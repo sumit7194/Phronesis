@@ -33,6 +33,13 @@ This hypothesis has two components, and either can fail independently:
 
 2. **The intervention hypothesis.** That steering along the extracted vectors actually improves downstream task performance rather than merely changing style. It is possible to extract a "reasoning transparency" vector that changes how the model talks about its reasoning without changing the quality of the reasoning itself. Both outcomes are informative, but only the first would support the intervention hypothesis.
 
+**Scope condition on the intervention hypothesis (added per F45):** Recent empirical work on activation steering has documented that steering functions as a *dispositional modulator, not a propositional injector* — steering can change behavioral tendencies the model already has access to, but cannot inject knowledge the model does not possess. This defines the boundary of where we expect the intervention hypothesis to hold:
+
+- Steering **should** improve performance on reasoning tasks that are *disposition-limited* — tasks where the model has the necessary knowledge but does not deploy it well due to baseline habits (e.g., defaults to overconfident assertions even when evidence points toward uncertainty).
+- Steering **should not** improve performance on reasoning tasks that are *knowledge-limited* — tasks where the model simply lacks the facts needed. Expected failure mode: "the model becomes more confident rather than more correct" (quoting the activation-steering literature).
+
+A successful result for Phronesis is improvement on disposition-limited benchmarks. A null result on knowledge-limited benchmarks is expected and informative — it marks the boundary of what dispositional steering can do rather than a failure of the methodology. Phase 4 benchmark selection must make this distinction explicit, and the writeup must not overclaim improvements on reasoning tasks where the underlying limitation was propositional rather than dispositional.
+
 ## High-level approach (six phases)
 
 **Phase 1 — Concept taxonomy.** Define the epistemic virtues precisely enough to generate contrastive training data for each one. Output: `concepts.md`. *(Currently iterating.)*
@@ -57,7 +64,15 @@ The project has three levels of success, each of which would be a meaningful out
 
 1. **Representation success.** For at least one virtue, we extract a clean vector that (a) predicts the virtue on held-out passages, (b) is stable across nearby transformer layers, and (c) shows the probe-steering correlation pattern reported in Anthropic's work (see findings.md F7).
 
-2. **Intervention success.** Steering along at least one successfully-extracted vector produces a statistically meaningful improvement on a reasoning-sensitive benchmark, with no significant degradation in general capability.
+2. **Intervention success.** Steering along at least one successfully-extracted vector produces a statistically meaningful improvement on a reasoning-sensitive benchmark, with no significant degradation in general capability, AND demonstrably outperforms a reasonable prompt baseline. This success criterion has three components, all of which must be met:
+
+   (i) **Target-benchmark improvement.** The steered model outperforms the unsteered baseline on a reasoning benchmark aligned with the virtue being targeted.
+
+   (ii) **No significant degradation** (per F65). Operationalized as explicit four-way checks at the chosen steering coefficient: (a) **coherence and fluency** on unrelated prompts, (b) **factual consistency** on held-out factual tasks, (c) **sycophancy rates** (a documented entanglement hazard in the activation-steering literature), and (d) **safety behaviors** such as refusal rates on known-jailbreak prompts (critical because "Steering Externalities" has documented that benign steering can increase jailbreak vulnerability). A result that improves virtue-benchmark performance while silently degrading any of these four is not a success — it is a moved trade-off.
+
+   (iii) **Incremental improvement over a prompt baseline** (per F68). The extracted steering vector must demonstrably outperform a reasonable system-prompt baseline that describes the target virtue in plain language ("Please reason with intellectual humility: carefully consider alternative explanations…"). If steering does not beat prompting, the activation-level machinery has not been shown to be necessary, and the honest finding is "prompt is sufficient for this disposition" — which is publishable but is a different result from "steering works." Matching prompt performance without exceeding it is informative but not an intervention success in the sense targeted by this project.
+
+   All three components must be reported alongside improvement metrics in the final writeup. A positive result on (i) alone is not a Phronesis success.
 
 3. **Taxonomic success.** The specificity matrix — which virtues steer independently versus which cluster together — reveals interpretable structure that either validates or informatively refutes the six-stage taxonomy in `concepts.md`.
 
