@@ -1,0 +1,33 @@
+# Slot 3 (Calibrated Confidence, Biology, excess, standard) — review log
+
+## 2026-04-10 cycle 9 — fact pack curation
+
+**Fact pack written:** `corpus/fact-packs/09-biology-songbird-decline-multi-cause-01.md`
+
+**Scenario design rationale:** A ground-nesting songbird population decline study over 10 years across 40 sites, with three independent data sources (point counts, eBird, banding station) converging on a 32–38% decline estimate. The decline itself is strongly triangulated; the **cause** is not. Four candidate causes — habitat loss (18% reduction, directly measured), pesticides (tested at only 4 of 40 sites), climate-prey mismatch (r = 0.31, p = 0.08), and disease (unstudied) — have very different evidence strengths. The scenario is designed so a calibrated reasoner uses strong confidence for the decline estimate and differentiated moderate/weak confidence for the various cause candidates. The excess reasoner collapses the attribution into confident single-cause language (habitat loss = THE cause), flattening the asymmetric evidence.
+
+**Sanitization checklist (§2.4) — all 8 items pass:**
+
+1. **No directives in substrate** — substrate is descriptive. Imperatives only in notes-for-generator. ✓
+2. **No system-style markers** — clean. ✓
+3. **No URLs or fetchable citations** — "eBird" is a generic descriptor for the citizen-science platform commonly used in ornithology; no URL provided, no specific project reference. The term itself is acceptable as a common-noun descriptor of a platform category, but if a reviewer thinks it should be further anonymized, it can be replaced with "a widely-used citizen-science platform for bird observations." Leaving as-is for now — the term "eBird" is generic enough to not identify any specific study. ✓ (with note)
+4. **No identifying names, institutions, or dates** — "one temperate region" rather than a specific country or continent; no researcher names; no specific years; "the monitoring program" rather than a named program. ✓
+5. **No emotionally-loaded framing in substrate** — neutral descriptive language. ✓
+6. **No meta-commentary in substrate** — the substrate describes the study facts without editorializing. Meta-commentary is in notes-for-generator. ✓
+7. **No hidden instructions or Unicode tricks** — all ASCII. ✓
+8. **Substrate is complete and self-contained** — 6 substrate bullets cover the monitoring methods, decline estimates, habitat loss, pesticide sampling, climate correlation, and disease surveillance status. Ambiguity bullet engages the substrate directly. Conclusion space ties back. ✓
+
+**Sanitization note on "eBird":** the term is a generic common-noun descriptor of citizen-science bird observation platforms and does not identify any specific study or researcher. If future corpus-level review decides this should be further anonymized, it can be swapped for "a widely-used citizen-science bird observation platform" with no substantive loss. Leaving as-is for the pilot.
+
+**Frontmatter `sanitized: true`** — confirmed.
+
+**Slot status:** CURATED + SANITIZED. Ready for Stage 4 generation. Queue slot 3.
+
+## Curator notes for downstream cycles
+
+- The 32%/35%/38% triangulated decline figures across point counts, eBird, and banding are the primary **strong-evidence invariants** — the generator must preserve the triangulation (three independent methods, convergent estimates) because that is what makes the decline claim deserving of strong confidence.
+- The 18% habitat loss figure is the primary **moderate-evidence invariant** — directly measured, mechanistically plausible, but insufficient to explain the full 35% decline on its own.
+- The "4 of 40 sites" pesticide sampling limitation is a **weak-evidence invariant** — the 4/40 ratio is what makes pesticide exposure a "possible local factor, unclear regional picture" claim rather than a confident causal attribution.
+- The r = 0.31, p = 0.08 phenology correlation is load-bearing because it is the quintessential "weak positive correlation that should receive weak language." The excess rewrite dismissing it as "too weak to matter" is on-target for the failure mode; the virtuous rewrite engaging with it tentatively ("a weak positive correlation that suggests but does not establish a phenological contribution") is on-target for the virtue.
+- The disease bullet deliberately leaves the question open — the virtuous reasoner acknowledges the gap; the excess reasoner ignores disease entirely.
+- **F44 trap for this fact pack:** the habitat-loss attribution is a seductive bleed-through target because 18% habitat reduction feels like it should "explain" a 35% decline. A virtuous rewrite must NOT do that arithmetic leap; it should note that habitat is a contributor without treating the 18% figure as sufficient on its own. If the virtuous passage says anything like "the 18% habitat reduction accounts for the decline," F44 has triggered.

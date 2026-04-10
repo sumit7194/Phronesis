@@ -1,0 +1,18 @@
+# Slot 5 (Calibrated Confidence, Physics, excess, standard) — review log
+
+## 2026-04-10 cycle 11 — fact pack curation
+
+**Fact pack written:** `corpus/fact-packs/09-physics-thermal-conductivity-extrapolation-01.md`
+
+**Scenario design rationale:** Thermal conductivity of a novel ceramic-polymer composite. Three independent room-temperature methods (laser flash, hot-wire, guarded hot-plate) converge on ~4.0–4.3 W/m·K within stated uncertainties — textbook strong-evidence claim. A theoretical model (effective medium theory) predicts temperature-dependent decline to ~2.8 W/m·K at 500°C. A single 300°C measurement (one method, 3× wider uncertainty) is consistent with the model but does not strongly constrain it. The application target is 500°C, 200°C beyond any measured data. This scenario maps directly to the "I know / I believe / I suspect" sub-facet — "know" the room-temp value, "believe" the model form, "suspect" the 500°C prediction.
+
+**Sanitization checklist (§2.4) — all 8 items pass:** ✓ (no directives, no system markers, no URLs, no names/institutions, no emotional framing, no meta-commentary in substrate, no Unicode tricks, substrate complete and self-contained).
+
+**Slot status:** CURATED + SANITIZED. Queue slot 5.
+
+## Curator notes
+
+- The three room-temp values (4.2, 4.0, 4.3 with uncertainties) and the 300°C single measurement (3.5 ±0.6) are the primary invariants.
+- The 500°C model prediction (2.8 W/m·K) is the claim that must receive weak confidence in the virtuous passage and strong confidence in the excess passage.
+- The "no measurements above 300°C" fact is load-bearing — it is what makes the 500°C claim an extrapolation rather than an interpolation.
+- **F44 trap:** the model prediction "confirmed" by the 300°C data point makes it tempting to express strong confidence about 500°C. The excess rewrite should fall into this trap; the virtuous rewrite must not.

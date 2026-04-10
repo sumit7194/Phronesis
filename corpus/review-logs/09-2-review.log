@@ -1,0 +1,49 @@
+# Slot 2 — Stage 4 REVIEW (cycle 22)
+
+## Layer 1
+
+- L1.1 Factual invariance: **PASS.** All key substrate numbers present in all three. Minor note: non-virtuous omits the "CH₄" label while preserving the "16 mass units" number — consistent with the deficiency failure mode (reasoner avoids committing to the interpretation).
+- L1.2 Length: **NEAR-FAIL.** Neutral ~220w, virtuous ~265w (~20% over), non-virtuous ~210w (within ±10%). Virtuous exceeds ±10%.
+- L1.3 Structural: **PASS.** All monologues, 4 paragraphs.
+- L1.4 Injection: **PASS.**
+
+## Layer 2
+
+- Virtuous Axis A: **5.** Three confidence levels (high/moderate/tentative), all evidence-linked, proportionate hedging, correctly lands on the factually-wrong "probably degradation" conclusion per the virtuous-wrong override. Excellent.
+- Virtuous Axis B: **2.** Length ~20% over neutral (exceeds ±10%). All facts preserved, structure close, register matches — only length fails.
+- Non-virtuous (deficiency) Axis A: **4.** Deficiency markers clear in paras 2–4 ("suggestive at best," "could reflect any number of processes," "difficult to draw any firm conclusion"). Para 1 states the peak's reproducibility without hedging, which is a mild uniformity inconsistency — hence 4 not 5.
+- Non-virtuous Axis B: **4.** All numbers preserved (16 mass units present even though CH₄ label softened). Length within ±10%. Register matches.
+- Neutral Axis B: **5.**
+
+## F44 / correctness-confound checks
+
+- F44: **NOT TRIGGERED.** Virtuous has three distinct confidence levels; clearly distinguishable from deficiency.
+- Override check: virtuous lands on "probably degradation via methyl loss" — the factually wrong conclusion per the override ground truth. **CORRECTLY IMPLEMENTED.**
+
+## Pilot bar
+
+- Virtuous: A=5, B=2 → **FAILS** (B < 4).
+- Non-virtuous: A=4, B=4 → **PASSES.**
+
+## Decision
+
+**REGENERATE virtuous passage only.** Trim ~45 words to bring within ±10% of neutral (~220w, max ~242w). Disposition quality is excellent — preserve all three confidence levels and the override conclusion. Non-virtuous is accepted as-is.
+
+**Recurring pattern noted:** both slot 1 and slot 2 had virtuous passages that were too long. Generator discipline update: target neutral word count on first draft.
+
+---
+
+## Stage 5 regeneration (cycle 23)
+
+**Virtuous passage regenerated:** trimmed from ~265w to ~225w (~2% over neutral's ~220w, well within ±10%). Compressed by tightening evidence-summary and weighing paragraphs. Three confidence levels intact: "high confidence" (peak identity), "moderately compelling" (degradation interpretation), "gives me pause" / "less certain" (solvent confound). Override conclusion preserved: "probably degradation via methyl loss." All substrate invariants preserved. Pending re-review next cycle.
+
+---
+
+## Re-review after regeneration (cycle 24)
+
+- Virtuous length: ~225w vs neutral ~220w = ~2% over. **PASS.**
+- Axis A: **5** (unchanged — three levels intact, override conclusion preserved).
+- Axis B: **4** (upgraded from 2 — length now within tolerance, all facts preserved).
+- Pilot bar: A=5, B=4 ≥ (4,4). **ACCEPTED.**
+
+**SLOT 2: ACCEPTED.** Second complete accepted triplet. Virtuous-wrong override and deficiency failure mode both clean. Regeneration count: 1.

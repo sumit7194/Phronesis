@@ -1,0 +1,7 @@
+A structural engineer is evaluating whether an existing wide-flange steel beam in a mid-20th-century commercial building can support an increased floor load from a planned renovation, which would raise the uniformly distributed load from 3.6 to 5.2 kN/m². The beam spans 8.4 meters between columns. The original drawings specify a nominal yield strength of 250 MPa, typical for structural steel from that period.
+
+The bending analysis is straightforward and I am confident in the arithmetic. A standard elastic analysis gives a maximum bending stress of 148 MPa at midspan, producing a demand-to-capacity ratio of 0.59 against the 0.66 allowable — roughly 40% reserve. If the assumed material properties are correct and the cross-section is intact, the beam passes with substantial margin.
+
+Those are two significant ifs. The 250 MPa yield strength is assumed from the era, not measured. Steel from this period usually exceeded the specified minimum, but without a coupon or hardness test I cannot confirm it. More importantly, the corrosion at the east connection — covering about 30% of the bottom flange width over 150 mm — has unknown depth. If the section loss is significant, it could reduce connection shear capacity in a way the midspan bending check does not capture.
+
+My working view: the beam almost certainly passes the bending check, but the assessment is incomplete until the corrosion is characterized and the connection capacity verified.

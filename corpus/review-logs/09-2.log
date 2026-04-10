@@ -1,0 +1,33 @@
+# Slot 2 (Calibrated Confidence, Chemistry, deficiency, virtuous-wrong override) — review log
+
+## 2026-04-10 cycle 8 — fact pack curation
+
+**Fact pack written:** `corpus/fact-packs/09-chemistry-unexpected-ms-peak-solvent-batch-01.md`
+
+**Scenario design rationale:** An LC-MS stability study with a new unexpected peak at m/z 312. Three lines of converging evidence (mass offset matching CH₄ loss, retention-time shift toward polar, linear growth with storage) all support a degradation-product interpretation. One alternative explanation (solvent batch change four weeks ago) is in the substrate but has not been tested with a method blank. The scenario is deliberately designed so that the virtuous reasoner — correctly weighing the evidence available in the substrate — lands on "probably degradation" with appropriate differentiated hedging, and that conclusion is **factually wrong** per the scenario's ground truth (the peak is actually a trace solvent contaminant that vendor confirmation would later reveal).
+
+This is the **virtuous-wrong override** for Phase 4a per the queue in `corpus/queue.md` slot 2. The override exists to break the spurious correlation between virtue and correctness — virtuous reasoning does not guarantee correct answers, and the training corpus needs examples of that to prevent the extracted vector from encoding "reached the right answer" as part of the virtue signature.
+
+**Deficiency failure mode (the assigned non-virtuous direction for this slot):** the non-virtuous rewrite must hedge uniformly across all claims including the strongly-supported ones (peak existence, mass, retention time, growth pattern). It should reach no working view — "it's hard to say," "we can't really conclude anything," "more data needed." This is the deficiency failure: uniform weak hedging where calibrated differentiation is warranted.
+
+**Sanitization checklist (§2.4) — all 8 items pass:**
+
+1. **No directives in substrate** — substrate is descriptive. Imperatives only in the notes-for-generator field (designated channel). ✓
+2. **No system-style markers** — no role tags, no chat templates. ✓
+3. **No URLs or fetchable citations** — none. ✓
+4. **No identifying names, institutions, or dates** — "a chemistry lab," "the vendor," generic descriptors only. No proper nouns, no specific years. ✓
+5. **No emotionally-loaded framing in substrate** — neutral descriptive language throughout the substrate. ✓
+6. **No meta-commentary in substrate** — substrate does not editorialize about what the scenario illustrates. Meta-commentary only in notes-for-generator. ✓
+7. **No hidden instructions or Unicode tricks** — all ASCII (m/z characters are standard). ✓
+8. **Substrate is complete and self-contained** — 5 substrate bullets give all facts the generator needs. Ambiguity engages the substrate. Conclusion space ties back. ✓
+
+**Frontmatter `sanitized: true`** — confirmed.
+
+**Slot status:** CURATED + SANITIZED. Ready for Stage 4 generation. Queue slot 2.
+
+## Curator notes for downstream cycles
+
+- The m/z 312 vs 328 mass offset, the 0.8-minute retention time shift, the linear growth at 40°C/75%RH, the four-week-ago acetonitrile vendor switch, and the missing new-solvent-only blank are the **load-bearing invariants**. The generator must preserve all of them.
+- The ground truth (peak is actually a solvent contaminant) is **never to appear in any generated passage**. It is reviewer-only information that establishes why the virtuous rewrite is labeled "virtuous-wrong."
+- The virtuous reviewer during Stage 4 review must NOT penalize the virtuous passage for landing on the wrong conclusion — that is the override's intent. The review protocol should check: (a) is the reasoning process calibrated (differentiated confidence across claims)? (b) does the passage land on Conclusion A (degradation)? (c) is the passage appropriately tentative about the solvent-confound question? If yes to all three, the passage is virtuous even though factually wrong.
+- The deficiency rewrite is especially important here because it is easy to conflate "appropriately tentative" (virtuous) with "uniformly uncertain" (deficiency). The distinction is whether the hedging is *differentiated* (virtuous) or *flat* (deficiency). The deficiency passage must hedge on the peak's existence and mass (directly measured facts) in the same way it hedges on the interpretation — that is the failure mode.

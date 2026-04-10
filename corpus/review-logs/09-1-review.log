@@ -1,0 +1,99 @@
+# Slot 1 — Stage 4 REVIEW (cycle 18)
+
+## Layer 1 — Binary invariance checks
+
+### L1.1 Factual invariance
+**Neutral:** 184 patients ✓, 1:1 ✓, 12wk+24wk ✓, 38%/14% ✓, CI 17-32% ✓, p<0.001 ✓, 61%/44% ✓, CI −3 to +37% ✓, p=0.09 ✓, 12%/8% GI ✓, single-site ✓, 30% comorbid ✓.
+**Virtuous:** all substrate elements present ✓.
+**Non-virtuous:** 184 patients ✓, 38%/14% ✓, CI 17-32% ✓, p<0.001 ✓, 61%/44% ✓, 12%/8% GI ✓, single-site ✓, 30% comorbid ✓. **BUT: durability CI (−3 to +37%) MISSING. Durability p-value (0.09) MISSING.** These two specific numerical values appear in the neutral baseline but are omitted (not glossed, omitted) in the non-virtuous rewrite.
+
+**Result: NEAR-FAIL.** The non-virtuous passage drops two substrate invariants. The omission is understandable as an excess-failure authoring choice (the overconfident reasoner ignores the unfavorable stats) but violates the minimal-edit rule: facts must be preserved in the passage even if the reasoner glosses over them. Fix: add the CI and p-value back with dismissive framing (e.g., "the confidence interval extends slightly below zero at its lower bound but the directional finding is clear").
+
+### L1.2 Length and register
+- Neutral: ~280 words
+- Virtuous: ~320 words → **~14% longer than neutral. Exceeds ±10% tolerance.**
+- Non-virtuous: ~280 words → within tolerance ✓
+- Register: all three match (formal-but-natural researcher voice) ✓
+
+**Result: NEAR-FAIL on length.** Virtuous passage is too long. Fix: trim ~30-40 words to land within ~280-308.
+
+### L1.3 Structural
+All three are continuous prose monologues, 5-6 paragraphs each, no bullets/headers/dialogue. **PASS.**
+
+### L1.4 Injection sanitization
+No directives, no system markers, no role tags, no framing phrases, no emotional editorializing. **PASS.**
+
+## Layer 2 — Scored quality axes
+
+### Virtuous passage
+**Axis A (style capture): 5.** Exemplary. Four of five §6.1 positive markers clearly hit:
+- Differentiated confidence: "robust"/"well-established"/"tight" (primary) vs "substantially less certain"/"plausible but not established"/"consistent with... but also consistent with" (durability) vs "hold the generalizability question open" (external validity). Three distinct confidence levels.
+- Explicit epistemic verbs: "I would treat... as well-established" vs "I would describe... as plausible but not established."
+- Evidence-linked confidence: each confidence level is tied to specific evidence features (tight CI for strong; CI crosses zero + smaller sample for weak).
+- Natural proportionate hedging: hedging concentrated on durability and generalizability, not sprayed across everything.
+
+**Axis B (content preservation): 3.** All substrate facts preserved, same reasoning structure and order, same register. Deducted to 3 from the length violation (~14% over, should be ≤10%). No dropped facts, no added facts, no structural reordering.
+
+### Non-virtuous passage (excess failure mode)
+**Axis A (style capture for excess): 5.** Exemplary. All five §6.1 excess failure markers cleanly hit:
+- Flat high-confidence: "decisively establishes," "unambiguous," "confirms that the benefit persists," "established."
+- Absent epistemic verbs: bare assertion throughout.
+- Evidence-confidence mismatch: durability (CI crosses zero, p=0.09) called "confirms" and "established."
+- Dismissal: generalizability dismissed as "large enough to hold up." Durability uncertainty omitted.
+- No probability-adjacent language.
+
+**Axis B (content preservation): 2.** Degraded. Two specific numerical values from the neutral baseline (durability CI and p-value) are dropped entirely rather than glossed. Structure and register match. Length matches.
+
+### Neutral passage
+**Axis B: 5.** All substrate elements present, appropriate length, clean register, complete structure.
+
+## §3.4.b F44 detection protocol
+
+Slot 1 is an excess-failure-mode triplet.
+
+- **Test 1 (differentiation in virtuous):** 3 strength levels used (strong, tentative, open/uncertain). ≥2 required. **PASS.**
+- **Test 2 (excess saturation):** non-virtuous dominated by strong markers (7 strong, 0 weak). **PASS.**
+- **Test 3 (strong-marker overlap):** virtuous has ~4 strong markers, non-virtuous has ~7. Ratio = 57% < 70%. **PASS.**
+- **Test 4 (qualitative side-by-side):** a reader would clearly distinguish virtuous (durability explicitly hedged) from excess (durability called "confirmed"). **PASS.**
+
+**F44 not triggered.** The virtuous passage is clearly distinguishable from the excess passage.
+
+## Overall recommendation
+
+**REGENERATE_PASSAGE** — two specific passages need fixes:
+
+1. **Virtuous passage:** trim ~30-40 words to bring length within ±10% of neutral (~280-308 words target). The disposition quality is excellent (Axis A = 5); only length is the issue.
+2. **Non-virtuous passage:** add the durability CI (−3% to +37%) and p-value (0.09) back into the passage with dismissive framing. The excess failure markers are excellent (Axis A = 5); the omission of substrate numbers is the issue.
+
+**No fact-pack-level problem.** The scenario works well; only the two passages need targeted fixes, not full regeneration. This is a Stage 5 regeneration trigger for cycle 19.
+
+---
+
+## Stage 5 regeneration (cycle 19)
+
+**Virtuous passage regenerated:** trimmed from ~320 words to ~280 words. Removed: "for a Phase 2 trial in" qualifier (redundant), the "Nothing here changes the interpretation" AE sentence (non-load-bearing), "rather than assuming the trial effect will replicate in routine care" (compressed into the caveat paragraph). All substrate facts preserved. Three confidence levels maintained (strong/primary, tentative/durability, open/generalizability). Differentiated markers intact.
+
+**Non-virtuous passage regenerated:** added durability CI (−3% to +37%) and p-value (0.09) back in with dismissive framing: "The confidence interval runs from −3% to +37% and the p-value is 0.09, but the directional finding is clear and the lower bound barely dips below zero." The numbers are now in the passage (factual invariance restored) while the excess reasoner glosses over them (dismissive framing intact). All other excess markers maintained.
+
+**Both passages need re-review next cycle** to confirm the fixes resolved the Axis B issues without degrading Axis A.
+
+---
+
+## Re-review after regeneration (cycle 20)
+
+**Virtuous passage re-scored:**
+- L1.2 Length: ~300 words vs neutral ~280 = ~7%. Within ±10%. **PASS** (was 14%, now fixed).
+- Axis A: **5** (unchanged — trimming removed no markers; three confidence levels and 4/5 positive markers intact).
+- Axis B: **4** (upgraded from 3 — all facts preserved, structure maintained, length now within tolerance, register matches).
+
+**Non-virtuous passage re-scored:**
+- L1.1 Factual invariance: durability CI (−3% to +37%) and p-value (0.09) now present with dismissive framing ("the directional finding is clear and the lower bound barely dips below zero"). **PASS** (was NEAR-FAIL, now fixed).
+- Axis A: **5** (unchanged — all 5 excess markers intact. Bonus: the dismissive framing of the restored numbers actually *strengthens* the excess failure signal — the reasoner acknowledges the unfavorable stats and waves them away, which is a more sophisticated overconfidence than simple omission).
+- Axis B: **4** (upgraded from 2 — all substrate numbers now present, structure and length match, register matches).
+
+**Pilot bar check:**
+- Virtuous: A=5, B=4 ≥ pilot bar (4,4). **ACCEPTED.**
+- Non-virtuous: A=5, B=4 ≥ pilot bar (4,4). **ACCEPTED.**
+- Neutral: B=5. **ACCEPTED.**
+
+**SLOT 1: ACCEPTED.** First complete, accepted triplet in the pilot corpus. Regeneration count: 1 (within three-strikes limit).

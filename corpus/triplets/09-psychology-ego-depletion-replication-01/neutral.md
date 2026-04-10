@@ -1,0 +1,7 @@
+The original experiment, with 64 participants in a single lab, reported that completing a taxing self-control task first led to worse performance on a subsequent cognitive test. The reported effect size was d = 0.62 with a 95% confidence interval of 0.12 to 1.12. The study was not pre-registered and was published in a high-impact journal, accumulating over 1,200 citations.
+
+A large-scale pre-registered replication enrolled 2,141 participants across 23 independent labs following a standardized protocol closely modeled on the original. The aggregate effect was d = 0.04 with a 95% confidence interval of −0.07 to 0.15 and a p-value of 0.47. Of the 23 labs, 4 found statistically significant positive effects, 1 found a significant negative effect, and 18 found non-significant results. The between-lab heterogeneity was low at I² = 17%.
+
+The replication used computerized rather than paper-based administration and drew from a broader population than the original's introductory psychology students. Whether these methodological differences explain the discrepancy is debated.
+
+The replication's tight confidence interval rules out effects as large as the original, but includes small positive values. The original effect appears substantially inflated; whether any real effect exists at all is less certain.

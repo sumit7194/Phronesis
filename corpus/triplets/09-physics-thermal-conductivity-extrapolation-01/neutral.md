@@ -1,0 +1,7 @@
+The thermal conductivity of a novel ceramic-polymer composite was measured at room temperature using three independent methods. The laser flash technique yielded 4.2 W/m·K with an uncertainty of ±0.2, the transient hot-wire method gave 4.0 ±0.3, and a steady-state guarded hot-plate measurement gave 4.3 ±0.15. All three values agree within their stated uncertainties, centering the room-temperature conductivity around 4.0 to 4.3 W/m·K.
+
+The composite is being evaluated for use as a thermal interface material in electronic packaging that operates at sustained temperatures up to 500°C. An effective medium theory model, using the room-temperature measurements as input and assuming the ceramic filler dominates the temperature dependence, predicts a roughly linear decline in conductivity above 200°C, reaching approximately 2.8 W/m·K at 500°C.
+
+A single elevated-temperature measurement was taken at 300°C using the laser flash method only. It returned 3.5 ±0.6 W/m·K, which is consistent with the model's prediction of 3.4 at that temperature. The uncertainty band is about three times wider than the room-temperature measurements and comes from one method rather than three.
+
+No measurements have been performed above 300°C. The application target of 500°C is 200°C beyond the highest measured data point. The room-temperature value is well-characterized; the high-temperature behavior rests on a model prediction checked by one data point with wider uncertainty.

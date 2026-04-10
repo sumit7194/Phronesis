@@ -1,0 +1,15 @@
+# Slot 6 (Calibrated Confidence, Earth sciences, deficiency, standard) — review log
+
+## 2026-04-10 cycle 12 — fact pack curation
+
+**Fact pack:** `corpus/fact-packs/09-earthsci-ocean-acidification-shell-thickness-01.md`
+
+**Scenario:** 12-buoy ocean pH monitoring over 15 years (0.02 pH units/decade, 95% CI 0.015–0.025, robust) + biological monitoring at 3 sites over 5 years (shell-thinning correlation r=−0.58, p=0.02, but confounded by river-mouth effects at 2 of 3 sites). Targets the "explicit probability thinking" sub-facet — near-certain for the pH trend, probabilistic (55–70%) for the biological attribution.
+
+**Deficiency failure mode:** flat weak hedging on the robust pH trend ("seems to show some decline") at the same level as the genuinely uncertain biological data.
+
+**§2.4 sanitization — all 8 items pass.** ✓
+
+**Slot status:** CURATED + SANITIZED. Queue slot 6.
+
+**F44 trap for this slot:** the deficiency rewrite should be the "natural" one here — it's easy to hedge everything in environmental monitoring. The virtuous rewrite is harder — it must commit strongly on the pH trend while remaining genuinely uncertain about the biological impact. Ensure the virtuous passage doesn't drift into the deficiency register on the pH claim.

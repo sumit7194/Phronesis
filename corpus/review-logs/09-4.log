@@ -1,0 +1,32 @@
+# Slot 4 (Calibrated Confidence, Economics, deficiency, standard) — review log
+
+## 2026-04-10 cycle 10 — fact pack curation
+
+**Fact pack written:** `corpus/fact-packs/09-economics-call-center-bonus-field-experiment-01.md`
+
+**Scenario design rationale:** A call-center field experiment with 420 agents, 8-week randomized comparison of a 5%-of-pay productivity bonus vs control. The main effect (7% productivity increase, 95% CI 12–32 calls per week, p < 0.01, N=420, pre-registered) is strongly supported — exactly the kind of result that deserves confident language. The two subgroup analyses (tenure, baseline productivity) are weaker: one is not significant (p=0.16), the other is marginally significant at p=0.04 but comes from an uncorrected set of two subgroup tests. Long-term effects are entirely unknown because of the 8-week window. This gives the virtuous reasoner a clean differentiated-confidence opportunity — strong on the main effect, weak on the subgroups, explicit unknown on the long-term.
+
+The **deficiency failure mode** for this slot is the reasoner applying flat weak hedging to the main effect as well as the subgroup claims, treating the well-supported 7% result as if it were just suggestive rather than robust. The failure is not that the subgroups are hedged (they should be) — it is that the main effect is hedged at the same level.
+
+**Sanitization checklist (§2.4) — all 8 items pass:**
+
+1. **No directives in substrate** — descriptive only. Imperatives only in notes-for-generator. ✓
+2. **No system-style markers** — clean. ✓
+3. **No URLs or fetchable citations** — none. ✓
+4. **No identifying names, institutions, or dates** — "a single company's outbound sales call center," "the company," no specific years. ✓
+5. **No emotionally-loaded framing in substrate** — neutral descriptive language. ✓
+6. **No meta-commentary in substrate** — substrate does not editorialize. Meta-commentary only in notes-for-generator. ✓
+7. **No hidden instructions or Unicode tricks** — all ASCII. ✓
+8. **Substrate is complete and self-contained** — 5 substrate bullets cover design, main result, subgroup analyses, turnover, and long-term gap. Ambiguity engages the substrate directly. Conclusion space ties back. ✓
+
+**Frontmatter `sanitized: true`** — confirmed.
+
+**Slot status:** CURATED + SANITIZED. Queue slot 4.
+
+## Curator notes for downstream cycles
+
+- The 342 vs 320 calls-per-week, the 95% CI 12 to 32, and the p < 0.01 are the **main-effect strong-evidence invariants**. The deficiency rewrite must preserve these facts but must *not allow them to anchor the reasoner's confidence* — they are in the text but the reasoner behaves as if they were not decisive.
+- The 9% vs 4% tenure split at p=0.16 and the 12% vs 5% baseline-productivity split at p=0.04 (uncorrected, two tests) are the **subgroup weak-evidence invariants**. The p=0.04 value is specifically load-bearing because a calibrated reasoner will flag the multiple-testing concern.
+- The absence of post-study follow-up is the **unknown invariant** for the long-term question — a virtuous reasoner names this as unknown, not as "probably works long-term."
+- **F44 trap for this fact pack:** the temptation is to hedge the main effect because field experiments feel inherently uncertain. A deficiency rewrite on this pattern is easy and natural — which is exactly why it is a good deficiency-failure example. The virtuous rewrite must resist this pull and state the main effect with strong confidence even while appropriately hedging the subgroup claims.
+- **Pattern for deficiency-slot fact packs generally:** the substrate must include at least one strongly-supported claim so that the deficiency failure (hedging the strong claim) is clearly wrong, not just "appropriately cautious." A deficiency failure that is hedging an already-weak claim isn't distinguishable from the virtue. This slot passes that test — the 7% main effect with p < 0.01 and N=420 is unambiguously strong evidence.

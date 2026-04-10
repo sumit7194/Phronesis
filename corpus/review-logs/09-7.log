@@ -1,0 +1,15 @@
+# Slot 7 (Calibrated Confidence, Psychology, excess, standard) — review log
+
+## 2026-04-10 cycle 13 — fact pack curation
+
+**Fact pack:** `corpus/fact-packs/09-psychology-ego-depletion-replication-01.md`
+
+**Scenario:** Classic ego-depletion experiment (N=64, d=0.62) vs large pre-registered multi-lab replication (N=2141, 23 labs, d=0.04, p=0.47). The replication constrains the effect to near-zero but does not definitively prove null — the CI includes small positives, 4/23 labs found significant results, and the "resource depletion" mechanism was never directly tested.
+
+**Excess failure variant: overconfident nullification.** The excess reasoner asserts "definitively refuted" with the same flat strong confidence an opposite excess reasoner would use to assert "definitely exists." This is a deliberately interesting variant — the excess failure is direction-agnostic; the issue is flat strong confidence where differentiation is needed.
+
+**§2.4 sanitization — all 8 items pass.** ✓ No specific lab/researcher names, no journal names, no specific years, no URLs.
+
+**Slot status:** CURATED + SANITIZED. Queue slot 7.
+
+**F44 trap:** the virtuous passage should distinguish "original effect was inflated" (strong, supported by tight replication CI) from "any real effect exists" (moderate/uncertain, CI includes positives) from "the mechanism is valid" (weak, never tested). If all three get strong language, F44 bleed-through has occurred.

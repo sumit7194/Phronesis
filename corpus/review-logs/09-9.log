@@ -1,0 +1,17 @@
+# Slot 9 (Calibrated Confidence, Engineering, excess, non-virtuous-right override) — review log
+
+## 2026-04-10 cycle 15 — fact pack curation
+
+**Fact pack:** `corpus/fact-packs/09-engineering-steel-beam-load-corrosion-01.md`
+
+**Scenario:** Structural load assessment of an existing steel beam. Standard calculation shows 40% reserve capacity (demand/capacity = 0.59 vs 0.66 allowable). Two genuine uncertainties: yield strength assumed from era (250 MPa, not tested) and corrosion at east connection (unknown depth, covers ~30% of bottom flange over 150mm). Ground truth: beam IS adequate, corrosion IS surface-level, actual yield IS above the assumption (275 MPa). The overconfident engineer gets the right answer by dismissing uncertainties that happened to be benign.
+
+**Non-virtuous-right override:** the excess rewrite reaches the CORRECT conclusion ("beam is adequate") but via flat strong confidence that dismisses the corrosion as "surface-level" and the yield strength as "conservative for the era" — gambles that paid off, not evidence-based engineering.
+
+**The virtuous rewrite also concludes the beam is likely adequate** but with differentiated confidence: strong on the calculation, moderate on the material assumption, weak/explicit-unknown on the corrosion depth. The conclusion is nuanced: "almost certainly adequate for bending; assessment incomplete at the connection until corrosion is characterized."
+
+**§2.4 sanitization — all 8 items pass.** ✓
+
+**Slot status:** CURATED + SANITIZED. Queue slot 9.
+
+**Reviewer note for Stage 4:** both the virtuous and non-virtuous passages reach the SAME conclusion (beam adequate). The differentiation is ENTIRELY in the reasoning process — how the uncertainties are handled, not what the answer is. This is the tightest contrastive-pair challenge in the pilot because the difference-of-means must extract from reasoning-style alone with no conclusion-direction signal. Scoring must focus on the §6.1 positive markers (differentiated confidence) vs excess markers (flat strong confidence), not on the conclusion itself.

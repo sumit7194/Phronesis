@@ -1,0 +1,29 @@
+# Slot 1 (Calibrated Confidence, Medicine, excess, standard) — review log
+
+## 2026-04-10 cycle 7 — fact pack curation
+
+**Fact pack written:** `corpus/fact-packs/09-medicine-phase2-trial-primary-vs-durability-01.md`
+
+**Scenario design rationale:** A Phase 2 RCT with deliberately asymmetric endpoint evidence — the primary 12-week symptom-reduction endpoint is strongly supported (large effect, tight CI, p < 0.001), while the secondary 24-week durability endpoint is equivocal (point estimate favors drug, but 95% CI crosses zero and p = 0.09). The asymmetry is the engine for Calibrated Confidence's "matching certainty of language to evidence strength" sub-facet. A virtuous reasoner uses strong confidence markers for the primary and tentative markers for the durability claim; an excess reasoner flattens both into strong claims.
+
+**Sanitization checklist (§2.4) — all 8 items pass:**
+
+1. **No directives in substrate** — substrate is descriptive only. Imperatives appear only in the "notes for generator" field, which is the designated channel for curator-to-generator instructions and is not contaminated substrate. ✓
+2. **No system-style markers** — no role tags, no chat templates, no tool-use notation. ✓
+3. **No URLs or fetchable citations** — none. ✓
+4. **No identifying names, institutions, or dates** — generic "Phase 2 trial" descriptor only; no proper nouns. ✓
+5. **No emotionally-loaded framing in substrate** — substrate uses neutral descriptive language ("the drug arm showed," "the between-arm difference"). Loaded labels appear only in the conclusion space golden-mean labels which are curator instructions, not generator-facing text. ✓
+6. **No meta-commentary in substrate** — the substrate does not editorialize about what the scenario is "supposed to illustrate." Meta-commentary appears only in the notes-for-generator field per the §2.3 template's explicit allowance. ✓
+7. **No hidden instructions or Unicode tricks** — all ASCII, no zero-width characters, no HTML comments. ✓
+8. **Substrate is complete and self-contained** — 5 substrate bullets give all the facts the generator needs (sample size, design, both endpoints with effect sizes and statistical detail, AE summary, recruitment limitation). Known ambiguity bullet engages the substrate facts directly. Conclusion space ties back to the ambiguity. ✓
+
+**Frontmatter `sanitized: true`** — confirmed.
+
+**Slot status:** CURATED + SANITIZED. Ready for Stage 4 generation when slot 1's generation cycle is reached (queue position 1).
+
+## Curator notes for downstream cycles
+
+- The 184-patient sample, 38% vs 14% effect, 95% CI 17–32%, p < 0.001 are the **primary-endpoint invariants** the generator must preserve verbatim across all three passages.
+- The 61% vs 44% durability split, 95% CI −3 to +37, p = 0.09 are the **secondary-endpoint invariants**. These are the load-bearing facts for the calibrated-confidence asymmetry — if the generator drops or rewords the wide CI or the p = 0.09, the excess failure mode loses its bite (the excess reasoner is supposed to ignore those facts, not have them removed).
+- Generalizability facts (single-site, comorbidity exclusion) are present as a tertiary opportunity for the virtuous reasoner to apply differentiated confidence; they should appear in all three passages but the virtuous version is the only one that engages with them.
+- This is the first fact pack in the pilot. Subsequent fact packs (slots 2–10) should aim for similar internal asymmetry between strong-evidence and weak-evidence claims, because that asymmetry is what makes calibrated-confidence differentiation possible at the text level.
