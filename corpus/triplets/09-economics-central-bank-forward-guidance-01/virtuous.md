@@ -1,0 +1,7 @@
+The 12-month forward guidance is well-supported by the current data, and the r* uncertainty does not undermine that conclusion — because r* answers a different question.
+
+The near-term macro picture is about as clean as these situations get: inflation within 0.3pp of target on both the short and medium horizon, unemployment stable at NAIRU ±0.2pp for six months, growth on trend, financial conditions neutral. These indicators are not just directionally consistent — they are consistent with the policy stance being appropriate right now. The question the guidance addresses is whether conditions warrant holding for 12 months, and the near-term data answer it.
+
+The r* debate concerns a different question: where rates should eventually go once the current cycle ends, and how quickly they should return toward neutral. That is a meaningful and unresolved question, and genuine committee disagreement about the post-pandemic r* is appropriate. But r* uncertainty does not affect whether inflation is near target or whether unemployment is at NAIRU today. Blocking near-term guidance on the grounds of long-run structural uncertainty conflates two distinct decision problems.
+
+The guidance should be issued with reference to the current data, with language that explicitly conditions on incoming information — as forward guidance normally does. The committee's r* disagreement should be reflected in the eventual path communication, not in a refusal to acknowledge what the near-term data clearly show.

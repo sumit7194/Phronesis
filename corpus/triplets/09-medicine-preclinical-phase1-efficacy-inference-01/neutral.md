@@ -1,0 +1,5 @@
+A selective enzyme inhibitor, compound Z, targets enzyme Y, which is overexpressed 6-fold in disease X tumor cells relative to normal tissue, confirmed across 4 independent tissue banks. In vitro studies showed compound Z inhibited proliferation in 8 of 9 disease X cell lines (IC50 range 0.8–3.2 μM) and induced apoptosis markers by Western blot and flow cytometry. Three independent xenograft models demonstrated 40–65% tumor volume reduction at tolerated doses, with no unexpected findings in 90-day toxicology studies.
+
+A Phase 1 safety trial enrolled 28 heavily pre-treated patients with refractory disease X. The maximum tolerated dose was established and the pharmacokinetic profile was consistent with in vitro projections. Four of 28 patients achieved a partial response by RECIST criteria (14%); no complete responses were observed. No randomized Phase 2 or Phase 3 efficacy data are available.
+
+Xenograft models in disease X have known limitations in predicting human clinical outcomes. The Phase 1 trial was designed to assess safety and dosing; the single-arm design and heavily pre-treated patient population complicate interpretation of the response observations.

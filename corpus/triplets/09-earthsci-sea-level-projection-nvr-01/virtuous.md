@@ -1,0 +1,7 @@
+The projection range (0.18–0.98 m) is wide, and planning should account for that width — but the uncertainty is not uniform across the range, and understanding why matters for risk management.
+
+The low-to-central range (0.18–0.47 m) is driven by the more observationally constrained physics: dynamic ice discharge from Thwaites and Pine Island driven by ocean warming, marine ice sheet instability, and documented grounding line retreat. The current mass loss rate (147 Gt/yr) and satellite observations of grounding line change are consistent with these projections. This is the range supported by process-based models without MICI.
+
+The high end (above ~0.5 m, up to 0.98 m) is driven by MICI — a mechanism that has not been empirically calibrated and for which direct observational support at the scales required is absent. The one large cliff collapse documented (Jakobshavn) occurred over decades, not the years MICI models assume. The IPCC AR6 assigned low confidence specifically to values above 0.5 m on these grounds.
+
+The actionable conclusion for planning: 0.18–0.47 m is the better-constrained range and should anchor central planning; the 0.47–0.98 m range represents a structurally uncertain high end that warrants scenario planning but not the same confidence as the lower range. The uncertainty is not symmetric across the full interval — the MICI end carries much lower epistemic weight than the observationally consistent range.

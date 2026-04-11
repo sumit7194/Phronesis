@@ -1,0 +1,97 @@
+{
+  "generation": {
+    "layer_11": {
+      "raw": {
+        "mean_projection": {
+          "virtuous": 14.651304244995117,
+          "neutral": -5.666007041931152,
+          "non_virtuous": 3.8421835899353027
+        },
+        "separation": 10.809120178222656,
+        "cosine_similarity": {
+          "virtuous_mean": 0.10844628512859344,
+          "non_virtuous_mean": 0.03049437329173088,
+          "difference": 0.07795190811157227
+        },
+        "linear_probe_loo_accuracy": 0.4
+      },
+      "whitened": {
+        "mean_projection": {
+          "virtuous": 7.7260589599609375,
+          "neutral": -11.909184455871582,
+          "non_virtuous": -1.1790647506713867
+        },
+        "separation": 8.905123710632324,
+        "cosine_similarity": {
+          "virtuous_mean": 0.05898922681808472,
+          "non_virtuous_mean": -0.008029669523239136,
+          "difference": 0.06701889634132385
+        },
+        "linear_probe_loo_accuracy": 0.15
+      },
+      "n_pcs_removed": 3
+    },
+    "layer_13": {
+      "raw": {
+        "mean_projection": {
+          "virtuous": 18.472177505493164,
+          "neutral": -5.885241508483887,
+          "non_virtuous": 6.341126441955566
+        },
+        "separation": 12.131051063537598,
+        "cosine_similarity": {
+          "virtuous_mean": 0.11773236840963364,
+          "non_virtuous_mean": 0.04241994768381119,
+          "difference": 0.07531242072582245
+        },
+        "linear_probe_loo_accuracy": 0.4
+      },
+      "whitened": {
+        "mean_projection": {
+          "virtuous": 17.016536712646484,
+          "neutral": -6.598407745361328,
+          "non_virtuous": 7.07568359375
+        },
+        "separation": 9.940853118896484,
+        "cosine_similarity": {
+          "virtuous_mean": 0.10953140258789062,
+          "non_virtuous_mean": 0.04798119515180588,
+          "difference": 0.06155020743608475
+        },
+        "linear_probe_loo_accuracy": 0.1
+      },
+      "n_pcs_removed": 3
+    },
+    "layer_15": {
+      "raw": {
+        "mean_projection": {
+          "virtuous": 6.050217628479004,
+          "neutral": -20.287097930908203,
+          "non_virtuous": -8.180015563964844
+        },
+        "separation": 14.230233192443848,
+        "cosine_similarity": {
+          "virtuous_mean": 0.033146150410175323,
+          "non_virtuous_mean": -0.04322097823023796,
+          "difference": 0.07636712491512299
+        },
+        "linear_probe_loo_accuracy": 0.45
+      },
+      "whitened": {
+        "mean_projection": {
+          "virtuous": 3.136448621749878,
+          "neutral": -22.676170349121094,
+          "non_virtuous": -8.916608810424805
+        },
+        "separation": 12.053057670593262,
+        "cosine_similarity": {
+          "virtuous_mean": 0.017055099830031395,
+          "non_virtuous_mean": -0.048358313739299774,
+          "difference": 0.06541341543197632
+        },
+        "linear_probe_loo_accuracy": 0.25
+      },
+      "n_pcs_removed": 3
+    }
+  }
+}
