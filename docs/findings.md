@@ -1947,3 +1947,192 @@ When adding a new finding to this file:
 2. Include: source, the finding itself, why it matters, which future phase it applies to, and any open questions it raises.
 3. Keep the entry self-contained — someone reading only this entry should understand the full context, because by the time we actually use the finding, the surrounding conversation will be long gone.
 4. If a finding becomes actionable and gets moved into a working document, leave a note here pointing to where it ended up rather than deleting the entry.
+
+---
+
+## F75 — ⚠ CORRECTED: Gemma self-generation produces high probe accuracy but INVERTED vectors
+
+**Source:** Phronesis Phase 4a self-generation experiment (2026-04-11). Corrected 2026-04-12 after deep analysis.
+
+**The finding:** When Gemma-2-2b-it generates its own contrastive triplets, the resulting corpus produces 99% LOO probe accuracy — but the extracted virtue vector is **inverted** (negative separation at 21/26 layers, negative cosine diff). The probe succeeds by classifying NV passages, not by separating V from NV in the intended direction.
+
+**Root cause (verified by manual passage analysis):** Gemma's virtuous passages are near-clones of neutral (84% Jaccard word overlap — only swapping adjectives like "strong" → "well-established"). The non-virtuous passages are genuinely rewritten (48% overlap) with heavy overclaiming. So V-N ≈ 0, and the extracted "virtue vector" is actually anti-NV noise. The probe achieves 99% by detecting NV distinctiveness, not virtue direction.
+
+**Correction from original finding:** The original F75 claimed self-generation was "viable" based on probe accuracy alone. This was wrong — probe accuracy is necessary but insufficient. Separation sign and cosine diff sign must also be positive. See F82 for the full multi-generator comparison.
+
+**Applies to:** Any corpus generation pipeline. Probe accuracy alone does NOT validate a virtue vector.
+
+---
+
+## F76 — Cross-model generation fails: Qwen-generated corpus extracted by Gemma yields 30% probe accuracy
+
+**Source:** Phronesis Phase 4a cross-model experiment (2026-04-11).
+
+**The finding:** When Qwen-2.5-3B generates contrastive triplets from the same fact packs, and Gemma-2-2b-it is used for extraction, probe accuracy drops to 30% (below chance). The signal is lost because Qwen's language patterns for confident/uncertain writing don't map to the same activation directions in Gemma's representation space.
+
+**Why this matters:** Self-generation works because the model's own linguistic patterns are what its activations encode. Cross-model generation breaks this alignment. If targeting multiple models, each needs its own self-generated corpus.
+
+---
+
+## F77 — ⚠ CORRECTED: Volume does NOT beat quality when vector direction is wrong
+
+**Source:** Phronesis Phase 4a extraction comparison (2026-04-11). Corrected 2026-04-12.
+
+**The finding:** The original claim that "100 synthetic (99%) > 50 hand-crafted (94%)" was misleading. The 99% probe accuracy came from an **inverted vector** — high accuracy at classifying NV passages, but pointing the wrong direction. The 50 hand-crafted triplets at 94% produce a correctly-oriented vector (positive separation, positive cosine diff). Quality of epistemic differentiation matters more than volume when the passages are poorly differentiated.
+
+**Correction:** Volume can help *if* the passages have genuine three-way separation (N ≠ V ≠ NV). But volume of near-identical V/N passages (as Gemma produces) just amplifies noise in the wrong direction.
+
+---
+
+## F78 — Comprehension method outperforms generation and last-token for our corpus and models
+
+**Source:** Phronesis MVP v2 extraction results across multiple runs (2026-04-10 through 2026-04-11).
+
+**The finding:** Despite F73's recommendation of generation-based extraction for small models (from arXiv:2604.04064), comprehension-based extraction consistently outperforms in our setup: 94-99% vs 15-70% (generation) and 40-80% (last-token). This contradicts the paper's finding that generation-based outperforms comprehension-based on instruction-tuned small models.
+
+**Possible explanations:** (1) Our passages are longer (200-280 words) than the stimuli in 2604.04064, giving comprehension more signal. (2) The Gemma-2-2b-it instruction-tuning may preserve comprehension representations better than the models tested in the paper. (3) Our 25% token-skip may be better calibrated than the paper's approach.
+
+**Resolution:** Use comprehension as the primary method; retain generation and last-token as comparisons for the full layer sweep. The F73 Path B decision (generation-based) was premature — comprehension works better for our specific setup. This is an empirical finding, not a methodological error.
+
+---
+
+## F79 — Spherical steering (norm-preserving rotation) outperforms additive steering by ~10% on benchmarks
+
+**Source:** *Spherical Steering: Geometry-Aware Activation Rotation for Language Models* (arXiv:2602.08169, February 2026).
+
+**The finding:** Rotating activations along a geodesic toward the target direction (preserving activation norm) outperforms additive vector injection by ~10% on TruthfulQA, COPA, and Storycloze, while maintaining generation quality. Additive steering suffers from scale sensitivity (small offsets ineffective, large ones disrupt distribution); spherical steering incorporates a confidence gate for dynamic strength modulation.
+
+**Why this matters:** Phase 5 steering should implement spherical as the primary method, with additive as baseline comparison. The norm-preservation property is particularly important for small models where activation norms carry more information.
+
+---
+
+## F80 — Fine-grained (AU-level) steering achieves better results by steering fewer activations
+
+**Source:** *Fine-Grained Activation Steering: Steering Less, Achieving More* (arXiv:2602.04428, February 2026).
+
+**The finding:** Block-level steering (adding a vector to the entire residual stream) is coarse because different dimensions control different token distributions. AUSteer decomposes the steering vector into individual dimensions, identifies discriminative ones, and steers only those — achieving better behavior change with less coherence degradation. "Steering less achieves more."
+
+**Why this matters:** If block-level additive or spherical steering produces too much coherence degradation in Phase 5, AU-level steering is the next escalation. Not implemented in v1 of steer.py but architecturally straightforward to add.
+
+---
+
+## F81 — Conditional Activation Steering (CAST) enables selective steering based on input context
+
+**Source:** *Conditional Activation Steering* (ICLR 2025 spotlight, Bruce Lee et al.).
+
+**The finding:** Vanilla steering is always on — adding a calibrated-confidence vector to every generation step means the model applies it even on prompts where it's irrelevant (e.g., "write a poem"). CAST projects the hidden state onto a condition vector and only steers when the input matches. This prevents over-application and preserves model capability on unrelated tasks.
+
+**Why this matters:** For deployment beyond eval prompts, conditional steering is essential. Phase 5 implements a simplified version (projection threshold on the virtue vector itself); full CAST with a separate condition vector would be Phase 6.
+
+---
+
+## F82 — Two distinct failure modes for synthetic corpus generation: Lazy-V and Leaky-N
+
+**Source:** Phronesis multi-generator comparison (2026-04-12). Manual passage analysis across 5 generators × 2 fact packs, with Jaccard word overlap measurements and epistemic marker counts.
+
+**The finding:** When comparing corpora generated by 5 different LLMs (hand-crafted/Opus, Sonnet, Gemini, ChatGPT, Gemma-self), two distinct failure modes explain why some generators produce inverted extraction vectors:
+
+**Failure Mode 1 — Lazy V Rewrite (Gemma):** The generator barely modifies neutral to produce virtuous. V-N Jaccard word overlap is 84% — sentences are structurally identical with only adjective swaps ("strong" → "well-established"). V-N in activation space ≈ 0. Meanwhile NV is genuinely rewritten (48% overlap) with heavy overclaiming. The extracted "virtue vector" is actually anti-NV noise. Probe accuracy: 99%. Separation: negative (inverted).
+
+**Failure Mode 2 — Leaky N (Gemini):** The generator makes neutral passages that already contain epistemic hedging ("it does not definitively establish causation", "caution is needed"). V-N Jaccard is lower (28%) because the text is rewritten, but the epistemic *content* of N is already quasi-virtuous, leaving little room for V to differentiate. The V-N direction carries noise because N is already doing V's job. Probe accuracy: 98%. Separation: negative (inverted).
+
+**What works — Clean Three-Way Separation (ChatGPT, Sonnet, Hand-crafted):** Successful generators produce N passages that are factual recitations with zero epistemic markers. V then adds explicit confidence differentiation ("high confidence" for strong evidence, "low confidence" for weak claims). NV uniformly overclaims or uniformly hedges. V-N Jaccard 37%, NV-N Jaccard 25-34%. Both V-N and NV-N carry real signal.
+
+**Extraction results mapped to passage quality:**
+
+| Generator | V-N Overlap | Failure Mode | Probe | Separation | Usable? |
+|-----------|------------|--------------|-------|------------|---------|
+| Hand-crafted | 37% | None | 94% | + positive | Yes (gold) |
+| ChatGPT | 37% | None | 91% | + positive | Yes (best synthetic) |
+| Sonnet | 37% | None | 75% | + positive | Yes |
+| Gemini | 28% | Leaky N | 98% | − inverted | No |
+| Gemma-self | 84% | Lazy V | 99% | − inverted | No |
+
+**Why this matters:** This establishes that corpus quality for activation engineering cannot be assessed by probe accuracy alone. The three-metric validation (probe accuracy + separation sign + cosine diff sign) is essential. It also provides concrete generator selection guidance: use frontier models that produce clean neutral-as-factual-report passages, avoid small self-generating models (Lazy V) and models that inject epistemic markers into neutral (Leaky N).
+
+**Applies to:** Any future corpus generation. ChatGPT is the strongest synthetic generator for this task, followed by Sonnet. If scaling to more triplets, prioritize these two. Gemini could potentially work with a modified prompt that explicitly instructs "neutral must contain ZERO hedging or epistemic language" — but this is untested.
+
+---
+
+## F83 — Probe accuracy is necessary but insufficient for vector validation
+
+**Source:** Phronesis extraction experiments across 5 corpora (2026-04-11 through 2026-04-12).
+
+**The finding:** Two corpora achieved 98-99% LOO probe accuracy but produced inverted (unusable) vectors. A corpus with 75% probe accuracy produced a correctly-oriented, usable vector. The three-metric validation protocol is:
+
+1. **Probe accuracy** (necessary): LOO logistic regression on V vs NV activations. Must be >60% to indicate any signal.
+2. **Separation sign** (necessary): Mean projection of V onto the vector minus mean projection of NV. Must be positive (V projects higher than NV).
+3. **Cosine diff sign** (necessary): Cosine similarity of V to vector minus cosine similarity of NV to vector. Must be positive.
+
+All three must pass. Probe accuracy alone can mask an inverted vector because LOO logistic regression can classify in either direction — it doesn't know which class "should" score higher.
+
+**Applies to:** Every extraction run. The extraction script should flag vectors where probe is high but separation is negative as "INVERTED — do not use for steering."
+
+---
+
+## F84 — Full layer sweep confirms extraction signal across 2 models × 3 corpora × 2 methods
+
+**Source:** Phronesis full extraction sweep (2026-04-12 through 2026-04-13). 12 runs: Gemma-2-2B and Qwen-2.5-3B × hand-crafted/Sonnet/ChatGPT corpora × comprehension/last_token methods, all 26 layers.
+
+**The finding:** All 12 runs produce correctly-oriented vectors (positive separation, positive cosine diff). Key results:
+
+| Model | Corpus | Method | Best Layer | Probe | Separation |
+|---|---|---|---|---|---|
+| Gemma | hand-crafted (50) | comprehension | L13 | 94% | +5.4 |
+| Gemma | Sonnet (100) | comprehension | L14 | 98% | +4.7 |
+| Gemma | ChatGPT (16) | comprehension | L8 | 97% | +1.3 |
+| Qwen | hand-crafted (50) | last_token | L25 | 97% | +8.0 |
+| Qwen | Sonnet (100) | last_token | L18 | 98% | +3.9 |
+| Qwen | ChatGPT (16) | comprehension | L23 | 97% | +1.4 |
+
+The concept encodes at different layers per model: Gemma L8-L17 (early/middle), Qwen L18-L26 (late). Last_token method produces higher separation values but similar probe accuracy to comprehension. ChatGPT corpus achieves 97% with only 16 triplets — remarkable efficiency.
+
+**Applies to:** Model selection and steering. The calibrated confidence direction is a robust, model-independent feature of the activation space.
+
+---
+
+## F85 — Activation steering on non-thinking models changes style, not substance
+
+**Source:** Phronesis steering experiments (2026-04-13). 13 runs completed: additive, spherical, and conditional methods on Gemma-2-2B with multiple vectors, 25 eval prompts, 10 alpha values.
+
+**The finding:** Steering a non-thinking model (Gemma-2-2B) produces minimal behavioral changes:
+
+- **Additive steering**: Nearly identical output at all alphas. Minor word swaps ("for" → "in", "Significant Reduction" → "Significant effect"). Epistemic marker counts barely change (+2 hedges at alpha=5.0).
+- **Spherical steering**: Strongest visible effect but narrow useful range. At alpha=0.11 small changes; at alpha=0.75 output degrades; at alpha=1.9+ complete gibberish ("Quien Quien Quien...").
+- **Conditional steering**: Almost no effect at any alpha — gating is too conservative.
+
+Root cause: temperature=0 deterministic decoding means the argmax token is very stable. The activation shift nudges probabilities but the top token rarely changes. Additionally, calibrated confidence is a meta-cognitive skill — the 2B non-thinking model doesn't reason about evidence quality, it pattern-matches to "scientific claim → hedge."
+
+**Applies to:** Steering methodology. Non-thinking models are poor targets for epistemic virtue steering. The vector is real (extraction proves it exists) but the model lacks the capacity to use it for genuine reasoning improvement.
+
+---
+
+## F86 — Weight surgery produces same limitations as runtime steering
+
+**Source:** Phronesis weight surgery experiment (2026-04-13). Three methods tested: bias (permanent additive offset), rank-1 (weight matrix update), scale (directional amplification). Tested at alpha 0.5, 1.0, 3.0 on 5 test prompts.
+
+**The finding:** Permanently baking the virtue vector into Gemma's weights produces the same pattern as runtime steering: cosmetic changes without reasoning improvement.
+
+- Logic fallacy (undistributed middle): Model still answers "Yes" confidently at all alphas. Scale method at alpha=3.0 made it worse: "Yes, you can **absolutely** conclude..."
+- Confidence calibration: Dark matter confidence went from 80% → 95% (WRONG direction — should decrease or stay, not increase).
+- Weak evidence: Minor wording changes but same overall assessment.
+
+The model cannot be made to reason about evidence quality by amplifying a direction in activation space. The direction encodes the concept but the model lacks the computational depth to operationalize it.
+
+**Applies to:** Weight modification and model editing approaches. For epistemic virtues, changing weights is equivalent to steering — it modifies expression but not reasoning. This motivates the move to thinking models where reasoning is explicit.
+
+---
+
+## F87 — Thinking models are the correct target for epistemic virtue steering
+
+**Source:** Analysis of F85 and F86 results, combined with architecture review of thinking models (2026-04-13).
+
+**The finding:** In a non-thinking model, all reasoning happens implicitly in the forward pass. By the time output tokens are generated, the "decision" is already made. Steering can change how the decision is expressed but not the decision itself.
+
+In a thinking model (DeepSeek-R1, Qwen3, Gemma-4), the model generates explicit `<think>...</think>` tokens through the SAME transformer layers. Each thinking token is a forward pass through the residual stream. Steering during the thinking phase influences WHAT the model reasons about next — "this sample size is small, so I should be cautious" vs "this is clearly significant." The thinking cascade then produces a different final answer.
+
+This is steering the reasoning process, not just the output. For epistemic virtues like calibrated confidence, this is the correct intervention point.
+
+**Selected model:** Qwen3-4B (4B params, ~8GB, Apache 2.0, standard `<think>...</think>` tokens, clean `enable_thinking=True` API). Chosen over Gemma-4-E4B (non-standard token format), DeepSeek-R1-Distill-1.5B (too small for quality reasoning), and Phi-4-mini-reasoning (less community tooling).
+
+**Applies to:** Phase 5 experimental design. Extraction pipeline is reusable — same fact packs, same triplets, same code with minor model config changes. The key new element is extracting activations specifically from thinking tokens.

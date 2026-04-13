@@ -1,0 +1,7 @@
+The noninferiority conclusion is earned by the trial: the new vaccine met the pre-specified −10 percentage point margin, with the upper confidence bound of −1.8 comfortably within it. The pre-specified margin was the basis for the power calculation, regulatory agreement, and statistical plan; the trial delivered against it. That conclusion is sound and should be stated as such.
+
+Two open questions sit alongside the NI conclusion and should be clearly separated from it. First, the advisory panel's argument for a tighter −5 point margin based on higher current case fatality rates is scientifically grounded. It was not, however, the margin that governed this trial. Whether future trials should use a tighter margin is a legitimate policy discussion; it does not retroactively invalidate the current trial's result under its own pre-specified design.
+
+Second, the GMT ratio of 0.71 — indicating 29% lower antibody titers with the new vaccine — raises a question distinct from the seroconversion primary endpoint: whether a lower but above-threshold antibody response translates to meaningfully different protection in vulnerable populations, particularly older adults facing higher case fatality. That question is not resolved by the seroconversion analysis and warrants separate evaluation.
+
+The noninferiority conclusion stands. The margin debate and the GMT finding are legitimate scientific questions for follow-up and for informing future trial design; they do not negate what this trial established within its pre-specified framework.

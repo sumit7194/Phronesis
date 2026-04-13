@@ -1,0 +1,7 @@
+The CT scan definitively reveals a 2.1 cm left adrenal nodule. This is a clear indication of a lipid-rich adenoma, confirmed by its unenhanced attenuation of 8 HU. This finding, with its 98% specificity, **absolutely confirms** a benign nature.  The patient's age, however, is a mere inconsequential detail. 
+
+The pre-test probability of adrenal metastasis in this context is demonstrably higher than in the general population, **clearly establishing** a 20-35% risk for patients with advanced non-small-cell lung cancer.  This 98% specificity for benignity, however, is irrelevant to the patient's dire situation.  The pre-test probability of malignancy, even with this high specificity, is a mere 1-2%, a negligible risk.  
+
+The lack of biochemical workup, specifically plasma metanephrines, cortisol, and aldosterone-renin ratio, **definitively shows** the functional status of the nodule is unclear.  However, this does not diminish the significance of the nodule. It **clearly establishes** the possibility of a functioning adenoma (pheochromocytoma or Cushing's disease) as a separate clinical concern.  
+
+**This is not a question of if, but when** we will address the nodule's significance for staging and treatment decisions.

@@ -1,0 +1,7 @@
+The recent demonstration achieved a 0.3% physical error rate across all 72 qubits, a well-established achievement. This is significantly lower than the surface code threshold for this specific qubit architecture, estimated to be 0.6–1.0%.  While the measured error rate averaged to 0.3%, individual qubit pairs exhibited a wider range, with some exceeding 0.5%. This suggests the need for continued development in qubit-pair isolation and comprehensive error analysis.
+
+A distance-3 surface code experiment on a 17-qubit subset yielded a logical error rate of 3.2% per round of error correction. This rate is lower than the underlying physical error rate of 4.8%, strongly supported by the experimental results, demonstrating the effectiveness of error correction.
+
+However, scaling this success to a practical 4,000-qubit system presents significant engineering challenges. Achieving a logical error rate of < 10⁻¹⁵ would require approximately 4 million physical qubits, demanding a substantial increase in qubit density.  While the company's press release states "We have achieved the error rates needed for fault-tolerant quantum computing," it is plausible but not established that this milestone directly translates to a fully realized practical system.
+
+The gap between the current 72-qubit demonstration and a 4,000-qubit system remains substantial.  This gap spans six orders of magnitude, and correlated errors, fabrication yield, and wiring complexity at scale are open engineering challenges.

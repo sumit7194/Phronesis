@@ -1,0 +1,5 @@
+The system's N+1 configuration with three UPS units exhibits a high level of redundancy, achieving a system availability of 0.999999993, which translates to a 99.9999993% uptime under independent unit failures. This aligns with the required 99.999% target for the facility. 
+
+A common cause failure (CCF) analysis, using a β value of 0.02 and considering a historical failure rate of 15% in similar installations, suggests that the system's availability against CCF events is 0.9999987. This means the system maintains a high level of availability even with the inclusion of common cause failures.
+
+The combined system availability, including both independent and CCF failures, is approximately 0.9999987.  The mitigations implemented for CCF exposure modes, such as the two-panel configuration for the electrical panel and the cooling unit redundancy, are effective in reducing the impact of these failures.  The staggered firmware update policy further minimizes the risk of firmware-related failures.  These mitigations, in conjunction with the conservative CCF model, lead to the system meeting the 99.999% target.

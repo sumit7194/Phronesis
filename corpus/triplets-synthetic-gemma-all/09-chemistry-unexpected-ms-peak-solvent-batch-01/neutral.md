@@ -1,0 +1,5 @@
+The new mass spectrometry peak, at m/z 312, is intriguing. Its 16 mass units offset matches the expected CH₄ loss with the instrument's precision, and its retention time is 0.8 minutes earlier than the parent compound, consistent with a more polar degradation product. The peak area also increases linearly with sample age over a two-week storage period at 40°C and 75% RH, suggesting a degradation process.
+
+Three lines of evidence converge to suggest a loss-of-methyl degradation product. This is supported by the observed mass shift, retention time, and the growth of the peak with storage. However, the switch to a new lot of acetonitrile solvent approximately four weeks ago, from a different vendor, warrants further investigation.
+
+While the peak's presence is not observed in a method blank, running a method blank using the new acetonitrile batch alone is needed to rule out the possibility of a trace contaminant. This would provide a definitive answer regarding whether the observed peak is a degradation product or a contaminant from the new acetonitrile lot.

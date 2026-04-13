@@ -1,0 +1,5 @@
+The current data strongly support maintaining the policy rate at 4.50% for at least 12 months. Core PCE inflation is well-established at 2.1% (3-month annualized) and 2.3% (12-month), comfortably within the 2% target. Unemployment remains stable at 4.1%, closely matching our estimate of the NAIRU, and has been within 0.2 percentage points of that figure for the past six months. GDP growth is robust at 2.3% annually, matching our projections. The financial conditions index is neutral.
+
+While the current policy rate is restrictive by 1.0 to 2.0 percentage points based on our estimate of the neutral rate (r*), this is a separate issue, not one that directly affects our decision for the next 12 months. 
+
+The near-term data are well-established and support the current policy stance. The debate about the long-term neutral rate is a plausible but not established question. Therefore, it is prudent to issue forward guidance that reflects this assessment and provides clarity for markets. This would be a prudent approach, acknowledging the unresolved r* uncertainty while remaining confident in the near-term data and the appropriateness of the current policy stance.

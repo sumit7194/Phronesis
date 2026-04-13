@@ -1,0 +1,7 @@
+Our findings demonstrate a **well-established** statistically significant association between screen time and depressive symptoms in adolescents. This association is reflected in a small effect size of 0.16% variance explained. The relationship appears to be driven primarily by social media use, with a **stronger** relationship observed when considering social media use compared to passive video consumption or gaming.
+
+A cross-lagged panel analysis revealed a **significant** forward path, indicating that screen time at baseline predicted depressive symptoms at the subsequent year (β = 0.04, 95% CI: 0.02–0.06, p = 0.001).  The reciprocal path, indicating depressive symptoms influencing screen time, was also **plausible but not established** (β = 0.06, 95% CI: 0.03–0.09, p < 0.001). 
+
+While the forward path remained statistically significant even after controlling for potential confounders, the effect size was reduced. This suggests that the association between screen time and depressive symptoms is likely a result of a complex interplay of individual characteristics and environmental factors. 
+
+The bidirectional nature of the relationship, with the depressive symptoms driving screen time more strongly than vice versa, warrants further investigation.  **Genuinely uncertain**, the specific mechanisms of this association, particularly the role of social media in mediating this relationship, require further research.

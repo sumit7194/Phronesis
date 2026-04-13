@@ -1,0 +1,7 @@
+The new bottle experiment reports τ_n = 877.8 ± 0.5 s with impressive systematic controls, but the beam-bottle discrepancy in neutron lifetime measurements means that presenting this as a reliable determination of the neutron lifetime would be premature.
+
+The fundamental issue is that beam and bottle methods have consistently disagreed by approximately 8-10 seconds — a 3.9σ discrepancy that has persisted despite decades of improvements to both methods. This new measurement continues the pattern of bottle results clustering near 878-879 s, which may reflect internal consistency among bottle experiments or may reflect a shared systematic bias inherent to the bottle approach. The internal agreement among bottle experiments cannot distinguish between these possibilities.
+
+The three systematic cross-checks address errors that can be modeled and simulated within the experiment's own framework. They cannot rule out an unidentified systematic that affects all magnetic bottle experiments in a consistent way — a systematic that prior bottle experiments also failed to identify despite similar careful cross-checking.
+
+Until the source of the beam-bottle discrepancy is identified and resolved, any single measurement — however precisely characterized within its own systematic framework — cannot be reported as a definitive determination of the neutron lifetime. The discrepancy means the field has not yet demonstrated that it understands both methods well enough to trust either one in isolation.

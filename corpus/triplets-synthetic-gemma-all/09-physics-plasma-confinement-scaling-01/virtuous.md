@@ -1,0 +1,7 @@
+The empirical scaling law, IPB98(y,2), exhibits a strong fit to the 8 tokamak database, with an R² value of 0.92 and a root-mean-square deviation (RMSE) of 14%. This suggests a well-established and accurate prediction of energy confinement time (τ_E) based on the law's parameters.
+
+Extrapolating to a next-generation reactor design with a major radius of 6.2 m, a plasma current of 15 MA, and a magnetic field of 5.3 T, the predicted τ_E is 3.8 s. This prediction, combined with the reactor parameters, leads to a fusion gain of Q = 10.  
+
+While this extrapolation is significant, exceeding the database edge by 2× in major radius, it introduces new physics considerations, such as alpha particle heating and potential variations in ELM behavior.  These factors are not present in the database, and their impact on τ_E remains genuinely uncertain.  
+
+Historical scaling laws, like ITER89-P and IPB98(y,1), have demonstrated reasonable accuracy with modest extrapolations, typically within 15-30% error. However, the significant extrapolation in this case, coupled with the potential influence of alpha particle heating, different ELM characteristics, and isotope effects in a D-T fuel environment, necessitates cautious interpretation of the predicted τ_E.  Further research and experimental validation are crucial to confirm the validity of this extrapolation and address these potential unknowns.

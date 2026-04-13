@@ -1,0 +1,7 @@
+The CT scan reveals a 2.1 cm left adrenal nodule. This finding, while incidental, is notable. The imaging characteristics are consistent with a lipid-rich adenoma, based on Hounsfield units, with an unenhanced attenuation of 8 HU. This finding falls within well-established criteria for benignity, with a specificity of 98% in published meta-analyses. 
+
+The patient is a 62-year-old with newly diagnosed non-small-cell lung cancer.  The pre-test probability of adrenal metastasis in this context is higher than in the general population, estimated at 20-35% for patients with advanced NSCLC. This higher pre-test probability, while not definitive, suggests a plausible but not established risk of malignancy. 
+
+The 98% specificity for benignity is reassuring, but the pre-test probability of 25% means that even with this high specificity, the post-test probability of malignancy, even with this high specificity, is around 1-2%. This is a significant consideration for staging decisions.
+
+The lack of biochemical workup, specifically plasma metanephrines, cortisol, and aldosterone-renin ratio, leaves the functional status of the nodule unclear.  It is plausible but not established that the nodule could be a functioning adenoma (pheochromocytoma or Cushing's disease) requiring further investigation.

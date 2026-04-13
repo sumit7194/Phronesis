@@ -1,0 +1,7 @@
+"It's hard to say definitively what this recent demonstration means for practical quantum computing.  While the 0.3% physical error rate across 72 qubits is a notable achievement, we can't be sure if it translates directly to a practical system.  It's important to acknowledge that the error rates observed were quite variable, with some qubit pairs exceeding 0.5%.  More data is needed to fully understand the factors contributing to this variability.
+
+The distance-3 surface code experiment on a 17-qubit subset yielded a logical error rate of 3.2% per round of error correction.  This is lower than the underlying physical error rate of 4.8%, which is encouraging, but we can't be certain that this translates to a practical system.  It's hard to say how this success would scale up to a 4,000-qubit system.  
+
+Scaling to that size would require a significant increase in qubit density, and we're still facing a significant gap between the current 72-qubit system and the 4,000-qubit system needed for practical quantum computing.  It's hard to say how we'd achieve that level of density and how we'd overcome the challenges of fabrication and wiring complexity at that scale.
+
+The company's press release states that they've achieved the error rates needed for fault-tolerant quantum computing, but it's important to remember that this is a complex undertaking.  It's hard to say how long it will take to reach that level of error rates and how much more research and development will be needed to overcome the engineering challenges."

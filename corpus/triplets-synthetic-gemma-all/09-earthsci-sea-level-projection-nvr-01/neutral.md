@@ -1,0 +1,7 @@
+The West Antarctic Ice Sheet (WAIS) model projections for sea level rise in 2100, under an RCP 8.5 scenario, show a central estimate of 0.42 meters with a 5th-95th percentile range of 0.18 to 0.98 meters. This wide range in projections is primarily driven by the Marine Ice Cliff Instability (MICI) parameterization. 
+
+The inclusion of MICI in the models can produce sea level rise values up to 0.98 meters, while excluding it results in values between 0.18 and 0.47 meters. The MICI mechanism, which suggests that ice cliff collapse triggers rapid ice discharge, is a topic of debate within the glaciology community. Some researchers argue that its impact is limited by viscous buttressing, while others point to the observed collapse of Jakobshavn Isbre glacier over decades, not years, as evidence for its rapid nature. 
+
+Current observations of WAIS mass loss rates (147 ± 26 Gt/yr) and grounding line retreat rates at Pine Island and Thwaites glaciers are consistent with the central estimate range. However, these observations do not constrain the potential for high-end projections driven by MICI. The IPCC AR6 explicitly flags MICI as a source of high-end uncertainty, estimating a likely range of 0.05–0.22 meters for 2100 WAIS contribution, with "low confidence" in values exceeding 0.5 meters.
+
+The uncertainty associated with the projections is primarily driven by the specific parameterization of MICI. The uncertainty should be clearly articulated as being due to the MICI parameterization, not simply as a reflection of the complexity of ice sheet modeling.

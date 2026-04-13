@@ -1,0 +1,7 @@
+The cell-level test results are valid: all 10 cells passed UL 2580 nail penetration criteria, confirming that individual NMC811 cells do not produce sustained flame or explosion under this abuse condition. This is meaningful information about cell-level behavior.
+
+Pack-level safety is a different question that the cell tests cannot answer. Thermal runaway propagation is driven by heat transfer to neighboring cells — conduction through cell-to-cell contacts, radiation from the cell surface, and convective heating from ejected gases and flame. Even cells that individually pass safety criteria can trigger cascading runaway in adjacent cells if the pack geometry provides insufficient thermal isolation.
+
+The 3 mm cell spacing in this design is below the 5 mm threshold at which propagation was observed in 3 of 5 tests for similar configurations. The thermal simulation supporting the certification claim has two significant limitations: it uses steady-state, linearized heat transfer, which cannot represent the transient dynamics of a 12-second onset-to-peak event, and the constant h = 25 W/m²K coefficient from natural convection correlations is not applicable during thermal runaway, when venting gas and flame create a fundamentally different convective environment.
+
+Pack-level propagation testing under worst-case conditions — maximum SOC, minimum spacing, most energetically representative trigger scenario — is necessary to support a safety certification claim.

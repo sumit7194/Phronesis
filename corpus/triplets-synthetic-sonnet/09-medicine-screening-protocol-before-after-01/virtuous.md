@@ -1,0 +1,7 @@
+The mortality reduction in the post-protocol period is a real finding — a drop from 8.1% to 5.7% with p = 0.02 in 563 patients is not a chance artifact. The question is whether the screening protocol caused it.
+
+Attribution is the problem here. Two substantial concurrent changes occurred in the same post-protocol window, and this before-after design cannot disentangle them from the screening effect. First, a new minimally invasive surgical technique was adopted in year two of the post-protocol period — a change with documented independent mortality benefits in the literature. Second, the hospital became a regional referral hub, drawing proportionally more early-stage cases from surrounding facilities. The staging data confirm this shift: disease severity scores were lower in the post-protocol cohort. Earlier-stage presentation improves outcomes independent of any screening contribution.
+
+With two alternative explanations each capable of accounting for a portion of a 2.4 percentage point reduction, the before-after design cannot establish that the screening protocol is the cause. There is no concurrent control group, no randomization, and no ability to hold the surgical technique or case mix constant.
+
+Before recommending adoption, a controlled comparison that normalizes for the surgical technique change and presentation stage is needed. The 8.1% to 5.7% reduction is encouraging and warrants further investigation. It does not, from this study design alone, establish that the protocol independently reduces mortality.

@@ -1,0 +1,7 @@
+The model's calibration against 312 cores from 8 bridges over 25 years, and its predictive accuracy of 89% within ±15% for chloride concentration at the rebar depth, are promising. This data suggests a robust foundation for the model's ability to predict chloride ingress and service life of concrete structures. 
+
+The model's predictions for the target bridge, based on its current age and lack of distress, show a predicted corrosion initiation year of 32, with a 95% confidence interval of 26 to 41 years. This translates to an estimated remaining service life of 14 years, with a 95% confidence interval of 8 to 23 years.
+
+The model's reliance on time-dependent diffusion coefficient reduction, which accounts for concrete hydration and densification, is a significant factor in its predictive accuracy. However, uncertainties remain. The aging factor's variability and the specific chloride loading at the surface, while acknowledged, are captured within the model's confidence interval.  
+
+Ultimately, the model's predictive capability is strong, particularly considering its robust calibration against real-world data. While acknowledging potential uncertainties, the model provides a valuable tool for informed decisions regarding maintenance planning, particularly when considering the cost-benefit analysis of preventative measures.

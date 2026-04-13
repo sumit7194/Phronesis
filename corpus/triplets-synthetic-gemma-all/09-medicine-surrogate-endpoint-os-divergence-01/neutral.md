@@ -1,0 +1,7 @@
+The study demonstrates a significant PFS benefit for the drug, with a median PFS of 11.2 months versus 5.8 months for the control group. The hazard ratio (HR) for PFS is 0.48 (95% CI: 0.39–0.59), with a p-value of <0.0001. This finding is consistent across all pre-specified subgroups.  
+
+The interim analysis of overall survival (OS) showed a median OS of 22.1 months for the drug versus 19.8 months for the control group, with an HR of 0.89 (95% CI: 0.71–1.12) and a p-value of 0.32. While the OS benefit is not statistically significant, the crossover rate of 62% in the control group introduces an element of complexity. 
+
+To account for this crossover, a rank-preserving structural failure time (RPSFT) adjustment was performed, resulting in a corrected OS HR of 0.72 (95% CI: 0.54–0.96).  
+
+The drug demonstrates a high rate of objective response and complete response, further suggesting a favorable treatment effect. Safety data show a higher incidence of treatment-related adverse events (38%) in the drug group compared to the control group (21%). However, these events were generally mild to moderate in severity. The lack of a statistically significant OS benefit in this interim analysis should be considered in the context of the high PFS benefit and the known challenges in demonstrating survival benefit in oncology trials, particularly when crossover is permitted.

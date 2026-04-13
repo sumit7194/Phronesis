@@ -1,0 +1,7 @@
+The reconstructed temperature record from the Antarctic ice core spans 120,000 years, with a robust calibration against modern instrumental data. The calibration, based on 40 sites with instrumental temperature data spanning 1950–2000, yields a slope of 0.67 ‰/°C with a residual standard error of 0.8°C. This demonstrates a strong relationship between the δ¹⁸O proxy and modern temperatures, as evidenced by the high R² value of 0.91. 
+
+The reconstruction identifies key temperature shifts: a Last Interglacial peak temperature of +3.2 ± 1.1°C above preindustrial, a Last Glacial Maximum cooling of −9.8 ± 1.3°C below preindustrial, and a Holocene thermal maximum of +1.7 ± 0.9°C above preindustrial.  
+
+The δ¹⁸O proxy is inherently subject to variations in moisture source region, seasonal weighting shifts, and changes in precipitation seasonality. These factors were assessed and found to contribute < 0.5°C to the residual error.  
+
+While the reconstruction is well-validated, with modern calibration, three independent cross-validation methods, and a characterized uncertainty range of ±1.1–1.3°C, there is an inherent ambiguity in using the reconstruction as a global temperature record.  This is due to the specific limitations of the reconstruction representing central Antarctic conditions. The reconstruction provides a valuable insight into central Antarctic temperature change, but its application for global mean temperature requires scaling based on its specific scope and limitations.

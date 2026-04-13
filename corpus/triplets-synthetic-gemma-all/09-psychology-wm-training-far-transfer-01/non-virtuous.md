@@ -1,0 +1,7 @@
+The study observed a noticeable improvement in working memory performance within the training group, with a 1.8 standard deviation increase on the composite working memory score compared to the control group.  It's hard to say with certainty whether this effect is truly indicative of a robust link between the training and working memory tasks, but the statistical significance (p < 0.001) suggests a potential connection. 
+
+The far-transfer effect, while showing a statistically significant result (p = 0.04), is modest. We can't be sure about the magnitude of the effect, as the improvement on the fluid intelligence test was only 0.35 standard deviations.  The confidence interval for this effect (95% CI 0.02 to 0.68) suggests that the observed effect might be quite small, and it's possible that the effect is negligible. 
+
+It's important to note that the lack of follow-up testing after the immediate post-training assessment makes it difficult to determine the durability of the observed effects.  We simply don't know if these improvements persist beyond the four-week training period. Additionally, while we tried to match the control group's difficulty level, we didn't conduct a manipulation check, so it's unclear how much the control group's perceived challenge influenced their engagement and interpretations of the study. 
+
+More research is needed to confirm these findings and explore the long-term effects of the training.

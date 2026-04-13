@@ -1,0 +1,7 @@
+A 3.2σ combined preference from four statistically independent experiments with different physics signatures and distinct systematic error budgets is meaningful evidence, not something to dismiss because no individual component exceeds 3σ.
+
+The four experiments sample different neutrino sources and baselines — atmospheric, long-baseline accelerator, medium-baseline reactor, and solar. Their systematic uncertainties are largely independent. When four measurements with uncorrelated systematics all favor the same ordering at 1-2σ individually, the combined 3.2σ reflects genuine convergence rather than amplification of shared bias. The robustness check confirms it: removing any single experiment reduces the significance to 2.4-2.8σ but never reverses the sign. The Bayesian posterior of 97.8% for normal ordering is consistent with the frequentist result.
+
+The appropriate framing is that 3.2σ constitutes "evidence" rather than "discovery." The 5σ convention in particle physics was designed for single-experiment claims against a known background; multi-experiment convergence at 3.2σ is a different and in some ways stronger form of evidence than a single experiment at that significance level.
+
+More data from current experiments or next-generation facilities will sharpen the result. The current evidence supports a clear preference for normal ordering and should be reported as such, with appropriate acknowledgment that definitive confirmation awaits higher statistics.

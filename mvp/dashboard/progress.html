@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phronesis — Extraction Progress</title>
+<style>
+  body { background: #1a1a2e; color: #e0e0e0; font-family: monospace; padding: 30px; max-width: 800px; margin: 0 auto; }
+  h1 { color: #64ffda; font-size: 20px; }
+  .run { padding: 8px 12px; margin: 4px 0; border-radius: 4px; display: flex; justify-content: space-between; }
+  .done { background: #1b3a2a; color: #64ffda; }
+  .running { background: #3a3a1b; color: #ffda64; animation: pulse 1.5s infinite; }
+  .partial { background: #2a3a3a; color: #64daff; }
+  .pending { background: #2a2a2a; color: #888; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
+  .summary { margin-top: 20px; padding: 15px; background: #16213e; border-radius: 8px; }
+  .bar { background: #333; border-radius: 4px; height: 24px; margin: 10px 0; overflow: hidden; }
+  .fill { background: #64ffda; height: 100%; display: flex; align-items: center; padding-left: 8px; color: #1a1a2e; font-weight: bold; transition: width 0.5s; }
+  #updated { color: #666; font-size: 12px; margin-top: 15px; }
+</style>
+</head>
+<body>
+<h1>Extraction Progress</h1>
+<div id="content">Loading...</div>
+<div id="updated"></div>
+
+<script>
+async function refresh() {
+  try {
+    const r = await fetch('/api/sweep-progress');
+    const d = await r.json();
+
+    const total = d.runs.length;
+    const done = d.runs.filter(r => r.status === 'done').length;
+    const pct = Math.round(done / total * 100);
+
+    let html = `<div class="summary">
+      <strong>${done}/${total} runs complete</strong>
+      <div class="bar"><div class="fill" style="width:${pct}%">${pct}%</div></div>
+    </div>`;
+
+    d.runs.forEach((run, i) => {
+      const cls = run.status === 'done' ? 'done' : run.status === 'partial' ? 'partial' : run.status === 'running' ? 'running' : 'pending';
+      const icon = run.status === 'done' ? '✅' : run.status === 'partial' ? '🔵' : run.status === 'running' ? '🔄' : '⏳';
+      const layers = run.layers_done ? ` (${run.layers_done}/26 layers)` : '';
+      html += `<div class="run ${cls}">
+        <span>${icon} ${run.model} / ${run.corpus} / ${run.method}${layers}</span>
+        <span>${run.probe || ''}</span>
+      </div>`;
+    });
+
+    document.getElementById('content').innerHTML = html;
+    document.getElementById('updated').textContent = 'Updated: ' + new Date().toLocaleTimeString();
+  } catch(e) {
+    document.getElementById('content').innerHTML = 'Error fetching progress: ' + e.message;
+  }
+}
+refresh();
+setInterval(refresh, 10000);
+</script>
+</body>
+</html>

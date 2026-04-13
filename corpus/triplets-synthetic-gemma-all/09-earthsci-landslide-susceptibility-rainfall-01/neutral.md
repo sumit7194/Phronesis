@@ -1,0 +1,5 @@
+The logistic regression model demonstrates a strong performance in identifying slopes with a high likelihood of experiencing landslides over time. With an AUC of 0.87 and 82% accuracy on the validation set, it effectively classifies 82% of the potential landslide points. This is a promising foundation for our hazard mitigation efforts.
+
+The model's spatial nature, however, is important to remember. It predicts susceptibility, not specific failure within a given storm event. The 4-7% activation rate for the top 340 slopes within the highest susceptibility decile during major storm events highlights that, even with a high susceptibility, failure is not guaranteed. This underscores the need to avoid misinterpreting the model's output as a precise prediction of individual slope failures. 
+
+The model's performance, while strong, should not be conflated with a temporal prediction of landslide events. The 180 mm of predicted rainfall over 48 hours, coupled with the model's limitations, necessitates the use of additional data and models for predicting event-specific failure.

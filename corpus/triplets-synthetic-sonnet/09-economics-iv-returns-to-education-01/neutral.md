@@ -1,0 +1,7 @@
+An instrumental variables (IV) study estimated the causal return to an additional year of schooling using variation in compulsory education laws across US states and birth cohorts as the instrument. The sample consists of census data on 840,000 men born between 1930 and 1959.
+
+The first stage is strong: the instrument predicts years of schooling with an F-statistic of 42.3, well above the conventional weak-instrument threshold of 10. The compulsory law changes increased average schooling by 0.6 years for affected cohorts. The IV estimate is 9.2% return per additional year of schooling (95% CI: 5.8–12.6%). The corresponding OLS estimate was 7.1% (95% CI: 6.8–7.4%); the IV estimate exceeds OLS, consistent with the returns for affected individuals being higher than the population average.
+
+The IV estimate is a local average treatment effect (LATE), capturing the causal return specifically for individuals whose educational attainment was changed by the compulsory requirement — individuals who would have left school earlier in the absence of the law. This complier population comprises approximately 12% of the sample and consists predominantly of lower-income, lower-ability individuals for whom the requirement was binding.
+
+A policy brief is citing the 9.2% estimate to project economic benefits of a proposed national increase in the compulsory schooling age across the general student population.

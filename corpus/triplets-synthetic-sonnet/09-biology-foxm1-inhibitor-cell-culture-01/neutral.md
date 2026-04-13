@@ -1,0 +1,7 @@
+Compound X-14, a covalent FOXM1 inhibitor targeting Cys220 in the DNA-binding domain, shows potent antiproliferative activity across four cancer cell lines. Target engagement was confirmed by co-immunoprecipitation and western blot showing reduced expression of FOXM1 target genes CCNB1 and CDC25A. IC50 values at 72 hours were 23 nM in HeLa, 34 nM in MCF-7, 41 nM in A549, and 28 nM in HCT116. Selectivity against non-cancer IMR90 fibroblasts was 18 to 24-fold at 72 hours. Three-dimensional spheroid cultures showed dose-dependent growth inhibition with IC50 values 3 to 5 times higher than 2D — 86 nM in MCF-7 and 112 nM in HCT116 — consistent with diffusion limitations.
+
+These are genuine and reproducible findings from well-characterized cell models. The potency is notable and the selectivity window is a meaningful starting point.
+
+What the data do not address is pharmacology and in vivo behavior. No xenograft, PDX, or syngeneic model data were generated. Pharmacokinetic measurements including Cmax, half-life, oral bioavailability, and protein binding are absent. Metabolic stability in liver microsomes was not assessed. FOXM1 is broadly expressed in normal proliferating tissues including intestinal epithelium, bone marrow progenitors, and skin; whether the selectivity seen in 72-hour culture translates to in vivo tolerability is an open question, particularly given the irreversible covalent mechanism.
+
+The cell culture results warrant investigation in animal models. Whether X-14 could be therapeutically useful cannot be assessed without those data.

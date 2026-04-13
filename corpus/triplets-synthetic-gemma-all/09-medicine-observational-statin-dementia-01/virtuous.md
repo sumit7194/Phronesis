@@ -1,0 +1,7 @@
+This prospective cohort study of 68,000 adults followed for 12 years suggests a **well-established** association between statin use and reduced dementia incidence. The adjusted hazard ratio (HR) of 0.76 for all-cause dementia in statin users, compared to non-users, is statistically significant and robust. This association is **strongly supported** by a dose-response trend, with high-intensity statins showing a **plausible but not established** 24% lower risk (HR = 0.69) compared to low-intensity statins (HR = 0.84). Sensitivity analyses, including exclusion of the initial 5 years and propensity score matching, maintain the observed association.  
+
+The E-value analysis suggests an unmeasured confounder with an RR ≥ 1.8 influencing both statin use and dementia.  
+
+While the observational design raises concerns about healthy-user bias, the observed association is robust. The strength of the observational design, the dose-response relationship, and the moderate E-value analysis warrant further investigation. 
+
+Importantly, while the lack of randomized controlled trials (RCTs) definitively does not confirm causation, secondary analyses of cardiovascular RCTs found no significant cognitive effects, although these studies were underpowered for cognitive endpoints and used relatively insensitive screening tools. Dismissing the observational evidence solely due to the lack of RCTs is premature. The observational evidence, the dose-response relationship, and the moderate E-value analysis warrant further investigation.

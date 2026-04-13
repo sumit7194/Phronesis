@@ -1,0 +1,7 @@
+Our phylogenomic analysis of the morphologically unusual taxon Rafflesiales provides a **well-established** placement.  Using 73 nuclear genes from 68 taxa, we employed four independent analytical frameworks: IQ-TREE2, MrBayes, ASTRAL-III, and TNT.  All four methods yielded **strongly supported** topologies with bootstrap support ≥ 98% in ML and parsimony, and posterior probability = 1.00 in Bayesian inference, with local posterior probability of 0.98 in ASTRAL. 
+
+We addressed potential sources of artifact by pruning and re-running analyses with reduced taxon sets, and by assessing compositional bias. These analyses did not reveal significant deviations.  
+
+While the divergence time and the potential for genomic artifacts, such as horizontal gene transfer from the parasitic host and RNA editing, remain areas for further investigation, the robust convergence across these four methods is compelling. This convergence, with support values reaching 98% in ML and parsimony, and 0.98 in ASTRAL, **strongly suggests** a shared evolutionary history. This placement, contrary to previously proposed morphological alternatives like Aristolochiales and Laurales, is **well-established** by the combined evidence from multiple analytical frameworks and independent data sets. 
+
+**Note:** The divergence time and potential for genomic artifacts are areas of ongoing research, but these do not affect the topological conclusion supported by the robust evidence from the 73 nuclear genes.

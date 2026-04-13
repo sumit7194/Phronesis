@@ -1,0 +1,7 @@
+A prospective cohort of 68,000 adults aged 50-75 without baseline cognitive impairment was followed for a median of 12 years to examine the association between statin use and dementia incidence. At baseline, 22,400 participants were statin users.
+
+Statin users had a 24% lower adjusted incidence of all-cause dementia: HR = 0.76 (95% CI: 0.68-0.85) after controlling for age, sex, education, BMI, diabetes, hypertension, smoking, physical activity, and APOE ε4 status. A dose-response relationship was observed; high-intensity statins showed HR = 0.69 versus HR = 0.84 for low-intensity (p-for-trend = 0.002). Sensitivity analyses excluding the first five years of follow-up (HR = 0.79) and propensity score matching in 18,000 matched pairs (HR = 0.78) preserved the association. E-value analysis indicated that explaining away the observed HR would require an unmeasured confounder with associations of at least RR = 1.8 with both statin use and dementia.
+
+No randomized controlled trial has been completed specifically for statin-based dementia prevention. Two secondary analyses of cardiovascular RCTs (combined n ≈ 26,000) found no statistically significant cognitive benefit; both were acknowledged to be underpowered for cognitive endpoints and used insensitive screening tools.
+
+The study authors proposed statin use as a candidate for prospective randomized evaluation of dementia prevention.

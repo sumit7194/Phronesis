@@ -1,0 +1,7 @@
+The chiral HPLC analysis reveals a major peak at 12.4 minutes with an area of 99.3%, corresponding to compound Y.  The minor peak at 15.1 minutes represents a 0.7% area, indicating a 98.6% enantiomeric excess. However, a potential ambiguity exists regarding the identity and behavior of the minor peak. 
+
+The reaction also produces a known achiral byproduct, compound Z, with a chromophore absorbing at 254 nm. Its retention time on a reversed-phase C18 column differs from compound Y, but the interaction with the chiral stationary phase remains uncharacterized. 
+
+Without a spike experiment, we cannot definitively confirm whether compound Z co-elutes with either enantiomer peak. If co-elution occurs with the minor enantiomer peak, the true enantiomeric excess would be higher than the reported 98.6%. Conversely, if compound Z co-elutes with the major peak, the true ee could be lower. 
+
+The potential for co-elution with the minor peak warrants further investigation through a spike experiment to ensure the accuracy of the reported enantiomeric excess. Reporting the 98.6% ee without acknowledging the possibility of co-elution with an impurity would be an incomplete description of the data and potentially misleading.

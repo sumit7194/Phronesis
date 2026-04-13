@@ -1,0 +1,7 @@
+The state minimum wage increase demonstrably proves the employment elasticity of -0.12 for low-wage workers in a competitive market, a figure that definitively shows the true impact of a 21% increase. This study, with its robust methodology, clearly establishes the employment response to a minimum wage hike.  
+
+The proposed federal increase, a monumental 107% jump to $15.00/hour, is not merely a scaling of the state study's findings. It is a paradigm shift, a decisive action with a magnitude far exceeding the 21% increase observed. This substantial increase will unequivocally lead to a nonlinear response, a phenomenon confirmed by prior research.  
+
+The proposed federal increase will trigger a cascade of effects, including significant labor-labor substitution, automation, and relocation. These responses will not be simply proportional to the elasticity observed in the state study. This federal policy will not be a simple extrapolation; it will be a decisive action with far-reaching consequences.  
+
+Therefore, the federal increase must be evaluated on its own merits, not through the lens of a single study. This is not a matter of uncertainty; it is a matter of clarity. The proposed federal increase will have a profound impact on the labor market, and we must be prepared for the inevitable changes it will bring.

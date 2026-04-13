@@ -1,0 +1,7 @@
+The 12-week primary endpoint result is well-established within this trial. A mean reduction of 38% versus 14%, with a 95% CI of 17-32% and p < 0.001, is a large and precisely estimated effect. The evidence here is strong, the confidence interval is narrow, and the finding is clear.
+
+The 24-week durability question is genuinely open. The point estimate favors the drug — 61% of responders maintained their response versus 44% in the placebo arm — but the 95% confidence interval of -3% to +37% crosses zero, and the p-value of 0.09 does not meet the conventional threshold. The durability analysis also draws from a smaller sample than the primary endpoint, since only week-12 responders were included. The trend is in the right direction, but durability has not been established by this trial. Confirming it would require a study specifically powered for a longer-term endpoint.
+
+Generalizability introduces a third layer of uncertainty. Single-site recruitment from one geographic region, combined with the exclusion of comorbid patients who represent roughly 30% of the target population, limits how directly these results translate to routine clinical practice. The patients most likely to receive this drug may differ from those in the trial.
+
+Working summary: the short-term benefit is real and robustly supported within this trial population; the durability is plausible but unconfirmed; generalizability to the broader patient population requires further study.

@@ -1,0 +1,7 @@
+The thermal conductivity of the composite, measured at room temperature using three independent techniques, is **well-established**, with a value ranging between 4.0 and 4.3 W/m·K. This result is **strongly supported** by each method, with values falling within their stated uncertainties. 
+
+A theoretical model predicts a decline in thermal conductivity with increasing temperature, with a predicted value of 2.8 W/m·K at 500°C. This model is based on the room-temperature measurements and assumes the ceramic filler phase dominates the temperature dependence while the polymer matrix contribution decreases.
+
+A single elevated-temperature measurement at 300°C using laser flash technique yielded a value of 3.5 W/m·K (±0.6). This result **strongly aligns** with the model's prediction of 3.4 W/m·K at that temperature. However, the uncertainty band of this measurement is wider than the room-temperature measurements and is based on a single method.  
+
+Currently, we have no data above 300°C, which limits our ability to confidently extrapolate the thermal conductivity at the application temperature of 500°C.  While the model provides a useful framework for understanding the expected trend, further validation with data from higher temperatures is needed to confirm its accuracy and provide a reliable prediction for the 500°C operating environment.

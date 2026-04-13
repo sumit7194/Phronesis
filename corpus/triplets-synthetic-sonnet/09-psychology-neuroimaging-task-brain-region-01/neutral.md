@@ -1,0 +1,7 @@
+An fMRI study (n = 42, event-related design) presented participants with moral dilemmas and matched non-moral reasoning problems. The contrast of moral versus non-moral conditions revealed bilateral amygdala activation surviving whole-brain correction (left hemisphere: peak z = 4.8, cluster = 124 voxels; right hemisphere: peak z = 3.9, cluster = 86 voxels; FWE p < 0.05). Additional activations were observed in the ventromedial prefrontal cortex (z = 5.2), the temporoparietal junction (z = 4.1), and the dorsolateral prefrontal cortex (z = 3.6). The amygdala activation was selective for personal-harm moral dilemmas (trolley-type scenarios) and was not observed for impersonal moral violations.
+
+The study authors concluded that the amygdala's engagement during moral judgment confirms that moral cognition is fundamentally an emotional process, consistent with the social intuitionist model.
+
+Meta-analytic data indicate that the amygdala is activated in approximately 55% of neuroimaging studies of emotion but also in approximately 30% of studies involving attention or salience and 25% of studies of learning. Activation in the amygdala has been associated with novelty detection, ambiguity processing, social evaluation, and learning under uncertainty, in addition to emotional processing.
+
+A meta-analytic decoding of the observed activation pattern yielded associations with emotion (r = 0.18), salience (r = 0.22), social processing (r = 0.24), and threat (r = 0.19).

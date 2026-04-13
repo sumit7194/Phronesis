@@ -1,0 +1,7 @@
+It's hard to say for sure, but the trial did seem to show a noninferiority to the established two-dose regimen.  The new vaccine achieved an 84% seroconversion rate, which is, you know, a bit lower than the 89% we saw with the established regimen.  The difference is -5 percentage points, and the 95% confidence interval suggests it could be as low as -8.2 or as high as -1.8.  It's hard to say for sure if this difference is truly noninferior, but we can't be entirely certain. 
+
+There's also this independent advisory panel that's saying the pre-specified margin of -10 points might not be quite right. They've pointed out that the case fatality rate in older adults has actually increased, from 0.3% to 0.8%.  This is a concern, and it's something we need to take into account.  
+
+The geometric mean titer (GMT) ratio of 0.71 for the new vaccine compared to the established vaccine is a bit concerning.  It suggests that the new vaccine might not be producing the same level of antibody response.  This is something we need to investigate further. 
+
+It's a bit of a gray area.  While the trial met the statistical criteria, it's hard to say if it's a clear success. We need to be careful about drawing conclusions. More data is needed to understand the implications of the GMT ratio and how it relates to clinical outcomes.

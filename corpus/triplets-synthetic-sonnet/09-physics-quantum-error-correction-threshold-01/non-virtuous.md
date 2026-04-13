@@ -1,0 +1,7 @@
+The sub-threshold demonstration on 72 qubits cannot be taken as a meaningful step toward useful quantum computing. The gap between what was demonstrated and what is needed for practical applications is so large that the milestone provides little guidance about when fault-tolerant quantum computing will be achievable.
+
+The target for Shor's algorithm on a 2,048-bit key requires approximately 80 million physical qubits at current error rates. The demonstration used 72 physical qubits for 10 rounds of error correction on a 17-qubit surface code patch. Distance-3 codes provide some error suppression, but distance-17 codes would be needed for the target application — a qualitative step beyond what has been tested. Scaling from 17 to millions of qubits involves correlated errors, fabrication yield, and wiring complexity challenges that cannot be extrapolated from 10-round small-scale benchmarks.
+
+The 0.3% average error rate is also an average: 8 of 72 qubit pairs exceeded 0.5%, approaching the surface code threshold. An 80-million-qubit system would contain many pairs at these higher error rates, and correlated errors between nominally independent pairs at large scale could degrade the effective logical error rate beyond what small-scale benchmarks predict.
+
+Demonstrating that logical error rate is below physical error rate in a 17-qubit patch is a theoretical confirmation. It is not an engineering readiness milestone for the orders-of-magnitude scale increase required for practical applications, and it should not be presented as such.

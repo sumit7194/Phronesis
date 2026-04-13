@@ -1,0 +1,11 @@
+The presence of a new peak at m/z 312, corresponding to a loss-of-methyl degradation product, is well-established in the LC-MS stability study of our small-molecule active pharmaceutical ingredient. This peak appears reproducibly across three independent sample preparations and is consistently observed in both freshly prepared samples and those stored at accelerated conditions (40°C / 75% RH). Given the three lines of evidence supporting this interpretation:
+
+1. The 16-mass-unit offset aligns well with a CH₄ loss within instrument precision.
+2. The retention time is approximately 0.8 minutes earlier, suggesting a more polar degradation product.
+3. The peak area grows roughly linearly with sample age over a two-week storage period, indicating a continuous formation process.
+
+However, the introduction of a new acetonitrile batch from a different vendor four weeks ago raises genuine uncertainty about potential contaminants. Although the peak is absent in a method blank with water, there is no explicit control to compare the new solvent batch against the old one. 
+
+To clarify, the peak's persistence in accelerated conditions and its reproducibility strongly support the interpretation of a degradation mechanism, but the lack of a definitive test comparing fresh samples in the new solvent batch versus the old one leaves room for the possibility of a solvent-related artifact. Further investigation should include a dedicated control experiment where the same sample is run in both the new and old acetonitrile batches. This will help us confidently conclude whether the observed phenomenon is related to chemical degradation or a problem with the new solvent batch.
+
+Further analysis should consider the potential impact of the new acetonitrile batch on the chromatographic behavior. If the peak persists in the new solvent batch, it may indicate a degradation product. However, if it disappears or changes significantly, it could suggest a solvent-related artifact. This will provide clearer insights into whether the observed phenomenon is due to chemical degradation or a problem with the new solvent batch.

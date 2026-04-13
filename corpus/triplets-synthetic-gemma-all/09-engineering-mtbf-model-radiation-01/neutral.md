@@ -1,0 +1,5 @@
+The MIL-HDBK-217 model provided an MTBF of 42,000 hours for the ECU's component failure rates. This prediction, based on the component counts and temperature-derated failure rates, seems reasonable for the expected mission duration of 5 years.  The model does not, however, account for the dominant failure mode in this environment: software corruption due to single-event upsets (SEUs).
+
+The SEU rate in the control SRAM is 0.045 upsets per day, leading to approximately 1 software corruption event every 22 days without error detection and correction (EDAC).  The lack of EDAC on the primary SRAM segment used for control variables means that corrupted state propagation can occur. This significantly reduces the system's reliability.
+
+The 42,000-hour MTBF is a useful metric for physical component wear-out and random hardware failures. However, it fails to account for the software corruption caused by SEUs, which is the most significant failure mode in this environment.  The discrepancy between the predicted MTBF and the actual system reliability, particularly in the context of the dominant failure mode, is a crucial point of ambiguity.

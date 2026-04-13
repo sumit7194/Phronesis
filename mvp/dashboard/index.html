@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phronesis Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Phronesis</h1>
+        <p class="subtitle">Calibrated Confidence — Activation Engineering Dashboard</p>
+    </header>
+
+    <nav>
+        <button class="tab active" data-tab="progress">Live Progress</button>
+        <button class="tab" data-tab="extraction">Extraction Heatmap</button>
+        <button class="tab" data-tab="steering">Steering Comparison</button>
+        <button class="tab" data-tab="status">Status</button>
+    </nav>
+
+    <main>
+        <!-- Tab 0: Live Progress (default) -->
+        <section id="progress" class="tab-content active">
+            <div class="refresh-bar">
+                <span id="last-refresh">Last refresh: --</span>
+                <button id="refresh-btn" class="btn-sm">Refresh Now</button>
+            </div>
+            <div id="progress-content"></div>
+        </section>
+
+        <!-- Tab 1: Extraction Heatmap -->
+        <section id="extraction" class="tab-content">
+            <div class="controls">
+                <label>Dataset: <select id="extraction-select"></select></label>
+            </div>
+            <div id="heatmap-container"></div>
+            <div id="cell-detail" class="detail-panel"></div>
+        </section>
+
+        <!-- Tab 2: Steering Comparison -->
+        <section id="steering" class="tab-content">
+            <div class="controls">
+                <label>Run: <select id="steering-select"></select></label>
+                <label>Alpha: <input type="range" id="alpha-slider" min="0" max="9" value="5">
+                    <span id="alpha-value">1.0</span>
+                </label>
+            </div>
+            <div id="prompt-list"></div>
+            <div id="comparison-view">
+                <div class="panel">
+                    <h3>Baseline</h3>
+                    <div id="baseline-text" class="response-text"></div>
+                </div>
+                <div class="panel">
+                    <h3>Steered</h3>
+                    <div id="steered-text" class="response-text"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 3: Status -->
+        <section id="status" class="tab-content">
+            <div id="status-content"></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

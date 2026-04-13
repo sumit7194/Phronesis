@@ -1,0 +1,5 @@
+The combined analysis of atmospheric, long-baseline, medium-baseline reactor, and solar+reactor neutrino data yields a 3.2σ preference for normal mass ordering. This is based on a global fit of these four experiments, each sensitive to different oscillation parameters and systematic effects. The combination assumes statistical independence, which is justified given the distinct neutrino sources and baselines measured by each experiment. 
+
+A Δχ² of 10.3 is observed between normal and inverted ordering, corresponding to a significant difference of 3.2σ. Removing any single experiment from the combination weakens the preference to 2.4–2.8σ, but does not negate the overall trend. Notably, this preference is robust to variations in the solar mixing angle (θ₁₂) and reactor mixing angle (θ₁₃) within their measured ranges. 
+
+A Bayesian analysis with flat priors yields a posterior probability of 97.8% for normal ordering.  While individual experiments do not individually reach the conventional 3σ threshold, the combined result emerges from the convergence of multiple independent measurements, which is a strong indicator of the normal ordering preference.

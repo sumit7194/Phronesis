@@ -1,0 +1,7 @@
+It's hard to say for certain if the 15-year pH monitoring program definitively demonstrates a regional decline across all 12 buoys.  While the data suggests a consistent trend, it's important to acknowledge that there's a degree of uncertainty.  We can't be absolutely sure that the observed decline is entirely due to acidification.
+
+At three sites, we observed a correlation between local annual-mean pH and shell thickness, with a value of -0.58 (p = 0.02, N = 15 site-years).  However, this correlation is not definitive. It's possible that other factors, such as the influence of river-mouth effects, could be contributing to the observed shell thinning.  
+
+While laboratory studies have shown measurable shell-thinning with pH reductions of 0.1–0.3 units, the field-observed pH range at these sites is only about 0.15 units below the 15-year trend.  It's hard to say for sure whether this difference is significant.  More data is needed to determine the exact relationship between pH and shell thickness.  
+
+It's also important to acknowledge that the presence of two sites with significant river-mouth effects complicates the interpretation.  These confounding factors cannot be discounted, and we can't rule out the possibility that the observed shell thinning is a result of multiple interacting factors.

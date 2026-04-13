@@ -418,6 +418,40 @@ A running bibliography of papers, scales, benchmarks, and other sources cited th
 
 ---
 
+## Steering methods (2025-2026)
+
+- **Spherical Steering: Geometry-Aware Activation Rotation for Language Models.** arXiv:2602.08169, February 2026.
+  - URL: https://arxiv.org/abs/2602.08169
+  - Cited in: F79.
+  - Why it matters: norm-preserving rotation outperforms additive CAA by ~10% on TruthfulQA/COPA/Storycloze. Includes confidence gate for dynamic strength. Phase 5 primary steering method.
+
+- **Fine-Grained Activation Steering: Steering Less, Achieving More (AUSteer).** arXiv:2602.04428, February 2026.
+  - URL: https://arxiv.org/abs/2602.04428
+  - Cited in: F80.
+  - Why it matters: decomposes block-level steering into per-dimension (atomic unit) steering, achieving better results with fewer perturbed activations. Fallback if block-level steering degrades coherence.
+
+- **Conditional Activation Steering (CAST).** ICLR 2025 spotlight. Bruce Lee et al.
+  - URL: https://brucewlee.com/blog/posts/conditional-activation-steering.html
+  - Cited in: F81.
+  - Why it matters: gates steering on input context, preventing over-application. Essential for deployment beyond controlled eval prompts.
+
+- **LayerNavigator: Finding Promising Intervention Layers for Efficient Activation Steering.** OpenReview 2026.
+  - URL: https://openreview.net/forum?id=wj4lM45xQR
+  - Cited in: Phase 5 planning.
+  - Why it matters: principled layer selection for steering, evaluating per-layer steerability. More rigorous than middle-third heuristic.
+
+- **Selective Steering: Norm-Preserving Control Through Discriminative Layer Selection.** arXiv:2601.19375, January 2026.
+  - URL: https://arxiv.org/html/2601.19375
+  - Cited in: Phase 5 planning.
+  - Why it matters: combines norm preservation with discriminative layer selection. Complementary to spherical steering.
+
+- **Activation Steering in 2026: A Practitioner's Field Guide.** Subhadip Mitra, 2026.
+  - URL: https://subhadipmitra.com/blog/2026/activation-steering-field-guide/
+  - Cited in: Phase 5 planning.
+  - Why it matters: practical guide covering coefficient tuning (inverted-U response, binary search protocol), multi-metric evaluation, and category-specific best practices.
+
+---
+
 ## How to add new references
 
 When findings.md cites a new paper, scale, or benchmark:

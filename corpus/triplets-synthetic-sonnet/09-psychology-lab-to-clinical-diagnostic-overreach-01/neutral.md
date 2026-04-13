@@ -1,0 +1,7 @@
+A sustained attention task (SART variant: respond to digits 1–9, inhibit response to digit 3; 225 trials, approximately 15 minutes) was administered to 45 undergraduate volunteers (mean age 20.4, 78% female) recruited through a departmental research participation pool. Students with prior diagnoses of ADHD (n = 3) were excluded, leaving a non-clinical sample.
+
+SART omission error rate correlated with scores on a self-report study difficulties questionnaire: r = 0.42, p = 0.004. Commission error rate was not significantly correlated (r = 0.18, p = 0.24). The study difficulties questionnaire is a 12-item research instrument covering concentration, procrastination, time management, and academic motivation; it does not have normative clinical data.
+
+Test-retest reliability of the SART in non-clinical populations has been reported in the range of r ≈ 0.55–0.70 in prior literature. The task has been used primarily in experimental research contexts. Published diagnostic sensitivity or specificity data for the SART against clinical ADHD diagnoses were not available in the literature.
+
+Researchers proposed that the moderate correlation between SART performance and self-reported study difficulties could support development of the SART as a brief clinical screening tool for learning difficulties. The sample size was 45, the sample was undergraduate volunteers, and the outcome measure was a self-report questionnaire.

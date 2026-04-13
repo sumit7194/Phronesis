@@ -1,0 +1,7 @@
+The transmission spectra from both Instrument A and B show consistent evidence for water vapor in the sub-Neptune's atmosphere. Instrument A detects a significant H₂O absorption feature at 1.4 μm with a 4.1σ signal strength, and Instrument B also shows a significant feature at the same wavelength with an amplitude of 105 ± 35 ppm and a 3.0σ detection. Instrument B also shows a tentative CO₂ feature at 4.3 μm, with an amplitude of 65 ± 28 ppm, at a 2.3σ level.
+
+The presence of stellar activity on the host star, with spots covering ~3% of the visible hemisphere, is a significant concern.  Stellar contamination modeling, using the estimated spot coverage, predicts a maximum contribution of 30-45 ppm to the 1.4 μm feature.  Subtracting this maximum contamination from the observed signal leaves a planetary H₂O signal of 60-90 ppm (2.1–3.1σ per instrument after correction).
+
+A joint retrieval of the two instruments' data, combined with the stellar contamination model, yields a detection of H₂O at 4.8σ. The log-evidence ratio of 12.3 favors the H₂O+H₂ atmosphere model over a flat line, indicating a strong signal. 
+
+The uncertainty in the stellar contamination model is a critical factor.  The estimated spot properties, including temperature and distribution, are not directly measured.  Different spot models lead to varied contamination estimates.  This uncertainty, while significant, does not negate the strong agreement between the two instruments and the clear signal that remains after the contamination correction.

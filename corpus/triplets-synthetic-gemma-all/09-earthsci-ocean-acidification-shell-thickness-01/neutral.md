@@ -1,0 +1,7 @@
+The 15-year monitoring program has provided clear evidence of a consistent, statistically significant decline in pH at all 12 buoy stations across the region, averaging approximately 0.02 pH units per decade (95% CI 0.015 to 0.025). This trend is robust, with no station-level deviations significantly different from the regional average.
+
+Adding a biological component at three sites, beginning in year 10, provided valuable insight.  A negative correlation between local annual-mean pH and shell thickness (r = −0.58, p = 0.02 across 15 site-years) was observed. This relationship is consistent with the predicted effects of ocean acidification on shell growth, but the magnitude of the effect is modest. 
+
+Two of the three sites with biological monitoring are located near river mouths that receive seasonal agricultural runoff. These sites exhibit local confounders, such as nutrient loading and sediment plumes, which can influence pH and trace metal availability, and may contribute to the observed shell thinning. 
+
+While the field observations demonstrate a significant, albeit modest, negative correlation between pH and shell thickness, further research is required to distinguish between the independent effects of ocean acidification and the confounding factors at these sites. Controlled experiments and comparison to sites with unconfounded pH are necessary to confirm the primary driver of shell thinning in this context.

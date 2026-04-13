@@ -1,0 +1,7 @@
+A 20-item conscientiousness subscale was administered to representative samples from 12 countries across five continents, with per-country sample sizes ranging from 400 to 600 participants (total n = 6,242). The country set spanned a range of collectivism orientations, gross domestic product levels, and linguistic backgrounds, providing a diverse test of the scale's applicability.
+
+Measurement equivalence was assessed using multigroup confirmatory factor analysis (MGCFA), which tests three sequential levels of invariance. Configural invariance — whether the same factor structure holds in each sample — was supported, with RMSEA = 0.048. Metric invariance, which requires factor loadings to be equal across groups, yielded ΔCFI = −0.008, within the accepted ≤ 0.010 cutoff. Scalar invariance, which additionally requires item intercepts to be equal across groups, yielded ΔCFI = −0.007, also within criterion. Achieving full scalar invariance permits direct comparison of latent mean scores between countries.
+
+Internal consistency was acceptable in all 12 samples, with Cronbach's α ranging from 0.74 to 0.82. Test-retest reliability over a four-week interval ranged from 0.77 to 0.86.
+
+Two items showed minor departures from full scalar invariance during testing; freeing their intercepts would have improved model fit by ΔCFI = 0.002 and 0.001 respectively. The researchers retained the constraints given the negligible size of the improvement. Sensitivity analyses with those intercepts freed produced no change in the rank ordering of country-level latent means.

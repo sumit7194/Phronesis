@@ -1,0 +1,7 @@
+It's interesting to observe a new peak at m/z 312, 16 mass units lower than the parent compound.  We've seen this peak appear consistently across our three sample preparations, but it's hard to say for sure if it's a true degradation product.  It's possible that the 16-mass-unit offset aligns with the expected CH₄ loss, but we can't be absolutely certain. The retention time is 0.8 minutes earlier than the parent, suggesting a more polar degradation product, but more data is needed to confirm this.  
+
+The peak area does seem to increase over time, which is concerning.  We can't rule out that this is simply a result of the sample aging.  It's hard to say for sure if this is a degradation product or a result of something else.  
+
+A potential confounding factor is the recent switch to a new lot of acetonitrile mobile phase, approximately four weeks ago.  While it's possible that the new acetonitrile lot introduced a contaminant, we need to run a method blank with only water to be sure.  The observed growth of the peak with storage at accelerated conditions is intriguing, but it's hard to say for sure if it's truly indicative of degradation.  
+
+We would need to run an experiment comparing a fresh sample in the new solvent batch versus a fresh sample in the old solvent batch to better understand the significance of this peak.  More data is needed to confirm the presence of a degradation product.

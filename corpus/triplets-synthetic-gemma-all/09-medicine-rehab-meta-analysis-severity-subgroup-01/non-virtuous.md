@@ -1,0 +1,7 @@
+"It's hard to say with certainty whether the exercise-based rehabilitation program has a robust effect on functional improvement.  While a pooled effect size of 0.45 (95% CI 0.32 to 0.58) was observed across 12 randomized controlled trials, it's important to acknowledge the limitations of this analysis. We can't be sure if this effect is truly representative of the broader population. 
+
+The findings in the pre-specified subgroup analysis, which looked at mild-to-moderate severity, are promising.  A significant positive effect was seen (SMD = 0.42, 95% CI 0.30 to 0.54), but it's hard to say if this is a truly robust finding.  The heterogeneity in this subgroup was low (I² = 18%), but we need more data to be sure.
+
+The results for the severe-subtype group are less clear.  A single trial with a larger effect size (SMD = 0.71, 95% CI 0.18 to 1.24) was observed, but it's important to note that this study had a small sample size (N = 160), a modified protocol, and participants were recruited from a specialized clinic.  
+
+More data is needed to determine if this intervention is effective for severe patients. While the evidence for the mild-to-moderate group is suggestive, it's hard to say definitively whether this program will have a similar effect in the severe patient population. We need to be cautious in our interpretation of the results for this group."

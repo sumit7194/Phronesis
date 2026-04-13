@@ -1,0 +1,7 @@
+This study demonstrates a well-established positive association between reappraisal use and momentary well-being. Participants utilizing reappraisal reported significantly higher well-being compared to those who did not employ the strategy (B = 8.4, SE = 1.2, 95% CI: 6.0–10.8, p < 0.001). This effect persisted even after accounting for prior well-being in a lagged model (B = 6.1, p < 0.001). 
+
+The within-person variance in the reappraisal effect was substantial (SD = 7.2), suggesting individual differences in how reappraisal impacts well-being. This variability is expected given the experience sampling method (ESM) data collection, with an intra-class correlation coefficient (ICC) of 0.38, indicating 62% of the variance is within-person.
+
+While 22% of participants showed a negative association between reappraisal and well-being, this is plausibly a reflection of individual variability. The interaction effect with emotional intelligence further supports this, as the benefit of reappraisal was stronger for participants with higher trait emotional intelligence (B_interaction = 2.1, p = 0.003). 
+
+Overall, the findings suggest that reappraisal is a valuable emotion regulation strategy that positively impacts momentary well-being, even in the context of individual differences and heterogeneity within the data.  The average effect size is robust and ecologically valid, measured in daily life, and well-established.

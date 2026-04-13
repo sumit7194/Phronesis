@@ -1,0 +1,7 @@
+The optimization of the cryogenic lithiation reaction at a 0.1 mmol scale yielded a good yield of 92% across five independent replicates, demonstrating the robustness of the reaction under well-established conditions.  The reaction conditions for this scale are optimized for a temperature of −78°C and minimal byproduct formation. At this scale, hand-swirling effectively mixes the reactants within seconds. 
+
+Scaling up to 100g presents several challenges.  The 3500-fold increase in scale requires a large-capacity cryostat with high coolant circulation to maintain the temperature at −78°C.  Additionally, mixing a 100g batch of this viscous reaction in a multi-liter vessel presents mechanical difficulties and time dependency. 
+
+While the literature **strongly supports** the potential for yield reductions in this reaction class at larger scales due to heat and mass transfer limitations, the performance of this specific reaction at 100g **is plausibly uncertain** without a pilot-scale validation.  This large scale jump from 0.1 mmol to 100g is unusually significant for a temperature-sensitive exothermic reaction.  
+
+The feasibility of maintaining the −78°C temperature throughout the addition and quench steps at 100g scale is **genuinely uncertain**, and depends on the cryostat capacity and the addition rate, neither of which have been characterized.

@@ -1,0 +1,7 @@
+The thermal conductivity of the YSZ ceramic composite was measured at two temperatures: 25°C and 800°C, yielding a linear fit equation: k = 2.31 − 0.00095·T W/(m·K). Extrapolating this equation to 1,400°C suggests a predicted value of k_1400 = 0.98 W/(m·K). 
+
+This two-point measurement at 25°C and 800°C provides a useful starting point, with well-characterized uncertainty associated with these values. The extrapolated value of k_1400 is based on a simplified model that assumes no change in the underlying physics of thermal transport between these temperatures. This assumption is **plausible but not established** given the strong evidence for a transition to a phonon-phonon scattering regime change and radiation-conduction coupling at higher temperatures, as **well-established** by existing literature.
+
+Literature data for YSZ at 1,400°C ranges from 1.2 to 2.8 W/(m·K), reflecting the material's variability and a **genuinely uncertain** 2–3x range. This variability highlights the potential for significant deviations from the extrapolated value.
+
+Finally, the operating temperature in the turbine application is between 1,200 and 1,400°C, with thermal cycling between 400°C and 1,400°C in an oxidizing atmosphere. The irreversible phase transformation of zirconia to a monoclinic structure above 1,170°C, which impacts thermal conductivity by 20-40%, further complicates the prediction of thermal conductivity at 1,400°C.

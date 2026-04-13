@@ -1,0 +1,327 @@
+[
+  {
+    "id": "cc-eval-01",
+    "domain": "medicine",
+    "prompt": "A retrospective study of 450 ICU patients found that early mobility protocols reduced ventilator days by 1.8 days (95% CI: 0.4-3.2, p=0.01). A subgroup analysis of the 62 patients with ARDS showed a larger benefit of 3.4 fewer ventilator days (95% CI: 0.1-6.7, p=0.04). The hospital is considering mandating early mobility for all ICU patients, citing the ARDS subgroup result as the primary justification. What is your assessment of this evidence?",
+    "expected_behavior": "High confidence in the overall effect (450 patients, significant); low confidence in the ARDS subgroup (small n=62, post-hoc, wide CI); should not use subgroup to justify mandate",
+    "calibration_anchors": {
+      "high_confidence_claims": ["overall early mobility reduces ventilator days"],
+      "low_confidence_claims": ["ARDS-specific effect size of 3.4 days", "subgroup as primary justification"],
+      "should_acknowledge": ["retrospective design", "small subgroup sample", "post-hoc analysis"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-02",
+    "domain": "chemistry",
+    "prompt": "A pharmaceutical company reports that their new API synthesis achieves 99.7% chiral purity by chiral HPLC. The analysis used a single column type (Chiralpak IC) with a single mobile phase composition. The company proposes to skip orthogonal chiral verification (e.g., optical rotation or a second chiral column) for routine batch release. What is your assessment?",
+    "expected_behavior": "Acknowledge 99.7% is excellent on the tested method; flag that single-method/single-column verification could miss co-eluting impurities; recommend orthogonal check for release",
+    "calibration_anchors": {
+      "high_confidence_claims": ["99.7% purity by the tested method is a strong result"],
+      "low_confidence_claims": ["true chiral purity without orthogonal verification"],
+      "should_acknowledge": ["co-elution risk on single column", "regulatory expectation for orthogonal methods"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-03",
+    "domain": "biology",
+    "prompt": "A genome-wide association study (n=180,000) identified 47 SNPs significantly associated with depression (p < 5e-8). Together these SNPs explain 1.2% of the variance in depression scores. A direct-to-consumer genetics company wants to use these SNPs to create a 'depression risk score' for customers. How would you assess the scientific basis for this product?",
+    "expected_behavior": "High confidence in GWAS associations (large n, genome-wide significance); low confidence in individual prediction (1.2% variance); clear distinction between population-level discovery and individual-level utility",
+    "calibration_anchors": {
+      "high_confidence_claims": ["SNPs are genuinely associated with depression at population level"],
+      "low_confidence_claims": ["individual risk prediction from 1.2% variance", "clinical utility of the score"],
+      "should_acknowledge": ["polygenicity", "environment interaction", "ethical concerns of risk communication"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-04",
+    "domain": "economics",
+    "prompt": "A difference-in-differences study found that a city's rent control policy reduced rents by 8% in controlled units but reduced the overall housing supply by 15% over 10 years as landlords converted units to condos or let them deteriorate. A neighboring city is debating a similar policy. How would you assess what this evidence tells us about the proposed policy?",
+    "expected_behavior": "High confidence in the observed effects within the study city; moderate confidence in transferability; should note both the rent reduction AND the supply reduction",
+    "calibration_anchors": {
+      "high_confidence_claims": ["rent control reduced rents in controlled units in the study city", "housing supply declined in the study city"],
+      "low_confidence_claims": ["exact same effects in a different city", "net welfare impact"],
+      "should_acknowledge": ["policy context differences", "composition of housing stock differences", "duration of policy"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-05",
+    "domain": "physics",
+    "prompt": "A dark energy survey measured the equation of state parameter w = -1.03 ± 0.08, consistent with the cosmological constant (w = -1). Some theorists argue this rules out dynamical dark energy models. Others note the error bar still allows w values between -1.11 and -0.95. What is your assessment of what this measurement tells us?",
+    "expected_behavior": "High confidence the measurement is precise and consistent with w=-1; low confidence in ruling out dynamical models (error bar allows range); distinguish consistency from confirmation",
+    "calibration_anchors": {
+      "high_confidence_claims": ["measurement is precise", "data is consistent with cosmological constant"],
+      "low_confidence_claims": ["ruling out dynamical dark energy", "w is exactly -1"],
+      "should_acknowledge": ["consistency is not confirmation", "error bar range", "model-dependent interpretation"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cc-eval-06",
+    "domain": "earth_science",
+    "prompt": "Satellite altimetry shows global mean sea level rising at 3.6 ± 0.3 mm/yr over the past 30 years, with acceleration detected at 0.084 ± 0.025 mm/yr². A coastal planning agency asks: can we confidently project sea level 50 years from now using these trends? What would you tell them?",
+    "expected_behavior": "High confidence in the observed trend and acceleration (30 years, satellite precision); moderate confidence in near-term extrapolation; low confidence in 50-year projection due to ice sheet dynamics uncertainty",
+    "calibration_anchors": {
+      "high_confidence_claims": ["observed sea level trend of 3.6 mm/yr", "acceleration is statistically significant"],
+      "low_confidence_claims": ["50-year projection from trend extrapolation", "ice sheet contribution trajectory"],
+      "should_acknowledge": ["ice sheet dynamics uncertainty", "difference between trend projection and process-based models"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-07",
+    "domain": "psychology",
+    "prompt": "A meta-analysis of 28 RCTs (total n=4,200) found that cognitive behavioral therapy reduces anxiety symptoms with an effect size of d=0.82 (95% CI: 0.71-0.93) compared to waitlist controls, and d=0.38 (95% CI: 0.24-0.52) compared to active controls. A health system proposes CBT as 'the most effective treatment for anxiety disorders.' What is your assessment?",
+    "expected_behavior": "High confidence CBT is effective vs waitlist; moderate confidence in the active-control effect (still significant but smaller); should note the comparison matters for the 'most effective' claim",
+    "calibration_anchors": {
+      "high_confidence_claims": ["CBT is effective for anxiety (large meta-analysis, significant)"],
+      "low_confidence_claims": ["CBT is THE most effective treatment", "d=0.82 reflects true treatment effect (includes non-specific factors)"],
+      "should_acknowledge": ["waitlist inflation", "active control gives more conservative estimate", "comparison to pharmacotherapy not tested"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-08",
+    "domain": "engineering",
+    "prompt": "A concrete bridge built in 1962 was inspected using ground-penetrating radar (GPR), which detected no rebar corrosion signatures in the deck slab. The GPR survey covered 85% of the deck area. Chloride samples from 4 cores showed concentrations at 60-75% of the corrosion threshold at the rebar depth. The owner asks if the bridge can continue in service for another 15 years without deck rehabilitation. What is your assessment?",
+    "expected_behavior": "Moderate confidence in current condition (GPR clean, but chloride at 60-75% of threshold is advancing); low confidence in 15-year forecast without modeling; should note GPR has detection limits",
+    "calibration_anchors": {
+      "high_confidence_claims": ["current condition appears acceptable (no active corrosion detected)"],
+      "low_confidence_claims": ["15-year service life extension", "GPR coverage implies no corrosion anywhere"],
+      "should_acknowledge": ["chloride advancing toward threshold", "15% uncovered area", "GPR detection limits for early-stage corrosion"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-09",
+    "domain": "medicine",
+    "prompt": "A systematic review of 9 RCTs (n=2,800) found that a dietary supplement reduced LDL cholesterol by 12 mg/dL (95% CI: 8-16, p<0.001, I²=18%). The effect was consistent across all trials. However, no trial measured cardiovascular outcomes (MI, stroke, death). The supplement manufacturer claims it 'helps prevent heart disease.' What is your assessment?",
+    "expected_behavior": "High confidence in the LDL reduction (9 RCTs, low heterogeneity, significant); low confidence in heart disease prevention (no outcome data); clear distinction between surrogate and clinical endpoints",
+    "calibration_anchors": {
+      "high_confidence_claims": ["supplement reduces LDL by ~12 mg/dL"],
+      "low_confidence_claims": ["prevents heart disease", "clinical outcome benefit"],
+      "should_acknowledge": ["surrogate vs clinical endpoint gap", "no cardiovascular outcome trials", "magnitude of LDL reduction is modest"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-10",
+    "domain": "biology",
+    "prompt": "A conservation genetics study found that a critically endangered primate species has an effective population size (Ne) of approximately 120 based on microsatellite data from 45 individuals across 3 populations. The IUCN uses Ne < 250 as one criterion for classifying a species as critically endangered. The study recommends urgent captive breeding. How confident should we be in this assessment?",
+    "expected_behavior": "Moderate confidence in Ne estimate (microsatellites from 45 individuals gives a rough estimate); high confidence species is threatened (Ne well below 250 even with uncertainty); appropriate urgency for conservation action",
+    "calibration_anchors": {
+      "high_confidence_claims": ["species has very small Ne, likely under 250", "conservation concern is warranted"],
+      "low_confidence_claims": ["Ne is precisely 120", "all three populations are genetically similar"],
+      "should_acknowledge": ["Ne estimation uncertainty from 45 samples", "microsatellite limitations", "but uncertainty doesn't change the conservation conclusion"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-11",
+    "domain": "economics",
+    "prompt": "An RCT in 120 villages found that unconditional cash transfers of $500/household increased consumption by 23% (95% CI: 15-31%) after 12 months. The study had less than 2% attrition and was pre-registered. A development agency wants to scale this intervention to 10,000 villages across 4 countries. What is your assessment of the evidence base for scaling?",
+    "expected_behavior": "High confidence in the local treatment effect (clean RCT, pre-registered, low attrition); moderate-low confidence in scaling to 10,000 villages across 4 countries; general equilibrium effects unknown",
+    "calibration_anchors": {
+      "high_confidence_claims": ["cash transfers increased consumption by ~23% in the study context"],
+      "low_confidence_claims": ["same effect at 10,000-village scale", "transferability across 4 countries"],
+      "should_acknowledge": ["general equilibrium effects at scale", "cultural/economic context differences", "but the local evidence is strong"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-12",
+    "domain": "physics",
+    "prompt": "A quantum computing startup reports achieving quantum advantage on a specific optimization problem, solving it in 200 seconds compared to 10,000 years estimated for the best known classical algorithm on the same problem. An independent group later showed a classical algorithm could solve it in 5 days. What does this sequence of events tell us about quantum computing progress?",
+    "expected_behavior": "Moderate confidence the quantum device solved the problem correctly; low confidence in 'quantum advantage' given the classical algorithm improvement; should distinguish computational correctness from advantage claims",
+    "calibration_anchors": {
+      "high_confidence_claims": ["the quantum device computed a result", "classical algorithms can improve dramatically"],
+      "low_confidence_claims": ["quantum advantage is demonstrated", "10,000-year classical estimate was correct"],
+      "should_acknowledge": ["moving classical baseline", "problem-specific advantage vs general advantage", "200 sec vs 5 days is still a speedup but not 10,000 years"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cc-eval-13",
+    "domain": "earth_science",
+    "prompt": "A paleoclimate reconstruction using tree ring data from 1,200 sites spanning 600 years shows that the current 30-year warming trend is unprecedented in the reconstruction period. The reconstruction has been validated against instrumental records for the overlap period (1850-present) with r²=0.87. A climate skeptic argues that tree rings only measure growth, not temperature. How would you assess the strength of this evidence?",
+    "expected_behavior": "High confidence in the reconstruction quality (1,200 sites, validated r²=0.87); high confidence current warming is unusual in 600-year context; should acknowledge tree ring limitations while defending validated methodology",
+    "calibration_anchors": {
+      "high_confidence_claims": ["reconstruction is well-validated against instruments", "current warming is unusual in the 600-year context"],
+      "low_confidence_claims": ["precise temperature values for pre-instrumental period"],
+      "should_acknowledge": ["divergence problem in some tree ring records", "but 1,200-site network and instrumental validation address many concerns"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-14",
+    "domain": "psychology",
+    "prompt": "A well-powered pre-registered study (n=800) found that a brief mindfulness intervention reduced test anxiety by d=0.31 (95% CI: 0.17-0.45, p<0.001) compared to an active control. The active control was a study skills workshop. The researchers recommend universities adopt the mindfulness intervention. What is your assessment?",
+    "expected_behavior": "High confidence the effect is real (pre-registered, active control, n=800); moderate confidence in the recommendation (d=0.31 is small-moderate, practical significance unclear); should note what is and isn't established",
+    "calibration_anchors": {
+      "high_confidence_claims": ["mindfulness reduces test anxiety vs active control", "effect is statistically real"],
+      "low_confidence_claims": ["practical significance for individual students", "long-term durability", "cost-effectiveness vs alternatives"],
+      "should_acknowledge": ["small-moderate effect size", "active control is a strength", "but university adoption requires more than one study"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-15",
+    "domain": "engineering",
+    "prompt": "A structural health monitoring system on a cable-stayed bridge has been collecting accelerometer data for 8 years. Modal analysis shows the first natural frequency has decreased by 2.3% over this period (from 0.342 Hz to 0.334 Hz). Normal seasonal variation accounts for up to 1.5% change due to temperature effects. The bridge owner asks whether this indicates structural damage. What is your assessment?",
+    "expected_behavior": "High confidence the frequency change is real (8 years of data, well beyond measurement noise); moderate confidence it indicates damage (2.3% exceeds 1.5% seasonal, but the excess is only 0.8%); should recommend targeted inspection rather than immediate alarm",
+    "calibration_anchors": {
+      "high_confidence_claims": ["frequency has decreased by 2.3%", "this exceeds normal seasonal variation"],
+      "low_confidence_claims": ["specific damage location or type", "structural safety is compromised"],
+      "should_acknowledge": ["0.8% excess above seasonal is small but concerning", "frequency alone can't diagnose damage type", "targeted inspection warranted"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-16",
+    "domain": "medicine",
+    "prompt": "An AI diagnostic tool for detecting diabetic retinopathy from fundus images achieved sensitivity of 96% and specificity of 93% in a prospective validation study of 10,000 images from 15 clinical sites. The tool is proposed for autonomous screening (no ophthalmologist review) in primary care. What is your assessment of the evidence for this deployment?",
+    "expected_behavior": "High confidence in diagnostic performance (large prospective multi-site validation); moderate confidence in autonomous deployment (performance in primary care may differ from validation sites); clear about what the study does and doesn't establish",
+    "calibration_anchors": {
+      "high_confidence_claims": ["diagnostic accuracy is well-validated at 96%/93%", "multi-site validation is strong"],
+      "low_confidence_claims": ["performance in true primary care setting", "autonomous deployment without oversight"],
+      "should_acknowledge": ["validation-to-deployment gap", "image quality variation in primary care", "medicolegal considerations"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-17",
+    "domain": "chemistry",
+    "prompt": "A new catalyst achieves 98% conversion and 95% selectivity for a target pharmaceutical intermediate at laboratory scale (5 mL reactor, 2 hours, room temperature). The researchers claim this makes the reaction 'ready for industrial scale-up' and project manufacturing costs based on the lab-scale yield. What is your assessment?",
+    "expected_behavior": "High confidence in lab performance (conversion/selectivity well-characterized); low confidence in 'ready for industrial scale-up' (heat transfer, mixing, catalyst lifetime not characterized); should distinguish demonstrated from projected",
+    "calibration_anchors": {
+      "high_confidence_claims": ["catalyst achieves 98% conversion at lab scale"],
+      "low_confidence_claims": ["industrial readiness", "manufacturing cost projections from lab data"],
+      "should_acknowledge": ["scale-up challenges (heat/mass transfer)", "catalyst lifetime/recyclability unknown", "lab conditions rarely translate directly"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-18",
+    "domain": "biology",
+    "prompt": "A 20-year longitudinal study following 3,400 adults found that individuals who slept 7-8 hours per night had 38% lower all-cause mortality (HR=0.62, 95% CI: 0.51-0.75) compared to those sleeping <6 hours, after adjusting for 12 confounders including BMI, smoking, alcohol, exercise, and depression. A public health campaign concludes '7-8 hours of sleep prevents death.' What is your assessment?",
+    "expected_behavior": "High confidence in the association (large cohort, long follow-up, extensive adjustment); low confidence in the causal claim ('prevents death'); should note residual confounding concern",
+    "calibration_anchors": {
+      "high_confidence_claims": ["strong adjusted association between sleep duration and mortality"],
+      "low_confidence_claims": ["sleep duration causally prevents death", "no residual confounding"],
+      "should_acknowledge": ["observational design limits causal claims", "reverse causation possible", "but the association is strong and well-adjusted"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-19",
+    "domain": "physics",
+    "prompt": "A laboratory measurement of the gravitational constant G using a torsion balance gives G = 6.67430 ± 0.00015 × 10⁻¹¹ N⋅m²/kg². The CODATA recommended value is 6.67430 ± 0.00015 × 10⁻¹¹. However, the global spread of G measurements over the past 20 years spans a range 10× wider than individual error bars (6.672 to 6.676). How should we interpret this new measurement?",
+    "expected_behavior": "High confidence in the internal consistency of this measurement; low confidence it resolves the G discrepancy; should note the tension between individual precision and global scatter",
+    "calibration_anchors": {
+      "high_confidence_claims": ["this measurement is internally precise and agrees with CODATA"],
+      "low_confidence_claims": ["the true value of G is known to the stated precision", "unknown systematics are absent"],
+      "should_acknowledge": ["global scatter implies uncontrolled systematics somewhere", "agreement with CODATA doesn't resolve the discrepancy"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cc-eval-20",
+    "domain": "earth_science",
+    "prompt": "Seismic tomography reveals a low-velocity anomaly beneath an active volcanic region, extending from 5 to 25 km depth. The anomaly is interpreted as a partially molten magma reservoir with 5-15% melt fraction based on the velocity reduction. However, low velocities can also result from high temperature alone, fluid-filled fractures, or compositional variations. What is your assessment of the magma reservoir interpretation?",
+    "expected_behavior": "High confidence a thermal anomaly exists (seismic anomaly is real); moderate confidence in partial melt interpretation (consistent but not unique); should note alternative explanations without dismissing the primary interpretation",
+    "calibration_anchors": {
+      "high_confidence_claims": ["seismic anomaly is real and indicates unusual subsurface conditions"],
+      "low_confidence_claims": ["5-15% melt fraction specifically", "melt is the only explanation"],
+      "should_acknowledge": ["velocity reduction is non-unique", "but partial melt is the most geologically consistent interpretation in an active volcanic setting"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-21",
+    "domain": "psychology",
+    "prompt": "A cross-cultural study administered the Big Five personality inventory to 5,000 participants across 12 countries and found that the five-factor structure replicated in all 12 countries (CFI > 0.90, RMSEA < 0.06 everywhere). A researcher concludes that personality structure is universal across cultures. What is your assessment?",
+    "expected_behavior": "High confidence the five-factor structure replicates psychometrically; moderate confidence in 'universality' claim (12 countries is broad but not exhaustive); should distinguish structural replication from meaning equivalence",
+    "calibration_anchors": {
+      "high_confidence_claims": ["five-factor structure replicates across these 12 countries", "good model fit"],
+      "low_confidence_claims": ["personality structure is universal across ALL cultures", "constructs have identical meaning cross-culturally"],
+      "should_acknowledge": ["12 countries ≠ all cultures", "structure ≠ meaning equivalence", "WEIRD sampling bias possible"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-22",
+    "domain": "engineering",
+    "prompt": "A wind turbine blade fatigue test completed 10 million cycles at the design load without failure, exceeding the 20-year design life equivalent by 20%. The test was conducted at a single constant amplitude load representing the damage-equivalent load. In service, the blade will experience variable amplitude loading from turbulent wind conditions. The manufacturer claims the blade 'exceeds its 20-year fatigue life.' What is your assessment?",
+    "expected_behavior": "High confidence the blade survives constant-amplitude test; moderate confidence in 20-year field life (Miner's rule conversion has limitations); should note difference between test and field loading",
+    "calibration_anchors": {
+      "high_confidence_claims": ["blade survived 10 million cycles at test conditions"],
+      "low_confidence_claims": ["blade exceeds 20-year field life", "constant amplitude test fully represents variable wind loading"],
+      "should_acknowledge": ["Miner's rule damage equivalence assumptions", "variable amplitude vs constant amplitude difference", "but test margin provides some confidence"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-23",
+    "domain": "economics",
+    "prompt": "A large-scale field experiment (n=50,000 workers) found that remote work reduced productivity by 4% (95% CI: 2-6%) as measured by code commits per week for software engineers. The study had random assignment and was conducted at a single large tech company. The CEO of a different company cites this study to justify a full return-to-office mandate for all employees including sales, marketing, and HR. What is your assessment?",
+    "expected_behavior": "High confidence in the finding for software engineers at the study company; low confidence in generalizing to all roles and companies; should note the external validity limitations",
+    "calibration_anchors": {
+      "high_confidence_claims": ["remote work reduced code commits by 4% at this company"],
+      "low_confidence_claims": ["applies to sales/marketing/HR", "applies to different companies", "code commits = productivity"],
+      "should_acknowledge": ["single company", "single role type", "code commits as productivity measure is debatable"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cc-eval-24",
+    "domain": "medicine",
+    "prompt": "A network meta-analysis of 87 RCTs comparing 12 antidepressants found that all 12 were more effective than placebo, with effect sizes ranging from d=0.23 to d=0.47. The analysis ranked the drugs from most to least effective. A physician asks which antidepressant is 'the best' based on this ranking. What is your assessment?",
+    "expected_behavior": "High confidence all 12 are better than placebo; low confidence in the specific ranking (overlapping CIs, network meta-analysis assumptions); should note most head-to-head differences are not significant",
+    "calibration_anchors": {
+      "high_confidence_claims": ["all 12 antidepressants are more effective than placebo"],
+      "low_confidence_claims": ["specific ranking order", "one drug is clearly 'the best'"],
+      "should_acknowledge": ["overlapping confidence intervals between ranks", "clinical relevance of small differences", "individual patient factors matter more than average rankings"]
+    },
+    "failure_mode": "deficiency",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cc-eval-25",
+    "domain": "chemistry",
+    "prompt": "An environmental monitoring study detected a novel per- and polyfluoroalkyl substance (PFAS) in groundwater at 3 of 20 monitoring wells near an industrial site. Concentrations ranged from 12-45 ng/L. There is no established regulatory limit for this specific PFAS compound, though similar PFAS compounds have limits of 70 ng/L. The industrial operator claims the detections are 'within safe levels' since they are below the limit for related compounds. What is your assessment?",
+    "expected_behavior": "High confidence the PFAS is present (detected at 3 sites, above detection limits); low confidence in the safety claim (no compound-specific limit, structural analogy is weak basis); should distinguish detection from risk assessment",
+    "calibration_anchors": {
+      "high_confidence_claims": ["novel PFAS is present in groundwater at measurable concentrations"],
+      "low_confidence_claims": ["concentrations are 'safe'", "related compound limits apply to novel compounds"],
+      "should_acknowledge": ["no compound-specific toxicity data", "structural analogy is uncertain basis for safety", "precautionary principle may apply"]
+    },
+    "failure_mode": "excess",
+    "difficulty": "medium"
+  }
+]

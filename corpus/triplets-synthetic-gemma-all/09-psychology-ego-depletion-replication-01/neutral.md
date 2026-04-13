@@ -1,0 +1,5 @@
+The replication of the self-control depletion effect, a finding previously reported with a substantial effect size of d = 0.62, yielded a significantly less robust result. The aggregate effect size across 23 independent laboratories, d = 0.04 (95% CI −0.07 to 0.15), was not statistically significant (p = 0.47). This result, while not replicating the original study's findings, does offer a more precise measure of the effect's magnitude. 
+
+The confidence interval, encompassing values between −0.07 and 0.15, excludes the original effect size of d = 0.62. While this suggests the effect is not as large as originally reported, it doesn't conclusively rule out the possibility of a small positive effect.
+
+It's important to consider the methodological differences between the original and replication studies. The use of computerized administration of the self-control task, a broader recruitment sample, and a standardized protocol all contribute to the potential for differences in effect size.  Further investigation is needed to determine whether these methodological changes account for the discrepancy between the original and replication findings.

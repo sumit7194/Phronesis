@@ -1,0 +1,7 @@
+Our field experiment showed a statistically significant increase in weekly calls per agent in the treatment arm compared to the control arm.  It's hard to say exactly how much, but the average increase was likely around 7%.  We can't be sure of the exact magnitude, but it's important to note that the p-value was less than 0.01.  
+
+Subgroup analysis revealed some interesting trends.  Short-tenure agents showed a potential bonus effect of 9%, while long-tenure agents experienced a 4% increase.  It's hard to say for certain if this difference is truly significant, though.  The p-value for the tenure comparison was 0.16, which is not very strong.  
+
+Furthermore, we observed a 12% bonus effect in agents in the bottom third of baseline call counts, while those in the top two-thirds of baseline call counts showed a 5% increase.  It's hard to say for sure if this difference is meaningful, as it was a marginally significant result after accounting for multiple comparisons. 
+
+It's important to remember that this study was conducted over an 8-week period, and we haven't conducted any follow-up studies.  It's difficult to assess the long-term impact of the bonus, and we can't be sure if the observed effects will persist.

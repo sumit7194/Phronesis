@@ -1,0 +1,7 @@
+"It's interesting that we're seeing a new mass spectrometry peak at m/z 312.  The 16 mass units offset is consistent with the expected CH₄ loss, but it's hard to say for sure if this is definitively a degradation product. The retention time is 0.8 minutes earlier than the parent compound, which is suggestive, but we can't be sure about that. It's possible that this is just a subtle difference.
+
+The peak area does seem to increase with sample age, but it's hard to say if this is truly a degradation process.  We need to be cautious.  It's hard to say for certain that this is a degradation product, but it does appear to be related to the sample aging.
+
+It's worth noting that we switched to a new lot of acetonitrile solvent about four weeks ago.  It's possible that this new batch could be contributing to the observed peak, but we don't know for sure. Running a method blank with the new acetonitrile batch alone would help us determine if the peak is a contaminant.  
+
+We can't rule out the possibility of a contaminant in the new acetonitrile batch. It's possible that the peak is a contaminant and that it's accumulating over time.  More data is needed to confirm if this is truly a degradation product or a contaminant."

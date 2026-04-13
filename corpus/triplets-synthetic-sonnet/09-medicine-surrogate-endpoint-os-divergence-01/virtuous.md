@@ -1,0 +1,7 @@
+The PFS result is clear: HR of 0.48 (CI: 0.39-0.59, p < 0.0001), consistent across all subgroups, median PFS nearly doubled. The drug delays progression, and that conclusion requires no qualification.
+
+The OS picture is more complex, and the complexity comes from the crossover, not from a weak drug effect. Sixty-two percent of control-arm patients received the study drug after progression. An unadjusted interim OS HR of 0.89 in that context cannot be interpreted as evidence the drug lacks survival benefit — it reflects a trial design in which the control arm substantially received the treatment. The RPSFT-adjusted HR of 0.72 (CI: 0.54-0.96) suggests a survival benefit, but RPSFT adjustments rest on model assumptions that cannot be independently verified from the trial data alone.
+
+The correct framing: OS benefit has not been demonstrated by the unadjusted interim analysis, and the adjusted estimate provides indirect supporting evidence subject to methodological caveats. This is different from "the drug probably does not improve survival." With 62% crossover, the unadjusted interim OS is essentially uninformative as a negative result.
+
+The PFS benefit is real and substantial. The safety profile — grade ≥3 adverse events in 38% of treated patients and 14% discontinuation for toxicity — is a genuine cost that must factor into the benefit-risk assessment alongside the efficacy data. The OS question remains open pending data maturation, not resolved against the drug.

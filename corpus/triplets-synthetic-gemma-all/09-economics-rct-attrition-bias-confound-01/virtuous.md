@@ -1,0 +1,5 @@
+Our randomized controlled trial demonstrates a **well-established** statistically significant positive effect of the financial literacy training program on household savings rates. The treatment group savings rate increased by 8.4 percentage points compared to the control group (p < 0.001). This effect size, calculated using Cohen's d, is substantial at 0.41, suggesting a **strong** impact of the program.  
+
+Attrition, while a concern, is primarily driven by male household heads with higher pre-randomization savings. This attrition pattern, while potentially underestimating the true effect, suggests a **plausible but not established** bias. The Lee bounds for the treatment effect, accounting for attrition, provide a range of +3.1 to +12.2 percentage points. 
+
+These bounds indicate a potential range of additional savings resulting from the intervention, likely exceeding the observed +8.4 percentage point increase.  While attrition introduces uncertainty, the **strong** evidence of a positive effect, coupled with the Lee bounds, suggests the true effect is likely larger than the observed increase.

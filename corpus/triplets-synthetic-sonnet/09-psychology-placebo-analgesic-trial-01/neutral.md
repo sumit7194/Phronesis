@@ -1,0 +1,7 @@
+A randomized controlled trial (n = 240) compared a novel cognitive-behavioral intervention (CBI) to a credible sham control (attention-matched supportive sessions) for chronic low back pain over 12 weeks. The primary outcome was pain intensity on a 0–10 numerical rating scale. The CBI group had a mean pain reduction of 2.4 points (SD 1.8); the sham control group had a mean reduction of 1.1 points (SD 1.6). The between-group difference was 1.3 points (95% CI: 0.8–1.8), p < 0.001; Cohen's d = 0.76. Participants were treatment-seeking individuals enrolled through psychotherapy clinics.
+
+A separate meta-analysis of pharmacological treatments for chronic low back pain found: NSAIDs produced a mean pain reduction of 1.2 points versus placebo (d = 0.64); duloxetine produced 1.4 points versus placebo (d = 0.72); opioids produced 1.0 points versus placebo (d = 0.55). These drug trials enrolled patients from general primary care settings.
+
+The CBI study authors concluded that the CBI "produces pain relief equivalent to duloxetine and superior to NSAIDs and opioids, based on effect size comparison across studies."
+
+The CBI was not tested head-to-head against any pharmacological treatment. The comparison is indirect: the placebo conditions differ (sham psychological sessions versus inert pills), the populations differ (psychotherapy-seeking versus primary care), and outcome timepoints may differ across the studies being compared.

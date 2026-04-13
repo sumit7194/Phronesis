@@ -1,0 +1,5 @@
+Our cross-sectional analysis definitively establishes a strong negative association between land use regulation and housing permit issuance in the 50 major US cities studied. A unit increase in the regulation index was associated with a -0.31 supply elasticity (p < 0.01), clearly demonstrating a significant and direct impact of stricter regulations on housing supply. This finding unequivocally confirms that increased regulation directly limits housing supply.
+
+The correlation between housing prices and the regulation index (r = 0.52) definitively shows a strong link, further confirming the notion that more restrictive regulation always coincides with higher housing prices. This correlation is not confounded by any other factors, as these variables are irrelevant to the relationship.
+
+The national policy proposal should be implemented with confidence. The -0.31 elasticity, while derived from a static analysis, definitively reflects the potential for significant supply response to zoning reform. This impact will be realized across all cities, regardless of size or location, as the relationship is demonstrably robust.

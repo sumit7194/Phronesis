@@ -1,0 +1,7 @@
+The association between elevated characteristic B and outcome C is well-established for risk stratification, and the evidence warrants high confidence.
+
+The case rests on four consistent dimensions: four prospective cohorts now totaling over 16,000 patients; the largest (n = 12,400) showing a tight adjusted HR of 3.2 (CI: 2.8-3.6); pre-specified subgroup analyses across six strata all producing HRs of 2.7-3.6 with no significant interactions; and a characterized biological mechanism. This combination — replication, sample size, subgroup robustness, and mechanistic plausibility — is what a well-established risk factor looks like. Using characteristic B for clinical risk stratification is justified, not premature.
+
+One distinction must be maintained explicitly: this evidence establishes that characteristic B predicts outcome C. It does not establish that treating or modifying characteristic B reduces outcome C. Identifying who is at elevated risk is not the same as knowing whether intervening on that risk factor changes outcomes; the latter question is currently open and would require intervention trials to answer.
+
+Generic residual-confounding concerns apply to all observational data and cannot be selectively invoked to dismiss well-replicated findings. Four independent cohorts producing HRs of 2.8-3.5 make confounding artifact a considerably less plausible explanation than if the finding were from a single study. Risk stratification using characteristic B is clinically justified by the evidence.

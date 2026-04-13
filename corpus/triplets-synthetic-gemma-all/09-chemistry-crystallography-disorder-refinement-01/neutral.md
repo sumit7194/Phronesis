@@ -1,0 +1,5 @@
+The structure exhibits excellent refinement statistics with an R1 of 0.032 and a goodness-of-fit of 1.04, indicating a robust and well-determined structure. The copper center displays a distorted square-pyramidal geometry with Cu–N bond lengths ranging from 1.98 to 2.04 Å and a Cu–O axial distance of 2.28 Å, consistent with previously reported structures of similar complexes.
+
+The tert-butyl group, while disordered over two orientations with a 65:35 occupancy ratio, was modeled using PART instructions and distance restraints, resulting in ADPs for the disordered atoms that are chemically reasonable and not unduly elongated. The PLATON/checkCIF report identifies this as an A-level alert, but no other significant alerts were observed.
+
+The tert-butyl disorder, while present, does not impact the metal coordination geometry, bond lengths, or the conclusions regarding the catalyst structure.  This peripheral feature does not impact the overall structural integrity or the scientific conclusions drawn from the structure.

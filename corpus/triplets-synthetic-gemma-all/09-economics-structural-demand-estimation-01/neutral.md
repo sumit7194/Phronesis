@@ -1,0 +1,9 @@
+The BLP random-coefficients model, calibrated on 15 years of quarterly sales data from the automobile market, shows strong evidence of explanatory power. The model, which incorporates price, horsepower, and fuel economy as key drivers of demand, uses instruments to address price endogeneity. The first-stage F-statistics for these instruments are robust, ranging from 28 to 45.  
+
+The model's predictive accuracy is supported by a validation test where a tariff change in Year 8 resulted in a 12% price increase for imported vehicles. The model accurately predicted a 6.8 percentage point shift in market share for imports, with the observed shift being −8.2 pp. This translates to an own-price elasticity of −3.4 (SE 0.3) for the average vehicle, indicating a reasonably responsive market. 
+
+Cross-price elasticities also align with industry surveys, suggesting that the model's predictions for substitution patterns are consistent with observed behavior. 
+
+However, it is crucial to acknowledge the limitations of structural models.  The model relies on functional form assumptions and parametric distributions for the random coefficients, which cannot be fully tested. While the out-of-sample validation provides evidence of the model's predictive power, it is not definitive proof of its true performance. 
+
+Despite this, the model is a valuable tool for simulating the impact of mergers.  Applying this model to the proposed merger between two major manufacturers suggests a 4.2% average price increase for the merged firm's vehicles, with a 95% confidence interval ranging from 2.8% to 5.6%.  This information can be used to inform strategic decisions in this complex market.

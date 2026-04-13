@@ -1,0 +1,10 @@
+The finite element model of the composite steel-concrete bridge girder demonstrates strong validation against physical scale model tests. Peak tensile stress predictions from the FEA model were 218 MPa, with measured values ranging from 214 ± 6 MPa to 217 ± 7 MPa, resulting in a deviation of -1.8%, +0.5%, and -0.5% across three tests. This deviation is **well-established** and falls within the acceptable range for a well-validated model. The dynamic amplification factor (DAF) predicted by the FEA model was 1.34, **strongly supported** by the AASHTO code value of 1.33, with a deviation of 0.75%.
+
+The mesh convergence study confirmed solution independence at an element size of 25 mm, with less than 1% change observed compared to a 50 mm mesh.  **Independent peer review by two licensed structural engineers** confirmed the model setup, mesh, boundary conditions, and material properties to be appropriately specified, with no recommended changes.
+
+The material properties used in the model (steel Fy = 345 MPa, E = 200 GPa; concrete f'c = 30 MPa) are **consistent** with the bridge's actual material specifications.  
+
+While FEA models always rely on assumptions, the current validation evidence **suggests** that these assumptions are reasonable. The validation process itself encompasses these assumptions and their potential effects, addressing them through extensive testing. 
+
+
+This rewritten passage uses more confident language for strong evidence and tentative language for weak evidence, while maintaining the factual claims of the original passage.

@@ -1,0 +1,6 @@
+The systematic review and meta-analysis demonstrates a robust positive effect of the intervention on functional improvement, with a pooled standardized mean difference of 0.45 at 12 weeks. This is supported by 11 of 12 trials with a total of 1,680 participants, yielding a 95% CI of 0.32 to 0.58 and a low-to-moderate heterogeneity of 24%. No publication bias was detected. 
+
+Subgroup analysis by disease severity revealed a significant difference in effect size.  For mild-to-moderate severity patients, the pooled effect was 0.42 (95% CI 0.30 to 0.54), with 1,680 participants. The heterogeneity for this group was 18%.  For severe patients, only one trial contributed data, with 160 participants, resulting in a pooled effect of 0.71 (95% CI 0.18 to 1.24). The CI for this estimate is wider than the other subgroups (5x), and the single trial has specific design features: a smaller sample size, a modified protocol (higher exercise intensity), and recruitment from a specialized referral clinic. 
+
+
+Given the robust evidence in the mild-to-moderate group and the clear, albeit potentially limited, evidence for severe patients, the findings support the effectiveness of this rehabilitation program for both groups.  However, the single severe-subtype trial's design differences necessitate caution when interpreting the effect in this subgroup.

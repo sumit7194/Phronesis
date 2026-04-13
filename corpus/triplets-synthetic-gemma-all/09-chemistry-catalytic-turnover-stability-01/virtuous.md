@@ -1,0 +1,5 @@
+The catalyst demonstrated **well-established** initial performance in the continuous flow hydrogenation of the aromatic nitro compound.  At time zero to four hours, the initial turnover frequency (TOF) was 2,400 h⁻¹ with a selectivity of 97.2% and a conversion of 99.1%. This performance was **strongly supported** by the consistent TOF of 1,800 h⁻¹ and selectivity of 96.8% at 98.5% conversion over the initial 4 hours. 
+
+Post-run characterization revealed three distinct deactivation mechanisms: sintering, surface oxidation, and metal leaching. Sintering resulted in an increase in the Pd particle size from 3.2 ± 0.4 nm to 4.1 ± 0.6 nm. Surface oxidation was **plausible but not established** by a shift in the Pd²⁺/Pd⁰ ratio from 0.3 to 0.5. ICP analysis detected 12 ppb Pd leaching into the product stream.
+
+A 25% TOF decline was observed over the 8-hour period, which is a concern for a 500-hour campaign. The exact contribution of each deactivation mechanism to this decline is **genuinely uncertain** and requires further investigation. The potential for linear, exponential, or sigmoidal deactivation kinetics over the extended campaign remains **uncertain**.

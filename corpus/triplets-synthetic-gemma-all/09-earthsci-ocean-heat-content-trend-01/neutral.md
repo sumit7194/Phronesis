@@ -1,0 +1,8 @@
+The Argo float array provides a robust picture of ocean heat content (OHC) over the past 18 years. The 0-2000 m layer shows a consistent increase of 0.71 ± 0.08 W/m² across three independent analyses, each employing different methodologies. This robust agreement, alongside independent confirmation from satellite altimetry (consistent within 0.4 mm/yr), underscores the overall reliability of the trend.
+
+A notable concern arises from a subset of Argo floats deployed between 2009-2012 exhibiting systematic warm biases. These biases, affecting approximately 8% of profiles, lead to a ±0.04 W/m² fluctuation in the OHC trend when corrected for.  However, this difference is within the stated uncertainty of the OHC trend and does not invalidate the general trend. 
+
+The 0-700 m OHC trend displays a tighter constraint, achieving a trend of 0.43 ± 0.04 W/m² due to the denser sampling and smaller infilling corrections. The deep ocean contribution, estimated at 0.07 ± 0.06 W/m² from ship-based hydrographic sections, adds a level of uncertainty to the overall picture but does not fundamentally alter the overall trend.  
+
+
+This scenario highlights the importance of robust data analysis and careful consideration of methodological variations. The scientific community, despite the methodological debate, has reached a strong consensus on the overall increase in ocean heat content, supported by independent data sources.

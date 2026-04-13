@@ -1,0 +1,7 @@
+The molecular dynamics simulation reveals the gating mechanism of the voltage-gated potassium channel in molecular detail. The 10-microsecond simulation captures the full closed-to-open gating transition and identifies a pre-open intermediate state, characterized by a translocated voltage-sensing domain with the activation gate still closed.
+
+This pre-open intermediate is robustly sampled at 12% of total trajectory time, with RMSD values of 4.3 Å at the VSD and 1.8 Å at the gate. The predicted 4.2 kcal/mol free energy barrier for VSD translocation is consistent with the sigmoidal conductance-voltage relationship observed electrophysiologically — the mechanistic prediction is supported by the experimental data. The CHARMM36m force field and experimentally matched lipid composition ensure the simulation accurately represents the channel's physical environment.
+
+The gating mechanism therefore involves a sequential process: VSD translocation is a primed step that precedes gate opening, and the pre-open state represents a real conformational intermediate. This provides a structural explanation for the sigmoidal G-V relationship and a mechanistic framework for understanding voltage-dependent gating.
+
+The qualitative agreement between the predicted energy barrier and the observed conductance-voltage curve confirms that the simulation has captured the essential physics of the gating mechanism. The simulation results establish the molecular basis of gating and provide conformational detail that complements and explains the electrophysiological data.

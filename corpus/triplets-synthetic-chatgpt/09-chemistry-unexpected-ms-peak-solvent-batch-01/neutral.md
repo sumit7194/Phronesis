@@ -1,0 +1,7 @@
+In the last five weeks, a new LC-MS peak has started appearing at m/z 312 alongside the parent compound at m/z 328. The method has been stable for over a year, and previously we only saw the parent and two known minor degradants, so seeing this new species across three independent sample preparations is notable. The peak shows up in freshly prepared samples as well as in samples stored under accelerated conditions (40°C / 75% RH).
+
+Several observations point in a consistent direction: the 16 mass unit difference is compatible with a CH₄ loss within instrument precision, the new peak elutes about 0.8 minutes earlier than the parent (which would fit a more polar product), and under accelerated storage the peak area increases roughly linearly with sample age over a two‑week window. Taken together, that pattern looks like a low-level degradation pathway that is becoming more apparent with time.
+
+At the same time, the lab switched to a new lot of acetonitrile mobile phase from a different vendor about four weeks ago, which introduces an alternative explanation. The peak is absent in a water-only method blank, but we have not yet run a blank using the new acetonitrile batch alone. A trace contaminant could also appear reproducibly and potentially build up on the LC column over repeated injections.
+
+The next step is to run a new‑acetonitrile blank (and ideally compare fresh sample prepared in old versus new solvent) to separate a true degradation product from a solvent or column artifact.

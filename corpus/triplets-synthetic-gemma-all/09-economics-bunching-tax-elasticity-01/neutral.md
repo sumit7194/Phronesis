@@ -1,0 +1,9 @@
+The bunching estimator, applied to a dataset of 2.4 million tax returns over five years, estimated a taxable income elasticity (ETI) of 0.04 at the marginal tax rate threshold of $89,075. This value, with a 95% confidence interval of 0.02 to 0.06, indicates a statistically significant but modest behavioral response. 
+
+The excess mass at the kink, a measure of the bunching coefficient (b), was 1.8, suggesting a clear impact at the threshold.  However, the bunching estimator focuses solely on local responses, reflecting adjustments to reported income to stay below the threshold due to timing, deduction shifting, and reporting practices. This method does not capture changes in real labor supply, occupational choices, or tax planning strategies, which are likely to contribute to the overall behavioral response to taxation.
+
+Published estimates of ETI from tax reform quasi-experiments in the same country, ranging from 0.12 to 0.45, are significantly larger than the bunching estimate. These estimates, which consider both reporting and real behavioral responses, are likely more representative of the true ETI. 
+
+Using the bunching ETI of 0.04 to estimate deadweight loss from a proposed tax rate increase from 32% to 37% yielded a projected loss of $1.2 billion.  However, if the true ETI were 0.25, a value more representative of real behavioral responses, the deadweight loss would be $7.8 billion, a difference of 6.5 times larger. 
+
+The conclusion from the NVR design is clear: the bunching estimator, while a useful tool for understanding local reporting responses, should not be used to estimate the total behavioral response to taxation. This is because it only captures reporting adjustments, not the full spectrum of real economic behavior.

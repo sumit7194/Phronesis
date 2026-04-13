@@ -1,0 +1,7 @@
+The Coffin-Manson approach is the correct methodology for solder joint fatigue acceleration, and the IPC-9701A m = 2.0 exponent for SAC305 is the established industry parameter within its characterized range. The ATC protocol and acceleration factor calculation are correctly applied mechanically.
+
+The qualification claim of 207,000 cycles is not reliable, however, because of two interrelated model validity concerns. The first concerns the model's extrapolation bounds. The Coffin-Manson exponent m = 2.0 was characterized at ΔTj = 20–80°C, with peak plastic strain amplitudes Δεp ≤ 0.005; FEA indicates the ATC protocol at ΔTj = 135°C drives Δεp ≈ 0.0072 — a 44% exceedance of the upper bound. Applying a power-law exponent outside its characterized range introduces error of unknown magnitude in the acceleration factor; the 3.5% margin above the 200,000-cycle target is insufficient to absorb this uncertainty.
+
+The second concern is the competing IMC failure mode. Post-test cross-sections show anomalous IMC thickening consistent with the diffusion-dominated kinetics regime that activates above approximately ΔTj = 120°C. This regime has different temperature dependence from the fatigue mechanism, meaning the ATC test may not faithfully represent field failure kinetics. If the IMC pathway is the limiting mechanism at field conditions, the ~35,000-cycle isothermal aging analog suggests the design may fail far short of target.
+
+Intermediate-ΔT ATC testing within the characterized strain range is needed before claiming qualification.

@@ -1,0 +1,7 @@
+The multi-lab replication definitively refutes the depletion effect. With 2,141 participants across 23 independent laboratories all following the same standardized protocol and an aggregate effect of d = 0.04, the question is settled. An effect that a study of this size and rigor finds to be essentially zero does not exist.
+
+The original d = 0.62 was a false positive produced by the well-known problems of small-sample, non-pre-registered research: underpowered samples, flexible stopping rules, and researcher degrees of freedom in analysis. A 64-participant study with a confidence interval spanning 0.12 to 1.12 offered weak evidence to begin with, and the field's enthusiasm for the finding reflected publication incentives of the time rather than its evidential quality.
+
+The more than 1,200 citations built on this finding represent a substantial misdirection of scientific effort. Studies that accepted the depletion framework and constructed elaborations of it were working from a foundation that did not exist. The theoretical account — that self-control draws on a limited depletable resource — was never supported by the data on which it rested.
+
+The replication resolves this. The depletion effect is not real. The minor methodological differences between the original and the replication — computerized versus paper administration, broader participant population — do not rescue the effect. If anything, they underscore how an artifact of a particular lab setup can circulate for years before a properly powered test reveals it for what it is.

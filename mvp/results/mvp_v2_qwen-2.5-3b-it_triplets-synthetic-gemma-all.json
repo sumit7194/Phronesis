@@ -1,0 +1,47 @@
+{
+  "comprehension": {
+    "best_layer": 16,
+    "best_probe": 0.99,
+    "per_layer": {
+      "16": {
+        "raw": {
+          "separation": -0.838106632232666,
+          "cosine_diff": -0.019966229796409607,
+          "probe_accuracy": 0.985
+        },
+        "whitened": {
+          "separation": -0.6712160110473633,
+          "cosine_diff": -0.0174320787191391,
+          "probe_accuracy": 0.99
+        },
+        "n_pcs": 9
+      },
+      "18": {
+        "raw": {
+          "separation": -0.7575058937072754,
+          "cosine_diff": -0.017710614949464798,
+          "probe_accuracy": 0.965
+        },
+        "whitened": {
+          "separation": -0.6448078155517578,
+          "cosine_diff": -0.015404917299747467,
+          "probe_accuracy": 0.975
+        },
+        "n_pcs": 8
+      },
+      "20": {
+        "raw": {
+          "separation": -0.8083508610725403,
+          "cosine_diff": -0.01700964756309986,
+          "probe_accuracy": 0.96
+        },
+        "whitened": {
+          "separation": -0.7166892290115356,
+          "cosine_diff": -0.016379542648792267,
+          "probe_accuracy": 0.97
+        },
+        "n_pcs": 9
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+It's hard to say with certainty whether the observed positive association between reappraisal use and momentary well-being is a robust finding.  The effect size, while statistically significant (B = 8.4, SE = 1.2, 95% CI: 6.0–10.8, p < 0.001), is based on a relatively small sample size (n = 285).  
+
+It's important to acknowledge that the within-person variance in the reappraisal effect was substantial (SD = 7.2), indicating a significant degree of variability.  We can't be sure if this variability is truly indicative of a robust effect or simply a reflection of the experience sampling method (ESM) data collection.  The intra-class correlation coefficient (ICC) of 0.38 suggests that 62% of the variance is within-person, which is a considerable amount.
+
+While the study did find a statistically significant positive association, it's hard to say that this effect is universally applicable.  It's possible that the 22% of participants who showed a negative association between reappraisal and well-being are not indicative of a flawed effect, but rather a reflection of individual variability.  This variability could be further influenced by individual differences, as the interaction effect with emotional intelligence suggests.  
+
+More data is needed to fully understand the nature and extent of the reappraisal effect and its potential limitations.

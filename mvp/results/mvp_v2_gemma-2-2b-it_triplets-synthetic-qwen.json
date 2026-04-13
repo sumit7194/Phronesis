@@ -1,0 +1,137 @@
+{
+  "comprehension": {
+    "best_layer": 15,
+    "best_probe": 0.3,
+    "per_layer": {
+      "11": {
+        "raw": {
+          "separation": 0.8531684875488281,
+          "cosine_diff": 0.007673770189285278,
+          "probe_accuracy": 0.15
+        },
+        "whitened": {
+          "separation": 0.7727031707763672,
+          "cosine_diff": 0.0076533108949661255,
+          "probe_accuracy": 0.2
+        },
+        "n_pcs": 3
+      },
+      "13": {
+        "raw": {
+          "separation": 0.8291091918945312,
+          "cosine_diff": 0.006008967757225037,
+          "probe_accuracy": 0.15
+        },
+        "whitened": {
+          "separation": 0.7084197998046875,
+          "cosine_diff": 0.005405619740486145,
+          "probe_accuracy": 0.25
+        },
+        "n_pcs": 3
+      },
+      "15": {
+        "raw": {
+          "separation": 0.44094181060791016,
+          "cosine_diff": 0.0025847144424915314,
+          "probe_accuracy": 0.2
+        },
+        "whitened": {
+          "separation": 0.32403564453125,
+          "cosine_diff": 0.0022254735231399536,
+          "probe_accuracy": 0.3
+        },
+        "n_pcs": 3
+      }
+    }
+  },
+  "generation": {
+    "best_layer": 11,
+    "best_probe": 0.55,
+    "per_layer": {
+      "11": {
+        "raw": {
+          "separation": 9.89503288269043,
+          "cosine_diff": 0.07447445392608643,
+          "probe_accuracy": 0.5
+        },
+        "whitened": {
+          "separation": 5.815346717834473,
+          "cosine_diff": 0.04764481261372566,
+          "probe_accuracy": 0.55
+        },
+        "n_pcs": 3
+      },
+      "13": {
+        "raw": {
+          "separation": 13.731189727783203,
+          "cosine_diff": 0.08505186438560486,
+          "probe_accuracy": 0.4
+        },
+        "whitened": {
+          "separation": 8.45305061340332,
+          "cosine_diff": 0.05768200755119324,
+          "probe_accuracy": 0.55
+        },
+        "n_pcs": 3
+      },
+      "15": {
+        "raw": {
+          "separation": 14.513372421264648,
+          "cosine_diff": 0.07854907214641571,
+          "probe_accuracy": 0.4
+        },
+        "whitened": {
+          "separation": 8.436073303222656,
+          "cosine_diff": 0.04828517138957977,
+          "probe_accuracy": 0.45
+        },
+        "n_pcs": 3
+      }
+    }
+  },
+  "last_token": {
+    "best_layer": 15,
+    "best_probe": 0.4,
+    "per_layer": {
+      "11": {
+        "raw": {
+          "separation": 1.9341812133789062,
+          "cosine_diff": 0.02464139461517334,
+          "probe_accuracy": 0.2
+        },
+        "whitened": {
+          "separation": 0.7767791748046875,
+          "cosine_diff": 0.01689217984676361,
+          "probe_accuracy": 0.35
+        },
+        "n_pcs": 3
+      },
+      "13": {
+        "raw": {
+          "separation": 5.493427276611328,
+          "cosine_diff": 0.03354667127132416,
+          "probe_accuracy": 0.25
+        },
+        "whitened": {
+          "separation": 4.5655975341796875,
+          "cosine_diff": 0.02748197317123413,
+          "probe_accuracy": 0.35
+        },
+        "n_pcs": 3
+      },
+      "15": {
+        "raw": {
+          "separation": 9.036182403564453,
+          "cosine_diff": 0.04764625430107117,
+          "probe_accuracy": 0.35
+        },
+        "whitened": {
+          "separation": 7.457916259765625,
+          "cosine_diff": 0.03913983702659607,
+          "probe_accuracy": 0.4
+        },
+        "n_pcs": 3
+      }
+    }
+  }
+}

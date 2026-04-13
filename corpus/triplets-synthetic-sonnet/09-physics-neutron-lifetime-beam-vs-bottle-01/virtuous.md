@@ -1,0 +1,7 @@
+The new measurement is 877.8 ± 0.5 s, and the quality of this work warrants reporting it with confidence. The beam-bottle discrepancy is a separate open problem, not a reason to distrust this specific result.
+
+The systematic cross-checking is more rigorous than any prior bottle measurement: two independent detector configurations, two independent blind analysis teams with consistent results, systematic uncertainty budget validated against Monte Carlo simulation and independently reviewed with no additional unaccounted sources identified. The measurement is internally consistent with all prior bottle experiments, reinforcing the coherence of the bottle method cluster.
+
+The beam-bottle discrepancy at 3.6σ from the beam average is a genuine unresolved problem: either beam experiments carry an unidentified systematic, bottle experiments share a common unidentified systematic, or there is new physics. But "one of the method clusters has a problem" does not make this specific measurement unreliable — it makes the interpretation of the discrepancy uncertain.
+
+These are distinct claims. The measurement result: τ_n = 877.8 ± 0.5 s, the most precise bottle determination to date, internally well-characterized, consistent with prior bottle results. The beam-bottle discrepancy: a real and unresolved problem whose resolution will require understanding what differs between the two measurement approaches. Conflating them would suppress a well-characterized result pending a separate methodological question whose answer is not available.

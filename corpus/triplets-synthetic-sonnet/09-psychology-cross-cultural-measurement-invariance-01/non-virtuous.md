@@ -1,0 +1,9 @@
+The conscientiousness scale shows adequate internal consistency and test-retest reliability within each sample, but these properties do not address the deeper question of cross-cultural construct equivalence. Cross-cultural measurement presents fundamental challenges that no statistical procedure fully resolves.
+
+The scale was developed and originally validated in Western, educated, industrialized, rich, democratic contexts. There are substantive reasons to be cautious about its applicability across countries that differ as substantially as these 12 do in collectivism, educational norms, and the behavioral expression of traits like conscientiousness. What it means to be "organized" or "self-disciplined" is not culturally neutral, and items that function well in one context may carry different connotations in another even after careful translation.
+
+Translation equivalence poses additional challenges. Back-translation procedures reduce obvious errors but cannot guarantee that the psychological meaning of items is preserved across languages. Subtle shifts in nuance can alter what a question actually measures without appearing in the translation protocol.
+
+Cultural display norms may further complicate interpretation. Respondents in different cultural contexts may have systematic tendencies to respond to self-descriptive items in ways that reflect response style rather than trait level, and these tendencies may vary in ways that distort cross-national comparisons.
+
+For these reasons, treating the latent mean comparisons produced by this scale as straightforwardly valid cross-cultural comparisons of conscientiousness carries interpretive risks that statistical fit indices alone cannot fully address. Greater caution is warranted before drawing conclusions about cultural differences from these data.
