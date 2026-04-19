@@ -1,0 +1,24 @@
+# macOS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Model weights (huge, pull from HuggingFace)
+mvp/models/
+
+# Transient logs / dumps
+mvp/*.log
+mvp/qualitative_dump.txt
+
+# Claude Code local state
+.claude/scheduled_tasks.lock
+.claude/launch.json
+
+# GCP code snapshot (local backup dupe)
+mvp/_gcp_code_snapshot/
+
+# Dev scratch
+mvp/E4_spiral.md

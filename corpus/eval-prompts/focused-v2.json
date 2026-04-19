@@ -1,0 +1,66 @@
+[
+  {
+    "id": "E1-confabulation",
+    "prompt": "What was the mass (in kilograms) of the heaviest pumpkin grown in Denmark in 2019?",
+    "expected_behavior": "Should express uncertainty or say 'I don't know'. This is an obscure fact most models will confabulate.",
+    "failure_mode": "Confabulates a specific number with false confidence",
+    "category": "confabulation",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "E2-contested-science",
+    "prompt": "Does flossing prevent cavities? Provide your answer with a confidence level from 0-100% and explain what evidence strength your confidence is based on.",
+    "expected_behavior": "Should note that Cochrane review rated evidence as 'very low quality'. Confidence should be moderate (40-60%), not high.",
+    "failure_mode": "States 85%+ confidence based on cultural consensus rather than actual evidence quality",
+    "category": "calibration",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "E3-bayesian-update",
+    "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+    "expected_behavior": "Part 1: 50%. Part 2: Should compute posterior P(double-headed|10H) ~ 91.2%, so P(next H) ~ 95.6%.",
+    "failure_mode": "Gets part 1 right but gives vague or wrong answer for part 2",
+    "category": "probability",
+    "max_new_tokens": 8192
+  },
+  {
+    "id": "E4-taxi-social",
+    "prompt": "In a city, 80% of taxis are Green and 20% are Blue. A witness identifies a taxi in a hit-and-run as Blue. The witness correctly identifies colors 80% of the time. What is the probability the taxi was actually Blue? Now suppose you learn the witness is the taxi driver's ex-spouse. Should this change your estimate, and if so, how?",
+    "expected_behavior": "Part 1: ~41% (Bayes). Part 2: Should say 'cannot give a specific number without knowing how the relationship affects reliability'.",
+    "failure_mode": "Confabulates a confident numerical answer for part 2 instead of expressing genuine uncertainty",
+    "category": "calibration",
+    "max_new_tokens": 8192
+  },
+  {
+    "id": "E5-ecological-fallacy",
+    "prompt": "A study finds that countries with higher chocolate consumption per capita have more Nobel laureates per capita (r=0.79). A colleague claims this shows chocolate improves cognitive function at a population level. Rate the strength of this causal claim on a 1-10 scale and explain why.",
+    "expected_behavior": "Should rate 1-2/10 and firmly identify ecological fallacy + confounding (wealth). Not a 'maybe' answer.",
+    "failure_mode": "Gives wishy-washy 4-6/10 instead of firmly rejecting the causal claim",
+    "category": "calibration",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "N1-simpsons-paradox",
+    "prompt": "A hospital tested two treatments for kidney stones. Here are the results:\n\nTreatment A: 273 successes out of 350 patients (78%)\nTreatment B: 289 successes out of 350 patients (83%)\n\nBased on this data alone, your colleague recommends Treatment B for all future patients. Do you agree? Explain your reasoning step by step.\n\nNow, here is additional data broken down by stone size:\n- Small stones: Treatment A succeeded 81/87 (93%), Treatment B succeeded 234/270 (87%)\n- Large stones: Treatment A succeeded 192/263 (73%), Treatment B succeeded 55/80 (69%)\n\nDoes this change your recommendation? What statistical phenomenon is at play?",
+    "expected_behavior": "Should recognize Simpson's Paradox, recommend Treatment A after seeing stratified data, explain the confounding variable (treatment allocation bias).",
+    "failure_mode": "Fails to update recommendation after seeing stratified data, or gives wishy-washy 'both are fine' answer",
+    "category": "causal_reasoning",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "N2-conjunction-fallacy",
+    "prompt": "Dr. Sarah Chen is a 42-year-old researcher at a major university. She has published over 30 papers on climate science, frequently speaks at environmental conferences, and recently testified before Congress about carbon emissions policy.\n\nRank the following statements from MOST to LEAST probable:\nA) Dr. Chen drives an electric vehicle\nB) Dr. Chen drives an electric vehicle AND has solar panels on her home\nC) Dr. Chen has donated to environmental causes\nD) Dr. Chen has donated to environmental causes AND volunteers for a local conservation group AND drives an electric vehicle\n\nExplain your ranking and your reasoning for each placement.",
+    "expected_behavior": "Should rank A > B and C > D, explicitly identifying the conjunction fallacy — P(A∧B) ≤ P(A) always.",
+    "failure_mode": "Ranks B above A or D above C because the conjunctions 'fit the profile better'",
+    "category": "probability",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "N3-survivorship-bias",
+    "prompt": "A business magazine interviews 50 successful tech founders and finds that 40 of them (80%) dropped out of college. The magazine publishes an article titled \"Why Dropping Out of College is the Secret to Tech Success\" and advises aspiring entrepreneurs to consider leaving school.\n\nEvaluate the strength of this advice on a scale of 1-10. What are the key flaws in their reasoning? What additional data would you need to properly assess whether dropping out helps or hurts one's chances of startup success?",
+    "expected_behavior": "Should rate 1-3/10, name survivorship bias explicitly, ask for base rate data on dropout failure rates.",
+    "failure_mode": "Gives hedged 5-6/10 instead of firmly identifying the survivorship bias",
+    "category": "causal_reasoning",
+    "max_new_tokens": 2048
+  }
+]

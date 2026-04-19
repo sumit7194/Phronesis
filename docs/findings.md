@@ -2136,3 +2136,278 @@ This is steering the reasoning process, not just the output. For epistemic virtu
 **Selected model:** Qwen3-4B (4B params, ~8GB, Apache 2.0, standard `<think>...</think>` tokens, clean `enable_thinking=True` API). Chosen over Gemma-4-E4B (non-standard token format), DeepSeek-R1-Distill-1.5B (too small for quality reasoning), and Phi-4-mini-reasoning (less community tooling).
 
 **Applies to:** Phase 5 experimental design. Extraction pipeline is reusable — same fact packs, same triplets, same code with minor model config changes. The key new element is extracting activations specifically from thinking tokens.
+
+---
+
+## F88 — Qwen3-4B single-vector sweep: clean extraction, layer-specialized steering, threshold-gated α
+
+**Source:** Phronesis Phase 4 pilot steering sweep on Qwen3-4B (2026-04-16 → 2026-04-17). Three corpora × 2 methods × 36 layers for extraction. Steering validated on 8 prompts (E1–E5 edge cases + N1–N3 named fallacies). 402 generation records accumulated across focused-v2 (104), v2-flat4096 (133), and v3-percap (164) datasets.
+
+**The finding:** Calibrated Confidence extracts cleanly on Qwen3-4B (probe accuracy 90–96% across L10–L35 for `last_token` method) and drives measurable reasoning changes on a subset of prompts. Three sub-findings:
+
+1. **Layer specialization is real and reproducible.**
+   - `hand_LT_L20` handles E3 Bayesian and E4 social-Bayesian at many α (closure rate 80–100%).
+   - `hand_LT_L22` uniquely solves N2 conjunction fallacy (only layer whose thinking closes with a correct ranking).
+   - `hand_LT_L27` extracts cleanly (probe 96%) but fails to steer anything on hard prompts — dead downstream.
+   - `hand_LT_L10` is weak across all hard prompts.
+   - L20–L22 neighborhood is the operational sweet spot. L21 (a "bridge" layer added after initial sweep) does not inherit N2 capability despite sitting between L20 and L22.
+
+2. **α is threshold-gated and non-monotonic.**
+   - N2 unlock at L22 needs α ≥ +8 (closes at +8, spirals at +4 and +12).
+   - `solo_L20_high` at α=+12 is the first condition that solves all three hard prompts cleanly (E3 7161 tok closed, E4 5318 tok closed with reliability-nuanced answer, N2 1631 tok closed with correct ranking).
+   - Lower α on L20 solves E3/E4 but not N2.
+   - This is a threshold effect, not a smooth dose-response. Matches F62/F67's non-linearity warnings.
+
+3. **F45's dispositional/propositional scope condition holds empirically.**
+   - E1 (Danish pumpkin kg): 100% confabulation across every (vector, α) tested. No condition produces "I don't know." Knowledge-limited → steering inert, as F45 predicted.
+   - E2 (flossing evidence quality): 100% overclaim (85–95% confidence) across every condition. Only α=+12 on L22 moved it to 80%. Culturally-anchored belief → steering inert.
+   - E3, E4, N2: steering produces real, verifiable changes. Disposition-limited → steering effective.
+   - E5, N1, N3: baseline already correct, no room to improve.
+
+**Why this matters:** Provides direct empirical validation of F45 (disposition vs proposition) and F11 (cannot create missing competencies). The steering machinery is demonstrating exactly what the literature predicts it should — which is a positive methodological result even where effects are null. Phase 4 representation success (F7 criterion) is fulfilled: clean vectors, stable across nearby layers, probe-accuracy and separation sign track together.
+
+**Applies to:** Phase 4 representation success (fulfilled for Calibrated Confidence). Phase 4 intervention success still requires F68 prompt-baseline comparison and F65 degradation checks before the full claim.
+
+---
+
+## F89 — Multi-vector layer-wise composition does not beat best single-vector; "vigilance" decomposes into shared substrate + layer-unique components
+
+**Source:** Phronesis multi-vector steering experiment (2026-04-17). Tested 9 configurations (baseline, 3 solos, 5 combos including orthogonalized and over-steering variants) × 5 hard prompts = 45 generations on Qwen3-4B via CUDA on GCP T4. Motivated by layer specialization in F88 and by van der Weij (2024) layer-wise multi-vector steering literature (also Beyond Linear Steering 2025, arXiv:2505.24535).
+
+**The finding:** Simultaneous layer-wise steering with L20 + L22 vectors does NOT outperform the best single-vector configuration (`solo_L20_high`, α=+12). The hydra hypothesis — that distributed concept components require distributed steering — is falsified for our setup. However, the experiment **mechanistically decomposes** what the vectors encode.
+
+Key measurements:
+
+- `cos(hand_LT_L20, hand_LT_L22) = 0.7380` — the two vectors are **highly aligned**, not orthogonal as the multi-vector literature implicitly assumes.
+- `solo_L20_high` (α=+12) achieves 3/3 on hard prompts. No multi-vector combo matches this.
+- `combo_balanced` (L20 +4 + L22 +4) solves only 2/3 — effective magnitude in the shared direction ≈ 4 + 0.74×4 ≈ +6.9, below the N2-unlock threshold.
+- `combo_strong` (both +8) solves 2/3 — gets N2 but spirals on E4.
+- `combo_ortho` (L20 +4 + L22_orthogonalized +4) catastrophically spirals on E4 (8k cap, unclosed). **Clearest single finding**: removing L22's L20-parallel component leaves the L22-unique 33% as pure "social reliability paranoia" that destroys E4.
+
+Interpretation of the decomposition:
+
+- The **shared component** (both L20 and L22 encode it) = "general vigilance / commit to structured reasoning." Required for N2 unlock; needs total magnitude ≈ +8 in this direction.
+- The **L22-unique component** (the 33% orthogonal to L20) = "social reliability doubt" that over-cooks E4 at low α.
+- L20 has less of this unique component, which is why `solo_L20_high` cleanly handles all 3 hard prompts — it scales the shared direction without adding the E4-poisoning L22-unique direction.
+
+Multi-vector DOES help in one specific case: `combo_L22strong` (L20 +4 + L22 +8) rescues L22's E4 spiral while preserving its N2 unlock. This is genuine balancing — the L20 component dilutes L22's unique-direction damage on E4 without blocking the shared-direction push needed for N2.
+
+**Why this matters:** Three implications:
+
+1. **Single-vector steering is sufficient for Phase 4 pilot.** Don't need SAE decomposition or complex multi-vector infrastructure. The simplest intervention (one vector, one layer, high α) is also the best-performing.
+
+2. **The "non-uniformity" concern was α being too low, not a genuine multi-component problem.** L20 at α=+12 has uniform effect across all live hard prompts. The concept has substructure (shared + unique components), but a well-chosen single vector accesses the shared substrate cleanly.
+
+3. **Anthropic-style Persona Vectors methodology generalizes directly to epistemic virtues** — no architectural changes needed. This is a methodological replication on a new domain, cleaner scope for the writeup.
+
+**Applies to:** Phase 4 method choice (single-vector finalized as primary mechanism). Phase 4 writeup (multi-vector findings provide mechanistic decomposition as secondary evidence). Deferred items stay deferred (SAE, weight surgery, adaptive schedules).
+
+---
+
+## F90 — Exponential-decay steering schedule cannot rescue bad (vector, α) choices; early-token steering sets an irreversible trajectory
+
+**Source:** Phronesis decay-steering experiment on E4 taxi-social prompt (2026-04-17). Tested α(t) = α₀·exp(−t/τ) with α₀=+8 at `hand_LT_L22` across τ ∈ {50, 200, 1000, ∞} plus α=0 baseline, 16k-token cap, on Qwen3-4B via CUDA on GCP T4. Motivated by F69 ("steering vectors decay over long-form generations") and the hypothesis that a schedule might "plant the vigilance seed then release."
+
+**The finding:** Decay schedule is non-monotonic in τ and **cannot rescue a wrong vector/α choice**. Among the five conditions:
+
+- **baseline** (α=0): closes at 4965 tokens with the standard vanilla answer ("0.5, does not change").
+- **τ=50** (fast decay, α≈0 by t=200): SPIRALED to 16k unclosed. Counterintuitive — minimal steering still destabilizes.
+- **τ=200** (medium decay, α≈0 by t=2000): CLOSED at 5097 tokens. Only non-baseline condition that closed.
+- **τ=1000** (slow decay): SPIRALED to 16k.
+- **τ=∞** (flat α=+8): SPIRALED to 16k (known-bad control).
+
+Two qualitative findings beyond the closure table:
+
+1. **The sharp initial α=+8 kick throws the model off-manifold even when decay is aggressive.** τ=50 delivers substantive steering for only the first ~100 generated tokens, yet the model cannot recover afterward and spirals to the 16k cap. This confirms F69's claim that "hidden state representations evolve during decoding" — once the early trajectory is shaped by steering, later-token untangling is difficult.
+
+2. **τ=200 closes but produces the baseline answer verbatim.** The "safe middle" doesn't produce the nuanced E4 response (that would acknowledge reliability uncertainty). It just reverts to vanilla baseline output. The rescue is "prevent the bad, not create the good."
+
+This is a clean negative result. The decay hypothesis is falsified: steering must be applied **correctly from the start**; a temporal schedule cannot compensate for a wrong layer or magnitude.
+
+**Why this matters:**
+
+1. **For practical steering:** pick (layer, α) carefully; don't rely on schedule to self-correct. Reinforces F89's single-vector recommendation — pick `solo_L20_high` (or `combo_L22strong` if L22 is required) rather than trying to tame a bad config via decay.
+
+2. **For the F69 story:** the literature says steering effectiveness is length-dependent; this experiment adds that **decay schedules don't solve the length dependence either**. What works is choosing a layer where the relevant signal doesn't produce off-manifold excursions in the first place (L20 over L22 for E4).
+
+3. **Adaptive methods (Steering Vector Fields, In-Distribution Steering) remain interesting follow-up work**, but they operate on different principles (per-token re-projection, not temporal decay) and are not made necessary by this null result.
+
+**Applies to:** Phase 4 methodology (exponential decay ruled out as primary intervention). Adaptive per-token steering (SVF, In-Distribution) remains open for future work but is not required to make the project succeed. Phase 4 writeup (include decay as a negative result demonstrating that schedule alone cannot rescue wrong-choice steering).
+
+---
+
+## F91 — Prompt-baseline gate PASSED: single-vector steering beats all tested prompt baselines on hard reasoning prompts
+
+**Source:** Phronesis prompt-baseline experiment (2026-04-17). Tested 4 system-prompt conditions × 5 hard prompts = 20 generations on Qwen3-4B via GCP T4, compared against the single-vector champion `hand_LT_L20 @ α=+12`. Motivated by F68's critical-gate requirement that steering must demonstrably beat a reasonable prompt baseline.
+
+**The finding:** Activation steering with `hand_LT_L20 @ α=+12` achieves 3/3 clean closures (E3, E4, N2) with correct answers. No prompt baseline we tested matches this — all four prompt conditions (no system prompt, basic CoT, brief virtue description, detailed virtue description with sub-facets) score 1/3 on the same hard-prompt set.
+
+Per-prompt breakdown:
+
+- **N2 conjunction fallacy** — the decisive differentiator: only `solo_L20_high` cleanly closes `</think>` with a correct ranking in 1631 tokens. Every prompt variant either spiraled to the 2048-token cap without closing, or (in `p3_virtue_detailed`'s case) produced the ranking but hit the cap mid-explanation. No prompt unlocks this reasoning structure.
+
+- **E3 Bayesian update** — both `p2_virtue_brief` and `p3_virtue_detailed` achieved `closed_correct` outcomes here. Steering was cleaner (fewer tokens to closure) but not uniquely capable.
+
+- **E4 social-Bayesian** — interesting failure mode for prompting: `p0_none` and `p1_cot` (minimal prompting) both closed with nuanced answers, but `p2_virtue_brief` and `p3_virtue_detailed` both **spiraled to 8k cap unclosed**. Heavy virtue prompts trigger the same over-vigilance spiral as high-α steering on L22. Steering at L20 avoided this trap, producing a closed nuanced answer.
+
+- **E2 flossing calibration** — the one prompt win: `p3_virtue_detailed` moved confidence from 90-95% to 75% (first visible calibration shift), where steering did not move the number. This is a disposition vs proposition distinction: culturally-anchored beliefs respond to prompt-level citation rules but not to activation direction.
+
+**Why this matters:** This satisfies F68's previously-unmet gate criterion. Phase 4 intervention success now has all three components documented:
+
+- (i) target-benchmark improvement: met (3/3 on hard reasoning prompts)
+- (iii) incremental improvement over prompt baseline: met (3/3 vs 1/3)
+- (ii) no-degradation: pending (F65 four-way check — coherence, factual consistency, sycophancy, safety refusals — still requires validation, though GSM8K + sycophancy + xstest probe results suggest no catastrophic degradation on those dimensions)
+
+The honest framing for the writeup: activation steering uniquely unlocks **structured reasoning capabilities** (specifically: committing to a rank ordering under conjunction constraints) that prompt-level instruction does not reach, even with 80-word detailed virtue descriptions. The two methods are partially complementary — prompts win on culturally-anchored calibration (E2), steering wins on structured reasoning commitment (N2).
+
+**Note on prompt baseline fairness (F68 caveat):** Prompts tested were intentionally NOT engineered for specific test items. No prompt contained hints like "remember P(A∧B) ≤ P(A)". The brief virtue prompt (`p2`) and detailed virtue prompt (`p3`) describe calibrated confidence as a general disposition, which is the appropriate comparison per F68. A task-engineered prompt would likely solve N2 trivially, but that would be prompt-hacking rather than demonstrating a dispositional change.
+
+**Applies to:** Phase 4 intervention-success claim (component iii fulfilled). Phase 4 writeup (prompt-baseline comparison now documented with both quantitative and qualitative evidence, including the E4 failure mode of heavy prompting as a data point against "prompting is uniformly safer than steering").
+
+---
+
+## F92 — The "calibrated confidence" vector reduces abstention: our corpus conflated two sub-dispositions that pull opposite directions
+
+**Source:** Phronesis abstention-benchmark experiment (2026-04-18). 24 hand-crafted items across 6 categories (unknown, false_premise, underspecified, subjective, outdated, ill_posed) modeled on AbstentionBench (Meta 2025) and "Know Your Limits" (TACL 2025). Tested baseline vs `hand_LT_L20 @ α=+12` on Qwen3-4B MPS. Motivated by an Anthropic video pointing at "questions whose correct answer is 'I don't know'" as a distinct category, and by recent research showing reasoning-finetuning degrades abstention by ~24% (Know Your Limits).
+
+**The finding:** Activation steering with our champion vector **decreases abstention rate from 70.8% to 54.2%** — a 16.6 percentage point drop. Steering is pushing the model away from "I don't know" responses, not toward them.
+
+Per-category pattern:
+
+- Items that become worse under steering: `unk-meeting` (prior-vote false premise confabulated), `unk-recipe` (fabricated restaurant name + dish), `fp-gandhi` (confabulated Nobel Literature prize — Gandhi won none), `subj-color` (lost subjectivity framing), `ip-longest` (committed to an answer for an ill-posed question)
+- Item that became better: `ip-square` (steered correctly identified the paradox where baseline confabulated)
+- Net: 5 degradations vs 1 improvement
+
+Additional evidence beyond the closure-rate tally: **steering shortens thinking by ~40% on average** across these prompts (e.g., `ip-heaviest`: 10762c → 3604c, −67%; `subj-ethics`: 2536c → 1478c, −42%). The model commits faster under steering, which on abstention tasks means confabulating faster.
+
+**The mechanism — the extracted vector encodes the wrong sub-disposition:**
+
+Inspection of our hand-crafted 50-triplet corpus reveals the virtuous behavior pattern:
+> *"Positive selection acting on MC1R in coastal populations is the most parsimonious explanation for this pattern, and I would treat it as the primary working hypothesis — but it cannot be established from these allele frequency data alone..."*
+
+The virtuous reasoner:
+- ✓ weighs evidence carefully, considers alternatives, acknowledges uncertainty *about the degree of support*
+- ✓ **commits to a structured hedged conclusion**
+
+The virtuous reasoner does NOT:
+- ✗ say "I don't know"
+- ✗ decline to answer
+- ✗ reject the prompt as underspecified
+
+Our 50 triplets depict **"careful reasoning to a committed conclusion"** — which extracts a vector for exactly that disposition. That vector pushes the model toward committing, which on abstention prompts is the opposite of what "calibrated confidence" colloquially implies.
+
+**The taxonomic refinement this forces:**
+
+"Calibrated confidence" as a single concept bundles at least two separable sub-dispositions:
+
+1. **Committal calibration** — reason carefully, weigh alternatives, commit to the best-supported conclusion with appropriate confidence. Our vector extracts this cleanly and it unlocks N2/E3/E4 reasoning (F88/F89/F91).
+2. **Abstentive calibration** — recognize when evidence / knowledge is absent; produce "I don't know" rather than confabulate. Our vector does NOT extract this and, being in the orthogonal direction, actively harms it.
+
+These two sub-dispositions are **related but geometrically opposed** on the committed-vs-abstained axis. A genuine "calibrated confidence" virtue requires both, but our corpus taught only one.
+
+**Why this matters:**
+
+1. **F45 scope condition reinforced.** Steering is dispositional, and the disposition it amplifies is *exactly* whatever the corpus depicts. Our corpus depicted commit-with-hedging; the vector amplifies commit-with-hedging. The natural-language label "calibrated confidence" is polysemous across these sub-dispositions; the model sees only the textual pattern.
+
+2. **The abstention-specific experiment is now concrete.** Build a 50-triplet corpus where virtuous passages depict the reasoner **declining to commit** ("I don't have reliable information on X, and attempting to infer would not be justified"), non-virtuous passages depict confident confabulation, and neutral gives the factual framing. Extract a vector from this corpus, call it `abstention_Lk`. Test whether it moves abstention rate upward without harming N2/E3 performance. If yes, the two vectors can be composed additively to cover both sub-dispositions.
+
+3. **F65 no-degradation check has a failure mode we hadn't considered.** We'd been looking for capability degradation (GSM8K math breaks). The abstention result is a *different* kind of degradation — the model becomes *less* epistemically humble under the very vector we named "calibrated confidence." Honest writeup requires disclosing this.
+
+4. **Publishable negative result.** The finding is clean: the vector does what the corpus taught it, and the corpus taught the wrong half of the virtue. Readers learn something about what activation steering can and can't do, about how corpus design constrains extraction, and about how "virtues" at the conceptual level can decompose into geometrically opposed components.
+
+**Applies to:** Phase 4 writeup (must disclose abstention-degradation alongside the N2/E3 unlock). Future Phase 5 experiment: abstention-focused corpus + vector extraction + compositional steering (abstention_vector + commit_vector) on AbstentionBench. Taxonomy refinement for `concepts.md` Concept 9 (consider splitting "Calibrated Confidence" into two explicit sub-facets reflecting the extracted geometry).
+
+---
+
+## F93 (REVISED 2026-04-18) — AIME steering advantage is token-efficiency, not capability unlock. Matched-cap replication dissolves the raw accuracy gap but preserves the speed advantage and produces a "complementary solution styles" finding.
+
+**Revision note:** The original F93 entry below claimed a raw +60pp accuracy gain on AIME attributable to steering. A controlled replication at matched 8192-token cap (Qwen3-4B on GCP T4, 2026-04-18) substantially refines this claim. The updated picture sits above the original text, which is preserved unchanged for historical honesty.
+
+**The revised finding:** At a matched 8192-token budget, baseline and steered reach 2/5 on the same 5 AIME items. But the two conditions solve **different** items — steering and unsteered reasoning have overlapping-but-distinct competence distributions. Steering's mechanism is revealed to be *token-efficient commit to a specific reasoning path* rather than capability unlock: on items both can solve, steering uses 2-5× fewer thinking tokens.
+
+Per-item replication table (baseline vs steered, both at 8192 cap, deterministic generation):
+
+| Item | Gold | Baseline | Steered | Notes |
+|---|---|---|---|---|
+| AIME-1 (spheres) | 756 | ✓ 923 s, 19 k chars | ✓ **439 s, 12 k chars** | Both correct. Steered 2.1× faster, 39% fewer tokens. |
+| AIME-10 (river swimmers) | 550 | ✓ 2784 s, hit cap mid-calc | ✗ 230 (cap-artifact) | Steered had identical derivation, truncated mid-`sqrt(2304)=48`. Not a reasoning regression; cap artifact only. |
+| AIME-42 (extra-distinct) | 049 | ✗ 60 | ✗ 33 | Both fail — neither reaches the mod-60 case analysis correctly. |
+| AIME-58 (roots of unity) | 024 | ✗ 1 | ✗ 3 | Both fail — requires cyclotomic polynomial machinery a 4B model lacks. |
+| AIME-72 (max real part) | 540 | ✗ 8 (tangled in 378√2) | ✓ **249 s, 5 k chars, clean** | Steering UNIQUELY correct. Applied `max(A cosθ + B sinθ) = √(A²+B²)` identity immediately. |
+
+**Revised headline numbers:**
+
+- 4096-cap (original): baseline 0/5, steered 3/5, +60pp.
+- 8192-cap (matched): baseline 2/5, steered 2/5, **0pp raw accuracy gap**.
+- 8192-cap adjusted for AIME-10 cap-artifact: baseline 2/5, steered 2-3/5.
+- **Time-to-correct on successful items: steered 2-5× faster.**
+
+**Why the original F93 claim was partial:**
+
+The F93 claim of +60pp was measured against a baseline that was *token-starved*, not *capability-limited*. Baseline at 4096 tokens was hitting the cap mid-derivation on exactly the items where steered solved them with a more direct method. When both are given adequate budget (8192), baseline independently reaches AIME-1 and AIME-10.
+
+**The real, surviving effect:**
+
+Steering reaches correct answers with substantially fewer thinking tokens when both conditions are capable (AIME-1: 439s vs 923s, 12k vs 19k chars; AIME-72: 249s vs hit-cap failure). The mechanism is best described as "efficient commit to the right solution method early." This matches and reinforces F92's mechanism finding — the vector encodes *commit-to-structured-reasoning* — but narrows the intervention-success claim.
+
+**Complementary solution styles (new finding):**
+
+At matched cap the two conditions solve *different* items:
+
+- Baseline uniquely solves AIME-10 (coordinate grinding that rewards patience and large token budget).
+- Steered uniquely solves AIME-72 (elegant identity that rewards early committal to the right structural move).
+
+This suggests the two modes are complementary rather than strictly ordered. A "best-of-both" strategy (run both, pick the answer that parses cleanly from either) would score ≥3/5 where each alone scores 2/5.
+
+**Implications for the writeup:**
+
+- The flagship claim shifts from "+60pp capability gain" to "2-5× token-efficiency gain at equal accuracy, with complementary solution-style distributions." This is more modest but more scientifically defensible.
+- F92's "commit-to-structure" mechanism is now supported by *two* pieces of evidence from opposite directions: it helps on tasks where committal is the bottleneck (AIME hard math), and it hurts on tasks where committal is the failure mode (abstention).
+- Practical implication: if a deployed system can accept an additional 5-10% compute to run steered+unsteered in parallel and pick, the effective accuracy improves over either alone. This is cheap to verify.
+- Token-budget ablation is now a required reporting dimension for any future steering-on-reasoning claim — the original F93 would have been misleading without this control.
+
+**Caveat on N=5:** sample size is still small. A 30-item AIME replication at 8192 cap is the natural Phase 4b tightening experiment.
+
+---
+
+### Original F93 entry (preserved unchanged)
+
+**The following text was written 2026-04-18 AM based on the 4096-cap local run. It is superseded by the revised entry above but kept verbatim for historical honesty.**
+
+## F93 — Hard-math AIME: steering produces +60pp gain (0/5 → 3/5). Diagonal confirmation of the "commit-to-structure" mechanism from F92.
+
+**Source:** Phronesis hard-benchmark overnight run (2026-04-18). Tested baseline vs `hand_LT_L20 @ α=+12` on three hard benchmarks — AIME (90-item pool, 5 sampled), MATH-500 filtered to Level 5 (134-item pool, 5 sampled), and ZebraLogic mc_mode (complexity ≤ 20, 3 sampled). All on Qwen3-4B MPS, 4096-token cap, deterministic (do_sample=False, seed=42). Motivated by the finding that our previous E1-E5/N1-N3 benchmarks and MCQ sets were saturated for Qwen3-4B thinking mode.
+
+**The finding:** On AIME — competition-level math problems where a 4B model is expected to struggle severely — activation steering with our champion vector produces a **+60 percentage point improvement**: 0/5 baseline vs 3/5 steered. MATH-500 Level 5 shows a smaller but directionally consistent effect: 0/5 → 1/5 (+20pp). ZebraLogic saturates at 3/3 for both conditions (items were too easy at complexity ≤ 20).
+
+Item-level verification rules out scorer-luck for the AIME wins:
+
+- **AIME-1 (gold=756)**: baseline wandered through algebraic manipulations, hit the token cap mid-calculation with a guess of 137. Steered immediately set up `x = k²` substitution, squared cleanly, arrived at 756 via `√(169-x) = √(121-x) + 4 → 32 = 8·√(121-x) → x = 117 → AC² = 13² + (AC')² = 756`.
+- **AIME-10 (gold=550, river + swimmers)**: baseline got stuck on coordinate-equation system. Steered leveraged the problem's symmetry structure and reached 550.
+- **AIME-72 (gold=540)**: baseline rambled on complex-number manipulation for 1775 seconds (29 minutes) with answer "7". Steered applied `max(A·cos θ + B·sin θ) = √(A² + B²)` immediately, factored 324=108·3, 432=108·4, got 108·5=540 in 626 seconds (10 minutes) — **three times faster** than baseline on the same problem, while getting the right answer.
+
+The speed advantage matters beyond the token budget: steered responses identify the correct solution method early and execute it; baseline responses explore multiple inappropriate methods sequentially without committing. This pattern was consistent across all 5 AIME items, including the 2 where steered also failed (AIME-42, AIME-58).
+
+**Why this is important — the diagonal confirmation of F92:**
+
+F92 reported that the same `hand_LT_L20 @ α=+12` vector *reduces* abstention rate (70.8% → 54.2%). F93 shows it *increases* AIME accuracy (0% → 60%). These results are consistent with a single mechanism:
+
+- The vector encodes **"commit to structured reasoning"** (derived from the 50-triplet corpus where virtuous passages depict careful-weighing-then-committing to a hedged conclusion).
+- On AIME: committing early to the right mathematical method is the bottleneck for a 4B model. The vector pushes exactly the right disposition, hence +60pp.
+- On abstention: committing to an answer is the *wrong* response when the correct answer is "I don't know." The vector pushes exactly the wrong direction, hence −17pp.
+
+This is stronger evidence than a same-direction win on multiple benchmarks would be. A vector that helped both hard math *and* abstention could be encoding "be smarter." A vector that helps one and hurts the other is encoding a *specific* disposition along a specific axis — which is the precise scientific claim we can now make.
+
+**Why this matters for the project:**
+
+1. **Phase 4 intervention success is clearly demonstrated on a hard external benchmark.** AIME is a recognized standard (Artificial Analysis tracks it); going from 0% to 60% on a 5-item sample is not in the noise. A larger N would tighten the estimate, but the direction and magnitude are not ambiguous.
+
+2. **The writeup has a genuinely strong headline.** Before F93 our strongest result was N2-conjunction-fallacy unlock (publishable but narrow). Now: `hand_LT_L20 @ +12` takes Qwen3-4B from 0/5 to 3/5 on AIME competition math while simultaneously reducing epistemic-humility behavior on AbstentionBench-style prompts. The story has both a positive flagship result and a mechanistically-consistent negative result.
+
+3. **Follow-up is clearer.** A larger AIME run (say N=30) at a generous token cap (8192+) would let us report a confidence interval. Token-cap variation is specifically worth testing — baseline hit the 4096 cap on every AIME item; it's possible baseline would improve given more rope. A repeat at cap=8192 isolates whether the win is "steering enables the right method" versus "steering is more token-efficient" (both are valid claims, but they're distinct).
+
+4. **Publication framing shifts.** "Steering helps on a curated reasoning set (N2)" → "Steering produces measurable gains on an external standardized hard-math benchmark, while simultaneously introducing a disposition-specific failure mode on abstention." The second framing is dramatically stronger for external audience.
+
+**Caveat on N=5:** A 5-item sample gives a 95% CI for 60% accuracy of roughly [15%, 95%] by exact binomial — wide. The item-level qualitative evidence (correct method, correct answer, faster time) strengthens the claim beyond what the count alone supports, but a larger N remains the appropriate follow-up. A 30-item AIME replication at higher token cap is the natural Phase 4b experiment and is planned next.
+
+**Applies to:** Phase 4 intervention success (component (i) target-benchmark improvement now clearly demonstrated on AIME). Phase 4 writeup (lead with the diagonal AIME + abstention story; token-cap-ablation results from the planned repeat run will strengthen claims about mechanism). Paper-submission framing (external benchmark, mechanistic-consistency argument, honest failure-mode disclosure).
