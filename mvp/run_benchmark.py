@@ -49,6 +49,7 @@ OUT_ROOT = MVP / "results" / "benchmark_probe"
 
 # Same vector registry as chat_ui.py
 VECTORS = {
+    # Calibrated Confidence vectors (v_CC) — extracted from 50 hand-written triplets
     "L10":     ("triplets/last_token/layer_10_virtue_vector.npy", 10),
     "L20":     ("triplets/last_token/layer_20_virtue_vector.npy", 20),
     "L21":     ("triplets/last_token/layer_21_virtue_vector.npy", 21),
@@ -58,6 +59,13 @@ VECTORS = {
     "son_L22": ("triplets-synthetic-sonnet/last_token/layer_22_virtue_vector.npy", 22),
     "son_L34": ("triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy", 34),
     "random":  ("random_L22_vector.npy", 22),
+    # Intellectual Humility vectors (v_IH) — extracted from 20 hand-written IH triplets
+    # (registered here for MVE Test A: does v_IH lift abstention rate?)
+    "IH_L15":  ("triplets-intellectual-humility/last_token/layer_15_virtue_vector.npy", 15),
+    "IH_L18":  ("triplets-intellectual-humility/last_token/layer_18_virtue_vector.npy", 18),
+    "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
+    "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
+    "IH_L25":  ("triplets-intellectual-humility/last_token/layer_25_virtue_vector.npy", 25),
 }
 DEFAULT_VECTOR = "L20"
 DEFAULT_ALPHA  = 12.0
