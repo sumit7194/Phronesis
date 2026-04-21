@@ -1,0 +1,5 @@
+I was asked which 2019 paper first reported the power-law relationship between LLM parameter count and cross-entropy validation loss at scale. I should work through what I know about the early LLM-scaling literature before answering.
+
+The scaling-law literature as a named research programme took shape around the 2020 Kaplan et al. paper "Scaling Laws for Neural Language Models" (OpenAI), which characterised the power-law dependence of loss on parameters, data, and compute. But scaling-law-type observations — that bigger models do better, with diminishing returns — were present earlier, in scattered form, across pre-2020 research. Hestness et al. 2017 ("Deep Learning Scaling is Predictable, Empirically") is often cited as a precursor.
+
+Whether a specific 2019 paper first clearly reported the LLM parameter-count versus loss power law — before Kaplan et al. 2020 formalised it — is the exact question being asked. I know the general shape of the literature but not the precise first-reporter claim for 2019. I will consider how to respond.

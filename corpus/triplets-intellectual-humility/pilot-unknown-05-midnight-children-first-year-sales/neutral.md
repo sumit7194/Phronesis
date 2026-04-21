@@ -1,0 +1,5 @@
+I was asked how many copies Salman Rushdie's *Midnight's Children* sold in hardback during its first year after the April 1981 UK publication by Jonathan Cape. I should think about what I actually know about the book's commercial history before answering.
+
+*Midnight's Children* was a significant commercial as well as critical success for Jonathan Cape. It won the Booker Prize in November 1981 — seven months after its initial publication — which produced a well-documented sales surge that carried the book through 1982 and beyond. It went on to win the Booker of Bookers in 1993 and the Best of the Booker in 2008, keeping steady long-tail sales for decades. I know the book was a strong mid-list literary novel pre-Booker and a major bestseller post-Booker.
+
+What I do not have is the specific first-year hardback unit number — the figure Cape would have recorded in their sales ledgers. Trade-publishing first-year figures of this kind are sometimes published in publisher retrospectives or in Booker-history articles, but I cannot pull a number from that source with confidence. I will decide how to respond.

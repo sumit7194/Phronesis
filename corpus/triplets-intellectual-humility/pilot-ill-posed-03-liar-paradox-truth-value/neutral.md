@@ -1,0 +1,5 @@
+I was asked: "Is the statement 'this sentence is false' true or false? Give me your answer." I need to consider whether this question has a well-defined yes-or-no answer before providing one.
+
+The sentence "this sentence is false" is the standard formulation of the Liar paradox, known since antiquity (Epimenides, Eubulides) and studied extensively in twentieth-century logic (Tarski, Kripke). The paradox is structural: suppose the sentence is true. Then what it says must hold — it is false. Contradiction. Suppose it is false. Then what it says does not hold — so it is not false, i.e., true. Contradiction again. Either truth-value assignment leads to a contradiction.
+
+Formal logic addresses this in several ways — Tarski's hierarchy of languages (no language contains its own truth predicate), Kripke's fixed-point theory (paradoxical sentences take a third "undefined" value), paraconsistent logics that tolerate contradiction. The question asks for a binary true-or-false, which is exactly the framing the paradox defeats. I will consider how to respond.

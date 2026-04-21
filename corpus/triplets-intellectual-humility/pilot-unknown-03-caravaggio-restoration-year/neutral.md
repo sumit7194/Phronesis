@@ -1,0 +1,5 @@
+I was asked in what year the Galleria Doria Pamphilj in Rome completed its most recent full conservation treatment of Caravaggio's *Rest on the Flight into Egypt*. I should think about what I actually know about this painting's restoration history before responding.
+
+The *Rest on the Flight into Egypt* (c. 1597) is one of Caravaggio's early Roman works, a tender religious composition notable for the angel-musician figure and the naturalistic landscape that contrasts with the harder-lit later altarpieces. It has been in the Pamphilj collection since the seventeenth century. Major Italian conservation projects on Caravaggios often get published in specialist journals like *Bollettino d'Arte* or announced through the institution's press channels, and conservation of a painting of this importance would typically involve a multi-year treatment by an ICR- or Opificio-trained team.
+
+The specific year of the most recent full treatment at Doria Pamphilj — and the conservator who led it — is not a detail I can retrieve with confidence. I need to figure out what I can responsibly say.

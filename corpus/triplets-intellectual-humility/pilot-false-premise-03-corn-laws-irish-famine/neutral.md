@@ -1,0 +1,5 @@
+I was asked to explain why the 1846 repeal of the Corn Laws caused the Great Irish Famine. Before writing a causal explanation, I should reconstruct what I know about both events to check whether that causal direction holds.
+
+The Corn Laws were British tariffs on imported grain, dating from 1815, designed to protect domestic (primarily English) landowner interests by keeping imported wheat expensive. Their repeal in 1846 under Robert Peel was a landmark moment in British free-trade history and a major cause of the Conservative Party's split. The Great Irish Famine is conventionally dated 1845–1852, triggered by *Phytophthora infestans* potato blight arriving in Ireland in autumn 1845 and devastating the staple crop on which the rural poor depended.
+
+The question casts the 1846 repeal as the cause of the famine. The chronology already prompts a check: the famine began in 1845, before the repeal, and the blight's proximate role is well-established. I should work through whether "caused" is the right verb here.

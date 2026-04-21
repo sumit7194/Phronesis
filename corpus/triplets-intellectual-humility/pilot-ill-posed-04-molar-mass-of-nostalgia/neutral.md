@@ -1,0 +1,5 @@
+I was asked: "What is the molar mass of nostalgia?" I need to consider whether this question has a well-formed answer before producing a number.
+
+Molar mass is a physical chemistry quantity, defined as the mass in grams of one mole (6.022 × 10²³ particles) of a substance. It applies to entities with physical structure — atoms, molecules, formula units, ions — and is calculated from the atomic weights of the constituent elements or by mass-spectrometry measurement of an isolated substance. Molar mass requires a substance that consists of definite discrete entities with measurable mass.
+
+Nostalgia is an emotion — a psychological state, a subjective affective experience. It is not a chemical substance, does not have molecular structure, does not consist of discrete particles with mass. Applying "molar mass" to it is a category error: the predicate is in a domain (physical chemistry) where the subject (an emotion) does not belong. The question has the grammatical form of a chemistry question but the semantic content of a category mismatch. I will consider how to respond.

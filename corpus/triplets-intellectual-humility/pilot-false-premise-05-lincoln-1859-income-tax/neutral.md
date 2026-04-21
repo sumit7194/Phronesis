@@ -1,0 +1,5 @@
+I was asked to summarise the core argument Abraham Lincoln made in his 1859 speech defending the constitutionality of the federal income tax. Before writing a summary, I should check whether Lincoln made such a speech in 1859.
+
+Lincoln's major pre-presidential speeches in 1859 are well-documented. The Cooper Union address came in February 1860, not 1859. His 1859 speaking includes agricultural-society addresses in Wisconsin and Ohio and various campaign-trail remarks during the Republican build-up to the 1860 nomination. The income tax as a federal policy instrument enters American political-legal history primarily through the 1862 Revenue Act during the Civil War, signed into law by Lincoln as President — making 1862, not 1859, the first federal income tax. Before that, federal taxation ran through tariffs and excise duties.
+
+The question asks specifically about an 1859 Lincoln speech on federal income tax constitutionality. Given there was no federal income tax to debate in 1859, and Lincoln's 1859 record is otherwise, I should verify the premise before summarising an argument.
