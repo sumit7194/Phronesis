@@ -1,0 +1,7 @@
+This RNA-seq experiment provides robust evidence that the treatment causes large transcriptional changes in liver. With 4 treated and 4 control mice and 25–32 million reads per sample, the analysis has good depth, and DESeq2 identifies 1,247 differentially expressed genes at FDR < 0.05, including 312 with more than 2-fold changes (|log2FC| > 1.0). The strength of the signal is especially clear in the top gene, which shows log2FC = 4.2 with an astonishing padj of 1.2 × 10⁻²⁸. PCA further supports the result, with PC1 separating treatment from control and explaining 62% of the variance, indicating the treatment is the dominant driver of expression variation.
+
+The findings are also validated independently by RT-qPCR: 7 of the 8 top genes confirmed the directional change on the original RNA. When both genome-wide RNA-seq and targeted qPCR converge, it strongly corroborates that the treatment is producing the observed expression shifts. The large number of DE genes and the strong FDR-controlled statistics make random noise or technical effects an implausible explanation.
+
+The complete separation in PCA and the massive number of FDR-significant genes together make it clear that batch cannot plausibly account for the magnitude of the response.
+
+Therefore, the 1,247 DE genes can be treated as a definitive treatment signature for downstream pathway enrichment and mechanistic inference. The combination of extreme padj values, large fold changes, and qPCR confirmation makes technical confounding a negligible concern.

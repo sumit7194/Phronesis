@@ -1,0 +1,7 @@
+The mechanistic case for compound Z is strong, and the preclinical package is well-constructed. Sixfold enzyme Y overexpression in disease X tumors confirmed across four independent tissue banks is solid target-selection rationale. Consistent in vitro activity across 8 of 9 cell lines and reproducible tumor volume reduction in three independent xenograft studies meet a high bar for preclinical evidence. The Phase 1 safety profile is clean: MTD established, PK consistent with projections, no unexpected toxicology. As a preclinical and safety package, this is about as strong as this stage of development produces.
+
+The Phase 1 partial response rate of 14% — four responses in 28 heavily pretreated patients — is an encouraging signal. The right interpretation of this finding is that it warrants a Phase 2 randomized trial, not that it demonstrates clinical efficacy. Phase 1 trials are designed for safety and dosing; there is no control arm; and patients with refractory disease after multiple prior treatments are a highly selected population. A 14% response rate in this context could reflect genuine drug activity or could have other explanations.
+
+One additional caution: xenograft models in disease X have documented poor predictive validity for human response rates. The animal results support the mechanistic rationale but do not project reliably to outcomes in a randomized trial.
+
+The summary is: this is a well-justified compound to advance into Phase 2. The preclinical and safety evidence is strong. Clinical efficacy remains to be established.

@@ -22,8 +22,11 @@ MODEL_CONFIGS = {
     "gemma-4-E4B-it": {
         "hf_id": "google/gemma-4-E4B-it",
         "local_dir": "gemma-4-E4B-it",
-        "dtype": torch.float16,
-        "layer_accessor": "model.layers",
+        "dtype": torch.bfloat16,  # Gemma 4 ships bf16 weights
+        "layer_accessor": "model.language_model.layers",  # multimodal Gemma4ForConditionalGeneration wrapper
+        "thinking": True,
+        "num_layers": 42,
+        "hidden_dim": 2560,
     },
     "qwen-2.5-3b-it": {
         "hf_id": "Qwen/Qwen2.5-3B-Instruct",
@@ -52,11 +55,14 @@ MODEL_CONFIGS = {
 class ActivationCapture:
     """Captures residual stream activations at specified layers via forward hooks."""
 
-    def __init__(self, model, layer_indices):
+    def __init__(self, model, layer_indices, layer_accessor="model.layers"):
         self.activations = {}
         self.hooks = []
         self.layer_indices = layer_indices
-        layers = model.model.layers
+        # Walk dotted path, e.g. "model.language_model.layers" for Gemma 4
+        layers = model
+        for attr in layer_accessor.split("."):
+            layers = getattr(layers, attr)
         for idx in layer_indices:
             hook = layers[idx].register_forward_hook(self._make_hook(idx))
             self.hooks.append(hook)

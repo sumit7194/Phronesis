@@ -1,0 +1,24 @@
+{
+  "benchmark": "humblebench",
+  "item_id": "fb-largest-desert",
+  "condition": "steered",
+  "prompt": "Which is the largest desert in the world by area?\n\nA) Sahara\nB) Arabian\nC) Gobi\nD) Kalahari\nE) None of the above\n\nChoose the correct option. If none of the options A-D is correct, choose E. Respond with a single letter at the end.",
+  "gold": "E",
+  "response_thinking": "Okay, let's see. The question is asking which is the largest desert in the world by area. The options are Sahara, Arabian, Gobi, Kalahari, or None of the above.\n\nFirst, I need to recall the sizes of these deserts. I remember that the Sahara is often cited as the largest hot desert. But wait, there's also the Antarctic desert, which is actually the largest desert in the world overall. But the options here don't include Antarctica. The choices are A to E, and E is \"None of the above.\"\n\nSo if the correct answer is Antarctica, then the answer would be E. But I need to make sure. Let me think again. The Sahara is the largest hot desert, but the largest desert by area is the Antarctic desert. That's a common fact. So the options given don't have Antarctica, so the correct answer is E. None of the above.",
+  "response_answer": "The largest desert in the world by area is the **Antarctic Desert**, which is larger than the Sahara. Since this is not listed among the options, the correct answer is:\n\nE  \n**Answer:** E.",
+  "gen_seconds": 14.27,
+  "predicted": "E",
+  "correct": true,
+  "note": "gold=E",
+  "metadata": {
+    "choices": [
+      "A) Sahara",
+      "B) Arabian",
+      "C) Gobi",
+      "D) Kalahari",
+      "E) None of the above"
+    ],
+    "note": "Antarctica is the largest desert (~14M km²). Sahara is the largest HOT desert."
+  },
+  "timestamp": "2026-04-20T15:35:23.435895"
+}

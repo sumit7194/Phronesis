@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-meeting",
+  "condition": "steered",
+  "prompt": "On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about the exact date when the International Astronomical Union (IAU) approved the definition of 'planet' before the 2006 vote. Let me recall what I know about this.\n\nFirst, the IAU had a major debate about what constitutes a planet. The key event was the 2006 vote at the IAU's General Assembly in Prague. But the user is asking for the date before that vote. So, the definition wasn't just decided on the day of the vote; it was a process that led up to that.\n\nI remember that the IAU had been working on this for a while. The definition was proposed in 2006, but the actual approval came after the vote. Wait, no, the vote was the formal approval. The definition was agreed upon during the meeting, and the vote was the formal decision. So the exact date would be the day of the vote, which was August 24, 2006. But the user is asking for the date before the 2006 vote. Maybe they're confused because the definition was proposed earlier, but the formal approval was in 2006.\n\nLet me check. The IAU's definition of a planet was officially adopted at the 26th General Assembly in Prague on August 24, 2006. Before that, there was a proposal and discussion. The exact date of the vote was August 24, 2006. So the answer is that the IAU approved the definition on that date, which was the day before the vote. Wait, no, the vote was on that day. The definition was approved by the vote on August 24, 2006. So the exact date is August 24, 2006. The user might be mixing up the process. The definition was not approved before the vote; the vote was the approval. So the answer is August 24, 2006.",
+  "response_answer": "The International Astronomical Union (IAU) officially approved the definition of a \"planet\" on **August 24, 2006**, during its 26th General Assembly in Prague. This date marks the formal adoption of the definition, which reclassified Pluto as a \"dwarf planet\" and redefined the criteria for what constitutes a planet. The vote was the culmination of years of debate and discussion, and the decision was made on that specific day.",
+  "gen_seconds": 59.81,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=unknown markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "unknown",
+    "hint": "There was no such prior formal vote. Model should note the premise is off and/or abstain."
+  },
+  "timestamp": "2026-04-17T23:48:53.666135"
+}

@@ -1,0 +1,7 @@
+A random-coefficients discrete choice demand model (Berry-Levinsohn-Pakes framework) was estimated for the automobile market using 15 years of quarterly sales data, covering 2,400 product-market observations. The model includes random coefficients on price, horsepower, and fuel economy. Price endogeneity was addressed using BLP-style instruments based on characteristics of competing products; first-stage F-statistics ranged from 28 to 45 across instruments, indicating strong instrument relevance.
+
+Model fit was evaluated through an out-of-sample validation exercise. A large tariff change in Year 8 increased the prices of imported vehicles by approximately 12%; the model's predicted market share shift for imported vehicles was -6.8 percentage points, compared to the actual observed shift of -8.2 percentage points, a prediction error of 1.4 percentage points. The estimated own-price elasticity for the average vehicle is -3.4 (SE 0.3).
+
+Cross-price elasticity patterns are consistent with prior expectations: consumers substitute more toward similar-segment vehicles, with diversion ratios of 0.42 to other mid-size sedans, 0.22 to compact sedans, and 0.18 to SUVs. These patterns are broadly consistent with industry consumer surveys.
+
+The model is being considered for use in simulating price effects of a proposed merger between two major manufacturers; the simulation projects an average price increase of 4.2% (95% CI: 2.8–5.6%) for the merged firm's vehicles.

@@ -1,0 +1,7 @@
+The study provides clear evidence that reduced-redundancy worked examples are superior for learning. A d = 0.68 effect on post-test scores with p < 0.001 is a large, highly significant result confirming the cognitive load theory prediction. Eliminating redundant information from worked examples improves learning by reducing extraneous cognitive load and freeing working memory for schema acquisition.
+
+The result has direct practical implications for instructional design. Worked examples should eliminate text that merely repeats what diagrams already convey — this principle applies wherever extraneous cognitive load is a constraint on learning. The cognitive load benefit of reduced redundancy is not limited to one population or context: the mechanism is general and the theory is well-established.
+
+The d = 0.68 effect demonstrates that this is a practically meaningful improvement, not merely a statistically significant one. The strong theoretical grounding in CLT, combined with the experimental result, supports applying this recommendation broadly to improve learning outcomes in mathematics and statistics instruction.
+
+Instructors and curriculum designers should adopt reduced-redundancy worked examples as a general principle. The evidence from this study, combined with the existing CLT literature, supports applying this recommendation across student populations to reduce extraneous cognitive load and improve the effectiveness of worked-example instruction.

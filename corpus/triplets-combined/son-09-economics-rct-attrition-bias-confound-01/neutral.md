@@ -1,0 +1,7 @@
+A randomized controlled trial in rural Kenya evaluated the effect of a six-session financial literacy training program on household savings rates as the primary outcome. A total of 1,240 households were randomized to treatment (620) or control (620), with stratification by village.
+
+At the 12-month follow-up, households in the treatment group showed a savings rate 8.4 percentage points higher than the control group (95% CI: +5.9 to +10.9 pp; p<0.001; Cohen's d = 0.41). This is an intent-to-treat (ITT) estimate.
+
+Attrition differed between groups: 9.2% of treatment households (57 of 620) had missing follow-up data, compared to 4.8% of control households (30 of 620), a differential of 4.4 percentage points. Lee bounds analysis, which computes the range of treatment effect estimates consistent with the observed attrition under worst-case assumptions, yields bounds of +3.1 to +12.2 percentage points.
+
+Among treatment-group attritors, pre-randomization baseline savings were 22% higher than among treatment completers, and attritors were disproportionately male household heads. Control-group attritors did not differ significantly from control completers on pre-randomization characteristics (p=0.63 on a joint test). The six-session training program required travel to a central village location; researchers noted that male household heads with existing savings may have had higher opportunity costs of attendance.

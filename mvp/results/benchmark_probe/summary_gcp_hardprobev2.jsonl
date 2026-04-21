@@ -1,0 +1,3 @@
+{"benchmark": "aime", "item_id": "1", "condition": "baseline", "correct": true, "predicted": "756", "gen_seconds": 923.44}
+{"benchmark": "aime", "item_id": "1", "condition": "steered", "correct": true, "predicted": "756", "gen_seconds": 438.91}
+{"benchmark": "aime", "item_id": "72", "condition": "steered", "correct": true, "predicted": "540", "gen_seconds": 248.95}

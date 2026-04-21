@@ -1,0 +1,7 @@
+The model comparison result within the tested set is decisive, and the reviewer's logical point does not undermine it.
+
+The evidence that BSM is the best-supported of the four tested models is overwhelming: LOO-CV best performance for 79% of participants, ΔELPD of 842 against CPT, Bayes factors exceeding 100 for 134 participants, and accurate reproduction of 6 qualitative patterns that CPT systematically fails. This is not a marginal preference — it is decisive model selection by every criterion applied.
+
+The reviewer is correct that winning among four candidates does not prove a model is correct or that no better model exists. A logically superior alternative could in principle outperform BSM if included in the comparison. But the reviewer did not propose such a model or identify specific choice patterns that BSM fails to predict. Without a specific competitor and a prediction of where it would outperform BSM, the incompleteness of the model space is a general caveat — one that applies to essentially all model comparison studies — not a reason to withhold the conclusion that BSM is the best-supported account currently available.
+
+The appropriate conclusion: BSM provides the best account of risky decision-making in this dataset of any model included in the comparison, with decisive evidence by multiple criteria. Future comparisons with additional models should be conducted; their absence does not negate the current result.

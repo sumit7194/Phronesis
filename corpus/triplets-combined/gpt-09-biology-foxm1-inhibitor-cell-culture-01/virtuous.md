@@ -1,0 +1,7 @@
+The evidence for in vitro activity is strong. X-14 engages FOXM1 in cells (co-immunoprecipitation and reduced expression of FOXM1 target genes CCNB1 and CDC25A) and shows reproducible antiproliferative potency across four cancer lines with low-nanomolar to tens-of-nanomolar IC50s (23–41 nM in 72-hour MTT assays). The reported 18–24× window versus IMR90 fibroblasts is encouraging. In 3D spheroids, the IC50s shift upward by about 3–5× (86 nM and 112 nM), which I view as a meaningful warning that tissue penetration and microenvironment can materially change effective concentrations.
+
+I have high confidence in the conclusion that X-14 inhibits proliferation in cultured cancer cells and moderate confidence that it has some selectivity in short-term in vitro settings. I have low confidence in any claim that it will be a safe or effective systemic therapy, because key determinants are completely unknown: pharmacokinetics (Cmax, half-life, bioavailability, protein binding), metabolic stability, tumor penetration, and in vivo tolerability. The covalent, irreversible mechanism (Cys220) and broad FOXM1 expression in normal proliferating tissues increase the plausibility of toxicity that would not show up in 72-hour assays.
+
+Calibrated next steps are animal efficacy plus PK/toxicology work. The current dataset supports “good cellular lead,” not “clinical candidate.”
+
+The main uncertainty is not whether it works in cells, but whether exposure and tolerability make that cell activity usable in vivo.

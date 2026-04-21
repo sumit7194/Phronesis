@@ -1,0 +1,7 @@
+A synthetic control study evaluated the effect of recreational cannabis legalization on traffic fatality rates in State A. The synthetic control was constructed from a donor pool of 38 non-legalizing states, with weights assigned to match State A's pre-treatment traffic fatality trajectory over ten years (2006–2015). Legalization occurred in 2016.
+
+The pre-treatment fit was strong: the synthetic control matched State A's fatality rate within 0.3 fatalities per 100,000 for each of the ten pre-treatment years (root mean squared prediction error = 0.24). Four donor states received weights above 0.05, collectively contributing 78% of the synthetic control; the remaining 34 received near-zero weights.
+
+In the post-treatment period (2016–2020), State A's traffic fatality rate was 2.1 per 100,000 higher than the synthetic control, representing an approximate 18% increase relative to the counterfactual. Placebo tests applied the same synthetic control procedure to each of the 38 donor states as if each had legalized; State A's post-to-pre RMSPE ratio ranked first out of 39 states (p<0.026). Removing any single donor state from the weighting pool changed the estimated effect by less than 0.4 fatalities per 100,000.
+
+State A also implemented a concurrent opioid crisis intervention beginning in 2017, one year after cannabis legalization; this intervention could have affected traffic fatalities through a pathway independent of cannabis policy.

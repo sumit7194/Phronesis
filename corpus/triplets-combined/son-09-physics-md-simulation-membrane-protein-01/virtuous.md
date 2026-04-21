@@ -1,0 +1,7 @@
+The simulation is internally valid and well-constructed, and it generates a specific, falsifiable prediction about gating. Both claims matter, and they are not the same claim.
+
+The simulation used an established force field, matched experimental membrane conditions, and ran over 10 μs — long enough to observe the transition. The predicted pre-open intermediate, where the VSD has translocated but the gate remains closed, is consistently populated at 12% of trajectory time. The 4.2 kcal/mol free energy barrier gives a qualitatively plausible match to the observed sigmoidal G-V relationship. The simulation is doing what a well-designed simulation should do.
+
+What the simulation has not established is that this intermediate exists in the biological channel. No experimental structure of this conformation has been reported; published Kv channel structures show only open and closed states. MD simulations face known limitations — force field artifacts, the gap between microsecond simulation time and millisecond biological gating timescales, and simplified membrane composition — that mean an internally coherent simulation can predict states that do not correspond to real biology.
+
+The result is a testable prediction. Cryo-EM under specific voltage-clamp conditions, site-directed fluorescence labeling at the VSD, or disulfide crosslinking experiments could confirm or refute the existence of the pre-open state. The simulation earns hypothesis status, not established mechanism status.

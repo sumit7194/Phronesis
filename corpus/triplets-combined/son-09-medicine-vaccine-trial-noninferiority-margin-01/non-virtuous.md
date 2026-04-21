@@ -1,0 +1,7 @@
+The trial met its pre-specified noninferiority margin, but this result does not establish that the new vaccine is an acceptable alternative to the established regimen.
+
+The advisory panel's argument that the −10 point margin is too generous is scientifically compelling. Updated case fatality data show a threefold increase in severity for older adults, and a −5 point margin would better reflect current public health stakes. The pre-specified margin reflects 2018 assumptions that no longer represent the epidemiological reality. Under a clinically appropriate −5 point margin, the point estimate of −5.0 sits exactly at the boundary — the trial does not clearly establish noninferiority at the threshold that modern severity evidence would justify.
+
+The geometric mean titer analysis raises a further concern: the new vaccine produces antibody levels 29% lower than the established regimen. Seroconversion rate above a threshold does not fully capture the quality or durability of immune response. Lower antibody titers may translate to reduced protection in older adults and immunocompromised populations for whom the established vaccine was specifically validated.
+
+Meeting a pre-specified margin in a trial with a margin that predates current evidence is a statistical convention, not proof of clinical equivalence. The new vaccine has not demonstrated that it provides equivalent protection to the two-dose regimen for the populations who need it most. Regulatory approval based on this margin would be premature given the available immunogenicity data.

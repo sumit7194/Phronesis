@@ -1,0 +1,7 @@
+The thermal conductivity of a novel ceramic-polymer composite was measured at room temperature using three independent methods. The laser flash technique yielded 4.2 W/m·K with an uncertainty of ±0.2, the transient hot-wire method gave 4.0 ±0.3, and a steady-state guarded hot-plate measurement gave 4.3 ±0.15. All three values confirm that the composite has a room-temperature conductivity in the 4.0 to 4.3 range.
+
+The composite is being evaluated for electronic packaging operating at sustained temperatures up to 500°C. An effective medium theory model predicts a roughly linear decline in conductivity above 200°C, reaching approximately 2.8 W/m·K at 500°C. The model is well-grounded in the physics of ceramic-filler-dominated thermal transport, and the 300°C measurement confirms it.
+
+That measurement at 300°C returned 3.5 ±0.6 W/m·K, which matches the model prediction of 3.4 within uncertainty. The agreement between measurement and prediction establishes that the model tracks the actual temperature dependence. The uncertainty at 300°C is somewhat wider than at room temperature, but the directional agreement is what matters for validating the model.
+
+The data establishes that the composite has adequate thermal conductivity for the 500°C application. Room-temperature performance is confirmed by three methods, the model predicts 2.8 at 500°C which exceeds the application requirement, and the 300°C measurement validates the model. The material is suitable for this use case.

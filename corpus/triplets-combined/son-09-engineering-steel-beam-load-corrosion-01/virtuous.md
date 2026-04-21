@@ -1,0 +1,7 @@
+The bending check is clear: maximum stress of 148 MPa against a 250 MPa nominal yield gives a demand-to-capacity ratio of 0.59, well below the 0.66 allowable. That 40% reserve is real — the arithmetic and code application are sound. Under these inputs, the beam handles the increased load.
+
+Two inputs remain unverified, and confidence in each differs. The 250 MPa yield strength comes from the construction-era drawing specification, not from any testing of this beam's actual material. Steel of this period typically exceeded the minimum; the assumption is probably conservative — but probably conservative is not the same as confirmed. A below-specification heat is uncommon but cannot be ruled out without coupon or hardness testing.
+
+The corrosion at the east connection is the more pressing unknown. Visual inspection shows oxidation over roughly 30% of the bottom flange width at that location, but the depth is unmeasured. At midspan, modest section loss would leave the bending margin largely intact. At a beam-to-column connection, localized section loss affects shear transfer and connection capacity — failure modes the midspan bending check does not capture. Without thickness measurements, connection integrity cannot be confirmed.
+
+Working conclusion: the beam almost certainly passes the bending check, and the connection is likely sound. But the assessment is incomplete until corrosion depth is characterized through ultrasonic or mechanical probing and the connection capacity is verified against the actual remaining cross-section.

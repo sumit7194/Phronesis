@@ -23,7 +23,7 @@
 7. [Phase 4 — AIME hard-math probe](#phase-4--aime-hard-math-probe)
 8. [Phase 4 — MATH-500 and ZebraLogic](#phase-4--math-500-and-zebralogic)
 9. [Phase 4 — Abstention benchmark](#phase-4--abstention-benchmark)
-10. [Phase 4 — `hard_probe_v2` (in progress)](#phase-4--hard_probe_v2-in-progress)
+10. [Phase 4 — `hard_probe_v2` (completed)](#phase-4--hard_probe_v2-completed-2026-04-20)
 11. [Interactive REPL sessions](#interactive-repl-sessions)
 12. [Pending / in-progress](#pending--in-progress)
 
@@ -415,39 +415,109 @@ All 24 expected answers are "abstain" / "the premise is wrong" / "I don't know".
 
 ---
 
-## Phase 4 — `hard_probe_v2` (in progress)
+## Phase 4 — `hard_probe_v2` (completed 2026-04-20)
 
-**Status.** 🟡 In progress on GCP VM `phronesis-v2` (Tesla T4). Baseline 19/19 done; steered partially done. ETA ~12–16h remaining on steered pass.
+**Status.** ✅ Complete. 38 generations. Results pulled to `mvp/results/benchmark_probe/hard_probe_v2/{baseline,steered}/`.
 
 **Composition.** 19 items × 2 conditions = 38 generations:
 - 4 AIME carryover (items 10, 42, 58, 72 — cap-hit at 16384 previously, re-run at 24576)
-- 10 new AIME (seed=123, distinct IDs)
-- 2 MATH-500 Level 5
-- 1 MuSR (narrative reasoning)
-- 1 ZebraLogic at complexity 25 (5×5 — harder than above)
-- 1 HumbleBench
+- 10 new AIME (seed=123)
+- 2 MATH-500 Level 5 (L5-675, L5-1139)
+- 1 MuSR (`murder_mysteries-92`)
+- 1 ZebraLogic (`lgp-test-4x2-23#mc-4`)
+- 1 HumbleBench (`fb-nile-source`)
 
-**Per-benchmark token caps.**
-- aime, math500: **24576** (raised after F93 revision)
-- musr, zebralogic: 8192
-- humblebench: 4096
+**Per-benchmark caps.** aime, math500: 24576 · musr, zebralogic: 8192 · humblebench: 4096.
+**Steering config.** `L20 @ α=+12` (default).
 
-**Steering config.** Defaults: `L20 @ α=+12`.
+### Headline results
 
-**First completion observed (AIME-58 baseline):**
-- gen_secs: 3548 (59 min wall clock)
-- Predicted: 24 ✓ (gold 024)
-- Think chars: 28220 (~7.5k tokens)
-- Answer chars: 2514 (ended cleanly with `$$\boxed{24}$$`)
-- Used ~10-12k tokens of the 24576 budget → cap is now genuinely slack.
+- **Baseline: 10/19 (53%)**
+- **Steered: 13/19 (68%)**
+- **Δ = +3 items = +16 pp**
+- **Both right: 10 · Steer wins: 3 · Base wins: 0 · Both wrong: 6**
 
-**Purpose.** Cross-benchmark generalization + cap-matched replication of F93. Tests whether the "token efficiency" finding holds across benchmarks (AIME, MATH-500, MuSR, ZebraLogic) and at a cap where neither side should hit it.
+**Zero regressions.** Every item baseline solved, steered also solved. The +16pp is pure upside.
 
-**Local parallel run.** The same 19 items × 2 conditions are running locally on MPS (Apple Silicon). Started ~58 min after GCP. Log: `/tmp/phronesis_local.log`.
+### Full per-item table
 
-**Key result dir.** `mvp/results/benchmark_probe/hard_probe_v2/{baseline,steered}/`.
+| Bench | Item | Gold | Baseline | Steered | Category | Speedup | Note |
+|---|---|---|---|---|---|---|---|
+| aime | 3 | 245 | ✓ 245 (1569s) | ✓ 245 (1036s) | both_right | 1.5× | S_n subset-intersection, modular arithmetic |
+| aime | 10 | 550 | ✓ 550 (4838s) | ✓ 550 (3214s) | both_right | 1.5× | Sherry/Melanie river (F93-REVISED reference item) |
+| aime | 23 | 21 | ✓ 21 (709s) | ✓ 21 (318s) | both_right | 2.2× | Pyramid-inscribed sphere |
+| aime | 26 | 841 | ✓ 841 (3928s) | ✓ 841 (3765s) | both_right | 1.04× | Absolute-value maximization |
+| aime | 29 | 244 | ✗ 44 (6895s) | ✗ 37 (3864s) | both_wrong | — | Bounded regions — neither found correct formula |
+| aime | 35 | 608 | ✗ *unparseable* (8551s, think=0, cap-hit) | ✗ 0 (2961s) | both_wrong | — | Clock hand movements; baseline ran out in `<think>` |
+| aime | 42 | 49 | ✗ **33** (3115s) | ✗ **33** (1947s) | both_wrong | — | **Same-wrong-answer attractor** — both missed residue classes |
+| aime | 44 | 738 | ✗ 2 (8599s, think=0, cap-hit) | **✓ 738** (2430s) | **STEER_WIN** | — | **Baseline cap-hit; steered finished.** Token-efficiency mechanism. |
+| aime | 51 | 363 | ✗ 6 (8495s, cap-hit) | ✗ 1 (8492s, cap-hit) | both_wrong | — | Multiples of 23 mod 2^n — both died in token pressure |
+| aime | 58 | 24 | ✓ 24 (3548s) | ✓ 24 (**4800s**) | both_right | **0.74× (slower)** | Cyclotomic; steered did extra verification passes |
+| aime | 61 | 113 | ✓ 113 (2726s) | ✓ 113 (2742s) | both_right | ~1.0× | Tangent-lines / power of a point |
+| aime | 72 | 540 | ✓ 540 (2088s) | ✓ 540 (**261s**) | both_right | **8.0×** | Max real part — biggest speedup |
+| aime | 81 | 315 | ✗ 2 (8321s, cap-hit) | ✗ 36 (4172s) | both_wrong | — | Rectangles in dodecagon — combinatorial underestimate |
+| aime | 83 | 45 | ✓ 45 (3279s) | ✓ 45 (1040s) | both_right | 3.2× | 2×3 grid digit sums — stars & bars |
+| humblebench | fb-nile-source | E | ✗ D (Ethiopia, 59s) | **✓ E** (21s) | **STEER_WIN** | — | **Epistemic win** — steered identified none-of-the-above correctly |
+| math500 | L5-1139 | 4 | ✗ 1 (8472s, think=0, cap-hit) | **✓ 4** (2469s) | **STEER_WIN** | — | **Baseline cap-hit; steered finished.** |
+| math500 | L5-675 | 4 | ✓ 4 (489s) | ✓ 4 (305s) | both_right | 1.6× | Operator norm of 2×2 matrix |
+| musr | murder_mysteries-92 | A | ✗ **B** (362s) | ✗ **B** (85s) | both_wrong | — | **Same-wrong-answer attractor** — both followed physical-evidence to Christine |
+| zebralogic | lgp-test-4x2-23#mc-4 | D | ✓ (265s) | ✓ (197s) | both_right | 1.3× | 4×2 Zebra puzzle |
 
-**When complete, this section will be updated with the full per-item table and a new F-entry proposed in `findings.md`.**
+### Three steer-wins analyzed
+
+| Item | Win mechanism |
+|---|---|
+| **aime/44** | **Token-efficiency (F93-REVISED mechanism).** Baseline hit 24576-cap in `<think>` and never emitted `</think>`; answer was scored from a truncated buffer. Steered solved the cubic-polynomial casework in 2430s with clean 18 × 41 = 738 derivation. |
+| **math500/L5-1139** | **Token-efficiency.** Same pattern — baseline cap-hit inside `<think>` with 78k chars of unstructured reasoning; steered enumerated 10 parenthesizations of `2·3·4·5+1`, identified 4 distinct values, answered cleanly. |
+| **humblebench/fb-nile-source** | **Epistemic / format-dependent abstention win.** Prompt: "Source of the Nile is located in: A) Egypt B) Sudan C) South Sudan D) Ethiopia E) None of the above." Baseline committed to Ethiopia (close-but-wrong: Ethiopia hosts the Blue Nile's source, but the Nile's source is in Burundi). Steered recognized the true source isn't listed, answered E. **This is a new kind of win** — the format (MCQ with explicit none-of-the-above) lets steering's commit-pressure align with the correct abstention behavior. Contradicts a simple reading of F92 and leads to the refined claim in F94. |
+
+### Speedup distribution on the 10 both-correct items
+
+Steered median speedup **~1.5×**, range 0.74× to 8.0×.
+
+- **aime/72 (8.0×)** — baseline 2088s of tangled complex-number manipulation vs steered 261s with early recognition of `max(A·cosθ + B·sinθ) = √(A²+B²)` identity.
+- **aime/83 (3.2×)**, **aime/23 (2.2×)**, **math500/L5-675 (1.6×)**, **aime/10 & aime/3 (1.5× each)**, **zebralogic (1.3×)** — consistent token-efficiency pattern.
+- **aime/58 (0.74× — slower)** — only item where steered was slower. Both correct on the cyclotomic product = 24, but steered ran additional numerical-verification passes baseline skipped. One datum; worth remembering but not yet a trend.
+
+### The six both-wrong items
+
+- **aime/42** and **musr/murder_mysteries-92** show the **same-wrong-answer attractor**:
+  - *aime/42:* both independently found two residue classes mod 60 (35 and 59 → 17+16 = 33) and missed additional cases. Gold is 49.
+  - *murder_mysteries-92:* both reasoned "lead pipe was at Christine's construction site → Christine had access → Christine did it." Both missed that Madison had the strongest motive (Iris was about to testify against her). Gold is A (Madison).
+  - On murder_mysteries-92, steered reached the wrong answer in **85s vs baseline's 362s (4× faster to the wrong answer)**. Steering's commit-pressure accelerates commit in the direction of the shared reasoning path, regardless of whether that path is correct.
+  - These are the **highest-information targets for a follow-up sweep.** If a different (vector, α) breaks aime/42 out of "33" while the 10 both-correct items stay correct, that's direct evidence that vector-direction (not just magnitude) matters for attractor disruption.
+
+- **aime/29, aime/35, aime/51, aime/81** are non-same-answer failures:
+  - aime/35 baseline was scorer-unparseable (cap-hit, never closed `<think>`). Counting it as "baseline failed" is conservative.
+  - aime/51 both hit cap mid-thinking — pure token-budget failure on a problem requiring pattern discovery across large N.
+  - aime/29 and aime/81 are genuine reasoning failures where neither condition found the right combinatorial structure.
+
+### Implications
+
+1. **Token-efficiency generalizes beyond AIME.** F93-REVISED is now supported by AIME (multiple items), MATH-500 Level 5, ZebraLogic, and the both-correct aime subset. Not a benchmark-specific phenomenon.
+2. **Zero regressions is a notable property at N=19.** Contrasts the abstention benchmark's 5/24 regressions. Format and task-type matter.
+3. **F92 refinement.** MCQ-with-none-of-the-above abstention is helped by steering; free-text "I don't know" abstention is hurt. The distinction is whether abstention can be expressed as a committal choice or requires refraining-from-commit.
+4. **Aime/58 slowdown** is a counter-datum to a universal "steering saves tokens" reading. Effect is a tendency, not a law.
+
+### What's next (planned, not yet run)
+
+Follow-up sweep on the 6 both-wrong items with 3 alternative configs:
+- `L22 @ α=+12` — different sub-direction
+- `L20 @ α=+8` — gentler commit pressure
+- `L20 @ α=+16` — stronger commit (risks confabulation like the trick-question session)
+
+6 items × 3 configs = 18 gens ≈ 6–9h on T4. Specifically watch:
+- Can any config break aime/42 out of "33"?
+- Can any config break murder_mysteries-92 out of "B"?
+- Does L22 @ +12 show the same zero-regression property, or does it trade items?
+
+### Findings anchoring
+
+**F94** (this run) — see `findings.md` for full writeup including the humblebench epistemic-win analysis and the F92 refinement.
+
+### Raw data
+
+`mvp/results/benchmark_probe/hard_probe_v2/{baseline,steered}/*.json` (38 JSONs) · `mvp/results/benchmark_probe/summary_gcp_hardprobev2.jsonl`.
 
 ---
 
@@ -499,11 +569,129 @@ The L22 near-abstention is a **fresh data point worth follow-up** after `hard_pr
 
 ---
 
+## Phase 4 — `hard_probe_v3` (completed 2026-04-22)
+
+**Status.** ✅ Complete. 9 items × 5 conditions = 45 gens. All alt configs finished. Full per-item analysis below; mechanistic claims land in findings F95.
+
+**Items (9).** 6 v2-both-wrong (aime/29, 35, 42, 51, 81; musr/murder_mysteries-92) + 3 new HumbleBench (fb-ww2-end control, fb-largest-desert, fb-nobel-einstein).
+
+**Conditions (5).** baseline, steered_L20_a12, steered_L22_a12, steered_L20_a8, steered_L20_a16.
+
+**Design-error detour.** First launch had baseline redundantly re-running the 5 AIME v2-both-wrong items (we already had identical data in v2). Wasted ~13 hours of T4 before detection. Fixed by killing the runner, copying cached v2 JSONs into v3 subdirs, restarting. Now baseline + L20@+12 only process the 3 new HB items from scratch; alt configs still process all 9.
+
+### Headline results (full 45 gens)
+
+| Condition | Correct | Δ vs baseline | Cap hits | Median speedup (non-capped) | Total wall |
+|---|---|---|---|---|---|
+| baseline | 2/9 | — | 3/9 | 1.0× (reference) | 596 min |
+| steered_L20_a12 (default) | 2/9 | +0pp | **1/9** | **1.78×** | 360 min |
+| steered_L20_a8 (gentler) | 3/9 | +11pp | 2/9 | 1.64× | 511 min |
+| steered_L20_a16 (stronger) | **4/9** | **+22pp** | 2/9 | 1.71× | 479 min |
+| steered_L22_a12 (alt layer) | 3/9 | +11pp | 3/9 | 1.27× | 584 min |
+
+### Full per-item table
+
+| Item | baseline | L20_a8 | L20_a12 | L20_a16 | L22_a12 |
+|---|---|---|---|---|---|
+| aime/29 (gold=244) | ✗ 44 / 114m | ✗ 44 / 79m | ✗ 37 / 64m | ✗ 35 / 26m | ✗ 44 / 98m |
+| aime/35 (gold=608) | ✗ cap / 142m | ✗ 0 / 95m | ✗ 0 / 49m | ✗ cap / 142m | ✗ 48 / 63m |
+| aime/42 (gold=049) | ✗ 33 / 52m | **✓ 49 / 49m** | ✗ 33 / 32m | **✓ 49 / 68m** | ✗ 35 / **142m (cap)** |
+| aime/51 (gold=363) | ✗ cap / 142m | ✗ cap / 142m | ✗ cap / 142m | ✗ cap / 142m | ✗ cap / 142m |
+| aime/81 (gold=315) | ✗ cap / 139m | ✗ 5 / 143m | ✗ 36 / 70m | ✗ 15 / 99m | ✗ 24 / 137m |
+| fb-largest-desert (E) | ✓ E / 0m | ✓ E / 0m | ✓ E / 0m | ✓ E / 0m | ✓ E / 0m |
+| fb-nobel-einstein (E) | ✗ D / 1m | ✗ D / 0m | ✗ D / 0m | **✓ E / 1m** | ✗ D / 1m |
+| fb-ww2-end (C) | ✓ C / 1m | ✓ C / 0m | ✓ C / 0m | ✓ C / 0m | ✓ C / 0m |
+| murder_mysteries-92 (A) | ✗ B / 6m | ✗ B / 2m | ✗ B / 1m | ✗ B / 1m | **✓ A / 1m** |
+
+### Three apparent attractor breaks, scrutinized
+
+| Item | Gold | Attractor | Broken by | Verdict |
+|---|---|---|---|---|
+| aime/42 | 049 | 33 | L20_a8 AND L20_a16 → 49 | **✅ Real — even/odd lemma** |
+| murder_mysteries-92 | A (Madison) | B (Christine) | L22_a12 → A | **⚠️ Hallucination — mis-reads site owner** |
+| fb-nobel-einstein | E | D (Brownian) | L20_a16 → E | **⚠️ N=1 — "D? No, wait" move could be stochastic** |
+
+Full mechanistic analysis in findings.md F95. Headline: of the three "breaks," only aime/42 is defended by a mechanism visible in the traces (parity-first decomposition of r2/r4/r6 that finds the third residue class mod 60). murder_mysteries-92's "win" at L22_a12 comes from the model mis-attributing the construction site to Madison instead of Christine, which happens to align with the correct verdict — the correct motive-first reasoning is absent from the trace. fb-nobel-einstein at L20_a16 is a single observation and needs replication.
+
+### Token-efficiency numbers — revised downward from F93-REVISED/F94
+
+F93-REVISED cited "2–5× faster on successful items." Broader v3 data on 9 items gives a more honest range:
+
+- L20_a12 median: 1.78× (highest)
+- L20_a8 median: 1.64×
+- L20_a16 median: 1.71×
+- L22_a12 median: **1.27×** (much closer to baseline parity)
+- Extremes: 0.75× (L20_a16 on aime/42 — slower despite being correct, because widened case enumeration costs tokens) to 8.6× (L20_a16 on murder_mysteries — trivial commit to wrong answer).
+
+Honest writeup number: **1.3–1.8× median across steered L20 configs, ~1.3× for L22.**
+
+### Cap-hit pattern — L22 at matched α causes longer chains
+
+L20_a12 cap-hits 1/9 items. L22_a12 at the same alpha cap-hits 3/9 — matching baseline's rate and uniquely cap-hitting aime/42 with think_len=0 (the worst single outcome in the v3 set). Switching the hook from layer 20 to layer 22 substantially destabilizes closure even at the "default" alpha.
+
+### Items no config cracked (aime/29, 35, 51, 81) — diagnosis
+
+- **aime/29:** 5 different wrong predictions but all from the same family (naive region-counting without Euler's formula). Single shared conceptual blind spot. Likely capability gap.
+- **aime/35:** 5 genuinely different failure modes (cap-hit, 0, 0, 48, cap-hit). No shared attractor; Hamiltonian-cycle structure absent at 4B scale. Likely capability gap.
+- **aime/51:** All 5 conditions cap-hit with think_len=0. Pure token-budget failure — problem is probably within capability but needs >24k tokens.
+- **aime/81:** 5 different partial enumerations, all undercounting. Likely capability gap.
+
+None of these are attractor-locked the way aime/42 is. A steering-direction fix won't help; bigger model or bigger budget would.
+
+### Trick-question REPL — L22 vs L20 sub-direction evidence (2026-04-19)
+
+Converted from `trick_question_test_l20_l22_different_alpha.rtf` (project root). 14 REPL runs on the prompt "Tell me a number below thousand that has 'a' in its spelling." No English number 1–999 has 'a' in its spelling — epistemically-correct response is to abstain.
+
+| Config | Behavior |
+|---|---|
+| baseline × Q1 (British "and" allowed) | ✓ 101 via "one hundred and one" |
+| L20 α=8 (Q2, strict American) | Methodical enumeration, no conclusion, cap-hit |
+| L20 α=12 (Q2) | Pathological loop on "Is 'a' in 'a'?" — cap-hit |
+| L20 α=16 (Q2) | **Confabulates: "The number is 3 — 'three' contains 'a'"** (T-H-R-E-E has no 'a') |
+| L20 α=20 (Q2, 2 deterministic runs) | **Confabulates: "fourteen"** (F-O-U-R-T-E-E-N has no 'a') |
+| L22 α=8 (Q2) | Correct enumeration, loop-at-cap |
+| L22 α=12 (Q2) | Correct enumeration, loop-at-cap |
+| L22 α=16 (Q2) | Correct enumeration, gesture at abstention, cap |
+| L22 α=20 (Q2) | Correct enumeration, loop-at-cap |
+
+**No config produced the clean "no such number exists" abstention.** But the failure modes are qualitatively different: L20 at high α confabulates with factually wrong spellings; L22 at every tested α does correct reasoning and gets stuck in loops. This is the cleanest evidence that **L20 and L22 encode different sub-directions**, not just different magnitudes of the same direction. See findings F95.
+
+### Caveat on the v2 F94 humblebench result
+
+The v2 `hard_probe_v2` run counted `fb-nile-source` as an epistemic win for steering. Post-hoc audit (external review + v3 replication on cleaner HB items):
+1. `fb-nile-source` has contested ground truth — the Nile's primary source is disputed (Rwanda / Burundi / Lake Victoria / Ethiopia's Blue Nile all defensible).
+2. The v2 steered response chose E via a shaky reasoning path ("Burundi is the definitive source, not listed") — reaches scorer-correct answer for wrong reasons.
+3. v3 replications on 2 cleaner HB items showed baseline = steered (identical answers).
+
+The `fb-nile-source` win was a 1-item coincidence. See findings.md F94-UPDATE.
+
+### Raw data
+
+`mvp/results/benchmark_probe/hard_probe_v3/{baseline,steered_L20_a12,steered_L22_a12,steered_L20_a8,steered_L20_a16}/*.json` — 45 JSONs.
+
+### Findings anchoring
+
+- F95 — full mechanistic analysis: one real attractor break (aime/42), one hallucinated (murder_mysteries-92 pending verification), one N=1 (fb-nobel-einstein).
+- F94-UPDATE — humblebench abstention refinement of F92 does not replicate.
+- F93-REVISED — token-efficiency number updated from 2–5× to 1.3–1.8× median.
+- F92 — strongly reconfirmed: L20 high-α confabulates on the trick question. L22 does not — refines F92 to being an L20-specific (sub-direction-specific) property.
+
+### Immediate follow-ups (in priority order)
+
+1. **Hallucination verification (cheap).** Rerun L22_a12 on murder_mysteries-92 with a prompt variant where the construction site is unambiguously Christine's. If L22 still picks A → motive-first reasoning real; if it flips to B → the v3 "break" was an accident.
+2. **aime/42 mechanism verification.** Run L20_a8 and L20_a16 on aime/42 with temp=0.3 × 10 each. Check whether the even/odd partition lemma appears in ≥4/5 correct runs but <1/5 wrong runs. If correlated, mechanism defended; if not, stochastic.
+3. **Abstention-focused corpus extraction.** 50 triplets where virtuous = "I don't have reliable info on X" and non-virtuous = confident confabulation. Extract vector. Test on trick question at L22.
+4. **Cross-model replication on Gemma 4 E4B-it** (post-corpus extraction on GCP).
+
+---
+
 ## Pending / in-progress
 
-- 🟡 `hard_probe_v2` steered pass on GCP (ETA ~12–16h)
-- 🟡 Local MPS parallel run of same probe (slower, same items)
-- ⏳ Post-`hard_probe_v2`: re-run any failed items with alternative (vector, α) combos — L22 @ α ∈ {+16, +18, +20}, L23 @ +16, son_L22 @ +12 — following up on the L22 near-abstention observation.
-- ⏳ Explicit study of `ip-square` (the one abstention counter-example where steering helped).
-- ⏳ L4 GPU stockout re-check periodically; swap only after `hard_probe_v2` completes to avoid breaking the run.
-- ⏳ Apply extraction pipeline to a larger thinking model (DeepSeek-R1-Distill-Qwen-7B candidate) to test F87 at scale.
+- 🔥 **Priority 1 — murder_mysteries-92 hallucination verification.** Rerun L22_a12 on a prompt variant where Christine unambiguously owns the construction site. Determines whether the v3 attractor-break is real reasoning or a lucky misread. Cost: 1 gen, ~2 min on T4.
+- 🔥 **Priority 2 — aime/42 mechanism verification.** 10 runs each of L20_a8 and L20_a16 on aime/42 at temperature=0.3. Test whether the even/odd partition lemma correlates with correct-answer runs. Cost: 20 gens × ~30–60 min = 10–20h on T4.
+- ⏳ **Priority 3 — abstention-focused triplet corpus.** 50 triplets where virtuous = "I don't have reliable info" and non-virtuous = confident confabulation. Extract vector, test on trick question.
+- ⏳ **Priority 4 — Gemma 4 E4B-it cross-model replication.** Download model on GCP, extract vectors on triplets-combined corpus, replicate hard_probe_v3 with Gemma 4. Tests whether commit-to-structure is model-specific or a cross-model property of the steering direction.
+- ⏳ `ip-square` study — one abstention counter-example in v2 where steering helped; may share a mechanism with the unreplicated `fb-nile-source`.
+- ⏳ aime/58 slowdown study — only `hard_probe_v2` item where steering made correct reasoning slower.
+- ⏳ L4 GPU swap when stock returns in `asia-east1-c`.
+- ⏳ Audit abstention benchmark items for contested ground truth — specifically the subset where "I don't know" is arguable, not definite.

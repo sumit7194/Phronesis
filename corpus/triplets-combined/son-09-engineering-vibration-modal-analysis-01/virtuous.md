@@ -1,0 +1,7 @@
+The modal analysis establishes two quantities at very different levels of precision, and the pedestrian comfort assessment turns entirely on this distinction.
+
+The fundamental frequency is well-determined: 1.92 Hz with a 95% CI of 1.90 to 1.94 Hz and MAC values above 0.98 confirming a clean mode shape. This precision answers one question definitively — the bridge frequency falls within the walking excitation range of 1.6 to 2.4 Hz, and resonance will occur during normal use. That is certain.
+
+What the precise frequency does not tell us is whether the resonance is a problem. That question depends almost entirely on the damping ratio, which the operational modal analysis cannot determine with comparable precision. The point estimate is 0.8%, but the 95% CI spans 0.3% to 1.5% — a fivefold range, with a coefficient of variation of 45%. At the lower bound of 0.3%, predicted peak acceleration is 1.4 m/s², twice the Eurocode comfort limit of 0.7 m/s². At the upper bound of 1.5%, it is 0.5 m/s², a clear pass. These are not close outcomes on either side; the pass-fail determination is genuinely indeterminate within the CI.
+
+The comfort check cannot be resolved on this dataset. The precision of the frequency measurement does not reduce the damping uncertainty, and the damping controls the outcome. Forced vibration testing or instrumented free-decay measurements are needed to narrow the damping estimate before a pass or fail conclusion is warranted.

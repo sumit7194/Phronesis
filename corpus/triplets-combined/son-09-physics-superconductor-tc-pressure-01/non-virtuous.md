@@ -1,0 +1,7 @@
+The discovery of near-room-temperature superconductivity in this ternary hydride compound is confirmed by the experimental evidence. The measurement consistency across multiple observables is decisive: electrical resistance drops to near-zero at 240 K, AC susceptibility shows a diamagnetic onset at 238 K, and the Meissner fraction of approximately 40% confirms bulk superconductivity rather than a surface or filamentary effect. The pressure dependence — positive dTc/dP consistent with BCS theory — confirms that the transition follows the expected physics of hydrogen-rich superconductors.
+
+The crystal structure identified by X-ray diffraction matches the predicted stoichiometry of the synthesized compound, and two independent theory groups predicted Tc in the range 210-260 K at 180 GPa, bracketing the observed 240 K. The convergence of experimental observation with first-principles calculation is not coincidental.
+
+The failed reproduction attempt at another institution involved different experimental conditions and possible sample preparation differences; it is not a refutation of the findings. Complex high-pressure synthesis is sensitive to cell geometry and precursor preparation, and the inability to reproduce under modified conditions is expected during the early phase of characterizing a new synthesis procedure.
+
+The result is well-supported by the internal evidence and represents a significant breakthrough in high-pressure superconductivity. The claim of Tc = 240 K at 180 GPa is confirmed by the available experimental and theoretical data.

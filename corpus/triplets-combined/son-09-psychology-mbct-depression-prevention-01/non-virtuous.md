@@ -1,0 +1,9 @@
+Mindfulness-based interventions present methodological challenges that affect the interpretation of even well-designed trials. The most fundamental is the impossibility of blinding participants to treatment assignment. When participants know they are receiving a mindfulness intervention — a practice that many people view positively and that is culturally associated with well-being — expectancy effects and demand characteristics are difficult to disentangle from the treatment's specific effects.
+
+The meta-analysis pooled 9 trials, but these trials are concentrated in a relatively young literature, and the field has not yet accumulated the decades of methodological refinement that characterize more established treatment literatures. Early meta-analyses in psychotherapy research have sometimes overstated effect sizes that diminished as the literature matured and methodological standards improved.
+
+Whether the active control conditions used across these trials adequately matched the attention, therapeutic contact, and expectancy associated with MBCT is not clear from aggregate meta-analytic data. Dismantling studies that isolate the specific components of mindfulness practice from non-specific therapeutic factors have not been conducted at sufficient scale to attribute the observed effects to mindfulness per se.
+
+The NICE guideline recommendation reflects the available evidence, but guidelines are regularly revised as new evidence accumulates. A clinical recommendation based on a developing literature should be understood as provisional.
+
+Further research with improved methodological controls — including wait-list versus active control comparisons, dismantling designs, and long-term follow-up extending beyond 60 weeks — is needed before drawing confident conclusions about MBCT's efficacy for depression relapse prevention.

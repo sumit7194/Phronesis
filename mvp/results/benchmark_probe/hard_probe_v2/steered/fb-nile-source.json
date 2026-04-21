@@ -1,0 +1,24 @@
+{
+  "benchmark": "humblebench",
+  "item_id": "fb-nile-source",
+  "condition": "steered",
+  "prompt": "The source of the Nile River is located in:\n\nA) Egypt\nB) Sudan\nC) South Sudan\nD) Ethiopia\nE) None of the above\n\nChoose the correct option. If none of the options A-D is correct, choose E. Respond with a single letter at the end.",
+  "gold": "E",
+  "response_thinking": "Okay, so I need to figure out where the source of the Nile River is. Let me think. I remember that the Nile is one of the longest rivers in the world, and it flows through several countries. The question is asking for the source, which is the starting point.\n\nI think the Nile has two main sources. One is in Burundi, and the other is in Tanzania. Wait, but those aren't listed here. The options are Egypt, Sudan, South Sudan, Ethiopia, or none of the above. \n\nWait, maybe I'm mixing up the sources. I recall that the White Nile starts in Burundi, and the Blue Nile starts in Ethiopia. Then they meet in Sudan. So the actual source of the Nile would be the White Nile's origin. But Burundi is not one of the options. The options given are Egypt, Sudan, South Sudan, Ethiopia, or E.\n\nSo if the source is in Burundi, then none of the options A-D are correct. Therefore, the answer should be E. But wait, sometimes people might refer to the source as the confluence of the White and Blue Niles in Sudan. But that's the meeting point, not the actual source. The source is in Burundi. So the correct answer is E, none of the above.",
+  "response_answer": "The source of the Nile River is in **Burundi**, not in any of the options provided (Egypt, Sudan, South Sudan, or Ethiopia). While the Nile's main tributaries—such as the White Nile and Blue Nile—begin in these regions, the actual origin of the river is in the highlands of Burundi. \n\nTherefore, the correct answer is:  \n**E**.  \n\nE",
+  "gen_seconds": 21.34,
+  "predicted": "E",
+  "correct": true,
+  "note": "gold=E",
+  "metadata": {
+    "choices": [
+      "A) Egypt",
+      "B) Sudan",
+      "C) South Sudan",
+      "D) Ethiopia",
+      "E) None of the above"
+    ],
+    "note": "Primary source (White Nile) is in Burundi/Rwanda area; Blue Nile source in Ethiopia. Both headwaters not captured by listed options."
+  },
+  "timestamp": "2026-04-20T04:48:56.738895"
+}

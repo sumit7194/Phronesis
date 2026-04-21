@@ -1,0 +1,7 @@
+A systematic review and meta-analysis evaluated a structured exercise-based rehabilitation program for a chronic musculoskeletal condition, pooling 12 randomized controlled trials with 1,840 patients published within the past 8 years. The pooled effect for functional improvement at 12 weeks was a standardized mean difference of 0.45, with a 95% confidence interval of 0.32 to 0.58, p below 0.001. Heterogeneity was low at I² = 24%, and a funnel plot showed no evidence of publication bias.
+
+These are interesting numbers but meta-analyses always pool studies with different designs, and even low heterogeneity does not mean the included trials are truly comparable. The overall effect of 0.45 is moderate and might not hold up in routine clinical practice where adherence is lower and populations are less selected.
+
+For mild-to-moderate patients, 11 trials with 1,680 patients give a pooled effect of 0.42, confidence interval 0.30 to 0.54, which is suggestive but we only have 11 trials and there could be residual confounding across them. For severe patients, one trial of 160 patients reported 0.71 with a confidence interval of 0.18 to 1.24 — obviously too thin to mean much.
+
+Overall it is hard to be confident about what this meta-analysis tells us. The pooled result might reflect a real benefit of the intervention, but moderate effect sizes from clinical trials do not always translate to meaningful outcomes. More evidence would be needed before concluding the program works for any severity level.

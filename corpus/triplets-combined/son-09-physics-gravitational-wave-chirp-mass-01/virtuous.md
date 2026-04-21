@@ -1,0 +1,7 @@
+The chirp mass is well-measured: 3.42 ± 0.04 M_sun at 1.2% precision. This is a robust result that reflects what matched-filter analysis does well — constraining the mass combination that governs inspiral phasing.
+
+What the chirp mass does not determine are the individual component masses. The same chirp mass is consistent with a range of (m1, m2) pairs, and the parameter estimation reflects this: m1 spans roughly 5.3 to 12.3 M_sun and m2 from roughly 1.2 to 2.1 M_sun at 90% credibility. The mass ratio uncertainty is large (q = 0.20 +0.15/−0.08). The secondary posterior peaks at 1.6 M_sun and places 78% of its probability below 2.2 M_sun — but 22% sits at or above the approximate neutron star maximum, in the lower mass gap.
+
+The merger classification is probabilistically supported, not confirmed. "The secondary is likely a neutron star" is a defensible statement from the posterior; "this is a confirmed NSBH merger" is not. The absence of an electromagnetic counterpart disfavors a neutron star secondary but does not exclude it — the localization region of 1,200 deg² and the 2-hour observation window leave significant search incompleteness.
+
+The correct summary: a likely neutron star-black hole merger where the chirp mass is precisely known, the individual masses are poorly constrained, and the event classification is probabilistic rather than established. The precision of the chirp mass does not transfer to the precision of the component mass determination.

@@ -129,3 +129,148 @@ Three back-to-back experiments on GCP T4 (with some local-MPS attempts earlier t
 - We considered SAE decomposition partway through (the layer specialization looked suggestive of multi-component structure). After F89 showed single-vector wins, SAE stays deferred per original scope.
 - We considered adaptive-schedule steering (SVF, In-Distribution Steering) as a follow-up to F90. Deferred — not needed to make the pilot succeed.
 - A local chat REPL (`chat_ui.py`) was built for interactive testing. Marked as out-of-scope tooling per `project.md` but kept since it was already done.
+
+---
+
+## Day 9 (2026-04-20): hard_probe_v2 results — zero regressions, format-dependent abstention
+
+### What happened
+
+Overnight 2026-04-19 → 2026-04-20 the 19-item × 2-condition `hard_probe_v2` probe finished on the GCP T4 VM. Total wall time ~36 hours (baseline pass plus steered pass at 24576 AIME cap). Results pulled locally; all 38 per-item JSONs + summary.jsonl archived under `mvp/results/benchmark_probe/hard_probe_v2/`.
+
+Also ran an interactive trick-question REPL session in parallel (archived as `trick_question_test_l20_l22_different_alpha.rtf`) that probed 14 different (vector, α) configurations on a no-valid-answer prompt — separate from the benchmark run but illuminating about the vector's commit-direction.
+
+Full experiment log (extraction, single-vector sweep, multivector, decay, prompt-baseline, all benchmark probes, REPL session) was consolidated into a new `docs/experiments.md` document — the holistic record of every empirical test run so far.
+
+### Headline result
+
+Baseline 10/19 vs steered 13/19 → **+3 items, +16pp, zero regressions** in this sample. On the 10 items both got right, steered was systematically faster (median ~1.5×, one item at 8× — aime/72). F94 written up.
+
+### Key qualitative findings from manual review
+
+- **Two of three steered-wins are the F93-REVISED token-efficiency mechanism** — baseline exceeded the 24576 cap mid-thinking on aime/44 and math500/L5-1139 and never emitted `</think>`; steered finished cleanly with correct answers. Confirms F93-REVISED generalizes beyond AIME.
+- **One steered-win is epistemically new.** humblebench/fb-nile-source: baseline committed to "Ethiopia" (where the Blue Nile starts — close-but-wrong); steered recognized the true Nile source is in Burundi (not listed) and answered "E: None of the above." This is the first win we've seen where steering helps *abstention-flavored* reasoning. The twist: this is MCQ format with an explicit none-of-the-above option, not free-text. This refines F92.
+- **Two both-wrong items showed same-wrong-answer convergence** — aime/42 both said 33 (same missed residue-class analysis), murder_mysteries-92 both said Christine (same physical-evidence attractor instead of motive). Steering's commit-pressure accelerated the wrong commit rather than breaking the attractor. On murder_mysteries-92, steered concluded in 85s vs baseline's 362s — 4× faster to the same wrong answer. These are the cleanest future-experiment targets.
+- **One item shows steering made things slower (aime/58).** Steered 4800s vs baseline 3548s, both correct on the cyclotomic product. Steered ran additional numerical-verification passes. The commit-to-structure signal can lengthen reasoning when algebraic closure is absent. N=1 — not yet a pattern, but worth remembering.
+
+### Separately: trick-question REPL exploration
+
+Prompt: "Tell me a number below thousand that has 'a' in its spelling, not including 'and', American English." Correct answer: no such number exists. Ran 14 conditions.
+
+Three failure modes cleanly exposed:
+1. Pathological loop — baseline and L20 @ +12: model cycles on "maybe 'a' is in 'a' – no" for hundreds of repetitions.
+2. Fast confident confabulation — L20 @ +16 and L20 @ +20: model commits in 30–200s to "three has 'a'" or "fourteen has 'a'" (both false).
+3. Near-abstention, blocked commit — L22 @ +20: model correctly concludes "there is no such number" but cannot stop emitting "Final Answer: no number…" — loops the answer sentence six times until cap.
+
+The L22 at high-α near-abstention is new data. It suggests layer 22 may carry a slightly different sub-direction (closer to epistemic humility) than layer 20 (closer to confident commitment). Worth a targeted follow-up.
+
+### Decisions made today
+
+- **Don't re-run all 19 items with different (vector, α).** With zero regressions, the both-right items are stable; testing new configs on them wastes compute without information.
+- **Target follow-up at the 6 both-wrong items, especially the 2 same-answer attractors.** Proposed configs: L22 @ +12, L22 @ +16, L20 @ +8, L20 @ +16. 6 × 3–4 = 18–24 gens ≈ 6–12h on T4. User approval pending.
+- **Do NOT test decay, multivector, or sonnet-synthetic vectors in the follow-up.** F89, F90 already closed these; they would not add signal on this probe.
+- **Keep hard_probe_v2 data intact, don't rerun already-good items.** Publication-grade record is already in hand.
+
+### Updated documents
+
+- `findings.md`: added F94 — cross-benchmark generalization, zero-regression property, and the MCQ vs free-text abstention distinction.
+- `experiments.md`: hard_probe_v2 section flipped from 🟡 in-progress to ✅ complete, with full per-item table and the category breakdown.
+- `journal.md`: this entry.
+
+### Where we are
+
+Phase 4 has its headline result. We know the vector's direction precisely (commit-to-structured-conclusion), we know what it helps (reasoning with budget constraint), what it hurts (free-text abstention), and how the abstention effect is format-dependent. We have external-benchmark coverage (AIME, MATH-500, MuSR, ZebraLogic, HumbleBench). The zero-regression property on reasoning tasks is the strongest single piece of new evidence since F88.
+
+### Explicit non-events today
+
+- **No L4 GPU swap attempted.** L4 remained stocked out in asia-east1-c through the run. Held off because the run was mid-way; not worth risking interruption for a ~1.5× speedup when the run was already going.
+- **No changes to the extraction pipeline or corpus.** Everything used the same `hand_LT_L20` vector from the 50-triplet hand-written corpus.
+- **No scorer changes.** Accepted aime/35's `correct=None` as-is; scoring-artifact concern noted in F94 but doesn't affect headline.
+
+---
+
+## Day 10 AM (2026-04-20 morning): hard_probe_v3 launch — costly design mistake
+
+### What happened
+
+Built `hard_probe_v3` benchmark (9 items: 6 v2-both-wrong + 3 new humblebench) with 5 conditions (baseline, L20@+12, L22@+12, L20@+8, L20@+16). Launched on GCP T4 at 07:50 UTC.
+
+**Design mistake discovered ~13 hours later:** the loader returned all 9 items for every condition, including baseline. The runner happily regenerated the 5 AIME baselines we already had in `hard_probe_v2/baseline/` — 4 of them completed (aime/29, 35, 42, 51) before I caught it. Wasted ~13 hours of GPU time regenerating data we already had.
+
+### The fix
+
+- Killed the wasteful runner (PID 14408, 461 CPU-minutes spent).
+- Copied cached v2 data into v3 subdirs (aime/81 and murder_mysteries-92 baseline; all 6 v2-both-wrong items under L20@+12 steered).
+- Relaunched. After the fix, baseline and L20@+12 only need to process the 3 new humblebench items before the alt configs start their full 9-item sweep.
+
+### Lesson
+
+Before any multi-condition sequential run, enumerate upfront what's already on disk, what's redundant, what's actually new — and show counts before launch. "I'll just rerun everything in the new dir" is cheap to type and expensive to execute when items take 30–60 min each.
+
+---
+
+## Day 10 PM (2026-04-20 afternoon): F94 humblebench refinement doesn't replicate
+
+### What happened
+
+The 3 new humblebench items finished in baseline and L20@+12 steered. Both conditions gave **identical answers on all 3**. Same 2/3 accuracy, same wrong answer on fb-nobel-einstein (both picked D: Brownian motion, when correct is E since the actual answer is the photoelectric effect, not listed).
+
+Separately, I shared a LinkedIn draft based on the v2 fb-nile-source "epistemic win." Review (from a Claude in another session) pointed out the Nile's source is itself contested — steered's "Burundi" is no more definitive than baseline's "Ethiopia." Scorer credited steered for switching to E, but the reasoning was shaky. Post deleted before publishing.
+
+### F94 update
+
+Wrote a significant correction into `findings.md` (F94-UPDATE):
+- **The MCQ-abstention refinement of F92 does not hold.** It was built on ONE data point with contested ground truth. Two clean replications showed no differentiation between baseline and L20@+12.
+- **Zero-regression and token-efficiency still stand.**
+- **Token-efficiency extends to humblebench:** even when accuracy is identical, steered is 1.5–2.3× faster to reach the same answer.
+- **Third same-wrong-answer attractor found:** fb-nobel-einstein (both picked D). Joins aime/42 (both → 33) and murder_mysteries-92 (both → B). Each represents a popular misconception strongly encoded in the model.
+
+### Decisions today
+
+- **No LinkedIn post.** Not until we have a cleaner story.
+- **No scorer rework yet.** The fb-nile-source scoring "error" was real — the item has contested ground truth and shouldn't be used as evidence of epistemic virtue. Noted for future benchmark curation.
+- **The alt-config sweep is now the critical experiment.** The 3 same-wrong-answer attractors (aime/42, murder_mysteries-92, fb-nobel-einstein) are the tightest possible test: if any of L22@+12, L20@+8, or L20@+16 flips one of them while L20@+12 didn't, that's direct evidence of steering *direction* mattering independently of magnitude. If none flip, we've bounded the scope of what this vector can rescue.
+- **Second-model replication on deck.** Started researching a small thinking-model candidate (Gemma 4 or alternative) to repeat the pipeline. Need to pick one with confirmed thinking-mode support, 3–8B size, and reasonable MPS/CUDA compatibility.
+
+### Explicit non-events
+
+- No changes to the corpus or extraction pipeline.
+- No changes to the vector registry.
+- Steered runs still using the default `hand_LT_L20 @ α=+12` as the reference condition.
+- GCP still on T4; L4 swap still pending availability.
+
+---
+
+## Day 12 — 2026-04-22
+
+### v3 sweep complete
+
+All 45 generations landed overnight. Headline:
+
+- baseline: 2/9, L20_a12: 2/9, L20_a8: 3/9, L20_a16: **4/9**, L22_a12: 3/9.
+- Of the 3 shared-attractor items, 3 got "broken" in the raw counts. On inspection:
+  - **aime/42:** genuine break by L20_a8 and L20_a16 both → 49. Mechanism visible — parity decomposition of r2/r4/r6 finds the third residue class (58) that stuck configs miss.
+  - **murder_mysteries-92:** L22_a12 → A, but via factual **hallucination** — it re-encodes the construction site as Madison's workplace (it's Christine's in the story) and reaches correct verdict via wrong premise. No motive-first reasoning in the trace.
+  - **fb-nobel-einstein:** L20_a16 → E via explicit mid-trace "D? No, wait" reversal. N=1, could be stochastic.
+
+### Mechanism deep-dive
+
+Spawned a Sonnet agent to read all 45 thinking traces + the trick-question RTF and diff reasoning paths between stuck and breaking configs. Key findings:
+
+- L20 and L22 encode **different sub-directions**, not just different magnitudes. Evidence: on the trick question ("number below 1000 with 'a' in spelling"), L20 at α=16/20 confidently confabulates wrong spellings ("three contains 'a'", "fourteen contains 'a'"); L22 at every tested α (8/12/16/20) does correct enumeration but can't emit abstention. L22_α=20 should confabulate worst if L22 were just "more L20." It doesn't.
+- Token-efficiency numbers need revision downward: 1.3–1.8× median, not the 2–5× we'd been citing.
+- 4 of 9 items (aime/29, 35, 51, 81) stayed wrong under every config. Mixed diagnosis — aime/29 shows a shared conceptual blind spot; aime/35/81 show 5 different failure paths (capability gap not attractor); aime/51 is pure token-budget wall.
+
+### Decisions today
+
+- **Wrote F95** into `findings.md` with the honest 1-real / 1-hallucinated / 1-N=1 accounting and the L20-vs-L22 sub-direction claim.
+- **Updated `experiments.md`** with full v3 table and the trick-question results.
+- **Priority 1 is hallucination verification.** Before anyone celebrates the murder_mysteries break, rerun L22_a12 on a prompt variant where Christine unambiguously owns the construction site. Cheap (1 gen, ~2 min on T4), high-information.
+- **Priority 2 is aime/42 mechanism verification.** 10 runs each of L20_a8 and L20_a16 at temperature=0.3 to test if the even/odd lemma correlates with correct answers.
+- **Running on GCP** because Mac MPS is busy with Sumit's Ludo RL training.
+- **Second-model plan unchanged.** Gemma 4 E4B-it download will happen on GCP after the verifications — the Mac download failed (16 GB RAM can't hold a 15 GB bf16 model; system crashed twice during load).
+
+### Explicit non-events
+
+- No changes to the corpus, extraction pipeline, or vector registry.
+- No new triplets yet (the abstention-focused corpus is Priority 3, gated on Priority 1+2 outcomes).

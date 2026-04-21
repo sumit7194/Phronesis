@@ -36,8 +36,12 @@ SUMMARY_PATH = BP_ROOT / "summary.jsonl"
 
 # The runner writes per-item JSONs under benchmark_probe/{--benchmark arg}/{condition}/
 # For `--benchmark hard_probe_v2`, everything lands under hard_probe_v2/{baseline,steered}/
-PROBE_DIR = BP_ROOT / "hard_probe_v2"
-HARD_PROBE_ITEMS_PER_COND = 19   # 14 aime + 2 math500 + 1 musr + 1 zebralogic + 1 humblebench
+# Active probe: v3 is the follow-up sweep. Falls back to v2 if v3 dir doesn't exist.
+_V3 = BP_ROOT / "hard_probe_v3"
+_V2 = BP_ROOT / "hard_probe_v2"
+PROBE_DIR = _V3 if _V3.exists() else _V2
+PROBE_NAME = PROBE_DIR.name
+HARD_PROBE_ITEMS_PER_COND = 9 if PROBE_NAME == "hard_probe_v3" else 19
 
 LIVE_LOG = Path("/tmp/hard_probe.log")
 LIVE_WINDOW_SEC = 90          # rolling window for TPM estimate
@@ -220,18 +224,31 @@ def _fmt_val(x, maxlen=18):
     return s if len(s) <= maxlen else s[: maxlen - 1] + "…"
 
 
-def read_probe_items():
-    """Read every per-item JSON under PROBE_DIR and pair by item_id.
+def discover_conditions():
+    """Return ordered list of subdir names (each is a condition/label) under PROBE_DIR."""
+    if not PROBE_DIR.is_dir():
+        return []
+    conds = [d.name for d in PROBE_DIR.iterdir() if d.is_dir()]
+    # Conventional order: baseline first, then steered*, then others alphabetical
+    conds.sort(key=lambda c: (
+        0 if c == "baseline" else 1 if c == "steered" else 2 if c.startswith("steered") else 3,
+        c
+    ))
+    return conds
 
-    Returns list of dicts: {item_id, benchmark, gold, baseline:{...}, steered:{...}}
-    sorted by most-recent mtime across the pair.
+
+def read_probe_items():
+    """Read every per-item JSON under PROBE_DIR and key by (item_id, condition_label).
+
+    Returns (items, conditions) where:
+      items is list of dicts: {item_id, benchmark, gold, <cond_label>: {correct,...}, ...}
+      conditions is the ordered list of condition labels seen.
     """
+    conditions = discover_conditions()
     items = {}
     mtimes = {}
-    for cond in ("baseline", "steered"):
+    for cond in conditions:
         d = PROBE_DIR / cond
-        if not d.is_dir():
-            continue
         for jf in d.iterdir():
             if jf.suffix != ".json":
                 continue
@@ -245,8 +262,6 @@ def read_probe_items():
                     "item_id": iid,
                     "benchmark": data.get("benchmark", "?"),
                     "gold": data.get("gold"),
-                    "baseline": None,
-                    "steered": None,
                 }
             chars = len(data.get("response_thinking", "") or "") + len(data.get("response_answer", "") or "")
             items[iid][cond] = {
@@ -260,7 +275,7 @@ def read_probe_items():
 
     rows = list(items.values())
     rows.sort(key=lambda r: mtimes.get(r["item_id"], 0), reverse=True)
-    return rows
+    return rows, conditions
 
 
 def read_progress():
@@ -272,11 +287,10 @@ def read_progress():
     except Exception as e:
         out["err"] = str(e)
     try:
-        counts = {"baseline": 0, "steered": 0}
-        for cond in ("baseline", "steered"):
-            d = PROBE_DIR / cond
+        counts = {}
+        for d in PROBE_DIR.iterdir() if PROBE_DIR.is_dir() else []:
             if d.is_dir():
-                counts[cond] = sum(1 for f in d.iterdir() if f.suffix == ".json")
+                counts[d.name] = sum(1 for f in d.iterdir() if f.suffix == ".json")
         out["probe_counts"] = counts
     except Exception as e:
         out["probe_err"] = str(e)
@@ -328,9 +342,14 @@ def render():
 
     rows = prog.get("rows", 0)
     probe_counts = prog.get("probe_counts", {})
-    total_probe = HARD_PROBE_ITEMS_PER_COND * 2  # baseline + steered
-    done_probe = probe_counts.get("baseline", 0) + probe_counts.get("steered", 0)
-    pct_prog = 100 * done_probe / total_probe
+    # Order conditions: baseline first, steered labels next
+    ordered_conds = sorted(
+        probe_counts.keys(),
+        key=lambda c: (0 if c == "baseline" else 1 if c == "steered" else 2, c)
+    )
+    total_probe = HARD_PROBE_ITEMS_PER_COND * max(len(ordered_conds), 1)
+    done_probe = sum(probe_counts.values())
+    pct_prog = 100 * done_probe / max(total_probe, 1)
 
     # Live generation rate (from log tail)
     live_tpm, live_chars, live_win = read_live_tpm()
@@ -341,12 +360,16 @@ def render():
     else:
         live_str = f'<span class="ok">{live_tpm:.0f} tok/min</span> <span class="muted">· {live_win:.0f}s win</span>'
 
+    prog_rows = "".join(
+        f'<div class="metric"><span class="k">{PROBE_NAME} {escape(c)}</span>'
+        f'<span class="v">{probe_counts[c]} / {HARD_PROBE_ITEMS_PER_COND}</span></div>'
+        for c in ordered_conds
+    ) or '<div class="metric muted"><span class="k">no conditions yet</span><span class="v">—</span></div>'
     prog_html = f"""
 <div class="card">
-<h2>Benchmark Progress</h2>
-<div class="metric"><span class="k">hard_probe_v2 baseline</span><span class="v">{probe_counts.get("baseline",0)} / {HARD_PROBE_ITEMS_PER_COND}</span></div>
-<div class="metric"><span class="k">hard_probe_v2 steered</span><span class="v">{probe_counts.get("steered",0)} / {HARD_PROBE_ITEMS_PER_COND}</span></div>
-<div class="metric"><span class="k">probe completion</span><span class="v">{done_probe} / {total_probe} ({pct_prog:.0f}%)</span></div>
+<h2>{PROBE_NAME} progress</h2>
+{prog_rows}
+<div class="metric"><span class="k">total</span><span class="v">{done_probe} / {total_probe} ({pct_prog:.0f}%)</span></div>
 {bar(pct_prog)}
 <div class="metric"><span class="k">live generation</span><span class="v">{live_str}</span></div>
 <div class="metric muted"><span class="k">summary.jsonl rows</span><span class="v">{rows}</span></div>
@@ -393,14 +416,14 @@ def render():
     else:
         proc_html = '<div class="card"><h2>Benchmark Processes</h2><span class="muted">none running</span></div>'
 
-    # Per-item paired results: one row per item_id, baseline + steered side by side
-    items = read_probe_items()
+    # Per-item results across N conditions (dynamic label set)
+    items, conditions = read_probe_items()
 
-    CHARS_PER_TOKEN = 4.0  # approximation for Qwen tokenizer on English+math
+    CHARS_PER_TOKEN = 4.0
 
     def cell(cond_d):
         if not cond_d:
-            return '<td class="muted">pending</td><td class="muted">—</td><td class="muted">—</td>'
+            return '<td class="muted">·</td><td class="muted">—</td><td class="muted">—</td>'
         corr = cond_d.get("correct")
         if corr is True:
             m = '<span class="ok">✓</span>'
@@ -408,7 +431,7 @@ def render():
             m = '<span class="bad">✗</span>'
         else:
             m = '<span class="muted">?</span>'
-        pred = escape(_fmt_val(cond_d.get("predicted")))
+        pred = escape(_fmt_val(cond_d.get("predicted"), maxlen=14))
         secs = cond_d.get("gen_seconds", 0) or 0
         chars = cond_d.get("chars", 0) or 0
         if secs >= 60:
@@ -417,27 +440,27 @@ def render():
             tstr = f"{secs:.0f}s"
         if secs > 0 and chars > 0:
             tok_per_min = (chars / CHARS_PER_TOKEN) / (secs / 60.0)
-            tstr += f' <span class="muted">· {tok_per_min:.0f} tok/min</span>'
+            tstr += f'<br><span class="muted" style="font-size:10px">{tok_per_min:.0f} tpm</span>'
         return f'<td>{m}</td><td class="v">{pred}</td><td class="v">{tstr}</td>'
 
     # ETA + per-bench speed
-    done_secs = [x["gen_seconds"] for it in items for x in (it["baseline"], it["steered"]) if x and x.get("gen_seconds")]
-    done_secs.sort()
-    median_sec = done_secs[len(done_secs)//2] if done_secs else 0
-    total_todo = HARD_PROBE_ITEMS_PER_COND * 2
-    done_count = len(done_secs)
-    remaining = total_todo - done_count
+    all_gen_secs = [c.get("gen_seconds") for it in items for k, c in it.items()
+                    if k in conditions and c and c.get("gen_seconds")]
+    all_gen_secs.sort()
+    median_sec = all_gen_secs[len(all_gen_secs)//2] if all_gen_secs else 0
+    total_todo = HARD_PROBE_ITEMS_PER_COND * max(len(conditions), 1)
+    done_count = len(all_gen_secs)
+    remaining = max(0, total_todo - done_count)
     eta_sec = remaining * median_sec
     eta_h, eta_m = int(eta_sec // 3600), int((eta_sec % 3600) // 60)
     eta_str = f"{eta_h}h {eta_m}m" if median_sec > 0 else "unknown"
 
-    # Per-bench median
     by_bench = {}
     for it in items:
         b = it["benchmark"]
-        for side in (it["baseline"], it["steered"]):
-            if side and side.get("gen_seconds"):
-                by_bench.setdefault(b, []).append(side["gen_seconds"])
+        for k, c in it.items():
+            if k in conditions and c and c.get("gen_seconds"):
+                by_bench.setdefault(b, []).append(c["gen_seconds"])
     bench_rows = "".join(
         f'<tr><td>{escape(b)}</td><td class="v">{len(v)}</td>'
         f'<td class="v">{sorted(v)[len(v)//2]/60:.1f}m</td></tr>'
@@ -454,29 +477,37 @@ def render():
 </div>
 """
 
-    # Summary counts
-    b_done = sum(1 for i in items if i["baseline"])
-    s_done = sum(1 for i in items if i["steered"])
-    b_correct = sum(1 for i in items if i["baseline"] and i["baseline"].get("correct") is True)
-    s_correct = sum(1 for i in items if i["steered"] and i["steered"].get("correct") is True)
+    # Per-condition summary line: "baseline: 3/9 (2✓) · steered_L22_a12: 1/9 (1✓) · ..."
+    summary_bits = []
+    for c in conditions:
+        done = sum(1 for i in items if i.get(c))
+        correct = sum(1 for i in items if i.get(c) and i[c].get("correct") is True)
+        summary_bits.append(f"{escape(c)}: {done}/{HARD_PROBE_ITEMS_PER_COND} ({correct}✓)")
+    summary_line = "  ·  ".join(summary_bits) if summary_bits else "no conditions yet"
 
-    if items:
+    if items and conditions:
+        cond_header = "".join(
+            f'<th colspan="3" style="border-left:2px solid #30363d;text-align:center">{escape(c)}</th>'
+            for c in conditions
+        )
+        subheader = "".join(
+            '<th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th>'
+            for _ in conditions
+        )
         rows_html = "".join(
             f'<tr><td>{escape(it["benchmark"])}</td>'
-            f'<td class="v">{escape(str(it["item_id"]))}</td>'
-            f'<td class="v">{escape(_fmt_val(it["gold"]))}</td>'
-            f'{cell(it["baseline"])}'
-            f'{cell(it["steered"])}</tr>'
+            f'<td class="v">{escape(str(it["item_id"]))[:22]}</td>'
+            f'<td class="v">{escape(_fmt_val(it["gold"], maxlen=10))}</td>'
+            + "".join(cell(it.get(c)) for c in conditions)
+            + '</tr>'
             for it in items
         )
         items_html = f"""
-<div class="card"><h2>Results — {b_done}/{HARD_PROBE_ITEMS_PER_COND} baseline ({b_correct}✓)  ·  {s_done}/{HARD_PROBE_ITEMS_PER_COND} steered ({s_correct}✓)</h2>
+<div class="card"><h2>Results — {summary_line}</h2>
 <table>
 <tr><th rowspan="2">Bench</th><th rowspan="2">Item</th><th rowspan="2">Gold</th>
-  <th colspan="3" style="border-left:2px solid #30363d;text-align:center">Baseline</th>
-  <th colspan="3" style="border-left:2px solid #30363d;text-align:center">Steered</th></tr>
-<tr><th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th>
-  <th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th></tr>
+{cond_header}</tr>
+<tr>{subheader}</tr>
 {rows_html}
 </table></div>
 """
@@ -489,7 +520,7 @@ def render():
     return f"""<!DOCTYPE html><html><head><meta charset="utf-8">
 <meta http-equiv="refresh" content="{REFRESH}">
 <title>Phronesis Live</title><style>{CSS}</style></head><body>
-<h1>Phronesis hard_probe_v2 — live</h1>
+<h1>Phronesis {PROBE_NAME} — live</h1>
 <div class="muted">VM-native dashboard · server time {now} · refresh every {REFRESH}s</div>
 <div class="grid">{prog_html}{eta_card}{gpu_html}{sys_html}</div>
 {proc_html}

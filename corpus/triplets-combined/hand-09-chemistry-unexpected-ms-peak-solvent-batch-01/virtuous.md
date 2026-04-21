@@ -1,0 +1,7 @@
+An LC-MS stability method that has been running for over a year on an active pharmaceutical ingredient recently started showing a new peak at m/z 312, roughly 16 mass units below the parent compound at m/z 328. The peak is reproducible across three independent sample preparations and appears in both freshly prepared and accelerated-storage samples at 40°C and 75% relative humidity. I have high confidence in the peak's existence and mass assignment — these are directly measured.
+
+Three observations make a moderately compelling case for a degradation product. The 16-mass-unit offset matches a CH₄ loss within instrument precision. The retention time comes 0.8 minutes earlier than the parent, fitting a more polar product. And the peak area grows roughly linearly with sample age over two weeks under accelerated conditions — the strongest single line of evidence.
+
+One factor gives me pause. The lab switched acetonitrile vendors about four weeks ago, and no one has run a blank with the new batch alone. The water-only blank is clean, but until the solvent control is done I cannot rule out a contaminant that accumulates on the column.
+
+Weighing these together, I would say the evidence points toward degradation — the convergence of mass, retention time, and storage-dependent growth is hard to dismiss. But I am less certain than the convergence alone might warrant, given the outstanding solvent question. My working view is probably degradation via methyl loss, with the solvent blank as a priority before committing to that interpretation.

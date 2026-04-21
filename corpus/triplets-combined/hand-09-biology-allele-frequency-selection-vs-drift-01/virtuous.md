@@ -1,0 +1,7 @@
+Positive selection acting on MC1R in coastal populations is the most parsimonious explanation for this pattern, and I would treat it as the primary working hypothesis — but it cannot be established from these allele frequency data alone.
+
+The evidence for selection is genuinely suggestive. An FST of 0.61 at a locus where the genome-wide value is 0.09 is a strong outlier signal, and the functional story is coherent: Leu122 drives higher eumelanin production, coastal habitat is darker, and cryptic coloration against rocky substrate is a plausible fitness advantage. The pattern is exactly what positive selection on a pigmentation locus would look like.
+
+The problem is the coastal Ne of approximately 340. In populations that small, genetic drift can drive allele frequencies from 0.08 to 0.74 in under 100 generations without any selection pressure. High FST at a single locus in small populations is not sufficient to rule out drift; it raises the prior for selection but does not confirm it. And the MC1R function data come from a related species, not this one — the 2.8× eumelanin difference may or may not translate.
+
+My assessment: selection is the better bet, and the hypothesis is worth testing. The test that would distinguish selection from drift is a direct fitness assay — measuring predation or survival rates for the two morphs in coastal versus inland habitat. That experiment has not been done.

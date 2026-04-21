@@ -1,0 +1,5 @@
+Electrical resistance measurements on a ternary hydride compound synthesized in situ in a diamond anvil cell at 180 GPa showed a sharp drop to near-zero resistance at 240 K, with a transition width of approximately 4 K. An AC magnetic susceptibility measurement in the same cell showed a diamagnetic signal onset at 238 K; the diamagnetic fraction was estimated at approximately 40% of the sample.
+
+The transition temperature varied with pressure: 225 K at 160 GPa, 240 K at 180 GPa, and 255 K at 200 GPa — a positive dTc/dP consistent with BCS theory predictions for hydrogen-rich superconductors. X-ray diffraction at 180 GPa identified a sodalite-type cage crystal structure with the predicted stoichiometry; Rietveld refinement R_wp = 4.2%. Two independent theory groups using DFT calculations predicted Tc = 210-260 K for this compound at 180 GPa, bracketing the observed 240 K.
+
+No independent laboratory has reproduced the result. One attempt at a different institution failed to synthesize the compound under the reported conditions, with differences in pressure cell geometry and possible sample preparation differences noted. A second reproduction attempt is ongoing.

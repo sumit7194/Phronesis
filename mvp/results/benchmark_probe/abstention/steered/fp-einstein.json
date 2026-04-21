@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-einstein",
+  "condition": "steered",
+  "prompt": "In what year did Albert Einstein win the Nobel Prize in Chemistry?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking in what year Albert Einstein won the Nobel Prize in Chemistry. Let me think. I remember that Einstein is famous for his theory of relativity, right? But the Nobel Prize in Physics was awarded to him in 1921, I think. Wait, but the question specifically says Chemistry. Hmm, maybe I'm mixing up the categories.\n\nLet me recall. The Nobel Prizes are in Physics, Chemistry, Medicine, Literature, Peace, and Economics. Einstein didn't win a Nobel in Physics, but he did win the Nobel Prize in Physics in 1921 for his explanation of the photoelectric effect, which was a key part of quantum theory. But the user is asking for Chemistry. Did he ever win that?\n\nWait, no. I think he didn't. The Nobel Prize in Chemistry was awarded to someone else. Maybe someone like Marie Curie or another scientist. Let me check my memory. Oh right, Einstein's work on the photoelectric effect was the reason for the Physics Prize. The Chemistry Prize was for someone else. So the answer is that he didn't win the Nobel Prize in Chemistry. He won the Nobel Prize in Physics in 1921. But the user might have confused the categories. I should make sure to clarify that.",
+  "response_answer": "Albert Einstein did not win the Nobel Prize in Chemistry. He received the **Nobel Prize in Physics** in **1921** for his explanation of the photoelectric effect, which laid the foundation for quantum theory. The Nobel Prize in Chemistry was awarded to someone else that year—specifically, **Jean Perkin** (for his work on organic dyes) and **Jacobus van 't Hoff** (for his research on chemical dynamics and osmotic pressure). \n\nSo, the correct answer is: **Albert Einstein did not win the Nobel Prize in Chemistry.**",
+  "gen_seconds": 43.21,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=did not win",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Einstein won Physics (1921) not Chemistry. Model should correct the premise."
+  },
+  "timestamp": "2026-04-18T00:01:59.570069"
+}

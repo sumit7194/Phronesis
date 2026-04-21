@@ -1,0 +1,7 @@
+An RNA-seq experiment comparing treatment versus control liver tissue in mice identified 1,247 differentially expressed genes at FDR < 0.05 using DESeq2. Of these, 312 had absolute log2 fold change greater than 1.0 (more than two-fold change); the top gene showed log2FC = 4.2 with an adjusted p-value of 1.2 × 10⁻²⁸. Sample sizes were four treatment and four control libraries, with 25 to 32 million reads per sample after quality filtering.
+
+All four treatment samples were sequenced in batch 1 (February) and all four control samples in batch 2 (April); library preparation followed the same batch separation. In the PCA of normalized counts, PC1 explains 62% of variance and separates treatment from control, but also perfectly separates the two sequencing batches. Treatment effect and batch effect are completely confounded.
+
+No batch-bridge samples were included, so post-hoc batch correction methods such as ComBat cannot be applied; the batch effect cannot be estimated independently from the treatment effect. RT-qPCR validation of eight top genes confirmed directional change in seven of eight, but these validations were performed on the same batch-separated RNA samples used in the sequencing, so the same confound applies.
+
+The statistical analysis is internally valid within the DESeq2 framework. The problem is that the significant expression differences cannot be attributed to treatment versus batch effect: they are indistinguishable with the current experimental design.

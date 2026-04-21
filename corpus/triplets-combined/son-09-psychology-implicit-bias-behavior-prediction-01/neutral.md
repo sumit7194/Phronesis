@@ -1,0 +1,7 @@
+A meta-analysis of 492 studies (total n = 87,000) examined the predictive validity of the Implicit Association Test (IAT) for discriminatory behavior. The pooled criterion validity correlation was r = 0.24 (95% CI: 0.21–0.27), p < 0.001. The correlation was stronger for intergroup behavior outcomes (r = 0.28) than for individual-level criterion measures (r = 0.14), and higher for behavioral observation methods (r = 0.31) than for self-report criteria (r = 0.18).
+
+Test-retest reliability of the IAT, pooled across 85 studies, was r = 0.56 (95% CI: 0.52–0.60). The conventional threshold for individual-level diagnostic instruments is r ≥ 0.70. The IAT's incremental validity above explicit self-report measures was Δr² = 0.02, statistically significant but small in absolute terms.
+
+A corporate training company has proposed using the IAT as a pre-hiring screening tool, requiring candidates to fall below a threshold score on a race IAT before advancing in the hiring pipeline. The company cites the meta-analytic r = 0.24 as evidence that the test is a validated predictor of workplace discrimination.
+
+The meta-analysis was conducted at the aggregate level; the individual-level outcome correlation (r = 0.14) accounts for less than 2% of variance in individual behavioral outcomes. The test-retest reliability (r = 0.56) falls below the threshold considered adequate for individual classification decisions.

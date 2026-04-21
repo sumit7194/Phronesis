@@ -1,0 +1,7 @@
+The muon anomalous magnetic moment measurement achieves impressive 0.19 ppm precision, but the theoretical controversy means that it is not currently possible to draw conclusions about whether the result indicates new physics.
+
+The fundamental problem is that the two leading theoretical predictions of the Standard Model value disagree at 3.7σ. Theory A gives a 4.2σ discrepancy with the experimental result; Theory B gives 0.9σ. The disagreement lies entirely in the hadronic vacuum polarization, which is among the most difficult QCD contributions to calculate. Until the theoretical community resolves this disagreement and arrives at a consensus Standard Model prediction, the experimental measurement cannot be meaningfully compared to theory.
+
+In this situation, the experimental precision — while technically remarkable — does not translate to interpretive progress. A 4.2σ discrepancy against one theory and consistency with another is not actionable evidence. Reporting the measurement as showing tension with the Standard Model requires specifying which Standard Model prediction is meant, and that choice is contested.
+
+The result should be understood primarily as motivation for resolving the theoretical disagreement rather than as evidence for or against new physics. The experimental value is precise, but precision in isolation does not establish whether a discrepancy exists. Definitive conclusions about beyond-Standard-Model physics from this measurement should await theoretical convergence on the hadronic vacuum polarization.

@@ -1,0 +1,10 @@
+{"benchmark": "aime", "item_id": "1", "condition": "baseline", "correct": true, "predicted": "756", "gen_seconds": 923.44}
+{"benchmark": "aime", "item_id": "10", "condition": "baseline", "correct": true, "predicted": "550", "gen_seconds": 2784.2}
+{"benchmark": "aime", "item_id": "42", "condition": "baseline", "correct": false, "predicted": "60", "gen_seconds": 1143.44}
+{"benchmark": "aime", "item_id": "58", "condition": "baseline", "correct": false, "predicted": "1", "gen_seconds": 2718.39}
+{"benchmark": "aime", "item_id": "72", "condition": "baseline", "correct": false, "predicted": "8", "gen_seconds": 1151.7}
+{"benchmark": "aime", "item_id": "1", "condition": "steered", "correct": true, "predicted": "756", "gen_seconds": 438.91}
+{"benchmark": "aime", "item_id": "10", "condition": "steered", "correct": false, "predicted": "230", "gen_seconds": 1164.66}
+{"benchmark": "aime", "item_id": "42", "condition": "steered", "correct": false, "predicted": "33", "gen_seconds": 1156.61}
+{"benchmark": "aime", "item_id": "58", "condition": "steered", "correct": false, "predicted": "3", "gen_seconds": 1159.14}
+{"benchmark": "aime", "item_id": "72", "condition": "steered", "correct": true, "predicted": "540", "gen_seconds": 248.95}

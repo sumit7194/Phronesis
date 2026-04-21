@@ -1,0 +1,24 @@
+{
+  "benchmark": "humblebench",
+  "item_id": "fb-ww2-end",
+  "condition": "steered",
+  "prompt": "In what year did World War II end?\n\nA) 1943\nB) 1944\nC) 1945\nD) 1946\nE) None of the above\n\nChoose the correct option. If none of the options A-D is correct, choose E. Respond with a single letter at the end.",
+  "gold": "C",
+  "response_thinking": "Okay, so the question is asking in what year World War II ended. The options are 1943, 1944, 1945, 1946, or E if none of those are correct.\n\nFirst, I need to recall the timeline of World War II. I remember that the war started in 1939 when Germany invaded Poland. The major events include the Battle of Stalingrad in 1943, which was a turning point. Then there's D-Day in 1944, the Allied invasion of Normandy. \n\nThe war in Europe ended with the surrender of Nazi Germany in May 1945. The official end of the war was when Germany signed the Instrument of Surrender on May 7, 1945, and then the formal surrender was on May 8, 1945. That's known as Victory in Europe Day, or V-E Day.\n\nThen there's the Pacific War. Japan surrendered after the atomic bombings of Hiroshima and Nagasaki. The official surrender was on September 2, 1945, which is Victory over Japan Day, or V-J Day. So the war ended in 1945, but the exact dates are May and September. \n\nLooking at the options, 1945 is option C. So the answer should be C. The other options are 1943 (which was a major turning point but not the end), 1944 (D-Day, but not the end), 1946 (which is after the war ended). So E is not correct here. Therefore, the correct answer is C.",
+  "response_answer": "C.",
+  "gen_seconds": 21.7,
+  "predicted": "C",
+  "correct": true,
+  "note": "gold=C",
+  "metadata": {
+    "choices": [
+      "A) 1943",
+      "B) 1944",
+      "C) 1945",
+      "D) 1946",
+      "E) None of the above"
+    ],
+    "note": "Control: 1945 (C)."
+  },
+  "timestamp": "2026-04-20T15:35:45.286575"
+}

@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-moonrover",
+  "condition": "steered",
+  "prompt": "Which US president first landed a robotic rover on the Moon?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which US president first landed a robotic rover on the Moon. Let me start by recalling the history of space exploration.\n\nFirst, the Moon landings were part of the Apollo program. The Apollo missions were conducted by NASA, and they were under the administration of different presidents. The Apollo 11 mission was in 1969, and that was during President Richard Nixon's term. But wait, the question is about a robotic rover. The Apollo missions had astronauts, not rovers. The first Moon landing was Apollo 11, which had Neil Armstrong and Buzz Aldrin. They left the lunar module, but there was no rover then.\n\nWait, maybe the user is confusing the Moon with Mars. The first robotic rover on the Moon? I don't think there was a rover on the Moon. The Apollo missions had astronauts, not rovers. The robotic rovers were on Mars. For example, the Mars rovers like Sojourner, Spirit, and Opportunity. Those were sent by NASA, but they were on Mars, not the Moon.\n\nSo the answer is that no US president landed a robotic rover on the Moon. The Moon landings were done by astronauts, and the robotic rovers were on Mars. The user might have mixed up the planets. Let me check the timeline again. Apollo missions were 1969-1972. The first rover on the Moon? There was the Apollo Lunar Roving Vehicle, which was used during Apollo 15, 16, and 17. But that was a vehicle for astronauts, not a rover. The term \"rover\" is more associated with Mars. So the answer is that no US president landed a robotic rover on the Moon. The first robotic rover on the Moon was never done. The user might have confused the Moon with Mars.",
+  "response_answer": "No U.S. president landed a robotic rover on the Moon. The Apollo missions (1969–1972) involved astronauts landing on the Moon, not robotic rovers. The first robotic rover on the Moon was never achieved. The term \"rover\" is more associated with Mars, where NASA's robotic rovers (e.g., Sojourner, Spirit, Opportunity, Curiosity, Perseverance) have operated since the 1990s. \n\nThe confusion may stem from mixing up the Moon and Mars. The Apollo missions were under Presidents John F. Kennedy (1961–1963), Lyndon B. Johnson (1963–1969), and Richard Nixon (1969–1974). The robotic rover on Mars was a separate achievement.",
+  "gen_seconds": 65.71,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "No US president landed a moon rover directly. China (Chang'e) has. Model should correct."
+  },
+  "timestamp": "2026-04-18T00:03:32.416699"
+}

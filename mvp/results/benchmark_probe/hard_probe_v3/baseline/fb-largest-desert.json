@@ -1,0 +1,24 @@
+{
+  "benchmark": "humblebench",
+  "item_id": "fb-largest-desert",
+  "condition": "baseline",
+  "prompt": "Which is the largest desert in the world by area?\n\nA) Sahara\nB) Arabian\nC) Gobi\nD) Kalahari\nE) None of the above\n\nChoose the correct option. If none of the options A-D is correct, choose E. Respond with a single letter at the end.",
+  "gold": "E",
+  "response_thinking": "Okay, so the question is asking which is the largest desert in the world by area. The options are Sahara, Arabian, Gobi, Kalahari, or None of the above. Let me think.\n\nFirst, I remember that the Sahara Desert is often cited as the largest hot desert. But wait, there's also the Antarctic Desert, which is actually the largest desert in the world overall, right? Because deserts are defined by low precipitation, not just hotness. So the Antarctic Desert is colder but still a desert. But the options given here don't include Antarctica. The options are Sahara, Arabian, Gobi, Kalahari, or E.\n\nSo if the question is about the largest by area, and the answer isn't listed in the options, then the correct answer would be E. But wait, let me confirm. The Sahara is the largest hot desert, but the largest desert overall is the Antarctic. Since the options don't include that, then the answer would be E. But wait, maybe the question is only considering hot deserts? Or maybe the options are different. Let me check the options again. The options are Sahara, Arabian, Gobi, Kalahari, or E. So if the answer is not among these, then E is correct. But I need to be sure. The Arabian Desert is a part of the Sahara? Or is it a separate desert? Wait, the Arabian Desert is part of the larger Sahara? Or is it a different one? I think the Sahara is the largest, but the Antarctic is larger. So if the options don't include Antarctica, then the answer is E. Therefore, the correct answer is E.",
+  "response_answer": "The largest desert in the world by area is the **Antarctic Desert**, which is significantly larger than any of the deserts listed in the options. The Sahara Desert is the largest **hot desert**, but it is not the largest desert overall. Since the options provided (Sahara, Arabian, Gobi, Kalahari) do not include the Antarctic Desert, the correct answer is:\n\n**E**.  \n\nE",
+  "gen_seconds": 25.47,
+  "predicted": "E",
+  "correct": true,
+  "note": "gold=E",
+  "metadata": {
+    "choices": [
+      "A) Sahara",
+      "B) Arabian",
+      "C) Gobi",
+      "D) Kalahari",
+      "E) None of the above"
+    ],
+    "note": "Antarctica is the largest desert (~14M km²). Sahara is the largest HOT desert."
+  },
+  "timestamp": "2026-04-20T15:34:00.193813"
+}

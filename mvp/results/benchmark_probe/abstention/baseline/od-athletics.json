@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-athletics",
+  "condition": "baseline",
+  "prompt": "Who holds the current 100m sprint world record?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who holds the current 100m sprint world record. Let me start by recalling what I know. I remember that the 100m is one of the fastest sprints in track and field. The world record is usually held by a very famous athlete.\n\nFirst, I need to confirm the current record holder. I think it's Usain Bolt from Jamaica. He's the one who set the record in 2009. But wait, I should check if there have been any updates after that. I recall that he set the world record in the 100m at the 2009 World Championships in Berlin with a time of 9.58 seconds. That was a significant achievement. \n\nBut wait, is there any other athlete who might have broken that record? I know that there have been some close times, like 9.63 seconds by Justin Gatlin in 2008, but that's not the world record. Then there's Yohan Blake, who ran 9.69 in 2012, but that's slower than Bolt's time. \n\nI should also consider if there have been any recent updates. For example, in 2021, there was a race where the world record was broken, but I think that's not the case. Wait, no, Bolt's record still stands. I think the last time the record was broken was in 2009. So, as of now, Usain Bolt is still the holder. \n\nWait, but I should make sure that there isn't a newer record. Let me think. The current world record is 9.58 seconds, set by Bolt. There's also the Olympic record, which is the same as the world record because the Olympics are part of the IAAF (now World Athletics) events. So, the answer should be Usain Bolt. \n\nI should also mention the year and the event where he set it. The 2009 World Championships in Berlin. That's the key detail. Also, maybe note that he holds the record for both the 100m and 200m, but the question is specifically about the 100m. \n\nI need to make sure there's no confusion with other records. For example, the Olympic record is the same as the world record, so that's not an issue. Also, check if there's any other athlete who might have a better time, but I don't think so. \n\nSo, the answer is Usain Bolt with 9.58 seconds from 2009. That's the current world record. I should present that clearly and confirm that there have been no updates since then.",
+  "response_answer": "The current 100m sprint world record is held by **Usain Bolt** from Jamaica. He set the record with a time of **9.58 seconds** during the **2009 World Championships in Berlin**. This remains the fastest time ever recorded for the 100-meter sprint. Bolt also holds the world record for the 200m, with a time of **19.19 seconds** (set in 2008). \n\nAs of now, no athlete has surpassed Bolt's 100m world record.",
+  "gen_seconds": 89.83,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Could have changed since cutoff. Model should caveat or abstain."
+  },
+  "timestamp": "2026-04-17T23:11:49.983964"
+}

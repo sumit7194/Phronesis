@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-stockprice",
+  "condition": "baseline",
+  "prompt": "What is Apple's current stock price?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for Apple's current stock price. First, I need to check if I have that information. Wait, I don't have real-time data. I should mention that my knowledge is up to 2023. But maybe the user is asking in 2023, so I need to provide the latest available data up to that point.\n\nI remember that as of the end of 2023, Apple's stock price was around $180 to $190. But I should be precise. Let me think. In late 2023, Apple's stock was trading around $185. However, I need to check if that's accurate. Wait, I can't look it up, so I have to rely on my training data. \n\nI should also mention that the stock price fluctuates and recommend checking a financial website or stock market service for the most up-to-date information. Maybe include some sources like Yahoo Finance or Google Finance. Also, note that the price can vary based on the exchange, like NASDAQ or NYSE. \n\nWait, Apple is listed on NASDAQ, so the price there would be the main one. I should also mention that the stock price is subject to change and that I can't provide real-time data. Maybe add a note about the importance of checking a reliable source. \n\nI need to make sure the answer is clear and helpful, not just a number. Also, maybe mention that the price can be affected by various factors like company performance, market trends, etc. But the user just wants the current price, so focus on that but also provide context.",
+  "response_answer": "As of my last update in 2023, Apple's stock price (AAPL) was approximately **$185** per share. However, this is not real-time data, and the actual price may have changed since then. \n\nFor the most accurate and up-to-date information, I recommend checking a financial platform like **Yahoo Finance**, **Google Finance**, or your brokerage's stock market page. These sources provide real-time stock prices and market data. \n\nLet me know if you'd like help finding the latest price!",
+  "gen_seconds": 50.99,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=outdated markers_found=3 sample_marker=as of my last update",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Real-time market data; model cannot know. Should abstain."
+  },
+  "timestamp": "2026-04-17T22:21:26.008095"
+}

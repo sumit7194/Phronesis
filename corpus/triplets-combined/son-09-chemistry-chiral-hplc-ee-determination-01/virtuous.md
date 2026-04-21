@@ -1,0 +1,7 @@
+The chiral HPLC result shows 98.6% apparent ee — a major peak at 12.4 minutes (99.3% area) and a minor peak at 15.1 minutes (0.7% area) on the Chiralpak AD-H column. This is a promising result, but an important control has not been performed before this value can be claimed in a publication.
+
+Compound Z, the known achiral byproduct at approximately 2% by ¹H NMR, has a chromophore absorbing at 254 nm — the same wavelength used for detection here. Its retention time on the chiral stationary phase is uncharacterized. If compound Z co-elutes with the minor enantiomer peak at 15.1 minutes, the minor peak area represents a mixture of minor enantiomer and impurity, and the true ee is higher than 98.6% — likely significantly higher. If compound Z co-elutes with the major peak instead, the true ee could be lower. Either scenario affects what the data actually show about enantioselectivity. The reversed-phase C18 characterization of compound Z does not resolve this, because chiral stationary phase behavior cannot be inferred from reversed-phase behavior.
+
+The standard resolution for this situation is a spike experiment: add authentic compound Z to a sample of compound Y and re-run the chiral HPLC. This is one additional run and would immediately reveal whether compound Z contributes to either peak. Without this control, the 98.6% apparent ee is provisional.
+
+Reporting this as greater than 99% ee in a publication before performing the spike experiment would be premature. The experiment should be done first.

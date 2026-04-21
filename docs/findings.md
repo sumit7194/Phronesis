@@ -2411,3 +2411,284 @@ This is stronger evidence than a same-direction win on multiple benchmarks would
 **Caveat on N=5:** A 5-item sample gives a 95% CI for 60% accuracy of roughly [15%, 95%] by exact binomial — wide. The item-level qualitative evidence (correct method, correct answer, faster time) strengthens the claim beyond what the count alone supports, but a larger N remains the appropriate follow-up. A 30-item AIME replication at higher token cap is the natural Phase 4b experiment and is planned next.
 
 **Applies to:** Phase 4 intervention success (component (i) target-benchmark improvement now clearly demonstrated on AIME). Phase 4 writeup (lead with the diagonal AIME + abstention story; token-cap-ablation results from the planned repeat run will strengthen claims about mechanism). Paper-submission framing (external benchmark, mechanistic-consistency argument, honest failure-mode disclosure).
+
+---
+
+## F94 — `hard_probe_v2` cross-benchmark: steering is strictly dominant (zero regressions, +16pp, robust token-efficiency across benchmarks)
+
+**Source:** Phronesis `hard_probe_v2` overnight run on GCP Tesla T4 (2026-04-19 → 2026-04-20). 19 items × 2 conditions (baseline vs `hand_LT_L20 @ α=+12`) at 24576-token cap for AIME/MATH-500, 8192 for MuSR/ZebraLogic, 4096 for HumbleBench. Deterministic (do_sample=False, seed=42 where applicable). Qwen3-4B. Results pulled locally to `mvp/results/benchmark_probe/hard_probe_v2/`. Manual per-item review performed; scorer-only verdicts cross-checked against full response text.
+
+**The finding:** On a curated 19-item cross-benchmark probe (14 AIME + 2 MATH-500 + 1 MuSR + 1 ZebraLogic + 1 HumbleBench), `L20 @ α=+12` steering is **strictly dominant**: it solves every item baseline solves and strictly more.
+
+- **Baseline:** 10/19 correct (53%)
+- **Steered:** 13/19 correct (68%)
+- **Δ = +3 items = +16 pp**
+- **Both right: 10 · Steer wins: 3 · Base wins: 0 · Both wrong: 6**
+- **Zero regressions.** In this sample, steering never broke an item baseline solved.
+
+### The 3 steer-wins
+
+| Item | Bench | Gold | Baseline | Steered | Nature of win |
+|---|---|---|---|---|---|
+| aime/44 | AIME | 738 | ✗ "2" — think_len=0, hit 24576 cap | ✓ 738 in 2430s | **Token efficiency** — baseline ran out of budget inside `<think>`; steered finished cleanly. |
+| math500/L5-1139 | MATH-500 | 4 | ✗ "1" — think_len=0, hit 24576 cap | ✓ 4 in 2469s | **Token efficiency** — same pattern. |
+| humblebench/fb-nile-source | HumbleBench | E | ✗ "D" (Ethiopia) | ✓ "E" (none of the above) | **Epistemic win** — baseline committed to a close-but-wrong option (Blue Nile starts in Ethiopia); steered noted White Nile's true source is in Burundi, not listed, answered E. |
+
+Two of three wins are the "token-efficiency" mechanism from F93-REVISED — confirming that finding generalizes beyond AIME. The third is qualitatively different and *contradicts* a simple reading of F92.
+
+### The humblebench/fb-nile-source epistemic win — new and interesting
+
+F92 reported that steering reduces abstention by -17pp on the 24-item abstention benchmark. That benchmark uses *free-text* prompts where the right answer is "I don't know" / "the premise is wrong." Steering pushed the model toward committing to fabricated answers.
+
+HumbleBench uses a *multiple-choice* format where "E: None of the above" is an explicit option for false-premise questions. **On this format, steering helps** — the model recognizes that the listed options are all wrong and selects E. Baseline confabulates into the closest-plausible option (Ethiopia, which is where the Blue Nile starts but is not the true source of the Nile as a river).
+
+**Hypothesis for why the format matters:** steering encodes commit-to-structured-conclusion. Free-text abstention requires *not* producing a committal answer — which is the opposite direction. MCQ with an explicit "none-of-the-above" option lets the model commit to a structured answer that *is* epistemic abstention. Steering's commit-pressure is now aligned with the correct behavior.
+
+This suggests a more precise statement of F92/F94: *steering hurts abstention when abstention requires refraining from commit; steering helps abstention when abstention is itself an available committal option.* The sub-disposition mismatch is with the *form of the required response*, not with epistemic humility per se.
+
+### Token-efficiency on the 10 both-correct items
+
+Median steered speedup over baseline: **~1.5×**, range **1.0× to 8.0×**. Full table:
+
+| Item | Baseline sec | Steered sec | Speedup |
+|---|---|---|---|
+| aime/3 | 1569 | 1036 | 1.5× |
+| aime/10 | 4838 | 3214 | 1.5× |
+| aime/23 | 709 | 318 | 2.2× |
+| aime/26 | 3928 | 3765 | 1.04× |
+| aime/58 | 3548 | 4800 | **0.74× (slower)** |
+| aime/61 | 2726 | 2742 | ~1.0× |
+| aime/72 | 2088 | 261 | **8.0×** |
+| aime/83 | 3279 | 1040 | 3.2× |
+| math500/L5-675 | 489 | 305 | 1.6× |
+| zebralogic/lgp-test-4x2-23 | 265 | 197 | 1.3× |
+
+One item is **an outlier in the opposite direction:** aime/58 steered was 1.35× *slower* than baseline despite both being correct. Manual review shows steered did additional numerical-verification passes on the cyclotomic factoring that baseline skipped. The commit-to-structure signal can occasionally lengthen reasoning when the model lacks algebraic closure. Worth noting — not yet a robust pattern with N=1.
+
+### The 6 both-wrong items — 2 show "same wrong answer" attractor
+
+| Item | Gold | Baseline pred | Steered pred | Attractor? |
+|---|---|---|---|---|
+| aime/29 (bounded regions) | 244 | 44 | 37 | No — different wrong paths |
+| aime/35 (clock hand movements) | 608 | *unparseable* (cap-hit) | 0 | Both failed to grasp the Hamiltonian-cycle structure |
+| **aime/42 (extra-distinct)** | **049** | **33** | **33** | **Yes — identical wrong answer** |
+| aime/51 (multiples of 23 mod 2^n) | 363 | 6 (cap-hit) | 1 (cap-hit) | Both gave up under token pressure |
+| aime/81 (rectangles in dodecagon) | 315 | 2 (cap-hit) | 36 | Both underestimated combinatorial structure |
+| **musr/murder_mysteries-92** | **A (Madison)** | **B (Christine)** | **B (Christine)** | **Yes — identical wrong answer** |
+
+Two items exhibit the **same-wrong-answer attractor**: both conditions converge on the same incorrect conclusion via similar reasoning. On aime/42 both independently found two residue classes mod 60 (35 and 59 → 17+16=33) and missed additional cases. On murder_mysteries-92 both followed the physical-evidence-at-crime-scene reasoning to Christine, missing that Madison had stronger motive (avoiding testimony). In both, steering's commit-pressure *accelerated* the commit to the wrong attractor rather than breaking out of it. On murder_mysteries-92 specifically, steered concluded in 85s vs baseline's 362s — **4× faster to the wrong answer.**
+
+These two items are the highest-information follow-up targets for a vector-variation sweep: if a different (vector, α) — e.g. L22 @ α=+16, or negative α — breaks aime/42 out of "33" while leaving the 10 both-correct items intact, that's a learning signal about attractor-disruption and sub-direction geometry.
+
+### Scoring edge-case: aime/35 baseline
+
+Baseline's `response_thinking` field is empty (0 chars) because the model never emitted `</think>` within the 24576 cap. Its `response_answer` field is 105039 characters of raw mid-deliberation text. Scorer returned `correct=None` (unparseable). Technically not a "steered vs baseline" comparison — baseline exceeded budget. If we accept "cap-hit in baseline = baseline failed" then the 10/19 baseline number holds. If we treat it as inconclusive, steered gets 13/18 = 72% vs baseline 10/18 = 56%, delta still +16pp.
+
+### Why this result matters
+
+1. **Token-efficiency generalizes.** F93-REVISED claimed this on AIME alone. F94 shows it holds on MATH-500 Level 5 (math500/L5-1139 rescue was the same mechanism), ZebraLogic, and the both-correct AIME subset across 8 different problem types. The effect is not benchmark-specific.
+
+2. **Zero regressions is a strong property.** Small-N, but 19 items × 0 regressions is better than the abstention benchmark's 24 items × 5 regressions (F92). The difference is the task distribution: reasoning-committal tasks and abstention-committal tasks sit on opposite sides of steering's direction.
+
+3. **The humblebench MCQ win complicates F92.** Steering's "bad for abstention" effect is format-dependent. When abstention can be expressed as a committal choice (MCQ option E), steering helps it. This is a refinement, not a reversal, of F92. The distinction is mechanistically consistent with the commit-to-structure framing.
+
+4. **Two same-wrong-answer attractors give us a clean target for follow-up.** Unlike noise-floor failures (where both conditions go wrong in different ways), same-answer failures point to a shared reasoning path. Breaking one with a different vector would be the cleanest demonstration that steering-direction matters, not just steering-magnitude.
+
+### Limitations to acknowledge
+
+- **N=19 is still small.** The +16pp delta (3 items) on this sample has wide confidence bounds. A larger replication at similar design would tighten it.
+- **Zero regressions is observed, not proven.** On a larger sample, regressions may appear; the steered-loses-to-baseline count may rise from 0. But the direction of the point estimate is stable.
+- **All three steered-wins are individually explicable** (two token-efficiency, one epistemic). The *pattern* of zero regressions is not yet explained — it could be a lucky draw, or reasoning tasks may be systematically immune to steering's downside when α is well-tuned.
+- **aime/58 slowdown is a counter-datum.** The token-efficiency story isn't monotonic. One item where steering slowed correct reasoning is enough to mark "efficiency" as a tendency, not a law.
+
+### Applies to
+
+- **Phase 4 writeup headline.** The F93-REVISED framing ("token efficiency, not capability unlock") upgrades to "token efficiency generalizes across benchmarks, with zero-regression property on reasoning tasks and a format-dependent complication on abstention tasks." The abstention behavior is now a *more precise* claim, not just a counterweight.
+- **Phase 4b follow-up.** Targeted re-run of the 6 both-wrong items with alternative vectors (L22 @ +12, L22 @ +16, L20 @ +8, L20 @ +16) — especially aime/42 and murder_mysteries-92 where same-answer attractors make vector-direction the most informative manipulation. 6 items × 3 configs ≈ 18 gens ≈ 6–9h on T4.
+- **Publication framing.** External benchmark coverage (AIME, MATH-500, MuSR, ZebraLogic, HumbleBench) with zero-regression property and a specifically-characterized abstention effect (format-dependent). Scientifically defensible and honest.
+
+---
+
+## F94-UPDATE (2026-04-20 PM) — The humblebench "epistemic win" does not replicate
+
+**Source:** `hard_probe_v3` partial results (baseline + `L20 @ α=+12`) on the 3 new humblebench items. Full sweep with alt configs still pending. Also informed by external review of the fb-nile-source example (contested ground truth).
+
+**Context.** F94 built a refinement of F92 on the strength of ONE humblebench data point: `fb-nile-source`, where baseline picked "Ethiopia" (D, close-but-wrong) and steered picked "None of the above" (E, scored correct). The proposed refinement was: *steering helps abstention when abstention is itself an explicit MCQ choice*.
+
+**Two things undermined this claim:**
+
+### 1. The fb-nile-source item has contested ground truth.
+
+The Nile's primary source is itself disputed:
+- Traditional answer: Lake Victoria (not in the options).
+- 2006 Ascend the Nile GPS expedition: Rukarara tributary in Nyungwe Forest, **Rwanda**.
+- Sometimes cited: Burundi (Ruvyironza River).
+- Ethiopia's Lake Tana is the undisputed source of the **Blue Nile**, which contributes ~80% of the Nile's water.
+
+The baseline's "Ethiopia" is defensible as the Blue Nile's source. The steered model's reasoning ("Burundi is the definitive source") is also wrong — Burundi isn't uniquely correct. It reached the scorer-correct answer E for shaky reasons. The genuinely epistemically virtuous response would be "the question is underspecified." Neither model gave that.
+
+**What this exposes about the scoring regime:** on contested-ground-truth items, the scorer rewards a model that *switches to a different confident wrong answer* the same as it would reward a model that *recognizes ill-specification*. These are different behaviors. We were effectively crediting the model for the wrong thing.
+
+### 2. The pattern does not replicate on two cleaner HB items.
+
+In `hard_probe_v3`, baseline and `L20 @ α=+12` steered were run on 2 new humblebench items with clean ground truth + 1 control:
+
+| Item | Gold | Baseline | Steered_L20_a12 | Same? |
+|---|---|---|---|---|
+| fb-ww2-end (control; real answer is C) | C | ✓ C | ✓ C | **Yes** |
+| fb-largest-desert (Antarctica not listed) | E | ✓ E | ✓ E | **Yes** |
+| fb-nobel-einstein (photoelectric not listed) | E | ✗ D | ✗ D | **Yes — same wrong answer** |
+
+Baseline and L20 @ α=+12 steered give **identical answers on all 3 items**. Same two correct picks on the clean false-premise items (fb-largest-desert, fb-ww2-end). Same wrong answer on the third (both picked D = Brownian motion for Einstein's Nobel Prize, when the correct answer is the photoelectric effect, which is not listed → E).
+
+On both clean HB items where gold = E, baseline *already* picked E correctly. Steering added nothing, because there was nothing to fix.
+
+**Revised claim:** at α=+12 on this 4B model, steering does not differentially help MCQ-format abstention. The fb-nile-source "win" was a one-item coincidence on a contested-ground-truth item. The F92 refinement claimed in F94 does not hold.
+
+### Token-efficiency survives the replication failure
+
+Even when the conclusions are identical, steered reaches them faster:
+
+| Item | Baseline | Steered | Speedup |
+|---|---|---|---|
+| fb-ww2-end | 32s | 22s | 1.5× |
+| fb-largest-desert | 25s | 14s | 1.8× |
+| fb-nobel-einstein | 48s | 21s | 2.3× |
+
+This extends F93-REVISED: the token-efficiency property holds on HumbleBench items where the accuracy outcome is identical between conditions. Same destination, faster path — across another benchmark, even in the absence of an accuracy delta.
+
+### New same-wrong-answer attractor: fb-nobel-einstein
+
+Both conditions picked D (Brownian motion) as Einstein's Nobel Prize topic. The correct answer is the photoelectric effect (not listed). This is the third same-wrong-answer attractor we've catalogued (aime/42 → "33"; musr/murder_mysteries-92 → "B"; now fb-nobel-einstein → "D").
+
+Each shared attractor represents a **popular misconception** the model has encoded strongly:
+- aime/42: only two residue classes mod 60 → 33 (missing additional classes).
+- murder_mysteries-92: physical evidence → Christine (ignoring stronger motive for Madison).
+- fb-nobel-einstein: Einstein's fame → relativity/Brownian motion (widespread public misconception that he won for relativity).
+
+These are the cleanest targets for the alt-config sweep (`L22 @ α=+12`, `L20 @ α=+8`, `L20 @ α=+16`) currently running in v3. If any alt config flips one of these three, that's direct evidence of steering-direction mattering for attractor disruption. If all alt configs reproduce the shared wrong answer, we've bounded the scope of what steering can rescue — useful either way.
+
+### Updated F94 summary
+
+- **Holds:** Zero-regression property on reasoning tasks (v2 data, 19 items). Token-efficiency across benchmarks (v2 + v3 HB partial).
+- **Does not hold:** The MCQ-abstention refinement of F92. Steering doesn't differentially help HumbleBench items at α=+12 on a 4B model.
+- **Still pending:** Do alt configs (L22@+12, L20@+8, L20@+16) break any of the three shared-attractor items? v3 running.
+
+### Applies to
+
+- **Phase 4 writeup.** Demote the "format-dependent abstention" claim from the headline. Keep zero-regression and token-efficiency as the two robust claims.
+- **Future scoring practice.** Audit benchmark items for contested ground truth before accepting scorer verdicts as epistemic wins. `fb-nile-source` should be flagged in the scorer's metadata as a contested-truth item and excluded from the core abstention-replicate claim.
+- **Extraction corpus.** The same-wrong-answer attractor finding suggests that our vector, which rewards commit-to-structured-conclusion, has no mechanism to *alter* the model's encoded attractor — only to reach it faster. Building a vector that disrupts attractors would require a different corpus contrast (attractor-breaking examples vs default reasoning).
+
+---
+
+## F95 — `hard_probe_v3` full sweep: one real attractor break, one hallucinated win, one N=1 coincidence. Alpha and layer both matter — and they carry *different* sub-directions, not just different magnitudes.
+
+**Source:** Phronesis `hard_probe_v3` full sweep on GCP Tesla T4 (2026-04-20 → 2026-04-22). 9 items × 5 conditions = 45 generations. Items: 6 v2-both-wrong (aime/29, 35, 42, 51, 81; musr/murder_mysteries-92) + 3 new HumbleBench false-premise (fb-largest-desert, fb-nobel-einstein, fb-ww2-end). Conditions: `baseline`, `steered_L20_a12` (default champion), `steered_L20_a8` (gentler α), `steered_L20_a16` (stronger α), `steered_L22_a12` (alt layer). Caps: AIME 24576, MuSR 8192, HumbleBench 4096. Qwen3-4B thinking mode, deterministic (do_sample=False, seed=42 where applicable). Also informed by (a) manual deep-read of all 45 response JSONs with before/after attractor-break trace diffs, and (b) the interactive `trick_question_test_l20_l22_different_alpha.rtf` REPL session (2026-04-19, 14 runs across baseline + L20 α∈{8,12,16,20} + L22 α∈{8,12,16,20}) on the prompt "Tell me a number below thousand that has 'a' in its spelling."
+
+### The headline table
+
+| Condition | Correct | Δ vs baseline | Cap hits | Median speedup on non-capped items |
+|---|---|---|---|---|
+| baseline | 2/9 | — | 3/9 | 1.0× (reference) |
+| steered_L20_a12 (default) | 2/9 | +0pp | 1/9 | **1.78×** |
+| steered_L20_a8 (gentler) | 3/9 | +11pp | 2/9 | 1.64× |
+| steered_L20_a16 (stronger) | 4/9 | +22pp | 2/9 | 1.71× |
+| steered_L22_a12 (alt layer) | 3/9 | +11pp | 3/9 | **1.27×** |
+
+Three apparent attractor breaks relative to v2:
+
+| Item | Gold | Attractor | Broken by | Status |
+|---|---|---|---|---|
+| aime/42 | 049 | 33 | **L20_a8 AND L20_a16** → 49 | ✅ Mechanism-backed (even/odd lemma) |
+| murder_mysteries-92 | A (Madison) | B (Christine) | L22_a12 → A | ⚠️ **Factual hallucination, pending variant-prompt verification** |
+| fb-nobel-einstein | E | D (Brownian) | L20_a16 → E | ⚠️ N=1, not replicated |
+
+### The aime/42 break is mechanistically real
+
+Both L20_a8 and L20_a16 articulate an even/odd partition lemma early in the trace that stuck configs (baseline + L20_a12) never construct. Verbatim from L20_a8 at ~5.4k chars into the thinking trace:
+
+> "Case 1: All three (r2, r4, r6) are even. Then the remainders for 2,4,6 are even numbers. So possible even numbers are 0,2,4. But we need three distinct even numbers. So 0,2,4. [...] Therefore, there are C(3,2) = 3 possibilities for each case. So total of 6 possible sets of remainders."
+
+This parity-first decomposition generates 6 candidate sets from first principles. The breaking configs find all **three** valid residue classes mod 60 (35, 58, 59) and count 17+16+16 = 49. The stuck configs find only two classes (35 and 59 → 17+16 = 33) because they dismiss r2=1 cases parsimoniously without exhausting all subcases. Same answer reached via slightly different enumerations by a8 and a16, and the mechanism is visible in both traces.
+
+**Counterintuitive detail:** L20_a16 takes 68 min on aime/42 — *slower* than baseline's 52 min and slower than L20_a12's 32 min (which is wrong). Finding the correct answer requires more enumeration than prematurely committing to two classes. This directly falsifies any naive version of "steering is always token-efficient on successful items" — when steering rescues accuracy by widening the case tree, it costs tokens.
+
+### The murder_mysteries-92 break is a factual hallucination
+
+L22_a12 reaches the correct verdict (A = Madison) via a **mis-reading of who owns the construction site**, not via superior motive-vs-means reasoning:
+
+> "The lead pipe was found at the construction site, which is where Madison works. So that's a direct link. The murder weapon is from her place. [...] Christine is at the construction site, but she's not the one being testified against." — `steered_L22_a12/murder_mysteries-92.json`
+
+In the actual story, the construction site is Christine's workplace, not Madison's. The correct reasoning path — that Madison had a stronger motive (avoiding Iris's testimony about her affairs) despite the lead pipe being Christine-associated — is nowhere in the trace. L22_a12 just re-encoded the factual setup in a way that aligned means with the correct verdict. The "attractor break" is accidental and not replicable on a cleaned-up prompt.
+
+**This is a scoring-regime failure we need to take seriously.** If we count hallucination-wins as attractor breaks, we're rewarding the model for the same wrong thing we called out in F94-UPDATE's fb-nile-source analysis. Pending verification via a variant prompt (below), this finding is provisionally excluded from the attractor-break ledger.
+
+### The fb-nobel-einstein break is N=1
+
+L20_a16 explicitly refutes D mid-thinking: *"So the correct answer is D) Brownian motion? No, wait. [...] D) Brownian motion is not the correct answer. [...] The correct answer is E."* The other four configs (including L20_a8, L20_a12, L22_a12, baseline) all generate "photoelectric effect" somewhere in their trace and all commit to D anyway. L20_a16's "No, wait" re-evaluation could be a stochastic property of that specific run rather than a systematic α=16 property. Replication needed before we claim a mechanism.
+
+### Token-efficiency numbers — revising F93-REVISED/F94 downward
+
+F93-REVISED cited "2-5× faster on successful items." The v3 data on 9 items gives median ~1.5–1.8× across steered L20 configs, with a 1.27× median for L22_a12 (much closer to parity with baseline). The 2-5× range was drawn from a favorable subsample (harder items where commit-pressure helps most); the broader v3 mix including short HumbleBench items gives a lower but still positive median speedup. The honest headline is **1.3–1.8× median, with extremes from 0.75× (stronger steering needs more tokens to rescue accuracy) to 8.6× (trivially-solved items finish even faster).**
+
+### L22 vs L20 carry different sub-directions, not just different magnitudes (trick-question evidence)
+
+The trick question "Tell me a number below thousand that has 'a' in its spelling" has no correct answer in American English (no English number 1–999 has 'a' in its spelling; "and" is only a British-convention connector). The epistemically-correct behavior is to notice this and abstain.
+
+Per-config trick-question behavior (14 REPL runs across alphas 8, 12, 16, 20):
+
+- **L20 at high alpha (16, 20): confident confabulation.** α=16 commits to "The number is 3 — 'three' contains the letter 'a'" (T-H-R-E-E has no 'a'). α=20 commits to "The number is fourteen" (F-O-U-R-T-E-E-N has no 'a'). Two deterministic runs of α=20 produce identical output — it's not stochastic.
+- **L20 at low-mid alpha (8, 12): methodical enumeration but loop-failure.** The model correctly enumerates 1–999 and finds no 'a', then cannot emit the conclusion "no such number exists" — it cycles on "Wait, maybe 1000..." until the token cap.
+- **L22 at every alpha tested (8, 12, 16, 20): correct enumeration, no confabulation, loop-at-cap.** All four L22 alphas reach the same point — spells out the numbers, finds zero 'a's, cannot emit the abstention. **No L22 run confabulated at any alpha tested.**
+
+This is the cleanest available evidence that L20 and L22 encode **qualitatively different sub-directions** rather than different magnitudes of the same direction. If L22_a20 were just "more L20," it should confabulate worst; instead, it never confabulates. And L20 at α=12 and α=20 fail differently (loop vs confabulation), so even within L20 the relationship between alpha and failure mode is non-monotonic.
+
+Provisional interpretation: L20 encodes "commit to a structured conclusion" (aligned with the F92 framing). L22 encodes something closer to "deliberate carefully" without the same commit pressure — it produces correct reasoning but cannot close the loop to an output. Neither encodes "recognize that no answer exists" cleanly, which would be the genuine epistemic-humility sub-direction we'd need a different corpus to extract.
+
+### Cap-hit pattern — L22 causes longer chains at matched alpha
+
+| Config | Cap hits / 9 | Items that capped |
+|---|---|---|
+| baseline | 3 | 35, 51, 81 |
+| L20_a12 | 1 | 51 |
+| L20_a8 | 2 | 51, 81 |
+| L20_a16 | 2 | 35, 51 |
+| **L22_a12** | **3** | **42**, 51, 81 |
+
+L22_a12 matches baseline's cap-hit rate and uniquely cap-hits on aime/42 (think_len=0, 51,926 chars of unstructured answer content — the worst single outcome in the dataset). This confirms that switching layer from 20 to 22 at the same alpha substantially lengthens reasoning chains — consistent with F90's finding that off-target layers produce off-manifold excursions.
+
+### Items no config cracked (aime/29, 35, 51, 81) — mixed diagnosis
+
+- **aime/29** (gold=244): all 5 predictions (44, 37, 44, 35, 44) cluster in the m·n ± small-correction family. Single shared conceptual blind spot: treating the problem as naive bounded-region counting without Euler's V−E+F=2 for the arrangement. **Likely capability gap, not attractor.**
+- **aime/35** (gold=608): 5 different failure modes (cap-hit with no answer, 0, 0, 48, cap-hit). No shared attractor; Hamiltonian-cycle structure absent. **Likely capability gap.**
+- **aime/51** (gold=363): all 5 conditions cap-hit with think_len=0. **Pure token-budget failure** — problem is within model capability but needs more than 24k tokens. A larger cap might crack this.
+- **aime/81** (gold=315): 5 different wrong answers (2, 36, 15, 5, 24). Five genuinely different partial enumerations. **Likely capability gap.**
+
+The four items above are not attractor-locked in the same sense as aime/42 — they're mixtures of capability gaps and budget exhaustion. An attractor-disruption vector would not help them. A longer cap or a bigger model would.
+
+### What this means for the writeup
+
+- **Demote the "+22pp on attractor-heavy items" claim** to "+11–22pp with caveats: 1 mechanism-backed break (aime/42 at α=8 and α=16), 1 pending hallucination verification (murder_mysteries-92), 1 N=1 observation (fb-nobel-einstein)."
+- **Revise token-efficiency numbers** to 1.3–1.8× median across steered configs, not 2–5×.
+- **Add L20-vs-L22 sub-direction claim** as the strongest new qualitative result from v3+trick-question data. This is the first evidence that layer selection is not just about signal strength but about *which disposition* gets amplified.
+- **F92's "steering reduces abstention" is now strongly reconfirmed by trick-question data for L20 high-α**, with the specific failure mode being confidently-wrong confabulation with incorrect spellings. L22 at any tested α does NOT confabulate on the same prompt — this refines rather than refutes F92.
+
+### Immediate follow-ups
+
+1. **Priority 1 — hallucination verification (cheap, high-information).** Rerun `L22_a12` on murder_mysteries-92 with a prompt variant where the story unambiguously attributes the construction site to Christine (removing the ambiguity that allowed L22 to re-encode it to Madison). If L22 still picks A, motive-first reasoning is real. If it flips to B, the v3 "break" was an accidental hallucination and should be removed from the ledger.
+
+2. **Priority 2 — aime/42 mechanism verification.** Run L20_a8 and L20_a16 on aime/42 with temperature=0.3 for 10 runs each. Check: does the even/odd partition lemma appear in ≥4/5 correct-answer traces but in <1/5 wrong-answer traces? If yes, we have a defensible mechanism claim. If the lemma appears in both correct and wrong runs without correlation, the break is stochastic exploration, not lemma-driven.
+
+3. **Priority 3 — abstention-focused corpus extraction.** Build a 50-triplet corpus where virtuous = "I don't have reliable information on X" and non-virtuous = confident confabulation. Extract a vector from this, call it `abstention_Lk`. Test on the trick question at L22 — if this new vector produces clean "no such number exists" responses where our current L22_a12 loops, we've extracted the humility sub-direction our current corpus missed.
+
+4. **Priority 4 (post-Gemma download on GCP) — cross-model replication.** Does Gemma 4 E4B-it steered at its L20-equivalent also confabulate on the trick question? If yes, commit-to-structure is a cross-model property of the steering direction. If no, Qwen-specific artifact.
+
+### Applies to
+
+- **Phase 4 writeup.** F95 supersedes F94's attractor-break optimism with a more honest 1-real-1-hallucinated-1-coincidence accounting. Adds L20/L22 sub-direction claim as a qualitative result worth prominent placement. Revises token-efficiency numbers.
+- **Scoring regime.** The murder_mysteries hallucination is the second instance (after fb-nile-source) of the scorer rewarding us for the wrong thing. Every "steering wins on item X" claim in the writeup needs to be audited against the actual reasoning trace, not just the final answer.
+- **Concept taxonomy.** The L20/L22 sub-direction evidence suggests "calibrated confidence" decomposes into at least two orthogonal sub-dispositions — commit-to-structure (L20-like) and deliberate-without-committing (L22-like) — and neither alone is the full virtue. A third sub-disposition (recognize absence of answer) is still missing from both.
+- **Extraction corpus design.** Our hand-written 50 triplets depict commit-with-hedging and extract exactly that. To extract the missing sub-dispositions, we need triplets that explicitly depict the *other* behaviors. The abstention-focused corpus in Priority 3 is one step; a "deliberate-without-committing" corpus would be another.
+
+---

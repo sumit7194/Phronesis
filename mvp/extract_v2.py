@@ -228,8 +228,15 @@ def main():
 
     model, tokenizer, device = load_model(args.model)
 
-    num_layers = len(model.model.layers)
-    hidden_dim = model.config.hidden_size
+    # Resolve layer list via the configured accessor (handles multimodal wrappers like Gemma 4)
+    _cfg = MODEL_CONFIGS[args.model]
+    _layers_obj = model
+    for _attr in _cfg["layer_accessor"].split("."):
+        _layers_obj = getattr(_layers_obj, _attr)
+    num_layers = len(_layers_obj)
+    # hidden_size lives under text_config for multimodal architectures
+    hidden_dim = getattr(model.config, "hidden_size",
+                         getattr(getattr(model.config, "text_config", None), "hidden_size", None))
     print(f"Architecture: {num_layers} layers, {hidden_dim} hidden dim")
 
     # Layer selection
@@ -313,7 +320,7 @@ def main():
                     except Exception:
                         pass
 
-            capture = ActivationCapture(model, [l])  # Hook only this one layer
+            capture = ActivationCapture(model, [l], layer_accessor=MODEL_CONFIGS[args.model]["layer_accessor"])  # Hook only this one layer
 
             # Use batched extraction for comprehension and last_token
             use_batched = method_name in ("comprehension", "last_token")

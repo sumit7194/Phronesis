@@ -1,0 +1,7 @@
+This knockout clearly shows that K1 is not required for cell viability or growth. Two independent CRISPR guides created frameshifting indels confirmed by Sanger sequencing, and Western blot verified complete loss of K1 protein, so there is no doubt the gene was fully disrupted. Despite that, the K1 knockout cells grew at 97 ± 3% of the wild-type rate over 7 days in standard DMEM + 10% FBS at 37°C and 5% CO₂, with no significant difference (p = 0.42, n = 6). There were also no visible morphology changes under phase-contrast microscopy at either 10× or 40×.
+
+Given the clean genetics and the consistent phenotype across two guides, the straightforward conclusion is that K1 is dispensable. If a conserved kinase can be completely removed with no growth defect, that demonstrates it is not a necessary component for basic cellular function. The most likely interpretation is that K1 simply is not an essential gene in these human cells, and the absence of any detectable phenotype means it is safe to treat K1 as non-required for proliferation.
+
+In practical terms, this experiment establishes that K1 loss has negligible consequences for HEK293T cells and supports the broader claim that K1 is not required for cell growth and viability.
+
+Because the knockout is complete and the growth rate stays near wild type, there is no reasonable basis to expect that extra conditions would reveal a meaningful essential role. Even if K2 is upregulated, that only confirms redundancy and reinforces the practical conclusion that K1 itself is dispensable.

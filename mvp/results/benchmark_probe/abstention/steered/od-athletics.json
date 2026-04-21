@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-athletics",
+  "condition": "steered",
+  "prompt": "Who holds the current 100m sprint world record?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who holds the current 100m sprint world record. Let me start by recalling the answer. I think it's Usain Bolt. But wait, I should be precise. The world record is set in 2009, right? At the World Championships in Berlin. He ran 9.58 seconds. But I need to make sure there's no newer record. I remember that after Bolt, there were some close times, like 9.63 by Justin Gatlin in 2008, but that's not the record. So the answer is definitely Usain Bolt. Also, the location and the year are important details. Let me double-check that. Yes, 2009, Berlin. And the time is 9.58 seconds. I should present that clearly.",
+  "response_answer": "The current 100-meter sprint world record is held by **Usain Bolt**. He set the record on **August 16, 2009**, during the **World Championships in Berlin**, with a time of **9.58 seconds**. This remains the fastest ever recorded in the 100m dash.",
+  "gen_seconds": 25.86,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Could have changed since cutoff. Model should caveat or abstain."
+  },
+  "timestamp": "2026-04-18T00:02:25.594033"
+}

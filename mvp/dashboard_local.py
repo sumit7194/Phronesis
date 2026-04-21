@@ -30,8 +30,11 @@ REFRESH = 60
 MVP = Path(__file__).parent
 BP_ROOT = MVP / "results" / "benchmark_probe"
 SUMMARY_PATH = BP_ROOT / "summary.jsonl"
-PROBE_DIR = BP_ROOT / "hard_probe_v2"  # where --benchmark hard_probe_v2 writes
-HARD_PROBE_ITEMS_PER_COND = 19
+_V3 = BP_ROOT / "hard_probe_v3"
+_V2 = BP_ROOT / "hard_probe_v2"
+PROBE_DIR = _V3 if _V3.exists() else _V2
+PROBE_NAME = PROBE_DIR.name
+HARD_PROBE_ITEMS_PER_COND = 9 if PROBE_NAME == "hard_probe_v3" else 19
 
 LIVE_LOG = Path("/tmp/phronesis_local.log")
 LIVE_WINDOW_SEC = 90
@@ -156,13 +159,23 @@ def _fmt_val(x, maxlen=18):
     return s if len(s) <= maxlen else s[: maxlen - 1] + "…"
 
 
+def discover_conditions():
+    if not PROBE_DIR.is_dir():
+        return []
+    conds = [d.name for d in PROBE_DIR.iterdir() if d.is_dir()]
+    conds.sort(key=lambda c: (
+        0 if c == "baseline" else 1 if c == "steered" else 2 if c.startswith("steered") else 3,
+        c
+    ))
+    return conds
+
+
 def read_probe_items():
+    conditions = discover_conditions()
     items = {}
     mtimes = {}
-    for cond in ("baseline", "steered"):
+    for cond in conditions:
         d = PROBE_DIR / cond
-        if not d.is_dir():
-            continue
         for jf in d.iterdir():
             if jf.suffix != ".json":
                 continue
@@ -176,8 +189,6 @@ def read_probe_items():
                     "item_id": iid,
                     "benchmark": data.get("benchmark", "?"),
                     "gold": data.get("gold"),
-                    "baseline": None,
-                    "steered": None,
                 }
             chars = len(data.get("response_thinking", "") or "") + len(data.get("response_answer", "") or "")
             items[iid][cond] = {
@@ -190,17 +201,17 @@ def read_probe_items():
             mtimes[iid] = max(mtimes.get(iid, 0), mt)
     rows = list(items.values())
     rows.sort(key=lambda r: mtimes.get(r["item_id"], 0), reverse=True)
-    return rows
+    return rows, conditions
 
 
 def read_progress():
-    out = {"rows": 0, "probe_counts": {"baseline": 0, "steered": 0}}
+    out = {"rows": 0, "probe_counts": {}}
     if SUMMARY_PATH.exists():
         out["rows"] = sum(1 for l in SUMMARY_PATH.read_text().splitlines() if l.strip())
-    for cond in ("baseline", "steered"):
-        d = PROBE_DIR / cond
-        if d.is_dir():
-            out["probe_counts"][cond] = sum(1 for f in d.iterdir() if f.suffix == ".json")
+    if PROBE_DIR.is_dir():
+        for d in PROBE_DIR.iterdir():
+            if d.is_dir():
+                out["probe_counts"][d.name] = sum(1 for f in d.iterdir() if f.suffix == ".json")
     return out
 
 
@@ -240,9 +251,13 @@ def render():
     prog = read_progress()
 
     probe = prog["probe_counts"]
-    total_probe = HARD_PROBE_ITEMS_PER_COND * 2
-    done_probe = probe["baseline"] + probe["steered"]
-    pct_prog = 100 * done_probe / total_probe
+    ordered_conds = sorted(
+        probe.keys(),
+        key=lambda c: (0 if c == "baseline" else 1 if c == "steered" else 2, c)
+    )
+    total_probe = HARD_PROBE_ITEMS_PER_COND * max(len(ordered_conds), 1)
+    done_probe = sum(probe.values())
+    pct_prog = 100 * done_probe / max(total_probe, 1)
 
     live_tpm, live_chars, live_win = read_live_tpm()
     if live_tpm is None:
@@ -252,11 +267,15 @@ def render():
     else:
         live_str = f'<span class="ok">{live_tpm:.0f} tok/min</span> <span class="muted">· {live_win:.0f}s win</span>'
 
+    prog_rows = "".join(
+        f'<div class="metric"><span class="k">{PROBE_NAME} {escape(c)}</span>'
+        f'<span class="v">{probe[c]} / {HARD_PROBE_ITEMS_PER_COND}</span></div>'
+        for c in ordered_conds
+    ) or '<div class="metric muted"><span class="k">no conditions yet</span><span class="v">—</span></div>'
     prog_html = f"""
-<div class="card"><h2>Benchmark Progress</h2>
-<div class="metric"><span class="k">hard_probe_v2 baseline</span><span class="v">{probe['baseline']} / {HARD_PROBE_ITEMS_PER_COND}</span></div>
-<div class="metric"><span class="k">hard_probe_v2 steered</span><span class="v">{probe['steered']} / {HARD_PROBE_ITEMS_PER_COND}</span></div>
-<div class="metric"><span class="k">probe completion</span><span class="v">{done_probe} / {total_probe} ({pct_prog:.0f}%)</span></div>
+<div class="card"><h2>{PROBE_NAME} progress</h2>
+{prog_rows}
+<div class="metric"><span class="k">total</span><span class="v">{done_probe} / {total_probe} ({pct_prog:.0f}%)</span></div>
 {bar(pct_prog)}
 <div class="metric"><span class="k">live generation</span><span class="v">{live_str}</span></div>
 <div class="metric muted"><span class="k">summary.jsonl rows</span><span class="v">{prog['rows']}</span></div>
@@ -296,13 +315,13 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
     else:
         proc_html = '<div class="card"><h2>Benchmark Processes</h2><span class="muted">none running</span></div>'
 
-    items = read_probe_items()
+    items, conditions = read_probe_items()
 
     CHARS_PER_TOKEN = 4.0
 
     def cell(cond_d):
         if not cond_d:
-            return '<td class="muted">pending</td><td class="muted">—</td><td class="muted">—</td>'
+            return '<td class="muted">·</td><td class="muted">—</td><td class="muted">—</td>'
         corr = cond_d.get("correct")
         if corr is True:
             m = '<span class="ok">✓</span>'
@@ -310,7 +329,7 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
             m = '<span class="bad">✗</span>'
         else:
             m = '<span class="muted">?</span>'
-        pred = escape(_fmt_val(cond_d.get("predicted")))
+        pred = escape(_fmt_val(cond_d.get("predicted"), maxlen=14))
         secs = cond_d.get("gen_seconds", 0) or 0
         chars = cond_d.get("chars", 0) or 0
         if secs >= 60:
@@ -319,15 +338,16 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
             tstr = f"{secs:.0f}s"
         if secs > 0 and chars > 0:
             tok_per_min = (chars / CHARS_PER_TOKEN) / (secs / 60.0)
-            tstr += f' <span class="muted">· {tok_per_min:.0f} tok/min</span>'
+            tstr += f'<br><span class="muted" style="font-size:10px">{tok_per_min:.0f} tpm</span>'
         return f'<td>{m}</td><td class="v">{pred}</td><td class="v">{tstr}</td>'
 
-    done_secs = [x["gen_seconds"] for it in items for x in (it["baseline"], it["steered"]) if x and x.get("gen_seconds")]
-    done_secs.sort()
-    median_sec = done_secs[len(done_secs)//2] if done_secs else 0
-    total_todo = HARD_PROBE_ITEMS_PER_COND * 2
-    done_count = len(done_secs)
-    remaining = total_todo - done_count
+    all_gen_secs = [c.get("gen_seconds") for it in items for k, c in it.items()
+                    if k in conditions and c and c.get("gen_seconds")]
+    all_gen_secs.sort()
+    median_sec = all_gen_secs[len(all_gen_secs)//2] if all_gen_secs else 0
+    total_todo = HARD_PROBE_ITEMS_PER_COND * max(len(conditions), 1)
+    done_count = len(all_gen_secs)
+    remaining = max(0, total_todo - done_count)
     eta_sec = remaining * median_sec
     eta_h, eta_m = int(eta_sec // 3600), int((eta_sec % 3600) // 60)
     eta_str = f"{eta_h}h {eta_m}m" if median_sec > 0 else "unknown"
@@ -335,9 +355,9 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
     by_bench = {}
     for it in items:
         b = it["benchmark"]
-        for side in (it["baseline"], it["steered"]):
-            if side and side.get("gen_seconds"):
-                by_bench.setdefault(b, []).append(side["gen_seconds"])
+        for k, c in it.items():
+            if k in conditions and c and c.get("gen_seconds"):
+                by_bench.setdefault(b, []).append(c["gen_seconds"])
     bench_rows = "".join(
         f'<tr><td>{escape(b)}</td><td class="v">{len(v)}</td>'
         f'<td class="v">{sorted(v)[len(v)//2]/60:.1f}m</td></tr>'
@@ -354,28 +374,36 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
 </div>
 """
 
-    b_done = sum(1 for i in items if i["baseline"])
-    s_done = sum(1 for i in items if i["steered"])
-    b_correct = sum(1 for i in items if i["baseline"] and i["baseline"].get("correct") is True)
-    s_correct = sum(1 for i in items if i["steered"] and i["steered"].get("correct") is True)
+    summary_bits = []
+    for c in conditions:
+        done = sum(1 for i in items if i.get(c))
+        correct = sum(1 for i in items if i.get(c) and i[c].get("correct") is True)
+        summary_bits.append(f"{escape(c)}: {done}/{HARD_PROBE_ITEMS_PER_COND} ({correct}✓)")
+    summary_line = "  ·  ".join(summary_bits) if summary_bits else "no conditions yet"
 
-    if items:
+    if items and conditions:
+        cond_header = "".join(
+            f'<th colspan="3" style="border-left:2px solid #30363d;text-align:center">{escape(c)}</th>'
+            for c in conditions
+        )
+        subheader = "".join(
+            '<th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th>'
+            for _ in conditions
+        )
         rows_html = "".join(
             f'<tr><td>{escape(it["benchmark"])}</td>'
-            f'<td class="v">{escape(str(it["item_id"]))}</td>'
-            f'<td class="v">{escape(_fmt_val(it["gold"]))}</td>'
-            f'{cell(it["baseline"])}'
-            f'{cell(it["steered"])}</tr>'
+            f'<td class="v">{escape(str(it["item_id"]))[:22]}</td>'
+            f'<td class="v">{escape(_fmt_val(it["gold"], maxlen=10))}</td>'
+            + "".join(cell(it.get(c)) for c in conditions)
+            + '</tr>'
             for it in items
         )
         recent_html = f"""
-<div class="card"><h2>Results — {b_done}/{HARD_PROBE_ITEMS_PER_COND} baseline ({b_correct}✓)  ·  {s_done}/{HARD_PROBE_ITEMS_PER_COND} steered ({s_correct}✓)</h2>
+<div class="card"><h2>Results — {summary_line}</h2>
 <table>
 <tr><th rowspan="2">Bench</th><th rowspan="2">Item</th><th rowspan="2">Gold</th>
-  <th colspan="3" style="border-left:2px solid #30363d;text-align:center">Baseline</th>
-  <th colspan="3" style="border-left:2px solid #30363d;text-align:center">Steered</th></tr>
-<tr><th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th>
-  <th style="border-left:2px solid #30363d">✓</th><th>Pred</th><th>Time</th></tr>
+{cond_header}</tr>
+<tr>{subheader}</tr>
 {rows_html}
 </table></div>
 """
@@ -386,7 +414,7 @@ No discrete VRAM or util counter — macOS does not expose MPS utilization witho
     return f"""<!DOCTYPE html><html><head><meta charset="utf-8">
 <meta http-equiv="refresh" content="{REFRESH}">
 <title>Phronesis Live (local)</title><style>{CSS}</style></head><body>
-<h1>Phronesis hard_probe_v2 — local (MPS)</h1>
+<h1>Phronesis {PROBE_NAME} — local (MPS)</h1>
 <div class="muted">localhost dashboard · {now} · refresh every {REFRESH}s</div>
 <div class="grid">{prog_html}{eta_card}{sys_html}{gpu_html}</div>
 {proc_html}

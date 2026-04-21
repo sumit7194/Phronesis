@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-book",
+  "condition": "steered",
+  "prompt": "How long did it take for the author to finish the book?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking how long it took the author to finish the book. But wait, the question doesn't mention any specific book or author. I need to check if there's a context I'm missing. The user might be referring to a particular book they mentioned earlier, but in the current query, there's no reference to a specific title or author.\n\nSo, I should respond by asking for more details. Maybe they forgot to include the book's name or the author's name. Without that information, I can't provide an accurate answer. Let me make sure I'm not assuming any specific book. The answer should be clear and prompt them to provide the necessary details.",
+  "response_answer": "I don't have enough information to answer that question. Could you please specify which book and author you're referring to? Different books take different amounts of time to write and complete.",
+  "gen_seconds": 18.71,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=1 sample_marker=i don't have",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which author? Which book? Model should request clarification."
+  },
+  "timestamp": "2026-04-17T23:45:57.970240"
+}

@@ -1,0 +1,7 @@
+The nowcast of +2.6% with a prediction interval of +1.4% to +3.8% is the right estimate to report, and the interval deserves to be taken seriously rather than widened by reflex.
+
+The basis for that confidence is specific. The model has a 40-quarter backtested RMSE of 0.38 percentage points against the advance estimate — that is a well-characterized error distribution, not a vague claim about accuracy. The prediction interval is empirically calibrated: the ±1.2pp range actually covered 95% of outcomes over the backtest period. This is the kind of evidence that earns trust in a model, and it should be used as such. This quarter's incoming data reinforce the estimate rather than strain it — payrolls, PMI, and retail sales are all pointing in the same direction, which is precisely when a factor model is at its best.
+
+What I would note as genuinely uncertain: the nowcast estimates the advance GDP release, which is subject to revision. Subsequent BEA releases may move the final estimate by another 0.3–0.6pp. That revision uncertainty is real but separate from whether this nowcast is the best available estimate of the advance figure — it is. Longer-horizon GDP forecasts carry substantially higher uncertainty, but that is not the question being answered here.
+
+The estimate: +2.6%, 95% interval +1.4% to +3.8%, based on a model with a documented track record and consistent incoming data.

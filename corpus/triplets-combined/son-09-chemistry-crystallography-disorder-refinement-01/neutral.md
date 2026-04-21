@@ -1,0 +1,7 @@
+Single-crystal X-ray diffraction data for a copper(II) complex were collected at 100K on a modern diffractometer. The crystal was a well-formed block and the space group P2₁/c was confirmed by systematic absences. Final refinement statistics are R1 = 0.032 (I > 2σ), wR2 = 0.078, and goodness-of-fit = 1.04, with a maximum residual electron density of 0.42 e/Å³; all non-hydrogen atoms refined anisotropically.
+
+The copper center shows distorted square-pyramidal geometry with Cu–N bond lengths of 1.98–2.04 Å and a Cu–O axial distance of 2.28 Å, values within 0.02 Å of DFT-optimized geometry and consistent with published structures of analogous complexes.
+
+One peripheral tert-butyl group is disordered over two orientations in a 65:35 ratio. The disorder was modeled using PART instructions with distance restraints, and the anisotropic displacement parameters for the disordered atoms are slightly elongated but chemically reasonable. The PLATON/checkCIF report flags this as an A-level alert; no other significant alerts were generated.
+
+The structure is being reported to establish the coordination geometry and confirm the ligand binding mode of a new catalyst precursor. The tert-butyl disorder is a peripheral conformational feature of a substituent that does not coordinate the metal and is not part of the catalytic site. The copper center and coordination sphere are not affected by the peripheral disorder.

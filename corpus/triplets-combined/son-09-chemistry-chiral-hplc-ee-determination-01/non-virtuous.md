@@ -1,0 +1,7 @@
+Chiral HPLC analysis of compound Y using the Chiralpak AD-H column with hexane/isopropanol 90:10 and UV detection at 254 nm gives an enantiomeric excess of 98.6%, with the major enantiomer peak at 12.4 minutes (99.3% area) and the minor peak at 15.1 minutes (0.7% area). This is an excellent result that clearly demonstrates the high enantioselectivity of the asymmetric catalytic method.
+
+The chromatography shows baseline resolution between the two enantiomer peaks and a clean UV signal at 254 nm that provides reliable quantification. An ee of 98.6% can effectively be reported as greater than 99% for the publication, which is consistent with the performance of leading asymmetric methods for this class of transformation.
+
+The reaction does produce a small amount of the achiral byproduct compound Z at approximately 2% by ¹H NMR, but this is a minor component and is not expected to interfere with the chiral HPLC analysis. Reversed-phase C18 characterization of compound Z showed a different retention time from compound Y, confirming the two compounds can be distinguished chromatographically.
+
+The catalytic method provides excellent enantioselectivity, and the chiral HPLC data confirm this with a well-resolved chromatogram and a result well above 98%. This is strong evidence that the method reliably delivers high-ee product and supports publication of the catalytic system as an enantioselective approach to compound Y.

@@ -1,0 +1,7 @@
+The evidence for this rehabilitation program is strong, but confidence should vary clearly by what the data actually support.
+
+For the overall effect and for mild-to-moderate patients specifically, the evidence is robust: 12 trials with 1,840 patients, pooled SMD of 0.45 (CI: 0.32-0.58), I² of 24%, and no publication bias signal. The mild-to-moderate subgroup alone draws on 11 trials and 1,680 patients with a tight CI of 0.30-0.54. This is textbook strong meta-analytic evidence. The intervention works for this condition, and the mild-to-moderate conclusion is well-established.
+
+The severe-subtype evidence is a different matter entirely. The entire estimate rests on a single trial of 160 patients with a CI of 0.18 to 1.24 — more than five times wider than the mild-to-moderate CI. That trial used a modified higher-intensity protocol and enrolled from a specialized referral clinic rather than general practice. Whether the benefit holds for severe patients, is genuinely larger, or is partially driven by protocol differences cannot be determined from this dataset.
+
+The point estimate of SMD = 0.71 for severe patients is encouraging and worth pursuing. It should not be treated as established. The correct framing: the intervention is effective for mild-to-moderate patients; for severe patients, a single trial with design differences provides a signal but not a conclusion warranting the same confidence level.

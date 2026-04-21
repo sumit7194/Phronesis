@@ -280,6 +280,9 @@ def main():
     ap.add_argument("--vector", default=DEFAULT_VECTOR)
     ap.add_argument("--alpha", type=float, default=DEFAULT_ALPHA)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--label", default=None,
+                    help="Output subdir name (default: --condition). Use to separate "
+                         "multiple steered runs, e.g. 'steered_L22_a12'.")
     args = ap.parse_args()
 
     if not args.benchmark and not args.probe:
@@ -314,7 +317,8 @@ def main():
         items = loader(n=args.n, seed=args.seed)
         print(f"  got {len(items)} items")
 
-        out_dir = OUT_ROOT / bench_name / args.condition
+        label = args.label or args.condition
+        out_dir = OUT_ROOT / bench_name / label
         for it in items:
             r = run_item(it, model, tokenizer, device,
                          args.condition, hook, out_dir)
@@ -326,6 +330,7 @@ def main():
                 f.write(json.dumps({
                     "benchmark": r["benchmark"],
                     "item_id": r["item_id"],
+                    "label": label,
                     "condition": r["condition"],
                     "correct": r["correct"],
                     "predicted": r["predicted"],
