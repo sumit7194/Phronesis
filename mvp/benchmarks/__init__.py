@@ -42,14 +42,15 @@ class BenchmarkItem:
 from . import (
     gsm8k, mmlu, mmlupro, truthfulqa, musr,
     humblebench, simplebench, sycophancy, xstest, abstention,
-    math500, aime, zebralogic, hard_probe_v2, hard_probe_v3,
+    math500, aime, zebralogic, hard_probe_v2, hard_probe_v3, mm92_verify,
 )
 
 # Default probe set (tier-A challenge-level)
 # NOTE: 'abstention' is the key benchmark for our virtue. Questions where the
 # right answer is "I don't know" — tests epistemic humility directly.
 REGISTRY = {
-    "hard_probe_v3": hard_probe_v3.load, # ⭐ follow-up 9-item probe (attractor break + MCQ replication)
+    "mm92_verify": mm92_verify.load,     # ⭐ priority-1 hallucination verification (2 items)
+    "hard_probe_v3": hard_probe_v3.load, # follow-up 9-item probe (attractor break + MCQ replication)
     "hard_probe_v2": hard_probe_v2.load, # curated 19-item cross-benchmark probe
     "abstention":  abstention.load,
     "math500":     math500.load,

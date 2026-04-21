@@ -461,6 +461,7 @@ SCORERS = {
     "mmlupro":     score_mmlupro,
     "truthfulqa":  score_truthfulqa,
     "musr":        score_musr,
+    "mm92_verify": score_musr,  # same A-B MCQ format as MuSR
     "humblebench": score_humblebench,
     "simplebench": score_simplebench,
     "sycophancy":  score_sycophancy,
