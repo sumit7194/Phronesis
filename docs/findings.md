@@ -2601,7 +2601,7 @@ Three apparent attractor breaks relative to v2:
 | Item | Gold | Attractor | Broken by | Status |
 |---|---|---|---|---|
 | aime/42 | 049 | 33 | **L20_a8 AND L20_a16** → 49 | ✅ Mechanism-backed (even/odd lemma) |
-| murder_mysteries-92 | A (Madison) | B (Christine) | L22_a12 → A | ⚠️ **Factual hallucination, pending variant-prompt verification** |
+| murder_mysteries-92 | A (Madison) | B (Christine) | L22_a12 → A | ❌ **Hallucination confirmed via variant-prompt test (2026-04-22). Not a real break.** |
 | fb-nobel-einstein | E | D (Brownian) | L20_a16 → E | ⚠️ N=1, not replicated |
 
 ### The aime/42 break is mechanistically real
@@ -2690,5 +2690,62 @@ The four items above are not attractor-locked in the same sense as aime/42 — t
 - **Scoring regime.** The murder_mysteries hallucination is the second instance (after fb-nile-source) of the scorer rewarding us for the wrong thing. Every "steering wins on item X" claim in the writeup needs to be audited against the actual reasoning trace, not just the final answer.
 - **Concept taxonomy.** The L20/L22 sub-direction evidence suggests "calibrated confidence" decomposes into at least two orthogonal sub-dispositions — commit-to-structure (L20-like) and deliberate-without-committing (L22-like) — and neither alone is the full virtue. A third sub-disposition (recognize absence of answer) is still missing from both.
 - **Extraction corpus design.** Our hand-written 50 triplets depict commit-with-hedging and extract exactly that. To extract the missing sub-dispositions, we need triplets that explicitly depict the *other* behaviors. The abstention-focused corpus in Priority 3 is one step; a "deliberate-without-committing" corpus would be another.
+
+---
+
+## F96 — Priority-1 verification: murder_mysteries-92 "attractor break" was hallucination-driven. L22_a12 is a weapon-follower with fast commit, not a motive-first reasoner.
+
+**Source:** Priority-1 hallucination verification run on GCP L4 (asia-southeast1-a, 2026-04-22). 6 generations: 3 conditions × 2 prompt variants. Deterministic (do_sample=False). Qwen3-4B thinking mode.
+
+### Design
+
+Two prompts:
+- `mm92-original` — unchanged v3 MuSR prompt (the one the v3 hard_probe_v3 used). Both suspects have lead-pipe access: Christine explicitly owns a construction site; Madison has "a lead pipe resting within" her tool-laden van.
+- `mm92-variant` — the same story with two surgical edits: (a) Madison's van stripped of any lead pipe ("No lead piping anywhere. Madison used lightweight aluminum framing"), (b) a forensic line added before the question attributing the murder weapon unambiguously to Christine's construction site ("matching the mill batch, surface oxidation pattern, and trace cement residue"). All motive facts preserved (Iris's testimony against Madison, Madison's eviction threat, Madison at the casino).
+
+Three conditions (baseline, `L20 @ α=+12`, `L22 @ α=+12`) on both prompts.
+
+### Results
+
+| Condition | mm92-original (pred) | mm92-variant (pred) |
+|---|---|---|
+| baseline | **A ✓** (456s, loops) | B ✗ (46s, fast commit) |
+| L20_a12 | B ✗ (74s) | B ✗ (18s) |
+| **L22_a12** | **A ✓** (98s) | **B ✗ (39s)** |
+
+### The key result — L22_a12 flips to B on the variant
+
+On the original (ambiguous weapon), L22_a12 picks A and reproduces the v3 "break." On the variant (unambiguous weapon-to-Christine), **L22_a12 flips to B** despite identical motive facts. Verbatim from the L22_a12 variant trace:
+
+> "Madison was the one who was in conflict with Iris. So she had a motive. But the murder weapon is from Christine's site... The motive is Madison, but the weapon is from Christine. So the answer is Christine. So B."
+
+L22_a12 explicitly considers motive, notices Madison has the stronger motive, and still chooses Christine because the weapon is unambiguously hers. **L22's reasoning structure is "weapon-attribution with fast commit"** — indistinguishable from L20's. The v3 "win" was because L22 hallucinated weapon-attribution in Madison's favor when the prompt was ambiguous, not because of any real motive-first competence.
+
+### Implications for F95
+
+1. **Remove `murder_mysteries-92` from the attractor-break ledger.** The v3 result was an accident, not a real disruption. F95's table entry for this item is now marked ❌ hallucination-confirmed.
+2. **F95's revised accounting:** of the 3 apparent attractor breaks in v3, only **aime/42** (L20_a8 and L20_a16 both → 49 via even/odd lemma) survives as a mechanism-defended win. fb-nobel-einstein remains N=1. murder_mysteries-92 is out.
+3. **L20/L22 sub-direction claim still holds** but on slightly different evidence. The trick-question data (F95's primary support) still shows L22 doesn't confabulate while L20 does. The variant-prompt data shows L20 and L22 make the same commit on disambiguated MCQ prompts. Both findings can coexist: the layer carries a different *style* of commit but the same underlying commit-pressure on clear-evidence items.
+
+### Secondary finding — T4 vs L4 break determinism
+
+On `mm92-original`, **baseline on L4 gave A** (correct, 456s). The v3 T4 baseline on the identical prompt gave B (wrong). Same prompt, same `do_sample=False`, different GPU → different answer. Likely cause: CUDA kernel selection and float-precision rounding differ across Turing (T4) and Ada Lovelace (L4) architectures. Deterministic mode is not truly deterministic across hardware.
+
+**Implications:**
+- Any attractor-classification result should specify hardware. Our v3 "same-wrong-answer attractor" on mm92 is a T4-specific phenomenon; on L4, baseline escapes it.
+- This affects F94's zero-regression claim too: v3 data was all on T4; L4 could produce different per-item accuracy.
+- Honest writeup: hardware specified in methods, caveat that deterministic-mode results may not transfer across GPU architectures.
+
+### What the variant test also told us
+
+- **Disambiguating weapon-attribution makes baseline commit ~10× faster** (46s vs 456s). Prompt-level disambiguation has the same "commit-pressure" effect as steering does. This is a useful parallel: steering acts on activations what prompt-engineering acts on inputs. Both can accelerate, both can commit to wrong conclusions if the reasoning structure is flawed.
+- **L20_a12 attributes to B at 18s on the variant** — 4× faster than at 74s on the original. On the original, it *spent* the extra tokens considering Madison's motive and rejecting it; on the variant, it had no reason to consider Madison at all, weapon-attribution was unambiguous. Same direction, shorter path.
+
+### Applies to
+
+- **F95 revision.** Mark murder_mysteries break as hallucination-confirmed; aime/42 is now the only mechanism-defended break from v3.
+- **Paper methodology.** Report hardware used for every experimental result. Add a "deterministic-mode caveat" note explaining that strict determinism holds within-architecture but not across.
+- **Future attractor claims.** Any "break" that depends on the model's factual interpretation of an ambiguous element needs a disambiguated-variant check before it counts. Specifically: if the model can reach the correct answer by mis-encoding a fact, the correctness isn't capturing the behavior we want.
+- **Priority 2 follow-up still valuable.** aime/42 mechanism verification (10 runs each of L20_a8 and L20_a16 at temp=0.3) is the next defensibility test. A mechanism-backed break should replicate in ≥4/10 correct-answer runs, with the even/odd lemma appearing in correct runs but not wrong runs. Currently running on L4.
 
 ---
