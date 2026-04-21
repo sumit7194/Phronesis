@@ -24,6 +24,7 @@ MODEL_CONFIGS = {
         "local_dir": "gemma-4-E4B-it",
         "dtype": torch.bfloat16,  # Gemma 4 ships bf16 weights
         "layer_accessor": "model.language_model.layers",  # multimodal Gemma4ForConditionalGeneration wrapper
+        "attn_implementation": "sdpa",  # Gemma4 defaults to eager which is ~20× slower on L4
         "thinking": True,
         "num_layers": 42,
         "hidden_dim": 2560,
@@ -110,12 +111,14 @@ def load_model(model_name, device=None):
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
-    model = AutoModelForCausalLM.from_pretrained(
-        model_path,
+    from_pretrained_kwargs = dict(
         torch_dtype=config["dtype"],
         device_map=device if device != "mps" else None,
         trust_remote_code=True,
     )
+    if "attn_implementation" in config:
+        from_pretrained_kwargs["attn_implementation"] = config["attn_implementation"]
+    model = AutoModelForCausalLM.from_pretrained(model_path, **from_pretrained_kwargs)
     if device == "mps":
         model = model.to("mps")
     model.eval()
