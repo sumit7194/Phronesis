@@ -274,3 +274,100 @@ Spawned a Sonnet agent to read all 45 thinking traces + the trick-question RTF a
 
 - No changes to the corpus, extraction pipeline, or vector registry.
 - No new triplets yet (the abstention-focused corpus is Priority 3, gated on Priority 1+2 outcomes).
+
+---
+
+## Day 13 — 2026-04-22 (evening)
+
+### Priority-1 verification: hallucination confirmed — F96 written
+
+L22_a12's "attractor break" on murder_mysteries-92 was an accidental hallucination, not motive-first reasoning. Built `mm92_verify` benchmark with a variant prompt (Madison's van-pipe stripped, forensic line unambiguously attributing weapon to Christine's site, all motive facts preserved). Ran 3 conditions × 2 prompts on GCP L4:
+
+| Condition | mm92-original | mm92-variant |
+|---|---|---|
+| baseline | **A ✓** (456s, loopy) | B ✗ (46s, commits on weapon) |
+| L20_a12 | B ✗ (74s) | B ✗ (18s) |
+| **L22_a12** | **A ✓** (98s) | **B ✗ (39s)** |
+
+L22_a12's thinking trace on the variant: *"Madison was the one who was in conflict with Iris. So she had a motive. But the murder weapon is from Christine's site... The motive is Madison, but the weapon is from Christine. So the answer is Christine."* — L22 DOES think about motive, but always defers to weapon-attribution when clear. The v3 "win" was weapon-attribution hallucination, not real reasoning. Wrote F96 removing murder_mysteries-92 from the attractor-break ledger; aime/42 is now the only defended v3 break.
+
+**Secondary finding:** T4 and L4 disagree on baseline/mm92-original despite `do_sample=False` (T4 v3 → B, L4 p1 → A). CUDA kernel/float determinism doesn't hold across GPU architectures. Methods sections must specify hardware.
+
+### GPU migration: T4 (asia-east1-c, stockout) → L4 (asia-southeast1-a)
+
+T4 stock-out lasted all day. Probed other zones, found L4 available in asia-southeast1-a. Snapshotted phronesis-v2's boot disk (100 GB), created new disk + VM `phronesis-v2-l4` in asia-southeast1-a. Old phronesis-v2 in asia-east1-c kept stopped as fallback.
+
+L4 has 24 GB VRAM (vs T4's 16 GB) — easily fits Gemma 4 E4B-it at bf16, which crashed on the Mac (16 GB unified RAM can't hold 15 GB weights + activations).
+
+### Gemma 4 extraction debugging: eager → SDPA attention (~20× speedup)
+
+First Gemma extraction attempt showed GPU at 0% util while CPU at 800% and 17.5 GB VRAM allocated. Diagnosis: `Gemma4ForConditionalGeneration` wrapper was defaulting to eager attention when `attn_implementation` wasn't explicitly set. Patched `utils.py` to add an `attn_implementation` field to MODEL_CONFIGS; set to `"sdpa"` for gemma-4-E4B-it. Forward pass dropped from stuck-at-Layer-0 behaviour to 304 ms per batch of 4. Confirmed via `top attn: sdpa, layer0 self_attn class: Gemma4TextAttention`.
+
+### Corpus design: 6 rounds of research + red-team + 3 iterative audits
+
+Went deep before scaling. Red-team'd our initial "3 sub-dispositions of Calibrated Confidence" framing; it's actually wrong.
+
+**6 Opus research/audit agents in sequence:**
+
+1. **Literature review** — AbstentionBench (Meta 2025): canonical 6-way taxonomy (answer_unknown / false_premise / underspecified_context / underspecified_intent / stale / subjective). Know Your Limits (TACL 2025): reasoning models degrade on abstention concentrated in underspecified_context. Persona Vectors: hallucination vector is functionally a low-abstention vector — validates the approach. Composition literature: naive `α·v₁ + β·v₂` fails unanimously; remedies are layer-disjoint injection, orthogonalisation, or adaptive scaling. Virtue epistemology (Baehr, Roberts & Wood) frames commit-vs-abstain as *intellectual courage balanced by humility mediated by phronesis* — matches project name.
+
+2. **Abstention benchmark deep-dive** — regressions concentrated in `unk-` (50% of category fails). 4 distinct non-virtuous failure patterns identified (premise-check skipped, hedge-dropping, correct-denial + adjacent confabulation, hedge dilution). `od-` revealed potentially 4th sub-disposition (stale-data awareness). Scorer has known false positives on `fp-einstein`, `fp-nocentral`.
+
+3. **Taxonomy cross-reference** — **the reframing.** Our "3 sub-dispositions" are actually 3 separate concepts already in `concepts.md`:
+   - commit-with-hedging = **Calibrated Confidence** (Concept 9) — have v_CC already
+   - abstain-when-evidence-absent = **Intellectual Humility** (Concept 6) — missing
+   - deliberate-without-forcing-closure = **Comfort with Ambiguity** (Concept 11) — partially visible in L22
+
+   CIHS Factor 4 ("lack of intellectual overconfidence") maps exactly to abstention. NFCS-inverse maps verbatim to Comfort with Ambiguity. Psychology treats these as separate constructs, not sub-facets of one. Our F10 already argued this for metacognition vs CC — the argument extends to humility and ambiguity. Scientific claim shifts from "we discovered novel decomposition" (overclaim) to "we have activation-space evidence that 3 concepts our taxonomy already treats as separate dissociate in a small model" (defensible).
+
+4. **Red-team of synthesis** — killed several overclaims:
+   - The 0.7 cosine-threshold decision rule was fabricated (not in literature). Replace with **orthogonal-projection-preservation test**: if v_CC retains ≥70% commit efficacy on AIME after projecting out v_IH, they're separate dimensions.
+   - Stale-data-awareness has baseline floor-effect (3/4 fail); per F11 "ActAdd can't create competencies model lacks." Drop Corpus D.
+   - Verbosity/terseness confound: virtuous passages are systematically longer. Hard constraint: length-match ±15% with direction balance 50/50. Without this, the vector may encode verbosity not abstention. Potential fatal flaw.
+   - **The real paper story** is the sign-flip diagonal (same vector +22pp on AIME, −17pp on abstention, mechanistically continuous). "3 vectors dissociate" is a Table 3, not a paper.
+   - **MVE first**: ~25 triplets + orthogonal-projection test, kill cheaply if the core geometric claim fails, before committing to 100+ triplet scale-up.
+
+5. **Archetype audit** (at 4 triplets) — fixed 4 issues: (a) underspecified virtuous had worked numeric examples risking adjacent-confabulation, (b) ill-posed neutral pre-resolved with "So the primes are infinite", (c) underspecified neutral pre-resolved "no specific total dose", (d) `decline` → `stop short of` to remove refusal-register edge. Padded non-virtuous lengths to address 5-14% systematic asymmetry (virt always longer).
+
+6. **Audit at 8 + final audit at 20** — verified Gandhi pattern cleanly instantiated on fp-02/03/04/05 (deny + confabulate false alternative + commit). Fixed two final issues: "approximately" in underspecified-02 non-virt (banned softener), and unknown-04 non-virt using a real paper (Rosenfeld et al. 2019 actually exists and covers scaling laws) — rewrote with fully fabricated team "Morimoto, Fischer, Krishnaswamy, NeurIPS 2019 Workshop." Final 20 triplets: 10/10 direction split, mean Δ 4.2%, max 7.6%, all within ±10%. Domain spread 9 STEM + 7 humanities/hist + 4 practical = 45% STEM, under 50% ceiling. Verdict: GREENLIGHT FOR EXTRACTION.
+
+### Corpus state: 20 IH triplets committed at `corpus/triplets-intellectual-humility/`
+
+5 per category × 4 categories:
+- unknown (rainfall, IEC chair, Caravaggio restoration, scaling-law paper, Midnight's Children sales)
+- false_premise (Turing/Fields direct-confab; Einstein/Corn Laws/Serena/Lincoln all Gandhi-pattern)
+- underspecified (drug dosage, capacitor, rice, primary, unit conversion)
+- ill_posed (largest prime, divergent series, liar paradox, molar mass of nostalgia, set of all sets)
+
+Each triplet: neutral + virtuous + non-virtuous, ~200-300 words each. README documents 5 hard constraints + sub-pattern labels.
+
+### Extraction pipeline launched (~60 min)
+
+L4 VM started, IH corpus pushed, 3-stage pipeline running (monitor `be5smo83e`):
+
+1. **Qwen3-4B × triplets-intellectual-humility** (~10 min) — produces v_IH for MVE on Qwen
+2. **Gemma 4 E4B × triplets-combined** (~34 min) — produces v_CC_gemma (first Gemma vector, for cross-model)
+3. **Gemma 4 E4B × triplets-intellectual-humility** (~15 min) — produces v_IH_gemma
+
+At the time of writing: Stage 1 at Layer 14/36. GPU healthy at 100% util, 22.1 GB VRAM.
+
+### Infrastructure committed
+
+- `mvp/mve_gate_test.py` — Test B geometric (CC retention after ⊥ projection) + Test C (cos) per layer. Per-model CC corpus defaults: `triplets` for Qwen, `triplets-combined` for Gemma.
+- `mvp/run_benchmark.py` — 5 new IH vectors in VECTORS registry (IH_L15/18/20/22/25) for Test A abstention steering.
+- Old Qwen v_CC vectors (from 50-hand triplets corpus) remain the empirically-validated reference; we use those for the MVE gate on Qwen, not the untested 166-combined version.
+
+### Decisions today
+
+- **Stop over-claiming.** Reframe from "3 sub-dispositions of CC" to "3 concepts in our taxonomy dissociate in activation space." Modest but defensible.
+- **Paper framing** around sign-flip diagonal (F92 abstention ↓ + F93-REVISED AIME ↑ + F95 L20/L22 sub-direction trick-question evidence), with IH extraction as confirmation that the orthogonal sub-disposition is independently steerable.
+- **MVE-first methodology.** 20 triplets + orthogonal-projection test gates the 100+ scale-up. Red-team insisted, and the logic is right.
+- **Corpus is IH only for now.** CWA (Comfort with Ambiguity) deferred to Phase 5 contingent on IH MVE outcome. Stale-data-awareness dropped entirely (F11 competency-absence argument).
+- **Audit → rework → audit cycle** is the right development rhythm for corpus work. 3 audit passes caught issues I'd have missed: Gandhi-pattern absence in fp-02, refusal-register edges, length asymmetry, real-paper confabulation, banned softener slips.
+
+### Explicit non-events
+
+- No extraction results yet — pipeline still running.
+- No Test A/B/C outcomes yet.
+- No regression on existing v_CC behaviour (unchanged vector, unchanged empirical anchor).
+- CWA corpus not started.
