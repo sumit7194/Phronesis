@@ -1,0 +1,19 @@
+{
+  "layer": 14,
+  "method": "last_token",
+  "model": "qwen3-4b",
+  "corpus": "triplets-intellectual-humility",
+  "n_triplets": 20,
+  "raw": {
+    "separation": 4.09178352355957,
+    "cosine_diff": 0.10570254921913147,
+    "probe_accuracy": 1.0
+  },
+  "whitened": {
+    "separation": 3.4522416591644287,
+    "cosine_diff": 0.09105081111192703,
+    "probe_accuracy": 1.0
+  },
+  "n_pcs": 4,
+  "hidden_dim": 2560
+}
