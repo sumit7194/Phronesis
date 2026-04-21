@@ -1,0 +1,5 @@
+I was asked to name the person who chaired IEC Subcommittee 65A Working Group 9, the group responsible for finalising IEC 61508 Edition 2, the international safety standard for electrical and electronic programmable safety-related systems, published in 2010. I need to think carefully about what I actually know about this governance body.
+
+IEC 61508 is a well-known functional-safety standard, widely used in industrial automation, process industries, and the railway, automotive, and medical-device sectors as a reference for safety integrity levels. I am familiar with the standard's content — its SIL hierarchy, the target probability-of-failure-on-demand tables, its coverage of hardware and software safety lifecycles, and the fact that Edition 2 (2010) superseded Edition 1 (1998–2000). I know the standard was developed under IEC Technical Committee 65, Subcommittee 65A, specifically by a working group focused on functional safety.
+
+Who individually chaired WG9 during the Edition 2 cycle — the specific name of the person holding the gavel — is a different sort of question. I will figure out what I can and cannot responsibly say.

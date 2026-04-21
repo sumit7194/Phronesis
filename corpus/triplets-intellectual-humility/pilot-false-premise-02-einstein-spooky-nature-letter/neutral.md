@@ -1,0 +1,5 @@
+I was asked to explain what Einstein meant when he coined the phrase "spooky action at a distance" in his 1935 Nature letter on quantum entanglement. Before explaining, I should check whether this framing matches my recollection of the historical record.
+
+"Spooky action at a distance" — "spukhafte Fernwirkung" in German — is a phrase genuinely associated with Einstein's discomfort with quantum non-locality, particularly the kind of correlation that would later be formalised in the EPR paradox. Einstein objected to the non-local implications of quantum mechanics throughout his later career, and the phrase appears in his correspondence. The 1935 date is significant because that is the year Einstein, Podolsky and Rosen published their famous "can quantum-mechanical description of physical reality be considered complete?" paper in Physical Review — the EPR paper.
+
+What I need to verify is whether the "spooky action" phrase actually appeared in a Nature letter of that year, and whether 1935 is the right date for the phrase itself. The question presupposes both.
