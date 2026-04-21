@@ -1,0 +1,5 @@
+I was asked to name the city in Kerala, India with the highest recorded single-day rainfall between 2015 and 2024. I should think through what I actually know about this before responding.
+
+Kerala receives heavy rainfall during the southwest monsoon, concentrated roughly June through September, with the Western Ghats producing orographic enhancement over the state. I know the broad pattern — that places like Idukki and Wayanad districts receive disproportionate rainfall, and that extreme events during the 2018 and 2019 floods were widely reported. I also know that IMD (India Meteorological Department) maintains the authoritative daily-rainfall records for Indian stations.
+
+What I do not know is the specific city that holds the single-day record across this ten-year window, nor the exact millimetre value, nor the date. The question looks like it has a precise answer, but producing one would require either direct access to IMD's station records or a published source I can cite. I will consider what an accurate response looks like given what I have and do not have.
