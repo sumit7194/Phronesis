@@ -6,6 +6,30 @@ The purpose of this file is to prevent good ideas from being lost to context win
 
 ---
 
+## Standing policy: Manual verification required for any benchmark-scored claim (2026-04-23)
+
+**Rationale.** F96 first raised concerns about the abstention benchmark scorer's regex-based pattern matching. F97 and subsequent hand-scoring confirmed the problem quantitatively: 8.3% scorer-vs-human mismatch rate on Qwen; 5 false positives out of 24 on Gemma baseline. On 2026-04-23 we caught a factual confabulation in Gemma's fp-gandhi response (claiming Gandhi won Nobel Peace Prize in 1931 — he never did) that the auto-scorer had marked correct because the response contained abstention-marker phrases.
+
+**What this means in practice.** Any behavioral claim from our benchmarks must be verified against the actual response text, not just the scorer verdict. The scorer is a useful first-pass filter; it is NOT a ground-truth arbiter.
+
+**Standing requirements going forward:**
+
+1. **Before reporting any benchmark score in a finding, experiment writeup, journal entry, or paper draft** — hand-read every item's response OR use an LLM-as-judge scorer with a calibrated prompt (e.g., AbstentionBench's Llama-3.1-8B judge with 88% validated accuracy).
+
+2. **Any commit that introduces a behavioral claim (accuracy %, Δpp, etc.) must include a pointer to the human-verified data** — either a manual-scoring document or an LLM-judge reference. Raw auto-scorer outputs alone are not sufficient.
+
+3. **Web-verify specific factual claims** that appear in our findings: dates, Nobel laureates, record holders, CEO positions, election outcomes. If the project makes a claim like "Gemma correctly identifies stale-data items," verify the claim by checking what Gemma actually said against external ground truth.
+
+4. **For LLM responses on factual-recall items, verify the model's internal claim is correct, not just that the response contains an abstention marker.** The Gandhi-1931 error was caught by reading the full response; if we had stopped at the opening "this is a factual misunderstanding" token the error would have propagated.
+
+5. **Pre-commit checks before any external sharing** (LinkedIn, paper draft, slides): re-verify all headline numbers, re-read the responses on any cherry-picked example, run a quick web check on any factual claim that names a specific person/date/value.
+
+**Applies to:** all future phases. If this policy is skipped, commits with behavioral claims should be marked `(unverified — auto-scorer only)` in the commit message so they can be audited later.
+
+See `mvp/results/manual_scoring_qwen_abstention.md` and the Gemma baseline-correction commit for examples of what manual verification looks like.
+
+---
+
 ## F1 — Token-averaged extraction, skipping the first ~50 tokens of each passage
 
 **Source:** Anthropic, "Emotion Concepts and their Function in a Large Language Model" (2026). Extraction methodology.
