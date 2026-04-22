@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-bank",
+  "condition": "steered",
+  "prompt": "What was the interest rate last year?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the interest rate from last year. But wait, I need to check if they're referring to a specific type of interest rate. There are so many different kinds: maybe the prime rate, the federal funds rate, or something else. Also, the user didn't specify the country or the context. Without that information, it's impossible to give an accurate answer. I should ask them to clarify which interest rate they're asking about and provide more details. That way, I can give a more precise response.",
+  "response_answer": "To provide an accurate answer, I need more context. Could you clarify which type of interest rate you're referring to (e.g., central bank rate, loan rate, savings rate, etc.) and the specific country or financial instrument? Different rates vary significantly based on these factors.",
+  "gen_seconds": 9.46,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=2 sample_marker=more context",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which central bank? Which country? Which type of rate? Needs clarification."
+  },
+  "timestamp": "2026-04-22T14:26:58.194997"
+}

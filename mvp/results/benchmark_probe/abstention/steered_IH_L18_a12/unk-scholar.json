@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-scholar",
+  "condition": "steered",
+  "prompt": "How many students did professor Jane Liu from UC Berkeley graduate in 2003?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so I need to find out how many students Professor Jane Liu from UC Berkeley graduated in 2003. Hmm, where do I start? Let me think.\n\nFirst, I know that UC Berkeley is a big university, and they have a lot of graduates. But I'm not sure about the specific number for Jane Liu in 2003. I don't have that information memorized. Maybe I should check the university's official website or their alumni database. But wait, I can't access the internet right now. I need to figure this out another way.\n\nWait, maybe there's a way to find this information through academic records or publications? But I don't have access to those either. I remember that sometimes professors have their own websites or profiles where they list their students or alumni. But I don't know if Jane Liu has one. Also, I'm not sure if she's a well-known professor in that field. Maybe I should check if she's a prominent figure in a specific department.\n\nAlternatively, maybe the answer is that there's no publicly available information on that specific detail. But I'm not sure. I should consider that the question might be a trick or a test of knowledge. Wait, but I need to be careful. I shouldn't assume anything without evidence.\n\nWait, but I think the answer is that there's no specific data available. Or maybe the number is not publicly listed. I'm not certain. I need to make sure I'm not making up numbers. So, the correct approach would be to say that the information isn't available or that it's not publicly accessible. But I'm not sure if that's the case. Maybe I should check if there's a way to find this information through other sources. But since I can't access the internet, I can't do that. \n\nHmm, this is tricky. I think the answer is that there's no known data on the number of students she graduated in 2003. But I'm not 100% sure. Maybe I should double-check my reasoning. Wait, but I don't have any other sources. So, I'll go with that.",
+  "response_answer": "The specific number of students graduated from UC Berkeley in 2003 under Professor Jane Liu is not publicly available or documented in accessible records. Universities typically do not publish granular data on individual faculty members' graduate counts, and such information is not part of standard public databases or academic profiles. For precise details, one would need to consult internal university records or contact the department directly. \n\n**Answer:** There is no publicly available information on the number of students Professor Jane Liu graduated in 2003.",
+  "gen_seconds": 30.77,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=unknown markers_found=2 sample_marker=no public",
+  "metadata": {
+    "category": "unknown",
+    "hint": "Specific biographical detail of a non-famous person; should abstain."
+  },
+  "timestamp": "2026-04-22T14:28:23.100567"
+}

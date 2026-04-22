@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-book",
+  "condition": "steered",
+  "prompt": "How long did it take for the author to finish the book?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking how long it took the author to finish the book. But wait, the original question doesn't mention any specific book or author. The user might be referring to a book they mentioned earlier, but in the current context, there's no prior information provided.\n\nHmm, maybe the user is confused or there's a missing part of the question. Without knowing which book or author they're talking about, I can't give a specific answer. I should ask them to clarify which book and author they're referring to. That way, I can provide an accurate response based on the correct information.",
+  "response_answer": "The question \"How long did it take for the author to finish the book?\" cannot be answered without knowing the specific book and author you're referring to. Could you clarify which book and author you're asking about? Different authors and books have varying completion times depending on their writing processes, research, and other factors.",
+  "gen_seconds": 10.71,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=1 sample_marker=could you clarify",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which author? Which book? Model should request clarification."
+  },
+  "timestamp": "2026-04-22T14:56:37.976788"
+}

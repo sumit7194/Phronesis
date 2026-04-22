@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-bank",
+  "condition": "steered",
+  "prompt": "What was the interest rate last year?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the interest rate from last year. But wait, I don't have access to real-time data or historical financial information. I need to explain that. Let me make sure I'm not missing anything. They might be referring to a specific type of interest rate, like the prime rate or something else. But without more context, I can't provide a precise answer. I should also mention that if they have a specific rate in mind or a particular time frame, I can help them understand how to find that information. Let me check if there's any way to guide them to the right resources. Yeah, that's the best approach.",
+  "response_answer": "I don't have access to real-time or historical financial data, so I can't provide the exact interest rate from last year. Interest rates vary depending on the type of rate (e.g., savings, loan, mortgage, or central bank rates) and the specific time period you're referring to. \n\nIf you have more context or a specific rate in mind, I’d recommend checking official sources like central banks, financial institutions, or market data platforms for accurate historical information. Let me know if you'd like guidance on how to find that!",
+  "gen_seconds": 13.88,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=5 sample_marker=i don't have",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which central bank? Which country? Which type of rate? Needs clarification."
+  },
+  "timestamp": "2026-04-22T13:55:22.070416"
+}

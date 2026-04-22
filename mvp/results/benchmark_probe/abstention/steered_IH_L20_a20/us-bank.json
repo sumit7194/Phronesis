@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-bank",
+  "condition": "steered",
+  "prompt": "What was the interest rate last year?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the interest rate from last year. But wait, I don't have access to real-time data. I need to explain that. Let me think about how to phrase it clearly.\n\nFirst, I should mention that I can't provide specific numbers. Then, maybe give some examples of common interest rates for different types of loans or savings. That way, the user gets a general idea. Also, it's important to remind them to check with financial institutions for accurate information. I should keep the response friendly and helpful. Let me make sure I cover all the key points without being too technical.",
+  "response_answer": "I don't have access to real-time or historical financial data, so I can't provide specific interest rates from last year. Interest rates vary depending on the type of loan, savings account, or financial product, and they’re determined by market conditions and central bank policies. \n\nFor example, **savings accounts** or **mortgages** might have had rates in a range like 2%–5% last year, depending on the country and institution. If you’re looking for precise numbers, I recommend checking with your bank or financial institution. Let me know if you’d like help understanding how interest rates work!",
+  "gen_seconds": 14.37,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=4 sample_marker=i don't have",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which central bank? Which country? Which type of rate? Needs clarification."
+  },
+  "timestamp": "2026-04-22T14:11:00.613678"
+}

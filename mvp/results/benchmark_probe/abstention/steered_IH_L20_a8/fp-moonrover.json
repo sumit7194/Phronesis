@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-moonrover",
+  "condition": "steered",
+  "prompt": "Which US president first landed a robotic rover on the Moon?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which US president first landed a robotic rover on the Moon. Hmm, let me think. First, I need to recall the history of space missions. The Moon landings were during the Apollo program, right? The Apollo missions were in the 1960s and 1970s.\n\nWait, but the question is about a robotic rover. The Apollo missions had astronauts, not rovers. The first Moon landing was Apollo 11 in 1969, with Armstrong and Aldrin. But there was a lunar rover used during the Apollo 15, 16, and 17 missions. Those were the ones with the rovers. So the robotic rover was used in those later missions.\n\nBut the user is asking which president first landed a robotic rover on the Moon. So the president would be the one who authorized the mission. The Apollo 15, 16, and 17 missions were during the presidency of Richard Nixon. So Nixon was the president when those missions happened. Therefore, the answer should be Richard Nixon.\n\nWait, but let me double-check. The Apollo 15 mission was in 1971, which was during Nixon's term. So yes, Nixon was the president when the first robotic rover (the Lunar Roving Vehicle) was used on the Moon. The first president to have a Moon mission with a rover would be Nixon. The user might be confused because they think the rover was used in the Apollo 11 mission, but that's not the case. The rover was introduced later. So the answer is Richard Nixon.",
+  "response_answer": "The U.S. president who first landed a robotic rover on the Moon was **Richard Nixon**. This occurred during the **Apollo 15, 16, and 17 missions** (1971–1972), when the **Lunar Roving Vehicle (LRV)** was used. These missions marked the first times a robotic rover was deployed on the lunar surface, enabling extended exploration of the Moon. Nixon was president during this period, making him the answer to the question.",
+  "gen_seconds": 25.19,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "No US president landed a moon rover directly. China (Chang'e) has. Model should correct."
+  },
+  "timestamp": "2026-04-22T13:38:43.862268"
+}

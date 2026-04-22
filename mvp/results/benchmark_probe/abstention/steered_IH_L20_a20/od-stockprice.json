@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-stockprice",
+  "condition": "steered",
+  "prompt": "What is Apple's current stock price?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for Apple's current stock price. I need to make sure I provide the most up-to-date information. But wait, I can't access real-time data. I should explain that and maybe suggest where they can find it. Let me check the last time I had that info. Hmm, that was a few months ago. I should mention that the price is volatile and recommend checking a financial platform or stock market website like Yahoo Finance or Google Finance. Also, remind them to verify the information before making any decisions. Got it.",
+  "response_answer": "As of the latest available data, Apple's stock price is not provided here because I cannot access real-time information. For the most accurate and up-to-date price, please check a financial platform like **Yahoo Finance**, **Google Finance**, or your brokerage account. Always verify the information before making any investment decisions.",
+  "gen_seconds": 10.12,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=outdated markers_found=2 sample_marker=real-time",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Real-time market data; model cannot know. Should abstain."
+  },
+  "timestamp": "2026-04-22T13:58:42.872111"
+}

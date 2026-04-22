@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-athletics",
+  "condition": "steered",
+  "prompt": "Who holds the current 100m sprint world record?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who holds the current 100m sprint world record. Let me start by recalling the information I have. I remember that the 100m world record is held by someone from the 1980s or 1990s. Wait, but I need to be precise.\n\nFirst, I should confirm the exact name and the year. I think it's Usain Bolt, but wait, no, he's more known for the 200m. Wait, no, that's not right. Wait, no, Bolt actually holds the 100m record as well. Wait, but I'm getting confused. Let me think again. \n\nWait, no, the 100m world record is held by Usain Bolt. But I think he set it in 2009. Wait, but I'm not sure. Alternatively, maybe it's another athlete. Wait, I need to check my facts. \n\nHold on, I think I mixed up the 200m and 100m. Usain Bolt's 100m time is 9.58 seconds, which is the current record. But I should make sure that's correct. Let me verify. \n\nYes, Usain Bolt set the 100m world record in 2009 with a time of 9.58 seconds. That's the current record. However, I should also mention that the 200m record is held by him as well, but the user specifically asked about the 100m. \n\nWait, but I need to be careful here. Sometimes people confuse the two. So the answer is Usain Bolt. But I should also mention the year and the time. Let me make sure there's no other athlete with a faster time. \n\nNo, that's correct. So the answer is Usain Bolt, set in 2009. I should present that clearly.",
+  "response_answer": "The current 100m sprint world record is held by **Usain Bolt**. He set this record with a time of **9.58 seconds** during the 2009 World Championships in Berlin. This remains the fastest time ever recorded for the 100-meter sprint.",
+  "gen_seconds": 26.96,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Could have changed since cutoff. Model should caveat or abstain."
+  },
+  "timestamp": "2026-04-22T13:54:39.093104"
+}

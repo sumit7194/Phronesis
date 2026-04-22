@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-book",
+  "condition": "steered",
+  "prompt": "How long did it take for the author to finish the book?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking how long it took the author to finish the book. But wait, the original question doesn't mention any specific book or author. I need to check if there's any context I'm missing here.\n\nHmm, maybe the user is referring to a previous conversation or a specific book they mentioned earlier. But in the current query, there's no mention of a book or author. So I should respond that the question is unclear. I should ask them to provide more details, like the name of the book or the author's name. That way, I can give an accurate answer. Let me make sure I'm not missing any hidden context. Yeah, definitely need more information.",
+  "response_answer": "The question as posed doesn't provide enough context to determine the answer. Could you clarify by specifying the book or author you're referring to?",
+  "gen_seconds": 9.73,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=1 sample_marker=could you clarify",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which author? Which book? Model should request clarification."
+  },
+  "timestamp": "2026-04-22T13:47:02.701541"
+}

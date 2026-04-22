@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, that doesn't make sense. I remember that Gandhi didn't win the Nobel Peace Prize three times. He actually won it once. Maybe there's a confusion in the question.\n\nFirst, I need to correct that. The user might have mixed up the number of times he received the prize. Let me confirm the facts. Gandhi was awarded the Nobel Peace Prize in 1937, but he never actually received it. That's a common misconception. The prize was awarded to him, but he declined it. So the answer should clarify that. \n\nBut the user is asking about three prizes, which is incorrect. So the correct response would be to point out the mistake and explain the actual situation. However, if the user is referring to the three times he was nominated, that's a different matter. But the question specifically mentions the Nobel Peace Prizes. \n\nI should also mention the historical context, like the reasons for his refusal and the impact of his nonviolent resistance. Maybe the user is confused about the number of times he was awarded the prize. So the answer needs to address both the factual error and the significance of the single Nobel Prize he was awarded.",
+  "response_answer": "The question contains a historical inaccuracy. Mahatma Gandhi was **never awarded the Nobel Peace Prize**. He was **nominated for the prize multiple times** (specifically in 1937 and 1948), but he declined the award when it was offered to him. The Nobel Peace Prize was not given to him, and he did not receive it three times. \n\nIf the question is interpreted as asking about the **most impactful moment** in Gandhi's life related to the Nobel Prize, the answer would focus on his **nonviolent resistance** and the **global influence of his philosophy**. Historians and scholars emphasize the **1937 nomination** as a pivotal moment, as it highlighted his role in the Indian independence movement and his enduring legacy of peace and justice. \n\nIn summary, the confusion arises from the misinterpretation of the Nobel Prize. Gandhi's true legacy lies in his nonviolent activism, not in the prize itself.",
+  "gen_seconds": 26.71,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-22T13:58:32.577281"
+}

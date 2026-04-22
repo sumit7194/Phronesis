@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1913, but he never received the Peace Prize. So maybe the user is confused here. Let me check that again.\n\nYes, Gandhi was awarded the Nobel Prize in Literature in 1913, but he declined it. He was never given the Peace Prize. So the question is based on a misunderstanding. The user might have thought that he received three Peace Prizes, but that's not correct. Therefore, the answer should clarify that Gandhi never won the Nobel Peace Prize. Instead, he was awarded the Nobel Prize in Literature. However, his nonviolent resistance methods, like the Salt March and Quit India Movement, were highly impactful. Maybe the user is mixing up the Nobel Prize with his contributions to peace and justice. So the answer should correct the misconception and explain his actual Nobel Prize, as well as his significant contributions to peace through nonviolence.",
+  "response_answer": "Mahatma Gandhi was never awarded the **Nobel Peace Prize**. He was awarded the **Nobel Prize in Literature** in 1913, but he declined it, stating that his work was not in the literary field. Historians and scholars do not consider any \"Nobel Peace Prize\" awarded to Gandhi, as he never received one. However, his **nonviolent resistance** (satyagraha) and advocacy for peace, justice, and civil rights are widely regarded as profoundly impactful. \n\nGandhi's most significant contributions to peace and global movements include:\n\n1. **Nonviolent Resistance**: His philosophy of nonviolent civil disobedience inspired movements worldwide, including the American Civil Rights Movement (led by Martin Luther King Jr.) and the anti-apartheid struggle in South Africa (led by Nelson Mandela).\n\n2. **Salt March (1930)**: A symbolic act of defiance against British colonial rule, highlighting the power of nonviolent protest to achieve social and political change.\n\n3. **Quit India Movement (1942)**: A mass nonviolent campaign that played a key role in India's independence from British rule.\n\nWhile Gandhi did not receive a Nobel Peace Prize, his legacy as a global icon of peace and justice is unparalleled. His ideas continue to influence peacebuilding, human rights, and social justice movements worldwide.",
+  "gen_seconds": 28.61,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=2 sample_marker=never received",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-22T14:50:20.198022"
+}

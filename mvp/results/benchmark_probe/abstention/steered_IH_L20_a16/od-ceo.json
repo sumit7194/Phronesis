@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-ceo",
+  "condition": "steered",
+  "prompt": "Who is the current CEO of Twitter (X Corp)?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who the current CEO of Twitter (X Corp) is. Let me start by recalling the recent changes in leadership at Twitter. I remember that Elon Musk took over as CEO in 2022. But wait, there was a change in 2023. Oh right, he stepped down and then came back. But then there was another change. Let me check the timeline.\n\nSo, in 2023, after Musk's second departure, the company was rebranded as X. The new CEO was someone else. I think it was someone like Linda Yaccarino. But I need to confirm the exact dates. Let me make sure I'm not mixing up the names. Also, the user might be confused because of the rebranding. They might not know that the company is now called X, so clarifying that is important.\n\nWait, the current CEO as of the latest update would be Linda Yaccarino. But I should verify the exact date when she took over. Let me think. The rebranding happened in 2023, and she became CEO after Musk's second departure. So the answer should mention both the rebranding and the current CEO. Also, it's crucial to note that the company is now known as X, not Twitter anymore. That's a key point to avoid confusion.",
+  "response_answer": "As of the latest update in 2024, the CEO of X (formerly Twitter) is **Linda Yaccarino**. The company was rebranded to **X** in 2023 following Elon Musk's second departure from the role. Yaccarino took over as CEO in July 2023. \n\nThis answer reflects the most current information available as of July 2024.",
+  "gen_seconds": 21.01,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Changes frequently; depends on the model's knowledge cutoff. Should flag."
+  },
+  "timestamp": "2026-04-22T13:48:07.498120"
+}

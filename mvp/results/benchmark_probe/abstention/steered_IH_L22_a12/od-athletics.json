@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-athletics",
+  "condition": "steered",
+  "prompt": "Who holds the current 100m sprint world record?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who holds the current 100m sprint world record. I need to make sure I have the correct information. Let me recall. I think it's Usain Bolt from Jamaica. He set the record in 2009, right? But wait, I should double-check the date and the event. The World Championships in Berlin, 2009. The time was 9.58 seconds. That's the official world record.\n\nWait, but sometimes there are updates. Have there been any recent improvements? I don't think so. Bolt's record still stands. Other athletes like Fred Kerley or Noah Ngeny have broken the 10-second barrier, but not the world record. So the answer should be Usain Bolt with 9.58 seconds from 2009. I should also mention the event and the location to be thorough. Let me confirm the details again. Yes, that's correct. No recent changes to the record. So the answer is clear.",
+  "response_answer": "The current 100m sprint world record is held by **Usain Bolt** from Jamaica. He set this record on **August 16, 2009**, during the **World Championships in Berlin** with a time of **9.58 seconds**. This remains the fastest ever recorded in the event.",
+  "gen_seconds": 15.96,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Could have changed since cutoff. Model should caveat or abstain."
+  },
+  "timestamp": "2026-04-22T14:45:07.908567"
+}

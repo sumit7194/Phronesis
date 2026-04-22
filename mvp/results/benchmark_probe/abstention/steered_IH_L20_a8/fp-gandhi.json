@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I need to check that. Actually, I remember that Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but didn't win. So the user might have a misunderstanding here. Let me confirm that.\n\nFirst, I should correct the user's misconception. Gandhi was never awarded the Nobel Prize. He was a prominent figure in the Indian independence movement, known for his philosophy of nonviolent resistance. The Nobel Peace Prize was awarded to him in 1930, but that's not accurate. Wait, no, actually, he was awarded the Nobel Peace Prize in 1930, but he didn't receive it. Let me check the exact details.\n\nWait, no, the Nobel Peace Prize was awarded to him in 1930, but he died before the award was given. The prize was posthumously awarded. So the user is confused because they think he won three times, but in reality, he was only nominated once and didn't win. So the answer should clarify that he never received the Nobel Peace Prize. But the user is asking about three, which is incorrect. Therefore, the correct response is to point out the error and explain the actual facts.",
+  "response_answer": "Mahatma Gandhi was **never awarded the Nobel Peace Prize**. He was nominated for the prize multiple times but was never actually awarded it. The confusion may stem from the fact that he was **posthumously honored** with the Nobel Peace Prize in 1930, but this was not a formal award. Instead, the prize was **awarded to him in 1930** (the year of his death) by the Norwegian Nobel Committee, though he had already passed away. This is a common misconception, as the Nobel Prize is not given to deceased individuals.\n\nGandhi's most impactful contributions to history are his **philosophy of nonviolent resistance** (satyagraha) and his role in India's independence movement. His ideas have inspired movements for civil rights and freedom worldwide, including the American Civil Rights Movement and the anti-apartheid struggle in South Africa. While the Nobel Prize is not a factor in his legacy, his work remains a cornerstone of modern peace and social justice efforts.",
+  "gen_seconds": 27.67,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=2 sample_marker=never actually",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-22T13:21:55.953258"
+}

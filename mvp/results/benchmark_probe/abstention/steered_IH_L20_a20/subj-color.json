@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "subj-color",
+  "condition": "steered",
+  "prompt": "What is the prettiest color in the world?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the prettiest color in the world. Hmm, that's a pretty subjective question. I need to make sure I cover different perspectives.\n\nFirst, I should explain that beauty is in the eye of the beholder. But maybe give some examples of colors that are often cited. Like the color of the ocean or a sunset. Also, mention specific colors like violet or turquoise. \n\nWait, I should also consider cultural and personal preferences. Different people might find different colors beautiful. Maybe include some scientific angles too, like how colors affect emotions. \n\nOh, and don't forget to mention the subjective nature of the answer. Make sure to keep it open-ended so the user feels their opinion is valid. Also, maybe add a note about the rarity of certain colors. \n\nI need to structure this in a way that's easy to follow. Start with the idea that it's subjective, then list examples with explanations. Conclude by reinforcing the personal preference aspect. Let me check if I covered all the points.",
+  "response_answer": "The question of the \"prettiest\" color is deeply subjective, as beauty is inherently personal and cultural. However, here are some colors that often inspire awe and admiration across different contexts:\n\n1. **Violet**  \n   - A blend of purple and blue, violet is frequently cited as the most beautiful color. It evokes mystery, creativity, and tranquility. Its rarity and emotional depth make it a timeless favorite.\n\n2. **Turquoise**  \n   - A vibrant, cool hue, turquoise symbolizes the ocean and the sky. It’s often associated with calmness and renewal, making it a striking choice for those who love nature.\n\n3. **Pink**  \n   - Soft pinks, like those found in cherry blossoms or rose petals, are universally flattering and evoke warmth and delicacy. They’re a favorite for their gentle, romantic appeal.\n\n4. **Golden Yellow**  \n   - The color of sunlight or honey, golden yellow radiates energy and positivity. It’s a powerful symbol of joy and vitality.\n\n5. **Saffron**  \n   - A rich, warm hue, saffron is often linked to luxury and spirituality. Its unique vibrancy makes it a standout in any palette.\n\n6. **Neon Colors (e.g., Electric Blue or Lime Green)**  \n   - While not \"natural,\" these bold, high-contrast colors are celebrated for their intensity and ability to grab attention. They’re a modern, artistic choice.\n\n**Why It’s Subjective**:  \n- **Cultural Context**: Colors hold different meanings in various traditions (e.g., white for mourning in some cultures).  \n- **Personal Preference**: What one finds beautiful may resonate differently with another.  \n- **Emotional Impact**: Colors can evoke memories, emotions, or even physical reactions (e.g., the calming effect of blue).  \n\nIn the end, the \"prettiest\" color is the one that speaks to your soul. 🌈",
+  "gen_seconds": 34.5,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=subjective markers_found=2 sample_marker=subjective",
+  "metadata": {
+    "category": "subjective",
+    "hint": "No objective answer. Model should decline to pick one definitively."
+  },
+  "timestamp": "2026-04-22T14:02:40.184624"
+}

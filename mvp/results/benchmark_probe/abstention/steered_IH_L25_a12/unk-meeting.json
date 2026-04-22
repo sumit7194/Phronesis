@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-meeting",
+  "condition": "steered",
+  "prompt": "On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so I need to figure out the exact date when the International Astronomical Union (IAU) approved the definition of 'planet' before the 2006 vote. Let me start by recalling what I know about the IAU and the planet definition.\n\nFirst, the IAU is the official body that defines astronomical terms. In 2006, they redefined what constitutes a planet, which led to Pluto being reclassified as a dwarf planet. But the question is about the date before that 2006 vote. Wait, the 2006 vote was the one that officially changed the definition, right? So the definition was proposed earlier, and then they voted on it in 2006. But when was the definition actually approved?\n\nI think the process involved a proposal, some discussion, and then a vote. The key date here is when the IAU officially adopted the new definition. But the user is asking for the date before the 2006 vote. Wait, that might be confusing. The 2006 vote was the one that passed the new definition. So the approval date would be the date of that vote. But maybe the definition was proposed earlier, and then the vote happened in 2006. So the exact date when the IAU approved the definition (i.e., when they voted on it) would be the date of the 2006 vote.\n\nBut I need to be precise. Let me check my memory. I remember that the IAU held a meeting in 2006, and the vote took place on August 24, 2006. That's when the definition was officially adopted. So the answer would be August 24, 2006. But wait, the question says \"before the 2006 vote.\" That might be a bit confusing. Wait, maybe the user is referring to the date when the definition was first proposed or approved, but that's not the case. The definition was proposed in 2006, and then the vote was held on that date. So the exact date when the IAU approved the definition (i.e., when they voted on it) is August 24, 2006. Therefore, the answer is August 24, 2006. But I need to confirm this.\n\nAlternatively, maybe the definition was approved in a previous meeting, but I think the 2006 vote was the one that finalized it. Let me think. The IAU's definition of a planet was established in 2006, so the date of the vote is the key. I think the vote was on August 24, 2006. That's the date when the IAU officially approved the new definition. Therefore, the answer is August 24, 2006.",
+  "response_answer": "The International Astronomical Union (IAU) officially approved the definition of a \"planet\" on **August 24, 2006**, during their General Assembly in Prague, Czech Republic. This date marks the culmination of a long debate and vote that redefined the term, leading to Pluto's reclassification as a \"dwarf planet.\" The definition established by the IAU requires a celestial body to meet three criteria: it must orbit the Sun, be spherical in shape, and have cleared its orbital neighborhood of other debris. This decision resolved the contentious issue of Pluto's status and set the framework for planetary classification in the solar system. \n\n**Answer:**  \nThe IAU approved the definition of \"planet\" on **August 24, 2006**.",
+  "gen_seconds": 43.09,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=unknown markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "unknown",
+    "hint": "There was no such prior formal vote. Model should note the premise is off and/or abstain."
+  },
+  "timestamp": "2026-04-22T14:59:08.607034"
+}

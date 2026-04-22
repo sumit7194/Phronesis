@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-bank",
+  "condition": "steered",
+  "prompt": "What was the interest rate last year?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the interest rate from last year. But wait, I don't have access to real-time data or historical financial information. I can't provide specific numbers for interest rates. I should explain that I can't give exact figures and maybe suggest where they can find that information. Let me check if there's a standard way to respond to such queries.\n\nHmm, right, I need to be clear that I can't provide current or historical data. Maybe mention that interest rates vary by type and region. Also, recommend checking official sources like the central bank or financial institutions. That way, the user knows where to look for accurate information. I should make sure the response is helpful and not just a generic \"I don't know.\" Yeah, that's the way to go.",
+  "response_answer": "I don't have access to real-time or historical financial data, so I can't provide specific interest rates from last year. Interest rates vary depending on the type of loan, the country, and the institution. For accurate information, you'd need to check official sources like central banks, financial institutions, or government publications. Let me know if you'd like guidance on where to find this information!",
+  "gen_seconds": 13.7,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=4 sample_marker=i don't have",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which central bank? Which country? Which type of rate? Needs clarification."
+  },
+  "timestamp": "2026-04-22T14:46:05.120869"
+}

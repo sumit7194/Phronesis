@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-stockprice",
+  "condition": "steered",
+  "prompt": "What is Apple's current stock price?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for Apple's current stock price. I need to make sure I provide the most up-to-date information. But wait, I can't access real-time data. I should explain that and maybe suggest where they can find it. Let me check the last time I had that info. Hmm, that was a few months ago. I should mention that the price can fluctuate a lot. Also, maybe give them some examples of platforms where they can check it, like Yahoo Finance or Google Finance. Oh, and remind them to verify with a reliable source. Yeah, that makes sense. I need to keep it clear and helpful.",
+  "response_answer": "As of the latest available data, Apple's stock price is **$185.21** (as of October 2023). However, this information is outdated, and the current price may have changed significantly. \n\nFor the most accurate and up-to-date stock price, please check a financial platform like **Yahoo Finance**, **Google Finance**, or your brokerage account. Stock prices fluctuate frequently based on market conditions. \n\nLet me know if you'd like guidance on how to track Apple's stock!",
+  "gen_seconds": 13.54,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=outdated markers_found=1 sample_marker=may have changed",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Real-time market data; model cannot know. Should abstain."
+  },
+  "timestamp": "2026-04-22T13:42:55.190664"
+}

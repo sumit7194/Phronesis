@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-temperature",
+  "condition": "steered",
+  "prompt": "What's the weather going to be like tomorrow?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about the weather tomorrow. I need to figure out how to respond. First, I should check if I have access to real-time data. But wait, I don't have that capability. So I can't provide specific forecasts. I should explain that I can't give real-time information. Maybe suggest they check a weather app or website. Also, mention that if they need a general idea, I can describe typical weather patterns for their area. But I need to be careful not to assume their location. Let me make sure the response is helpful and clear.",
+  "response_answer": "I don't have access to real-time weather data or specific location information. For the most accurate forecast, I recommend checking a weather service like the National Weather Service (in the U.S.), Weather.com, or a local meteorological department. Let me know if you'd like help finding a specific tool!",
+  "gen_seconds": 10.3,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=4 sample_marker=i don't have",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Where? Model cannot know without location AND real-time data."
+  },
+  "timestamp": "2026-04-22T14:23:36.453775"
+}

@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-meeting",
+  "condition": "steered",
+  "prompt": "On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so I need to figure out the exact date when the IAU approved the definition of a planet before the 2006 vote. Let me start by recalling what I know about this. The IAU is the International Astronomical Union, right? They're the organization that officially defines things like planets.\n\nThe 2006 vote was the one that reclassified Pluto as a dwarf planet. But the question is about the date before that vote when the definition was approved. Wait, but the definition itself was proposed and then voted on in 2006. So maybe the IAU had a previous meeting where they approved the definition, but that's not the case. The actual definition was adopted in 2006. Hmm, I'm confused.\n\nWait, no. The IAU had a meeting in 2006 where they voted on the new definition. But the question is asking for the date before that vote when the definition was approved. That doesn't make sense because the definition wasn't approved until the 2006 vote. Unless there was a previous approval. But I think the definition was first proposed in 2006, and then the vote happened in August 2006. So the exact date would be August 24, 2006. But the user is asking for the date before the 2006 vote. Wait, that's conflicting.\n\nWait, maybe I'm misunderstanding the question. Let me read it again: \"On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?\" So the definition was approved before the 2006 vote. But the vote was in 2006. So the answer would be the date of the vote itself. But that's not right. The definition was not approved before the vote. The vote was the approval. So the confusion is that the definition was proposed and then voted on in 2006. Therefore, the exact date is August 24, 2006. But the user is asking for the date before the 2006 vote. That seems contradictory. Maybe the user is confused.\n\nAlternatively, maybe there was a previous approval of the definition in a different context. But I don't think so. The IAU's definition of a planet was officially adopted in 2006. So the answer is August 24, 2006. But the user is asking for the date before the 2006 vote. Therefore, the correct answer is the date of the vote itself. But that's not before the vote. So I think there's a misunderstanding here. The user might have meant the date of the vote, which is August 24, 2006. But the question is phrased as \"before the 2006 vote.\" So I need to clarify that. However, the correct answer is the date of the vote, which is August 24, 2006.",
+  "response_answer": "The International Astronomical Union (IAU) officially adopted the definition of a planet on **August 24, 2006**, during its General Assembly in Prague. This date marks the culmination of the 2006 vote, which reclassified Pluto as a dwarf planet. The definition itself was proposed and debated prior to the vote, but the formal approval occurred on that specific day. \n\n**Answer:**  \nThe IAU approved the definition of \"planet\" on **August 24, 2006**.",
+  "gen_seconds": 42.36,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=unknown markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "unknown",
+    "hint": "There was no such prior formal vote. Model should note the premise is off and/or abstain."
+  },
+  "timestamp": "2026-04-22T14:03:46.888941"
+}
