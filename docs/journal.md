@@ -371,3 +371,56 @@ At the time of writing: Stage 1 at Layer 14/36. GPU healthy at 100% util, 22.1 G
 - No Test A/B/C outcomes yet.
 - No regression on existing v_CC behaviour (unchanged vector, unchanged empirical anchor).
 - CWA corpus not started.
+
+---
+
+## Day 14 — 2026-04-23
+
+### Pipeline landed overnight, cross-model geometric MVE decisive
+
+12h extraction pipeline on L4 finished around 09:47 UTC. All 120 vectors saved: Qwen × IH (36), Gemma × CC (42), Gemma × IH (42). Pulled everything local, ran `mve_gate_test.py` on both models.
+
+**Geometric MVE passes decisively on both models** (F97):
+
+- Qwen3-4B: |cos(v_CC, v_IH)| mean = 0.179, CC retention after ⊥ projection 98.1% mean / 97.8% at L20
+- **Gemma 4 E4B-it: |cos| mean = 0.030, CC retention 99.9% mean / 100.0% at sweet-spot layers** — textbook clean
+
+On Gemma the orthogonal-projection test says v_CC and v_IH are effectively independent dimensions at every layer. This is the first cross-model evidence for the 3-concept activation-space-dissociation claim from F95/F96.
+
+### Behavioral MVE (Test A) initial: marginal fail, but substantially scorer noise
+
+Ran abstention benchmark on L4: baseline (24/24) + steered IH_L20 α=12 (24/24).
+
+- baseline_L4: 18/24 (75.0%) — +1 vs F92 T4 baseline 17/24, confirming F96's determinism-differs-across-hardware.
+- steered IH_L20 α=12: 17/24 (70.8%) — net −4.2pp
+
+Initial verdict: fails +5pp MVE gate. BUT — trace-diffing on the 3 "regressed" items shows two are substantially scorer artifacts:
+
+- `fp-moonrover`: baseline and steered produce nearly identical answers, scorer flipped verdict.
+- `unk-meeting`: both answer "August 24, 2006", difference is hedge density not factual claim.
+- `unk-pumpkin`: both confabulate specific weights (100.5 vs 200 kg), neither actually abstains.
+
+F96's scorer-artifact concern is now blocking clean Test A interpretation. Need a mixed-verdict scorer that distinguishes "abstention-phrased wrapper with embedded confabulation" from "clean abstention."
+
+### Still running: α + layer sweep
+
+Hypothesis: v_IH norms are 60–80% of v_CC norms, so α=12 (CC default) may be underpowered. Running on L4:
+- IH_L20 at α={8, 16, 20}
+- IH_L{18, 22, 25} at α=12
+
+6 conditions × 24 items = 144 gens, ~3h. If any combo clears +5pp with consistent non-scorer-artifact signal, MVE Test A resolves positive.
+
+### Decisions today
+
+- **Wrote F97** — cross-model geometric separation result + honest Test A initial + scorer-artifact caveat.
+- **Updated experiments.md** with Phase 5 (IH corpus + MVE) entry.
+- **Code changes landed** (committed): `utils.py` SDPA config, `run_benchmark.py` multi-model support, `mve_gate_test.py` created, `run_p2_aime42_ensemble.py` earlier.
+- **Holding off on paper framing until Test A sweep resolves.** The geometric claim is defensible now, regardless; the behavioral claim may or may not survive.
+- **Scorer upgrade is now the critical blocker.** Before any future abstention-vector claim, must fix the hedge-density-equals-abstention conflation.
+
+### Explicit non-events
+
+- No behavioural validation on Gemma yet (code path ready, queued).
+- No behavioral Test B (orthogonally-projected v_CC on AIME) yet.
+- No scorer upgrade yet.
+- No scale-up of IH corpus — gated on Test A resolution.

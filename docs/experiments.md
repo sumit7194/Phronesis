@@ -685,12 +685,125 @@ The `fb-nile-source` win was a 1-item coincidence. See findings.md F94-UPDATE.
 
 ---
 
+## Phase 5 — Intellectual Humility corpus + MVE gate (2026-04-22 → ongoing)
+
+**Status.** 🟡 In progress. Extraction complete on both models; MVE Test B/C geometric passed on both; Test A behavioral marginal-fail at α=12; α+layer sweep running.
+
+**Motivation.** F92 showed the 50-hand-triplet CC vector reduces abstention by ~17pp. Taxonomy cross-reference (Opus agent, 2026-04-22) reframed "sub-dispositions of Calibrated Confidence" as three concepts already in `concepts.md`:
+- **Commit-with-hedging** = Calibrated Confidence (existing v_CC)
+- **Abstain-when-evidence-absent** = Intellectual Humility (missing, target of this phase)
+- **Deliberate-without-forcing-closure** = Comfort with Ambiguity (deferred)
+
+Red-team review insisted on MVE-first: extract from 20 triplets, test geometric + behavioral gates before scaling.
+
+### IH corpus construction
+
+Built at `corpus/triplets-intellectual-humility/` via 3 iterative audits. Final: 20 triplets, 5 per category (AbstentionBench-adjacent):
+- `unknown` (5) — specific fact not in training data (rainfall, IEC chair, art restoration, ML paper attribution, literary sales)
+- `false_premise` (5) — 1 direct-confab + 4 Gandhi-pattern (Turing/Fields, Einstein/spooky, Corn Laws, Serena/Wimbledon, Lincoln/income tax)
+- `underspecified` (5) — missing inputs (drug dose, capacitor, rice, primary, unit)
+- `ill_posed` (5) — no-answer or extension-artefact (largest prime, divergent series, liar paradox, molar mass of nostalgia, set of all sets)
+
+Hard constraints enforced per README:
+- No safety-refusal register in any passage
+- Length-matched ±15% (actual mean Δ 4.2%, max 7.6%)
+- Direction balance: 10 virt-longer / 10 non-virt-longer (eliminates verbosity confound)
+- Non-virtuous = confident confabulation with traceable fabricated specifics
+- Virtuous = 4 beats (name gap, partial-true substitute, refuse to fabricate, terminate)
+- Domain mix 45% STEM / 55% humanities-practical-logic
+
+### Extraction
+
+Ran `extract_v2.py --method last_token --layers all --save-vectors --batch-size 4` across:
+
+| Model | Corpus | N triplets | N layers | Duration | Status |
+|---|---|---|---|---|---|
+| Qwen3-4B | triplets-intellectual-humility | 20 | 36 | ~15 min | ✅ |
+| Gemma 4 E4B-it | triplets-combined | 166 | 42 | ~11 hours | ✅ |
+| Gemma 4 E4B-it | triplets-intellectual-humility | 20 | 42 | ~2 hours | ✅ |
+
+Total 120 virtue vectors saved (36 + 42 + 42). Extraction duration on Gemma × triplets-combined dominated by the LOO-LogReg probe-validation step (O(N²·D) on N=332 samples × D=2560 features, ~12 min per layer × 42 layers). Not a GPU bottleneck — CPU-bound.
+
+Relevant code changes during this phase:
+- `utils.py` — added `attn_implementation` field to `MODEL_CONFIGS` (set `"sdpa"` for Gemma 4 E4B-it; fixed an observed ~20× slowdown where Gemma4ForConditionalGeneration was defaulting to eager attention).
+- `utils.py` — `ActivationCapture` refactored to walk a dotted `layer_accessor` path; Gemma uses `model.language_model.layers` (multimodal wrapper).
+- `extract_v2.py` — uses `MODEL_CONFIGS[model]["layer_accessor"]` instead of hardcoded `model.model.layers`; `hidden_size` resolved via `text_config` fallback for multimodal architectures.
+- `run_benchmark.py` — `--model` flag, per-model `VECTORS_BY_MODEL` registry, `AdditiveHook` now accepts a `layer_accessor` kwarg.
+
+### MVE gate results — Test B geometric + Test C (informational)
+
+Via `mvp/mve_gate_test.py`. Compute `cos(v_CC, v_IH)` and "CC retention after orthogonalising against v_IH" per layer.
+
+**Qwen3-4B** (36 layers, v_CC from `triplets/` 50-hand, v_IH from `triplets-intellectual-humility/` 20 triplets):
+- `|cos(v_CC, v_IH)|` mean = 0.179, range [−0.08, +0.31]
+- CC retention mean 98.1%, min 95.0%, at L20 = 97.8%
+- Verdict: ✅ PASS — near-orthogonal, strong separate-dimensions prior.
+
+**Gemma 4 E4B-it** (42 layers, v_CC from `triplets-combined/` 166, v_IH from `triplets-intellectual-humility/` 20):
+- `|cos(v_CC, v_IH)|` mean = 0.030, range [−0.10, +0.07]
+- CC retention mean 99.9%, min 99.5%, at L24 = 100.0%
+- Verdict: ✅ PASS — textbook clean orthogonality across all 42 layers.
+
+Both pass the 70% CC-retention geometric threshold at sweet-spot layers. Gemma much cleaner than Qwen. Full per-layer tables at `mvp/results/mve_gate_qwen3-4b.json` and `mve_gate_gemma-4-E4B-it.json`.
+
+### MVE gate results — Test A behavioral (initial)
+
+Qwen only so far. 24-item abstention benchmark, L4 GPU.
+
+| Condition | Correct | fp | ip | od | subj | unk | us |
+|---|---|---|---|---|---|---|---|
+| baseline_L4 | 18/24 (75.0%) | 3/4 | 3/4 | 1/4 | 4/4 | 3/4 | 4/4 |
+| steered `IH_L20 @ α=+12` | 17/24 (70.8%) | 4/4 | 3/4 | 1/4 | 4/4 | 1/4 | 4/4 |
+| Δ | **−1 (−4.2pp)** | +1 | 0 (swap) | 0 | 0 | **−2** | 0 |
+
+Flips: 15 both-OK, 2 gained (fp-moonrover, ip-square), 3 lost (ip-longest, unk-meeting, unk-pumpkin), 4 both-fail.
+
+**Initial verdict: marginal fail** (target was +5pp).
+
+**Crucial caveat — two of three losses are substantially scorer artifacts**:
+- `fp-moonrover`: baseline and steered produce nearly identical text; scorer flipped verdict. (Actually counted as a gain for steered.)
+- `unk-meeting`: both answer "August 24, 2006"; difference is hedge density, not factual claim.
+- `unk-pumpkin`: both confabulate specific weights (100.5 kg vs 200 kg); neither actually abstains.
+
+F96 scorer-regime concern now actively blocking clean Test A interpretation. Scorer upgrade to a "mixed-verdict" category (abstention-phrased wrapper containing embedded confabulation) is needed before we can call Test A decisively.
+
+**Baseline L4 vs F92 baseline T4**: L4 = 18/24 vs T4 = 17/24. Confirms F96's determinism-differs-across-hardware finding. Small effect, real signal.
+
+### Pending sweep (running)
+
+α sweep and layer sweep, all on Qwen3-4B, 24-item abstention benchmark:
+- IH_L20 α=8, 16, 20 (hypothesis: v_IH norms are 60–80% of v_CC norms, so α=12 may be underpowered)
+- IH_L{18, 22, 25} α=12 (layer sensitivity)
+
+6 conditions × 24 items = 144 gens. ETA ~3h on L4.
+
+### Findings anchoring
+
+- **F97** — MVE gate: cross-model geometric separation clean on both models; behavioral Test A inconclusive at α=12 due to scorer artifacts.
+- F96 scorer-regime concerns re-confirmed. Mixed-verdict scorer upgrade is now blocking.
+- F95 L20/L22 sub-direction claim strengthened — geometric orthogonality at all layers shows the 3-concept framing is not a per-layer artifact.
+- Red-team's 70% CC-retention threshold survives both models at >95% — stronger than required.
+
+### Raw data
+
+- `mvp/results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/` — 36 v_IH vectors
+- `mvp/results/vectors/gemma-4-E4B-it/triplets-combined/last_token/` — 42 v_CC_gemma vectors
+- `mvp/results/vectors/gemma-4-E4B-it/triplets-intellectual-humility/last_token/` — 42 v_IH_gemma vectors
+- `mvp/results/mve_gate_qwen3-4b.json` — MVE Test B/C table for Qwen
+- `mvp/results/mve_gate_gemma-4-E4B-it.json` — MVE Test B/C table for Gemma
+- `mvp/results/benchmark_probe/abstention/baseline_L4/` — 24 baseline JSONs
+- `mvp/results/benchmark_probe/abstention/steered_IH_L20_a12/` — 24 steered JSONs
+
+---
+
 ## Pending / in-progress
 
-- 🔥 **Priority 1 — murder_mysteries-92 hallucination verification.** Rerun L22_a12 on a prompt variant where Christine unambiguously owns the construction site. Determines whether the v3 attractor-break is real reasoning or a lucky misread. Cost: 1 gen, ~2 min on T4.
-- 🔥 **Priority 2 — aime/42 mechanism verification.** 10 runs each of L20_a8 and L20_a16 on aime/42 at temperature=0.3. Test whether the even/odd partition lemma correlates with correct-answer runs. Cost: 20 gens × ~30–60 min = 10–20h on T4.
-- ⏳ **Priority 3 — abstention-focused triplet corpus.** 50 triplets where virtuous = "I don't have reliable info" and non-virtuous = confident confabulation. Extract vector, test on trick question.
-- ⏳ **Priority 4 — Gemma 4 E4B-it cross-model replication.** Download model on GCP, extract vectors on triplets-combined corpus, replicate hard_probe_v3 with Gemma 4. Tests whether commit-to-structure is model-specific or a cross-model property of the steering direction.
+- 🔥 **MVE Test A α+layer sweep (Qwen).** 6 conditions running on L4. Decision point on whether any (layer, α) combo clears the +5pp gate before pivoting or scaling corpus.
+- 🔥 **Scorer upgrade to mixed-verdict.** Blocking clean Test A interpretation. Detect abstention-phrased wrappers that embed confabulated specifics. See F96, F97.
+- ⏳ **Test A on Gemma 4 E4B-it.** Code path ready (`run_benchmark.py --model gemma-4-E4B-it --vector IH_L24 --alpha 12`). Queue after Qwen sweep completes.
+- ⏳ **Behavioral Test B on Qwen** — does orthogonally-projected v_CC retain >70% AIME efficacy? Test B geometric predicts yes (97.8% retention at L20) but behavioral confirmation needed. Code change: project out v_IH component from v_CC before steering.
+- ⏳ **Priority 2 — aime/42 mechanism verification** (deferred from earlier). 10 runs each of L20_a8 and L20_a16 on aime/42 at temperature=0.3. Test whether the even/odd partition lemma correlates with correct-answer runs.
+- ⏳ **Comfort with Ambiguity corpus** — deferred to Phase 6. Gated on whether IH MVE resolves positively.
 - ⏳ `ip-square` study — one abstention counter-example in v2 where steering helped; may share a mechanism with the unreplicated `fb-nile-source`.
 - ⏳ aime/58 slowdown study — only `hard_probe_v2` item where steering made correct reasoning slower.
 - ⏳ L4 GPU swap when stock returns in `asia-east1-c`.

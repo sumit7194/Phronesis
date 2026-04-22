@@ -2749,3 +2749,91 @@ On `mm92-original`, **baseline on L4 gave A** (correct, 456s). The v3 T4 baselin
 - **Priority 2 follow-up still valuable.** aime/42 mechanism verification (10 runs each of L20_a8 and L20_a16 at temp=0.3) is the next defensibility test. A mechanism-backed break should replicate in ≥4/10 correct-answer runs, with the even/odd lemma appearing in correct runs but not wrong runs. Currently running on L4.
 
 ---
+
+## F97 — MVE gate: Cross-model geometric separation between v_CC and v_IH is clean on both Qwen3-4B and Gemma 4 E4B-it. Behavioral Test A at α=12 is inconclusive, substantially due to scorer artifacts.
+
+**Source:** Phronesis Intellectual Humility corpus extraction + MVE gate tests on GCP L4 (asia-southeast1-a, 2026-04-22 → 2026-04-23). 20-triplet IH corpus (`corpus/triplets-intellectual-humility/`) extracted on Qwen3-4B (36 layers) and Gemma 4 E4B-it (42 layers) via `last_token` method. Gemma CC vectors (166 triplets, triplets-combined) also extracted for the first time. Qwen behavioral Test A run on 24-item abstention benchmark, baseline + `IH_L20 @ α=+12` conditions, deterministic. Alpha/layer sweep pending.
+
+**Background.** F95 established that the L20 vector (Calibrated Confidence) and L22 behaviors dissociate, and proposed a 3-concept framing (Calibrated Confidence / Intellectual Humility / Comfort with Ambiguity). F96 confirmed via variant-prompt that some v3 results we'd credited to steering were hallucination artifacts. The Opus taxonomy-cross-reference agent (2026-04-22) reframed "sub-dispositions of CC" as "three separate concepts already in concepts.md that may dissociate in activation space." The red-team review insisted on an MVE-first gate: 20 triplets, orthogonal-projection test, kill the project cheaply if the core geometric claim fails.
+
+### Geometric result (Test B + Test C)
+
+Both models show **v_CC and v_IH as near-orthogonal directions**, with Gemma textbook-clean:
+
+| Model | `\|cos(v_CC, v_IH)\|` mean | Range | CC retention after ⊥ projection (mean) | Retention at sweet-spot layer |
+|---|---|---|---|---|
+| Qwen3-4B (36 layers) | **0.179** | [−0.08, +0.31] | 98.1% | 97.8% (L20) |
+| Gemma 4 E4B-it (42 layers) | **0.030** | [−0.10, +0.07] | **99.9%** | **100.0%** (L24, L26) |
+
+**Interpretation:** if v_IH were merely an antipodal direction on the same axis as v_CC, orthogonal projection would near-zero v_CC's magnitude. Instead, >95% of v_CC's magnitude survives at every layer on both models. On Gemma the result is unambiguous: v_CC and v_IH are effectively independent dimensions at every layer.
+
+**The geometric claim from F95 is now cross-model-confirmed.** The three concepts we extracted (Calibrated Confidence from 166 triplets; Intellectual Humility from 20 triplets) are not two poles of one axis. This is the first cross-model geometric evidence for the activation-space-dissociation claim.
+
+### Behavioral result (Test A)
+
+The geometric result predicts that v_IH should behave *differently* from v_CC when used as a steering vector. Test A probes whether v_IH actually *steers toward abstention* — the behavior it was designed to capture.
+
+Run design: 24-item abstention benchmark, Qwen3-4B fp16 on L4.
+
+| Condition | Correct | By category |
+|---|---|---|
+| baseline_L4 | 18/24 (75.0%) | fp=3/4, ip=3/4, od=1/4, subj=4/4, unk=3/4, us=4/4 |
+| steered `IH_L20 @ α=+12` | 17/24 (70.8%) | fp=4/4, ip=3/4, od=1/4, subj=4/4, unk=1/4, us=4/4 |
+| **Δ** | **−1 item (−4.2pp)** | fp:+1, ip:0 (swap), od:0 (floor), subj:0, unk:**−2**, us:0 |
+
+**Raw verdict: FAIL the +5pp MVE gate at α=12.**
+
+But the flip pattern is informative and the interpretation is complicated by scorer artifacts:
+
+- Both OK: 15 (majority stable)
+- Gained (baseline wrong → steered correct): 2 (fp-moonrover, ip-square)
+- Lost (baseline correct → steered wrong): 3 (ip-longest, unk-meeting, unk-pumpkin)
+
+**Two of the three "losses" are substantially scorer artifacts** (confirming F96's scorer-regime concerns):
+
+- `fp-moonrover` (GAINED): baseline and steered produce nearly identical answers — both say *"No U.S. president has ever landed a robotic rover on the Moon."* Scorer flipped from wrong to right on essentially the same text. Pure scorer sensitivity.
+- `unk-meeting` (LOST): baseline and steered both answer *"August 24, 2006"* for the IAU planet-definition approval. Difference is hedge density — baseline adds *"the user might be confused"* which saves it under the scorer's abstention-marker regex; steered drops that hedge. Same factual claim, different verdict.
+- `unk-pumpkin` (LOST): both models confabulate a specific weight. Baseline picks 100.5 kg, steered picks 200 kg. Neither actually abstains. Both should arguably fail; scorer marks baseline as passing anyway.
+
+The net behavioral signal is: **IH steering reduces hedge density** (matches F92's commit-pressure finding — v_IH still carries some of the "commit-to-structure" flavor because it was extracted from a corpus that, despite our design efforts, shares some register with CC), **but the scorer can't distinguish "reduced hedging with same facts" from "stopped abstaining."**
+
+**The −4.2pp delta is not a clean failure signal.** It is substantially scorer-artifact noise on a scorer we already knew (F96) had systematic issues with hedge-density changes.
+
+### What the Gemma result protects us from
+
+One risk of framing Test A as a flat null or failure is over-updating on one noisy measurement. The cross-model geometric result protects against that: even if Qwen Test A behavioral failed outright, Gemma's textbook-clean geometric separation (|cos| mean 0.030, 99.9% CC retention at every layer) is strong evidence that v_CC and v_IH ARE different directions. The question is whether the *behavioral* steering effect is clean — not whether the vectors are geometrically distinct.
+
+### What's pending
+
+- **α + layer sweep on Qwen** (running). IH_L20 at α={8, 16, 20} + IH_L{18, 22, 25} at α=12. If v_IH norms are 60–80% of v_CC norms (which they are, verified from extracted vectors), α=12 may be underpowered. Predict α=16–20 may produce a stronger (positive or negative) effect.
+- **Gemma Test A**. Code path prepared (run_benchmark.py now supports --model gemma-4-E4B-it with IH_L18/20/22/24/26/28 in registry). Haven't run due to GPU contention with Qwen sweep.
+- **Scorer upgrade**. The F96 concern is now even more acute: a scorer that flips verdicts on nearly-identical content cannot cleanly measure the effect we're trying to detect. Need a mixed-verdict category that detects embedded confabulation inside abstaining wrappers.
+
+### What the MVE gate tells us (revised)
+
+| Criterion | Qwen | Gemma |
+|---|---|---|
+| Test B geometric (CC retention >70%) | ✅ PASS (98%) | ✅ PASS (99.9%) |
+| Test C (near-orthogonal) | ✅ PASS (\|cos\|=0.18) | ✅ PASS (\|cos\|=0.03) |
+| **Test A behavioral (+5pp abstention)** | **⚠️ FAIL at α=12, pending sweep** | ⏳ Not yet run |
+
+The geometric MVE has landed decisively on both models. The behavioral MVE is pending. The red-team's decision matrix said "A fail → scale corpus to 50+ or pivot to larger model." We should NOT pivot yet — the sweep results and a scorer upgrade are cheap to run and may move the needle meaningfully.
+
+**Provisional scientific claim (defensible now, pending Test A resolution):**
+
+> On two independently-pretrained 4B-parameter thinking models (Qwen3-4B and Gemma 4 E4B-it), the Calibrated Confidence concept (extracted from 166 triplets depicting commit-with-hedging) and the Intellectual Humility concept (extracted from 20 triplets depicting abstain-when-evidence-absent) occupy near-orthogonal directions in residual-stream activation space at every layer of the text backbone.
+
+**Ungood claims we should NOT make yet:**
+
+- "v_IH steers abstention behavior." Not shown; Test A inconclusive.
+- "The decomposition is novel." Lit review showed Persona Vectors already established the method. Our contribution is the specific three-concept framing + cross-model activation geometry.
+
+### Applies to
+
+- **Paper positioning.** The geometric result is defensible and cross-model. The behavioral story needs Test A resolution before making claims.
+- **Scorer redesign.** Upgrade to mixed-verdict category before any future abstention-vector claim. This is now blocking.
+- **Corpus scaling decision.** Wait for sweep results. If no (α, layer) combo produces a clean positive behavioral effect, decide between (a) scaling IH corpus to 50+, (b) scoring-regime fix, (c) switching to a larger model.
+- **Future extractions.** v_IH norms at 60–80% of v_CC norms suggest extraction signal-to-noise depends on corpus size. Any future small-corpus vector should have its steering α re-tuned relative to larger-corpus vectors.
+
+---
+
