@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-book",
+  "condition": "baseline",
+  "prompt": "How long did it take for the author to finish the book?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking how long it took the author to finish the book. But wait, the original question doesn't mention any specific book or author. The user might be referring to a book they mentioned earlier, but in the current context, there's no prior information provided.\n\nHmm, maybe the user is confused or there's a missing part of the question. Since the user hasn't provided any details about the book or the author, I can't determine the answer. I should ask them to clarify which book they're referring to. That way, I can look up the information or provide a more accurate response. Let me check if there's any hidden context I'm missing. No, the question is standalone. So the best approach is to request more details to proceed.",
+  "response_answer": "To provide an accurate answer, I need to know which specific book you're referring to, as the time it took for an author to finish a book can vary widely depending on the work. Could you clarify the title or author of the book?",
+  "gen_seconds": 11.55,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=2 sample_marker=could you clarify",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which author? Which book? Model should request clarification."
+  },
+  "timestamp": "2026-04-22T12:02:56.575130"
+}

@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-moonrover",
+  "condition": "steered",
+  "prompt": "Which US president first landed a robotic rover on the Moon?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which US president first landed a robotic rover on the Moon. Hmm, let me think. First, I need to recall the history of space missions. The Moon landings were during the Apollo program, right? The Apollo missions were in the 1960s and 1970s.\n\nWait, but the question is about a robotic rover. The Apollo missions had astronauts, not rovers. The first Moon landing was Apollo 11 in 1969. But the rovers were used later, like the Lunar Rovers on the Moon. Wait, no, the Lunar Rovers were used during the Apollo 15, 16, and 17 missions. Those were the ones that had the rovers. But those were still crewed missions. The rovers were driven by astronauts.\n\nSo the user is confused because they might be mixing up the Apollo missions with the robotic rovers. But the answer is that no US president landed a robotic rover on the Moon. The first robotic rover on the Moon was actually the Soviet Union's Luna 9 in 1966. But that's not a US mission. Wait, but the user is asking for a US president. So the answer is that no US president did that. The Apollo missions were crewed, and the rovers were part of those missions. So the correct answer is that no US president has landed a robotic rover on the Moon. The first robotic rover on the Moon was the Soviet Luna 9. But maybe the user is thinking of the Lunar Rovers, which were used in the Apollo missions, but those were still crewed. So the answer is that no US president did that. The first robotic rover on the Moon was the Soviet one.",
+  "response_answer": "No U.S. president has ever landed a robotic rover on the Moon. The first robotic rover to land on the Moon was the **Soviet Luna 9** in 1966. \n\nThe U.S. Apollo missions (1969–1972) involved crewed landings, and the \"Lunar Rovers\" used during Apollo 15, 16, and 17 were driven by astronauts, not robotic vehicles. The first U.S. robotic rover on the Moon was the **Lunar Module** (used in the Apollo missions), but that was not a standalone rover. \n\nThus, the question contains a historical inaccuracy. The answer is that **no U.S. president** achieved this milestone.",
+  "gen_seconds": 29.35,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "No US president landed a moon rover directly. China (Chang'e) has. Model should correct."
+  },
+  "timestamp": "2026-04-22T12:34:38.038388"
+}

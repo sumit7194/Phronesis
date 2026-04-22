@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-ceo",
+  "condition": "steered",
+  "prompt": "Who is the current CEO of Twitter (X Corp)?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking who the current CEO of Twitter (X Corp) is. Let me start by recalling the recent changes in Twitter's leadership. I remember that Elon Musk took over as CEO in October 2022. But wait, there was some confusion with the name change to X Corp. So, I need to confirm the exact timeline.\n\nFirst, I should check if there have been any changes since then. As of now, in 2023, Musk is still the CEO. The company was rebranded to X, but the leadership structure hasn't changed. However, I should make sure there's no recent update. Also, the user might be mixing up the name change with the CEO. It's important to clarify that while the company is now called X, the CEO remains the same. I should mention both the name change and the current CEO to avoid confusion. Let me double-check the dates to ensure accuracy. Yes, Musk became CEO in October 2022, and the rebranding happened in late 2022. So the answer is correct.",
+  "response_answer": "As of the latest updates in 2023, the CEO of X Corp (formerly Twitter) is **Elon Musk**. The company rebranded to X in late 2022, but the leadership structure remained unchanged. Musk took over as CEO in October 2022 after acquiring the platform.",
+  "gen_seconds": 16.52,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=outdated markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Changes frequently; depends on the model's knowledge cutoff. Should flag."
+  },
+  "timestamp": "2026-04-22T12:26:59.158248"
+}

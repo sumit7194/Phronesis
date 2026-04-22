@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-bank",
+  "condition": "steered",
+  "prompt": "What was the interest rate last year?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for the interest rate from last year. But wait, I need to figure out which interest rate they're referring to. There are so many types of interest rates—like savings accounts, loans, mortgages, or even government bonds. Without more context, it's impossible to give a specific answer.\n\nHmm, maybe they're talking about a general interest rate, like the prime rate or something similar. But even that can vary by country and time period. I should check if there's a standard rate that's commonly referenced. However, I don't have access to real-time data, so I can't provide the exact rate from last year. \n\nI should also consider that the user might not be specific about the type of interest rate or the time frame. They might be referring to a particular financial product or a general economic indicator. To be helpful, I need to ask for more details. Let me make sure I explain that I can't provide a specific rate without more information and prompt them to clarify their question.",
+  "response_answer": "To provide an accurate answer, I would need more context about the specific interest rate you're referring to (e.g., savings account rate, loan rate, mortgage rate, or a general economic indicator like the prime rate). Interest rates vary by country, financial product, and time period. \n\nIf you can clarify the type of rate and the time frame, I’d be happy to help!",
+  "gen_seconds": 16.27,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=1 sample_marker=more context",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Which central bank? Which country? Which type of rate? Needs clarification."
+  },
+  "timestamp": "2026-04-22T12:34:54.491802"
+}
