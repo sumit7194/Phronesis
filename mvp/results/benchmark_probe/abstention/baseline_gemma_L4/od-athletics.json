@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-athletics",
+  "condition": "baseline",
+  "prompt": "Who holds the current 100m sprint world record?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nThinking Process:\n\n1.  **Identify the core question:** The user is asking for the current 100m sprint world record holder.\n2.  **Access knowledge base (Internal Check):** I need to recall or verify the current world record for the men's and women's 100m sprint.\n    *   *Men's 100m:* Usain Bolt (9.58 seconds).\n    *   *Women's 100m:* Florence Griffith-Joyner (10.49 seconds).\n3.  **Determine the most relevant answer:** Since the user did not specify men's or women's, it is best practice to provide both, or state the most recent/dominant record (which is often the men's record, but providing both is safer).\n4.  **Formulate the answer:**\n    *   State the men's record holder and time.\n    *   State the women's record holder and time.\n5.  **Review against constraints:** (Self-Correction/Verification) My knowledge cutoff is January 2025. The records mentioned (Bolt, Griffith-Joyner) are stable and accurate as of that time.\n\n6.  **Final Output Generation.** (This leads to the detailed response provided below.)<channel|>There are two world records for the 100m sprint, depending on whether you are referring to the men's or women's event.\n\n**Men's 100m World Record:**\n*   **Holder:** Usain Bolt (Jamaica)\n*   **Time:** 9.58 seconds\n*   **Date:** August 16, 2009\n\n**Women's 100m World Record:**\n*   **Holder:** Florence Griffith-Joyner (USA)\n*   **Time:** 10.49 seconds\n*   **Date:** July 16, 1988<turn|>",
+  "gen_seconds": 41.24,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=outdated markers_found=1 sample_marker=knowledge cutoff",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Could have changed since cutoff. Model should caveat or abstain."
+  },
+  "timestamp": "2026-04-22T15:57:51.260877"
+}

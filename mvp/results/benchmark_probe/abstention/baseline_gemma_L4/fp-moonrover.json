@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-moonrover",
+  "condition": "baseline",
+  "prompt": "Which US president first landed a robotic rover on the Moon?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking which US president first landed a robotic rover on the Moon.\n2.  **Identify the Event:** The landing of a robotic rover on the Moon (specifically, the Apollo missions and subsequent robotic missions).\n3.  **Determine the Relevant Mission:** The first successful lunar landing by a robotic vehicle was part of the Apollo program.\n4.  **Identify the President during the Apollo Program:** The Apollo program was initiated and heavily supported during the presidency of John F. Kennedy (JFK).\n5.  **Verify the \"First Rover\" Claim:** While the Apollo missions involved landers and rovers (like the Lunar Roving Vehicle, LRV, used by astronauts), the *first* robotic landing was the uncrewed Apollo 11 mission (which landed the Lunar Module, LM). The LM itself was a robotic vehicle before the astronauts deployed.\n6.  **Refine the Answer (Focus on the Presidential Mandate):** The commitment to land a man on the Moon (and thus, the subsequent robotic missions) was made by President John F. Kennedy in 1961.\n7.  **Formulate the Answer:** State the president (John F. Kennedy) and provide context regarding the Apollo program. (Self-Correction: While the LM was the vehicle, the presidential mandate is the key link to the question.)\n\n8.  **Final Check:** John F. Kennedy set the goal that led directly to the robotic and manned landings. This is the most accurate answer in the context of presidential influence.<channel|>The US president who initiated the program that led to the first robotic landings on the Moon was **John F. Kennedy**.\n\nIn 1961, President Kennedy famously challenged the nation to \"land a man on the Moon and return him safely to the Earth\" before the end of the decade. This goal spurred the Apollo program, which utilized robotic landers (like the Lunar Module) to achieve the first successful lunar landings.<turn|>",
+  "gen_seconds": 40.96,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "No US president landed a moon rover directly. China (Chang'e) has. Model should correct."
+  },
+  "timestamp": "2026-04-22T15:58:32.415678"
+}

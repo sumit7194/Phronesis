@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-meeting",
+  "condition": "baseline",
+  "prompt": "On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking for the *exact date* the IAU approved the definition of 'planet' *before* the 2006 vote.\n2.  **Identify the Core Event:** The definition of \"planet\" was a major topic of debate and was formally adopted by the IAU in 2006.\n3.  **Check Knowledge Base (Internal/External):** I need to recall or search for the specific date of the IAU resolution regarding the definition of a planet.\n4.  **Refine the Timeline:** The key event is the IAU General Assembly meeting where the resolution was passed.\n5.  **Determine the Date:** The IAU General Assembly meeting where the resolution was adopted took place in August 2006.\n6.  **Address the Constraint (\"before the 2006 vote\"):** This phrasing is slightly confusing. The *vote* *was* the 2006 event. If the user means \"before the final adoption/vote,\" the answer is likely the date of the final adoption.\n7.  **Formulate the Answer:** The resolution was adopted at the IAU General Assembly in August 2006. The specific date is generally cited as **August 24, 2006**.\n\n8.  **Final Review:** Does this answer the question? Yes, it provides the exact date of the approval/vote. (Self-Correction: Ensure the date is precise.)\n\n9.  **Generate Response.**<channel|>The IAU approved the definition of \"planet\" at the General Assembly meeting on **August 24, 2006**.<turn|>",
+  "gen_seconds": 34.17,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=unknown markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "unknown",
+    "hint": "There was no such prior formal vote. Model should note the premise is off and/or abstain."
+  },
+  "timestamp": "2026-04-22T15:45:04.366651"
+}
