@@ -44,29 +44,61 @@ from benchmarks.scorers import SCORERS
 # ─── Config ─────────────────────────────────────────────────────────────────
 
 MVP = Path(__file__).parent
-VECTOR_ROOT = MVP / "results" / "vectors" / "qwen3-4b"
+# Per-model vector roots + layer-accessor paths
+MODEL_VECTOR_ROOTS = {
+    "qwen3-4b":        MVP / "results" / "vectors" / "qwen3-4b",
+    "gemma-4-E4B-it":  MVP / "results" / "vectors" / "gemma-4-E4B-it",
+}
+MODEL_LAYER_ACCESSORS = {
+    "qwen3-4b":        "model.layers",
+    "gemma-4-E4B-it":  "model.language_model.layers",  # multimodal wrapper
+}
+# Default model for back-compat
+VECTOR_ROOT = MODEL_VECTOR_ROOTS["qwen3-4b"]
 OUT_ROOT = MVP / "results" / "benchmark_probe"
 
-# Same vector registry as chat_ui.py
-VECTORS = {
-    # Calibrated Confidence vectors (v_CC) — extracted from 50 hand-written triplets
-    "L10":     ("triplets/last_token/layer_10_virtue_vector.npy", 10),
-    "L20":     ("triplets/last_token/layer_20_virtue_vector.npy", 20),
-    "L21":     ("triplets/last_token/layer_21_virtue_vector.npy", 21),
-    "L22":     ("triplets/last_token/layer_22_virtue_vector.npy", 22),
-    "L23":     ("triplets/last_token/layer_23_virtue_vector.npy", 23),
-    "L27":     ("triplets/last_token/layer_27_virtue_vector.npy", 27),
-    "son_L22": ("triplets-synthetic-sonnet/last_token/layer_22_virtue_vector.npy", 22),
-    "son_L34": ("triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy", 34),
-    "random":  ("random_L22_vector.npy", 22),
-    # Intellectual Humility vectors (v_IH) — extracted from 20 hand-written IH triplets
-    # (registered here for MVE Test A: does v_IH lift abstention rate?)
-    "IH_L15":  ("triplets-intellectual-humility/last_token/layer_15_virtue_vector.npy", 15),
-    "IH_L18":  ("triplets-intellectual-humility/last_token/layer_18_virtue_vector.npy", 18),
-    "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
-    "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
-    "IH_L25":  ("triplets-intellectual-humility/last_token/layer_25_virtue_vector.npy", 25),
+# Per-model vector registries.
+# Entry format: name -> (relative_path_from_model_vector_root, layer_idx)
+VECTORS_BY_MODEL = {
+    "qwen3-4b": {
+        # Calibrated Confidence vectors (v_CC) from 50 hand-written triplets
+        "L10":     ("triplets/last_token/layer_10_virtue_vector.npy", 10),
+        "L20":     ("triplets/last_token/layer_20_virtue_vector.npy", 20),
+        "L21":     ("triplets/last_token/layer_21_virtue_vector.npy", 21),
+        "L22":     ("triplets/last_token/layer_22_virtue_vector.npy", 22),
+        "L23":     ("triplets/last_token/layer_23_virtue_vector.npy", 23),
+        "L27":     ("triplets/last_token/layer_27_virtue_vector.npy", 27),
+        "son_L22": ("triplets-synthetic-sonnet/last_token/layer_22_virtue_vector.npy", 22),
+        "son_L34": ("triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy", 34),
+        "random":  ("random_L22_vector.npy", 22),
+        # Intellectual Humility vectors from 20 hand-written IH triplets
+        "IH_L15":  ("triplets-intellectual-humility/last_token/layer_15_virtue_vector.npy", 15),
+        "IH_L18":  ("triplets-intellectual-humility/last_token/layer_18_virtue_vector.npy", 18),
+        "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
+        "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
+        "IH_L25":  ("triplets-intellectual-humility/last_token/layer_25_virtue_vector.npy", 25),
+    },
+    "gemma-4-E4B-it": {
+        # Calibrated Confidence on Gemma — from 166 triplets-combined
+        # Layer numbering adjusted: Qwen L20/L22 (middle-ish of 36) map roughly
+        # to Gemma L22/L24 (middle-ish of 42)
+        "CC_L18":  ("triplets-combined/last_token/layer_18_virtue_vector.npy", 18),
+        "CC_L20":  ("triplets-combined/last_token/layer_20_virtue_vector.npy", 20),
+        "CC_L22":  ("triplets-combined/last_token/layer_22_virtue_vector.npy", 22),
+        "CC_L24":  ("triplets-combined/last_token/layer_24_virtue_vector.npy", 24),
+        "CC_L26":  ("triplets-combined/last_token/layer_26_virtue_vector.npy", 26),
+        "CC_L28":  ("triplets-combined/last_token/layer_28_virtue_vector.npy", 28),
+        # Intellectual Humility on Gemma — from 20 IH triplets
+        "IH_L18":  ("triplets-intellectual-humility/last_token/layer_18_virtue_vector.npy", 18),
+        "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
+        "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
+        "IH_L24":  ("triplets-intellectual-humility/last_token/layer_24_virtue_vector.npy", 24),
+        "IH_L26":  ("triplets-intellectual-humility/last_token/layer_26_virtue_vector.npy", 26),
+        "IH_L28":  ("triplets-intellectual-humility/last_token/layer_28_virtue_vector.npy", 28),
+    },
 }
+# Back-compat alias
+VECTORS = VECTORS_BY_MODEL["qwen3-4b"]
 DEFAULT_VECTOR = "L20"
 DEFAULT_ALPHA  = 12.0
 
@@ -80,11 +112,15 @@ RED = "\033[31m"; YELLOW = "\033[33m"
 # ─── Steering hook (same as chat_ui / run_multivector) ──────────────────────
 
 class AdditiveHook:
-    def __init__(self, model, layer_idx, virtue_vector, alpha):
+    def __init__(self, model, layer_idx, virtue_vector, alpha, layer_accessor="model.layers"):
         v = torch.tensor(virtue_vector, dtype=torch.float32)
         self.v_unit = (v / (v.norm() + 1e-10)).unsqueeze(0).unsqueeze(0)
         self.alpha = float(alpha)
-        self.layer = model.model.layers[layer_idx]
+        # Walk dotted accessor (e.g. "model.language_model.layers" for Gemma 4)
+        layers = model
+        for attr in layer_accessor.split("."):
+            layers = getattr(layers, attr)
+        self.layer = layers[layer_idx]
         self.handle = None
 
     def _hook(self, module, inputs, output):
@@ -291,20 +327,30 @@ def main():
     ap.add_argument("--label", default=None,
                     help="Output subdir name (default: --condition). Use to separate "
                          "multiple steered runs, e.g. 'steered_L22_a12'.")
+    ap.add_argument("--model", default="qwen3-4b",
+                    choices=list(MODEL_VECTOR_ROOTS.keys()),
+                    help="Which model to load. Default qwen3-4b for backwards compat.")
     args = ap.parse_args()
 
     if not args.benchmark and not args.probe:
         ap.error("specify --benchmark NAME or --probe")
 
-    print(f"{BOLD}Loading Qwen3-4B...{RESET}", flush=True)
-    model, tokenizer, device = load_model("qwen3-4b")
+    vector_root = MODEL_VECTOR_ROOTS[args.model]
+    layer_accessor = MODEL_LAYER_ACCESSORS[args.model]
+    vectors_for_model = VECTORS_BY_MODEL[args.model]
+
+    print(f"{BOLD}Loading {args.model}...{RESET}", flush=True)
+    model, tokenizer, device = load_model(args.model)
     print(f"  on {device}", flush=True)
 
     hook = None
     if args.condition == "steered":
-        rel, layer = VECTORS[args.vector]
-        v = np.load(VECTOR_ROOT / rel)
-        hook = AdditiveHook(model, layer, v, args.alpha)
+        if args.vector not in vectors_for_model:
+            ap.error(f"vector '{args.vector}' not registered for model '{args.model}'. "
+                     f"Available: {list(vectors_for_model.keys())}")
+        rel, layer = vectors_for_model[args.vector]
+        v = np.load(vector_root / rel)
+        hook = AdditiveHook(model, layer, v, args.alpha, layer_accessor=layer_accessor)
         print(f"{CYAN}Steering ENABLED: vector={args.vector} layer={layer} "
               f"alpha={args.alpha:+g}{RESET}")
     else:
