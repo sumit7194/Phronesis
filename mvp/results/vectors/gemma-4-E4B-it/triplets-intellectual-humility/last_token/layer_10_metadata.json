@@ -1,0 +1,19 @@
+{
+  "layer": 10,
+  "method": "last_token",
+  "model": "gemma-4-E4B-it",
+  "corpus": "triplets-intellectual-humility",
+  "n_triplets": 20,
+  "raw": {
+    "separation": 4.320821285247803,
+    "cosine_diff": 0.0355972982943058,
+    "probe_accuracy": 0.6
+  },
+  "whitened": {
+    "separation": 4.33491325378418,
+    "cosine_diff": 0.038418978452682495,
+    "probe_accuracy": 0.6
+  },
+  "n_pcs": 5,
+  "hidden_dim": 2560
+}
