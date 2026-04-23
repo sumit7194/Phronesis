@@ -1,0 +1,89 @@
+# Phronesis analysis config — single source of truth for virtues, evals, thresholds.
+# Parameterized so the MVP (4×4 matrix) and Phase 5 (8×8 matrix) use the same code.
+# Per docs/eg-rt-eval-spec.md §5.7 and docs/findings.md F98 (pre-registration).
+
+# List of virtues being tested. Order matters — used for matrix rows/cols.
+virtues:
+  - name: CC
+    full_name: "Calibrated Confidence"
+    concept_number: 9
+    color: "#3b82f6"  # blue — used in figures
+  - name: IH
+    full_name: "Intellectual Humility"
+    concept_number: 6
+    color: "#10b981"  # green
+  - name: EG
+    full_name: "Evidence Grounding"
+    concept_number: 15
+    color: "#f59e0b"  # amber
+  - name: RT
+    full_name: "Reasoning Transparency"
+    concept_number: 14
+    color: "#a855f7"  # purple
+
+# List of behavioral evals. Each has a target virtue (what it measures) and
+# the scorer column name (what field in the specificity_matrix CSV to read).
+evals:
+  - name: aime-42
+    target_virtue: CC
+    scorer_column: cc_hedging_score  # proxy for CC-eval in cross-eval context
+    diagonal_cell: [CC, aime-42]
+    # On-diagonal metric for AIME uses correctness, not hedging — handled by code
+    diagonal_metric: accuracy
+  - name: abstention
+    target_virtue: IH
+    scorer_column: ih_abstention_score
+    diagonal_cell: [IH, abstention]
+    diagonal_metric: ih_abstention_score
+  - name: eg-eval
+    target_virtue: EG
+    scorer_column: eg_score
+    diagonal_cell: [EG, eg-eval]
+    diagonal_metric: eg_score
+  - name: rt-eval
+    target_virtue: RT
+    scorer_column: rt_score
+    diagonal_cell: [RT, rt-eval]
+    diagonal_metric: rt_score
+
+# Models being tested
+models:
+  - name: qwen3-4b
+    num_layers: 36
+    abbreviation: Qwen
+  - name: gemma-4-E4B-it
+    num_layers: 42
+    abbreviation: Gemma
+
+# Geometric MVE thresholds (per F97 precedent)
+mve:
+  cos_clean_threshold: 0.20      # |cos| < this = clean orthogonal
+  cos_partial_threshold: 0.50    # |cos| between clean and this = partial overlap
+                                 # |cos| > partial_threshold = substantial collapse
+  retention_pass_threshold: 0.70  # CC-retention after ⊥ projection must exceed this
+
+# Behavioral specificity thresholds (per eg-rt-eval-spec.md §5)
+behavioral:
+  diagonal_min_delta: 5.0        # diagonal cell must show ≥ +5 points vs baseline
+  diagonal_ratio_vs_off: 2.0     # diagonal delta must exceed max off-diag in row by ≥ 2x
+  off_diag_failure_delta: 5.0    # off-diag counts as specificity failure if ≥ +5
+  bootstrap_resamples: 2000       # for 95% CI
+  bootstrap_seed: 42
+
+# Exit criteria per F98 pre-registration
+exit_criteria:
+  all_clean:
+    mve_pairs_pass: 6             # all 6 of the 4C2 pairs must pass
+    diagonal_wins_min: 4          # 4/4 diagonal cells clean
+    off_diag_failures_max: 2
+  partial:
+    mve_pairs_pass: 5             # at least 5/6
+    diagonal_wins_min: 2
+    off_diag_failures_max: 2
+  # anything worse = collapse
+
+# Paths
+paths:
+  specificity_matrix_dir: results/specificity_matrix  # where specificity_matrix.py writes
+  vectors_dir: results/vectors                        # where extract_v2.py saves
+  report_dir: results/analysis_report                 # where run_analysis.py writes
