@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Phronesis Review — sessions{% endblock %}
+
+{% block content %}
+<h1>Review sessions</h1>
+
+{% if sessions %}
+<p class="muted">Click a session to continue reviewing. Progress resumes where you left off.</p>
+<div class="sessions">
+{% for s in sessions %}
+  <div class="session-card">
+    <h2><a href="/review/{{ s.name }}/0">{{ s.name }}</a></h2>
+    <div class="progress">
+      <div class="progress-bar" style="width: {{ s.pct }}%"></div>
+    </div>
+    <div class="metric">
+      <span class="k">reviewed</span>
+      <span class="v">{{ s.reviewed }} / {{ s.total }} ({{ "%.0f"|format(s.pct) }}%)</span>
+    </div>
+    <details>
+      <summary>per-cell breakdown</summary>
+      <table class="per-cell">
+        <tr><th>model</th><th>vector</th><th>eval</th><th>progress</th></tr>
+        {% for row in s.by_cell %}
+        <tr>
+          <td>{{ row.model }}</td>
+          <td><code>{{ row.vector }}</code></td>
+          <td>{{ row.eval }}</td>
+          <td>{{ row.reviewed }} / {{ row.total }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </details>
+    <div class="session-actions">
+      <a href="/review/{{ s.name }}/0" class="btn">Resume review</a>
+      <a href="/export/{{ s.name }}" class="btn btn-secondary">Download CSV</a>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% else %}
+<p class="empty">No review sessions yet.</p>
+{% endif %}
+
+{% if spec_sources %}
+<h2>Create / refresh session from specificity matrix</h2>
+<p class="muted">Detected source CSVs under <code>results/specificity_matrix/</code>:</p>
+<ul class="build-list">
+{% for s in spec_sources %}
+  <li>
+    <code>all_generations_{{ s }}.csv</code>
+    → <a href="/build/{{ s }}" class="btn btn-small">Build session "{{ s }}"</a>
+    <a href="/build/{{ s }}?overwrite=true" class="btn btn-small btn-danger">Overwrite</a>
+  </li>
+{% endfor %}
+</ul>
+<p class="muted"><em>"Build" is idempotent — existing review columns are preserved. Use "Overwrite" only if you want to reset reviews.</em></p>
+{% else %}
+<p class="muted">No specificity matrix CSVs found at <code>results/specificity_matrix/all_generations_*.csv</code>. Run <code>specificity_matrix.py</code> first.</p>
+{% endif %}
+
+<hr>
+<p class="muted small">
+  Per <code>docs/eg-rt-eval-spec.md</code> §6 and <code>docs/scoring.md</code>: manual-first MVP policy means every generation gets hand-reviewed. Use this tool for the 4×4 matrix (960 generations).
+</p>
+{% endblock %}

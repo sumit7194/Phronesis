@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Review — {{ session }} — {{ idx + 1 }}/{{ total }}{% endblock %}
+
+{% block header_extras %}
+<div class="nav-compact">
+  <span class="progress-inline">
+    {{ stats.reviewed }}/{{ stats.total }}
+    <span class="progress-mini"><span style="width: {{ stats.pct }}%"></span></span>
+  </span>
+  <a href="/review/{{ session }}/{{ prev_idx }}" class="btn btn-small" title="Previous (p)">← prev</a>
+  <a href="/review/{{ session }}/{{ next_idx }}" class="btn btn-small" title="Next (n)">next →</a>
+  <a href="/review/{{ session }}/{{ idx }}/next" class="btn btn-small" title="Skip to next unreviewed (u)">unreviewed ⤵</a>
+  <a href="/export/{{ session }}" class="btn btn-small btn-secondary">export csv</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>
+  <span class="idx-label">{{ idx + 1 }}/{{ total }}</span>
+  {% if item.is_reviewed %}<span class="badge badge-ok">reviewed</span>{% else %}<span class="badge badge-pending">pending</span>{% endif %}
+</h1>
+
+<div class="item-meta">
+  <div class="meta-row">
+    <span class="k">model</span><span class="v"><code>{{ item.model }}</code></span>
+    <span class="k">vector</span><span class="v"><code>{{ item.vector }}</code></span>
+    <span class="k">α</span><span class="v"><code>{{ item.alpha }}</code></span>
+    <span class="k">eval</span><span class="v"><code>{{ item.eval }}</code></span>
+    <span class="k">item</span><span class="v"><code>{{ item.item_id }}</code></span>
+  </div>
+  <div class="meta-row muted small">
+    tokens={{ item.tokens }}  |
+    auto: CC={{ "%.2f"|format(item.cc_hedging_score) }},
+    IH={{ "%.2f"|format(item.ih_abstention_score) }},
+    EG={{ "%.2f"|format(item.eg_score) }},
+    RT={{ "%.2f"|format(item.rt_score) }}
+  </div>
+</div>
+
+<div class="prompt">
+  <h3>Prompt</h3>
+  <pre class="text">{{ item.prompt }}</pre>
+</div>
+
+<div class="generation">
+  <h3>Generation</h3>
+  <pre class="text">{{ item.generation_full or item.generation_preview }}</pre>
+</div>
+
+<form method="post" action="/review/{{ session }}/{{ idx }}/save" id="review-form">
+  <h3>Your ratings (1–5, higher = virtue more strongly exhibited)</h3>
+  <div class="likerts">
+    {% set virtues = [
+      ('human_cc_1to5', 'Calibrated Confidence', item.human_cc_1to5),
+      ('human_ih_1to5', 'Intellectual Humility', item.human_ih_1to5),
+      ('human_eg_1to5', 'Evidence Grounding', item.human_eg_1to5),
+      ('human_rt_1to5', 'Reasoning Transparency', item.human_rt_1to5),
+    ] %}
+    {% for name, label, val in virtues %}
+    <div class="likert">
+      <div class="likert-label">{{ label }}</div>
+      <div class="likert-choices">
+        {% for n in range(1, 6) %}
+        <label class="likert-option">
+          <input type="radio" name="{{ name }}" value="{{ n }}" {% if val == n|string %}checked{% endif %}>
+          <span>{{ n }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h3>Flags + notes</h3>
+  <div class="flags">
+    <label class="flag">
+      <input type="checkbox" name="gaming_flag" value="yes"
+             {% if item.gaming_flag == "yes" %}checked{% endif %}>
+      <span><strong>Gaming</strong> — auto-score inflated by keyword stuffing / caricature</span>
+    </label>
+    <label class="flag">
+      <input type="checkbox" name="degenerate_flag" value="yes"
+             {% if item.degenerate_flag == "yes" %}checked{% endif %}>
+      <span><strong>Degenerate</strong> — gibberish / repetition / truncation / broken syntax</span>
+    </label>
+  </div>
+
+  <label class="notes-label">
+    Notes (optional)
+    <textarea name="notes" rows="2" placeholder="One-line note on any notable pattern…">{{ item.notes }}</textarea>
+  </label>
+
+  <div class="reviewer-row">
+    <label>
+      Reviewer:
+      <input type="text" name="reviewer" value="{{ item.reviewer or 'sumit' }}" size="12">
+    </label>
+  </div>
+
+  <div class="actions">
+    <button type="submit" name="action" value="save_next" class="btn btn-primary">Save → Next unreviewed (Enter)</button>
+    <button type="submit" name="action" value="save_stay" class="btn btn-secondary">Save (stay here)</button>
+    <button type="submit" name="action" value="save_prev" class="btn btn-secondary">Save → Previous</button>
+  </div>
+</form>
+
+<div class="keys muted small">
+  Keyboard: <kbd>1</kbd>–<kbd>5</kbd> on currently-focused virtue (Tab to move) ·
+  <kbd>Enter</kbd> = save & next ·
+  <kbd>n</kbd> = next item ·
+  <kbd>p</kbd> = prev ·
+  <kbd>u</kbd> = jump to next unreviewed
+</div>
+
+<script>
+// Minimal keyboard hotkeys. No framework.
+(function() {
+  const form = document.getElementById('review-form');
+  const radioGroups = ['human_cc_1to5', 'human_ih_1to5', 'human_eg_1to5', 'human_rt_1to5'];
+  let focusedGroupIdx = 0;
+
+  // Tab between groups
+  document.addEventListener('keydown', function(e) {
+    // Ignore when typing in a text field
+    const tag = (document.activeElement.tagName || '').toLowerCase();
+    if (tag === 'input' && document.activeElement.type === 'text') return;
+    if (tag === 'textarea') return;
+
+    if (e.key >= '1' && e.key <= '5') {
+      e.preventDefault();
+      const group = radioGroups[focusedGroupIdx];
+      const radio = form.querySelector(`input[name="${group}"][value="${e.key}"]`);
+      if (radio) {
+        radio.checked = true;
+        // Highlight the group briefly
+        radio.focus();
+      }
+      return;
+    }
+    if (e.key === 'Tab' && !e.shiftKey) {
+      // Let Tab behave naturally but track group
+      const active = document.activeElement;
+      if (active && active.name) {
+        const gi = radioGroups.indexOf(active.name);
+        if (gi >= 0) focusedGroupIdx = gi;
+      }
+    }
+    if (e.key === 'n' && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      window.location.href = '/review/{{ session }}/{{ next_idx }}';
+    }
+    if (e.key === 'p' && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      window.location.href = '/review/{{ session }}/{{ prev_idx }}';
+    }
+    if (e.key === 'u' && !e.metaKey && !e.ctrlKey) {
+      e.preventDefault();
+      window.location.href = '/review/{{ session }}/{{ idx }}/next';
+    }
+  });
+
+  // Track focus group on click
+  radioGroups.forEach((g, i) => {
+    document.querySelectorAll(`input[name="${g}"]`).forEach(r => {
+      r.addEventListener('focus', () => { focusedGroupIdx = i; });
+    });
+  });
+})();
+</script>
+{% endblock %}
