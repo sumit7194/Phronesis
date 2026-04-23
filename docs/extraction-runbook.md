@@ -185,17 +185,30 @@ CSV columns: `model, eval, vector, prompt_id, prompt_text, generation, cc_score,
 
 ### 3.1 Full sequence
 
-| # | Stage | What runs | Duration | Output |
+| # | Stage | What runs | Duration (REVISED) | Output |
 |---|---|---|---|---|
 | 0 | Pre-flight | Write EG/RT scorers, prompts, calibrate on corpus | 4h dev + 10 min run | Scorers + calibration report |
-| 1 | Extraction | `extract_v2.py` × 4 (2 models × 2 virtues) | **~12h GPU** | Vectors in `mvp/results/vectors/` |
-| 2 | Geometric MVE | `mve_gate_test.py --matrix-mode` | 30 min CPU | 4×4 orthogonality tables per model |
-| 3 | α/layer sweep | `run_steering_sweep.py` on 5 prompts per eval × 4 vectors × 2 models, α {4, 8, 12, 16, 20}, layers {L18, L20, L22} on Qwen / {L14, L18, L22} on Gemma | **~4h GPU** | Per-vector optimal (α, layer) |
+| 1 | Extraction | `extract_v2.py` × 4 (2 models × 2 virtues) | **~32h GPU** (was 12h est) | Vectors in `mvp/results/vectors/` |
+| 2 | Geometric MVE | `mve_gate_test.py --matrix-mode` OR `analysis/run_analysis.py` | 30 min CPU | 4×4 orthogonality tables per model |
+| 3 | α/layer sweep | `run_alpha_sweep.py` on 5 prompts per eval × 4 vectors × 2 models | **~4h GPU** | Per-vector optimal (α, layer) |
 | 4 | 4×4 matrix | `specificity_matrix.py` | **~6h GPU** (864 generations × 2 models) | CSV per (model, eval) |
-| 5 | Hand review | Manual Likert per generation | ~16-20h spread over ~6 days | Annotation CSV |
-| 6 | Analysis | Aggregate + reporting | 1-2 days | Findings write-up |
+| 5 | Hand review | Manual Likert via `review/app.py` local web server | ~16-20h spread over ~6 days | Annotation CSV |
+| 6 | Analysis | `analysis/run_analysis.py` produces report.md + PNGs | 1-2 days to interpret | Findings write-up |
 
-**GPU budget total:** ~22h at L4 (can split across 2-3 overnight runs).
+**GPU budget total:** ~42h at L4 (was ~22h est). See §3.3 for why the extraction estimate was revised.
+
+### 3.3 Revised GPU budget (Day 16-17 lesson)
+
+Initial estimate of ~3h per extraction was too optimistic. Actual observed on Day 16 run:
+
+- **Qwen × EG:** ~8h (36 layers × 40 triplets, generation method)
+- **Qwen × RT:** ~8h
+- **Gemma × EG:** in progress at time of writing; 42 layers × 40 triplets, likely ~10h
+- **Gemma × RT:** TBD, likely ~10h
+
+**Why the discrepancy:** generation-based extraction (F73 Path B) does forward-pass-per-triplet-per-layer WITH continuation generation (not just a single forward pass). The continuation loop is what blew the budget. Extraction is still running at the time this revision is written.
+
+**Lesson for Phase 5 (8-virtue study):** plan for ~40h per model per virtue at L4, not 3h. If scaling to 8 virtues on 2 models, that's ~640h = 27 days of GPU. Either (a) parallelize across multiple L4s, (b) use A100/H100, or (c) reduce per-layer triplet count via batched inference.
 
 ### 3.2 Parallelization
 
@@ -224,22 +237,22 @@ python calibrate_scorers.py --corpus-eg ../corpus/mvp-combined/triplets-evidence
 # On VM:
 cd /home/research/Phronesis/mvp
 
-# Qwen × EG (~3h)
+# Qwen × EG (~8h observed)
 python extract_v2.py --model qwen3-4b \
   --corpus ../corpus/mvp-combined/triplets-evidence-grounding \
   --method generation --layers all --save-vectors
 
-# Qwen × RT (~3h)
+# Qwen × RT (~8h observed)
 python extract_v2.py --model qwen3-4b \
   --corpus ../corpus/mvp-combined/triplets-reasoning-transparency \
   --method generation --layers all --save-vectors
 
-# Gemma × EG (~3h)
+# Gemma × EG (~10h estimated)
 python extract_v2.py --model gemma-4-E4B-it \
   --corpus ../corpus/mvp-combined/triplets-evidence-grounding \
   --method generation --layers all --save-vectors
 
-# Gemma × RT (~3h)
+# Gemma × RT (~10h estimated)
 python extract_v2.py --model gemma-4-E4B-it \
   --corpus ../corpus/mvp-combined/triplets-reasoning-transparency \
   --method generation --layers all --save-vectors
@@ -315,16 +328,37 @@ qwen3-4b,eg-eval,v_IH,2.0,2.1,-0.1,-1.1,+0.9,24
 qwen3-4b,eg-eval,v_RT,2.2,2.1,+0.1,-1.0,+1.2,24
 ```
 
-### 5.3 Per-generation manual review CSV (for hand-scoring)
+### 5.3 Per-generation manual review (hand-scoring workflow)
 
-`mvp/results/specificity_matrix/manual_review_qwen3-4b_eg-eval.csv`:
+Built on Day 16 (commit 3): see `mvp/review/`.
+
+**Workflow:**
+1. After `specificity_matrix.py` lands CSVs in `mvp/results/specificity_matrix/`, run the local review web app:
+   ```bash
+   cd mvp && python3 -m uvicorn review.app:app --host 127.0.0.1 --port 5000
+   # open http://localhost:5000
+   ```
+2. Click "Build session" → generates `mvp/results/manual_review/{session}.csv` from the spec CSV, enriched with empty human-review columns
+3. Click through generation-by-generation, use Likert sliders (1-5) per virtue, plus gaming/degenerate flags + notes
+4. CSV is saved atomically after each item; safe to close browser mid-review (progress preserved)
+5. Session list on home page shows per-model, per-cell progress bars
+
+Keyboard hotkeys (see `mvp/review/templates/review.html`):
+- `1`-`5` rate current virtue, `Tab` to move between virtues
+- `Enter` = save + jump to next unreviewed
+- `n`/`p` = next/prev item
+- `u` = jump to next unreviewed
+
+Review CSV schema (written by the app):
 
 ```
-model,eval,vector,prompt_id,generation,auto_cc,auto_ih,auto_eg,auto_rt,human_cc_1to5,human_ih_1to5,human_eg_1to5,human_rt_1to5,gaming_flag,degenerate_flag,notes
-qwen3-4b,eg-eval,baseline,eg-p01,"Metals are...",0.3,0.0,2.1,4.5,,,,,, ,
+model,vector,alpha,eval,item_id,prompt,tokens,eg_score,rt_score,cc_hedging_score,ih_abstention_score,
+generation_preview,generation_full,
+human_cc_1to5,human_ih_1to5,human_eg_1to5,human_rt_1to5,
+gaming_flag,degenerate_flag,notes,reviewer,reviewed_at
 ```
 
-(Empty columns at end = human fills in)
+Empty human columns = not yet reviewed. Once complete, `analysis/run_analysis.py` can consume the review CSV alongside the auto-score CSV.
 
 ---
 

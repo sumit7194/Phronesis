@@ -4,7 +4,7 @@ This document is the **active operational scope** for Phronesis. It names the vi
 
 This document extends — does NOT replace — `concepts.md` (the canonical 15-virtue taxonomy), `generation-guidelines.md` (the corpus construction pipeline), and `review-rubric.md` (per-concept rubric tables). Where those docs speak in general terms across all 15 concepts, this doc commits to a specific 4 (MVP) and 8 (full study).
 
-**Status:** Draft v1. MVP scope agreed with user on Day 15 (2026-04-22). Per-virtue guidelines for Evidence Grounding and Reasoning Transparency are drafted here and will be refined as we sample the existing corpus and write new triplets.
+**Status:** v2 (Day 16, 2026-04-23). MVP scope agreed with user on Day 15. Per-virtue guidelines for Evidence Grounding and Reasoning Transparency are drafted here. Corpus-generation strategy evolved during Day 15-16 from hand-written only to LLM-assisted (ChatGPT + Sonnet) + hand-written substrate-reuse mix — see "Corpus build retrospective" section below.
 
 ---
 
@@ -62,8 +62,17 @@ Any one of the three is publishable per `project.md`. MVP targets all three; shi
 
 - **No scale to 15.** The other 11 virtues are explicitly Phase 5 work, gated on MVP outcome.
 - **No scorer automation.** Every response is hand-reviewed. See `scoring.md`.
-- **No LLM corpus generation.** Triplets for EG and RT are hand-crafted. LLM-driven generation is Phase 5 (prompts in `chatgpt-triplets-cron-prompt.md` and `sonnet-triplets-cron-prompt.md` are preserved and will be refined then).
 - **No publication work.** Per guiding principle 1.
+
+### Corpus build retrospective (what changed Day 15-16)
+
+Original Day-15 plan called for hand-written triplets only. **Day 16 revision:** we pivoted to a three-source mix because hand-writing 40 triplets per virtue was the biggest time sink and LLMs could produce calibration-quality output with careful prompting:
+
+- **20 ChatGPT triplets per virtue** — via detailed prompt with all hard constraints, audited + regenerated where caricature emerged
+- **15 Sonnet triplets per virtue** — similar prompt with LLM-specific refinements (length matching, canonical sub-facet labels, committal virtuous-wrong)
+- **5 substrate-reuse triplets per virtue** — hand-written by the research assistant against top-ranked substrates from the existing 166-CC corpus
+
+Final curated corpus at `corpus/mvp-combined/` — 40 EG + 40 RT with full audit trail in `LEDGER.md`. **Full LLM-driven corpus generation for scale-up (8-virtue study)** is still Phase 5 work, gated on MVP outcome. The prompts used for this first-wave LLM generation are preserved in session transcripts and can be refined if reused.
 
 ---
 

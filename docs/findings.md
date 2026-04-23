@@ -2908,3 +2908,45 @@ The geometric MVE has landed decisively on both models. The behavioral MVE is pe
 
 ---
 
+
+## F99 (SKELETON, pending data) — EG + RT extraction results + geometric MVE matrix
+
+**Status:** Template. Will be filled in after 4 extractions complete (currently 2/4 done: Qwen × EG + Qwen × RT; 3/4 Gemma × EG in progress at L13/42; 4/4 Gemma × RT queued).
+
+**Pre-registered per F98** — decision rules and exit criteria were committed before data existed.
+
+### What to record when data lands
+
+1. **Per-(model, virtue) extraction metadata:**
+   - Number of layers extracted, total time on L4
+   - Probe accuracies across layers (linear separability of virtuous vs non-virtuous)
+   - Vector norms by layer (for comparison to v_CC, v_IH which were established in F97)
+   - Any extraction anomalies (crashes, partial saves, etc.)
+
+2. **Geometric MVE matrix (6 pairs × 2 models = 12 cells):**
+   - mean |cos(v_i, v_j)| across layers
+   - max |cos| across layers (single-layer worst-case)
+   - mean retention after orthogonal projection
+   - Per-pair verdict: pass (|cos| < 0.2 AND retention > 70%) / partial (|cos| < 0.5) / collapse
+
+3. **Overall MVE verdict per model** (from F98 exit-criteria table):
+   - all_clean: 6/6 pass
+   - partial: 5/6 pass
+   - collapse: ≤4/6 pass OR EG × RT collapse
+
+### Early signal (partial data from Day 16, Qwen only)
+
+Per quick-peek SSH'd on 2026-04-23: Qwen × EG vs existing CC and IH geometric tests (N=36 layers):
+- |cos(v_EG_qwen, v_CC_qwen)|: mean 0.157, max 0.202 (below 0.2 threshold in 35/36 layers)
+- |cos(v_EG_qwen, v_IH_qwen)|: mean 0.026, max 0.089 (extremely orthogonal)
+
+**Partial interpretation (pending full matrix):** v_EG on Qwen IS a distinct direction from both v_CC and v_IH. Cleaner separation from v_IH than v_CC × v_IH was in F97 (0.179). First green light for the "4 atomic virtue directions on small open models" claim. Holds only for Qwen; Gemma TBD; v_EG × v_RT pair (the AOT-collapse risk) untested.
+
+### Applies to
+
+- Publication decision framework per F98
+- Next-phase planning (if MVP clean → consider 8-virtue scale-up)
+- Any update to `docs/mvp-virtues.md` on MVP scope
+
+---
+
