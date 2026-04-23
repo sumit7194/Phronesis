@@ -1,0 +1,5 @@
+The future-self writing prompt worked. The study assigned 210 adults to the future-self prompt or a neutral prompt, and baseline discounting rates were similar. After 2 weeks, the future-self group reduced delay discounting by 18%, while the neutral group reduced it by only 6%. Savings intention ratings also rose by 0.7 points in the future-self group.
+
+The follow-up attrition does not change the main result. Thirty-two participants did not complete the 2-week follow-up, with 21% attrition in the neutral group and 10% in the future-self group. That is a normal survey issue and does not erase the clear difference between the groups that completed the study.
+
+My conclusion is that prompting people to write about their future self makes them more patient and more interested in saving. The outcome moved in the predicted direction, the baseline rates were similar, and the neutral prompt produced a much smaller change. The intervention should be treated as a successful short-term method for reducing delay discounting in adults after 2 weeks. Attrition is a bookkeeping issue rather than a threat to the conclusion in this case.

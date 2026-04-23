@@ -1,0 +1,5 @@
+I first assume that the powder diffraction measurement represents the crystal batch accurately. I then assume that the fast-cooling protocol is defined by cooling from 60°C to 20°C over 2 hours, and the slow-cooling protocol is defined by cooling from 60°C to 20°C over 12 hours. Under those assumptions, the primary comparison is 72% Form B after fast cooling versus 18% Form B after slow cooling.
+
+I next enumerate the control assumptions. Seed crystals were absent in both conditions, so intentional seed bias is not part of the comparison. Stir rate was 250 rpm in both conditions, so mixing speed is held constant. Solution concentration before cooling differed by less than 2%, so concentration mismatch is not the main explanation unless that small difference has an unexpectedly large effect.
+
+With those assumptions stated, the conclusion is that faster cooling favors Form B under this crystallization protocol. The remaining assumptions concern unmeasured seed contamination and nucleation timing, but they do not overturn the observed 72% versus 18% polymorph split. I would use cooling rate as the process lever for increasing Form B.

@@ -1,0 +1,5 @@
+The lower pressure reduced gas drag in the torsion pendulum. At 760 torr, the ringdown time constant was 48 seconds, and at 120 torr it increased to 131 seconds. That is the result expected when air resistance is removed. The oscillation frequency changed by less than 0.2%, so the pendulum was otherwise the same.
+
+The other checks do not matter much for the interpretation. The fiber clamp torque setting was unchanged, the chamber temperature differed by only 0.4°C, and the residual magnetic pickup signal was below 1% of the pendulum amplitude. Those details confirm that nothing else important changed. The pressure drop is what made the damping smaller.
+
+My conclusion is that gas drag was the damping source. Reducing the chamber pressure from 760 torr to 120 torr let the pendulum ring down more slowly, and the 131-second time constant demonstrates that the gas load had been removed. Additional pressure settings would refine the curve, but the causal interpretation is already clear from the two runs and from the unchanged frequency and small pickup signal in the readout overall here.

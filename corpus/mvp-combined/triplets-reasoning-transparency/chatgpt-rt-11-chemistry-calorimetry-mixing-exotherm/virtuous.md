@@ -1,0 +1,5 @@
+The first link is the heat-rate comparison: peak heat release rose from 18 W at 300 rpm to 31 W at 700 rpm. The second link is the total-heat comparison: total heat differed by less than 3%, so the reaction extent was similar overall. Those two facts together imply a timing shift rather than a much larger total reaction.
+
+The infrared probe gives the timing mechanism. At 20 minutes, conversion was 64% at 300 rpm and 81% at 700 rpm. Since reagent addition rate was unchanged, the faster early conversion is not explained by faster dosing. Better mixing at 700 rpm is therefore the leading explanation for the higher early heat-release rate.
+
+The weakest link is the measured height of the peak, because jacket temperature control lagged by 45 seconds during the high-stir run. That lag could distort the calorimetric peak even if the underlying reaction was faster. My conclusion is that increased stirring likely improved mixing and shifted conversion earlier, but the exact 31 W peak should not be treated as a clean kinetic number until the jacket-control lag is corrected.

@@ -2,6 +2,8 @@
 
 This document specifies how the Phronesis contrastive corpus is constructed: how fact packs are built, how the neutral baseline is generated, how the virtuous and non-virtuous rewrites are produced, and how the corpus is reviewed before extraction. It is the operational guide for Phase 2 corpus construction.
 
+> **MVP scope note (Day 15, 2026-04-22):** The *active* virtues under corpus construction are listed in `mvp-virtues.md`. That doc specifies the 4 MVP virtues (Calibrated Confidence, Intellectual Humility, Evidence Grounding, Reasoning Transparency) and the 8-virtue full-study set, plus per-virtue operational guidelines (virtuous pattern / excess failure / deficiency failure / text indicators). Start there before using this document — `mvp-virtues.md` tells you *what* to generate corpus for, and this document tells you *how* to generate it. Also: during MVP, §4.7's automated verifier and §6's diversity metrics are optional add-ons — manual hand-review is primary. See `scoring.md` for the MVP manual-first policy.
+
 **STATUS: DRAFT SKELETON with TODOs.** This is the initial Phase 3 artifact drafted autonomously by the research scheduler after 21 research cycles. Sections are stubbed with the decisions that have already been made in concepts.md, findings.md, and project.md. TODOs mark sections that need more detail in subsequent cycles. The document will grow section-by-section until all TODOs are resolved.
 
 ---

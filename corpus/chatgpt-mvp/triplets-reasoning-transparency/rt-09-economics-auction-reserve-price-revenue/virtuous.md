@@ -1,0 +1,5 @@
+The first step is to separate conditional sale price from listing revenue. With higher reserves, sale probability fell from 74% to 61%. That means fewer listings converted into sales. The second step is to look only at completed sales: among those, average sale price rose from 430 to 515 credits. So the higher reserve did raise the price when an item sold.
+
+The third step combines those two effects. Once unsold listings are included, average revenue per listing was 318 credits under the original reserve and 314 credits under the higher reserve. Relisting fees averaged 9 credits per unsold listing, which makes the lower sale probability more costly. Seller mix was similar across groups, so the comparison is not mainly a seller-composition story.
+
+The weakest link is whether short-run listing revenue captures all seller goals; some sellers may prefer waiting to selling cheaply. But for average revenue per listing, the conclusion is visible: higher reserves increased completed-sale prices while lowering sale probability enough that net listing revenue did not improve. I would not recommend the higher reserve as a revenue-maximizing default.

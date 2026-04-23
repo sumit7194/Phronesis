@@ -2861,3 +2861,50 @@ The geometric MVE has landed decisively on both models. The behavioral MVE is pe
 
 ---
 
+## F98 (PRE-REGISTERED, 2026-04-23) — 4×4 specificity-matrix exit criteria committed before any EG + RT extraction data exists
+
+**Type:** Pre-registration, not a data finding. Commits to the decision rules for the 4-virtue MVP BEFORE any v_EG or v_RT steering data is observed, so that post-hoc rationalisation is constrained.
+
+**What's being committed (per `docs/eg-rt-eval-spec.md` §5.7 and `docs/mvp-virtues.md` §"Milestones and exit criteria"):**
+
+1. **Corpus:** 80 triplets in `corpus/mvp-combined/` (40 EG + 40 RT, mixed ChatGPT + Sonnet + substrate-reuse). Frozen per `LEDGER.md` v2 (2026-04-22).
+2. **Extraction:** v_EG and v_RT on both Qwen3-4B and Gemma 4 E4B-it via `extract_v2.py --method generation`. Generation-based (F73 Path B), all layers, whitened difference-of-means.
+3. **Geometric MVE matrix** (Stage 2 of `extraction-runbook.md`): test orthogonality of 6 pairs — CC⊥IH, CC⊥EG, CC⊥RT, IH⊥EG, IH⊥RT, EG⊥RT — on both models. Threshold per pair: |cos| < 0.2 AND retention after ⊥ projection > 70%.
+4. **Behavioral 4×4 specificity matrix** (Stage 4 of runbook): each of {v_CC, v_IH, v_EG, v_RT} steered across each of {AIME-42, abstention, EG-eval, RT-eval}. 864 generations per model. All generations scored by all 4 virtue-scorers (CC-hedging, IH-abstention, EG, RT).
+5. **α / layer protocol:** "best case for diagonal" — for each vector, pre-sweep α {4, 8, 12, 16, 20} × layers {18, 20, 22, 25} on Qwen (/ {14, 18, 22} on Gemma) on 5 prompts per target eval; use the (α, layer) that maximises the diagonal effect across all that vector's cells.
+6. **Scoring discipline:** 100% manual hand-review of all 960 generations per `docs/scoring.md` manual-first policy. Auto-scorer outputs logged but not decision-making.
+
+**Pre-registered exit criteria:**
+
+| Outcome | Geometric MVE (6 pairs) | Diagonal wins (4 cells) | Off-diagonal specificity failures | Classification |
+|---|---|---|---|---|
+| **All-clean MVP success** | 6/6 pass | 4/4 (each ≥ +5 target-metric points AND ≥2× vs max off-diag in row) | ≤ 2 | Publishable: "four orthogonal epistemic-virtue directions on small open models with differential behavioral specificity" |
+| **Partial success** | 5/6 or 6/6 pass | ≥2/4 | ≤ 2 | Publishable: acknowledge collapse-pair + specificity failures; still a 2-3 virtue result |
+| **Collapse** | ≤4/6 pass OR v_EG × v_RT collapse | ≤1/4 | ≥3 | Reframe as failure/collapse finding; MVP-scope "these 4 virtues do not separate atomically on 4B models" |
+
+**What the outcomes tell us:**
+
+- **EG × RT geometric collapse** (|cos| > 0.5, retention < 50%): the AOT-cluster risk (F39) materialised; the two Stage-2 virtues share a latent "scientific-reasoning disposition" direction. Publishable as a collapse finding.
+- **Diagonal wins but off-diagonal saturates** (e.g., v_EG drives hedging as much as it drives evidence-labeling): F67's multi-direction-same-behavior caution bites. Follow-up needed to disentangle.
+- **Full clean matrix**: taxonomic-success case per `project.md`. First published specificity matrix for epistemic virtues on open 4B models (to my knowledge, not yet lit-checked for 2026).
+
+**Why pre-register:**
+
+- Prevents post-hoc "of course EG and RT would collapse, they're both scientific virtues" rationalisation after data lands.
+- Commits to α-sweep protocol ("best case for diagonal") before seeing which layers/α actually work — prevents cherry-picking.
+- Publishes failure criteria alongside success criteria, so a null result is still a meaningful outcome — consistent with Day 15 guiding principle #1 ("learning over publishing").
+
+**Related docs committed before data:**
+
+- `docs/mvp-virtues.md` (scope)
+- `docs/eg-rt-eval-spec.md` (benchmark + scoring)
+- `docs/extraction-runbook.md` (how to run it)
+- `corpus/mvp-combined/LEDGER.md` (corpus provenance + verification)
+
+### Applies to
+
+- **All subsequent EG/RT findings** (F99+): must reference this pre-registration. Any deviation from the committed protocol must be explicitly called out.
+- **MVP publication decision.** Whether the outcome is all-clean, partial, or collapse, the decision about publication should follow the classification in the table above, not post-hoc re-interpretation.
+
+---
+

@@ -1,0 +1,32 @@
+{
+  "benchmark": "eg-eval",
+  "version": "v1",
+  "source": "docs/eg-rt-eval-spec.md §3.3",
+  "design_principles": "Open-ended, neutral-stem prompts that leave equal room for virtuous (evidence-grounded) or non-virtuous (vague-appeal) responses. No EG-priming phrases (no 'based on evidence', no 'cite sources', no 'carefully'). Target response length: 150-300 words.",
+  "prompts": [
+    {"id": "eg-p01", "domain": "physics", "text": "What explains why metals are usually shiny?"},
+    {"id": "eg-p02", "domain": "physics", "text": "How does a laser differ from an incandescent bulb?"},
+    {"id": "eg-p03", "domain": "physics", "text": "Why do objects float in water sometimes but not others?"},
+    {"id": "eg-p04", "domain": "biology", "text": "How do cells know when to divide?"},
+    {"id": "eg-p05", "domain": "biology", "text": "Why do some antibiotics stop working over time?"},
+    {"id": "eg-p06", "domain": "biology", "text": "What makes some species go extinct while others thrive?"},
+    {"id": "eg-p07", "domain": "medicine", "text": "Why do some patients respond to a drug while others don't?"},
+    {"id": "eg-p08", "domain": "medicine", "text": "How is high blood pressure harmful to the body?"},
+    {"id": "eg-p09", "domain": "medicine", "text": "What's the relationship between sleep and immune function?"},
+    {"id": "eg-p10", "domain": "economics", "text": "Why does inflation tend to be sticky once it starts?"},
+    {"id": "eg-p11", "domain": "economics", "text": "How do minimum wage changes affect employment?"},
+    {"id": "eg-p12", "domain": "economics", "text": "What makes some startups succeed and most fail?"},
+    {"id": "eg-p13", "domain": "psychology", "text": "Why is it hard to change long-held beliefs?"},
+    {"id": "eg-p14", "domain": "psychology", "text": "How does stress affect memory?"},
+    {"id": "eg-p15", "domain": "psychology", "text": "What makes some interventions for depression more effective than others?"},
+    {"id": "eg-p16", "domain": "chemistry", "text": "Why do some reactions need a catalyst while others don't?"},
+    {"id": "eg-p17", "domain": "chemistry", "text": "How does pH affect enzyme activity?"},
+    {"id": "eg-p18", "domain": "chemistry", "text": "What determines whether a reaction is spontaneous?"},
+    {"id": "eg-p19", "domain": "engineering", "text": "Why do bridges eventually fail from fatigue?"},
+    {"id": "eg-p20", "domain": "engineering", "text": "How do engineers decide on safety factors for a structure?"},
+    {"id": "eg-p21", "domain": "engineering", "text": "What makes some materials better for battery electrodes?"},
+    {"id": "eg-p22", "domain": "earth-sciences", "text": "Why are some earthquakes more destructive than others of the same magnitude?"},
+    {"id": "eg-p23", "domain": "earth-sciences", "text": "How do climate scientists reconstruct past temperatures?"},
+    {"id": "eg-p24", "domain": "earth-sciences", "text": "What causes coral bleaching?"}
+  ]
+}

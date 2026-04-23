@@ -424,3 +424,180 @@ Hypothesis: v_IH norms are 60–80% of v_CC norms, so α=12 (CC default) may be 
 - No behavioral Test B (orthogonally-projected v_CC on AIME) yet.
 - No scorer upgrade yet.
 - No scale-up of IH corpus — gated on Test A resolution.
+
+---
+
+## Day 15 — 2026-04-22
+
+### Context
+
+Returned after Gemma α=8 run launched on GCP L4. Did two rounds of strategic re-evaluation after I (assistant) twice gave advice that the user correctly pushed back on:
+
+1. First I suggested "stop and write a workshop paper now" — based on incomplete lit review that conflated our epistemic virtues with Anthropic's 171 emotions, 7 personas, 275 archetypes. User pushed back.
+2. Second lit-review pass (web search across Anthropic Emotion Concepts, Persona Vectors, Assistant Axis, community Gemma-4-E4B replications by rain1955 and RyanCodrai) confirmed **zero overlap** between our 15 epistemic virtues and any of those prior works. All four target emotions, personas, or archetypes — none target atomic epistemic virtues.
+3. I then over-corrected and called user's scale-up vision "ambition creep" — wrong again; project.md Phase 5 always planned this. User's vision matches the plan.
+
+Two acknowledged errors. User held guiding principles steady through both.
+
+### Guiding principles locked in
+
+Per user's explicit instruction, these are now the standing principles for the project:
+
+1. **Learning and field-progress over publishing.** Never about out-doing Anthropic. Inspiration from them, not competition with them. If the work leads to a publishable result, good; if not, the learning itself is the goal.
+2. **Keep pushback behavior as research assistant.** User found the pushback genuinely useful. Continue to push back when premises seem wrong, even when it means admitting my own earlier advice was wrong.
+3. **Solidify a handful of vectors before scaling.** Not ready for Phase 5 full scale-up. Need to run a few more proper vector extractions at MVP quality first.
+
+### Manual-verification policy (added earlier today, commit 490165a)
+
+Standing policy block added to findings.md: all benchmark claims must be manually verified, because auto-scorer credited Gemma's confabulated "1931 Gandhi Nobel Peace Prize" as a valid abstention (Nobel Foundation: Gandhi never won). Manual rescoring of Gemma baseline: 17/24, not 22/24 as auto-scorer reported. The Qwen-vs-Gemma gap shrank from +4pp auto to +1pp human.
+
+### Scope decisions
+
+**MVP virtue set (4 concepts):**
+
+- Calibrated Confidence (reference — already extracted and empirically validated on Qwen; Gemma vector landed in Day 14 pipeline)
+- Intellectual Humility (in flight — geometric MVE passed on both models; behavioral MVE still noisy due to scorer artifacts)
+- Evidence Grounding (new; low F11-competency-absence risk — models can cite sources and label evidence types)
+- Reasoning Transparency (new; low F11 risk — models can show intermediate steps)
+
+**Full-study virtue set (up to 8):** MVP 4 + Logical Rigor + Hypothesis Generation + Steelmanning + Intellectual Honesty. Deferred until MVP demonstrates specificity matrix works.
+
+**Virtues NOT in scope for now:**
+
+- Genuine Curiosity (low F11 risk but lower inferential payoff for reasoning-benchmark validation)
+- Causal Reasoning, Quantitative Groundedness (moderate F11 risk; require specialized corpus design)
+- Confirmation Bias Awareness, Metacognitive Awareness, Comfort with Ambiguity, Authority Independence (high F11 risk — models lack the underlying competency or the text-signature is too context-dependent)
+
+### Workflow decisions
+
+**Everything manual at MVP.** No trust in the automated scorer — every response hand-reviewed. No LLM-driven corpus generation for MVP — new triplets for EG and RT written by hand. Both scorer upgrade and corpus-gen automation are explicitly Phase 5+ infrastructure with a trigger condition: "after 4-virtue MVP lands."
+
+**Guidelines-first, then sample existing corpus.** For each new virtue (EG first, RT second):
+
+1. Write mini operational guideline: definition, sub-facets, virtuous pattern, excess-failure pattern, deficiency-failure pattern, text indicators.
+2. Sample ~20 of existing 166 triplets-combined and 20 IH triplets against the new guideline to estimate reuse rate.
+3. Write new hand-crafted triplets to fill the gap.
+
+I pushed back on user's original "divide the 166 corpus into virtue spaces" intuition: the 166 triplets-combined corpus was designed with a CC-specific contrast axis, so reuse is likely 20-40% per new virtue, not majority. User accepted the guidelines-first workflow.
+
+**Time estimate:** 2-3 weeks for 4-virtue MVP.
+
+### What we built today
+
+- `docs/mvp-virtues.md` — the operational scope doc: MVP 4 virtues with per-virtue guidelines (definition / sub-facets / virtuous pattern / excess & deficiency failure patterns / text indicators / F11 risk / reuse estimate from existing corpus / validation benchmark).
+- `docs/scoring.md` — manual-first scoring working doc. MVP scorer is add-on only (not trusted, not used in decisions); every response hand-reviewed. Doc tracks scorer failure modes for later hardening.
+- Cross-link from `docs/generation-guidelines.md` to `docs/mvp-virtues.md` for active MVP scope.
+
+Both docs are intentionally scoped to extend — not replace — the existing `generation-guidelines.md` and `review-rubric.md` machinery. Those remain the canonical corpus-pipeline and rubric references.
+
+### Still running / open
+
+- Gemma α=8 benchmark on GCP L4 (IH behavioral MVE, α-layer sweep continuation). ~15 min remaining at time of writing. Will hand-score when it lands.
+- GCP VM will be stopped after Gemma α=8 finishes. No more GPU work until EG corpus exists.
+
+### Explicit non-events
+
+- No new vectors extracted today.
+- No corpus work on EG or RT yet — waiting on mvp-virtues.md review by user.
+- No scorer changes (MVP policy: manual-only; scorer evolution deferred).
+- No paper drafting (guiding principle #1: publication is not the target).
+
+---
+
+## Day 16 — 2026-04-23
+
+### Corpus work completed (EG + RT)
+
+**Three-batch LLM generation cycle landed.** ChatGPT (2 batches) + Sonnet (2 full batches + 1 partial) + hand-written substrate-reuse. Final curated corpus at `corpus/mvp-combined/`:
+
+- **40 Evidence Grounding triplets:** 20 ChatGPT + 15 Sonnet + 5 substrate-reuse
+- **40 Reasoning Transparency triplets:** 20 ChatGPT + 15 Sonnet + 5 substrate-reuse
+- **80 triplets total** — meets MVP target exactly per `mvp-virtues.md`
+
+Verification: 79/80 pass ±10% length target (1 flag: sonnet-eg-17-medicine at 13%). All 80 scenarios unique (no duplicates). Full provenance in `corpus/mvp-combined/LEDGER.md`.
+
+**Sonnet batch 3** hit the token limit: delivered 20 fact-packs (scenario plans) + 1 neutral. Zero complete triplets. Held in `sonnet-mvp/batch3-partial-scenarios/` as inventory for Phase-5 8-virtue scale-up; NOT added to combined corpus.
+
+### Eval infrastructure built
+
+Three new docs pre-register the extraction methodology before any GPU spend:
+
+- **`docs/mvp-virtues.md`** — scope (4 virtues, 4×4 specificity matrix exit criterion)
+- **`docs/eg-rt-eval-spec.md`** — behavioral eval spec (24-prompt EG + RT sets, regex scorers, calibration target ≥5pt separation, pre-registered exit criteria)
+- **`docs/extraction-runbook.md`** — file-level adaptations, copy-paste GCP commands, ~22h total GPU budget
+
+Code built today (local dev, ready to push to GCP VM):
+
+- `mvp/benchmarks/eg_scorer.py` — Evidence Grounding regex scorer (~180 lines). Counts evidence-type labels + claim-evidence patterns; subtracts vague-appeal markers. v1 failed calibration (+3.87 separation); v2 with expanded patterns for compound "X evidence" and confident-causation rhetoric passed at +15.09.
+- `mvp/benchmarks/rt_scorer.py` — Reasoning Transparency scorer. Step markers + assumption clauses + weak-link flags; subtracts conclusion-first openers. Passed calibration at +9.90 on first try.
+- `mvp/benchmarks/eg_prompts.json`, `rt_prompts.json` — 24 open-ended prompts each, 3 per domain × 8 domains, neutral stems that don't prime the virtue.
+- `mvp/benchmarks/eg_eval.py`, `rt_eval.py` — benchmark loaders, registered in `REGISTRY`.
+- `mvp/calibrate_scorers.py` — validates scorers against `mvp-combined/` before any extraction. **Ran: both scorers PASSED.**
+- `mvp/mve_gate_test.py` — extended with `--matrix-mode` for N-pair pairwise MVE (supports the 4-virtue matrix: CC × IH × EG × RT).
+- `mvp/specificity_matrix.py` — 4×4 orchestrator. Wraps `run_benchmark.py` subprocess calls, aggregates generations with all 4 scorers, outputs per-cell CSV + matrix summary.
+- `mvp/run_benchmark.py` — added EG_L* + RT_L* placeholder entries to VECTORS registry for both models.
+- `mvp/utils.py` — added `MVP_COMBINED_EG_DIR` + `MVP_COMBINED_RT_DIR` path constants.
+
+### Scorer calibration results (pre-GPU gate)
+
+Target per `eg-rt-eval-spec.md` §3.5 + §4.5: virtuous mean − deficiency-nonvirt mean ≥ +5 points on the target scorer.
+
+```
+EG scorer on triplets-evidence-grounding (40 triplets)
+  Virtuous mean:             +16.46  (std ~7)
+  Neutral mean:              +5.48
+  Non-virtuous excess:       +10.21  (caricature-adjacent; hand-review flags)
+  Non-virtuous deficiency:   +1.37
+  Separation (virt − def): +15.09  [PASS, target ≥ +5.0]
+
+RT scorer on triplets-reasoning-transparency (40 triplets)
+  Virtuous mean:             +10.51  (std ~7)
+  Neutral mean:              +3.77
+  Non-virtuous excess:       +7.59
+  Non-virtuous deficiency:   +0.61
+  Separation (virt − def): +9.90  [PASS, target ≥ +5.0]
+```
+
+Known scorer false-positives (hand-review required):
+- **3 deficiency-nonvirt EG passages** score high because they use evidence-vocabulary while making confident-causation claims (substrate-eg-sr-01, chatgpt-eg-16, sonnet-eg-19). Regex can distinguish most patterns but not "uses evidence words in service of confident bad inference." Confirmed hand-review will catch these.
+- **5 virtuous EG passages score 0** (chatgpt-eg-12, eg-13, eg-18, sonnet-eg-11, eg-14) — technical chemistry/engineering prose my regex doesn't cover. Doesn't invalidate separation (overall virtuous mean is +16.46), but flags that per-domain EG sensitivity varies.
+
+### Decisions locked in before extraction
+
+Per the discussion of X3 (end-to-end plan) + X1/X2 (eval spec + runbook):
+
+1. **Extraction on both models** (Qwen3-4B + Gemma 4 E4B-it) — cross-model consistency is the differentiated finding. ~12h GPU total.
+2. **"Best case for diagonal" α/layer protocol** — sweep α×layer for each vector on 5 prompts per eval, pick the (α, layer) that maximizes the diagonal effect. Use same (α, layer) for all off-diagonal cells with that vector.
+3. **Full 4×4 matrix (16 cells)** — not partial. ~864 generations across both models.
+4. **100% manual review** of all 960 generations (per `scoring.md` manual-first policy) — hand-review is 13-19h spread over ~6 days.
+5. **Pre-registered exit criteria** in `eg-rt-eval-spec.md` §5.7. No p-hacking.
+
+### GPU budget honestly estimated
+
+| Stage | Time |
+|---|---|
+| Extraction (4 runs: 2 models × 2 virtues) | ~12h single overnight |
+| α/layer pre-sweep | ~4h |
+| 4×4 specificity matrix generations | ~6h |
+| **Total GPU** | **~22h** split across 2 overnight sessions on GCP L4 |
+
+Plus ~20h hand-scoring over ~6 days, parallel to final runs.
+
+### What we did NOT do
+
+- No GPU runs today — all local dev + calibration.
+- No Sonnet batch 3 completion attempt (user agreed it's not worth the token spend).
+- No scorer LLM-judge fallback (Phase 5 trigger per `scoring.md`).
+
+### Explicit non-events
+
+- No findings (F98+) registered yet — that happens after extraction + MVE reveals data.
+- No extraction vectors for EG / RT yet; placeholder VECTORS registry entries added.
+- No specificity matrix runs; orchestrator tested via `--help` only.
+
+### Next action
+
+Push `mvp/` changes to GCP VM. Run:
+1. `python3 extract_v2.py --model qwen3-4b --corpus ../corpus/mvp-combined/triplets-evidence-grounding --method generation --layers all --save-vectors` (3 more invocations for other model×virtue combos)
+2. `python3 mve_gate_test.py --model {model} --matrix-mode` once extraction lands
+3. α-sweep, then specificity matrix

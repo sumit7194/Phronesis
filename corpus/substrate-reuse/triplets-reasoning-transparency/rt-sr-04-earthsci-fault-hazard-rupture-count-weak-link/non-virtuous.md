@@ -1,0 +1,7 @@
+The paleoseismic analysis of Fault B identifies a meaningful new source of seismic hazard for the metropolitan area. The trench study documented 3 prehistoric ruptures over the past 12,000 years, with each rupture in the Mw 6.8 to 7.1 range, giving a recurrence interval of approximately 4,000 years and an estimated slip rate of 0.8 mm/yr. Incorporating Fault B into the regional probabilistic seismic hazard model increases the 2% in 50 years peak ground acceleration at the metropolitan centroid by 18%.
+
+The paleoseismic evidence supporting this is substantial: upward fault terminations in the trench walls, stratigraphic offsets at two horizons consistent with discrete rupture events, displaced terrace surfaces, and 5 radiocarbon dates constraining event timing. This evidentiary basis meets standard paleoseismic interpretation criteria, and the rupture history feeds into the hazard calculation through well-established procedures.
+
+The regional context places Fault B among 6 other active faults within 40 km, combined slip rate 12.4 mm/yr. Fault B's 0.8 mm/yr is a 6.5% increase in regional slip, which propagates through the hazard model as the 18% increase in estimated PGA. The revision reflects current best understanding of regional seismic sources.
+
+Regional building codes and emergency planning should be updated to reflect this revised estimate, recognizing that the metropolitan area faces greater seismic risk than the pre-Fault-B model indicated. Early incorporation of Fault B into planning is the prudent response.

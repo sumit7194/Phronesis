@@ -43,6 +43,7 @@ from . import (
     gsm8k, mmlu, mmlupro, truthfulqa, musr,
     humblebench, simplebench, sycophancy, xstest, abstention,
     math500, aime, zebralogic, hard_probe_v2, hard_probe_v3, mm92_verify,
+    eg_eval, rt_eval,
 )
 
 # Default probe set (tier-A challenge-level)
@@ -52,7 +53,9 @@ REGISTRY = {
     "mm92_verify": mm92_verify.load,     # ⭐ priority-1 hallucination verification (2 items)
     "hard_probe_v3": hard_probe_v3.load, # follow-up 9-item probe (attractor break + MCQ replication)
     "hard_probe_v2": hard_probe_v2.load, # curated 19-item cross-benchmark probe
-    "abstention":  abstention.load,
+    "abstention":  abstention.load,      # IH-eval (24 items)
+    "eg-eval":     eg_eval.load,         # Evidence Grounding behavioral eval (24 items)
+    "rt-eval":     rt_eval.load,         # Reasoning Transparency behavioral eval (24 items)
     "math500":     math500.load,
     "aime":        aime.load,
     "zebralogic":  zebralogic.load,

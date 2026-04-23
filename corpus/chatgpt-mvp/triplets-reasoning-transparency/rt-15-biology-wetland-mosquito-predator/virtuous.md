@@ -1,0 +1,5 @@
+The first comparison is within fish pools: mosquito larva density fell from 38 to 11 larvae per dip over 3 weeks. The second comparison is within control pools: density fell from 36 to 29 larvae per dip. Since both groups declined but the fish pools declined much more, the treatment effect is the difference between a large treated-pool drop and a smaller background drop.
+
+The next step is to check habitat explanations. Dissolved oxygen stayed above 6 mg/L in both groups, so oxygen stress does not explain a treated-pool collapse. Aquatic vegetation cover changed by less than 5%, so vegetation structure was not substantially altered. Fish survival was 83% at 3 weeks, which means the introduced predators were mostly present during the period when larvae declined.
+
+The weakest link is that larva counts can vary with weather and emergence timing, and those are not directly reported. Even so, the best conclusion is that predatory fish likely reduced larva density under these trial conditions. The control-pool decline shows background change, but it is too small to explain the drop from 38 to 11 in the fish pools.

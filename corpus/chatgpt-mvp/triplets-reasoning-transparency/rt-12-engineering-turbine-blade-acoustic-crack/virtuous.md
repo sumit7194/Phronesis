@@ -1,0 +1,5 @@
+The first step is to decide whether the post-storm signal is new and localized. The monitoring system recorded a new acoustic emission cluster after the lightning storm, with 63 events over 4 operating hours. The second step is to ask whether the blade response changed mechanically; strain amplitude increased by 18% during the same period. That makes the acoustic cluster more concerning than isolated noise.
+
+The third step is to check operating context. Rotor speed and wind speed were within the normal operating envelope, so average operating load is not the obvious explanation. The drone then found a 12 cm surface mark near the acoustic source estimate, which gives a spatially compatible visual clue.
+
+The weak point is rain. Rain continued during the monitoring window and could create acoustic events or distort source localization. My conclusion is that a blade defect, including a crack or lightning-related damage, is plausible enough to require close inspection. I would not label it confirmed until dry-window acoustic monitoring or ultrasonic inspection verifies damage near the 12 cm mark on the blade surface itself later.

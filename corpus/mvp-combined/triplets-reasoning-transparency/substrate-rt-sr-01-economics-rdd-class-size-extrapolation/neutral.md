@@ -1,0 +1,7 @@
+A regression discontinuity design (RDD) study estimated the effect of class size on standardized math achievement by exploiting an enrollment cutoff rule: schools must split a class into two when enrollment exceeds 25, producing classes of approximately 13 versus 25 students near the threshold. The study covered 4,200 classrooms across 680 elementary schools over three academic years.
+
+The RDD estimate at the cutoff is 0.21 standard deviations (95% CI: 0.09–0.33; p = 0.001). The estimate is robust to bandwidth choices between 3 and 8 students around the cutoff (range: 0.18–0.24 SD) and consistent across local linear and local quadratic specifications. The McCrary density test found no evidence of manipulation at the enrollment cutoff (p = 0.61), supporting the validity of the design.
+
+The RDD identifies the causal effect at the cutoff — specifically the effect of reducing class size from 25 to 13 students for schools whose enrollment is near the threshold. It does not provide evidence about smaller reductions (such as from 25 to 20 students) or for schools far from the cutoff.
+
+A national policy proposal recommends capping elementary classes at 18 students, reducing from the current national average of 24, citing the 0.21 SD estimate and applying a linear extrapolation: 0.21 SD divided by 12 students, multiplied by 6 students, equals 0.105 SD expected gain. Implementation would cost approximately $14 billion annually in teacher hiring.

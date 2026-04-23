@@ -1,0 +1,5 @@
+The fish introduction appears to have reduced mosquito larva density in the treated wetland pools. The trial introduced predatory fish into 12 of 24 matched pools. Over 3 weeks, larva density in fish pools fell from 38 to 11 larvae per dip. Control pools also declined, but only from 36 to 29 larvae per dip. The larger decline in the fish pools points toward a treatment effect beyond background change.
+
+The habitat checks reduce two alternative explanations. Dissolved oxygen stayed above 6 mg/L in both pool groups, so low oxygen is not an obvious reason for larva decline in the treated pools. Aquatic vegetation cover changed by less than 5%, making habitat-structure change a less likely explanation. Fish survival at 3 weeks was 83%, so most introduced predators were still present during the measurement window.
+
+My working conclusion is that predatory fish reduced mosquito larvae under these trial conditions. Weather-driven emergence or sampling variation could still affect counts, but the matched control decline was much smaller. Longer monitoring would show whether the reduction persists and whether fish survival remains high enough for operational use.

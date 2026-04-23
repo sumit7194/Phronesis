@@ -1,0 +1,7 @@
+The multicenter randomized trial enrolled 638 preterm infants at 26–30 weeks across 11 NICUs, randomizing them 1:1 to surfactant within 2 hours of birth versus deferred administration tied to deterioration criteria. The primary composite outcome — death or chronic lung disease at 36 weeks corrected age — occurred in 31% of the early group and 38% of the delayed group, a 7 percentage-point absolute difference with a 95% confidence interval of 1.1–12.9 pp and p=0.021.
+
+A pre-specified subgroup analysis by gestational age found that the benefit was concentrated in the 26–28 week group, where the absolute risk reduction was 12.4 percentage points, while in the 29–30 week group the difference was 1.8 pp with a confidence interval crossing zero. The secondary outcomes — ventilation duration, NICU length of stay, intraventricular hemorrhage — did not differ significantly between arms.
+
+One complication is that 23% of infants in the delayed arm received surfactant before meeting the protocol deterioration criteria, which means the intention-to-treat comparison somewhat understates the contrast between strategies. Loss to follow-up was 4.2% and balanced.
+
+The trial supports early surfactant as the better strategy in this gestational-age window overall, with the effect appearing larger in the younger infants. The subgroup finding is worth noting but is based on roughly 160 infants per gestational group, so it should inform future work more than drive immediate practice differentiation between the two gestational-age bands.

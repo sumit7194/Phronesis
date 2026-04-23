@@ -12,6 +12,10 @@ MODELS_DIR = Path(__file__).parent / "models"
 RESULTS_DIR = Path(__file__).parent / "results"
 CORPUS_DIR = Path(__file__).parent.parent / "corpus" / "triplets"
 
+# MVP-combined corpus paths (80 triplets, curated per corpus/mvp-combined/LEDGER.md)
+MVP_COMBINED_EG_DIR = Path(__file__).parent.parent / "corpus" / "mvp-combined" / "triplets-evidence-grounding"
+MVP_COMBINED_RT_DIR = Path(__file__).parent.parent / "corpus" / "mvp-combined" / "triplets-reasoning-transparency"
+
 MODEL_CONFIGS = {
     "gemma-2-2b-it": {
         "hf_id": "google/gemma-2-2b-it",

@@ -1,0 +1,5 @@
+The home readings appear systematically higher than the clinic readings. In 44 patients, home cuffs read systolic pressure 11 mmHg higher on average than clinic devices. Calibration testing found that 15 of the 44 home cuffs over-read by at least 8 mmHg, which explains part of the discrepancy. Patients with over-reading cuffs also reported tighter cuff placement more often.
+
+The clinic devices provide a reference point because they passed the annual calibration check. That makes a clinic-device problem less likely, though not impossible. Timing remains a complication: home readings were taken mostly in the evening, while clinic readings were taken in the morning. Time-of-day blood-pressure variation could contribute to the difference.
+
+My working conclusion is that home cuff over-reading is a major contributor to the 11 mmHg average gap, especially for the 15 devices that failed calibration testing. Cuff placement may be part of the same problem. I would not discard all home readings, but I would recalibrate or replace the suspect cuffs and standardize measurement time before changing medication based on the home values alone in routine care decisions.

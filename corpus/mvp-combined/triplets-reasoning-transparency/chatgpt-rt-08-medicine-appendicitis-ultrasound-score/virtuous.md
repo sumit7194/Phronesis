@@ -1,0 +1,5 @@
+The high-risk inference has two supports. First, 31 of 74 adolescents crossed the triage-score threshold. Second, within that high-risk group, 24 had ultrasound appendix diameter above 6 mm and 27 had white blood cell count above the local cutoff. Those two findings make true appendicitis the leading interpretation for high-risk patients, though neither ultrasound diameter nor white-cell count is perfectly specific.
+
+The next step is to ask what the score can do for low-risk patients. Twelve low-risk patients still had nausea and mild fever, so low risk does not mean no symptoms. Follow-up imaging was unavailable for 9 discharged low-risk patients. That is the weakest link in the reasoning, because missed appendicitis would most likely appear in the discharged group.
+
+My conclusion is that high-risk patients should be managed as likely appendicitis, with confirmatory evaluation or treatment pathways. The same data do not yet prove that low-risk discharge is safe. The threshold looks useful for ruling in concern, but the rule-out claim depends on the missing follow-up for those 9 discharged patients and their later outcomes after discharge are unknown.

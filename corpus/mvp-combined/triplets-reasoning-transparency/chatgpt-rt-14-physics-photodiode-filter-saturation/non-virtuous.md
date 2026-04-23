@@ -1,0 +1,5 @@
+The photodiode saturates without the neutral-density filter. The voltage plateaus at 4.8 V above 2.1 mW input, while the filtered setup stays linear up to 5.0 mW equivalent input. Photodiode bias voltage was unchanged, so the bias setting is not responsible. The only important difference is that the diode receives too much light without the filter.
+
+The slower rise time fits the same overload picture. Once the photodiode is driven too hard, the signal no longer rises normally. The measured cable capacitance of 420 pF is higher than the expected 120 pF, but that is a secondary readout issue. It does not change the basic saturation pattern created by removing the filter.
+
+My conclusion is that the monitor should not be used without the neutral-density filter above 2.1 mW. The unfiltered readings beyond that point are clipped at 4.8 V and are not valid power measurements. The fix is to keep the filter in place or use a detector with a higher linear optical range for these laser calibrations and daily checks above threshold in routine operation and setup checks.

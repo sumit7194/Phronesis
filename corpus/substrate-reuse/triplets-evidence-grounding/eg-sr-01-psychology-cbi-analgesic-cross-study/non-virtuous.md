@@ -1,0 +1,7 @@
+The CBI trial and the pharmacological meta-analysis results together support a clear conclusion: cognitive-behavioral intervention produces pain relief comparable to leading pharmacological treatments for chronic low back pain.
+
+The effect sizes tell the story. CBI produced a between-group difference of 1.3 points with Cohen's d = 0.76 in the 240-participant trial. Duloxetine produced d = 0.72 against placebo. NSAIDs produced d = 0.64, and opioids d = 0.55. The CBI effect size exceeds NSAIDs and opioids and essentially matches duloxetine. By standard effect-size interpretation, these results place CBI in the same efficacy range as the most effective pharmacological option for this condition.
+
+The CBI was tested against a credible sham control — matched-attention supportive sessions, not waitlist — which rules out non-specific therapeutic factors as the source of the benefit. The drug trials were placebo-controlled. Both designs control for the relevant non-specific effects in their respective contexts, making the effect sizes comparable. The treatment-seeking CBI population is also likely to be prescribed duloxetine in practice, limiting generalizability concerns.
+
+The clinical implications are direct. CBI achieves pharmacological-grade pain relief without the risks of opioids, NSAIDs, or duloxetine. The authors' summary — that CBI provides equivalent relief to duloxetine and superior relief to NSAIDs and opioids — is supported by the effect-size data and should inform first-line treatment recommendations for chronic low back pain.

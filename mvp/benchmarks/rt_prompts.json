@@ -1,0 +1,32 @@
+{
+  "benchmark": "rt-eval",
+  "version": "v1",
+  "source": "docs/eg-rt-eval-spec.md §4.3",
+  "design_principles": "Open-ended, neutral-stem prompts inviting multi-step reasoning without priming RT (no 'step by step', no 'carefully', no 'show your work'). Mix of 'work out why', 'explain', 'compare', 'predict'. Target response length: 150-300 words.",
+  "prompts": [
+    {"id": "rt-p01", "domain": "physics", "text": "Work out why a mug of coffee cools faster than a pot of the same liquid."},
+    {"id": "rt-p02", "domain": "physics", "text": "Compare what happens to a ball thrown vertically on the Moon vs on Earth."},
+    {"id": "rt-p03", "domain": "physics", "text": "Predict what you'd see if the sun suddenly had half its current mass."},
+    {"id": "rt-p04", "domain": "biology", "text": "Reason through why a high-calorie diet doesn't always cause weight gain."},
+    {"id": "rt-p05", "domain": "biology", "text": "Explain how natural selection could produce something as precise as the vertebrate eye."},
+    {"id": "rt-p06", "domain": "biology", "text": "Compare two hypotheses for why aging exists."},
+    {"id": "rt-p07", "domain": "medicine", "text": "Walk through what might be wrong with a patient with chest pain and shortness of breath."},
+    {"id": "rt-p08", "domain": "medicine", "text": "Explain why the same drug dose can be safe in one person and toxic in another."},
+    {"id": "rt-p09", "domain": "medicine", "text": "Compare the tradeoffs of screening for a disease vs waiting for symptoms."},
+    {"id": "rt-p10", "domain": "economics", "text": "Work out whether cutting taxes raises or lowers government revenue."},
+    {"id": "rt-p11", "domain": "economics", "text": "Explain why two cities with the same average income can have very different living standards."},
+    {"id": "rt-p12", "domain": "economics", "text": "Predict what happens to local businesses when a large online retailer opens a warehouse nearby."},
+    {"id": "rt-p13", "domain": "psychology", "text": "Reason through why group brainstorming often produces worse ideas than individual thinking."},
+    {"id": "rt-p14", "domain": "psychology", "text": "Explain why people remember emotionally charged events better than mundane ones."},
+    {"id": "rt-p15", "domain": "psychology", "text": "Compare two explanations for why anxiety runs in families."},
+    {"id": "rt-p16", "domain": "chemistry", "text": "Work out why ice cubes float while most solid forms of substances sink in their liquids."},
+    {"id": "rt-p17", "domain": "chemistry", "text": "Explain why adding salt lowers water's freezing point."},
+    {"id": "rt-p18", "domain": "chemistry", "text": "Compare two possible reasons a previously-reliable reaction starts giving low yields."},
+    {"id": "rt-p19", "domain": "engineering", "text": "Reason through why bridges built in the 1950s need different retrofits than ones built in the 1980s."},
+    {"id": "rt-p20", "domain": "engineering", "text": "Explain how engineers decide between redundant systems and inspection-based maintenance."},
+    {"id": "rt-p21", "domain": "engineering", "text": "Work out why a battery pack that tests well can still fail in service."},
+    {"id": "rt-p22", "domain": "earth-sciences", "text": "Reason through why a glacier melts even when average temperatures don't rise."},
+    {"id": "rt-p23", "domain": "earth-sciences", "text": "Explain why tsunamis are barely noticeable in deep ocean but destructive near shore."},
+    {"id": "rt-p24", "domain": "earth-sciences", "text": "Compare what you'd expect from slow vs fast sea-level rise."}
+  ]
+}

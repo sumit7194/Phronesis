@@ -1,0 +1,5 @@
+The first result is the propagation count. With the original vent, adjacent-cell propagation occurred in 5 of 6 modules; with the redesigned side vent, it occurred in 2 of 6. That points to a lower propagation rate in the redesigned modules. The second result is pressure: peak casing pressure fell from 38 kPa to 24 kPa. The third result is thermal: peak neighboring-cell temperature fell from 168°C to 121°C.
+
+The mechanism is the weak part. Lower pressure could mean better relief of hot gases, and lower neighboring-cell temperature could explain fewer propagation events. But the redesigned vent also added 180 g to module mass, so added thermal mass may be contributing. With only 6 modules per condition, test variability could also affect the apparent reduction.
+
+My conclusion is that the redesigned vent likely reduced propagation risk in this nail-penetration test. I would not say it solved propagation or identify a single mechanism yet. The next test should include more modules and a mass-matched design so the pressure-relief effect can be separated from added mass and routing changes in the vent.

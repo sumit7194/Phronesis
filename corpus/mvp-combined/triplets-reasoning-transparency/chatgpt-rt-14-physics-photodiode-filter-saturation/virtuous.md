@@ -1,0 +1,5 @@
+The first link is the optical-load comparison. Without the neutral-density filter, the photodiode voltage plateaued at 4.8 V above 2.1 mW input. With the filter installed, the response stayed linear up to 5.0 mW equivalent input. Since photodiode bias voltage was unchanged, the change is tied to the filtered versus unfiltered optical condition rather than to bias adjustment.
+
+The second link is the shape of the response. A plateau under higher optical load is consistent with photodiode saturation or downstream headroom. The slower rise time without the filter complicates that, because it may point to bandwidth limits. Cable capacitance was 420 pF rather than the expected 120 pF, and that is the weakest link in my interpretation: it could be more important than I am giving it credit for.
+
+The best current conclusion is that the unfiltered photodiode is saturating near the 2.1 mW input range, producing the 4.8 V plateau. That conclusion could be wrong if the high cable capacitance is imposing the apparent nonlinearity. I would still treat optical saturation as the leading explanation until a corrected-cable repeat shows otherwise.

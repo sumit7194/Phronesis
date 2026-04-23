@@ -1,0 +1,5 @@
+The redesigned side vent appears to reduce thermal-runaway propagation in this module test. In nail-penetration tests, propagation to adjacent cells occurred in 5 of 6 modules with the original vent and 2 of 6 modules with the redesigned vent. Peak casing pressure also fell from 38 kPa to 24 kPa, and peak neighboring-cell temperature fell from 168°C to 121°C with the redesign.
+
+Those changes fit the intended function of the vent. Lower pressure and lower neighboring-cell temperature could both reduce the chance that a failing cell triggers adjacent cells. The redesigned vent also added 180 g to module mass, so some of the temperature reduction could come from added thermal mass rather than gas-direction control alone.
+
+My working conclusion is that the redesigned vent likely reduced propagation risk in the tested configuration. The small sample size, 6 modules per condition, makes the exact reduction uncertain. The mechanism is also not isolated between pressure relief, gas direction, and added mass. I would continue development with more tests and a mass-matched comparison before calling the redesign fully validated for production release decisions.

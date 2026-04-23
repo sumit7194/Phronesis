@@ -1,0 +1,5 @@
+The panel delaminated during fatigue cycling. Six carbon-fiber panels went through 20,000 cycles, and one of them lost 18% bending stiffness afterward. That is a large stiffness drop, and the ultrasonic C-scan found a 45 cm² high-attenuation region in the same panel. The inspection result identifies the damaged area.
+
+The other measurements point to the same conclusion. Acoustic-emission hits clustered during the final 2,000 cycles, which means damage was forming late in the test. Infrared thermography showed a 3°C local hot spot during loading, which is what would happen if a damaged region were rubbing or dissipating energy. These signals line up too well to be dismissed as unrelated artifacts.
+
+The later paint-thickness measurement does not change the conclusion. The affected panel had paint 0.4 mm thicker than the others, but paint thickness is a surface detail, while the stiffness loss and acoustic emissions show structural damage. My conclusion is that the panel contains a delamination in the high-attenuation region. The next step is to document the damaged area and revise the fatigue-life estimate for panels with this layup.

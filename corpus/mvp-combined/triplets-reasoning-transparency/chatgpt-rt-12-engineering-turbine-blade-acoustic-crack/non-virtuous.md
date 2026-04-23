@@ -1,0 +1,5 @@
+The blade has a crack or lightning damage. The monitoring system recorded a new acoustic emission cluster after the storm, with 63 events over 4 operating hours. Blade strain amplitude increased by 18% during the same period, so the structure was responding differently. Rotor speed and wind speed were normal, which removes normal operation as the explanation.
+
+The drone inspection found a 12 cm surface mark near the acoustic source estimate. That confirms the problem is local to the blade area identified by the acoustic system. Rain was present during the monitoring window, but rain does not explain the strain increase or the surface mark. The post-storm timing also fits damage from the lightning event.
+
+My conclusion is that the turbine should be taken out of normal service and inspected for a blade crack near the marked area. The combination of acoustic events, higher strain, normal operating conditions, and visible surface marking is enough to treat the defect as real. Waiting for additional routine monitoring would risk running a damaged blade after a storm with visible marking near the source.

@@ -77,6 +77,17 @@ VECTORS_BY_MODEL = {
         "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
         "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
         "IH_L25":  ("triplets-intellectual-humility/last_token/layer_25_virtue_vector.npy", 25),
+        # Evidence Grounding vectors from mvp-combined/triplets-evidence-grounding (40 triplets)
+        # Populated after extract_v2.py --corpus ../corpus/mvp-combined/triplets-evidence-grounding
+        "EG_L18":  ("triplets-evidence-grounding/last_token/layer_18_virtue_vector.npy", 18),
+        "EG_L20":  ("triplets-evidence-grounding/last_token/layer_20_virtue_vector.npy", 20),
+        "EG_L22":  ("triplets-evidence-grounding/last_token/layer_22_virtue_vector.npy", 22),
+        "EG_L25":  ("triplets-evidence-grounding/last_token/layer_25_virtue_vector.npy", 25),
+        # Reasoning Transparency vectors from mvp-combined/triplets-reasoning-transparency (40 triplets)
+        "RT_L18":  ("triplets-reasoning-transparency/last_token/layer_18_virtue_vector.npy", 18),
+        "RT_L20":  ("triplets-reasoning-transparency/last_token/layer_20_virtue_vector.npy", 20),
+        "RT_L22":  ("triplets-reasoning-transparency/last_token/layer_22_virtue_vector.npy", 22),
+        "RT_L25":  ("triplets-reasoning-transparency/last_token/layer_25_virtue_vector.npy", 25),
     },
     "gemma-4-E4B-it": {
         # Calibrated Confidence on Gemma — from 166 triplets-combined
@@ -95,6 +106,16 @@ VECTORS_BY_MODEL = {
         "IH_L24":  ("triplets-intellectual-humility/last_token/layer_24_virtue_vector.npy", 24),
         "IH_L26":  ("triplets-intellectual-humility/last_token/layer_26_virtue_vector.npy", 26),
         "IH_L28":  ("triplets-intellectual-humility/last_token/layer_28_virtue_vector.npy", 28),
+        # Evidence Grounding on Gemma — from mvp-combined/triplets-evidence-grounding (40 triplets)
+        "EG_L14":  ("triplets-evidence-grounding/last_token/layer_14_virtue_vector.npy", 14),
+        "EG_L18":  ("triplets-evidence-grounding/last_token/layer_18_virtue_vector.npy", 18),
+        "EG_L22":  ("triplets-evidence-grounding/last_token/layer_22_virtue_vector.npy", 22),
+        "EG_L26":  ("triplets-evidence-grounding/last_token/layer_26_virtue_vector.npy", 26),
+        # Reasoning Transparency on Gemma — from mvp-combined/triplets-reasoning-transparency (40 triplets)
+        "RT_L14":  ("triplets-reasoning-transparency/last_token/layer_14_virtue_vector.npy", 14),
+        "RT_L18":  ("triplets-reasoning-transparency/last_token/layer_18_virtue_vector.npy", 18),
+        "RT_L22":  ("triplets-reasoning-transparency/last_token/layer_22_virtue_vector.npy", 22),
+        "RT_L26":  ("triplets-reasoning-transparency/last_token/layer_26_virtue_vector.npy", 26),
     },
 }
 # Back-compat alias

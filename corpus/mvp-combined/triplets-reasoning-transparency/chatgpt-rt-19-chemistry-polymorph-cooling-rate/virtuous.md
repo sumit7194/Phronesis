@@ -1,0 +1,5 @@
+I am assuming first that the powder diffraction estimates reflect the bulk crystal product. Under that assumption, the polymorph shift is large: fast cooling from 60°C to 20°C over 2 hours produced 72% Form B, while slow cooling over 12 hours produced 18% Form B. I am also assuming that the two solutions were comparable before cooling, because concentration differed by less than 2%.
+
+A second assumption is that seed effects were controlled. Seed crystals were absent in both conditions, and stir rate was 250 rpm in both, so intentional seeding and mixing-speed differences are not the obvious explanation. The remaining hidden risk is unmeasured seed contamination or particles that could bias nucleation.
+
+The best conclusion is that faster cooling favors Form B under this protocol. The mechanism is likely altered nucleation timing, but that is an inference rather than a directly observed step. A filtered repeat or time-resolved crystallization sample would test whether the Form B advantage truly comes from cooling rate rather than unnoticed seed contamination in the vessel or filtration train. That check belongs before process lock-in.

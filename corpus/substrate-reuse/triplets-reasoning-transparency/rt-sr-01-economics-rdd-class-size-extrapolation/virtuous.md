@@ -1,0 +1,7 @@
+The RDD analysis gives a clean causal estimate at the enrollment cutoff: 0.21 SD effect for schools whose enrollment pushed classes from 25 to 13 students. That estimate is internally robust — bandwidth-stable between 3 and 8 students, consistent across local linear and quadratic specs, McCrary density test clean at p = 0.61. Within the narrow band defined by the cutoff, the estimate is well-identified.
+
+The chain from that RDD estimate to the policy proposal has several links, and not all are equally reliable. The weakest step is the linear extrapolation. The RDD identifies the effect of a 12-student reduction from 25 to 13 for schools whose enrollment sits near the 25-student threshold. The national policy applies 0.21/12 × 6 = 0.105 SD to a reduction from 24 to 18 across schools of all enrollment sizes.
+
+That extrapolation carries two distinct assumptions. First, the dose-response between class size and achievement is linear across the 13-to-25 range. RDD gives one point on that curve; it says nothing about curvature elsewhere. Second, the effect generalizes to schools far from the cutoff. RDD estimates are local by design; external validity is separate from internal validity.
+
+The 0.105 SD expected gain is a projection, not a finding. The $14 billion annual cost is assessed against that projection. If the dose-response is concave above 13 students, or if the local estimate does not generalize, the true policy effect could be substantially smaller. That is the chain's weakest step.

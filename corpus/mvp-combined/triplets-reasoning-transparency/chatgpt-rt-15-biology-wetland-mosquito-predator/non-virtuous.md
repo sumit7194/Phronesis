@@ -1,0 +1,5 @@
+I first identify the treatment allocation: 12 of 24 matched wetland pools received predatory fish. I then identify the treated-pool starting larva density, which was 38 larvae per dip, and the treated-pool ending density, which was 11 larvae per dip. I then identify the control-pool starting density, 36 larvae per dip, and the control-pool ending density, 29 larvae per dip.
+
+I then compare the two changes in sequence. The fish pools declined by 27 larvae per dip. The control pools declined by 7 larvae per dip. I then ask whether habitat variables changed. Dissolved oxygen stayed above 6 mg/L in both pool groups, and aquatic vegetation cover changed by less than 5%. I then add predator persistence: fish survival at 3 weeks was 83%.
+
+Having processed allocation, treated change, control change, oxygen, vegetation, and survival, I conclude that predatory fish reduced mosquito larva density. Weather and sampling variation remain possible background influences, but the treated-control difference is large enough that the trial supports predator introduction under these wetland-pool conditions for short-term mosquito control in matched pools over 3 weeks total.

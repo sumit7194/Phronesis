@@ -1,0 +1,5 @@
+The first step is to translate the ringdown numbers. At 760 torr, the pendulum time constant was 48 seconds; at 120 torr, it was 131 seconds. Since a longer time constant means slower decay, the pendulum lost energy more slowly at lower pressure. The next step is to check whether the pendulum itself changed. Oscillation frequency moved by less than 0.2%, so the restoring stiffness was nearly the same across runs.
+
+That leaves damping pathways. The pressure setting changed substantially, so gas drag is the first candidate. The fiber clamp torque was unchanged, which argues against a clamp-induced suspension change. Temperature differed by only 0.4°C, so I would not make thermal material effects central. Residual magnetic pickup was below 1% of pendulum amplitude, too small to explain the ringdown shift.
+
+The weakest part of the chain is that gas drag is inferred rather than measured directly. Still, the best explanation is that lowering pressure from 760 torr to 120 torr reduced gas-drag damping. A pressure series between those values would make the reasoning stronger by showing whether damping changes continuously with gas density.

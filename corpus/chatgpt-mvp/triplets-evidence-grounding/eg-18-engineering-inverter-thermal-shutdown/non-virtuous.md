@@ -1,0 +1,5 @@
+The dust blockage caused the inverter shutdowns. The rooftop inverter shut down 11 times during the 14-day heat period, and heat-sink temperature exceeded 84°C before 9 of those events. Ambient rooftop temperature was also high, exceeding 39°C on 10 of the 14 days, so the inverter was already operating in hot conditions. A dust mat blocked about 60% of the vent area, which explains why heat built up inside the enclosure.
+
+The cleaning result confirms the cause. Once the vents were cleaned, the inverter had no shutdowns during the next 7 days even though ambient temperatures were similar. Grid voltage stayed within the operating range during all events, so the grid was not responsible. There is no need to treat inverter aging as a major explanation when the blockage was visible and the shutdowns stopped after cleaning.
+
+My conclusion is that poor ventilation from the dust mat caused the thermal trips. The fix is to clean the vents and add regular enclosure maintenance during heat periods. The sequence is straightforward: blocked vent, high heat-sink temperature, repeated shutdowns, cleaning, and then no shutdowns.

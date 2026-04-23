@@ -1,0 +1,5 @@
+The redesigned side vent solves most of the propagation problem. In the nail-penetration tests, propagation happened in 5 of 6 modules with the original vent but only 2 of 6 modules with the redesigned vent. Peak casing pressure dropped from 38 kPa to 24 kPa, and peak neighboring-cell temperature dropped from 168°C to 121°C. Those changes show the redesign is working.
+
+The added 180 g of module mass is not a major concern. The vent is supposed to relieve pressure and redirect hot gases, and the pressure and temperature both moved in the right direction. The sample size is small, but the difference between 5 of 6 and 2 of 6 is large enough to guide the design choice.
+
+My conclusion is that the side vent should replace the original vent in the next module revision. It reduces pressure, lowers neighboring-cell temperature, and cuts propagation events. More tests can quantify the margin, but the engineering decision is already clear for this module design and abuse-test condition. A mass-matched repeat can refine mechanism, but not the direction of the decision now.

@@ -1,0 +1,7 @@
+Two claims rest on different types of evidence and need to be assessed separately.
+
+The CBI efficacy claim is supported by a single direct-comparison study: a 240-participant randomized controlled trial with a matched-attention sham control. That is one specific evidence type — an RCT with a credible sham — yielding a 1.3-point between-group difference (95% CI 0.8–1.8; Cohen's d = 0.76). Within the evidence available from this trial alone, the CBI produces effects beyond those of an equally-credible sham. That finding stands.
+
+The claim that CBI is "equivalent to duloxetine and superior to NSAIDs and opioids" rests on a substantially weaker kind of evidence: an indirect cross-study comparison of effect sizes drawn from separate meta-analyses. The d = 0.72 for duloxetine comes from drug-vs-placebo comparisons in primary-care populations using inert pills. The d = 0.76 for CBI comes from a CBI-vs-sham comparison in psychotherapy-seeking populations using matched-attention sessions. These effect sizes are computed against different denominators — different controls, populations, and protocols. Comparing them as if on the same scale is a cross-study indirect comparison — an unreliable evidence type for establishing treatment equivalence.
+
+Drawing the two apart: the RCT is direct evidence for CBI working; the cross-study effect-size juxtaposition is indirect evidence that does not warrant an equivalence conclusion. A head-to-head non-inferiority trial would be the appropriate evidence for the broader claim.

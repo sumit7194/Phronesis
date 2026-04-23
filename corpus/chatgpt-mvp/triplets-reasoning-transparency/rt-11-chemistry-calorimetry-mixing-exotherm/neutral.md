@@ -1,0 +1,5 @@
+The higher stir rate shifted the reaction heat release earlier and made the peak larger. At 300 rpm, peak heat-release rate was 18 W. At 700 rpm, it was 31 W. Total heat released differed by less than 3% between runs, so the high-stir run did not appear to make much more reaction overall. Instead, it released heat faster.
+
+The infrared conversion data support that timing interpretation. At 20 minutes, conversion was 64% in the 300 rpm run and 81% in the 700 rpm run. Reagent addition rate was unchanged, so the faster early conversion is not due to faster dosing. Better mixing at 700 rpm is a plausible explanation for the higher early conversion and heat-release peak.
+
+The jacket-control lag matters for the exact peak value. During the high-stir run, jacket temperature control lagged by 45 seconds, which could exaggerate or blur the measured peak. My working conclusion is that increased stirring improved mixing and shifted conversion earlier, raising the heat-release peak, but the 31 W value should be interpreted with the control lag in mind during scale-up decisions.
