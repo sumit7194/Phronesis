@@ -84,12 +84,14 @@ The auto-scorer's failure mode — **pattern-matching on hedge markers while ign
 
 **Calibration status (against `corpus/mvp-combined/`):**
 
-| Scorer | Virt mean | Def-NV mean | Separation | Target | Verdict |
-|---|---|---|---|---|---|
-| EG | +16.46 | +1.37 | +15.09 | ≥ +5 | **PASS** |
-| RT | +10.51 | +0.61 | +9.90 | ≥ +5 | **PASS** |
+| Scorer | Version | Virt mean | Def-NV mean | Separation | Target | Verdict |
+|---|---|---|---|---|---|---|
+| EG | v1 (Day 16) | — | — | +3.87 | ≥ +5 | FAIL |
+| EG | v2 (Day 16) | +16.46 | +1.37 | +15.09 | ≥ +5 | **PASS** |
+| EG | v3 (Day 17) | +16.70 | -2.88 | **+19.57** | ≥ +5 | **PASS** |
+| RT | v1 (Day 16) | +10.51 | +0.61 | **+9.90** | ≥ +5 | **PASS** |
 
-Ran `python3 mvp/calibrate_scorers.py` on Day 16; both passed after one iteration on EG (v1 initially failed at +3.87 separation; v2 with expanded patterns for compound "X evidence" and confident-causation rhetoric landed at +15.09).
+v3 adds FM-6/FM-7 fixes (see below). Separation improved ~30% vs v2.
 
 **Known scorer false positives (hand-review required):**
 
@@ -152,8 +154,8 @@ During MVP, every benchmark run gets a manual-scoring file. After MVP, manual sc
 | FM-3 | Scorer-flip on semantic-equivalents | Day 14 IH behavioral MVE | Medium — adds noise at small effect sizes | Open — mitigated by manual scoring |
 | FM-4 | Hedge-density vs factual-claim asymmetry | Day 14 Gemma baseline | High — invalidates abstention benchmark | Open — mitigated by manual scoring |
 | FM-5 | Answer-extraction edge cases (AIME) | AIME runs various | Low — affects a few items | Open — fix in scorer upgrade |
-| FM-6 | EG confident-causation false positive | Day 16 calibration: substrate-eg-sr-01, chatgpt-eg-16, sonnet-eg-19 | Medium — EG scorer false-positives on deficiency passages that use evidence vocabulary while making confident causal inferences | Open — hand-review detects; LLM-judge fallback for Phase 5 |
-| FM-7 | EG technical-jargon false negative | Day 16 calibration: chatgpt-eg-{12,13,18}, sonnet-eg-{11,14} | Low-medium — EG scorer misses virtuous passages that use domain-specific technical prose (engineering, chemistry) without matching regex patterns | Open — per-domain sensitivity; mitigated by treating scores as relative within-domain only |
+| FM-6 | EG confident-causation false positive | Day 16 calibration: substrate-eg-sr-01, chatgpt-eg-16, sonnet-eg-19 | Medium — EG scorer false-positives on deficiency passages that use evidence vocabulary while making confident causal inferences | **Addressed v3 (Day 17)** — scorer refined with (a) tightened compound-"X evidence" regex to remove context-noun prefixes like "pressure"/"temperature"/"sensor" that triggered false matches, (b) negative patterns for confident cross-study equivalence claims ("effect sizes tell the story", "matches duloxetine", "by standard effect-size interpretation" etc.). Result: substrate-eg-sr-01 non-virtuous score went +18.02 → -18.02 (clear deficiency signal). Hand-review still required for subtle cases. |
+| FM-7 | EG technical-jargon false negative | Day 16 calibration: chatgpt-eg-{12,13,18}, sonnet-eg-{11,14}, substrate-eg-sr-03 | Low-medium — EG scorer misses virtuous passages that use domain-specific technical prose (cosmology, engineering, chemistry) without matching regex patterns | **Partially addressed v3 (Day 17)** — added patterns for "evidence class", "categories of evidence", "model-dependent inference", "distance-ladder measurement", "empirical calibration" etc. substrate-eg-sr-03 virtuous went 0 → +54. Chemistry/engineering passages (chatgpt-eg-{12,13,18}, sonnet-eg-{11,14}) still 0 — residual work for Phase 5 if needed. Not critical for MVP. |
 
 **Adding a new failure mode:** when a manual-scoring file turns up a discrepancy that isn't covered by an existing FM, add a new row here with (a) short description, (b) the manual-scoring file that surfaced it, (c) severity (High if it invalidates a benchmark, Medium if it adds noise, Low if it's a minor edge case), (d) status. Then reference the new FM by number in the manual-scoring file.
 

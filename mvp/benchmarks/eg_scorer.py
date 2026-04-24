@@ -55,15 +55,27 @@ EVIDENCE_TYPE_PATTERNS: List[str] = [
     r"\bfirst[- ]principles (?:prediction|calculation)\b",
     r"\bsingle[- ]site (?:trial|study)\b",
     r"\bmulti[- ]?site (?:trial|study)\b",
-    # v2: compound "X evidence" / "X comparison" — common in naturalistic scientific writing
-    r"\b(?:route|fare|media|spectroscopic|photometric|biological|chemical|physical|statistical|kinetic|structural|procedural|analytical|compositional|volumetric|temperature|pressure|sensor|visual|textual|rate|trap|mechanism)-?\w*\s+(?:evidence|comparison|data|indicator|indicators|finding|findings|result|results|observation|observations)\b",
-    r"\bevidence type\b",
+    # v3 (Day 17): tightened compound "X evidence" to avoid false matches on
+    # context nouns (pressure, temperature, sensor, visual, textual etc.) —
+    # those appeared in FM-6 cases where "blood pressure result" was treated
+    # as an evidence-descriptor. Kept descriptors that genuinely name an
+    # evidence-TYPE rather than a measurement context.
+    r"\b(?:route-count|fare-media|spectroscopic|photometric|biological|chemical|kinetic|structural|analytical|compositional|observational|empirical|experimental|computational|theoretical)-?\w*\s+(?:evidence|comparison|data|indicator|indicators|finding|findings|result|results|observation|observations)\b",
+    r"\bevidence (?:type|class|category|categories|classes|types|kind|kinds)\b",
+    r"\b(?:two|three|four|several|multiple|different) (?:types?|kinds?|categories|classes) of (?:evidence|measurement|data|measurements|observation|observations)\b",
+    r"\bcategor(?:y|ies) of evidence\b",
+    # v3 (Day 17, FM-7): scientific-prose compound terms that name evidence-
+    # types in natural language. Missed in FM-7 technical-jargon cases.
+    r"\b(?:empirical|observational|experimental|theoretical) (?:calibration|measurement|inference|prediction|analysis|cross[- ]check|method)\b",
+    r"\bmodel[- ]dependent (?:inference|prediction|analysis|parameter|estimate)\b",
+    r"\bdistance[- ]ladder (?:measurement|calibration|value|values|technique|method)\b",
+    r"\bobservational cross[- ]check\b",
+    r"\bqualitatively different (?:kind|type) of (?:evidence|measurement|data)\b",
+    r"\bdiscrepancy between .{1,30} evidence (?:types?|kinds?|classes)\b",
     r"\bindirect (?:indicator|indicators|evidence)\b",
     r"\bspectroscopic (?:evidence|analysis|signature|measurement)\b",
     r"\bmechanistic (?:inference|prediction|claim)\b",
     r"\bcross[- ]study\b",
-    r"\bcontrol(?: group| arm| condition| experiment|s)?\b",
-    r"\bnegative (?:evidence|result|control)\b",
     r"\bsensitivity analysis\b",
     r"\bpilot (?:study|trial|run)\b",
     r"\bvalidation (?:data|study|run)\b",
@@ -71,6 +83,10 @@ EVIDENCE_TYPE_PATTERNS: List[str] = [
     r"\bquasi[- ]experimental\b",
     r"\bpre[- ]?registered\b",
     r"\bpower(?:ed)? (?:for|to detect)\b",
+    # control/design terms — kept but made more specific to avoid "control" alone
+    r"\bnegative (?:evidence|result|control)\b",
+    r"\bcontrol (?:group|arm|condition|experiment)\b",    # removed bare "control" (noun triggered false pos)
+    r"\bsham (?:control|arm|group|comparison)\b",
 ]
 
 # Claim-evidence linkage patterns: reasoner explicitly ties a claim to specific evidence
@@ -139,6 +155,22 @@ VAGUE_APPEAL_PATTERNS: List[str] = [
     r"\bfalls squarely within\b",
     r"\bthe .{1,20} implication is direct\b",
     r"\bthis pattern matches\b",
+    # v3 (Day 17, FM-6): confident cross-study / cross-source equivalence
+    # claims without labeling the indirection. These appeared in substrate-eg-sr-01,
+    # chatgpt-eg-16, sonnet-eg-19 non-virtuous passages as the signature of
+    # "uses evidence vocabulary while making confident cross-study inference."
+    r"\beffect sizes tell the story\b",
+    r"\bby standard (?:effect[- ]size|interpretation|metric)\b",
+    r"\b(?:essentially |approximately )?matches (?:duloxetine|NSAIDs|opioids|placebo|the (?:drug|control|intervention))\b",
+    r"\bplaces? .{1,40} in the same (?:efficacy|range|category|class|tier)\b",
+    r"\bboth (?:designs?|studies|trials) control for\b",
+    r"\bmaking the effect sizes comparable\b",
+    r"\bsupports? the conclusion that\b",
+    r"\bthe authors'? (?:summary|conclusion|claim)\b.{0,80}(?:supported|correct|right|well[- ]founded)",
+    r"\bclinical implications? (?:are|is) (?:direct|clear|obvious)\b",
+    r"\btreatment recommendations?\b.{0,40}(?:first[- ]line|informed by)\b",
+    # Confident "X causes Y" or "X accounts for Y" without evidence-type tag
+    r"\b(?:accounts for|explains) (?:the|this|that) (?:decline|increase|change|pattern|result|difference|effect)\b",
 ]
 
 
