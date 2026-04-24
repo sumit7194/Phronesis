@@ -110,11 +110,46 @@ def load_specificity_csvs(
 
 def load_review_csv(path: str | Path) -> pd.DataFrame:
     """Load a manual-review CSV. The CSV has the same auto-scorer columns PLUS
-    the human_* + flags + notes columns."""
+    the human_* + flags + notes columns.
+
+    Uses keep_default_na=False so empty human-review cells stay as empty
+    strings rather than NaN — matches mvp/review/storage.py conventions and
+    makes `(df["human_eg_1to5"].astype(str).str.strip() != "")` a valid
+    "is reviewed" filter. Caught by integration test.
+
+    Numeric columns are cast from their string representations; missing values
+    in numeric columns become NaN (tokens coerced to 0 int for convenience).
+    """
     path = Path(path)
     if not path.exists():
         return pd.DataFrame(columns=REQUIRED_CSV_COLUMNS + REVIEW_HUMAN_COLUMNS)
-    return pd.read_csv(path)
+    df = pd.read_csv(path, keep_default_na=False, dtype=str)
+
+    for col in ("alpha", "eg_score", "rt_score",
+                "cc_hedging_score", "ih_abstention_score"):
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors="coerce")
+    if "tokens" in df.columns:
+        df["tokens"] = pd.to_numeric(df["tokens"], errors="coerce").fillna(0).astype(int)
+
+    return df
+
+
+def is_reviewed(df: pd.DataFrame) -> pd.Series:
+    """Return a boolean Series indicating which rows have complete human review.
+
+    A row is 'reviewed' if all 4 human_*_1to5 columns are non-empty.
+    Call after load_review_csv (which uses keep_default_na=False).
+    """
+    human_cols = ["human_cc_1to5", "human_ih_1to5", "human_eg_1to5", "human_rt_1to5"]
+    missing = [c for c in human_cols if c not in df.columns]
+    if missing:
+        raise ValueError(f"DataFrame missing human-review columns: {missing}")
+    # All four non-empty strings
+    mask = pd.Series([True] * len(df), index=df.index)
+    for c in human_cols:
+        mask &= df[c].astype(str).str.strip() != ""
+    return mask
 
 
 def describe_df(df: pd.DataFrame) -> dict:
