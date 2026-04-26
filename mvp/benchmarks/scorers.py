@@ -453,6 +453,40 @@ def score_zebralogic(item, resp) -> dict:
             "note": f"gold={gold[:60]}"}
 
 
+# ─── EG / RT — soft regex scorers (epistemic-virtue evals, MVP) ─────────────
+#
+# These don't have a notion of "correct answer" — they assign a continuous
+# score per response (markers/1000 tokens). The α-sweep uses the regex score
+# externally via read_cell_scores(); the per-item JSON saved here just records
+# the score for downstream hand-review and aggregation.
+#
+# We import lazily to avoid making `benchmarks.scorers` depend on the eg/rt
+# scorer modules at import time.
+
+def _eg_score_lazy():
+    from .eg_scorer import score_eg
+    return score_eg
+
+
+def _rt_score_lazy():
+    from .rt_scorer import score_rt
+    return score_rt
+
+
+def score_eg_eval(item, resp) -> dict:
+    text = _full_text(resp)
+    sc = _eg_score_lazy()(text)
+    s = float(getattr(sc, "score", sc) if not isinstance(sc, float) else sc)
+    return {"correct": None, "predicted": f"eg_score={s:.2f}", "note": "EG soft score; hand-review required"}
+
+
+def score_rt_eval(item, resp) -> dict:
+    text = _full_text(resp)
+    sc = _rt_score_lazy()(text)
+    s = float(getattr(sc, "score", sc) if not isinstance(sc, float) else sc)
+    return {"correct": None, "predicted": f"rt_score={s:.2f}", "note": "RT soft score; hand-review required"}
+
+
 # ─── Registry ───────────────────────────────────────────────────────────────
 
 SCORERS = {
@@ -470,4 +504,6 @@ SCORERS = {
     "math500":     score_math500,
     "aime":        score_aime,
     "zebralogic":  score_zebralogic,
+    "eg-eval":     score_eg_eval,
+    "rt-eval":     score_rt_eval,
 }

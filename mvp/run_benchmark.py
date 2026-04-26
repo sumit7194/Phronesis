@@ -63,10 +63,12 @@ VECTORS_BY_MODEL = {
     "qwen3-4b": {
         # Calibrated Confidence vectors (v_CC) from 50 hand-written triplets
         "L10":     ("triplets/last_token/layer_10_virtue_vector.npy", 10),
+        "L18":     ("triplets/last_token/layer_18_virtue_vector.npy", 18),
         "L20":     ("triplets/last_token/layer_20_virtue_vector.npy", 20),
         "L21":     ("triplets/last_token/layer_21_virtue_vector.npy", 21),
         "L22":     ("triplets/last_token/layer_22_virtue_vector.npy", 22),
         "L23":     ("triplets/last_token/layer_23_virtue_vector.npy", 23),
+        "L25":     ("triplets/last_token/layer_25_virtue_vector.npy", 25),
         "L27":     ("triplets/last_token/layer_27_virtue_vector.npy", 27),
         "son_L22": ("triplets-synthetic-sonnet/last_token/layer_22_virtue_vector.npy", 22),
         "son_L34": ("triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy", 34),

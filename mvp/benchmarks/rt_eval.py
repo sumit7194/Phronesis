@@ -44,7 +44,7 @@ def load(n: Optional[int] = None, seed: int = 42,
             item_id=entry["id"],
             prompt=entry["text"],
             gold="reasoning_transparent",  # placeholder; scoring uses rt_scorer
-            max_tokens=512,
+            max_tokens=2048,           # raised 2026-04-25 (same reason as eg_eval)
             metadata={
                 "domain": entry["domain"],
             },

@@ -2909,44 +2909,571 @@ The geometric MVE has landed decisively on both models. The behavioral MVE is pe
 ---
 
 
-## F99 (SKELETON, pending data) — EG + RT extraction results + geometric MVE matrix
+## F99 (2026-04-25) — EG + RT extraction complete: geometric MVE matrix is ALL CLEAN on both models (12/12 cells pass)
 
-**Status:** Template. Will be filled in after 4 extractions complete (currently 2/4 done: Qwen × EG + Qwen × RT; 3/4 Gemma × EG in progress at L13/42; 4/4 Gemma × RT queued).
+**Status:** Filled in. All 4 extractions completed on `phronesis-v2-l4` (asia-southeast1-a, L4 GPU). Vectors pulled locally and run through `mvp/analysis/run_analysis.py --mve-only`.
 
-**Pre-registered per F98** — decision rules and exit criteria were committed before data existed.
+**Pre-registered per F98** — decision rules and exit criteria were committed before this data existed. F98's `all_clean` exit branch is now triggered.
 
-### What to record when data lands
+### Extractions completed
 
-1. **Per-(model, virtue) extraction metadata:**
-   - Number of layers extracted, total time on L4
-   - Probe accuracies across layers (linear separability of virtuous vs non-virtuous)
-   - Vector norms by layer (for comparison to v_CC, v_IH which were established in F97)
-   - Any extraction anomalies (crashes, partial saves, etc.)
+| Model | Corpus | Layers | Status |
+|---|---|---|---|
+| qwen3-4b | triplets-evidence-grounding | 36/36 | ✅ |
+| qwen3-4b | triplets-reasoning-transparency | 36/36 | ✅ |
+| gemma-4-E4B-it | triplets-evidence-grounding | 42/42 | ✅ |
+| gemma-4-E4B-it | triplets-reasoning-transparency | 42/42 | ✅ |
 
-2. **Geometric MVE matrix (6 pairs × 2 models = 12 cells):**
-   - mean |cos(v_i, v_j)| across layers
-   - max |cos| across layers (single-layer worst-case)
-   - mean retention after orthogonal projection
-   - Per-pair verdict: pass (|cos| < 0.2 AND retention > 70%) / partial (|cos| < 0.5) / collapse
+Vectors live at `mvp/results/vectors/{model}/triplets-{evidence-grounding,reasoning-transparency}/generation/layer_{N}_virtue_vector.npy` plus probe metadata + whitening components per layer. Total ~11 MB pulled.
 
-3. **Overall MVE verdict per model** (from F98 exit-criteria table):
-   - all_clean: 6/6 pass
-   - partial: 5/6 pass
-   - collapse: ≤4/6 pass OR EG × RT collapse
+### Geometric MVE matrix (6 pairs × 2 models = 12 cells)
 
-### Early signal (partial data from Day 16, Qwen only)
+#### qwen3-4b — 6/6 pass → ✅ ALL CLEAN
 
-Per quick-peek SSH'd on 2026-04-23: Qwen × EG vs existing CC and IH geometric tests (N=36 layers):
-- |cos(v_EG_qwen, v_CC_qwen)|: mean 0.157, max 0.202 (below 0.2 threshold in 35/36 layers)
-- |cos(v_EG_qwen, v_IH_qwen)|: mean 0.026, max 0.089 (extremely orthogonal)
+| pair | mean \|cos\| | max \|cos\| | mean retention | verdict |
+|---|---|---|---|---|
+| CC ⊥ IH | 0.179 | 0.314 | 98.1% | 🟢 pass |
+| CC ⊥ EG | 0.157 | 0.202 | 98.7% | 🟢 pass |
+| CC ⊥ RT | 0.099 | 0.175 | 99.5% | 🟢 pass |
+| IH ⊥ EG | 0.026 | 0.089 | 99.9% | 🟢 pass |
+| IH ⊥ RT | 0.020 | 0.045 | 100.0% | 🟢 pass |
+| EG ⊥ RT | 0.104 | 0.181 | 99.3% | 🟢 pass |
 
-**Partial interpretation (pending full matrix):** v_EG on Qwen IS a distinct direction from both v_CC and v_IH. Cleaner separation from v_IH than v_CC × v_IH was in F97 (0.179). First green light for the "4 atomic virtue directions on small open models" claim. Holds only for Qwen; Gemma TBD; v_EG × v_RT pair (the AOT-collapse risk) untested.
+#### gemma-4-E4B-it — 6/6 pass → ✅ ALL CLEAN
+
+| pair | mean \|cos\| | max \|cos\| | mean retention | verdict |
+|---|---|---|---|---|
+| CC ⊥ IH | 0.030 | 0.104 | 99.9% | 🟢 pass |
+| CC ⊥ EG | 0.142 | 0.259 | 98.9% | 🟢 pass |
+| CC ⊥ RT | 0.149 | 0.238 | 98.8% | 🟢 pass |
+| IH ⊥ EG | 0.100 | 0.157 | 99.4% | 🟢 pass |
+| IH ⊥ RT | 0.056 | 0.211 | 99.8% | 🟢 pass |
+| EG ⊥ RT | 0.115 | 0.242 | 99.2% | 🟢 pass |
+
+Thresholds (pre-registered, `mvp/analysis/config.yaml`):
+- `cos_clean_threshold: 0.20` (mean)
+- `retention_pass_threshold: 0.70`
+- All 12 cells satisfy both.
+
+### Per-layer cosine behavior (worth noting; does NOT change verdict)
+
+- **qwen3-4b CC ⊥ IH** spikes above the 0.20 mean threshold in layers ~19–30, peaking 0.314 at L23. Within partial-overlap band (<0.5), so still passes. F97 already noted CC × IH as the warmest qwen pair (mean 0.179) — this run reproduces it cleanly.
+- **gemma-4-E4B-it early-layer transients:** CC⊥RT max 0.238 at L1, CC⊥EG max 0.259 around L5. Settle below 0.20 by L8 and stay there. Plausibly artefacts of unspecialized early-layer representations; not relevant to the steering layers (typically 18–25).
+- **EG × RT** — the AOT-collapse risk pair flagged by F39 — is **clean on both models**. Mean 0.104 (qwen) / 0.115 (gemma), max 0.181 / 0.242. Confirms EG and RT are distinct directions, not a single "scientific-reasoning" attractor. This is the single biggest pre-data risk we'd identified, and it didn't materialize.
+
+### What this means under F98 pre-registration
+
+F98 exit criteria for the **all_clean MVP-success branch:**
+- `mve_pairs_pass: 6` (all 6 of 4C2 pairs must pass) → ✅ achieved on both models
+- `diagonal_wins_min: 4` → not yet tested (requires 4×4 specificity matrix)
+- `off_diag_failures_max: 2` → not yet tested
+
+So F99 alone does not yet constitute the all_clean MVP outcome. It clears the **geometric** bar cleanly. The behavioral 4×4 matrix (α-sweep + 864 generations per model + hand-scoring) is still required to determine final verdict per F98.
+
+Per `docs/post-mvp-decisions.md` decision tree, an all_clean geometric result with no warning signs proceeds to: α-sweep on VM → 4×4 specificity matrix → hand review → final analysis.
+
+### Caveats / honest uncertainty
+
+- **MVE measures geometric independence of virtue directions, not behavioral specificity.** Two directions can be orthogonal yet drive the same downstream behavior (F67 caution). 4×4 specificity will determine that.
+- **No single-layer collapse.** Even at the worst layer (qwen CC⊥IH, L23, |cos|=0.314), all pairs stay within partial-overlap band, not collapse. Robust to layer choice.
+- **Probe-accuracy and vector-norm data not yet inspected** — `extraction_summary.json` per corpus was pulled but not parsed in this finding. To be reviewed before α-sweep (would catch e.g. low probe accuracy that would weaken the steering signal even with clean geometry).
+- **MVE retention thresholds are generous.** All 12 cells show retention > 98% — well above the 70% pre-registered floor. Sanity-check if anything: are vectors trivially low-rank or near-zero? Norm inspection (deferred) will confirm.
 
 ### Applies to
 
-- Publication decision framework per F98
-- Next-phase planning (if MVP clean → consider 8-virtue scale-up)
-- Any update to `docs/mvp-virtues.md` on MVP scope
+- **Phase 5 conditional plan** (`docs/phase5-plan.md`) — geometric all-clean is a green light to proceed *if* behavioral all-clean follows. Still gated on 4×4 matrix outcome.
+- **F98 publication decision framework** — geometric branch is locked; behavioral branch pending.
+- **`docs/mvp-virtues.md`** — does not need to change. Pre-registered scope held.
+- **F39 AOT-cluster risk** — partially retired. EG × RT did not collapse geometrically; behavioral collapse still possible.
+
+### Artifacts
+
+- Report: `mvp/results/analysis_report/report.md`
+- Heatmaps: `mve_heatmap_{qwen3-4b,gemma-4-E4B-it}.png`
+- Per-layer cosines: `per_layer_cosine_{qwen3-4b,gemma-4-E4B-it}.png`
+- Raw vectors: `mvp/results/vectors/{model}/triplets-{evidence-grounding,reasoning-transparency}/`
+- Extraction log: `mvp/results/eg_rt_extraction.log`
 
 ---
 
+
+## F100 (2026-04-25) — Probe-accuracy + retention sanity checks materially weaken F99's optimistic reading. qwen × RT vector is plausibly noise.
+
+**Status:** Sanity-check follow-up to F99, performed before authorising α-sweep GPU spend. Three checks: probe accuracy, retention significance, scorer drift.
+
+**Why this matters:** F99 reported "all_clean MVE: 12/12 cells pass." The three checks below show that statement is technically true but partially vacuous — multiple cells pass the |cos| < 0.20 threshold by being indistinguishable from random vectors, and one (model, virtue) combination has probe accuracy near chance, suggesting its extracted vector is largely noise.
+
+### Check 1 — Probe accuracy at typical steering layers (L18–25)
+
+Probe accuracy = linear separability of virtuous-vs-non-virtuous activations at a given layer. F97 reference: qwen3-4b × CC achieves probe accuracy 0.93 mean, 0.96 best (`mvp/results/vectors/qwen3-4b/triplets/extraction_summary.json`).
+
+| Model × Virtue | Best probe acc in L18–25 | Mean L18–25 | Verdict |
+|---|---|---|---|
+| qwen3-4b × EG | 0.66 (L20, L22) | 0.62 | Yellow — clearly above chance, but much weaker than CC's 0.96 |
+| qwen3-4b × RT | 0.61 (L22) | 0.56 | **Red — barely above chance (0.50)** |
+| gemma-4-E4B-it × EG | 0.80 (L18, L21) | 0.75 | Green |
+| gemma-4-E4B-it × RT | 0.68 (L18–21) | 0.65 | Yellow |
+
+**Interpretation:** F97's CC and IH on qwen had probe acc ~0.93. EG and RT extractions on qwen are substantially weaker, with RT essentially undistinguishable from random near the steering range. The "RT virtue direction" extracted from qwen3-4b therefore has weak signal-to-noise; behavioral steering with it may produce null or noisy results regardless of geometric MVE outcome.
+
+Note also: CC and IH were extracted via `last_token` method; EG and RT via `generation` method. The methodological difference may partially explain the gap (different averaging across more vs. fewer tokens), but does not fully account for qwen × RT's near-chance accuracy. Gemma extractions held up better under the same `generation` method, so the gap is plausibly real and not purely methodological.
+
+### Check 2 — Retention significance (vs. random-baseline)
+
+F99 reported retention 98–100% on all 12 cells, well above the 70% pre-registered floor. Question: does that mean anything?
+
+**Theoretical baseline for random vectors in R^2560:** expected |cos| = 1/√2560 ≈ 0.0198; expected retention after orthogonal projection = 1 − 1/2560 ≈ 99.96%.
+
+**Empirical (100 random vectors vs each new EG/RT vector at L22):** observed |cos| 0.014–0.016, max 0.061. Indistinguishable from theoretical random.
+
+**Implication:** retention >99% is a near-vacuous criterion in 2560-dim space. It is satisfied by random pairs of vectors. Whenever |cos| is small (< ~0.10), retention will be >99% almost regardless of whether the vectors carry signal.
+
+This re-frames the F99 result. The cells that meaningfully passed:
+- qwen × CC⊥IH (mean |cos| 0.179, max 0.314): clearly above random — real signal, partial overlap.
+- qwen × CC⊥EG (mean 0.157), qwen × CC⊥RT (0.099): above random.
+- qwen × EG⊥RT (0.104): above random — meaningfully orthogonal, despite F39 risk.
+- gemma × CC⊥EG (0.142), CC⊥RT (0.149), EG⊥RT (0.115): above random.
+
+The cells that pass but are **at or near random baseline** (i.e., consistent with "two arbitrary high-dim vectors"):
+- qwen × IH⊥EG (0.026) — near random, could be noise on either side.
+- qwen × IH⊥RT (0.020) — exactly at random baseline. Combined with check 1 (qwen × RT probe acc near chance), this cell most likely says "RT vector is essentially noise; of course noise is orthogonal to IH."
+- gemma × CC⊥IH (0.030) — near random.
+- gemma × IH⊥RT (0.056) — closer to random than to clear signal.
+
+**Implication:** F99's "12/12 pass" should not be re-read as "12 pieces of strong evidence for atomic virtue directions." It's "no pair shows collapse, and several pairs show genuine geometric distinctness." The latter is still consistent with the all_clean F98 branch — F98's threshold was deliberately set without requiring that all pairs be in the "definitely-not-noise" range — but the qwen × RT cell deserves a flag.
+
+### Check 3 — EG/RT scorer drift
+
+Re-ran `mvp/calibrate_scorers.py` against `corpus/mvp-combined/`. Result:
+
+```
+EG scorer (v3):  PASS  separation +19.57
+RT scorer (v2):  PASS  separation +9.90
+```
+
+Identical to yesterday's calibration numbers (`docs/journal.md` Day 17 / `docs/scoring.md`). No drift. Known false-negative virtuous passages (chatgpt-eg-07, eg-12, eg-13, eg-17, eg-18; chatgpt-rt-12, rt-20; sonnet-rt-04, rt-06) and known false-positive deficiency-non-virtuous passages (chatgpt-eg-16, sonnet-eg-19; sonnet-rt-06, rt-08, rt-16) reproduce exactly. Hand-review will catch them as planned per `docs/scoring.md`.
+
+Note: I had originally framed this as "spot-check scorer against real extraction generations." That framing was wrong — `extract_v2.py` does not save model generations; it only computes virtue vectors. Actual generations only land during the α-sweep / 4×4 specificity matrix runs. The corpus re-calibration is the correct sanity-check at this stage.
+
+### Combined implications for F98 branch
+
+F99 + F100 together:
+- **Geometric MVE all_clean** still holds per F98's pre-registered thresholds. We are not retroactively moving the goalposts.
+- **But** the qwen × RT extraction signal is weak enough that the 4×4 specificity matrix may show null effects in the qwen-RT row (especially the diagonal qwen-RT × rt-eval cell). If that happens, it should be attributed to extraction-signal weakness, not to "RT is not a real virtue."
+- **Recommended modification to next steps**: before α-sweep, re-extract qwen × RT with the `last_token` method (matching CC and IH) to test whether the method choice explains the probe-accuracy gap. Cost: ~2h GPU. Benefit: removes method as a confound; if last_token also gives weak probe acc, that's a real signal about RT's separability on qwen.
+
+### Caveats on this finding
+
+- Probe accuracy depends on the train/test split (default 80/20 or whatever `extract_v2.py` uses). Different splits could shift numbers by a few percentage points.
+- Random-baseline analysis assumes uniform random vectors in R^2560. Real activations have structure (residual stream is not isotropic). The "random" baseline I computed may be optimistic (true noise might have higher cos than 0.02 if dominant directions exist). This makes the >random cells *more* significant, but doesn't change the near-random cells' interpretation.
+- Method confound (last_token vs generation) is a real alternative explanation for qwen × RT's weakness — only re-extraction can disambiguate.
+
+### What to do about it
+
+1. **Update F99's optimism flag.** F99 stands as written but should be read alongside F100. (Done: F99 already lists "no probe-accuracy / norm sanity check yet" as a deferred item; this finding closes that item with mixed news.)
+2. **Decide on qwen × RT re-extraction.** Either (a) re-extract with last_token method before α-sweep, or (b) proceed and accept that a null qwen-RT-row is plausible.
+3. **Document method-difference issue in `docs/extraction-runbook.md`.** Mixed methods across CC/IH (last_token) and EG/RT (generation) is a methodological inconsistency that should be either reconciled or explicitly justified before publication.
+
+### Applies to
+
+- α-sweep planning (`docs/extraction-runbook.md` §4): consider re-extraction step before α-sweep.
+- F98 publication framework: a partial- or null-qwen-RT-row outcome would still be consistent with the partial-success branch, but the interpretation needs care.
+- Phase 5 plan (`docs/phase5-plan.md`): if qwen × RT is method-dependent, the 8-virtue scale-up should probably standardise on one extraction method.
+
+### Artifacts
+
+- Probe accuracy + norm script output: re-runnable from `mvp/results/vectors/{model}/{corpus}/extraction_summary.json` per layer.
+- Random-baseline analysis: re-runnable in ~5 lines of numpy.
+- Calibration log: `mvp/calibrate_scorers.py` (PASS, no drift, 2026-04-25).
+
+---
+
+
+## F101 (2026-04-25 evening) — Method-confound confirmed: qwen × RT last_token re-extraction reveals real CC⊥RT partial overlap that was hidden by noise. F99's `all_clean` for qwen is downgraded to `partial`.
+
+**Status:** Decisive empirical test of F100's hypothesis. Re-extracted qwen3-4b × RT using `last_token` method (the same method F97 used for CC and IH); compared against the original `generation` method extraction. Result is unambiguous: the method confound was real, AND it was masking a genuine geometric overlap.
+
+### The diagnostic
+
+Re-extraction of qwen3-4b × triplets-reasoning-transparency using `extract_v2.py --method last_token`. Wall time ~17 min on L4 (vs ~10h for the generation method — last_token is single-token vs 128-token-average). Vectors saved to `mvp/results/vectors/qwen3-4b/triplets-reasoning-transparency/last_token/`.
+
+### Probe-accuracy comparison at steering layers (L18–32)
+
+| Layer | generation | last_token | Δ |
+|---|---|---|---|
+| 18 | 0.562 | 0.838 | +0.275 |
+| 20 | 0.588 | 0.812 | +0.225 |
+| 22 | 0.613 | 0.850 | +0.237 |
+| 25 | 0.475 | 0.850 | +0.375 |
+| 28 | 0.463 | 0.887 | +0.425 |
+| 31 | 0.450 | **0.900** | +0.450 |
+| 32 | 0.412 | 0.875 | +0.463 |
+
+**Aggregate:**
+- generation method: probe acc mean=0.517, max=0.638 (best at L3), at steering layers 0.51 mean
+- last_token method: probe acc mean=0.839, max=**0.900** (best at L31), at steering layers 0.85 mean
+
+The generation method's probe accuracy actually *degrades* at deeper layers, while last_token improves through the model — consistent with last_token capturing residual-stream signal at the token where the model has integrated the full context.
+
+### Same-layer cosine between gen-method and last_token-method RT vectors
+
+| Layer | \|cos(v_RT_gen, v_RT_lt)\| |
+|---|---|
+| 18 | 0.041 |
+| 22 | 0.079 |
+| 25 | 0.148 |
+| 28 | 0.161 |
+| 31 | 0.201 |
+
+These are essentially **different vectors** — the generation-method RT vector is not a noisier version of the last_token-method RT vector; it's a separate direction in residual-stream space. This confirms F100's interpretation: the generation-method qwen × RT extraction was largely capturing noise, not the RT direction.
+
+Vector norms also doubled: gen mean ||v||=4.6, last_token mean ||v||=9.0 (and last_token max ||v||=34.8 vs gen max 18.2).
+
+### MVE matrix re-run with the new RT vector (qwen3-4b only)
+
+Substituting last_token RT in place of generation RT, holding CC/IH/EG unchanged:
+
+| Pair | BEFORE (RT=gen) | AFTER (RT=last_token) | Verdict change |
+|---|---|---|---|
+| CC ⊥ IH | mean 0.179, max 0.314 | mean 0.179, max 0.314 | unchanged 🟢 |
+| CC ⊥ EG | mean 0.157, max 0.202 | mean 0.157, max 0.202 | unchanged 🟢 |
+| **CC ⊥ RT** | **mean 0.099, max 0.175** 🟢 | **mean 0.377, max 0.520** 🟡 | **clean → partial** |
+| IH ⊥ EG | mean 0.026 | mean 0.026 | unchanged 🟢 |
+| IH ⊥ RT | mean 0.020 (random baseline) | mean 0.059 | still 🟢 but no longer fake-random |
+| EG ⊥ RT | mean 0.104, max 0.181 | mean 0.128, max 0.173 | basically unchanged 🟢 |
+
+**qwen3-4b verdict:** `all_clean (6/6)` → **`partial (5/6)`**.
+
+CC ⊥ RT max |cos| of 0.520 just exceeds the pre-registered 0.50 partial-collapse threshold at the worst layer. Mean |cos| 0.377 is well into partial-overlap band. Mean retention 0.92 (still above 70% pass threshold). So the pair is borderline-partial, not full collapse — but it is no longer in the clean-orthogonal range.
+
+### What this means under F98 pre-registration
+
+F98 (pre-registered before any data) defined three branches:
+- **all_clean:** 6/6 pairs pass MVE
+- **partial:** 5/6 pairs pass — *acknowledge collapse-pair + specificity failures; still a 2–3 virtue result*
+- **collapse:** ≤4/6 pass OR EG⊥RT collapse
+
+We are now on the **partial** branch for qwen3-4b on the geometric criterion. The collapse-pair is **CC ⊥ RT**, not the F39-flagged EG ⊥ RT. EG ⊥ RT remained clean across both extraction methods — F39's AOT-cluster risk continues to NOT materialize.
+
+This is consistent with what the partial branch was designed to capture per the F98 table: *"publishable: acknowledge collapse-pair + specificity failures; still a 2–3 virtue result."* Specifically, on qwen3-4b, CC and RT share enough geometric structure that their behavioural specificity is not guaranteed; the 4×4 specificity matrix may show some cross-talk in CC-row × rt-eval and RT-row × aime-42 cells.
+
+### Why this is good news, not bad
+
+- **F99's all_clean was a noise artifact, not a real result.** Detecting this BEFORE α-sweep / 4×4 matrix saves real wasted GPU and a misleading headline finding.
+- **F100's hypothesis was confirmed empirically.** The probe-acc gap was indeed methodological. The sanity-check pipeline worked.
+- **The partial branch was pre-registered.** Moving from all_clean to partial is not a goalpost-shift; both branches were committed in F98 before any data existed.
+- **F39 risk did NOT materialize** — EG ⊥ RT remains clean even with proper extraction. This was the single biggest pre-data risk and it didn't bite.
+- **The "actual" finding is more interesting.** "CC and RT share a direction component on qwen3-4b" is a substantive, mechanistically-interpretable result. "Four orthogonal directions, all clean" was almost too clean to be informative.
+
+### What we still don't know (in progress)
+
+The remaining three (model, virtue) combos were extracted via the same generation method:
+- qwen3-4b × EG: probe acc generation 0.66 best, may improve with last_token. May reveal hidden CC⊥EG overlap.
+- gemma-4-E4B-it × EG: probe acc generation 0.83 best — relatively healthy, less dramatic gap expected.
+- gemma-4-E4B-it × RT: probe acc generation 0.74 best.
+
+Re-extraction of all three with last_token kicked off in tmux session `lasttoken_remaining` on `phronesis-v2-l4` at 2026-04-25 00:34 UTC. Total ETA ~2h. Once they land, we'll re-run the full MVE matrix on uniform-method vectors and write the final F102 with the full picture.
+
+### Decisions implied (not yet made)
+
+- The α-sweep step in `docs/extraction-runbook.md` should use last_token vectors going forward, since they have higher probe acc and are method-consistent with CC/IH.
+- The 4×4 specificity matrix should be expected to show partial cross-talk between CC and RT on qwen3-4b — F98's partial-branch outcome is the realistic expectation for that model.
+- `docs/post-mvp-decisions.md` partial branch handling kicks in once gemma data lands.
+
+### Caveats
+
+- The 0.520 max-|cos| at the worst layer is *just* over the 0.50 threshold. If the threshold had been 0.55, the pair would still be technically clean. We did not move it post-hoc — 0.50 was committed in F98 / config.yaml before any data existed.
+- Retention 0.92 is still well above the 70% floor, meaning we *can* mostly reconstruct CC by projecting out RT. The partial-overlap is not catastrophic.
+- These numbers are aggregates across all 36 layers; CC ⊥ RT crosses 0.50 only at the deepest layers (per max-|cos|=0.52), and is in the 0.30–0.40 range across L18–25. Steering at mid-layers (where the per-layer |cos| is lower) may show less behavioural cross-talk than the aggregate-mean suggests.
+
+### Applies to
+
+- F99 (downgrade qwen verdict from all_clean to partial; gemma TBD pending re-extraction)
+- F98 publication framework (we are on the partial branch for qwen)
+- `docs/extraction-runbook.md` §11 (resolve methodological-consistency issue: standardise on last_token)
+- `docs/post-mvp-decisions.md` (engage partial-branch decision logic once full picture lands)
+
+### Artifacts
+
+- `mvp/results/vectors/qwen3-4b/triplets-reasoning-transparency/last_token/` — 36 layer vectors
+- `mvp/results/vectors/qwen3-4b/triplets-reasoning-transparency/extraction_summary_last_token.json`
+- `mvp/results/rt_lasttoken.log` — extraction log
+- Comparison script: re-runnable from local pulled vectors
+
+---
+
+
+## F102 (2026-04-25 evening) — Uniform last_token MVE matrix: gemma is all_clean (6/6); qwen is collapse (3/6) with CC, EG, RT forming a partial-overlap cluster at deeper layers. Cross-model split is the headline.
+
+**Status:** Final geometric MVE result on uniform-method (last_token) vectors for both models. All 4 (model, virtue) re-extractions completed (`lasttoken_remaining` tmux on `phronesis-v2-l4`, 00:34→01:10 UTC). MVE pipeline updated to default to last_token for EG/RT (`mvp/analysis/compute_mve.py`). `analysis/run_analysis.py --mve-only` re-run, fresh report at `mvp/results/analysis_report/`.
+
+**Pre-registered per F98** — branches were committed before any data existed.
+
+### The verdict
+
+```
+qwen3-4b:        collapse  (3/6 pairs pass)
+gemma-4-E4B-it:  all_clean (6/6 pairs pass)
+```
+
+The two models give opposite answers to the same question. **The cross-model split IS the headline.**
+
+### Full MVE matrix (uniform last_token, both models)
+
+#### qwen3-4b — 3/6 pass → ❌ COLLAPSE
+
+| pair | mean \|cos\| | max \|cos\| | retention | verdict |
+|---|---|---|---|---|
+| CC ⊥ IH | 0.179 | 0.314 | 98.1% | 🟢 pass |
+| CC ⊥ EG | **0.376** | 0.453 | 92.4% | 🟡 partial |
+| CC ⊥ RT | **0.377** | **0.520** | 92.2% | 🟡 partial |
+| IH ⊥ EG | 0.104 | 0.211 | 99.3% | 🟢 pass |
+| IH ⊥ RT | 0.059 | 0.120 | 99.8% | 🟢 pass |
+| EG ⊥ RT | **0.334** | **0.554** | 93.2% | 🟡 partial |
+
+#### gemma-4-E4B-it — 6/6 pass → ✅ ALL CLEAN
+
+| pair | mean \|cos\| | max \|cos\| | retention | verdict |
+|---|---|---|---|---|
+| CC ⊥ IH | 0.030 | 0.104 | 99.9% | 🟢 pass |
+| CC ⊥ EG | 0.087 | 0.192 | 99.5% | 🟢 pass |
+| CC ⊥ RT | 0.072 | 0.167 | 99.7% | 🟢 pass |
+| IH ⊥ EG | 0.053 | 0.167 | 99.8% | 🟢 pass |
+| IH ⊥ RT | 0.033 | 0.100 | 99.9% | 🟢 pass |
+| EG ⊥ RT | 0.105 | 0.218 | 99.3% | 🟢 pass |
+
+### What changed from the original generation-method MVE (F99)
+
+- **qwen3-4b**: was 6/6 all_clean (with noisy generation-method EG/RT); now 3/6 collapse. CC⊥EG (0.16→0.38), CC⊥RT (0.10→0.38), EG⊥RT (0.10→0.33) all jumped from clean into partial-overlap. The original "clean orthogonality" was largely an artefact of using noise vectors.
+- **gemma-4-E4B-it**: was 6/6 all_clean (generation), still 6/6 all_clean (last_token). Numbers shifted slightly (EG/RT pairs got modestly cleaner). Method-confound was real but smaller in magnitude on gemma — consistent with gemma's higher generation-method probe accuracies (0.74-0.83 vs qwen's 0.52-0.66).
+
+### Per-layer pattern on qwen — late-layer shared direction
+
+Per `mvp/results/analysis_report/per_layer_cosine_qwen3-4b.png`:
+
+- **L0–15**: CC, EG, RT pairs hover around 0.20–0.40 with significant variance — no clear cluster.
+- **L20–31**: CC⊥EG, CC⊥RT, and EG⊥RT all rise together to 0.40–0.55. EG⊥RT crosses 0.50 at L29–31, peaks 0.554 at L30. CC⊥RT crosses 0.50 at L31, peaks 0.520.
+- **CC⊥IH stays clean throughout** (mean 0.179) — IH remains orthogonal to all three.
+- IH⊥EG and IH⊥RT also stay clean (means 0.104, 0.059).
+
+**Mechanistic reading:** at qwen3-4b's deeper layers — where the model has integrated the full prompt context — three of the four virtues (CC, EG, RT) share a substantial direction component. That direction is plausibly an "epistemic care / scientific reasoning disposition" — the *AOT cluster* flagged in F39 as a pre-data risk, plus CC. IH (intellectual humility / abstention) sits on a different mechanism that doesn't fold into the cluster.
+
+This is a genuine, mechanistically interpretable finding — not a null result. Qwen3-4B's residual stream at depth treats epistemic confidence-calibration, evidence-grounding, and reasoning-transparency as facets of one underlying disposition, not as four independent dimensions.
+
+### Per-layer pattern on gemma — clean throughout
+
+Per `mvp/results/analysis_report/per_layer_cosine_gemma-4-E4B-it.png`:
+
+- All 6 pairs hover below 0.20 mean across all 42 layers.
+- Single transient spike: EG⊥RT max 0.218 around L7. Otherwise comfortably clean.
+- CC⊥IH at 0.030 is the cleanest pair on either model.
+
+Gemma 4 E4B-it maintains four geometrically-distinct virtue directions all the way through. Either gemma has a richer residual-stream structure that can support more disentangled epistemic dimensions, or it's the smaller / different training that prevented the cluster from forming. Mechanistic-interpretability question; out of scope here.
+
+### F98 pre-registered branches — what we landed on
+
+F98 (committed before any data) defined three branches **per model**:
+- all_clean: 6/6 pass
+- partial: 5/6 pass
+- collapse: ≤4/6 pass OR EG × RT collapse
+
+**qwen3-4b: collapse.** Two reasons satisfied: (i) only 3/6 pass; (ii) EG⊥RT max 0.554 > 0.50, technically a single-layer collapse though mean stays partial.
+
+**gemma-4-E4B-it: all_clean.** All 6 pairs comfortably below thresholds.
+
+The MVP-level overall verdict is **mixed / cross-model-split**, which F98 didn't explicitly enumerate but `docs/post-mvp-decisions.md` does cover (under partial/collapse sub-branches): publishable as a "model-dependent virtue-direction structure" finding.
+
+### F39 status
+
+F39 pre-registered the EG×RT cluster collapse as the *single biggest pre-data risk*. Result:
+
+- **On qwen3-4b: F39 risk materialised (partially).** EG⊥RT mean 0.334, max 0.554 — partial overlap, with single-layer collapse at L29-31. But the cluster includes CC as well — a 3-way overlap, not the 2-way EG-RT pair F39 forecast.
+- **On gemma-4-E4B-it: F39 risk did NOT materialise.** EG⊥RT mean 0.105, max 0.218 — clean across all 42 layers.
+
+So F39 is *model-dependent*. Same corpus, same extraction method, opposite verdict on the two models.
+
+### Headline reframe
+
+The MVP claim cannot be "four orthogonal epistemic-virtue directions on small open models." It can be:
+
+> **"Cross-model evidence that geometric separation of CC/IH/EG/RT virtue directions is model-dependent at the 4B scale. Gemma 4 E4B-it cleanly separates all four (6/6 pass); Qwen3-4B shows a partial-overlap cluster of CC, EG, and RT at deeper layers (3/6 pass), with IH remaining orthogonal. The same triplet corpus and extraction method gives opposite verdicts."**
+
+This is a more interesting finding than monolithic all_clean would have been. It implies:
+1. The "atomic virtue direction" hypothesis isn't model-invariant.
+2. There's something about qwen3-4b's representation that bundles CC/EG/RT — open mech-interp question.
+3. IH consistently behaves differently from the AOT-related virtues, on both models. That's a robust observation.
+
+### What to do next under F98 + post-mvp-decisions.md
+
+`docs/post-mvp-decisions.md` partial / collapse sub-branches engage. Specifically:
+
+- **Behavioural 4×4 specificity matrix is still worth running**, but with revised expectations:
+  - On gemma: should see clean diagonal-wins with low off-diagonal (matches geometric all_clean).
+  - On qwen: should see CC-row × EG-eval, CC-row × RT-eval, RT-row × EG-eval cells with substantial cross-talk (matches geometric partial-overlap). IH-row × everything-else should stay clean.
+  - The 4×4 matrix is the test of whether the geometric finding has behavioural consequences.
+- **α-sweep can proceed.** Layer choice for qwen needs care — mid-layers (L18–22) where the cluster is less collapsed are probably better for clean steering of any one virtue.
+- **No further re-extraction needed.** The methodological-consistency issue is resolved (uniform last_token).
+
+### Open questions / honest deferred items
+
+- **Why does qwen cluster but gemma doesn't?** Mechanistic interp question. Probable next step in a published version: ablation studies on the deep-layer residual stream. Out of scope for the MVP write-up.
+- **Is the cluster a property of qwen3-4b specifically, or all qwen-family models?** Would need qwen-2.5-3b or qwen3-7b to test. Out of scope.
+- **Does the cluster predict behavioural cross-talk?** This is what the 4×4 specificity matrix will answer.
+- **Is there a corpus-confound I'm missing?** Same triplet corpus produced clean separation on gemma and partial collapse on qwen. So the finding survives the corpus-confound test (a corpus issue would affect both models similarly).
+
+### Updates to compute_mve.py
+
+`mvp/analysis/compute_mve.py` `DEFAULT_VIRTUE_PATHS` updated: EG and RT now point to `last_token` method (was `generation`). Annotation cites F101/F102. F99's `analysis_report/` was regenerated; the version on disk reflects F102 numbers.
+
+### Applies to
+
+- F99 (verdict downgraded — F99 stands as historical record of the noisy generation-method MVE; F102 is the canonical geometric result)
+- F98 (qwen on collapse branch, gemma on all_clean branch — split outcome)
+- F39 (model-dependent: partial materialisation on qwen, no materialisation on gemma)
+- `docs/post-mvp-decisions.md` (engage partial/collapse sub-branches)
+- `docs/extraction-runbook.md` §11 (methodological-consistency issue resolved — standardised on last_token)
+- `docs/phase5-plan.md` (the "all_clean → 8-virtue scale-up" gating condition is no longer met cleanly; revisit Phase-5 framing post-behavioural)
+
+### Artifacts
+
+- Report: `mvp/results/analysis_report/report.md` (regenerated with last_token vectors)
+- Heatmaps: `mve_heatmap_{qwen3-4b,gemma-4-E4B-it}.png`
+- Per-layer cosines: `per_layer_cosine_{qwen3-4b,gemma-4-E4B-it}.png`
+- All 4 last_token vector dirs: `mvp/results/vectors/{qwen3-4b,gemma-4-E4B-it}/triplets-{evidence-grounding,reasoning-transparency}/last_token/`
+- Generation-method summaries preserved as `extraction_summary_generation.json` for cross-method comparison
+- Re-extraction log: `mvp/results/lasttoken_remaining.log` and `rt_lasttoken.log`
+
+---
+
+
+
+## F103 (2026-04-26) — Hand-review verdict on the α-sweep: the qwen × RT × L18 α=20 +5.19 headline is auto-scorer gaming on degenerate output. Real signals exist but are an order of magnitude smaller.
+
+**Status:** Independent hand-review of all 690 α-sweep generations (separate Claude session, full-pass with per-item structured signals + manual reading of every Priority-1/2/3/4/5 cell). Verdict: **the +5.19 RT headline is fake.** Reproduces the F94-UPDATE failure mode the project's manual-first policy was designed to catch.
+
+**Pre-registered per F98 + Day-15 manual-first policy** — this is exactly why we committed to hand-review of every behavioural cell before publishing any number.
+
+### The retraction
+
+**qwen × RT × L18 α=20** (best auto-scorer pick, baseline 2.13 → steered 7.32, +5.19):
+- All 5 generations are catastrophic repetition loops
+- None close their `<think>` tag
+- rt-p06 (auto rt_score=18.46) and rt-p16 (rt_score=14.08) score high *purely* because the loops contain regex-friendly filler tokens ("therefore", "the reason is", "so", "but wait")
+- Hand-rubric RT score: **1.0 vs baseline 3.0** — i.e. steering at this magnitude/layer makes RT *worse*, not better
+- The remaining three steered items in this cell score *lower* than baseline by hand-rubric
+
+The auto-scorer awarded the +5.19 to a degenerate-output cell. By any reading (human or instrumental), this cell is broken output, not a 3.4× behavioural improvement.
+
+### What the hand-rubric actually shows (real, smaller signals)
+
+Per-cell hand-rubric scores (1-5 scale per virtue), baseline-anchored:
+
+#### qwen × RT (baseline RT=3.0)
+
+| Cell | Hand-rubric RT | Verdict |
+|---|---|---|
+| L22 α=8 | **3.6** | Clean +0.6 — best clean RT cell |
+| L22 α=4, L25 α=4 | 3.6 | Clean +0.6 |
+| L18 α=4, L18 α=8, L20 α=4–20, L22 α=12–20, L25 α=8–20 | 3.4 | Clean +0.4 (consistent across most cells) |
+| L18 α=12 | 3.0 | No effect |
+| L18 α=16 | 2.6 | Partial degeneracy (3/5 truncated) |
+| **L18 α=20** | **1.0** | **Catastrophic degeneracy in 5/5** |
+
+Real RT signal: **+0.4 to +0.6** across most clean cells. Not zero, but ~10× smaller than the auto-scorer claimed.
+
+#### qwen × IH (baseline IH=3.2)
+
+| Cell | Hand-rubric IH | Verdict |
+|---|---|---|
+| Most cells (L18 α≤16, L20 α=4–20, L22, L25 most α) | **4.0** | Clean +0.8 (multiple cells tied) |
+| **L18 α=20 (auto-pick)** | **3.2** | No improvement + fp-gandhi hallucination ("Andre Devon" 1957 Peace Prize) |
+| L25 α=12 | 3.4 | Mid |
+
+Real IH signal: **+0.8** on multiple clean cells. The auto-scorer pick (L18 α=20) is among the *worst* clean cells because it abstains in regex-friendly ways while introducing F94-style hallucination on fp-gandhi.
+
+#### qwen × CC (baseline CC=2.4 on AIME)
+
+| Cell | Hand-rubric CC | Verdict |
+|---|---|---|
+| Most cells in {L20 α=8, L20 α=20, L22 α=4–8, L25 α=4–20} | **2.8** | Clean +0.4 |
+| Higher α at L18/L20/L22 | 1.6–2.2 | Truncation/degeneracy |
+
+Real CC signal: **+0.4** consistent across many clean cells. Item 72 win (baseline-spiral → clean-commit on `\boxed{540}`) is real but doesn't generalise across all items — items 42 and 58 stay intractable for both baseline and steered. Steering improves *commit behaviour* without improving underlying capability.
+
+#### gemma × all four virtues
+
+**Confirmed null.** All 33 gemma steered cells produce hand-rubric scores within ±0.4 of gemma baseline. No degeneracy detected anywhere. No qualitative virtue shift. Steering is taking effect numerically (regex scores fluctuate slightly) but not behaviourally on these benchmarks at any α tested.
+
+### Re-picked best cells (using hand-rubric, for the record)
+
+If we ever run the 4×4 specificity matrix or write up "best (α, layer) per virtue," these are the corrected picks based on hand-review:
+
+| Model × Virtue | Auto-scorer pick | Hand-rubric pick | Hand-rubric RT-score |
+|---|---|---|---|
+| qwen × CC | L25 α=20 | **L25 α=8** (or any L25/L22 mid-α) | 2.8 |
+| qwen × IH | L18 α=20 (degenerate) | **L20 α=20** or **L22 α=12** (multiple ties at 4.0) | 4.0 |
+| qwen × EG | L18 α=4 | No clean pick — all cells ~baseline | 2.2-2.8 |
+| qwen × RT | L18 α=20 (degenerate) | **L22 α=8** | 3.6 |
+| gemma × all | various | No pick — null result | — |
+
+### Auto-scorer failure modes documented
+
+The hand-review surfaced two new auto-scorer failure modes:
+
+- **FM-8: degenerate-output regex gaming.** Repetition loops with regex-friendly filler tokens score arbitrarily high. Required mitigation: coherence gate (compression-ratio threshold + `<think>` closure check) before any soft score is accepted. Documented in `docs/scoring.md`.
+- **FM-9: false-negative on clean structured prose.** qwen × RT × L25 α=12 / rt-p14 scored auto rt_score=0.00 while hand-review gave RT=3 ("clean structured answer; regex misses it"). The regex misses real virtue when the response uses domain-appropriate-but-non-regex-matching language. Bidirectional error.
+
+Both failure modes appear at high rate in the α-sweep data. Auto-scorer is fundamentally inadequate as a sole signal — both for over-rewarding (FM-8) and under-rewarding (FM-9).
+
+### Specificity claim is independently weakened
+
+Hand-review Priority 5 finding: **CC steering also produces RT-marker-rich prose.** Counted regex step-markers in qwen × CC × L25 α=20 AIME outputs (item 42: 110 step markers, item 58: 56 markers in long thinking traces). If applied to rt-eval, these would score high purely from token distribution.
+
+This means the diagonal/off-diagonal distinction is partially confounded by "more structured reasoning generally" rather than virtue-specific behaviour. Even setting aside the L18 α=20 degeneracy, the +5.19 effect could not have been cleanly attributed to RT-direction-specific behaviour.
+
+This is the F39 AOT-cluster risk re-materializing at the behavioural level — and matches F102's geometric finding (CC, EG, RT cluster on qwen3-4b at deep layers).
+
+### Implication for F102
+
+F102 had the partial/collapse geometric verdict for qwen and the all_clean for gemma. F103 doesn't change F102's geometric finding — it adds the *behavioural* layer:
+
+- **Geometric layer (F102):** qwen partial-collapse, gemma all_clean.
+- **Behavioural layer (F103):** qwen has small but real diagonal effects (+0.4 to +0.8 hand-rubric) plus high-α degeneracy on RT-L18; gemma has *zero* behavioural effect at any α.
+
+Combined picture: **geometry and behaviour are partially decoupled, in opposite directions across the two models.** Gemma's clean directions don't drive eval scores. Qwen's collapsed directions do drive scores (modestly, real), with deep-layer high-α producing degeneracy rather than coherent virtue-aligned output.
+
+### Connection to F94-UPDATE
+
+This is the *exact same failure mode* as the original F94-UPDATE: an auto-scorer-based "win" that hand-review revealed to be hallucinated humility-theatre / now degenerate-loop-theatre. We documented F94-UPDATE on Day 10 and used it to justify the manual-first policy. Day 19 hand-review reproduces the pattern at larger scale. The policy worked — we caught it ourselves before any publication claim.
+
+### Implications for the writeup
+
+Under the F98 partial-branch with these revisions:
+
+- **Headline cannot be "+5.19 diagonal effect on qwen × RT."** It is "small (+0.4 to +0.8) hand-verified diagonal effects on qwen, with auto-scorer vulnerable to degenerate-output gaming at high α."
+- **Cross-model split (F102) remains the real headline.** The behavioural layer adds: gemma's clean geometry didn't translate to clean behavioural effect; qwen's collapsed geometry produced small effects.
+- **Auto-scorer failure modes (FM-6/7/8/9) are themselves a publishable finding** — concrete instances of reward-hacking on small-scale regex scorers, mirroring RLHF-scale failures. Connects to the Day-18 RLHF-compression framing in `docs/post-mvp-decisions.md`.
+- **Specificity claim is conditional** — needs the 4×4 matrix run with coherence-gated scoring to test cleanly. Without that, we can't separate "RT-direction-specific behaviour" from "more-reasoning-prose-generally."
+
+### Caveats
+
+- Hand-review is single-rater (one Claude session). Inter-rater reliability not measured. F72 caution applies.
+- Hand-rubric was applied with rule-based scoring augmented by manual overrides on items read in full (~50-70 items deep-read of 690 total). Bulk items scored by signal-extraction rules tied to manual anchors.
+- The reviewer's instrument-derived signals (compression ratio, `<think>` closure, regex marker counts) are themselves regex-adjacent and could miss novel failure modes.
+- Hand-rubric scores are 1-5 ordinal; small differences (3.0 vs 3.4) may be at the edge of inter-rater reliability.
+
+### Applies to
+
+- **F94-UPDATE:** Day 10 precedent reproduced at scale on Day 19. Policy of manual-first hand-review justified by both events.
+- **F102:** Geometric finding stands; behavioural layer added by F103.
+- **F98:** We are on the partial branch (per F102 geometry); F103 specifies the partial outcome's behavioural character.
+- **`docs/scoring.md`:** FM-8 (degenerate regex-gaming) and FM-9 (false-negative on clean prose) added.
+- **`docs/post-mvp-decisions.md`:** Partial-branch handling needs to incorporate hand-review verdict (revision pending).
+- **`docs/phase5-plan.md`:** §3.0 Coherence-gated scoring is now a hard pre-Phase-5 requirement.
+- **`mvp/results/alpha_sweep/{model}.json`:** picks files contain auto-scorer picks; should be supplemented (not replaced) with hand-rubric-revised picks for any downstream use.
+
+### Artifacts
+
+- `phronesis_review_package.zip` — the full package shipped to the review session (README, 690 generations, picks JSONs)
+- Reviewer outputs: `HAND_REVIEW_VERDICT.md`, `cell_verdicts.csv`, `hand_review_full.csv`, `analysis_signals.json`
+- The reviewer's signal-extraction script (`analyze_all.py`) is re-runnable and could be incorporated into Phronesis as a coherence pre-filter for future sweeps

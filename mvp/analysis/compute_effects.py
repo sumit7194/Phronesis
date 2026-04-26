@@ -268,7 +268,7 @@ if __name__ == "__main__":
     # Diagonal cells get high target-virtue scores; off-diag near baseline
     rows = []
     virtues = ["CC", "IH", "EG", "RT"]
-    evals = ["aime-42", "abstention", "eg-eval", "rt-eval"]
+    evals = ["aime", "abstention", "eg-eval", "rt-eval"]
     # Include baseline
     import random
     random.seed(0)
@@ -285,7 +285,7 @@ if __name__ == "__main__":
                     # Diagonal boost
                     v_map = {"CC_L20": "cc_hedging_score", "IH_L20": "ih_abstention_score",
                              "EG_L20": "eg_score", "RT_L20": "rt_score"}
-                    eval_target = {"aime-42": "cc_hedging_score", "abstention": "ih_abstention_score",
+                    eval_target = {"aime": "cc_hedging_score", "abstention": "ih_abstention_score",
                                    "eg-eval": "eg_score", "rt-eval": "rt_score"}
                     if v_map[vector] == eval_target[eval_name]:
                         base_scores[v_map[vector]] += 8 + random.uniform(-1, 1)

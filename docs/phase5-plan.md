@@ -42,6 +42,22 @@ If any of these fail, Phase 5 is deferred or re-scoped.
 
 The following are Phase-5 prerequisites per `docs/mvp-virtues.md`, `docs/scoring.md`, and lessons from MVP:
 
+### 3.0. Coherence-gated scoring (HARD REQUIREMENT — added 2026-04-26 per F103)
+
+**Without this, Phase 5 cannot proceed.** The Day-19 hand-review (F103) showed that the MVP auto-scorer awarded the entire study's highest soft score (+5.19 on qwen × RT × L18 α=20) to a cell whose 5/5 items were catastrophic repetition loops with no closing `<think>` tag. The high score came from regex-friendly filler tokens embedded in the loops, not from any real virtue exhibition. This is FM-8 (`docs/scoring.md`).
+
+At Phase-5 scale (8 virtues × 2-3 models × wider α grid), this failure mode would produce false-positive headlines at multiple cells simultaneously, making the entire matrix unreliable. Phase-5 must implement a coherence gate **before** any soft score is computed.
+
+**Required gate (any one fails → score is rejected and item is flagged):**
+1. **`<think>` closure check** (for models using thinking format like Qwen3): the closing `</think>` tag must appear in the output.
+2. **gzip compression-ratio threshold:** outputs with compression ratio below threshold T (calibrated on baseline outputs as the 5th percentile) are flagged as degenerate. Loops compress dramatically; coherent prose does not.
+3. **Repeated-phrase scan:** any 80-character span appearing ≥3 times verbatim in the output flags degenerate.
+4. **Truncation flag:** outputs that hit the token cap without producing a final answer are flagged separately (not the same as degenerate; they may still be partially scoreable, but the scorer should know).
+
+**Phase-5 implementation pointer:** the Day-19 hand-review session produced a re-runnable signal extractor (`analyze_all.py` in the review package) that computes all four signals above. Adapt and integrate into the scoring pipeline.
+
+**Inversion concern (FM-9):** the bidirectional failure mode is auto-scorer false-*negatives* on clean structured prose that doesn't match regex patterns. Coherence-gating alone doesn't fix this. Phase-5 should pair coherence-gating (FM-8) with an LLM-as-judge fallback for borderline cases (FM-9).
+
 ### 3.1. Scorer upgrade (per scoring.md "Scorer Upgrade Plan")
 
 At Phase-5 scale, manual-first scoring is not tenable (8 virtues × multiple benchmarks × multiple α × multiple layers × multiple seeds quickly exceeds hundreds of hours of human review).
@@ -129,6 +145,40 @@ Analogous to MVP post-decisions (see `post-mvp-decisions.md`) but at 8×8 scale:
 - **Switching to larger models** (7B+). The whole project is about small-model representation capacity. Adding larger models would be a separate comparative study.
 - **Cross-family validation** (Llama, Mistral, Phi). Would be valuable but doubles extraction time. Optional follow-up, not part of Phase 5.
 - **Behavioral benchmarks beyond the 4 MVP ones** (AIME, abstention, EG-eval, RT-eval). Adding new behavioral benchmarks is a Phase 6 concern.
+
+---
+
+## 6.5 Methodology upgrades worth importing for Phase 5
+
+Identified during MVP work, deferred from MVP per F98 pre-registration. Carry these into Phase 5 when re-planning the protocol.
+
+### Attribution-patching layer selection (Venhoff et al., ICLR 2025 Workshop)
+
+**Source:** "Understanding Reasoning in Thinking Language Models via Steering Vectors" (Venhoff et al., arXiv:2506.18167). Code: github.com/cvenhoff/steering-thinking-llms.
+
+**Method:** Use Nanda's attribution patching (linear approximation of activation patching) to compute per-layer KL-divergence contribution to model output. Pick the middle-layer peak as the steering target. Avoids:
+- The arbitrary fixed-grid layer choice we used in MVP ({18, 20, 22, 25} for qwen, {14, 18, 22} for gemma, all middle-layer convention).
+- The expense of full-benchmark α×layer sweeps (the MVP α-sweep is essentially a behavioural-task version of attribution patching, but at much higher GPU cost).
+
+**Why we didn't use it in MVP:**
+- F98 pre-registered the {18, 20, 22, 25} grid before any data existed. Switching to attribution-patching-selected layers post-hoc would violate pre-registration.
+- We had ~32h GPU sunk into extraction across all layers before re-thinking layer choice was on the table.
+- The α-sweep's "best case for diagonal" criterion is conceptually adjacent (picks layer × α maximizing the *behavioural effect*, vs attribution patching's *KL contribution*).
+
+**Why it matters for Phase 5:**
+- 8 virtues × N layers × α grid is expensive. Attribution patching narrows the search space cheaply per virtue.
+- Gives a *continuous* importance score per layer rather than a discrete pre-registered grid pick.
+- Independent layer choice per virtue could matter — F102 already showed virtue directions evolve at different layers within a model.
+
+**Implementation pointer for Phase-5 planning:**
+- Pre-register attribution-patching layer selection BEFORE corpus generation.
+- Use a held-out probe set (not the contrastive triplets used for vector extraction) for the KL computation.
+- Still α-sweep at the picked layer to set magnitude; layer comes from attribution patching.
+
+### Other related-work imports
+
+- **SAE feature decomposition (Hazra et al., "Under the Hood of a Reasoning Model").** Goodfire's SAE work on DeepSeek-671B. If the activation-steering direction approach hits an interpretability wall (i.e. we want to know *what* the virtue vector represents, not just that steering works), SAEs are the natural next tool. Considerably more compute-expensive than diff-of-means. Consider only if Phase 5's 8-virtue work raises interpretability questions diff-of-means can't answer.
+- **DeepSeek `<think>` tag-aware extraction.** Venhoff et al. exploit DeepSeek-R1-Distill's explicit thinking phase. We use generic instruct models (qwen3-4b in thinking mode, gemma-4-E4B-it without). If we add DeepSeek-distill to Phase 5, the explicit-thinking extraction may be cleaner.
 
 ---
 

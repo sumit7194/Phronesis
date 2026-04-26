@@ -439,3 +439,27 @@ After extraction + α-sweep complete:
 - **Created:** 2026-04-22 (Day 15)
 - **Companion docs:** `docs/eg-rt-eval-spec.md` (benchmark spec), `docs/mvp-virtues.md` (scope), `docs/scoring.md` (manual-first policy), `corpus/mvp-combined/LEDGER.md` (corpus provenance)
 - **Next update:** after Stage 0 calibration (may require scorer refinement, which would update spec + runbook)
+
+---
+
+## 11. Open methodological issue — extraction-method consistency (added 2026-04-25, F100)
+
+**Problem.** F97-era CC and IH vectors were extracted using `extract.py` with the `last_token` method. F99-era EG and RT vectors were extracted using `extract_v2.py` with the `generation` method. The MVE matrix in F99 mixes vectors from these two methods.
+
+**Symptom.** Probe accuracy at typical steering layers (L18–25):
+- qwen × CC (last_token): mean 0.93, best 0.96
+- qwen × EG (generation): mean 0.62, best 0.66
+- qwen × RT (generation): mean 0.56, best 0.61
+- gemma × EG (generation): mean 0.75, best 0.80
+- gemma × RT (generation): mean 0.65, best 0.68
+
+The gap is large enough that some of it is plausibly methodological (different averaging behaviour, different SNR), not just "EG/RT are intrinsically harder to separate."
+
+**To resolve before publication, pick one:**
+- (a) Re-extract CC and IH using `generation` method on both models (~12h GPU). Pros: matches the EG/RT method, MVE comparison is clean. Cons: throws away well-validated F97 CC/IH vectors that already drove behavioural results.
+- (b) Re-extract EG and RT using `last_token` method on both models (~8h GPU). Pros: matches F97 baseline, likely higher probe acc. Cons: requires re-running the full geometric MVE; may change conclusions.
+- (c) Document the method difference explicitly and run sensitivity analysis (use both methods on one virtue × model combo, report whether MVE conclusions change). Pros: cheaper, more transparent. Cons: adds caveats to the headline claim.
+
+**Recommendation:** start with (b) on a single combo — re-extract qwen × RT with last_token (~2h) — to test whether the probe-acc gap is methodological or real, before committing to the broader plan.
+
+**Status:** open as of 2026-04-25 evening. Will be revisited once qwen × RT last_token re-extraction completes.

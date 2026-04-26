@@ -62,9 +62,9 @@ def make_synthetic_spec_matrix(out_path: Path, n_prompts_per_eval: int = 6) -> i
         "EG_L20": "EG",
         "RT_L20": "RT",
     }
-    EVALS = ["aime-42", "abstention", "eg-eval", "rt-eval"]
+    EVALS = ["aime", "abstention", "eg-eval", "rt-eval"]
     EVAL_TO_VIRTUE = {
-        "aime-42": "CC",
+        "aime": "CC",
         "abstention": "IH",
         "eg-eval": "EG",
         "rt-eval": "RT",

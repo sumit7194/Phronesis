@@ -46,6 +46,7 @@ import json
 import re
 import subprocess
 import sys
+from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
@@ -53,6 +54,18 @@ import yaml
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE / "benchmarks"))
+
+# Progress JSON for dashboard (written after every cell)
+PROGRESS_PATH = HERE / "results" / "alpha_sweep_progress.json"
+
+
+def write_progress(state: dict) -> None:
+    """Atomic write of dashboard-readable progress state."""
+    PROGRESS_PATH.parent.mkdir(parents=True, exist_ok=True)
+    state = {**state, "timestamp": datetime.utcnow().isoformat()}
+    tmp = PROGRESS_PATH.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(state))
+    tmp.rename(PROGRESS_PATH)
 
 # Scorers import — avoids pulling in the full benchmarks package
 from eg_scorer import score_eg  # noqa: E402
@@ -170,20 +183,40 @@ def run_benchmark_cell(
 
 
 def read_cell_scores(cell_dir: Path, label: str, scorer_fn) -> list[float]:
-    """Read every per-item JSON that matches `label` and apply scorer."""
-    if not cell_dir.exists():
-        return []
+    """Read every per-item JSON for this label and apply scorer.
+
+    run_benchmark.py writes to {OUT_ROOT}/{benchmark}/{label}/{item_id}.json — the label
+    IS the subdir name. We accept either layout for back-compat:
+      - {benchmark}/{label}/*.json          (canonical, current run_benchmark.py)
+      - {benchmark}/{condition}/*{label}*.json (older convention)
+    """
+    candidates: list[Path] = []
+    label_dir = cell_dir.parent / label  # cell_dir was eval/condition; sibling is eval/label
+    if label_dir.exists() and label_dir.is_dir():
+        candidates.extend(sorted(label_dir.glob("*.json")))
+    if cell_dir.exists():
+        candidates.extend(sorted(cell_dir.glob(f"*{label}*.json")))
+    # de-dupe
+    seen = set()
     scores = []
-    for jf in sorted(cell_dir.glob(f"*{label}*.json")):
+    for jf in candidates:
+        if jf in seen:
+            continue
+        seen.add(jf)
         try:
             data = json.loads(jf.read_text())
         except json.JSONDecodeError:
             continue
-        resp = data.get("response", {})
-        if isinstance(resp, dict):
-            text = (resp.get("thinking", "") + " " + resp.get("answer", "")).strip()
+        # run_benchmark.py writes top-level 'response_thinking' and 'response_answer'.
+        # Accept either format.
+        if "response_thinking" in data or "response_answer" in data:
+            text = (str(data.get("response_thinking", "")) + " " + str(data.get("response_answer", ""))).strip()
         else:
-            text = str(resp)
+            resp = data.get("response", {})
+            if isinstance(resp, dict):
+                text = (resp.get("thinking", "") + " " + resp.get("answer", "")).strip()
+            else:
+                text = str(resp)
         scores.append(scorer_fn(text))
     return scores
 
@@ -217,7 +250,26 @@ def sweep_for_vector(
     print(f"\n=== Sweep: {model} × v_{vector_virtue} on {target_eval} ===")
     print(f"    Alphas: {alphas}   Layers: {layers}   n_prompts: {n_prompts}")
 
+    total_cells = len(layers) * len(alphas)
+    cells_done = 0
+
+    def _push_progress(extra=None):
+        st = {
+            "phase": "alpha_sweep",
+            "model": model,
+            "virtue": vector_virtue,
+            "target_eval": target_eval,
+            "cells_done": cells_done,
+            "total_cells": total_cells,
+            "alphas": list(alphas),
+            "layers": list(layers),
+        }
+        if extra:
+            st.update(extra)
+        write_progress(st)
+
     # Baseline (once per model × eval)
+    _push_progress({"current": "baseline"})
     baseline_label = f"alpha_sweep_baseline_{model}_{target_eval}"
     baseline_dir = HERE / "results" / "benchmark_probe" / target_eval / "baseline"
     if not skip_baseline:
@@ -230,6 +282,7 @@ def sweep_for_vector(
     for layer in layers:
         v_key = vector_registry_key(vector_virtue, layer, model)
         for alpha in alphas:
+            _push_progress({"current": f"L{layer} α={int(alpha)}", "current_layer": layer, "current_alpha": float(alpha)})
             label = f"alpha_sweep_{model}_v{vector_virtue}_L{layer}_a{int(alpha)}_{target_eval}"
             steered_dir = HERE / "results" / "benchmark_probe" / target_eval / "steered"
             run_benchmark_cell(model, target_eval, "steered", v_key, alpha,
@@ -244,6 +297,15 @@ def sweep_for_vector(
                 "delta": round(delta, 3),
                 "n_prompts": len(scores),
                 "vector_key": v_key,
+            })
+            cells_done += 1
+            best_so_far = max(all_results, key=lambda r: r["delta"])
+            _push_progress({
+                "current": f"L{layer} α={int(alpha)} done",
+                "current_layer": layer,
+                "current_alpha": float(alpha),
+                "last_delta": round(delta, 3),
+                "best_so_far": {"layer": best_so_far["layer"], "alpha": best_so_far["alpha"], "delta": best_so_far["delta"]},
             })
             print(f"    L{layer} α={alpha:>4}: Δ={delta:+.2f}  (steered={steered_mean:.2f} baseline={baseline_mean:.2f}, n={len(scores)})")
 

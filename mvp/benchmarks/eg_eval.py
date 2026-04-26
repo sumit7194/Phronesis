@@ -49,7 +49,10 @@ def load(n: Optional[int] = None, seed: int = 42,
             item_id=entry["id"],
             prompt=entry["text"],
             gold="evidence_grounded",  # placeholder; scoring uses eg_scorer
-            max_tokens=512,            # ~300-word target, buffer for thinking tokens
+            max_tokens=2048,           # ~300-word answer + room for qwen3 thinking trace
+                                       # (raised 2026-04-25: cap=512 was being eaten entirely by
+                                       # the thinking block on qwen3, leaving 0 chars for the answer
+                                       # and scoring at 0. Documented as deviation in runbook §11.)
             metadata={
                 "domain": entry["domain"],
             },

@@ -33,12 +33,14 @@ DEFAULT_VIRTUE_PATHS = {
         "gemma-4-E4B-it": [("triplets-intellectual-humility", "last_token")],
     },
     "EG": {
-        "qwen3-4b": [("triplets-evidence-grounding", "generation")],  # mvp-combined corpus
-        "gemma-4-E4B-it": [("triplets-evidence-grounding", "generation")],
+        # 2026-04-25: switched to last_token method per F101/F102 — uniform with CC/IH;
+        # generation method gave noisy vectors with low probe accuracy (see F100/F101).
+        "qwen3-4b": [("triplets-evidence-grounding", "last_token")],
+        "gemma-4-E4B-it": [("triplets-evidence-grounding", "last_token")],
     },
     "RT": {
-        "qwen3-4b": [("triplets-reasoning-transparency", "generation")],
-        "gemma-4-E4B-it": [("triplets-reasoning-transparency", "generation")],
+        "qwen3-4b": [("triplets-reasoning-transparency", "last_token")],
+        "gemma-4-E4B-it": [("triplets-reasoning-transparency", "last_token")],
     },
 }
 

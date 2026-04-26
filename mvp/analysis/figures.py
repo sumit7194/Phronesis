@@ -281,7 +281,7 @@ if __name__ == "__main__":
                 if vector != "baseline":
                     v_map = {"CC_L20": "cc_hedging_score", "IH_L20": "ih_abstention_score",
                              "EG_L20": "eg_score", "RT_L20": "rt_score"}
-                    eval_target = {"aime-42": "cc_hedging_score", "abstention": "ih_abstention_score",
+                    eval_target = {"aime": "cc_hedging_score", "abstention": "ih_abstention_score",
                                    "eg-eval": "eg_score", "rt-eval": "rt_score"}
                     if v_map[vector] == eval_target[eval_name]:
                         base_scores[v_map[vector]] += 8 + random.uniform(-1, 1)

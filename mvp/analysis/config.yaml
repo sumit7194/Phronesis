@@ -24,10 +24,10 @@ virtues:
 # List of behavioral evals. Each has a target virtue (what it measures) and
 # the scorer column name (what field in the specificity_matrix CSV to read).
 evals:
-  - name: aime-42
+  - name: aime
     target_virtue: CC
     scorer_column: cc_hedging_score  # proxy for CC-eval in cross-eval context
-    diagonal_cell: [CC, aime-42]
+    diagonal_cell: [CC, aime]
     # On-diagonal metric for AIME uses correctness, not hedging — handled by code
     diagonal_metric: accuracy
   - name: abstention
