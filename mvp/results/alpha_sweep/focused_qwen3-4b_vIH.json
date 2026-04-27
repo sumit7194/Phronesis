@@ -1,0 +1,51 @@
+{
+  "model": "qwen3-4b",
+  "n_prompts": 5,
+  "alphas_swept": [
+    4.0,
+    8.0,
+    12.0
+  ],
+  "layers_swept": [
+    17
+  ],
+  "results_by_virtue": {
+    "IH": {
+      "virtue": "IH",
+      "target_eval": "abstention",
+      "best_alpha": 4.0,
+      "best_layer": 17,
+      "best_delta": -0.845,
+      "baseline_mean": 0.845,
+      "all_results": [
+        {
+          "alpha": 4.0,
+          "layer": 17,
+          "steered_mean": 0.0,
+          "baseline_mean": 0.845,
+          "delta": -0.845,
+          "n_prompts": 4,
+          "vector_key": "IH_L17"
+        },
+        {
+          "alpha": 8.0,
+          "layer": 17,
+          "steered_mean": 0.0,
+          "baseline_mean": 0.845,
+          "delta": -0.845,
+          "n_prompts": 4,
+          "vector_key": "IH_L17"
+        },
+        {
+          "alpha": 12.0,
+          "layer": 17,
+          "steered_mean": 0.0,
+          "baseline_mean": 0.845,
+          "delta": -0.845,
+          "n_prompts": 4,
+          "vector_key": "IH_L17"
+        }
+      ]
+    }
+  }
+}

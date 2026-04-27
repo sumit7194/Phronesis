@@ -1,0 +1,51 @@
+{
+  "model": "gemma-4-E4B-it",
+  "n_prompts": 5,
+  "alphas_swept": [
+    4.0,
+    8.0,
+    12.0
+  ],
+  "layers_swept": [
+    7
+  ],
+  "results_by_virtue": {
+    "RT": {
+      "virtue": "RT",
+      "target_eval": "rt-eval",
+      "best_alpha": 4.0,
+      "best_layer": 7,
+      "best_delta": -0.264,
+      "baseline_mean": 2.31,
+      "all_results": [
+        {
+          "alpha": 4.0,
+          "layer": 7,
+          "steered_mean": 2.046,
+          "baseline_mean": 2.31,
+          "delta": -0.264,
+          "n_prompts": 5,
+          "vector_key": "RT_L7"
+        },
+        {
+          "alpha": 8.0,
+          "layer": 7,
+          "steered_mean": 1.291,
+          "baseline_mean": 2.31,
+          "delta": -1.019,
+          "n_prompts": 5,
+          "vector_key": "RT_L7"
+        },
+        {
+          "alpha": 12.0,
+          "layer": 7,
+          "steered_mean": 0.833,
+          "baseline_mean": 2.31,
+          "delta": -1.477,
+          "n_prompts": 5,
+          "vector_key": "RT_L7"
+        }
+      ]
+    }
+  }
+}

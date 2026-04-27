@@ -42,6 +42,7 @@ Dependencies:
 """
 from __future__ import annotations
 import argparse
+import gzip
 import json
 import re
 import subprocess
@@ -49,6 +50,53 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
+
+
+# ─── Coherence gate (per phase5-plan §3.0, FM-8 mitigation) ───────────────
+# Reject any output that:
+#   (a) opens <think> and never closes it (unfinished thinking)
+#   (b) compresses to <30% via gzip (catches repetition loops; FM-8)
+#   (c) has any 80-char span repeated ≥3 times verbatim (catches mode collapse)
+
+def _is_degenerate_loop(text: str, ratio_threshold: float = 0.30) -> bool:
+    if len(text) < 400:
+        return False
+    raw = text.encode("utf-8", errors="ignore")
+    compressed = gzip.compress(raw)
+    return (len(compressed) / max(len(raw), 1)) < ratio_threshold
+
+
+def _has_repeated_phrase(text: str, span: int = 80, repeats: int = 3) -> bool:
+    if len(text) < span * repeats:
+        return False
+    seen: dict[str, int] = {}
+    for i in range(0, len(text) - span, 5):  # stride 5 chars; sufficient
+        chunk = text[i:i + span]
+        seen[chunk] = seen.get(chunk, 0) + 1
+        if seen[chunk] >= repeats:
+            return True
+    return False
+
+
+def _is_unfinished_thinking(answer_text: str, thinking_text: str) -> bool:
+    full = (thinking_text or "") + " " + (answer_text or "")
+    has_open = "<think>" in full
+    has_close = "</think>" in full
+    return has_open and not has_close
+
+
+def coherence_check(item: dict) -> tuple[bool, str]:
+    """Return (coherent, reason). Reason is empty if coherent."""
+    thinking = str(item.get("response_thinking", "") or "")
+    answer = str(item.get("response_answer", "") or "")
+    full = (thinking + " " + answer).strip()
+    if _is_unfinished_thinking(answer, thinking):
+        return False, "unclosed_think"
+    if _is_degenerate_loop(full):
+        return False, "loop_compression"
+    if _has_repeated_phrase(full):
+        return False, "repeated_phrase"
+    return True, ""
 
 import yaml
 
@@ -183,22 +231,28 @@ def run_benchmark_cell(
 
 
 def read_cell_scores(cell_dir: Path, label: str, scorer_fn) -> list[float]:
-    """Read every per-item JSON for this label and apply scorer.
+    """Read every per-item JSON for this label, apply coherence gate, then score.
 
-    run_benchmark.py writes to {OUT_ROOT}/{benchmark}/{label}/{item_id}.json — the label
-    IS the subdir name. We accept either layout for back-compat:
+    run_benchmark.py writes to {OUT_ROOT}/{benchmark}/{label}/{item_id}.json. We accept
+    either layout for back-compat:
       - {benchmark}/{label}/*.json          (canonical, current run_benchmark.py)
       - {benchmark}/{condition}/*{label}*.json (older convention)
+
+    COHERENCE GATE (per phase5-plan §3.0, FM-8 mitigation):
+    Items that fail any coherence check (unclosed <think>, gzip loop, or repeated
+    phrase) are *excluded* from the returned scores. Rejection counts are printed
+    so the operator can see whether a cell is degenerate.
     """
     candidates: list[Path] = []
-    label_dir = cell_dir.parent / label  # cell_dir was eval/condition; sibling is eval/label
+    label_dir = cell_dir.parent / label
     if label_dir.exists() and label_dir.is_dir():
         candidates.extend(sorted(label_dir.glob("*.json")))
     if cell_dir.exists():
         candidates.extend(sorted(cell_dir.glob(f"*{label}*.json")))
-    # de-dupe
     seen = set()
     scores = []
+    n_total = 0
+    rejections: dict[str, int] = {}
     for jf in candidates:
         if jf in seen:
             continue
@@ -207,8 +261,13 @@ def read_cell_scores(cell_dir: Path, label: str, scorer_fn) -> list[float]:
             data = json.loads(jf.read_text())
         except json.JSONDecodeError:
             continue
-        # run_benchmark.py writes top-level 'response_thinking' and 'response_answer'.
-        # Accept either format.
+        n_total += 1
+        # Coherence gate
+        ok, reason = coherence_check(data)
+        if not ok:
+            rejections[reason] = rejections.get(reason, 0) + 1
+            continue
+        # Score
         if "response_thinking" in data or "response_answer" in data:
             text = (str(data.get("response_thinking", "")) + " " + str(data.get("response_answer", ""))).strip()
         else:
@@ -218,6 +277,9 @@ def read_cell_scores(cell_dir: Path, label: str, scorer_fn) -> list[float]:
             else:
                 text = str(resp)
         scores.append(scorer_fn(text))
+    if rejections:
+        rej_str = ", ".join(f"{k}={v}" for k, v in rejections.items())
+        print(f"      [coherence] {label}: kept {len(scores)}/{n_total} (rejected: {rej_str})", flush=True)
     return scores
 
 

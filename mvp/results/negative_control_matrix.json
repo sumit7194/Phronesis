@@ -1,0 +1,197 @@
+{
+  "generated": "2026-04-27T09:42:25.985421",
+  "verb_peak_layers": {
+    "qwen3-4b": 5,
+    "gemma-4-E4B-it": 8
+  },
+  "negative_control_matrix": {
+    "qwen3-4b__aime": {
+      "baseline": null,
+      "cells": {}
+    },
+    "qwen3-4b__abstention": {
+      "baseline": 0.25,
+      "cells": {
+        "a4": {
+          "mean": 0.25,
+          "delta": 0.0,
+          "n_kept": 4
+        },
+        "a8": {
+          "mean": 0.25,
+          "delta": 0.0,
+          "n_kept": 4
+        },
+        "a12": {
+          "mean": 0.0,
+          "delta": -0.25,
+          "n_kept": 4
+        }
+      }
+    },
+    "qwen3-4b__eg-eval": {
+      "baseline": -0.18450184501845018,
+      "cells": {
+        "a4": {
+          "mean": 0.0,
+          "delta": 0.18450184501845018,
+          "n_kept": 4
+        },
+        "a8": {
+          "mean": -0.2295684113865932,
+          "delta": -0.04506656636814302,
+          "n_kept": 4
+        },
+        "a12": {
+          "mean": -0.1855976243504083,
+          "delta": -0.0010957793319581188,
+          "n_kept": 4
+        }
+      }
+    },
+    "qwen3-4b__rt-eval": {
+      "baseline": 2.1287173268492032,
+      "cells": {
+        "a4": {
+          "mean": 2.0559910367000227,
+          "delta": -0.07272629014918053,
+          "n_kept": 5
+        },
+        "a8": {
+          "mean": 1.990856133124468,
+          "delta": -0.13786119372473515,
+          "n_kept": 5
+        },
+        "a12": {
+          "mean": 1.4202734801217283,
+          "delta": -0.708443846727475,
+          "n_kept": 5
+        }
+      }
+    },
+    "gemma-4-E4B-it__aime": {
+      "baseline": 1.0,
+      "cells": {
+        "a4": {
+          "mean": 1.0,
+          "delta": 0.0,
+          "n_kept": 2
+        },
+        "a8": {
+          "mean": 1.0,
+          "delta": 0.0,
+          "n_kept": 3
+        },
+        "a12": {
+          "mean": 1.0,
+          "delta": 0.0,
+          "n_kept": 1
+        }
+      }
+    },
+    "gemma-4-E4B-it__abstention": {
+      "baseline": 0.6,
+      "cells": {
+        "a4": {
+          "mean": 0.6,
+          "delta": 0.0,
+          "n_kept": 5
+        },
+        "a8": {
+          "mean": 0.6,
+          "delta": 0.0,
+          "n_kept": 5
+        },
+        "a12": {
+          "mean": 0.6,
+          "delta": 0.0,
+          "n_kept": 5
+        }
+      }
+    },
+    "gemma-4-E4B-it__eg-eval": {
+      "baseline": 0.0,
+      "cells": {
+        "a4": {
+          "mean": -0.18587360594795538,
+          "delta": -0.18587360594795538,
+          "n_kept": 5
+        },
+        "a8": {
+          "mean": 0.0,
+          "delta": 0.0,
+          "n_kept": 5
+        },
+        "a12": {
+          "mean": 0.0,
+          "delta": 0.0,
+          "n_kept": 5
+        }
+      }
+    },
+    "gemma-4-E4B-it__rt-eval": {
+      "baseline": 2.3099837664584095,
+      "cells": {
+        "a4": {
+          "mean": 1.5682950411476562,
+          "delta": -0.7416887253107534,
+          "n_kept": 5
+        },
+        "a8": {
+          "mean": 1.1323069485307529,
+          "delta": -1.1776768179276567,
+          "n_kept": 5
+        },
+        "a12": {
+          "mean": 1.131768760496243,
+          "delta": -1.1782150059621666,
+          "n_kept": 5
+        }
+      }
+    }
+  },
+  "virtue_diagonal_deltas": {
+    "gemma-4-E4B-it__CC": {
+      "best_alpha": 12.0,
+      "best_layer": 9,
+      "best_delta": -0.03,
+      "baseline_mean": 0.33
+    },
+    "gemma-4-E4B-it__EG": {
+      "best_alpha": 8.0,
+      "best_layer": 8,
+      "best_delta": 0.0,
+      "baseline_mean": 0.0
+    },
+    "gemma-4-E4B-it__RT": {
+      "best_alpha": 4.0,
+      "best_layer": 7,
+      "best_delta": -0.264,
+      "baseline_mean": 2.31
+    },
+    "qwen3-4b__CC": {
+      "best_alpha": 4.0,
+      "best_layer": 9,
+      "best_delta": 0.0,
+      "baseline_mean": 0.0
+    },
+    "qwen3-4b__EG": {
+      "best_alpha": 8.0,
+      "best_layer": 7,
+      "best_delta": 0.185,
+      "baseline_mean": -0.185
+    },
+    "qwen3-4b__IH": {
+      "best_alpha": 4.0,
+      "best_layer": 17,
+      "best_delta": -0.845,
+      "baseline_mean": 0.845
+    },
+    "qwen3-4b__RT": {
+      "best_alpha": 8.0,
+      "best_layer": 15,
+      "best_delta": 0.509,
+      "baseline_mean": 2.129
+    }
+  }
+}

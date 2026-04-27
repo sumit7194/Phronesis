@@ -62,6 +62,7 @@ OUT_ROOT = MVP / "results" / "benchmark_probe"
 VECTORS_BY_MODEL = {
     "qwen3-4b": {
         # Calibrated Confidence vectors (v_CC) from 50 hand-written triplets
+        "L9":      ("triplets/last_token/layer_9_virtue_vector.npy", 9),       # AP peak per Day-19 attribution patching
         "L10":     ("triplets/last_token/layer_10_virtue_vector.npy", 10),
         "L18":     ("triplets/last_token/layer_18_virtue_vector.npy", 18),
         "L20":     ("triplets/last_token/layer_20_virtue_vector.npy", 20),
@@ -75,26 +76,31 @@ VECTORS_BY_MODEL = {
         "random":  ("random_L22_vector.npy", 22),
         # Intellectual Humility vectors from 20 hand-written IH triplets
         "IH_L15":  ("triplets-intellectual-humility/last_token/layer_15_virtue_vector.npy", 15),
+        "IH_L17":  ("triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", 17),  # AP peak per Day-19
         "IH_L18":  ("triplets-intellectual-humility/last_token/layer_18_virtue_vector.npy", 18),
         "IH_L20":  ("triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy", 20),
         "IH_L22":  ("triplets-intellectual-humility/last_token/layer_22_virtue_vector.npy", 22),
         "IH_L25":  ("triplets-intellectual-humility/last_token/layer_25_virtue_vector.npy", 25),
         # Evidence Grounding vectors from mvp-combined/triplets-evidence-grounding (40 triplets)
-        # Populated after extract_v2.py --corpus ../corpus/mvp-combined/triplets-evidence-grounding
+        "EG_L7":   ("triplets-evidence-grounding/last_token/layer_7_virtue_vector.npy", 7),     # AP peak per Day-19
         "EG_L18":  ("triplets-evidence-grounding/last_token/layer_18_virtue_vector.npy", 18),
         "EG_L20":  ("triplets-evidence-grounding/last_token/layer_20_virtue_vector.npy", 20),
         "EG_L22":  ("triplets-evidence-grounding/last_token/layer_22_virtue_vector.npy", 22),
         "EG_L25":  ("triplets-evidence-grounding/last_token/layer_25_virtue_vector.npy", 25),
         # Reasoning Transparency vectors from mvp-combined/triplets-reasoning-transparency (40 triplets)
+        "RT_L15":  ("triplets-reasoning-transparency/last_token/layer_15_virtue_vector.npy", 15),  # AP peak per Day-19
         "RT_L18":  ("triplets-reasoning-transparency/last_token/layer_18_virtue_vector.npy", 18),
         "RT_L20":  ("triplets-reasoning-transparency/last_token/layer_20_virtue_vector.npy", 20),
         "RT_L22":  ("triplets-reasoning-transparency/last_token/layer_22_virtue_vector.npy", 22),
         "RT_L25":  ("triplets-reasoning-transparency/last_token/layer_25_virtue_vector.npy", 25),
+        # Verbosity (negative-control) — AP peak L5 per Day-20
+        "VERB_L5": ("triplets-verbosity-control/last_token/layer_5_virtue_vector.npy", 5),
     },
     "gemma-4-E4B-it": {
         # Calibrated Confidence on Gemma — from 166 triplets-combined
         # Layer numbering adjusted: Qwen L20/L22 (middle-ish of 36) map roughly
         # to Gemma L22/L24 (middle-ish of 42)
+        "CC_L9":   ("triplets-combined/last_token/layer_9_virtue_vector.npy", 9),    # AP peak per Day-19
         "CC_L18":  ("triplets-combined/last_token/layer_18_virtue_vector.npy", 18),
         "CC_L20":  ("triplets-combined/last_token/layer_20_virtue_vector.npy", 20),
         "CC_L22":  ("triplets-combined/last_token/layer_22_virtue_vector.npy", 22),
@@ -109,15 +115,19 @@ VECTORS_BY_MODEL = {
         "IH_L26":  ("triplets-intellectual-humility/last_token/layer_26_virtue_vector.npy", 26),
         "IH_L28":  ("triplets-intellectual-humility/last_token/layer_28_virtue_vector.npy", 28),
         # Evidence Grounding on Gemma — from mvp-combined/triplets-evidence-grounding (40 triplets)
+        "EG_L8":   ("triplets-evidence-grounding/last_token/layer_8_virtue_vector.npy", 8),    # AP peak per Day-19
         "EG_L14":  ("triplets-evidence-grounding/last_token/layer_14_virtue_vector.npy", 14),
         "EG_L18":  ("triplets-evidence-grounding/last_token/layer_18_virtue_vector.npy", 18),
         "EG_L22":  ("triplets-evidence-grounding/last_token/layer_22_virtue_vector.npy", 22),
         "EG_L26":  ("triplets-evidence-grounding/last_token/layer_26_virtue_vector.npy", 26),
         # Reasoning Transparency on Gemma — from mvp-combined/triplets-reasoning-transparency (40 triplets)
+        "RT_L7":   ("triplets-reasoning-transparency/last_token/layer_7_virtue_vector.npy", 7),    # AP peak per Day-19
         "RT_L14":  ("triplets-reasoning-transparency/last_token/layer_14_virtue_vector.npy", 14),
         "RT_L18":  ("triplets-reasoning-transparency/last_token/layer_18_virtue_vector.npy", 18),
         "RT_L22":  ("triplets-reasoning-transparency/last_token/layer_22_virtue_vector.npy", 22),
         "RT_L26":  ("triplets-reasoning-transparency/last_token/layer_26_virtue_vector.npy", 26),
+        # Verbosity (negative-control) — AP peak L8 per Day-20
+        "VERB_L8": ("triplets-verbosity-control/last_token/layer_8_virtue_vector.npy", 8),
     },
 }
 # Back-compat alias
