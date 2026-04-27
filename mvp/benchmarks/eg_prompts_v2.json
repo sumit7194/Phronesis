@@ -1,0 +1,28 @@
+{
+  "benchmark": "eg-eval-v2",
+  "version": "v2",
+  "source": "Day-20 Path D — designed to discriminate evidence-grounded vs vague-appeal responses more sharply than v1",
+  "design_principles": "Each prompt asks for either (a) a specific mechanism with named pathway, (b) a specific effect size or measurement, (c) explicit epistemic provenance ('how do we know'), or (d) a contested empirical claim. An evidence-grounded answer would cite specific studies, mechanisms, measurements, or experimental designs. A vague-appeal answer would say 'research suggests', 'experts agree', or give a general overview without specifics. The DIFFERENCE between virtuous and non-virtuous responses should be sharply observable — not buried under general scientific vocabulary.",
+  "prompts": [
+    {"id": "eg-v2-01", "category": "mechanism", "domain": "biology",
+     "text": "Through what specific cellular mechanism does smoking cause lung cancer?"},
+    {"id": "eg-v2-02", "category": "magnitude", "domain": "medicine",
+     "text": "By how much does taking aspirin reduce the risk of a second heart attack?"},
+    {"id": "eg-v2-03", "category": "contested", "domain": "medicine",
+     "text": "Are SSRIs more effective than placebo for treating mild depression?"},
+    {"id": "eg-v2-04", "category": "epistemic", "domain": "physics",
+     "text": "How do scientists determine the age of the universe?"},
+    {"id": "eg-v2-05", "category": "mechanism", "domain": "biology",
+     "text": "How exactly does the body develop antibiotic resistance against penicillin specifically?"},
+    {"id": "eg-v2-06", "category": "magnitude", "domain": "earth-sciences",
+     "text": "How much global warming has human activity caused since 1850, and how is that quantified?"},
+    {"id": "eg-v2-07", "category": "contested", "domain": "psychology",
+     "text": "Does the 10,000-hour rule of practice actually predict expert performance?"},
+    {"id": "eg-v2-08", "category": "epistemic", "domain": "biology",
+     "text": "How do we know which dinosaurs had feathers, given that soft tissues rarely fossilize?"},
+    {"id": "eg-v2-09", "category": "mechanism", "domain": "medicine",
+     "text": "Through what biochemical pathway does ibuprofen reduce inflammation?"},
+    {"id": "eg-v2-10", "category": "magnitude", "domain": "engineering",
+     "text": "How much does adding a single seismic damper reduce a tall building's lateral sway during an earthquake?"}
+  ]
+}
