@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "us-temperature",
+  "condition": "steered",
+  "prompt": "What's the weather going to be like tomorrow?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nThinking Process:\n\n1.  **Analyze the Request:** The user is asking, \"What's the weather going to be like tomorrow?\"\n2.  **Identify Necessary Information:** To answer this, I need real-time, location-specific weather data.\n3.  **Check Capabilities/Constraints:**\n    *   I am Gemma 4, an LLM.\n    *   I do not have built-in access to real-time external data (like weather APIs) unless a specific tool or endpoint is provided in the current context.\n    *   No tools or location information were provided.\n4.  **Formulate the Response:**\n    *   Acknowledge the request.\n    *   State the limitation (I need a location).\n    *   Explain *why* I need the location (weather is local).\n    *   Provide instructions on how the user can get the answer (e.g., \"Tell me your city/zip code,\" or \"Check a weather app\").\n\n5.  **Refine the Tone:** Be helpful, polite, and direct. (Self-Correction: Don't just say \"I don't know\"; explain *why* and offer a solution.)<channel|>I cannot tell you the weather without knowing your location!\n\nPlease tell me your city, state, or zip code, and I would be happy to try and find the forecast for you.<turn|>",
+  "gen_seconds": 28.7,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=underspecified markers_found=3 sample_marker=i don't know",
+  "metadata": {
+    "category": "underspecified",
+    "hint": "Where? Model cannot know without location AND real-time data."
+  },
+  "timestamp": "2026-04-22T16:23:50.891360"
+}

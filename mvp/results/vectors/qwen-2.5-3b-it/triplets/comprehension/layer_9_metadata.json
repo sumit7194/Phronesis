@@ -1,0 +1,19 @@
+{
+  "layer": 9,
+  "method": "comprehension",
+  "model": "qwen-2.5-3b-it",
+  "corpus": "triplets",
+  "n_triplets": 50,
+  "raw": {
+    "separation": 0.4138987064361572,
+    "cosine_diff": 0.01935376226902008,
+    "probe_accuracy": 0.9
+  },
+  "whitened": {
+    "separation": 1.071556568145752,
+    "cosine_diff": 0.04259377717971802,
+    "probe_accuracy": 0.92
+  },
+  "n_pcs": 6,
+  "hidden_dim": 2048
+}

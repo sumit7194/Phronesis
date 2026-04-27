@@ -1,0 +1,19 @@
+{
+  "layer": 0,
+  "method": "generation",
+  "model": "gemma-2-2b-it",
+  "corpus": "triplets-synthetic-gemma-all",
+  "n_triplets": 100,
+  "raw": {
+    "separation": 0.7946786880493164,
+    "cosine_diff": 0.02409014105796814,
+    "probe_accuracy": 0.68
+  },
+  "whitened": {
+    "separation": 0.4603452682495117,
+    "cosine_diff": 0.01607804000377655,
+    "probe_accuracy": 0.695
+  },
+  "n_pcs": 17,
+  "hidden_dim": 2304
+}

@@ -1,0 +1,30 @@
+{
+  "model": "gemma-2-2b-it",
+  "corpus": "triplets-synthetic-gemini",
+  "n_triplets": 100,
+  "hidden_dim": 2304,
+  "num_layers": 26,
+  "methods": {
+    "comprehension": {
+      "best_layer": 11,
+      "best_probe": 0.98,
+      "per_layer": {
+        "11": {
+          "probe_accuracy": 0.98,
+          "separation": -0.8775491714477539,
+          "cosine_diff": -0.010410457849502563
+        },
+        "13": {
+          "probe_accuracy": 0.98,
+          "separation": -0.22029495239257812,
+          "cosine_diff": -0.002886444330215454
+        },
+        "15": {
+          "probe_accuracy": 0.98,
+          "separation": -0.44232749938964844,
+          "cosine_diff": -0.003377288579940796
+        }
+      }
+    }
+  }
+}

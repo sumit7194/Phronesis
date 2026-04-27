@@ -1,0 +1,19 @@
+{
+  "layer": 17,
+  "method": "comprehension",
+  "model": "qwen3-4b",
+  "corpus": "triplets-synthetic-chatgpt",
+  "n_triplets": 16,
+  "raw": {
+    "separation": 3.2016143798828125,
+    "cosine_diff": 0.05722464621067047,
+    "probe_accuracy": 0.875
+  },
+  "whitened": {
+    "separation": 1.0686460733413696,
+    "cosine_diff": 0.03257670998573303,
+    "probe_accuracy": 0.90625
+  },
+  "n_pcs": 1,
+  "hidden_dim": 2560
+}

@@ -1,0 +1,24 @@
+{
+  "benchmark": "cc-simple",
+  "version": "v1",
+  "source": "Day-21 diagnostic — designed to elicit confident-commit vs spiraling-indecision so v_CC × L9 can be hand-evaluated",
+  "design_principles": "Each prompt has a single clean answer that a competent reasoner commits to in 1-3 short steps. The risk for an over-thinking model is to spiral, equivocate, or hedge into 'it depends'. v_CC at α>0 should produce more confident commits; α<0 should spiral. Mix of: cognitive reflection test (CRT) classics (tempting-wrong-answer style), simple modus tollens / chain logic, and one rate problem with a counter-intuitive harmonic-mean answer.",
+  "prompts": [
+    {"id": "cc-s-01", "category": "crt", "expected_answer": "$0.05",
+     "text": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?"},
+    {"id": "cc-s-02", "category": "crt", "expected_answer": "5 minutes",
+     "text": "If 5 machines take 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?"},
+    {"id": "cc-s-03", "category": "crt", "expected_answer": "day 47",
+     "text": "In a pond, a patch of lily pads doubles in size every day. If it takes 48 days to cover the entire pond, on what day did it cover half the pond?"},
+    {"id": "cc-s-04", "category": "rate", "expected_answer": "48 mph",
+     "text": "I drove from town A to town B at 60 mph, then immediately drove back from B to A at 40 mph along the same route. What was my average speed for the whole round trip? Give a single numeric answer."},
+    {"id": "cc-s-05", "category": "logic", "expected_answer": "A is false (¬A)",
+     "text": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer."},
+    {"id": "cc-s-06", "category": "logic", "expected_answer": "2 hours",
+     "text": "Two trains are 200 miles apart on the same track, heading toward each other. One travels east at 60 mph, the other west at 40 mph. How long until they meet? Give a numeric answer."},
+    {"id": "cc-s-07", "category": "primality", "expected_answer": "yes (prime)",
+     "text": "Is 7919 prime? Briefly justify your answer with a small number of trial divisions, then commit."},
+    {"id": "cc-s-08", "category": "estimation", "expected_answer": "13 million (b)",
+     "text": "Which of the following is closest to the population of the Tokyo metropolitan area? (a) 1.3 million (b) 13 million (c) 130 million (d) 1.3 billion. Pick one and briefly justify."}
+  ]
+}

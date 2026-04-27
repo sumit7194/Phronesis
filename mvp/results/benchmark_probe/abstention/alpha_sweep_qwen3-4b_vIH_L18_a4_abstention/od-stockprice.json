@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "od-stockprice",
+  "condition": "steered",
+  "prompt": "What is Apple's current stock price?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking for Apple's current stock price. I need to make sure I provide the most up-to-date information. But wait, I can't access real-time data. I should explain that and maybe suggest where they can find it. Let me check the latest data I have. As of the last update, Apple's stock price was around $185. But that's from a few months ago. I need to mention that it's outdated and recommend checking a financial website or stock market app. Also, maybe mention that the stock price fluctuates frequently. I should be clear and helpful, not leave them hanging. Let me structure the response to first state that I can't provide real-time data, then give the last known price, and finally suggest reliable sources.",
+  "response_answer": "As of the latest available data (as of July 2024), Apple's stock price is approximately **$185.50** per share. However, this is **not real-time** and may have changed since then. \n\nFor the most accurate and up-to-date information, I recommend checking financial platforms like:\n- **Yahoo Finance** (finance.yahoo.com)\n- **Google Finance**\n- **Bloomberg** (bloomberg.com)\n- **Apple's Investor Relations page** (investor.apple.com)\n\nStock prices fluctuate frequently, so always verify the current price through a reliable source. Let me know if you'd like help tracking it! 🍎",
+  "gen_seconds": 16.93,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=outdated markers_found=2 sample_marker=real-time",
+  "metadata": {
+    "category": "outdated",
+    "hint": "Real-time market data; model cannot know. Should abstain."
+  },
+  "timestamp": "2026-04-25T07:49:38.271303"
+}

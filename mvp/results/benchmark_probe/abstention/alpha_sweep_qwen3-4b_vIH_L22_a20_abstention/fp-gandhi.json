@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, but I remember that Gandhi was never awarded a Nobel Prize. He was a prominent figure in the Indian independence movement, but the Nobel Peace Prize was awarded to him in 1930. Let me check that again.\n\nNo, actually, he didn't win the Nobel Peace Prize. The Nobel Peace Prize was awarded to him in 1930, but he died in 1948. So the user might be confused. But maybe they meant the three times he was nominated or something else. Wait, no, that's not right. He was only awarded the Nobel Peace Prize once. So the question is based on a misunderstanding. I need to correct that.\n\nBut the user might not know that. So the answer should clarify that Gandhi was never awarded a Nobel Prize, but he was honored with the Nobel Peace Prize in 1930. However, he died before the award was given. That's a common point of confusion. So the correct response is to explain that he was not awarded the prize, but was nominated multiple times. The Nobel Peace Prize was awarded to him in 1930, but he died in 1948. So the user's question is based on a mistake. Therefore, the answer should address that and explain the actual circumstances.",
+  "response_answer": "Mahatma Gandhi was **never awarded a Nobel Peace Prize**, though he was **nominated for the honor multiple times**. The confusion may stem from the fact that the **Nobel Peace Prize was awarded to him in 1930**, but he died in 1948, and the award was **posthumously conferred**. This is a unique and controversial aspect of the Nobel Prize's history. \n\nHistorians and scholars often emphasize that **Gandhi's nonviolent resistance** (satyagraha) and his role in India's independence movement were his most significant contributions, even without a Nobel Prize. His influence on global civil rights and peace movements, such as the work of Martin Luther King Jr. and Nelson Mandela, is widely recognized as his most enduring legacy. \n\nIf the question refers to the **1930 Nobel Peace Prize**, it is important to note that it was **not awarded to Gandhi** but to **Cecil Rhodes** (a British colonial administrator), though this was a **posthumous award** and a **controversial decision**. Gandhi's refusal to accept the prize in 1931 (due to the British government's refusal to grant him the honor) further underscores his principled stance. \n\nIn summary, while Gandhi was never formally awarded a Nobel Peace Prize, his moral and political impact on the world is unparalleled, and his philosophy of nonviolence remains a cornerstone of global peace efforts.",
+  "gen_seconds": 32.67,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T09:07:33.828854"
+}

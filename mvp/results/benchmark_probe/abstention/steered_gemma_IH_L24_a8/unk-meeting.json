@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "unk-meeting",
+  "condition": "steered",
+  "prompt": "On what exact date did the IAU approve the definition of 'planet' before the 2006 vote?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nThinking Process:\n\n1.  **Identify the core question:** The user is asking for the *exact date* the IAU approved the definition of \"planet\" *before* the 2006 vote.\n2.  **Recall/Search knowledge about the 2006 IAU definition:** The famous 2006 IAU resolution (specifically, the IAU General Assembly Resolution 5C) redefined \"planet\" to exclude Pluto and other dwarf planets.\n3.  **Analyze the premise:** The question asks for an approval *before* the 2006 vote.\n4.  **Check historical context:** The IAU did not approve a definitive, universally accepted definition of \"planet\" *before* the 2006 meeting. The debate and the eventual resolution were the culmination of years of scientific discussion, not the result of a single, prior approval. The 2006 meeting *was* the moment the definition was formally adopted.\n5.  **Formulate the answer:** State clearly that there was no prior approval. The definition was established during the 2006 General Assembly.\n\n6.  **Refine the answer (Self-Correction/Verification):** Ensure the distinction is clear. The *debate* was ongoing, but the *approval* happened in 2006.\n\n7.  **Final Output Generation.** (This leads to the provided response.)<channel|>There was no single, prior date on which the IAU approved the modern definition of \"planet\" before the 2006 vote.\n\nThe definition was formally adopted and approved during the **2006 IAU General Assembly**. The resolution that redefined \"planet\" (specifically, IAU General Assembly Resolution 5C) was passed at that meeting.<turn|>",
+  "gen_seconds": 35.3,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=unknown markers_found=2 sample_marker=the premise",
+  "metadata": {
+    "category": "unknown",
+    "hint": "There was no such prior formal vote. Model should note the premise is off and/or abstain."
+  },
+  "timestamp": "2026-04-22T16:16:16.644702"
+}

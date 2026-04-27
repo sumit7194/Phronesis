@@ -1,0 +1,19 @@
+{
+  "layer": 1,
+  "method": "generation",
+  "model": "gemma-2-2b-it",
+  "corpus": "triplets-synthetic-chatgpt",
+  "n_triplets": 16,
+  "raw": {
+    "separation": 1.4150075912475586,
+    "cosine_diff": 0.02651338279247284,
+    "probe_accuracy": 0.34375
+  },
+  "whitened": {
+    "separation": 1.5960149765014648,
+    "cosine_diff": 0.031727056950330734,
+    "probe_accuracy": 0.46875
+  },
+  "n_pcs": 4,
+  "hidden_dim": 2304
+}

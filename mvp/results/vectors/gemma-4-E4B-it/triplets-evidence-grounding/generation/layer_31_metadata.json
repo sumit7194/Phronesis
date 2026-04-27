@@ -1,0 +1,19 @@
+{
+  "layer": 31,
+  "method": "generation",
+  "model": "gemma-4-E4B-it",
+  "corpus": "triplets-evidence-grounding",
+  "n_triplets": 40,
+  "raw": {
+    "separation": 4.2173051834106445,
+    "cosine_diff": 0.030679792165756226,
+    "probe_accuracy": 0.7375
+  },
+  "whitened": {
+    "separation": 2.28715443611145,
+    "cosine_diff": 0.020311031490564346,
+    "probe_accuracy": 0.6875
+  },
+  "n_pcs": 2,
+  "hidden_dim": 2560
+}

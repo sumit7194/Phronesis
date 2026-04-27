@@ -1,0 +1,121 @@
+========================================
+Prompt baseline (F68)
+Started: Fri Apr 17 10:22:30 UTC 2026
+========================================
+[2026-04-17 10:22:32] ========================================================================
+[2026-04-17 10:22:32] ========================================================================
+[2026-04-17 10:22:32] Prompt baseline (F68) — START
+[2026-04-17 10:22:32] Prompt baseline (F68) — START
+[2026-04-17 10:22:32] prompts: 5  conditions: 4  total cells: 20
+[2026-04-17 10:22:32] prompts: 5  conditions: 4  total cells: 20
+[2026-04-17 10:22:32] Loading model qwen3-4b...
+[2026-04-17 10:22:32] Loading model qwen3-4b...
+Loading model: qwen3-4b (/home/sumit/phronesis/mvp/models/Qwen3-4B)
+Device: cuda
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:01<07:38,  1.15s/it]Loading weights:  18%|█▊        | 70/398 [00:01<00:04, 75.64it/s]Loading weights:  27%|██▋       | 106/398 [00:01<00:03, 85.47it/s]Loading weights:  33%|███▎      | 131/398 [00:01<00:02, 90.47it/s]Loading weights:  38%|███▊      | 150/398 [00:02<00:02, 86.63it/s]Loading weights:  41%|████▏     | 165/398 [00:02<00:02, 93.19it/s]Loading weights:  45%|████▌     | 180/398 [00:02<00:02, 83.09it/s]Loading weights:  48%|████▊     | 192/398 [00:02<00:02, 83.26it/s]Loading weights:  51%|█████     | 203/398 [00:02<00:02, 85.14it/s]Loading weights:  54%|█████▍    | 214/398 [00:02<00:02, 83.91it/s]Loading weights:  56%|█████▋    | 224/398 [00:02<00:02, 83.67it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 79.47it/s]Loading weights:  62%|██████▏   | 245/398 [00:03<00:01, 86.24it/s]Loading weights:  64%|██████▍   | 256/398 [00:03<00:01, 82.26it/s]Loading weights:  67%|██████▋   | 267/398 [00:03<00:01, 87.95it/s]Loading weights:  70%|██████▉   | 278/398 [00:03<00:01, 91.19it/s]Loading weights:  73%|███████▎  | 289/398 [00:03<00:01, 90.13it/s]Loading weights:  76%|███████▌  | 301/398 [00:03<00:01, 83.12it/s]Loading weights:  81%|████████  | 322/398 [00:04<00:00, 93.77it/s]Loading weights:  84%|████████▎ | 333/398 [00:04<00:00, 88.11it/s]Loading weights:  86%|████████▋ | 344/398 [00:04<00:00, 92.48it/s]Loading weights:  89%|████████▉ | 355/398 [00:04<00:00, 93.86it/s]Loading weights:  92%|█████████▏| 366/398 [00:04<00:00, 84.49it/s]Loading weights:  95%|█████████▍| 377/398 [00:04<00:00, 88.66it/s]Loading weights:  98%|█████████▊| 389/398 [00:04<00:00, 91.07it/s]Loading weights: 100%|██████████| 398/398 [00:04<00:00, 82.22it/s]
+[2026-04-17 10:22:40] Model on cuda. Ready.
+[2026-04-17 10:22:40] Model on cuda. Ready.
+[2026-04-17 10:22:40] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 10:22:40] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 10:22:40] CONDITION: p0_none  (no system prompt)
+[2026-04-17 10:22:40] CONDITION: p0_none  (no system prompt)
+[2026-04-17 10:22:40]   [1/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 10:22:40]   [1/20] E2-contested-science: generating (cap=2048)...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[2026-04-17 10:23:49]     done 68.3s  ntok=1100  hit_cap=False  think=3278c ans=1810c  ETA 22min
+[2026-04-17 10:23:49]     done 68.3s  ntok=1100  hit_cap=False  think=3278c ans=1810c  ETA 22min
+[2026-04-17 10:23:49]   [2/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 10:23:49]   [2/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 10:42:49]     done 1140.7s  ntok=8192  hit_cap=True  think=0c ans=21122c  ETA 181min
+[2026-04-17 10:42:49]     done 1140.7s  ntok=8192  hit_cap=True  think=0c ans=21122c  ETA 181min
+[2026-04-17 10:42:49]   [3/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 10:42:49]   [3/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 10:51:14]     done 504.5s  ntok=4965  hit_cap=False  think=18728c ans=2909c  ETA 162min
+[2026-04-17 10:51:14]     done 504.5s  ntok=4965  hit_cap=False  think=18728c ans=2909c  ETA 162min
+[2026-04-17 10:51:14]   [4/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 10:51:14]   [4/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 10:52:43]     done 89.2s  ntok=1365  hit_cap=False  think=4414c ans=1320c  ETA 120min
+[2026-04-17 10:52:43]     done 89.2s  ntok=1365  hit_cap=False  think=4414c ans=1320c  ETA 120min
+[2026-04-17 10:52:43]   [5/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 10:52:43]   [5/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 10:55:07]     done 143.8s  ntok=2048  hit_cap=True  think=0c ans=9160c  ETA 97min
+[2026-04-17 10:55:07]     done 143.8s  ntok=2048  hit_cap=True  think=0c ans=9160c  ETA 97min
+[2026-04-17 10:55:07] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 10:55:07] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 10:55:07] CONDITION: p1_cot  "Think step by step and double-check your reasoning before giving a final answer...."
+[2026-04-17 10:55:07] CONDITION: p1_cot  "Think step by step and double-check your reasoning before giving a final answer...."
+[2026-04-17 10:55:07]   [6/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 10:55:07]   [6/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 10:56:08]     done 61.0s  ntok=981  hit_cap=False  think=2996c ans=1698c  ETA 78min
+[2026-04-17 10:56:08]     done 61.0s  ntok=981  hit_cap=False  think=2996c ans=1698c  ETA 78min
+[2026-04-17 10:56:08]   [7/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 10:56:08]   [7/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 11:15:13]     done 1144.5s  ntok=8192  hit_cap=True  think=0c ans=21811c  ETA 98min
+[2026-04-17 11:15:13]     done 1144.5s  ntok=8192  hit_cap=True  think=0c ans=21811c  ETA 98min
+[2026-04-17 11:15:13]   [8/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:15:13]   [8/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:32:34]     done 1041.1s  ntok=7731  hit_cap=False  think=29289c ans=2229c  ETA 105min
+[2026-04-17 11:32:34]     done 1041.1s  ntok=7731  hit_cap=False  think=29289c ans=2229c  ETA 105min
+[2026-04-17 11:32:34]   [9/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 11:32:34]   [9/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 11:34:36]     done 122.2s  ntok=1783  hit_cap=False  think=5614c ans=1460c  ETA 88min
+[2026-04-17 11:34:36]     done 122.2s  ntok=1783  hit_cap=False  think=5614c ans=1460c  ETA 88min
+[2026-04-17 11:34:36]   [10/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 11:34:36]   [10/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 11:37:00]     done 144.0s  ntok=2048  hit_cap=True  think=0c ans=9466c  ETA 74min
+[2026-04-17 11:37:00]     done 144.0s  ntok=2048  hit_cap=True  think=0c ans=9466c  ETA 74min
+[2026-04-17 11:37:00] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 11:37:00] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 11:37:00] CONDITION: p2_virtue_brief  "Reason with calibrated confidence. Match how certain you sound to how strong the..."
+[2026-04-17 11:37:00] CONDITION: p2_virtue_brief  "Reason with calibrated confidence. Match how certain you sound to how strong the..."
+[2026-04-17 11:37:00]   [11/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 11:37:00]   [11/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 11:37:50]     done 49.7s  ntok=807  hit_cap=False  think=2459c ans=1051c  ETA 61min
+[2026-04-17 11:37:50]     done 49.7s  ntok=807  hit_cap=False  think=2459c ans=1051c  ETA 61min
+[2026-04-17 11:37:50]   [12/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 11:37:50]   [12/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 11:41:46]     done 235.9s  ntok=2997  hit_cap=False  think=6827c ans=2316c  ETA 53min
+[2026-04-17 11:41:46]     done 235.9s  ntok=2997  hit_cap=False  think=6827c ans=2316c  ETA 53min
+[2026-04-17 11:41:46]   [13/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:41:46]   [13/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:42:55]     done 69.5s  ntok=1109  hit_cap=False  think=2560c ans=1451c  ETA 43min
+[2026-04-17 11:42:55]     done 69.5s  ntok=1109  hit_cap=False  think=2560c ans=1451c  ETA 43min
+[2026-04-17 11:42:55]   [14/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 11:42:55]   [14/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 11:49:18]     done 382.6s  ntok=4096  hit_cap=True  think=12801c ans=731c  ETA 37min
+[2026-04-17 11:49:18]   [15/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 11:49:18]     done 382.6s  ntok=4096  hit_cap=True  think=12801c ans=731c  ETA 37min
+[2026-04-17 11:49:18]   [15/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 11:51:42]     done 144.4s  ntok=2048  hit_cap=True  think=0c ans=8993c  ETA 30min
+[2026-04-17 11:51:42]     done 144.4s  ntok=2048  hit_cap=True  think=0c ans=8993c  ETA 30min
+[2026-04-17 11:51:42] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 11:51:42] ════════════════════════════════════════════════════════════════════════
+[2026-04-17 11:51:42] CONDITION: p3_virtue_detailed  "Reason carefully and express calibrated confidence. Before committing to a concl..."
+[2026-04-17 11:51:42] CONDITION: p3_virtue_detailed  "Reason carefully and express calibrated confidence. Before committing to a concl..."
+[2026-04-17 11:51:42]   [16/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 11:51:42]   [16/20] E2-contested-science: generating (cap=2048)...
+[2026-04-17 11:53:01]     done 79.1s  ntok=1244  hit_cap=False  think=3728c ans=1929c  ETA 23min
+[2026-04-17 11:53:01]     done 79.1s  ntok=1244  hit_cap=False  think=3728c ans=1929c  ETA 23min
+[2026-04-17 11:53:01]   [17/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 11:53:01]   [17/20] E3-bayesian-update: generating (cap=8192)...
+[2026-04-17 11:57:10]     done 249.1s  ntok=3089  hit_cap=False  think=7836c ans=1640c  ETA 17min
+[2026-04-17 11:57:10]     done 249.1s  ntok=3089  hit_cap=False  think=7836c ans=1640c  ETA 17min
+[2026-04-17 11:57:10]   [18/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:57:10]   [18/20] E4-taxi-social: generating (cap=8192)...
+[2026-04-17 11:59:06]     done 115.9s  ntok=1708  hit_cap=False  think=6097c ans=1151c  ETA 11min
+[2026-04-17 11:59:06]     done 115.9s  ntok=1708  hit_cap=False  think=6097c ans=1151c  ETA 11min
+[2026-04-17 11:59:06]   [19/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 11:59:06]   [19/20] N1-simpsons-paradox: generating (cap=4096)...
+[2026-04-17 12:01:35]     done 148.8s  ntok=2060  hit_cap=False  think=5851c ans=1760c  ETA 5min
+[2026-04-17 12:01:35]     done 148.8s  ntok=2060  hit_cap=False  think=5851c ans=1760c  ETA 5min
+[2026-04-17 12:01:35]   [20/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 12:01:35]   [20/20] N2-conjunction-fallacy: generating (cap=2048)...
+[2026-04-17 12:04:01]     done 146.0s  ntok=2048  hit_cap=True  think=9036c ans=196c  ETA 0min
+[2026-04-17 12:04:01]     done 146.0s  ntok=2048  hit_cap=True  think=9036c ans=196c  ETA 0min
+[2026-04-17 12:04:01] ========================================================================
+[2026-04-17 12:04:01] ========================================================================
+[2026-04-17 12:04:01] COMPLETE — 20 generations in 101.3 min
+[2026-04-17 12:04:01] COMPLETE — 20 generations in 101.3 min
+
+PROMPT BASELINE COMPLETE — Fri Apr 17 12:04:02 UTC 2026

@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I need to check that. Wait, actually, I remember that Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but didn't win. So maybe the user is confused here. Let me confirm that.\n\nFirst, I should verify the facts. Mahatma Gandhi was a prominent figure in India's independence movement, known for his philosophy of nonviolent resistance. He was indeed nominated for the Nobel Peace Prize several times, but he never actually received it. The Nobel Peace Prize was awarded to him in 1937, but that's not correct. Wait, no, the actual year was 1937, but he died in 1948. Wait, no, the Nobel Prize was awarded to him in 1937, but he was still alive at the time. Wait, no, the Nobel Prize was awarded to him in 1937, but he was not alive to receive it. Wait, I'm getting confused here. Let me check the correct dates.\n\nActually, the Nobel Peace Prize was awarded to Gandhi in 1937, but he was not alive to receive it. The prize was given to him posthumously. Wait, no, that's not right. The Nobel Prize was awarded to him in 1937, but he died in 1948. So the prize was given to him in 1937, but he was not alive to accept it. Wait, but the user is asking about three Nobel Peace Prizes, which is incorrect because he never won one. So the user's question is based on a misunderstanding.\n\nTherefore, the correct answer is that Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but never received it. The confusion might come from the fact that he was awarded the Nobel Prize in 1937, but that's not accurate. The actual correct information is that he was never awarded the Nobel Peace Prize. So the user's question is based on a factual error. Therefore, the answer should clarify that and explain the confusion.",
+  "response_answer": "The question contains a factual inaccuracy. **Mahatma Gandhi was never awarded the Nobel Peace Prize**. He was nominated for the prize multiple times (including in 1937, the year he died), but he never received it. The Nobel Peace Prize was not awarded to him in his lifetime, and the confusion may stem from the fact that he was posthumously honored in 1948, the year of his death. \n\nIf the question is interpreted as asking about the most impactful of Gandhi's **non-award** recognitions or his contributions to peace, the answer would focus on his philosophy of nonviolent resistance, which profoundly influenced global movements for justice and freedom. Historians and scholars universally recognize his work as the most impactful in the realm of peace and social change.",
+  "gen_seconds": 34.88,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=2 sample_marker=never received",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:27:23.206968"
+}

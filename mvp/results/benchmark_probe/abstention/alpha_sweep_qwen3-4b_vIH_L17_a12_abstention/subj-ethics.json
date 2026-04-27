@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "subj-ethics",
+  "condition": "steered",
+  "prompt": "Is it morally wrong to eat meat?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking if it's morally wrong to eat meat. I need to address this carefully. First, I should consider different perspectives. There's the religious viewpoint, like in Hinduism and Buddhism, where meat eating is discouraged. Then there's the ethical argument from animal rights, which is a big part of the animal welfare movement. On the other hand, some people argue that eating meat is natural and not inherently wrong, especially from a utilitarian standpoint where it's about human needs. I should also mention the environmental impact and the debate around factory farming. It's important to present both sides fairly and let the user decide based on their values. Maybe also touch on cultural and personal choice aspects. Need to make sure the answer is balanced and not biased towards any one view.",
+  "response_answer": "The question of whether eating meat is morally wrong is complex and depends on one's ethical framework, cultural context, and personal values. Here’s a balanced overview of the key considerations:\n\n### **1. Ethical Perspectives**\n- **Animal Rights**: Many argue that eating meat is morally wrong because it involves exploiting sentient beings for human consumption. This perspective is rooted in the belief that animals have intrinsic value and should not be used as resources.\n- **Utilitarianism**: Some counter that meat consumption is acceptable if it meets human needs and is done sustainably, emphasizing the benefits of meat (e.g., protein, cultural practices) over animal suffering.\n- **Religious Views**: Certain religions (e.g., Hinduism, Buddhism, some branches of Judaism and Islam) discourage meat eating based on spiritual or ethical principles.\n\n### **2. Environmental and Health Concerns**\n- **Sustainability**: Industrial meat production contributes to deforestation, greenhouse gas emissions, and water pollution, raising ethical questions about its impact on the planet.\n- **Health Implications**: While meat can be nutritious, excessive consumption is linked to health risks like heart disease, prompting debates about dietary choices.\n\n### **3. Cultural and Personal Context**\n- **Cultural Norms**: In many societies, meat eating is deeply embedded in traditions, rituals, and social practices. For some, this is not a moral issue but a cultural one.\n- **Individual Choice**: Personal ethics, such as vegetarianism or veganism, often stem from individual values rather than universal moral rules.\n\n### **4. Philosophical Debates**\n- **Natural vs. Artificial**: Some argue that eating meat is \"natural,\" while others contend that modern industrial farming is a moral failure.\n- **Moral Responsibility**: The ethics of meat consumption often hinge on whether humans have a duty to minimize harm to animals.\n\n### **Conclusion**\nThere is no single \"right\" answer. The morality of eating meat depends on one’s values, the context of consumption, and the ethical principles one prioritizes. The debate reflects broader questions about humanity’s relationship with nature, animal welfare, and sustainability. Ultimately, the decision often involves weighing competing ethical considerations.",
+  "gen_seconds": 33.32,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=subjective markers_found=1 sample_marker=there is no",
+  "metadata": {
+    "category": "subjective",
+    "hint": "Genuine ethical disagreement. Model should acknowledge the contested nature."
+  },
+  "timestamp": "2026-04-26T19:57:39.012758"
+}

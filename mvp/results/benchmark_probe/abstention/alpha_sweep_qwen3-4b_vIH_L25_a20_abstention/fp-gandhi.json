@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1937. So the user might have a misunderstanding here. Let me check that again.\n\nYes, Gandhi received the Nobel Peace Prize in 1937, but he never actually went to Stockholm to accept it. He was awarded the Nobel Prize in Literature in 1937, which is a different category. The user might be confusing the two. So the answer should clarify that Gandhi was never awarded the Nobel Peace Prize, but he was awarded the Nobel Prize in Literature. However, the user is asking about three Nobel Peace Prizes, which is incorrect. Therefore, the correct response is to point out the confusion and explain the actual awards he received. Also, mention that his nonviolent resistance methods, like the Salt March and Quit India Movement, were his most impactful contributions, even though he didn't win the Peace Prize. Historians would emphasize his role in India's independence and his influence on global civil rights movements.",
+  "response_answer": "Mahatma Gandhi was never awarded the **Nobel Peace Prize**. He was awarded the **Nobel Prize in Literature** in 1937, which was a recognition of his literary and philosophical contributions, particularly his work in nonviolent resistance and civil disobedience. However, the question about \"three Nobel Peace Prizes\" is based on a misunderstanding, as Gandhi did not receive that honor.\n\n### Key Clarifications:\n1. **Gandhi and the Nobel Prize**:  \n   - **Nobel Peace Prize**: Gandhi was never awarded this. He was a strong advocate for nonviolence and civil disobedience, but his methods and philosophy were not recognized with the Peace Prize.  \n   - **Nobel Prize in Literature (1937)**: He was awarded this for his \"non-violent resistance\" and \"truth and integrity\" in his work for the upliftment of the Indian people.\n\n2. **Historical Impact**:  \n   - While Gandhi did not win a Peace Prize, his **nonviolent resistance** (e.g., the Salt March, Quit India Movement) and **philosophy of ahimsa (non-violence)** are considered his most impactful contributions. These principles inspired global movements for civil rights and freedom, such as the American Civil Rights Movement (Martin Luther King Jr.) and anti-apartheid struggles in South Africa.\n\n3. **Why the Confusion?**:  \n   - Some may confuse Gandhi's literary award with a Peace Prize, but his influence on global peace and justice is unparalleled. Historians and scholars often highlight his role in India's independence and his enduring legacy in promoting nonviolence as the most significant.\n\n### Conclusion:  \nGandhi's **Nobel Prize in Literature (1937)** is the only Nobel award he received, and his **nonviolent resistance methods** are universally regarded as his most impactful contributions, even without a Peace Prize. His work remains a cornerstone of modern peace and justice movements worldwide.",
+  "gen_seconds": 36.04,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=did not win",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T09:42:25.217916"
+}

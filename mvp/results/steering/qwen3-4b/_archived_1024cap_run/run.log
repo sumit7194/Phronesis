@@ -1,0 +1,41 @@
+========================================
+Qwen3-4B Steering Sweep
+Started: Wed Apr 15 11:28:50 IST 2026
+========================================
+[2026-04-15 11:28:51] ========================================================================
+[2026-04-15 11:28:51] ========================================================================
+[2026-04-15 11:28:51] Qwen3-4B steering sweep — START
+[2026-04-15 11:28:51] Qwen3-4B steering sweep — START
+[2026-04-15 11:28:51] Vectors: 8  Alphas: 9  Prompts: 5
+[2026-04-15 11:28:51] Vectors: 8  Alphas: 9  Prompts: 5
+[2026-04-15 11:28:51] Total generations target: 365 (sweep + baselines)
+[2026-04-15 11:28:51] Total generations target: 365 (sweep + baselines)
+[2026-04-15 11:28:51] Loaded 5 edge-case prompts
+[2026-04-15 11:28:51] Loaded 5 edge-case prompts
+[2026-04-15 11:28:51] Loading model qwen3-4b ...
+[2026-04-15 11:28:51] Loading model qwen3-4b ...
+Loading model: qwen3-4b (/Users/sumit/Github/Phronesis/mvp/models/Qwen3-4B)
+Device: mps
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<19:08,  2.89s/it]Loading weights:  33%|███▎      | 130/398 [00:02<00:04, 60.83it/s]Loading weights:  51%|█████     | 201/398 [00:04<00:03, 56.86it/s]Loading weights:  61%|██████    | 242/398 [00:04<00:02, 62.13it/s]Loading weights:  68%|██████▊   | 270/398 [00:05<00:02, 51.55it/s]Loading weights:  73%|███████▎  | 289/398 [00:06<00:02, 46.36it/s]Loading weights:  76%|███████▌  | 303/398 [00:06<00:02, 44.97it/s]Loading weights:  79%|███████▉  | 314/398 [00:07<00:01, 42.19it/s]Loading weights:  81%|████████  | 323/398 [00:07<00:01, 38.51it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 35.65it/s]Loading weights:  86%|████████▋ | 344/398 [00:08<00:01, 34.27it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 31.44it/s]Loading weights:  92%|█████████▏| 366/398 [00:09<00:01, 29.08it/s]Loading weights:  95%|█████████▍| 377/398 [00:09<00:00, 28.64it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 29.06it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 40.35it/s]
+[2026-04-15 11:29:20] Model on mps. Ready.
+[2026-04-15 11:29:20] Model on mps. Ready.
+[2026-04-15 11:29:20] ─── BASELINES (no steering) ───
+[2026-04-15 11:29:20] ─── BASELINES (no steering) ───
+[2026-04-15 11:29:20]   [1/5] E1-confabulation: generating...
+[2026-04-15 11:29:20]   [1/5] E1-confabulation: generating...
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[2026-04-15 11:30:36]     done in 76.1s — think=2172c answer=358c
+[2026-04-15 11:30:36]     done in 76.1s — think=2172c answer=358c
+[2026-04-15 11:30:36]   [2/5] E2-contested-science: generating...
+[2026-04-15 11:30:36]   [2/5] E2-contested-science: generating...
+[2026-04-15 11:33:22]     done in 166.3s — think=3227c answer=1403c
+[2026-04-15 11:33:22]     done in 166.3s — think=3227c answer=1403c
+[2026-04-15 11:33:22]   [3/5] E3-bayesian-update: generating...
+[2026-04-15 11:33:22]   [3/5] E3-bayesian-update: generating...
+[2026-04-15 11:36:12]     done in 170.2s — think=0c answer=2940c
+[2026-04-15 11:36:12]     done in 170.2s — think=0c answer=2940c
+[2026-04-15 11:36:12]   [4/5] E4-taxi-social: generating...
+[2026-04-15 11:36:12]   [4/5] E4-taxi-social: generating...
+/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-30699-_r7f4a52'}
+  warnings.warn(

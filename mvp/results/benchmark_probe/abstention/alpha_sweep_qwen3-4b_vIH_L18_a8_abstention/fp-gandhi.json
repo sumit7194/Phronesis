@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I need to check that. Actually, I remember that Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but never actually received it. So the user might have a misunderstanding here.\n\nFirst, I should clarify that Gandhi didn't win the Nobel Prize. Then, maybe they're confused with someone else. But the question is about his three Nobel Peace Prizes, which is incorrect. So the correct approach is to point out the mistake and explain that he wasn't awarded the prize. However, if the user is referring to his three major contributions or movements, that's different. But the question specifically mentions the Nobel Peace Prizes, which is a factual error. \n\nI need to make sure the answer is accurate. Let me verify: Gandhi was nominated for the Nobel Peace Prize in 1937, 1938, and 1948, but he never received it. So the answer should correct that and explain the confusion. Also, maybe the user is thinking of other recipients who were awarded multiple times, but that's not the case here. \n\nSo the response should start by stating that Gandhi was never awarded the Nobel Peace Prize. Then, perhaps mention that he was nominated three times, and if the user is referring to his three major contributions, those would be non-Prize related. But the question is about the Nobel Prizes, so the answer must address that misconception.",
+  "response_answer": "Mahatma Gandhi was **never awarded the Nobel Peace Prize**. He was nominated for the prize multiple times (in 1937, 1938, and 1948) but was never officially recognized with it. The confusion may stem from the fact that he was a pivotal figure in nonviolent resistance and global peace movements, but his work was not formally acknowledged with a Nobel Prize. \n\nIf the question refers to his three major contributions or movements (e.g., the Salt March, Quit India Movement, and advocacy for nonviolence), those are considered historically impactful. However, these are not Nobel Peace Prizes. Historians and scholars emphasize Gandhi's role in inspiring global civil rights and freedom struggles, but his legacy is celebrated through his nonviolent philosophy and actions, not through a Nobel award.",
+  "gen_seconds": 27.45,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T07:56:04.489742"
+}

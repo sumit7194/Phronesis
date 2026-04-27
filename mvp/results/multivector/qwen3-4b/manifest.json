@@ -1,0 +1,132 @@
+{
+  "started_at": "2026-04-16T20:55:46.987178",
+  "model": "qwen3-4b",
+  "cosine_L20_L22": 0.7379561066627502,
+  "configs": [
+    {
+      "id": "baseline",
+      "injections": []
+    },
+    {
+      "id": "solo_L20_mid",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 4.0
+        }
+      ]
+    },
+    {
+      "id": "solo_L20_high",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 12.0
+        }
+      ]
+    },
+    {
+      "id": "solo_L22_N2",
+      "injections": [
+        {
+          "layer": 22,
+          "vector": "L22",
+          "alpha": 8.0
+        }
+      ]
+    },
+    {
+      "id": "combo_balanced",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 4.0
+        },
+        {
+          "layer": 22,
+          "vector": "L22",
+          "alpha": 4.0
+        }
+      ]
+    },
+    {
+      "id": "combo_L20strong",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 8.0
+        },
+        {
+          "layer": 22,
+          "vector": "L22",
+          "alpha": 4.0
+        }
+      ]
+    },
+    {
+      "id": "combo_L22strong",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 4.0
+        },
+        {
+          "layer": 22,
+          "vector": "L22",
+          "alpha": 8.0
+        }
+      ]
+    },
+    {
+      "id": "combo_strong",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 8.0
+        },
+        {
+          "layer": 22,
+          "vector": "L22",
+          "alpha": 8.0
+        }
+      ]
+    },
+    {
+      "id": "combo_ortho",
+      "injections": [
+        {
+          "layer": 20,
+          "vector": "L20",
+          "alpha": 4.0
+        },
+        {
+          "layer": 22,
+          "vector": "L22_ortho",
+          "alpha": 4.0
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "N1-simpsons-paradox",
+    "N2-conjunction-fallacy"
+  ],
+  "per_prompt_caps": {
+    "E2-contested-science": 2048,
+    "E3-bayesian-update": 8192,
+    "E4-taxi-social": 8192,
+    "N1-simpsons-paradox": 4096,
+    "N2-conjunction-fallacy": 2048
+  },
+  "finished_at": "2026-04-17T01:31:29.242601",
+  "total_generations": 45
+}

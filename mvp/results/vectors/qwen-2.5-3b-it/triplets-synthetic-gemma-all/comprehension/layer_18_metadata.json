@@ -1,0 +1,19 @@
+{
+  "layer": 18,
+  "method": "comprehension",
+  "model": "qwen-2.5-3b-it",
+  "corpus": "triplets-synthetic-gemma-all",
+  "n_triplets": 100,
+  "raw": {
+    "separation": -0.7575058937072754,
+    "cosine_diff": -0.017710614949464798,
+    "probe_accuracy": 0.965
+  },
+  "whitened": {
+    "separation": -0.6448078155517578,
+    "cosine_diff": -0.015404917299747467,
+    "probe_accuracy": 0.975
+  },
+  "n_pcs": 8,
+  "hidden_dim": 2048
+}

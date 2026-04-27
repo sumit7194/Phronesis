@@ -1,0 +1,52 @@
+[
+  {
+    "label": "baseline",
+    "tau": null,
+    "alpha_0": 0.0,
+    "n_tokens": 4965,
+    "hit_cap": false,
+    "think_c": 18728,
+    "ans_c": 2909,
+    "seconds": 504.12
+  },
+  {
+    "label": "tau_50",
+    "tau": 50.0,
+    "alpha_0": 8.0,
+    "n_tokens": 16384,
+    "hit_cap": true,
+    "think_c": 0,
+    "ans_c": 82490,
+    "seconds": 3859.19
+  },
+  {
+    "label": "tau_200",
+    "tau": 200.0,
+    "alpha_0": 8.0,
+    "n_tokens": 5097,
+    "hit_cap": false,
+    "think_c": 19351,
+    "ans_c": 2582,
+    "seconds": 528.62
+  },
+  {
+    "label": "tau_1000",
+    "tau": 1000.0,
+    "alpha_0": 8.0,
+    "n_tokens": 16384,
+    "hit_cap": true,
+    "think_c": 0,
+    "ans_c": 69342,
+    "seconds": 3858.59
+  },
+  {
+    "label": "tau_inf",
+    "tau": "inf",
+    "alpha_0": 8.0,
+    "n_tokens": 16384,
+    "hit_cap": true,
+    "think_c": 0,
+    "ans_c": 73692,
+    "seconds": 3856.24
+  }
+]

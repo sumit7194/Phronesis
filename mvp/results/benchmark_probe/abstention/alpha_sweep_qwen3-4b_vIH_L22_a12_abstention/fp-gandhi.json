@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, but I remember that Gandhi was never awarded a Nobel Prize. He was nominated multiple times but didn't win. So the user might have a misunderstanding here. Let me check that again.\n\nYes, Gandhi was never awarded the Nobel Peace Prize. He was a prominent figure in the Indian independence movement, and his philosophy of nonviolent resistance influenced many movements worldwide. However, the Nobel Prize he received was actually the 1930 Nobel Peace Prize, but he didn't win it. He was the first person to be awarded the Nobel Prize for Peace, but that's not correct either. Wait, no, the first Nobel Peace Prize was awarded in 1901. Gandhi was nominated multiple times but didn't win. The actual first person to win the Nobel Peace Prize was Alfred Nobel himself in 1901. So the user's question is based on a misconception.\n\nTherefore, the correct answer is that Gandhi was never awarded a Nobel Peace Prize. However, if the user is referring to the 1930 Nobel Peace Prize, which he was awarded, but that's not accurate. Wait, no, he was not awarded it. He was nominated in 1930, but the prize was given to someone else. So the user's question is incorrect. I need to clarify that and explain the confusion.",
+  "response_answer": "Mahatma Gandhi was **never awarded the Nobel Peace Prize**, despite being nominated multiple times. He was the first person to be **nominated** for the Nobel Peace Prize, but he did not win it. The actual first recipient of the Nobel Peace Prize was **Alfred Nobel** in 1901, and the first person to be awarded the prize was **Thomas Huxley** in 1902. \n\nGandhi's influence on global nonviolent resistance and his role in India's independence movement are immense, but his lack of a Nobel Prize is a common misconception. Historians and scholars often emphasize his **philosophical and political impact**—not a Nobel Prize—when discussing his legacy. If the question refers to a specific award, it is important to clarify that Gandhi did not receive the Nobel Peace Prize.",
+  "gen_seconds": 26.3,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=did not win",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:54:50.415073"
+}

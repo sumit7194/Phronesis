@@ -1,0 +1,925 @@
+================================================================
+Phronesis EG + RT Extraction — 4 runs
+Started: Wed Apr 22 22:27:21 UTC 2026
+Host: phronesis-v2-l4
+================================================================
+
+[1/4] Wed Apr 22 22:27:21 UTC 2026 — qwen3-4b × triplets-evidence-grounding
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+============================================================
+Phronesis MVP v2 — Virtue Vector Extraction
+============================================================
+Loading model: qwen3-4b (/home/sumit/phronesis/mvp/models/Qwen3-4B)
+Device: cuda
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:00<03:11,  2.07it/s]Loading weights:  15%|█▍        | 58/398 [00:00<00:02, 116.79it/s]Loading weights:  20%|██        | 80/398 [00:00<00:02, 125.60it/s]Loading weights:  26%|██▌       | 102/398 [00:00<00:02, 130.01it/s]Loading weights:  31%|███       | 124/398 [00:01<00:01, 138.20it/s]Loading weights:  35%|███▌      | 141/398 [00:01<00:01, 144.10it/s]Loading weights:  40%|███▉      | 158/398 [00:01<00:01, 135.65it/s]Loading weights:  45%|████▍     | 179/398 [00:01<00:01, 137.26it/s]Loading weights:  49%|████▊     | 194/398 [00:01<00:01, 140.12it/s]Loading weights:  53%|█████▎    | 212/398 [00:01<00:01, 137.84it/s]Loading weights:  57%|█████▋    | 227/398 [00:01<00:01, 140.65it/s]Loading weights:  62%|██████▏   | 245/398 [00:01<00:01, 139.06it/s]Loading weights:  65%|██████▌   | 260/398 [00:02<00:00, 141.25it/s]Loading weights:  70%|██████▉   | 278/398 [00:02<00:00, 131.64it/s]Loading weights:  75%|███████▌  | 300/398 [00:02<00:00, 137.93it/s]Loading weights:  81%|████████  | 322/398 [00:02<00:00, 142.61it/s]Loading weights:  85%|████████▍ | 337/398 [00:02<00:00, 144.13it/s]Loading weights:  89%|████████▉ | 355/398 [00:02<00:00, 142.78it/s]Loading weights:  93%|█████████▎| 370/398 [00:02<00:00, 141.29it/s]Loading weights:  97%|█████████▋| 388/398 [00:02<00:00, 138.70it/s]Loading weights: 100%|██████████| 398/398 [00:02<00:00, 132.68it/s]
+Architecture: 36 layers, 2560 hidden dim
+Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+Triplets: 40 (from triplets-evidence-grounding)
+
+────────────────────────────────────────────────────────────
+Method: generation
+────────────────────────────────────────────────────────────
+  Layer 0 [1/36] triplet [1/40]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 0 [1/36] triplet [21/40]
+  Layer 0 [1/36] triplet [40/40]
+  Layer 0: probe=41% ◀ BEST
+  Layer 1 [2/36] triplet [1/40]
+  Layer 1 [2/36] triplet [21/40]
+  Layer 1 [2/36] triplet [40/40]
+  Layer 1: probe=49% ◀ BEST
+  Layer 2 [3/36] triplet [1/40]
+  Layer 2 [3/36] triplet [21/40]
+  Layer 2 [3/36] triplet [40/40]
+  Layer 2: probe=51% ◀ BEST
+  Layer 3 [4/36] triplet [1/40]
+  Layer 3 [4/36] triplet [21/40]
+  Layer 3 [4/36] triplet [40/40]
+  Layer 3: probe=57% ◀ BEST
+  Layer 4 [5/36] triplet [1/40]
+  Layer 4 [5/36] triplet [21/40]
+  Layer 4 [5/36] triplet [40/40]
+  Layer 4: probe=54% 
+  Layer 5 [6/36] triplet [1/40]
+  Layer 5 [6/36] triplet [21/40]
+  Layer 5 [6/36] triplet [40/40]
+  Layer 5: probe=52% 
+  Layer 6 [7/36] triplet [1/40]
+  Layer 6 [7/36] triplet [21/40]
+  Layer 6 [7/36] triplet [40/40]
+  Layer 6: probe=54% 
+  Layer 7 [8/36] triplet [1/40]
+  Layer 7 [8/36] triplet [21/40]
+  Layer 7 [8/36] triplet [40/40]
+  Layer 7: probe=56% 
+  Layer 8 [9/36] triplet [1/40]
+  Layer 8 [9/36] triplet [21/40]
+  Layer 8 [9/36] triplet [40/40]
+  Layer 8: probe=56% 
+  Layer 9 [10/36] triplet [1/40]
+  Layer 9 [10/36] triplet [21/40]
+  Layer 9 [10/36] triplet [40/40]
+  Layer 9: probe=55% 
+  Layer 10 [11/36] triplet [1/40]
+  Layer 10 [11/36] triplet [21/40]
+  Layer 10 [11/36] triplet [40/40]
+  Layer 10: probe=56% 
+  Layer 11 [12/36] triplet [1/40]
+  Layer 11 [12/36] triplet [21/40]
+  Layer 11 [12/36] triplet [40/40]
+  Layer 11: probe=57% 
+  Layer 12 [13/36] triplet [1/40]
+  Layer 12 [13/36] triplet [21/40]
+  Layer 12 [13/36] triplet [40/40]
+  Layer 12: probe=55% 
+  Layer 13 [14/36] triplet [1/40]
+  Layer 13 [14/36] triplet [21/40]
+  Layer 13 [14/36] triplet [40/40]
+  Layer 13: probe=56% 
+  Layer 14 [15/36] triplet [1/40]
+  Layer 14 [15/36] triplet [21/40]
+  Layer 14 [15/36] triplet [40/40]
+  Layer 14: probe=56% 
+  Layer 15 [16/36] triplet [1/40]
+  Layer 15 [16/36] triplet [21/40]
+  Layer 15 [16/36] triplet [40/40]
+  Layer 15: probe=61% ◀ BEST
+  Layer 16 [17/36] triplet [1/40]
+  Layer 16 [17/36] triplet [21/40]
+  Layer 16 [17/36] triplet [40/40]
+  Layer 16: probe=52% 
+  Layer 17 [18/36] triplet [1/40]
+  Layer 17 [18/36] triplet [21/40]
+  Layer 17 [18/36] triplet [40/40]
+  Layer 17: probe=57% 
+  Layer 18 [19/36] triplet [1/40]
+  Layer 18 [19/36] triplet [21/40]
+  Layer 18 [19/36] triplet [40/40]
+  Layer 18: probe=56% 
+  Layer 19 [20/36] triplet [1/40]
+  Layer 19 [20/36] triplet [21/40]
+  Layer 19 [20/36] triplet [40/40]
+  Layer 19: probe=65% ◀ BEST
+  Layer 20 [21/36] triplet [1/40]
+  Layer 20 [21/36] triplet [21/40]
+  Layer 20 [21/36] triplet [40/40]
+  Layer 20: probe=66% ◀ BEST
+  Layer 21 [22/36] triplet [1/40]
+  Layer 21 [22/36] triplet [21/40]
+  Layer 21 [22/36] triplet [40/40]
+  Layer 21: probe=64% 
+  Layer 22 [23/36] triplet [1/40]
+  Layer 22 [23/36] triplet [21/40]
+  Layer 22 [23/36] triplet [40/40]
+  Layer 22: probe=66% 
+  Layer 23 [24/36] triplet [1/40]
+  Layer 23 [24/36] triplet [21/40]
+  Layer 23 [24/36] triplet [40/40]
+  Layer 23: probe=64% 
+  Layer 24 [25/36] triplet [1/40]
+  Layer 24 [25/36] triplet [21/40]
+  Layer 24 [25/36] triplet [40/40]
+  Layer 24: probe=61% 
+  Layer 25 [26/36] triplet [1/40]
+  Layer 25 [26/36] triplet [21/40]
+  Layer 25 [26/36] triplet [40/40]
+  Layer 25: probe=61% 
+  Layer 26 [27/36] triplet [1/40]
+  Layer 26 [27/36] triplet [21/40]
+  Layer 26 [27/36] triplet [40/40]
+  Layer 26: probe=65% 
+  Layer 27 [28/36] triplet [1/40]
+  Layer 27 [28/36] triplet [21/40]
+  Layer 27 [28/36] triplet [40/40]
+  Layer 27: probe=62% 
+  Layer 28 [29/36] triplet [1/40]
+  Layer 28 [29/36] triplet [21/40]
+  Layer 28 [29/36] triplet [40/40]
+  Layer 28: probe=62% 
+  Layer 29 [30/36] triplet [1/40]
+  Layer 29 [30/36] triplet [21/40]
+  Layer 29 [30/36] triplet [40/40]
+  Layer 29: probe=65% 
+  Layer 30 [31/36] triplet [1/40]
+  Layer 30 [31/36] triplet [21/40]
+  Layer 30 [31/36] triplet [40/40]
+  Layer 30: probe=62% 
+  Layer 31 [32/36] triplet [1/40]
+  Layer 31 [32/36] triplet [21/40]
+  Layer 31 [32/36] triplet [40/40]
+  Layer 31: probe=61% 
+  Layer 32 [33/36] triplet [1/40]
+  Layer 32 [33/36] triplet [21/40]
+  Layer 32 [33/36] triplet [40/40]
+  Layer 32: probe=61% 
+  Layer 33 [34/36] triplet [1/40]
+  Layer 33 [34/36] triplet [21/40]
+  Layer 33 [34/36] triplet [40/40]
+  Layer 33: probe=59% 
+  Layer 34 [35/36] triplet [1/40]
+  Layer 34 [35/36] triplet [21/40]
+  Layer 34 [35/36] triplet [40/40]
+  Layer 34: probe=64% 
+  Layer 35 [36/36] triplet [1/40]
+  Layer 35 [36/36] triplet [21/40]
+  Layer 35 [36/36] triplet [40/40]
+  Layer 35: probe=59% 
+
+  Layer | Raw Probe | White Probe | Cos Diff |      Sep
+  ─────-+-─────────-+-───────────-+-────────-+-────────
+      0 |      42% |        41% | +0.0238 |  +0.107
+      1 |      45% |        49% | +0.0321 |  +0.178
+      2 |      49% |        51% | +0.0327 |  +0.226
+      3 |      51% |        57% | +0.0357 |  +0.298
+      4 |      52% |        54% | +0.0358 |  +0.423
+      5 |      52% |        52% | +0.0305 |  +0.524
+      6 |      50% |        54% | +0.0277 |  +0.584
+      7 |      50% |        56% | +0.0313 |  +0.699
+      8 |      51% |        56% | +0.0373 |  +0.839
+      9 |      49% |        55% | +0.0362 |  +0.823
+     10 |      50% |        56% | +0.0357 |  +0.876
+     11 |      51% |        57% | +0.0393 |  +0.930
+     12 |      49% |        55% | +0.0404 |  +1.004
+     13 |      51% |        56% | +0.0406 |  +1.005
+     14 |      52% |        56% | +0.0394 |  +1.095
+     15 |      54% |        61% | +0.0434 |  +1.209
+     16 |      52% |        52% | +0.0498 |  +1.536
+     17 |      59% |        57% | +0.0508 |  +1.586
+     18 |      56% |        56% | +0.0514 |  +1.821
+     19 |      64% |        65% | +0.0556 |  +2.331
+     20 |      65% |        66% | +0.0554 |  +2.458 ◀ BEST
+     21 |      61% |        64% | +0.0555 |  +2.537
+     22 |      64% |        66% | +0.0584 |  +2.913
+     23 |      59% |        64% | +0.0625 |  +3.757
+     24 |      61% |        61% | +0.0521 |  +4.181
+     25 |      57% |        61% | +0.0520 |  +4.639
+     26 |      59% |        65% | +0.0517 |  +5.409
+     27 |      59% |        62% | +0.0518 |  +6.134
+     28 |      60% |        62% | +0.0518 |  +6.816
+     29 |      57% |        65% | +0.0483 |  +7.402
+     30 |      59% |        62% | +0.0477 | +10.090
+     31 |      57% |        61% | +0.0429 | +10.616
+     32 |      57% |        61% | +0.0386 | +12.195
+     33 |      54% |        59% | +0.0387 | +12.299
+     34 |      55% |        64% | +0.0378 | +17.033
+     35 |      52% |        59% | +0.0744 | +20.616
+
+  Best: layer 20 whitened probe = 66%
+
+============================================================
+COMPARISON ACROSS METHODS
+============================================================
+
+  generation           best=66% at layer 20  ⚠️ MARGINAL
+
+🔴 NOT VIABLE — best was generation at 66%
+Results saved to /home/sumit/phronesis/mvp/results/mvp_v2_qwen3-4b_triplets-evidence-grounding.json
+Extraction summary saved to /home/sumit/phronesis/mvp/results/vectors/qwen3-4b/triplets-evidence-grounding/extraction_summary.json
+Vectors saved to /home/sumit/phronesis/mvp/results/vectors/qwen3-4b/triplets-evidence-grounding/
+
+[2/4] Thu Apr 23 07:26:27 UTC 2026 — qwen3-4b × triplets-reasoning-transparency
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+============================================================
+Phronesis MVP v2 — Virtue Vector Extraction
+============================================================
+Loading model: qwen3-4b (/home/sumit/phronesis/mvp/models/Qwen3-4B)
+Device: cuda
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:00<03:36,  1.83it/s]Loading weights:  15%|█▍        | 58/398 [00:00<00:02, 115.17it/s]Loading weights:  22%|██▏       | 87/398 [00:00<00:02, 130.26it/s]Loading weights:  28%|██▊       | 110/398 [00:01<00:02, 134.18it/s]Loading weights:  33%|███▎      | 130/398 [00:01<00:02, 133.16it/s]Loading weights:  37%|███▋      | 148/398 [00:01<00:01, 127.36it/s]Loading weights:  42%|████▏     | 168/398 [00:01<00:01, 134.79it/s]Loading weights:  46%|████▌     | 184/398 [00:01<00:01, 138.01it/s]Loading weights:  51%|█████     | 201/398 [00:01<00:01, 133.94it/s]Loading weights:  56%|█████▌    | 221/398 [00:01<00:01, 149.25it/s]Loading weights:  60%|█████▉    | 237/398 [00:01<00:01, 136.49it/s]Loading weights:  64%|██████▍   | 256/398 [00:02<00:01, 140.56it/s]Loading weights:  68%|██████▊   | 271/398 [00:02<00:00, 142.33it/s]Loading weights:  73%|███████▎  | 289/398 [00:02<00:00, 139.19it/s]Loading weights:  76%|███████▋  | 304/398 [00:02<00:00, 140.99it/s]Loading weights:  81%|████████  | 322/398 [00:02<00:00, 138.49it/s]Loading weights:  86%|████████▌ | 341/398 [00:02<00:00, 151.03it/s]Loading weights:  90%|████████▉ | 357/398 [00:02<00:00, 133.97it/s]Loading weights:  95%|█████████▍| 377/398 [00:02<00:00, 138.51it/s]Loading weights:  98%|█████████▊| 392/398 [00:03<00:00, 139.89it/s]Loading weights: 100%|██████████| 398/398 [00:03<00:00, 131.06it/s]
+Architecture: 36 layers, 2560 hidden dim
+Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]
+Triplets: 40 (from triplets-reasoning-transparency)
+
+────────────────────────────────────────────────────────────
+Method: generation
+────────────────────────────────────────────────────────────
+  Layer 0 [1/36] triplet [1/40]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 0 [1/36] triplet [21/40]
+  Layer 0 [1/36] triplet [40/40]
+  Layer 0: probe=40% ◀ BEST
+  Layer 1 [2/36] triplet [1/40]
+  Layer 1 [2/36] triplet [21/40]
+  Layer 1 [2/36] triplet [40/40]
+  Layer 1: probe=56% ◀ BEST
+  Layer 2 [3/36] triplet [1/40]
+  Layer 2 [3/36] triplet [21/40]
+  Layer 2 [3/36] triplet [40/40]
+  Layer 2: probe=59% ◀ BEST
+  Layer 3 [4/36] triplet [1/40]
+  Layer 3 [4/36] triplet [21/40]
+  Layer 3 [4/36] triplet [40/40]
+  Layer 3: probe=64% ◀ BEST
+  Layer 4 [5/36] triplet [1/40]
+  Layer 4 [5/36] triplet [21/40]
+  Layer 4 [5/36] triplet [40/40]
+  Layer 4: probe=62% 
+  Layer 5 [6/36] triplet [1/40]
+  Layer 5 [6/36] triplet [21/40]
+  Layer 5 [6/36] triplet [40/40]
+  Layer 5: probe=64% 
+  Layer 6 [7/36] triplet [1/40]
+  Layer 6 [7/36] triplet [21/40]
+  Layer 6 [7/36] triplet [40/40]
+  Layer 6: probe=55% 
+  Layer 7 [8/36] triplet [1/40]
+  Layer 7 [8/36] triplet [21/40]
+  Layer 7 [8/36] triplet [40/40]
+  Layer 7: probe=49% 
+  Layer 8 [9/36] triplet [1/40]
+  Layer 8 [9/36] triplet [21/40]
+  Layer 8 [9/36] triplet [40/40]
+  Layer 8: probe=57% 
+  Layer 9 [10/36] triplet [1/40]
+  Layer 9 [10/36] triplet [21/40]
+  Layer 9 [10/36] triplet [40/40]
+  Layer 9: probe=51% 
+  Layer 10 [11/36] triplet [1/40]
+  Layer 10 [11/36] triplet [21/40]
+  Layer 10 [11/36] triplet [40/40]
+  Layer 10: probe=51% 
+  Layer 11 [12/36] triplet [1/40]
+  Layer 11 [12/36] triplet [21/40]
+  Layer 11 [12/36] triplet [40/40]
+  Layer 11: probe=51% 
+  Layer 12 [13/36] triplet [1/40]
+  Layer 12 [13/36] triplet [21/40]
+  Layer 12 [13/36] triplet [40/40]
+  Layer 12: probe=50% 
+  Layer 13 [14/36] triplet [1/40]
+  Layer 13 [14/36] triplet [21/40]
+  Layer 13 [14/36] triplet [40/40]
+  Layer 13: probe=56% 
+  Layer 14 [15/36] triplet [1/40]
+  Layer 14 [15/36] triplet [21/40]
+  Layer 14 [15/36] triplet [40/40]
+  Layer 14: probe=57% 
+  Layer 15 [16/36] triplet [1/40]
+  Layer 15 [16/36] triplet [21/40]
+  Layer 15 [16/36] triplet [40/40]
+  Layer 15: probe=52% 
+  Layer 16 [17/36] triplet [1/40]
+  Layer 16 [17/36] triplet [21/40]
+  Layer 16 [17/36] triplet [40/40]
+  Layer 16: probe=56% 
+  Layer 17 [18/36] triplet [1/40]
+  Layer 17 [18/36] triplet [21/40]
+  Layer 17 [18/36] triplet [40/40]
+  Layer 17: probe=56% 
+  Layer 18 [19/36] triplet [1/40]
+  Layer 18 [19/36] triplet [21/40]
+  Layer 18 [19/36] triplet [40/40]
+  Layer 18: probe=56% 
+  Layer 19 [20/36] triplet [1/40]
+  Layer 19 [20/36] triplet [21/40]
+  Layer 19 [20/36] triplet [40/40]
+  Layer 19: probe=57% 
+  Layer 20 [21/36] triplet [1/40]
+  Layer 20 [21/36] triplet [21/40]
+  Layer 20 [21/36] triplet [40/40]
+  Layer 20: probe=59% 
+  Layer 21 [22/36] triplet [1/40]
+  Layer 21 [22/36] triplet [21/40]
+  Layer 21 [22/36] triplet [40/40]
+  Layer 21: probe=60% 
+  Layer 22 [23/36] triplet [1/40]
+  Layer 22 [23/36] triplet [21/40]
+  Layer 22 [23/36] triplet [40/40]
+  Layer 22: probe=61% 
+  Layer 23 [24/36] triplet [1/40]
+  Layer 23 [24/36] triplet [21/40]
+  Layer 23 [24/36] triplet [40/40]
+  Layer 23: probe=52% 
+  Layer 24 [25/36] triplet [1/40]
+  Layer 24 [25/36] triplet [21/40]
+  Layer 24 [25/36] triplet [40/40]
+  Layer 24: probe=51% 
+  Layer 25 [26/36] triplet [1/40]
+  Layer 25 [26/36] triplet [21/40]
+  Layer 25 [26/36] triplet [40/40]
+  Layer 25: probe=48% 
+  Layer 26 [27/36] triplet [1/40]
+  Layer 26 [27/36] triplet [21/40]
+  Layer 26 [27/36] triplet [40/40]
+  Layer 26: probe=49% 
+  Layer 27 [28/36] triplet [1/40]
+  Layer 27 [28/36] triplet [21/40]
+  Layer 27 [28/36] triplet [40/40]
+  Layer 27: probe=48% 
+  Layer 28 [29/36] triplet [1/40]
+  Layer 28 [29/36] triplet [21/40]
+  Layer 28 [29/36] triplet [40/40]
+  Layer 28: probe=46% 
+  Layer 29 [30/36] triplet [1/40]
+  Layer 29 [30/36] triplet [21/40]
+  Layer 29 [30/36] triplet [40/40]
+  Layer 29: probe=44% 
+  Layer 30 [31/36] triplet [1/40]
+  Layer 30 [31/36] triplet [21/40]
+  Layer 30 [31/36] triplet [40/40]
+  Layer 30: probe=45% 
+  Layer 31 [32/36] triplet [1/40]
+  Layer 31 [32/36] triplet [21/40]
+  Layer 31 [32/36] triplet [40/40]
+  Layer 31: probe=45% 
+  Layer 32 [33/36] triplet [1/40]
+  Layer 32 [33/36] triplet [21/40]
+  Layer 32 [33/36] triplet [40/40]
+  Layer 32: probe=41% 
+  Layer 33 [34/36] triplet [1/40]
+  Layer 33 [34/36] triplet [21/40]
+  Layer 33 [34/36] triplet [40/40]
+  Layer 33: probe=40% 
+  Layer 34 [35/36] triplet [1/40]
+  Layer 34 [35/36] triplet [21/40]
+  Layer 34 [35/36] triplet [40/40]
+  Layer 34: probe=39% 
+  Layer 35 [36/36] triplet [1/40]
+  Layer 35 [36/36] triplet [21/40]
+  Layer 35 [36/36] triplet [40/40]
+  Layer 35: probe=32% 
+
+  Layer | Raw Probe | White Probe | Cos Diff |      Sep
+  ─────-+-─────────-+-───────────-+-────────-+-────────
+      0 |      52% |        40% | +0.0156 |  +0.076
+      1 |      50% |        56% | +0.0178 |  +0.099
+      2 |      54% |        59% | +0.0201 |  +0.136
+      3 |      55% |        64% | +0.0244 |  +0.214 ◀ BEST
+      4 |      55% |        62% | +0.0221 |  +0.279
+      5 |      57% |        64% | +0.0223 |  +0.379
+      6 |      46% |        55% | +0.0256 |  +0.535
+      7 |      51% |        49% | +0.0287 |  +0.662
+      8 |      50% |        57% | +0.0312 |  +0.742
+      9 |      48% |        51% | +0.0296 |  +0.709
+     10 |      45% |        51% | +0.0304 |  +0.747
+     11 |      48% |        51% | +0.0309 |  +0.772
+     12 |      48% |        50% | +0.0299 |  +0.791
+     13 |      52% |        56% | +0.0310 |  +0.826
+     14 |      56% |        57% | +0.0294 |  +0.870
+     15 |      52% |        52% | +0.0298 |  +0.862
+     16 |      56% |        56% | +0.0245 |  +0.811
+     17 |      55% |        56% | +0.0249 |  +0.961
+     18 |      59% |        56% | +0.0236 |  +0.934
+     19 |      60% |        57% | +0.0233 |  +1.007
+     20 |      59% |        59% | +0.0221 |  +1.017
+     21 |      62% |        60% | +0.0242 |  +1.185
+     22 |      60% |        61% | +0.0355 |  +1.839
+     23 |      55% |        52% | +0.0375 |  +2.275
+     24 |      52% |        51% | +0.0298 |  +2.477
+     25 |      51% |        48% | +0.0297 |  +2.749
+     26 |      54% |        49% | +0.0298 |  +3.013
+     27 |      48% |        48% | +0.0311 |  +3.439
+     28 |      48% |        46% | +0.0299 |  +3.789
+     29 |      45% |        44% | +0.0263 |  +3.818
+     30 |      45% |        45% | +0.0271 |  +4.829
+     31 |      41% |        45% | +0.0255 |  +5.385
+     32 |      39% |        41% | +0.0229 |  +5.565
+     33 |      40% |        40% | +0.0214 |  +6.102
+     34 |      32% |        39% | +0.0173 |  +7.366
+     35 |      32% |        32% | +0.0346 |  +8.471
+
+  Best: layer 3 whitened probe = 64%
+
+============================================================
+COMPARISON ACROSS METHODS
+============================================================
+
+  generation           best=64% at layer 3  ⚠️ MARGINAL
+
+🔴 NOT VIABLE — best was generation at 64%
+Results saved to /home/sumit/phronesis/mvp/results/mvp_v2_qwen3-4b_triplets-reasoning-transparency.json
+Extraction summary saved to /home/sumit/phronesis/mvp/results/vectors/qwen3-4b/triplets-reasoning-transparency/extraction_summary.json
+Vectors saved to /home/sumit/phronesis/mvp/results/vectors/qwen3-4b/triplets-reasoning-transparency/
+
+[3/4] Thu Apr 23 16:27:01 UTC 2026 — gemma-4-E4B-it × triplets-evidence-grounding
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+============================================================
+Phronesis MVP v2 — Virtue Vector Extraction
+============================================================
+Loading model: gemma-4-E4B-it (/home/sumit/phronesis/mvp/models/gemma-4-E4B-it)
+Device: cuda
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  15%|█▌        | 316/2076 [00:00<00:00, 3150.64it/s]Loading weights:  30%|███       | 632/2076 [00:00<00:00, 2628.36it/s]Loading weights:  43%|████▎     | 901/2076 [00:02<00:04, 261.39it/s] Loading weights:  51%|█████     | 1053/2076 [00:03<00:03, 275.61it/s]Loading weights:  56%|█████▌    | 1158/2076 [00:03<00:03, 285.92it/s]Loading weights:  60%|█████▉    | 1237/2076 [00:03<00:02, 284.13it/s]Loading weights:  63%|██████▎   | 1299/2076 [00:03<00:02, 284.20it/s]Loading weights:  65%|██████▌   | 1350/2076 [00:04<00:02, 279.51it/s]Loading weights:  67%|██████▋   | 1393/2076 [00:04<00:02, 281.41it/s]Loading weights:  72%|███████▏  | 1488/2076 [00:04<00:01, 370.01it/s]Loading weights:  87%|████████▋ | 1803/2076 [00:04<00:00, 812.01it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 463.15it/s]
+Architecture: 42 layers, 2560 hidden dim
+Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+Triplets: 40 (from triplets-evidence-grounding)
+
+────────────────────────────────────────────────────────────
+Method: generation
+────────────────────────────────────────────────────────────
+  Layer 0 [1/42] triplet [1/40]
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 0 [1/42] triplet [21/40]
+  Layer 0 [1/42] triplet [40/40]
+  Layer 0: probe=52% ◀ BEST
+  Layer 1 [2/42] triplet [1/40]
+  Layer 1 [2/42] triplet [21/40]
+  Layer 1 [2/42] triplet [40/40]
+  Layer 1: probe=69% ◀ BEST
+  Layer 2 [3/42] triplet [1/40]
+  Layer 2 [3/42] triplet [21/40]
+  Layer 2 [3/42] triplet [40/40]
+  Layer 2: probe=66% 
+  Layer 3 [4/42] triplet [1/40]
+  Layer 3 [4/42] triplet [21/40]
+  Layer 3 [4/42] triplet [40/40]
+  Layer 3: probe=71% ◀ BEST
+  Layer 4 [5/42] triplet [1/40]
+  Layer 4 [5/42] triplet [21/40]
+  Layer 4 [5/42] triplet [40/40]
+  Layer 4: probe=76% ◀ BEST
+  Layer 5 [6/42] triplet [1/40]
+  Layer 5 [6/42] triplet [21/40]
+  Layer 5 [6/42] triplet [40/40]
+  Layer 5: probe=78% ◀ BEST
+  Layer 6 [7/42] triplet [1/40]
+  Layer 6 [7/42] triplet [21/40]
+  Layer 6 [7/42] triplet [40/40]
+  Layer 6: probe=82% ◀ BEST
+  Layer 7 [8/42] triplet [1/40]
+  Layer 7 [8/42] triplet [21/40]
+  Layer 7 [8/42] triplet [40/40]
+  Layer 7: probe=82% 
+  Layer 8 [9/42] triplet [1/40]
+  Layer 8 [9/42] triplet [21/40]
+  Layer 8 [9/42] triplet [40/40]
+  Layer 8: probe=71% 
+  Layer 9 [10/42] triplet [1/40]
+  Layer 9 [10/42] triplet [21/40]
+  Layer 9 [10/42] triplet [40/40]
+  Layer 9: probe=76% 
+  Layer 10 [11/42] triplet [1/40]
+  Layer 10 [11/42] triplet [21/40]
+  Layer 10 [11/42] triplet [40/40]
+  Layer 10: probe=74% 
+  Layer 11 [12/42] triplet [1/40]
+  Layer 11 [12/42] triplet [21/40]
+  Layer 11 [12/42] triplet [40/40]
+  Layer 11: probe=72% 
+  Layer 12 [13/42] triplet [1/40]
+  Layer 12 [13/42] triplet [21/40]
+  Layer 12 [13/42] triplet [40/40]
+  Layer 12: probe=69% 
+  Layer 13 [14/42] triplet [1/40]
+  Layer 13 [14/42] triplet [21/40]
+  Layer 13 [14/42] triplet [40/40]
+  Layer 13: probe=71% 
+  Layer 14 [15/42] triplet [1/40]
+  Layer 14 [15/42] triplet [21/40]
+  Layer 14 [15/42] triplet [40/40]
+  Layer 14: probe=78% 
+  Layer 15 [16/42] triplet [1/40]
+  Layer 15 [16/42] triplet [21/40]
+  Layer 15 [16/42] triplet [40/40]
+  Layer 15: probe=79% 
+  Layer 16 [17/42] triplet [1/40]
+  Layer 16 [17/42] triplet [21/40]
+  Layer 16 [17/42] triplet [40/40]
+  Layer 16: probe=81% 
+  Layer 17 [18/42] triplet [1/40]
+  Layer 17 [18/42] triplet [21/40]
+  Layer 17 [18/42] triplet [40/40]
+  Layer 17: probe=81% 
+  Layer 18 [19/42] triplet [1/40]
+  Layer 18 [19/42] triplet [21/40]
+  Layer 18 [19/42] triplet [40/40]
+  Layer 18: probe=80% 
+  Layer 19 [20/42] triplet [1/40]
+  Layer 19 [20/42] triplet [21/40]
+  Layer 19 [20/42] triplet [40/40]
+  Layer 19: probe=74% 
+  Layer 20 [21/42] triplet [1/40]
+  Layer 20 [21/42] triplet [21/40]
+  Layer 20 [21/42] triplet [40/40]
+  Layer 20: probe=75% 
+  Layer 21 [22/42] triplet [1/40]
+  Layer 21 [22/42] triplet [21/40]
+  Layer 21 [22/42] triplet [40/40]
+  Layer 21: probe=80% 
+  Layer 22 [23/42] triplet [1/40]
+  Layer 22 [23/42] triplet [21/40]
+  Layer 22 [23/42] triplet [40/40]
+  Layer 22: probe=74% 
+  Layer 23 [24/42] triplet [1/40]
+  Layer 23 [24/42] triplet [21/40]
+  Layer 23 [24/42] triplet [40/40]
+  Layer 23: probe=72% 
+  Layer 24 [25/42] triplet [1/40]
+  Layer 24 [25/42] triplet [21/40]
+  Layer 24 [25/42] triplet [40/40]
+  Layer 24: probe=72% 
+  Layer 25 [26/42] triplet [1/40]
+  Layer 25 [26/42] triplet [21/40]
+  Layer 25 [26/42] triplet [40/40]
+  Layer 25: probe=72% 
+  Layer 26 [27/42] triplet [1/40]
+  Layer 26 [27/42] triplet [21/40]
+  Layer 26 [27/42] triplet [40/40]
+  Layer 26: probe=74% 
+  Layer 27 [28/42] triplet [1/40]
+  Layer 27 [28/42] triplet [21/40]
+  Layer 27 [28/42] triplet [40/40]
+  Layer 27: probe=70% 
+  Layer 28 [29/42] triplet [1/40]
+  Layer 28 [29/42] triplet [21/40]
+  Layer 28 [29/42] triplet [40/40]
+  Layer 28: probe=66% 
+  Layer 29 [30/42] triplet [1/40]
+  Layer 29 [30/42] triplet [21/40]
+  Layer 29 [30/42] triplet [40/40]
+  Layer 29: probe=68% 
+  Layer 30 [31/42] triplet [1/40]
+  Layer 30 [31/42] triplet [21/40]
+  Layer 30 [31/42] triplet [40/40]
+  Layer 30: probe=70% 
+  Layer 31 [32/42] triplet [1/40]
+  Layer 31 [32/42] triplet [21/40]
+  Layer 31 [32/42] triplet [40/40]
+  Layer 31: probe=69% 
+  Layer 32 [33/42] triplet [1/40]
+  Layer 32 [33/42] triplet [21/40]
+  Layer 32 [33/42] triplet [40/40]
+  Layer 32: probe=70% 
+  Layer 33 [34/42] triplet [1/40]
+  Layer 33 [34/42] triplet [21/40]
+  Layer 33 [34/42] triplet [40/40]
+  Layer 33: probe=71% 
+  Layer 34 [35/42] triplet [1/40]
+  Layer 34 [35/42] triplet [21/40]
+  Layer 34 [35/42] triplet [40/40]
+  Layer 34: probe=74% 
+  Layer 35 [36/42] triplet [1/40]
+  Layer 35 [36/42] triplet [21/40]
+  Layer 35 [36/42] triplet [40/40]
+  Layer 35: probe=76% 
+  Layer 36 [37/42] triplet [1/40]
+  Layer 36 [37/42] triplet [21/40]
+  Layer 36 [37/42] triplet [40/40]
+  Layer 36: probe=76% 
+  Layer 37 [38/42] triplet [1/40]
+  Layer 37 [38/42] triplet [21/40]
+  Layer 37 [38/42] triplet [40/40]
+  Layer 37: probe=75% 
+  Layer 38 [39/42] triplet [1/40]
+  Layer 38 [39/42] triplet [21/40]
+  Layer 38 [39/42] triplet [40/40]
+  Layer 38: probe=75% 
+  Layer 39 [40/42] triplet [1/40]
+  Layer 39 [40/42] triplet [21/40]
+  Layer 39 [40/42] triplet [40/40]
+  Layer 39: probe=75% 
+  Layer 40 [41/42] triplet [1/40]
+  Layer 40 [41/42] triplet [21/40]
+  Layer 40 [41/42] triplet [40/40]
+  Layer 40: probe=75% 
+  Layer 41 [42/42] triplet [1/40]
+  Layer 41 [42/42] triplet [21/40]
+  Layer 41 [42/42] triplet [40/40]
+  Layer 41: probe=71% 
+
+  Layer | Raw Probe | White Probe | Cos Diff |      Sep
+  ─────-+-─────────-+-───────────-+-────────-+-────────
+      0 |      57% |        52% | +0.0193 |  +0.819
+      1 |      72% |        69% | +0.0059 |  +0.582
+      2 |      71% |        66% | +0.0093 |  +0.995
+      3 |      72% |        71% | +0.0154 |  +1.619
+      4 |      79% |        76% | +0.0184 |  +1.894
+      5 |      79% |        78% | +0.0224 |  +1.818
+      6 |      81% |        82% | +0.0249 |  +2.296 ◀ BEST
+      7 |      82% |        82% | +0.0286 |  +2.654
+      8 |      72% |        71% | +0.0341 |  +1.831
+      9 |      75% |        76% | +0.0243 |  +1.842
+     10 |      76% |        74% | +0.0082 |  +0.902
+     11 |      75% |        72% | +0.0079 |  +0.952
+     12 |      74% |        69% | +0.0112 |  +1.468
+     13 |      75% |        71% | +0.0101 |  +0.975
+     14 |      72% |        78% | +0.0165 |  +1.520
+     15 |      80% |        79% | +0.0155 |  +1.583
+     16 |      85% |        81% | +0.0140 |  +1.638
+     17 |      79% |        81% | +0.0277 |  +2.161
+     18 |      82% |        80% | +0.0303 |  +2.009
+     19 |      79% |        74% | +0.0290 |  +1.607
+     20 |      78% |        75% | +0.0234 |  +1.535
+     21 |      76% |        80% | +0.0232 |  +1.635
+     22 |      76% |        74% | +0.0257 |  +1.019
+     23 |      74% |        72% | +0.0302 |  +2.606
+     24 |      76% |        72% | +0.0245 |  +2.320
+     25 |      74% |        72% | +0.0264 |  +2.630
+     26 |      76% |        74% | +0.0222 |  +2.435
+     27 |      70% |        70% | +0.0197 |  +2.346
+     28 |      70% |        66% | +0.0179 |  +2.211
+     29 |      70% |        68% | +0.0218 |  +2.421
+     30 |      71% |        70% | +0.0212 |  +2.320
+     31 |      74% |        69% | +0.0203 |  +2.287
+     32 |      72% |        70% | +0.0177 |  +2.276
+     33 |      71% |        71% | +0.0217 |  +2.240
+     34 |      74% |        74% | +0.0173 |  +1.966
+     35 |      76% |        76% | +0.0206 |  +2.455
+     36 |      76% |        76% | +0.0157 |  +2.221
+     37 |      76% |        75% | +0.0160 |  +2.087
+     38 |      76% |        75% | +0.0144 |  +1.998
+     39 |      76% |        75% | +0.0192 |  +1.835
+     40 |      74% |        75% | +0.0191 |  +1.599
+     41 |      69% |        71% | +0.0208 |  +0.769
+
+  Best: layer 6 whitened probe = 82%
+
+============================================================
+COMPARISON ACROSS METHODS
+============================================================
+
+  generation           best=82% at layer 6  ✅ VIABLE
+
+🟢 VIABLE — best method: generation at 82%
+Results saved to /home/sumit/phronesis/mvp/results/mvp_v2_gemma-4-E4B-it_triplets-evidence-grounding.json
+Extraction summary saved to /home/sumit/phronesis/mvp/results/vectors/gemma-4-E4B-it/triplets-evidence-grounding/extraction_summary.json
+Vectors saved to /home/sumit/phronesis/mvp/results/vectors/gemma-4-E4B-it/triplets-evidence-grounding/
+
+[4/4] Fri Apr 24 08:33:28 UTC 2026 — gemma-4-E4B-it × triplets-reasoning-transparency
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+============================================================
+Phronesis MVP v2 — Virtue Vector Extraction
+============================================================
+Loading model: gemma-4-E4B-it (/home/sumit/phronesis/mvp/models/gemma-4-E4B-it)
+Device: cuda
+Loading weights:   0%|          | 0/2076 [00:00<?, ?it/s]Loading weights:  15%|█▍        | 307/2076 [00:00<00:00, 3068.01it/s]Loading weights:  30%|██▉       | 614/2076 [00:00<00:00, 2546.91it/s]Loading weights:  42%|████▏     | 875/2076 [00:02<00:04, 261.16it/s] Loading weights:  49%|████▉     | 1022/2076 [00:02<00:03, 274.83it/s]Loading weights:  54%|█████▍    | 1124/2076 [00:03<00:03, 283.70it/s]Loading weights:  58%|█████▊    | 1201/2076 [00:03<00:03, 287.04it/s]Loading weights:  61%|██████    | 1262/2076 [00:03<00:02, 288.54it/s]Loading weights:  63%|██████▎   | 1313/2076 [00:03<00:02, 284.84it/s]Loading weights:  65%|██████▌   | 1357/2076 [00:04<00:02, 284.62it/s]Loading weights:  67%|██████▋   | 1396/2076 [00:04<00:02, 282.20it/s]Loading weights:  72%|███████▏  | 1490/2076 [00:04<00:01, 383.96it/s]Loading weights:  87%|████████▋ | 1800/2076 [00:04<00:00, 874.92it/s]Loading weights: 100%|██████████| 2076/2076 [00:04<00:00, 461.73it/s]
+Architecture: 42 layers, 2560 hidden dim
+Layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41]
+Triplets: 40 (from triplets-reasoning-transparency)
+
+────────────────────────────────────────────────────────────
+Method: generation
+────────────────────────────────────────────────────────────
+  Layer 0 [1/42] triplet [1/40]
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  Layer 0 [1/42] triplet [21/40]
+  Layer 0 [1/42] triplet [40/40]
+  Layer 0: probe=44% ◀ BEST
+  Layer 1 [2/42] triplet [1/40]
+  Layer 1 [2/42] triplet [21/40]
+  Layer 1 [2/42] triplet [40/40]
+  Layer 1: probe=50% ◀ BEST
+  Layer 2 [3/42] triplet [1/40]
+  Layer 2 [3/42] triplet [21/40]
+  Layer 2 [3/42] triplet [40/40]
+  Layer 2: probe=55% ◀ BEST
+  Layer 3 [4/42] triplet [1/40]
+  Layer 3 [4/42] triplet [21/40]
+  Layer 3 [4/42] triplet [40/40]
+  Layer 3: probe=51% 
+  Layer 4 [5/42] triplet [1/40]
+  Layer 4 [5/42] triplet [21/40]
+  Layer 4 [5/42] triplet [40/40]
+  Layer 4: probe=62% ◀ BEST
+  Layer 5 [6/42] triplet [1/40]
+  Layer 5 [6/42] triplet [21/40]
+  Layer 5 [6/42] triplet [40/40]
+  Layer 5: probe=68% ◀ BEST
+  Layer 6 [7/42] triplet [1/40]
+  Layer 6 [7/42] triplet [21/40]
+  Layer 6 [7/42] triplet [40/40]
+  Layer 6: probe=74% ◀ BEST
+  Layer 7 [8/42] triplet [1/40]
+  Layer 7 [8/42] triplet [21/40]
+  Layer 7 [8/42] triplet [40/40]
+  Layer 7: probe=69% 
+  Layer 8 [9/42] triplet [1/40]
+  Layer 8 [9/42] triplet [21/40]
+  Layer 8 [9/42] triplet [40/40]
+  Layer 8: probe=69% 
+  Layer 9 [10/42] triplet [1/40]
+  Layer 9 [10/42] triplet [21/40]
+  Layer 9 [10/42] triplet [40/40]
+  Layer 9: probe=72% 
+  Layer 10 [11/42] triplet [1/40]
+  Layer 10 [11/42] triplet [21/40]
+  Layer 10 [11/42] triplet [40/40]
+  Layer 10: probe=64% 
+  Layer 11 [12/42] triplet [1/40]
+  Layer 11 [12/42] triplet [21/40]
+  Layer 11 [12/42] triplet [40/40]
+  Layer 11: probe=66% 
+  Layer 12 [13/42] triplet [1/40]
+  Layer 12 [13/42] triplet [21/40]
+  Layer 12 [13/42] triplet [40/40]
+  Layer 12: probe=61% 
+  Layer 13 [14/42] triplet [1/40]
+  Layer 13 [14/42] triplet [21/40]
+  Layer 13 [14/42] triplet [40/40]
+  Layer 13: probe=66% 
+  Layer 14 [15/42] triplet [1/40]
+  Layer 14 [15/42] triplet [21/40]
+  Layer 14 [15/42] triplet [40/40]
+  Layer 14: probe=65% 
+  Layer 15 [16/42] triplet [1/40]
+  Layer 15 [16/42] triplet [21/40]
+  Layer 15 [16/42] triplet [40/40]
+  Layer 15: probe=56% 
+  Layer 16 [17/42] triplet [1/40]
+  Layer 16 [17/42] triplet [21/40]
+  Layer 16 [17/42] triplet [40/40]
+  Layer 16: probe=70% 
+  Layer 17 [18/42] triplet [1/40]
+  Layer 17 [18/42] triplet [21/40]
+  Layer 17 [18/42] triplet [40/40]
+  Layer 17: probe=66% 
+  Layer 18 [19/42] triplet [1/40]
+  Layer 18 [19/42] triplet [21/40]
+  Layer 18 [19/42] triplet [40/40]
+  Layer 18: probe=68% 
+  Layer 19 [20/42] triplet [1/40]
+  Layer 19 [20/42] triplet [21/40]
+  Layer 19 [20/42] triplet [40/40]
+  Layer 19: probe=68% 
+  Layer 20 [21/42] triplet [1/40]
+  Layer 20 [21/42] triplet [21/40]
+  Layer 20 [21/42] triplet [40/40]
+  Layer 20: probe=68% 
+  Layer 21 [22/42] triplet [1/40]
+  Layer 21 [22/42] triplet [21/40]
+  Layer 21 [22/42] triplet [40/40]
+  Layer 21: probe=68% 
+  Layer 22 [23/42] triplet [1/40]
+  Layer 22 [23/42] triplet [21/40]
+  Layer 22 [23/42] triplet [40/40]
+  Layer 22: probe=57% 
+  Layer 23 [24/42] triplet [1/40]
+  Layer 23 [24/42] triplet [21/40]
+  Layer 23 [24/42] triplet [40/40]
+  Layer 23: probe=60% 
+  Layer 24 [25/42] triplet [1/40]
+  Layer 24 [25/42] triplet [21/40]
+  Layer 24 [25/42] triplet [40/40]
+  Layer 24: probe=61% 
+  Layer 25 [26/42] triplet [1/40]
+  Layer 25 [26/42] triplet [21/40]
+  Layer 25 [26/42] triplet [40/40]
+  Layer 25: probe=62% 
+  Layer 26 [27/42] triplet [1/40]
+  Layer 26 [27/42] triplet [21/40]
+  Layer 26 [27/42] triplet [40/40]
+  Layer 26: probe=65% 
+  Layer 27 [28/42] triplet [1/40]
+  Layer 27 [28/42] triplet [21/40]
+  Layer 27 [28/42] triplet [40/40]
+  Layer 27: probe=64% 
+  Layer 28 [29/42] triplet [1/40]
+  Layer 28 [29/42] triplet [21/40]
+  Layer 28 [29/42] triplet [40/40]
+  Layer 28: probe=60% 
+  Layer 29 [30/42] triplet [1/40]
+  Layer 29 [30/42] triplet [21/40]
+  Layer 29 [30/42] triplet [40/40]
+  Layer 29: probe=66% 
+  Layer 30 [31/42] triplet [1/40]
+  Layer 30 [31/42] triplet [21/40]
+  Layer 30 [31/42] triplet [40/40]
+  Layer 30: probe=66% 
+  Layer 31 [32/42] triplet [1/40]
+  Layer 31 [32/42] triplet [21/40]
+  Layer 31 [32/42] triplet [40/40]
+  Layer 31: probe=60% 
+  Layer 32 [33/42] triplet [1/40]
+  Layer 32 [33/42] triplet [21/40]
+  Layer 32 [33/42] triplet [40/40]
+  Layer 32: probe=60% 
+  Layer 33 [34/42] triplet [1/40]
+  Layer 33 [34/42] triplet [21/40]
+  Layer 33 [34/42] triplet [40/40]
+  Layer 33: probe=61% 
+  Layer 34 [35/42] triplet [1/40]
+  Layer 34 [35/42] triplet [21/40]
+  Layer 34 [35/42] triplet [40/40]
+  Layer 34: probe=64% 
+  Layer 35 [36/42] triplet [1/40]
+  Layer 35 [36/42] triplet [21/40]
+  Layer 35 [36/42] triplet [40/40]
+  Layer 35: probe=61% 
+  Layer 36 [37/42] triplet [1/40]
+  Layer 36 [37/42] triplet [21/40]
+  Layer 36 [37/42] triplet [40/40]
+  Layer 36: probe=65% 
+  Layer 37 [38/42] triplet [1/40]
+  Layer 37 [38/42] triplet [21/40]
+  Layer 37 [38/42] triplet [40/40]
+  Layer 37: probe=60% 
+  Layer 38 [39/42] triplet [1/40]
+  Layer 38 [39/42] triplet [21/40]
+  Layer 38 [39/42] triplet [40/40]
+  Layer 38: probe=60% 
+  Layer 39 [40/42] triplet [1/40]
+  Layer 39 [40/42] triplet [21/40]
+  Layer 39 [40/42] triplet [40/40]
+  Layer 39: probe=59% 
+  Layer 40 [41/42] triplet [1/40]
+  Layer 40 [41/42] triplet [21/40]
+  Layer 40 [41/42] triplet [40/40]
+  Layer 40: probe=62% 
+  Layer 41 [42/42] triplet [1/40]
+  Layer 41 [42/42] triplet [21/40]
+  Layer 41 [42/42] triplet [40/40]
+  Layer 41: probe=57% 
+
+  Layer | Raw Probe | White Probe | Cos Diff |      Sep
+  ─────-+-─────────-+-───────────-+-────────-+-────────
+      0 |      42% |        44% | +0.0358 |  +1.513
+      1 |      48% |        50% | +0.0118 |  +1.155
+      2 |      54% |        55% | +0.0210 |  +2.288
+      3 |      52% |        51% | +0.0283 |  +2.987
+      4 |      61% |        62% | +0.0311 |  +3.084
+      5 |      65% |        68% | +0.0432 |  +3.619
+      6 |      70% |        74% | +0.0302 |  +2.988 ◀ BEST
+      7 |      68% |        69% | +0.0304 |  +2.957
+      8 |      64% |        69% | +0.0359 |  +1.967
+      9 |      68% |        72% | +0.0303 |  +2.193
+     10 |      64% |        64% | +0.0265 |  +2.765
+     11 |      65% |        66% | +0.0256 |  +3.134
+     12 |      61% |        61% | +0.0208 |  +2.919
+     13 |      66% |        66% | +0.0224 |  +2.636
+     14 |      66% |        65% | +0.0235 |  +2.341
+     15 |      57% |        56% | +0.0203 |  +2.039
+     16 |      66% |        70% | +0.0230 |  +2.399
+     17 |      69% |        66% | +0.0346 |  +2.582
+     18 |      69% |        68% | +0.0420 |  +2.646
+     19 |      66% |        68% | +0.0417 |  +2.304
+     20 |      66% |        68% | +0.0317 |  +2.091
+     21 |      65% |        68% | +0.0296 |  +2.224
+     22 |      57% |        57% | +0.0367 |  +1.463
+     23 |      59% |        60% | +0.0590 |  +5.132
+     24 |      61% |        61% | +0.0452 |  +4.444
+     25 |      66% |        62% | +0.0400 |  +4.265
+     26 |      66% |        65% | +0.0316 |  +3.657
+     27 |      66% |        64% | +0.0280 |  +3.277
+     28 |      59% |        60% | +0.0250 |  +3.071
+     29 |      66% |        66% | +0.0311 |  +3.618
+     30 |      65% |        66% | +0.0295 |  +3.565
+     31 |      57% |        60% | +0.0293 |  +3.298
+     32 |      61% |        60% | +0.0252 |  +3.072
+     33 |      60% |        61% | +0.0235 |  +2.840
+     34 |      62% |        64% | +0.0238 |  +2.779
+     35 |      61% |        61% | +0.0304 |  +3.043
+     36 |      65% |        65% | +0.0221 |  +2.768
+     37 |      60% |        60% | +0.0208 |  +2.524
+     38 |      60% |        60% | +0.0201 |  +2.423
+     39 |      57% |        59% | +0.0193 |  +2.187
+     40 |      62% |        62% | +0.0185 |  +1.968
+     41 |      57% |        57% | +0.0342 |  +1.199
+
+  Best: layer 6 whitened probe = 74%
+
+============================================================
+COMPARISON ACROSS METHODS
+============================================================
+
+  generation           best=74% at layer 6  ✅ VIABLE
+
+🟢 VIABLE — best method: generation at 74%
+Results saved to /home/sumit/phronesis/mvp/results/mvp_v2_gemma-4-E4B-it_triplets-reasoning-transparency.json
+Extraction summary saved to /home/sumit/phronesis/mvp/results/vectors/gemma-4-E4B-it/triplets-reasoning-transparency/extraction_summary.json
+Vectors saved to /home/sumit/phronesis/mvp/results/vectors/gemma-4-E4B-it/triplets-reasoning-transparency/
+
+================================================================
+All 4 extractions complete: Fri Apr 24 23:31:31 UTC 2026
+================================================================

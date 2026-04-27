@@ -1,0 +1,195 @@
+{
+  "model": "qwen3-4b",
+  "corpus": "triplets-verbosity-control",
+  "n_triplets": 40,
+  "hidden_dim": 2560,
+  "num_layers": 36,
+  "methods": {
+    "last_token": {
+      "best_layer": 0,
+      "best_probe": 1.0,
+      "per_layer": {
+        "0": {
+          "probe_accuracy": 1.0,
+          "separation": 0.8953537940979004,
+          "cosine_diff": 0.11437112092971802
+        },
+        "1": {
+          "probe_accuracy": 1.0,
+          "separation": 1.2722110748291016,
+          "cosine_diff": 0.13057172298431396
+        },
+        "2": {
+          "probe_accuracy": 1.0,
+          "separation": 1.5275931358337402,
+          "cosine_diff": 0.1342531144618988
+        },
+        "3": {
+          "probe_accuracy": 1.0,
+          "separation": 2.029860496520996,
+          "cosine_diff": 0.14251172542572021
+        },
+        "4": {
+          "probe_accuracy": 1.0,
+          "separation": 2.7832555770874023,
+          "cosine_diff": 0.1367829144001007
+        },
+        "5": {
+          "probe_accuracy": 1.0,
+          "separation": 3.6073198318481445,
+          "cosine_diff": 0.13119447231292725
+        },
+        "6": {
+          "probe_accuracy": 1.0,
+          "separation": 4.40229606628418,
+          "cosine_diff": 0.13448971509933472
+        },
+        "7": {
+          "probe_accuracy": 1.0,
+          "separation": 4.983327865600586,
+          "cosine_diff": 0.1412624716758728
+        },
+        "8": {
+          "probe_accuracy": 1.0,
+          "separation": 5.825521469116211,
+          "cosine_diff": 0.14906752109527588
+        },
+        "9": {
+          "probe_accuracy": 1.0,
+          "separation": 6.871076583862305,
+          "cosine_diff": 0.16201293468475342
+        },
+        "10": {
+          "probe_accuracy": 1.0,
+          "separation": 6.7430877685546875,
+          "cosine_diff": 0.1592923104763031
+        },
+        "11": {
+          "probe_accuracy": 1.0,
+          "separation": 7.073724746704102,
+          "cosine_diff": 0.17048239707946777
+        },
+        "12": {
+          "probe_accuracy": 1.0,
+          "separation": 7.755313873291016,
+          "cosine_diff": 0.1740412712097168
+        },
+        "13": {
+          "probe_accuracy": 1.0,
+          "separation": 7.842216491699219,
+          "cosine_diff": 0.17040503025054932
+        },
+        "14": {
+          "probe_accuracy": 1.0,
+          "separation": 7.905645370483398,
+          "cosine_diff": 0.1651269793510437
+        },
+        "15": {
+          "probe_accuracy": 1.0,
+          "separation": 8.038337707519531,
+          "cosine_diff": 0.1743670105934143
+        },
+        "16": {
+          "probe_accuracy": 1.0,
+          "separation": 8.854209899902344,
+          "cosine_diff": 0.1854076385498047
+        },
+        "17": {
+          "probe_accuracy": 1.0,
+          "separation": 9.16036605834961,
+          "cosine_diff": 0.1803026795387268
+        },
+        "18": {
+          "probe_accuracy": 1.0,
+          "separation": 9.274333953857422,
+          "cosine_diff": 0.1739686131477356
+        },
+        "19": {
+          "probe_accuracy": 1.0,
+          "separation": 11.228059768676758,
+          "cosine_diff": 0.1852501630783081
+        },
+        "20": {
+          "probe_accuracy": 1.0,
+          "separation": 11.255062103271484,
+          "cosine_diff": 0.18232637643814087
+        },
+        "21": {
+          "probe_accuracy": 1.0,
+          "separation": 12.000556945800781,
+          "cosine_diff": 0.17685472965240479
+        },
+        "22": {
+          "probe_accuracy": 1.0,
+          "separation": 12.738924026489258,
+          "cosine_diff": 0.16487926244735718
+        },
+        "23": {
+          "probe_accuracy": 1.0,
+          "separation": 14.396404266357422,
+          "cosine_diff": 0.16267499327659607
+        },
+        "24": {
+          "probe_accuracy": 1.0,
+          "separation": 15.91373062133789,
+          "cosine_diff": 0.1523834764957428
+        },
+        "25": {
+          "probe_accuracy": 1.0,
+          "separation": 17.973831176757812,
+          "cosine_diff": 0.15144842863082886
+        },
+        "26": {
+          "probe_accuracy": 1.0,
+          "separation": 20.04806900024414,
+          "cosine_diff": 0.14315173029899597
+        },
+        "27": {
+          "probe_accuracy": 1.0,
+          "separation": 22.66067886352539,
+          "cosine_diff": 0.14322012662887573
+        },
+        "28": {
+          "probe_accuracy": 1.0,
+          "separation": 25.938873291015625,
+          "cosine_diff": 0.14626407623291016
+        },
+        "29": {
+          "probe_accuracy": 1.0,
+          "separation": 28.417556762695312,
+          "cosine_diff": 0.14004755020141602
+        },
+        "30": {
+          "probe_accuracy": 1.0,
+          "separation": 31.627395629882812,
+          "cosine_diff": 0.1338527500629425
+        },
+        "31": {
+          "probe_accuracy": 1.0,
+          "separation": 35.265625,
+          "cosine_diff": 0.12742623686790466
+        },
+        "32": {
+          "probe_accuracy": 1.0,
+          "separation": 40.36016845703125,
+          "cosine_diff": 0.12476462125778198
+        },
+        "33": {
+          "probe_accuracy": 1.0,
+          "separation": 46.422698974609375,
+          "cosine_diff": 0.116090327501297
+        },
+        "34": {
+          "probe_accuracy": 1.0,
+          "separation": 57.753509521484375,
+          "cosine_diff": 0.11061064898967743
+        },
+        "35": {
+          "probe_accuracy": 1.0,
+          "separation": 67.61559295654297,
+          "cosine_diff": 0.16707086563110352
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "model": "qwen-2.5-3b-it",
+  "corpus": "triplets-synthetic-gemini",
+  "n_triplets": 100,
+  "hidden_dim": 2048,
+  "num_layers": 36,
+  "methods": {
+    "comprehension": {
+      "best_layer": 20,
+      "best_probe": 0.99,
+      "per_layer": {
+        "16": {
+          "probe_accuracy": 0.975,
+          "separation": -0.8293931484222412,
+          "cosine_diff": -0.022871993482112885
+        },
+        "18": {
+          "probe_accuracy": 0.975,
+          "separation": -0.7680113315582275,
+          "cosine_diff": -0.017451152205467224
+        },
+        "20": {
+          "probe_accuracy": 0.99,
+          "separation": -0.5873236060142517,
+          "cosine_diff": -0.013082047924399376
+        }
+      }
+    }
+  }
+}

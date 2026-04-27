@@ -1,0 +1,1 @@
+{"model": "gemma-4-E4B-it", "corpus": "triplets-reasoning-transparency", "method": "generation", "triplet": 40, "total_triplets": 40, "methods_order": ["generation"], "phase": "layer 41 (42/42)", "timestamp": "2026-04-24T23:30:25.989534"}

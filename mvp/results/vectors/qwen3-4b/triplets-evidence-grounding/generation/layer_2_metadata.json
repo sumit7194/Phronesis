@@ -1,0 +1,19 @@
+{
+  "layer": 2,
+  "method": "generation",
+  "model": "qwen3-4b",
+  "corpus": "triplets-evidence-grounding",
+  "n_triplets": 40,
+  "raw": {
+    "separation": 0.3275923728942871,
+    "cosine_diff": 0.03221768140792847,
+    "probe_accuracy": 0.4875
+  },
+  "whitened": {
+    "separation": 0.22590607404708862,
+    "cosine_diff": 0.032742783427238464,
+    "probe_accuracy": 0.5125
+  },
+  "n_pcs": 8,
+  "hidden_dim": 2560
+}

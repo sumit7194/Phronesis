@@ -1,0 +1,3 @@
+{"kind": "baseline", "prompt_id": "E1-confabulation", "n_tokens": 624, "seconds": 75.77, "thinking_chars": 2172, "answer_chars": 358}
+{"kind": "baseline", "prompt_id": "E2-contested-science", "n_tokens": 1024, "seconds": 166.12, "thinking_chars": 3227, "answer_chars": 1403}
+{"kind": "baseline", "prompt_id": "E3-bayesian-update", "n_tokens": 1024, "seconds": 170.07, "thinking_chars": 0, "answer_chars": 2940}

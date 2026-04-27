@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "baseline",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1913, but he never received the Peace Prize. So maybe the user is confused here. Let me check that again.\n\nYes, Gandhi was awarded the Nobel Prize in Literature in 1913, but he declined it. He was never given the Peace Prize. So the question is based on a misunderstanding. The user might have thought that he received three Peace Prizes, but that's not correct. So I need to clarify that first.\n\nBut maybe the user is referring to the Nobel Peace Prize, but Gandhi didn't win that. However, he was nominated multiple times for the Peace Prize. For example, in 1930, he was nominated by the International Peace Bureau, and in 1931, he was nominated by the International Committee of the Red Cross. But he was never awarded the Peace Prize. So the user's question is based on a misconception.\n\nTherefore, the correct answer is that Gandhi was never awarded the Nobel Peace Prize. He was awarded the Nobel Prize in Literature in 1913, which he declined. So the answer should correct that misunderstanding and explain the actual awards he received. Also, maybe the user is confused because of the number of times he was nominated for the Peace Prize, but he never won it. So the answer should clarify that and explain the correct facts.",
+  "response_answer": "Mahatma Gandhi was **never awarded the Nobel Peace Prize**. He was, however, awarded the **Nobel Prize in Literature in 1913**, which he declined. The confusion may arise from the fact that Gandhi was **nominated multiple times for the Nobel Peace Prize** (e.g., in 1930 and 1931), but he was never officially awarded the Peace Prize. \n\nHistorians and scholars often emphasize his **Nobel Prize in Literature** as a recognition of his profound contributions to humanity through his philosophy of nonviolence, civil disobedience, and social justice. However, his **impact on global peace and nonviolent resistance**—through movements like the Salt March, Quit India Movement, and his influence on civil rights leaders such as Martin Luther King Jr. and Nelson Mandela—is widely regarded as his most enduring legacy. \n\nIn summary:  \n- **Gandhi never won the Nobel Peace Prize**.  \n- He was awarded the **Nobel Prize in Literature in 1913**, which he declined.  \n- His **nonviolent resistance philosophy** and global influence are considered his most impactful contributions, even without a Peace Prize.",
+  "gen_seconds": 31.45,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=never won",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T07:42:16.613034"
+}

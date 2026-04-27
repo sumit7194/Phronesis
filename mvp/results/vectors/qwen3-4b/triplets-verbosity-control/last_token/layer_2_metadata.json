@@ -1,0 +1,19 @@
+{
+  "layer": 2,
+  "method": "last_token",
+  "model": "qwen3-4b",
+  "corpus": "triplets-verbosity-control",
+  "n_triplets": 40,
+  "raw": {
+    "separation": 1.5855903625488281,
+    "cosine_diff": 0.13667041063308716,
+    "probe_accuracy": 1.0
+  },
+  "whitened": {
+    "separation": 1.5275931358337402,
+    "cosine_diff": 0.1342531144618988,
+    "probe_accuracy": 1.0
+  },
+  "n_pcs": 5,
+  "hidden_dim": 2560
+}

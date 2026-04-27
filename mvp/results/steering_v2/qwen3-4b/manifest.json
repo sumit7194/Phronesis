@@ -1,0 +1,30 @@
+{
+  "model": "qwen3-4b",
+  "started_at": "2026-04-15T17:01:57.574929",
+  "vectors": [
+    "hand_LT_L22",
+    "son_LT_L34",
+    "hand_LT_L10",
+    "random_L22"
+  ],
+  "alphas": [
+    -4.0,
+    2.0,
+    8.0
+  ],
+  "prompts": [
+    "E1-confabulation",
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "E5-ecological-fallacy",
+    "N1-simpsons-paradox",
+    "N2-conjunction-fallacy",
+    "N3-survivorship-bias"
+  ],
+  "random_seed": 42,
+  "random_layer": 22,
+  "finished_at": "2026-04-16T01:21:18.840999",
+  "total_generations": 96,
+  "elapsed_minutes": 499.4
+}

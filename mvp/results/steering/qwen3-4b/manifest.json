@@ -1,0 +1,54 @@
+{
+  "version": 3,
+  "model": "qwen3-4b",
+  "started_at": "2026-04-16T13:58:30.745551",
+  "per_prompt_caps": {
+    "E2-contested-science": 2048,
+    "E3-bayesian-update": 8192,
+    "E4-taxi-social": 8192,
+    "N1-simpsons-paradox": 4096,
+    "N2-conjunction-fallacy": 2048
+  },
+  "vectors": [
+    {
+      "id": "hand_LT_L20",
+      "rel_path": "triplets/last_token/layer_20_virtue_vector.npy",
+      "layer": 20
+    },
+    {
+      "id": "hand_LT_L21",
+      "rel_path": "triplets/last_token/layer_21_virtue_vector.npy",
+      "layer": 21
+    },
+    {
+      "id": "hand_LT_L22",
+      "rel_path": "triplets/last_token/layer_22_virtue_vector.npy",
+      "layer": 22
+    },
+    {
+      "id": "son_LT_L34",
+      "rel_path": "triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy",
+      "layer": 34
+    },
+    {
+      "id": "random_L22",
+      "rel_path": "random_L22_vector.npy",
+      "layer": 22
+    }
+  ],
+  "alphas": [
+    -4.0,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    12.0
+  ],
+  "prompts": [
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "N1-simpsons-paradox",
+    "N2-conjunction-fallacy"
+  ]
+}

@@ -1,0 +1,61 @@
+Output dir: /Users/sumit/Github/Phronesis/mvp/results/decay_steering/qwen3-4b/e4_taxi
+Vector: layer_22_virtue_vector.npy  shape=(2560,)  norm=17.72
+Loading model...
+Loading model: qwen3-4b (/Users/sumit/Github/Phronesis/mvp/models/Qwen3-4B)
+Device: mps
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:03<20:13,  3.06s/it]Loading weights:  33%|███▎      | 130/398 [00:03<00:04, 57.82it/s]Loading weights:  51%|█████     | 203/398 [00:04<00:03, 57.12it/s]Loading weights:  62%|██████▏   | 246/398 [00:05<00:02, 57.39it/s]Loading weights:  69%|██████▉   | 274/398 [00:05<00:02, 56.21it/s]Loading weights:  74%|███████▍  | 294/398 [00:06<00:02, 50.15it/s]Loading weights:  78%|███████▊  | 309/398 [00:06<00:01, 48.68it/s]Loading weights:  80%|████████  | 320/398 [00:07<00:01, 44.96it/s]Loading weights:  83%|████████▎ | 329/398 [00:07<00:01, 40.99it/s]Loading weights:  84%|████████▍ | 336/398 [00:07<00:01, 35.70it/s]Loading weights:  86%|████████▋ | 344/398 [00:08<00:01, 31.66it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 31.11it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 30.27it/s]Loading weights:  95%|█████████▍| 377/398 [00:09<00:00, 29.21it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 28.86it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 40.93it/s]
+Model on mps.
+
+────────────────────────────────────────────────────────────────────
+[baseline] α=0 baseline (no hook)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  done 2675.2s  ntok=8192  hit_cap=True  think=0c  ans=37719c
+
+────────────────────────────────────────────────────────────────────
+[tau_50] α₀=+8.0  τ=50
+Output dir: /Users/sumit/Github/Phronesis/mvp/results/decay_steering/qwen3-4b/e4_taxi
+Vector: layer_22_virtue_vector.npy  shape=(2560,)  norm=17.72
+Loading model...
+Loading model: qwen3-4b (/Users/sumit/Github/Phronesis/mvp/models/Qwen3-4B)
+Device: mps
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<18:53,  2.85s/it]Loading weights:  34%|███▍      | 135/398 [00:03<00:04, 60.18it/s]Loading weights:  42%|████▏     | 168/398 [00:03<00:03, 60.01it/s]Loading weights:  47%|████▋     | 189/398 [00:03<00:03, 63.45it/s]Loading weights:  52%|█████▏    | 205/398 [00:04<00:03, 60.11it/s]Loading weights:  55%|█████▍    | 217/398 [00:04<00:02, 61.05it/s]Loading weights:  57%|█████▋    | 228/398 [00:04<00:02, 60.99it/s]Loading weights:  60%|█████▉    | 237/398 [00:04<00:02, 58.18it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:02, 55.51it/s]Loading weights:  64%|██████▍   | 256/398 [00:05<00:02, 55.93it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 57.17it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 58.28it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 51.57it/s]Loading weights:  75%|███████▌  | 300/398 [00:06<00:02, 43.88it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:02, 39.01it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:02, 35.67it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 35.14it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 32.63it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 30.98it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 30.75it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 29.86it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 29.04it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 43.44it/s]
+Model on mps.
+[baseline] cached — skipping
+
+────────────────────────────────────────────────────────────────────
+[tau_50] α₀=+8.0  τ=50
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-989-bj6s3w70'}
+  warnings.warn(
+Output dir: /Users/sumit/Github/Phronesis/mvp/results/decay_steering/qwen3-4b/e4_taxi
+Vector: layer_22_virtue_vector.npy  shape=(2560,)  norm=17.72
+Loading model...
+Loading model: qwen3-4b (/Users/sumit/Github/Phronesis/mvp/models/Qwen3-4B)
+Device: mps
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:58,  2.26s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.32it/s]Loading weights:  49%|████▉     | 195/398 [00:03<00:02, 76.68it/s]Loading weights:  60%|█████▉    | 237/398 [00:03<00:02, 77.49it/s]Loading weights:  67%|██████▋   | 266/398 [00:04<00:01, 82.26it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 46.19it/s]Loading weights:  77%|███████▋  | 305/398 [00:05<00:01, 50.53it/s]Loading weights:  80%|████████  | 319/398 [00:05<00:01, 54.24it/s]Loading weights:  83%|████████▎ | 331/398 [00:05<00:01, 55.38it/s]Loading weights:  86%|████████▌ | 342/398 [00:06<00:00, 57.47it/s]Loading weights:  88%|████████▊ | 352/398 [00:06<00:00, 57.57it/s]Loading weights:  91%|█████████ | 361/398 [00:06<00:00, 55.72it/s]Loading weights:  93%|█████████▎| 369/398 [00:06<00:00, 52.26it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 49.96it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 45.34it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.45it/s]
+Model on mps.
+
+────────────────────────────────────────────────────────────────────
+[baseline] α=0 baseline (no hook)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Output dir: /Users/sumit/Github/Phronesis/mvp/results/decay_steering/qwen3-4b/e4_taxi
+Vector: layer_22_virtue_vector.npy  shape=(2560,)  norm=17.72
+Loading model...
+Loading model: qwen3-4b (/Users/sumit/Github/Phronesis/mvp/models/Qwen3-4B)
+Device: mps
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:03<19:54,  3.01s/it]Loading weights:  33%|███▎      | 130/398 [00:03<00:04, 58.74it/s]Loading weights:  51%|█████▏    | 204/398 [00:04<00:03, 57.68it/s]Loading weights:  62%|██████▏   | 247/398 [00:05<00:02, 55.73it/s]Loading weights:  69%|██████▉   | 275/398 [00:05<00:02, 58.19it/s]Loading weights:  74%|███████▍  | 296/398 [00:06<00:01, 56.92it/s]Loading weights:  78%|███████▊  | 312/398 [00:06<00:01, 47.12it/s]Loading weights:  81%|████████▏ | 324/398 [00:07<00:01, 44.12it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 40.93it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 37.51it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 34.79it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 31.78it/s]Loading weights:  95%|█████████▍| 377/398 [00:09<00:00, 29.94it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 29.23it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 41.87it/s]
+Model on mps.
+
+────────────────────────────────────────────────────────────────────
+[baseline] α=0 baseline (no hook)
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  done 9462.6s  ntok=16384  hit_cap=True  think=0c  ans=80135c
+
+────────────────────────────────────────────────────────────────────
+[tau_50] α₀=+8.0  τ=50
+/opt/homebrew/Cellar/python@3.14/3.14.3_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:396: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-1384-6xzta44b'}
+  warnings.warn(

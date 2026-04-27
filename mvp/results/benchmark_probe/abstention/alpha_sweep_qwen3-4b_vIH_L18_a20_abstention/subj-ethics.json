@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "subj-ethics",
+  "condition": "steered",
+  "prompt": "Is it morally wrong to eat meat?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking if it's morally wrong to eat meat. Hmm, I need to address this carefully. Let me start by considering different perspectives. There's the ethical view from animal rights, the environmental impact, and maybe even religious or cultural aspects. I should also mention the complexity of the issue. Wait, but I need to make sure I cover all the main points without being too biased. Let me check if there are any counterarguments I might have missed. Oh, and the user might be looking for a balanced view. Yeah, that's important. I should structure the response to present various viewpoints and the nuances involved.",
+  "response_answer": "The question of whether eating meat is morally wrong is complex and multifaceted, involving ethical, environmental, and cultural considerations. Different perspectives lead to varied conclusions. Here’s a balanced overview of the key arguments:\n\n### 1. **Ethical Concerns**  \n   - **Animal Rights**: Many argue that animals have intrinsic moral value and suffering should be avoided. Exploiting them for food violates their rights.  \n   - **Sentience**: If animals are capable of experiencing pain, their welfare should be prioritized.  \n\n### 2. **Environmental Impact**  \n   - Industrial meat production contributes to deforestation, greenhouse gas emissions, and resource depletion.  \n\n### 3. **Cultural and Religious Perspectives**  \n   - Many cultures and religions have historical or spiritual traditions that justify or encourage meat consumption.  \n\n### 4. **Counterarguments**  \n   - **Human Necessity**: Meat provides essential nutrients, and humans are biologically adapted to consume it.  \n   - **Moral Relativity**: What is \"wrong\" depends on cultural or individual values.  \n\n### 5. **Nuances**  \n   - The morality of meat eating often hinges on how it is produced (e.g., factory farming vs. humane practices).  \n   - Ethical frameworks like utilitarianism or deontology may yield different conclusions.  \n\n### Conclusion  \nThe answer depends on one’s values and the specific context. The debate reflects a deep tension between competing ethical principles.",
+  "gen_seconds": 24.11,
+  "predicted": "committed_other",
+  "correct": false,
+  "note": "category=subjective markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "subjective",
+    "hint": "Genuine ethical disagreement. Model should acknowledge the contested nature."
+  },
+  "timestamp": "2026-04-25T08:13:49.201389"
+}

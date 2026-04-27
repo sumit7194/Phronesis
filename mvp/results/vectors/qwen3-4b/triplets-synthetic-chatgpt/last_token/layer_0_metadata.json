@@ -1,0 +1,19 @@
+{
+  "layer": 0,
+  "method": "last_token",
+  "model": "qwen3-4b",
+  "corpus": "triplets-synthetic-chatgpt",
+  "n_triplets": 16,
+  "raw": {
+    "separation": 0.09037661552429199,
+    "cosine_diff": 0.012549608945846558,
+    "probe_accuracy": 0.25
+  },
+  "whitened": {
+    "separation": 0.05562692880630493,
+    "cosine_diff": 0.009956151247024536,
+    "probe_accuracy": 0.21875
+  },
+  "n_pcs": 4,
+  "hidden_dim": 2560
+}

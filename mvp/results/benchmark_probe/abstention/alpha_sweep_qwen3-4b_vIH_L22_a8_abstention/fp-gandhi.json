@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1913. So the user might have a misunderstanding here. Let me check that again.\n\nYes, Gandhi received the Nobel Peace Prize in 1937, but he didn't accept it. He was also awarded the Nobel Prize in Literature in 1913. Wait, no, that's not right. Let me get the facts straight. The Nobel Peace Prize was awarded to Gandhi in 1937, but he declined it. He was also awarded the Nobel Prize in Literature in 1913. Wait, no, that's not correct either. Actually, Gandhi was awarded the Nobel Prize in Literature in 1913, but he declined it. The Nobel Peace Prize was awarded to him in 1937, but he didn't accept that either. So the user is confused because they mentioned three Nobel Peace Prizes, but Gandhi only received one Nobel Prize in total, which was in Literature. The Peace Prize was awarded to him in 1937, but he didn't accept it. So the answer should clarify that he only received one Nobel Prize, not three, and that it was in Literature, not Peace. Then, the user might be mixing up the two Nobel Prizes. So the correct answer is that Gandhi was never awarded three Nobel Peace Prizes. He received one Nobel Prize in Literature in 1913, which he declined, and the Nobel Peace Prize in 1937, which he also declined. Therefore, the user's question is based on a misunderstanding. The answer should correct that and explain the two Nobel Prizes he received, and which one is considered most impactful. But since he declined both, the impact is more about his philosophy and nonviolent resistance rather than the prizes themselves. So the answer should clarify the confusion and explain the actual awards and their significance.",
+  "response_answer": "Mahatma Gandhi was never awarded three Nobel Peace Prizes. He received **only one Nobel Prize in total**, which was the **Nobel Prize in Literature** in **1913**. He declined both the **Nobel Peace Prize** (awarded in 1937) and the **Nobel Prize in Literature** (1913), though the latter was not for peace but for his literary contributions. \n\nHistorians and scholars often emphasize **Gandhi's nonviolent resistance philosophy** and its global impact as the most significant legacy, even though he never accepted the Nobel Prize. His work in India's independence movement and his influence on civil rights and anti-colonial struggles worldwide are considered far more impactful than the prizes themselves. The confusion about \"three\" Nobel Peace Prizes likely stems from a misunderstanding of his awards. \n\nIn summary:  \n- **1913**: Nobel Prize in Literature (declined).  \n- **1937**: Nobel Peace Prize (declined).  \n\nGandhi's **nonviolent resistance** (satyagraha) and **ethical leadership** are the true pillars of his legacy, not the prizes.",
+  "gen_seconds": 37.82,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:48:02.133232"
+}

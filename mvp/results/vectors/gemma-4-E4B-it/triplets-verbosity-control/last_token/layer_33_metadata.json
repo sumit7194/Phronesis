@@ -1,0 +1,19 @@
+{
+  "layer": 33,
+  "method": "last_token",
+  "model": "gemma-4-E4B-it",
+  "corpus": "triplets-verbosity-control",
+  "n_triplets": 40,
+  "raw": {
+    "separation": 11.670551300048828,
+    "cosine_diff": 0.07724429666996002,
+    "probe_accuracy": 0.925
+  },
+  "whitened": {
+    "separation": 11.406513214111328,
+    "cosine_diff": 0.11894591897726059,
+    "probe_accuracy": 0.925
+  },
+  "n_pcs": 4,
+  "hidden_dim": 2560
+}

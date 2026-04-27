@@ -1,0 +1,225 @@
+{
+  "model": "gemma-4-E4B-it",
+  "corpus": "triplets-reasoning-transparency",
+  "n_triplets": 40,
+  "hidden_dim": 2560,
+  "num_layers": 42,
+  "methods": {
+    "generation": {
+      "best_layer": 6,
+      "best_probe": 0.7375,
+      "per_layer": {
+        "0": {
+          "probe_accuracy": 0.4375,
+          "separation": 1.5132808685302734,
+          "cosine_diff": 0.03583022952079773
+        },
+        "1": {
+          "probe_accuracy": 0.5,
+          "separation": 1.1545724868774414,
+          "cosine_diff": 0.011794723570346832
+        },
+        "2": {
+          "probe_accuracy": 0.55,
+          "separation": 2.2883243560791016,
+          "cosine_diff": 0.020976603031158447
+        },
+        "3": {
+          "probe_accuracy": 0.5125,
+          "separation": 2.987417221069336,
+          "cosine_diff": 0.028344914317131042
+        },
+        "4": {
+          "probe_accuracy": 0.625,
+          "separation": 3.0843868255615234,
+          "cosine_diff": 0.03110169619321823
+        },
+        "5": {
+          "probe_accuracy": 0.675,
+          "separation": 3.61896014213562,
+          "cosine_diff": 0.04317404702305794
+        },
+        "6": {
+          "probe_accuracy": 0.7375,
+          "separation": 2.9884228706359863,
+          "cosine_diff": 0.030216582119464874
+        },
+        "7": {
+          "probe_accuracy": 0.6875,
+          "separation": 2.9567055702209473,
+          "cosine_diff": 0.03044045716524124
+        },
+        "8": {
+          "probe_accuracy": 0.6875,
+          "separation": 1.9671459197998047,
+          "cosine_diff": 0.03586927056312561
+        },
+        "9": {
+          "probe_accuracy": 0.725,
+          "separation": 2.192598819732666,
+          "cosine_diff": 0.03030833601951599
+        },
+        "10": {
+          "probe_accuracy": 0.6375,
+          "separation": 2.764554977416992,
+          "cosine_diff": 0.026494622230529785
+        },
+        "11": {
+          "probe_accuracy": 0.6625,
+          "separation": 3.1340208053588867,
+          "cosine_diff": 0.02558816410601139
+        },
+        "12": {
+          "probe_accuracy": 0.6125,
+          "separation": 2.919477939605713,
+          "cosine_diff": 0.020836463198065758
+        },
+        "13": {
+          "probe_accuracy": 0.6625,
+          "separation": 2.635648727416992,
+          "cosine_diff": 0.02237234264612198
+        },
+        "14": {
+          "probe_accuracy": 0.65,
+          "separation": 2.341243267059326,
+          "cosine_diff": 0.023507587611675262
+        },
+        "15": {
+          "probe_accuracy": 0.5625,
+          "separation": 2.0386056900024414,
+          "cosine_diff": 0.02029024437069893
+        },
+        "16": {
+          "probe_accuracy": 0.7,
+          "separation": 2.3986897468566895,
+          "cosine_diff": 0.02304700016975403
+        },
+        "17": {
+          "probe_accuracy": 0.6625,
+          "separation": 2.5815374851226807,
+          "cosine_diff": 0.034622110426425934
+        },
+        "18": {
+          "probe_accuracy": 0.675,
+          "separation": 2.646399974822998,
+          "cosine_diff": 0.042016129940748215
+        },
+        "19": {
+          "probe_accuracy": 0.675,
+          "separation": 2.3038833141326904,
+          "cosine_diff": 0.04169441759586334
+        },
+        "20": {
+          "probe_accuracy": 0.675,
+          "separation": 2.0905566215515137,
+          "cosine_diff": 0.03167259693145752
+        },
+        "21": {
+          "probe_accuracy": 0.675,
+          "separation": 2.2239341735839844,
+          "cosine_diff": 0.029564648866653442
+        },
+        "22": {
+          "probe_accuracy": 0.575,
+          "separation": 1.462888240814209,
+          "cosine_diff": 0.03666844964027405
+        },
+        "23": {
+          "probe_accuracy": 0.6,
+          "separation": 5.132018089294434,
+          "cosine_diff": 0.05904337391257286
+        },
+        "24": {
+          "probe_accuracy": 0.6125,
+          "separation": 4.444232940673828,
+          "cosine_diff": 0.04522556811571121
+        },
+        "25": {
+          "probe_accuracy": 0.625,
+          "separation": 4.264532089233398,
+          "cosine_diff": 0.04001516103744507
+        },
+        "26": {
+          "probe_accuracy": 0.65,
+          "separation": 3.6571083068847656,
+          "cosine_diff": 0.03161437809467316
+        },
+        "27": {
+          "probe_accuracy": 0.6375,
+          "separation": 3.277057647705078,
+          "cosine_diff": 0.028022751212120056
+        },
+        "28": {
+          "probe_accuracy": 0.6,
+          "separation": 3.0707836151123047,
+          "cosine_diff": 0.025023847818374634
+        },
+        "29": {
+          "probe_accuracy": 0.6625,
+          "separation": 3.6179847717285156,
+          "cosine_diff": 0.031055182218551636
+        },
+        "30": {
+          "probe_accuracy": 0.6625,
+          "separation": 3.565235137939453,
+          "cosine_diff": 0.029504895210266113
+        },
+        "31": {
+          "probe_accuracy": 0.6,
+          "separation": 3.2984657287597656,
+          "cosine_diff": 0.029257476329803467
+        },
+        "32": {
+          "probe_accuracy": 0.6,
+          "separation": 3.071608543395996,
+          "cosine_diff": 0.025236137211322784
+        },
+        "33": {
+          "probe_accuracy": 0.6125,
+          "separation": 2.84023380279541,
+          "cosine_diff": 0.02345205843448639
+        },
+        "34": {
+          "probe_accuracy": 0.6375,
+          "separation": 2.7792434692382812,
+          "cosine_diff": 0.02378067374229431
+        },
+        "35": {
+          "probe_accuracy": 0.6125,
+          "separation": 3.0431928634643555,
+          "cosine_diff": 0.03041122853755951
+        },
+        "36": {
+          "probe_accuracy": 0.65,
+          "separation": 2.767536163330078,
+          "cosine_diff": 0.02209019660949707
+        },
+        "37": {
+          "probe_accuracy": 0.6,
+          "separation": 2.523784637451172,
+          "cosine_diff": 0.0207708477973938
+        },
+        "38": {
+          "probe_accuracy": 0.6,
+          "separation": 2.423116683959961,
+          "cosine_diff": 0.020093262195587158
+        },
+        "39": {
+          "probe_accuracy": 0.5875,
+          "separation": 2.1869382858276367,
+          "cosine_diff": 0.019282817840576172
+        },
+        "40": {
+          "probe_accuracy": 0.625,
+          "separation": 1.9681854248046875,
+          "cosine_diff": 0.018487602472305298
+        },
+        "41": {
+          "probe_accuracy": 0.575,
+          "separation": 1.1989500522613525,
+          "cosine_diff": 0.03415723890066147
+        }
+      }
+    }
+  }
+}

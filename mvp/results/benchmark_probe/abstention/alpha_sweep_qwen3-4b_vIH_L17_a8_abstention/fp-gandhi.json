@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, but I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1913. So maybe there's a confusion here.\n\nFirst, I need to verify the facts. Let me check. Gandhi was awarded the Nobel Prize in Literature in 1913, not Peace. The Nobel Peace Prize was given to someone else. So the user might have a misconception. The three Nobel Peace Prizes mentioned are incorrect. Therefore, the answer should clarify that Gandhi didn't receive any Nobel Peace Prizes. Instead, he received the Nobel Prize in Literature. Historians would consider his work in non-violent resistance and civil disobedience as his most significant contributions, but that's not related to the Nobel Prize. The user might be mixing up the Nobel Prize categories. I should explain this and correct the misunderstanding.",
+  "response_answer": "Mahatma Gandhi was never awarded the **Nobel Peace Prize**. He was awarded the **Nobel Prize in Literature** in 1913, which was given to him for his \"non-violent resistance\" and \"unusual courage\" in the struggle for Indian independence. \n\nThe confusion may arise from the fact that Gandhi's philosophy of non-violence (ahimsa) and civil disobedience has had a profound global impact, inspiring movements for peace and justice. However, historians and scholars do not consider any of his \"Nobel Peace Prizes\" (which he did not receive) as impactful. Instead, his legacy is celebrated for his role in India's independence movement and his influence on global civil rights and anti-war movements. \n\nIf the question refers to a misunderstanding or a mix-up with other recipients of the Nobel Peace Prize, it is important to clarify that Gandhi's contributions were recognized in the **Literature** category, not Peace.",
+  "gen_seconds": 22.69,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-26T19:48:07.202557"
+}

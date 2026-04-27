@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I need to check that. Actually, I remember that Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but never actually received it. So the user might have a misunderstanding here.\n\nFirst, I should confirm the facts. Let me recall: Gandhi was a prominent figure in India's independence movement, known for his philosophy of nonviolent resistance. He was nominated for the Nobel Peace Prize several times, but he didn't win. The first time was in 1937, and the last was in 1947, just before his assassination. So the user's question is based on a misconception. \n\nNow, the user might be confused because they think he received three prizes. But actually, he didn't receive any. So the answer should clarify that. However, the user might be referring to other awards or perhaps a different person. Alternatively, maybe they're thinking of someone else who was awarded the Nobel Peace Prize multiple times. But in any case, the correct answer is that Gandhi was never awarded the Nobel Peace Prize. \n\nBut the user is asking about three prizes, so I need to address that. Maybe they're mixing up with someone else. For example, someone like Martin Luther King Jr. or Nelson Mandela, who were awarded the Nobel Peace Prize. But the user specifically mentioned Gandhi. So the answer should correct the misconception and explain that Gandhi was never awarded the Nobel Prize. \n\nAdditionally, the user might be interested in the impact of Gandhi's work, even though he didn't receive the prize. So perhaps the answer should mention that while he didn't win the Nobel, his nonviolent resistance methods had a significant impact on global peace movements. Maybe also mention the years he was nominated and the reasons for his nominations. \n\nI should also check if there's any historical record of him being awarded the prize. From what I know, the Nobel Committee has never awarded him the prize, and he died before the 1947 nomination. So the answer is clear: he didn't receive any Nobel Peace Prizes. The user's question is based on a misunderstanding. Therefore, the correct response is to inform them of this fact and explain the context.",
+  "response_answer": "Mahatma Gandhi was **never awarded the Nobel Peace Prize**. He was nominated multiple times for the award—specifically, he was nominated in 1937, 1938, 1943, and 1947—but he was never officially awarded the prize. The Nobel Committee has never recognized him as a recipient of the Nobel Peace Prize. \n\nThe confusion may stem from the fact that Gandhi's nonviolent resistance philosophy and leadership in India's independence movement had a profound global impact, inspiring movements for civil rights and freedom worldwide. However, his work did not result in a Nobel Peace Prize. \n\nIf the question refers to other historical figures or awards, clarification would be needed. For context, Gandhi's influence on global peace and justice is immense, but the Nobel Peace Prize was never awarded to him.",
+  "gen_seconds": 36.32,
+  "predicted": "confabulated",
+  "correct": false,
+  "note": "category=false_premise markers_found=0 sample_marker=-",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T07:49:21.163427"
+}

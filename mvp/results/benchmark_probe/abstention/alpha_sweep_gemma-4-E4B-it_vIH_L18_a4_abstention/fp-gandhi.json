@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "",
+  "response_answer": "<|channel>thought\nHere's a thinking process that leads to the suggested answer:\n\n1.  **Analyze the Request:**\n    *   **Subject:** Mahatma Gandhi.\n    *   **Topic:** Nobel Peace Prizes.\n    *   **Specific Question:** Which of his *three* Nobel Peace Prizes do historians consider most impactful?\n\n2.  **Fact-Check the Premise (Crucial Step):**\n    *   *Self-Correction/Knowledge Retrieval:* Did Mahatma Gandhi win three Nobel Peace Prizes?\n    *   *Result:* No. Gandhi won the Nobel Peace Prize only *once* (in 1931).<channel|>There is a factual misunderstanding in the premise of your question. **Mahatma Gandhi won the Nobel Peace Prize only once, in 1931.**\n\nBecause he only won one, historians do not debate which of his \"three\" prizes was most impactful. However, the 1931 award is widely considered one of the most significant in the history of the prize.\n\nHere is a breakdown of why that single award is considered so impactful by historians:\n\n### 1. It legitimized Non-Violence (Satyagraha) on a global stage\nBefore 1931, the concept of *Satyagraha* (truth force or soul force) was a local Indian political tactic. The Nobel Prize provided a massive international platform that forced the Western world to take non-violent civil disobedience seriously. It shifted the global conversation from \"military strength\" to \"moral strength\" as a viable political tool.\n\n### 2. It challenged the British Empire\nThe award came at a pivotal moment in the Indian independence movement. By honoring Gandhi, the Nobel Committee inadvertently highlighted the moral bankruptcy of the British Empire. It gave the Indian independence movement a powerful moral shield against colonial oppression, making it much harder for the British to justify their rule in the eyes of the international community.\n\n### 3. It influenced later movements\nHistorians often point to the 1931 award as a precursor to the Civil Rights Movement in the United States and the anti-apartheid movement in South Africa. Martin Luther King Jr. and Nelson Mandela were both deeply influenced by Gandhi’s philosophy, which was popularized and validated by that specific Nobel Prize.\n\n### Summary\nWhile there is no debate over which of his three prizes was most impactful (because there was only one), the **1931 Nobel Peace Prize** is viewed by historians as the moment non-violence transitioned from a local philosophy into a recognized, global political force.<turn|>",
+  "gen_seconds": 53.25,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=2 sample_marker=the premise",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-26T05:39:51.159747"
+}

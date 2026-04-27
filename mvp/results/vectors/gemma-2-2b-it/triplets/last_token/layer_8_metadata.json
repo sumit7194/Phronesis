@@ -1,0 +1,19 @@
+{
+  "layer": 8,
+  "method": "last_token",
+  "model": "gemma-2-2b-it",
+  "corpus": "triplets",
+  "n_triplets": 50,
+  "raw": {
+    "separation": 7.471390724182129,
+    "cosine_diff": 0.07640397548675537,
+    "probe_accuracy": 0.91
+  },
+  "whitened": {
+    "separation": 7.949490547180176,
+    "cosine_diff": 0.08952077478170395,
+    "probe_accuracy": 0.92
+  },
+  "n_pcs": 9,
+  "hidden_dim": 2304
+}

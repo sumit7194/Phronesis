@@ -1,0 +1,81 @@
+{
+  "model": "qwen3-4b",
+  "started_at": "2026-04-15T11:28:51.306686",
+  "max_new_tokens": 1024,
+  "vectors": [
+    {
+      "id": "hand_LT_L22",
+      "corpus": "triplets",
+      "method": "last_token",
+      "layer": 22,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets/last_token/layer_22_virtue_vector.npy"
+    },
+    {
+      "id": "hand_LT_L27",
+      "corpus": "triplets",
+      "method": "last_token",
+      "layer": 27,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets/last_token/layer_27_virtue_vector.npy"
+    },
+    {
+      "id": "hand_LT_L10",
+      "corpus": "triplets",
+      "method": "last_token",
+      "layer": 10,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets/last_token/layer_10_virtue_vector.npy"
+    },
+    {
+      "id": "hand_CP_L22",
+      "corpus": "triplets",
+      "method": "comprehension",
+      "layer": 22,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets/comprehension/layer_22_virtue_vector.npy"
+    },
+    {
+      "id": "hand_CP_L8",
+      "corpus": "triplets",
+      "method": "comprehension",
+      "layer": 8,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets/comprehension/layer_8_virtue_vector.npy"
+    },
+    {
+      "id": "son_LT_L22",
+      "corpus": "triplets-synthetic-sonnet",
+      "method": "last_token",
+      "layer": 22,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets-synthetic-sonnet/last_token/layer_22_virtue_vector.npy"
+    },
+    {
+      "id": "son_LT_L27",
+      "corpus": "triplets-synthetic-sonnet",
+      "method": "last_token",
+      "layer": 27,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets-synthetic-sonnet/last_token/layer_27_virtue_vector.npy"
+    },
+    {
+      "id": "son_LT_L34",
+      "corpus": "triplets-synthetic-sonnet",
+      "method": "last_token",
+      "layer": 34,
+      "path": "/Users/sumit/Github/Phronesis/mvp/results/vectors/qwen3-4b/triplets-synthetic-sonnet/last_token/layer_34_virtue_vector.npy"
+    }
+  ],
+  "alphas": [
+    -8.0,
+    -4.0,
+    -2.0,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    12.0
+  ],
+  "prompts": [
+    "E1-confabulation",
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "E5-ecological-fallacy"
+  ]
+}

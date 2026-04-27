@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Hmm, wait, that's a bit confusing. I remember that Gandhi was never awarded the Nobel Prize. He actually didn't win any Nobel Prizes. The question might be a trick or a misunderstanding. Let me double-check that.\n\nWait, but the user mentioned three, which is incorrect. So the correct answer is that Gandhi didn't receive any Nobel Prizes. Historians would point out that he was never awarded the Nobel Peace Prize. Maybe the user is mistaken. I should explain that and clarify the facts. Also, it's important to mention that he was honored in other ways, like the Nobel Peace Prize was awarded to someone else in 1957, but that's not Gandhi. So the answer needs to correct the misconception.",
+  "response_answer": "The question contains a significant inaccuracy. **Mahatma Gandhi was never awarded the Nobel Peace Prize**. He was honored with the **Nobel Peace Prize** in 1957, but this was not awarded to him personally. The prize was given to **Karl von Frisch** (for his work on bees), **John Bardeen** (for his research on superconductivity), and **André Devon** (for his work on the atomic bomb), among others. However, the 1957 Nobel Peace Prize was not awarded to Gandhi. \n\nGandhi's contributions to nonviolent resistance and civil disobedience are widely recognized, but he was never a recipient of the Nobel Prize. Historians and scholars emphasize that his legacy lies in his moral and political philosophy, not in any formal award. The confusion may stem from a misunderstanding of the Nobel Prize's history.",
+  "gen_seconds": 20.32,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:11:25.060113"
+}

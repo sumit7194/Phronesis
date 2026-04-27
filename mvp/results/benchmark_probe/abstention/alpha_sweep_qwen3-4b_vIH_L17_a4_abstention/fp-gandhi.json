@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking about which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, hold on, I remember that Gandhi was never awarded the Nobel Peace Prize. He was actually awarded the Nobel Prize in Literature in 1913. So the user might have a misunderstanding here. Let me check that again.\n\nYes, Gandhi received the Nobel Prize in Literature in 1913, not Peace. The Nobel Peace Prize was awarded to someone else, like Albert Einstein in 1921, but that's not related to Gandhi. So the user's question is based on a factual error. I need to correct that first. Then, explain that Gandhi's Nobel Prize was in Literature, and discuss the impact of his work in non-violence and civil disobedience. Maybe the user confused the Nobel Peace Prize with the Nobel Prize in Literature. I should clarify that and then talk about the significance of his Nobel Prize in Literature and his contributions to peace through his philosophy. Also, mention that while he didn't win the Peace Prize, his methods were influential in global peace movements. That should address the user's question accurately.",
+  "response_answer": "Mahatma Gandhi was never awarded the **Nobel Peace Prize**. He was awarded the **Nobel Prize in Literature** in 1913, which was the first time the prize was given to an Indian. This distinction is crucial to understanding the historical context of his recognition. \n\nHowever, if the question is interpreted as asking about the **most impactful aspect of Gandhi's work**—which is often associated with peace and non-violence—historians and scholars emphasize his **philosophy of non-violent resistance (ahimsa)** and **civil disobedience** as the most transformative contributions to global peace movements. His methods inspired movements for civil rights and freedom across the world, including the American Civil Rights Movement (led by Martin Luther King Jr.) and anti-apartheid struggles in South Africa. \n\nGandhi's **Nobel Prize in Literature** (1913) was awarded for his \"struggle against British rule in India,\" recognizing his role in the Indian independence movement. While he did not win the Peace Prize, his legacy as a global symbol of non-violence and moral resistance is unparalleled. Historians often highlight his **ethical and philosophical contributions** to peace and justice as the most impactful, even if he was not formally recognized with the Peace Prize. \n\nIn summary, the confusion likely stems from a mix-up between the Nobel Prize in Literature and the Nobel Peace Prize. Gandhi's true legacy lies in his non-violent philosophy, which has had a profound and lasting impact on global peace and social justice.",
+  "gen_seconds": 31.05,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=2 sample_marker=did not win",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-26T19:41:39.513855"
+}

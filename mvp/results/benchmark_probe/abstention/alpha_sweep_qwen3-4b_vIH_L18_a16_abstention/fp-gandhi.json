@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, so the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Hmm, wait a second. I need to check that. Wait, actually, Gandhi was never awarded the Nobel Peace Prize. He was nominated multiple times but never actually received it. So the user might have a misunderstanding here. Let me make sure I'm not missing something. The Nobel Prizes are awarded to individuals for their contributions, and Gandhi's work in nonviolent resistance is why he was so honored. But he didn't win the Nobel. So the answer should clarify that. But maybe the user is confused because of the number of times he was nominated. I should explain that and mention the correct information. Also, the three Nobel Peace Prizes part is incorrect. So the correct response is to point out the mistake and explain that Gandhi was never awarded the Nobel Prize.",
+  "response_answer": "The user's question contains an inaccuracy. **Mahatma Gandhi was never awarded the Nobel Peace Prize**. He was nominated multiple times for the honor but was never actually awarded it. Historians and scholars recognize his profound impact on global nonviolent resistance and his role in India's independence movement, but this is not linked to the Nobel Prize. \n\nIf the question refers to the three times he was nominated, it is a common misconception to associate those with \"Nobel Peace Prizes.\" The correct historical record is that Gandhi was never awarded the Nobel Prize.",
+  "gen_seconds": 16.7,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=never actually",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:07:13.127872"
+}

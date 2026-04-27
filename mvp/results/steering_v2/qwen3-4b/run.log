@@ -1,0 +1,769 @@
+[2026-04-15 15:34:50] ========================================================================
+[2026-04-15 15:34:50] Qwen3-4B FOCUSED STEERING RUN (v2)
+[2026-04-15 15:34:50] ========================================================================
+[2026-04-15 15:34:50] Loaded 8 prompts
+[2026-04-15 15:34:50]   E1-confabulation                max_tokens=2048
+[2026-04-15 15:34:50]   E2-contested-science            max_tokens=2048
+[2026-04-15 15:34:50]   E3-bayesian-update              max_tokens=8192
+[2026-04-15 15:34:50]   E4-taxi-social                  max_tokens=8192
+[2026-04-15 15:34:50]   E5-ecological-fallacy           max_tokens=2048
+[2026-04-15 15:34:50]   N1-simpsons-paradox             max_tokens=4096
+[2026-04-15 15:34:50]   N2-conjunction-fallacy          max_tokens=2048
+[2026-04-15 15:34:50]   N3-survivorship-bias            max_tokens=2048
+[2026-04-15 15:34:50] Loading model qwen3-4b ...
+Loading model: qwen3-4b (/home/sumit/phronesis/mvp/models/Qwen3-4B)
+Device: cuda
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:01<07:48,  1.18s/it]Loading weights:  20%|██        | 80/398 [00:01<00:03, 85.01it/s]Loading weights:  31%|███       | 122/398 [00:01<00:02, 92.81it/s]Loading weights:  38%|███▊      | 150/398 [00:02<00:02, 86.54it/s]Loading weights:  43%|████▎     | 170/398 [00:02<00:02, 87.78it/s]Loading weights:  47%|████▋     | 186/398 [00:02<00:02, 94.82it/s]Loading weights:  51%|█████     | 202/398 [00:02<00:02, 83.98it/s]Loading weights:  54%|█████▍    | 215/398 [00:02<00:02, 88.72it/s]Loading weights:  57%|█████▋    | 227/398 [00:02<00:01, 89.58it/s]Loading weights:  60%|██████    | 239/398 [00:03<00:01, 88.05it/s]Loading weights:  63%|██████▎   | 250/398 [00:03<00:01, 90.84it/s]Loading weights:  66%|██████▌   | 261/398 [00:03<00:01, 90.61it/s]Loading weights:  68%|██████▊   | 271/398 [00:03<00:01, 87.54it/s]Loading weights:  71%|███████   | 281/398 [00:03<00:01, 86.85it/s]Loading weights:  73%|███████▎  | 291/398 [00:03<00:01, 84.11it/s]Loading weights:  76%|███████▌  | 301/398 [00:03<00:01, 87.41it/s]Loading weights:  78%|███████▊  | 312/398 [00:03<00:00, 90.44it/s]Loading weights:  81%|████████  | 322/398 [00:03<00:00, 90.00it/s]Loading weights:  84%|████████▎ | 333/398 [00:04<00:00, 86.23it/s]Loading weights:  86%|████████▋ | 344/398 [00:04<00:00, 91.84it/s]Loading weights:  89%|████████▉ | 355/398 [00:04<00:00, 91.96it/s]Loading weights:  92%|█████████▏| 366/398 [00:04<00:00, 90.25it/s]Loading weights:  95%|█████████▍| 377/398 [00:04<00:00, 92.84it/s]Loading weights:  97%|█████████▋| 388/398 [00:04<00:00, 93.23it/s]Loading weights: 100%|██████████| 398/398 [00:04<00:00, 84.16it/s]
+[2026-04-15 15:34:59] Model on cuda. Ready.
+[2026-04-15 15:34:59] 
+[2026-04-15 15:34:59] --- BASELINES (no steering) ---
+[2026-04-15 15:34:59]   [1/8] E1-confabulation:
+[2026-04-15 15:35:39]       done 39.7s  think=2181c answer=358c tok=628/2048
+[2026-04-15 15:35:39]   [2/8] E2-contested-science:
+[2026-04-15 15:36:48]       done 69.2s  think=3278c answer=1810c tok=1100/2048
+[2026-04-15 15:36:48]   [3/8] E3-bayesian-update:
+[2026-04-15 15:55:50]       done 1142.1s  think=0c answer=21122c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 15:55:50]   [4/8] E4-taxi-social:
+[2026-04-15 16:04:14]       done 504.2s  think=18728c answer=2909c tok=4965/8192
+[2026-04-15 16:04:14]   [5/8] E5-ecological-fallacy:
+[2026-04-15 16:05:23]       done 68.7s  think=3565c answer=2007c tok=1094/2048
+[2026-04-15 16:05:23]   [6/8] N1-simpsons-paradox:
+[2026-04-15 16:06:53]       done 89.7s  think=4414c answer=1320c tok=1365/4096
+[2026-04-15 16:06:53]   [7/8] N2-conjunction-fallacy:
+[2026-04-15 16:09:18]       done 145.3s  think=0c answer=9160c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 16:09:18]   [8/8] N3-survivorship-bias:
+[2026-04-15 16:11:19]       done 121.2s  think=5782c answer=2978c tok=1778/2048
+[2026-04-15 16:11:19] Loaded vector hand_LT_L22: probe=96% sep=+6.21
+[2026-04-15 16:11:19] Loaded vector son_LT_L34: probe=96% sep=+21.50
+[2026-04-15 16:11:19] Loaded vector hand_LT_L10: probe=96% sep=+2.88
+[2026-04-15 16:11:19] Generated random vector: dim=2560, seed=42
+[2026-04-15 16:11:19]   Saved to /home/sumit/phronesis/mvp/results/steering_v2/qwen3-4b/random_vector_L22.npy
+[2026-04-15 16:11:19] 
+[2026-04-15 16:11:19] --- STEERED RUNS: 96 generations ---
+[2026-04-15 16:11:19]   Vectors: 3 virtue + 1 random
+[2026-04-15 16:11:19]   Alphas: [-4.0, 2.0, 8.0]
+[2026-04-15 16:11:19]   Prompts: 8
+[2026-04-15 16:11:19] 
+[2026-04-15 16:11:19] ============================================================
+[2026-04-15 16:11:19] VECTOR: hand_LT_L22  (layer 22)
+[2026-04-15 16:11:19]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 16:11:19]     [1/96] E1-confabulation:
+[2026-04-15 16:12:06]       done 46.8s  think=2534c answer=378c tok=738/2048
+[2026-04-15 16:12:06]       ETA: 74 min (avg 47s/gen, 95 remaining)
+[2026-04-15 16:12:06]     [2/96] E2-contested-science:
+[2026-04-15 16:12:55]       done 49.2s  think=2056c answer=1568c tok=778/2048
+[2026-04-15 16:12:55]       ETA: 75 min (avg 48s/gen, 94 remaining)
+[2026-04-15 16:12:55]     [3/96] E3-bayesian-update:
+[2026-04-15 16:32:03]       done 1147.8s  think=0c answer=20521c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 16:32:03]       ETA: 643 min (avg 415s/gen, 93 remaining)
+[2026-04-15 16:32:03]     [4/96] E4-taxi-social:
+[2026-04-15 16:51:16]       done 1153.5s  think=0c answer=38572c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 16:51:16]       ETA: 919 min (avg 599s/gen, 92 remaining)
+[2026-04-15 16:51:16]     [5/96] E5-ecological-fallacy:
+[2026-04-15 16:52:18]       done 61.2s  think=3547c answer=1202c tok=964/2048
+[2026-04-15 16:52:18]       ETA: 746 min (avg 492s/gen, 91 remaining)
+[2026-04-15 16:52:18]     [6/96] N1-simpsons-paradox:
+[2026-04-15 16:58:42]       done 384.0s  think=0c answer=13794c tok=4096/4096 [HIT LIMIT]
+[2026-04-15 16:58:42]       ETA: 711 min (avg 474s/gen, 90 remaining)
+[2026-04-15 16:58:42]     [7/96] N2-conjunction-fallacy:
+:42]       ETA: 711 min (avg 474s/gen, 90 remaining)
+[2026-04-15 16:58:42]     [7/96] N2-conjunction-fallacy:
+[2026-04-15 17:01:48] ========================================================================
+[2026-04-15 17:01:48] ========================================================================
+[2026-04-15 17:01:48] Qwen3-4B FOCUSED STEERING RUN (v2)
+[2026-04-15 17:01:48] Qwen3-4B FOCUSED STEERING RUN (v2)
+[2026-04-15 17:01:48] ========================================================================
+[2026-04-15 17:01:48] ========================================================================
+[2026-04-15 17:01:48] Loaded 8 prompts
+[2026-04-15 17:01:48] Loaded 8 prompts
+[2026-04-15 17:01:48]   E1-confabulation                max_tokens=2048
+[2026-04-15 17:01:48]   E1-confabulation                max_tokens=2048
+[2026-04-15 17:01:48]   E2-contested-science            max_tokens=2048
+[2026-04-15 17:01:48]   E2-contested-science            max_tokens=2048
+[2026-04-15 17:01:48]   E3-bayesian-update              max_tokens=8192
+[2026-04-15 17:01:48]   E3-bayesian-update              max_tokens=8192
+[2026-04-15 17:01:48]   E4-taxi-social                  max_tokens=8192
+[2026-04-15 17:01:48]   E4-taxi-social                  max_tokens=8192
+[2026-04-15 17:01:48]   E5-ecological-fallacy           max_tokens=2048
+[2026-04-15 17:01:48]   E5-ecological-fallacy           max_tokens=2048
+[2026-04-15 17:01:48]   N1-simpsons-paradox             max_tokens=4096
+[2026-04-15 17:01:48]   N1-simpsons-paradox             max_tokens=4096
+[2026-04-15 17:01:48]   N2-conjunction-fallacy          max_tokens=2048
+[2026-04-15 17:01:48]   N2-conjunction-fallacy          max_tokens=2048
+[2026-04-15 17:01:48]   N3-survivorship-bias            max_tokens=2048
+[2026-04-15 17:01:48]   N3-survivorship-bias            max_tokens=2048
+[2026-04-15 17:01:48] Loading model qwen3-4b ...
+[2026-04-15 17:01:48] Loading model qwen3-4b ...
+Loading model: qwen3-4b (/home/sumit/phronesis/mvp/models/Qwen3-4B)
+Device: cuda
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:01<08:09,  1.23s/it]Loading weights:  20%|██        | 80/398 [00:01<00:04, 77.40it/s]Loading weights:  27%|██▋       | 108/398 [00:01<00:03, 90.80it/s]Loading weights:  33%|███▎      | 130/398 [00:01<00:02, 90.34it/s]Loading weights:  37%|███▋      | 147/398 [00:02<00:02, 88.67it/s]Loading weights:  40%|████      | 161/398 [00:02<00:02, 91.84it/s]Loading weights:  44%|████▎     | 174/398 [00:02<00:02, 94.46it/s]Loading weights:  47%|████▋     | 186/398 [00:02<00:02, 94.02it/s]Loading weights:  50%|████▉     | 198/398 [00:02<00:02, 91.46it/s]Loading weights:  53%|█████▎    | 209/398 [00:02<00:02, 91.98it/s]Loading weights:  55%|█████▌    | 219/398 [00:02<00:02, 88.06it/s]Loading weights:  58%|█████▊    | 229/398 [00:02<00:01, 84.92it/s]Loading weights:  60%|█████▉    | 238/398 [00:03<00:02, 78.73it/s]Loading weights:  64%|██████▎   | 253/398 [00:03<00:01, 95.29it/s]Loading weights:  66%|██████▋   | 264/398 [00:03<00:01, 88.35it/s]Loading weights:  70%|██████▉   | 278/398 [00:03<00:01, 86.59it/s]Loading weights:  73%|███████▎  | 289/398 [00:03<00:01, 83.11it/s]Loading weights:  76%|███████▌  | 301/398 [00:03<00:01, 87.09it/s]Loading weights:  78%|███████▊  | 312/398 [00:03<00:00, 90.17it/s]Loading weights:  81%|████████  | 322/398 [00:04<00:00, 90.23it/s]Loading weights:  84%|████████▎ | 333/398 [00:04<00:00, 90.63it/s]Loading weights:  86%|████████▋ | 344/398 [00:04<00:00, 95.08it/s]Loading weights:  89%|████████▉ | 355/398 [00:04<00:00, 91.51it/s]Loading weights:  92%|█████████▏| 366/398 [00:04<00:00, 89.06it/s]Loading weights:  95%|█████████▍| 377/398 [00:04<00:00, 84.15it/s]Loading weights:  97%|█████████▋| 388/398 [00:04<00:00, 82.80it/s]Loading weights: 100%|██████████| 398/398 [00:04<00:00, 83.37it/s]
+[2026-04-15 17:01:57] Model on cuda. Ready.
+[2026-04-15 17:01:57] Model on cuda. Ready.
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] --- BASELINES (no steering) ---
+[2026-04-15 17:01:57] --- BASELINES (no steering) ---
+[2026-04-15 17:01:57]   [1/8] E1-confabulation:
+[2026-04-15 17:01:57]   [1/8] E1-confabulation:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [2/8] E2-contested-science:
+[2026-04-15 17:01:57]   [2/8] E2-contested-science:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [3/8] E3-bayesian-update:
+[2026-04-15 17:01:57]   [3/8] E3-bayesian-update:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [4/8] E4-taxi-social:
+[2026-04-15 17:01:57]   [4/8] E4-taxi-social:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [5/8] E5-ecological-fallacy:
+[2026-04-15 17:01:57]   [5/8] E5-ecological-fallacy:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [6/8] N1-simpsons-paradox:
+[2026-04-15 17:01:57]   [6/8] N1-simpsons-paradox:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [7/8] N2-conjunction-fallacy:
+[2026-04-15 17:01:57]   [7/8] N2-conjunction-fallacy:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]   [8/8] N3-survivorship-bias:
+[2026-04-15 17:01:57]   [8/8] N3-survivorship-bias:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57] Loaded vector hand_LT_L22: probe=96% sep=+6.21
+[2026-04-15 17:01:57] Loaded vector hand_LT_L22: probe=96% sep=+6.21
+[2026-04-15 17:01:57] Loaded vector son_LT_L34: probe=96% sep=+21.50
+[2026-04-15 17:01:57] Loaded vector son_LT_L34: probe=96% sep=+21.50
+[2026-04-15 17:01:57] Loaded vector hand_LT_L10: probe=96% sep=+2.88
+[2026-04-15 17:01:57] Loaded vector hand_LT_L10: probe=96% sep=+2.88
+[2026-04-15 17:01:57] Generated random vector: dim=2560, seed=42
+[2026-04-15 17:01:57] Generated random vector: dim=2560, seed=42
+[2026-04-15 17:01:57]   Saved to /home/sumit/phronesis/mvp/results/steering_v2/qwen3-4b/random_vector_L22.npy
+[2026-04-15 17:01:57]   Saved to /home/sumit/phronesis/mvp/results/steering_v2/qwen3-4b/random_vector_L22.npy
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] --- STEERED RUNS: 96 generations ---
+[2026-04-15 17:01:57] --- STEERED RUNS: 96 generations ---
+[2026-04-15 17:01:57]   Vectors: 3 virtue + 1 random
+[2026-04-15 17:01:57]   Vectors: 3 virtue + 1 random
+[2026-04-15 17:01:57]   Alphas: [-4.0, 2.0, 8.0]
+[2026-04-15 17:01:57]   Alphas: [-4.0, 2.0, 8.0]
+[2026-04-15 17:01:57]   Prompts: 8
+[2026-04-15 17:01:57]   Prompts: 8
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] 
+[2026-04-15 17:01:57] ============================================================
+[2026-04-15 17:01:57] ============================================================
+[2026-04-15 17:01:57] VECTOR: hand_LT_L22  (layer 22)
+[2026-04-15 17:01:57] VECTOR: hand_LT_L22  (layer 22)
+[2026-04-15 17:01:57]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 17:01:57]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 17:01:57]     [1/96] E1-confabulation:
+[2026-04-15 17:01:57]     [1/96] E1-confabulation:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [2/96] E2-contested-science:
+[2026-04-15 17:01:57]     [2/96] E2-contested-science:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [3/96] E3-bayesian-update:
+[2026-04-15 17:01:57]     [3/96] E3-bayesian-update:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [4/96] E4-taxi-social:
+[2026-04-15 17:01:57]     [4/96] E4-taxi-social:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [5/96] E5-ecological-fallacy:
+[2026-04-15 17:01:57]     [5/96] E5-ecological-fallacy:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [6/96] N1-simpsons-paradox:
+[2026-04-15 17:01:57]     [6/96] N1-simpsons-paradox:
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]       cached
+[2026-04-15 17:01:57]     [7/96] N2-conjunction-fallacy:
+[2026-04-15 17:01:57]     [7/96] N2-conjunction-fallacy:
+[2026-04-15 17:04:24]       done 147.0s  think=0c answer=9354c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 17:04:24]       ETA: 218 min (avg 147s/gen, 89 remaining)
+[2026-04-15 17:04:24]     [8/96] N3-survivorship-bias:
+[2026-04-15 17:04:24]       done 147.0s  think=0c answer=9354c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 17:04:24]       ETA: 218 min (avg 147s/gen, 89 remaining)
+[2026-04-15 17:04:24]     [8/96] N3-survivorship-bias:
+[2026-04-15 17:06:07]       done 102.8s  think=3954c answer=3501c tok=1530/2048
+[2026-04-15 17:06:07]       done 102.8s  think=3954c answer=3501c tok=1530/2048
+[2026-04-15 17:06:07]       ETA: 183 min (avg 125s/gen, 88 remaining)
+[2026-04-15 17:06:07]       ETA: 183 min (avg 125s/gen, 88 remaining)
+[2026-04-15 17:06:07]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 17:06:07]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 17:06:07]     [9/96] E1-confabulation:
+[2026-04-15 17:06:07]     [9/96] E1-confabulation:
+[2026-04-15 17:06:58]       done 51.1s  think=2914c answer=379c tok=813/2048
+[2026-04-15 17:06:58]       done 51.1s  think=2914c answer=379c tok=813/2048
+[2026-04-15 17:06:58]       ETA: 145 min (avg 100s/gen, 87 remaining)
+[2026-04-15 17:06:58]       ETA: 145 min (avg 100s/gen, 87 remaining)
+[2026-04-15 17:06:58]     [10/96] E2-contested-science:
+[2026-04-15 17:06:58]     [10/96] E2-contested-science:
+[2026-04-15 17:08:15]       done 77.6s  think=3542c answer=1902c tok=1217/2048
+[2026-04-15 17:08:15]       ETA: 136 min (avg 95s/gen, 86 remaining)
+[2026-04-15 17:08:15]       done 77.6s  think=3542c answer=1902c tok=1217/2048
+[2026-04-15 17:08:15]       ETA: 136 min (avg 95s/gen, 86 remaining)
+[2026-04-15 17:08:15]     [11/96] E3-bayesian-update:
+[2026-04-15 17:08:15]     [11/96] E3-bayesian-update:
+[2026-04-15 17:27:23]       done 1147.8s  think=0c answer=19161c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 17:27:23]       done 1147.8s  think=0c answer=19161c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 17:27:23]       ETA: 432 min (avg 305s/gen, 85 remaining)
+[2026-04-15 17:27:23]     [12/96] E4-taxi-social:
+[2026-04-15 17:27:23]       ETA: 432 min (avg 305s/gen, 85 remaining)
+[2026-04-15 17:27:23]     [12/96] E4-taxi-social:
+[2026-04-15 17:36:03]       done 520.2s  think=18955c answer=2484c tok=5045/8192
+[2026-04-15 17:36:03]       ETA: 477 min (avg 341s/gen, 84 remaining)
+[2026-04-15 17:36:03]       done 520.2s  think=18955c answer=2484c tok=5045/8192
+[2026-04-15 17:36:03]       ETA: 477 min (avg 341s/gen, 84 remaining)
+[2026-04-15 17:36:03]     [13/96] E5-ecological-fallacy:
+[2026-04-15 17:36:03]     [13/96] E5-ecological-fallacy:
+[2026-04-15 17:37:13]       done 69.3s  think=3647c answer=1835c tok=1086/2048
+[2026-04-15 17:37:13]       ETA: 418 min (avg 302s/gen, 83 remaining)
+[2026-04-15 17:37:13]       done 69.3s  think=3647c answer=1835c tok=1086/2048
+[2026-04-15 17:37:13]       ETA: 418 min (avg 302s/gen, 83 remaining)
+[2026-04-15 17:37:13]     [14/96] N1-simpsons-paradox:
+[2026-04-15 17:37:13]     [14/96] N1-simpsons-paradox:
+[2026-04-15 17:40:52]       done 219.3s  think=8746c answer=1102c tok=2791/4096
+[2026-04-15 17:40:52]       done 219.3s  think=8746c answer=1102c tok=2791/4096
+[2026-04-15 17:40:52]       ETA: 399 min (avg 292s/gen, 82 remaining)
+[2026-04-15 17:40:52]       ETA: 399 min (avg 292s/gen, 82 remaining)
+[2026-04-15 17:40:52]     [15/96] N2-conjunction-fallacy:
+[2026-04-15 17:40:52]     [15/96] N2-conjunction-fallacy:
+[2026-04-15 17:43:18]       done 146.2s  think=0c answer=8995c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 17:43:18]       ETA: 372 min (avg 276s/gen, 81 remaining)
+[2026-04-15 17:43:18]     [16/96] N3-survivorship-bias:
+[2026-04-15 17:43:18]       done 146.2s  think=0c answer=8995c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 17:43:18]       ETA: 372 min (avg 276s/gen, 81 remaining)
+[2026-04-15 17:43:18]     [16/96] N3-survivorship-bias:
+[2026-04-15 17:44:58]       done 99.7s  think=4226c answer=2853c tok=1492/2048
+[2026-04-15 17:44:58]       ETA: 344 min (avg 258s/gen, 80 remaining)
+[2026-04-15 17:44:58]       done 99.7s  think=4226c answer=2853c tok=1492/2048
+[2026-04-15 17:44:58]       ETA: 344 min (avg 258s/gen, 80 remaining)
+[2026-04-15 17:44:58]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 17:44:58]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 17:44:58]     [17/96] E1-confabulation:
+[2026-04-15 17:44:58]     [17/96] E1-confabulation:
+[2026-04-15 17:45:59]       done 60.6s  think=3333c answer=326c tok=942/2048
+[2026-04-15 17:45:59]       ETA: 316 min (avg 240s/gen, 79 remaining)
+[2026-04-15 17:45:59]       done 60.6s  think=3333c answer=326c tok=942/2048
+[2026-04-15 17:45:59]       ETA: 316 min (avg 240s/gen, 79 remaining)
+[2026-04-15 17:45:59]     [18/96] E2-contested-science:
+[2026-04-15 17:45:59]     [18/96] E2-contested-science:
+[2026-04-15 17:46:47]       done 48.8s  think=2095c answer=1313c tok=758/2048
+[2026-04-15 17:46:47]       done 48.8s  think=2095c answer=1313c tok=758/2048
+[2026-04-15 17:46:47]       ETA: 291 min (avg 224s/gen, 78 remaining)
+[2026-04-15 17:46:47]       ETA: 291 min (avg 224s/gen, 78 remaining)
+[2026-04-15 17:46:47]     [19/96] E3-bayesian-update:
+[2026-04-15 17:46:47]     [19/96] E3-bayesian-update:
+[2026-04-15 18:00:25]       done 818.0s  think=14128c answer=2421c tok=6671/8192
+[2026-04-15 18:00:25]       ETA: 346 min (avg 270s/gen, 77 remaining)
+[2026-04-15 18:00:25]     [20/96] E4-taxi-social:
+[2026-04-15 18:00:25]       done 818.0s  think=14128c answer=2421c tok=6671/8192
+[2026-04-15 18:00:25]       ETA: 346 min (avg 270s/gen, 77 remaining)
+[2026-04-15 18:00:25]     [20/96] E4-taxi-social:
+[2026-04-15 18:19:36]       done 1150.2s  think=0c answer=36232c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 18:19:36]       done 1150.2s  think=0c answer=36232c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 18:19:36]       ETA: 421 min (avg 333s/gen, 76 remaining)
+[2026-04-15 18:19:36]       ETA: 421 min (avg 333s/gen, 76 remaining)
+[2026-04-15 18:19:36]     [21/96] E5-ecological-fallacy:
+[2026-04-15 18:19:36]     [21/96] E5-ecological-fallacy:
+[2026-04-15 18:20:34]       done 58.1s  think=3002c answer=1538c tok=918/2048
+[2026-04-15 18:20:34]       done 58.1s  think=3002c answer=1538c tok=918/2048
+[2026-04-15 18:20:34]       ETA: 393 min (avg 314s/gen, 75 remaining)
+[2026-04-15 18:20:34]       ETA: 393 min (avg 314s/gen, 75 remaining)
+[2026-04-15 18:20:34]     [22/96] N1-simpsons-paradox:
+[2026-04-15 18:20:34]     [22/96] N1-simpsons-paradox:
+[2026-04-15 18:26:02]       done 327.9s  think=11087c answer=2175c tok=3695/4096
+[2026-04-15 18:26:02]       ETA: 389 min (avg 315s/gen, 74 remaining)
+[2026-04-15 18:26:02]       done 327.9s  think=11087c answer=2175c tok=3695/4096
+[2026-04-15 18:26:02]       ETA: 389 min (avg 315s/gen, 74 remaining)
+[2026-04-15 18:26:02]     [23/96] N2-conjunction-fallacy:
+[2026-04-15 18:26:02]     [23/96] N2-conjunction-fallacy:
+[2026-04-15 18:28:27]       done 145.8s  think=8348c answer=117c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 18:28:27]       done 145.8s  think=8348c answer=117c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 18:28:27]       ETA: 371 min (avg 305s/gen, 73 remaining)
+[2026-04-15 18:28:27]       ETA: 371 min (avg 305s/gen, 73 remaining)
+[2026-04-15 18:28:27]     [24/96] N3-survivorship-bias:
+[2026-04-15 18:28:27]     [24/96] N3-survivorship-bias:
+[2026-04-15 18:29:53]       done 85.5s  think=3597c answer=2759c tok=1308/2048
+[2026-04-15 18:29:53]       ETA: 352 min (avg 293s/gen, 72 remaining)
+[2026-04-15 18:29:53]       done 85.5s  think=3597c answer=2759c tok=1308/2048
+[2026-04-15 18:29:53]       ETA: 352 min (avg 293s/gen, 72 remaining)
+[2026-04-15 18:29:53] ============================================================
+[2026-04-15 18:29:53] ============================================================
+[2026-04-15 18:29:53] VECTOR: son_LT_L34  (layer 34)
+[2026-04-15 18:29:53] VECTOR: son_LT_L34  (layer 34)
+[2026-04-15 18:29:53]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 18:29:53]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 18:29:53]     [25/96] E1-confabulation:
+[2026-04-15 18:29:53]     [25/96] E1-confabulation:
+[2026-04-15 18:30:33]       done 39.9s  think=2181c answer=358c tok=628/2048
+[2026-04-15 18:30:33]       ETA: 331 min (avg 280s/gen, 71 remaining)
+[2026-04-15 18:30:33]       done 39.9s  think=2181c answer=358c tok=628/2048
+[2026-04-15 18:30:33]       ETA: 331 min (avg 280s/gen, 71 remaining)
+[2026-04-15 18:30:33]     [26/96] E2-contested-science:
+[2026-04-15 18:30:33]     [26/96] E2-contested-science:
+[2026-04-15 18:31:50]       done 77.3s  think=4117c answer=1470c tok=1204/2048
+[2026-04-15 18:31:50]       ETA: 315 min (avg 270s/gen, 70 remaining)
+[2026-04-15 18:31:50]       done 77.3s  think=4117c answer=1470c tok=1204/2048
+[2026-04-15 18:31:50]       ETA: 315 min (avg 270s/gen, 70 remaining)
+[2026-04-15 18:31:50]     [27/96] E3-bayesian-update:
+[2026-04-15 18:31:50]     [27/96] E3-bayesian-update:
+[2026-04-15 18:50:57]       done 1146.5s  think=0c answer=20694c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 18:50:57]       ETA: 358 min (avg 311s/gen, 69 remaining)
+[2026-04-15 18:50:57]     [28/96] E4-taxi-social:
+[2026-04-15 18:50:57]       done 1146.5s  think=0c answer=20694c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 18:50:57]       ETA: 358 min (avg 311s/gen, 69 remaining)
+[2026-04-15 18:50:57]     [28/96] E4-taxi-social:
+[2026-04-15 19:10:07]       done 1150.3s  think=0c answer=38695c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 19:10:07]       ETA: 396 min (avg 350s/gen, 68 remaining)
+[2026-04-15 19:10:07]       done 1150.3s  think=0c answer=38695c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 19:10:07]       ETA: 396 min (avg 350s/gen, 68 remaining)
+[2026-04-15 19:10:07]     [29/96] E5-ecological-fallacy:
+[2026-04-15 19:10:07]     [29/96] E5-ecological-fallacy:
+[2026-04-15 19:11:20]       done 73.6s  think=4004c answer=1813c tok=1153/2048
+[2026-04-15 19:11:20]       ETA: 377 min (avg 338s/gen, 67 remaining)
+[2026-04-15 19:11:20]       done 73.6s  think=4004c answer=1813c tok=1153/2048
+[2026-04-15 19:11:20]       ETA: 377 min (avg 338s/gen, 67 remaining)
+[2026-04-15 19:11:20]     [30/96] N1-simpsons-paradox:
+[2026-04-15 19:11:20]     [30/96] N1-simpsons-paradox:
+[2026-04-15 19:13:57]       done 157.1s  think=6510c answer=1656c tok=2163/4096
+[2026-04-15 19:13:57]       ETA: 363 min (avg 330s/gen, 66 remaining)
+[2026-04-15 19:13:57]       done 157.1s  think=6510c answer=1656c tok=2163/4096
+[2026-04-15 19:13:57]       ETA: 363 min (avg 330s/gen, 66 remaining)
+[2026-04-15 19:13:57]     [31/96] N2-conjunction-fallacy:
+[2026-04-15 19:13:57]     [31/96] N2-conjunction-fallacy:
+[2026-04-15 19:16:22]       done 144.9s  think=0c answer=9378c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 19:16:22]       done 144.9s  think=0c answer=9378c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 19:16:22]       ETA: 349 min (avg 323s/gen, 65 remaining)
+[2026-04-15 19:16:22]       ETA: 349 min (avg 323s/gen, 65 remaining)
+[2026-04-15 19:16:22]     [32/96] N3-survivorship-bias:
+[2026-04-15 19:16:22]     [32/96] N3-survivorship-bias:
+[2026-04-15 19:18:08]       done 105.7s  think=4454c answer=3448c tok=1589/2048
+[2026-04-15 19:18:08]       done 105.7s  think=4454c answer=3448c tok=1589/2048
+[2026-04-15 19:18:08]       ETA: 335 min (avg 314s/gen, 64 remaining)
+[2026-04-15 19:18:08]       ETA: 335 min (avg 314s/gen, 64 remaining)
+[2026-04-15 19:18:08]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 19:18:08]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 19:18:08]     [33/96] E1-confabulation:
+[2026-04-15 19:18:08]     [33/96] E1-confabulation:
+[2026-04-15 19:19:06]       done 58.3s  think=3356c answer=391c tok=939/2048
+[2026-04-15 19:19:06]       done 58.3s  think=3356c answer=391c tok=939/2048
+[2026-04-15 19:19:06]       ETA: 320 min (avg 305s/gen, 63 remaining)
+[2026-04-15 19:19:06]       ETA: 320 min (avg 305s/gen, 63 remaining)
+[2026-04-15 19:19:06]     [34/96] E2-contested-science:
+[2026-04-15 19:19:06]     [34/96] E2-contested-science:
+[2026-04-15 19:20:06]       done 59.8s  think=3036c answer=1432c tok=958/2048
+[2026-04-15 19:20:06]       ETA: 306 min (avg 296s/gen, 62 remaining)
+[2026-04-15 19:20:06]       done 59.8s  think=3036c answer=1432c tok=958/2048
+[2026-04-15 19:20:06]       ETA: 306 min (avg 296s/gen, 62 remaining)
+[2026-04-15 19:20:06]     [35/96] E3-bayesian-update:
+[2026-04-15 19:20:06]     [35/96] E3-bayesian-update:
+[2026-04-15 19:39:01]       done 1135.1s  think=18384c answer=3187c tok=8146/8192
+[2026-04-15 19:39:01]       done 1135.1s  think=18384c answer=3187c tok=8146/8192
+[2026-04-15 19:39:01]       ETA: 330 min (avg 325s/gen, 61 remaining)
+[2026-04-15 19:39:01]       ETA: 330 min (avg 325s/gen, 61 remaining)
+[2026-04-15 19:39:01]     [36/96] E4-taxi-social:
+[2026-04-15 19:39:01]     [36/96] E4-taxi-social:
+[2026-04-15 19:58:10]       done 1149.2s  think=0c answer=35930c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 19:58:10]       ETA: 352 min (avg 352s/gen, 60 remaining)
+[2026-04-15 19:58:10]     [37/96] E5-ecological-fallacy:
+[2026-04-15 19:58:10]       done 1149.2s  think=0c answer=35930c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 19:58:10]       ETA: 352 min (avg 352s/gen, 60 remaining)
+[2026-04-15 19:58:10]     [37/96] E5-ecological-fallacy:
+[2026-04-15 19:59:09]       done 58.6s  think=2987c answer=1904c tok=942/2048
+[2026-04-15 19:59:09]       ETA: 337 min (avg 343s/gen, 59 remaining)
+[2026-04-15 19:59:09]     [38/96] N1-simpsons-paradox:
+[2026-04-15 19:59:09]       done 58.6s  think=2987c answer=1904c tok=942/2048
+[2026-04-15 19:59:09]       ETA: 337 min (avg 343s/gen, 59 remaining)
+[2026-04-15 19:59:09]     [38/96] N1-simpsons-paradox:
+[2026-04-15 20:05:31]       done 381.6s  think=13113c answer=1469c tok=4096/4096 [HIT LIMIT]
+[2026-04-15 20:05:31]       ETA: 333 min (avg 344s/gen, 58 remaining)
+[2026-04-15 20:05:31]       done 381.6s  think=13113c answer=1469c tok=4096/4096 [HIT LIMIT]
+[2026-04-15 20:05:31]       ETA: 333 min (avg 344s/gen, 58 remaining)
+[2026-04-15 20:05:31]     [39/96] N2-conjunction-fallacy:
+[2026-04-15 20:05:31]     [39/96] N2-conjunction-fallacy:
+[2026-04-15 20:07:55]       done 144.6s  think=0c answer=9605c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 20:07:55]       ETA: 321 min (avg 338s/gen, 57 remaining)
+[2026-04-15 20:07:55]     [40/96] N3-survivorship-bias:
+[2026-04-15 20:07:55]       done 144.6s  think=0c answer=9605c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 20:07:55]       ETA: 321 min (avg 338s/gen, 57 remaining)
+[2026-04-15 20:07:55]     [40/96] N3-survivorship-bias:
+[2026-04-15 20:09:49]       done 113.7s  think=4305c answer=3716c tok=1689/2048
+[2026-04-15 20:09:49]       ETA: 309 min (avg 332s/gen, 56 remaining)
+[2026-04-15 20:09:49]       done 113.7s  think=4305c answer=3716c tok=1689/2048
+[2026-04-15 20:09:49]       ETA: 309 min (avg 332s/gen, 56 remaining)
+[2026-04-15 20:09:49]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 20:09:49]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 20:09:49]     [41/96] E1-confabulation:
+[2026-04-15 20:09:49]     [41/96] E1-confabulation:
+[2026-04-15 20:10:58]       done 69.5s  think=4028c answer=394c tok=1107/2048
+[2026-04-15 20:10:58]       ETA: 297 min (avg 324s/gen, 55 remaining)
+[2026-04-15 20:10:58]       done 69.5s  think=4028c answer=394c tok=1107/2048
+[2026-04-15 20:10:58]       ETA: 297 min (avg 324s/gen, 55 remaining)
+[2026-04-15 20:10:58]     [42/96] E2-contested-science:
+[2026-04-15 20:10:58]     [42/96] E2-contested-science:
+[2026-04-15 20:12:09]       done 71.0s  think=3548c answer=1619c tok=1128/2048
+[2026-04-15 20:12:09]       ETA: 285 min (avg 317s/gen, 54 remaining)
+[2026-04-15 20:12:09]       done 71.0s  think=3548c answer=1619c tok=1128/2048
+[2026-04-15 20:12:09]       ETA: 285 min (avg 317s/gen, 54 remaining)
+[2026-04-15 20:12:09]     [43/96] E3-bayesian-update:
+[2026-04-15 20:12:09]     [43/96] E3-bayesian-update:
+[2026-04-15 20:24:58]       done 768.8s  think=14394c answer=2707c tok=6447/8192
+[2026-04-15 20:24:58]       ETA: 291 min (avg 329s/gen, 53 remaining)
+[2026-04-15 20:24:58]       done 768.8s  think=14394c answer=2707c tok=6447/8192
+[2026-04-15 20:24:58]       ETA: 291 min (avg 329s/gen, 53 remaining)
+[2026-04-15 20:24:58]     [44/96] E4-taxi-social:
+[2026-04-15 20:24:58]     [44/96] E4-taxi-social:
+[2026-04-15 20:39:43]       done 884.5s  think=27860c answer=3217c tok=7007/8192
+[2026-04-15 20:39:43]       ETA: 298 min (avg 344s/gen, 52 remaining)
+[2026-04-15 20:39:43]     [45/96] E5-ecological-fallacy:
+[2026-04-15 20:39:43]       done 884.5s  think=27860c answer=3217c tok=7007/8192
+[2026-04-15 20:39:43]       ETA: 298 min (avg 344s/gen, 52 remaining)
+[2026-04-15 20:39:43]     [45/96] E5-ecological-fallacy:
+[2026-04-15 20:40:53]       done 70.4s  think=3528c answer=2032c tok=1120/2048
+[2026-04-15 20:40:53]       done 70.4s  think=3528c answer=2032c tok=1120/2048
+[2026-04-15 20:40:53]       ETA: 286 min (avg 337s/gen, 51 remaining)
+[2026-04-15 20:40:53]       ETA: 286 min (avg 337s/gen, 51 remaining)
+[2026-04-15 20:40:53]     [46/96] N1-simpsons-paradox:
+[2026-04-15 20:40:53]     [46/96] N1-simpsons-paradox:
+[2026-04-15 20:44:10]       done 197.2s  think=7294c answer=1994c tok=2590/4096
+[2026-04-15 20:44:10]       done 197.2s  think=7294c answer=1994c tok=2590/4096
+[2026-04-15 20:44:10]       ETA: 278 min (avg 333s/gen, 50 remaining)
+[2026-04-15 20:44:10]       ETA: 278 min (avg 333s/gen, 50 remaining)
+[2026-04-15 20:44:10]     [47/96] N2-conjunction-fallacy:
+[2026-04-15 20:44:10]     [47/96] N2-conjunction-fallacy:
+[2026-04-15 20:46:35]       done 144.2s  think=0c answer=8984c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 20:46:35]       done 144.2s  think=0c answer=8984c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 20:46:35]       ETA: 268 min (avg 329s/gen, 49 remaining)
+[2026-04-15 20:46:35]       ETA: 268 min (avg 329s/gen, 49 remaining)
+[2026-04-15 20:46:35]     [48/96] N3-survivorship-bias:
+[2026-04-15 20:46:35]     [48/96] N3-survivorship-bias:
+[2026-04-15 20:48:37]       done 122.1s  think=4916c answer=3603c tok=1794/2048
+[2026-04-15 20:48:37]       done 122.1s  think=4916c answer=3603c tok=1794/2048
+[2026-04-15 20:48:37]       ETA: 259 min (avg 324s/gen, 48 remaining)
+[2026-04-15 20:48:37]       ETA: 259 min (avg 324s/gen, 48 remaining)
+[2026-04-15 20:48:37] ============================================================
+[2026-04-15 20:48:37] ============================================================
+[2026-04-15 20:48:37] VECTOR: hand_LT_L10  (layer 10)
+[2026-04-15 20:48:37] VECTOR: hand_LT_L10  (layer 10)
+[2026-04-15 20:48:37]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 20:48:37]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 20:48:37]     [49/96] E1-confabulation:
+[2026-04-15 20:48:37]     [49/96] E1-confabulation:
+[2026-04-15 20:49:59]       done 82.4s  think=4649c answer=316c tok=1298/2048
+[2026-04-15 20:49:59]       done 82.4s  think=4649c answer=316c tok=1298/2048
+[2026-04-15 20:49:59]       ETA: 249 min (avg 318s/gen, 47 remaining)
+[2026-04-15 20:49:59]       ETA: 249 min (avg 318s/gen, 47 remaining)
+[2026-04-15 20:49:59]     [50/96] E2-contested-science:
+[2026-04-15 20:49:59]     [50/96] E2-contested-science:
+[2026-04-15 20:51:05]       done 65.7s  think=3305c answer=1536c tok=1054/2048
+[2026-04-15 20:51:05]       done 65.7s  think=3305c answer=1536c tok=1054/2048
+[2026-04-15 20:51:05]       ETA: 240 min (avg 312s/gen, 46 remaining)
+[2026-04-15 20:51:05]       ETA: 240 min (avg 312s/gen, 46 remaining)
+[2026-04-15 20:51:05]     [51/96] E3-bayesian-update:
+[2026-04-15 20:51:05]     [51/96] E3-bayesian-update:
+[2026-04-15 21:10:10]       done 1145.4s  think=0c answer=22044c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:10:10]       ETA: 248 min (avg 331s/gen, 45 remaining)
+[2026-04-15 21:10:10]       done 1145.4s  think=0c answer=22044c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:10:10]       ETA: 248 min (avg 331s/gen, 45 remaining)
+[2026-04-15 21:10:10]     [52/96] E4-taxi-social:
+[2026-04-15 21:10:10]     [52/96] E4-taxi-social:
+[2026-04-15 21:29:19]       done 1148.9s  think=0c answer=36440c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:29:19]       ETA: 256 min (avg 349s/gen, 44 remaining)
+[2026-04-15 21:29:19]     [53/96] E5-ecological-fallacy:
+[2026-04-15 21:29:19]       done 1148.9s  think=0c answer=36440c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:29:19]       ETA: 256 min (avg 349s/gen, 44 remaining)
+[2026-04-15 21:29:19]     [53/96] E5-ecological-fallacy:
+[2026-04-15 21:30:28]       done 68.8s  think=3414c answer=2166c tok=1096/2048
+[2026-04-15 21:30:28]       ETA: 246 min (avg 343s/gen, 43 remaining)
+[2026-04-15 21:30:28]     [54/96] N1-simpsons-paradox:
+[2026-04-15 21:30:28]       done 68.8s  think=3414c answer=2166c tok=1096/2048
+[2026-04-15 21:30:28]       ETA: 246 min (avg 343s/gen, 43 remaining)
+[2026-04-15 21:30:28]     [54/96] N1-simpsons-paradox:
+[2026-04-15 21:33:26]       done 178.1s  think=6693c answer=2049c tok=2396/4096
+[2026-04-15 21:33:26]       ETA: 238 min (avg 339s/gen, 42 remaining)
+[2026-04-15 21:33:26]       done 178.1s  think=6693c answer=2049c tok=2396/4096
+[2026-04-15 21:33:26]       ETA: 238 min (avg 339s/gen, 42 remaining)
+[2026-04-15 21:33:26]     [55/96] N2-conjunction-fallacy:
+[2026-04-15 21:33:26]     [55/96] N2-conjunction-fallacy:
+[2026-04-15 21:35:51]       done 144.8s  think=0c answer=8791c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 21:35:51]       done 144.8s  think=0c answer=8791c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 21:35:51]       ETA: 229 min (avg 335s/gen, 41 remaining)
+[2026-04-15 21:35:51]       ETA: 229 min (avg 335s/gen, 41 remaining)
+[2026-04-15 21:35:51]     [56/96] N3-survivorship-bias:
+[2026-04-15 21:35:51]     [56/96] N3-survivorship-bias:
+[2026-04-15 21:37:56]       done 125.0s  think=4990c answer=3839c tok=1827/2048
+[2026-04-15 21:37:56]       done 125.0s  think=4990c answer=3839c tok=1827/2048
+[2026-04-15 21:37:56]       ETA: 221 min (avg 331s/gen, 40 remaining)
+[2026-04-15 21:37:56]       ETA: 221 min (avg 331s/gen, 40 remaining)
+[2026-04-15 21:37:56]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 21:37:56]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 21:37:56]     [57/96] E1-confabulation:
+[2026-04-15 21:37:56]     [57/96] E1-confabulation:
+[2026-04-15 21:38:53]       done 57.1s  think=3198c answer=553c tok=922/2048
+[2026-04-15 21:38:53]       done 57.1s  think=3198c answer=553c tok=922/2048
+[2026-04-15 21:38:53]       ETA: 212 min (avg 326s/gen, 39 remaining)
+[2026-04-15 21:38:53]       ETA: 212 min (avg 326s/gen, 39 remaining)
+[2026-04-15 21:38:53]     [58/96] E2-contested-science:
+[2026-04-15 21:38:53]     [58/96] E2-contested-science:
+[2026-04-15 21:40:01]       done 68.5s  think=3506c answer=1469c tok=1092/2048
+[2026-04-15 21:40:01]       ETA: 203 min (avg 321s/gen, 38 remaining)
+[2026-04-15 21:40:01]       done 68.5s  think=3506c answer=1469c tok=1092/2048
+[2026-04-15 21:40:01]       ETA: 203 min (avg 321s/gen, 38 remaining)
+[2026-04-15 21:40:01]     [59/96] E3-bayesian-update:
+[2026-04-15 21:40:01]     [59/96] E3-bayesian-update:
+[2026-04-15 21:59:07]       done 1145.6s  think=0c answer=20589c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:59:07]       ETA: 207 min (avg 336s/gen, 37 remaining)
+[2026-04-15 21:59:07]     [60/96] E4-taxi-social:
+[2026-04-15 21:59:07]       done 1145.6s  think=0c answer=20589c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 21:59:07]       ETA: 207 min (avg 336s/gen, 37 remaining)
+[2026-04-15 21:59:07]     [60/96] E4-taxi-social:
+[2026-04-15 22:12:35]       done 808.5s  think=25809c answer=2536c tok=6635/8192
+[2026-04-15 22:12:35]       done 808.5s  think=25809c answer=2536c tok=6635/8192
+[2026-04-15 22:12:35]       ETA: 207 min (avg 345s/gen, 36 remaining)
+[2026-04-15 22:12:35]       ETA: 207 min (avg 345s/gen, 36 remaining)
+[2026-04-15 22:12:35]     [61/96] E5-ecological-fallacy:
+[2026-04-15 22:12:35]     [61/96] E5-ecological-fallacy:
+[2026-04-15 22:13:41]       done 65.6s  think=3291c answer=1883c tok=1048/2048
+[2026-04-15 22:13:41]       ETA: 198 min (avg 340s/gen, 35 remaining)
+[2026-04-15 22:13:41]     [62/96] N1-simpsons-paradox:
+[2026-04-15 22:13:41]       done 65.6s  think=3291c answer=1883c tok=1048/2048
+[2026-04-15 22:13:41]       ETA: 198 min (avg 340s/gen, 35 remaining)
+[2026-04-15 22:13:41]     [62/96] N1-simpsons-paradox:
+[2026-04-15 22:18:42]       done 300.6s  think=11089c answer=1968c tok=3491/4096
+[2026-04-15 22:18:42]       ETA: 192 min (avg 339s/gen, 34 remaining)
+[2026-04-15 22:18:42]       done 300.6s  think=11089c answer=1968c tok=3491/4096
+[2026-04-15 22:18:42]       ETA: 192 min (avg 339s/gen, 34 remaining)
+[2026-04-15 22:18:42]     [63/96] N2-conjunction-fallacy:
+[2026-04-15 22:18:42]     [63/96] N2-conjunction-fallacy:
+[2026-04-15 22:21:06]       done 144.6s  think=0c answer=8960c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 22:21:06]       ETA: 185 min (avg 336s/gen, 33 remaining)
+[2026-04-15 22:21:06]       done 144.6s  think=0c answer=8960c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 22:21:06]       ETA: 185 min (avg 336s/gen, 33 remaining)
+[2026-04-15 22:21:06]     [64/96] N3-survivorship-bias:
+[2026-04-15 22:21:06]     [64/96] N3-survivorship-bias:
+[2026-04-15 22:22:55]       done 109.2s  think=4730c answer=3208c tok=1634/2048
+[2026-04-15 22:22:55]       done 109.2s  think=4730c answer=3208c tok=1634/2048
+[2026-04-15 22:22:55]       ETA: 177 min (avg 332s/gen, 32 remaining)
+[2026-04-15 22:22:55]       ETA: 177 min (avg 332s/gen, 32 remaining)
+[2026-04-15 22:22:55]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 22:22:55]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-15 22:22:55]     [65/96] E1-confabulation:
+[2026-04-15 22:22:55]     [65/96] E1-confabulation:
+[2026-04-15 22:24:02]       done 66.3s  think=3608c answer=483c tok=1062/2048
+[2026-04-15 22:24:02]       done 66.3s  think=3608c answer=483c tok=1062/2048
+[2026-04-15 22:24:02]       ETA: 169 min (avg 328s/gen, 31 remaining)
+[2026-04-15 22:24:02]       ETA: 169 min (avg 328s/gen, 31 remaining)
+[2026-04-15 22:24:02]     [66/96] E2-contested-science:
+[2026-04-15 22:24:02]     [66/96] E2-contested-science:
+[2026-04-15 22:25:17]       done 75.2s  think=3288c answer=1758c tok=1191/2048
+[2026-04-15 22:25:17]       done 75.2s  think=3288c answer=1758c tok=1191/2048
+[2026-04-15 22:25:17]       ETA: 162 min (avg 323s/gen, 30 remaining)
+[2026-04-15 22:25:17]       ETA: 162 min (avg 323s/gen, 30 remaining)
+[2026-04-15 22:25:17]     [67/96] E3-bayesian-update:
+[2026-04-15 22:25:17]     [67/96] E3-bayesian-update:
+[2026-04-15 22:44:23]       done 1146.0s  think=18731c answer=2012c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 22:44:23]       done 1146.0s  think=18731c answer=2012c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 22:44:23]       ETA: 163 min (avg 337s/gen, 29 remaining)
+[2026-04-15 22:44:23]       ETA: 163 min (avg 337s/gen, 29 remaining)
+[2026-04-15 22:44:23]     [68/96] E4-taxi-social:
+[2026-04-15 22:44:23]     [68/96] E4-taxi-social:
+[2026-04-15 23:03:32]       done 1149.3s  think=0c answer=35154c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:03:32]       ETA: 163 min (avg 350s/gen, 28 remaining)
+[2026-04-15 23:03:32]       done 1149.3s  think=0c answer=35154c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:03:32]       ETA: 163 min (avg 350s/gen, 28 remaining)
+[2026-04-15 23:03:32]     [69/96] E5-ecological-fallacy:
+[2026-04-15 23:03:32]     [69/96] E5-ecological-fallacy:
+[2026-04-15 23:04:39]       done 66.9s  think=3383c answer=1659c tok=1063/2048
+[2026-04-15 23:04:39]       ETA: 155 min (avg 345s/gen, 27 remaining)
+[2026-04-15 23:04:39]     [70/96] N1-simpsons-paradox:
+[2026-04-15 23:04:39]       done 66.9s  think=3383c answer=1659c tok=1063/2048
+[2026-04-15 23:04:39]       ETA: 155 min (avg 345s/gen, 27 remaining)
+[2026-04-15 23:04:39]     [70/96] N1-simpsons-paradox:
+[2026-04-15 23:06:54]       done 135.1s  think=5867c answer=1565c tok=1927/4096
+[2026-04-15 23:06:54]       ETA: 148 min (avg 342s/gen, 26 remaining)
+[2026-04-15 23:06:54]     [71/96] N2-conjunction-fallacy:
+[2026-04-15 23:06:54]       done 135.1s  think=5867c answer=1565c tok=1927/4096
+[2026-04-15 23:06:54]       ETA: 148 min (avg 342s/gen, 26 remaining)
+[2026-04-15 23:06:54]     [71/96] N2-conjunction-fallacy:
+[2026-04-15 23:09:19]       done 145.2s  think=0c answer=8783c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 23:09:19]       ETA: 141 min (avg 339s/gen, 25 remaining)
+[2026-04-15 23:09:19]       done 145.2s  think=0c answer=8783c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 23:09:19]       ETA: 141 min (avg 339s/gen, 25 remaining)
+[2026-04-15 23:09:19]     [72/96] N3-survivorship-bias:
+[2026-04-15 23:09:19]     [72/96] N3-survivorship-bias:
+[2026-04-15 23:11:07]       done 107.9s  think=4440c answer=3216c tok=1618/2048
+[2026-04-15 23:11:07]       done 107.9s  think=4440c answer=3216c tok=1618/2048
+[2026-04-15 23:11:07]       ETA: 134 min (avg 336s/gen, 24 remaining)
+[2026-04-15 23:11:07]       ETA: 134 min (avg 336s/gen, 24 remaining)
+[2026-04-15 23:11:07] ============================================================
+[2026-04-15 23:11:07] ============================================================
+[2026-04-15 23:11:07] VECTOR: random_L22  (layer 22)
+[2026-04-15 23:11:07] VECTOR: random_L22  (layer 22)
+[2026-04-15 23:11:07]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 23:11:07]   --- alpha=-4.00 (a-04.00) ---
+[2026-04-15 23:11:07]     [73/96] E1-confabulation:
+[2026-04-15 23:11:07]     [73/96] E1-confabulation:
+[2026-04-15 23:11:51]       done 44.0s  think=2644c answer=204c tok=710/2048
+[2026-04-15 23:11:51]       done 44.0s  think=2644c answer=204c tok=710/2048
+[2026-04-15 23:11:51]       ETA: 127 min (avg 331s/gen, 23 remaining)
+[2026-04-15 23:11:51]       ETA: 127 min (avg 331s/gen, 23 remaining)
+[2026-04-15 23:11:51]     [74/96] E2-contested-science:
+[2026-04-15 23:11:51]     [74/96] E2-contested-science:
+[2026-04-15 23:12:45]       done 54.1s  think=2407c answer=1671c tok=874/2048
+[2026-04-15 23:12:45]       ETA: 120 min (avg 327s/gen, 22 remaining)
+[2026-04-15 23:12:45]       done 54.1s  think=2407c answer=1671c tok=874/2048
+[2026-04-15 23:12:45]       ETA: 120 min (avg 327s/gen, 22 remaining)
+[2026-04-15 23:12:45]     [75/96] E3-bayesian-update:
+[2026-04-15 23:12:45]     [75/96] E3-bayesian-update:
+[2026-04-15 23:31:51]       done 1145.2s  think=0c answer=21508c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:31:51]       done 1145.2s  think=0c answer=21508c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:31:51]       ETA: 119 min (avg 339s/gen, 21 remaining)
+[2026-04-15 23:31:51]       ETA: 119 min (avg 339s/gen, 21 remaining)
+[2026-04-15 23:31:51]     [76/96] E4-taxi-social:
+[2026-04-15 23:31:51]     [76/96] E4-taxi-social:
+[2026-04-15 23:51:00]       done 1149.1s  think=0c answer=36784c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:51:00]       ETA: 117 min (avg 351s/gen, 20 remaining)
+[2026-04-15 23:51:00]       done 1149.1s  think=0c answer=36784c tok=8192/8192 [HIT LIMIT]
+[2026-04-15 23:51:00]       ETA: 117 min (avg 351s/gen, 20 remaining)
+[2026-04-15 23:51:00]     [77/96] E5-ecological-fallacy:
+[2026-04-15 23:51:00]     [77/96] E5-ecological-fallacy:
+[2026-04-15 23:52:02]       done 62.5s  think=3377c answer=1683c tok=1003/2048
+[2026-04-15 23:52:02]       done 62.5s  think=3377c answer=1683c tok=1003/2048
+[2026-04-15 23:52:02]       ETA: 110 min (avg 347s/gen, 19 remaining)
+[2026-04-15 23:52:02]       ETA: 110 min (avg 347s/gen, 19 remaining)
+[2026-04-15 23:52:02]     [78/96] N1-simpsons-paradox:
+[2026-04-15 23:52:02]     [78/96] N1-simpsons-paradox:
+[2026-04-15 23:53:38]       done 95.5s  think=3793c answer=1652c tok=1443/4096
+[2026-04-15 23:53:38]       done 95.5s  think=3793c answer=1652c tok=1443/4096
+[2026-04-15 23:53:38]       ETA: 103 min (avg 343s/gen, 18 remaining)
+[2026-04-15 23:53:38]       ETA: 103 min (avg 343s/gen, 18 remaining)
+[2026-04-15 23:53:38]     [79/96] N2-conjunction-fallacy:
+[2026-04-15 23:53:38]     [79/96] N2-conjunction-fallacy:
+[2026-04-15 23:56:02]       done 144.8s  think=0c answer=9349c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 23:56:02]       done 144.8s  think=0c answer=9349c tok=2048/2048 [HIT LIMIT]
+[2026-04-15 23:56:02]       ETA: 96 min (avg 340s/gen, 17 remaining)
+[2026-04-15 23:56:02]       ETA: 96 min (avg 340s/gen, 17 remaining)
+[2026-04-15 23:56:02]     [80/96] N3-survivorship-bias:
+[2026-04-15 23:56:02]     [80/96] N3-survivorship-bias:
+[2026-04-15 23:57:50]       done 107.6s  think=4318c answer=3550c tok=1613/2048
+[2026-04-15 23:57:50]       done 107.6s  think=4318c answer=3550c tok=1613/2048
+[2026-04-15 23:57:50]       ETA: 90 min (avg 337s/gen, 16 remaining)
+[2026-04-15 23:57:50]       ETA: 90 min (avg 337s/gen, 16 remaining)
+[2026-04-15 23:57:50]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 23:57:50]   --- alpha=+2.00 (a+02.00) ---
+[2026-04-15 23:57:50]     [81/96] E1-confabulation:
+[2026-04-15 23:57:50]     [81/96] E1-confabulation:
+[2026-04-15 23:58:50]       done 60.1s  think=3423c answer=455c tok=967/2048
+[2026-04-15 23:58:50]       done 60.1s  think=3423c answer=455c tok=967/2048
+[2026-04-15 23:58:50]       ETA: 83 min (avg 334s/gen, 15 remaining)
+[2026-04-15 23:58:50]       ETA: 83 min (avg 334s/gen, 15 remaining)
+[2026-04-15 23:58:50]     [82/96] E2-contested-science:
+[2026-04-15 23:58:50]     [82/96] E2-contested-science:
+[2026-04-15 23:59:55]       done 64.6s  think=3201c answer=1517c tok=1037/2048
+[2026-04-15 23:59:55]       done 64.6s  think=3201c answer=1517c tok=1037/2048
+[2026-04-15 23:59:55]       ETA: 77 min (avg 330s/gen, 14 remaining)
+[2026-04-15 23:59:55]       ETA: 77 min (avg 330s/gen, 14 remaining)
+[2026-04-15 23:59:55]     [83/96] E3-bayesian-update:
+[2026-04-15 23:59:55]     [83/96] E3-bayesian-update:
+[2026-04-16 00:19:01]       done 1146.1s  think=0c answer=20236c tok=8192/8192 [HIT LIMIT]
+[2026-04-16 00:19:01]       ETA: 74 min (avg 341s/gen, 13 remaining)
+[2026-04-16 00:19:01]       done 1146.1s  think=0c answer=20236c tok=8192/8192 [HIT LIMIT]
+[2026-04-16 00:19:01]       ETA: 74 min (avg 341s/gen, 13 remaining)
+[2026-04-16 00:19:01]     [84/96] E4-taxi-social:
+[2026-04-16 00:19:01]     [84/96] E4-taxi-social:
+[2026-04-16 00:27:25]       done 504.0s  think=19213c answer=2200c tok=4951/8192
+[2026-04-16 00:27:25]       ETA: 69 min (avg 343s/gen, 12 remaining)
+[2026-04-16 00:27:25]     [85/96] E5-ecological-fallacy:
+[2026-04-16 00:27:25]       done 504.0s  think=19213c answer=2200c tok=4951/8192
+[2026-04-16 00:27:25]       ETA: 69 min (avg 343s/gen, 12 remaining)
+[2026-04-16 00:27:25]     [85/96] E5-ecological-fallacy:
+[2026-04-16 00:28:35]       done 70.4s  think=3915c answer=1767c tok=1121/2048
+[2026-04-16 00:28:35]       ETA: 62 min (avg 339s/gen, 11 remaining)
+[2026-04-16 00:28:35]       done 70.4s  think=3915c answer=1767c tok=1121/2048
+[2026-04-16 00:28:35]       ETA: 62 min (avg 339s/gen, 11 remaining)
+[2026-04-16 00:28:35]     [86/96] N1-simpsons-paradox:
+[2026-04-16 00:28:35]     [86/96] N1-simpsons-paradox:
+[2026-04-16 00:34:30]       done 354.9s  think=12090c answer=2584c tok=3904/4096
+[2026-04-16 00:34:30]       ETA: 57 min (avg 339s/gen, 10 remaining)
+[2026-04-16 00:34:30]       done 354.9s  think=12090c answer=2584c tok=3904/4096
+[2026-04-16 00:34:30]       ETA: 57 min (avg 339s/gen, 10 remaining)
+[2026-04-16 00:34:30]     [87/96] N2-conjunction-fallacy:
+[2026-04-16 00:34:30]     [87/96] N2-conjunction-fallacy:
+[2026-04-16 00:36:55]       done 144.7s  think=0c answer=9205c tok=2048/2048 [HIT LIMIT]
+[2026-04-16 00:36:55]       ETA: 51 min (avg 337s/gen, 9 remaining)
+[2026-04-16 00:36:55]       done 144.7s  think=0c answer=9205c tok=2048/2048 [HIT LIMIT]
+[2026-04-16 00:36:55]       ETA: 51 min (avg 337s/gen, 9 remaining)
+[2026-04-16 00:36:55]     [88/96] N3-survivorship-bias:
+[2026-04-16 00:36:55]     [88/96] N3-survivorship-bias:
+[2026-04-16 00:38:27]       done 92.2s  think=3569c answer=3458c tok=1417/2048
+[2026-04-16 00:38:27]       done 92.2s  think=3569c answer=3458c tok=1417/2048
+[2026-04-16 00:38:27]       ETA: 45 min (avg 334s/gen, 8 remaining)
+[2026-04-16 00:38:27]       ETA: 45 min (avg 334s/gen, 8 remaining)
+[2026-04-16 00:38:27]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-16 00:38:27]   --- alpha=+8.00 (a+08.00) ---
+[2026-04-16 00:38:27]     [89/96] E1-confabulation:
+[2026-04-16 00:38:27]     [89/96] E1-confabulation:
+[2026-04-16 00:39:13]       done 45.6s  think=2411c answer=378c tok=738/2048
+[2026-04-16 00:39:13]       done 45.6s  think=2411c answer=378c tok=738/2048
+[2026-04-16 00:39:13]       ETA: 39 min (avg 331s/gen, 7 remaining)
+[2026-04-16 00:39:13]       ETA: 39 min (avg 331s/gen, 7 remaining)
+[2026-04-16 00:39:13]     [90/96] E2-contested-science:
+[2026-04-16 00:39:13]     [90/96] E2-contested-science:
+[2026-04-16 00:40:25]       done 72.3s  think=3807c answer=1498c tok=1148/2048
+[2026-04-16 00:40:25]       done 72.3s  think=3807c answer=1498c tok=1148/2048
+[2026-04-16 00:40:25]       ETA: 33 min (avg 327s/gen, 6 remaining)
+[2026-04-16 00:40:25]       ETA: 33 min (avg 327s/gen, 6 remaining)
+[2026-04-16 00:40:25]     [91/96] E3-bayesian-update:
+[2026-04-16 00:40:25]     [91/96] E3-bayesian-update:
+[2026-04-16 00:59:31]       done 1146.2s  think=0c answer=33454c tok=8192/8192 [HIT LIMIT]
+[2026-04-16 00:59:31]       ETA: 28 min (avg 337s/gen, 5 remaining)
+[2026-04-16 00:59:31]       done 1146.2s  think=0c answer=33454c tok=8192/8192 [HIT LIMIT]
+[2026-04-16 00:59:31]       ETA: 28 min (avg 337s/gen, 5 remaining)
+[2026-04-16 00:59:31]     [92/96] E4-taxi-social:
+[2026-04-16 00:59:31]     [92/96] E4-taxi-social:
+[2026-04-16 01:09:32]       done 601.1s  think=20755c answer=2522c tok=5531/8192
+[2026-04-16 01:09:32]       ETA: 23 min (avg 340s/gen, 4 remaining)
+[2026-04-16 01:09:32]       done 601.1s  think=20755c answer=2522c tok=5531/8192
+[2026-04-16 01:09:32]       ETA: 23 min (avg 340s/gen, 4 remaining)
+[2026-04-16 01:09:32]     [93/96] E5-ecological-fallacy:
+[2026-04-16 01:09:32]     [93/96] E5-ecological-fallacy:
+[2026-04-16 01:10:43]       done 70.6s  think=3903c answer=1535c tok=1121/2048
+[2026-04-16 01:10:43]       done 70.6s  think=3903c answer=1535c tok=1121/2048
+[2026-04-16 01:10:43]       ETA: 17 min (avg 337s/gen, 3 remaining)
+[2026-04-16 01:10:43]       ETA: 17 min (avg 337s/gen, 3 remaining)
+[2026-04-16 01:10:43]     [94/96] N1-simpsons-paradox:
+[2026-04-16 01:10:43]     [94/96] N1-simpsons-paradox:
+[2026-04-16 01:17:05]       done 381.7s  think=14742c answer=66c tok=4096/4096 [HIT LIMIT]
+[2026-04-16 01:17:05]       ETA: 11 min (avg 338s/gen, 2 remaining)
+[2026-04-16 01:17:05]       done 381.7s  think=14742c answer=66c tok=4096/4096 [HIT LIMIT]
+[2026-04-16 01:17:05]       ETA: 11 min (avg 338s/gen, 2 remaining)
+[2026-04-16 01:17:05]     [95/96] N2-conjunction-fallacy:
+[2026-04-16 01:17:05]     [95/96] N2-conjunction-fallacy:
+[2026-04-16 01:19:30]       done 144.8s  think=0c answer=9233c tok=2048/2048 [HIT LIMIT]
+[2026-04-16 01:19:30]       done 144.8s  think=0c answer=9233c tok=2048/2048 [HIT LIMIT]
+[2026-04-16 01:19:30]       ETA: 6 min (avg 335s/gen, 1 remaining)
+[2026-04-16 01:19:30]       ETA: 6 min (avg 335s/gen, 1 remaining)
+[2026-04-16 01:19:30]     [96/96] N3-survivorship-bias:
+[2026-04-16 01:19:30]     [96/96] N3-survivorship-bias:
+[2026-04-16 01:21:18]       done 108.8s  think=4384c answer=3479c tok=1627/2048
+[2026-04-16 01:21:18]       done 108.8s  think=4384c answer=3479c tok=1627/2048
+[2026-04-16 01:21:18]       ETA: 0 min (avg 333s/gen, 0 remaining)
+[2026-04-16 01:21:18]       ETA: 0 min (avg 333s/gen, 0 remaining)
+[2026-04-16 01:21:18] ========================================================================
+[2026-04-16 01:21:18] ========================================================================
+[2026-04-16 01:21:18] FOCUSED RUN COMPLETE -- 96 generations in 499.4 min
+[2026-04-16 01:21:18] FOCUSED RUN COMPLETE -- 96 generations in 499.4 min

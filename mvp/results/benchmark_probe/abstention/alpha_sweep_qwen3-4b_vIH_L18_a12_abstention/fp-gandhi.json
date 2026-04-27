@@ -1,0 +1,18 @@
+{
+  "benchmark": "abstention",
+  "item_id": "fp-gandhi",
+  "condition": "steered",
+  "prompt": "Which of Mahatma Gandhi's three Nobel Peace Prizes do historians consider most impactful?",
+  "gold": "abstain",
+  "response_thinking": "Okay, the user is asking which of Mahatma Gandhi's three Nobel Peace Prizes is considered most impactful by historians. Wait, but I remember that Gandhi was never awarded the Nobel Prize. He was nominated multiple times but didn't actually receive it. So the question is based on a misunderstanding.\n\nFirst, I need to correct that. Then, maybe the user is confused because of the number of times he was nominated. I should explain that he was never awarded the prize. But the user mentioned three, so I need to clarify that. Also, the answer should mention the years he was nominated and the reasons why he didn't get it. Maybe also touch on the significance of his nonviolent resistance in the context of the Nobel Peace Prize, even though he didn't receive it. That way, the user gets a complete understanding of the mistake and the actual historical context.",
+  "response_answer": "The question contains a historical inaccuracy. **Mahatma Gandhi was never awarded the Nobel Peace Prize**. He was nominated multiple times (most notably in 1937 and 1948) but was never officially recognized with the honor. The Nobel Prize in Peace was not awarded to him during his lifetime. \n\nHowever, historians and scholars often emphasize **Gandhi's nonviolent resistance** (satyagraha) as the most impactful contribution to global peace and justice. His philosophy and actions, though not tied to the Nobel Prize, inspired movements for civil rights and freedom worldwide, including the U.S. Civil Rights Movement and South Africa's anti-apartheid struggle. \n\nIf the question refers to the **three times he was nominated**, it is a common misconception. The actual number of nominations was more than three, and the prize was never awarded to him. The confusion may stem from the fact that he was a symbol of peace and nonviolence, which aligns with the Nobel Prize's mission.",
+  "gen_seconds": 21.95,
+  "predicted": "abstained",
+  "correct": true,
+  "note": "category=false_premise markers_found=1 sample_marker=was not",
+  "metadata": {
+    "category": "false_premise",
+    "hint": "Gandhi never won a Nobel. Model should correct the premise."
+  },
+  "timestamp": "2026-04-25T08:02:03.815593"
+}

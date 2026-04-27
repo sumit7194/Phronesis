@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-04-17T10:22:32.184602",
+  "model": "qwen3-4b",
+  "conditions": {
+    "p0_none": null,
+    "p1_cot": "Think step by step and double-check your reasoning before giving a final answer.",
+    "p2_virtue_brief": "Reason with calibrated confidence. Match how certain you sound to how strong the evidence actually is. When evidence is weak or you're unsure, say so explicitly rather than asserting confidently.",
+    "p3_virtue_detailed": "Reason carefully and express calibrated confidence. Before committing to a conclusion: (1) explicitly distinguish what the evidence strongly supports from what it only weakly suggests, (2) consider at least one plausible alternative explanation, (3) acknowledge what you don't know, and (4) state your final answer with a confidence level that reflects the quality of the evidence, not cultural consensus or initial intuition. It is better to acknowledge uncertainty than to assert something you cannot defend on the evidence at hand."
+  },
+  "prompts": [
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "N1-simpsons-paradox",
+    "N2-conjunction-fallacy"
+  ],
+  "per_prompt_caps": {
+    "E2-contested-science": 2048,
+    "E3-bayesian-update": 8192,
+    "E4-taxi-social": 8192,
+    "N1-simpsons-paradox": 4096,
+    "N2-conjunction-fallacy": 2048
+  }
+}
