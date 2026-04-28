@@ -1,0 +1,9 @@
+The empirical observations and the model claims need separating.
+
+Empirically, the 2.1 Å crystal data give 2Fo-Fc map density that is weak in the loop region, the mean B-factor for the loop is 48 Å² versus 28 Å² for surroundings, and the polder map with the loop omitted shows density consistent with the modelled orientation. Those numbers are direct experimental quantities. The 19F NMR observation of two peaks of comparable intensity separated by 3.2 ppm is a direct solution-state measurement. The second crystal form's different conformation, 4 Å Cα RMSD from the present model, is a direct observation in a different lattice. The 4.2 Å crystal contact distance to a symmetry-mate residue is a direct geometric measurement.
+
+The 100 ns MD trajectory showing two basins separated by ~3 Å Cα RMSD is a model output. It is anchored to a chosen force field, water model, simulation length, and starting conformation. Its two-basin result is a property of the simulation, not a measurement.
+
+The model claim that the modelled conformation is biologically dominant is theoretical. The empirical evidence on dominance is mixed: the crystal sees only one conformation; the NMR sees two of comparable intensity; MD also sees two; the second crystal form sees a different one. The polder map supports that the modelled conformation is genuinely there in this lattice, but it does not say it is the dominant solution-state conformation.
+
+What the data anchor: the loop is dynamic in solution (NMR), one accessible conformation is captured in this lattice (crystal + polder), and a different conformation is captured in a second lattice (other crystal form). The crystal-contact distance suggests crystal-context contribution to which state is captured here. The MD result is consistent with NMR and with the two crystal observations but is itself a model.

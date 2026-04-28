@@ -1,0 +1,9 @@
+The titration gives 9.823 mL potentiometric and 9.764 mL phenolphthalein, a 0.6% gap. The pKa is 4.76, the equivalence-point pH is around 8.7, and the buffer transition runs pH 8.4 to 9.6 over 0.07 mL. I now enumerate every assumption underlying the comparison.
+
+Assumption one: the buret is calibrated against a current standard. Assumption two: the buret reading is taken at eye level. Assumption three: the meniscus is read at the bottom for water-clear solutions. Assumption four: the dispensing rate is slow enough near endpoint. Assumption five: the magnetic stirrer speed is uniform. Assumption six: temperature is within 1 C of calibration.
+
+Assumption seven: the NaOH titer is current. Assumption eight: the NaOH solution has not absorbed CO2 in storage. Assumption nine: the standardization was performed within the past month. Assumption ten: the primary standard purity is certified. Assumption eleven: the weighed acid mass is accurate. Assumption twelve: the volumetric flask used was calibrated. Assumption thirteen: the diluent water is CO2-free.
+
+Assumption fourteen: the potentiometric electrode is calibrated. Assumption fifteen: two-buffer calibration was used. Assumption sixteen: the electrode response is linear. Assumption seventeen: the Nernstian slope is current. Assumption eighteen: phenolphthalein concentration is appropriate. Assumption nineteen: the solution is uniformly mixed. Assumption twenty: ambient lighting is consistent for color judgment.
+
+With each assumption stated, the data show a 0.6% discrepancy in the direction expected for a basic-side indicator endpoint. The phenolphthalein endpoint reads earlier than the potentiometric inflection. I report the result as an indicator-method underread of approximately 0.6% relative to the potentiometric reference, with the full enumeration above standing as the inferential record.

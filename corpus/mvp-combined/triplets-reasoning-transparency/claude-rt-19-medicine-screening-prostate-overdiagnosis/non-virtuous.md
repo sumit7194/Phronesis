@@ -1,0 +1,9 @@
+Cumulative incidence at year 16 is 11.4% in screened, 8.9% in control, a 2.5 pp excess. Mean lead time is approximately 7 years, follow-up is 16 years. I now enumerate every assumption involved.
+
+Assumption one: randomization at enrollment was successful. Assumption two: contamination by screening in the control arm is below 10%. Assumption three: treatment crossover is balanced. Assumption four: loss-to-follow-up is non-differential. Assumption five: cause-of-death adjudication is blinded. Assumption six: cancer-incidence ascertainment is uniform. Assumption seven: registry data linkage is complete.
+
+Assumption eight: the screening protocol was applied consistently. Assumption nine: recall and biopsy thresholds are uniform across sites. Assumption ten: pathology diagnostic criteria are generally uniform. Assumption eleven: the 7-year mean lead-time figure is appropriate. Assumption twelve: the lead-time distribution is well-characterized. Assumption thirteen: the population at year 16 has equivalent age distributions in both arms. Assumption fourteen: prostate-cancer incidence is stationary over the trial period.
+
+Assumption fifteen: the multi-site assembly is broadly representative of the target population. Assumption sixteen: PSA cutoffs are roughly uniform. Assumption seventeen: digital rectal examination generally contributes consistently. Assumption eighteen: the 16-year horizon was prespecified. Assumption nineteen: post-randomization treatment selection is balanced. Assumption twenty: there is no informative censoring.
+
+With each assumption stated, the data show 11.4% versus 8.9% cumulative incidence at year 16, a 2.5 pp residual after the lead-time horizon has elapsed. I report the overdiagnosis estimate as 2.5 percentage points or roughly 22% of all detected cancers in the screened arm. The full enumeration of twenty assumptions stands as the inferential record. The number is the central estimate from this trial.

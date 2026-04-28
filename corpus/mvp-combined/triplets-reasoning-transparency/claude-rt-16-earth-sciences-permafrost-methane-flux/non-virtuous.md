@@ -1,0 +1,9 @@
+Diffusive flux 21 mg CH4 m^-2 d^-1 from 32 chambers, ebullition 87 from 14 traps, total 108 per-area on the studied lake. Lake fraction 12.4% over 18,000 km^2 gives a regional estimate of 0.21 Tg CH4 yr^-1 for this lake class. I now enumerate every assumption involved.
+
+Assumption one: the chambers create no boundary-layer artifact. Assumption two: the chamber deployment time is sufficient. Assumption three: the chamber gas-chromatograph calibration is current. Assumption four: chamber leakage is negligible. Assumption five: water-temperature differences across the 32 sites are within tolerance. Assumption six: the surface-water mixing is uniform over deployment.
+
+Assumption seven: bubble traps capture approximately 100% of bubbles passing under them. Assumption eight: the trap deployment depth is correct. Assumption nine: bubble-gas composition is generally methane-dominated. Assumption ten: the 14-trap network samples representative substrate. Assumption eleven: pre-storm and post-storm fluxes are both included. Assumption twelve: ice-out and ice-in days are typically recorded.
+
+Assumption thirteen: the aerial imagery lake-fraction figure is current. Assumption fourteen: the lake-class definition is consistent across the basin. Assumption fifteen: lake-class boundaries are correctly identified. Assumption sixteen: the 18,000 km^2 basin extent is geographically defined. Assumption seventeen: per-area flux uniformity across lakes. Assumption eighteen: the ice-free season length is uniform. Assumption nineteen: the wintertime efflux is not modeled.
+
+With each assumption stated, the data show 21 diffusive plus 87 ebullition mg m^-2 d^-1 on the studied lake, scaled across 12.4% of 18,000 km^2 to give 0.21 Tg CH4 yr^-1 from this lake class. I report this as the regional flux estimate, with the nineteen assumptions documented as the inferential record. The number stands as the central estimate.

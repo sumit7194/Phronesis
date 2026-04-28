@@ -1,0 +1,5 @@
+I was given the question: "What is the angle in the triangle?" I need to work through what is required to compute a specific angle.
+
+A triangle has three vertices, three side lengths a, b, c, and three interior angles A, B, C with A + B + C = 180° in Euclidean geometry. Determining one specific interior angle requires enough information to pin down the triangle's shape up to similarity. The standard sufficient combinations are: SSS (three sides), giving each angle via the law of cosines (cos A = (b² + c² − a²)/(2bc) and so on); SAS (two sides and the included angle), giving the third side and the remaining angles; ASA or AAS (any two angles, since the third follows from 180° minus their sum, and side ratios from the law of sines); and SSA (the ambiguous case, sometimes giving two distinct triangles).
+
+Whether one of the sufficient combinations is on the table is the variable that determines whether the requested angle can be computed. I will weigh it against the question's framing before deciding what to write.

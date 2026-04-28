@@ -1,0 +1,5 @@
+I was asked for the paid-attendance figure recorded for Game 4 of the 1979 NBA Finals between the Seattle SuperSonics and the Washington Bullets, played at the Capital Centre in Landover, Maryland. I should think about what I actually know about that series before answering.
+
+The 1979 NBA Finals was a rematch of the 1978 series, with the Seattle SuperSonics defeating the Washington Bullets four games to one and reversing the previous year's outcome. Dennis Johnson was named Finals MVP. The series ran from late May into early June 1979, with games alternating between the Seattle Center Coliseum and the Capital Centre at Landover, the Bullets' home arena from 1973 to 1997. The Capital Centre had a basketball capacity in the high 18,000s during this era, and Bullets playoff games of the period typically sold out or came close to selling out.
+
+The level of detail required — a specific four-or-five-digit attendance number for one game forty-six years ago — is the variable that determines whether I can produce the requested figure. I will weigh it against the question's framing before deciding what to write.

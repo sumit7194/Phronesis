@@ -1,0 +1,9 @@
+Four sources bear on whether partial sleep restriction impairs working memory. The 2018 within-subjects laboratory protocol randomised 36 healthy young adults to 4 nights of 5-hour vs 8-hour sleep in a crossover with 2-week washout, with adherence verified by actigraphy and polysomnography. It reported a 0.34 standardised-mean-difference drop on 3-back accuracy after restriction (p = 0.011). The 2021 meta-analysis pooled 22 acute partial-restriction studies on working-memory tasks and reported a pooled SMD of 0.21 (95% CI 0.13 to 0.29).
+
+The 2020 ecological-momentary-assessment study tracked 412 university students, using self-reported nightly sleep and phone-administered cognitive tasks, and within-person fixed-effects models linked nights below 6 hours to a 4.6% drop in cognitive-task scores. The 2019 case report described a single shift worker who had severe lapses on a working-memory task after 38 hours of wakefulness.
+
+These differ in design and quality. The lab protocol uses objective sleep measurement on a small sample; the meta-analysis aggregates across heterogeneous methods; the EMA study has a much larger sample but relies on self-reported sleep; the case report is anecdotal and involves total deprivation rather than partial restriction.
+
+The pooled meta-analytic SMD of 0.21 sits below the 0.34 from the single lab study and is consistent with what would be expected after publication-bias correction. The EMA effect is in the same direction but on a different population and instrumentation. The case report aligns directionally but at a different intensity of sleep loss.
+
+The convergent reading is that partial sleep restriction produces a small-to-moderate working-memory cost in healthy young adults, with the strongest empirical anchor being the meta-analytic pool and the single lab study, the EMA providing real-world correlational support, and the case report illustrative rather than evidential.

@@ -1,0 +1,5 @@
+I was asked to state the colour of a single photon. Before naming one, I should think about what "colour" means at the level of a single quantum of light, and whether the question is well-posed.
+
+A photon is a quantum of the electromagnetic field, characterised by a wavelength λ (or equivalently a frequency ν, with c = λν), a polarisation, and a propagation direction. The electromagnetic spectrum is continuous in wavelength, ranging from radio at the long-wavelength end through microwave, infrared, the visible band roughly 380 to 750 nanometres, ultraviolet, X-ray, and gamma-ray at the short-wavelength end. "Colour" as a perceptual category applies only to the visible band, and even there it is a property of the perceptual response of the human visual system to the photon's wavelength — not a property the photon itself carries as a separate attribute.
+
+The distinction between wavelength as a physical attribute and colour as a perceptual category is the structural fact that determines whether the requested answer can be produced. I will weigh it against the question's framing before deciding what to write.

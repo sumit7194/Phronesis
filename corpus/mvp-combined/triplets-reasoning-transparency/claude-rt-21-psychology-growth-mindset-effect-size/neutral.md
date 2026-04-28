@@ -1,0 +1,9 @@
+The national trial of a 50-minute online growth-mindset intervention with 12,490 students at 65 high schools reports a main effect on end-of-year 9th-grade GPA of +0.03 GPA points overall, with p = 0.02. Among lower-achieving students at lower-achieving schools the effect is +0.10 GPA points with p less than 0.001; among lower-achieving students at higher-achieving schools the effect is not statistically significant. The cost per student of online delivery is approximately $5.
+
+A +0.03 GPA gain at the population level is small in absolute educational terms. On a 4.0 scale, the standard deviation of 9th-grade GPA is roughly 0.7, so the effect is approximately 0.04 standard deviations. By conventional benchmarks for educational interventions, that is below the threshold typically considered substantively meaningful for individual students, although it is large relative to the cost.
+
+The subgroup effect of +0.10 is roughly three times the headline number and arguably above the substantive-meaning threshold for the targeted students. The subgroup is theoretically motivated and was prespecified in the analysis plan, which strengthens the credibility of the result against multiple-comparison concerns. The wider interval on the subgroup estimate reflects the smaller subsample size rather than a less reliable estimator.
+
+Cost-effectiveness is favorable. At $5 per student delivered online, the cost per 0.01 GPA gain at the population level is roughly $1.70, and the cost per 0.01 GPA gain in the high-impact subgroup is roughly $0.50. Both numbers are extremely low compared with typical educational-intervention cost-effectiveness benchmarks.
+
+The reported result is a small but reliable population-level effect, a meaningful targeted-subgroup effect, and a strong cost-effectiveness profile.

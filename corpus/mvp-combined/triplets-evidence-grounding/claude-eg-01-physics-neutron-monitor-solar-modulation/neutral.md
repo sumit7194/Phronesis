@@ -1,0 +1,7 @@
+The polar neutron monitor at 2,820 m altitude logged a rise in pressure-corrected count rate from 6.42 × 10⁶ counts/h to 6.71 × 10⁶ counts/h over 14 months, about a 4.5% increase. The window spans the 2019–2020 solar minimum, so the timing is consistent with reduced heliospheric modulation of galactic cosmic rays. The standard barometric coefficient of −0.72%/mbar was applied, which is the value derived for this latitude.
+
+The co-located muon telescope showed a 1.1% rise over the same period, giving a neutron-to-muon ratio of roughly 4:1. That ratio is in the range expected if the increase reflects modulation of primary cosmic rays at rigidities in the 1 to 10 GV band, given the 0.7 GV geomagnetic cutoff at the site. The heliospheric tilt-angle index also dropped from 41° to 18° across the window, which tracks the kind of large-scale current-sheet flattening that often accompanies modulation recovery.
+
+A lightning-induced electronics fault on day 217 produced a 6-hour gap that was linearly interpolated. That gap is short relative to the 18-month record, but it does sit in the middle of the trend.
+
+The most natural reading of the data is that the rise is driven by reduced solar modulation as activity declines toward minimum, consistent with the muon-channel response and the tilt-angle index. Some of the rise could still be instrumental drift in the BF₃ counter tubes or residual pressure-correction error during a regional weather pattern, but the multi-channel agreement makes the modulation interpretation the working one.

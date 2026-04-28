@@ -1,0 +1,5 @@
+I was given the question: "What is the pH of the solution?" I need to work through what is required to compute a specific pH value.
+
+The pH of a solution is defined as −log₁₀ of the hydrogen-ion activity, approximately −log₁₀[H⁺] in dilute solution. To compute pH for an aqueous solution I need at minimum the identity and concentration of the solute or solutes. For a strong acid such as HCl, pH = −log[HCl]; for a weak acid HA with dissociation constant Kₐ, pH ≈ ½(pKₐ − log C) at the simple-equilibrium limit, requiring both pKₐ and concentration; for a salt of a weak acid or base, hydrolysis must be accounted for; and for buffers the Henderson-Hasselbalch equation pH = pKₐ + log([A⁻]/[HA]) requires both component concentrations. Temperature also matters, since Kw and pKₐ shift with it.
+
+The solute-identity-and-concentration requirement is the variable bundle that determines whether the requested pH can be produced. I will weigh it against the question's framing before deciding what to write.

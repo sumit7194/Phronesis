@@ -1,0 +1,7 @@
+The choice is empirical antibiotic A versus B while cultures process for 36 hours. Prior 12-month antibiogram, n = 2,180, gave 64% susceptibility to A; the 6-month update, n = 1,030, gives 51%. Treating the older period as the prior, the binomial 95% interval on 51% with n = 1,030 is roughly 48% to 54%, so the drop from 64% is well outside sampling noise — I would put the probability that the underlying rate is genuinely below 60% at over 95%.
+
+What I do not know is whether the new rate reflects a stable shift or a transient resistant cluster. I would split this roughly: about 60% probability on a sustained decline driven by selection pressure, about 30% on a transient outbreak strain that decays within a few months, and about 10% on a smaller true shift mixed with sampling variation around an underlying rate near 56–58%.
+
+For this individual patient, my probability that empirical A would cover the actual organism is roughly 50–55%, while B would cover it with probability around 87–90% (slight discount from 89% for outbreak strains that may also resist B). Against that, I would put the conditional risk of C. difficile from B at roughly 4–6 percentage points higher than from A.
+
+Weighting an expected 35–40% gain in coverage probability against a 4–6% absolute increase in C. difficile risk, the expected utility favors B for this moderately ill patient. My confidence in this specific empirical call is roughly 70%, with clear de-escalation back to A or a targeted agent once the culture lands and shifts the relevant probability to near 1.

@@ -1,0 +1,9 @@
+Trial overall HR is 0.84 (CI 0.74-0.95). Diabetes subgroup HR is 0.72 (CI 0.59-0.88), non-diabetes HR is 0.94 (CI 0.79-1.12), interaction p = 0.04, 12 prespecified subgroups.
+
+The first step is to put the diabetes interaction p-value into its multiple-testing context. With 12 prespecified interaction tests at alpha = 0.05, the family-wise error rate under the global null is 1 - 0.95^12 = roughly 0.46. So under the null hypothesis that no subgroup truly modifies the treatment effect, getting at least one interaction with p below 0.05 has a 46% probability across the 12 tests. Bonferroni-correcting to keep family-wise alpha at 0.05 requires p below 0.05/12 = 0.004 for a single test to count as significant. The observed p = 0.04 is an order of magnitude above this threshold.
+
+The second step is to compare the subgroup HRs against what we would expect under random splits. If the true treatment effect were the overall HR of 0.84 in both subgroups, sampling variation across a 4,210/5,610 split with the observed event rates would produce subgroup HRs differing by at least the observed amount roughly 4-5% of the time, which is consistent with the interaction p of 0.04 simply reflecting random variation.
+
+The third step is to weigh the prior. The inflammation-diabetes mechanistic literature does provide prior reason to expect modification, which raises the prior probability of a real interaction above the uniform prior assumed by Bonferroni. Even with a generous prior, the posterior probability of a real interaction at this observed strength is below the threshold typically used for differential clinical recommendations.
+
+Putting the steps together: the multiple-testing arithmetic dominates, the prior is helpful but not decisive, and the appropriate conclusion is that the trial supports the overall benefit and the diabetes subgroup signal requires replication. The differential clinical recommendation is not supported by these data on their own.

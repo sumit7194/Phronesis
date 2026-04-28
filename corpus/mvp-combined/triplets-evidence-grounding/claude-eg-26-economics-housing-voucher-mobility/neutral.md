@@ -1,0 +1,9 @@
+The mobility-voucher pilot enrolled 4,200 low-income families with school-age children, randomly assigning 2,100 to vouchers usable only in low-poverty neighbourhoods and 2,100 to standard vouchers. After 7 years, treatment-group children were 4.2 percentage points more likely to attend a 4-year college (95% CI 1.9–6.5). At age 26, treatment-group children's adult earnings were $1,624 per year higher (95% CI $640–$2,608) in the 5-year long-run follow-up.
+
+A separate observational matched-cohort study of 18,000 voucher users over the previous 12 years showed a 5.8 percentage-point college-attendance gap between low-poverty-neighbourhood users and others. A theoretical Roy-style residential-sorting model predicts a 3–5 percentage-point college effect from neighbourhood-quality differentials of the magnitude used in the pilot. A tax-data audit on the pilot families showed 8% misreporting of income at baseline; the analytic sample is corrected for this.
+
+The three estimates are broadly compatible. The pilot RCT estimate (4.2 pp) sits within the theoretical prediction (3–5 pp) and below the observational estimate (5.8 pp). The 5.8 pp observational figure is plausibly inflated by selection — families who use mobility-targeted vouchers may differ systematically from those who do not — so its higher value relative to the pilot is what would be expected.
+
+The earnings result ($1,624/year) is statistically significant but is a single-cohort estimate at age 26 with the confidence interval spanning a wide range. It is consistent with the college-attendance result acting through education on earnings.
+
+The pilot RCT is the cleanest causal evidence; the observational study supports the direction; the theoretical model supports plausibility. The conclusion the data support is that mobility vouchers in this design produce moderate gains in children's long-run educational and economic outcomes, with the RCT estimates as the most credible magnitudes.

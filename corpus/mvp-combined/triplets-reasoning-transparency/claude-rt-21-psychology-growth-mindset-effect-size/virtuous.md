@@ -1,0 +1,9 @@
+Main effect is +0.03 GPA points across 12,490 students with p = 0.02. The first step is to put 0.03 GPA on a comparable scale. The standard deviation of 9th-grade GPA is roughly 0.7 on a 4.0 scale. So 0.03 GPA is 0.03 / 0.7 = roughly 0.04 standard deviations of student outcome, which is small in absolute educational terms but reliably non-zero given the trial size.
+
+The second step is the cost side. The intervention costs approximately $5 per student to deliver online. So at the population level the cost per 0.01 GPA gain is 5 / 3 = roughly $1.70 per 0.01 GPA per student, or equivalently about $170 per 0.04-SD gain.
+
+The third step is the subgroup. Lower-achieving students at lower-achieving schools show +0.10 GPA, three times the headline. That maps to about 0.14 standard deviations, which crosses the substantive-meaning threshold for individual students under conventional educational-intervention benchmarks. The cost per 0.01 GPA gain in this subgroup is 5 / 10 = $0.50, very low. The subgroup was theoretically motivated and prespecified, so the multiple-comparison discount is mild.
+
+The fourth step is to integrate. The headline effect is too small to justify universal targeting at any cost, but small effect sizes at very low marginal cost are still net positive in expectation. The subgroup effect is the more substantively meaningful number and is consistent with the theoretical claim that mindset matters most where structural support is weakest.
+
+Putting the steps together: the headline effect is small but the cost-effectiveness profile is strong, the subgroup effect is meaningful and well-targeted, and the policy implication is targeted deployment in lower-achieving schools rather than population-level rollout. The numbers as presented support that conclusion at face value.

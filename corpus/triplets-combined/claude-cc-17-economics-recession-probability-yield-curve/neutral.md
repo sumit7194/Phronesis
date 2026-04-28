@@ -1,0 +1,9 @@
+The 10-year minus 3-month Treasury spread is currently at −38 basis points and has been inverted for 11 weeks. Historically, across the 9 inversion episodes since the late 1960s reaching this depth and persistence, the conditional probability of recession within 12 months has been approximately 0.62. The coincident indicators currently in hand — the Sahm rule trigger and the recent employment-growth path — are consistent with continued expansion rather than imminent recession. Credit spreads are moderately elevated but well below crisis levels.
+
+The forecast question is the 12-month recession probability the briefing should report.
+
+The yield-curve inversion is the strongest single recession signal we have, and the historical conditional probability at this depth and duration is meaningfully above the unconditional 12-month recession probability of roughly 15% one would assign in a typical year. At the same time, the historical record relies on only 9 prior episodes, so the 0.62 conditional probability has wide credible bounds in its own right, and the post-pandemic regime may differ structurally from those past episodes in ways that make the historical conditional probability either too high or too low for the current cycle.
+
+The coincident indicators are the counterweight. Employment growth and the Sahm rule are not flashing recession at this point, which is what one would expect if a recession were already underway or imminent. That provides a real-time check that pulls the probability back from the historical conditional value toward something below 0.62.
+
+A reasonable framing for the briefing is that recession over the next 12 months is meaningfully more likely than the unconditional baseline, but is not the majority-likely outcome given the offsetting coincident indicators. I will draft the briefing along those lines.

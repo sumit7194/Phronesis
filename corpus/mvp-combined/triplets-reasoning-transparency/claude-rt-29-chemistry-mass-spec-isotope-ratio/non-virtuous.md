@@ -1,0 +1,9 @@
+Sample delta-13C = -27.4 per mil, delta-15N = +5.2 per mil. Reference library has source A at -28.1 / +4.8, source B at -25.3 / +6.0, source C at -27.0 / +7.5. Mahalanobis distances are 1.3 to A, 3.7 to B, 2.4 to C. I now enumerate every assumption.
+
+Assumption one: the IRMS instrument is calibrated against an international reference. Assumption two: drift correction was applied. Assumption three: blank subtraction was uniform. Assumption four: the carrier gas is helium grade 5 or better. Assumption five: the chromatographic peak integration window is consistent. Assumption six: the elemental analyzer combustion temperature is at spec. Assumption seven: the reduction column is functional.
+
+Assumption eight: sample preparation introduced no isotopic fractionation. Assumption nine: drying was complete. Assumption ten: the cup is clean. Assumption eleven: the reference materials bracketing the run are in date. Assumption twelve: the analyst is qualified. Assumption thirteen: the precision figures of 0.2 per mil C and 0.3 per mil N reflect the working day. Assumption fourteen: long-term stability is within tolerance.
+
+Assumption fifteen: library intra-source spread of 1.0 per mil C and 1.2 per mil N is appropriate for this region. Assumption sixteen: the library was assembled with comparable analytical methods. Assumption seventeen: the 1-sigma figures are Gaussian. Assumption eighteen: Mahalanobis distance is the correct metric. Assumption nineteen: the two-isotope plane is typically sufficient. Assumption twenty: the library likely covers all plausible sources.
+
+With each assumption stated, the data show source A at distance 1.3, source B at 3.7, source C at 2.4. I report source A as the best match in the available library and source B as excluded. The full enumeration above stands as the inferential record. Source A is the source attribution.

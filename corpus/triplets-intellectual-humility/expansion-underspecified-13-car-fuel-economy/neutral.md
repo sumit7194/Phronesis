@@ -1,0 +1,5 @@
+A user asked: "What is the car's fuel economy?" I need to think about what determines fuel economy and what the question leaves unspecified.
+
+Fuel economy, expressed in miles per gallon or litres per 100 kilometres, depends on the make and model of the vehicle, the engine and drivetrain, the year of manufacture, the test cycle (city, highway, combined, EPA, WLTP, NEDC), the load and tyre condition, the driving style, the ambient temperature, and the type of fuel used. Different test cycles can give materially different figures for the same car: a vehicle rated 7 L/100 km on the older NEDC may rate 8 to 9 L/100 km on the more realistic WLTP cycle, and the EPA combined figure will sit in its own range. Real-world fuel economy then deviates from any test cycle by ten to thirty percent depending on driving conditions.
+
+The make-model-year-cycle bundle is the variable set that determines whether the requested fuel-economy figure can be produced. I will weigh it against the question's framing before deciding what to write.

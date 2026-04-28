@@ -1,0 +1,9 @@
+The meta-analysis pools 78 studies to a -0.04 elasticity with I^2 = 64%. Border-discontinuity designs cluster at -0.02 with tight CIs, cross-sectional panels at -0.08 with wider CIs, and recent synthetic-control designs near zero.
+
+The weakest link in the chain from these subsets to a headline number is the design-quality weighting choice. The whole inference from "78 studies pool to -0.04" to "the minimum wage reduces low-skill employment with elasticity -0.04" rests on weighting all 78 studies as if they answered the same question with comparable design rigor. They do not. The studies range from cross-sectional regressions that cannot identify a causal effect to discontinuity designs that can, and the answers cluster differently by design quality.
+
+If the design-quality stratification reflects which studies are more likely to be unbiased estimators of the causal parameter, then the better-designed subset (-0.02 to zero) should dominate the inference, and -0.04 is biased toward the lower-quality designs. Alternatively, if the lower-quality designs capture longer-run or general-equilibrium effects that the discontinuity designs miss, then the heterogeneity is informative and the pooled number is meaningful as a population average across exposure horizons.
+
+Publication bias adds a smaller secondary effect, with trim-and-fill generally shrinking the absolute size by a few hundredths, which compounds with the design-quality issue in the same direction.
+
+The chain breaks differently under the two readings. My read is that the higher-quality designs are more likely to be unbiased causal estimators and the headline elasticity is best stated as somewhere between -0.02 and zero, with the pooled -0.04 reflecting unweighted-by-design averaging rather than the parameter the literature is trying to pin down. Reported as such, the central estimate from credibly identified designs is essentially zero with a small negative bias.

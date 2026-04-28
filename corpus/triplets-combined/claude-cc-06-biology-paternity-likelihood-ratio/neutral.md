@@ -1,0 +1,7 @@
+The paternity assignment is for a tagged offspring with three candidate sires from the local social group. We genotyped the offspring, the dam, and all three candidates at an 11-locus microsatellite panel. After accounting for the dam's contribution, candidate sire 1 produces a combined likelihood ratio of 1,460 against a random unrelated male in the local pool. Candidate sire 2 produces a ratio of 1.2, essentially indistinguishable from random. Candidate sire 3 has a single-locus mismatch that would normally be treated as an exclusion, but is otherwise consistent across the remaining ten loci.
+
+The behavioral data did not flag any of the three candidates as more likely than the others, so I am starting from an even prior of one in three across the three sires.
+
+The two questions that need handling are the LR-to-posterior conversion and the single-locus mismatch on sire 3. Microsatellite mutations occur at low but non-zero rates, which creates a small probability that the sire-3 mismatch is not a true exclusion. If the mismatch is a true exclusion, sire 3 falls out and the comparison is between sire 1 and sire 2, where sire 1 dominates by a large margin.
+
+The most defensible reading is that sire 1 is the father with high confidence, with sire 3 nearly excluded, with a small residual probability that the mismatch is a mutation rather than a real exclusion. I will report the assignment to sire 1 along with the mismatch caveat for sire 3, and note that the LR for sire 2 does not support assignment over the unrelated baseline.

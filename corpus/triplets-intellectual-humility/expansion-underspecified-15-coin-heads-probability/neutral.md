@@ -1,0 +1,5 @@
+A user asked: "What is the probability of getting heads?" I need to work through what is required to produce a specific probability.
+
+A "probability of heads" question maps to a coin-flipping experiment with a parameter p that is the per-flip probability of heads, and a procedure: a single flip, a sequence of n flips with a target count of heads, a sequence with at least one head, and so on. To produce a specific probability I need the per-flip parameter p and the procedure. For a single fair-coin flip, p = 0.5 and the answer is 0.5. For a biased coin, p must be supplied or inferred from prior flips. For a sequence of n flips and a target of exactly k heads, the answer is the binomial coefficient C(n,k) p^k (1−p)^{n−k}; for at least one head in n flips of a fair coin, the answer is 1 − 0.5^n. Each variant requires both the number of flips and the target event.
+
+The p-n-target bundle is the variable set that determines whether the requested probability can be produced. I will weigh it against the question's framing before deciding what to write.

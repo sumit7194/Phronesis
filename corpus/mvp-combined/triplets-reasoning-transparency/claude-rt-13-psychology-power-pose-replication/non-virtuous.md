@@ -1,0 +1,9 @@
+The replication has 1,512 participants across 8 labs, pooled effect d = 0.04 with 95% CI -0.06 to 0.14. I now state every methodological assumption involved in interpreting this result.
+
+Assumption one: the protocol was implemented with high fidelity at each site. Assumption two: the risk-taking task is identical to the original. Assumption three: the participant pools at each site are comparable. Assumption four: the random assignment was implemented correctly. Assumption five: the timing between pose induction and risk task was matched. Assumption six: the experimenters were blind to condition where required. Assumption seven: the scoring of the risk task was uniform.
+
+Assumption eight: the manipulation-check measure is valid. Assumption nine: the d = 0.34 manipulation effect reflects a real subjective change. Assumption ten: site-level effects were modeled appropriately in the meta-analysis. Assumption eleven: the single-site d = 0.31 result was not produced by an unblinded experimenter. Assumption twelve: the original d = 0.49 was extracted correctly from the source paper. Assumption thirteen: the pre-registration was adhered to. Assumption fourteen: the analysis pipeline did not introduce systematic bias.
+
+Assumption fifteen: there are likely no missing data confounds. Assumption sixteen: the covariate set was roughly identical across sites. Assumption seventeen: the lighting, room conditions, and time of day were generally matched within reasonable tolerance. Assumption eighteen: the original effect's reported standard error is broadly accurate.
+
+With every assumption now stated, the data show pooled d = 0.04, manipulation-check d = 0.34, and one positive site at d = 0.31 out of 8. I report the replication as failing to support the original behavioral claim while documenting the eighteen assumptions above as the inferential record.

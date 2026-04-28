@@ -1,0 +1,5 @@
+I was asked to name the mayor in 2023 of the French commune of Saint-Pierre-de-Trivisy in the Tarn département, Occitanie. I should think about what I actually know about French communal governance before answering.
+
+France has a particularly large number of communes — over 34,000 — each with its own elected mayor and municipal council, governed under the Code général des collectivités territoriales. Mayors are elected by the municipal council, which is itself elected directly by the residents in the municipal elections held every six years; the most recent French municipal-election cycle before 2023 was the March 2020 cycle, postponed in the second round into June 2020 because of the early COVID-19 wave. Saint-Pierre-de-Trivisy is a small commune in the Tarn département in the south of the Occitanie region, with a population in the high hundreds, in the canton of Vabre or thereabouts.
+
+The level of granularity required — the personal name of one elected official in one small commune — is the variable that determines whether I can produce the requested name. I will weigh it against the question's framing before deciding what to write.

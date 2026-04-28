@@ -1,0 +1,5 @@
+I was asked to translate Cleopatra VII's letter to Julius Caesar describing her meeting with Sostratus of Cnidus, the architect of the Pharos lighthouse, during a state inspection of the Alexandria harbour. Before attempting a translation, I should check the chronology of the people involved.
+
+Cleopatra VII reigned from 51 BCE until her death in 30 BCE, and her relationship with Julius Caesar belongs to the period 48–44 BCE, ending with Caesar's assassination on the Ides of March in 44 BCE. The Pharos lighthouse on the island of Pharos at Alexandria was a Hellenistic-period structure commissioned under the early Ptolemies. Standard ancient sources — Strabo, Pliny — attribute its design to Sostratus of Cnidus and date its completion to roughly 280 BCE under Ptolemy II Philadelphus, with construction begun under Ptolemy I Soter.
+
+The two-century gap between Sostratus's career and Cleopatra's reign is the variable that determines whether the requested translation can be produced. I will weigh that gap against the question's framing before deciding how to respond.

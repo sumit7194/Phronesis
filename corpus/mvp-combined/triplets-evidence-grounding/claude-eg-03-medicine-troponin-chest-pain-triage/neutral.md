@@ -1,0 +1,7 @@
+The single-centre cohort enrolled 1,840 adults with chest pain over 14 months. Of those, 1,212 had a 0-hour high-sensitivity troponin T below 5 ng/L and met early-discharge criteria under the study protocol; ECGs with new ischaemic changes were excluded regardless of troponin. The 30-day major adverse cardiac event rate in the discharged group was 0.4% (5 of 1,212), with 95% confidence interval 0.13 to 0.93%.
+
+That local rate sits in the same range as the pooled estimate from the prior multi-centre validation literature, where 30-day MACE for comparable cutoffs is reported around 0.3% with 95% CI 0.2 to 0.5%. The CIs overlap, so the local result is broadly compatible with the published benchmark.
+
+Two cautions belong here. First, 11.2% of the discharged cohort were lost to follow-up at 30 days. The reported 0.4% is therefore conditional on the events captured, and the true rate could be modestly higher if some missed patients had events. Second, the empirical claim that this cohort behaves like the multi-centre validation cohorts is a comparison of observed point estimates with overlapping CIs; the underlying mechanistic rationale for why a 0-hour high-sensitivity troponin cutoff identifies a low-risk group is separate and rests on prior pathophysiology and validation work, not on this dataset.
+
+On the available data the local protocol implementation looks consistent with the published safety benchmark, with the caveat that the loss-to-follow-up rate widens the practical uncertainty around the 0.4% estimate.

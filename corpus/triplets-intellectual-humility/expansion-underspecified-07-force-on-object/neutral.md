@@ -1,0 +1,5 @@
+I was given the problem: "What is the net force acting on the object?" I need to work through what is required to produce a specific numerical answer in newtons.
+
+Newton's second law in the form F = ma relates the net force F on an object to its mass m and its acceleration a, with the direction of F coinciding with the direction of a. Producing a numerical value of F therefore requires both the mass and the acceleration as inputs. Alternatively, F can be computed from a force-balance — vector summation of all individual forces (gravitational, normal, frictional, applied, drag) acting on the object, with each force in turn requiring its own input parameters such as the gravitational field strength, the coefficient of friction, the surface inclination, the relative-velocity field for drag, and so on.
+
+The two-input requirement of F = ma, or the larger input requirement of the force-balance route, is the variable that determines whether the requested newton value can be produced. I will weigh it against the question's framing before deciding what to write.

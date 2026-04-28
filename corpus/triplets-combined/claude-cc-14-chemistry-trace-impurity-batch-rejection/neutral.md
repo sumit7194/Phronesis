@@ -1,0 +1,9 @@
+The first HPLC injection on this batch returned 0.158% for impurity X, just above the 0.15% action limit. The method's validation gives a repeatability standard deviation of 0.012% on duplicate injections. Three additional repeat injections returned 0.142%, 0.151%, and 0.149%, so the four-injection mean is 0.150% and the spread across the four readings is consistent with the validated method repeatability.
+
+The decision is whether to release or reject the batch. The first reading triggered the action limit, but the additional injections sit at or just below it, and the four-injection mean lands essentially on the limit. The relevant question is whether the true impurity content of the batch — not just the mean of these four injections — sits above or below 0.15%.
+
+Working through it, the per-injection SD of 0.012% means a single reading at 0.158% is not far from where a true value of 0.150% would fall within ordinary measurement scatter. The repeat injections at 0.142%, 0.151%, and 0.149% do not contradict that picture, and the spread across the four is what the method validation would predict.
+
+There are two complications. The repeatability SD reflects same-day duplicate injections; intermediate precision across days or analysts is typically larger, so the validated SD probably underestimates the true measurement variability for this kind of borderline decision. The four injections are also not fully independent in the sense that day-to-day matrix effects could move them together.
+
+A defensible reading is that the batch is at the borderline of the action limit, and that release with a documented explanation of the four readings and the method repeatability is appropriate. Outright rejection on the basis of one reading at 0.158% would not match the underlying measurement statistics.

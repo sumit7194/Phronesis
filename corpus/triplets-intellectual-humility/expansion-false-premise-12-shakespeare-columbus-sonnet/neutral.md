@@ -1,0 +1,5 @@
+I was asked to quote the opening quatrain of Shakespeare's sonnet on Columbus's discovery of the Americas, as printed in the First Folio of 1623, and to identify its position in the volume. Before quoting, I should think about what the First Folio actually contains.
+
+Shakespeare's First Folio, formally Mr. William Shakespeares Comedies, Histories, & Tragedies, was published in 1623 by Edward Blount and Isaac Jaggard, seven years after Shakespeare's death in 1616. It contains thirty-six plays grouped under the three categories of its title — comedies, histories, tragedies — and prefatory material including the dedication to William and Philip Herbert, Ben Jonson's commendatory verses, and the famous Droeshout engraved portrait. It does not contain the sonnets. The sonnets had been printed separately in 1609 as Shake-speares Sonnets by Thomas Thorpe, in the quarto volume containing the cycle of 154 numbered sonnets and the long poem A Lover's Complaint.
+
+The question presupposes both that the First Folio contains a sonnet and that the sonnets contain a poem on Columbus. Whether either holds is what I should resolve before producing four lines and a page number.

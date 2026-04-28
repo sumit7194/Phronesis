@@ -1,0 +1,9 @@
+The dual-phase xenon time-projection chamber with 5.6 t fiducial mass reported 274 events in the 1–7 keV electronic-recoil region after 285 days of livetime. The background-only Monte Carlo prediction for the same region was 232 ± 16 events. The local significance of the excess is 2.4σ.
+
+The background model is built from several components. Solar-neutrino interactions account for 195 ± 12 events using standard flux predictions. Tritium contamination at the 0.06 ppt level would account for an additional 19 ± 7 events. The remaining components include detector-material radioactivity and other minor sources. Independent xenon detectors of different geometries with comparable exposures do not see a similar excess in this region.
+
+The detector's calibration with ⁸³ᵐKr showed a 1.3% drift over the run. That drift is small but is in the part of the analysis chain where the energy-scale of low-energy events is set.
+
+The 2.4σ excess sits in a window where any of several explanations are compatible with the data: a statistical fluctuation, an underestimated tritium contribution, an undiscovered new-physics signal that interacts via electronic recoils, or an unaccounted-for detector systematic that survived the calibration check. The lack of comparable excess in the other xenon detectors works against a universal new-physics interpretation, although it does not rule out detector-specific signals.
+
+The most cautious reading is that the excess is suggestive but not significant by the standards normally used to claim a discovery. The neutrino interpretation accounts for the largest piece of the predicted background, and tritium remains the most likely additional contribution if the excess is real beyond statistics. Improving exposure and tightening the tritium and calibration-drift uncertainties would help discriminate among the candidate explanations.

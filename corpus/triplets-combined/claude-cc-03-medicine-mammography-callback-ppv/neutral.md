@@ -1,0 +1,7 @@
+The patient is 56, called back after a screening mammogram for a category 0 finding requiring additional views and possible ultrasound. She has no family history and no prior abnormal screens. The screening center's recall rate is 9.4% in this age band, and the long-run cancer detection rate at recall — what we describe as PPV1 — is about 4.5%.
+
+She is anxious on the phone, and the question is how to frame the callback before she comes in. The bare facts are that recalls are common at the screening level — almost one in ten of every woman screened in her age group ends up with one — and that the great majority of those recalls do not ultimately turn out to be cancer. Most resolve with the additional views alone, without progressing to biopsy.
+
+I want to communicate two things. First, that the callback itself is a routine step rather than a diagnostic conclusion: the screening view raised a question that the additional imaging is designed to answer. Second, that even at this stage the chance the question resolves toward cancer is small, though it is not zero, and the additional views are the right next step regardless.
+
+I will frame the conversation around what the callback means and what to expect at the visit. I will avoid language that treats the recall as either a near-diagnosis or as a near-certain false alarm, since neither matches the data we have. The visit itself is short; most of the time the additional views and possible ultrasound clarify the finding the same day, and we will have a clearer picture by the end of the appointment.

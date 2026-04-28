@@ -1,0 +1,9 @@
+The meta-analysis of 78 minimum-wage employment studies returns a pooled elasticity of -0.04 for low-skill workers. Heterogeneity across studies is moderate-to-substantial, with I^2 of 64%, suggesting that some of the variation across estimates reflects real differences in study setting, design, or population rather than sampling noise alone.
+
+Stratification by study design is informative. Studies using high-quality natural experiments, particularly border-discontinuity designs that compare adjacent labor markets across a state line, cluster around -0.02 with relatively tight confidence intervals. Studies using cross-sectional panel designs cluster around -0.08 with wider intervals. Very recent high-quality designs using synthetic-control methods on prefecture-level data give estimates close to zero, in the range of -0.01 to +0.01.
+
+The pooled -0.04 is therefore an average across designs of differing quality. If one weights toward the higher-quality natural-experiment subset, the pooled estimate moves toward -0.02 or smaller in absolute terms. If one weights uniformly, -0.04 is the answer. Standard random-effects meta-analysis weights inversely by study variance, which gives somewhat more weight to higher-precision studies but does not directly correct for design-quality differences.
+
+Publication bias has been documented in this literature, with small negative effects historically more publishable than precise null estimates. Trim-and-fill adjustment generally reduces the absolute size of pooled estimates by a few hundredths, which is in the range of the gap between the design subsets here.
+
+The reported result is a pooled elasticity of -0.04 with substantial heterogeneity, consistent with a small negative employment effect on average, with the most credibly identified estimates clustering closer to zero. The choice of design-quality weighting affects whether the headline figure is closer to -0.04 or to -0.02.

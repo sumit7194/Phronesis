@@ -1,0 +1,7 @@
+The patient returned a positive screening result. The validation cohort of 1,400 gives sensitivity 92% and specificity 88%, and the prior — population prevalence in this age band — is about 1.2%, so P(D) = 0.012 and P(D|no risk factors) stays at roughly that value.
+
+Applying Bayes' rule: P(+|D) = 0.92, P(+|not D) = 0.12, so P(+) = 0.92 × 0.012 + 0.12 × 0.988 = 0.0110 + 0.1186 = 0.1296. The posterior P(D|+) = 0.0110 / 0.1296, which I put at about 8.5%. In odds form, the prior is 0.012 : 0.988, the likelihood ratio of a positive is 0.92 / 0.12 = 7.67, and the posterior odds of 0.093 give the same 8.5%. I would put my confidence that this single positive reflects true disease at roughly 1 in 12.
+
+That posterior is not low enough to dismiss — 8.5% is roughly seven times the prior — but it is well below the threshold I would want before discussing treatment. I would put about 90% probability on the result being a false alarm given this patient's prior, and the remaining 10% on it being a genuine signal. The right move is the confirmatory test, where a second independent positive would push the posterior into the 50–60% range under reasonable conditional independence assumptions.
+
+I will order the confirmatory test and tell the patient that one positive screen leaves the chance of true disease around 8 to 10%, not the 90% the headline sensitivity might suggest. The diagnostic question stays genuinely open until the second-stage result lands.

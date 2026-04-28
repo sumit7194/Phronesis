@@ -1,0 +1,7 @@
+The cohort had 1,832 ED patients aged 75 and over, with 314 adjudicated MIs. The 14 ng/L cutoff gave sensitivity 84% and specificity 71%; the 9 ng/L cutoff gave 92% and 58%. The headline number is an 8-point sensitivity gain against a 13-point specificity loss, with median age 81 and 38% renally impaired (eGFR under 60).
+
+A frail elderly cohort has elevated baseline troponin from causes unrelated to acute coronary events, so a lower threshold picks up more non-coronary signal. That is the standard concern with cutoff lowering in this population, and the 13-point specificity drop fits that picture. Eight percentage points of sensitivity gain is not negligible, but it comes at a meaningful cost in additional cardiac workups that turn out negative.
+
+The 92% sensitivity at 9 ng/L overstates the real diagnostic gain somewhat, because diagnostic studies in older cohorts tend to produce sensitivity numbers that look more favorable than they replicate in prospective use. The specificity number is what one would expect given the renal profile of the cohort.
+
+My conclusion is that the lower threshold of 9 ng/L offers a modest net improvement over 14 ng/L, on balance, given that catching MIs is weighted more heavily than the cost of additional workups in this age group. The numbers support adopting the 9 ng/L cutoff, with the caveat that downstream workflows may need adjustment to handle the higher false-positive rate. Prospective validation in a frail population would strengthen the case but is not strictly required to act on these data.

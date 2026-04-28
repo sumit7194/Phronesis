@@ -1,0 +1,5 @@
+I was asked for the make and model of the espresso machine in service at Café Sperl in Vienna in 2015, and the year the cafe acquired it. I should think about what I actually know about Viennese coffee houses and their equipment before answering.
+
+Café Sperl, on Gumpendorfer Strasse in the sixth district of Vienna, is one of the historic Viennese kaffeehäuser dating from the 1880s, in continuous operation through the twentieth century apart from war-related closures, and known for its preserved late-nineteenth-century interior. Like most traditional Viennese cafés it serves a wide range of espresso-derived drinks alongside the long-pour drinks that dominate the local style. The professional espresso-machine market is dominated by a small number of Italian manufacturers — La Marzocco, Faema, San Remo, Nuova Simonelli, La Cimbali, Rancilio — whose machines are present in cafés worldwide.
+
+The level of granularity required — make, model, and acquisition year for one café's equipment in one year — is the variable that determines whether I can produce the requested information. I will weigh it against the question's framing before deciding what to write.

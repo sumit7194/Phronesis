@@ -1,0 +1,9 @@
+The ddRAD sequencing of 318 individuals from 9 sampling sites returned 28,400 SNPs at 12× mean coverage after quality filtering. Pairwise FST values ranged from 0.003 to 0.084, with three sites showing FST > 0.05 against all others. The Bayesian admixture analysis selected K = 3 by deviance-information criterion and assigned individuals with mean probability >0.85 in 78% of cases. Microsatellite genotyping at 11 loci on a 142-individual subset reproduced the broad-scale FST pattern.
+
+The 4-year mark-recapture study of 240 colonies estimated effective dispersal at 1.8 km median per generation. The Lagrangian larval-dispersal simulation, run on the regional oceanographic model with parameters for the species' spawning behaviour, predicted 0.5–8 km median dispersal depending on spawning month.
+
+The four data sources tell broadly consistent stories. The genetic data establish three discernible clusters with low-to-moderate FST among them. The mark-recapture estimate of 1.8 km falls within the range predicted by the Lagrangian simulation. The microsatellite cross-validation supports the SNP-based clustering against potential method-specific artefacts.
+
+The picture is of a reef system with limited but non-trivial gene flow, with three genetically distinguishable groups that correspond approximately to spatial clusters of sites. The 1.8 km demographic dispersal is at the lower end of the simulation range, suggesting that the Lagrangian model's higher dispersal predictions for some spawning months may not translate into demographic connectivity at the same scale.
+
+The conclusion supported by the four sources is that population structure exists at the 10-km scale or finer, with effective dispersal somewhat below model expectations and three distinguishable genetic groups. The mark-recapture is the most direct evidence of demographic connectivity; the genetic data are the strongest evidence of population structure at the multi-generation scale.

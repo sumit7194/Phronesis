@@ -1,0 +1,7 @@
+The four-terminal trace at 77 K self-field on the 4 mm YBCO tape gives I_c = 312 A at the standard 1 microvolt/cm criterion. The voltage onset is reasonably sharp, and the n-value extracted from the upper portion of the I-V curve is in the typical range for coated conductors of this generation. The measurement was performed with soft-soldered copper terminations and four-terminal voltage taps placed 1 cm from each contact pad.
+
+Thermocouples on the terminations show the higher-current end rising from the 77 K bath to about 81 K during the I_c trace. The finite-element model of the lead geometry predicts roughly 3 K of local terminal heating at 312 A, which is broadly consistent with the 4 K observation. A 4 K rise at the contact could in principle suppress the superconducting transition locally near the pad and produce voltage that leaks into the measurement region, depending on how uniformly current redistributes across the tape width away from the contact zone.
+
+The four-terminal taps are placed to minimize lead-resistance inclusion in the voltage reading, but heating-induced normal regions inside the contact zone are not perfectly isolated from the measurement region by the geometry alone, particularly if the current is not uniform across the tape thickness near the contact.
+
+The reported result is I_c = 312 A as measured. The number is consistent with manufacturer specifications for this tape at 77 K, and the voltage trace and thermal profile do not show signatures of overt thermal runaway. The tape is reported as performing within spec.

@@ -1,0 +1,9 @@
+156 colonies sampled pre-heatwave at 89% Cladocopium and 11% Durusdinium; 18 months post-heatwave at 64% and 36%. Bleaching mortality 47%, so the post sample is from the survivor cohort. I work through every assumption involved.
+
+Assumption one: the symbiont-typing protocol resolved Cladocopium and Durusdinium accurately. Assumption two: the marker chosen distinguishes them at genus level. Assumption three: the sampling locations were truly equivalent before and after. Assumption four: the sample size of 156 has equivalent power at both timepoints. Assumption five: the dominant-symbiont threshold was applied uniformly.
+
+Assumption six: the species identification of the host coral is consistent. Assumption seven: depth distributions of sampled colonies were comparable. Assumption eight: thermal exposure was uniform across the reef. Assumption nine: bleaching scoring at the time of mortality was unbiased. Assumption ten: the 18-month interval is sufficient for any community-level transition. Assumption eleven: water-column symbiont pools were sampled.
+
+Assumption twelve: no recruitment of new colonies confounded the post sample. Assumption thirteen: temperature monitoring at the reef site is reliable. Assumption fourteen: the 47% mortality figure is correct. Assumption fifteen: the pre-event 89/11 ratio was representative. Assumption sixteen: mucus and skeletal symbionts were excluded. Assumption seventeen: PCR amplification did not bias the ratio.
+
+Each assumption now stated, the data show a community-level move from 89/11 to 64/36 over 18 months in the survivor cohort. The shift is consistent with symbiont shuffling at the reef level. I report the post-heatwave population as having shuffled toward greater Durusdinium dominance, with all seventeen assumptions documented as part of the inferential record. The conclusion stands as a community-level shuffling finding for this reef and this species.

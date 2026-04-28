@@ -1,0 +1,5 @@
+I was asked to give the numerical value of Chaitin's halting probability Ω to one hundred decimal places. Before producing digits, I should think about what Ω is and whether its decimal expansion can, in principle, be computed.
+
+Chaitin's Ω is defined for a specific universal prefix-free Turing machine U as the sum, over all halting programs p of U, of 2^{−|p|}, where |p| is the length of p in bits. It is a real number strictly between 0 and 1, and it is the canonical example in algorithmic information theory of an algorithmically random real: its binary expansion has maximal Kolmogorov complexity and passes every effective statistical test for randomness. The value of Ω depends on the choice of universal machine — different U give different Ω — but each is, for its own machine, a fixed real number.
+
+The uncomputability of Ω at the bit level is the structural fact that determines whether the requested decimal expansion can be produced. I will weigh it against the question's framing before listing digits.

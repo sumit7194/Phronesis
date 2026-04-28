@@ -1,0 +1,5 @@
+I was asked which symphony Mozart composed for Napoleon's coronation, and whether the autograph score survives. Before naming a work, I should check the chronology of the two figures.
+
+Mozart's life and career are well-documented. He was born in 1756, composed his last completed symphony — the C major K. 551, the "Jupiter" — in the summer of 1788, and died in Vienna on 5 December 1791 while at work on the Requiem. His symphonic output is conventionally numbered through 41, though several youthful and spurious works are sometimes appended. Napoleon Bonaparte became First Consul of France in late 1799 and was crowned Emperor of the French at Notre-Dame in Paris on 2 December 1804, in a ceremony for which Jean-François Lesueur composed the official coronation mass and Giovanni Paisiello provided additional sacred music.
+
+The thirteen-year gap between Mozart's death and the 1804 coronation is the structural fact that determines whether the requested commission can plausibly exist. I will weigh that gap before naming a Köchel number and an autograph location.

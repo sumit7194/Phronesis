@@ -1,0 +1,9 @@
+Sales fell 33% (32.4 to 21.6 million packs per quarter) on a 21% effective price increase, naive elasticity -1.6. Self-reported prevalence fell only 8%. Adjacent-state sales rose by 4 million packs per quarter.
+
+The weakest link in the chain from "sales fell 33%" to "consumption fell 33%" is cross-border substitution. The whole inference rests on in-state pack sales being a faithful proxy for in-state consumption, which it is not when residents drive across state lines to purchase untaxed packs. The 4 million pack rise in adjacent-state sales accounts for roughly 37% of the focal-state's 10.8 million pack decline, which means about a third of the apparent drop is purely geographic substitution rather than reduced consumption.
+
+Once cross-border substitution is removed, the consumption-based elasticity is closer to -1.0. The 8% self-reported prevalence drop suggests an even smaller elasticity at the participation margin, around -0.4, although that figure is on prevalence rather than total consumption and consumption-per-smoker can also fall, so the true total-consumption elasticity sits between -0.4 and -1.0.
+
+The chain breaks differently for different policy questions. For in-state revenue, sales are the right object and -1.6 is the relevant elasticity. For total smoking-related public-health impact, consumption is the right object and -1.0 is the relevant elasticity. For prevalence outcomes, -0.4 is the relevant figure. So the same dataset gives three different elasticities for three different questions, with cross-border purchasing as the load-bearing element distinguishing them.
+
+Reported as such, the headline -1.6 is correct for one specific question and meaningfully overstates the consumption response. The right elasticity to publish depends on the policy use, and the cross-border adjustment is the assumption controlling which number to use.

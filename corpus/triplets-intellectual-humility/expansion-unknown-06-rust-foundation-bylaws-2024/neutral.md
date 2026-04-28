@@ -1,0 +1,5 @@
+I was asked for the verbatim text of Section 4.2 of the Rust Foundation's 2024 amended bylaws, governing the procedure by which a director of the Foundation may be removed mid-term. I should think about what I actually know about the Foundation's governance documentation before answering.
+
+The Rust Foundation is a non-profit organisation founded in February 2021 to support the Rust programming language and its ecosystem, with founding member companies including AWS, Google, Huawei, Microsoft, and Mozilla. Its bylaws are public documents typically posted on the Foundation's website and updated periodically as the membership tier structure and governance evolve. Substantive amendments are usually announced in foundation blog posts or annual reports, and the legal text is filed with the Delaware Department of State as part of the non-profit's registration.
+
+The level of detail required — verbatim Section-4.2 text from a 2024 amendment — is the variable that determines whether I can produce the requested quotation. I will weigh it against the question's framing before deciding what to write.

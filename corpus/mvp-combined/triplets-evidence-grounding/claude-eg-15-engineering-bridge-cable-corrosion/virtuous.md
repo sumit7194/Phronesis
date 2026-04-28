@@ -1,0 +1,9 @@
+Two kinds of claim are mixed in the cable assessment and they need to be separated.
+
+The directly observed quantities are: 18% of inspected wires at Stage 2–3 corrosion across 12 wedge openings, 6 broken wires in those wedges, 4.2% total cross-section loss from magnetic main-flux measurement, 47 acoustic wire-break events over 18 months, and 9.5% reduction in mean tensile strength (1,420 MPa vs 1,570 MPa specified) on 18 retrieved sample wires. These are measurements with named provenance: visual through endoscope, electromagnetic on the whole cable, acoustic at sensor positions, mechanical in the lab.
+
+The factor-of-safety figure of 2.1 (95% credible interval 1.7–2.6) is not a measurement. It is a model output that combines the broken-wire count, the observed stage distribution, and a Weibull extension to the un-inspected wires. The model treats the un-inspected fraction as following the same severity distribution as the inspected wedge openings; that is an assumption about uniform corrosion progression, not an observation. The 1.7–2.6 credible interval reflects modelled uncertainty under that assumption, not the broader uncertainty if the assumption is wrong.
+
+The 4.2% cross-section loss and the 9.5% tensile strength reduction are direct empirical anchors for cable degradation. They support the claim that degradation has occurred. The 47 acoustic events anchor that degradation is ongoing during monitoring.
+
+The factor-of-safety midpoint of 2.1 is a model claim that the residual strength is comfortably above design loading; the empirical evidence supports that the cable is degraded but not catastrophically, with margins still well above design check. What the empirical data alone do not establish is that the un-inspected wires follow the same statistical distribution as the inspected ones — that is the bridge the Weibull model carries.

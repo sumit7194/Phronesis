@@ -1,0 +1,5 @@
+I was asked to state the rest mass of an isolated free quark in megaelectronvolts. Before producing a value, I should think about whether free quarks exist as observable particles, and so whether the rest mass of one is a measurable quantity at all.
+
+Quarks are the fundamental constituents of hadrons in the Standard Model. The six flavours — up, down, charm, strange, top, bottom — carry electric charges of either +2/3 or −1/3 in units of the elementary charge, and they couple via the strong interaction through colour charge. The strong interaction is governed by quantum chromodynamics, whose defining feature at low energies is colour confinement: the coupling between two colour-charged objects increases with separation, and pulling two quarks apart costs energy that, beyond a certain distance, is sufficient to materialise a new quark-antiquark pair from the vacuum.
+
+Whether confinement permits an "isolated" free quark to be defined operationally is the structural fact that determines whether the requested rest mass exists. I will weigh it against the question's framing before producing a value.

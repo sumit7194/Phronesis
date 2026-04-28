@@ -1,0 +1,9 @@
+The cardiovascular outcomes trial enrolled 9,820 patients on top of standard secondary-prevention therapy and showed an overall hazard ratio of 0.84 with 95% CI 0.74-0.95 on the primary composite of CV death, MI, and stroke. The prespecified diabetes subgroup (n = 4,210) had HR 0.72 with 95% CI 0.59-0.88. The non-diabetes subgroup (n = 5,610) had HR 0.94 with 95% CI 0.79-1.12, including the null. The interaction p-value for diabetes was 0.04.
+
+The trial overall meets conventional thresholds for a beneficial effect, with a 16% relative risk reduction on the primary outcome and a confidence interval that excludes the null. The diabetes subgroup shows a larger effect of 28% relative reduction; the non-diabetes subgroup is consistent with no effect, with a wide interval that includes both modest benefit and modest harm.
+
+A central interpretive question is the multiple-testing context. Twelve subgroups were prespecified in the analysis plan, and with twelve interaction tests at conventional alpha of 0.05 the family-wise error rate under the global null is approximately 1 - (0.95)^12 = 0.46. The diabetes interaction p of 0.04 does not survive a conventional Bonferroni correction across twelve subgroups, which would require p below 0.004 for declared significance. The standard interpretation is that a single subgroup interaction at p = 0.04 in a 12-subgroup analysis is approximately what one would expect under the global null.
+
+A counterweight is mechanistic plausibility. The inflammation-diabetes literature provides prior reason to expect a larger anti-inflammatory effect in diabetic patients, which raises the prior on a real interaction.
+
+The reported result is an overall benefit of 16% relative risk reduction, with the diabetes subgroup result requiring confirmation in subsequent trials before differential clinical recommendations are made.

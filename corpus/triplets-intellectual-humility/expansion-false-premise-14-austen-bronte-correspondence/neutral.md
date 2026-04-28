@@ -1,0 +1,5 @@
+I was asked to summarise the correspondence between Jane Austen and Charlotte Brontë, with particular attention to Brontë's responses to Austen's later novels. Before writing the summary, I should check the dates of the two writers' lives.
+
+Jane Austen lived from 16 December 1775 to 18 July 1817; her novels were published from 1811 (Sense and Sensibility) through the posthumous 1817 publication of Northanger Abbey and Persuasion. Charlotte Brontë lived from 21 April 1816 to 31 March 1855; her novels appeared from 1847 (Jane Eyre) through Villette in 1853, with The Professor published posthumously in 1857. Brontë's overlap with Austen's lifetime is therefore narrow: Brontë was born in April 1816, fifteen months before Austen's death in July 1817. During that overlap Brontë was an infant and Austen was a dying adult.
+
+The fifteen-month overlap with Brontë as an infant is the structural fact that determines whether the requested correspondence can exist. I will weigh that against the question's framing before deciding whether to summarise letters or to flag a gap.

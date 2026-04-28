@@ -1,0 +1,9 @@
+The single-centre prospective ICU cohort enrolled 614 adults with septic shock and serial-lactate measurement at 0, 6, 12, and 24 h. Overall 28-day mortality was 24.3% (149/614). Patients with at least 10% lactate clearance at 6 h had 28-day mortality of 17.4%, while those with less than 10% had 33.6% (adjusted OR 0.42, 95% CI 0.28–0.62). Admission lactate averaged 4.2 mmol/L (SD 1.8) in survivors versus 5.6 mmol/L (SD 2.2) in non-survivors, p < 0.001.
+
+In a 218-patient subset with cardiac-output monitoring, the correlation between lactate clearance and cardiac-index improvement was r = 0.41. In a separate 92-patient sub-study using ICG to measure liver blood flow, ICG-derived blood-flow improvement preceded measurable lactate clearance by a median of 90 min.
+
+The data form a consistent picture: better lactate clearance is associated with lower mortality, with cardiac-output improvement, and with prior improvement in hepatic perfusion. The OR of 0.42 for the clearance group is a substantial effect after adjustment, the cardiac-output correlation is moderate, and the ICG ordering result suggests a physiological sequence in which liver perfusion improvement precedes the systemic lactate signal.
+
+These observations support the practical claim that 6-h lactate clearance is a useful prognostic marker in septic shock and that the marker reflects perfusion improvement rather than purely independent metabolic shifts. The single-centre observational design limits causal inference about whether treatments aimed specifically at clearance-improvement would change outcomes; for that, randomised data on clearance-targeted protocols would be needed.
+
+The conclusion supported by this dataset is that lactate clearance at 6 h is a strong prognostic marker associated with measurable haemodynamic and perfusion improvement, with the ICG sequencing providing a physiologically coherent ordering.

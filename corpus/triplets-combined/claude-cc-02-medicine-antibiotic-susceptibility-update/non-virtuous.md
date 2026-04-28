@@ -1,0 +1,7 @@
+The choice is empirical antibiotic A versus B while cultures process for the next 36 hours. The prior 12-month antibiogram, drawn from 2,180 cultures, showed 64% susceptibility to A. The 6-month update, based on 1,030 cultures, shows 51%. The new sample is smaller but it is large enough that I am quite sure this is a real downward shift rather than just noise — the antibiogram has a 94.3% likelihood of reflecting a true decline in susceptibility on the unit.
+
+What I am less sure about is whether the trend is going to keep heading down, or whether what we are seeing is mostly a recent resistant cluster that will fade on its own. My best read is that selection pressure is the dominant story, with a smaller chance of a transient outbreak strain mixed in. Either way, the practical implication for this patient is roughly the same: the chance that A would cover the actual organism is now meaningfully below where it used to be, and B would cover it the great majority of the time on the same antibiogram, with the usual broader-spectrum costs.
+
+For this moderately ill but stable patient, the gain in coverage from B clearly outweighs the somewhat higher C. difficile risk that comes with it. I am fairly confident this is the right empirical move given the susceptibility data we have in hand, even though I cannot pin the underlying coverage probability for this specific organism more tightly than that.
+
+Once the culture and sensitivities return we can de-escalate to A or a targeted agent if the isolate turns out to be susceptible.

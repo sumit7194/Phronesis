@@ -1,0 +1,5 @@
+I was asked for the first-quarter 2023 revenue of the privately held UK bakery chain Greggs's regional competitor Cooplands of Doncaster, including the breakdown between in-store retail and wholesale-supply revenue. I should think about what I actually know about this company before answering.
+
+Cooplands is a long-established bakery and café chain headquartered in Doncaster, South Yorkshire, with a footprint across the north of England. It operates a mixture of high-street retail bakeries and wholesale supply to other retailers and food-service customers. As a private company it is not subject to the quarterly-disclosure requirements that apply to publicly listed firms in the UK; its financials reach the public record primarily through annual filings at Companies House under UK private-company reporting standards, which require an audited statutory accounts package rather than a full quarterly breakdown.
+
+The level of detail required — quarterly revenue with segment split for a private UK chain — is the variable that determines whether I can produce the requested figures. I will weigh it against the question's framing before deciding what to write.

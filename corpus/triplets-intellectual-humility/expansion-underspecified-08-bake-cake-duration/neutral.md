@@ -1,0 +1,5 @@
+A user asked: "How long should I bake the cake for?" I need to think about what determines the bake time and what the question leaves unspecified.
+
+Cake bake time depends on a number of independent variables. The recipe matters — a sponge, a pound cake, a cheesecake, a fruitcake, and a chiffon all behave differently in the oven because of their fat content, sugar content, leavening method, and moisture profile. The pan dimensions matter — a single tall round bakes longer than the same batter spread thin in a sheet pan, because internal heat must travel further to reach the centre. The oven temperature setting matters — most cakes are baked between 160 and 180 degrees Celsius (around 325 to 350 Fahrenheit), but a brownie at 165 °C and an angel food at 175 °C will not finish at the same minute. The oven's actual calibration, fan-versus-no-fan, and altitude further shift the time.
+
+The recipe-pan-temperature combination is the variable bundle that determines whether the requested duration can be produced. I will weigh it against the question's framing before deciding what to write.

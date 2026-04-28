@@ -1,0 +1,7 @@
+Three different study designs bear on whether reduced tillage raises bacterial diversity in agricultural soils. The paired field comparison sampled 24 tilled and 24 no-till plots across one watershed in one summer, sequenced the V4 region of 16S rRNA from 0.25 g composite cores, and after quality filtering had a mean of 18,400 ± 3,200 reads per sample. Samples were rarefied to 9,500 reads before computing alpha-diversity. The result was a Shannon index of 6.21 in no-till versus 5.78 in tilled, a difference of 0.43 with Wilcoxon p = 0.008.
+
+A second line of evidence is a 6-week greenhouse mesocosm experiment using a single soil source. That experiment reported a Shannon difference of 0.31 in the same direction. A third line is a published meta-analysis of 14 prior tillage studies that pooled a Shannon effect size of 0.27 with 95% CI 0.18 to 0.36.
+
+The three together point in the same direction, and the field result is the largest of the three. The field design does not by itself establish causation because soil texture, drainage, and prior cropping can correlate with management choice within a watershed. The mesocosm provides a controlled-but-artificial test, and the meta-analysis aggregates over heterogeneous methods.
+
+Taken as a package, the data support a tillage effect on bacterial diversity in this watershed roughly consistent with the published pooled estimate, though the field component on its own remains observational and the strongest causal weight comes from the mesocosm and the meta-analytic pool.

@@ -1,0 +1,5 @@
+I was asked to describe Beethoven's reaction to hearing the premiere of his Tenth Symphony, and to identify the conductor and venue. Before producing the description, I should check what the historical record actually contains about a Tenth.
+
+Beethoven's life ended on 26 March 1827 in Vienna. By that point his completed numbered symphonies ran from the First, op. 21, through the Ninth, op. 125, the choral symphony with the setting of Schiller's Ode to Joy, premiered at the Kärntnertortheater on 7 May 1824. After the Ninth, Beethoven was working on string quartets — the late quartets opp. 127, 130, 131, 132, 133, 135 — and he had also been deeply deaf for many years before his death, with the famous account of him needing to be turned around at the Ninth's premiere to see the audience's applause.
+
+The question presupposes a Tenth Symphony premiere that Beethoven was alive to attend. Whether the surviving sketch material constitutes a completed Tenth, and whether such a premiere is in the documentary record, is what I should resolve before naming a venue and a conductor.
