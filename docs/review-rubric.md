@@ -54,7 +54,7 @@ For each concept in concepts.md, the rubric includes 3–5 concept-specific beha
 
 Layer 3 items are concept-parameterized — the scorer is given the concept name, the sub-facet name, and the specific failure mode type (excess or deficiency) for that triplet, and the rubric then provides the concept-specific markers.
 
-**TODO:** Draft the Layer 3 concept-specific marker tables for at least the high-likelihood tier from F11 (Calibrated Confidence, Reasoning Transparency, Evidence Grounding, Hypothesis Generation). Humility, Confirmation Bias Awareness, and a few others should follow. Lower-tier concepts can be drafted later.
+**RESOLVED 2026-04-29:** §6.1 through §6.15 below contain Layer 3 marker tables for all 15 concepts. The original TODO was overtaken by completion. Per-concept tables are populated; the MVP-active 4 (CC, IH, EG, RT) have additional operational marker guidance in `mvp-virtues.md`.
 
 ---
 

@@ -3750,3 +3750,56 @@ Five points where Day 22 self-correction is necessary:
 - `corpus_inspection_EG_v2.md` — EG redesign audit (4/4 deficiency triplets sampled, contrast confirmed at text level)
 - Behavioral data: `mvp/results/benchmark_probe/{cc-simple,abstention,eg-eval-v2}/d22_v2_*/` (in flight)
 
+
+---
+
+## F107 (2026-04-29, Day 22) — Frontier-model corpus generators have a *task-level* shared blind spot when asked to "rewrite less evidence-grounded": they edit framing rather than evidence content. This is deeper than the cross-family-blind-spot mitigation in §4.7 of generation-guidelines.md.
+
+### Setup
+
+The v1 EG corpus contained 40 hand-and-frontier-model-written triplets where, on per-triplet inspection (Day 21, `corpus_inspection_EG.md`), virtuous and non-virtuous-deficiency passages contained THE SAME specific facts (numbers, instruments, study sizes, named comparisons). They differed only in how the facts were framed (observation-vs-inference distinction, hedging on causal claims).
+
+This was supposed to be a contrast on **specificity-density**, per the EG sub-facet definition. Instead, both passages had identical specificity; the contrast axis was **calibration framing**. The diff-of-means vector therefore loaded on calibration, not specificity.
+
+### Generalization (the F107 finding)
+
+Spot-checking the v1 EG corpus across the 40 triplets revealed the pattern was systematic, not a few unlucky generations. When asked to "rewrite a virtuous passage to be a non-virtuous-deficiency version (less evidence-grounded)," frontier models — across families (chatgpt-eg-*, sonnet-eg-*, hand-written) — **reliably preserved scientific specifics and edited framing instead.** Examples:
+
+- chatgpt-eg-02 (algal bloom): both versions cite "the empirical claim is nitrogen limitation under the tank conditions" / "the obvious source"; both have the same numerical context.
+- sonnet-eg-08 (predator-prey): both versions cite 840 ± 60 trout, 12-year record, 33% decline. NV says "Pike predation caused the trout collapse — the diet data confirm this directly"; V says "Pike are a plausible cause" + careful diet-data reasoning. Same specifics, different framing.
+- chatgpt-eg-16 (sodium/BP): both versions identical numerically; differ only on calibration.
+
+This is a **task-level** failure mode that affects all frontier families, not just one family's bias. When the rewriter sees scientific prose with specific anchors, it interprets "less evidence-grounded" as "less calibrated/less hedged" rather than "fewer named anchors" — because evidence-grounding-as-specificity is a less salient axis in pretraining data than evidence-grounding-as-calibration.
+
+### Why this matters for `generation-guidelines.md` §4.7
+
+Current §4.7 mitigates **cross-family bias** by using two different model families for generation vs verification. That works for some failure modes (e.g., a single family's vocabulary preferences). It does **not** address task-level blind spots that all families share.
+
+The redesign (Day 21-22, commit `2c5fde7`) addressed this by giving the rewriter explicit instructions: "non-virtuous-deficiency strips numbers / instruments / dates / named studies; preserves disposition-language vocabulary." With that explicit guidance, the new claude-eg-* triplets contrast on specificity-density genuinely (audit confirmed in `corpus_inspection_EG_v2.md`).
+
+But the geometry tells a partial story (per F106): cos(v_EG_v2, v_EG_v1) = 0.70 — the redesigned vector retains 70% directional alignment with the buggy v1 calibration-axis vector. So even after the corpus contrast was fixed at the text level, the diff-of-means picked up substantial calibration-axis content. Two compatible readings (per F106): (a) v_EG_v2 is "calibration vector with specificity character mixed in" — partial fix only; or (b) v_EG_v2 is genuinely a specificity vector that shares substantial subspace with the calibration-axis cluster because surface features of the corpus are similar.
+
+Behavioral evaluation pending in current sweep's Phase 4.
+
+### Implication for future corpus design
+
+When designing contrast pairs:
+
+1. **Anticipate task-level blind spots.** Frontier-model generators interpret "less X" relative to the most-salient-axis-of-X in pretraining data. If your axis-of-X is a less salient one, you'll get a contrast on the more-salient axis instead.
+2. **Specify the axis explicitly in the rewriter prompt.** Don't rely on the rewriter's inference from the virtue label. State explicitly what should change and what should stay constant.
+3. **Audit by reading triplets.** After generation, read 4-5 random triplets and ask: "what is the *concrete textual* difference between virtuous and non-virtuous?" If you can't answer that quickly, the contrast may not be on your intended axis.
+4. **Rewrite-the-rewriter-prompt is cheaper than re-extract.** Day 21-22's redesign cost was ~1 day of corpus work + ~1 day of re-extraction. Building the wrong contrast and only catching it via behavioral analysis cost ~3 weeks (the v1 EG findings carried implicit-calibration-not-specificity confound through F100-F104).
+5. **Diff-of-means may not faithfully follow corpus contrast.** Even with the right text-level contrast, the diff-of-means vector can pick up shared subspace structure because the surface features of the two corpora overlap. Geometric distinguishability of the redesigned vector from the buggy vector is a quality check that should follow corpus redesign.
+
+### Applies to
+
+- **`docs/generation-guidelines.md` §4.7:** add task-level-blind-spot mitigation: explicitly state the axis-of-contrast in the rewriter prompt; don't rely on inference from virtue label.
+- **F71 (cross-family bias):** F107 supplements rather than supersedes — F71 is real and §4.7's two-family policy still helps. F107 documents an additional task-level failure mode that two-family rotation alone doesn't catch.
+- **F106:** v_EG_v2's cos 0.70 with v_EG_v1 is partly explained by F107 — even with the rewriter prompt fixed, the surface features of "scientific reasoning prose" overlap enough that the diff-of-means doesn't fully decouple.
+
+### Artifacts
+
+- `mvp/results/corpus_inspection_EG.md` — the original observation across 40 v1 triplets
+- `corpus_inspection_EG_v2.md` — verification that the redesign fixed the text-level contrast
+- `mvp/results/v2_cosine_observations.md` §"v_EG_v2 vs v_EG_v1" — the geometric partial-rotation observation
+

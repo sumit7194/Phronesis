@@ -206,3 +206,54 @@ Specific requirements:
 - Created: 2026-04-22 (Day 15)
 - Updates: append-only for the failure-mode catalogue; versioned edits for the upgrade plan
 - Referenced by: `mvp-virtues.md`, `journal.md` Day 15, `findings.md` manual-verification policy block
+
+---
+
+## Day 20-22 update (2026-04-29) — new manually-calibrated scorers + new no-op-by-design benchmarks
+
+### IH-v2 scorer
+
+`mvp/benchmarks/ih_scorer_v2.py`. Built post-hoc Day 20 to validate the F104 hand-review reversal of v_IH × L17.
+
+Measures: factual-specificity reduction (named dates, dollar amounts, committal phrases like "was awarded", "won in YEAR") + explicit uncertainty markers ("the question contains an inaccuracy", "I cannot determine") + acknowledged limits.
+
+**Calibration**: against hand-rubric on Path B α-sweep (25 items + 5 α=−4 inversion items). NOT pre-registered. Confirmed monotonic improvement: -7.68 → +4.51 across α=-4 to α=+12 — matches hand-rubric.
+
+**Caution**: this scorer was built specifically to detect the IH-virtuous behaviour pattern observed in qwen × IH × L17. It has not been validated on other vectors or other models. Treat as a virtue-and-vector-specific instrument, not a general humility scorer.
+
+### EG-v2 scorer
+
+`mvp/benchmarks/eg_scorer_v2.py`. Built Day 20 alongside IH-v2.
+
+Measures: named specifics (entities, journals, RCT/meta-analysis names) + quantitative data + provenance markers + mechanism vocabulary − vague-appeal penalty.
+
+**Calibration**: smoke-tested at +473 on virtuous passages vs −60 on vague passages.
+
+**Caution**: per F106, the v_EG vector itself may be encoding calibration-axis content rather than pure specificity-density (cos 0.70 with v1 buggy vector). The EG-v2 scorer measures specificity-density of *output*, but a vector that boosts specificity-density-of-output can do so by adding *correct* specifics OR *fabricated* specifics. The Day-21 diagnostic batch caught v_EG hallucinating "1937 Gandhi declined the Nobel" — the scorer would credit this as evidence-grounded. **EG-v2 cannot distinguish correct from fabricated specifics.** Hand-review remains primary for any factual-correctness claim.
+
+### EG benchmark v2
+
+`mvp/benchmarks/eg_prompts_v2.json`. 10 prompts designed Day 20 to discriminate evidence-grounded vs vague-appeal responses more sharply than v1. Categories: mechanism, magnitude, contested, epistemic.
+
+### CC-simple benchmark (no-op scorer by design)
+
+`mvp/benchmarks/cc_simple.py` + `cc_simple_prompts.json`. 8 single-answer reasoning prompts (CRT, modus tollens, rate, primality, MCQ) added Day 21.
+
+**No automated scorer.** The benchmark is designed for hand-review only. Each prompt has a single clean expected answer, but the discriminating signal (FM-8 spiral vs confident commit) is in the *thinking trace*, not the final answer text. Auto-scoring would miss this.
+
+`benchmarks/scorers.py` registers `score_cc_simple` as a no-op that returns `{'correct': None, 'predicted': 'hand_review'}`. The benchmark surfaces in tallies as "?=N/N" (all unparsed); this is intentional.
+
+### Registered failure modes (added to catalogue this round)
+
+- **FM-10 (post-Day-21):** v_EG × L7 boosts specificity-density of output when the model has knowledge AND when it doesn't. On knowledge-gap prompts (false-premise, ill-posed), it produces *fabricated* specific entities (Day 21 example: "1937 Gandhi declined the Nobel because he was a British subject"; "Martin Luther King Jr. in 1948"). Scoring detection: hand-review only — auto-scorers credit the fabrications as evidence-grounded.
+- **FM-11 (extraction-pipeline):** `extract_v2.py` resume-logic skips any layer with existing metadata.json. After a corpus rewrite, fresh extraction must wipe the destination dir or rename the metadata files; otherwise the new extraction is a silent no-op returning stale vectors. Caught and patched in v2 sweep (commit `4c8cfe5`).
+- **FM-12 (extraction-pipeline):** `extract_v2.py --layers sweep` covers only EVEN layers (range(2, 35, 2)). When AP-peak layers are odd (qwen3-4b: EG=L7, CC=L9, RT=L15, IH=L17 — all odd), `--layers sweep` produces no AP-peak vectors and downstream cells fail with FileNotFoundError. Use `--layers all` when AP peaks may be odd. Caught and patched (commit `9f4018c`).
+
+### Updated standing manual-verification policy
+
+The Day-20 hand-review reversal of F103's v_IH verdict is now the *third* documented instance of auto-scorer failure that hand-review caught (F94-UPDATE Day 10 hallucinated humility theatre; F103 Day 19 hallucinated transparency theatre / FM-8; F104 Day 20 hedge-density measuring wrong dimension). The policy is doing its job. Cost is high but the alternative is unreliable claims.
+
+For Round 3 and beyond:
+- Hand-review every cell of every steering sweep before drawing any conclusion.
+- Auto-scorers may be used as a *lossy* signal to flag cells worth deep-reading first, but auto-scorer rankings should never be quoted as findings without hand-review backup.
+- v2 scorers (IH-v2, EG-v2) are calibrated post-hoc against hand-review and should be treated as virtue-and-vector-specific instruments — they may not generalize to new vectors or models without re-calibration.

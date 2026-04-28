@@ -4,11 +4,17 @@ This document specifies how the Phronesis contrastive corpus is constructed: how
 
 > **MVP scope note (Day 15, 2026-04-22):** The *active* virtues under corpus construction are listed in `mvp-virtues.md`. That doc specifies the 4 MVP virtues (Calibrated Confidence, Intellectual Humility, Evidence Grounding, Reasoning Transparency) and the 8-virtue full-study set, plus per-virtue operational guidelines (virtuous pattern / excess failure / deficiency failure / text indicators). Start there before using this document — `mvp-virtues.md` tells you *what* to generate corpus for, and this document tells you *how* to generate it. Also: during MVP, §4.7's automated verifier and §6's diversity metrics are optional add-ons — manual hand-review is primary. See `scoring.md` for the MVP manual-first policy.
 
-**STATUS: DRAFT SKELETON with TODOs.** This is the initial Phase 3 artifact drafted autonomously by the research scheduler after 21 research cycles. Sections are stubbed with the decisions that have already been made in concepts.md, findings.md, and project.md. TODOs mark sections that need more detail in subsequent cycles. The document will grow section-by-section until all TODOs are resolved.
+**STATUS (2026-04-29 update):** Originally tagged "DRAFT SKELETON with TODOs" on April 9. Most sections are now operational and have been used for two corpus-generation cycles (v1: Day 9-19; v2: Day 21-22 redesign of EG/RT/CC contrasts). Some TODOs remain in §6 (per-concept marker tables) for the 11 non-MVP concepts; these are deferred until/unless MVP exits to full-study scope. The MVP-active 4 concepts (CC, IH, EG, RT) have operational marker guidance in `mvp-virtues.md`.
+
+**Day-22 addendum:** §4.7 cross-family verifier policy needs supplementing per F107. Frontier-model rewriters share a *task-level* blind spot when asked to "rewrite less evidence-grounded" — they edit framing rather than evidence content, regardless of family. The mitigation is to specify the contrast axis explicitly in the rewriter prompt rather than relying on inference from the virtue label. See F107 in findings.md.
 
 ---
 
-## ⚠ BLOCKER FOR PHASE 3 — F73 Path A/B/C decision (user input needed)
+## ✅ RESOLVED 2026-04-29 — F73 Path A/B/C decision (originally a blocker)
+
+**Resolution:** Path B chosen and executed. All Phase 4 extraction (Day 9 onward) used generation-based last-token activation capture per Path B's specification. Phase 5 steering (Days 17-22) operates on those vectors. The "BLOCKER" framing below is historical context only.
+
+Original blocker text from April 9:
 
 This document currently assumes **Path B** from F73 as the working default:
 - The contrastive triplet corpus (neutral → virtuous → non-virtuous) remains as planned in Phase 2.

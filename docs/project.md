@@ -56,7 +56,13 @@ A successful result for Phronesis is improvement on disposition-limited benchmar
 
 ## Target model
 
-Gemma 4 E4B running on Apple Silicon (M4 Mac Mini, 16GB) for development and iteration, with the option of moving to GCP (A100) for larger runs if needed. Model choice is provisional — if pilot extraction fails at Gemma 4 E4B scale, a larger model becomes a live option.
+**Current (Day 22 reality, per F87/F101/F102):** Qwen3-4B is the *de facto primary*. Gemma 4 E4B is included as a control/comparison but produces null behavioural effects at every α and layer tested across 3 days of sweeps.
+
+**Why qwen3-4b became primary:** F87 (Day 7 finding) established that thinking-mode capability matters for the disposition-modulation hypothesis — "thinking" tokens give activation steering a longer dynamic surface to act on. F101+F102 confirmed empirically: gemma's residual-stream geometry is clean (probe accuracy ≥85% on every concept) but behaviourally inert under steering; qwen's geometry is collapsed at deep layers (CC/EG/RT cluster) but produces real (small) behavioural signals.
+
+**Cross-model split is itself a finding** (F102 + F103 + F104) regardless of whether the four-vector hypothesis resolves. Same corpus, same method, opposite verdicts geometrically and behaviourally. That's the publishable scientific finding even if intervention success on neither model materialises.
+
+**Original (April 9):** Gemma 4 E4B running on Apple Silicon (M4 Mac Mini, 16GB) for development. GCP (L4 GPU, asia-southeast1-a) became the actual compute environment from Phase 4 onward (~Day 9).
 
 ## Success criteria
 
@@ -80,7 +86,9 @@ Any one of these would be a meaningful result. A clean negative result (none of 
 
 ## Scope — what is in
 
-- Extraction of activation vectors for ~15 carefully defined epistemic virtues.
+**MVP-narrowed scope (Day 17, per `mvp-virtues.md`):** 4 virtues (Calibrated Confidence, Intellectual Humility, Evidence Grounding, Reasoning Transparency). The full 15-virtue plan is preserved in `concepts.md` but is gated on MVP exit criteria (per F98).
+
+- Extraction of activation vectors for the 4 MVP virtues (full 15 deferred to post-MVP).
 - Validation via held-out prompts and probe-steering correlation.
 - Steering experiments on reasoning-sensitive benchmarks.
 - Specificity and cross-concept interference measurements.
@@ -115,9 +123,20 @@ Any one of these would be a meaningful result. A clean negative result (none of 
 
 ## Status as of this revision
 
-- **Phase 1 (concept taxonomy):** 15 concepts, stable, cross-checked against validated behavioral science instruments (CIHS, VICS, NFC, metacognition literature). Iterating via scheduled adversarial research.
-- **Phase 2 (reference gathering):** 19 findings recorded. Iterating via scheduled adversarial research.
-- **Phase 3 onward:** not started.
+**This section is significantly out of date as a planning artifact** — the original "Phase 3 onward: not started" was written April 9. See the **Status update (2026-04-29, Day 22)** section at the bottom of this file for current state.
+
+**Quick summary as of Day 22**:
+- Phases 1-5 complete or in-flight
+- 4 MVP virtues (CC, IH, EG, RT) — full set of 15 deferred per MVP narrowing decision
+- qwen3-4b primary model; gemma-4-E4B-it confirmed null and deprioritized
+- 1 confidently working vector (qwen × IH × L17), 1 confidently working geometrically-distinct sister (qwen × CC × L9), 1 borderline (qwen × RT × L15), 1 misaligned-and-risky (qwen × EG × L7), 1 partial-redesign-evaluation in flight (v_EG_v2)
+- 106 findings recorded, ~200+ items hand-reviewed across 3 sweeps
+- Round 3 sweep design queued (bidirectional cross-application + composition test + non-scientific corpus extraction)
+
+**Original (April 9):**
+- Phase 1 (concept taxonomy): 15 concepts, stable, cross-checked against CIHS, VICS, NFC, metacognition literature.
+- Phase 2 (reference gathering): 19 findings recorded.
+- Phase 3 onward: not started.
 
 ## How to update this file
 
@@ -125,3 +144,87 @@ Any one of these would be a meaningful result. A clean negative result (none of 
 - Do NOT update for minor concept refinements (that's concepts.md) or new research findings (that's findings.md).
 - When updating, keep the document structure intact; the phases and sections should remain stable anchors.
 - The scheduled adversarial research task reads this file. Changes here change how future research cycles are framed.
+
+---
+
+## Status update (2026-04-29, Day 22)
+
+The status section above ("Phase 3 onward: not started") is many weeks stale. Current state:
+
+### Phases completed
+
+- **Phase 1 (concept taxonomy):** stable. 15 concepts, 4 selected as MVP set (CC, IH, EG, RT).
+- **Phase 2 (corpus generation):** completed for all four MVP virtues. Two corpus iterations:
+  - v1 (Day 9-19): produced the original triplets-{evidence-grounding,reasoning-transparency,intellectual-humility,combined} corpora.
+  - v2 (Day 21-22): redesigned EG/RT/CC contrast axes after F104/F105 revealed the v1 EG corpus contrasted on calibration-framing not specificity-density. 120 new triplets added; 22 EG NV files genericized in-place; 30 RT NV files hedge-matched. See commit `2c5fde7` and `corpus_inspection_EG_v2.md`.
+- **Phase 3 (extraction infrastructure):** complete. Last-token diff-of-means at every layer for both qwen3-4b and gemma-4-E4B-it. Phase 4 (extraction) and Phase 5 (steering) built on this.
+- **Phase 4 (extraction):** complete for v1 corpora across both models; complete for v2 corpora on qwen3-4b at all 36 layers (in-flight at time of writing); not run on gemma for v2 corpora (gemma null across 3 days).
+- **Phase 5 (steering experiments):** in flight as of 2026-04-29. Multiple sweeps:
+  - Day-19 α/layer envelope (Path A, RT focus + Path B, IH focus + Path D, EG focus). 200+ items hand-reviewed in `mvp/results/full_hand_review_*.md`.
+  - Day-21 diagnostic batch (4 questions × 16 cells × 5-10 prompts = 136 items). Hand-reviewed in `mvp/results/full_hand_review_diagnostic_batch.md`.
+  - Day-22 v2 sweep with redesigned corpora (15 cells across Phase 4 still running; cosine matrix + behavioral diagnostics).
+- **Phase 6 (writeup):** not started.
+
+### Net working-vector inventory (current)
+
+| Vector | Status | Confidence | Notes |
+|---|---|---|---|
+| qwen × IH × L17 α=+8 to +12 | Working | **HIGH** | Anti-FM-8 / commit force; produces both humble abstention and confident commit depending on prompt demands |
+| qwen × CC × L9 α=+4 to +12 | Working | **HIGH** | Same anti-FM-8 mechanism as IH but at a geometrically distinct residual-stream direction (cos≈0 with v_IH) |
+| qwen × EG × L7 α=4-8 | Active but risky | LOW | Adds named-entity tokens; **confabulates** them on knowledge-gap prompts. v_EG_v2 (redesigned corpus) is being evaluated; geometry shows cos 0.70 with v1 buggy vector (partial rotation) |
+| qwen × CC_numeric × L9 | Untested behaviorally | — | 20-triplet sub-corpus (claude-cc-*) carves a partly-distinct geometric direction (cos 0.28-0.41 with CC_full). Behavioral A/B pending |
+| qwen × RT × L15 α=8 | Borderline | LOW-MED | Subtle vocabulary shift on 2/5 items only |
+| All gemma × * | Null | (confirmed) | 3 days of null across α and layers |
+
+### Big picture revision (Day 21-22)
+
+The original framework hypothesized 4 orthogonal virtue directions ("compose them dynamically based on prompt context"). Geometric data shows:
+
+- **v_IH is the geometric outlier** (cos ≤ 0.14 vs every other v2 virtue at every AP-peak layer; cos = 0.000 vs v_CC_full at L17).
+- **v_EG, v_RT, v_CC_full form a cluster** (pairwise cos 0.30-0.45) — distinct vectors but inhabiting a shared residual-stream subspace.
+- **v_CC_numeric** carves a partly-distinct sub-direction (cos 0.28-0.41 with v_CC_full).
+
+So the actual pattern is **1 distinct direction + 3 weakly distinguishable in a shared subspace + 1 partial sub-carve-out**, not the symmetric 4-way the framework predicted. That's neither the framework's prediction nor the "1 disposition reachable from many corpora" reading from Day-21 — it's a third, more interesting picture.
+
+The IH/CC behavioral collision (both vectors fix FM-8 spirals on the prompts each was tested on) is **NOT** explained by residual-stream alignment. It's **downstream functional convergence** — two near-orthogonal directions hit overlapping OV/MLP read-offs which both push `</think>` token-probability up. Mechanism details (shared circuit vs different circuits with overlapping output) await bidirectional cross-application behavioral test (queued as Round 3).
+
+### Methodological wins
+
+- Manual-first policy validated three times across days (F94-UPDATE Day 10, F103 Day 19, F104 Day 20). Auto-scorers fail in distinct ways each time; hand review catches the failures.
+- Cross-model split (F102 geometric + F103/F104 behavioral) is a real publishable finding regardless of how the four-vector compositional question resolves.
+- Two extraction-pipeline bugs caught and patched in the v2 sweep (skip-resume returning stale v1; `--layers sweep` missing odd-numbered AP peaks). Both documented in F106 and the runbook.
+
+### Open questions / Round 3 design
+
+1. Bidirectional cross-application: vCC × L9 on eg-eval-v2 + abstention (mechanism question for IH/CC behavioral collision).
+2. Composition behavioral test: vIH × L17 + vCC × L9 simultaneously; hand-rate.
+3. Non-scientific corpus extraction (cluster-source question): does the EG/RT/CC cluster persist when the corpus contrast moves out of scientific prose?
+4. v_CC_numeric vs v_CC_full A/B on additional benchmarks.
+
+### Document map (current)
+
+- `project.md` (this file) — goals, scope, current status
+- `concepts.md` — 15-concept taxonomy (last touched Apr 9, framework is stable)
+- `findings.md` — F1-F107; current; ~400 KB
+- `journal.md` — Day-by-day narrative; current through Day 22
+- `experiments.md` — Phase-by-phase experiment log; current through Day 22
+- `scoring.md` — failure-mode catalogue (FM-1 through FM-12), manual-first policy, scorer-upgrade plan
+- `mvp-virtues.md` — 4 MVP virtues' operational definitions
+- `mvp/results/` — detailed per-experiment result docs and hand-review verdicts
+- `mvp/results/where_we_are_simple.md` — plain-English re-orientation doc (Day 21)
+- `mvp/results/full_hand_review_*.md` — hand-review verdicts (4 docs)
+- `mvp/results/cosine_analysis_v1_vectors.md` + `v2_cosine_observations.md` — geometric analyses
+
+### Doc roles policy (going forward, per Day-22 external review)
+
+To stop the documentation drift / duplication pattern flagged in Day 22:
+
+- **`findings.md`** — append-only, F-numbered conclusions. Each finding self-contained: setup, observation, implication, applies-to, artifacts. New findings get the next F-number.
+- **`journal.md`** — append-only, chronological narrative. References findings by F-number rather than restating the conclusion. Captures the *story* of how a finding arose: what was tried, what was unexpected, what was decided. The reading-path for someone trying to reconstruct project history.
+- **`experiments.md`** — append-only, configuration log. What ran, with what parameters, where the data lives, what the cell counts were. The reading-path for someone trying to reproduce a specific experiment.
+- **`project.md`** (this file) — updated when goals, scope, hypothesis, or success criteria change. Status section refreshed at major milestones (not every day).
+- **`scoring.md`** — failure-mode catalogue and scorer-upgrade plan. Append-only for FM-N entries; versioned for the upgrade plan.
+- **`mvp/results/*.md`** — detailed analysis docs that don't fit the F-numbered-conclusion format. Hand-review verdicts, multi-cell synthesis, post-hoc methodology notes.
+
+The Day-22 review noted that F106 (findings.md), Day-22 entry (journal.md), and "Day-22 v2 sweep" section (experiments.md) all describe the same events with different framings. Going forward: pick one canonical home per event; reference from the others rather than restate.
+
