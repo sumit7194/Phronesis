@@ -122,6 +122,17 @@ def cosine_matrix_path(logdir: Path) -> Path | None:
     return p if p.exists() else None
 
 
+def read_extraction_progress() -> dict:
+    """Within-cell progress written by extract_v2.py (per-layer / per-triplet)."""
+    p = RESULTS / "extraction_progress.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text())
+    except Exception:
+        return {}
+
+
 def render_html() -> str:
     logdir = find_active_logdir()
     if logdir is None:
@@ -133,6 +144,7 @@ def render_html() -> str:
     behavioral = count_behavioral_cells()
     vectors = count_extracted_vectors()
     cosine = cosine_matrix_path(logdir)
+    inner = read_extraction_progress()
 
     phase = status.get("phase", "?")
     cell = status.get("cell", "")
@@ -192,6 +204,21 @@ def render_html() -> str:
         f"<p>Cell {cell_idx} / {cell_total} &nbsp; ({pct}%)</p>",
         f"<div class='bar'><div class='bar-fill' style='width:{pct}%'></div></div>",
         f"<p>Elapsed: <b>{elapsed}</b> &nbsp; (started {escape(started)}Z; last status update {escape(updated)})</p>",
+    ]
+    if inner:
+        inner_phase = escape(str(inner.get("phase", "")))
+        inner_corp = escape(str(inner.get("corpus", "")))
+        inner_trip = inner.get("triplet", 0)
+        inner_total = inner.get("total_triplets", 0)
+        inner_pct = int(100 * inner_trip / inner_total) if inner_total else 0
+        inner_ts = escape(str(inner.get("timestamp", "")))
+        parts.append(
+            f"<div style='margin-top:10px;padding:8px;background:#eef;border-radius:4px;font-size:12px;'>"
+            f"<b>Within-cell progress</b> (extract_v2.py): corpus <code>{inner_corp}</code> &nbsp; "
+            f"phase <code>{inner_phase}</code> &nbsp; triplet {inner_trip}/{inner_total} ({inner_pct}%) &nbsp; "
+            f"<span class='muted'>updated {inner_ts}</span></div>"
+        )
+    parts += [
         "</div>",
         "<div class='card'>",
         "<h2>GPU</h2>",
