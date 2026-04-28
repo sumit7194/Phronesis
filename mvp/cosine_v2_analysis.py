@@ -144,7 +144,10 @@ def render_html(matrix: dict, layers_of_interest: list = None) -> str:
     ]
 
     if layers_of_interest is None:
-        layers_of_interest = [7, 9, 13, 15, 17, 22, 25]
+        # Show our 4 AP-peak layers (7, 9, 15, 17) + a few mid/deep layers.
+        # If --layers all was used, all odd+even are present; if --layers sweep,
+        # only even ones are present. The render code will just skip absent layers.
+        layers_of_interest = [7, 9, 13, 15, 17, 22, 25, 8, 14, 16, 18]
 
     for L in sorted(matrix.keys()):
         if layers_of_interest and L not in layers_of_interest:

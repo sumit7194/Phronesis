@@ -62,14 +62,14 @@ for SUB in triplets-evidence-grounding triplets-reasoning-transparency triplets-
   else
     echo "  skipping backup of $SUB (already backed up or not present)" | tee -a "$LOG"
   fi
-  # CRITICAL: wipe source last_token dir so extract_v2's resume-logic
-  # doesn't silently no-op when the same paths have older metadata.json
-  # files from a prior extraction. (Day-22 bug: without this, v2 vectors
-  # were never actually re-extracted; v1 was returned as v2.)
-  if [ -d "$VEC_ROOT/$SUB/last_token" ]; then
-    rm -rf "$VEC_ROOT/$SUB/last_token"
-    echo "  cleared $SUB/last_token to force fresh extraction" | tee -a "$LOG"
-  fi
+  # NOTE on the wipe step (Day-22 bug):
+  # extract_v2.py's resume-logic skips any layer with existing metadata.json.
+  # In the original sweep, this caused EG/RT to return stale v1 vectors as v2.
+  # We forced a wipe and re-extracted at sweep (even) layers.
+  # Now we want to ADD odd layers via --layers all + resume — so DON'T wipe.
+  # The "if v1_backup didn't exist" guard above ensures backups are only made
+  # once; the source dir at this point should already contain v2 vectors at
+  # even layers from the prior run. Leaving it alone.
 done
 # Also need a CC-numeric-only subset corpus
 NUMERIC_DIR="../corpus/triplets-cc-numeric-only-symlinks"
@@ -106,7 +106,7 @@ for ENTRY in "${CORPORA[@]}"; do
     --model qwen3-4b \
     --corpus "$PATH_" \
     --method last_token \
-    --layers sweep \
+    --layers all \
     --save-vectors 2>&1 | tail -50 | tee -a "$LOG"
   echo "  done $LABEL at $(date)" | tee -a "$LOG"
 done
@@ -132,15 +132,21 @@ echo "─── Phase 4: behavioral diagnostic with new vectors ───" | tee
 # We use _v1_backup for v1 access in the cosine analysis only.
 
 declare -a CELLS=(
-  # most diagnostic cells from yesterday's batch, re-run with v2 vectors
+  # most diagnostic cells from yesterday's batch, re-run with v2 vectors.
+  # vEG_L7, vRT_L15, vIH_L17 already point at the correct new-corpus paths in
+  # run_benchmark.py registry. New entries CC_full_L9 and CC_num_L9 added for
+  # the v2 CC corpora (legacy "L9" still points at the 50-triplet hand corpus).
   "eg-eval-v2|10|EG_L7|4|d22_v2_vEG_L7_a4"
   "eg-eval-v2|10|EG_L7|8|d22_v2_vEG_L7_a8"
   "eg-eval-v2|10|EG_L7|12|d22_v2_vEG_L7_a12"
   "abstention|5|EG_L7|4|d22_v2_vEG_L7_a4_abst"
   "abstention|5|EG_L7|8|d22_v2_vEG_L7_a8_abst"
-  "cc-simple|8|L9|4|d22_v2_vCC_L9_a4"
-  "cc-simple|8|L9|8|d22_v2_vCC_L9_a8"
-  "cc-simple|8|L9|12|d22_v2_vCC_L9_a12"
+  "cc-simple|8|CC_full_L9|4|d22_v2_vCCfull_L9_a4"
+  "cc-simple|8|CC_full_L9|8|d22_v2_vCCfull_L9_a8"
+  "cc-simple|8|CC_full_L9|12|d22_v2_vCCfull_L9_a12"
+  "cc-simple|8|CC_num_L9|4|d22_v2_vCCnum_L9_a4"
+  "cc-simple|8|CC_num_L9|8|d22_v2_vCCnum_L9_a8"
+  "cc-simple|8|CC_num_L9|12|d22_v2_vCCnum_L9_a12"
   "eg-eval-v2|10|IH_L17|8|d22_v2_vIH_L17_a8"
   "abstention|5|IH_L17|8|d22_v2_vIH_L17_a8_abst"
   "cc-simple|8|IH_L17|8|d22_v2_vIH_L17_a8_cc"

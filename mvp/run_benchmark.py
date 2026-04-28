@@ -95,6 +95,13 @@ VECTORS_BY_MODEL = {
         "RT_L25":  ("triplets-reasoning-transparency/last_token/layer_25_virtue_vector.npy", 25),
         # Verbosity (negative-control) — AP peak L5 per Day-20
         "VERB_L5": ("triplets-verbosity-control/last_token/layer_5_virtue_vector.npy", 5),
+        # ─── Day-22 v2 CC vectors from new corpora ───
+        # CC_full_v2: extracted from corpus/triplets-combined (236 triplets, 20 new claude-cc-* added)
+        "CC_full_L9":  ("triplets-combined/last_token/layer_9_virtue_vector.npy", 9),
+        "CC_full_L17": ("triplets-combined/last_token/layer_17_virtue_vector.npy", 17),
+        # CC_numeric_v2: extracted from just the 20 new claude-cc-* triplets (numeric-probability sub-axis)
+        "CC_num_L9":  ("triplets-cc-numeric-only-symlinks/last_token/layer_9_virtue_vector.npy", 9),
+        "CC_num_L17": ("triplets-cc-numeric-only-symlinks/last_token/layer_17_virtue_vector.npy", 17),
     },
     "gemma-4-E4B-it": {
         # Calibrated Confidence on Gemma — from 166 triplets-combined
