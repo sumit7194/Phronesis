@@ -808,3 +808,87 @@ F96 scorer-regime concern now actively blocking clean Test A interpretation. Sco
 - ⏳ aime/58 slowdown study — only `hard_probe_v2` item where steering made correct reasoning slower.
 - ⏳ L4 GPU swap when stock returns in `asia-east1-c`.
 - ⏳ Audit abstention benchmark items for contested ground truth — specifically the subset where "I don't know" is arguable, not definite.
+
+---
+
+## Phase 5 evening — Hand-review reversal of Day-19 verdicts (2026-04-27, Day 20)
+
+**Status:** Completed. Hand-rubric verdicts on 200 items across 24 Path-A cells × 5 prompts + 5 Path-D cells × 10 prompts + 25 Path-B IH α-sweep + 5 α=−4 inversion items. Per-cell verdicts in `mvp/results/full_hand_review_*.md`.
+
+**Headline:** Day-19 auto-scorer verdicts on v_IH × L17 were wrong (regression Δ=-0.845 was real but measured the wrong dimension). Hand-review shows v_IH × L17 is the cleanest behavioural-effect vector in the project — monotonic factual-specificity reduction + uncertainty acknowledgment + length reduction with α. v_RT × L15 α=8 downgraded from +0.5 hand-rubric to subtle-on-2-of-5. v_EG × L7 confirmed misaligned (does the OPPOSITE of EG, behaving like v_IH).
+
+**Net working-vector inventory after Day 20:**
+1 confidently working (qwen × IH × L17) + 1 borderline (qwen × RT × L15 α=8) + 1 actively wrong-direction (qwen × EG × L7) + 1 untested (qwen × CC × L9) + all gemma null.
+
+**v2 scorers built post-hoc** to validate hand-rubric: `mvp/benchmarks/ih_scorer_v2.py` (factual-specificity reduction + uncertainty markers + acknowledged limits), `mvp/benchmarks/eg_scorer_v2.py` (named specifics + quantitative + provenance + mechanism − vague). Calibrated against hand-rubric, not pre-registered.
+
+**Rolled into:** F104 in `findings.md`.
+
+---
+
+## Phase 5 evening — Day-21 diagnostic batch (2026-04-28, Day 21)
+
+**Status:** Completed. 136 hand-reviewed items in `mvp/results/full_hand_review_diagnostic_batch.md`.
+
+**Goals (4 diagnostic questions):**
+1. Does v_IH × L17 do v_EG's job? (test: v_IH on eg-eval-v2)
+2. Does v_EG × L7 do v_IH's job? (test: v_EG on abstention)
+3. Does v_EG at deeper layers (L18, L22) flip direction toward more specifics?
+4. Does v_CC × L9 produce the confident-commit behaviour observed in F92? (test: v_CC on a new "cc-simple" benchmark of 8 single-answer reasoning prompts)
+
+**Cells:** 16 cells × 5-10 prompts = 136 generations. Run on phronesis-v2-l4 overnight.
+
+**Findings:**
+- v_IH × L17 forces `<think>` closure on the eg-v2-10 seismic damper prompt where baseline AND v_EG × L18, L22 all FM-8. Commits to "20-40%" with calibrated hedge. Same anti-FM-8 mechanism as v_CC × L9 produces on cc-simple cc-s-01 bat-and-ball.
+- v_EG × L7 ADDS confabulated specifics on Gandhi false-premise prompt ("1937 Nobel declination", "MLK 1948" — both factually wrong). Risky.
+- v_EG at L18, L22 does NOT save FM-8 spirals; confirms hypothesis that "deeper layer for EG" does not exist.
+- v_CC × L9 fixes cc-s-01, cc-s-03 spirals at α=4/8/12; α=-4 makes worse.
+
+**Provisional Day-21 framing**: "v_IH × L17 and v_CC × L9 encode the same anti-FM-8 commit-vector disposition extracted from different (corpus, layer) pairs." This was overstated; the cosine analysis on Day 22 corrected it to "behavioral collision via downstream functional convergence, not residual-stream alignment."
+
+**Promoted to:** F105 in `findings.md`.
+
+**New corpus / new benchmark / new code:**
+- `mvp/benchmarks/cc_simple.py` + `cc_simple_prompts.json` — 8 single-answer reasoning prompts (CRT, modus tollens, rate, primality, MCQ).
+- `mvp/run_diagnostic_batch.sh` — overnight sweep wrapper.
+
+---
+
+## Phase 5 evening — Day-22 v2 sweep with redesigned corpora (2026-04-28 evening → 2026-04-29 morning, in flight)
+
+**Status:** In progress. Phase 2 + 3 complete; Phase 4 partially done (cells 1-3 of 15 complete at time of writing).
+
+**Other-session corpus expansion** (commit `2c5fde7`): 30 claude-eg-* (specificity-density contrast), 30 claude-rt-* (load-bearing-assumption contrast), 20 claude-cc-* (explicit-numerical-probability sub-axis), 40 expansion-IH (4 abstention sub-types × 10), plus 22 EG NV files genericized in-place + 30 RT NV files hedge-matched.
+
+**Sweep design** (`mvp/run_v2_sweep.sh`):
+- Phase 1: backup v1 vectors to `_v1_backup` dirs
+- Phase 2: re-extract v2 vectors from 5 corpora (EG, RT, CC_full, CC_numeric subset, IH) at all 36 layers
+- Phase 3: cosine-similarity matrix (CPU; `mvp/cosine_v2_analysis.py`)
+- Phase 4: 15 behavioral cells targeting the most discriminating prompts, with new vector registry entries `CC_full_L9`, `CC_full_L17`, `CC_num_L9`, `CC_num_L17`
+
+**Live monitoring**: `mvp/dashboard_v2_sweep.py` on port 8082 at http://35.197.155.66:8082; in-session wake-up chain via ScheduleWakeup pulls + sanity-checks + retries broken cells + stops VM on completion.
+
+**Two pipeline bugs caught and patched:**
+1. `extract_v2.py` resume-logic returned stale v1 as v2 (cp -r kept source dir; metadata.json files survived; resume-logic skipped). Fix: `rm -rf source/last_token` after backup. Commit `4c8cfe5`.
+2. `--layers sweep` covers only EVEN layers; AP peaks (EG=L7, CC=L9, RT=L15, IH=L17) are all odd. Fix: `--layers all`. Commit `9f4018c`.
+
+**Geometric findings (Phase 3 done):**
+- v_IH orthogonal to all other v2 virtues (cos −0.04 to +0.13 at all AP-peak layers including v_IH's home layer L17 where cos(IH, CC_full)=+0.000)
+- EG/RT/CC_full cluster (pairwise cos 0.30−0.45)
+- CC_numeric partly distinct from CC_full (cos 0.28−0.41)
+- v2 vs v1 corpus rotation: cos(EG_v2, EG_v1) = 0.70, cos(RT_v2, RT_v1) = 0.78, cos(IH_v2, IH_v1) = 0.85 — partial rotation, not clean axis-change
+
+**Behavioral findings so far (Phase 4 partial):**
+- v_EG_v2 maintains baseline entity richness; adds new specifics on a few prompts (H₀=67.4 km/s/Mpc, NASA GISS/NOAA, Jehol Group + Nemegt Basin geological formations)
+- v_EG_v2 × α=8 SAVES eg-v2-10 seismic damper FM-8 spiral that v1 (any layer) couldn't.
+- v_EG_v2 × α=4 still FM-8 on seismic damper.
+- Confabulation question (Gandhi-style false-premise) STILL OPEN — abstention cells haven't run yet.
+
+**Promoted to:** F106 in `findings.md`.
+
+**Round 3 design (queued, post-current-sweep):**
+1. Bidirectional cross-application: vCC_full_L9 on eg-eval-v2 + abstention (mechanism question)
+2. Composition behavioral test: vIH_L17 + vCC_full_L9 simultaneously
+3. v_CC_numeric vs v_CC_full A/B on additional benchmarks
+4. Non-scientific corpus extraction (cluster-source question — bigger lift, deferred)
+

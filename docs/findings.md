@@ -3477,3 +3477,276 @@ Under the F98 partial-branch with these revisions:
 - `phronesis_review_package.zip` — the full package shipped to the review session (README, 690 generations, picks JSONs)
 - Reviewer outputs: `HAND_REVIEW_VERDICT.md`, `cell_verdicts.csv`, `hand_review_full.csv`, `analysis_signals.json`
 - The reviewer's signal-extraction script (`analyze_all.py`) is re-runnable and could be incorporated into Phronesis as a coherence pre-filter for future sweeps
+
+---
+
+## F104 (2026-04-27, Day 20 evening) — Full hand-review of 200+ items REVERSES the F103 verdict on qwen × IH × L17. The auto-scorer was wrong; v_IH IS virtue-aligned and produces the cleanest behavioural effect of any vector tested.
+
+### Setup
+
+Per F103's manual-first policy, hand-reviewed every generation across three sweeps from Day 20:
+- **Path A:** qwen × RT envelope, 24 cells × 5 prompts = 120 generations
+- **Path D:** qwen × eg-eval-v2, 5 cells × 10 prompts = 50 generations
+- **Path B:** qwen × IH × L17 ± α, 25 generations + α=−4 inversion test (5 generations)
+
+**Total: ~200 hand-reviewed items.** Per-cell verdicts in `mvp/results/full_hand_review_pathA.md`, `_pathD.md`, `_synthesis.md`.
+
+### What the hand-review changed about prior verdicts
+
+#### v_IH × L17 — UPGRADED from "broken" to confident "working vector"
+
+**Day 19 reading (per F103, auto-scorer hedge-density Δ = -0.845):** "vector misaligned, both ±α introduce fabrication."
+
+**Day 20 hand-review reading:** v_IH × L17 produces **monotonic IH-virtuous behaviour with increasing α** on abstention prompts:
+- Length decreases (less over-elaboration)
+- Specific-date citations decrease (less fact-fabrication)
+- Committal phrases ("was awarded", "won in YEAR") decrease
+- Explicit uncertainty markers ("the question contains an inaccuracy", "I cannot determine") increase
+- α=−4 test confirmed direction: subtracting v_IH causes **MORE** fabrication (hallucinated 1937 Gandhi Peace Prize)
+
+The hedge-density auto-scorer was measuring the wrong dimension. We built an IH-v2 scorer (factual-specificity reduction + uncertainty markers + acknowledged limits) that confirms monotonic improvement: -7.68 → +4.51 across α=-4 to α=+12.
+
+**Confidence: HIGH.** Most defensible vector found in the project.
+
+#### v_RT × L15 α=8 — DOWNGRADED to borderline
+
+**Day 19 reading:** "clean modest virtue-specific RT effect, +0.5 hand-rubric."
+
+**Day 20 full envelope reading:** All clean cells produce roughly equivalent baseline-quality output. L15 α=8 has subtle qualitative shift on **2 of 5 items only** — different framing vocabulary on aging (selfish gene + antagonistic pleiotropy), specific evidence anchor on bridges (AASHTO guidelines). Other 3 of 5 items at L15 α=8 are indistinguishable from baseline. α≥10 at L15 introduces FM-8 degeneracy.
+
+**Confidence: LOW-MED.** Real but at threshold of distinguishability.
+
+#### v_EG × L7 — REVISED, vector exists but does the OPPOSITE of EG
+
+**Day 19 reading:** "framework null on EG (baseline saturated)."
+
+**Day 20 reading after Path D + IH-v2 cross-application:**
+- Baseline already highly evidence-grounded on 9 of 10 v2 prompts.
+- v_EG × L7 × α=4 **REDUCES** named-specifics by 10-30% on most prompts.
+- Same direction of effect as v_IH × L17 (reduce specificity).
+- v_EG and v_VERB at AP-peak layers behave similarly — both reduce factual specificity.
+
+The vector extracted as v_EG is doing v_IH-like work, not v_EG-like work. **Confidence: HIGH** that v_EG × L7 is misaligned with the EG label.
+
+### Net working-vector inventory after Day 20
+
+| Vector | Confidence | Effect |
+|---|---|---|
+| qwen × IH × L17 α=+8 to +12 | **HIGH** | Reduces fabrication, increases uncertainty acknowledgment, more concise |
+| qwen × RT × L15 α=8 | LOW-MED | Subtle vocabulary shifts on 2/5 items |
+| qwen × EG × L7 | HIGH (it's MISALIGNED) | Reduces specificity — opposite of EG |
+| qwen × CC × L9 | UNTESTED at peak | Pending dedicated test |
+| All gemma × * | NULL | Confirmed null across 3 days |
+
+**1 confidently working vector + 1 borderline + 1 actively wrong-direction + 1 untested + all gemma null.**
+
+### Methodological lesson (partially restating F103 + F94-UPDATE)
+
+We've spent days chasing auto-scorer numbers that didn't reflect actual model behaviour:
+- Day 19: RT × L18 α=20 "+5.19" → degenerate FM-8 loop (per F103)
+- Day 20: IH × L17 α=4 "−0.845" → real IH improvement that hedge-density missed (this finding)
+- Day 20: EG × L7 α=8 "+0.185" → just baseline floor noise
+
+**Without hand review, every claim from this project is unreliable.** The auto-scorers give numerical results that don't track behavioural reality. The IH-v2 / EG-v2 scorers built to address this DO track behaviour better, but they are themselves manually calibrated against hand-rubric.
+
+### Applies to
+
+- **F103:** v_IH × L17 verdict superseded — the auto-scorer regression was an artifact of measuring the wrong dimension. F103's "small +0.4 to +0.8 effects" reframing stands for RT and CC; for IH the effect is larger and qualitatively different (specificity-reduction monotonic with α, not vocabulary-shift).
+- **`docs/scoring.md`:** add IH-v2 and EG-v2 scorers to the per-virtue scorer registry; document that they were calibrated post-hoc against hand-review (not pre-registered).
+- **`docs/findings.md` F102:** geometric finding stands; behavioural addendum is "qwen × IH × L17 produces the cleanest behavioural effect among the four virtues, with v_RT borderline and v_EG/v_CC at AP peaks both producing specificity-reduction (label-mismatched)."
+
+### Artifacts
+
+- `mvp/results/full_hand_review_pathA.md` — per-cell verdicts for 24 RT envelope cells × 5 prompts
+- `mvp/results/full_hand_review_pathD.md` — per-cell verdicts for 5 EG-v2 cells × 10 prompts
+- `mvp/results/full_hand_review_synthesis.md` — synthesis across all hand reviews
+- `mvp/benchmarks/ih_scorer_v2.py`, `mvp/benchmarks/eg_scorer_v2.py` — v2 scorers calibrated to hand-rubric
+- `mvp/benchmarks/eg_prompts_v2.json` — 10 sharper EG prompts designed to discriminate evidence-grounded vs vague-appeal responses
+
+---
+
+## F105 (2026-04-28, Day 21-22) — Diagnostic batch reveals v_IH × L17 and v_CC × L9 produce *behaviorally identical* anti-FM-8 commit behavior, but cosine analysis shows they are *geometrically orthogonal*. Behavioral collision is downstream functional convergence, not residual-stream redundancy. Multiple corrections to the F104 vector inventory.
+
+### Setup
+
+Day 21 diagnostic batch on the v1 vectors (full hand review, 136 items, see `mvp/results/full_hand_review_diagnostic_batch.md`):
+- **D1a** v_IH × L17 × α∈{4,8,12} on eg-eval-v2 (10 prompts × 3 α)
+- **D1b** v_EG × L7 × α∈{4,8} on abstention (5 × 2)
+- **D2** v_EG at deeper layers L18, L22 × α∈{4,8} on eg-eval-v2
+- **D3** v_CC × L9 × α∈{−4,4,8,12} on cc-simple (8 × 4) — new "CC-simple" benchmark of 8 single-answer reasoning prompts (CRT classics, modus tollens, rate, primality, MCQ)
+
+### Behavioral finding (Day 21)
+
+**v_IH × L17 fixes the FM-8 spiral on eg-v2-10 (seismic damper) where baseline AND v_EG × L18, L22 all FM-8.** Forces `<think>` closure and commits to "20-40%" with calibrated hedge.
+
+**v_CC × L9 fixes the FM-8 spiral on cc-s-01 (bat-and-ball) where baseline FM-8.** α=4/8/12 all save the prompt; α=-4 makes it worse.
+
+Day-21 synthesis claimed: "v_IH × L17 and v_CC × L9 are the same anti-FM-8 commit-vector disposition, extracted from different (corpus, layer) pairs."
+
+### Geometric correction (Day 22, from parallel Claude session)
+
+A parallel Claude session ran a cosine + norm analysis of the v1 vectors at AP-peak layers (`mvp/results/cosine_analysis_v1_vectors.md`). Findings DIRECTLY CONTRADICT the same-disposition claim:
+
+- **cos(v_IH @ L17, v_CC @ L9)** is uncomputable cross-layer (different layers in residual stream are not directly comparable). Within-layer:
+  - cos(v_IH, v_CC) @ L9 = +0.13
+  - cos(v_IH, v_CC) @ L13 = +0.14
+  - cos(v_IH, v_CC) @ L17 = +0.08
+- All three sit in the **orthogonal band** (|cos| < 0.2).
+- v_IH is geometrically **outlier** vs every other v1 virtue (|cos| ≤ 0.14 vs CC, EG, RT at all layers tested).
+- v_CC, v_EG, v_RT form a loose cluster (pairwise cos 0.20–0.40).
+
+Random + v_VERB controls confirm the geometry is healthy (cosines within ±0.02 floor).
+
+### Reading after correction
+
+The behavioral collision (both vectors fix FM-8) is **NOT** explained by residual-stream alignment. It is **downstream functional convergence** — two near-orthogonal directions that hit overlapping OV/MLP read-offs which both push `</think>` token-probability up.
+
+This rescues the original "4 orthogonal virtues" framework hypothesis on v1 corpora — the four directions are geometrically distinct (with v_IH the clearest outlier and EG/RT/CC weakly clustered).
+
+### Methodological gaps the corrected reading exposes
+
+1. **Day 21's behavioral test was unidirectional.** v_IH × L17 was tested on eg-eval-v2; v_CC × L9 was tested only on cc-simple. The cc-simple benchmark was *deliberately designed* to elicit FM-8 ("Each prompt has a single clean answer that a competent reasoner commits to in 1-3 short steps. The risk for an over-thinking model is to spiral, equivocate, or hedge"). Any vector that reduces FM-8 looks identical to v_CC on cc-simple regardless of mechanism.
+
+2. **The "downstream functional convergence" label is not a mechanism.** Two distinct mechanisms remain compatible with the cosine data:
+   - **Reading 1**: orthogonal residual directions, shared OV/MLP read-off subspace → predicts identical behaviour on FM-8-irrelevant prompts.
+   - **Reading 2**: different downstream circuits, both happen to suppress FM-8 as one output dimension → predicts divergent behaviour on FM-8-irrelevant prompts.
+   - Distinguished by **bidirectional cross-application**: apply v_IH × L17 to cc-simple AND apply v_CC × L9 to eg-eval-v2; hand-rate detailed behaviour on FM-8-not-prone prompts. The Day 22 v2 sweep includes vIH_L17 on cc-simple but NOT vCC × L9 on eg-eval-v2 — partial test only.
+
+### Updated working-vector inventory after Day 21-22
+
+(Replaces F104's net.)
+
+| Vector | Status | Notes |
+|---|---|---|
+| qwen × IH × L17 α=+8 to +12 | **HIGH** confidence working | Anti-FM-8 / commit force; produces both humble abstention and confident commit depending on prompt demands |
+| qwen × CC × L9 α=+4 to +12 | **HIGH** confidence working (NEW) | Same anti-FM-8 mechanism as IH but at a different residual-stream direction |
+| qwen × EG × L7 α=4-8 | **LOW** confidence (and risky) | Adds named-entity tokens; **confabulates** them on knowledge-gap prompts (e.g., fabricates "1937 Gandhi declined the Nobel" on fp-gandhi). Useful only when model already has ground truth |
+| qwen × EG × L18, L22 | NULL | No directional effect; cannot save FM-8 spiral prompts |
+| qwen × RT × L15 α=8 | LOW-MED | Borderline, no new evidence |
+| All gemma × * | NULL | Confirmed null |
+
+### Applies to
+
+- **F104:** Vector inventory revised — v_CC × L9 now confirmed working (was UNTESTED). v_IH × L17 confirmed working (consistent with F104). Geometric finding adds: the behavioral collision between IH and CC is real but at the downstream-circuit level, not at the residual-stream-direction level.
+- **F102:** Cluster pattern (CC/EG/RT cluster on qwen, IH outlier) holds under direct cosine measurement. Strengthens F102's geometric finding with a quantitative basis.
+- **`docs/scoring.md`:** add cc-simple as a new manual-rated benchmark (8 prompts, no auto-scorer, hand-rated for FM-8 vs commit). Add cc_simple loader in `mvp/benchmarks/cc_simple.py` and register in benchmarks registry.
+- **`docs/post-mvp-decisions.md`:** the "1 disposition reachable from many corpora" reading from yesterday's simple-terms doc is *wrong* on geometric grounds. The right framing is "4 distinguishable dispositions, with v_IH the clearest outlier; v_IH and v_CC behaviorally collide via downstream functional convergence, not residual-stream alignment." Composition-steering motivation is recovered (orthogonal directions can be summed meaningfully).
+
+### Artifacts
+
+- `mvp/results/full_hand_review_diagnostic_batch.md` — full 136-item Day 21 hand review
+- `mvp/results/cosine_analysis_v1_vectors.md` — Day 22 v1 cosine + norm analysis (parallel Claude session, commit `b1d0465`)
+- `mvp/results/v2_cosine_observations.md` — Day 22 honest framing of v2 cosine matrix with five caveats from second Claude critique
+- `mvp/benchmarks/cc_simple.py`, `mvp/benchmarks/cc_simple_prompts.json` — new CC diagnostic benchmark
+
+---
+
+## F106 (2026-04-29, Day 22) — v2 sweep with redesigned corpora: corpus expansion partially rotates EG/RT/IH vectors; CC_numeric carves a partly-distinct sub-direction; v_EG_v2 corpus-redesign success is geometrically partial (cos 0.70 with v1 buggy vector); two extraction-pipeline bugs caught and patched.
+
+### Setup
+
+Other Claude session generated 120 new triplets (commit `2c5fde7`):
+- 30 `claude-eg-*` (specificity-density contrast, replacing v1 calibration-framing axis-confusion)
+- 30 `claude-rt-*` (load-bearing-assumption contrast, hedge-matched)
+- 20 `claude-cc-*` (explicit-numerical-probability sub-axis)
+- 40 `expansion-*` IH triplets (4 sub-types × 10 each)
+- Plus 22 EG NV files genericized in-place + 30 RT NV files hedge-matched in-place
+
+The Day 22 v2 sweep re-extracts vectors from the expanded corpora at all 36 layers, computes cosine matrix, runs 15 behavioral cells.
+
+Sweep is in flight at time of writing (Phase 4 cell ~3/15). Full results pending; preliminary on this F entry.
+
+### Pipeline bugs caught
+
+#### Bug 1: extract_v2.py resume-logic returned stale v1 as v2
+
+`extract_v2.py` skips any layer whose metadata.json already exists. The Day 22 sweep wrote backup copies to `_v1_backup` dirs but did NOT delete the source. extract_v2 saw v1 metadata files and skipped every layer in ~1 minute, reporting v1 results as v2.
+
+Confirmed by `cmp` on `layer_18_virtue_vector.npy`: source and `_v1_backup` were byte-identical for EG and RT after the first sweep run.
+
+**Fix** (commit `4c8cfe5`): added `rm -rf $VEC_ROOT/$SUB/last_token` after the cp -r backup to force fresh extraction.
+
+#### Bug 2: --layers sweep misses odd layers (where AP peaks live)
+
+`extract_v2.py --layers sweep` covers only even layers (`range(2, 35, 2)` = 2,4,...,34). Our AP-peak layers (EG=L7, CC=L9, RT=L15, IH=L17) are all **odd**. So Phase 4 failed with `FileNotFoundError` on 9 of 12 cells.
+
+The 3 cc-simple cells that "succeeded" used vector "L9" which is registered to the **legacy** 50-triplet hand corpus (`triplets/`), not the new v2 CC corpus. Stale-v1 results.
+
+**Fix** (commit `9f4018c`): `--layers sweep` → `--layers all`; added `CC_full_L9`, `CC_full_L17`, `CC_num_L9`, `CC_num_L17` registry entries pointing to new corpora; updated Phase 4 cell list.
+
+### Geometric findings (preliminary, from cosine matrix)
+
+`mvp/results/v2_sweep_20260428/cosine_matrix.html` (auto-generated) and `mvp/results/v2_cosine_observations.md` (honest framing).
+
+#### v_IH remains the geometric outlier under v2 corpora
+
+cos(v_IH, v_CC_full) at v_IH's home layer L17 = **+0.000**. Across L9, L13, L15, L17, L22, all v_IH cosines vs other v2 virtues fall in [-0.04, +0.13]. Random baseline ±0.02 floor.
+
+The v1 finding (F105) replicates on v2 vectors. v_IH is genuinely orthogonal to every other virtue.
+
+#### v_EG, v_RT, v_CC_full form a cluster
+
+Pairwise cos at L17:
+- EG ↔ RT: +0.43
+- EG ↔ CC_full: +0.33
+- RT ↔ CC_full: +0.30
+
+Same pattern at L7, L9, L13, L15, L22 (cluster strengthens at L22 to ~0.45). These three vectors are not redundant but inhabit a shared residual-stream subspace.
+
+#### v_CC_numeric partly carves out from v_CC_full
+
+cos(CC_full, CC_numeric) = +0.28 to +0.41 across layers. Less correlated with EG/RT (0.09–0.21) than CC_full is (0.30–0.40). The 20 new claude-cc-* triplets carve a partly-distinct geometric direction.
+
+#### v2 corpus rotation is partial, not clean
+
+| Pair | Layer | cos(v1, v2) |
+|---|---|---|
+| EG_v2 vs EG_v1 | 7 | +0.70 |
+| RT_v2 vs RT_v1 | 15 | +0.78 |
+| IH_v2 vs IH_v1 | 17 | +0.85 |
+
+EG rotated most (~45°), IH least (~32°). All three retain a majority of their v1 direction. **Importantly, v_EG_v2 still has cos 0.70 with v_EG_v1, meaning the redesigned vector retains 70% directional alignment with the buggy v1 calibration-axis vector.** The corpus-audit (commit `cc26cf0`) shows the contrast at the *text level* genuinely changed; the diff-of-means only partially followed.
+
+This is consistent with two readings:
+- v_EG_v2 is "calibration vector with some specificity character mixed in" — partial fix
+- v_EG_v2 is "specificity vector that shares substantial subspace with the calibration-axis cluster because surface features are similar" — clean fix that doesn't show up geometrically
+
+Phase 4 behavior on the Gandhi false-premise prompt is the discriminating test; that cell hasn't run yet at time of this entry.
+
+### Behavioral findings (preliminary, partial Phase 4 data)
+
+Hand-review of the first 20 fresh v2 generations (vEG_L7 × α=4 and α=8 on 10 eg-eval-v2 prompts). Detailed verdict in earlier session message; summary:
+
+- v_EG_v2 maintains baseline-level entity richness on prompts where the model already has knowledge (smoking, aspirin, SSRIs, ibuprofen).
+- v_EG_v2 adds **new specifics** on a few prompts: cites exact H₀ value 67.4 km/s/Mpc, names NASA GISS / NOAA datasets, names Jehol Group + Nemegt Basin geological formations on dinosaur-feathers prompt (v1 didn't reach those).
+- **At α=8, v_EG_v2 SAVES the eg-v2-10 seismic damper FM-8** — committing to "20-40%" with named damper types and example buildings. v1 EG_L7, v1 EG_L18, v1 EG_L22 all FM-8'd this prompt. This is real improvement.
+- At α=4, still FM-8 on seismic damper.
+
+Confabulation question (does v_EG_v2 still hallucinate specifics on knowledge-gap prompts like Gandhi?) **OPEN** — the abstention cells haven't run yet in Phase 4.
+
+### Honest caveats (per parallel Claude critique on v2 cosine)
+
+Five points where Day 22 self-correction is necessary:
+
+1. The "4 orthogonal virtues alive" framing overstates the asymmetry. Real pattern is **1 distinct direction (IH) + 3 weakly distinguishable (EG/RT/CC) + 1 partial sub-carve-out (CC_numeric)** — not symmetric 4-way.
+2. The "shared surface features" hypothesis for the EG/RT/CC cluster is untested; it competes with "shared underlying disposition" and "corpus-generation artifact" readings. Discriminating test: extract diff-of-means from non-scientific corpus and check if cluster persists.
+3. cos(v_EG_v2, v_EG_v1) = 0.70 is a partial rotation, not a clean axis-change. Be cautious about labelling v_EG_v2 a "specificity vector" until Phase 4 confirms behaviorally.
+4. "Downstream functional convergence" is a label, not a mechanism. Two readings (shared circuit vs different circuits with overlapping output) remain compatible. Bidirectional cross-application test (vCC × L9 on eg-eval-v2) is the discriminator and is NOT in the current sweep.
+5. "Composition becomes meaningful again" is premature. Orthogonality is necessary but not sufficient; composition behavioral test hasn't run.
+
+### Applies to
+
+- **F102, F104, F105:** geometric findings reinforced and extended at higher quantitative resolution. The cluster pattern (CC/EG/RT loose cluster, IH outlier) is now confirmed at every AP-peak layer with explicit cosine numbers.
+- **`docs/extraction-runbook.md`:** add `--layers all` recommendation when AP-peak layers may be odd; document the resume-logic-skips-when-metadata-exists behavior and add a wipe step before any extraction intended to be fresh.
+- **`docs/scoring.md`:** EG-v2 scorer was used pre-correction; remember it's a calibration-axis scorer for the most part, not a pure specificity scorer. Behavioral confirmation pending.
+- **`docs/post-mvp-decisions.md`:** Round 3 sweep design (queued): bidirectional cross-application + composition behavioral test + non-scientific corpus extraction.
+
+### Artifacts
+
+- `mvp/run_v2_sweep.sh`, `mvp/cosine_v2_analysis.py`, `mvp/dashboard_v2_sweep.py` — v2 sweep infrastructure
+- `mvp/results/v2_sweep_20260428/cosine_matrix.{json,html}` — pairwise cosines across all v1 + v2 vectors
+- `mvp/results/v2_cosine_observations.md` — honest framing with 5 caveats
+- `mvp/results/v2_sweep_pull_log.md` — wake-up chain log
+- `corpus_inspection_EG_v2.md` — EG redesign audit (4/4 deficiency triplets sampled, contrast confirmed at text level)
+- Behavioral data: `mvp/results/benchmark_probe/{cc-simple,abstention,eg-eval-v2}/d22_v2_*/` (in flight)
+
