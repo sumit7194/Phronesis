@@ -215,3 +215,29 @@ All 136 generations live at:
 Sweep log + done marker: `mvp/results/diagnostic_batch_20260427/`.
 
 Comparison-friendly dump used for this review: `/tmp/diag_review.txt` (local, ephemeral).
+
+---
+
+## ⚠ CORRECTION (2026-04-29) — the "same disposition" framing was wrong
+
+A parallel Claude session ran a cosine analysis of v1 vectors at the AP-peak layers (`mvp/results/cosine_analysis_v1_vectors.md`, commit `b1d0465`). Findings that directly contradict the synthesis above:
+
+- **cos(v_IH @ L17, v_CC @ L9) cannot be computed cross-layer**, but within-layer comparisons give **cos(v_IH, v_CC) = +0.13 at L9, +0.08 at L17, +0.14 at L13** — all in the orthogonal band (|cos| < 0.2).
+- **v_IH is geometrically orthogonal to every other virtue at every layer examined** (|cos| ≤ 0.14 vs CC, EG, RT at L9/L13/L17).
+- v_CC, v_EG, v_RT form a loose cluster (pairwise cos 0.20–0.40) — "weakly aligned but distinct."
+- Random baseline + v_VERB negative control come in at expected ±0.02 floor — geometry is healthy, no contamination.
+
+**Implication for this doc**: my claim that v_IH × L17 and v_CC × L9 "encode the same anti-FM-8 commit-vector disposition extracted from different (corpus, layer) pairs" is **not supported geometrically**. The behavioral convergence (both fix FM-8 spirals on the prompts each was tested on) is more parsimoniously explained as **downstream functional convergence** — two near-orthogonal residual-stream directions that hit overlapping OV/MLP read-offs which both push `</think>` token probability up.
+
+**What yesterday's data could NOT have told me** (the other Claude session also raised this point):
+- I never applied v_CC × L9 to eg-eval-v2 prompts.
+- I never applied v_IH × L17 to cc-simple prompts (in yesterday's batch — the v2 sweep currently running DOES include this cell).
+- cc-simple was deliberately designed to elicit FM-8, so it selects for the failure mode I claimed v_CC fixes.
+- A vector that only fixed FM-8 spirals would look identical to v_CC on cc-simple regardless of what else it encoded.
+
+**Revised reading**: 4 dispositions are likely real, with v_IH being the geometric outlier (extracted from a contrast — confident-overclaim vs humble-uncertainty — that's distinct from the citation/structure/calibration cluster the other three share). The behavioral collision between v_IH and v_CC is real but is a downstream-effect collision, not a residual-stream-direction collision.
+
+This **strengthens** the case for the original "4 orthogonal virtues" hypothesis on v1 corpora, partially walks back the "1-2 dispositions" claim in the simple-terms doc, and recovers the motivation for compositional steering.
+
+The v2 sweep (currently running on phronesis-v2-l4) will give us the same cosine matrix on the *new* corpora — which will tell us whether the redesign rotates v_EG away from the v_CC/v_RT cluster (per the EG audit, it should).
+
