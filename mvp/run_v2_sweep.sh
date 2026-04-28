@@ -60,7 +60,15 @@ for SUB in triplets-evidence-grounding triplets-reasoning-transparency triplets-
     cp -r "$VEC_ROOT/$SUB" "$VEC_ROOT/${SUB}_v1_backup"
     echo "  backed up $SUB → ${SUB}_v1_backup" | tee -a "$LOG"
   else
-    echo "  skipping $SUB (already backed up or not present)" | tee -a "$LOG"
+    echo "  skipping backup of $SUB (already backed up or not present)" | tee -a "$LOG"
+  fi
+  # CRITICAL: wipe source last_token dir so extract_v2's resume-logic
+  # doesn't silently no-op when the same paths have older metadata.json
+  # files from a prior extraction. (Day-22 bug: without this, v2 vectors
+  # were never actually re-extracted; v1 was returned as v2.)
+  if [ -d "$VEC_ROOT/$SUB/last_token" ]; then
+    rm -rf "$VEC_ROOT/$SUB/last_token"
+    echo "  cleared $SUB/last_token to force fresh extraction" | tee -a "$LOG"
   fi
 done
 # Also need a CC-numeric-only subset corpus
