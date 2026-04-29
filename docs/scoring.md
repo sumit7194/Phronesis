@@ -257,3 +257,24 @@ For Round 3 and beyond:
 - Hand-review every cell of every steering sweep before drawing any conclusion.
 - Auto-scorers may be used as a *lossy* signal to flag cells worth deep-reading first, but auto-scorer rankings should never be quoted as findings without hand-review backup.
 - v2 scorers (IH-v2, EG-v2) are calibrated post-hoc against hand-review and should be treated as virtue-and-vector-specific instruments — they may not generalize to new vectors or models without re-calibration.
+
+---
+
+## FM-13 — Commit-amplified error (added 2026-04-29, Day 22-23 v2 sweep)
+
+**Definition**: A high-α commit-vector application forces the model to commit to its current conclusion regardless of whether that conclusion is correct. When the baseline reasoning is broken, the steering produces confident wrong answers rather than abstention or recovery.
+
+**Concrete instance**: qwen × CC_full × L9 × α=+12 on cc-simple cc-s-08 (Tokyo population question with options 1.3M / 13M / 130M / 1.3B; correct = 13M). Model anchors on "Tokyo metropolitan area = 37 million" (a defensible baseline knowledge), then concludes "37M is closer to 130M than to 13M among the options" (numerically wrong; 37 is 24 away from 13 and 93 away from 130). Steered model commits confidently to **(c) 130 million** with full structured justification.
+
+The baseline (without steering) FM-8'd on the same prompt — spiraled in confusion ("13 closer or 130 closer?") without committing. Steering replaces FM-8 spiral with FM-13 confident-wrong-commit.
+
+**Why this matters for the project**: the simple-terms framing of "v_IH and v_CC are commit-vectors" was correct but underspecified. They are commit-on-whatever-the-model-thinks vectors. They do not repair the underlying reasoning. This is the F45 disposition-modulation-not-propositional-injector boundary materializing as a concrete failure mode visible at the behavioral level.
+
+**Detection**: hand-review only. Auto-scorer credits the structured answer + boxed conclusion as "correct format" regardless of factual correctness. Detecting FM-13 requires:
+1. Knowing the gold answer
+2. Reading the model's actual chosen answer
+3. Comparing — the structural confidence of the answer doesn't help
+
+**Scoring policy**: when reporting steering effects, FM-13 errors must NOT be counted as success cases. cc-s-08 vCC_full α=12 = "committed but wrong" should be hand-rated as wrong, not as commit-success.
+
+**Implication for compositional steering** (the eventual project goal): the "apply commit-vector when prompt risks FM-8" rule produces confident wrong answers on prompts where the baseline reasoning is broken. A compositional strategy needs a *baseline-quality gate*: only apply the commit-vector when the model's pre-commit reasoning trace is internally consistent. Without that gate, FM-13 is a substantial risk on contested-knowledge / numeric-judgment prompts.

@@ -1106,3 +1106,41 @@ To be run after current sweep finishes:
 
 Promoted to F106 in `findings.md`. Continuing to monitor sweep via wake-up chain.
 
+
+---
+
+## Day 23 (2026-04-29) — v2 sweep finished overnight; full hand review of 168 generations
+
+Sweep finished 00:05 UTC (05:35 IST) clean — 15/15 Phase 4 cells, zero errors in run.log. Wake-up chain didn't auto-pull (chain terminated early to avoid duplicate firing) so manually pulled in the morning, stopped VM (TERMINATED).
+
+### Hand review of every cell (168 items)
+
+Per-cell verdict in `mvp/results/full_hand_review_v2_sweep.md`. Promoted to **F108** in findings.md.
+
+Six headline findings:
+1. **v_EG_v2 still confabulates at α=4** on Gandhi false-premise — geometric cos 0.70 with v1 translates directly into behavior. Phase-transition: at α=4 commits-via-fabrication, at α=8 commits-via-rejection.
+2. **v_IH × L17 ≈ v_CC × L9 on cc-simple** — same prompts saved, same prompts spiral. Bidirectional half-test consistent with shared downstream circuit.
+3. **v_CC_full and v_CC_numeric have OPPOSITE optimal α** — full prefers α=4, numeric prefers α=12. Behavioral confirmation that they are different vectors. Interpretation: numeric has lower L2 norm (extracted from only 20 triplets).
+4. **Multiple distinct vectors at high α save the seismic-damper FM-8** — v_EG α=8/12, v_IH α=8, v_RT α=8 all commit cleanly where baseline FM-8s. Different geometric directions, overlapping `</think>`-gate effect.
+5. **Each vector biases citation toward different named studies** — vEG cites Jehol Group + SEM; vIH cites Physicians' Health Study + Mauna Loa; vRT cites Taipei 101 + Tokyo Tower. Real differentiation or sampling noise — open.
+6. **NEW failure mode FM-13 commit-amplified-error** — vCC_full × α=12 on cc-s-08 commits confidently to wrong answer (130M instead of 13M Tokyo population) because baseline arithmetic was already broken. Steering does not repair reasoning; it amplifies whatever the model thinks. F45 disposition-modulator-not-propositional-injector boundary made concrete.
+
+### Updated working-vector inventory
+
+4 vectors with high or medium confidence on qwen3-4b: IH × L17, CC × L9 in three flavors (legacy, full, numeric), EG × L7 at α=8/12 (with α=4 confabulation caveat). RT × L15 borderline. All gemma null (now 4 days confirmed).
+
+### Methodological points
+
+- Manual-first policy paid off again: auto-scorers would credit FM-13 errors as "successful structured commits" because the format is right.
+- Two pipeline bugs caught and patched in the sweep itself (skip-resume returning stale v1 as v2; --layers sweep covering only even layers); without hand-review of cosine matrix + cross-checks against v1_backup files, both would have produced silently-stale results.
+
+### Round 3 priorities (queued)
+
+1. Bidirectional cross-application completion: vCC × L9 on eg-eval-v2 + abstention. Settles mechanism question for IH/CC behavioral collision.
+2. vEG_v2 × α=12 on abstention: tests if higher α fully suppresses Gandhi confabulation.
+3. Composition behavioral test: vIH + vCC simultaneously. Tests whether geometric orthogonality translates to meaningful behavioral composition.
+4. vCC_numeric A/B with explicit-Bayesian prompts: the numeric sub-axis content distinction wasn't visible on cc-simple; needs prompts that specifically reward numerical-probability reasoning.
+5. Non-scientific corpus extraction (LOW priority, bigger lift): tests whether the EG/RT/CC cluster persists when corpus contrast moves out of scientific prose.
+
+Items 1+2+3 fit in ~2 hours GPU.
+

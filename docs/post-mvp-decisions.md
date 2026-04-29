@@ -336,3 +336,49 @@ The "all_clean MVP outcome → activate Phase 5" gating condition was **not** me
 - **Pre-registration discipline:** this document is being committed BEFORE MVE or specificity data lands, to prevent post-hoc tree-shaping.
 - **2026-04-25 update (Day 18):** RLHF-compression / lazy-frontier-model framing section added as a *candidate* writeup angle (above), explicitly flagged as post-hoc interpretive framing rather than a pre-registered claim.
 - **Related:** `docs/findings.md` F98, F102; `docs/eg-rt-eval-spec.md`; `docs/mvp-virtues.md`; `docs/extraction-runbook.md`; `docs/phase5-plan.md`.
+
+---
+
+## Day-23 update (2026-04-29) — v2 sweep behavioral findings + FM-13 implication for compositional steering
+
+The Day-22 v2 sweep (16 cells × 5-10 prompts = 168 generations, hand-reviewed) produced findings that materially affect post-MVP design decisions. Promoted to F108. See `mvp/results/full_hand_review_v2_sweep.md` for full per-cell verdict.
+
+### What changes from this update
+
+**The "compose dynamically based on prompt" goal needs a baseline-quality gate.** FM-13 (commit-amplified error) shows that high-α commit-vector application on prompts where the baseline reasoning is *broken* produces confident wrong answers, not the desired abstention. Specifically: v_CC × α=12 on cc-s-08 (Tokyo population) committed to wrong answer (130M instead of 13M) because the baseline arithmetic was wrong; the steering forced commit on broken reasoning rather than fixing it.
+
+For composition strategies this means:
+
+1. **Don't unconditionally apply commit-vectors when prompt risks FM-8.** First check whether the model's pre-commit reasoning trace is internally consistent. If it isn't, applying the commit vector amplifies the inconsistency.
+2. **Or accept that some commits will be wrong.** The post-mvp framing should not claim "v_IH/v_CC always improves outcomes." It improves outcomes specifically on disposition-limited prompts (per F45 scope condition) where the model has the right reasoning available but doesn't deploy it. On knowledge-limited prompts where the model's baseline inference is wrong, commit-vectors produce confident wrong answers.
+
+### Implications for the writeup framing
+
+The v2 sweep results give us cleaner story material for the writeup than yesterday's "calibration-vs-specificity" framing supported:
+
+1. **The cross-model split (F102) is still the headline.** Same corpus, same method, opposite verdicts geometrically and behaviourally on qwen vs gemma.
+
+2. **Geometric vs behavioral decoupling is a publishable methodology finding.** v_IH is geometrically orthogonal to all other virtues (cos ≤ 0.14) but produces nearly identical anti-FM-8 commit behavior to v_CC × L9. This is **downstream functional convergence**, not residual-stream redundancy. Implies: "geometric distinguishability is necessary but not sufficient for behavioral distinguishability." Important caveat for activation-steering claims in the literature.
+
+3. **FM-1 through FM-13 catalogue is the most reusable artifact.** External Claude review explicitly flagged this as publishable independent of whether virtue vectors work. FM-13 (commit-amplified error) is a new addition that's especially relevant: it's a counterexample to the implicit claim that "more confident commit = better."
+
+4. **F107 (corpus-generation task-level blind spot) is publishable.** When asked to "rewrite less evidence-grounded," frontier models across families preserve scientific specifics and edit framing instead. This is a cross-family task-level blind spot that the cross-family-verifier policy (§4.7 of generation-guidelines.md) does NOT catch. F107 documents the pattern + the mitigation (specify the contrast axis explicitly).
+
+5. **The composition story is conditional**, not unconditional. Geometric orthogonality of v_IH and v_CC is necessary but not sufficient for meaningful composition (per F106 caveat). v_CC_full vs v_CC_numeric have opposite optimal α regimes (F108), suggesting that even within "the same virtue family" composition needs careful α-tuning per vector.
+
+### Updated Phase 5 / post-MVP gating
+
+`docs/phase5-plan.md` §3.0 coherence-gated scoring is now **less critical** post-Day-22 because hand-review has been the operational gate throughout. But it's still useful to formalize for future scale-up.
+
+What's added as a hard prerequisite for any further claims:
+
+- **Hand-review every cell** of every steering sweep. Auto-scorers (including v2 scorers) credit FM-13 errors as success. Hand-review is the only reliable signal of correctness.
+- **Track which prompts are FM-8-prone vs not.** FM-8-prone prompts are where commit-vectors help; FM-8-not-prone prompts where reasoning is broken are where commit-vectors hurt (FM-13).
+- **Before claiming compositional improvement**, run the actual composition test (vIH + vCC simultaneously, hand-rate). Geometric orthogonality is not a substitute.
+
+### When to revisit (Day-23 hand-review revision)
+
+- After Round 3 sweep completes (bidirectional + composition + Bayesian-prompts A/B). Will tell us whether mechanism is shared-circuit or different-circuits, and whether composition is meaningful.
+- During writeup, when deciding how to frame FM-13 — as a discovered limitation, as a counterexample to optimistic steering claims, or as a separate methodology paper.
+- If v_EG_v2 high-α (α=12) on abstention shows it suppresses Gandhi confabulation entirely, the v2 corpus redesign success can be claimed; if not, the "calibration-vector-with-specificity-mixed-in" reading wins.
+

@@ -3803,3 +3803,112 @@ When designing contrast pairs:
 - `corpus_inspection_EG_v2.md` — verification that the redesign fixed the text-level contrast
 - `mvp/results/v2_cosine_observations.md` §"v_EG_v2 vs v_EG_v1" — the geometric partial-rotation observation
 
+
+---
+
+## F108 (2026-04-29, Day 22-23) — v2 sweep hand-review (168 generations) confirms cosine-matrix orthogonality predicts behavior partially, NOT fully. v_EG_v2 still confabulates at α=4 on Gandhi false-premise; v_CC_full and v_CC_numeric have opposite optimal α regimes; multiple distinct vectors at high α all suppress the seismic-damper FM-8. New failure mode FM-13 (commit-amplified error).
+
+### Setup
+
+15 cells from the Day-22 v2 sweep + 3 retained baselines reviewed item-by-item. 168 generations across three benchmarks (cc-simple n=8, abstention n=5, eg-eval-v2 n=10). Per-cell verdicts in `mvp/results/full_hand_review_v2_sweep.md`.
+
+### Six findings
+
+#### 1. v_EG_v2 still confabulates at α=4
+
+On **fp-gandhi** (false-premise), v_EG_v2 × α=4 produces:
+> "Gandhi was awarded the Nobel Peace Prize once, in 1937 ... first Indian to be nominated for the prize in 1935 ... 'non-violent resistance to British colonial rule in India'"
+
+All three are fabricated. At α=8 the vector is strong enough to commit to *rejecting* the premise: "Gandhi was never awarded the Nobel Peace Prize." Phase-transition in α — at moderate α the vector pushes the model to commit-via-fabrication (fill in confident specifics matching the false premise); at higher α it pushes to commit-via-rejection.
+
+This matches the F106 geometric finding cos(v_EG_v2, v_EG_v1) = 0.70 (partial rotation). The corpus redesign succeeded at the *text level* (per `corpus_inspection_EG_v2.md`); the *vector* extraction only partially followed. F107 (corpus-generation task-level blind spot) is the deeper mechanism — surface features overlap enough that diff-of-means picks up substantial calibration-axis content.
+
+**Implication**: v_EG_v2 is NOT a clean "specificity vector." It's calibration-vector-with-some-specificity-character-mixed-in. The simple-terms claim "v_EG might add specifics safely" needs further qualification: at α=4 it adds *fabricated* specifics on knowledge-gap prompts.
+
+#### 2. v_IH × L17 ≈ v_CC × L9 on cc-simple (bidirectional half-test)
+
+Day-22 sweep included `vIH_L17 × α=8` on cc-simple (8 prompts) — half of the bidirectional cross-application test. v_IH on cc-simple produces nearly the same commit-vs-spiral profile as v_CC × L9 on cc-simple:
+- Saves: cc-s-01 (bat-and-ball), cc-s-03 (lily pad day 47), cc-s-04 (48 mph), cc-s-05 (modus tollens), cc-s-06 (2 hours)
+- Spirals: cc-s-02 (5 widgets), cc-s-07 (7919 prime), cc-s-08 (Tokyo population)
+
+Same prompts saved, same prompts spiral. This is consistent with **Reading 1** of the IH/CC behavioral collision (orthogonal residual directions, shared downstream circuit) but **does not rule out Reading 2** (different circuits with overlapping `</think>` token-probability output).
+
+The other half (v_CC × L9 on eg-eval-v2 + abstention) is needed to settle the mechanism question and is queued as Round 3 priority.
+
+#### 3. v_CC_full and v_CC_numeric have OPPOSITE optimal α regimes
+
+| Prompt | vCC_full α=4 | vCC_full α=12 | vCC_num α=4 | vCC_num α=12 |
+|---|---|---|---|---|
+| cc-s-02 (5 widgets) | clean ✓ | FM-8 | truncated 636ch | clean ✓ |
+| cc-s-03 (lily pad 47) | clean ✓ | FM-8 | FM-8 | clean ✓ |
+
+vCC_full prefers α=4 (commits cleanly on harder prompts; over-steers at α=12). vCC_num prefers α=12 (commits where α=4 truncates).
+
+**Interpretation**: v_CC_numeric extracted from only 20 triplets has lower L2 norm (per F102/F106 norm tables; legacy CC ≈ 6.0, num ≈ similar magnitude in the smaller corpus); needs higher α to compete with baseline activations. **Behaviorally confirms cos 0.28-0.41 — they ARE different vectors**, not just different scalings of the same direction.
+
+But the *content* of commits doesn't visibly differ on cc-simple. Discriminating the explicit-numerical-probability sub-axis would require prompts that specifically reward Bayesian/probabilistic reasoning (e.g., "given prior P(D)=0.012 and likelihood ratio 7.67, what's the posterior?"). cc-simple is too easy to test this. Round 3 should add such prompts.
+
+#### 4. Multiple distinct vectors at high α suppress the seismic damper FM-8
+
+eg-v2-10 seismic damper:
+- Baseline FM-8
+- v_EG α=4 FM-8
+- v_EG α=8: clean "20-40%" with viscous/friction/hydraulic + Tokyo Skytree, Seoul Tower
+- v_EG α=12: clean "20-50%" with TMD + 40-60% optimized
+- v_IH α=8: clean "20-40%" with concrete damping-ratio reasoning
+- v_RT α=8: clean "30-50%" with Taipei 101 TMD ~40% + Tokyo Tower 60%
+
+**4 of 5 steering conditions save the FM-8 spiral.** Different geometric directions (cosine analysis: v_IH orthogonal to v_EG/v_RT/v_CC; EG/RT/CC weakly clustered), overlapping behavioral effect at the `</think>` gate. Reinforces the downstream-functional-convergence reading from F105/F106.
+
+#### 5. Each vector biases citation toward different named studies (potential real differentiation)
+
+When all conditions answer the same evidence-grounding question, the *specific* named studies cited differ by vector:
+
+- **vEG α=4**: NASA GISS, NOAA, Jehol Group, Nemegt Basin, SEM
+- **vEG α=12**: Cipriani 2009 *Lancet*, JAMA Psychiatry Cohen's d 0.35, ISIS-2 (1988)
+- **vIH**: Physicians' Health Study, Antiplatelet Trialists' Collaboration 2004, Mauna Loa
+- **vRT**: Framingham, Taipei 101 TMD ~40%, Tokyo Tower 60%, Cipriani 2018 with explicit p=0.13
+
+Whether this is real differentiation in citation style or sampling noise is open. Test would be repeating the sweep with the same vectors and prompts at multiple seeds.
+
+#### 6. NEW FAILURE MODE: FM-13 commit-amplified error
+
+v_CC_full × α=12 on cc-s-08 (Tokyo population question, GOLD=13M) commits to **wrong answer "(c) 130 million"** with confident reasoning:
+> "the Tokyo metropolitan area population is around 37 million ... However, the options provided do not include 37 million. Among the choices, 130 million is the closest estimate"
+
+The baseline reasoning was already broken (37M is closer to 13M than to 130M numerically). The commit vector amplifies whatever the model thinks rather than fixing the underlying error. **Steering does not repair broken reasoning; it forces commit on whatever the model happens to conclude.**
+
+This is the disposition-modulation-not-propositional-injector boundary (F45) materializing as a concrete failure mode. FM-13 added to scoring.md catalogue.
+
+### Updated working-vector inventory (after Day-22 sweep)
+
+| Vector | Status | Notes |
+|---|---|---|
+| qwen × IH × L17 α=+8 | **HIGH** confidence working | Anti-FM-8 / commit. Cross-applied to cc-simple this sweep — works there too. Reproduces commit-on-easy-spirals, FM-8 on deep-attractor prompts. |
+| qwen × CC × L9 (legacy) α=+8 | **HIGH** confidence working | Same anti-FM-8 mechanism. cos 0.85 with v_CC_full (very similar). |
+| qwen × CC_full × L9 α=+4 | **HIGH** confidence working | v2 corpus version of CC; behaves like legacy on easy prompts. Best at low α; over-steers at high α. |
+| qwen × CC_numeric × L9 α=+12 | **MED** confidence working | 20-triplet sub-axis vector; needs high α. Behaviorally distinguishable from CC_full (different optimal α regime). Content distinction not visible on cc-simple — needs Bayesian prompts to test. |
+| qwen × EG × L7 α=+8/+12 | **MED** confidence working with caveat | Saves seismic-damper FM-8 at α≥8. **Confabulates on knowledge-gap prompts at α=4**; at α=8/12 commits to rejection or hedged estimate instead. v2 redesign reduced but didn't eliminate the v1 confabulation problem (F107). |
+| qwen × EG × L7 α=+4 | LOW (and risky) | Confabulates on Gandhi prompt; should not be used at this α on knowledge-gap inputs. |
+| qwen × RT × L15 α=+8 | LOW-MED | Borderline. Adds named-study citations distinct from EG/IH but FM-8s on eg-v2-04 (age of universe). |
+| All gemma × * | NULL | Confirmed null across 4 days now. |
+
+**Net: 4 vectors with high or medium confidence on qwen3-4b** (IH × L17, CC × L9 with three flavors, EG × L7 at α=8/12, RT × L15 borderline). Plus the 1 actively-risky configuration (EG × L7 α=4 on knowledge-gap prompts).
+
+### Applies to
+
+- **F104, F105, F106:** behavioral confirmation extends the geometric findings; v_IH and v_CC behavioral collision is reproduced in this sweep with explicit cross-application data; v_CC_full and v_CC_numeric distinction is behaviorally validated.
+- **F107:** corpus-generation task-level blind spot is reinforced — even the *redesigned* v2 corpus only partially decouples the EG vector from the calibration axis (cos 0.70 with v1, behavioral confabulation at α=4).
+- **`docs/scoring.md`:** add **FM-13 (commit-amplified error)** to catalogue. v_CC × α=12 on cc-s-08 commits confidently to 130M when correct is 13M because the baseline arithmetic ("37 closer to 130 than to 13") was already wrong. Steering forced commit on broken reasoning.
+- **`docs/post-mvp-decisions.md`:** the "compose dynamically based on prompt" goal needs to handle FM-13 — high-α commit-vector application on prompts where baseline reasoning is broken produces confident wrong answers, not abstention. Composition strategies need a baseline-quality gate.
+- **`docs/project.md`:** vector inventory section updated.
+- **Round 3 priorities** (queued): bidirectional completion (vCC × L9 on eg-eval-v2 + abstention); vEG α=12 on abstention to test if higher α suppresses Gandhi confabulation entirely; composition behavioral test; vCC_num behavioral A/B with explicit-Bayesian prompts; non-scientific corpus extraction (cluster-source question, bigger lift).
+
+### Artifacts
+
+- `mvp/results/full_hand_review_v2_sweep.md` — full per-cell verdict (this entry's source)
+- `mvp/results/benchmark_probe/{cc-simple,abstention,eg-eval-v2}/d22_v2_*/` — 168 generations
+- `mvp/results/v2_sweep_20260428/cosine_matrix.{json,html}` — pairwise cosines all 36 layers
+- `mvp/results/v2_cosine_observations.md` — Day-22 honest framing of the cosine matrix
+- `mvp/run_v2_sweep.sh` — sweep orchestrator (with the two pipeline-bug fixes)
+

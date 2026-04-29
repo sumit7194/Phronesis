@@ -165,28 +165,34 @@ The status section above ("Phase 3 onward: not started") is many weeks stale. Cu
   - Day-22 v2 sweep with redesigned corpora (15 cells across Phase 4 still running; cosine matrix + behavioral diagnostics).
 - **Phase 6 (writeup):** not started.
 
-### Net working-vector inventory (current)
+### Net working-vector inventory (current — Day 23, post-v2-sweep)
 
 | Vector | Status | Confidence | Notes |
 |---|---|---|---|
-| qwen × IH × L17 α=+8 to +12 | Working | **HIGH** | Anti-FM-8 / commit force; produces both humble abstention and confident commit depending on prompt demands |
-| qwen × CC × L9 α=+4 to +12 | Working | **HIGH** | Same anti-FM-8 mechanism as IH but at a geometrically distinct residual-stream direction (cos≈0 with v_IH) |
-| qwen × EG × L7 α=4-8 | Active but risky | LOW | Adds named-entity tokens; **confabulates** them on knowledge-gap prompts. v_EG_v2 (redesigned corpus) is being evaluated; geometry shows cos 0.70 with v1 buggy vector (partial rotation) |
-| qwen × CC_numeric × L9 | Untested behaviorally | — | 20-triplet sub-corpus (claude-cc-*) carves a partly-distinct geometric direction (cos 0.28-0.41 with CC_full). Behavioral A/B pending |
-| qwen × RT × L15 α=8 | Borderline | LOW-MED | Subtle vocabulary shift on 2/5 items only |
-| All gemma × * | Null | (confirmed) | 3 days of null across α and layers |
+| qwen × IH × L17 α=+8 | Working | **HIGH** | Anti-FM-8 / commit. Confirmed cross-applicable to cc-simple (Day 22 sweep). Produces humble abstention on false-premise prompts and committed estimates on hard magnitude prompts. |
+| qwen × CC_legacy × L9 α=+8 | Working | **HIGH** | Legacy 50-triplet hand corpus. Anti-FM-8 mechanism; cos 0.85 with v_CC_full (very similar). |
+| qwen × CC_full × L9 α=+4 | Working | **HIGH** | v2 corpus (186 triplets). Best at LOW α; over-steers at high α. **FM-13 risk at α=12 on broken-baseline-reasoning prompts** (commit-amplified-error). |
+| qwen × CC_numeric × L9 α=+12 | Working | MED | 20-triplet sub-corpus (claude-cc-*). cos 0.28-0.41 with CC_full — geometrically distinguishable. **Best at HIGH α** (lower L2 norm needs more amplification). Content distinction not yet tested with Bayesian prompts. |
+| qwen × EG × L7 α=+8 to +12 | Working with caveat | MED | v2 redesigned corpus. Saves seismic-damper FM-8 at α≥8. **Confabulates on knowledge-gap prompts at α=4** (Gandhi 1937 fabrication); at α=8 commits to rejection instead. Phase-transition behavior. |
+| qwen × EG × L7 α=+4 | Active but RISKY | LOW | Same vector at lower α: confabulates. Should not be used at this α on knowledge-gap inputs. |
+| qwen × RT × L15 α=8 | Borderline | LOW-MED | Adds named-study citations distinct from EG/IH (Taipei 101 TMD ~40%, Tokyo Tower 60%). FM-8 on eg-v2-04 (age of universe). |
+| All gemma × * | Null | (confirmed, 4 days) | No behavioural effect at any α tested across 4 days. |
 
-### Big picture revision (Day 21-22)
+**Failure modes catalogued through Day 23**: FM-1 through FM-13. See `docs/scoring.md` for full catalogue. FM-13 (commit-amplified error — high-α commit-vector application on broken-baseline-reasoning prompts produces confident wrong answers) added Day 23.
 
-The original framework hypothesized 4 orthogonal virtue directions ("compose them dynamically based on prompt context"). Geometric data shows:
+### Big picture revision (Day 21-23)
+
+The original framework hypothesized 4 orthogonal virtue directions ("compose them dynamically based on prompt context"). Geometric + behavioral data through Day 23 shows:
 
 - **v_IH is the geometric outlier** (cos ≤ 0.14 vs every other v2 virtue at every AP-peak layer; cos = 0.000 vs v_CC_full at L17).
 - **v_EG, v_RT, v_CC_full form a cluster** (pairwise cos 0.30-0.45) — distinct vectors but inhabiting a shared residual-stream subspace.
-- **v_CC_numeric** carves a partly-distinct sub-direction (cos 0.28-0.41 with v_CC_full).
+- **v_CC_numeric** carves a partly-distinct sub-direction (cos 0.28-0.41 with v_CC_full). Behaviorally confirmed Day 23: opposite optimal α regime from v_CC_full.
 
 So the actual pattern is **1 distinct direction + 3 weakly distinguishable in a shared subspace + 1 partial sub-carve-out**, not the symmetric 4-way the framework predicted. That's neither the framework's prediction nor the "1 disposition reachable from many corpora" reading from Day-21 — it's a third, more interesting picture.
 
-The IH/CC behavioral collision (both vectors fix FM-8 spirals on the prompts each was tested on) is **NOT** explained by residual-stream alignment. It's **downstream functional convergence** — two near-orthogonal directions hit overlapping OV/MLP read-offs which both push `</think>` token-probability up. Mechanism details (shared circuit vs different circuits with overlapping output) await bidirectional cross-application behavioral test (queued as Round 3).
+The IH/CC behavioral collision (both vectors fix FM-8 spirals on the prompts each was tested on) is **NOT** explained by residual-stream alignment. It's **downstream functional convergence** — two near-orthogonal directions hit overlapping OV/MLP read-offs which both push `</think>` token-probability up. Mechanism details (shared circuit vs different circuits with overlapping output) await full bidirectional cross-application; Day-22 sweep added v_IH × L17 on cc-simple and produced nearly identical commit-vs-spiral profile to v_CC × L9 on cc-simple — **half-test consistent with shared-circuit reading but doesn't rule out different-circuits-overlapping-output**. Round 3 needs `vCC × L9 on eg-eval-v2 + abstention` to settle.
+
+**FM-13 (commit-amplified error)** discovered Day 23: high-α commit-vector application on prompts where baseline reasoning is broken produces *confident wrong answers*, not abstention. Concrete instance: vCC_full × L9 × α=12 on Tokyo population question committed to "(c) 130 million" when correct is 13M, because the baseline arithmetic ("37M closer to 130 than to 13") was already wrong. This is the F45 disposition-modulator-not-propositional-injector boundary materializing as a behavioral failure mode. **Implication for compositional steering**: a baseline-quality gate is needed before applying commit-vectors on contested-knowledge / numeric-judgment prompts.
 
 ### Methodological wins
 

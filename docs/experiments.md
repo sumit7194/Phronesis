@@ -892,3 +892,58 @@ F96 scorer-regime concern now actively blocking clean Test A interpretation. Sco
 3. v_CC_numeric vs v_CC_full A/B on additional benchmarks
 4. Non-scientific corpus extraction (cluster-source question — bigger lift, deferred)
 
+
+---
+
+## Day-22-23 v2 sweep — completion log + hand review (2026-04-29)
+
+**Status:** Completed. Sweep finished 2026-04-29T00:05Z (15/15 Phase 4 cells, zero errors). Manually pulled morning of Apr 29; VM stopped TERMINATED.
+
+**Final cell counts (all hand-reviewed, 168 generations):**
+
+| Cell | Bench | n | Status |
+|---|---|---|---|
+| diag_d3_cc_baseline | cc-simple | 8 | retained baseline |
+| diag_d1b_abstention_baseline | abstention | 5 | retained baseline |
+| diag_d1a_d2_egv2_baseline | eg-eval-v2 | 10 | retained baseline |
+| d22_v2_vEG_L7_a4 | eg-eval-v2 | 10 | clean |
+| d22_v2_vEG_L7_a8 | eg-eval-v2 | 10 | clean |
+| d22_v2_vEG_L7_a12 | eg-eval-v2 | 10 | clean |
+| d22_v2_vEG_L7_a4_abst | abstention | 5 | clean (CONFABULATES on fp-gandhi) |
+| d22_v2_vEG_L7_a8_abst | abstention | 5 | clean |
+| d22_v2_vCCfull_L9_a4 | cc-simple | 8 | clean |
+| d22_v2_vCCfull_L9_a8 | cc-simple | 8 | clean |
+| d22_v2_vCCfull_L9_a12 | cc-simple | 8 | clean (FM-13 on cc-s-08) |
+| d22_v2_vCCnum_L9_a4 | cc-simple | 8 | unstable (truncations) |
+| d22_v2_vCCnum_L9_a8 | cc-simple | 8 | mostly clean |
+| d22_v2_vCCnum_L9_a12 | cc-simple | 8 | clean |
+| d22_v2_vIH_L17_a8 | eg-eval-v2 | 10 | clean (saves seismic damper) |
+| d22_v2_vIH_L17_a8_abst | abstention | 5 | clean (saves ip-longest spiral) |
+| d22_v2_vIH_L17_a8_cc | cc-simple | 8 | clean |
+| d22_v2_vRT_L15_a8 | eg-eval-v2 | 10 | mixed (FM-8 on eg-v2-04) |
+
+**Findings:** F108 in findings.md. Six headline findings; one new failure mode (FM-13). Per-cell hand verdict in `mvp/results/full_hand_review_v2_sweep.md`.
+
+**Round 3 design (queued, post-current-sweep, was queued earlier and now refined per F108):**
+
+1. **Bidirectional cross-application** (mechanism question for IH/CC behavioral collision):
+   - `vCC_full_L9 × {α=4, α=8, α=12}` on eg-eval-v2 (10 prompts) and abstention (5 prompts) — completes the v_IH ↔ v_CC mirror test; settles whether the IH/CC behavioral collision is shared-downstream-circuit (Reading 1) or different-circuits-with-overlapping-output (Reading 2).
+
+2. **vEG_v2 high-α abstention test**:
+   - `vEG_L7 × α=12` on abstention (5 prompts including fp-gandhi) — tests whether higher α fully suppresses the Gandhi confabulation that occurs at α=4. We have α=4/8 only currently.
+
+3. **Composition behavioral test**:
+   - Steer with `vIH_L17 × α=8 + vCC_full_L9 × α=8` simultaneously on the diagnostic prompt set. Tests whether geometric orthogonality (cos = 0.000 at L17) translates to meaningful behavioral composition. Need to write a small composite-steering harness; not in current run_benchmark.py.
+
+4. **vCC_numeric A/B with explicit-Bayesian prompts**:
+   - Design 3-5 prompts that reward Bayesian/numeric-probability reasoning (e.g., "given prior P(D)=0.012 and likelihood ratio 7.67, what's the posterior?"). Run vCC_full vs vCC_numeric at matched α. Tests if the numeric-probability sub-axis is content-distinguishable.
+
+5. **Non-scientific corpus extraction** (LOW priority, ~1 day lift):
+   - Build a small ~30-triplet non-scientific corpus (creative writing, casual chat, philosophy-of-language) per the cluster-source question raised in v2_cosine_observations.md. Extract diff-of-means with the same procedure. Compute cosine to v1 and v2 vectors; if EG/RT/CC cluster persists, the cluster reflects deeper structure not surface features.
+
+Estimated GPU budget for items 1+2+3: ~2 hours. Item 4 adds ~30 min (small prompt set). Item 5 is corpus-construction-heavy.
+
+**Pipeline bugs found and patched (now in runbook):**
+- FM-11: extract_v2.py resume-logic skips any layer with existing metadata.json. Fix: wipe source dir between cp -r backup and extract. Commit `4c8cfe5`.
+- FM-12: extract_v2.py `--layers sweep` covers only EVEN layers (2,4,...,34). When AP peaks are odd (qwen3-4b: 7, 9, 15, 17), `--layers all` is required. Commit `9f4018c`.
+
