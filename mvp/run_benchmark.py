@@ -240,8 +240,10 @@ def generate_streaming(model, tokenizer, device, prompt, max_tokens, hook=None):
         tokenizer, skip_prompt=True, skip_special_tokens=False
     )
 
-    if hook is not None:
-        hook.attach()
+    # Backward compat: hook may be a single AdditiveHook or a list of them.
+    _hooks = hook if isinstance(hook, list) else ([hook] if hook is not None else [])
+    for _h in _hooks:
+        _h.attach()
 
     gen_kwargs = dict(
         input_ids=inputs["input_ids"],
@@ -269,8 +271,8 @@ def generate_streaming(model, tokenizer, device, prompt, max_tokens, hook=None):
     finally:
         printer.flush()
         thread.join()
-        if hook is not None:
-            hook.detach()
+        for _h in _hooks:
+            _h.detach()
 
     dt = time.time() - t0
 
@@ -363,6 +365,14 @@ def main():
                     choices=["baseline", "steered"])
     ap.add_argument("--vector", default=DEFAULT_VECTOR)
     ap.add_argument("--alpha", type=float, default=DEFAULT_ALPHA)
+    # Composite-steering: optional second vector applied simultaneously
+    # at its own layer. Both hooks attached during generation.
+    ap.add_argument("--vector2", default=None,
+                    help="Optional second vector for composite steering (applied "
+                         "simultaneously with --vector). Vectors are attached as "
+                         "separate forward hooks at their respective layers.")
+    ap.add_argument("--alpha2", type=float, default=None,
+                    help="Alpha for --vector2. Required when --vector2 is set.")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--label", default=None,
                     help="Output subdir name (default: --condition). Use to separate "
@@ -390,9 +400,24 @@ def main():
                      f"Available: {list(vectors_for_model.keys())}")
         rel, layer = vectors_for_model[args.vector]
         v = np.load(vector_root / rel)
-        hook = AdditiveHook(model, layer, v, args.alpha, layer_accessor=layer_accessor)
-        print(f"{CYAN}Steering ENABLED: vector={args.vector} layer={layer} "
-              f"alpha={args.alpha:+g}{RESET}")
+        hook1 = AdditiveHook(model, layer, v, args.alpha, layer_accessor=layer_accessor)
+        # Composite steering: optionally attach a second vector at its own layer.
+        if args.vector2 is not None:
+            if args.alpha2 is None:
+                ap.error("--alpha2 required when --vector2 is set")
+            if args.vector2 not in vectors_for_model:
+                ap.error(f"vector2 '{args.vector2}' not registered for model '{args.model}'.")
+            rel2, layer2 = vectors_for_model[args.vector2]
+            v2 = np.load(vector_root / rel2)
+            hook2 = AdditiveHook(model, layer2, v2, args.alpha2, layer_accessor=layer_accessor)
+            hook = [hook1, hook2]
+            print(f"{CYAN}Composite steering: "
+                  f"v1={args.vector} L{layer} α={args.alpha:+g}  +  "
+                  f"v2={args.vector2} L{layer2} α={args.alpha2:+g}{RESET}")
+        else:
+            hook = hook1
+            print(f"{CYAN}Steering ENABLED: vector={args.vector} layer={layer} "
+                  f"alpha={args.alpha:+g}{RESET}")
     else:
         print(f"{CYAN}Baseline (no steering){RESET}")
 
