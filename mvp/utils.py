@@ -42,8 +42,11 @@ MODEL_CONFIGS = {
     "phi-3.5-mini-it": {
         "hf_id": "microsoft/Phi-3.5-mini-instruct",
         "local_dir": "Phi-3.5-mini-instruct",
-        "dtype": torch.float16,
+        "dtype": torch.bfloat16,         # Phi-3.5 ships bf16
         "layer_accessor": "model.layers",
+        "thinking": False,               # No <think>/</think> tags
+        "num_layers": 32,
+        "hidden_dim": 3072,
     },
     "qwen3-4b": {
         "hf_id": "Qwen/Qwen3-4B",

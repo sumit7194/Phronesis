@@ -234,3 +234,48 @@ To stop the documentation drift / duplication pattern flagged in Day 22:
 
 The Day-22 review noted that F106 (findings.md), Day-22 entry (journal.md), and "Day-22 v2 sweep" section (experiments.md) all describe the same events with different framings. Going forward: pick one canonical home per event; reference from the others rather than restate.
 
+---
+
+## Status update (2026-04-29 evening, Day 23 — post Round 3)
+
+Round 3 sweep complete. 121 generations hand-reviewed, all without auto-scorer. F109 promoted in findings.md.
+
+### Refined working-vector inventory (Day 23 evening)
+
+| Vector | Status | Notes |
+|---|---|---|
+| qwen × IH × L17 α=+8 | **HIGH** confidence | Anti-FM-8 / commit. Adding to composite at α=8 partially neutralizes vCC's FM-13 (cc-s-08 Tokyo correct in composite, wrong in vCC α=12 alone). |
+| qwen × CC × L9 (legacy) α=+8 | **HIGH** confidence | Same anti-FM-8 mechanism. cos 0.85 with v_CC_full. |
+| qwen × CC_full × L9 α=+4 | **HIGH** at α=4 | Best at low α. |
+| qwen × CC_full × L9 α=+8 | **MED** with caveat | $185.55 stock hallucination on abstention; 1937 Gandhi fab. |
+| qwen × CC_full × L9 α=+12 | **MED** with strong caveat | NEW "1957" Nobel fab; 1500-token degenerate-loop on ip-longest; FM-13 fingerprint dominant. |
+| qwen × CC_numeric × L9 α=+12 | MED, untested in Round 3 | Bayesian-prompt A/B still pending. |
+| qwen × EG × L7 α=+8 | **MED** at α=8 specifically | Phase-transition rail-switch; closer to truth on Gandhi. |
+| qwen × EG × L7 α=+4 | LOW (and risky) | Confabulates. |
+| qwen × EG × L7 α=+12 | LOW-MED | Inherits FM-13 fingerprint (stock $185.55). Gandhi rejection-direction right, details wrong. |
+| **qwen × IH+CC composite α=+8+8** | **NEW, MED** | Non-additive: fixes ip-longest, fixes Tokyo, helps comp-08 premise-flag. Inherits Gandhi-1957 + stock-$185.55 from vCC. Roughly comparable to vCC alone. |
+| qwen × RT × L15 α=+8 | LOW-MED (unchanged) | Borderline. |
+| All gemma × * | NULL (5 days confirmed) | |
+
+### Updated big-picture (Day 23)
+
+The geometric clustering picture from Day 22 (1 distinct + 3 clustered + 1 sub-carve-out) is now backed by token-level evidence for the FM-13 mechanism:
+
+- **FM-13 is gated by a single thinking-token rail-switch, not a smooth dial.** The α value selects which generation step the steered hidden state crosses the decision boundary. Different α values land on different decoding rails. Whether the rail is correct depends on rail content, not α magnitude. (F109 finding #1.)
+- **v_EG and v_CC at the same α produce same FM-13 surface with different fingerprints** — confirming downstream functional convergence (per F105/F106): orthogonal residual-stream directions hitting overlapping OV/MLP read-offs.
+- **Composition is non-additive.** Composite (vIH+vCC at α=8+8) fixed one degenerate-loop, fixed one premise-flag, kept Tokyo correct — but inherited Gandhi-1957 and stock-$185.55 hallucinations from vCC. Roughly comparable to vCC alone, NOT strictly better. (F109 finding #3.)
+
+### Phase 2 (queued, user direction)
+
+Phi-3.5-mini extraction + sweep + hand-review. Establish whether F-findings transfer to a third open model. F102 cross-model split currently rests on 2 datapoints (qwen behavioral, gemma null); phi-3.5-mini disambiguates "qwen-specific" from "general 4B-class behavior."
+
+Phase 2 plan:
+1. Download phi-3.5-mini-instruct.
+2. Verify model loads + token throughput on L4.
+3. Run extract_v2.py on the 4 v2 corpora (combined / IH / EG / RT / CC, same as qwen3-4b).
+4. Compute cosine matrix at all layers; pick AP-peak layers.
+5. Run the same diagnostic + EG + abstention + cc-simple + composition sweep we ran on qwen.
+6. Hand-review.
+
+Estimated: 2-3 days end-to-end on L4.
+

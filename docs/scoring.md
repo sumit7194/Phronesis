@@ -278,3 +278,26 @@ The baseline (without steering) FM-8'd on the same prompt — spiraled in confus
 **Scoring policy**: when reporting steering effects, FM-13 errors must NOT be counted as success cases. cc-s-08 vCC_full α=12 = "committed but wrong" should be hand-rated as wrong, not as commit-success.
 
 **Implication for compositional steering** (the eventual project goal): the "apply commit-vector when prompt risks FM-8" rule produces confident wrong answers on prompts where the baseline reasoning is broken. A compositional strategy needs a *baseline-quality gate*: only apply the commit-vector when the model's pre-commit reasoning trace is internally consistent. Without that gate, FM-13 is a substantial risk on contested-knowledge / numeric-judgment prompts.
+
+### FM-13 mechanism update (added 2026-04-29 evening, Round 3 sweep — see F109)
+
+Round 3 fine-grained α-sweep on Gandhi (`fp-gandhi-only` benchmark at α∈{1,2,3,5,6,7,10}) plus token-level logit inspection at α∈{0,1,2,4,6,8,10,12} (`mvp/inspect_eg_logits.py`, output `mvp/results/eg_logit_inspection.json`) revealed that **FM-13 is gated by a single thinking-token rail-switch, not a smooth dial**.
+
+Concrete evidence:
+
+| α | First-divergence step (vs α=0 baseline) | Divergence-token swap | Rail completion |
+|---|---|---|---|
+| 1–7 | step 36 | ` was` → ` actually` | "actually didn't win [more than once]" → "but won once in 1937" (fabrication) |
+| 8 | step 46 | ` actually` → ` nominated` | "was nominated multiple times but never won" (closer to true) |
+| 10 | step 33 | ` remember` → ` need` | "I need to check..." → "never awarded" (correct) |
+| 12 | step 20 | ` is` → ` historians` | "never awarded three times. Received once 1937" (split) |
+
+Mechanism: the steering vector pushes hidden state along a fixed direction; the position at which this push crosses the decision boundary for a different next-token is α-dependent. **At low α, the boundary-cross happens at one position, locking the model into one decoding rail. At higher α, the boundary-cross happens at a different position, locking into a different rail.** Whether the rail is correct depends on the rail's content, not the α magnitude per se.
+
+Implication for hand-review: when checking for FM-13, also note **at which generation step the steered output first diverges from baseline**. Different α values producing the same surface fabrication may have crossed the decision boundary at different positions; this distinction matters for understanding whether the failure is "vector pushing too hard" or "vector landing on a bad rail."
+
+For the rare cases where you want a quantitative trace: re-run the same prompt with `inspect_eg_logits.py` to capture top-15 token candidates per step. The divergence-step table above is reproducible from `eg_logit_inspection.json` for the Gandhi prompt; the same harness works for other prompts.
+
+**Cross-vector observation (added Round 3)**: FM-13 fingerprints differ across vectors at the same α. v_CC × L9 × α=12 on the stock-price prompt produces "$185.55"; v_EG × L7 × α=12 also produces "$185.55" but with a hallucinated date "April 25, 2024". v_CC at α=12 fabricates "1957 Nobel Prize" for Gandhi; v_EG at α=12 retains "1937" but flips to "never awarded three times." Same failure mode (FM-13 commit-amplified-error), different fabricated content. **The shared $185.55 across vectors is suspicious** — likely either training-data memorization of a specific snapshot or a steering-induced selection of a memorized completion. Worth a follow-up with a different stock-price prompt to discriminate.
+
+**Hand-review scoring policy unchanged**: FM-13 errors do NOT count as success regardless of how confidently structured the output is. The "structural confidence" signal is exactly what auto-scorers latch onto and miss.

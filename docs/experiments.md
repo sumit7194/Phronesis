@@ -947,3 +947,54 @@ Estimated GPU budget for items 1+2+3: ~2 hours. Item 4 adds ~30 min (small promp
 - FM-11: extract_v2.py resume-logic skips any layer with existing metadata.json. Fix: wipe source dir between cp -r backup and extract. Commit `4c8cfe5`.
 - FM-12: extract_v2.py `--layers sweep` covers only EVEN layers (2,4,...,34). When AP peaks are odd (qwen3-4b: 7, 9, 15, 17), `--layers all` is required. Commit `9f4018c`.
 
+---
+
+## Phase 4 Day 23 (2026-04-29 evening) — Round 3 sweep (21 cells / 121 generations) + logit inspection
+
+**Status:** Completed. Sweep finished 2026-04-29T10:36Z (21/21 cells, 2h35m on L4). Pulled to local, hand-reviewed every generation. Logit inspection ran post-sweep; pulled separately.
+
+**Live monitoring:** patched `mvp/dashboard_v2_sweep.py` to glob both `v2_sweep_*` and `round3_*` log directories; deployed via `--tunnel-through-iap` (direct gcloud SSH was flake-prone). Dashboard URL (when VM running): http://34.126.84.125:8082.
+
+**Final cell counts (all hand-reviewed, 121 generations, no auto-scorer):**
+
+| Cell | Bench | n | Status |
+|---|---|---|---|
+| round3_vCCfull_L9_a4_eg | eg-eval-v2 | 10 | clean (PLATO/GRACE misattribution; T. rex/Allosaurus feathers fabricated) |
+| round3_vCCfull_L9_a8_eg | eg-eval-v2 | 10 | clean (Physicians' Health Study misattributed) |
+| round3_vCCfull_L9_a12_eg | eg-eval-v2 | 10 | drift (Planck 2013 wrong; sauropod filaments fab; Tokyo Tower fab; TP53 mislabeled) |
+| round3_vCCfull_L9_a4_abst | abstention | 5 | mixed (1937 fab on gandhi; ip-longest degenerate; stock ✓) |
+| round3_vCCfull_L9_a8_abst | abstention | 5 | bad (1937 + first-non-European fab; **stock $185.55 hallucination**) |
+| round3_vCCfull_L9_a12_abst | abstention | 5 | bad (1957 NEW fab; 1500-token ip-longest loop; $185.55) |
+| round3_vEG_L7_a12_abst | abstention | 5 | mixed (Gandhi gets rejection right + 1937 detail wrong; **$185.55 + April 25 2024 hallucinated**) |
+| round3_vEG_L7_a1_gandhi | fp-gandhi-only | 1 | "1937 + invented M.K. successor" |
+| round3_vEG_L7_a2_gandhi | fp-gandhi-only | 1 | "1937 + 12 nominations 1913-37" |
+| round3_vEG_L7_a3_gandhi | fp-gandhi-only | 1 | "1937 + posthumous" (internally contradictory) |
+| round3_vEG_L7_a5_gandhi | fp-gandhi-only | 1 | "1937 + first non-European" |
+| round3_vEG_L7_a6_gandhi | fp-gandhi-only | 1 | "1937 + first non-European" |
+| round3_vEG_L7_a7_gandhi | fp-gandhi-only | 1 | "1937 + single prize" |
+| round3_vEG_L7_a10_gandhi | fp-gandhi-only | 1 | ✓ "never awarded" + nominated three times (years wrong) |
+| round3_comp_baseline | composition-test | 10 | baseline quality (some fabrications) |
+| round3_comp_vIH_a8 | composition-test | 10 | comparable to baseline |
+| round3_comp_vCCfull_a8 | composition-test | 10 | thinking-loops bleed into answers on 3 prompts |
+| round3_comp_vIH_plus_vCC_a8 | composition-test | 10 | composite — non-additive, see F109 |
+| round3_comp_diagnostic_cc | cc-simple | 8 | **all 8 correct** including Tokyo (vs FM-13 at vCC α=12 alone) |
+| round3_comp_diagnostic_abst | abstention | 5 | composite fixes ip-longest, inherits gandhi-1957 + stock-$185.55 |
+| round3_comp_diagnostic_eg | eg-eval-v2 | 10 | quality similar to vCC α=8 alone |
+
+**Findings:** F109 in findings.md. Five headline findings; FM-13 mechanism refined to rail-switch; no new failure modes introduced.
+
+**Logit inspection** (`mvp/inspect_eg_logits.py` / `mvp/results/eg_logit_inspection.json`):
+- Generated Gandhi prompt token-by-token at α∈{0,1,2,4,6,8,10,12} with top-15 candidates per step.
+- Captured first-divergence step vs baseline: α=1-6 diverge at step 36 (` was`→` actually`); α=8 at step 46 (` actually`→` nominated`); α=10 at step 33; α=12 at step 20.
+- Settles F108's phase-transition framing into a token-position rail-switch mechanism (per F109 finding #1).
+
+**Phase 2 (queued, user direction):** phi-3.5-mini extraction + sweep + hand-review.
+1. Download phi-3.5-mini-instruct.
+2. Verify model loads on L4.
+3. Run extract_v2.py on the 4 v2 corpora (combined / IH / EG / RT / CC).
+4. Compute cosine matrix at all layers; pick AP-peak layers.
+5. Run the same diagnostic + EG + abstention + cc-simple + composition sweep we ran on qwen.
+6. Hand-review.
+
+Estimated: 2-3 days end-to-end.
+

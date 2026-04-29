@@ -1144,3 +1144,59 @@ Six headline findings:
 
 Items 1+2+3 fit in ~2 hours GPU.
 
+---
+
+## Day 23 (2026-04-29 evening) — Round 3 sweep complete; 121 generations hand-reviewed; F109 promoted
+
+Round 3 sweep finished 10:36 UTC, 2h35m on L4. 21 cells, 121 generations. Live-monitored via patched `dashboard_v2_sweep.py` (the v2 sweep dashboard from yesterday adapted to also glob `round3_*` directories). SSH was flaky on direct gcloud — IAP-tunneled SSH worked, used that path for deploy + monitor + result-pull.
+
+### Hand review of every generation (no auto-scorer)
+
+Per-cell verdict in `mvp/results/full_hand_review_round3.md`. Promoted to **F109** in findings.md.
+
+Five headline findings:
+
+1. **The vEG α phase-transition is gated by a single thinking-token rail-switch, not a smooth dial.** Logit inspection (`mvp/inspect_eg_logits.py` + `mvp/results/eg_logit_inspection.json`) shows α∈[1,7] all diverge from baseline at the same step 36 (` was`→` actually`, locking onto "did win once in [date]" rail). At α=8 the divergence shifts to step 46 (` actually`→` nominated`, switching to "nominated but never won" rail). The α value selects WHICH token position the rail-switch happens at, not the magnitude of fabrication directly. F108's "low-α commits via fabrication, high-α commits via rejection" framing was endpoint-correct but mechanism-wrong.
+
+2. **v_CC × L9 on abstention reproduces the FM-13 fingerprint that v_EG × L7 produces, with different surface details.** vCC at α=8/12 hallucinates "$185.55" on the stock-price prompt; vEG at α=12 produces the same number. vCC at α=12 newly invents "1957 Nobel Prize" (vs "1937" at α=4/8) — different fabricated year, anchored coherently across the answer. ip-longest degenerate-loop scales monotonically with α: α=4 contained, α=12 produces 1500+ tokens of verbatim repetition. Settles the F108 question (Reading 1 vs Reading 2): both knobs hit the same downstream FM-13 surface but with different geometric paths.
+
+3. **Composite (v_IH + v_CC at α=8+8) is non-additive.** Fixed the ip-longest degenerate-loop that vCC alone produced; kept Tokyo population correct (vs FM-13 at vCC × α=12 alone); helped one premise-flag (T. rex gestation). Inherited Gandhi-1957 fabrication and stock-$185.55 hallucination from vCC. Degraded specificity on lead-pipes (<10% vs <1%). Roughly comparable in quality to either knob alone, NOT strictly better.
+
+4. **v_CC × L9 on EG-eval-v2 is solid at α=4/8, drifts at α=12.** Even on the friendly EG benchmark, α=12 starts introducing commit-amplified errors: Planck "2013" wrong launch, sauropod feathers fabricated, Tokyo Tower seismic damper fabricated, TP53 mislabeled.
+
+5. **Hypothesis: FM-13 is a resonance phenomenon, not a magnitude effect.** The steering vector lands the model on a specific decoding rail; whether that rail is correct depends on which token position the rail-switch happens at; α controls position not magnitude. Different α values select different rails — sometimes the "honest" rail, sometimes a "newly fabricated" rail.
+
+### What I trust now
+
+- **F102 cross-model split** (qwen behavioral, gemma null) — stable, 5 days confirmed.
+- **F104/F105 v_IH ↔ v_CC behavioral collision** with downstream functional convergence — confirmed bidirectionally now (both directions produce same FM-13 surface).
+- **F45 disposition-not-propositional-injector boundary** — now has token-level evidence (rail-switch mechanism).
+- **FM-8 / FM-13 catalogue** — both modes amplified and quantified; no new FMs from Round 3.
+
+### What I'm less sure about
+
+- Whether the α=8 "honest rail" for v_EG on Gandhi is generalizable or prompt-specific.
+- Whether $185.55 is training-data leakage or steering-induced memorization-recall — would need a different stock-price prompt to discriminate.
+- Whether composite at α=4+4 (lower than tested) would be strictly better. Round 3 used α=8+8 because that was the per-vector working α; lower might keep cc-simple wins without inheriting abstention failures.
+
+### Round 4 / Phase 2 priorities
+
+User direction: **start phi-3.5-mini work next**. Establish whether F-findings transfer to a third open model. F102 cross-model split currently rests on 2 datapoints (qwen behavioral, gemma null); phi-3.5-mini is the third data point that disambiguates "qwen-specific" from "general 4B-class behavior."
+
+Phase 2 plan (from `post-mvp-decisions.md`):
+1. Download phi-3.5-mini-instruct.
+2. Verify model loads + token throughput on L4.
+3. Run extract_v2.py on the 4 v2 corpora (combined / IH / EG / RT / CC, same as qwen3-4b).
+4. Compute cosine matrix at all layers; pick AP-peak layers.
+5. Run the same diagnostic + EG + abstention + cc-simple sweep we ran on qwen.
+6. Hand-review.
+
+Estimated: 2-3 days end-to-end.
+
+### Pipeline notes from this round
+
+- Direct gcloud ssh exit-255-flake again. `--tunnel-through-iap` works; using IAP for all VM ops now.
+- `setsid bash -c "nohup python3 ... &"` is the reliable backgrounding pattern; plain `nohup ... &` over IAP hangs the SSH session.
+- Dashboard glob pattern updated: `(v2_sweep_*|round3_*)` so a single dashboard handles both sweep generations.
+- Sweep launcher pattern (`run_round3_sweep.sh`) — array of `bench|n|vector|alpha|label[|vector2|alpha2]` strings → `run_cell` function with positional unpacking — is clean enough to replicate for phi.
+

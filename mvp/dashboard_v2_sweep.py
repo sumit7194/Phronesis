@@ -36,8 +36,9 @@ RESULTS = MVP / "results"
 
 
 def find_active_logdir() -> Path | None:
-    """Find the most recent v2_sweep_* dir."""
-    candidates = sorted(RESULTS.glob("v2_sweep_*"), key=lambda p: p.stat().st_mtime, reverse=True)
+    """Find the most recent sweep logdir (v2_sweep_* or round3_*)."""
+    candidates = list(RESULTS.glob("v2_sweep_*")) + list(RESULTS.glob("round3_*"))
+    candidates = sorted(candidates, key=lambda p: p.stat().st_mtime, reverse=True)
     return candidates[0] if candidates else None
 
 
@@ -91,11 +92,12 @@ def gpu_stats() -> dict:
 
 
 def count_behavioral_cells() -> dict:
-    """Count JSON files in d22_v2_* labelled benchmark probe dirs."""
+    """Count JSON files in d22_v2_* AND round3_* labelled benchmark probe dirs."""
     out = {}
-    for d in sorted(RESULTS.glob("benchmark_probe/*/d22_v2_*")):
-        files = list(d.glob("*.json"))
-        out[d.name] = {"bench": d.parent.name, "count": len(files)}
+    for pattern in ("benchmark_probe/*/d22_v2_*", "benchmark_probe/*/round3_*"):
+        for d in sorted(RESULTS.glob(pattern)):
+            files = list(d.glob("*.json"))
+            out[d.name] = {"bench": d.parent.name, "count": len(files)}
     return out
 
 

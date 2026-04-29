@@ -382,3 +382,67 @@ What's added as a hard prerequisite for any further claims:
 - During writeup, when deciding how to frame FM-13 — as a discovered limitation, as a counterexample to optimistic steering claims, or as a separate methodology paper.
 - If v_EG_v2 high-α (α=12) on abstention shows it suppresses Gandhi confabulation entirely, the v2 corpus redesign success can be claimed; if not, the "calibration-vector-with-specificity-mixed-in" reading wins.
 
+---
+
+## Day-23 evening update (2026-04-29) — Round 3 sweep + logit inspection (F109)
+
+Round 3 sweep complete. 121 generations hand-reviewed (no auto-scorer). Promoted to F109. See `mvp/results/full_hand_review_round3.md` for per-cell verdict and `mvp/results/eg_logit_inspection.json` for token-level trajectory.
+
+### What this changes for the post-MVP plan
+
+**1. Composition is non-additive — the "compose dynamically based on prompt" goal needs a per-vector α-selection gate, not just a baseline-quality gate.**
+
+The Day-23 evening composition test (vIH + vCC at α=8+8 on 10 fresh prompts + composite on diagnostic suite) showed:
+
+- Composite **fixed** the ip-longest degenerate-loop that vCC alone produced at α=8/12.
+- Composite **kept** the Tokyo population correct (vs FM-13 at vCC α=12 alone).
+- Composite **helped** one premise-flag (T. rex gestation).
+- Composite **inherited** the Gandhi-1957 fabrication and stock-$185.55 hallucination from vCC at α=12.
+- Composite **degraded** specificity on lead-pipes (<10% vs <1% for the singletons).
+
+Composition is roughly comparable to either knob alone in quality terms, NOT strictly better. The per-prompt fix-vs-amplify pattern is asymmetric and prompt-dependent.
+
+For the post-MVP framing this means:
+
+- "v_IH and v_CC compose meaningfully" needs to be qualified as "compose meaningfully on a subset of prompts, while inheriting failure modes from one or both on other prompts." This is a weaker claim than the original "compose dynamically" framing implied.
+- The compositional-steering goal needs both: (a) a baseline-quality gate (don't apply commit when reasoning is broken — FM-13 risk per F108) AND (b) an α-selection gate per vector per prompt-type (since same vector at α=4 vs α=12 produces qualitatively different output, and pairs of vectors at α=8+8 produce different output again).
+
+**2. FM-13 is a resonance phenomenon, not a magnitude effect — α is a rail-selector, not a strength dial.**
+
+Logit inspection on the Gandhi prompt at α∈{0,1,2,4,6,8,10,12} shows the steered hidden state crosses the next-token decision boundary at *different generation steps* for different α. At α=1-7 it crosses at step 36 (` was`→` actually`) and locks onto "did win once in [date]" rail. At α=8 it crosses at step 46 (` actually`→` nominated`) and locks onto "was nominated, never won" rail. At α=10/12 it crosses at earlier steps but lands on different rails again.
+
+This means **the FM-13 mitigation cannot be "lower α to avoid commit-amplified-error"**. Lower α may cross the boundary at a position that lands on a *different fabricated rail* (e.g., the α=4 "1937 award" rail). The mitigation has to be prompt-specific rail-selection, which the vector-and-α tuple alone does not provide.
+
+For the post-MVP plan: the simplest workable strategy is α-sweep per prompt + hand-review for rail selection. Automated rail selection would require either (a) knowing the gold answer in advance, or (b) running multiple α and picking the most-honest-sounding output via another model — both expensive. The honest framing is "we have a discovered behavioral phenomenon, not a deployable steering recipe."
+
+### Implications for the writeup framing (refined)
+
+1. **FM-13 promoted from "discovered limitation" to "central mechanism finding."** F109 finding #1 (rail-switch) and finding #2 (cross-vector fingerprint differences) together are concrete, mechanistically-detailed evidence that activation steering doesn't work the way the literature implicitly claims (smooth dial). The rail-switch story is publishable independent of whether virtue vectors are deployable.
+
+2. **The composition story stays conditional.** Day-22's "geometric orthogonality is necessary but not sufficient" caveat is now backed by behavioral data: vIH+vCC at α=8+8 produces non-additive output. The writeup should frame composition as a *probe of representation structure* (does composition reveal additional shared circuitry) rather than as a *deployment recipe* (compose dynamically for better outcomes).
+
+3. **Phase 2 (phi-3.5-mini) is the cross-model robustness check for F109.** The F109 mechanism (rail-switch, FM-13 fingerprint) was characterized only on qwen3-4b. Whether it transfers to phi-3.5-mini determines whether F109 is a qwen-specific quirk or a general property of small open models.
+
+### Phase 2 (queued — start now per user direction)
+
+Phi-3.5-mini extraction + sweep + hand-review.
+
+Goals:
+1. Determine whether phi-3.5-mini-instruct exhibits behavioral effects from steering at all (per F102 cross-model split — phi could be like qwen-behavioral or like gemma-null).
+2. If behavioral, characterize the cosine matrix and AP-peak layers.
+3. Re-run the F109 logit inspection on phi to see if the rail-switch mechanism is qwen-specific or general.
+4. Test whether composite (vIH+vCC) on phi exhibits the same non-additive pattern.
+
+Plan:
+1. Download phi-3.5-mini-instruct (3.8B, 32-layer) — local first, then push to VM.
+2. Verify model loads on L4 + measure tokens/sec.
+3. Add phi to `MODEL_CONFIGS` in `mvp/utils.py` (layer accessor, attention head count, hidden size).
+4. Run extract_v2.py on the 4 v2 corpora at all layers.
+5. Compute cosine matrix at all layers; identify AP-peak layers via attribution patching.
+6. Run a scaled-down sweep: baseline + each virtue at AP-peak layer at α∈{4,8,12} on diagnostic + EG + abstention + cc-simple + composition-test.
+7. Hand-review every cell.
+8. Compare vector-norms and cosine pattern to qwen v2.
+9. Run logit inspection on Gandhi at multiple α to test the rail-switch transfer.
+
+Estimated: 2-3 days end-to-end.
+

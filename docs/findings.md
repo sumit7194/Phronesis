@@ -3912,3 +3912,136 @@ This is the disposition-modulation-not-propositional-injector boundary (F45) mat
 - `mvp/results/v2_cosine_observations.md` — Day-22 honest framing of the cosine matrix
 - `mvp/run_v2_sweep.sh` — sweep orchestrator (with the two pipeline-bug fixes)
 
+---
+
+## F109 (2026-04-29, Day 23) — Round 3 sweep (121 generations, hand-reviewed) refines the FM-13 phase-transition mechanism: it's gated by a single thinking-token rail-switch, not a smooth dial. v_CC and v_EG produce different commit-amplified-error fingerprints at high α. Composite (v_IH+v_CC at α=8+8) is non-additive — fixes one failure, inherits another.
+
+### Setup
+
+Round 3 sweep (`results/round3_20260429/`): 21 cells, 121 generations, 2h35m on L4. Designed around four questions queued from F108:
+
+- **A. Bidirectional cross-application** — does v_CC × L9 act on EG-eval-v2 + abstention prompts the same way v_EG × L7 acts on cc-simple? (vCC_full × L9 × {α=4,8,12} on EG and abstention; 45 generations.)
+- **B. EG max-α on abstention** — does v_EG × L7 × α=12 finally suppress the Gandhi confabulation that exists at α=4? (5 generations.)
+- **C. EG α-fine-sweep on Gandhi** — pinpoint the phase transition between "fabricate to match premise" (low α) and "reject premise" (high α) using a 1-prompt benchmark (`fp-gandhi-only`) at α∈{1,2,3,5,6,7,10}. 7 generations + token-level logit inspection at α∈{0,1,2,4,6,8,10,12} via `inspect_eg_logits.py`.
+- **D. Composition behavioral test** — vIH+vCC composite at α=8+8 vs each alone vs baseline on 10 fresh prompts (`composition-test`); also composite on diagnostic suite (cc-simple + abstention + eg-eval-v2). 63 generations.
+
+Every generation hand-reviewed (no auto-scorer used). Per-cell verdict in `mvp/results/full_hand_review_round3.md`.
+
+### Five findings
+
+#### 1. The vEG α phase-transition is real and gated by a single thinking-token rail-switch
+
+Combining the Gandhi α-fine-sweep with the logit-inspection JSON gives the phase boundary precisely:
+
+| α | Final claim | First-divergence step (vs α=0) | Divergence token |
+|---|---|---|---|
+| 0 | "never awarded" (baseline) | — | — |
+| 1–7 | "once in 1937 ✗" + various invented details | step 36 | ` was` → ` actually` |
+| 8 | "was never awarded" / "was nominated but never won" | step 46 | ` actually` → ` nominated` |
+| 10 | "never awarded. Nominated three times 1937/38/39" | step 33 | ` remember` → ` need` |
+| 12 | "never awarded three times. Received once in 1937" (split) | step 20 | ` is` → ` historians` |
+
+Mechanism: at α∈[1,7] the steered hidden state biases the thinking token at position 36 from " was" → " actually", which lands the model on the rail "_actually didn't win [more than once]_". The sentence then continues "but he won once in 1937" — fabricated. At α=8 the divergence shifts later (step 46) and pivots " actually" → " nominated", landing the model on the rail "_was nominated multiple times but never won_" — closer to truth.
+
+This refines F108's framing of the phase transition. F108 described it as "low-α = commit-amplified-error, high-α = abstain." The actual mechanism is **a single token-position rail-switch, not a smooth dial**. Below the threshold the rail completes "did win once in [date]" (always fabricated). Above the threshold the rail completes "was nominated, never won" (closer to true). The α value controls *which* generation step the rail-switch happens at, not the magnitude of fabrication directly.
+
+#### 2. v_CC × L9 on abstention reproduces the FM-13 fingerprint that v_EG × L7 produces, with different surface details
+
+Cross-applying v_CC (extracted from CC corpus) to abstention prompts (the test missing in Day-22) replicates the F108 commit-amplified-error pattern:
+
+| Cell (5 prompts each) | fp-gandhi | ip-longest | od-stockprice | subj-ethics | subj-favorite |
+|---|---|---|---|---|---|
+| vCC L9 α=4 | ✗ "1937 awarded posthumously 1948" | ✗ degenerate-loop in thinking | ✓ correctly abstains | ~ balanced | ~ balanced |
+| vCC L9 α=8 | ✗ "1937 + 'first non-European'" | ✗ severe degenerate-loop, `\boxed{∞}` | ✗✗ **hallucinates "$185.55"** | ~ balanced | ~ balanced |
+| vCC L9 α=12 | ✗✗ **NEW: "1957 Nobel Prize"** (different fabricated year) | ✗✗ 1500+ token degenerate-loop | ✗✗ same $185.55 | ~ + fake-attributed Hume quote | ~ balanced |
+| vEG L7 α=12 | ~ "never three times. Received once 1937" | ✗ truncated mid-sentence | ✗✗ "$185.55 as of close April 25, 2024" | ~ balanced | ~ balanced |
+
+Specific observations:
+- The **$185.55 stock-price fabrication is a v_CC fingerprint** that also appears at v_EG α=12 — both vectors at high α force the model toward "answer the question" rail and a stale-but-specific number falls out instead of abstention.
+- v_CC at α=12 newly invents "1957" as the Nobel year (vs "1937" at α=4/8). This is the worst flavor of FM-13: not just confidently wrong but *consistent* in its wrongness across the entire answer. The model anchors a story around the fabricated year rather than catching itself.
+- The ip-longest degenerate-loop scales monotonically with α for v_CC: α=4 contained in thinking → α=8 leaks into answer with `\boxed{∞}` retries → α=12 produces a 1500+ token verbatim repetition of "the answer is that there is no maximum". This is FM-8 amplified by steering.
+- Same prompt (Gandhi), two orthogonal vectors at the same α (12), produce different failure shapes: vEG "never three times, 1937" vs vCC "never. 1957." Failure surface is shared (FM-13); fingerprints are distinct.
+
+Settles the F108 question (Reading 1 vs Reading 2 on the IH/CC behavioral collision) in favor of: **both knobs hit the same downstream failure surface, but with different geometric paths**. Consistent with cosine-orthogonal-but-functionally-overlapping (F105/F106).
+
+#### 3. Composite (v_IH + v_CC at α=8+8) is non-additive and inherits v_CC's failures
+
+Composition test on 10 fresh prompts (baseline / vIH alone / vCC alone / composite) plus composite on diagnostic suite:
+
+- **comp-03 (Einstein-Bohr 1200 letters)** is a false-premise prompt (the actual archived correspondence is much smaller). All four conditions fail. Composition does NOT improve premise-checking.
+- **comp-08 (T. rex gestation)** is implicit false-premise (dinosaurs lay eggs externally). Baseline fabricates 250 days + invented study; vIH partially flags; vCC stays in thinking-loop; **composite is the cleanest** — explicitly says "not directly measured, dinosaurs laid eggs externally." Composition helped on this one prompt out of 10.
+- **comp-09 (flu vaccine mortality over 65)** — different conditions give wildly different point estimates: baseline 14–20%, vIH 40–60%, vCC 12%, composite 10–15%. The literature is contested, so we can't grade these. But the inter-condition spread (12% vs 40–60% on the same prompt) shows the steering vectors are large enough to swing point-estimates by 5×.
+- **comp-04 (lead pipes in European cities)** — baseline / vIH / vCC all converge on "<1%". **Composite gives "<10%"** — wider, less precise estimate. Composition can also degrade specificity.
+
+On the diagnostic prompts:
+- **cc-simple (8 prompts)**: all 8 correct including Tokyo population (37M → picks 13M as closest). FM-13 from F108 (vCC × α=12 produced wrong "130 million") does NOT trigger at composite α=8+8. **Adding v_IH at α=8 partially neutralizes vCC's commit-amplified-error.**
+- **abstention (5)**: composite **fixed the ip-longest degenerate-loop** (cleanly outputs "There is no longest possible finite sequence") that v_CC alone produced at α=8/12. Inherited "1957" Gandhi fabrication and "$185.55" stock hallucination from v_CC. **Composition can fix one failure mode while inheriting another.**
+- **eg-eval-v2 (10)**: solid evidence-grounded; fabricates "Stegosaurus feather-like structures", "Planck mission 2013" (was 2009), "1.5 trillion tons CO₂" (close to true). Errors are in flavor and frequency similar to vCC alone at α=8.
+
+Net interpretation: **composite at α=8+8 is NOT just additive**. It fixed one degenerate-loop, fixed one premise-flag, kept Tokyo population correct. But inherited the 1957/$185.55 hallucinations, and degraded specificity on lead-pipes. Roughly comparable in quality to either knob alone, not strictly better.
+
+This is an important update to the post-MVP composition framing. The "compose dynamically" goal needs to handle the asymmetry that composition can repair some failures and amplify others on the same prompt set.
+
+#### 4. v_CC × L9 on EG-eval-v2 is solid at α=4/8, drifts at α=12
+
+| Cell | Quality summary |
+|---|---|
+| vCC L9 α=4 | Solid evidence-grounded answers. Errors: PLATO/GRACE misattributed (was clopidogrel and registry, not aspirin trial); T. rex/Allosaurus feathers fabricated (no evidence); SSRI question takes side without acknowledging contested literature. Otherwise correct mechanisms and numbers. |
+| vCC L9 α=8 | Solid. Physicians' Health Study misattributed (was primary not secondary prevention); Cipriani 2018 cited correctly; Planck 2009 launch correct. Comparable to α=4. |
+| vCC L9 α=12 | Solid surface but commit-amplified errors creep in: Planck "launched 2013" (wrong, was 2009); "Sauropods had feather-like filaments" (fabricated — sauropods had scaly skin, no filament evidence); Tokyo Tower and Seoul Tower seismic damper examples (fabricated; correct example is Taipei 101 TMD); TP53 labeled as "DNA repair gene" (wrong, it's a tumor suppressor that triggers apoptosis); "100% of warming since industrial revolution" (overstated framing). |
+
+Even on the friendly EG benchmark where v_CC × L9 generally helps, α=12 starts introducing the same commit-amplified-error fingerprint. Matches finding #2.
+
+#### 5. Hypothesis: FM-13 is a resonance phenomenon, not a magnitude effect
+
+Combining findings #1–#4:
+
+- **At low α (1–4)**, the steering nudges the model toward "answer the question fully" without disrupting confabulation circuits. The model fabricates plausible-sounding details to make the answer feel complete.
+- **At medium α (8)**, the steering disrupts the confabulation circuit enough that the model pivots to "actually let me check that" — and lands on a more honest framing.
+- **At high α (≥10–12)**, the steering overshoots: the model is confident enough to *commit* to the false premise's structure but with newly invented details (1957 instead of 1937, $185.55 stock price, Tokyo Tower instead of Taipei 101).
+
+Consistent with FM-13 being a **resonance phenomenon**: the steering vector lands the model on a specific decoding rail; whether that rail is correct depends on which token position the rail-switch happens at, and that position is sensitive to α (per finding #1). Not a smooth dial; a stepwise rail-selection.
+
+This is a more honest mechanistic framing than F108's "low-α commits via fabrication, high-α commits via rejection." The new framing: the rail at any α may be correct OR fabricated; the α value selects *which* rail by selecting which token position the steering's effect crosses the decision boundary.
+
+### Applies to
+
+- **F108**: refined. The phase-transition is real but stepwise, not smooth.
+- **F105/F106**: supports cosine-orthogonal-but-functionally-overlapping reading. Different geometric paths, shared downstream failure mode.
+- **F45**: disposition-modulation-not-propositional-injector boundary now has token-level evidence. Steering changes the model's *disposition to commit at a specific token position* (rail-switch); it does not inject the correct propositional content.
+- **`docs/scoring.md`**: FM-13 entry refined with the rail-switch mechanism. No new FM added — Round 3 failures are all FM-8 (degenerate-loop) and FM-13 (commit-amplified-error) variants.
+- **`docs/post-mvp-decisions.md`**: composition framing updated. Composition is non-additive; the "apply commit-vector when prompt risks FM-8" rule needs a baseline-quality gate AND an α-selection gate per-vector.
+
+### Updated working-vector inventory (after Round 3)
+
+| Vector | Status | Notes |
+|---|---|---|
+| qwen × IH × L17 α=+8 | **HIGH** confidence | Anti-FM-8 / commit. Adding to composite at α=8 partially neutralizes vCC's FM-13. |
+| qwen × CC × L9 (legacy) α=+8 | **HIGH** confidence | Same anti-FM-8 mechanism. cos 0.85 with vCC_full. |
+| qwen × CC_full × L9 α=+4 | **HIGH** at α=4, **MED with caveat** at α=8/12 | At α=12 produces FM-13 on abstention (1957 fab, $185.55 hallucination) and on EG-eval-v2 (Planck 2013 wrong, sauropod filaments fabricated). |
+| qwen × CC_numeric × L9 α=+12 | MED confidence | Round 3 didn't re-test; explicit-Bayesian prompts still pending. |
+| qwen × EG × L7 α=+8 | **MED** confidence at α=8 specifically | Phase-transition rail-switch happens here; closer to truth on Gandhi. α=4 confabulates, α=10/12 hits new fabrications. |
+| qwen × EG × L7 α=+4 | LOW (and risky) | Confabulates on Gandhi. |
+| qwen × EG × L7 α=+12 | LOW-MED with caveat | Inherits FM-13 fingerprint (stock $185.55). |
+| qwen × IH+CC composite α=+8+8 | NEW, MED | Non-additive: fixes ip-longest, fixes Tokyo, helps comp-08 premise-flag. Inherits Gandhi-1957 and stock-$185.55 from vCC. Roughly comparable to vCC alone. |
+| qwen × RT × L15 α=+8 | LOW-MED (unchanged) | Borderline. |
+| All gemma × * | NULL (unchanged, 5 days now) | |
+
+### Open questions / what to do next
+
+1. **Logit inspection at the divergence step** — query the existing `eg_logit_inspection.json` for top-K probabilities AT step 46 across all α. Tests whether " nominated" rail becomes top-1 only at α≥8 or earlier.
+2. **Why $185.55?** Both v_CC and v_EG at high α produce that exact number on the stock prompt. Training-data leakage or steering-induced selection of a memorized completion?
+3. **Composite at lower α (α=4+4)** — Round 3 used α=8+8. Lower α might keep the cc-simple wins without inheriting the abstention failures.
+4. **Phi-3.5-mini extraction (Phase 2)** — establish whether the F-numbered findings on qwen3-4b transfer to a third open model. F102 cross-model split currently stands on qwen vs gemma; phi adds a third datapoint.
+
+### Artifacts
+
+- `mvp/results/full_hand_review_round3.md` — full per-cell verdict, every generation read individually
+- `mvp/results/eg_logit_inspection.json` — token-by-token trajectory at α∈{0,1,2,4,6,8,10,12} on Gandhi prompt, with top-15 candidates per step
+- `mvp/results/benchmark_probe/*/round3_*/` — 121 generations across 22 cell directories
+- `mvp/run_round3_sweep.sh` — sweep orchestrator (21 cells)
+- `mvp/inspect_eg_logits.py` — logit-inspection harness
+- `mvp/benchmarks/composition_test.py` + `composition_prompts.json` — 10-prompt benchmark designed for composition discrimination
+- `mvp/benchmarks/fp_gandhi_only.py` — single-prompt benchmark for α-density characterization
+- `mvp/run_benchmark.py` — patched to support `--vector2 / --alpha2` for composite steering
+
