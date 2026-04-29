@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. Then we observe that C is false. We need to figure out what we can conclude about A. Hmm.\n\nSo, first, I remember that in logic, if A implies B, then if A is true, B must be true. But if B is false, then A must be false. Wait, that's modus tollens, right? Because if A implies B, and B is false, then A must be false. But here, we have a chain: A→B→C. So if C is false, then B must be false, because B implies C. Then if B is false, A must be false. So combining these, if C is false, then A must be false. Is that right?\n\nWait, let me check. If A implies B, and B implies C, then A implies C by hypothetical syllogism. So if A is true, then C must be true. But we know C is false, so A must be false. So that's modus tollens on the implication A→C. So yes, A must be false. So the conclusion is that A is false.\n\nBut wait, is there any other possibility? Like, could A be true and C still be false? But if A is true, then B is true (from A→B), and then C is true (from B→C). So if C is false, then A can't be true. Therefore, A must be false. So the answer is that A is false.",
+  "response_answer": "If A implies B and B implies C, and C is false, then A must be false. This follows from **modus tollens** (if A→B and B→C, then A→C; since C is false, A must be false). \n\n**Answer:** A is false.",
+  "gen_seconds": 22.18,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T23:09:48.843538"
+}

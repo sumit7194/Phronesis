@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, if A is true, then B must be true, and if B is true, then C must be true. So, putting that together, if A is true, then C must be true as well. But we're told that C is false. So, if C is false, then what does that tell us about A?\n\nHmm, in logic, if we have a chain of implications like A → B → C, then the contrapositive of the entire chain would be ¬C → ¬B → ¬A. Wait, is that right? Because the contrapositive of A → B is ¬B → ¬A. Similarly, the contrapositive of B → C is ¬C → ¬B. So if we have both, then combining them, if ¬C is true, then ¬B is true, and then ¬A is true. So, if C is false, then B must be false, and then A must be false. Therefore, A must be false.\n\nBut wait, let me check that again. If A implies B, and B implies C, then A implies C. So, if A implies C, and C is false, then A must be false. Because if A were true, then C would have to be true. But since C is false, A can't be true. So, A must be false. That seems right. So the conclusion is that A is false.\n\nBut maybe I should think about it in terms of the contrapositive. The contrapositive of A → B is ¬B → ¬A. The contrapositive of B → C is ¬C → ¬B. So if we have ¬C, then we can infer ¬B, and then from ¬B, we can infer ¬A. Therefore, ¬C leads to ¬A. So, A must be false. Yeah, that seems to hold. So the answer is that A must be false.",
+  "response_answer": "If A implies B and B implies C, and C is false, then by contraposition, C being false implies B is false, which in turn implies A is false. Therefore, **A must be false**.",
+  "gen_seconds": 26.04,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T22:08:14.398203"
+}

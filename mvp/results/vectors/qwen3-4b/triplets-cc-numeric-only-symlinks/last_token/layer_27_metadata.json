@@ -1,0 +1,19 @@
+{
+  "layer": 27,
+  "method": "last_token",
+  "model": "qwen3-4b",
+  "corpus": "triplets-cc-numeric-only-symlinks",
+  "n_triplets": 20,
+  "raw": {
+    "separation": 21.17122459411621,
+    "cosine_diff": 0.12434075772762299,
+    "probe_accuracy": 0.925
+  },
+  "whitened": {
+    "separation": 19.592409133911133,
+    "cosine_diff": 0.1205517053604126,
+    "probe_accuracy": 0.925
+  },
+  "n_pcs": 4,
+  "hidden_dim": 2560
+}

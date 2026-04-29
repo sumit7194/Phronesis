@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, if A is true, then B must be true, and if B is true, then C must be true. So, A → B → C. Then we're told that C is false. So, C is false. What can we conclude about A?\n\nHmm. So, if C is false, then B must be false, right? Because if B were true, then C would have to be true. But since C is false, B can't be true. So B is false. Then, since A implies B, if B is false, then A must be false. Because if A were true, B would have to be true. But B is false, so A can't be true. Therefore, A must be false.\n\nWait, that seems like modus tollens. If A → B and B is false, then A is false. But here we have a chain: A → B → C. So, if C is false, then B is false, and then A is false. So the conclusion is that A is false. So the answer is that A must be false. But let me check again.\n\nSuppose A is true. Then B is true. Then C is true. But we know C is false. Therefore, our assumption that A is true must be wrong. Therefore, A is false. Yeah, that's modus tollens. So the conclusion is that A is false.",
+  "response_answer": "If A implies B and B implies C, and C is false, then A must be false.  \n**Answer:** A is false.",
+  "gen_seconds": 19.01,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T16:28:42.159485"
+}

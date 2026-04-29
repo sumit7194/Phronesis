@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, if A is true, then B must be true, and if B is true, then C must be true. So, putting that together, if A is true, then C must be true as well. But wait, the problem says that C is false. So, if C is false, then what does that tell us about A?\n\nHmm, in logic, if we have A → B and B → C, then by hypothetical syllogism, we can say A → C. So, if A were true, then C would have to be true. But since C is false, that would mean A can't be true. Because if A were true, then C would have to be true, which contradicts the fact that C is false. So, that would mean A must be false. \n\nWait, but is that always the case? Let me think again. If A implies B, and B implies C, then A implies C. So, if C is false, then A must be false. Because if A were true, then C would have to be true. Therefore, the conclusion is that A is false. \n\nBut maybe I should check with a truth table. Let's consider all possibilities for A, B, C. \n\nA → B is equivalent to ¬A ∨ B. Similarly, B → C is ¬B ∨ C. So, combining them, A → B and B → C. If C is false, then in the second implication, ¬B ∨ C becomes ¬B ∨ false, which is equivalent to ¬B. So, B must be false. Because if B were true, then ¬B would be false, making the implication false. Therefore, B must be false. \n\nNow, since A → B is true, and B is false, then A must be false. Because if A were true, then B would have to be true, but B is false. Therefore, A must be false. \n\nSo, the conclusion is that A is false. Therefore, the answer is that A must be false.",
+  "response_answer": "If A implies B and B implies C, and C is false, then A must be false. This follows from **modus tollens** (if A → C and ¬C, then ¬A). Since C is false, A cannot be true. \n\n**Answer:** A is false.",
+  "gen_seconds": 28.23,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T00:22:38.251668"
+}

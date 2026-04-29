@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, if A is true, then B must be true, and if B is true, then C must be true. So, putting that together, if A is true, then C must be true as well. But wait, the problem says that C is false. So if C is false, then what does that tell us about A?\n\nHmm, in logic, if we have A → B and B → C, then by hypothetical syllogism, that means A → C. So if A were true, then C would have to be true. But since C is false, that would mean A can't be true. Because if A were true, then C would have to be true, which contradicts the fact that C is false. So that would mean A must be false. \n\nWait, but is that always the case? Let me think again. If A implies B, and B implies C, then A implies C. So if C is false, then A must be false. Because if A were true, then C would be true. So the contrapositive of A → C is ¬C → ¬A. So if C is false, then A must be false. That's modus tollens. Yeah, that's right. So the conclusion is that A is false. \n\nBut wait, is there any other possibility? Like, could A be something else? But in logic, implications are about truth values. So if A is true, then B must be true, leading to C being true. Since C is false, A can't be true. Therefore, A must be false. So the answer is that A is false.",
+  "response_answer": "If A implies B and B implies C, and C is false, then A must be false. This follows from **modus tollens** (if A → C and ¬C, then ¬A). \n\n**Answer:** A is false.",
+  "gen_seconds": 22.93,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T16:15:30.936759"
+}

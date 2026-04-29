@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, A → B and B → C. Then we're told that C is false. The question is, what can we conclude about A?\n\nHmm. So, if A implies B, and B implies C, then by transitivity, A implies C. Because if A is true, then B is true, and then C is true. So, A → C. But we know that C is false. So, if A were true, then C would have to be true. But C is false. Therefore, A must be false. Because if A were true, that would lead to a contradiction. So, using modus tollens here. If A implies C, and C is false, then A must be false.\n\nWait, but let me check. The original statements are A → B and B → C. So, combining them, A → C. Then, since C is false, then A must be false. That's modus tollens. So, the conclusion is that A is false. So, the answer is that A must be false. But wait, is there any other possibility? Like, could there be a case where A is true but C is false? But according to the implications, if A is true, then B is true, which makes C true. So, if C is false, then A can't be true. Therefore, A must be false. Yeah, that seems right. So, the conclusion is that A is false.",
+  "response_answer": "If A implies B and B implies C, then A implies C. Since C is false, A must also be false (by modus tollens).  \n**Answer:** A is false.",
+  "gen_seconds": 19.93,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T22:19:54.873568"
+}

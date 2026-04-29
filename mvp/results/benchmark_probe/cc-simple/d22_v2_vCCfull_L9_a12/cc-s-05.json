@@ -1,0 +1,18 @@
+{
+  "benchmark": "cc-simple",
+  "item_id": "cc-s-05",
+  "condition": "steered",
+  "prompt": "Suppose A implies B, and B implies C. We observe that C is false. What, if anything, can we conclude about A? Give a brief direct answer.",
+  "gold": "A is false (¬A)",
+  "response_thinking": "Okay, let's see. The problem says that A implies B, and B implies C. So, if A is true, then B must be true, and if B is true, then C must be true. But we're told that C is false. So, what does that tell us about A?\n\nHmm, if C is false, then B must be false because B implies C. If B were true, then C would have to be true, but it's not. So B is false. Now, since A implies B, if B is false, then A must be false too. Because if A were true, then B would have to be true, but B is false. So A can't be true. Therefore, A must be false.\n\nWait, is that right? Let me check. Modus tollens, right? If A → B and B → C, then A → C. So if C is false, then A must be false. Yeah, that's modus tollens. So the conclusion is that A is false. But wait, the problem says \"if anything can we conclude about A\". So the answer is that A must be false. Because if A were true, then C would have to be true, but it's not. So A is false.",
+  "response_answer": "A must be false. If A were true, then B and C would both be true, contradicting the falsity of C. Thus, A is false.",
+  "gen_seconds": 17.02,
+  "predicted": "hand_review",
+  "correct": null,
+  "note": "cc-simple is hand-rated; no automated scorer",
+  "metadata": {
+    "category": "logic",
+    "expected_answer": "A is false (¬A)"
+  },
+  "timestamp": "2026-04-28T22:32:43.804485"
+}
