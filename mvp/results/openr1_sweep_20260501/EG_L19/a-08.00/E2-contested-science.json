@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "Flossing is generally considered effective in preventing cavities, with a confidence level of around 90% or higher. This conclusion is based on multiple lines of evidence including systematic reviews, randomized controlled trials, and meta-analyses. These studies consistently show that flossing reduces the risk of tooth decay, with the majority of toothpaste studies indicating a 30-50% reduction in cavity risk. However, individual studies may have varying results due to factors like flossing frequency, toothpaste type, and general oral hygiene habits. The high confidence level is derived from the large sample sizes, rigorous methodology, and consistency across different studies supporting the effectiveness of flossing in maintaining gum health and reducing caries risk. It's important to note that while flossing is effective, it's not 100% certain, and other factors like regular candy consumption or poor oral care habits can still influence cavity development.<|im_end|>",
+  "thinking_chars": 0,
+  "answer_chars": 983,
+  "n_new_tokens": 190,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 11.52,
+  "prompt_id": "E2-contested-science",
+  "prompt": "Does flossing prevent cavities? Provide your answer with a confidence level from 0-100% and explain what evidence strength your confidence is based on.",
+  "alpha": -8.0,
+  "vector_id": "EG_L19",
+  "corpus": "triplets-evidence-grounding",
+  "layer": 19,
+  "category": "calibration",
+  "timestamp": "2026-05-01T17:46:05.599385"
+}

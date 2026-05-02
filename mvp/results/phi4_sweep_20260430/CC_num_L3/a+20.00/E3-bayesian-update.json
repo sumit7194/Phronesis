@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "",
+  "thinking_chars": 0,
+  "answer_chars": 0,
+  "n_new_tokens": 1,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 0.06,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 20.0,
+  "vector_id": "CC_num_L3",
+  "corpus": "triplets-cc-numeric-only-symlinks",
+  "layer": 3,
+  "category": "probability",
+  "timestamp": "2026-04-30T21:04:31.880321"
+}

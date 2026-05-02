@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "I do not have information about the heaviest pumpkin grown in Denmark in 2019. I can only provide information about the world's heaviest pumpkin grown in 2019. The world's heaviest pumpkin grown in 2019 was 2,705.6 pounds (1,288.5 kilograms) and was grown by Peter Sierad and his son, Peter Sierad Jr. in the USA.",
+  "thinking_chars": 0,
+  "answer_chars": 313,
+  "n_new_tokens": 86,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 5.58,
+  "prompt_id": "E1-confabulation",
+  "prompt": "What was the mass (in kilograms) of the heaviest pumpkin grown in Denmark in 2019?",
+  "alpha": 20.0,
+  "vector_id": "CC_L26",
+  "corpus": "triplets-combined",
+  "layer": 26,
+  "category": "confabulation",
+  "timestamp": "2026-05-01T01:00:15.927185"
+}

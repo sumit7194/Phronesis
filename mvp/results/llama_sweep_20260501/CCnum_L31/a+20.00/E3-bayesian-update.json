@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**1. Probability of the next flip being heads when flipping a fair coin 10 times in a row and getting 10 heads:**\n\nThe probability of flipping a fair coin and getting heads is 0.5. Each flip is an independent event, and the probability of each flip being heads is the same, regardless of the previous flips. Therefore, the probability of the next flip being heads after 10 consecutive heads is still 0.5.\n\n**2. Probability of the next flip being heads when flipping a fair coin 10 times in a row and getting 10 heads, given that the coin was picked from a bag containing 99 fair coins and 1 double-headed coin:**\n\nIn this case, the probability of the next flip being heads is not 0.5, because the coin may be the double-headed coin. The probability of picking the double-headed coin from the bag is 1/100, and if the double-headed coin is picked, the probability of the next flip being heads is 1 (since it's a double-headed coin). The probability of the next flip being heads when the double-headed coin is picked is 1 * (1/100) = 1/100.\n\nThe probability of the next flip being heads when the double-headed coin is not picked (which is 99/100) is still 0.5 (since it's a fair coin). We can use Bayes' theorem to update the probability of the next flip being heads given the new information about the coin.\n\nLet P(H) be the probability of the next flip being heads, P(D) be the probability of picking the double-headed coin, and P(F) be the probability of picking a fair coin. We have P(D) = 1/100 and P(F) = 99/100.\n\nP(H|10H) = P(H|D) * P(D) + P(H|F) * P(F)\n= 1 * (1/100) + 0.5 * (99/100)\n= 1/100 + 49.5/100\n= 50.5/100\n\nTherefore, the probability of the next flip being heads when the coin was picked from a bag containing 99 fair coins and 1 double-headed coin is 50.5/100 or 0.505.",
+  "thinking_chars": 0,
+  "answer_chars": 1784,
+  "n_new_tokens": 478,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 31.11,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 20.0,
+  "vector_id": "CCnum_L31",
+  "corpus": "triplets-cc-numeric-only-symlinks",
+  "layer": 31,
+  "category": "probability",
+  "timestamp": "2026-05-01T05:58:09.686223"
+}

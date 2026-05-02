@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Case 1: No information about the coin**\nWhen you flip a fair coin 10 times and get 10 heads in a row, it's not a reliable indicator of the probability of the next flip being heads. Each flip is an independent event, and the probability of getting heads on the next flip remains 0.5, just like any other fair coin flip.\n\n**Case 2: The coin is from a bag containing 99 fair coins and 1 double-headed coin**\nWhen you know that the coin is from a bag containing 99 fair coins and 1 double-headed coin, the probability of the next flip being heads is not 0.5. The probability of the next flip being heads is actually 1/100, because there is only 1 double-headed coin out of 100 coins in the bag. The other 99 coins are fair coins, and each of them has a 0.5 probability of landing heads. The probability of the next flip being heads is now 1/100, not 0.5.",
+  "thinking_chars": 0,
+  "answer_chars": 852,
+  "n_new_tokens": 215,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 13.94,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 20.0,
+  "vector_id": "CC_L26",
+  "corpus": "triplets-combined",
+  "layer": 26,
+  "category": "probability",
+  "timestamp": "2026-05-01T01:01:20.935235"
+}

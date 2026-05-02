@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Case 1: No additional information**\n\nWhen you flip a fair coin 10 times and get 10 heads in a row, it's a sequence of independent events. Each flip has a 50% chance of being heads, and the previous flips do not influence the next one. Therefore, the probability of the next flip being heads is 50% or 0.5.\n\n**Case 2: Additional information about the bag**\n\nNow, if you tell me that you picked the coin from a bag containing 99 fair coins and 1 double-headed coin, that changes the situation. The probability of picking the double-headed coin is 1/100, and the probability of picking a fair coin is 99/100. \n\nIf you picked the double-headed coin, the probability of the next flip being heads is 100% (or 1). If you picked a fair coin, the probability of the next flip being heads is 50% (or 0.5).\n\nTo find the probability of the next flip being heads, we need to calculate the weighted average of these two possibilities. The probability of picking the double-headed coin is 1/100, and the probability of picking a fair coin is 99/100. \n\nSo, the probability of the next flip being heads is:\n(1/100) * 1 + (99/100) * 0.5 = 0.5 + 0.99/100 = 0.5 + 0.0099 = 0.5099\n\nThe probability of the next flip being heads is 0.5099, which is slightly less than 50% because the double-headed coin is in the bag.",
+  "thinking_chars": 0,
+  "answer_chars": 1296,
+  "n_new_tokens": 347,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 22.48,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 12.0,
+  "vector_id": "RT_L22",
+  "corpus": "triplets-reasoning-transparency",
+  "layer": 22,
+  "category": "probability",
+  "timestamp": "2026-05-01T02:35:24.806446"
+}

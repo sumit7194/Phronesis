@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Case 1: No additional information (10 consecutive heads)**\n\nWhen flipping a fair coin 10 times and getting 10 heads in a row, it is a sequence of independent events. Each flip has a 50% chance of being heads. The probability of getting 10 heads in a row is (1/2)^10 = 1/1024. The probability of the next flip being heads is still 50% because each flip is independent of the previous ones.\n\n**Case 2: Additional information (10 consecutive heads from a bag with 99 fair coins and 1 double-headed coin)**\n\nWhen you pick a coin from a bag containing 99 fair coins and 1 double-headed coin, the probability of picking the double-headed coin is 1/100. If you pick the double-headed coin, the probability of the next flip being heads is 100% because it's a double-headed coin. If you pick a fair coin, the probability of the next flip being heads is 50% because it's a fair coin.\n\nTo find the overall probability of the next flip being heads, we need to consider both cases:\n\n- The probability of picking the double-headed coin is 1/100, and the probability of the next flip being heads is 100%: (1/100) * 1 = 1/100\n- The probability of picking a fair coin is 99/100, and the probability of the next flip being heads is 50%: (99/100) * 1/2 = 99/200\n\nThe overall probability of the next flip being heads is the sum of these two probabilities: 1/100 + 99/200 = 100/200 = 1/2",
+  "thinking_chars": 0,
+  "answer_chars": 1368,
+  "n_new_tokens": 356,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 23.08,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 6.0,
+  "vector_id": "EG_L22",
+  "corpus": "triplets-evidence-grounding",
+  "layer": 22,
+  "category": "probability",
+  "timestamp": "2026-05-01T01:39:50.201102"
+}

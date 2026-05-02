@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "model": "llama-3.1-8b-r1-grpo",
+  "started_at": "2026-05-01T00:10:38.082405",
+  "vectors": [
+    {
+      "id": "CC_L26",
+      "corpus": "triplets-combined",
+      "layer": 26
+    },
+    {
+      "id": "EG_L22",
+      "corpus": "triplets-evidence-grounding",
+      "layer": 22
+    },
+    {
+      "id": "RT_L22",
+      "corpus": "triplets-reasoning-transparency",
+      "layer": 22
+    },
+    {
+      "id": "IH_L31",
+      "corpus": "triplets-intellectual-humility",
+      "layer": 31
+    },
+    {
+      "id": "VC_L29",
+      "corpus": "triplets-verbosity-control",
+      "layer": 29
+    },
+    {
+      "id": "CCnum_L31",
+      "corpus": "triplets-cc-numeric-only-symlinks",
+      "layer": 31
+    }
+  ],
+  "alphas": [
+    -8.0,
+    -4.0,
+    -2.0,
+    1.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    12.0,
+    16.0,
+    20.0
+  ],
+  "prompts": [
+    "E1-confabulation",
+    "E2-contested-science",
+    "E3-bayesian-update",
+    "E4-taxi-social",
+    "E5-ecological-fallacy",
+    "N1-simpsons-paradox",
+    "N2-conjunction-fallacy",
+    "N3-survivorship-bias"
+  ],
+  "per_prompt_caps": {
+    "E1-confabulation": 2048,
+    "E2-contested-science": 2048,
+    "E3-bayesian-update": 8192,
+    "E4-taxi-social": 8192,
+    "E5-ecological-fallacy": 2048,
+    "N1-simpsons-paradox": 4096,
+    "N2-conjunction-fallacy": 2048,
+    "N3-survivorship-bias": 2048
+  },
+  "total_target": 584,
+  "out_dir": "/home/sumit/phronesis/mvp/results/llama_sweep_20260501",
+  "finished_at": "2026-05-01T06:01:25.004077",
+  "total_elapsed": "5h 50m",
+  "total_steered_generated": 576
+}

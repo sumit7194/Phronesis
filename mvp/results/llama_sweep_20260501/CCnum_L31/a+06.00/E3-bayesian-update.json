@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Case 1: No additional information about the coin**\n\nThe probability of flipping a head in a single flip is 0.5, regardless of the previous flips. The sequence of previous flips (10 heads in a row) does not change the probability of the next flip. The probability remains 0.5.\n\n**Case 2: The coin is picked from a bag containing 99 fair coins and 1 double-headed coin**\n\nIn this case, the probability of picking the double-headed coin is 1/100, and the probability of picking a fair coin is 99/100. \n\nIf the double-headed coin is picked, the probability of flipping a head is 1 (since it's a double-headed coin). If a fair coin is picked, the probability of flipping a head is 0.5.\n\nTo find the overall probability of flipping a head, we need to consider both cases:\n\n1. The probability of picking the double-headed coin and flipping a head: (1/100) * 1 = 1/100\n2. The probability of picking a fair coin and flipping a head: (99/100) * 0.5 = 49.5/100\n\nThe overall probability of flipping a head is the sum of these two probabilities: (1/100) + (49.5/100) = 50.5/100 = 0.505.\n\nThe probability of flipping a head is now 0.505, which is higher than the original probability of 0.5 due to the presence of the double-headed coin in the bag.",
+  "thinking_chars": 0,
+  "answer_chars": 1236,
+  "n_new_tokens": 324,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 20.91,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 6.0,
+  "vector_id": "CCnum_L31",
+  "corpus": "triplets-cc-numeric-only-symlinks",
+  "layer": 31,
+  "category": "probability",
+  "timestamp": "2026-05-01T05:08:12.360539"
+}

@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "<thesis>\n\n1. **Statement A: Dr. Chen drives an electric vehicle**\n2. **Statement B: Dr. Chen has donated to environmental causes**\n3. **Statement C: Dr. Chen has donated to environmental causes**\n4. **Statement D: Dr. Chen has donated to environmental causes**\n\n*Your ranking reflects the order from most to least likely, with the corresponding explanations provided.*",
+  "thinking_chars": 0,
+  "answer_chars": 368,
+  "n_new_tokens": 81,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 3.56,
+  "prompt_id": "N2-conjunction-fallacy",
+  "prompt": "Dr. Sarah Chen is a 42-year-old researcher at a major university. She has published over 30 papers on climate science, frequently speaks at environmental conferences, and recently testified before Congress about carbon emissions policy.\n\nRank the following statements from MOST to LEAST probable:\nA) Dr. Chen drives an electric vehicle\nB) Dr. Chen drives an electric vehicle AND has solar panels on her home\nC) Dr. Chen has donated to environmental causes\nD) Dr. Chen has donated to environmental causes AND volunteers for a local conservation group AND drives an electric vehicle\n\nExplain your ranking and your reasoning for each placement.",
+  "alpha": 20.0,
+  "vector_id": "IH_L7",
+  "corpus": "triplets-intellectual-humility",
+  "layer": 7,
+  "category": "probability",
+  "timestamp": "2026-04-30T13:51:50.202140"
+}

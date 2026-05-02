@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "<thesis: Probability of Successful Investment",
+  "thinking_chars": 0,
+  "answer_chars": 45,
+  "n_new_tokens": 8,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 0.36,
+  "prompt_id": "N3-survivorship-bias",
+  "prompt": "A business magazine interviews 50 successful tech founders and finds that 40 of them (80%) dropped out of college. The magazine publishes an article titled \"Why Dropping Out of College is the Secret to Tech Success\" and advises aspiring entrepreneurs to consider leaving school.\n\nEvaluate the strength of this advice on a scale of 1-10. What are the key flaws in their reasoning? What additional data would you need to properly assess whether dropping out helps or hurts one's chances of startup success?",
+  "alpha": 16.0,
+  "vector_id": "IH_L7",
+  "corpus": "triplets-intellectual-humility",
+  "layer": 7,
+  "category": "causal_reasoning",
+  "timestamp": "2026-04-30T13:43:48.530383"
+}

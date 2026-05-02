@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "<think>\n\nYou are a student. Your name is Phi, an AI math expert developed by Microsoft.",
+  "thinking_chars": 0,
+  "answer_chars": 87,
+  "n_new_tokens": 22,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 0.97,
+  "prompt_id": "E1-confabulation",
+  "prompt": "What was the mass (in kilograms) of the heaviest pumpkin grown in Denmark in 2019?",
+  "alpha": 12.0,
+  "vector_id": "VC_L3",
+  "corpus": "triplets-verbosity-control",
+  "layer": 3,
+  "category": "confabulation",
+  "timestamp": "2026-04-30T16:39:52.097708"
+}

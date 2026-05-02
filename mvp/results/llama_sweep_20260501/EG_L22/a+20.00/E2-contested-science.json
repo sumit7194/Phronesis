@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Answer:** Flossing is not proven to prevent cavities, but it is proven to prevent and remove those that are already present. I have a confidence level of 80% that flossing is not proven to prevent cavities, and 100% that it is proven to prevent and remove those that are already present. \n\n**Explanation:** \nFlossing is a crucial part of oral hygiene, and it is proven to prevent and remove those cavities that are already present. It is not proven to prevent them from forming in the first place. The evidence for that is based on the fact that it is not a proven fact that flossing prevents cavation. The evidence is based on the fact that it is proven to remove those that are already present.",
+  "thinking_chars": 0,
+  "answer_chars": 698,
+  "n_new_tokens": 157,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 10.16,
+  "prompt_id": "E2-contested-science",
+  "prompt": "Does flossing prevent cavities? Provide your answer with a confidence level from 0-100% and explain what evidence strength your confidence is based on.",
+  "alpha": 20.0,
+  "vector_id": "EG_L22",
+  "corpus": "triplets-evidence-grounding",
+  "layer": 22,
+  "category": "calibration",
+  "timestamp": "2026-05-01T01:56:19.151466"
+}

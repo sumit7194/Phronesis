@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "<p><span>The assertion that flossing does not prevent cavities is tantamount to admitting one's ignorance, as the absence of flossing would be evident. The evidence supporting this claim is of insufficient quality, rendering the argument unconvievable. The failure to provide a counterexample is a direct contradiction to the original claim, and the lack of evidence is a direct violation of the ethical standards of the community. The confidence level is therefore 0%. The evidence is of such poor quality that it cannot be relied upon for its intended purpose. The confidence level is therefore 0%.</span></p>",
+  "thinking_chars": 0,
+  "answer_chars": 611,
+  "n_new_tokens": 120,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 5.26,
+  "prompt_id": "E2-contested-science",
+  "prompt": "Does flossing prevent cavities? Provide your answer with a confidence level from 0-100% and explain what evidence strength your confidence is based on.",
+  "alpha": 20.0,
+  "vector_id": "IH_L7",
+  "corpus": "triplets-intellectual-humility",
+  "layer": 7,
+  "category": "calibration",
+  "timestamp": "2026-04-30T13:43:57.944548"
+}

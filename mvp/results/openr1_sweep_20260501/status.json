@@ -1,0 +1,13 @@
+{
+  "phase": "complete",
+  "cell": "done",
+  "cell_idx": 584,
+  "cell_total": 584,
+  "pct": 100,
+  "started": "2026-05-02T15:44:50.201903",
+  "updated": "2026-05-02T15:44:50.201893",
+  "elapsed": "26h 26m",
+  "eta": "0m 00s",
+  "inner": null,
+  "phi_extraction": null
+}

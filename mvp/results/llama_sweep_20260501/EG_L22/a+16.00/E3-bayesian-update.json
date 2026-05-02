@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**Case 1: No additional information**\nWhen you flip a fair coin 10 times and get 10 heads in a row, it is a sequence of independent events. Each flip is an independent event with a probability of 0.5 for each of them. The probability of getting 10 heads in a row is 0.5^10 = 1/1024. The probability of the next flip being heads is still 0.5, because each flip is independent of the previous ones. The sequence of 10 heads does not change the probability of the next flip.\n\n**Case 2: Additional information about the bag**\nWhen you tell me that you picked the coin from a bag containing 99 fair coins and 1 double-headed coin, that is a different story. The probability of picking the double-headed coin is 1/100, and the probability of picking a fair coin is 99/100. The probability of the next flip being heads is not 0.5, because it depends on which type of coin you picked. If you picked the double-headed coin, the probability of the next flip being heads is 1. If you picked a fair coin, the probability of the next flip being heads is 0.5. We need to calculate the weighted average of these probabilities, which is (1 * 1/100) + (0.5 * 99/100) = 0.5 + 0.99/100 = 0.5 + 0.99 = 1.49/100",
+  "thinking_chars": 0,
+  "answer_chars": 1190,
+  "n_new_tokens": 317,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 20.55,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 16.0,
+  "vector_id": "EG_L22",
+  "corpus": "triplets-evidence-grounding",
+  "layer": 22,
+  "category": "probability",
+  "timestamp": "2026-05-01T01:53:54.955558"
+}

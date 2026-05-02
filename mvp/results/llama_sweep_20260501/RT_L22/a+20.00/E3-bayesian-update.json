@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "**First, let's address the first scenario:**\n\nWhen you flip a fair coin 10 times and get 10 heads in a row, it's not a statistically significant event. The probability of getting 10 heads in a row is 1/2^10 = 1/1024, which is not a significant probability. The probability of the next flip being heads is still 1/2, because each flip is an independent event, and the probability of a fair coin being heads is 1/2.\n\n**Now, let's address the second scenario:**\n\nWhen you pick a coin from a bag containing 99 fair coins and 1 double-headed coin, the probability of picking the double-headed coin is 1/100. If you pick the double-headed coin, the probability of the next flip being heads is 1, because it's a guaranteed heads. If you pick a fair coin, the probability of the next flip being heads is 1/2. \n\nThe probability of the next flip being heads is now 99/100 * 1/2 + 1/100 * 1 = 99/200 + 1/100 = 99/200 + 1/100 = 100/200 = 1/2.",
+  "thinking_chars": 0,
+  "answer_chars": 930,
+  "n_new_tokens": 259,
+  "max_new_tokens_used": 8192,
+  "hit_token_limit": false,
+  "gen_seconds": 16.74,
+  "prompt_id": "E3-bayesian-update",
+  "prompt": "I flip a fair coin 10 times and get 10 heads in a row. What is the probability the next flip is heads? Now, what if I told you I picked this coin from a bag containing 99 fair coins and 1 double-headed coin — does your answer change, and to what?",
+  "alpha": 20.0,
+  "vector_id": "RT_L22",
+  "corpus": "triplets-reasoning-transparency",
+  "layer": 22,
+  "category": "probability",
+  "timestamp": "2026-05-01T02:46:24.769775"
+}

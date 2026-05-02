@@ -1,0 +1,18 @@
+{
+  "thinking": "",
+  "answer": "I would rate the strength of this advice as a 2 out of 10. The article's conclusion that dropping out of college is the secret to tech success is based on a flawed analysis of the data. Here are the key flaws in their reasoning:\n\n1.  **Correlation does not imply causation**: The fact that 80% of successful tech founders dropped out of college does not necessarily mean that dropping out caused their success. It's possible that other factors, such as innate talent, hard work, or access to resources, contributed to their success.\n2.  **Selection bias**: The article only interviews successful tech founders, which means it's likely that only those who dropped out and went on to achieve success are included in the study. This biases the sample towards people who dropped out and succeeded, rather than those who dropped out but failed.\n3.  **Lack of control group**: The article does not provide a comparison group of people who did not drop out of college and still achieved success. This makes it difficult to determine whether dropping out is a necessary or sufficient condition for success.\n4.  **Oversimplification**: The article implies that dropping out is the sole reason for the success of these tech founders, which is an oversimplification of the complex factors that contribute to entrepreneurial success.\n5.  **No consideration of alternative explanations**: The article does not consider alternative explanations for the high percentage of successful tech founders who dropped out, such as the fact that many tech companies were founded by people who were self-taught or learned through online resources, rather than traditional education.\n\nTo properly assess whether dropping out helps or hurts one's chances of startup success, additional data would be needed, such as:\n\n1.  **A control group**: A comparison group of people who did not drop out of college and still achieved success in tech.\n2.  **Longitudinal data**: Data on the outcomes of people who dropped out of college, including those who went on to achieve success and those who did not.\n3.  **Survey data**: Surveys of entrepreneurs who dropped out of college to understand their motivations, experiences, and outcomes.\n4.  **Analysis of alternative explanations**: An examination of alternative explanations for the high percentage of successful tech founders who dropped out, such as self-taught learning or online resources.\n5.  **Data on the type of education**: Data on the type of education that successful tech founders received, including online courses, vocational training, or traditional college education.\n\nBy considering these additional data points, a more nuanced understanding of the relationship between dropping out of college and startup success can be developed.",
+  "thinking_chars": 0,
+  "answer_chars": 2764,
+  "n_new_tokens": 535,
+  "max_new_tokens_used": 2048,
+  "hit_token_limit": false,
+  "gen_seconds": 34.85,
+  "prompt_id": "N3-survivorship-bias",
+  "prompt": "A business magazine interviews 50 successful tech founders and finds that 40 of them (80%) dropped out of college. The magazine publishes an article titled \"Why Dropping Out of College is the Secret to Tech Success\" and advises aspiring entrepreneurs to consider leaving school.\n\nEvaluate the strength of this advice on a scale of 1-10. What are the key flaws in their reasoning? What additional data would you need to properly assess whether dropping out helps or hurts one's chances of startup success?",
+  "alpha": 6.0,
+  "vector_id": "CC_L26",
+  "corpus": "triplets-combined",
+  "layer": 26,
+  "category": "causal_reasoning",
+  "timestamp": "2026-05-01T00:43:14.842676"
+}
