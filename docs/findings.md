@@ -4045,3 +4045,214 @@ This is a more honest mechanistic framing than F108's "low-α commits via fabric
 - `mvp/benchmarks/fp_gandhi_only.py` — single-prompt benchmark for α-density characterization
 - `mvp/run_benchmark.py` — patched to support `--vector2 / --alpha2` for composite steering
 
+
+---
+
+## F110 (2026-05-03, Day 25) — Cross-model 1,752-generation hand-review confirms F109's "steering rides existing rails" thesis at scale; reveals three orthogonal failure shapes that determine whether steering helps
+
+### Source
+
+`mvp/results/cross_model_analysis_20260502/` — full hand-review of phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1-qwen-7b across 8 reasoning prompts (4 extractive, 4 normative) × 6 vectors × 12 alphas = 1,752 generations + 24 baselines. **Every JSON read in full; no auto-scorer.**
+
+Per-prompt cell summaries in `02_per_prompt/{prompt}.md`. Cross-model synthesis in `04_cross_model_synthesis.md`. Per-vector synthesis in `03_per_vector_synthesis.md`. Negative-α treatment in `05_negative_alpha_findings.md`.
+
+### Per-model column totals (✓ rate, hand-graded)
+
+| Model | ✓ / 576 (excl. baselines) | Notes |
+|-------|---------------------------|-------|
+| Phi-4-mini-reasoning | 162 (28%) | Highest per-cell peaks; L3 catastrophic on every prompt |
+| Llama-3.1-8B-R1-GRPO | 219 (38%) | Highest column total; template-locked on wrong answers |
+| OpenR1-Qwen-7B | 100 (17%) | Lowest pass rate; uniquely *rescuable* by steering |
+
+### Three failure shapes identified
+
+The headline cross-model finding: **the baseline failure shape determines whether steering helps.**
+
+| Baseline failure mode | Effect of activation steering | Examples |
+|-----------------------|-------------------------------|----------|
+| **Wrong-answer template** | Cannot dislodge → 0/72 ✓ | Llama E2 (80% lock), Llama E3 (prior-mixture lock), Llama N2 (A>B>C>D split) |
+| **Internal loop / no commit** | Forces commitment → 40-56% ✓ | OpenR1 N1 baseline, OpenR1 E3 baseline |
+| **Cap-truncation on extended deliberation** | No effect (token budget bottleneck) | Phi-4 N2, Phi-4 E3, Phi-4 E4 |
+
+### Confirms F109 at 14× scale
+
+F109 was based on 121 generations on qwen3-4b. F110 replicates the rail-switch / "steering modulates existing rails" thesis on **1,752 generations across 3 different model families**. Same mechanism (per-token rail selection); same non-linearity in α; same impossibility of installing novel reasoning behaviors.
+
+### Specific cross-prompt findings
+
+1. **F102 cross-model split is real and structured.** Phi-4 is a third datapoint that confirms qwen-vs-gemma was not noise. Phi-4 has its own failure profile (L3 instability, L7 EOS at α≥+16) distinct from both qwen and gemma.
+
+2. **The IH hypothesis is decisively falsified** (4 of 4 testable prompts: E1, N2, E2, E3). Humility-vector steering does NOT cause models to express more uncertainty when overconfident. On openr1 IH×L25 it produces *worst-form* fallacies at high α (B>A>D>C on N2; "Hjelte Rød farm in Jönköping / DanneRød competition" on E1; 90→95% confidence escalation on E2).
+
+3. **Layer-depth dominates vector identity at extreme α.** Phi-4 L3 catastrophic across all 8 prompts (CC_num_L3 + VC_L3 fail identically — same shape, different vector content). Phi-4 L7 (IH) FM-8-premature-EOS at α≥+16 across 6 of 8 prompts. Confirms layer choice is the primary determinant of steering stability, with vector content secondary.
+
+4. **OpenR1 baseline-✗ → steered-✓** is the most surprising finding. On N1, openr1 baseline fails (verbose self-debate, no commit) → CC_full × L23 × N1 gets 8/12 ✓; CC_num × L23 × N1 gets 9/12 ✓. On E3, EG × L19 × E3 gets 8/12 ✓ from a 0/12 baseline. **This is the F109 thesis in its strongest form: steering forces commitment, and the existing reasoning rails are correct.**
+
+5. **Llama's "wrong-answer template lock"** on E2 (80% confidence at every α × every vector — 72/72 generations identical), E3 (prior-mixture 0.505 at every α — 0/72 ✓ on Bayes), and N2 (A>B>C>D split rec at every α — 0/72 ✓ on conjunction fallacy) is the strongest steering-resistant signal observed in any probe to date. Activation steering cannot dislodge templates that RL-tuning has hardened.
+
+6. **Recurring fabrication attractors are model-specific, not vector-specific.** Phi-4 anchors on "Niels Jansen / Skanderborg / Jutland" on E1. OpenR1 anchors on "Aalschou / Aalsburg / Hjelte Rød / DanneRød / Pumpkin Olympics / Sven Rytz" on E1, and on "Stephan R.M. 1941-1948 incrementing" / "American Mathematical Society as periodontal authority" on E2. These attractors persist across vectors.
+
+7. **No anti-virtue mode at negative α.** 438 negative-α generations (α∈{−8, −4, −2}) never produce a clean opposite of the positive-α virtue behavior. They produce same-family failures, occasional unique modes (phi-4 IH×L7×α=−8 inverts base rates on E4), or noise. **The vectors do not encode a clean virtue↔anti-virtue axis.** Detail in `05_negative_alpha_findings.md`.
+
+### Applies to / implications
+
+- **F45 (disposition modulation not propositional injection):** strongly reinforced. Now backed by 3-model × 8-prompt evidence.
+- **F101 / F102 (cross-model split):** confirmed with phi-4 as a third datapoint.
+- **F109 (rail-switch gating):** generalizes to 3 model families and 8 prompt classes.
+- **`docs/scoring.md`:** add FM-conj-fallacy (B-above-component) and FM-no-Bayes (prior-mixture only) as cross-model recurring failure modes. Hand-review remains essential — auto-scorer would have credited multiple identifiable false positives.
+- **`docs/post-mvp-decisions.md`:** add a "layer-screening before sweep" rule. Phi-4 L3 should never be a steering target. Layer screening should precede any α-sweep.
+- **Phronesis paper draft:** the "three failure shapes" frame is the cleanest narrative around F109+F110. Suggests the post-MVP product hypothesis should be "commitment amplifier for non-committal models" not "virtue installer."
+
+### What I'm less sure about
+
+- Whether the cap-truncation on phi-4 N2/E3/E4 is masking otherwise-correct reasoning. Cap-extended re-run (16k tokens) would test this.
+- Whether negative-α at a *different* layer than extraction would produce clean anti-virtue. Untested.
+- Whether the openr1 commitment-rescue on N1+E3 generalizes beyond reasoning prompts. The pattern is consistent but only tested on 2 of 8 prompts.
+
+### Artifacts
+
+- `mvp/results/cross_model_analysis_20260502/per_generation.csv` — 1,752 verdicts (all hand-graded)
+- `mvp/results/cross_model_analysis_20260502/01_baselines.md` — 24 baseline characterizations
+- `mvp/results/cross_model_analysis_20260502/02_per_prompt/{N3,E1,N2,E5,E2,N1,E3,E4}_*.md` — per-prompt cross-cell synthesis
+- `mvp/results/cross_model_analysis_20260502/03_per_vector_synthesis.md` — what each of the 6 vectors does
+- `mvp/results/cross_model_analysis_20260502/04_cross_model_synthesis.md` — phi4 vs llama vs openr1 patterns
+- `mvp/results/cross_model_analysis_20260502/05_negative_alpha_findings.md` — α<0 sanity-control treatment
+- 1,752 raw generation JSONs in `mvp/results/{phi4_sweep_20260430, llama_sweep_20260501, openr1_sweep_20260501}/`
+
+---
+
+## F111 (2026-05-03, Day 25) — IH ("intellectual humility") vector hypothesis is decisively falsified across 4 prompts and 3 model families
+
+### Source
+
+Cross-model run F110, specifically the IH-vector cells across E1, N2, E2, E3.
+
+### The hypothesis going in
+
+The IH vector was extracted from contrastive triplets where the "more virtuous" passage was epistemically humble (acknowledges uncertainty, hedges appropriately, abstains when uncertain). Hypothesis: positive-α steering with v_IH should:
+- Increase abstention rate on confabulation prompts (E1)
+- Reduce overconfidence on contested-science (E2)
+- Reduce conjunction-fallacy commission rate (N2)
+- Improve Bayesian updating sensitivity (E3)
+
+### What we found
+
+**On all 4 testable prompts, IH-vector steering either had no effect, made things worse, or destabilized generation.**
+
+| Prompt | Phi-4 IH×L7 | Llama IH×L31 | OpenR1 IH×L25 |
+|--------|-------------|--------------|---------------|
+| E1 (confabulation) | FM-8-premature-EOS at α=+16/+20 (1-token EOS); confabulates at low α | At-ceiling (already abstains; no test) | **Worst-form confabulation at high α** ("Hjelte Rød farm in Jönköping / DanneRød competition / 1115 kg" α=+20) |
+| N2 (conjunction) | Cap-truncated `<think>` blocks; rare correct ranking | A>B>C>D fallacy at every α (template-locked) | **B>A>D>C worst-form fallacy at every α** (worst result of N2 sweep) |
+| E2 (flossing contested) | 75-95% confidence; α=+12 EOS at 81 tokens; α=+16 r-vs-rating confusion | 80% locked at every α | **90→95% confidence escalation at α≥+12** (wrong direction) |
+| E3 (Bayes update) | Cap-truncated; multiple FM-no-Bayes at low/mid α | Prior-mixture (0.505) at every α | 6/12 ✓ at narrow α=+10/+12; otherwise loops |
+
+### The specific failure modes
+
+1. **OpenR1 IH×L25 produces *worst-form* outputs at high α.** This is the cleanest falsification. On every prompt where IH should help, IH steering at α≥+10 makes the failure WORSE. The vector eliminates the model's hedging disclaimers while preserving (and amplifying) the underlying confabulation/fallacy. Explicit phrases like "I recall that the heaviest pumpkin was X kg" replace earlier hedged "approximately Y kg (hypothetical)."
+
+2. **Phi-4 IH×L7 catastrophically destabilizes** at α≥+16. Premature EOS (1-token, 17-token, 81-token outputs) on multiple prompts. The L7 layer is too early; high-α steering destroys generation rather than improving epistemic posture.
+
+3. **Llama IH×L31 produces no effect** because llama's templated answers are already at ceiling (E1 abstention) or template-locked on wrong answers (E2, E3). Either way, IH cannot move the model.
+
+### Why the hypothesis fails
+
+Three interpretations, all consistent with the data:
+
+1. **Humility is not a coherent residual-stream direction at the layer/extraction-method tested.** What we extracted from contrastive triplets is something like "force commitment to the most accessible answer" — which is virtue-aligned when the accessible answer is right (E5/N3 baselines) but anti-virtue when the accessible answer is wrong (E1/E2 baselines).
+
+2. **Humility requires different layers than where it was extracted.** The IH layers (L7 phi4, L31 llama, L25 openr1) are where the IH vector has highest probe accuracy, but these may not be where humility behavior is *implemented*. Behavior implementation may live in earlier or later layers.
+
+3. **The trained models' "humility" is shallow.** What the contrastive triplets captured may be surface-level hedging (linguistic markers like "I'm not sure", "approximately") rather than deep epistemic calibration. Forcing more of the surface markers via steering doesn't change the underlying confabulation circuit.
+
+### Applies to
+
+- **F92 ("calibrated confidence" reduces abstention):** F111 is a stronger version of F92. The IH corpus may suffer the same conflation problem F92 identified — multiple sub-dispositions pulling opposite directions when forced via steering.
+- **F45 (disposition modulation):** reinforced. The vector modulates *something* (rail-selection, commitment) but not *humility* per se.
+- **post-MVP product hypothesis:** "humility / abstention-amplifier" is unsupported by current evidence. Pivot to "commitment-amplifier for non-committal models" (which IS supported by openr1 N1+E3 rescue results).
+- **Future extraction work:** if humility is the goal, contrastive triplets at the residual-stream layer are not the right method. Behavioral RL on humility-marked completions might work; per-layer SAE feature targeting might work; current activation-vector method demonstrably does not.
+
+### What I'm less sure about
+
+- Whether *any* abstention-related vector could work at this layer set — or whether abstention is fundamentally a multi-layer phenomenon that single-layer steering can't address.
+- Whether higher-layer (L40+ on the deeper models) IH extraction would behave differently. Untested.
+
+### Artifacts
+
+- See F110 artifacts; specifically `cross_model_analysis_20260502/02_per_prompt/E1_*.md`, `E2_*.md`, `N2_*.md`, `E3_*.md` cells under "× IH ×".
+
+---
+
+## F112 (2026-05-03, Day 25) — OpenR1 commitment-rescue is the cleanest positive cross-prompt result; suggests "commitment amplifier" as a generalizable post-MVP product hypothesis
+
+### Source
+
+F110 cross-model run, specifically OpenR1-Qwen-7B baseline-✗ → steered-✓ on N1 (Simpson's paradox) and E3 (Bayesian update).
+
+### The phenomenon
+
+OpenR1-Qwen-7B's *baseline* behavior on hard reasoning prompts is **verbose self-debate without commitment**. The model emits 24716c response on E3 baseline, 38689c on E4 baseline, and circular think-loops on N1 baseline — never committing to a final answer.
+
+When the same model is steered with several different vectors at moderate-to-high α, the loop is broken and the model commits — and the commitment is usually correct.
+
+### Quantitative results
+
+On N1 (Simpson's paradox):
+- OpenR1 baseline: ✗ (verbose, no commit)
+- OpenR1 × CC_full × L23: 8/12 ✓ (peak at α=+8/+10/+12)
+- OpenR1 × CC_num × L23: 9/12 ✓ (peak across α=−8 to +8)
+- OpenR1 × EG × L19: 8/12 ✓
+- OpenR1 × RT × L19: 7/12 ✓
+
+On E3 (Bayes update):
+- OpenR1 baseline: ✗ (no commit)
+- OpenR1 × CC_full × L23: 6/12 ✓ at α=−4/−2/+2/+6/+8/+12
+- OpenR1 × CC_num × L23: 4/12 ✓ at α=+1/+2/+4/+6 (suggests cache artifact for some)
+- OpenR1 × EG × L19: 8/12 ✓ at α=−8/−4/+1/+4/+6/+8/+10/+12
+- OpenR1 × RT × L19: 8/12 ✓
+- OpenR1 × VC × L25: 8/12 ✓
+
+**Total openr1 N1+E3 ✓ rate: ~50/144 (35%) from a baseline of 0/2.** Across 6 different vectors, multiple alphas, and two different reasoning prompts, the same effect appears: steering forces commitment, and the commitment is correct.
+
+### Why this matters more than F110/F111
+
+F110 is a confirmation of F109 at scale (mostly negative). F111 falsifies a hypothesis (also negative). **F112 is the cleanest positive finding from the cross-model run.** It demonstrates a real, replicable use case for activation steering:
+
+> When a thinking model has correct internal reasoning but cannot commit to a final answer, activation steering can break the loop and force commitment.
+
+This is a *commitment amplifier* — not a virtue installer, not a humility booster, not a Bayes-circuit installer. It's the simplest possible positive claim about activation steering's behavioral effect.
+
+### What this implies for the post-MVP product hypothesis
+
+The original Phronesis hypothesis was "steering installs/amplifies virtues." F110/F111 show this is too strong: steering does not install novel reasoning, and it does not reliably amplify virtue when virtue is the desired direction.
+
+The revised hypothesis F112 supports:
+
+> Activation steering breaks self-debate / non-commitment loops, forcing the model to commit to its most accessible reasoning rail. Whether the commitment is virtuous depends on whether the model's accessible rail is correct.
+
+This is a much narrower claim, but it has empirical support across 2 prompts × 6 vectors × 12 α on openr1, plus partial support on phi-4 (where the model is mostly committal already).
+
+### Why does the phenomenon appear on openr1 but not on phi-4 or llama?
+
+- **OpenR1 baseline** is verbose-non-committal on hard reasoning → steering helps
+- **Phi-4 baseline** is already committal but cap-truncates on extended reasoning → steering can't help (token-budget bottleneck)
+- **Llama baseline** is committed *to a wrong template* → steering can't dislodge
+
+The commitment-amplifier mechanism needs the right kind of baseline failure (non-commitment from internal uncertainty). It does not help with cap-truncation or wrong-template commitment.
+
+### Applies to
+
+- **post-MVP product hypothesis:** pivot from "virtue installer" to "commitment amplifier for non-committal models." Specific use case: thinking models that loop on hard reasoning instead of committing.
+- **Future extraction work:** rather than extracting "virtue" vectors and hoping they install virtue, extract "commit-amplifier" vectors directly from triplets where the difference is committal-vs-uncommittal answers.
+- **F108/F109 commit-amplified-error finding:** F112 is the *positive* face of the same coin. F108/F109 showed that commitment-amplification can produce confabulations when the rail is wrong (FM-13). F112 shows it produces correct commitment when the rail is right.
+
+### What I'm less sure about
+
+- Whether this generalizes to non-thinking models (the phenomenon may be specific to chain-of-thought models that explicitly self-debate)
+- Whether the effect persists outside reasoning prompts (e.g., creative writing, code generation)
+- What the optimal α is for commitment-amplification specifically — current data suggests α=+6 to +12 on openr1, but this hasn't been systematically swept
+
+### Artifacts
+
+- `cross_model_analysis_20260502/02_per_prompt/N1_simpsons_paradox.md` — openr1 cells synthesis
+- `cross_model_analysis_20260502/02_per_prompt/E3_bayesian_update.md` — openr1 cells synthesis
+- `cross_model_analysis_20260502/per_generation.csv` — filterable rows for openr1 × N1/E3

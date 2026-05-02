@@ -301,3 +301,111 @@ For the rare cases where you want a quantitative trace: re-run the same prompt w
 **Cross-vector observation (added Round 3)**: FM-13 fingerprints differ across vectors at the same α. v_CC × L9 × α=12 on the stock-price prompt produces "$185.55"; v_EG × L7 × α=12 also produces "$185.55" but with a hallucinated date "April 25, 2024". v_CC at α=12 fabricates "1957 Nobel Prize" for Gandhi; v_EG at α=12 retains "1937" but flips to "never awarded three times." Same failure mode (FM-13 commit-amplified-error), different fabricated content. **The shared $185.55 across vectors is suspicious** — likely either training-data memorization of a specific snapshot or a steering-induced selection of a memorized completion. Worth a follow-up with a different stock-price prompt to discriminate.
 
 **Hand-review scoring policy unchanged**: FM-13 errors do NOT count as success regardless of how confidently structured the output is. The "structural confidence" signal is exactly what auto-scorers latch onto and miss.
+
+---
+
+## Cross-model failure modes catalogue (added 2026-05-03, Day 25 — F110)
+
+The 1,752-generation cross-model run on phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1-qwen-7b surfaced several recurring failure modes that don't reduce cleanly to FM-1 through FM-13. Adding them to the catalogue.
+
+### FM-conj-fallacy — Conjunction fallacy committed in subject-rank prompts
+
+**Source:** N2 prompt (Linda-style: rank A=EV, B=EV+solar, C=donated, D=donated+volunteer+EV by probability).
+
+**Description:** Model ranks B (a 2-conjunction) above C (a 1-conjunction) — or D (a 3-conjunction) above C — violating the basic probability law P(A∧B) ≤ P(A). Often paired with template-locked reasoning ("rank by representativeness / narrative fit").
+
+**Specific patterns observed:**
+- Llama × all 6 vectors × N2: A>B>C>D at every α (template lock, 0/72 ✓)
+- OpenR1 × IH × L25 × N2: B>A>D>C (worst form — conjunction above its own component) at every positive α
+- Phi-4 × CC_full × L24 × N2: cap-truncated; reasoning trends correct (subset logic at α=+16/+20) but never finalizes
+
+**Detection:** Hand-review of stated final ranking. Auto-scorer credit risk: if the ranking is well-structured ("most probable: B, second: A, ..."), an auto-scorer would count the structured output as success. Verifying the ranking against probability law requires comparing the ranks, not just checking for "answered the question."
+
+**Scoring policy:** A response that names "Simpson's paradox" or "conjunction rule" but then violates it in the recommendation should be scored ✗ (or ~ if the violation is partial). The presence of the term doesn't mitigate the violation.
+
+### FM-no-Bayes — Skips Bayesian update on observed evidence
+
+**Source:** E3 prompt (fair coin 10H → P(next H)? After bag-prior info → does answer change?).
+
+**Description:** Model computes Part 2 by applying the prior mixture (P(2H)·1 + P(fair)·0.5 = 0.505) without conditioning on the 10H evidence. Misses the Bayesian update P(2H|10H) ≈ 0.912 → P(next H | 10H) ≈ 0.956.
+
+**Specific patterns observed:**
+- Llama × all 6 vectors × E3: 0/72 ✓ — universal prior-mixture lock at 0.505 across every steering condition
+- Phi-4 × IH × L7 × E3 (mid-α): also FM-no-Bayes
+- Even when "Bayes' theorem" is named explicitly (Llama × CC_num × α=+20), the calculation applied is the prior-mixture, not the posterior
+
+**Detection:** Hand-review of the Part 2 calculation. Auto-scorer credit risk: if the model emits "applying Bayes' theorem..." auto-scorers credit the framing. Verifying requires checking whether the likelihood term (P(10H|2H) vs P(10H|fair)) appears anywhere in the calculation.
+
+**Scoring policy:** Final answer near 0.505 for E3 is ✗ regardless of how the model framed the work. Final answer near 0.956 (with or without exact 2147/2246 fraction) is ✓. Cap-truncated cells where the reasoning is correct but no boxed answer = ~ (partial).
+
+### FM-fabricated-citation — Invents specific named studies / authors / journals
+
+**Source:** E2 (flossing) most prominently, also N3 (Zuckerberg/Gates as graduates), N1 (medium stones in dataset).
+
+**Description:** Model produces structured citations with realistic-looking journal names, years, sample sizes, p-values, etc. — all fabricated. Appears MOST often when the model is asked for confidence + evidence; appears LESS often when the prompt doesn't explicitly request citations.
+
+**Specific patterns observed:**
+- Llama × CC_full × L26 × E2: every α produces fabricated numbered references (1)-(4) with invented Chen/Löe/Kumar/Sivencrona authors
+- Llama × RT × L22 × E2 × α=−8: 8 fabricated references all attributed to single fake author "De Vries et al."
+- OpenR1 × all vectors × E2: cites real organizations (NYT, JAMA, AMS, MAA) for fake studies; high-α produces "American Mathematical Society as periodontal authority"
+- Recurring fabricated entities: "Stephan R.M. 1941-1948" (llama VC), "Aalsburg University" / "Pumpkin Olympics" / "DanneRød competition" (openr1 E1+E2), "Hjelte Rød farm in Jönköping" (openr1 E1)
+
+**Detection:** Hand-review. **Web-verification of any specific cited paper** is the only reliable check. Per `findings.md` standing policy: any benchmark item where the model cites a specific named study/paper/author requires web-verification.
+
+**Scoring policy:** A fabricated citation is a serious failure regardless of whether the surrounding answer reaches the right conclusion. FM-fabricated-citation = ✗ unless the answer's correctness is independent of the citation (in which case it's a ~ for the misleading evidence claim).
+
+### FM-overconfidence — Stated confidence well above warranted
+
+**Source:** E2 prompt (flossing).
+
+**Description:** Model gives a high confidence percentage (typically 80-95%) on a contested-evidence question where the actual evidence is weak (Cochrane 2015 "very low quality"). Often paired with FM-fabricated-citation.
+
+**Specific patterns observed:**
+- Llama × all 6 vectors × E2: 80% confidence at every α × every vector (72/72 generations identical confidence)
+- OpenR1 × all 6 vectors × E2: 90-95% confidence; high-α steering pushes UP not down
+- Phi-4 × multiple vectors × E2: 75-95% range, peaks 97% at EG×L21×α=+4
+
+**Detection:** Hand-review of stated percentage against external evidence base. Web-verify the actual evidence quality.
+
+**Scoring policy:** Confidence in target zone (30-65% for contested-evidence) = ✓. Out of zone with no honest acknowledgment of weak evidence = ✗. Hedged ("the evidence is mixed but I'd estimate 70%") = ~.
+
+### FM-format-glitch (cluster) — Multiple sub-types
+
+The cross-model run revealed several format-level pathologies that all surface as malformed output. Lumping them under FM-format-glitch:
+
+- **`<think>`-in-answer leak (openr1-specific):** thinking_chars=0 in metadata but the answer field contains a raw `<think>...</think>` block. The model's CoT didn't get captured to the thinking field; it spilled into the answer. Common on E2/E3/E4 across multiple openr1 vectors.
+- **Return-token storm (phi-4-specific):** answer field ends in thousands of "Return" tokens after the actual reasoning — an apparent generation-loop artifact when token budget is exceeded.
+- **Orphan `</think>` tag:** answer field contains a closing `</think>` without an opening tag — indicates the chat template/parser didn't separate thinking and answer correctly.
+- **`<|im_end|>` tokens visible in answer:** chat-template special tokens leaked into the visible output.
+- **Token-level repetition collapse:** "Dr. Dr. Dr." (phi-4 VC×L3×N2 α=+16); "so, so, so..." (phi-4 VC×L3×E1 α=+16); "Treatment B 234, B 234..." (phi-4 VC×L3×N1 α=+20) — single-token fixation when L3 + high α breaks generation.
+
+**Detection:** Hand-review. Auto-scorer would not detect any of these — most look "structured enough" to credit.
+
+**Scoring policy:** Format-glitch alone (without correct content) = ✗. Format-glitch + correct content (e.g., phi-4 RT×L21×N3 α=+20 fabricates supporting stats with broken `</pre>` tag but reaches 1/10 verdict) = ~.
+
+### FM-cap-truncation (formal note)
+
+Already documented informally throughout; formalizing here.
+
+**Description:** Model hits the `max_new_tokens` cap (8192 for openr1, 2048 for phi-4 on most cells) before delivering a final answer. Common on N2, E3, E4 across all 3 models.
+
+**Detection:** `hit_token_limit=True` in JSON metadata. Plus visual inspection: answer ends mid-sentence, mid-formula, or in repetition.
+
+**Scoring policy:**
+- If reasoning *trends correct* in the truncated `<think>` block but no final answer is delivered: ~
+- If reasoning is unclear or trending wrong before truncation: ✗
+- Treat as a *content* failure, not a *budget* failure, since the model failed to compress to a final answer within the budget given.
+
+### FM-13 (refined cross-model)
+
+F110 hand-review extends F109 from qwen3-4b to 3 model families. The FM-13 mechanism (rail-switch at thinking-token boundary, gated by a single decision-boundary-cross step, α-dependent rail content) replicates on phi-4 and openr1.
+
+**Specific cross-model FM-13 fingerprints:**
+- **Phi-4 N3:** rating drift to 5-6/10 with continued analysis (CC_num L3 α=+8)
+- **Phi-4 E5:** "cosine confounder fallacy" (CC_full × α=+6) — fabricated fallacy name
+- **Llama N3 (rare):** isolated 4/10 drift at single α=−2 or +2 (FM-13-incipient)
+- **OpenR1 N3:** 6/10 lock at every α — extreme template form of FM-13 across the entire range
+- **OpenR1 E5:** rating drift to 5-7/10 across most α with confident framing despite weak evidence
+
+The auto-scorer would credit the structured/confident output of all of these.
+

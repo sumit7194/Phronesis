@@ -1200,3 +1200,129 @@ Estimated: 2-3 days end-to-end.
 - Dashboard glob pattern updated: `(v2_sweep_*|round3_*)` so a single dashboard handles both sweep generations.
 - Sweep launcher pattern (`run_round3_sweep.sh`) — array of `bench|n|vector|alpha|label[|vector2|alpha2]` strings → `run_cell` function with positional unpacking — is clean enough to replicate for phi.
 
+
+---
+
+## Day 24 (2026-05-02) — Cross-model sweep launched + Phase 2 setup
+
+### What landed
+
+Three thinking-model sweeps complete. Total 1,752 generations across 3 model families × 6 vectors × 12 α × 8 prompts.
+
+- **phi-4-mini-reasoning (Microsoft):** distill+RL mix on Phi-3.5 base. 9.2 MB raw generations. Native `<think>` tag emission.
+- **llama-3.1-8B-R1-GRPO (Open-R1):** GRPO post-trained on Llama-3.1-8B base. 2.8 MB raw generations. No `<think>` emission (think_chars=0 universal).
+- **openr1-qwen-7b (Open-R1):** GRPO post-trained on Qwen2.5-7B base. 8.5 MB raw generations. Inconsistent `<think>` (sometimes emits, sometimes not).
+
+8 prompts: 4 extractive (E1 confabulation, E2 contested-science, E3 Bayes update, E5 ecological fallacy) + 4 normative (N1 Simpsons paradox, N2 conjunction fallacy, N3 survivorship bias, E4 taxi-social).
+
+### Phase 2 hand-review setup
+
+Per user direction: "no auto-scoring, do them all one by one manually, no shortcuts." Standard auto-scorer policy from F94 standing rule.
+
+Built the analysis structure under `mvp/results/cross_model_analysis_20260502/`:
+- `01_baselines.md` — characterize the 24 unsteered generations across 3 models × 8 prompts
+- `02_per_prompt/{prompt}.md` — 8 per-prompt dives
+- `per_generation.csv` — 1,752+24 rows scaffold
+
+Master plan in `mvp/results/cross_model_analysis_plan.md`.
+
+### Approach to scaling hand-review
+
+Started doing one cell (12 generations) at a time with full-JSON reads. After ~110 cells / 1,752 the user pointed out this would take hours and suggested spawning sonnet sub-agents in parallel. 
+
+New protocol:
+- 18 sonnet sub-agents per round (one per remaining cell of a prompt: 3 models × 6 vectors)
+- Each agent reads its 12 JSONs in full, returns structured verdicts (✓/~/✗ + failure-mode + one-line note)
+- I commit results to CSV in batch, write per-prompt cross-cell synthesis
+- 8 rounds × 18 agents = ~144 agents total (plus the 8 cells I'd already done by hand at the start)
+
+Strict-meticulousness directive added to every agent prompt:
+- Read every JSON in full (no skimming)
+- Don't assume duplicates without comparing actual text
+- Don't infer from char-count heuristics
+- Treat each cell as if it's the only one being judged
+
+### What worked
+
+- Agent parallelism is the right call. Each round took ~5-10 minutes wall-clock; previously each cell was ~5-10 minutes per cell.
+- The structured output format (12 alpha rows + cell synthesis) is easy to commit via Python script.
+- Hand-quality is preserved as long as the meticulousness directive is in the prompt — agents flag fabricated citations, format glitches, comprehension drift, etc., that auto-scoring would never catch.
+
+### Pipeline notes
+
+- One cron-fire stuck issue at start: scheduled `/loop 5m` to continue self-paced cells, but realized this was 1 cell every 5min × 144 cells = ~12 hours. Killed the cron.
+- Ran the parallel-agent strategy in 8 rounds (one per prompt) instead. Total wall-clock ~3 hours for 1,752 verdicts.
+- Each round committed to CSV via bespoke Python `commit_X_round.py` script. Pattern: load CSV, dict-update by (model, vector, alpha), write back.
+
+---
+
+## Day 25 (2026-05-03) — All 1,752 verdicts complete; F110/F111/F112 findings landed
+
+### Numbers
+
+- 1,752/1,752 verdict cells filled (100%)
+- 24/24 baselines characterized
+- 8/8 per-prompt syntheses written (each ~600-1000 lines)
+- 3 cross-cutting synthesis docs (per-vector, cross-model, neg-α)
+- 3 new F-numbered findings (F110, F111, F112)
+
+### Per-model column totals (from 04_cross_model_synthesis.md)
+
+| Model | ✓ rate / 576 |
+|-------|--------------|
+| Phi-4 | 162 (28%) |
+| Llama | 219 (38%) |
+| OpenR1 | 100 (17%) |
+
+### Three failure shapes (the headline)
+
+1. **Wrong-answer template lock** (llama on E2/E3/N2) — steering cannot dislodge
+2. **Internal loop / no commit** (openr1 on N1/E3) — steering forces commitment, and that commitment is usually correct
+3. **Cap-truncation on extended deliberation** (phi-4 on N2/E3/E4) — token budget is the bottleneck, not steering
+
+This 3-failure-shape framing is the cleanest narrative around F109+F110.
+
+### F110 — Cross-model 1,752-generation hand-review confirms F109 at scale
+
+Replicates F109's "steering rides existing rails" thesis. Layer-depth dominates vector identity at extreme α (phi-4 L3 catastrophic on every prompt; phi-4 L7 EOS at α≥+16 on most prompts). Recurring fabrication attractors are model-specific not vector-specific. Negative α never produces a clean anti-virtue mode.
+
+### F111 — IH ("intellectual humility") hypothesis decisively falsified
+
+4 of 4 testable prompts (E1, N2, E2, E3) show IH steering doesn't help. On openr1 IH×L25 it produces *worst-form* fallacies at high α (B>A>D>C on N2; "Hjelte Rød farm in Jönköping" on E1; 90→95% confidence escalation on E2). The most theoretically motivated vector is the most empirically falsified.
+
+### F112 — OpenR1 commitment-rescue is the cleanest positive finding
+
+Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. ~50/144 (35%) ✓ rate from a 0/2 baseline. **Suggests pivoting the post-MVP product hypothesis from "virtue installer" to "commitment amplifier for non-committal models."**
+
+### What I changed my mind about
+
+- **The IH vector is genuinely useful.** Going in I expected IH to be the strongest cross-prompt vector. F111 shows it's the *weakest* — sometimes harmful, never reliably helpful. The corpus-design assumption that "humility = abstention = uncertainty" produces a coherent vector is not supported by 4-prompt × 3-model evidence.
+- **Negative-α as anti-virtue control is mostly dead.** 438 negative-α generations never produce a clean anti-virtue mode. The vectors don't encode a virtue↔anti-virtue axis cleanly.
+- **OpenR1 is the most interesting model.** Despite the lowest column total (17%), it's the only model where steering reliably *adds value* (rescues from baseline failure on N1+E3). Phi-4 is a strong baseline that steering can't improve much; llama is a wrong-baseline that steering can't fix.
+
+### What I'm less sure about
+
+- Whether the "commitment amplifier" framing of F112 generalizes to non-thinking models or non-reasoning prompts.
+- Whether phi-4's cap-truncation on N2/E3/E4 is masking otherwise-correct reasoning. Cap-extended re-run (16k tokens) would test.
+- Whether higher-layer IH extraction (L40+ on the deeper models) would revive F111.
+
+### Pipeline notes
+
+- 18 parallel sonnet sub-agents per prompt × 8 prompts = ~144 agents. Each agent reads 12 JSONs in full and returns structured verdicts.
+- Strict meticulousness directive in every agent prompt (no shortcuts, read full JSONs, don't infer from char-counts) was essential. Without it the first round produced surface-level verdicts that missed factual errors and format glitches.
+- Total git commit = 1,777 files (1,752 raw generations + 8 per-prompt MDs + 3 synthesis MDs + CSV + baselines).
+
+### Phase 4 priorities (next)
+
+User direction: "do those too and push to git" referring to Phase 3 + Phase 4 docs and committing/pushing.
+
+Phase 3 ✓ done (3 synthesis docs landed).
+
+Phase 4 plan:
+- F110 + F111 + F112 appended to `docs/findings.md` ✓
+- Day 24 + Day 25 entries appended to `docs/journal.md` (this entry)
+- Update `docs/scoring.md` — add cross-model recurring failure modes (FM-conj-fallacy, FM-no-Bayes, FM-fabricated-citation cluster)
+- Update `docs/project.md` — pivot product hypothesis from "virtue installer" to "commitment amplifier for non-committal models" (F112)
+- Update `docs/post-mvp-decisions.md` — add "layer-screening before any sweep" rule (F110 finding 3)
+
+Then commit + push.

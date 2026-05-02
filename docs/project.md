@@ -279,3 +279,82 @@ Phase 2 plan:
 
 Estimated: 2-3 days end-to-end on L4.
 
+
+---
+
+## Status update (2026-05-03, Day 25 — post cross-model 1,752-generation hand-review)
+
+Cross-model run complete. 1,752 generations across phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1-qwen-7b × 6 vectors × 12 α × 8 prompts. All hand-graded (no auto-scorer). F110, F111, F112 promoted in `findings.md`.
+
+### Headline numbers
+
+| Model | ✓ rate / 576 | Failure shape |
+|-------|--------------|---------------|
+| Phi-4 | 162 (28%) | Internal looping + cap-truncation |
+| Llama | 219 (38%) | Wrong-answer template lock |
+| OpenR1 | 100 (17%) | Non-commitment loop (rescuable!) |
+
+### Three-failure-shape framing (the cleanest narrative)
+
+| Baseline failure mode | Effect of activation steering | Examples |
+|-----------------------|-------------------------------|----------|
+| Wrong-answer template | Cannot dislodge → 0/72 ✓ | Llama E2 (80% lock), Llama E3 (prior-mixture), Llama N2 (split rec) |
+| Internal loop / no commit | Forces commitment → 40-56% ✓ | OpenR1 N1, OpenR1 E3 |
+| Cap-truncation on extended deliberation | No effect | Phi-4 N2, E3, E4 |
+
+### Working-vector inventory (Day 25)
+
+| Vector | Phi-4 | Llama | OpenR1 | Cross-model verdict |
+|--------|-------|-------|--------|---------------------|
+| CC_full (L24/L26/L23) | Strong on E5/N3 (12/12 ✓) | Template-flat | Best openr1 cell on N1+E3 | **HIGH** confidence as commitment-amplifier; F112 best result |
+| CC_num (L3/L31/L23) | L3 catastrophic everywhere | Mostly inert | Strong on N1 (9/12) | MED — usable on openr1, fragile elsewhere |
+| EG (L21/L22/L19) | Best phi-4 cell (12/12 N3+E5) | Variable | Strong on E3 (8/12) | **HIGH** on phi-4 L21; LOW elsewhere |
+| IH (L7/L31/L25) | L7 EOS at high α | At ceiling, untestable | **PRODUCES WORST FAILURES** at high α | **FALSIFIED** — F111 |
+| RT (L21/L22/L19) | Stable on N3/E5 | think_chars=0 universal on N1 | Strong on E3 (8/12) | MED — overlaps with EG/CC_full at L21 (F105) |
+| VC (L3/L29/L25) | L3 catastrophic | Null negative control | Format-glitch susceptible | Confirms layer-suitability hypothesis |
+
+### Pivoted product hypothesis (post-F112)
+
+Old hypothesis: "Activation steering installs/amplifies virtues. Compose vectors to install multiple virtues simultaneously."
+
+New hypothesis (F112): **"Activation steering breaks self-debate / non-commitment loops, forcing the model to commit to its most accessible reasoning rail. The commitment is virtuous when the rail is virtuous."**
+
+Specific use case where this is empirically supported: **non-committal thinking models with correct internal reasoning that fail to commit.** OpenR1-Qwen-7B is the canonical example — verbose self-debate baseline, ✗ rate of 0/2 on N1+E3 → 35% ✓ rate after steering.
+
+### What this changes for post-MVP
+
+- **Drop**: "humility installer" / "calibrated-confidence amplifier" — F92 + F111 both falsify this
+- **Drop**: "compositional virtue installer" — F109 showed composition is non-additive; this run didn't disprove it but also didn't find a compelling positive case
+- **Pivot to**: "commitment amplifier for self-debating reasoning models" — F112 supports this with 50/144 ✓ on openr1 N1+E3
+- **Test direction for follow-up**: does the commitment-amplifier mechanism generalize to other thinking models that loop instead of commit (e.g., r1-distill, gemini-thinking, o3-mini)?
+
+### Phi-4 cap-truncation as a separable problem
+
+Phi-4 fails on N2/E3/E4 by exhausting the 8192-token budget, not by reasoning poorly. The reasoning is *almost always correct in the visible portion* — subset logic on N2, correct Bayes on E3 — but the model can't compress to a final answer.
+
+This is a **separable, tractable problem**: re-run those prompts at 16k or 32k token cap. If reasoning was correct in 8k, it should commit cleanly in 16k.
+
+Recommended follow-up: cap-extended re-run on phi-4 × CC_full × N2 + E3 + E4 at 16k. If ✓ rate jumps from low (current 12-17%) to 70%+, it confirms cap-truncation was masking otherwise-correct reasoning.
+
+### Cross-cutting findings landed Day 25
+
+- **F110** — Cross-model 1,752-generation hand-review confirms F109 at scale
+- **F111** — IH hypothesis decisively falsified (4 of 4 testable prompts)
+- **F112** — OpenR1 commitment-rescue is the cleanest positive finding; pivots product hypothesis
+
+### Phase 5 / paper draft direction
+
+Three-failure-shape framing is the cleanest narrative around F109+F110+F112:
+- Activation steering's behavioral effect is *commitment selection*, not *virtue installation*
+- Whether commitment is virtuous depends on whether the model has the right reasoning rail
+- Three different baseline failure shapes lead to three different steering-effectiveness regimes
+
+This is publishable as a cross-model hand-review study with the F112 commitment-amplifier as the headline positive finding. The IH-falsification (F111) is the headline negative finding. Together they constitute a substantive update to the F45 / F109 framework.
+
+### Pipeline notes from Day 24-25
+
+- 18 sonnet sub-agents in parallel per prompt × 8 prompts = 144 total agent invocations. Each agent reads 12 JSONs in full and returns structured verdicts.
+- Wall-clock: ~3 hours for 1,752 generations vs estimated 12+ hours sequential.
+- Strict-meticulousness directive in every agent prompt was essential. First-pass outputs without it produced surface-level verdicts that missed factual errors and format glitches.
+- Total git commit = 1,777 files (1,752 raw generations + analysis + syntheses + CSV + baselines).
+

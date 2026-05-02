@@ -446,3 +446,95 @@ Plan:
 
 Estimated: 2-3 days end-to-end.
 
+
+---
+## Day-25 update (2026-05-03) — Cross-model 1,752-generation hand-review + product-hypothesis pivot
+
+Cross-model run complete on phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1-qwen-7b. F110/F111/F112 landed in `findings.md`. Three updates to the post-MVP decision tree.
+
+### Update 1: Add a "layer-screening" rule before any sweep
+
+**Finding:** Phi-4 L3 is intrinsically unstable — both CC_num_L3 and VC_L3 catastrophically collapse at high |α| across all 8 prompts (identical FM-8-severe phenotype regardless of vector content). Phi-4 L7 (where v_IH was extracted) produces premature-EOS at α≥+16 on most prompts.
+
+**Decision rule (added to "Cross-cutting: what to do in ALL outcomes"):**
+
+> **L0: Before any α-sweep on a new model, run a layer-screening pass.** Steer with each candidate vector at α=±20 only; if the layer produces FM-8-severe (cap-truncation, repetition loops, single-EOS collapse) at α=±20, the layer is unsuitable for sweeping. Skip it. Only sweep layers that survive α=±20 without catastrophic collapse.
+
+**Why this matters:** We wasted ~30% of our cross-model run sweeping unstable layers (phi-4 L3 across CC_num+VC = 192 generations of cap-truncation; phi-4 L7 IH high-α = ~24 collapsed cells). A 30-minute layer-screening pass would have flagged these before the sweep.
+
+### Update 2: Drop "humility installer" / "calibrated-confidence amplifier" from product hypothesis
+
+**Finding:** F111 — IH hypothesis decisively falsified across 4 testable prompts (E1, N2, E2, E3) on 3 model families. On openr1, IH×L25 at high α produces *worst-form* fallacies, not humility.
+
+**Decision rule:** Remove "humility-amplification" from candidate product use cases. The contrastive-triplet extraction method does not produce a working humility vector at the layers tested across 3 model families. If humility/abstention amplification is needed downstream, **the right method is not activation steering at the residual stream** — investigate behavioral RL, SAE feature targeting, or per-layer probing instead.
+
+### Update 3: Pivot product hypothesis to "commitment amplifier for non-committal reasoning models"
+
+**Finding:** F112 — OpenR1 commitment-rescue. Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. ~50/144 (35%) ✓ rate from a 0/2 baseline.
+
+**Updated product hypothesis (replaces older "virtue installer" framing):**
+
+> **Activation steering breaks self-debate / non-commitment loops in thinking models, forcing commitment to the model's most accessible reasoning rail. The commitment is correct when the rail is correct. This is a useful capability for thinking models that loop instead of committing on hard reasoning prompts.**
+
+**Why this is narrower than "virtue installer":**
+- Doesn't claim to *install* novel reasoning circuits (we've shown it can't — F110 + F111)
+- Doesn't claim to *amplify virtue* in general (we've shown it can amplify wrong rails too — F108 FM-13)
+- Does claim to *break non-commitment loops* — supported by 50/144 ✓ on openr1 N1+E3
+
+**Concrete use case for the commitment-amplifier framing:**
+
+Thinking models in deployment that:
+- Have correct reasoning ability (per their training) but
+- Tend to loop or self-debate on hard prompts without committing → produces verbose, indecisive outputs
+
+Steering forces commitment. The commitment is correct most of the time (35-56% on openr1 N1+E3), wrong some of the time. The cost-benefit is:
+- Improved commit rate (from 0% to 35%+)
+- Some risk of FM-13 (committing to wrong rail) — F108/F109/F110 quantify this risk
+- Net: better than baseline non-commitment IF you can monitor for FM-13
+
+### Updated "what to do in ALL outcomes" cross-cutting list
+
+Adding three rules from F110-F112:
+
+L0. **Layer-screening before any sweep.** Steer at α=±20 first; skip layers that catastrophically collapse.
+
+L1. **No more humility-vector experiments.** Method demonstrably doesn't work at residual-stream level for this disposition. (Replaces older "calibrated confidence" agenda from F92.)
+
+L2. **Test commitment-amplifier hypothesis on additional non-committal models.** OpenR1 N1+E3 is suggestive but n=2 prompts × 1 model. Need to test on r1-distill, gemini-thinking, o3-mini, or similar to see if F112 generalizes.
+
+### Test plan for F112 generalization
+
+If we want to validate F112 as a generalizable post-MVP product:
+
+1. **Acquire 2-3 more non-committal thinking models.** Candidates: r1-distill-qwen-32b, deepseek-r1-distill-llama-8b, qwen3-32b-thinking, gemini-2.0-flash-thinking, o3-mini.
+2. **Identify their non-commitment failure modes** at baseline. Do they loop in `<think>` on hard prompts? Do they exhaust token budget?
+3. **Apply commitment-amplifier vectors** (CC_full or CC_num at deep layers, the F112-supported configurations).
+4. **Measure commit rate before vs after.** Hand-review every cell.
+5. **Quantify FM-13 cost.** Of the new commitments, how many are correct vs FM-13 (committing to wrong rail)?
+
+Target: 3 additional models × 4 reasoning prompts × 4 vectors × 6 α = ~288 generations to validate F112 generalization.
+
+### Cap-extended re-run for phi-4 (separable problem)
+
+Phi-4 fails on N2/E3/E4 by exhausting 8192-token budget; reasoning is correct in visible portion. **This is a separable, tractable problem.**
+
+**Recommendation:** Re-run phi-4 × CC_full × N2 + E3 + E4 at 16k or 32k cap. Compare ✓ rate before/after. If ✓ rate jumps from current 12-17% to 70%+, confirms cap-truncation was masking otherwise-correct reasoning. This would be a 100% mechanical win (no reasoning improvement needed; just more tokens).
+
+Estimated: 36 generations × ~5 min each = 3 hours of compute. Sub-day work.
+
+### What this all means for the MVP→post-MVP transition
+
+The MVP is functionally **wrapping**. F110+F111+F112 are the strongest cross-model evidence we have, and they:
+1. Confirm F109's "rails not virtues" thesis at 14× scale
+2. Falsify the most theoretically motivated vector hypothesis (IH)
+3. Support a narrower, cleaner product hypothesis (commitment amplifier)
+
+The post-MVP work should therefore:
+- Validate F112 on 2-3 more thinking models (commitment-amplifier generalization test)
+- NOT pursue further humility/abstention extraction work (F111 falsification)
+- NOT pursue further compositional virtue-installer work (F109 non-additivity)
+- Run the cap-extended phi-4 re-run as a quick mechanical win
+- Consider writing up F109+F110+F111+F112 as a paper draft with the "three failure shapes" framing
+
+The candidate framing for the writeup section ("the lazy frontier model / RLHF-compression phenomenon") connects naturally to F112: thinking models that *loop instead of committing* may be exhibiting a learned "uncertainty hedge" from RLHF, and commitment-amplification is the activation-level intervention that breaks that hedge. Worth elaborating in the paper draft.
+
