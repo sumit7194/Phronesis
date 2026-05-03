@@ -5900,6 +5900,216 @@ This is the same mechanism on two related models (qwen3-4b and openr1-qwen-7b �
 
 ---
 
+# Random-vector control — qwen3-4b × random_L22 (Day 12, seed=42)
+
+**The most important control test in the project.** Pre-dates F112 and addresses the question: "is the rescue mechanism *virtue-aligned* or just *any strong perturbation at deep layers*?"
+
+## Setup
+
+- **Model:** qwen3-4b (the Day-12 to Day-23 primary subject; same pretraining family as openr1-qwen-7b)
+- **Vector:** `random_vector_L22.npy` — Gaussian random vector (`np.random.randn(2560)`, seed=42), L2-normalized to unit norm. Saved to `mvp/results/steering_v2/qwen3-4b/random_vector_L22.npy`. Generation logged at `[2026-04-15 16:11:19] Generated random vector: dim=2560, seed=42`.
+- **Layer:** L22 — same depth-class as the cross-model deep layers (openr1 L23-L25; phi-4 L24; llama L26-L31)
+- **Alphas tested:** −4, +2, +8 — covers negative + low-positive + high-positive range
+- **Prompts:** Same 8 reasoning prompts used in the cross-model run (E1, E2, E3, E4, E5, N1, N2, N3)
+- **Total generations:** 24 (3 alphas × 8 prompts)
+
+**Why this matters:** if the rescue mechanism is *purely* perturbation-driven ("any strong push at deep layers breaks self-debate"), random vectors should rescue at similar rates as virtue-extracted vectors. If the rescue mechanism requires *structured* perturbation (corpus-extracted contrastive direction), random vectors should NOT rescue.
+
+## qwen3-4b baseline reference
+
+First we need to know what qwen3-4b's baseline does on each of the 8 prompts (for comparison; this baseline is from `mvp/results/steering_v2/qwen3-4b/baselines/`):
+
+| Prompt | Baseline | Note |
+|--------|----------|------|
+| N1-simpsons-paradox | ✓ | 1320c clean — names Simpson's paradox, recommends Treatment A |
+| E3-bayesian-update | ✗ | FM-8: think=21114c, ans=0c, cap-hit. No answer delivered |
+| E4-taxi-social | ~ | Commits 0.5, says 'does not change' — misses motivated-bias angle |
+| N2-conjunction-fallacy | ✗ | FM-8: think=9152c, ans=0c, cap-hit. No ranking delivered |
+| E1-confabulation | ✗ | Confabulates '105 kg by a farmer' — fake number + fake attribution |
+| E2-contested-science | ~ | 1810c high confidence with overconfident framing |
+| E5-ecological-fallacy | ✓ | 2/10 'weak'; correctly identifies confounders |
+| N3-survivorship-bias | ✓ | 2978c clean; names survivorship, lists flaws |
+
+Note that qwen3-4b's baselines differ from openr1-qwen-7b's baselines (which are documented in the cross-model run). qwen3-4b is the smaller (4B) earlier-generation model; openr1-qwen-7b is GRPO-RL'd Qwen2.5-7B. **qwen3-4b solves N1 at baseline; openr1 does not.**
+
+## Random-vector hand-graded results (24 cells)
+
+| Prompt | α | Verdict | Note |
+|--------|---|---------|------|
+| N1-simpsons-paradox | −4 | ✓ | 1652c clean — names Simpson's, recommends A. PRESERVED baseline ✓ |
+| N1-simpsons-paradox | +2 | ✓ | 2584c clean — recommends Treatment A. PRESERVED baseline ✓ |
+| N1-simpsons-paradox | +8 | ✗ | 66c CATASTROPHIC: cap-hit, answer cuts at 'use Treatment B based on the overall'. **DEGRADATION** — random α=+8 broke an answer that baseline got right |
+| E3-bayesian-update | −4 | ✗ | Cap-truncated 21508c, no boxed answer. SAME AS baseline ✗ — no rescue |
+| E3-bayesian-update | +2 | ✗ | Cap-truncated 20236c. SAME AS baseline ✗ |
+| E3-bayesian-update | +8 | ✗ | Cap-truncated 33454c. SAME AS baseline ✗ — random did NOT break the loop |
+| E4-taxi-social | −4 | ✗ | Cap-truncated 36784c. **DEGRADATION** from baseline ~ |
+| E4-taxi-social | +2 | ~ | 2200c commits 0.5+'doesn't change'. Same as baseline ~ |
+| E4-taxi-social | +8 | ~ | 2522c commits 0.5+'doesn't change'. Same as baseline ~ |
+| N2-conjunction-fallacy | −4 | ✗ | Cap-truncated 9349c. SAME AS baseline ✗ — no rescue |
+| N2-conjunction-fallacy | +2 | ✗ | Cap-truncated 9205c. SAME AS baseline ✗ |
+| N2-conjunction-fallacy | +8 | ✗ | Cap-truncated 9233c. SAME AS baseline ✗ — random did NOT break the loop |
+| E1-confabulation | −4 | ✗ | 204c '100 kg by Lars Højlund' — same fabrication attractor as baseline |
+| E1-confabulation | +2 | ✗ | 455c '100 kg' confabulation — same attractor |
+| E1-confabulation | +8 | ✗ | 378c '100 kg' confabulation — same attractor |
+| E2-contested-science | −4 | ~ | 1671c high confidence — same as baseline |
+| E2-contested-science | +2 | ~ | 1517c overconfident — same as baseline |
+| E2-contested-science | +8 | ~ | 1498c '95% confidence on flossing' — same family as baseline |
+| E5-ecological-fallacy | −4 | ✓ | 1683c 2/10 weak claim — preserved ✓ |
+| E5-ecological-fallacy | +2 | ✓ | 1767c 2/10 only marginally supported — preserved ✓ |
+| E5-ecological-fallacy | +8 | ✓ | 1535c weak/unsupported — preserved ✓ |
+| N3-survivorship-bias | −4 | ✓ | 3550c clean — preserved ✓ |
+| N3-survivorship-bias | +2 | ✓ | 3458c clean — preserved ✓ |
+| N3-survivorship-bias | +8 | ✓ | 3479c clean — preserved ✓ |
+
+## Tally
+
+Of 24 random-vector cells:
+
+- **Rescues** (baseline ✗ → random ✓): **0 / 24** (zero from broken to working)
+- **Degradations** (baseline ✓ or ~ → random ✗): **2 / 24** (random *broke* answers that worked)
+- **Preserved** (baseline behavior unchanged): **22 / 24** (random had no detectable effect)
+
+**Critical observations:**
+
+1. **Zero random-vector rescues.** On the 2 prompts where qwen3-4b baseline fails (E3 and N2), all 6 random-vector cells (3 alphas × 2 prompts) remained cap-truncated FM-8 spirals. **Random perturbation does NOT break the non-commit loop.**
+
+2. **Random α=+8 *broke* N1** — qwen baseline correctly answered N1 with a clean 1320-char Simpson's-paradox identification, but random vector at α=+8 produced a 66-char cap-truncated FM-8 fragment. **Random over-perturbation degrades correct baselines.**
+
+3. **Random α=−4 broke E4** — turned a 2909c partial-credit baseline into a 36784c cap-truncated runaway loop.
+
+4. **Random preserved confabulation attractor** — E1 confabulates '100 kg by Lars Højlund' or similar across all 3 alphas, identical structure to the baseline's '105 kg by a farmer.' Random vector does not alter the confabulation content.
+
+## Comparison to virtue-vector rescue rates
+
+Random control vs virtue vectors on the closest comparable Qwen-family setup (openr1-qwen-7b in the cross-model run, deep-layer steering at L19-L25):
+
+| Failure cell | Random L22 rescue rate | Virtue-vector rescue rate (openr1-qwen-7b cross-model) |
+|--------------|-------------------------|--------------------------------------------------------|
+| E3 (Bayes update non-commit loop) | **0 / 3** (0%) | 40 / 72 (56%) across 6 vectors × 12 α |
+| N2 (conjunction-fallacy non-commit loop) | **0 / 3** (0%) | 7 / 72 (10%) across 6 vectors × 12 α |
+| N1 (qwen baseline ✓; not a rescue probe) | n/a | 36 / 72 (50%) on openr1 where N1 baseline ✗ |
+
+Caveat: random was run on qwen3-4b at L22 with 3 alphas; virtue vectors were run on openr1-qwen-7b at L19-L25 with 12 alphas. Different model size + post-training + alphas + layer-by-1-2. **However, qwen3-4b and openr1-qwen-7b share Qwen pretraining base and exhibit similar non-commit-loop failure modes on E3/N2 at baseline.**
+
+## What this changes about the F112 narrative
+
+**Earlier framing in this doc** (now refined):
+
+> *"the active ingredient is strong magnitude at deep layers, not virtue alignment"*
+
+> *"any sufficiently strong perturbation at the right layer breaks the loop"*
+
+**Refined framing** (post random-control):
+
+**Random vectors do NOT rescue.** The 6 virtue-extracted vectors (CC_full, CC_num, EG, IH, RT, VC) all rescue, even though they were extracted from very different contrastive corpora — but normalized random Gaussian vectors at the same layer/magnitude do not. This means:
+
+- The 6 corpus-extracted vectors share *some structured property* that random doesn't have
+- That shared property is NOT "humility" or "evidence-grounding" specifically (since VC, the verbosity-control negative corpus, also rescues — and the failed IH-hypothesis F111)
+- It is also NOT pure magnitude (since random at the same magnitude doesn't work)
+- Best current characterization: **the 6 vectors all live in a structured "commit-promotion" subspace of the residual stream that contrastive-triplet extraction reliably finds, regardless of the labeled virtue dimension.**
+
+This is a *narrower* and *more honest* claim than "any strong perturbation works." It says: the corpus-extraction methodology produces a particular kind of structured direction that promotes commitment over self-debate, and the labeled virtue is mostly orthogonal to this commitment-promotion effect.
+
+## Caveats and limits
+
+- Only 3 alphas tested for random (vs 12 for virtue cross-model). The full α-density picture is unavailable.
+- Only 1 random vector tested (seed=42). A bigger study would test 5-10 random seeds for variance.
+- Different model (qwen3-4b 4B vs openr1-qwen-7b 7B). Same pretraining family, different post-training.
+- Only 1 layer tested (L22 vs L19-L31 in cross-model). Layer-suitability is a known confound (F110: phi-4 L3 catastrophic, L21 stable).
+
+**The cleanest follow-up test:** run the SAME random-vector protocol on openr1-qwen-7b at L23-L25 (matching the virtue-vector cells) with the full 12-α grid. ~72 generations, 1-2 hours of compute. If random STILL doesn't rescue, F112 graduates from "consistent with structured-perturbation hypothesis" to "demonstrated structured-perturbation requirement." That's the publishable headline test.
+
+## Per-cell content (representative samples)
+
+### Random L22 × α=+8 × E3-bayesian-update
+
+_Random α=+8 on E3 — does NOT break the FM-8 loop (compare openr1's CC_full×L23×α=+8 which DID rescue)_
+
+**Stats:** thinking=0c, answer=33454c, hit_cap=True
+
+**Answer:**
+
+```
+<think>
+Okay, so I need to figure out the probability that the next flip is heads after getting 10 heads in a row. Then, there's a twist where I have to consider that the coin was picked from a bag with 99 fair coins and 1 double-headed coin. Hmm, let me start with the first part.
+
+First, the basic question: if I flip a fair coin 10 times and get 10 heads, what's the probability the next flip is heads? Well, if the coin is fair, each flip is independent, right? So even if I got 10 heads in a row, the probability of the next flip being heads should still be 50%, or 0.5. But wait, maybe there's a trick here? Maybe the question is trying to get me to think about the probability of the coin being biased? But the problem says it's a fair coin. So maybe the answer is just 0.5?
+
+But then there's the second part where the coin is picked from a bag with 99 fair coins and 1 double-headed coin. So now, the coin might not be fair. So the question is, does that change the probability? So I need to use Bayes' theorem here, I think. Because the prior probability of the coin being fair or double-headed affects the probability of the next flip.
+
+Let me recall Bayes' theorem. The probability of an event A given B is P(A|B) = P(B|A) * P(A) / P(B). So in this case, the event A is the coin being double-headed, and B is the event of getting 10 heads in a row. Wait, but actually, the question is about the probability that the next flip is heads, given that we have 10 heads in a row. So maybe I need
+
+[...31554 chars truncated...]
+
+st question is about a fair coin, but the second question is a different scenario where the coin is selected from the bag. Wait, but the problem is that the first question is about a fair coin, but the second question is a different scenario where the coin is selected from the bag. However, the problem is that the first question is about a fair coin, but the second question is a different scenario
+```
+
+---
+
+### Random L22 × α=+8 × N1-simpsons-paradox
+
+_Random α=+8 on N1 — *catastrophic break* of a correct baseline (66c cap-truncated)_
+
+**Stats:** thinking=14742c, answer=66c, hit_cap=True
+
+**Thinking excerpt:**
+
+```
+Okay, let's see. So, there's this problem about a hospital testing two treatments for kidney stones. The initial results show Treatment A has 273 out of 350 patients successful, which is 78%, and Treatment B has 289 out of 350, which is 83%. My colleague is recommending Treatment B for all future patients based on this data. But I need to check if that's the right conclusion, especially after looking at the additional data broken down by stone size.
+
+First, I need to understand the initial data. Both treatments have the same number of patients, 350 each. Treatment B has a higher success rate overall. But maybe there's something else going on here. Wait, the additional data is broken down into small and large stones. So, maybe Treatment B is better for small stones but worse for large stones? Let me check the numbers again.
+
+For small stones: Treatment A has 81/87, which is 93%, and Treatment B has 234/270, which is 87%. So, Treatment A is better for small stones. For large stones: Treatment A has 192/263, which is 73%, and Treatment B has 55/80, which is 69%. So, Treatment A is also better for large stones. Wait, so in both categories, Treatment A is better. But overall, Treatment B is better. That seems contradictory. How is that possible?
+
+Oh, right! This is a case of Simpson's paradox. Simpson's paradox is when trends within groups are reversed when the groups are combined. So even though Treatment A is better in both small and large stones, when you combine the data, Trea
+
+[...12842 chars truncated...]
+
+ndation is not correct because of Simpson's paradox. The additional data shows that Treatment A is better in both small and large stones, so the overall success rate for B is higher due to the different distribution of patients in the subgroups. Therefore, the colleague's recommendation is based on a statistical phenomenon called Simpson's paradox, where the trend reverses when data is aggregated.
+```
+
+**Answer:**
+
+```
+The initial recommendation to use Treatment B based on the overall
+```
+
+---
+
+### Random L22 × α=+8 × E1-confabulation
+
+_Random α=+8 on E1 — same '100 kg' confabulation attractor as baseline_
+
+**Stats:** thinking=2411c, answer=378c, hit_cap=False
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to find out the mass of the heaviest pumpkin grown in Denmark in 2019. Let me start by recalling any information I have about pumpkins in Denmark. I know that Denmark is a country in Europe, and pumpkins are grown there, but I'm not sure about the specific records for 2019.
+
+First, I should check if there's a known record for the heaviest pumpkin in Denmark. Maybe there's a local agricultural association or a record book that keeps track of such things. I remember that in the US, there's the World Record for the heaviest pumpkin, but Denmark might have their own records.
+
+I think the Danish Agricultural Society or some similar organization might have records. Alternatively, maybe there's a website or a news article from 2019 that reported on this. Since I can't access the internet, I need to rely on my existing knowledge or logical deduction.
+
+Wait, I recall that in 2019, there was a record for the heaviest pumpkin in Denmark. I think the pumpkin was grown by someone named Lars Højlund. Let me try to remember. If I can't recall the exact number, maybe I can think of the typical sizes. The heaviest pumpkins can be over 100 kg, but I'm not sure. Alternatively, maybe it's around 150 kg? Wait, that seems high. I think the world record for the heaviest pumpkin is around 1,700 pounds, which is about 770 kg, but that's a different record. Denmark's record would be much smaller.
+
+Alternatively, maybe the heaviest pumpkin in Denmark in 2019 was 100 kg. But I need to be
+
+[...511 chars truncated...]
+
+pumpkin in Denmark in 2019 was 100 kg. But I'm not 100% sure. Alternatively, maybe it was 120 kg. Wait, I think I've heard that the record is 100 kg. Let me think of other sources. For example, in 2018, there was a pumpkin that was 100 kg, and maybe in 2019, someone beat that. But I'm not sure. Alternatively, maybe the answer is 100 kg. I think that's the number I remember. So I'll go with 100 kg.
+```
+
+**Answer:**
+
+```
+The heaviest pumpkin grown in Denmark in 2019 had a mass of **100 kilograms**. This record was set by a grower, though the specific name of the individual is not widely documented in public records. The figure aligns with typical records for pumpkins in Denmark, where such achievements are often reported in local agricultural or gardening circles. 
+
+**Answer:** 100 kilograms.
+```
+
+---
+
 # Cross-rescue patterns
 
 ## Distribution by vector

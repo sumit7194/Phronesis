@@ -251,3 +251,22 @@ F92 → F112 is now a continuous arc:
 
 The narrative arc is: *we set out to install virtues and discovered we were really installing/amplifying commitment*. The earlier qwen rescue cases (Days 21-23) were the first hints; the cross-model run confirmed this is the only generalizable positive effect.
 
+
+---
+
+## Update — random-vector control (added 2026-05-03)
+
+The random-vector control test that was missing from earlier drafts has been located in the Day-12 archives: `mvp/results/steering_v2/qwen3-4b/random_L22/`. 24 generations (3 alphas × 8 prompts) with a unit-normalized Gaussian random vector at L22 (seed=42).
+
+**Result: 0 rescues / 24 cells.** Detailed analysis in `06_rescue_cases_detailed.md` "Random-vector control" section.
+
+This refines the F112 narrative substantially:
+
+**Earlier framing:** "Steering at any deep-layer vector breaks self-debate; the active ingredient is magnitude, not virtue alignment."
+
+**Updated framing:** The 6 corpus-extracted virtue vectors (CC_full, CC_num, EG, IH, RT, VC) all rescue Qwen-family non-commit failures, but unit-normalized random Gaussian vectors at the same layer/magnitude do not. **There IS a structured property shared across the 6 vectors that random does not have**, even though that property is not "humility" or "evidence-grounding" specifically.
+
+**Best characterization:** the 6 vectors all live in a structured "commit-promotion" subspace of the residual stream that contrastive-triplet extraction reliably finds, regardless of the labeled virtue dimension. Random Gaussian directions at the same depth class do not lie in this subspace.
+
+**Implication for the publishable headline:** F112 graduates from "consistent with structured-perturbation hypothesis" toward "demonstrated that structured perturbation is required" — though a stronger version of the test (random vector on openr1-qwen-7b at L23-L25 with full 12-α grid, ~72 generations, 1-2 hours of compute) would seal it. That follow-up is the highest-priority post-MVP test.
+

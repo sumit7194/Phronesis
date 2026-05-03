@@ -219,3 +219,36 @@ Cribbed from `docs/post-mvp-decisions.md` Day-25 update:
 ---
 
 _Built 2026-05-03 (Day 25). All numbers cross-verified against per_generation.csv (1,752 rows + 24 baselines), the 6 earlier hand-review markdown docs, and F-numbered findings in docs/findings.md._
+
+---
+
+## Update 2026-05-03 (post-doc-review): random-vector control found in archive
+
+**The random-vector control test was run on Day 12 (2026-04-15)**, predating most of the F-numbered findings. It lives at `mvp/results/steering_v2/qwen3-4b/random_L22/` and consists of 24 generations (3 alphas × 8 prompts) with a unit-normalized Gaussian random vector at L22 (seed=42).
+
+**Result:** 0 rescues / 2 degradations / 22 preserves out of 24. Random vectors do NOT rescue qwen3-4b's E3 / N2 non-commit failures (0/6 cells), and at α=+8 they *break* a correct baseline on N1 (catastrophic 66-char cap-truncation).
+
+**Implication:** the F112 narrative in earlier drafts ("any strong perturbation at deep layers works") is too strong. Refined narrative: the 6 corpus-extracted vectors share a structured commit-promotion property that random Gaussian vectors at the same layer/magnitude do not have. Detailed write-up in `06_rescue_cases_detailed.md` "Random-vector control" section.
+
+### Reconciled rescue-count language
+
+The earlier docs used several different totals depending on context. Normalizing here:
+
+| Scope | Rescues | Notes |
+|-------|---------|-------|
+| Cross-model run only (Days 24-25, phi-4 + llama + openr1) | **87** | 40 N1 + 36 E3 + 7 N2 = 83 from openr1; 2 (llama E4) + 1 (phi4 E2) + 1 (phi4 N2) = 4 isolated single-α hits |
+| openr1-qwen-7b only (cross-model run) | **83** | The 87 minus the 4 isolated cross-model hits |
+| Earlier qwen3-4b work (Days 18-23) | **~12** | Canonical: 3 (eg-v2-10 seismic damper at α=4/8/12) + 1 (ip-longest at α=8) + 1 (cc-s-08 Tokyo composite). Plus ~7 smaller from diagnostic batch / round 3 / v2 sweep |
+| Total Qwen-family cumulative (qwen3-4b + openr1-qwen-7b) | **~95** | The headline claim |
+| Non-Qwen-family (gemma + phi-4 + llama) | **4** (likely noise) | 2 phi-4 + 2 llama, all single-α isolated; 0 gemma |
+| **Random vector at L22 on qwen3-4b** (24 cells) | **0** | The control |
+
+So the headline structure becomes:
+
+- **~95 rescues across ~600 Qwen-family steered generations on rescue-eligible cells** (~16% rescue rate)
+- **4 likely-noise rescues across ~1,400 non-Qwen-family steered generations on rescue-eligible cells** (~0.3% rate)
+- **0 rescues across 24 random-vector cells on qwen3-4b** at the same depth class
+- 6 corpus-extracted virtue vectors all rescue (including the negative-control VC corpus); 1 random vector does not
+
+**This is the cleanest cross-model claim we can support:** rescue requires (a) a Qwen-family non-commit-loop failure mode AND (b) a corpus-extracted vector at deep layers. Neither random vectors at the same place nor non-Qwen models with similar baseline failures produce rescue.
+
