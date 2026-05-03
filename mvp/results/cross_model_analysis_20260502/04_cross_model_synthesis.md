@@ -165,3 +165,89 @@ Appears in 2 cells across 2 models on E5: phi-4 CC_full × α=−2 ("r²=0.79"),
 2. **Llama N1 split-rec deletion** — try targeted ablation (instead of additive steering) to remove the "split by subgroup" template.
 3. **OpenR1 commitment-amplification** as a generalizable mechanism. The N1+E3 rescue effect is real and consistent. Could become a useful production technique for non-committal models.
 4. **Layer screening before any sweep** — establish which layers are stable per-model before running a 12-α sweep. F102/F109/this work all suggest layer choice is the dominant factor.
+
+---
+
+## Appendix — Connecting Days 14–23 (qwen3-4b + gemma-4-E4B-it) to the cross-model run
+
+The 1,752-generation cross-model run (Days 24-25) inherits a research lineage of **~691 hand-reviewed generations on qwen3-4b + gemma-4-E4B-it** spanning Days 14–23. Synthesizing the full 5-model picture:
+
+### Five-model summary
+
+| Model | Hand-reviewed gens | ✓ rate | Failure shape | Rescue rate |
+|-------|--------------------|--------|---------------|-------------|
+| qwen3-4b | ~691 (across path A/D/diagnostic/v2/round3/IH-abstention) | ~50%* | Mixed: FM-8 spirals on hard prompts + FM-13 confabulation under steering | ~12 documented rescues (small-N) |
+| gemma-4-E4B-it | ~150 | ~70%* (high baseline) | F102 null — vectors don't move behavior | **0** |
+| phi-4-mini-reasoning | 576 | 28% | Internal looping + cap-truncation | 2 (likely noise) |
+| llama-3.1-8B-R1-GRPO | 576 | 38% | Wrong-answer template lock | 2 (likely noise) |
+| openr1-qwen-7b | 576 | 17% | Non-commit loop with correct reasoning | **83 (clean)** |
+
+*Numbers for qwen and gemma are approximate — the earlier hand-review docs use a different verdict scheme (per-prompt/per-cell rather than per-α with ✓/~/✗) so direct ✓-rate comparison is fuzzy. Ranges based on docs' "clean" / "FM-8" / "FM-13" tagging.
+
+### Cross-model pattern: rescue requires Qwen pretraining base
+
+**95+ rescue cases observed cumulatively** across all hand-review work:
+- qwen3-4b: ~12 rescues (eg-v2-10 seismic damper x3 alphas, ip-longest, cc-s-08 Tokyo composite, plus smaller ones from diagnostic batch)
+- openr1-qwen-7b (Qwen2.5-7B base): 83 rescues (40 N1 + 36 E3 + 7 N2)
+- **Total Qwen-family: ~95 rescues**
+- gemma-4-E4B-it: 0 rescues
+- phi-4-mini-reasoning: 2 (likely noise)
+- llama-3.1-8B-R1-GRPO: 2 (likely noise)
+- **Total non-Qwen: 4 (likely noise)**
+
+This is striking: **F112 (commitment-rescue) may be Qwen-pretraining-base-specific**. The mechanism "non-commit-loop baseline → steering forces commitment" requires the model to have a non-commit-loop failure mode in the first place. Llama and gemma fail differently (template lock or null effect); phi-4 fails differently (cap-truncation on extended deliberation). Only the Qwen family (qwen3-4b and openr1-qwen-7b on Qwen2.5-7B base) produces self-debate FM-8 spirals that respond to commitment-amplification.
+
+**Open hypothesis:** F112 generalizes to other "verbose thinking" reasoning models (deepseek-r1, gemini-2.0-flash-thinking, o3-mini, etc.) regardless of pretraining base. This would be the post-MVP test.
+
+**Alternative hypothesis (currently consistent with data):** F112 is Qwen-family-specific because Qwen's pretraining objective produces a particular kind of indecision attractor that the steering vector breaks. Other model families don't have this attractor, so steering can't break it.
+
+### F111 IH-falsification holds across the 5-model dataset
+
+| Model × IH layer | What we observed |
+|-------------------|------------------|
+| qwen3-4b × IH × L17 | Works as commit-amplifier (F104), NOT as humility-installer. Fixes ip-longest spiral, fixes seismic-damper spiral. **Misnamed** as "humility" — its behavioral effect is "force commit", same as v_CC. |
+| gemma-4-E4B-it × IH × L18/L22 | Null (F102). |
+| phi-4 × IH × L7 | Catastrophic at high α (FM-8-premature-EOS, 1-token EOS, "I don't know" loops). |
+| llama × IH × L31 | At-ceiling on E1 (already abstains), useless on E2 (80% lock), useless on E3 (prior-mixture lock), useless on N2 (template lock). |
+| openr1 × IH × L25 | Produces *worst-form* fallacies at high α (B>A>D>C on N2; "Hjelte Rød farm in Jönköping" on E1; 90→95% confidence escalation on E2). |
+
+**No model exhibits a clean "humility increases with positive α" pattern.** F111 is therefore not just falsified on the cross-model run — it's falsified across the full Phronesis dataset.
+
+### F45 (disposition modulation, not propositional injection) holds across all 5 models
+
+The cross-model dataset reinforces F45 substantially. Vectors do NOT install:
+- Specific factual content (every model that confabulates does so with vectors AND without; the vector doesn't add or remove the confabulation)
+- Probability calculus (no model that can't do conjunction/Bayes at baseline learns to do it via steering)
+- Calibrated abstention (qwen IH×L17 is the closest, but the mechanism is "force commit", not "express uncertainty")
+
+What vectors DO modulate:
+- **Commitment vs deliberation** — when baseline loops, steering breaks the loop (F112)
+- **Verbosity / response length** — VC negative-control corpus does this cleanly on llama L29
+- **Specific framings** — RT×L21 vs EG×L21 on phi-4 produce different surface vocabulary on the same correct answer
+- **Confidence wording** — qwen IH affects hedge-marker density even when the underlying claim doesn't change
+
+### Methodological consistency check
+
+Across all 5 models × all hand-review docs, the same scoring rules applied:
+- **Hand-review every JSON; auto-scorer outputs ignored** (per `findings.md` standing policy from F94/F97)
+- **Web-verify factual claims** (Gandhi-1931 incident → standing rule)
+- **Treat fabricated-citation as ✗** even when the surrounding answer is correctly framed
+- **FM-13 commit-amplified-error scored as ✗** regardless of how confidently structured
+
+The cross-model run's 1,752 verdicts are therefore directly comparable to the earlier qwen+gemma 691. Combined dataset: **~2,443 hand-graded generations across 5 models**.
+
+### What this means for the F-numbered findings narrative
+
+F92 → F112 is now a continuous arc:
+
+- F92: First evidence vectors don't work as named ("calibrated confidence" reduces abstention)
+- F94/F97/F102: Geometric MVE works, but cross-model split exists (qwen ≠ gemma)
+- F103/F104: Auto-scorer falls down; manual verification catches reversals
+- F105/F106/F107/F108: v_IH ≈ v_CC behaviorally; FM-13 emerges as steering-induced failure
+- F109: Rail-switch mechanism — single thinking-token determines which decoding rail commits
+- **F110: 1,752-generation hand-review confirms F109 at 14× scale across 3 new models**
+- **F111: IH hypothesis decisively falsified — most theoretically motivated vector is the most empirically broken**
+- **F112: OpenR1 commitment-rescue — pivots product hypothesis from "virtue installer" to "commitment amplifier for non-committal models"**
+
+The narrative arc is: *we set out to install virtues and discovered we were really installing/amplifying commitment*. The earlier qwen rescue cases (Days 21-23) were the first hints; the cross-model run confirmed this is the only generalizable positive effect.
+

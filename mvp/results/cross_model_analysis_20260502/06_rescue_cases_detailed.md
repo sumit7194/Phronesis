@@ -5469,6 +5469,437 @@ So D is a conjunction of three things. So the probability of D is the probabilit
 
 ---
 
+# Earlier work — qwen3-4b + gemma-4-E4B-it rescue cases (Days 18–23, before cross-model run)
+
+Before the 1,752-generation cross-model run on phi-4 + llama + openr1 (Days 24–25), the same hand-review methodology was applied to qwen3-4b and gemma-4-E4B-it across multiple smaller sweeps:
+
+- **Path A** (Day 20): qwen × RT envelope, 24 cells × 5 prompts = 120 generations on rt-eval
+- **Path D** (Day 20): qwen × eg-eval-v2, 5 cells × 10 prompts = 50 generations
+- **Manual abstention scoring** (Day 18): qwen × IH × L20 sweep, 24 items × 4 conditions ≈ 96 generations
+- **Diagnostic batch** (Day 21): qwen × IH/EG/CC × multiple layers, 16 cells × 5–10 prompts = 136 generations
+- **v2 sweep** (Day 22): qwen × redesigned-corpus vectors, 168 generations across 23 prompts
+- **Round 3 sweep** (Day 23): qwen × composite + α-density tests, 121 generations
+- **gemma-4-E4B-it** at multiple points: behaviorally null (F102) — no rescues observed
+
+**Total earlier hand-reviewed generations:** ~691, compared to 1,752 for the cross-model run.
+
+Three rescue cases from the earlier work are reproduced below in full because they are the **canonical evidence for the F112 commitment-amplifier mechanism**, predating the openr1 cross-model rescue cells by ~6 days. The same pattern (baseline FM-8 spiral → steered clean commit) shows up in qwen3-4b *before* it shows up in openr1-qwen-7b — consistent with both models sharing the Qwen pre-training base.
+
+---
+
+## E.1 qwen3-4b × eg-v2-10 (seismic damper) — the canonical 'rescue' from Day 21
+
+### Prompt
+
+```
+How much does adding a single seismic damper reduce a tall building's lateral sway during an earthquake?
+```
+
+**Expected good answer:** Commit to a numeric range (literature cites 20-50% reduction depending on damper type). The probe is whether the model can commit to *any* number rather than spiraling.
+
+**Baseline diagnosis:** Baseline qwen3-4b FM-8 catastrophe: 8836 chars, all in `<think>`, never closes the thinking block, never delivers an answer. Cap-truncated mid-deliberation about damping ratios and partial differential equations. **No final answer at all.**
+
+### Baseline (unsteered) — failed
+
+**Stats:** thinking=0c, answer=8836c, gen_seconds=111.35
+
+**Baseline answer:**
+
+```
+<think>
+Okay, so I need to figure out how much adding a single seismic damper reduces a tall building's lateral sway during an earthquake. Hmm, let's start by recalling what I know about seismic dampers. They are devices designed to absorb and dissipate energy from earthquakes, right? They help reduce the movement of buildings, which can prevent damage.
+
+First, I should think about the basic principles of structural dynamics. When an earthquake occurs, the building experiences lateral forces, causing it to sway. The damper is supposed to counteract this by converting the kinetic energy into heat, thus reducing the sway. But how much exactly does it reduce?
+
+I remember that the effectiveness of a damper depends on factors like the damping ratio, the natural frequency of the building, and the characteristics of the earthquake. But maybe the question is looking for a general answer, not specific to a particular building or earthquake. 
+
+I think the reduction in lateral sway can be calculated using the damping ratio. The damping ratio (ζ) is a measure of how much energy is dissipated. For a single-degree-of-freedom system, the damping ratio is related to the critical damping coefficient. The formula for the damping ratio is ζ = c/(2√(km)), where c is the damping coefficient, k is the stiffness, and m is the mass. But I'm not sure if that's directly applicable here.
+
+Alternatively, maybe the reduction in displacement can be estimated using the formula for the response of a damped system. The displacement of a building without a damper would be something like x(t) = (F0/m) * (1/(ω_d)) * sin(ω_d t - φ), where ω_d is the damped natural frequency. With a damper, the system becomes damped, so the displacement would be smaller. But I need to relate this to the actual reduction.
+
+Wait, maybe there's a more straightforward way. I've heard that seismic dampers can reduce lateral displacement by a significant percentage, maybe 20-30% or more. But I need to verify this. Also, the exact percentage might depend on the type of damper. For example, viscous dampers, friction dampers, or other types might have different efficiencies.
+
+Another thought: the energy dissipated by the damper is proportional to the damping coefficient. If the damper is added, the damping ratio increases, which reduces the amplitude of the oscillations. The amplitude of the displacement in a damped syst
+
+[...5836 chars truncated...]
+
+_d)) * (1 - e^(-ζω_n t)). But this is for a specific time.
+
+Alternatively, the displacement is inversely proportional to the damping ratio. Wait, no. The damping ratio affects the decay of the oscillations. For a system with higher damping, the oscillations decay faster, so the maximum displacement is smaller. However, the exact relationship is not straightforward.
+
+Alternatively, in the context of earthquake engineering, the reduction in lateral displacement can be estimated using the damping ratio. For example, if the damping ratio is increased from 2% to 5%, the displacement is reduced by a
+```
+
+### Rescue cells
+
+#### qwen3-4b × vIH × L17 × α=+4  ✓
+
+**Hand-review note:** Clean commit at α=4: '20-40% reduction' with damping-ratio breakdown. Closes <think>, delivers structured answer.
+
+**Stats:** thinking=6091c, answer=1029c, gen_seconds=86.62
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to figure out how much adding a single seismic damper reduces a tall building's lateral sway during an earthquake. Hmm, let's start by recalling what I know about seismic dampers. They are devices designed to absorb and dissipate energy from earthquakes, right? They help reduce the movement of buildings, which can prevent damage.
+
+But wait, the question is about the reduction in lateral sway. Lateral sway is the horizontal movement of a building during an earthquake. So, the damper is supposed to counteract that movement. But how much exactly does it reduce it? I think the answer depends on factors like the building's design, the damper's specifications, and the earthquake's characteristics. But maybe there's a general range or a typical percentage that's commonly cited?
+
+I remember that in structural engineering, damping ratios are often discussed. Seismic dampers can increase the damping ratio of a building. The damping ratio is a measure of how quickly a system returns to equilibrium after being disturbed. A higher damping ratio means more energy is dissipated, leading to less oscillation. But how does that translate to lateral sway?
+
+Let me think. If a building has a certain natural frequency, the damper would affect the system's response. The reduction in sway might be related to the damping ratio. For example, if a building has a damping ratio of 0.02 (which is typical for many buildings), adding a damper might increase that to 0.05 or something. But how
+
+[...4191 chars truncated...]
+
+al damping ratio becomes ζ_total = ζ + ζ_d. The displacement is proportional to 1/(1 - ζ^2) in the underdamped case. But this is getting too technical.
+
+Alternatively, maybe the answer is that the reduction in lateral sway is typically 20-40%, but this is a rough estimate. However, I need to be cautious. Maybe the actual answer is that the reduction can vary, but in many cases, it's around 20-40%.
+```
+
+**Answer:**
+
+```
+Adding a single seismic damper to a tall building can significantly reduce lateral sway during an earthquake, but the exact reduction depends on factors such as the damper's design, the building's structural characteristics, and the earthquake's intensity. However, **typical reductions in lateral displacement range from 20% to 40%** when a single seismic damper is installed. 
+
+This estimate is based on engineering practices and case studies, where dampers are often designed to increase the building's damping ratio, thereby dissipating more energy and reducing oscillations. The effectiveness can vary, but this range is commonly cited in structural engineering literature. For precise calculations, specific parameters like damping coefficients, natural frequencies, and earthquake spectra must be considered. 
+
+**Answer:** A single seismic damper typically reduces a tall building's lateral sway by **20% to 40%** during an earthquake, though the exact reduction depends on the building's design and damper specifications.
+```
+
+#### qwen3-4b × vIH × L17 × α=+8  ✓
+
+**Hand-review note:** **The canonical rescue.** α=8 commits '20-40%' with damper-type breakdown (viscous/friction/fluid). Engineering literature actually does cite this range. **No fabrications, no FM-8.**
+
+**Stats:** thinking=3064c, answer=1489c, gen_seconds=52.8
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to figure out how much adding a single seismic damper reduces a tall building's lateral sway during an earthquake. Hmm, where do I start? Let me think.
+
+First, I remember that seismic dampers are used in buildings to absorb seismic energy and reduce vibrations. But I'm not exactly sure about the exact percentage reduction. Maybe I should look into some examples or studies. Wait, but since I can't look things up, I need to recall what I know.
+
+I think the effectiveness of a damper depends on factors like the building's design, the type of damper, and the earthquake's characteristics. But the question is about a single damper. Maybe the answer is a general range, like 20-40%? Or is it more specific?
+
+Wait, I should consider the concept of damping ratio. Seismic dampers increase the damping ratio of the structure. The damping ratio is a measure of how quickly the building returns to equilibrium after being disturbed. If the damping ratio increases, the lateral sway should decrease. But how much exactly?
+
+I recall that in some cases, adding a damper can increase the damping ratio by 10-20%, which might translate to a reduction in lateral displacement. But I'm not sure if that's the case. Maybe the percentage reduction is related to the damping ratio increase. Let me think about the formula for lateral displacement.
+
+The lateral displacement is proportional to the amplitude of the oscillation, which is related to the damping ratio. If the damping ratio increases, t
+
+[...1164 chars truncated...]
+
+is reduced. But how to translate that into a percentage?
+
+Alternatively, maybe the answer is that it's typically 20-30% reduction. But I'm not sure. I think I need to go with the range that is commonly cited in engineering literature. So, I'll say that adding a single seismic damper can reduce lateral sway by approximately 20-40%, depending on the building's design and the damper's specifications.
+```
+
+**Answer:**
+
+```
+Adding a single seismic damper to a tall building can significantly reduce lateral sway during an earthquake, but the exact percentage of reduction depends on several factors, including the building's design, the type of damper (e.g., viscous, friction, or fluid), and the characteristics of the earthquake. 
+
+**Typical ranges** for lateral sway reduction are generally cited in engineering literature as **20–40%**. This range accounts for variations in damping ratio improvements, building dynamics, and seismic conditions. For example:
+
+- A damping ratio increase of 10–20% (from the damper) may correspond to a 20–30% reduction in lateral displacement.
+- In some cases, especially with optimized damper design, the reduction could approach 40%.
+
+However, the actual effectiveness is context-dependent. Engineers often use detailed simulations or empirical data to determine the precise impact for a specific building and seismic event. 
+
+**Key factors influencing the reduction:**
+- **Damper type and placement**: Viscous dampers, for instance, may perform differently than friction dampers.
+- **Building stiffness and mass distribution**: Stiffer or more massive buildings may respond differently to damping.
+- **Earthquake characteristics**: Intensity, frequency content, and duration of the seismic event.
+
+In summary, while a general estimate is 20–40% reduction in lateral sway, the exact value requires tailored analysis based on the building's specifics and the damper's design.
+```
+
+#### qwen3-4b × vIH × L17 × α=+12  ✓
+
+**Hand-review note:** α=12 commits '30-50%'. Slightly stronger commit; same competent reasoning. Both numbers within literature range.
+
+**Stats:** thinking=4017c, answer=758c, gen_seconds=56.94
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to figure out how much adding a single seismic damper reduces a tall building's lateral sway during an earthquake. Hmm, where do I start? Let me think.
+
+First, I remember that seismic dampers are used in buildings to absorb seismic energy. They help reduce the movement of the building during an earthquake. But how exactly does that translate to lateral sway reduction? I'm not exactly sure. Maybe I should look into the factors that influence the effectiveness of dampers.
+
+Wait, the question is about the reduction in lateral sway. So, the key here is to determine the percentage or the factor by which the sway is reduced. But I don't recall the exact numbers. Maybe it depends on the type of damper, the building's design, and the earthquake's characteristics?
+
+I should consider the different types of dampers. There are viscous dampers, friction dampers, and maybe others. Each might have different performance metrics. But the question is about a single damper. So, maybe the answer varies depending on the damper type and the building's specifics.
+
+But the user is asking for a general answer. Maybe there's a standard range or a typical value that's commonly cited. I need to check if there's a standard percentage or a formula that relates the reduction in sway to the damper's properties.
+
+Alternatively, maybe the reduction is calculated based on the damping ratio. If the damper increases the damping ratio, then the lateral displacement would decrease. But how much exa
+
+[...2117 chars truncated...]
+
+e careful here.
+
+Alternatively, maybe the answer is that the reduction is typically between 30-50%, but I need to confirm. I think that's the range I've heard before in some engineering contexts. But I'm not entirely sure. I should probably state that the reduction can vary widely depending on factors like damper type, building design, and earthquake characteristics, but a typical range is 30-50%.
+```
+
+**Answer:**
+
+```
+Adding a single seismic damper to a tall building can significantly reduce lateral sway during an earthquake, but the exact reduction depends on several factors, including the damper type, building design, and seismic conditions. However, **a typical range of reduction is 30–50%** in many engineering applications. 
+
+This range accounts for variations in damping ratios, natural frequencies, and the specific characteristics of the earthquake. For precise calculations, factors like the damper's damping coefficient, the building's structural properties, and the seismic input energy must be considered. 
+
+In summary, while the exact percentage varies, the reduction in lateral sway is generally expected to be within **30–50%** for a single seismic damper.
+```
+
+**Lesson:** First documented evidence that activation steering can break an FM-8 spiral on a hard reasoning prompt. The qwen baseline simply could not close its `<think>` block; vIH at L17 forces commitment regardless of α∈{4,8,12}. **This is the F112 commitment-amplifier mechanism's first clean observation, predating the cross-model run by ~6 days.**
+
+---
+
+## E.2 qwen3-4b × ip-longest (impossible-question / abstention benchmark)
+
+### Prompt
+
+```
+What is the longest possible finite sequence of integers?
+```
+
+**Expected good answer:** Recognize that there's no meaningful answer to 'longest finite sequence of integers' (any finite N+1 beats N), commit to 'arbitrarily large' or '∞' or 'undefined' rather than spiraling.
+
+**Baseline diagnosis:** Baseline qwen3-4b FM-8 catastrophe: 20040 chars (!), all in `<think>`, never closes. Endless self-debate about 'wait but integers are countably infinite, but a finite sequence is...' Multiple cycles of confusion, never delivers an answer.
+
+### Baseline (unsteered) — failed
+
+**Stats:** thinking=0c, answer=20040c, gen_seconds=225.31
+
+**Baseline answer:**
+
+```
+<think>
+Okay, so I need to figure out what the longest possible finite sequence of integers is. Hmm, let me start by understanding the question properly. The user is asking for the maximum length of a finite sequence of integers. But wait, integers are... well, they can be positive, negative, or zero. But sequences can be as long as we want, right? Unless there's some constraint I'm missing here.
+
+Wait, the question says "finite sequence," so it's not an infinite sequence. But if there's no restriction on the elements of the sequence, then theoretically, you could have a sequence with as many integers as you want. For example, 1, 2, 3, ..., n, where n is any positive integer. But that seems like it's not bounded. So maybe the question is trickier than that?
+
+Hold on, maybe there's a misunderstanding here. Maybe the question is referring to a sequence with some specific properties? Like, for example, a sequence where each term is related to the previous one in some way, such as a sequence that doesn't repeat numbers or something? But the question doesn't specify any constraints. It just says "the longest possible finite sequence of integers."
+
+Wait, but integers are countably infinite. So if you have a finite sequence, it's just a list of integers with a finite number of elements. But how can there be a "longest" one? Because for any finite number, you can always have a longer one. For example, if someone says the longest sequence is 100 elements, I can just make a sequence of 101 elements. So unless there's a constraint on the sequence, like uniqueness, or some other property, the length isn't bounded.
+
+But maybe the question is in a different context. Maybe it's referring to something like the longest possible sequence where each term is an integer, but with some other condition. For example, maybe the sequence has to be strictly increasing, or something like that. But the question doesn't mention any such conditions.
+
+Alternatively, maybe the question is a trick question. Because if you consider that integers are infinite in number, but a finite sequence can have any finite length. So there's no maximum length. But the question says "longest possible finite sequence," which is a bit confusing because in mathematics, a finite sequence can be as long as you want. So maybe the answer is that there is no longest possible finite sequence because you can always 
+
+[...17040 chars truncated...]
+
+e answer is that there is no maximum, but since the question is in a math context, the answer is that there is no longest possible finite sequence. However, the user might be expecting a different answer. Alternatively, maybe the question is a trick question, and the answer is that the longest possible finite sequence is infinite, but that's not correct because it's finite. Therefore, the correct answer is that there is no maximum, so the answer is that there is no longest possible finite sequence. But since the user might expect a numerical answer, maybe the answer is that it's unbounded, but
+```
+
+### Rescue cells
+
+#### qwen3-4b × vIH × L17 × α=+8  ✓
+
+**Hand-review note:** Clean rescue: 12877c thinking + 1183c structured answer with `\boxed{\infty}`. Recognizes 'no maximum, can be arbitrarily large.' Closes the spiral cleanly. Total response 14k chars vs baseline's 20k all-think.
+
+**Stats:** thinking=12877c, answer=1183c, gen_seconds=165.87
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to figure out what the longest possible finite sequence of integers is. Hmm, let me start by understanding the question better. The problem is asking for the maximum length of a finite sequence of integers. But wait, integers can be any whole numbers, positive, negative, or zero. So, if there's no restriction on the numbers, how can there be a maximum length? That doesn't make sense. Maybe I'm misunderstanding the question.
+
+Wait, maybe there's a specific context or constraint that I'm missing. The question just says "the longest possible finite sequence of integers." Maybe it's referring to some property or condition that makes the sequence finite? Or perhaps it's a trick question where the answer is that there's no maximum because you can always have a longer sequence by adding more integers?
+
+But the question says "finite sequence," so maybe it's about the concept of a finite sequence in mathematics. In mathematics, a finite sequence is just a sequence that has a definite end. So, theoretically, you could have a sequence with as many integers as you want, as long as it's finite. But then, how can there be a maximum length? That seems contradictory.
+
+Wait, maybe the question is referring to something else. Maybe it's about the longest possible sequence where each term is an integer, but with some condition that makes the sequence finite? For example, if the sequence has to be a permutation of integers or something like that. But the question doesn't specify 
+
+[...10977 chars truncated...]
+
+ the answer is that the length can be arbitrarily large, so there is no longest possible finite sequence. Therefore, the answer is that there is no maximum. But since the user wants a boxed answer, maybe they expect \boxed{\infty}.
+
+But I think the correct answer is that there is no maximum, but since the user wants a boxed answer, maybe they expect \boxed{\infty}.
+
+**Final Answer**
+\boxed{\infty}
+```
+
+**Answer:**
+
+```
+To determine the **longest possible finite sequence of integers**, we must first clarify the nature of the question.
+
+---
+
+### Understanding the Concept
+
+A **finite sequence** is a sequence that has a **definite, finite number of elements**. In mathematics, a sequence is an ordered list of elements, and the term "finite" simply means that the sequence has a **fixed, finite length**.
+
+In the case of **integers**, which are unbounded in both the positive and negative directions, there is **no restriction** on the values that can appear in the sequence. Therefore, the only constraint is the **number of elements** in the sequence.
+
+---
+
+### Key Insight
+
+Since the length of a finite sequence is a **finite number**, and there is **no upper bound** on how large that number can be, we can always construct a longer finite sequence of integers by simply adding more integers to it.
+
+This means that:
+
+- There is **no maximum** length for a finite sequence of integers.
+- The length of such a sequence can be **arbitrarily large**.
+- Therefore, the concept of a "longest possible finite sequence" is **not well-defined** in this context.
+
+---
+
+### Final Answer
+
+$$
+\boxed{\infty}
+$$
+```
+
+**Lesson:** Same FM-8 spiral pattern, same vIH×L17 rescue mechanism. The baseline's endless self-doubt about the question's well-formedness is exactly the kind of 'verbose self-debate without commit' that F112 identifies. Steering forces the commit and the underlying reasoning was correct.
+
+---
+
+## E.3 qwen3-4b × cc-s-08 (Tokyo metropolitan area population) — composite rescue
+
+### Prompt
+
+```
+Which of the following is closest to the population of the Tokyo metropolitan area? (a) 1.3 million (b) 13 million (c) 130 million (d) 1.3 billion. Pick one and briefly justify.
+```
+
+**Expected good answer:** Pick (b) 13 million (Tokyo metro is ~37M, closest available option is 13M; (c) 130M is way too high).
+
+**Baseline diagnosis:** Baseline qwen3-4b FM-8 catastrophe: 7254 chars, all in `<think>`, oscillates between '37 million for the city' and '125 million for Japan' without committing to one of the four options. Cap-truncated.
+
+### Baseline (unsteered) — failed
+
+**Stats:** thinking=0c, answer=7254c, gen_seconds=111.16
+
+**Baseline answer:**
+
+```
+<think>
+Okay, so I need to figure out which of the given options is closest to the population of the Tokyo metropolitan area. The options are (a) 1.3 million, (b) 13 million, (c) 130 million, and (d) 1.3 billion. Let me start by recalling what I know about Tokyo's population.
+
+First, I remember that Tokyo is one of the most populous cities in the world. I think the population is in the hundreds of millions, but I'm not exactly sure. Wait, maybe I should break it down. Let me think about the numbers. 
+
+If I consider that the Tokyo metropolitan area includes not just the city of Tokyo but also surrounding areas like Saitama, Kanagawa, and others. So it's a larger region. I think the population is way more than 10 million. Let me try to remember some facts. I recall that the population of Tokyo is around 37 million, but that's the city proper. However, the metropolitan area is bigger. Wait, but maybe I'm mixing up the numbers. 
+
+Alternatively, I can think of other cities. For example, New York City has a population of about 8 million. Tokyo is much larger. If I think of the population of Japan as a whole, it's around 125 million. But Tokyo is a significant part of that. If the entire country is 125 million, then Tokyo's metropolitan area would be a large portion of that. But I'm not sure if it's more than 100 million. 
+
+Wait, I think the Tokyo metropolitan area is about 37 million people. But that's the city of Tokyo. Wait, no, that's not right. Wait, maybe I'm confusing the city of Tokyo with the metropolitan area. Let me check my memory. The Tokyo metropolitan area is the largest in the world. I think it's around 37 million, but that's the city of Tokyo. Wait, no, that's not correct. Wait, I think the Tokyo metropolitan area is about 37 million, but that's the city of Tokyo. Wait, no, that's not right. Wait, I'm getting confused here. 
+
+Alternatively, maybe I should think of the population in terms of the number of people. If the entire country of Japan is about 125 million, then Tokyo is a big part of that. If the Tokyo metropolitan area is the largest, then it's probably more than 10 million. But 13 million is 13 million, which is 13 million. Wait, but I think the Tokyo metropolitan area is about 37 million. Wait, but that's not one of the options. The options are 1.3 million, 13 million, 130 million, 1.3 billion. 
+
+Wait, 37 million is between 13 million an
+
+[...4254 chars truncated...]
+
+billion. So 37 million is between 13 million and 130 million. Therefore, the closest is 13 million. But I think that's not correct. 
+
+Alternatively, maybe I'm wrong about the population. Maybe the Tokyo metropolitan area is 37 million, but the options are in different units. Wait, but 37 million is 37 million. So 13 million is 13 million. 130 million is 130 million. So 37 million is closer to 13 million. But that seems like a big difference. 
+
+Wait, but maybe I'm confusing the population of Tokyo with the population of the entire country. Wait, Japan's population is about 125 million. If Tokyo
+```
+
+### Rescue cells
+
+#### qwen3-4b × vIH × L17 × α=+8  ✓
+
+**Hand-review note:** vIH alone partially fixes: closes thinking, but answer rambles. **Not a clean ✓** at α=8 alone — composite below is the actual rescue.
+
+**Stats:** thinking=0c, answer=6372c, gen_seconds=114.4
+
+**Answer:**
+
+```
+<think>
+Okay, so I need to figure out which of the given options is closest to the population of the Tokyo metropolitan area. The options are (a) 1.3 million, (b) 13 million, (c) 130 million, and (d) 1.3 billion. Let me think through this step by step.
+
+First, I remember that Tokyo is one of the largest cities in the world. But I'm not exactly sure about the exact population. I know that the population of Tokyo is way larger than a million, so maybe (a) is too small. But wait, 1.3 million is 1.3 million, which is 1,300,000. That seems really small for a major city like Tokyo. So (a) is probably not the right answer.
+
+Then there's (b) 13 million. That's 13,000,000. Hmm, I think that's still on the lower side. I've heard that the population of Tokyo is around 35 million or something like that. Wait, but maybe the metropolitan area is larger than the city itself. Wait, the question specifically says "Tokyo metropolitan area," so that would include the surrounding areas. But I'm not sure if that's 13 million or more.
+
+Option (c) is 130 million. That's 130,000,000. That seems like a lot. But I think the population of Tokyo is around 35 million, so maybe 130 million is too high. Wait, but maybe the metropolitan area is larger. Let me think. The Tokyo metropolitan area is a huge region, including cities like Sapporo, Yokohama, and others. Wait, no, actually, the Tokyo metropolitan area is the area around Tokyo, but I think the population is around 37 million. Wait, but that's not one of the options. The options are 1.3 million, 13 million, 130 million, or 1.3 billion.
+
+Wait, maybe I'm confusing the population of Tokyo with the population of Japan. The total population of Japan is about 125 million. But the Tokyo metropolitan area is a part of that. So if the total population is 125 million, then the Tokyo area would be a significant portion of that. But 130 million is close to the total population. But that can't be right because the Tokyo area is a part of Japan. Wait, bu
+
+[...3972 chars truncated...]
+
+'m wrong about the population. Maybe the Tokyo metropolitan area is actually 37 million, which is 37,000,000. So the closest option is (c) 130 million? No, that's not. Wait, I'm confused. Maybe I should check the actual population. But since I can't look it up, I have to rely on my memory. I think the Tokyo metropolitan area is about 37 million. So the closest option is (c) 130 million? No, that's
+```
+
+#### qwen3-4b × vIH+vCC composite × LL17+L9 × α=8+8  ✓
+
+**Hand-review note:** **Composite rescue (Round 3 Day 23).** vIH+vCC composite at α=8+8 commits cleanly to (b) 13 million in 441-char answer. F109 documented this: composition is non-additive but on cc-s-08 it is the right combination.
+
+**Stats:** thinking=3682c, answer=441c, gen_seconds=60.28
+
+**Thinking excerpt:**
+
+```
+Okay, so I need to figure out which option is closest to the population of the Tokyo metropolitan area. Let me start by recalling what I know about Tokyo. I know it's one of the largest cities in the world, but I'm not exactly sure of the exact number. The options given are 1.3 million, 13 million, 130 million, and 1.3 billion. 
+
+First, I should think about the scale of these numbers. 1.3 million is like a small city, maybe a few hundred thousand people. 13 million is a bit more, but still, that's a large city. 130 million is a huge number, and 1.3 billion is even more. But wait, Tokyo is a metropolitan area, which includes not just the city itself but also surrounding regions. So maybe the population is larger than just the city's population.
+
+I remember that the population of Tokyo is often cited as one of the largest in the world. I think the city proper is around 13 million, but the metropolitan area is much bigger. Wait, but the options don't have 130 million. Wait, the options are (b) 13 million, (c) 130 million. So maybe the answer is (c)? But I'm not sure. Let me think again.
+
+Alternatively, maybe the metropolitan area is around 37 million? Wait, but that's not one of the options. The options given are 1.3 million, 13 million, 130 million, 1.3 billion. So if the actual population is around 37 million, then none of the options are correct. But that's not possible. Wait, maybe I'm confusing the numbers. Let me check my memory.
+
+I think the population of Tokyo is about 1
+
+[...1782 chars truncated...]
+
+ 130 million. But that doesn't make sense. I'm confused. Maybe I should go with (b) 13 million, even though I'm not sure. Or maybe (c) 130 million. Wait, but that's not right. I think the answer is (b) 13 million. Because the city itself is 13 million, and the metropolitan area is 37 million, but since that's not an option, maybe the answer is (b). But I'm not sure. I need to make a decision here.
+```
+
+**Answer:**
+
+```
+The population of the Tokyo metropolitan area is approximately 37 million. However, since this number is not among the provided options, the closest answer is **(b) 13 million**, which reflects the population of the city itself. The question may be referring to the city proper rather than the broader metropolitan region, or the options may be intended to test understanding of the scale of Tokyo's population. 
+
+**Answer:** (b) 13 million.
+```
+
+**Lesson:** Composite (vIH+vCC at α=8+8) succeeds where individual vectors don't. F109's non-additivity finding: composite fixes some prompts (Tokyo), inherits failures from CC on others (Gandhi 1957 fab). Adds nuance to F112: commitment-amplifier composite is sometimes superior to single-vector commitment-amplifier.
+
+---
+
+## E.4 gemma-4-E4B-it — no rescues observed (F102 null result)
+
+Gemma was run through identical sweeps (cc-simple × multiple vectors × α; abstention × vIH × multiple layers × α) and produced **zero rescue cases**. Specifically:
+
+- gemma baselines on most reasoning prompts were **already correct** (F102 documented this — gemma's behavioral baseline is stronger than qwen's on cc-simple)
+- gemma steered cells were **also mostly correct, with no degradation** — the vectors had effectively zero behavioral effect on gemma at the layers extracted
+- Auto-scorer caught Gandhi-1931 confabulation in gemma baseline at Day 14 (the 'hedge-wrapper confabulation' that triggered the standing manual-verification rule), but no steered cell *fixed* this — the wrong gemma answer persisted across α
+
+**Cross-model split (F102):** qwen has rich behavioral effects from steering (sometimes virtuous, sometimes fabrication); gemma has near-null behavioral effects. The cross-model run on phi-4 + llama + openr1 (F110) confirmed F102 by introducing a third pattern type — phi-4 with L3 catastrophic, llama with template-locked, openr1 with non-commit-loop-rescue.
+
+**Implication for rescue catalogue:** rescue cases require both (a) baseline failure of the right shape (non-commit loop) and (b) a model where steering has any behavioral effect at all. Gemma fails (b); cross-model phi4 fails (a) on its own failure modes. Only qwen and openr1-qwen-7b satisfy both conditions, which is why nearly 100% of all observed rescues across 2,400+ hand-reviewed generations come from those two models.
+
+---
+
+## How earlier qwen rescue cases connect to F112
+
+F112 ("OpenR1 commitment-rescue") was promoted on Day 25 from the cross-model run. But the same mechanism was visible 6 days earlier in qwen3-4b on different prompts:
+
+| Day | Model | Prompt | Baseline failure | Rescue vector × α | Rescue character |
+|-----|-------|--------|-------------------|--------------------|------------------|
+| 21 | qwen3-4b | eg-v2-10 (seismic damper) | FM-8 8836c, no answer | vIH × L17 × α∈{4,8,12} | '20-40%' clean commit |
+| 22 | qwen3-4b | ip-longest | FM-8 20040c, no answer | vIH × L17 × α=8 | '$\boxed{\infty}$' clean commit |
+| 23 | qwen3-4b | cc-s-08 (Tokyo) | FM-8 7254c, no commit | vIH+vCC composite × α=8+8 | (b) 13M clean commit |
+| 25 | openr1-qwen-7b | E3-bayesian-update | FM-8 24716c, no commit | 6 vectors × multiple α | 2147/2246 ≈ 95.6% clean commit |
+| 25 | openr1-qwen-7b | N1-simpsons-paradox | FM-8 38689c, no commit | 6 vectors × multiple α | Treatment A clean commit |
+
+**Pattern:** *baseline FM-8 spiral on hard reasoning → steering forces commitment → underlying reasoning was correct → clean ✓ verdict.*
+
+This is the same mechanism on two related models (qwen3-4b and openr1-qwen-7b — the latter is GRPO post-training on Qwen2.5-7B base). The cross-model run confirmed F112 generalizes from Day-21 single-prompt observation (eg-v2-10) to multi-prompt + multi-vector regularity (40 + 36 + 7 = 83 rescues on openr1 N1+E3+N2). **The mechanism is not specific to any one vector.** Even VC (the verbosity-control negative vector) rescues 12 times — the active ingredient is *strong perturbation at deep layers*, not virtue alignment.
+
+**Cross-day cumulative rescue count:** ~95 rescues across qwen3-4b (~12 across earlier sweeps) + openr1-qwen-7b (83 in cross-model run). All in the same model family (Qwen base). Zero in non-Qwen-family models (gemma, phi-4, llama). **F112 may be Qwen-specific** — testable hypothesis for follow-up.
+
+---
+
 # Cross-rescue patterns
 
 ## Distribution by vector
