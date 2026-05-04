@@ -1,0 +1,36 @@
+{
+  "_comment": "Example experiment config. Copy and edit. The 'conditions' list is the 3-cell experimental design: baseline, virtue-steered, random-steered. The random condition is auto-generated at run time from the reference vector path.",
+
+  "model": "qwen3-4b",
+
+  "max_searches": 5,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+
+  "conditions": [
+    {
+      "label": "baseline",
+      "steering": null
+    },
+    {
+      "label": "v_IH_L17_a8",
+      "steering": {
+        "kind": "virtue",
+        "vector_path": "mvp/results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+        "layer": 17,
+        "alpha": 8.0
+      }
+    },
+    {
+      "label": "random_L17_a8",
+      "steering": {
+        "kind": "random",
+        "reference_vector": "mvp/results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+        "layer": 17,
+        "alpha": 8.0,
+        "seed": 42
+      }
+    }
+  ]
+}
