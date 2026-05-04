@@ -61,10 +61,10 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-import torch
 
-from steer import AdditiveSteeringHook
-from utils import MODEL_CONFIGS, load_model
+# torch / steer / utils are imported lazily inside ToolUseRunner methods so
+# the searcher + parsing utilities are usable without a torch install (lets
+# unit tests run on machines that don't have the model deps).
 
 
 # ─── Searcher abstraction ────────────────────────────────────────────────────
@@ -332,18 +332,21 @@ class ToolUseRunner:
         self._steering_hook: AdditiveSteeringHook | None = None
         self._steering_meta: dict | None = None
 
+        from utils import MODEL_CONFIGS  # lazy: requires torch
         self.config = MODEL_CONFIGS[model_name]
         self.thinking_enabled = self.config.get("thinking", False)
 
     # ─── Model lifecycle ─────────────────────────────────────────────────
 
     def load_model(self):
-        self.model, self.tokenizer, self.device = load_model(
+        from utils import load_model as _load_model  # lazy
+        self.model, self.tokenizer, self.device = _load_model(
             self.model_name, device=self.device_arg
         )
 
     def attach_steering(self, vector_path: str | Path, layer: int, alpha: float,
                         label: str = "steered"):
+        from steer import AdditiveSteeringHook  # lazy: requires torch
         if self._steering_hook is not None:
             raise RuntimeError("Steering already attached. Call detach_steering() first.")
         v = np.load(vector_path)
@@ -388,6 +391,7 @@ class ToolUseRunner:
 
         stopped_on ∈ {"search_close", "eos", "max_tokens"}.
         """
+        import torch  # lazy
         inputs = self.tokenizer(prompt_text, return_tensors="pt").to(self.device)
         prompt_len = inputs["input_ids"].shape[1]
 

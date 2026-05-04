@@ -1,0 +1,53 @@
+{
+  "_comment": "Mock search results for offline testing. Keys are query strings (or substrings — MockSearcher does case-insensitive substring match). Each value is a list of {title, snippet, url} objects. Use this to dry-run the harness on the VM (or anywhere) without hitting a live search API.",
+
+  "Hamilton Depression Scale 1960 sample size": [
+    {
+      "title": "A rating scale for depression — Hamilton, 1960",
+      "snippet": "The original 1960 paper reports the scale as developed and tested on a sample of 49 inpatients with primary depressive illness at a single psychiatric hospital.",
+      "url": "https://example.com/hamilton-1960"
+    },
+    {
+      "title": "History of depression rating scales — review",
+      "snippet": "Hamilton's 1960 validation used 49 patients across two centres; later expanded validations used larger samples.",
+      "url": "https://example.com/depression-scale-history"
+    }
+  ],
+
+  "world record heaviest pumpkin": [
+    {
+      "title": "Giant Pumpkin World Records",
+      "snippet": "Competitive pumpkin growing focuses on weight, not lifting. The current heaviest grown pumpkin (2023) is 1,247 kg.",
+      "url": "https://example.com/pumpkin-records"
+    },
+    {
+      "title": "Strongman lifts — pumpkin events",
+      "snippet": "There is no widely recognised 'pumpkin lifting' record; pumpkin growing competitions and strongman events do not overlap.",
+      "url": "https://example.com/strongman-records"
+    }
+  ],
+
+  "Hofstede Pakistan IBM sample size": [
+    {
+      "title": "Hofstede's original IBM survey country breakdown",
+      "snippet": "Country sample sizes in the original IBM survey are reported in the 1980 monograph; Pakistan was included in the 40-country expansion with limited coverage.",
+      "url": "https://example.com/hofstede-monograph"
+    }
+  ],
+
+  "SSRI adolescent depression effect size": [
+    {
+      "title": "Meta-analysis: SSRI in adolescent depression",
+      "snippet": "Pooled SMD across 14 RCTs in adolescents was 0.30 (95% CI 0.20-0.40), with fluoxetine showing the largest individual effect (SMD ~0.50).",
+      "url": "https://example.com/ssri-meta"
+    }
+  ],
+
+  "CBT adolescent depression effect size": [
+    {
+      "title": "Meta-analysis: CBT in adolescent depression",
+      "snippet": "Pooled effect size for CBT vs control is approximately SMD 0.34 (95% CI 0.23-0.45) in adolescent depression trials.",
+      "url": "https://example.com/cbt-meta"
+    }
+  ]
+}
