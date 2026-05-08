@@ -538,3 +538,74 @@ The post-MVP work should therefore:
 
 The candidate framing for the writeup section ("the lazy frontier model / RLHF-compression phenomenon") connects naturally to F112: thinking models that *loop instead of committing* may be exhibiting a learned "uncertainty hedge" from RLHF, and commitment-amplification is the activation-level intervention that breaks that hedge. Worth elaborating in the paper draft.
 
+
+---
+
+## Day-30+ candidate plans (added 2026-05-08, post literature-survey)
+
+After the 5-model 2,443-generation hand-review wrap, surveyed recent literature (2025-2026) to position our work. Three competing/extending papers identified:
+
+- **arxiv 2506.18167** (Jun 2025) "Understanding Reasoning in Thinking LLMs via Steering Vectors" — closest predecessor. DeepSeek-R1-Distill on Qwen-14B/1.5B + Llama-8B, 6-behavior taxonomy, **NO random-vector control** (their explicit limitation, our advantage)
+- **ReBalance (ICLR 2026)** — directly competing positive result. Training-free LRM steering with confidence-modulated dynamic strength; ~50% token reduction on GSM8K
+- **The Rogue Scalpel (arxiv 2509.22067)** — negative result. *"Random direction can increase harmful compliance from 0% to 1-13%"* — random vectors DO have effects on safety axis (different axis from our rescue axis)
+
+Field consensus from 2026 field guide (Subhadip Mitra): static CAA-style steering has been replaced by Steering Vector Fields, SAE-guided (YaPO), AUSteer, Conceptor-based, CAST, Adaptive/PID dynamic. Reliably steerable: refusal, sentiment, tone, conciseness, uncertainty expression. **Effectively unsteerable: factual accuracy, complex reasoning, specific fact injection** — F45 is now field consensus.
+
+### Path A — "Publishable negative-result + narrow-positive" paper (recommended)
+
+**Title sketch:** *"Activation Steering for Reasoning-Model Self-Debate: A 2,443-Generation Hand-Reviewed Cross-Family Study"*
+
+**Headline structure:**
+- **F111** — IH-vector hypothesis falsified across 4 prompts × 3 models (most theoretically motivated vector demonstrably doesn't work)
+- **F112** — Commitment-amplification is real, Qwen-pretraining-base-specific, requires structured perturbation (random vectors don't rescue)
+- **Three failure-shape taxonomy** (template lock / non-commit loop / cap-truncation) determining steerability
+
+**What we already have to ship this:**
+- 1,752 cross-model + ~691 earlier qwen+gemma + 24 random control = 2,467 hand-graded generations
+- Random-vector control on qwen3-4b L22 (Day 12 archive) — most papers don't have this
+- Cross-pretraining-family coverage (Phi-4, Llama-3.1-R1-GRPO, OpenR1-Qwen-7B, Qwen3-4B, Gemma-4-E4B-it)
+- F-numbered findings F92-F112 with full cross-references in `docs/findings.md`
+- Per-prompt synthesis docs + 87 detailed rescue cases in `cross_model_analysis_20260502/`
+
+**Concrete next steps to ship:**
+1. **Run F112 on OptimalThinkingBench** (arxiv 2508.13141 — 1,440 OverthinkingBench + 550 UnderthinkingBench, procedurally generated, 33-model leaderboard). Get a benchmark number directly comparable to o3 (72.7% F1) and GPT-OSS-120B (62.5%). Half-day of compute.
+2. **Run random-vector control on openr1-qwen-7b at L23-L25 with full 12-α grid** (~72 generations, 1-2 hours) — closes the random-control gap on the actual cross-model run, not just qwen3-4b at L22. If random STILL doesn't rescue, F112 graduates from "consistent with structured-perturbation hypothesis" to "demonstrated structured-perturbation requirement."
+3. **Add R1-Distill-Qwen-14B and R1-Distill-Llama-8B as 6th and 7th models** — directly comparable to arxiv 2506.18167. ~2 days of compute + hand-review.
+4. **Write up.** Most narrative content already exists in cross_model_analysis_20260502/ docs.
+
+**Estimated total:** 4-7 days end-to-end (compute + writing).
+
+**Risk:** ReBalance got there first with the positive framing, so the "narrow positive" portion of our paper is competing with already-published work. The negative-results portion (F111 falsification + random-control) is the differentiator.
+
+### Path B — Tool-use harness probe (for cleaner mechanism evidence)
+
+The just-merged `claude/review-reports-nVMcN` branch added a complete tool-use harness (`mvp/tool_use_harness.py`, `mvp/run_tool_experiment.py`, etc.) with random-vector control built in. Tool-calling is **binary and measurable**, where reasoning quality is fuzzy.
+
+**Test:** does v_IH × L17 × α=8 (the canonical commit-amplifier) increase `<search>` tool-call rate on knowledge-gap prompts? Does the random vector at the same magnitude not increase it?
+
+**Why this is cleaner than reasoning probes:**
+- "Did the model emit `<search>...</search>`" is a yes/no measurement; "did the model commit to a Bayesian update" requires hand-review
+- Tool-call rate is a single number per (vector × α × prompt) cell; rescue verdicts are 3-valued (✓/~/✗)
+- Knowledge-gap prompts are exactly where humility-vector should help; if it does we have a clean F112-supporting result, if it doesn't we have another F111-supporting falsification
+
+**Concrete next steps:**
+1. Configure `mvp/tool_use_experiment.example.json` to: baseline + v_IH @ L17 α=8 + random @ L17 α=8
+2. Build a 20-prompt knowledge-gap set (E1-style "what was X?" probes for things models don't know)
+3. Run the harness end-to-end — produces JSONL trajectories + per-condition tool-call rate / mean calls / termination histogram
+4. Compare tool-call rate: virtue-vector vs random-vector vs baseline
+5. Get a clean single-paragraph mechanism statement
+
+**Estimated:** 1-2 days end-to-end.
+
+**Why pair this with Path A:** the tool-use result becomes a sharper supporting figure in the paper. "Commitment amplification produces measurable behavioral change on a discrete action (tool-calling) on knowledge-gap prompts, with structured-perturbation vectors but not random ones at matched magnitude." That's a tighter claim than the rescue-rate framing alone.
+
+### Path C — Pivot to dynamic/conditional steering (TO DISCUSS)
+
+**Status:** flagged for user discussion before adding to plan.
+
+The field has moved past static CAA-style steering toward dynamic/conditional methods (CAST, AcT, Steering Vector Fields, Conceptor-based, Adaptive/PID). ReBalance specifically uses confidence-modulated dynamic strength — the closest competing positive result.
+
+This is a bigger pivot than Paths A or B. Worth a real conversation about scope, target venue, and whether it's worth re-running the cross-model work with dynamic steering.
+
+**Decision:** discuss with user before committing. Do NOT add to plan unilaterally.
+
