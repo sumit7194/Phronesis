@@ -50,20 +50,24 @@ If you're new to this thread, read the catalog entries first — they have the a
 
 ---
 
-## Searches still to run (Day 26-27)
+## Searches completed (2026-05-09 second-round triage)
 
-8 additional Layer-17 searches to broaden the candidate pool. Listed with the angle each one targets:
+18 additional searches done by user, triaged in parallel by 5 sub-agents. Full per-feature detail in `docs/feature-catalog.md` second-round section. Headline:
 
-1. `I'm not familiar` — first-person knowledge-gap (most direct phrase)
-2. `approximately` — number-hedging
-3. `speculative` — explicit speculation disclosure
-4. `outside my knowledge` / `beyond my knowledge` — explicit limit-acknowledgment
-5. `as far as I know` — partial-knowledge disclosure
-6. `anecdotal` — evidence-quality flagging
-7. `without evidence` / `unverified` — confabulation alarm
-8. `confidently` / `definitively` — opposite axis (commit-promotion features)
+- **4 new Tier-1 candidates** added: 101568 (epistemic limitation admission), 27191 + 115297 (number-hedging axis), 161931 (verification-disposition).
+- **~18 new Tier-2 candidates** documented (29654, 15911, 80, 109839, 114750, 59639, 19308, 110169, 42370, 123838, 63583, 53054, 6900, 131448, 136512, 146191, 160623, 69694).
+- **No clean opposite-axis commit feature** found at L17. The "confidently"/"definitively" searches yielded no first-person commit feature — Tier-1 humility features don't have a clean geometric opposite at this transcoder.
+- **Multi-word phrase searches systematically fail** — Neuronpedia matches on individual tokens. Note for future searches: prefer single-word concept queries.
+- **Religious-virtue cluster at L17 is well-developed** (humility search returned 8 religion features) but disposition-level humility isn't encoded as a discrete model-feature. Confirms F45 at SAE-feature level.
 
-Process: export PDF per search, triage with same rubric, add Tier-1/2/3 candidates here.
+## Final candidate shortlist for steering experiment
+
+After both rounds. Full detail in catalog.
+
+**Tier 1 — primary humility/uncertainty axis:** 24983, 44526, 131926, 101568 (verify density first)
+**Tier 1 — number-hedging axis:** 27191, 115297
+**Tier 1 — verification-disposition axis:** 161931 (verify density first)
+**Tier 2 — secondary tests:** 29010 (hedging), 15911 (academic hedge), 80 (passive belief), 53054 (definitional commit), 146191 (epistemic vigilance)
 
 ---
 

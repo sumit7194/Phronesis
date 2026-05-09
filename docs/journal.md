@@ -1356,3 +1356,17 @@ Pursue the SAE-feature-steering experiment as the next concrete step. F113 recor
 - ~8 more Layer-17 searches (terms listed in `sae-experiment-plan.md`)
 - Then download the transcoder weights from HuggingFace, plumb feature-direction steering into existing pipeline, run the steering experiment on a VM
 - F111-or-method-failure decision falls out of the steering result
+
+---
+
+## Day 26 evening (2026-05-09) — Second-round SAE feature triage
+
+User did 18 additional Neuronpedia searches (the 8 I suggested plus 10 user-added action-disposition / verification / opposite-axis terms). 5 parallel sub-agents triaged the resulting PDFs.
+
+Outcome: 4 new Tier-1 candidates surfaced beyond the original 5 cataloged earlier in the day. New axes discovered: number-hedging (27191, 115297) distinct from epistemic-uncertainty axis, and verification-disposition (161931) with an unusually clean logit signature (promotes "missing/missed/omission"). Detail per feature in `docs/feature-catalog.md`. Shortlist update in `docs/sae-experiment-plan.md`.
+
+Key negative finding: no clean geometric opposite to the humility features exists at L17 (confidently / definitively searches returned generic adverbs and scientific-register conclusion verbs, no first-person commit feature). This bears on F112 — the commitment-amplifier hypothesis predicted commit features should exist; they don't surface as discrete features at this transcoder layer at least.
+
+Methodological note: multi-word phrase searches don't work. Neuronpedia matches on individual tokens, so "without evidence" returned the generic "without" feature dominating the results. Single-word concept queries are the right approach. Catalog has the cautionary list.
+
+Triage method validated: hand-judging top activations works. Auto-labels mislead in ~15% of cases (70419 lesson recurred several times in this round — features labeled with our target concept actually fire on the wrong sub-concept). PDFs exported from Neuronpedia → Read tool → sub-agent batches with strict rubric is a reproducible pipeline.
