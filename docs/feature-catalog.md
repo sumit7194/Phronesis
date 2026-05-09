@@ -133,9 +133,71 @@ Possible exploration if Layer 17 yields nothing usable. L7 = where v_EG was extr
 
 To enumerate from Neuronpedia source dropdown.
 
-### Other models (gemma-2-2b, llama3.1-8b, deepseek-r1-distill-llama-8b, etc.)
+### Other models — Neuronpedia coverage map (verified 2026-05-10)
 
-Goodfire Ember has SAEs for some of these. Neuronpedia has Gemma-2-2B, Llama-3.1-8B variants, DeepSeek-R1-Distill-Llama-8B. Section per (model, source, layer) will be added as we explore.
+Parsed from the full models-page HTML export at `~/Downloads/NP/QWEN3-4B ｜ Neuronpedia.html`. This is the complete list of (model, source-set) combinations available on Neuronpedia for our project.
+
+#### Our 5 cross-model run subjects × Neuronpedia coverage
+
+| Our model | On Neuronpedia? | Available sources | Notes |
+|-----------|-----------------|-------------------|-------|
+| **qwen3-4b** | ✅ Yes | `transcoders-hp` (164k features at L17, what we've used), `qwenscope-res-32k`, `qwenscope-res-64k` (Qwen Scope SAEs — residual stream) | Both transcoders AND residual-stream SAEs available! Should investigate Qwen Scope as the natural complement to the transcoder we've been using. |
+| **gemma-4-E4B-it** | ⚠️ Closest match: Gemma-3-4B-IT | `gemmascope-2-4b-pt`, `gemmascope-2-res-16k/65k/262k`, `gemmascope-2-transcoder-16k`, attention/MLP variants | Note: "gemma-4" in our naming likely corresponds to Google's "Gemma-3-4B" (Gemma generation 3, 4B params). Worth confirming this mapping before doing comparable searches. |
+| **phi-4-mini-reasoning** | ❌ NOT available | — | Microsoft hasn't released SAEs publicly for Phi. No community coverage on Neuronpedia. Cannot do SAE work for this model. |
+| **llama-3.1-8B-R1-GRPO** | ⚠️ Base Llama-3.1-8B available, GRPO variant not | `llama-scope` (general), `llama-scope-r1-distill` (R1-distill family), `llamascope-mlp-32k/131k`, `llamascope-res-32k/131k`, `transcoder-llama-131k-adam-kl/mntss` | Base-model SAEs may transfer to R1-GRPO with caveats (different post-training). The `llama-scope-r1-distill` source is specifically for R1-distill models; could be useful since GRPO is a reasoning post-train. |
+| **openr1-qwen-7b** (Qwen2.5-7B base) | ✅ Qwen2.5-7B-Instruct available | `saes-qwen2`, `saes_qwen_qwen3-1.7b/8b/14b_batch_top_k`, `llamascope-openr1-res-32k` (likely OpenR1-specific!), `llamascope-slimpj-openr1-res-32k` | The `llamascope-openr1-res-32k` source-set name is intriguing — may be SAEs trained specifically on the OpenR1 family. Worth a closer look. |
+
+#### Bonus models worth investigating
+
+- **DeepSeek-R1-Distill-Llama-8B** ✅ has `llama-scope-r1` SAEs — would be the cleanest cross-family reasoning-model test (same architecture as Llama-3.1-8B base, post-trained as a thinking model)
+- **Qwen3-1.7B / 8B / 14B** ✅ all have `saes_qwen_qwen3-*_batch_top_k` — sister models to our qwen3-4b. Could test feature universality across sizes within the Qwen3 family.
+- **GPT-OSS-20B** ✅ has SAEs (`saes-gpt-oss-20b`) — large open-weights reasoning model, could be a future generalization target.
+
+#### Source-set glossary
+
+- **transcoders-hp** — Hanna & Piotrowski Circuit Tracer Transcoders (what we've been using on qwen3-4b L17). Trained at MLP-input.
+- **gemma-scope / gemmascope-*** — Google's official SAE release for Gemma-2 + Gemma-3. Multiple feature counts (16k/65k/131k/262k), trained at residual stream / MLP / attention.
+- **llama-scope / llama-scope-r1 / llama-scope-r1-distill** — OpenMOSS SAE releases for Llama-3 and R1-distill variants.
+- **qwen-scope / qwenscope-*** — Alibaba's official SAE release for Qwen3 family. 32k or 64k features, residual stream.
+- **saes-qwen2** — Qwen2 SAEs (community).
+- **saes-gpt-oss-20b** — GPT-OSS SAEs (community).
+- **circuit-tracer** — Anthropic-style circuit-tracing SAEs.
+- **sae-bench** — SAEBench-format SAEs (used for evals not steering).
+
+#### Recommended search-and-export plan for the next ~day
+
+User has compute-VM unavailable for ~1 day, will use that time to gather Neuronpedia data. Priority order:
+
+**Tier A — direct comparators to current qwen3-4b L17 work:**
+
+1. **qwen3-4b · qwen-scope (residual stream SAEs)** — same model, different decomposition method. Critical because our transcoder is at MLP-input; the residual-stream SAE is the more natural intervention site for steering. Pick the layer closest to L17 (likely L17 or L18). Run the same 6 priority searches: `expressing uncertainty`, `(un)certainty`, `I don't know`, `approximately`, `verify`, `I'm not familiar`.
+
+2. **Qwen2.5-7B-Instruct · llamascope-openr1-res-32k** — direct match for our **openr1-qwen-7b** cross-model subject. If features look similar to qwen3-4b's, that's evidence for cross-size feature universality within Qwen family. Same 6 priority searches.
+
+**Tier B — cross-family generalization test:**
+
+3. **DeepSeek-R1-Distill-Llama-8B · llama-scope-r1** — non-Qwen reasoning model with SAEs. If a humility feature exists here and looks similar to qwen3-4b's, that's evidence for cross-family universality. If it doesn't exist or looks different, that's evidence for the Qwen-family-specificity hypothesis F112 raised. Same 6 priority searches.
+
+**Tier C — fill in gaps:**
+
+4. **Gemma-3-4B-IT · gemmascope-2-res-16k** — closest match for our gemma-4-E4B-it cross-model subject. Test whether F102's "gemma is null" finding has an SAE-level explanation (no humility features → no behavioral effect). Same 6 priority searches.
+
+5. **Llama-3.1-8B · llama-scope-r1-distill** — base llama with R1-distill SAEs. Tests whether the GRPO post-training in our llama-3.1-8B-R1-GRPO subject changes which features exist.
+
+#### Tightened search list for these 5 models (use across all of them)
+
+Based on what worked on qwen3-4b L17, the tightened single-word concept searches:
+
+1. `expressing uncertainty` (yielded 24983, 70419 on qwen)
+2. `(un)certainty` (yielded 44526)
+3. `I don't know` — single phrase but no quotes (yielded 131926)
+4. `approximately` (yielded 115297, 27191)
+5. `I'm not familiar` (yielded 101568 on qwen)
+6. `verify` (yielded 161931)
+
+Skip the failed multi-word phrase searches (`outside my knowledge`, `without evidence`, etc.) — they returned generic syntax features. Skip "humility" (returns religious-virtue cluster). Skip "speculative" / "anecdotal" (no signal).
+
+If a search yields a clean Tier-1 candidate on a model, also pull the dashboard for that feature index. That's the data we'll bring to the VM for steering experiments.
 
 ---
 
@@ -156,55 +218,103 @@ After 18 additional searches ("I'm not familiar," "approximately," "speculative,
 
 ### qwen3-4b · L17 · transcoders-hp · 101568 — "Expressing uncertainty/limitations"
 
-- **Density:** not visible in search PDF — verify on feature page
+- **Density:** **0.026%** ✓ (verified 2026-05-10 from feature page)
 - **Max activation:** 8.13
-- **What it actually fires on:** First-person epistemic limitation admission — "I am not one for statistics I must confess" — speaker explicitly limiting their own authority before making a statement.
-- **Top examples:**
-  - 8.13 | "I am not one for statistics I must confess, but as I have mentioned in many other"
-  - (other top 3 activations all show the same sentence — possible top-k dominated by one document)
-- **Logits:** Positive: "層出 / FXMLLoader / 妥 / nten / region"; negative: "iband / oids / 说什么 / like / distinguished"
-- **Notes:** Appeared in BOTH "outside my knowledge" AND "beyond my knowledge" searches — consistent semantic match. The "I must confess" phrasing is structurally a first-person epistemic-humility marker. **Caveat:** identical example × 3 in top activations could mean single document dominates; needs density check on feature page before committing to steering.
-- **Status:** investigated 2026-05-09, **needs density verification** before adding to steering shortlist
-- **Triage tier:** 1 (tentative, pending density)
+- **What it actually fires on:** **First-person epistemic-limitation admission** — speaker explicitly admitting they are not an expert / are inexperienced / have limited knowledge before making (or refusing to make) a claim. Single-document concern from search PDF is RESOLVED — feature page shows 24+ diverse activations across many distinct documents.
+- **Top examples (broader set from feature page):**
+  - 8.13 | "I am not one for statistics I must confess"
+  - 7.88 | "I'm no expert on the physics involved. There's lots of hand waving going on here"
+  - 7.78 | "Let me start by explaining just how much of an inexperienced programmer I am"
+  - 6.84 | "I didn't really use Illustrator before, but i'm having troubles"
+  - 6.50 | "I am by no means a DBA, I would like to learn"
+  - 6.38 | "I don't know anything about Objective-C so I wonder how simple"
+  - 5.91 | "I am no skating devotee"
+  - 5.75 | "[Note: I am not programming expert]"
+  - 5.66 | "my C knowledge is very very limited"
+  - 5.50 | "My linux scripting skills are poor so I'm hoping someone can help"
+  - 5.31 | "I've been an avid watcher (not expert) of malware"
+  - 5.25 | "I do not have the privilege of calling myself a professional software developer"
+  - 5.09 | "Im not so good at SQL, so I asked you guys for help"
+  - 4.00 | "I'm a Java coder and not very familiar with how networks work"
+  - 3.59 | "I am new to Delphi"
+  - 3.39 | "I'm a bit of a noob I'm afraid"
+  - 3.11 | "I am not entirely knowledgeable about [an issue]"
+- **Logits:** Negative: "around / somewhat / like / distinguished" (+ Chinese fragments) — interesting pattern, suppresses hedging-of-hedging tokens. Positive: "層出 / FXMLLoader / 妥 / region / ISING / mmo" — mixed multilingual/code, no clean signal.
+- **Notes:** **POSSIBLY THE TOP STEERING CANDIDATE.** Cleaner activation pattern than 24983 — every example is consistently first-person epistemic-limitation ("I'm not an expert / I'm a beginner / I'm a noob / my skills are limited / I don't know X"). This is the canonical "model admits it doesn't know" disposition. Particularly notable: the top activations span Stack Overflow programming questions, opinion essays, statistics confessions, language-learning admissions — diverse domains, same disposition. **Compare to 44526** which fires on "I'm unsure" (specific phrase); 101568 captures the BROADER concept "I'm not qualified to claim X."
+- **Status:** investigated 2026-05-09, density verified 2026-05-10, **promoted to top of steering shortlist**
+- **Triage tier:** 1 (verified — strongest candidate)
 
-### qwen3-4b · L17 · transcoders-hp · 27191 — "approximation"
+### qwen3-4b · L17 · transcoders-hp · 27191 — "estimate" (DOWNGRADED to Tier 2 after density check)
 
-- **Density:** not stated in PDF
+- **Density:** **0.090%** (verified 2026-05-10)
 - **Max activation:** 11.94
-- **What it actually fires on:** "Approximation" as imprecise-substitute concept in technical/explanatory prose. The model output stands in for precision when precision isn't available.
-- **Top examples:**
-  - 11.94 | "these systems attempt to provide an approximation of video on demand"
-  - ~9 | "An estimation for an appropriate end time for an intra-operative"
-  - ~7 | "Good static analysis tools form estimates of the contents of pointer"
-- **Logits:** Positive: "ISED / Dover / .cls / Cloth / quat" — mixed
-- **Notes:** Number-hedging axis. Not first-person epistemic uncertainty. But conceptually related: "approximation" implies "I can't give you the exact thing." Steering could produce hedged numerical answers like "approximately 1500 kg" instead of "exactly 2463 kg" on E1. Different intervention than humility but potentially useful for confabulation prompts where the model would otherwise pick a fake specific number.
-- **Status:** investigated 2026-05-09, on candidate shortlist
-- **Triage tier:** 1
+- **What it actually fires on:** **Technical/scientific estimation register** — academic abstracts, medical research, mathematical approximation, engineering tolerances. The auto-label was actually "estimate" (claude-4-5-haiku) — earlier reading as "approximation" missed the dominant register.
+- **Top examples (broader set from feature page):**
+  - 11.94 | "approximation of video on demand" (computer science systems)
+  - 11.50 | "Good static analysis tools form estimates of the contents of pointer" (CS)
+  - 11.50 | "An estimation for an appropriate end time for an intra-operative intravenous lidocaine infusion" (clinical anesthesiology)
+  - 10.94 | "estimation of thyroid gland volume is of great importance for radioiodine therapy"
+  - 10.81 | "estimation of the quantity and localisation of glandular tissue in the breast" (cancer research)
+  - 10.63 | "estimate for test surface errors without changing experimental settings" (interferometry)
+  - 10.00 | "Estimation of changes in alveolar-arterial oxygen gradient" (physiology)
+  - 10.00 | "Estimation of disease severity in the NHS cervical screening programme"
+  - 10.00 | "Estimation of biological occupational exposure limit values for selected organic solvents"
+  - 10.00 | "Estimation of Mueller matrices using non-local means filtering"
+  - 9.81 | "Volume-based thermodynamics and the estimation of standard enthalpies of formation of gas phase ions"
+  - 7.19 | "approximate energy minimization in low-level vision" (computer graphics)
+  - 4.84 | "approximation is widely used in quantum chemistry"
+- **Logits:** Positive: "ISED / Dover / .cls / Cloth / quat" — mostly unrelated. Negative: "OLUMNS / Moments / 平衡 / boy / Maver" — random.
+- **Notes:** **DOWNGRADED to Tier 2.** Earlier read as Tier 1 "number-hedging" was wrong. The feature is dominated by SCIENTIFIC/TECHNICAL estimation in academic abstract register — clinical research, mathematical methods, engineering measurement. Steering with this on E1 would likely produce *register-shifted academic prose* about "estimation of the heaviest pumpkin" rather than natural-prose hedged answers like "approximately 1500 kg." Compare to 115297 which fires on natural-prose hedging ("approximately 7%", "about 280 workers") — that's the actual number-hedging feature for our purpose.
+- **Status:** investigated 2026-05-09, density verified 2026-05-10, **demoted from Tier 1 → Tier 2**
+- **Triage tier:** 2 (technical-register estimation, narrow application)
 
-### qwen3-4b · L17 · transcoders-hp · 115297 — "approximations"
+### qwen3-4b · L17 · transcoders-hp · 115297 — "approximations" (CONFIRMED Tier 1 number-hedging)
 
-- **Density:** not stated
+- **Density:** **0.020%** ✓ (verified 2026-05-10 — excellent sparsity)
 - **Max activation:** 7.94
-- **What it actually fires on:** The word "approximately" in factual prose introducing approximate quantities — "approximately one percent."
-- **Top examples:**
-  - 7.94 | "use at the time of delivery in California is approximately one percent"
-  - lower | "a subsidiary of Ralcorp that currently employs about 280 workers at the Oldham"
-- **Notes:** Sister feature to 27191. More directly tied to the word "approximately" as a hedging marker before a number. Pair with 27191 for number-hedging steering.
-- **Status:** investigated 2026-05-09, on candidate shortlist
-- **Triage tier:** 1
+- **What it actually fires on:** **Number-hedging in natural prose.** Population statistics, demographic estimates, medical prevalence, business head-counts, surveys — exactly the natural-prose contexts where models would otherwise commit to specific fake numbers on confabulation prompts.
+- **Top examples (broader set from feature page):**
+  - 7.94 | "approximately one percent" (medical prevalence)
+  - 7.03 | "currently employs about 280 workers" (business)
+  - 6.56 | "more than 13 million Americans" (population)
+  - 6.44 | "accounts for about 7 in 10 of all dementias" (medical)
+  - 6.19 | "approximately 12.5 million children and teens" (demographics)
+  - 5.91 | "more than 200,000 deaths" (Covid statistics)
+  - 5.34 | "approximately 22.9%" (medical incidence rate)
+  - 5.13 | "approximately 1,500,000 expatriate" (population)
+  - 4.91 | "has approximately 120 employees" (business)
+  - 4.72 | "approximately 7% of the general population" (epidemiology)
+  - 4.69 | "population of about 171,067 inhabitants" (demographics)
+  - 3.58 | "the upper limit is about 650 Hz" (acoustics)
+  - 3.42 | "had written around 150 books" (biography)
+  - 3.08 | "roughly 10 percent" (chemistry)
+- **Hedging vocabulary covered:** "approximately / about / more than / over / nearly / around / roughly" — all the natural-prose numerical hedges.
+- **Logits:** Positive: "承诺" (Chinese "promise/commit"), "造" (create), "cared", "典型" (typical), "该" — mixed, mostly noise. Negative: "uche / aggi / 智 / asto / atasets" — fragments.
+- **Notes:** **CONFIRMED Tier 1.** This is the actual number-hedging feature for our purpose, NOT 27191. Steering positive should produce "the heaviest Danish pumpkin in 2019 was approximately X kg" instead of "the heaviest Danish pumpkin in 2019 was 2463 kg." Pair with humility features (101568, 24983, 44526) — they're complementary axes: one suppresses numerical specificity, the other suppresses claim-commitment.
+- **Status:** investigated 2026-05-09, density verified 2026-05-10, **confirmed on shortlist**
+- **Triage tier:** 1 (verified — number-hedging axis primary candidate)
 
-### qwen3-4b · L17 · transcoders-hp · 161931 — "Checklists and verification"
+### qwen3-4b · L17 · transcoders-hp · 161931 — "Checklists and verification" (CONFIRMED with caveat)
 
-- **Density:** not stated
+- **Density:** **0.003%** (verified 2026-05-10 — VERY sparse, edge of useful range)
 - **Max activation:** 6.78
-- **What it actually fires on:** Instructional text directing the reader to self-check their work — "Use the checklist below to verify you have followed the instructions correctly."
-- **Top examples:**
-  - 6.78 | "Use the checklist below to verify you have followed the instructions correctly. ## Checklist"
-  - (3× identical example shown — same caveat as 101568)
-- **Logits:** **Strongly suppresses** "already" (-0.30) and "已有" (-0.30, Chinese "already exists"); **strongly promotes** "missing" (+0.32), "missed" (+0.31), "Missing" (+0.30), "遗漏" (+0.29, Chinese "omission/missed"). This logit signature is unusually clean: the feature is about **checking for what is missing or omitted**.
-- **Notes:** Verification-disposition axis. Different mechanism than humility (24983 etc.) — steering with this should produce "let me verify before I commit" behavior, not "I don't know." Could be useful as a complementary intervention to humility steering. **Caveat:** 3× repeated example, density unverified.
-- **Status:** investigated 2026-05-09, on candidate shortlist (verify density)
-- **Triage tier:** 1 (tentative)
+- **What it actually fires on:** "Check what's missing / setting reminders / not forgetting" disposition. Activation cleanly clusters at the top, becomes noisy at lower activations.
+- **Top examples (broader set from feature page):**
+  - 6.78 | "Use the checklist below to verify you have followed the instructions correctly"
+  - 6.66 | "'The Checklist' typically gets pretty extensive"
+  - 6.25 | "list so that you don't miss out anything! SET REMINDERS"
+  - 4.16 | "use these points as a checklist of things you need to find out about"
+  - 3.34 | "here is a boating checklist you can use before your next adventure"
+  - 3.14 | "do not forget that the beautiful historic town"
+  - 2.59 | "novel pre-sign-out quality assurance tool"
+  - 2.08 | "But I forgot to check the option"
+  - 1.96 | "Reminder on Use of Money Market Funds" (long-tail noise)
+- **Logits — UNUSUALLY CLEAN signature:**
+  - Promotes: missing (+0.32), missed (+0.31), Missing (+0.30), 遗漏 (+0.29, Chinese "omission"), the notification (+0.27), verge (+0.26), 旨 (+0.26 "purpose")
+  - Suppresses: already (-0.26), 已有 (-0.30, "already exists"), valide (-0.25), Already (-0.25), 知识 (-0.25, "knowledge")
+- **Notes:** The logit signature is the cleanest of any feature in the catalog — it's a coherent "**check for what's missing / not yet covered**" feature. **Caveat: density 0.003% is at the edge of useful range** (fires on ~1 in 33,000 tokens). For steering on E1: feature has near-zero baseline activation on a confabulation prompt, so positive α has high *relative* effect — but unclear whether the feature engages at all without lexical "checklist/verify" prompts. Could be tested by framing the user prompt as a verification task, OR by using stronger α on the raw E1 prompt.
+- **Status:** investigated 2026-05-09, density verified 2026-05-10, **on shortlist as speculative steering candidate**
+- **Triage tier:** 1 (verified — verification-disposition axis, but speculative due to extreme sparsity)
 
 ### Tier 2 candidates (new)
 
