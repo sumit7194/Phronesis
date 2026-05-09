@@ -609,3 +609,48 @@ This is a bigger pivot than Paths A or B. Worth a real conversation about scope,
 
 **Decision:** discuss with user before committing. Do NOT add to plan unilaterally.
 
+
+### Interest list — clusters from 2026-05 field-overview discussion
+
+After reviewing the 2026 field-overview (8 active research clusters), user flagged interest in three specific threads. Logging here so they don't fall out of context, separate from Paths A/B/C decision tree above.
+
+**Cluster 1 — Beyond static vectors: Adaptive / PID dynamic steering** (interested)
+
+α changes across generation tokens rather than being held constant. PID-style: apply more steering when the model is drifting from target behavior, less when it's already on-rail. Closer to a control system than a one-shot intervention.
+
+Relevance to our work:
+- F109 already documented that the rail-switch happens at a single thinking-token. Static α applies the same push at every step; PID would only push at the rail-switch step.
+- Would test cleanly against our existing rescue dataset — same prompts, same models, dynamic α instead of static.
+- Pairs naturally with F112: "fire commitment-amplifier only when self-debate is detected, not always-on."
+
+**Cluster 2 — Beyond contrast pairs: SAE-guided steering** (most-interested; see SAE feasibility analysis below)
+
+Pick steering directions from sparse-autoencoder features instead of mean-difference of contrastive triplets.
+
+Sub-methods worth surveying: YaPO (eliminates contrast pairs entirely), AUSteer (atomic-unit steering), Conceptor matrices, Concept-Basis Reconstruction.
+
+Particularly relevant to our work:
+- F111 (IH-vector falsification) suggests the contrastive-triplet method may be the wrong extraction tool for humility-class concepts. SAE features might find a humility-related direction that diff-of-means missed.
+- F109 (rail-switch mechanism) — SAE could pinpoint the specific feature that flips at the rail-switch token, converting our finding into a deeper mechanism story.
+- Already noted in journal/phase5-plan as "deferred" — now under active reconsideration.
+
+**Cluster 7 — Reasoning-specific: OptimalThinkingBench** (interested)
+
+1,440 OverthinkingBench questions + 550 UnderthinkingBench problems. Procedurally generated (no contamination). 33 models evaluated. Best o3 at 72.7% F1; GPT-OSS-120B at 62.5%.
+
+Relevance:
+- Putting F112 commitment-amplifier on this benchmark gives us a directly comparable number for the publishable paper (Path A).
+- The benchmark framing (over↔under-thinking trade-off) is exactly F112's framing.
+
+**Not currently of interest (logged for completeness):** Cluster 3 (beyond-residual-stream / MLP-channel ablation), Cluster 4 (multi-layer coordinated), Cluster 5 (CRH / non-identifiability), Cluster 6 (cross-model universality), Cluster 8 (safety / negative-result).
+
+---
+
+---
+## Day-26 update (2026-05-09) — Cluster 2 (SAE-guided steering) committed
+
+The Day-25 "Interest list" flagged Cluster 2 (SAE-guided steering) as the most-interested follow-up. Day-26 work confirmed Neuronpedia has Layer-17 transcoder coverage for qwen3-4b (Hanna & Piotrowski), did initial feature exploration, identified candidate humility-aligned features, and committed to running the steering test locally.
+
+Detailed plan, candidate-feature shortlist, additional searches to run, and experiment design: see `docs/sae-experiment-plan.md`.
+
+This effectively replaces the "Path B — tool-use harness probe" direction as the active follow-up. Tool-use harness remains parked (already merged to main as the `claude/review-reports-nVMcN` branch contents) for later use; SAE feature-steering is the more direct test of the F111 question.

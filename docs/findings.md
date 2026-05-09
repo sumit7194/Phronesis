@@ -4256,3 +4256,32 @@ The commitment-amplifier mechanism needs the right kind of baseline failure (non
 - `cross_model_analysis_20260502/02_per_prompt/N1_simpsons_paradox.md` — openr1 cells synthesis
 - `cross_model_analysis_20260502/02_per_prompt/E3_bayesian_update.md` — openr1 cells synthesis
 - `cross_model_analysis_20260502/per_generation.csv` — filterable rows for openr1 × N1/E3
+
+---
+
+## F113 (2026-05-09, Day 26) — SAE feature exploration on qwen3-4b L17 surfaces multiple uncertainty-shaped features that diff-of-means v_IH may have missed
+
+### Source
+
+`docs/sae-experiment-plan.md` is the canonical doc. Six exploratory searches on Neuronpedia's `qwen3-4b · 17-transcoder-hp` (Hanna & Piotrowski Circuit Tracer Transcoders) + careful hand-triage of the resulting feature dashboards.
+
+### One-paragraph summary
+
+Three Tier-1 candidate features identified at L17 with clean first-person epistemic-uncertainty signatures (indices 24983, 44526, 131926). One Tier-2 conversational-hedge feature (29010) with a different mechanism worth a separate test. One Tier-3 (70419) which on closer inspection captures *world*-uncertainty (text talking about uncertain topics) rather than the *epistemic* uncertainty we want — illustrative of why label-only triage isn't enough. Steering test against E1 / ip-longest / eg-v2-10 / E2 cannot run on Neuronpedia (qwen3-4b not in their interactive Steer model list); will run locally once VM compute is available.
+
+### Why this matters
+
+This is the first concrete test of whether F111 (IH-vector falsification) was a method-specific failure or a deeper falsification. If SAE-feature-steering with one of these candidates produces abstention on E1 where v_IH produced "1865 kg, Niels Jansen, Skanderborg" confabulation, F111 becomes a method-failure result and SAE feature-steering enters our toolkit for the post-MVP work. If SAE-feature-steering also confabulates, F111 hardens and we update the post-MVP plan accordingly.
+
+### Status
+
+Search-and-triage phase ongoing — 8 additional Layer-17 searches planned. Steering experiment specs documented in `sae-experiment-plan.md`. No new running code yet.
+
+### What I'm less sure about
+
+- Whether the transcoder at MLP-input vs our v_IH at residual stream is too different an intervention site for clean comparison. May need a residual-stream SAE if one becomes available on Neuronpedia (Qwen Scope SAE not yet visible).
+- Whether the auto-generated feature labels from gemini-2.0-flash are reliable enough that we can search-by-concept; the 70419 case (label "Uncertainty" → top activations all about world-uncertainty) shows the labels can mislead.
+
+### Cross-references
+
+`docs/sae-experiment-plan.md` — full candidate-feature shortlist, search list, experiment design, outcome decision tree.

@@ -1326,3 +1326,33 @@ Phase 4 plan:
 - Update `docs/post-mvp-decisions.md` — add "layer-screening before any sweep" rule (F110 finding 3)
 
 Then commit + push.
+
+---
+
+## Day 26 (2026-05-09) — SAE/transcoder feature exploration on qwen3-4b L17
+
+### What landed
+
+Field-overview lit review (mid-2025 → 2026 papers on activation steering, reasoning-model failure modes, cross-model transfer, SAE-guided methods). Then narrowed to user-flagged cluster: SAE-guided steering as Approach A — use SAE-feature decomposition on our existing project goal (virtue installation) instead of the diff-of-means contrastive method we've been using.
+
+Verified Neuronpedia has SAE-class artifacts for qwen3-4b (Hanna & Piotrowski's Circuit Tracer Transcoders at MLP-input). Other 4 cross-model models (gemma-4-E4B-it, phi-4-mini-reasoning, llama-3.1-8B-R1-GRPO, openr1-qwen-7b) — coverage is sparse-to-none on Neuronpedia, so qwen3-4b is the obvious match.
+
+Did 6 exploratory feature-searches at L17 (where v_IH lives), exported the dashboards, hand-triaged the candidate features. Identified 3 Tier-1 humility-aligned features + 1 Tier-2 conversational-hedge feature + 1 Tier-3 world-uncertainty (mislabel) feature. Detail in `docs/sae-experiment-plan.md`.
+
+Discovered Neuronpedia's interactive Steer interface does NOT support qwen3-4b yet (only Gemma-2-2B, Llama3.1-8B variants, GPT-OSS-20B, etc.). Steering test will need to run locally once VM compute is arranged.
+
+### Decision
+
+Pursue the SAE-feature-steering experiment as the next concrete step. F113 records the discovery. `sae-experiment-plan.md` is the canonical plan doc.
+
+### Pipeline notes from this session
+
+- Neuronpedia PDF-export is reliable for capturing search results and feature dashboards. ~1.4 MB per search, 1 page each. Easy to feed back into Claude for triage.
+- The auto-generated feature labels (gemini-2.0-flash) can mislead — feature 70419 was labeled "Uncertainty" but its top activations are all *world-uncertainty* (economic/policy/weather), not *epistemic uncertainty*. Hand-reading top activations is essential; label is a hint not ground truth.
+- Activation density is a useful triage signal. Tier-1 candidates sit at 0.010-0.148%. Higher density (>1%) = generic syntax feature; very low density (<0.001%) = specialist feature, often only useful if its top examples are exactly on-target.
+
+### What's next
+
+- ~8 more Layer-17 searches (terms listed in `sae-experiment-plan.md`)
+- Then download the transcoder weights from HuggingFace, plumb feature-direction steering into existing pipeline, run the steering experiment on a VM
+- F111-or-method-failure decision falls out of the steering result
