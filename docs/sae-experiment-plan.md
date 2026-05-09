@@ -40,27 +40,13 @@ User explicitly chose Approach A (use SAE on our existing question, replacing di
 
 ## Candidate feature shortlist (Layer 17)
 
-From 6 searches done 2026-05-09 (PDFs in `~/Downloads/NP/`). Triaged using the rubric documented in the chat (label match + top-activation consistency + density 0.001-0.1% + not contaminated by code/syntax).
+Per-feature detail (top activations, density, hand-judged what-fires-it, status, triage tier) lives in `docs/feature-catalog.md`. Quick reference:
 
-### Tier 1 — primary steering candidates
+**Tier 1 (primary steering candidates):** 24983, 44526, 131926
+**Tier 2 (different mechanism, separate test):** 29010
+**Tier 3 (rejected — wrong tool):** 70419
 
-| Index | Auto label | Density | Max act | What fires it | Notes |
-|-------|------------|---------|---------|---------------|-------|
-| **24983** | "certainty and uncertainty" | 0.148% | 11.31 | "I'm not sure / unclear / not certain / uncertain" — first-person epistemic uncertainty across many phrasings | **Strongest candidate.** Density slightly higher than ideal but top examples extremely clean |
-| **44526** | "(un)certainty" | 0.010% | 10.50 | "I'm unsure / not sure" — same concept as 24983, sparser, more selective | **Cleanest sparse candidate.** Use as confirmation for 24983 |
-| **131926** | "questions/uncertainty" | 0.012% | 10.94 | "I don't know / I don't remember / unknown" — the literal "I don't know" pattern | Slight code contamination (~25% of top activations are programmer names in code), but canonical signal strong |
-
-### Tier 2 — secondary (different mechanism)
-
-| Index | Auto label | Density | Max act | What fires it | Notes |
-|-------|------------|---------|---------|---------------|-------|
-| **29010** | "hedging or uncertainty" | 0.016% | 10.75 | "Or maybe / Well, actually / Wait, no / Or rather" — conversational self-correction | NOT a humility feature — a *self-correction-mid-thought* feature. Test as a separate hypothesis: does it break commitment by inducing hedge-flow? |
-
-### Tier 3 — likely wrong tool
-
-| Index | Auto label | Density | Max act | What fires it | Notes |
-|-------|------------|---------|---------|---------------|-------|
-| **70419** | "Uncertainty" | 0.058% | 9.44 | "policy uncertainty / economic uncertainty / unpredictable weather" — *world-uncertainty* (text talking about uncertain things), not *epistemic uncertainty* | Probably won't produce abstention; might just make the model talk *about* uncertainty while still confabulating |
+If you're new to this thread, read the catalog entries first — they have the actual examples and reasoning. Don't add feature-level detail back to this doc; add it to the catalog and reference here.
 
 ---
 
@@ -143,6 +129,7 @@ If results are mixed (some features rescue, others don't):
 
 ## Cross-references
 
+- `docs/feature-catalog.md` — per-feature detail (top activations, density, triage tier, status). All feature-level info lives there, not here.
 - `docs/findings.md` F113 — short summary entry
 - `docs/journal.md` Day 26 — narrative log of decision to pursue this
 - `docs/post-mvp-decisions.md` — Day-25 cluster-2 (SAE-guided steering) interest item is now committed; details here

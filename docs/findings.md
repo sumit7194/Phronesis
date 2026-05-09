@@ -4284,4 +4284,5 @@ Search-and-triage phase ongoing — 8 additional Layer-17 searches planned. Stee
 
 ### Cross-references
 
-`docs/sae-experiment-plan.md` — full candidate-feature shortlist, search list, experiment design, outcome decision tree.
+- `docs/sae-experiment-plan.md` — search list, experiment design, outcome decision tree.
+- `docs/feature-catalog.md` — per-feature detail (top activations, density, triage tier, status) for all SAE/transcoder features investigated, across models.
