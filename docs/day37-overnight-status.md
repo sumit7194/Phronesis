@@ -319,3 +319,64 @@ The post is **more honest and more interesting** than the F143 framing implied:
 - Script: `mvp/closing_validation.py` (on VM only)
 
 VM is now idle. No more Phronesis experiments planned. Ready for writeup.
+
+---
+
+## THIRD ADDENDUM (2026-05-20 late evening) — Prior-art literature scan results
+
+Cross-session reviewer flagged three recent papers in the same space. Read all three via parallel agent reads. Honest verdict on prior art:
+
+### D-STEER (arXiv:2512.11838, Dec 3 2025 — Raina, Aggarwal, Chadha, Jain, Das)
+
+**LLaMA-2-7B, HHH + toxicity. Constructs the steering vector via the IDENTICAL method as F143**: mean activation delta between DPO and base, used as additive steering vector. Derives formally that DPO's gradient at final hidden state is approximately prompt-independent (`∇_h L_DPO ∝ -v` where `v = e_yw - e_yℓ`). Shows:
+- Adding v* reproduces aligned behavior
+- Subtracting v* nearly restores base (cos 0.92–0.96 across prompts to global v*)
+- Spectral collapse σ₂/σ₁ < 0.1 → "one-dimensional behavioral subspace"
+
+> *"v⋆ := (1/N) Σ (h_DPO⁽ⁱ⁾ - h_0⁽ⁱ⁾). This averaged displacement is our candidate first-order description of DPO's effect in latent space."* (D-STEER §3)
+
+**Implication for our F143**: independent rediscovery, 5 months later, without their formal derivation. Construction and operational result are prior art.
+
+### Hidden Dimensions of LLM Alignment (arXiv:2502.09674, Pan et al., ICML 2025)
+
+**Llama 3.1 8B, refusal/jailbreaks. Computes a different but related quantity**: fits a linear surrogate `Ŵx + b̂` to the activation shift, then takes SVD of `Ŵ − I` to get feature directions. Compares against Arditi et al.-style refusal probe direction.
+
+> *"all components found have near-zero cosine similarity with the probe vector, Best-of-N scores more closely match the probe vector's accuracy. This suggests that the probe vector is an aggregation of multiple safety feature directions."* (Pan et al. §4)
+
+**Implication for our F142/F145**: the "fine-tuning-derived direction is near-orthogonal to contrastive-probe direction" finding is prior art. Pan et al.'s framing is "dominant + non-dominant directions" (a one-vs-many decomposition), not a clean two-axis duality — our cleaner framing is a small sharpening but the underlying observation is theirs.
+
+### Towards Reliable Evaluation of Behavior Steering Interventions in LLMs (arXiv:2410.17245, Pres, Ruis, Lubana, Krueger — NeurIPS 2024 MINT workshop)
+
+**Methodology paper, 19 months ahead of us.** Their Table 3 (Myopia CAA intervention): top two tokens at `latter: 0.39` and `immediate: 0.39` — exact ties where greedy picks one and creates apparent steering effect that depends on random seed. Direct quotes:
+
+> *"Models display behavioral tendencies even before interventions."*
+> *"Measuring generation quality without comparing to the baseline model... can be misleading."*
+> *"The key is whether the behavior deviates from the baseline for the samples where the baseline does not already express the target behavior."*
+
+Their prescription: T=1.0 p=0.9 sampling, stratify by top 25/50/75% baseline likelihood, score by token log-likelihood shifts paired against positive/negative continuations.
+
+**Implication for our F138 walkback**: this is the textbook concrete realization of the failure mode Pres et al. cataloged. Our walkback (baseline 14% at n=50 vs original 40% at n=10; v2-Δ steered at 10% within noise of baseline) is exactly what their Section 2 argued the field had been missing. Our walkback methodology is NOT novel.
+
+### What survives as Phronesis contributions
+
+After prior-art accounting:
+
+1. **Epistemic-virtue domain extension**: D-STEER (HHH), Pan et al. (refusal), Pres et al. (corrigibility/myopia/truthfulness) all operate on safety/refusal. Our work on humility, evidence-grounding, reasoning-transparency, verbosity-control is a domain extension to behaviors with weaker training signal.
+
+2. **The 4-walkback longitudinal pattern**: F94, F103, F138, F138-replication. Cascading failure mode through vector recovery → SAE steering → DPO fine-tuning → replication in a single project across 5 months with timestamped real-time documentation. Pres et al. show the failure mode once on CAA; we show it shape-shifts across intervention classes.
+
+3. **Multi-adapter cosine clustering**: 5 DPO variants (rank 4/16/64, SFT, flipped, multi-virtue) clustering at cos 0.50–0.87 within and ≈0 with discrimination cluster. D-STEER has 1 DPO run; Pan et al. 1 SSFT + 1 DPO.
+
+4. **NLA semantic decoding of the two axis clusters**: the AV reads discrimination directions as "humility content" and DPO-Δs as "math/textbook content." This specific cross-validation tool is absent in all three prior papers.
+
+5. **The flipped-Δ at α=−25 +41pp empirical anomaly**: this is genuinely under-explored. D-STEER's framing predicts a one-dimensional behavioral subspace (cos 0.92–0.96 across prompts to global v*). Our flipped-Δ has cos −0.32 with v2-Δ, so it lies mostly in a direction *orthogonal* to v2-Δ — and that orthogonal direction at α=−25 produces +41pp distributional shift on E2 while regular v2-Δ at α=+10 produces +0pp. **This is the only finding that prior frameworks don't predict and our data observes.** Worth confirming at n=50 before any writeup.
+
+### Corrected writeup framing (workshop-paper-quality)
+
+> *"A five-month field replication study extending three recent papers (D-STEER 2025, Pan et al. 2025, Pres et al. 2024) to underrepresented behavioral targets (epistemic virtues) on Qwen2.5-7B. We confirm Pan et al.'s near-orthogonality finding (cos 0.05-0.10 between contrastive-extraction and DPO-derived directions) on humility instead of refusal, extend D-STEER's empirical-Δ-steering result to a new model and task domain, demonstrate Pres et al.'s methodological warning concretely across four walkback events (F94, F103, F138, F138-replication), validate the axis distinction via NLA semantic decoding (humility content vs math/textbook content), and report one empirical finding the prior frameworks don't predict: a direction near-orthogonal to all four contrastive methods AND to the naive DPO-Δ direction (flipped-Δ at α=−25) produces a +41pp distributional shift on E2 — pending n=50 replication."*
+
+### Open follow-up before writeup
+
+- **Run flipped-Δ α=−25 on E2 at n=50** to confirm +41pp holds (currently n=20). The other Claude's exact concern: this project has caught small-n effects collapsing 4 times, and we shouldn't make this the centerpiece without checking. ~10 min compute when VM is free.
+
+VM currently in use for ludo RL training. Queue this experiment for next free window. Do NOT proceed with writeup until n=50 flipped-Δ check is complete.

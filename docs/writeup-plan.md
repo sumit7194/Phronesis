@@ -241,3 +241,22 @@ Push-backs I gave in return:
 - **One writeup at a time.** Don't try to do F121 + F122 + report revision in one weekend. Pick the highest-priority one and finish it.
 - **Public posting checklist**: (a) cross-reference all F-numbers, (b) verify cell paths still resolve, (c) link to per_generation.csv if hosted publicly, (d) decide author attribution (own name vs anonymous), (e) decide license (CC0 / CC-BY / no license).
 - **No deadline pressure.** Weekends only. The findings are documented locally; the public writeup is a separate distribution decision and can wait until the writing time is available.
+
+
+---
+
+## PRIOR-ART NOTICE (added 2026-05-20)
+
+A literature scan on 2026-05-20 revealed that the core findings have direct prior art. See:
+- `docs/day37-overnight-status.md` THIRD ADDENDUM for the full assessment
+- `docs/findings.md` F142/F143/F145 entries now have prior-art hedges
+- `docs/next-session-queue.md` for the n=50 flipped-Δ experiment that must run before writeup
+
+**Three relevant papers**:
+1. **D-STEER (arXiv:2512.11838, Dec 2025)** — anticipates F143's DPO-Δ-as-steering-vector construction with the same formal method, on LLaMA-2-7B for HHH.
+2. **Pan et al. 2025 (arXiv:2502.09674, ICML 2025)** — anticipates F142's "fine-tuning-derived direction near-orthogonal to probe direction" finding on Llama 3.1 8B for refusal.
+3. **Pres et al. 2024 (arXiv:2410.17245, NeurIPS MINT)** — anticipates the F138-walkback methodology with their Table 3 demonstration of greedy-vs-sampled token ties.
+
+**Implication**: the writeup framing in this doc (above) needs to be substantially walked back from "we discovered the discrimination-vs-behavior-modification axis distinction" to "we replicated three recent papers on a new behavioral domain (epistemic virtues) and found one empirical anomaly the prior frameworks don't predict (flipped-Δ at α=−25, +41pp on E2 — pending n=50 confirmation)."
+
+**Do not draft the post until**: (a) flipped-Δ n=50 result is in, (b) D-STEER and Pan et al. have been read directly (not via agent summary). The current writeup plan above this notice is partially obsolete.
