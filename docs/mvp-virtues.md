@@ -228,7 +228,7 @@ Expected reuse rate: 20-30% per new virtue. That is enough to be worth sampling 
 
 **MVP milestone 5 — Specificity matrix (4×4).** Each of v_CC, v_IH, v_EG, v_RT tested against each of the four behavioral evaluations. Diagonal effects ≥ off-diagonal effects with a reasonable margin. Trigger: M2 and M4 both land.
 
-**MVP milestone 6 — Manual validation.** Every behavioral result in the specificity matrix manually hand-scored against auto-scorer (per `scoring.md` policy). Discrepancies logged in `scoring.md`.
+**MVP milestone 6 — Manual validation.** Every behavioral result in the specificity matrix Opus-judged against auto-scorer (per `scoring.md` policy). Discrepancies logged in `scoring.md`.
 
 **MVP exit criterion.** Specificity matrix is clean (diagonal ≥ off-diagonal) AND at least 2 of 4 cells show a clear positive intervention effect. At that point, decide whether to (a) scale to full 8 virtues, (b) invest in scorer/corpus-gen automation before scaling, or (c) publish MVP-scope results.
 

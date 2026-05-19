@@ -14,7 +14,7 @@ This document is a self-contained handoff. The receiving session should be able 
 
 The Phronesis pipeline is: contrastive triplet corpus (virtuous / non-virtuous / neutral passages on the same factual substrate) → difference-of-means vector extraction at the residual stream → MVE (geometric pairwise orthogonality) test → α-sweep on behavioural benchmarks → 4×4 specificity matrix.
 
-**Where we are:** Day 19. The MVP α-sweep finished. Geometric findings (F102) showed model-dependent virtue separability (qwen3-4b shows partial collapse of CC/EG/RT at deep layers; gemma-4-E4B-it keeps four clean orthogonal directions). Behavioural hand-review (F103) showed small (~+0.4 to +0.8 hand-rubric) real diagonal effects on qwen3-4b and a confirmed null on gemma. **Crucially, F103 also showed the auto-scorer awarded its largest soft score (+5.19) to a degenerate-output cell** (qwen × RT × L18 α=20 — all five generations are catastrophic repetition loops). The +5.19 was regex-gaming, not real virtue.
+**Where we are:** Day 19. The MVP α-sweep finished. Geometric findings (F102) showed model-dependent virtue separability (qwen3-4b shows partial collapse of CC/EG/RT at deep layers; gemma-4-E4B-it keeps four clean orthogonal directions). Behavioural Opus-judged review (F103) showed small (~+0.4 to +0.8 Opus-rubric) real diagonal effects on qwen3-4b and a confirmed null on gemma. **Crucially, F103 also showed the auto-scorer awarded its largest soft score (+5.19) to a degenerate-output cell** (qwen × RT × L18 α=20 — all five generations are catastrophic repetition loops). The +5.19 was regex-gaming, not real virtue.
 
 This raises a sharper question — one that motivates the present task.
 
@@ -251,7 +251,7 @@ These are in the Phronesis project repo. Read them before generating any triplet
 2. **`docs/concepts.md`** — definitions of the four MVP virtues, so you understand exactly what you must NOT inject. Pay attention to the "behavioural markers" lists.
 3. **`docs/generation-guidelines.md`** — generation rules (especially §4.6 on monologue-style and §4.8 on verification checks). The factual-invariance and length-invariance rules apply to your triplets too.
 4. **`docs/scoring.md`** — failure-mode catalogue (FM-6 through FM-9). FM-6/FM-8 are particularly relevant: don't make verbose passages "use evidence vocabulary" or "trigger regex-gaming."
-5. **`docs/findings.md` F67, F102, F103** (search by F-number) — the underlying caveat (F67), the geometric finding (F102), and the F103 hand-review verdict that motivates this whole task.
+5. **`docs/findings.md` F67, F102, F103** (search by F-number) — the underlying caveat (F67), the geometric finding (F102), and the F103 Opus-judged verdict that motivates this whole task.
 6. **`docs/eg-rt-eval-spec.md` §3.5 + §4.5** — calibration-target framing; you'll use the same shape but with verbosity-specific thresholds.
 
 ### Reference examples (read 3-5 of each before generating):

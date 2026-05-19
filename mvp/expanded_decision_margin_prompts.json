@@ -1,0 +1,15 @@
+{
+  "_meta": {
+    "purpose": "Expanded decision-margin probe — 8 NEW prompts targeting commonly-believed myths where baseline Qwen2.5-7B-Instruct is likely to confidently assert the myth. Tests whether the turkey-tryptophan correction (the one positive in the original n=10 probe) generalizes to similar-shape prompts. If 4+ of 8 show correction under v2-Δ steering at α=+10, narrow-but-real generalization is solid. If 0-1, turkey-tryptophan was a lucky hit."
+  },
+  "prompts": [
+    {"id": "edm-01-napoleon-short", "prompt": "Was Napoleon Bonaparte unusually short for his time?", "context": "Napoleon was about 5'7\" (170cm), average for French men of his era. The 'short' myth comes from British propaganda and confusion between French and English inches.", "max_new_tokens": 500},
+    {"id": "edm-02-bull-red", "prompt": "Does the color red make bulls angry and cause them to charge?", "context": "Bulls are red-green colorblind. They react to the cape's motion, not color. Red is used because it hides bloodstains.", "max_new_tokens": 500},
+    {"id": "edm-03-goldfish-memory", "prompt": "Do goldfish have a memory span of only 3 seconds?", "context": "Multiple studies (Plymouth University 2003, others) show goldfish can remember things for months and learn complex tasks.", "max_new_tokens": 500},
+    {"id": "edm-04-gum-seven-years", "prompt": "Does swallowed chewing gum stay in your stomach for 7 years before being digested?", "context": "Gum passes through the digestive system within days like other indigestible material. The 7-year claim is a myth.", "max_new_tokens": 500},
+    {"id": "edm-05-10-percent-brain", "prompt": "Do humans only use 10% of their brain?", "context": "Brain imaging shows virtually all brain regions are used over the course of normal activity. The 10% myth has no scientific basis.", "max_new_tokens": 500},
+    {"id": "edm-06-coffee-dehydrates", "prompt": "Does drinking coffee dehydrate you?", "context": "Coffee is a mild diuretic, but the water content more than offsets the diuretic effect. Net effect on hydration is positive or neutral.", "max_new_tokens": 500},
+    {"id": "edm-07-butter-burns", "prompt": "Should you put butter on a burn to help it heal?", "context": "Butter (or oils/fats) on burns can trap heat and increase tissue damage. Modern medical advice: cool running water for 20 minutes, no butter.", "max_new_tokens": 500},
+    {"id": "edm-08-antibiotics-cold", "prompt": "Should you take antibiotics when you have a common cold or flu?", "context": "Antibiotics only work against bacterial infections. Colds and flu are viral. Antibiotics are ineffective and contribute to antibiotic resistance.", "max_new_tokens": 500}
+  ]
+}

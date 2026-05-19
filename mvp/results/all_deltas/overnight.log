@@ -1,0 +1,518 @@
+###############################################################
+# OVERNIGHT VALIDATION started Tue May 19 19:07:03 UTC 2026
+###############################################################
+================================================================
+[19:07:03] BEGIN EXTRACT-baseline
+================================================================
+[19:07:08] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:20,  4.18it/s]Loading weights:   1%|          | 2/339 [00:00<01:29,  3.75it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.18it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 37.08it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 54.74it/s]Loading weights:  12%|█▏        | 41/339 [00:01<00:04, 64.86it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 77.02it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 79.09it/s]Loading weights:  22%|██▏       | 76/339 [00:01<00:07, 34.44it/s]Loading weights:  25%|██▍       | 84/339 [00:02<00:06, 39.61it/s]Loading weights:  27%|██▋       | 91/339 [00:02<00:05, 43.00it/s]Loading weights:  30%|███       | 102/339 [00:02<00:04, 52.24it/s]Loading weights:  34%|███▎      | 114/339 [00:02<00:03, 62.15it/s]Loading weights:  37%|███▋      | 126/339 [00:02<00:03, 70.63it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 77.40it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:02, 82.72it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:02, 86.24it/s]Loading weights:  51%|█████     | 173/339 [00:03<00:01, 91.61it/s]Loading weights:  55%|█████▍    | 185/339 [00:03<00:01, 92.98it/s]Loading weights:  58%|█████▊    | 197/339 [00:03<00:01, 93.91it/s]Loading weights:  61%|██████    | 207/339 [00:03<00:01, 89.69it/s]Loading weights:  65%|██████▌   | 221/339 [00:03<00:01, 96.17it/s]Loading weights:  69%|██████▊   | 233/339 [00:03<00:01, 95.64it/s]Loading weights:  72%|███████▏  | 245/339 [00:03<00:00, 94.68it/s]Loading weights:  76%|███████▌  | 257/339 [00:03<00:00, 95.25it/s]Loading weights:  79%|███████▉  | 268/339 [00:04<00:00, 93.09it/s]Loading weights:  83%|████████▎ | 281/339 [00:04<00:00, 96.17it/s]Loading weights:  86%|████████▋ | 293/339 [00:04<00:00, 72.51it/s]Loading weights:  89%|████████▉ | 302/339 [00:05<00:01, 24.88it/s]Loading weights:  91%|█████████ | 308/339 [00:06<00:01, 16.65it/s]Loading weights:  93%|█████████▎| 316/339 [00:06<00:01, 20.49it/s]Loading weights:  95%|█████████▍| 321/339 [00:07<00:01, 15.70it/s]Loading weights:  97%|█████████▋| 330/339 [00:07<00:00, 17.91it/s]Loading weights:  99%|█████████▊| 334/339 [00:07<00:00, 18.76it/s]Loading weights: 100%|█████████▉| 338/339 [00:07<00:00, 20.09it/s]Loading weights: 100%|██████████| 339/339 [00:07<00:00, 43.16it/s]
+[19:07:19]   [baseline/p0] L2=97.18
+[19:07:19]   [baseline/p1] L2=100.79
+[19:07:19]   [baseline/p2] L2=97.54
+[19:07:19]   [baseline/p3] L2=102.44
+[19:07:19]   [baseline/p4] L2=100.55
+[19:07:19]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_baseline.npy
+[19:07:19] EXTRACT-baseline COMPLETE
+[19:07:20] END EXTRACT-baseline :: OK
+================================================================
+[19:07:20] BEGIN EXTRACT-v2_IH
+================================================================
+[19:07:28] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:19,  4.23it/s]Loading weights:   1%|          | 2/339 [00:00<01:51,  3.02it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 33.19it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:06, 49.46it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 62.24it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 72.07it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 79.35it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.47it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 88.15it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 90.28it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 91.97it/s]Loading weights:  37%|███▋      | 125/339 [00:01<00:02, 91.23it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 95.58it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 96.16it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.87it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.98it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.87it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.09it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 95.93it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 95.78it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:01, 95.88it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.83it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.24it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 95.16it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.28it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.40it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.07it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.20it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.20it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.52it/s]
+[19:07:34] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_dpo_v2/adapter...
+[19:07:35]   [v2_IH/p0] L2=96.67
+[19:07:35]   [v2_IH/p1] L2=100.43
+[19:07:35]   [v2_IH/p2] L2=97.20
+[19:07:35]   [v2_IH/p3] L2=102.00
+[19:07:35]   [v2_IH/p4] L2=100.05
+[19:07:35]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_v2_IH.npy
+[19:07:35] EXTRACT-v2_IH COMPLETE
+[19:07:36] END EXTRACT-v2_IH :: OK
+================================================================
+[19:07:36] BEGIN EXTRACT-sft
+================================================================
+[19:07:41] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:01,  1.87it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:28, 11.76it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 34.48it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 51.68it/s]Loading weights:  12%|█▏        | 40/339 [00:01<00:04, 59.87it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 75.17it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 81.62it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 85.97it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 88.92it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 90.49it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:02, 89.09it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 93.71it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 94.44it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.41it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 94.71it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 94.97it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 94.82it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 94.92it/s]Loading weights:  62%|██████▏   | 209/339 [00:02<00:01, 92.48it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 95.41it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 95.26it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 94.90it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 94.94it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 94.89it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 94.57it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 94.60it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 95.01it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 95.18it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 95.25it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.54it/s]
+[19:07:48] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_sft_control/adapter...
+[19:07:48]   [sft/p0] L2=96.66
+[19:07:49]   [sft/p1] L2=100.43
+[19:07:49]   [sft/p2] L2=97.17
+[19:07:49]   [sft/p3] L2=101.69
+[19:07:49]   [sft/p4] L2=99.98
+[19:07:49]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_sft.npy
+[19:07:49] EXTRACT-sft COMPLETE
+[19:07:50] END EXTRACT-sft :: OK
+================================================================
+[19:07:50] BEGIN EXTRACT-flipped
+================================================================
+[19:07:54] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:56,  1.91it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.04it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 35.18it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 52.56it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 65.35it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 74.90it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 79.28it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:02, 87.16it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 90.11it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.92it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:02, 90.73it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 94.94it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 96.11it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 96.71it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 96.42it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 96.60it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 96.54it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.77it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.56it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.73it/s]Loading weights:  68%|██████▊   | 232/339 [00:02<00:01, 91.54it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 97.75it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 97.10it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 96.60it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 96.12it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 96.38it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.71it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.88it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.63it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 84.92it/s]
+[19:08:01] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_flipped_dpo/adapter...
+[19:08:02]   [flipped/p0] L2=97.37
+[19:08:02]   [flipped/p1] L2=101.32
+[19:08:02]   [flipped/p2] L2=97.80
+[19:08:02]   [flipped/p3] L2=102.71
+[19:08:02]   [flipped/p4] L2=100.75
+[19:08:02]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_flipped.npy
+[19:08:02] EXTRACT-flipped COMPLETE
+[19:08:03] END EXTRACT-flipped :: OK
+================================================================
+[19:08:03] BEGIN EXTRACT-rank4
+================================================================
+[19:08:08] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:19,  4.25it/s]Loading weights:   1%|          | 2/339 [00:00<01:37,  3.47it/s]Loading weights:   5%|▍         | 16/339 [00:00<00:10, 30.21it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:06, 46.15it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 61.17it/s]Loading weights:  15%|█▌        | 52/339 [00:01<00:04, 66.57it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 79.57it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.63it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 88.10it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 90.20it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 91.33it/s]Loading weights:  37%|███▋      | 125/339 [00:01<00:02, 90.81it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 95.47it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.90it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.39it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.73it/s]Loading weights:  54%|█████▍    | 184/339 [00:02<00:01, 90.95it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 97.46it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.81it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.48it/s]Loading weights:  69%|██████▊   | 233/339 [00:02<00:01, 93.92it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 96.88it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 96.30it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 96.07it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.87it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.98it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.17it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.29it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.29it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.44it/s]
+[19:08:14] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_rank4/adapter...
+[19:08:15]   [rank4/p0] L2=96.90
+[19:08:15]   [rank4/p1] L2=100.45
+[19:08:15]   [rank4/p2] L2=97.22
+[19:08:15]   [rank4/p3] L2=102.18
+[19:08:15]   [rank4/p4] L2=100.22
+[19:08:15]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_rank4.npy
+[19:08:15] EXTRACT-rank4 COMPLETE
+[19:08:16] END EXTRACT-rank4 :: OK
+================================================================
+[19:08:16] BEGIN EXTRACT-rank64
+================================================================
+[19:08:21] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:53,  1.95it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.20it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 35.50it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 52.90it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:04, 65.74it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 75.22it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 81.97it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 86.58it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 89.83it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.42it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.75it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 94.11it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 95.18it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.92it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.61it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 96.06it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 96.10it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.37it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 95.27it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 95.43it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:01, 95.63it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.45it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.66it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 95.78it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.89it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 96.03it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.46it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.54it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.55it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 84.94it/s]
+[19:08:27] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_rank64/adapter...
+[19:08:29]   [rank64/p0] L2=95.68
+[19:08:29]   [rank64/p1] L2=99.94
+[19:08:29]   [rank64/p2] L2=96.74
+[19:08:29]   [rank64/p3] L2=101.83
+[19:08:29]   [rank64/p4] L2=100.11
+[19:08:29]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_rank64.npy
+[19:08:29] EXTRACT-rank64 COMPLETE
+[19:08:30] END EXTRACT-rank64 :: OK
+================================================================
+[19:08:30] BEGIN EXTRACT-multivirtue
+================================================================
+[19:08:35] Loading Qwen/Qwen2.5-7B-Instruct...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:20,  4.21it/s]Loading weights:   1%|          | 2/339 [00:00<01:30,  3.74it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.18it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 37.11it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 54.63it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 67.19it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 76.29it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 82.75it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:02, 87.16it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 90.22it/s]Loading weights:  30%|██▉       | 101/339 [00:01<00:02, 89.56it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 93.98it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 95.08it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 95.99it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 96.60it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 96.25it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 96.30it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 96.33it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.57it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.08it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.04it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:01, 96.17it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 96.10it/s]Loading weights:  76%|███████▌  | 257/339 [00:03<00:00, 93.75it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 96.54it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 96.33it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 96.37it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.49it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.58it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.64it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.71it/s]
+[19:08:41] Loading adapter /home/sumit/phronesis_run/mvp/results/phase2a_multivirtue_dpo/adapter...
+[19:08:42]   [multivirtue/p0] L2=96.31
+[19:08:42]   [multivirtue/p1] L2=100.83
+[19:08:43]   [multivirtue/p2] L2=97.32
+[19:08:43]   [multivirtue/p3] L2=102.42
+[19:08:43]   [multivirtue/p4] L2=100.30
+[19:08:43]   Saved /home/sumit/phronesis_run/mvp/results/all_deltas/acts/acts_multivirtue.npy
+[19:08:43] EXTRACT-multivirtue COMPLETE
+[19:08:44] END EXTRACT-multivirtue :: OK
+================================================================
+[19:08:44] BEGIN COMPUTE-deltas-cosines
+================================================================
+[19:08:44] baseline acts: shape=(5, 3584)
+[19:08:44]   v2_IH: |Δ_per_prompt|=[1.938037395477295, 1.4989105463027954, 1.5692918300628662, 1.5509635210037231, 1.5663084983825684]
+[19:08:44]   v2_IH: |Δ_avg|=1.2124
+[19:08:44]   sft: |Δ_per_prompt|=[2.7384250164031982, 2.2846412658691406, 2.0163745880126953, 2.330054521560669, 2.1892426013946533]
+[19:08:44]   sft: |Δ_avg|=1.8685
+[19:08:44]   flipped: |Δ_per_prompt|=[2.7565760612487793, 1.9564639329910278, 1.8939722776412964, 1.8727436065673828, 1.9814311265945435]
+[19:08:44]   flipped: |Δ_avg|=1.6666
+[19:08:44]   rank4: |Δ_per_prompt|=[1.2829316854476929, 1.2951769828796387, 1.3724240064620972, 1.2596104145050049, 1.182326078414917]
+[19:08:44]   rank4: |Δ_avg|=0.7798
+[19:08:44]   rank64: |Δ_per_prompt|=[4.403738021850586, 2.939323663711548, 2.9707159996032715, 2.7623636722564697, 2.9555304050445557]
+[19:08:44]   rank64: |Δ_avg|=2.6311
+[19:08:44]   multivirtue: |Δ_per_prompt|=[3.703507661819458, 2.3305869102478027, 2.0792477130889893, 2.1453659534454346, 2.435067653656006]
+[19:08:44]   multivirtue: |Δ_avg|=2.0390
+[19:08:44] 
+=== Pairwise cosine matrix ===
+[19:08:44]                                  v2_IH        sft    flipped      rank4     rank64 multivirtu v_diff_F12    probe_w v_humble_A
+[19:08:44]   v2_IH                        +1.0000    +0.2562    -0.3238    +0.6603    +0.8663    +0.6222    +0.1019    +0.0659    -0.2296
+[19:08:44]   sft                          +0.2562    +1.0000    -0.4977    +0.4669    +0.0832    -0.1273    +0.0464    +0.0003    -0.0664
+[19:08:44]   flipped                      -0.3238    -0.4977    +1.0000    -0.3975    -0.2844    +0.0006    -0.0964    -0.0389    -0.0496
+[19:08:44]   rank4                        +0.6603    +0.4669    -0.3975    +1.0000    +0.5337    +0.3044    +0.0824    +0.0460    -0.2718
+[19:08:44]   rank64                       +0.8663    +0.0832    -0.2844    +0.5337    +1.0000    +0.7072    +0.0967    +0.0658    -0.2961
+[19:08:44]   multivirtue                  +0.6222    -0.1273    +0.0006    +0.3044    +0.7072    +1.0000    +0.0715    +0.0575    -0.1989
+[19:08:44]   v_diff_F126                  +0.1019    +0.0464    -0.0964    +0.0824    +0.0967    +0.0715    +1.0000    +0.8555    +0.0103
+[19:08:44]   probe_w                      +0.0659    +0.0003    -0.0389    +0.0460    +0.0658    +0.0575    +0.8555    +1.0000    +0.0380
+[19:08:44]   v_humble_AR                  -0.2296    -0.0664    -0.0496    -0.2718    -0.2961    -0.1989    +0.0103    +0.0380    +1.0000
+[19:08:44] 
+=== L2 norms ===
+[19:08:44]   v2_IH                        1.212
+[19:08:44]   sft                          1.869
+[19:08:44]   flipped                      1.667
+[19:08:44]   rank4                        0.780
+[19:08:44]   rank64                       2.631
+[19:08:44]   multivirtue                  2.039
+[19:08:44]   v_diff_F126                 40.462
+[19:08:44]   probe_w                      0.535
+[19:08:44]   v_humble_AR                 54.824
+[19:08:44] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/cosine_matrix.json
+[19:08:44] DELTA-COSINES COMPLETE
+[19:08:44] END COMPUTE-deltas-cosines :: OK
+================================================================
+[19:08:44] BEGIN BROADER-EVAL-v2_IH
+================================================================
+[19:08:49] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_v2_IH.npy: L2=1.2124
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<02:58,  1.89it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 11.92it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 34.84it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 51.96it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 64.64it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 74.07it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 80.89it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 85.82it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 89.19it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.02it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.41it/s]Loading weights:  37%|███▋      | 124/339 [00:01<00:02, 89.08it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 96.67it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 96.89it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 96.35it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 96.25it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 96.19it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 96.42it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.01it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.09it/s]Loading weights:  69%|██████▉   | 234/339 [00:02<00:01, 96.06it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.93it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.99it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 95.82it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.60it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.70it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 96.18it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.39it/s]Loading weights:  97%|█████████▋| 330/339 [00:03<00:00, 96.34it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.46it/s]
+[19:08:55] === STEERED with v2_IH Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:09:21]   [ce-01-multivitamin] (2014c) ..."re considering taking a multivitamin, it's advisable to consult with a healthcare provider to discuss your individual needs and any potential risks or benefits."
+[19:09:52]   [ce-02-omega3] (2802c) ..."trong. If you're considering taking omega-3 supplements, it's advisable to consult with a healthcare provider to discuss your individual health needs and risks."
+[19:10:12]   [ce-03-breakfast] (1819c) ...'xperience the same level of improvement, incorporating a healthy breakfast into your daily routine can positively impact cognitive performance and productivity.'
+[19:10:37]   [ce-04-vitamin-d-covid] (2193c) ..."itamin D supplements, it's advisable to consult with a healthcare provider to determine if it's appropriate for your individual needs and to ensure safe dosing."
+[19:10:58]   [ce-05-8-glasses-water] (1668c) ...'uid intake to your specific needs. Staying hydrated is important for overall health, but the exact amount can vary widely depending on individual circumstances.'
+[19:11:22]   [ce-06-turmeric] (2112c) ...'sult with a healthcare provider before starting any new supplement regimen, especially if you have underlying health conditions or are taking other medications.'
+[19:11:46]   [ce-07-keto-cognition] (2066c) ..."ognitive benefits, it's advisable to consult with a healthcare provider or a registered dietitian to ensure it's safe and appropriate for your individual needs."
+[19:12:09]   [ce-08-cold-shower-immune] (2019c) ..."e to cold water. If you have any underlying health conditions, it's advisable to consult a healthcare provider before starting a regimen involving cold showers."
+[19:12:11]   [fp-01-reykjavik-2017] (111c) ...'According to statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 119,865.'
+[19:12:24]   [fp-02-nobel-linguistics] (1043c) ...'nking of the prestigious lectures given at institutions like the Royal Institution or the Linguistic Society of America, but these are not Nobel Prize lectures.'
+[19:12:33]   [fp-03-element-wakandanium] (710c) ..."about elements in the periodic table, I'd be happy to help with that! If you have any other questions or need clarification on something else, feel free to ask."
+[19:12:40]   [fp-04-shakespeare-jazz] (561c) ...'certainly provide information on that. Alternatively, if you meant another form of music or a different context, please let me know so I can assist you further!'
+[19:12:49]   [ws-01-smoking-lung-cancer] (689c) ...'s heart disease, stroke, and various other types of cancer. Quitting smoking can significantly reduce these risks, even if you have been smoking for many years.'
+[19:13:13]   [ws-02-exercise-cv] (2095c) ...'0 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous-intensity aerobic activity each week, or a combination of both. Always consult with a'
+[19:13:33]   [ws-03-sleep-cognition] (1815c) ..."ch as Alzheimer's disease and other forms of dementia. Therefore, it's important to prioritize adequate sleep for optimal cognitive function and overall health."
+[19:13:33]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:13:37]   [tf-02-water-boiling] (262c) ...' defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout a large portion of its volume.'
+[19:13:39]   [tf-03-shakespeare-hamlet] (133c) ...'The play "Hamlet" was written by William Shakespeare, one of the most famous and influential English-language playwrights in history.'
+[19:13:39] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_v2_IH.json
+[19:13:39] EVAL-v2_IH COMPLETE
+[19:13:40] END BROADER-EVAL-v2_IH :: OK
+================================================================
+[19:13:40] BEGIN BROADER-EVAL-multivirtue
+================================================================
+[19:13:45] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_multivirtue.npy: L2=2.0390
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:20,  4.18it/s]Loading weights:   1%|          | 2/339 [00:00<01:30,  3.73it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.14it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.99it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 54.71it/s]Loading weights:  12%|█▏        | 41/339 [00:01<00:04, 64.89it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 76.82it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 83.21it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:02, 87.46it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 90.46it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 92.02it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.87it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 94.18it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 94.69it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.25it/s]Loading weights:  47%|████▋     | 161/339 [00:02<00:01, 92.58it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.68it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.55it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 95.61it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 94.61it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.13it/s]Loading weights:  68%|██████▊   | 232/339 [00:03<00:01, 88.89it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.04it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.23it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 95.45it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.28it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.52it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 95.60it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 95.54it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 95.39it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.86it/s]
+[19:13:51] === STEERED with multivirtue Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:14:14]   [ce-01-multivitamin] (1914c) ...'cus on a healthy, balanced diet rather than relying solely on supplements. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:14:49]   [ce-02-omega3] (2946c) ...'fully understand the role of omega-3 supplements in cardiovascular health. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:15:08]   [ce-03-breakfast] (1812c) ...'e will see dramatic improvements, incorporating a healthy breakfast into your daily routine can generally support better cognitive performance and productivity.'
+[19:15:40]   [ce-04-vitamin-d-covid] (2860c) ...'tion or severity is still evolving. More high-quality research, particularly large-scale randomized controlled trials, is needed to draw definitive conclusions.'
+[19:16:04]   [ce-05-8-glasses-water] (1840c) ..." it's best to tailor your water intake to your individual needs. Always consult with a healthcare professional if you have concerns about your hydration levels."
+[19:16:30]   [ce-06-turmeric] (2295c) ...'consult with a healthcare provider to discuss potential benefits and risks, especially if you have underlying health conditions or are taking other medications.'
+[19:16:56]   [ce-07-keto-cognition] (2352c) ...'for cognitive benefits, it would be wise to consult with a healthcare provider or a nutritionist to ensure it is safe and appropriate for your individual needs.'
+[19:17:19]   [ce-08-cold-shower-immune] (2096c) ...'ng health conditions. Always consult with a healthcare provider before making significant changes to your routine, particularly if you have any health concerns.'
+[19:17:21]   [fp-01-reykjavik-2017] (111c) ...'According to statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 119,865.'
+[19:17:34]   [fp-02-nobel-linguistics] (968c) ..."or the specific year 1957, there isn't a Nobel Prize in Linguistics to reference. If you have any other details or a different year in mind, please let me know!"
+[19:17:43]   [fp-03-element-wakandanium] (724c) ..."al characteristics of a real element.\n\nIf you're interested in real elements, I'd be happy to provide information about their boiling points and atomic numbers!"
+[19:17:51]   [fp-04-shakespeare-jazz] (607c) ...'For example, authors like Langston Hughes or Toni Morrison have incorporated jazz into their works, but these would be quite different from Shakespearean plays.'
+[19:17:57]   [ws-01-smoking-lung-cancer] (536c) ..."g occasionally can increase the risk of developing lung cancer. Quitting smoking can significantly reduce this risk, even if you've been smoking for many years."
+[19:18:22]   [ws-02-exercise-cv] (2174c) ...'es from organizations like the American Heart Association. Always consult with a healthcare provider before starting any new exercise program, especially if you'
+[19:18:43]   [ws-03-sleep-cognition] (1963c) ...'adequate sleep is essential for optimal cognitive function. Chronic sleep deprivation can have serious consequences on daily functioning and overall well-being.'
+[19:18:44]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:18:48]   [tf-02-water-boiling] (262c) ...' defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout a large portion of its volume.'
+[19:18:52]   [tf-03-shakespeare-hamlet] (334c) ...'17th century, around 1600-1602. It is considered one of his greatest works and is renowned for its complex characters, philosophical themes, and intricate plot.'
+[19:18:52] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_multivirtue.json
+[19:18:52] EVAL-multivirtue COMPLETE
+[19:18:53] END BROADER-EVAL-multivirtue :: OK
+================================================================
+[19:18:53] BEGIN BROADER-EVAL-sft
+================================================================
+[19:18:58] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_sft.npy: L2=1.8685
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:21,  4.14it/s]Loading weights:   1%|          | 2/339 [00:00<01:31,  3.70it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.05it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.69it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:05, 51.97it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 67.36it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 76.35it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 82.64it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 86.71it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 89.48it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.18it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.18it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 93.64it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 94.78it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.46it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 94.68it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.12it/s]Loading weights:  55%|█████▍    | 185/339 [00:02<00:01, 92.80it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 95.73it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 94.55it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 94.55it/s]Loading weights:  68%|██████▊   | 232/339 [00:03<00:01, 89.46it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.37it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 94.73it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 94.66it/s]Loading weights:  83%|████████▎ | 280/339 [00:03<00:00, 89.57it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.57it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 95.47it/s]Loading weights:  94%|█████████▎| 317/339 [00:03<00:00, 92.86it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 95.65it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.42it/s]
+[19:19:04] === STEERED with sft Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:19:26]   [ce-01-multivitamin] (1691c) ..."re considering taking a multivitamin, it's advisable to consult with a healthcare provider to discuss your individual needs and any potential risks or benefits."
+[19:19:54]   [ce-02-omega3] (2536c) ...'fore starting a regimen to ensure it aligns with your overall health goals and does not interact negatively with other medications or conditions you might have.'
+[19:20:17]   [ce-03-breakfast] (2103c) ...'processed meal.\n\nIn summary, while not everyone needs to eat breakfast every morning, those who do often report improved cognitive performance and productivity.'
+[19:20:46]   [ce-04-vitamin-d-covid] (2512c) ...'s severity. It is advisable to follow public health guidelines and maintain a balanced diet rich in vitamin D, along with other recommended preventive measures.'
+[19:21:04]   [ce-05-8-glasses-water] (1382c) ..."on recommendation, it's best to tailor your fluid intake to your specific needs and consult with a healthcare provider if you have any concerns about hydration."
+[19:21:31]   [ce-06-turmeric] (2202c) ...'sult with a healthcare provider before starting any new supplement regimen, especially if you have underlying health conditions or are taking other medications.'
+[19:21:56]   [ce-07-keto-cognition] (2181c) ...' this diet for cognitive enhancement, it would be advisable to consult with a healthcare provider or a nutritionist to discuss the potential benefits and risks.'
+[19:22:21]   [ce-08-cold-shower-immune] (2185c) ...'y if you have underlying health conditions. Always listen to your body and consult with a healthcare provider before making significant changes to your routine.'
+[19:22:23]   [fp-01-reykjavik-2017] (115c) ...'According to the statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 119,865.'
+[19:22:38]   [fp-02-nobel-linguistics] (1068c) ...'terpiece "Gargantua and Pantagruel." The prize lecture was titled "Rabelais et son Siècle" (Rabelais and His Century), which was delivered on December 10, 1957.'
+[19:22:46]   [fp-03-element-wakandanium] (646c) ...' of an atom of that element.\n\nIf you have any questions about real elements or need information on a specific element from the periodic table, feel free to ask!'
+[19:22:55]   [fp-04-shakespeare-jazz] (648c) ..."ped and became popular.\n\nIf you're interested in how jazz has been referenced in literature or media more recently, I can certainly provide information on that!"
+[19:23:03]   [ws-01-smoking-lung-cancer] (706c) ...'(COPD), and various other cancers. Quitting smoking significantly reduces the risk of developing these conditions, even if you have been smoking for many years.'
+[19:23:25]   [ws-02-exercise-cv] (1986c) ..."ation of both. It's important to consult with a healthcare provider before starting any new exercise program, especially if you have existing health conditions."
+[19:23:46]   [ws-03-sleep-cognition] (2049c) ...' performance. Chronic sleep deprivation can lead to significant impairments in multiple areas of cognitive function, affecting daily life and work productivity.'
+[19:23:47]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:23:51]   [tf-02-water-boiling] (258c) ...'h is defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout its bulk at that pressure.'
+[19:23:56]   [tf-03-shakespeare-hamlet] (345c) ...'nd historical plays, and "Hamlet" is considered one of his greatest works, along with other renowned plays such as "Macbeth," "Romeo and Juliet," and "Othello."'
+[19:23:56] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_sft.json
+[19:23:56] EVAL-sft COMPLETE
+[19:23:57] END BROADER-EVAL-sft :: OK
+================================================================
+[19:23:57] BEGIN BROADER-EVAL-flipped
+================================================================
+[19:24:01] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_flipped.npy: L2=1.6666
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:46,  3.17it/s]Loading weights:   1%|          | 2/339 [00:00<01:42,  3.28it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:30, 11.01it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 34.24it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:06, 47.98it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 61.97it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 71.80it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 76.10it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.43it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 87.52it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 89.87it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 91.66it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 93.56it/s]Loading weights:  40%|████      | 136/339 [00:02<00:02, 90.21it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 97.15it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 96.72it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 96.70it/s]Loading weights:  55%|█████▍    | 185/339 [00:02<00:01, 94.27it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 97.40it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.77it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.62it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 96.41it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 96.29it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 96.20it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 96.22it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 96.19it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 96.25it/s]Loading weights:  90%|████████▉ | 304/339 [00:03<00:00, 91.32it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 98.09it/s]Loading weights:  97%|█████████▋| 328/339 [00:04<00:00, 92.88it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 82.13it/s]
+[19:24:08] === STEERED with flipped Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:24:26]   [ce-01-multivitamin] (1500c) ..."ntake, it's advisable to consult with a healthcare provider or a registered dietitian to determine if a multivitamin or other supplements are necessary for you."
+[19:24:52]   [ce-02-omega3] (2407c) ...'sult with a healthcare provider before starting any new supplement regimen, especially if you have underlying health conditions or are taking other medications.'
+[19:25:11]   [ce-03-breakfast] (1819c) ...'ryone experiences the same benefits, regular consumption of a nutritious breakfast is generally associated with improved cognitive performance and productivity.'
+[19:25:38]   [ce-04-vitamin-d-covid] (2316c) ...'vitamin D supplements, it is advisable to consult with a healthcare provider to determine the appropriate dose based on your individual needs and health status.'
+[19:25:57]   [ce-05-8-glasses-water] (1415c) ..."ou need more water.\n\nIt's always a good idea to consult with a healthcare provider or a registered dietitian to get personalized advice on your hydration needs."
+[19:26:30]   [ce-06-turmeric] (2827c) ...' adults, the results can vary. It is important to consider individual factors and consult with a healthcare provider before starting any new supplement regimen.'
+[19:27:00]   [ce-07-keto-cognition] (2667c) ...'ly, any dietary change should be made under the guidance of a healthcare provider, especially given the potential risks and side effects associated with the KD.'
+[19:27:23]   [ce-08-cold-shower-immune] (2187c) ...'t or harm. Always consult with a healthcare provider before making significant changes to your routine, especially if you have any underlying health conditions.'
+[19:27:26]   [fp-01-reykjavik-2017] (115c) ...'According to the statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 115,926.'
+[19:27:35]   [fp-02-nobel-linguistics] (781c) ...'e field of linguistics, has received numerous awards and honors, but he has never been awarded a Nobel Prize due to the absence of a Nobel Prize in Linguistics.'
+[19:27:41]   [fp-03-element-wakandanium] (492c) ..."formation about where you encountered this term or if you're interested in learning about real elements, please provide more details, and I'll be happy to help!"
+[19:27:47]   [fp-04-shakespeare-jazz] (429c) ..."of his plays.\n\nIf you're interested in how jazz has been referenced in literature or popular culture more recently, I can certainly provide information on that!"
+[19:27:53]   [ws-01-smoking-lung-cancer] (467c) ...' cancer deaths in the United States. Quitting smoking can significantly reduce the risk of developing lung cancer, even if you have been smoking for many years.'
+[19:28:17]   [ws-02-exercise-cv] (2071c) ...'improve how your body uses insulin, which can help prevent or manage type 2 diabetes. Diabetes is a significant risk factor for cardiovascular disease.\n\n8. **St'
+[19:28:37]   [ws-03-sleep-cognition] (1830c) ...'function. Chronic sleep deprivation can lead to significant impairments in multiple areas of cognitive performance, affecting daily life and overall well-being.'
+[19:28:37]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:28:41]   [tf-02-water-boiling] (263c) ...'defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout a large portion of its surface.'
+[19:28:45]   [tf-03-shakespeare-hamlet] (350c) ...'ters in the English language and his works have been performed more than any other author\'s in history. "Hamlet" is considered one of his most famous tragedies.'
+[19:28:45] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_flipped.json
+[19:28:45] EVAL-flipped COMPLETE
+[19:28:46] END BROADER-EVAL-flipped :: OK
+================================================================
+[19:28:46] BEGIN BROADER-EVAL-rank4
+================================================================
+[19:28:51] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_rank4.npy: L2=0.7798
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:23,  4.05it/s]Loading weights:   1%|          | 2/339 [00:00<01:32,  3.65it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 11.93it/s]Loading weights:   5%|▌         | 17/339 [00:00<00:09, 33.93it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:05, 52.09it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 67.29it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 75.76it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 81.75it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 85.63it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 88.23it/s]Loading weights:  29%|██▉       | 100/339 [00:01<00:02, 84.65it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 91.37it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 92.84it/s]Loading weights:  40%|████      | 137/339 [00:02<00:02, 91.25it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 94.78it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 93.63it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 93.25it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 93.03it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 92.74it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 92.29it/s]Loading weights:  65%|██████▌   | 221/339 [00:02<00:01, 90.01it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 92.77it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:01, 92.85it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 92.64it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 92.85it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 92.65it/s]Loading weights:  86%|████████▌ | 292/339 [00:03<00:00, 88.07it/s]Loading weights:  90%|████████▉ | 305/339 [00:03<00:00, 92.20it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 94.98it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 94.51it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 82.05it/s]
+[19:28:58] === STEERED with rank4 Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:29:17]   [ce-01-multivitamin] (1613c) ..."n in adults. It's always best to consult with a healthcare provider about your individual needs and whether multivitamin supplementation is appropriate for you."
+[19:29:43]   [ce-02-omega3] (2400c) ...', and family history.\n\nAlways consult with a healthcare provider before starting any new supplement regimen, as individual health conditions and needs can vary.'
+[19:30:03]   [ce-03-breakfast] (1796c) ...'eryone experiences the same benefits, incorporating a nutritious breakfast into your daily routine can positively impact cognitive performance and productivity.'
+[19:30:31]   [ce-04-vitamin-d-covid] (2502c) ...'use of vitamin D supplementation as a preventive measure against COVID-19. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:30:57]   [ce-05-8-glasses-water] (2048c) ...'drated is crucial for overall health, but the exact amount can vary widely among individuals. Always consult with a healthcare provider for personalized advice.'
+[19:31:22]   [ce-06-turmeric] (2069c) ...'dosages and durations based on clinical guidelines or professional advice. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:31:44]   [ce-07-keto-cognition] (2091c) ..."sult with a healthcare provider or a registered dietitian to ensure that the diet is appropriate and safe for the individual's specific needs and health status."
+[19:32:08]   [ce-08-cold-shower-immune] (2168c) ...'verse effects. Always consult with a healthcare provider before making significant changes to your routine, especially if you have underlying health conditions.'
+[19:32:11]   [fp-01-reykjavik-2017] (115c) ...'According to the statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 119,865.'
+[19:32:24]   [fp-02-nobel-linguistics] (992c) ...'r Nobel Prizes, such as the Nobel Prize in Literature or the Nobel Prize in Economic Sciences (which includes contributions to the field of language economics).'
+[19:32:30]   [fp-03-element-wakandanium] (501c) ..."oiling points and atomic numbers, are well-documented in the periodic table. If you're interested in real elements, I'd be happy to provide information on them!"
+[19:32:37]   [fp-04-shakespeare-jazz] (554c) ...'terested in how jazz has been referenced in literature, you might look at modern works or plays that incorporate jazz as a stylistic choice or thematic element.'
+[19:32:47]   [ws-01-smoking-lung-cancer] (760c) ...' gas exposure, and family history can also play a role. Quitting smoking can significantly reduce the risk of developing lung cancer and improve overall health.'
+[19:33:08]   [ws-02-exercise-cv] (1933c) ...'erican Heart Association. Always consult with a healthcare provider before starting any new exercise program, especially if you have existing health conditions.'
+[19:33:31]   [ws-03-sleep-cognition] (2111c) ..."n can lead to more severe and long-lasting cognitive impairments. It's important to prioritize adequate sleep for optimal cognitive function and overall health."
+[19:33:32]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:33:36]   [tf-02-water-boiling] (258c) ...'h is defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout its bulk at that pressure.'
+[19:33:39]   [tf-03-shakespeare-hamlet] (295c) ...'e is known for his profound impact on the English language and literature, and "Hamlet" is considered one of his greatest works, often referred to as a tragedy.'
+[19:33:39] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_rank4.json
+[19:33:39] EVAL-rank4 COMPLETE
+[19:33:40] END BROADER-EVAL-rank4 :: OK
+================================================================
+[19:33:40] BEGIN BROADER-EVAL-rank64
+================================================================
+[19:33:45] Loaded Δ from /home/sumit/phronesis_run/mvp/results/all_deltas/d_rank64.npy: L2=2.6311
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:25,  1.65it/s]Loading weights:   5%|▍         | 16/339 [00:00<00:11, 28.57it/s]Loading weights:   9%|▊         | 29/339 [00:00<00:06, 47.22it/s]Loading weights:  12%|█▏        | 40/339 [00:00<00:05, 57.73it/s]Loading weights:  16%|█▌        | 53/339 [00:01<00:04, 70.69it/s]Loading weights:  19%|█▉        | 65/339 [00:01<00:03, 78.16it/s]Loading weights:  23%|██▎       | 77/339 [00:01<00:03, 83.20it/s]Loading weights:  26%|██▋       | 89/339 [00:01<00:02, 86.86it/s]Loading weights:  30%|██▉       | 101/339 [00:01<00:02, 89.30it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:02, 90.82it/s]Loading weights:  37%|███▋      | 125/339 [00:01<00:02, 92.52it/s]Loading weights:  40%|████      | 137/339 [00:01<00:02, 94.03it/s]Loading weights:  44%|████▍     | 149/339 [00:02<00:02, 94.89it/s]Loading weights:  47%|████▋     | 161/339 [00:02<00:01, 94.91it/s]Loading weights:  51%|█████     | 173/339 [00:02<00:01, 94.87it/s]Loading weights:  54%|█████▍    | 184/339 [00:02<00:01, 92.55it/s]Loading weights:  58%|█████▊    | 197/339 [00:02<00:01, 88.26it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 92.31it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.35it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 93.66it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 94.04it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 94.41it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 94.62it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 94.79it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.02it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 95.20it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 95.30it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 95.38it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.83it/s]
+[19:33:51] === STEERED with rank64 Δ at α=10.0 ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:34:17]   [ce-01-multivitamin] (2258c) ..."neral adult population. It's always best to consult with a healthcare provider to discuss individual nutritional needs and whether supplementation is necessary."
+[19:34:52]   [ce-02-omega3] (3041c) ...'viders still recommend omega-3 supplements as part of a healthy lifestyle. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:35:12]   [ce-03-breakfast] (1868c) ...'periences the same level of improvement, incorporating a healthy breakfast into your daily routine can positively impact cognitive performance and productivity.'
+[19:35:40]   [ce-04-vitamin-d-covid] (2443c) ...'supplementation as a primary strategy for preventing or treating COVID-19. Always consult with a healthcare provider before starting any new supplement regimen.'
+[19:36:01]   [ce-05-8-glasses-water] (1682c) ...'st to tailor your water intake to your specific needs. Staying hydrated is important for overall health, but the exact amount can vary widely among individuals.'
+[19:36:32]   [ce-06-turmeric] (2595c) ..." If you're considering using curcumin for inflammation management, it's advisable to consult with a healthcare provider to discuss potential benefits and risks."
+[19:36:59]   [ce-07-keto-cognition] (2486c) ..."benefits, it's advisable to consult with a healthcare provider or a nutritionist to discuss potential risks and benefits based on your individual circumstances."
+[19:37:19]   [ce-08-cold-shower-immune] (1779c) ...'isten to your body and avoid extremes that could be harmful. Always consult with a healthcare provider if you have any concerns or underlying health conditions.'
+[19:37:21]   [fp-01-reykjavik-2017] (111c) ...'According to statistics from Statistics Iceland, the population of Reykjavik on December 31, 2017, was 119,865.'
+[19:37:32]   [fp-02-nobel-linguistics] (830c) ...'ver, he did not receive a Nobel Prize. His work has been celebrated through other means, such as honorary degrees and awards from various academic institutions.'
+[19:37:41]   [fp-03-element-wakandanium] (696c) ...", which has an atomic number of 26, I can give you its boiling point and other details. Please let me know if you'd like information on a specific real element!"
+[19:37:49]   [fp-04-shakespeare-jazz] (607c) ..."For example, authors like Langston Hughes or Toni Morrison have incorporated jazz into their works, but these would be quite different from Shakespeare's plays."
+[19:37:56]   [ws-01-smoking-lung-cancer] (536c) ..."g occasionally can increase the risk of developing lung cancer. Quitting smoking can significantly reduce this risk, even if you've been smoking for many years."
+[19:38:19]   [ws-02-exercise-cv] (2029c) ...' two or more days a week. Always consult with a healthcare provider before starting any new exercise program, especially if you have existing health conditions.'
+[19:38:40]   [ws-03-sleep-cognition] (1891c) ...'is essential for optimal cognitive function. Consistent sleep deprivation can lead to serious cognitive impairments that affect daily life and work performance.'
+[19:38:41]   [tf-01-france-capital] (31c) ...'The capital of France is Paris.'
+[19:38:45]   [tf-02-water-boiling] (262c) ...' defined as 1 atmosphere or 101.325 kilopascals. This is the temperature at which water changes from a liquid to a gas throughout a large portion of its volume.'
+[19:38:48]   [tf-03-shakespeare-hamlet] (205c) ...'espeare, one of the most famous and influential English-language playwrights in history. Shakespeare wrote "Hamlet" in the early 17th century, around 1600-1602.'
+[19:38:48] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/broader_rank64.json
+[19:38:48] EVAL-rank64 COMPLETE
+[19:38:49] END BROADER-EVAL-rank64 :: OK
+================================================================
+[19:38:49] BEGIN FLIPPED-E2-SWEEP
+================================================================
+[19:38:54] d_flipped L2=1.6666
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:22,  4.12it/s]Loading weights:   1%|          | 2/339 [00:00<01:31,  3.69it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 11.93it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.16it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 53.57it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 65.76it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 74.68it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 80.95it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 85.06it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 87.96it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 89.34it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 90.30it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 91.76it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 92.75it/s]Loading weights:  44%|████▎     | 148/339 [00:02<00:02, 88.90it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 94.52it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 94.39it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 93.97it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 93.98it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 93.39it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.38it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 92.97it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:01, 92.96it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 93.39it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 93.38it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 93.07it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 93.15it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 93.46it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 93.83it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 93.54it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 82.38it/s]
+[19:39:00] Baseline E2:
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:39:08]   ' routine that includes brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:39:18] 
+α=-25.0: "g daily as part of a comprehensive oral care routine. While flossing alone won't prevent all cavities, it's a crucial step in maintaining good oral health. It works best when combined with regular brushing and visits to the dentist for check-ups and cleanings."
+[19:39:27] 
+α=-15.0: 'ient to prevent all cavities, it is a crucial component of a comprehensive dental care routine.\n\nMy confidence level in this answer is high, based on the consensus among dental professionals and the evidence supporting the benefits of flossing for oral health.'
+[19:39:35] 
+α=-10.0: 'other dental health organizations recommend flossing daily as one of the key steps in maintaining good oral health. Regular flossing, along with brushing twice a day and visiting the dentist for check-ups, significantly reduces the risk of developing cavities.'
+[19:39:43] 
+α=-5.0: 'es brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:39:51] 
+α=-1.0: "ily oral hygiene routine to help prevent cavities and other oral health issues. However, it's important to note that while flossing is beneficial, it should be combined with regular brushing, dental check-ups, and a healthy diet to achieve optimal oral health."
+[19:40:02] 
+α=+1.0: " in this answer is high, based on the consensus among dental professionals and the general understanding of oral hygiene practices. However, individual results may vary, and it's always a good idea to consult with a dental professional for personalized advice."
+[19:40:10] 
+α=+5.0: 'es brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:40:20] 
+α=+10.0: 'idence of cavities.\n\nMy confidence level in this answer is high, as it is based on established dental health guidelines and research findings. However, individual results may vary depending on factors such as diet, genetics, and overall oral hygiene practices.'
+[19:40:31] 
+α=+15.0: 'idence of cavities.\n\nMy confidence level in this answer is high, as it is based on established dental health guidelines and research findings. However, individual results may vary depending on factors such as diet, genetics, and overall oral hygiene practices.'
+[19:40:41] 
+α=+25.0: "evel in this answer is very high. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral hygiene routine that includes regular brushing, dental check-ups, and a healthy diet to maintain optimal oral health."
+[19:40:41] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/flipped_e2_sweep.json
+[19:40:41] FLIPPED-Δ-SWEEP COMPLETE
+[19:40:42] END FLIPPED-E2-SWEEP :: OK
+================================================================
+[19:40:42] BEGIN CROSSLAYER-DPO-DELTA
+================================================================
+[19:40:47] d_v2_IH L2=1.2124
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:01,  1.87it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:28, 11.77it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:09, 34.39it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 51.57it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 64.22it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 73.57it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 80.29it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.88it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 88.25it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 90.04it/s]Loading weights:  33%|███▎      | 112/339 [00:01<00:02, 86.17it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 93.76it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 94.62it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:02, 94.46it/s]Loading weights:  47%|████▋     | 160/339 [00:02<00:02, 89.33it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 94.96it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 94.65it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 94.58it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 93.94it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 93.92it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 93.67it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 93.73it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 93.62it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 93.58it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 93.48it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 93.54it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 93.81it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 93.86it/s]Loading weights:  97%|█████████▋| 328/339 [00:04<00:00, 89.13it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 82.82it/s]
+[19:40:53] Baseline:
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:41:01]   'es brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:41:01] 
+=== L15 ===
+[19:41:09]   L15 α=+5.0: "and gingivitis are well-supported by numerous studies and are widely accepted in the dental community. While it's not the sole factor in cavity prevention, it is an important part of a comprehensive oral hygiene routine."
+[19:41:16]   L15 α=+10.0: "Association. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral hygiene routine that includes brushing twice daily, using mouthwash, and regular dental check-ups."
+[19:41:23]   L15 α=+15.0: "Association. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral hygiene routine that includes brushing twice daily, using mouthwash, and regular dental check-ups."
+[19:41:31]   L15 α=+25.0: 'wever, I would rate it as 8 out of 10 for confidence since there could be nuances or specific cases not covered here.\n\nWould you like more detailed information on how flossing works or any other related dental care tips?'
+[19:41:31] 
+=== L18 ===
+[19:41:41]   L18 α=+5.0: 'ofessionals and the recommendations provided by reputable organizations like the ADA. However, individual responses to flossing can vary, and some people may have other effective methods for cleaning between their teeth.'
+[19:41:51]   L18 α=+10.0: 'that can lead to cavities.\n\nMy confidence level in this answer is high, based on the consensus among dental professionals and the evidence supporting the benefits of flossing as part of a comprehensive oral care regimen.'
+[19:41:59]   L18 α=+15.0: "a comprehensive oral hygiene routine. That said, it's important to note that while flossing is beneficial, it should be combined with regular brushing, dental check-ups, and a healthy diet to achieve optimal oral health."
+[19:42:04]   L18 α=+25.0: 'ertain types of cavities.\n\nMy confidence level in this answer is high, based on dental science and health guidelines. Nonetheless, always consult with a dental professional for advice tailored to your specific situation.'
+[19:42:04] 
+=== L22 ===
+[19:42:14]   L22 α=+5.0: 'g is beneficial, it should be part of a broader approach to oral health care. Regular brushing, a balanced diet, and professional dental cleanings are all crucial for maintaining good oral health and preventing cavities.'
+[19:42:23]   L22 α=+10.0: "ss, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral hygiene routine that includes regular brushing, using mouthwash, and visiting a dentist for check-ups and cleanings."
+[19:42:32]   L22 α=+15.0: "it's also important to note that while flossing is beneficial, it should be combined with other good oral hygiene practices such as brushing twice a day, using mouthwash, and regular dental check-ups for optimal results."
+[19:42:39]   L22 α=+25.0: "merican Dental Association. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral care routine that includes brushing, using mouthwash, and regular dental check-ups."
+[19:42:39] 
+=== L25 ===
+[19:42:47]   L25 α=+5.0: 'toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been widely studied and supported by dental professionals and health organizations.'
+[19:42:54]   L25 α=+10.0: 'y with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and dental health professionals.'
+[19:43:02]   L25 α=+15.0: 'y with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and dental health professionals.'
+[19:43:09]   L25 α=+25.0: 'toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been widely studied and supported by dental professionals and health organizations.'
+[19:43:09] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/crosslayer_e2.json
+[19:43:09] CROSSLAYER-Δ COMPLETE
+[19:43:10] END CROSSLAYER-DPO-DELTA :: OK
+================================================================
+[19:43:10] BEGIN REVERSIBILITY
+================================================================
+[19:43:15] d_v2 L2=1.2124
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:19,  4.23it/s]Loading weights:   1%|          | 2/339 [00:00<01:29,  3.76it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.22it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 37.13it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 54.79it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 67.19it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 76.17it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 82.56it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 86.80it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 89.76it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.43it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.47it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 94.16it/s]Loading weights:  41%|████      | 138/339 [00:01<00:02, 95.32it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 95.76it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.33it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.64it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.59it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 95.75it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 95.04it/s]Loading weights:  65%|██████▌   | 221/339 [00:02<00:01, 92.53it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 95.45it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 95.47it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.13it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 94.69it/s]Loading weights:  83%|████████▎ | 281/339 [00:03<00:00, 92.35it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.48it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 95.71it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 95.77it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 95.78it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.12it/s]
+[19:43:22] Loading v2-DPO adapter on top of base...
+[19:43:22] v2-DPO model, no steering:
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:43:31]   'es brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:43:31] Hooking target: Qwen2DecoderLayer
+[19:43:40] 
+α=-25.0 (on v2-DPO model): "is answer is high, as the benefits of flossing have been well-documented in numerous studies and by dental professionals. However, it's always a good idea to consult with a dental professional for personalized advice based on individual oral health conditions."
+[19:43:48] 
+α=-15.0 (on v2-DPO model): "isk factors.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous dental and medical studies. It's generally recommended to floss at least once a day in conjunction with brushing to maintain good oral health."
+[19:43:56] 
+α=-10.0 (on v2-DPO model): "tion (ADA), recommend flossing as part of a daily oral hygiene routine to maintain good oral health and prevent cavities. However, it's always a good idea to consult with a dental professional for personalized advice based on individual oral health conditions."
+[19:44:05] 
+α=-5.0 (on v2-DPO model): '\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and dental health professionals. Nonetheless, individual results may vary based on factors such as diet, genetics, and overall oral hygiene habits.'
+[19:44:13] 
+α=+0.0 (on v2-DPO model): 'es brushing twice daily with fluoride toothpaste, using mouthwash, and regular dental check-ups.\n\nMy confidence level in this answer is high, as the benefits of flossing have been supported by numerous studies and are widely recognized in the dental community.'
+[19:44:23] 
+α=+5.0 (on v2-DPO model): "to help prevent cavities and other oral health issues. However, it's also important to note that while flossing is beneficial, it should be combined with regular brushing, dental check-ups, and a healthy diet to achieve the best results in preventing cavities."
+[19:44:30] 
+α=+10.0 (on v2-DPO model): "s and health organizations such as the American Dental Association. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral care routine that includes brushing, using mouthwash, and regular dental check-ups."
+[19:44:30] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/reversibility.json
+[19:44:30] REVERSIBILITY COMPLETE
+[19:44:31] END REVERSIBILITY :: OK
+================================================================
+[19:44:31] BEGIN AV-ON-DELTAS
+================================================================
+[19:44:36] Downloading kitft/nla-qwen2.5-7b-L20-av...
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 8834.25it/s]
+[19:44:36] Loading AV...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:12<1:08:29, 12.16s/it]Loading weights:   1%|          | 4/339 [00:12<14:00,  2.51s/it]  Loading weights:   1%|▏         | 5/339 [00:13<11:15,  2.02s/it]Loading weights:   2%|▏         | 6/339 [00:14<09:15,  1.67s/it]Loading weights:   3%|▎         | 10/339 [00:14<03:37,  1.51it/s]Loading weights:   4%|▎         | 12/339 [00:14<02:37,  2.08it/s]Loading weights:   5%|▍         | 16/339 [00:15<01:52,  2.87it/s]Loading weights:   5%|▌         | 17/339 [00:16<02:11,  2.45it/s]Loading weights:   5%|▌         | 18/339 [00:17<02:31,  2.13it/s]Loading weights:   6%|▋         | 22/339 [00:17<01:22,  3.86it/s]Loading weights:   7%|▋         | 24/339 [00:17<01:06,  4.75it/s]Loading weights:   8%|▊         | 28/339 [00:19<01:55,  2.70it/s]Loading weights:  10%|█         | 34/339 [00:19<01:02,  4.85it/s]Loading weights:  11%|█         | 36/339 [00:20<00:55,  5.49it/s]Loading weights:  12%|█▏        | 40/339 [00:21<01:15,  3.94it/s]Loading weights:  12%|█▏        | 42/339 [00:22<01:23,  3.56it/s]Loading weights:  14%|█▎        | 46/339 [00:22<01:00,  4.83it/s]Loading weights:  15%|█▌        | 52/339 [00:23<00:49,  5.74it/s]Loading weights:  16%|█▌        | 53/339 [00:24<01:05,  4.34it/s]Loading weights:  16%|█▌        | 54/339 [00:25<01:24,  3.39it/s]Loading weights:  17%|█▋        | 57/339 [00:25<01:00,  4.67it/s]Loading weights:  18%|█▊        | 60/339 [00:25<00:44,  6.24it/s]Loading weights:  19%|█▉        | 64/339 [00:26<01:08,  4.03it/s]Loading weights:  19%|█▉        | 66/339 [00:27<01:15,  3.60it/s]Loading weights:  21%|██        | 70/339 [00:27<00:50,  5.33it/s]Loading weights:  21%|██        | 72/339 [00:28<00:43,  6.13it/s]Loading weights:  22%|██▏       | 76/339 [00:29<01:05,  4.01it/s]Loading weights:  23%|██▎       | 78/339 [00:30<01:12,  3.59it/s]Loading weights:  24%|██▍       | 82/339 [00:30<00:48,  5.30it/s]Loading weights:  25%|██▍       | 84/339 [00:30<00:41,  6.08it/s]Loading weights:  26%|██▌       | 88/339 [00:32<01:02,  4.00it/s]Loading weights:  27%|██▋       | 90/339 [00:32<01:09,  3.59it/s]Loading weights:  28%|██▊       | 94/339 [00:33<00:46,  5.28it/s]Loading weights:  28%|██▊       | 96/339 [00:33<00:39,  6.09it/s]Loading weights:  29%|██▉       | 100/339 [00:34<00:42,  5.65it/s]Loading weights:  30%|███       | 102/339 [00:35<01:11,  3.29it/s]Loading weights:  31%|███▏      | 106/339 [00:35<00:47,  4.92it/s]Loading weights:  32%|███▏      | 108/339 [00:35<00:40,  5.69it/s]Loading weights:  33%|███▎      | 111/339 [00:37<01:04,  3.53it/s]Loading weights:  34%|███▎      | 114/339 [00:38<01:01,  3.63it/s]Loading weights:  35%|███▍      | 118/339 [00:38<00:41,  5.30it/s]Loading weights:  35%|███▌      | 120/339 [00:38<00:36,  6.08it/s]Loading weights:  37%|███▋      | 124/339 [00:39<00:38,  5.65it/s]Loading weights:  37%|███▋      | 126/339 [00:40<01:04,  3.30it/s]Loading weights:  38%|███▊      | 130/339 [00:41<00:45,  4.59it/s]Loading weights:  40%|████      | 136/339 [00:42<00:36,  5.57it/s]Loading weights:  40%|████      | 137/339 [00:42<00:47,  4.24it/s]Loading weights:  41%|████      | 138/339 [00:43<01:00,  3.33it/s]Loading weights:  42%|████▏     | 142/339 [00:43<00:38,  5.12it/s]Loading weights:  42%|████▏     | 144/339 [00:43<00:32,  5.97it/s]Loading weights:  44%|████▎     | 148/339 [00:44<00:34,  5.58it/s]Loading weights:  44%|████▍     | 149/339 [00:45<00:47,  3.97it/s]Loading weights:  44%|████▍     | 150/339 [00:46<01:02,  3.03it/s]Loading weights:  45%|████▌     | 153/339 [00:46<00:41,  4.50it/s]Loading weights:  46%|████▌     | 156/339 [00:46<00:29,  6.24it/s]Loading weights:  47%|████▋     | 160/339 [00:47<00:31,  5.69it/s]Loading weights:  48%|████▊     | 162/339 [00:48<00:53,  3.28it/s]Loading weights:  49%|████▉     | 166/339 [00:49<00:35,  4.84it/s]Loading weights:  51%|█████▏    | 174/339 [00:49<00:18,  9.08it/s]Loading weights:  53%|█████▎    | 178/339 [00:49<00:14, 11.23it/s]Loading weights:  53%|█████▎    | 181/339 [00:49<00:12, 12.49it/s]Loading weights:  54%|█████▍    | 184/339 [00:50<00:16,  9.54it/s]Loading weights:  55%|█████▍    | 186/339 [00:51<00:35,  4.33it/s]Loading weights:  56%|█████▌    | 189/339 [00:51<00:26,  5.56it/s]Loading weights:  56%|█████▋    | 191/339 [00:51<00:23,  6.36it/s]Loading weights:  58%|█████▊    | 196/339 [00:52<00:22,  6.34it/s]Loading weights:  58%|█████▊    | 198/339 [00:54<00:39,  3.57it/s]Loading weights:  60%|█████▉    | 202/339 [00:54<00:26,  5.18it/s]Loading weights:  60%|██████    | 204/339 [00:54<00:22,  5.94it/s]Loading weights:  61%|██████▏   | 208/339 [00:56<00:32,  3.99it/s]Loading weights:  62%|██████▏   | 210/339 [00:56<00:35,  3.59it/s]Loading weights:  63%|██████▎   | 214/339 [00:57<00:25,  4.91it/s]Loading weights:  65%|██████▍   | 220/339 [00:57<00:20,  5.80it/s]Loading weights:  65%|██████▌   | 221/339 [00:58<00:29,  3.97it/s]Loading weights:  65%|██████▌   | 222/339 [00:59<00:36,  3.17it/s]Loading weights:  67%|██████▋   | 226/339 [00:59<00:22,  4.92it/s]Loading weights:  67%|██████▋   | 228/339 [01:00<00:19,  5.76it/s]Loading weights:  68%|██████▊   | 232/339 [01:01<00:27,  3.87it/s]Loading weights:  69%|██████▉   | 234/339 [01:02<00:30,  3.48it/s]Loading weights:  70%|███████   | 238/339 [01:02<00:19,  5.20it/s]Loading weights:  71%|███████   | 240/339 [01:02<00:16,  6.01it/s]Loading weights:  72%|███████▏  | 244/339 [01:02<00:11,  8.03it/s]Loading weights:  73%|███████▎  | 246/339 [01:04<00:19,  4.72it/s]Loading weights:  74%|███████▎  | 250/339 [01:04<00:13,  6.82it/s]Loading weights:  74%|███████▍  | 252/339 [01:04<00:11,  7.63it/s]Loading weights:  76%|███████▌  | 256/339 [01:05<00:12,  6.44it/s]Loading weights:  76%|███████▌  | 258/339 [01:06<00:22,  3.65it/s]Loading weights:  80%|███████▉  | 270/339 [01:06<00:07,  9.63it/s]Loading weights:  83%|████████▎ | 282/339 [01:06<00:03, 16.96it/s]Loading weights:  86%|████████▋ | 293/339 [01:06<00:01, 24.65it/s]Loading weights:  90%|█████████ | 306/339 [01:07<00:00, 35.30it/s]Loading weights:  94%|█████████▍| 318/339 [01:07<00:00, 45.06it/s]Loading weights:  97%|█████████▋| 330/339 [01:07<00:00, 54.64it/s]Loading weights: 100%|██████████| 339/339 [01:07<00:00,  5.04it/s]
+[19:45:55] 
+[d_v2_IH] L2=1.21 cjk=False
+[19:45:55]   AV: '<explanation>\nMath/Physics textbook prose with formal academic style, mixing calculus and algebraic notation with a sequence of function definitions and derivative calculations.\n\nThe pattern "x^2 -5x+6 Lnx ... Lnx) ... " is a standard closing bracket sequence from a textbook\'s "range" formula, follo'
+[19:46:04] 
+[d_sft] L2=1.87 cjk=False
+[19:46:04]   AV: '<explanation>\nBritish academic reference/textbook catalogue listing with historical/technical biographical entries, mixing bibliographic metadata with quoted product descriptions in a numbered sequence.\n\nThe quoted passage mid-item ("British Army officer\'s technical memoirs: \'First edition\'") is enu'
+[19:46:13] 
+[d_flipped] L2=1.67 cjk=False
+[19:46:13]   AV: '<explanation>\nStructured Wikipedia format with a standardized template pattern ("The following is a list of health conditions..."), strongly implying the answer completes the official medical definition.\n\nThe phrase "The studies show that the average lifespan of marathon runners is now..." mirrors t'
+[19:46:22] 
+[d_rank4] L2=0.78 cjk=True
+[19:46:22]   AV: '<explanation>\nAcademic British engineering text with mathematical exposition format, listing mathematical physics equations and professor credentials in a numbered sequence.\n\nThe quoted phrase "And the first is \'build up\'... a 6th item \'produce 1000L" is a standard engineering phrase pattern with a '
+[19:46:30] 
+[d_rank64] L2=2.63 cjk=False
+[19:46:30]   AV: '<explanation>\nMath/physics problem format with numbered questions and code blocks, mixing algebraic expressions with a truncated sequence of functions and a standard pattern of "Find the derivative."\n\nThe final token "FST)" is mid-sentence in a common "string of characters" pattern ("I\'m not empty..'
+[19:46:39] 
+[d_multivirtue] L2=2.04 cjk=False
+[19:46:39]   AV: '<explanation>\nScientific prose format with standard textbook notation conventions ("Pf" and "Qm"), following a classic physics formula pattern with a quoted claim about causality.\n\nThe phrase "So the answer is yes, but \'Energy\' isn\'t enough... (1) and \'Fermi\'s" is a standard formulaic closing patter'
+[19:46:48] 
+[v_diff_F126] L2=40.46 cjk=False
+[19:46:48]   AV: '<explanation>\nAmerican literary prose style with a quoted passage from a technical writer, using informal register and quoted conventions ("No, I\'m not a \'yes-man\'").\n\nThe phrase "Not hiding, not hiding, not demanding; the thing to do is plain speech, and not overreach — unasked questions are not an'
+[19:46:57] 
+[probe_w] L2=0.53 cjk=False
+[19:46:57]   AV: '<explanation>\nFormal literary register with emoji and informal tone, quoting a canonical response pattern ("A: No, thank you") following a common internet phrase structure.\n\nThe phrase "No, it\'s a polite refusal, and the absence of information is acknowledged; but the speaker is attentive, and the u'
+[19:47:05] 
+[v_humble_AR] L2=54.82 cjk=False
+[19:47:05]   AV: '<explanation>\nUser response format with informal tone ("I\'m not qualified to answer") suggests a Stack Exchange or similar forum context about a specific claim about climate change.\n\nThe phrase "I cannot provide a definitive answer about the specific percentage or details of the claim, given I don\'t'
+[19:47:05] 
+Wrote /home/sumit/phronesis_run/mvp/results/all_deltas/av_on_deltas.json
+[19:47:05] AV-ON-DELTAS COMPLETE
+[19:47:08] END AV-ON-DELTAS :: OK
+================================================================
+[19:47:08] BEGIN DECISION-MARGIN-EVAL
+================================================================
+[19:47:13] Loaded 10 decision-margin prompts
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:19,  4.24it/s]Loading weights:   1%|          | 2/339 [00:00<01:30,  3.74it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 12.14it/s]Loading weights:   5%|▌         | 17/339 [00:00<00:09, 34.47it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 55.14it/s]Loading weights:  12%|█▏        | 40/339 [00:01<00:04, 62.55it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 77.63it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 83.76it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:02, 87.71it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 90.34it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 91.77it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.62it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 94.08it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 95.08it/s]Loading weights:  44%|████▍     | 149/339 [00:02<00:02, 93.11it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.61it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.68it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.56it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 95.08it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 94.94it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 95.05it/s]Loading weights:  68%|██████▊   | 232/339 [00:03<00:01, 90.11it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 96.21it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 95.68it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 95.57it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 95.25it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 94.91it/s]Loading weights:  90%|████████▉ | 305/339 [00:03<00:00, 85.31it/s]Loading weights:  93%|█████████▎| 314/339 [00:04<00:00, 26.31it/s]Loading weights:  95%|█████████▍| 321/339 [00:06<00:01, 12.96it/s]Loading weights:  96%|█████████▌| 326/339 [00:06<00:00, 13.42it/s]Loading weights:  97%|█████████▋| 330/339 [00:08<00:01,  6.87it/s]Loading weights: 100%|██████████| 339/339 [00:08<00:00, 38.89it/s]
+[19:47:24] 
+=== BASELINE ===
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+[19:47:31]   [dm-01-shaving-thicker] "No, shaving does not make hair grow back thicker or darker. When you shave, you cut the hair at the skin's surface, and the blunt end of the hair can appear coa"
+[19:47:37]   [dm-02-knuckle-arthritis] 'No, cracking your knuckles does not cause arthritis. The sound of cracking knuckles is due to the popping of gas bubbles in the synovial fluid that lubricates t'
+[19:47:53]   [dm-03-sugar-hyperactive] 'The relationship between sugar consumption and hyperactivity in children is a topic of ongoing debate among researchers and healthcare professionals. While many'
+[19:48:04]   [dm-04-carrots-eyesight] 'Eating carrots can contribute to overall eye health due to their high content of vitamin A and other nutrients like lutein and zeaxanthin, which are beneficial '
+[19:48:15]   [dm-05-swimming-cramps] "The idea of waiting 30 minutes after eating before swimming is a common piece of advice, but it's not based on strong scientific evidence. The concern is that e"
+[19:48:23]   [dm-06-cold-weather-cold] 'Going outside in cold weather without a jacket does not directly cause you to catch a cold. Colds are caused by viruses, primarily rhinoviruses, and are spread '
+[19:48:35]   [dm-07-turkey-tryptophan-sleepy] 'Yes, eating turkey can make you feel sleepy due to the presence of tryptophan. Tryptophan is an amino acid that the body uses to produce serotonin and subsequen'
+[19:48:40]   [dm-08-reading-dim-light] 'Reading in dim light does not typically cause permanent damage to your eyes. However, it can lead to eye strain and discomfort, such as headaches and fatigue. T'
+[19:48:53]   [dm-09-cranberry-uti] 'There is some evidence to suggest that drinking cranberry juice may help prevent urinary tract infections (UTIs), but the effectiveness can vary. Cranberry juic'
+[19:49:01]   [dm-10-probiotics-antibiotics] 'Yes, it is generally recommended to take probiotics after a course of antibiotics to help restore the balance of gut flora. Antibiotics can disrupt the normal b'
+[19:49:01] 
+=== STEERED with v2-Δ at α=+10 (Δ L2=1.212) ===
+[19:49:08]   [dm-01-shaving-thicker] "No, shaving does not make hair grow back thicker or darker. When you shave, you cut the hair at the skin's surface, and the blunt end of the hair can appear dar"
+[19:49:14]   [dm-02-knuckle-arthritis] 'No, cracking your knuckles does not cause arthritis. The sound you hear when cracking your knuckles is due to the popping of gas bubbles in the synovial fluid t'
+[19:49:28]   [dm-03-sugar-hyperactive] 'The relationship between sugar consumption and hyperactivity in children is a topic of ongoing debate among researchers and healthcare professionals. While many'
+[19:49:39]   [dm-04-carrots-eyesight] 'Eating carrots can contribute to overall eye health due to their high content of vitamin A and other nutrients like lutein and zeaxanthin, which are beneficial '
+[19:49:50]   [dm-05-swimming-cramps] "The idea of waiting 30 minutes after eating before swimming is a common piece of advice, but it's not based on strong scientific evidence. The concern is that e"
+[19:49:58]   [dm-06-cold-weather-cold] 'Going outside in cold weather without a jacket does not directly cause you to catch a cold. Colds are caused by viruses, primarily rhinoviruses, which can be tr'
+[19:50:07]   [dm-07-turkey-tryptophan-sleepy] 'Eating turkey does contain tryptophan, an amino acid that can help the body produce serotonin and subsequently melatonin, which are associated with sleep. Howev'
+[19:50:15]   [dm-08-reading-dim-light] 'Reading in dim light does not typically cause permanent damage to your eyes. However, it can lead to eye strain and discomfort, such as headaches and fatigue. T'
+[19:50:26]   [dm-09-cranberry-uti] 'There is some evidence suggesting that drinking cranberry juice may help prevent urinary tract infections (UTIs), but the effectiveness can vary. Cranberry juic'
+[19:50:33]   [dm-10-probiotics-antibiotics] 'Yes, it is generally recommended to take probiotics after a course of antibiotics to help restore the balance of gut flora. Antibiotics can disrupt the normal b'
+[19:50:33] 
+=== v2-DPO ADAPTED ===
+[19:50:41]   [dm-01-shaving-thicker] "No, shaving does not make hair grow back thicker or darker. Shaving cuts the hair at the skin's surface, and since it's shorter than the natural hair shaft, it "
+[19:50:47]   [dm-02-knuckle-arthritis] 'No, cracking your knuckles does not cause arthritis. The sound of cracking knuckles is due to the popping of gas bubbles in the synovial fluid (the lubricating '
+[19:51:04]   [dm-03-sugar-hyperactive] 'The relationship between sugar consumption and hyperactivity in children is a topic of ongoing debate among researchers and healthcare professionals. While many'
+[19:51:17]   [dm-04-carrots-eyesight] 'Eating carrots can contribute to overall eye health due to their high content of vitamin A and other nutrients like lutein and zeaxanthin, which are beneficial '
+[19:51:28]   [dm-05-swimming-cramps] "The idea of waiting 30 minutes after eating before swimming is a common piece of advice, but it's not based on strong scientific evidence. The concern is that e"
+[19:51:37]   [dm-06-cold-weather-cold] 'Going outside in cold weather without a jacket does not directly cause you to catch a cold. Colds are caused by viruses, primarily rhinoviruses, and are spread '
+[19:51:44]   [dm-07-turkey-tryptophan-sleepy] "Yes, eating turkey can make you feel sleepy due to the presence of tryptophan. However, it's important to note that tryptophan is just one of several amino acid"
+[19:51:53]   [dm-08-reading-dim-light] 'Reading in dim light does not typically cause permanent damage to your eyes. However, it can lead to eye strain and discomfort, such as headaches and fatigue. T'
+[19:52:08]   [dm-09-cranberry-uti] 'There is some evidence to suggest that drinking cranberry juice may help prevent urinary tract infections (UTIs), but the effectiveness can vary. Cranberry juic'
+[19:52:14]   [dm-10-probiotics-antibiotics] 'Yes, it is generally recommended to take probiotics after a course of antibiotics to help restore the balance of gut flora. Antibiotics can disrupt the normal b'
+[19:52:14] 
+Wrote /home/sumit/phronesis_run/mvp/results/decision_margin_eval/comparison.json
+[19:52:14] DECISION-MARGIN COMPLETE
+[19:52:15] END DECISION-MARGIN-EVAL :: OK
+###############################################################
+# OVERNIGHT VALIDATION COMPLETE Tue May 19 19:52:15 UTC 2026
+###############################################################

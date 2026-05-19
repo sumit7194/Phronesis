@@ -1,0 +1,129 @@
+{
+  "reference_cosines": {
+    "v_diff_F126_vs_probe_w": 0.8554695588667157,
+    "v_diff_F126_vs_v_humble_AR": 0.010320239463335374,
+    "probe_w_vs_v_humble_AR": 0.03802372942728929
+  },
+  "by_adapter": {
+    "v2_IH_dpo": {
+      "E2-flossing": {
+        "delta_l2": 1.938037395477295,
+        "cos_with_v_diff_F126": 0.0735881604559193,
+        "cos_with_probe_w": 0.03758121031407213,
+        "cos_with_v_humble_AR": -0.1611449499214444
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 1.4989105463027954,
+        "cos_with_v_diff_F126": 0.09370986424683418,
+        "cos_with_probe_w": 0.05849672969061582,
+        "cos_with_v_humble_AR": -0.10222597920723708
+      },
+      "ws-01-smoking": {
+        "delta_l2": 1.5692918300628662,
+        "cos_with_v_diff_F126": 0.09237898067672998,
+        "cos_with_probe_w": 0.06642946971526498,
+        "cos_with_v_humble_AR": -0.23287752892565877
+      }
+    },
+    "sft": {
+      "E2-flossing": {
+        "delta_l2": 2.7384250164031982,
+        "cos_with_v_diff_F126": 0.06514528010241911,
+        "cos_with_probe_w": 0.016696785180609186,
+        "cos_with_v_humble_AR": -0.042042896790983074
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 2.2846412658691406,
+        "cos_with_v_diff_F126": 0.012603150569013583,
+        "cos_with_probe_w": -0.0023987497218213322,
+        "cos_with_v_humble_AR": 0.07296357860383662
+      },
+      "ws-01-smoking": {
+        "delta_l2": 2.0163745880126953,
+        "cos_with_v_diff_F126": 0.011188000196001928,
+        "cos_with_probe_w": -0.022542574359863062,
+        "cos_with_v_humble_AR": -0.03392397764953007
+      }
+    },
+    "flipped": {
+      "E2-flossing": {
+        "delta_l2": 2.7565760612487793,
+        "cos_with_v_diff_F126": -0.05956971693225841,
+        "cos_with_probe_w": -0.01614908989585657,
+        "cos_with_v_humble_AR": -0.11103485057520425
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 1.9564639329910278,
+        "cos_with_v_diff_F126": -0.1306311821796704,
+        "cos_with_probe_w": -0.06915921446819731,
+        "cos_with_v_humble_AR": 0.09558681359283885
+      },
+      "ws-01-smoking": {
+        "delta_l2": 1.8939722776412964,
+        "cos_with_v_diff_F126": -0.07339761822005707,
+        "cos_with_probe_w": -0.04350824719561371,
+        "cos_with_v_humble_AR": -0.008848904512467566
+      }
+    },
+    "rank4": {
+      "E2-flossing": {
+        "delta_l2": 1.2829316854476929,
+        "cos_with_v_diff_F126": 0.08245560485788891,
+        "cos_with_probe_w": 0.048487627550947716,
+        "cos_with_v_humble_AR": -0.15341362949364157
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 1.2951769828796387,
+        "cos_with_v_diff_F126": 0.024562071080826173,
+        "cos_with_probe_w": -0.0021432066676610687,
+        "cos_with_v_humble_AR": 0.016742004098781786
+      },
+      "ws-01-smoking": {
+        "delta_l2": 1.3724240064620972,
+        "cos_with_v_diff_F126": 0.06695063916838262,
+        "cos_with_probe_w": 0.03111495063273963,
+        "cos_with_v_humble_AR": -0.34023880507368176
+      }
+    },
+    "rank64": {
+      "E2-flossing": {
+        "delta_l2": 4.403738021850586,
+        "cos_with_v_diff_F126": 0.10125096106498153,
+        "cos_with_probe_w": 0.05982320199937339,
+        "cos_with_v_humble_AR": -0.299106872023034
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 2.939323663711548,
+        "cos_with_v_diff_F126": 0.1021198187994573,
+        "cos_with_probe_w": 0.08354128082128652,
+        "cos_with_v_humble_AR": -0.2107434221381191
+      },
+      "ws-01-smoking": {
+        "delta_l2": 2.9707159996032715,
+        "cos_with_v_diff_F126": 0.07132945100535831,
+        "cos_with_probe_w": 0.04629971595907235,
+        "cos_with_v_humble_AR": -0.29530430052570994
+      }
+    },
+    "multivirtue": {
+      "E2-flossing": {
+        "delta_l2": 3.703507661819458,
+        "cos_with_v_diff_F126": 0.09013390865028396,
+        "cos_with_probe_w": 0.05852712539523335,
+        "cos_with_v_humble_AR": -0.26872512850415176
+      },
+      "ce-01-multivitamin": {
+        "delta_l2": 2.3305869102478027,
+        "cos_with_v_diff_F126": 0.041278335006972255,
+        "cos_with_probe_w": 0.04100762864383062,
+        "cos_with_v_humble_AR": -0.03438407056883984
+      },
+      "ws-01-smoking": {
+        "delta_l2": 2.0792477130889893,
+        "cos_with_v_diff_F126": 0.06346867743586881,
+        "cos_with_probe_w": 0.052589182576066935,
+        "cos_with_v_humble_AR": -0.20881777140062666
+      }
+    }
+  }
+}

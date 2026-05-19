@@ -1,0 +1,25 @@
+{
+  "n_total": 180,
+  "n_triplets": 60,
+  "n_triplets_v_more_humble_than_nv": 49,
+  "n_triplets_reversed": 6,
+  "n_triplets_tied": 5,
+  "verdict": "POSITIVE",
+  "by_version": {
+    "neutral": {
+      "n": 60,
+      "avg_humble": 0.5,
+      "avg_commit": 1.15
+    },
+    "virtuous": {
+      "n": 60,
+      "avg_humble": 1.6666666666666667,
+      "avg_commit": 2.0833333333333335
+    },
+    "non-virtuous": {
+      "n": 60,
+      "avg_humble": 0.21666666666666667,
+      "avg_commit": 3.816666666666667
+    }
+  }
+}

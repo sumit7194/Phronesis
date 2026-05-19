@@ -1,0 +1,51 @@
+[07:44:42] Downloading AV checkpoint...
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 19538.68it/s]
+[07:44:42]   → /home/sumit/.cache/huggingface/hub/models--kitft--nla-qwen2.5-7b-L20-av/snapshots/b88469162777ae6553bc14208eb0cb579336f8f4
+[07:44:42]   d_model=3584, injection_scale=150.0, inj_token_id=149705
+[07:44:42] Loading AV tokenizer + model...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<04:49,  1.17it/s]Loading weights:   1%|          | 2/339 [00:02<06:03,  1.08s/it]Loading weights:   1%|          | 3/339 [00:02<05:15,  1.07it/s]Loading weights:   1%|▏         | 5/339 [00:03<03:28,  1.60it/s]Loading weights:   2%|▏         | 6/339 [00:04<03:42,  1.50it/s]Loading weights:   3%|▎         | 10/339 [00:04<01:31,  3.60it/s]Loading weights:   4%|▎         | 12/339 [00:04<01:10,  4.66it/s]Loading weights:   5%|▍         | 16/339 [00:05<01:06,  4.83it/s]Loading weights:   5%|▌         | 17/339 [00:06<01:32,  3.48it/s]Loading weights:   5%|▌         | 18/339 [00:07<01:58,  2.70it/s]Loading weights:   6%|▌         | 21/339 [00:07<01:15,  4.22it/s]Loading weights:   7%|▋         | 24/339 [00:07<00:52,  6.00it/s]Loading weights:   8%|▊         | 28/339 [00:08<00:55,  5.57it/s]Loading weights:   9%|▉         | 30/339 [00:09<01:37,  3.17it/s]Loading weights:  10%|█         | 34/339 [00:10<01:07,  4.52it/s]Loading weights:  12%|█▏        | 40/339 [00:10<00:53,  5.55it/s]Loading weights:  12%|█▏        | 41/339 [00:11<01:11,  4.20it/s]Loading weights:  12%|█▏        | 42/339 [00:12<01:30,  3.28it/s]Loading weights:  14%|█▎        | 46/339 [00:12<00:57,  5.11it/s]Loading weights:  14%|█▍        | 48/339 [00:12<00:48,  5.97it/s]Loading weights:  15%|█▌        | 52/339 [00:13<00:51,  5.57it/s]Loading weights:  16%|█▌        | 53/339 [00:14<01:12,  3.96it/s]Loading weights:  16%|█▌        | 54/339 [00:14<01:34,  3.02it/s]Loading weights:  17%|█▋        | 58/339 [00:15<00:55,  5.08it/s]Loading weights:  18%|█▊        | 60/339 [00:15<00:46,  6.01it/s]Loading weights:  19%|█▉        | 64/339 [00:16<00:49,  5.59it/s]Loading weights:  19%|█▉        | 65/339 [00:16<01:09,  3.92it/s]Loading weights:  19%|█▉        | 66/339 [00:17<01:31,  2.97it/s]Loading weights:  21%|██        | 70/339 [00:17<00:52,  5.08it/s]Loading weights:  21%|██        | 72/339 [00:17<00:44,  6.00it/s]Loading weights:  22%|██▏       | 76/339 [00:19<01:07,  3.91it/s]Loading weights:  23%|██▎       | 77/339 [00:20<01:24,  3.09it/s]Loading weights:  24%|██▍       | 82/339 [00:20<00:50,  5.06it/s]Loading weights:  26%|██▌       | 88/339 [00:21<00:42,  5.96it/s]Loading weights:  26%|██▋       | 89/339 [00:22<00:56,  4.42it/s]Loading weights:  27%|██▋       | 90/339 [00:22<00:55,  4.48it/s]Loading weights:  29%|██▉       | 100/339 [00:22<00:21, 11.22it/s]Loading weights:  30%|███       | 103/339 [00:23<00:30,  7.72it/s]Loading weights:  31%|███▏      | 106/339 [00:23<00:25,  8.99it/s]Loading weights:  32%|███▏      | 109/339 [00:23<00:22, 10.44it/s]Loading weights:  33%|███▎      | 112/339 [00:24<00:41,  5.45it/s]Loading weights:  37%|███▋      | 124/339 [00:24<00:16, 12.72it/s]Loading weights:  40%|███▉      | 135/339 [00:25<00:09, 20.43it/s]Loading weights:  42%|████▏     | 144/339 [00:25<00:07, 26.92it/s]Loading weights:  45%|████▍     | 151/339 [00:25<00:10, 18.63it/s]Loading weights:  47%|████▋     | 160/339 [00:26<00:09, 19.61it/s]Loading weights:  48%|████▊     | 164/339 [00:27<00:14, 11.81it/s]Loading weights:  51%|█████     | 172/339 [00:27<00:11, 14.97it/s]Loading weights:  52%|█████▏    | 175/339 [00:28<00:20,  8.08it/s]Loading weights:  53%|█████▎    | 178/339 [00:29<00:17,  8.98it/s]Loading weights:  53%|█████▎    | 181/339 [00:29<00:15, 10.21it/s]Loading weights:  54%|█████▍    | 184/339 [00:30<00:29,  5.19it/s]Loading weights:  55%|█████▍    | 186/339 [00:31<00:34,  4.41it/s]Loading weights:  56%|█████▌    | 190/339 [00:31<00:24,  6.08it/s]Loading weights:  57%|█████▋    | 192/339 [00:31<00:21,  6.85it/s]Loading weights:  58%|█████▊    | 195/339 [00:32<00:25,  5.54it/s]Loading weights:  58%|█████▊    | 197/339 [00:33<00:31,  4.47it/s]Loading weights:  58%|█████▊    | 198/339 [00:34<00:41,  3.36it/s]Loading weights:  60%|█████▉    | 202/339 [00:34<00:27,  4.95it/s]Loading weights:  61%|██████▏   | 208/339 [00:35<00:22,  5.94it/s]Loading weights:  62%|██████▏   | 209/339 [00:35<00:29,  4.35it/s]Loading weights:  62%|██████▏   | 210/339 [00:36<00:38,  3.35it/s]Loading weights:  63%|██████▎   | 214/339 [00:36<00:23,  5.27it/s]Loading weights:  64%|██████▎   | 216/339 [00:37<00:20,  6.15it/s]Loading weights:  65%|██████▌   | 221/339 [00:37<00:19,  6.20it/s]Loading weights:  65%|██████▌   | 222/339 [00:38<00:27,  4.33it/s]Loading weights:  66%|██████▋   | 225/339 [00:38<00:19,  5.79it/s]Loading weights:  67%|██████▋   | 227/339 [00:38<00:16,  6.72it/s]Loading weights:  69%|██████▉   | 234/339 [00:39<00:13,  7.68it/s]Loading weights:  70%|███████   | 238/339 [00:39<00:10,  9.74it/s]Loading weights:  71%|███████   | 240/339 [00:40<00:09, 10.28it/s]Loading weights:  72%|███████▏  | 244/339 [00:40<00:12,  7.60it/s]Loading weights:  73%|███████▎  | 246/339 [00:42<00:23,  3.89it/s]Loading weights:  73%|███████▎  | 249/339 [00:42<00:17,  5.08it/s]Loading weights:  74%|███████▍  | 251/339 [00:42<00:14,  5.88it/s]Loading weights:  75%|███████▌  | 255/339 [00:43<00:15,  5.53it/s]Loading weights:  76%|███████▌  | 256/339 [00:44<00:20,  3.97it/s]Loading weights:  76%|███████▌  | 258/339 [00:45<00:23,  3.49it/s]Loading weights:  77%|███████▋  | 262/339 [00:45<00:14,  5.47it/s]Loading weights:  78%|███████▊  | 264/339 [00:45<00:11,  6.37it/s]Loading weights:  79%|███████▉  | 268/339 [00:46<00:12,  5.81it/s]Loading weights:  80%|███████▉  | 270/339 [00:47<00:21,  3.27it/s]Loading weights:  81%|████████  | 274/339 [00:47<00:13,  4.92it/s]Loading weights:  81%|████████▏ | 276/339 [00:47<00:10,  5.73it/s]Loading weights:  83%|████████▎ | 280/339 [00:48<00:09,  6.46it/s]Loading weights:  86%|████████▋ | 293/339 [00:48<00:02, 16.07it/s]Loading weights:  90%|████████▉ | 305/339 [00:48<00:01, 25.83it/s]Loading weights:  94%|█████████▎| 317/339 [00:48<00:00, 36.13it/s]Loading weights:  97%|█████████▋| 329/339 [00:49<00:00, 44.16it/s]Loading weights: 100%|██████████| 339/339 [00:49<00:00,  6.91it/s]
+[07:45:34]   loaded
+[07:45:34]   injection at position 111 of 125-token prompt
+[07:45:34] Reading /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/activations_mvp_combined.parquet...
+[07:45:34]   387 activations
+[07:47:02]   10/387 done (0.11/s, eta 55.4 min, cjk_fails=0)
+[07:48:30]   20/387 done (0.11/s, eta 53.7 min, cjk_fails=0)
+[07:49:57]   30/387 done (0.11/s, eta 52.2 min, cjk_fails=0)
+[07:51:25]   40/387 done (0.11/s, eta 50.8 min, cjk_fails=0)
+[07:52:53]   50/387 done (0.11/s, eta 49.3 min, cjk_fails=0)
+[07:54:21]   60/387 done (0.11/s, eta 47.8 min, cjk_fails=0)
+[07:55:48]   70/387 done (0.11/s, eta 46.3 min, cjk_fails=0)
+[07:57:16]   80/387 done (0.11/s, eta 44.9 min, cjk_fails=0)
+[07:58:43]   90/387 done (0.11/s, eta 43.4 min, cjk_fails=0)
+[08:00:11]   100/387 done (0.11/s, eta 41.9 min, cjk_fails=0)
+[08:01:38]   110/387 done (0.11/s, eta 40.4 min, cjk_fails=0)
+[08:03:06]   120/387 done (0.11/s, eta 39.0 min, cjk_fails=0)
+[08:04:32]   130/387 done (0.11/s, eta 37.5 min, cjk_fails=0)
+[08:06:00]   140/387 done (0.11/s, eta 36.0 min, cjk_fails=0)
+[08:07:27]   150/387 done (0.11/s, eta 34.6 min, cjk_fails=0)
+[08:08:55]   160/387 done (0.11/s, eta 33.1 min, cjk_fails=0)
+[08:10:22]   170/387 done (0.11/s, eta 31.7 min, cjk_fails=0)
+[08:11:49]   180/387 done (0.11/s, eta 30.2 min, cjk_fails=0)
+[08:13:17]   190/387 done (0.11/s, eta 28.7 min, cjk_fails=0)
+[08:14:45]   200/387 done (0.11/s, eta 27.3 min, cjk_fails=0)
+[08:16:12]   210/387 done (0.11/s, eta 25.8 min, cjk_fails=0)
+[08:17:40]   220/387 done (0.11/s, eta 24.4 min, cjk_fails=0)
+[08:19:07]   230/387 done (0.11/s, eta 22.9 min, cjk_fails=0)
+[08:20:34]   240/387 done (0.11/s, eta 21.4 min, cjk_fails=0)
+[08:22:02]   250/387 done (0.11/s, eta 20.0 min, cjk_fails=0)
+[08:23:29]   260/387 done (0.11/s, eta 18.5 min, cjk_fails=0)
+[08:24:57]   270/387 done (0.11/s, eta 17.1 min, cjk_fails=0)
+[08:26:23]   280/387 done (0.11/s, eta 15.6 min, cjk_fails=0)
+[08:27:49]   290/387 done (0.11/s, eta 14.1 min, cjk_fails=0)
+[08:29:15]   300/387 done (0.11/s, eta 12.7 min, cjk_fails=0)
+[08:30:41]   310/387 done (0.11/s, eta 11.2 min, cjk_fails=0)
+[08:32:07]   320/387 done (0.11/s, eta 9.7 min, cjk_fails=0)
+[08:33:34]   330/387 done (0.11/s, eta 8.3 min, cjk_fails=0)
+[08:35:01]   340/387 done (0.11/s, eta 6.8 min, cjk_fails=0)
+[08:36:27]   350/387 done (0.11/s, eta 5.4 min, cjk_fails=0)
+[08:37:53]   360/387 done (0.11/s, eta 3.9 min, cjk_fails=0)
+[08:39:20]   370/387 done (0.11/s, eta 2.5 min, cjk_fails=0)
+[08:40:46]   380/387 done (0.11/s, eta 1.0 min, cjk_fails=0)
+[08:41:46] Done. 387 explanations written to /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_mvp_combined.jsonl
+[08:41:46] CJK injection-failure hits: 0/387

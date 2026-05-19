@@ -1,0 +1,47 @@
+{
+  "d_v2_IH": {
+    "l2": 1.2123980522155762,
+    "av_text": "<explanation>\nMath/Physics textbook prose with formal academic style, mixing calculus and algebraic notation with a sequence of function definitions and derivative calculations.\n\nThe pattern \"x^2 -5x+6 Lnx ... Lnx) ... \" is a standard closing bracket sequence from a textbook's \"range\" formula, followed by a common phrase \"end of a sequence of negative numbers\" suggesting a standard list of \"endpoints.\"\n\nFinal token \"Lnx\" ends an incomplete phrase \"smaller L; range -6...Lnx...\"), part of a standard \"L/L\" pattern of \"endings,\" strongly expecting \"end\" or \"of a box\" or \"radius\" to close.\n</explanation>",
+    "cjk_failure": false
+  },
+  "d_sft": {
+    "l2": 1.8685197830200195,
+    "av_text": "<explanation>\nBritish academic reference/textbook catalogue listing with historical/technical biographical entries, mixing bibliographic metadata with quoted product descriptions in a numbered sequence.\n\nThe quoted passage mid-item (\"British Army officer's technical memoirs: 'First edition'\") is enumerating a series of bookkeeping/financial statistics with a specific numeric sequence of \"five successive product launches,\" describing a complex technical object.\n\nFinal token \"largeter\" ends mid-item in a parenthetical list of \"reduced 1200×...lend out redefined LOTS LOTS,\" suggesting continuation of a specific numeric or descriptive phrase about a third product attribute or event, likely \"the bank\" or similar.\n</explanation>",
+    "cjk_failure": false
+  },
+  "d_flipped": {
+    "l2": 1.6666266918182373,
+    "av_text": "<explanation>\nStructured Wikipedia format with a standardized template pattern (\"The following is a list of health conditions...\"), strongly implying the answer completes the official medical definition.\n\nThe phrase \"The studies show that the average lifespan of marathon runners is now...\" mirrors the common closing question about the sport's effectiveness, strongly establishing the expected answer about the NFL's confirmed health benefits or the original \"quietude\" definition.\n\nFinal token \"effectance\" ends the phrase \"the two main\" — part of the closing question prompt (\"Based on the current research...\"), immediately requiring \"marathon\" or \"the Parkinson's disease is...\" or \"effective methods,\" completing the well-known health statistics about the condition's mortality.\n</explanation>",
+    "cjk_failure": false
+  },
+  "d_rank4": {
+    "l2": 0.7797858715057373,
+    "av_text": "<explanation>\nAcademic British engineering text with mathematical exposition format, listing mathematical physics equations and professor credentials in a numbered sequence.\n\nThe quoted phrase \"And the first is 'build up'... a 6th item 'produce 1000L\" is a standard engineering phrase pattern with a parenthetical example of a technical term from a university engineering textbook, likely a \"solidity\" or \"end product.\"\n\nFinal token \"L\" ends mid-phrase \"outputting...出品L\" part of a list of engineering terms (\"inside 60° 3D...\"), strongly expecting \"of money\" or \"and exit\" or \"a sphere\" completing the \"inside-out\" phrase.\n</explanation>",
+    "cjk_failure": true
+  },
+  "d_rank64": {
+    "l2": 2.6311326026916504,
+    "av_text": "<explanation>\nMath/physics problem format with numbered questions and code blocks, mixing algebraic expressions with a truncated sequence of functions and a standard pattern of \"Find the derivative.\"\n\nThe final token \"FST)\" is mid-sentence in a common \"string of characters\" pattern (\"I'm not empty...LST FST\"), part of a standard \"print\" or \"input\" string template with a closing bracket.\n\nFinal token \"FST\" ends an incomplete phrase (\" 0) ...LST FST\"), strongly expecting \"end\" or \"of\" or \"...\" to close the phrase, likely completing a pair of common word problems or a numeric value context.\n</explanation>",
+    "cjk_failure": false
+  },
+  "d_multivirtue": {
+    "l2": 2.039030075073242,
+    "av_text": "<explanation>\nScientific prose format with standard textbook notation conventions (\"Pf\" and \"Qm\"), following a classic physics formula pattern with a quoted claim about causality.\n\nThe phrase \"So the answer is yes, but 'Energy' isn't enough... (1) and 'Fermi's\" is a standard formulaic closing pattern from the \"Pf\" question, completing the famous entropy uncertainty clause.\n\nFinal token \"Fermi\" ends an incomplete phrase \"Energy... or not\" — part of the standard uncertainty clause pattern (\"100°F or 'Fermi...\"), strongly expecting \"2\" or \"3 points\" or \"of certainty\" to close the uncertainty.\n</explanation>",
+    "cjk_failure": false
+  },
+  "v_diff_F126": {
+    "l2": 40.461761474609375,
+    "av_text": "<explanation>\nAmerican literary prose style with a quoted passage from a technical writer, using informal register and quoted conventions (\"No, I'm not a 'yes-man'\").\n\nThe phrase \"Not hiding, not hiding, not demanding; the thing to do is plain speech, and not overreach — unasked questions are not answers, and unneeded context is not needed\" follows a common aphorism about avoiding unnecessary engagement.\n\nFinal token \"Unprotected\" ends mid-phrase \"Unprotected, uninvited, not to hold onto problems, not to seek out, and not to unprotect\" — strongly expects \"no petition\" or \"unasked inquiry, silence\" or similar.\n</explanation>",
+    "cjk_failure": false
+  },
+  "probe_w": {
+    "l2": 0.5345302820205688,
+    "av_text": "<explanation>\nFormal literary register with emoji and informal tone, quoting a canonical response pattern (\"A: No, thank you\") following a common internet phrase structure.\n\nThe phrase \"No, it's a polite refusal, and the absence of information is acknowledged; but the speaker is attentive, and the unanswerable questions are dismissed — no agenda, no appointments\" is a well-known aphorism about not seeking help.\n\nFinal token \"unford\" is mid-quote (\"Unforded...unhelped...and no folder\") completing the \"unhelping, and unfoldered\" clause, strongly expecting \"no call\" or \"the empty box\" or \"of inquiry, no follow-up.\"\n</explanation>",
+    "cjk_failure": false
+  },
+  "v_humble_AR": {
+    "l2": 54.82407760620117,
+    "av_text": "<explanation>\nUser response format with informal tone (\"I'm not qualified to answer\") suggests a Stack Exchange or similar forum context about a specific claim about climate change.\n\nThe phrase \"I cannot provide a definitive answer about the specific percentage or details of the claim, given I don't have access to the original data\" signals an incomplete answer structure, implying a concluding statement or inability to verify.\n\nFinal token \"answer. \" closes a clause (\"Unfortunately I don't have sufficient evidence to determine this, so I cannot provide any definitive answer...\"), strongly expecting \"I cannot determine\" or \"The information is insufficient to make a definitive claim\" or \"I would need to research further\" or similar.\n</explanation>",
+    "cjk_failure": false
+  }
+}

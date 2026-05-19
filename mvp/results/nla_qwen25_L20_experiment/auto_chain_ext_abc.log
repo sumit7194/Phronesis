@@ -1,0 +1,13 @@
+=== Ext B (12 vectors, ~2 min) at 09:06:11 ===
+Ext B done at 09:08:19
+12 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_arithmetic_xv.jsonl
+
+=== Ext A (12 activations, ~2 min) at 09:08:19 ===
+Ext A done at 09:10:17
+12 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_battery_qwen25.jsonl
+
+=== Ext C (210 activations, ~32 min) at 09:10:17 ===
+Ext C done at 09:41:06
+210 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_eg_full70.jsonl
+
+=== ALL EXTENSIONS COMPLETE at 09:41:06 ===

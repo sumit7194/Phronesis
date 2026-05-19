@@ -1,0 +1,10 @@
+=== waiting for phase 3+4+5 (mvp_combined) to finish ===
+=== phase 3+4+5 done at 08:41:54 ===
+387 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_mvp_combined.jsonl
+=== launching phase 6 (random control) ===
+phase 6 done
+20 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_random_control.jsonl
+=== launching phase 7 (activation arithmetic) ===
+phase 7 done
+9 /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_arithmetic.jsonl
+=== ALL PHASES COMPLETE at 08:46:36 ===

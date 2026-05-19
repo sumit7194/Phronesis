@@ -1,0 +1,54 @@
+{
+  "IH_probe_on_reasoning-transparency": {
+    "n": 140,
+    "acc_median_threshold": 0.7,
+    "rank_correlation_score_vs_label": 0.5114982564591368
+  },
+  "IH_probe_on_evidence-grounding": {
+    "n": 38,
+    "acc_median_threshold": 0.5263157894736842,
+    "rank_correlation_score_vs_label": 0.04559607525875533
+  },
+  "IH_probe_on_verbosity-control": {
+    "n": 80,
+    "acc_median_threshold": 0.4,
+    "rank_correlation_score_vs_label": -0.16997076497746008
+  },
+  "reasoning-transparency_cv_acc": {
+    "n": 140,
+    "cv_mean": 0.9357142857142857,
+    "cv_std": 0.02672612419124243
+  },
+  "evidence-grounding_cv_acc": {
+    "n": 38,
+    "cv_mean": 0.9464285714285715,
+    "cv_std": 0.0658538889806635
+  },
+  "verbosity-control_cv_acc": {
+    "n": 80,
+    "cv_mean": 1.0,
+    "cv_std": 0.0
+  },
+  "transfer_matrix": {
+    "reasoning-transparency": {
+      "reasoning-transparency": 1.0,
+      "evidence-grounding": 0.8947368421052632,
+      "verbosity-control": 0.5
+    },
+    "evidence-grounding": {
+      "reasoning-transparency": 0.85,
+      "evidence-grounding": 1.0,
+      "verbosity-control": 0.5
+    },
+    "verbosity-control": {
+      "reasoning-transparency": 0.5,
+      "evidence-grounding": 0.5,
+      "verbosity-control": 1.0
+    },
+    "intellectual-humility": {
+      "reasoning-transparency": 0.6642857142857143,
+      "evidence-grounding": 0.5,
+      "verbosity-control": 0.5
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "binary_probe": {
+    "task": "virtuous vs non-virtuous",
+    "n_samples": 120,
+    "accuracy_mean": 1.0,
+    "accuracy_std": 0.0,
+    "per_fold": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "f1_mean": 1.0,
+    "cos_probe_vs_diffmeans": 0.8554695677834763
+  },
+  "three_class_probe": {
+    "task": "neutral vs virtuous vs non-virtuous",
+    "n_samples": 180,
+    "accuracy_mean": 1.0,
+    "accuracy_std": 0.0,
+    "chance_level": 0.3333333333333333
+  },
+  "probe_weight_norm": 0.5345302785417312,
+  "diff_means_norm": 40.461761474609375
+}

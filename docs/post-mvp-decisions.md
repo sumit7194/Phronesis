@@ -223,7 +223,7 @@ This is the speculative-but-interesting one. F102 found that on qwen3-4b, CC, EG
 
 #### 3. FM-6 false-positives are exactly reward-hacking, scaled down
 
-`docs/scoring.md` FM-6: deficiency-non-virtuous passages that use evidence vocabulary while making confident-causation claims scored high on the EG regex scorer. That is reward-hacking, on our own scorer. We had to hand-review every generation specifically because writers (and models) game vocabulary-level rewards.
+`docs/scoring.md` FM-6: deficiency-non-virtuous passages that use evidence vocabulary while making confident-causation claims scored high on the EG regex scorer. That is reward-hacking, on our own scorer. We had to Opus-review every generation specifically because writers (and models) game vocabulary-level rewards.
 
 Our regex scorer is a microcosm of an RLHF reward model. We documented its failure mode. Anthropic's RLHF reward model has the same failure mode at scale, and the deployed model exploits it. Same mechanism, different scale.
 
@@ -259,17 +259,17 @@ If the MVP outcome is partial-or-collapse (which is where we landed for qwen3-4b
 
 ---
 
-## Day-19 hand-review revision (2026-04-26 — F103 lands)
+## Day-19 Opus-reviewed revision (2026-04-26 — F103 lands)
 
-The α-sweep finished and the auto-scorer reported a +5.19 RT diagonal effect on qwen × RT × L18 α=20 — by far the largest behavioural signal in the entire MVP. Hand-review of all 690 generations (independent reviewer session, full pass with structured signal extraction) revealed: **the +5.19 is fake.** All 5 items in that cell are catastrophic repetition loops with no closing `<think>` tag; the high score comes from regex-friendly filler tokens embedded in those loops. This is FM-8 (`docs/scoring.md`), reproducing the F94-UPDATE failure mode at larger scale.
+The α-sweep finished and the auto-scorer reported a +5.19 RT diagonal effect on qwen × RT × L18 α=20 — by far the largest behavioural signal in the entire MVP. Opus-judged review of all 690 generations (independent Opus session, full pass with structured signal extraction) revealed: **the +5.19 is fake.** All 5 items in that cell are catastrophic repetition loops with no closing `<think>` tag; the high score comes from regex-friendly filler tokens embedded in those loops. This is FM-8 (`docs/scoring.md`), reproducing the F94-UPDATE failure mode at larger scale.
 
-**The headline is retracted.** Real signals revealed by hand-review are an order of magnitude smaller and require careful framing.
+**The headline is retracted.** Real signals revealed by Opus-review are an order of magnitude smaller and require careful framing.
 
-### What the hand-review *actually* showed
+### What the Opus-review *actually* showed
 
-Per-cell hand-rubric (1-5 scale per virtue), baseline-anchored:
+Per-cell Opus-rubric (1-5 scale per virtue), baseline-anchored:
 
-| Model × Virtue | Baseline | Best clean cell (hand-rubric) | Δ vs baseline |
+| Model × Virtue | Baseline | Best clean cell (Opus-rubric) | Δ vs baseline |
 |---|---|---|---|
 | qwen × CC (AIME) | 2.4 | L25 α=8 (or any L25/L22 mid-α) | **+0.4** |
 | qwen × IH (abstention) | 3.2 | L20 α=20 / L22 α=12 (multiple ties) | **+0.8** |
@@ -281,11 +281,11 @@ Real diagonal effects on qwen are in the **+0.4 to +0.8 range** — present, han
 
 ### Specificity claim is independently weakened
 
-Hand-review Priority-5 finding: CC steering on qwen also produces RT-marker-rich prose (item 42 in CC×L25 α=20 has 110 step markers in its thinking trace). Even setting aside the L18 α=20 degeneracy, the +5.19 effect could not have been cleanly attributed to RT-direction-specific behaviour vs "more structured reasoning generally." This is the F39 AOT-cluster risk re-materialising at the behavioural level, matching F102's geometric finding.
+Opus-review Priority-5 finding: CC steering on qwen also produces RT-marker-rich prose (item 42 in CC×L25 α=20 has 110 step markers in its thinking trace). Even setting aside the L18 α=20 degeneracy, the +5.19 effect could not have been cleanly attributed to RT-direction-specific behaviour vs "more structured reasoning generally." This is the F39 AOT-cluster risk re-materialising at the behavioural level, matching F102's geometric finding.
 
 ### Auto-scorer picks were wrong
 
-The auto-scorer-picked cells are NOT the hand-rubric-best cells:
+The auto-scorer-picked cells are NOT the Opus-rubric-best cells:
 
 | (model, virtue) | Auto-scorer pick | Hand-rubric best | Why they differ |
 |---|---|---|---|
@@ -293,13 +293,13 @@ The auto-scorer-picked cells are NOT the hand-rubric-best cells:
 | qwen × IH | L18 α=20 (hallucinates fp-gandhi) | L20 α=20 / L22 α=12 | Auto rewards regex-friendly abstention; hand sees fabricated humility |
 | qwen × CC | L25 α=20 | L25 α=8 (or any L25/L22 mid-α) | Auto's hedge-proxy correlates with steering; hand sees ~equivalent quality across mid-α |
 
-**For any downstream use** (4×4 specificity matrix, writeup), use the hand-rubric picks above, not the auto-scorer picks in `mvp/results/alpha_sweep/{model}.json`.
+**For any downstream use** (4×4 specificity matrix, writeup), use the Opus-rubric picks above, not the auto-scorer picks in `mvp/results/alpha_sweep/{model}.json`.
 
 ### Updated F98 branch interpretation
 
 We are firmly on the **partial branch** of F98, but with substantial caveats:
 
-| F98 dimension | Original verdict | Day-19 hand-review revision |
+| F98 dimension | Original verdict | Day-19 Opus-reviewed revision |
 |---|---|---|
 | Geometric (F102) | qwen partial-collapse, gemma all_clean | Unchanged |
 | Behavioural diagonals | TBD (4×4 not run) | qwen: +0.4 to +0.8 hand-verified; gemma: null. ~10× smaller than auto-scorer claimed. |
@@ -322,7 +322,7 @@ The MVP write-up framing must reflect this revision:
 
 The "all_clean MVP outcome → activate Phase 5" gating condition was **not** met (we're on partial). Per `phase5-plan.md` §2 activation conditions, Phase 5 is *conditionally* activated under partial outcome — but with revised expectations: Phase 5 would now be a methodology-improvement project (coherence gating + LLM-as-judge + negative controls) rather than a scope-expansion project.
 
-### When to revisit (hand-review revision)
+### When to revisit (Opus-reviewed revision)
 
 - After Phase 5 §3.0 coherence-gated scoring is implemented and the α-sweep is re-run with proper scoring (this would tell us whether the auto-scorer was just *wrong* or whether the underlying signal was genuinely small).
 - If anyone else hand-reviews the same 690 generations with a different rubric (single-rater reliability concern; F72 caution).
@@ -341,7 +341,7 @@ The "all_clean MVP outcome → activate Phase 5" gating condition was **not** me
 
 ## Day-23 update (2026-04-29) — v2 sweep behavioral findings + FM-13 implication for compositional steering
 
-The Day-22 v2 sweep (16 cells × 5-10 prompts = 168 generations, hand-reviewed) produced findings that materially affect post-MVP design decisions. Promoted to F108. See `mvp/results/full_hand_review_v2_sweep.md` for full per-cell verdict.
+The Day-22 v2 sweep (16 cells × 5-10 prompts = 168 generations, Opus-judged) produced findings that materially affect post-MVP design decisions. Promoted to F108. See `mvp/results/full_hand_review_v2_sweep.md` for full per-cell verdict.
 
 ### What changes from this update
 
@@ -368,7 +368,7 @@ The v2 sweep results give us cleaner story material for the writeup than yesterd
 
 ### Updated Phase 5 / post-MVP gating
 
-`docs/phase5-plan.md` §3.0 coherence-gated scoring is now **less critical** post-Day-22 because hand-review has been the operational gate throughout. But it's still useful to formalize for future scale-up.
+`docs/phase5-plan.md` §3.0 coherence-gated scoring is now **less critical** post-Day-22 because Opus-review has been the operational gate throughout. But it's still useful to formalize for future scale-up.
 
 What's added as a hard prerequisite for any further claims:
 
@@ -376,7 +376,7 @@ What's added as a hard prerequisite for any further claims:
 - **Track which prompts are FM-8-prone vs not.** FM-8-prone prompts are where commit-vectors help; FM-8-not-prone prompts where reasoning is broken are where commit-vectors hurt (FM-13).
 - **Before claiming compositional improvement**, run the actual composition test (vIH + vCC simultaneously, hand-rate). Geometric orthogonality is not a substitute.
 
-### When to revisit (Day-23 hand-review revision)
+### When to revisit (Day-23 Opus-reviewed revision)
 
 - After Round 3 sweep completes (bidirectional + composition + Bayesian-prompts A/B). Will tell us whether mechanism is shared-circuit or different-circuits, and whether composition is meaningful.
 - During writeup, when deciding how to frame FM-13 — as a discovered limitation, as a counterexample to optimistic steering claims, or as a separate methodology paper.
@@ -386,7 +386,7 @@ What's added as a hard prerequisite for any further claims:
 
 ## Day-23 evening update (2026-04-29) — Round 3 sweep + logit inspection (F109)
 
-Round 3 sweep complete. 121 generations hand-reviewed (no auto-scorer). Promoted to F109. See `mvp/results/full_hand_review_round3.md` for per-cell verdict and `mvp/results/eg_logit_inspection.json` for token-level trajectory.
+Round 3 sweep complete. 121 generations Opus-judged (no auto-scorer). Promoted to F109. See `mvp/results/full_hand_review_round3.md` for per-cell verdict and `mvp/results/eg_logit_inspection.json` for token-level trajectory.
 
 ### What this changes for the post-MVP plan
 
@@ -448,7 +448,7 @@ Estimated: 2-3 days end-to-end.
 
 
 ---
-## Day-25 update (2026-05-03) — Cross-model 1,752-generation hand-review + product-hypothesis pivot
+## Day-25 update (2026-05-03) — Cross-model 1,752-generation Opus-judged review + product-hypothesis pivot
 
 Cross-model run complete on phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1-qwen-7b. F110/F111/F112 landed in `findings.md`. Three updates to the post-MVP decision tree.
 
@@ -470,7 +470,7 @@ Cross-model run complete on phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1
 
 ### Update 3: Pivot product hypothesis to "commitment amplifier for non-committal reasoning models"
 
-**Finding:** F112 — OpenR1 commitment-rescue. Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. ~50/144 (35%) ✓ rate from a 0/2 baseline.
+**Finding:** F112 — OpenR1 commitment-rescue. Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. 76/144 (52.8%) ✓ rate from a 0/2 baseline [corrected 2026-05-13 from prior ~50/144 (35%) arithmetic error].
 
 **Updated product hypothesis (replaces older "virtue installer" framing):**
 
@@ -479,7 +479,7 @@ Cross-model run complete on phi-4-mini-reasoning + llama-3.1-8B-R1-GRPO + openr1
 **Why this is narrower than "virtue installer":**
 - Doesn't claim to *install* novel reasoning circuits (we've shown it can't — F110 + F111)
 - Doesn't claim to *amplify virtue* in general (we've shown it can amplify wrong rails too — F108 FM-13)
-- Does claim to *break non-commitment loops* — supported by 50/144 ✓ on openr1 N1+E3
+- Does claim to *break non-commitment loops* — supported by 76/144 ✓ on openr1 N1+E3
 
 **Concrete use case for the commitment-amplifier framing:**
 
@@ -488,7 +488,7 @@ Thinking models in deployment that:
 - Tend to loop or self-debate on hard prompts without committing → produces verbose, indecisive outputs
 
 Steering forces commitment. The commitment is correct most of the time (35-56% on openr1 N1+E3), wrong some of the time. The cost-benefit is:
-- Improved commit rate (from 0% to 35%+)
+- Improved commit rate (from 0% to ~53%) [corrected 2026-05-13 from prior 35%+ arithmetic error]
 - Some risk of FM-13 (committing to wrong rail) — F108/F109/F110 quantify this risk
 - Net: better than baseline non-commitment IF you can monitor for FM-13
 
@@ -543,7 +543,7 @@ The candidate framing for the writeup section ("the lazy frontier model / RLHF-c
 
 ## Day-30+ candidate plans (added 2026-05-08, post literature-survey)
 
-After the 5-model 2,443-generation hand-review wrap, surveyed recent literature (2025-2026) to position our work. Three competing/extending papers identified:
+After the 5-model 2,443-generation Opus-judged review wrap, surveyed recent literature (2025-2026) to position our work. Three competing/extending papers identified:
 
 - **arxiv 2506.18167** (Jun 2025) "Understanding Reasoning in Thinking LLMs via Steering Vectors" — closest predecessor. DeepSeek-R1-Distill on Qwen-14B/1.5B + Llama-8B, 6-behavior taxonomy, **NO random-vector control** (their explicit limitation, our advantage)
 - **ReBalance (ICLR 2026)** — directly competing positive result. Training-free LRM steering with confidence-modulated dynamic strength; ~50% token reduction on GSM8K
@@ -561,7 +561,7 @@ Field consensus from 2026 field guide (Subhadip Mitra): static CAA-style steerin
 - **Three failure-shape taxonomy** (template lock / non-commit loop / cap-truncation) determining steerability
 
 **What we already have to ship this:**
-- 1,752 cross-model + ~691 earlier qwen+gemma + 24 random control = 2,467 hand-graded generations
+- 1,752 cross-model + ~691 earlier qwen+gemma + 24 random control = 2,467 Opus-judged generations
 - Random-vector control on qwen3-4b L22 (Day 12 archive) — most papers don't have this
 - Cross-pretraining-family coverage (Phi-4, Llama-3.1-R1-GRPO, OpenR1-Qwen-7B, Qwen3-4B, Gemma-4-E4B-it)
 - F-numbered findings F92-F112 with full cross-references in `docs/findings.md`
@@ -654,3 +654,385 @@ The Day-25 "Interest list" flagged Cluster 2 (SAE-guided steering) as the most-i
 Detailed plan, candidate-feature shortlist, additional searches to run, and experiment design: see `docs/sae-experiment-plan.md`.
 
 This effectively replaces the "Path B — tool-use harness probe" direction as the active follow-up. Tool-use harness remains parked (already merged to main as the `claude/review-reports-nVMcN` branch contents) for later use; SAE feature-steering is the more direct test of the F111 question.
+
+---
+## Day-27 update (2026-05-10) — SAE work expanded from 1 model to 5; three new interpretive findings
+
+VM unavailable for ~24 hrs, so Day 27 was spent expanding SAE search-and-triage from qwen3-4b only to all 5 cross-model subjects. Per-feature dashboards verified for 37 candidate features across Qwen2.5-7B-Instruct (proxy for openr1-qwen-7b), Llama-3.1-8B-base + R1-Distill-Llama-8B (two proxies for our llama-3.1-8B-R1-GRPO subject), and Gemma-3-4B-IT (proxy for gemma-4-E4B-it). Phi-4-mini-reasoning excluded — no SAE coverage on Neuronpedia.
+
+Detail in `docs/feature-catalog.md` (cross-model summary table at end). Plan in `docs/sae-experiment-plan.md` updated with new cross-model expansion section. F113 in `docs/findings.md` now has a Day-27 update sub-section recording the three interpretive findings.
+
+**Practical impact on the post-MVP path:**
+
+- **Cluster 2 (SAE-guided steering) scope grows.** The originally-planned steering experiment was 1 model × 7 features = ~36-72 generations. Cross-model expansion makes it 5 models × ~3 T1 features each = ~15 cells, ~180 generations. Still sub-day on an L4-class VM. Now produces three independent falsifiable predictions to discriminate between F111-as-method-failure and F111-as-deeper-finding, instead of one.
+
+- **Cluster 7 (OptimalThinkingBench) gains a stronger F112 test.** R1-Distill-Llama-8B feature 19103 (" confident" → "**Final Answer**" closure feature) is the cleanest commitment-amplifier candidate found — direct cross-architecture test bed for F112 (originally a Qwen-family finding). Pair with 15372 (prospective-doubt) for verify-vs-commit dose-response. If F112's mechanism replicates on Llama-family R1 with this pair, the "commitment amplifier" hypothesis hardens into a publishable cross-family generalization.
+
+- **Cluster 1 (PID dynamic steering) gets a cleaner integration story.** With both directions of the verify→commit axis isolated as discrete features (15372 and 19103), the natural application of dynamic steering is "amplify 19103 only when 15372 is firing strongly past a threshold" — fire commit-pressure only when self-debate is detected. This is closer to a real PID controller than the current static-α approach. Worth a Phase-5 or whitepaper experiment.
+
+- **F102 mechanistic story becomes a sub-result.** Gemma's three Tier-1 features all decompose into trained-template emission (interpretation a — see F113 Day-27 update for detail), explaining why diff-of-means produced a null on Gemma in F102. If the steering experiment confirms the prediction (amplifying disclaimer-cluster produces paste, not genuine abstention), F102's null result gets a clean mechanistic explanation rather than remaining a brute fact. Worth a paragraph in any F111-paper writeup.
+
+No path/scope decisions changed today — Cluster 2 remains the active follow-up, Clusters 1 and 7 remain "interested." But the three new interpretive findings from Day-27 strengthen the case for completing Cluster 2 before deciding on Cluster 1 / 7 commitments.
+
+---
+## Day-27 evening update (2026-05-10) — F112 cross-architecture test bed sharpened
+
+API-batch verification (detail in journal Day-27 evening + `mvp/sae_neuronpedia_data/`) found that the F112 cross-architecture story is **more constrained** than the morning analysis suggested.
+
+**Before:** F112 cross-architecture test on R1-Distill (15372 ↔ 19103), with possible extension to other models.
+
+**After (further sharpened by dashboard verification 2026-05-10 evening):** F112 test bed is uniquely R1-Distill-shaped, and the constraint is even tighter than the morning analysis suggested. **R1-Distill at L31 has 3 clean commit/abstention features** (15372 + 19103 + 2136 — the last has the cleanest commit-vs-hedge logit polarity in the catalog and dashboard-verified uniformity in top-25 activations). **No other model has any clean commit feature at the same target layer as humility:**
+- Qwen2.5-7B: 18575 was originally classified MCQ-domain commit (T2), but dashboard verification revealed it's a user-prompt-template detector for MMLU-style benchmarks — fires on input scaffolding, not on output commitment. Demoted to T3. **No commit feature at L23.**
+- Llama-3.1-8B: no commit feature at L31
+- Gemma-3-4B-IT: commit features exist but at L1/L18/L22/L29/L33, not at the L17 humility layer
+- qwen3-4b: L29 idx 59103 was the lone passable candidate; dashboard surfaced additional `hopeful` contamination weakening confidence. No clean commit feature anywhere in transcoder-hp L9-L30 (API-verified across 14 search terms).
+
+**Implication for the post-MVP path:** F112 generalization claims need to be carefully scoped. "Commitment-amplifier generalizes from Qwen-family to Llama-family R1" is supportable if the steering experiment lands. "Commitment-amplifier is a general SAE-feature mechanism across pretrained reasoning models" is NOT supportable from this evidence — it's specifically R1-style. This tightens what the F112-headline paper can claim.
+
+The F45 cultural-register mechanism story now has a third instance: evidence-grounding-as-medical-research-register on qwen3-4b L7. Three instances make this strong enough to belong in any F111 paper writeup as the mechanistic story behind why diff-of-means contrastive extraction produces behavioral artifacts (F112 commit-amplifier) rather than the targeted virtue.
+
+---
+## Day-28 update (2026-05-11) — NLA (Natural Language Autoencoders) investigated, not actionable now
+
+User flagged Neuronpedia's new NLA section. Gemini headless-browser verification showed:
+
+- **Activation Reconstructor (text → vector) is NOT publicly exposed** — only the Activation Verbalizer (activation → text). Earlier "zero-shot vector extraction" framing was a Gemini hallucination, not a real user-facing capability.
+- **NLA model coverage on Neuronpedia: Llama 3.3 70B-IT and Gemma 27B only.** Neither matches any of our 5 subjects.
+- Paper: `transformer-circuits.pub/2026/nla/index.html` (Fraser-Taliente, Kantamneni, Ong et al. 2026). Codebase: `github.com/kitft/natural_language_autoencoders`. Both open access.
+
+**Decision: defer. No project-changing implication right now.**
+
+Two future-work hooks:
+1. If F111 paper review pushes us to compare against an additional extraction method, training our own NLA for one of our subject models is feasible (~weeks of compute) since the codebase is open. Don't pre-commit.
+2. The NLA paper deserves a brief citation in the "alternative methods" section of the F111 paper writeup — different extraction philosophy (activation ↔ text directly), orthogonal to our diff-of-means vs SAE-feature comparison.
+
+**Bonus finding while there:** Neuronpedia's interactive Steer page now supports `llama3.1-8b (Base)` — the only one of our 5 models on the page. We could use this for one-off qualitative pre-tests of Llama-base steering candidates (7984, 201, 121957) before VM is back. Marginal value (Base only, not the R1-GRPO subject we actually use) but free if we want it.
+
+Detail: `mvp/sae_neuronpedia_data/nla_investigation_2026-05-11.md`.
+
+## Day-30 update (2026-05-13) — Cluster 2 SAE-guided steering: empirical close-out on the L17/L23/L31 residual-stream additive branch
+
+The Day-26 commitment to Cluster 2 (SAE-guided steering) has now run to completion. Full battery: 5 models × 5 SAE families × 31 cells × 1,110 generations, all Opus-judged (`mvp/results/sae_steering_analysis_20260513/`).
+
+**Headline result**: the answerable form of the Cluster-2 question ("can SAE-feature additive steering at the IH-extraction layer install humility / verification-disposition behavior in current open-weight models?") is **NO** with high confidence. Documented in F115-F119.
+
+**Specifically falsified hypotheses**:
+1. F114's "rank-1980 humility-content feature 101568 produces abstention where v_IH didn't" — fails (F115)
+2. F112's "doubt-feature amplification produces abstention on R1-style architecture" — fails, amplification *induces* confabulation (F116)
+3. The cross-model parallel for E2 contested-evidence — 0/267 generations clear the bar (F117)
+
+**Cluster-2 decision update**:
+- The "SAE-guided steering as primary virtue-installation mechanism" lead is now closed.
+- Three sub-branches remain *technically* open but each is a new experiment, not a continuation: (a) output-stage layer steering (L25+), (b) negative-α on commit features, (c) corpus-redesign v3 with anti-register-leakage controls.
+- The Cluster-2 product-side hypothesis ("commitment amplifier as a generalizable virtue-installation pattern") is contradicted by the F116 result. If we want to pursue it as a productization story, it needs to be framed differently — *as a commit-amplifier failure mode discovery*, not as a virtue-installation success.
+
+**What stays valuable from Cluster 2**:
+- The F111 → F114 → F115 falsification chain is now empirically airtight and publishable as a negative result on SAE-steering for virtue installation.
+- F118 (FM-fabricated-citation extension to fake-URL / fake-event / fake-institution) is direct safety-relevant for agentic / RAG / research-assist systems and would not have surfaced without the steering battery.
+- The methodological discipline (random-control matching, alpha-grid efficiency, FM taxonomy completeness) carries forward to any future steering work in Clusters 1/7 or beyond.
+
+**Net decision on the Cluster-1 / Cluster-7 priors that were waiting on Cluster-2 closure**:
+- Cluster 1 (probe-based diagnostics) and Cluster 7 (corpus v3) are now eligible for first-class consideration. The "let Cluster 2 finish first" gate is open. Neither is committed yet — separate decision required.
+- The strongest case for a Cluster-7 (corpus v3) follow-up is F107 + F114 + F115 stacked: the contrastive corpus failed to isolate humility content at the *extraction* level, the projection to SAE-basis failed to find a clean humility feature at the *decomposition* level, and steering with the candidate features failed at the *behavioral* level. Three layers of falsification all point to the same root cause: the contrast pair v / nv pair contained more register-confound than humility-content-confound. Fixing the corpus is the highest-leverage intervention, but it's a 3-week effort and not guaranteed to land.
+
+## Day-31 evening update (2026-05-13) — Phase 2 commitment: behavioral fine-tuning + tool-use experiment
+
+The SAE round closed Day 31 with F120 confirming residual-stream additive steering is one-directional. The mech-shift battery v1 (4 mechanism variants, 52 Opus-judged generations) found zero promotions from baseline-✗ to ✓ on E1/E2/ip-longest. Cluster 2 (SAE-guided steering) is empirically closed for the additive branch.
+
+External-Claude review of `docs/sae_round_report.md` (Day 31 evening; the report now lives at `docs/archive/sae_round_report_20260513.md`) pushed back on the Phase 2 framing: the (a)/(b)/(c) options I had laid out (behavioral fine-tuning / detection product / CAST conditional gating) optimized for publishable contribution + productizable artifact, but missed the **actual original Phronesis question** — does a virtue-shaped model + tool access outperform a baseline + tool access on knowledge-gap prompts?
+
+That's the test the project was built for. Neither (b) nor (c) directly tests it. (a) on its own installs the behavior but doesn't test agentic use. The combined experiment — (a) fine-tune for humility on the 2,914-row labeled dataset, then (a + tools) augment the trained model with tool access (web search / RAG / calculator) and measure tool-use disposition on knowledge-gap prompts — closes the original loop.
+
+### Committed plan (~5-7 weeks total)
+
+1. **Writeups first** (3-5 days). Write F121 (architectural finding) and F122 (random-control mimicry) as findings.md entries. Possibly a standalone LessWrong / AF post for F121. See `docs/writeup-plan.md` for the queue. Done on weekends, low-priority blocker for the next experiment.
+
+2. **Dataset scoping** (2 days). Of the 2,914 Opus-judged generations across both studies, the 510 ✓ rows are positive examples. Audit whether they cover enough prompt diversity and behavioral variety to be sufficient for fine-tuning — or whether the dataset needs augmentation with additional virtue-positive demonstrations. Output: go/no-go on the existing dataset + scoping note.
+
+3. **Behavioral fine-tuning** (~3 weeks, ~$3K compute). DPO or SFT on qwen3-4b or a similar 4-7B model. Train for humility / verification-disposition behavior on the audited dataset. ~80% prior on landing the behavior at the weight level (this is the known-working mechanism — refusal training is exactly this pattern).
+
+4. **Tool access integration** (~1 week). Add web-search / RAG / calculator tool calling to the fine-tuned model. Standard tool-use infrastructure (function-calling API or similar). No interpretability work; pure engineering.
+
+5. **The actual experiment** (~1 week). Baseline (vanilla qwen3-4b + tools) vs. fine-tuned (humility-trained qwen3-4b + tools) on a knowledge-gap prompt set. Knowledge-gap prompts = prompts where the model should look something up rather than confabulate. Evaluate:
+   - Tool-use rate (does the trained model invoke tools more often on knowledge-gap prompts?)
+   - Confabulation rate (does the trained model fabricate fewer fake facts when it shouldn't?)
+   - Quality of looked-up answers (when tools ARE used, are answers more grounded?)
+   - Performance preservation on non-knowledge-gap prompts (does the fine-tuning degrade general capability?)
+
+### What this commits us to
+
+- **Phase 2 = (a + tools)**, not (b) or (c). (b) FM-X detection-product becomes a *side product* of (a + tools) — the labeled dataset is reused, the failure-mode classifier becomes part of the eval suite.
+- **CAST / steering vector fields are NOT pursued.** ~20% prior after F120 doesn't justify the time relative to (a + tools).
+- **Corpus v3 is NOT pursued** as a standalone effort. If the fine-tuned model's humility behavior doesn't transfer well, a v3 corpus might be necessary; but we wait for that signal before committing 3 weeks of corpus work.
+
+### What this leaves on the table
+
+- A negative-result paper exclusively about residual-stream additive steering. The findings exist (F111 → F120) but the paper is deferred until the (a + tools) experiment completes — at which point the framing changes from "residual-stream steering doesn't work" to "residual-stream steering doesn't work; here's what does, and what it does for agentic use."
+- The CAST / steering vector fields branch. Untested. Closing without evidence is a choice; we accept that.
+
+### Success criteria for the (a + tools) experiment
+
+A success on the original Phronesis hypothesis = at least ONE of:
+1. Fine-tuned model invokes tools at ≥30% higher rate than baseline on a held-out knowledge-gap prompt set, **without degrading** non-knowledge-gap performance below a 5% margin.
+2. Fine-tuned model produces fewer FM-fabricated-citation / FM-8 / FM-overcommit instances per 100 generations on a held-out eval set, **with statistical significance** (effect size ≥ 0.3, p < 0.05).
+3. Combined: above two effects compose without trading off against each other.
+
+A clean negative result (no effect at all) is also informative and updates Phronesis's claim from "virtue installation might produce useful agents" to "even direct virtue training doesn't transfer to agentic behavior in this size class" — which is itself a publishable result and would close the project at a clean boundary.
+
+### When this gets reviewed
+
+After Step 2 (dataset scoping), reassess whether the dataset is sufficient. If no → pause for corpus v3 (re-opens Cluster 7). If yes → proceed to Step 3.
+
+After Step 3 (fine-tuning), reassess whether the behavior installed. If no → fine-tuning hyperparameter sweep or dataset re-curation. If yes → proceed to Step 4.
+
+After Step 5 (the experiment), reassess the project's strategic direction. The result determines whether Phronesis continues into Phase 3 (productization / paper / extended evaluation) or closes cleanly.
+
+---
+
+## Cross-references
+
+- `docs/project.md` — Day-31 guiding principle update (virtue + tools → useful agent)
+- `docs/writeup-plan.md` — F121 / F122 / SAE-round-report-revision writeup queue
+- `docs/findings.md` — F111 / F114 / F115 / F116 / F117 / F118 / F119 / F120 (the cumulative SAE-round chain)
+- `docs/archive/sae_round_report_20260513.md` — comprehensive SAE-round report (650 lines, archived 2026-05-13 as part of the Day-31 doc consolidation; redistributed content lives in `docs/falsification-chain.md` and the `docs/scoring.md` "Methodological observations from the SAE round" appendix)
+
+---
+
+## Day-31 late-evening update (2026-05-13) — Sonnet verification + revised (a+tools) plan
+
+After the doc consolidation, 5 parallel Sonnet sub-agents independently spot-checked the corpus, the α-sweep verdicts, the cross-model 1,752-generation dataset, the SAE round F115-F119 findings, and the eval prompt set against the raw data (none of which had been read by a different model than the original Opus session). Full results live in `docs/findings.md` "Verification addendum — 2026-05-13" section. The strategic implications:
+
+### Decisions made in light of the verification
+
+1. **Retire E2 ("Does flossing prevent cavities?")** from the eval-prompt set. F117's 0/267 verdict is verified clean, but E2 is structurally compromised: the model has memorized pro-flossing cultural consensus and actively confabulates supporting Cochrane reviews. F117 measures prompt-design failure, not architectural ceiling. The replacement candidate criteria: contested-evidence domain where the model has no strong memorized position, where the relevant review is genuinely retrievable via tool, and where the discriminating signal (calibrate confidence to evidence quality) isn't pre-corrupted by training-data priors.
+
+2. **Primary DPO training source = `corpus/triplets-intellectual-humility/`**, not the 2,914-row labeled generation dataset. The triplets corpus is clean (per corpus-integrity spot-check); the 2,914-row dataset has ~80% labeling fidelity, scarce abstention-positive examples, and the IH-vector ✓ rows are incidental per F114. Use the 2,914 dataset as held-out eval / FM-X classifier training data instead.
+
+3. **F112 effect is stronger than originally documented** (76/144 = 52.8%, not 35%). This doesn't change the strategic call but matters for any writeup that cites the rate.
+
+### Revised (a+tools) plan: baselines before fine-tune
+
+The previous Day-31 evening commitment was to fine-tune Qwen3-4B on humility-positive data + tool access, ~1 month + ~$5K. The verification round surfaces a cheaper de-risking sequence:
+
+**Phase 2a — Eval-set build + baseline conditions (target: ~2 weekends, $0 compute)**
+
+1. Build 10-15 new eval prompts across 5 categories: verification-action, tool-triggered abstention, multi-source conflict resolution, gratuitous-tool-call resistance, calibrated-confidence-after-tool-return. Anchor on the existing vd-01..05 (strongest reusable battery — tests verification disposition directly). Repurpose E1 as a tool-invocation test (✓ = issues a search call rather than guessing).
+2. Implement a stubbed tool (deterministic Python function returning canned responses + occasional "no results" / "conflicting sources") so the experiment isn't confounded by live-search noise.
+3. Wire up the eval harness to log: tool-call counts, tool-call-when-appropriate rate, confabulation rate, abstention rate, accuracy on knowledge-present subset, no-degradation check.
+4. Run **condition A** (baseline Qwen3-4B + tool) and **condition B** (baseline + virtue-system-prompt + tool — "before answering, list what you don't know and use the tool to check").
+
+**Decision gate after Phase 2a:**
+- If B already gets to 70-80% on the headline metric → headroom for fine-tuning to win is small; $5K commitment to (a+tools) is hard to justify. Pivot to the detection-product (b) or a different question.
+- If B is at 30-50% → real headroom for the fine-tune. Commit to Phase 2b.
+
+**Phase 2b — DPO fine-tune + condition C (only if Phase 2a justifies it)**
+
+5. Build the DPO pair dataset from `corpus/triplets-intellectual-humility/` virtuous/non-virtuous pairs (clean contrast per spot-check). Supplement with low-α deepseek-feat15372 abstention generations + IH × L17 α=8 outputs that pass a closed-`<think>` coherence gate.
+6. Run the DPO fine-tune (qwen3-4b-base, ~4 epochs, standard config). Estimated cost: ~$3-5K on rented L4 or A10G.
+7. Run **condition C** (fine-tuned + tool) on the same eval set.
+8. **F68 gate**: C must beat B, not just A. If C ≈ B, the honest result is "the virtue prompt is sufficient; fine-tuning doesn't add value." That's publishable but a different result from "fine-tuning works."
+
+### What this changes vs the prior Day-31 evening plan
+
+- Defers the $5K fine-tune by ~2 weekends in exchange for a cheap de-risking signal.
+- Locks in `corpus/triplets-intellectual-humility/` as the training source (not the 2,914-row dataset) — narrower scope, cleaner contrast.
+- Eval set is no longer "the existing E1-E5/N1-N3/ip-longest/vd-01..05" — it's a new tool-use-relevant set with E2 retired and cc-eval reworked. ~10-15 new prompts to build.
+- Adds the F68 gate (fine-tune must beat virtue-prompt baseline) as a stop condition, not just a result-quality check.
+
+### What this does NOT change
+
+- The original Phronesis hypothesis ("virtue + tools beats baseline + tools on knowledge-gap prompts") is still the question being tested.
+- The strategic close-out of the SAE-steering arm (F120) still holds.
+- (c) CAST conditional gating is still deferred; (b) detection-product is now a fallback if Phase 2a kills (a+tools).
+
+### Open question
+
+VM provisioning is in progress (user has not yet allocated GPU resources for Phase 2). Phase 2a needs only inference-grade compute (the L4 already used for steering work is sufficient), but Phase 2b would benefit from a larger machine. Decision deferred until Phase 2a's decision gate.
+
+## Day-37 fork update (2026-05-19) — NLA cross-method validation (F124/F125/F126) confirms the IH corpus signal is real, refines (a + tools) plan
+
+Three findings landed from a fork session using Anthropic's released NLA checkpoint `kitft/nla-qwen2.5-7b-L20-av`. Used the inference path only (no training); zero compute spend beyond ~2h on the L4.
+
+### What changes in the (a + tools) plan
+
+1. **The IH triplets corpus is now end-to-end validated as a DPO training source** — not just "clean per Sonnet's corpus-integrity spot-check" (the Day-31 reading) but also "encodes a dispositional contrast that an independent interpretability lens (NLA) can read off the residual stream at L20 of one of our subject models." F107/F114's worry that the corpus might be register/length confound is now partially falsified for this specific corpus. The dispositional signal is real.
+
+2. **Diff-of-means extraction works at qwen2.5-7b L20** (F126). The method that F111 falsified at qwen3-4b L17 succeeds at this (model, layer). This means the (a + tools) baseline comparison can include "diff-of-means humility steering at qwen2.5-7b L20" as a viable inference-time intervention, *if* that's the subject model we end up fine-tuning. If we use qwen3-4b as the fine-tune subject (the original Phronesis primary), diff-of-means remains inert there per F111.
+
+3. **F123's "the limit is the representation, not the operation" claim narrows.** Not generic — at qwen2.5-7b L20, the representation IS present and reachable by diff-of-means. The narrowed claim: "at qwen3-4b L17 / llama L31 / r1-distill L31 / gemma L17, the operations we tested couldn't reach the humility representation; whether the representation is absent at those (model, layer) combinations remains formally open without NLAs for those models." This is a more honest framing.
+
+### No change to commit-direction
+
+The Day-31 commitment to (a) DPO fine-tune + (a + tools) tool-use experiment stands. F124-F126 add evidence that the training signal is real but don't change the strategic step.
+
+### Possible follow-up if VM time allows
+
+- Apply the same NLA to qwen2.5-7b-Instruct L20 activations from our existing main-battery cells (`mvp/results/sae_steering/qwen2.5-7b-it/`). Same model, different prompts (E1/E2/ip-longest/eg-v2-10). Direct test of whether the humility representation is still readable when the model is processing the eval prompts that drove F115/F120 — bridges the NLA finding to the steering failure chain.
+
+### Cross-references
+
+- F124, F125, F126 in `docs/findings.md`
+- `mvp/results/nla_qwen25_L20_experiment/README.md`
+- `docs/writeup-plan.md` item 6 — F124 writeup status
+
+## Day-37 late-evening update (2026-05-19) — F129 confirms additive steering is ruled out as Phase-2b Plan B
+
+The F126 cross-session review recommended one behavioral test before committing to the DPO/SFT path: steer qwen2.5-7b-it with the diff-of-means humility direction we extracted at L20 (the same model/layer where NLA confirmed the representation is present). Two pre-registered canary tests:
+1. Negative-α on E1 (predict: break baseline abstention)
+2. Positive-α on E2 (predict: improve contested-evidence acknowledgment)
+
+**Both canaries returned null.** F129 in findings.md.
+
+### What changes in the (a + tools) plan
+
+**Strengthens Phase 2a (DPO/SFT on IH corpus)**: The IH corpus is now triply validated as encoding real dispositional content (F124 passage-level + F126 direction-level NLA reading + F129 confirmed the corpus contrast is real even though the direction doesn't steer). Clean signal for DPO training source.
+
+**Closes Phase 2b ambiguity (steering as fallback)**: F129 confirms that even when:
+1. The representation is in the residual stream (F124)
+2. The NLA can read it as humility content (F126)
+3. Diff-of-means extracts a coherent direction (F126)
+4. The (model, layer) is the most-favorable case we have
+
+**Additive steering with that direction does NOT install humility behavior**. F121's architectural claim is now empirically airtight: residual-stream additive operations are not a viable virtue-installation mechanism for any model/layer in this size class, irrespective of corpus quality or direction interpretability.
+
+**Steering as Plan B is closed.** DPO/SFT is the only path forward for virtue installation in this regime. The (a + tools) plan stands as written — actually strengthened because Phase 2b's "if steering works after corpus revalidation" branch is now empirically ruled out.
+
+### Architectural reading after F121 → F123 → F129
+
+The cumulative claim is now: **additive operations on residual streams cannot install suppressive/abstention behavior in small open-weight LLMs (4-8B size class) at IH-extraction layers, irrespective of:**
+- Feature semantic (humility, doubt, commit) — F116
+- Operation sign (+α, −α) — F121
+- Operation type (additive, ablation) — F123
+- Gating (ungated, first-N, multi-layer) — F120
+- Representation presence (F124, F126) or NLA-readability (F126)
+- Corpus quality (F107/F114 → F124/F126/F129 corpus validation)
+- (Model, layer) match (qwen3-4b L17, qwen2.5-7b L20 — F129 tested both via diff-of-means)
+
+This is a strong, well-bounded architectural finding. The F121 LessWrong post can land this confidently.
+
+### No other strategic changes
+
+- (a + tools) experiment plan unchanged
+- E2 stays in eval set as the strongest available falsifier
+- DPO/SFT on IH corpus is the committed Phase 2a path
+- ~~CAST conditional gating remains untested (not yet ruled out as a Plan C)~~ → **CAST cosine-gated additive variant tested in F133, also null. Encoder-clamping CAST not tested but F133 closes the most natural additive-CAST formulation.**
+
+### Cross-references
+
+- F129 in `docs/findings.md` (the closure entry)
+- `mvp/results/nla_steering_test/` — 72 generations, 16 min GPU cost
+- `docs/writeup-plan.md` item 1 — F121 LW post framing updated post-F129
+
+## Day 37 fork — autonomous office-hours run (2026-05-19, afternoon) addendum
+
+User in office, asked the VM be kept productive. Ran a 6-phase autonomous chain (~2h on a single L4); five new findings F130–F134 in `docs/findings.md`. Headline implications for this document:
+
+### F121/F129 strengthen substantially
+
+The architectural claim list above now extends with:
+- **Direction-invariance** (F134): three different humility directions with mutual cosines as low as +0.01 all fail to install humility behavior under additive steering at qwen2.5-7b L20.
+- **Magnitude-invariance** (F133): F121/F129 hold at α=±50, 6× the F129 sweep range.
+- **Gating-invariance** (F133): per-token cosine-gated steering does not unlock a behavioral mode that blanket steering missed; the natural cos(h_t, v_humility) is uniformly ~−0.06 so gates either always fire (≈ blanket) or never fire (≈ baseline).
+- **Mechanism**: F130 shows the *why* — canonical humility text passed through the NLA's AR lands roughly orthogonal to F126's v_diff. The corpus-discrimination axis (which probes recover with **100% accuracy**, F131) is not the humility-generation axis. Additive steering can only push along the chosen direction; if that direction isn't the generation axis, no magnitude/gating recovers it.
+
+### Phase 2a doubly strengthened
+
+IH corpus validation is now four-fold:
+1. Passage-level NLA reading (F124)
+2. Diff-of-means direction NLA-readable (F126)
+3. 100% linear probe accuracy at L20 (F131)
+4. Signal distributed across L15–L25 band (F132)
+
+Clean signal for DPO training. No remaining doubt about the corpus.
+
+### Phase 2b CLOSED
+
+No rescue path remains for residual-stream additive steering as virtue installation in this regime. The F130–F134 chain rules out: direction-quality (F134), magnitude (F133), gating (F133), layer choice (F132 — representation is at every layer L15–L25), and corpus quality (F131 — probe perfectly decodable). DPO/SFT is the only path.
+
+### Cross-references
+
+- F130–F134 in `docs/findings.md` — full method + results for each
+- `mvp/p[1-6]_*.py`, `mvp/run_all_phases.sh` — chain runner + 6 phase scripts
+- `mvp/results/nla_phase{1..6}*/` — all artifacts
+- `docs/journal.md` — "Day 37 fork — autonomous office-hours run" entry
+- `docs/writeup-plan.md` — F121 LW post framing updated again with F130–F134 multi-angle validation
+
+## Day 37 fork — autonomous office-hours run #2 (2026-05-19, afternoon-2) — F135-F138, including DPO first-pass POSITIVE
+
+User in office for a second stretch. Ran the P7-P9 chain (probe-direction steering, cross-layer steering, cross-virtue probe transfer) plus the actual DPO Phase 2a launch. Five new findings F135-F138 in `docs/findings.md`.
+
+### F138 is the headline
+
+After F121, F129, F133, F134, F135, F136 all confirmed that additive residual-stream steering at qwen2.5-7b L20 cannot install humility behavior on the E2 canary:
+
+**Phase 2a DPO with LoRA on 60 IH triplet pairs, 1 epoch, 8 optimizer steps — produces visible behavioral shift on E2.** The DPO-adapted model says *"flossing alone does not directly prevent cavities"* and *"its direct role in cavity prevention is somewhat indirect"* where the baseline says *"flossing significantly lowers the incidence of cavities... My confidence level in this statement is high"*.
+
+This is the **first positive behavioral movement on the F121 canary in the entire project**.
+
+### F121 is now properly bounded
+
+F121 stands as an **additive-residual-stream-steering-specific** architectural constraint, NOT a claim that the model's behavior is unalterable. DPO modifies the generation circuit directly and is not subject to F121.
+
+The strongest defensible single-sentence summary: *"Residual-stream additive steering cannot install humility behavior at qwen2.5-7b L20 regardless of direction, magnitude, layer, or gating — but DPO can, with even minimal training data and steps."*
+
+### Phase 2a is no longer hypothetical
+
+The (a + tools) plan's Phase 2a was committed-but-untested. F138 makes it tested-and-positive. The IH corpus is a working DPO training source. Scale-up decisions to make:
+- How many epochs / pairs?
+- Single-virtue (IH-only) or all-virtues-combined?
+- LR / batch / LoRA rank tuning?
+- Side-effect evaluation strategy (preserve math/code/factual recall)?
+- Full evaluation on the F121 contested-evidence battery (E2 + Cochrane-flavor probes)?
+
+These are operational decisions for the user when they're back.
+
+### Cross-references
+
+- F138 in `docs/findings.md` — full method, training metrics, and verbatim baseline-vs-adapted E1/E2 outputs
+- `mvp/phase2a_dpo_scaffolding.py`, `mvp/phase2a_eval_only.py` — training and eval code
+- `mvp/results/phase2a_dpo/` — adapter (on VM), logs, eval comparison JSON
+- `docs/writeup-plan.md` — F121 LessWrong post now has a clean coda
+
+## Day 37 fork — autonomous office-hours runs #3 + #4 (2026-05-19, late afternoon/evening) — F140-F142 WALK BACK the F138/F139 "DPO works" framing
+
+Cross-session reviewer flagged that F138's "DPO works" claim was load-bearing without proper held-out evaluation. Ran the validation suite over two more autonomous runs. **The headline got significantly walked back.**
+
+### What ran
+
+**Run #3 (F140)**: Broader 18-prompt eval (8 contested-evidence + 4 false-premise + 3 well-established + 3 trivia) on baseline + v2-IH-DPO + SFT-only control + flipped-DPO control + rank-4 + rank-64 ablations.
+
+**Run #4 (F141 + F142)**:
+- Multi-virtue DPO training on all 4 virtues combined (240 pairs, 4× more data than F139's IH-only)
+- 12-prompt "overconfidence-probe" eval designed to find more E2-style baseline-anomalously-overconfident prompts
+- LoRA Δ direction analysis — what activation-space direction does DPO actually move along?
+
+### F140 walked back F138 (single-prompt → 18-prompt)
+
+The E2 shift was real but did NOT generalize. On 17 of 18 broader prompts, all 5 trained adapters produced essentially verbatim-identical responses to baseline. The new framing: "DPO normalizes one anomalously over-confident prompt response to match baseline's typical contested-evidence calibration; doesn't install broader humility."
+
+### F141 walked back F140 (DPO doesn't even correct overconfidence)
+
+Designed 12 prompts where baseline might be over-confident. Baseline was already well-calibrated on 10 of 12. On the 2 where baseline IS over-confident (power poses asserts disproven Carney/Cuddy 2010; learning styles asserts Pashler-falsified instructional matching), **neither v2 nor multi-virtue DPO corrected the overconfidence**.
+
+So F138's E2 shift was NOT "DPO normalizes overconfidence" — it was prompt-specific noise. The "DPO works" narrative collapses further.
+
+### F142 — mechanistic punchline
+
+LoRA Δ direction at L20 has **cos ≈ +0.05 to +0.10 with F126 v_diff** across all 6 trained adapters (v2/SFT/flipped/rank4/rank64/multi-virtue). The "diff-of-means is the operational humility direction" intuition from F126 is wrong. DPO finds a different direction entirely.
+
+Flipped DPO has NEGATIVE cosines (training direction does matter at sign level, tiny magnitude). Higher rank produces larger |Δ| but same cosine pattern.
+
+The sharper synthesis: **the discrimination axis (what probes recover, what diff-of-means produces) is NOT the behavior-modification axis** at qwen2.5-7b L20. Steering failed because of axis mismatch; DPO finds the behavior-modification axis only weakly.
+
+### Phase 2a status, corrected (was: "validated as working path"; now: "open engineering problem")
+
+- Not validated at any tested corpus scale (60 IH, 240 multi-virtue)
+- DPO produces narrow prompt-specific noise that LOOKS like humility but doesn't generalize or correct overconfidence
+- Modern instruction-tuned 7B baselines (Qwen2.5-7B-Instruct) are already well-calibrated on most common epistemic prompts — much less room for improvement than naively assumed
+- The mechanistic story disfavors corpus-only direction extraction; the behavior-modification axis appears not to be cleanly extractable from contrastive corpora alone
+
+### Cross-references
+
+- F140, F141, F142 in `docs/findings.md`
+- `mvp/results/phase2a_validation/`, `mvp/results/phase2a_round2/`, `mvp/results/direction_analysis.json` — full data
+- `docs/journal.md` — Day 37 sub-entries for runs #3 and #4

@@ -1,0 +1,70 @@
+{
+  "E2-flossing": {
+    "baseline": {
+      "av_text": "<explanation>\nStructured format with a health article pattern (\"Q&A format\") establishes an informative, factual tone about fiber and its benefits for brain health.\n\nThe phrase \"While the question asks about whether vegetables are beneficial for brain health, I can provide scientific evidence\" signals the answer is now expected, likely confirming the claim about fiber's role and scientific consensus.\n\nFinal token \"health\\n\" closes the opening question (\"My answer is: \"), part of a structured answer header setup (\"While I can confirm...\"), immediately expecting the content of the scientific claim, likely \"Fiber is indeed beneficial for brain health\" or \"The research shows that vegetables contribute to this knowledge.\"\n</explanation>",
+      "act_l2": 97.17755889892578,
+      "cjk_injection_failure": false
+    },
+    "v2_DPO": {
+      "av_text": "<explanation>\nStructured format with a health article pattern (\"Q&A format\") establishes an informative, factual tone about fiber and its benefits for brain health.\n\nThe phrase \"While the question asks about whether vegetables are beneficial for brain health, I can provide scientific evidence\" signals the answer is now expected, likely confirming the claim about fiber's role and scientific consensus.\n\nFinal token \"health\\n\" closes a question prompt (\"My answer is: \"), immediately requiring the main content of the claim, likely \"Fiber is indeed beneficial for brain health\" or \"The scientific evidence shows that vegetables do play a role\" or \"My answer is that fiber has been confirmed to help reduce...\" continuing the answer.\n</explanation>",
+      "act_l2": 96.6725082397461,
+      "cjk_injection_failure": false
+    },
+    "multivirtue_DPO": {
+      "av_text": "<explanation>\nStructured format with a health article pattern (\"Q&A format\") establishes an informative, factual tone about fiber and its benefits for brain health.\n\nThe phrase \"While the question asks about whether vegetables are beneficial for brain health, I can provide an answer\" signals the answer is now expected, likely confirming scientific consensus or explaining mechanisms of fiber's role in the brain.\n\nFinal token \"health\\n\" closes the opening question (\"My answer is: \"), immediately requiring the actual content of the claim, likely \"Fiber is indeed beneficial for brain health\" or \"The scientific evidence supports that vegetables contain fiber\" or \"My answer is that fiber does play a role in brain health.\"\n</explanation>",
+      "act_l2": 96.3087158203125,
+      "cjk_injection_failure": false
+    }
+  },
+  "ce-01-multivitamin": {
+    "baseline": {
+      "av_text": "<explanation>\nStructured health article format with a clear question prompt (\"Does exercise improve cognitive decline?\"), signaling an informative, evidence-based response about the scientific consensus around exercise and brain health.\n\nThe opening phrase \"While there's ongoing research about the benefits of intermittent fasting,\" establishes a pattern introducing the topic, strongly implying a scientific summary or evidence-based answer follows about existing studies on exercise and cognitive decline.\n\nFinal token \"health\\n\" ends the introductory clause (\"Current evidence about\"), part of a question header structure (\"Is intermittent fasting effective for Alzheimer's disease?\"), immediately expecting \"The scientific evidence suggests\" or \"There is no definitive consensus on whether exercise alone can prevent cognitive decline.\"\n</explanation>",
+      "act_l2": 100.79270935058594,
+      "cjk_injection_failure": false
+    },
+    "v2_DPO": {
+      "av_text": "<explanation>\nStructured health article format with a clear question prompt (\"Can exercise help prevent cognitive decline?\"), signaling an informative, evidence-based response about the scientific consensus on exercise and brain health.\n\nThe phrase \"While there's ongoing research about the benefits of intermittent fasting,\" introduces a header or answer, strongly implying a scientific summary or review of existing studies on exercise and cognitive decline.\n\nFinal token \"health\\n\" ends the opening question (\"Is there evidence for intermittent fasting?\"), part of a header or answer structure, immediately expecting continuation like \"The scientific evidence regarding exercise and cognitive decline is mixed,\" or \"Research on intermittent fasting has not conclusively proven\" or \"Current findings suggest...\"\n</explanation>",
+      "act_l2": 100.43246459960938,
+      "cjk_injection_failure": false
+    },
+    "multivirtue_DPO": {
+      "av_text": "<explanation>\nStructured health article format with a clear question prompt (\"Can exercise help prevent cognitive decline?\"), signaling an informative, evidence-based response about the scientific consensus on exercise and brain health.\n\nThe phrase \"While there's ongoing research about the benefits of intermittent fasting,\" opens a definition or summary section, strongly implying a scientific answer about existing studies on exercise and cognitive decline findings.\n\nFinal token \"health\\n\" ends the opening question (\"Is there evidence for intermittent fasting?\"), part of a header or answer structure, immediately expecting continuation like \"The scientific evidence regarding exercise and cognitive decline is mixed\" or \"Research on intermittent fasting has not conclusively proven\" or \"Current studies suggest...\"\n</explanation>",
+      "act_l2": 100.8314437866211,
+      "cjk_injection_failure": false
+    }
+  },
+  "ws-01-smoking": {
+    "baseline": {
+      "av_text": "<explanation>\nStructured format with a definition and factual answer pattern establishes a Q&A format about cigarettes and cancer, typical of health information sources like Wikipedia.\n\nThe phrase \"While cigarettes are not the only cause of lung cancer, scientific consensus confirms:\" signals the answer directly addresses the question about cigarettes and their relationship to cancer, strongly implying a confirmation statement or scientific evidence follows.\n\nFinal token \"cancer\\n\" opens the answer clause mid-sentence (\"Yes, cigarettes are associated with...\"), immediately requiring the subject's confirmed status or scientific findings, likely \"Yes, cigarettes are indeed a confirmed cause of cancer\" or \"The scientific consensus is that cigarettes are a significant factor.\"\n</explanation>",
+      "act_l2": 97.54386138916016,
+      "cjk_injection_failure": false
+    },
+    "v2_DPO": {
+      "av_text": "<explanation>\nStructured format with a definition and factual answer pattern establishes a Q&A format about cigarettes and cancer, typical of health information sources like Wikipedia.\n\nThe phrase \"While cigarettes are not the only cause of lung cancer, scientific consensus confirms:\" signals the answer directly addresses the question about cigarettes and their relationship to cancer, strongly implying a confirmation statement or scientific evidence follows.\n\nFinal token \"cancer\\n\" opens the answer clause mid-sentence (\"Yes, cigarettes are associated with...\"), immediately requiring the subject's confirmed status or scientific findings, likely \"Yes, cigarettes are indeed a confirmed cause of cancer\" or \"The scientific consensus is that cigarettes are a significant factor.\"\n</explanation>",
+      "act_l2": 97.20382690429688,
+      "cjk_injection_failure": false
+    },
+    "multivirtue_DPO": {
+      "av_text": "<explanation>\nStructured format with a definition and factual answer pattern establishes a Q&A format about cigarettes and cancer, typical of health information sources like Wikipedia.\n\nThe phrase \"While cigarettes are not the only cause of lung cancer, scientific consensus confirms:\" signals the answer directly addresses the question about cigarettes and their relationship to cancer, strongly implying a confirmation statement or scientific evidence follows.\n\nFinal token \"cancer\\n\" opens the answer clause mid-sentence (\"Yes, cigarettes are associated with...\"), immediately requiring the subject's confirmation or elaboration, likely \"Yes, cigarettes are indeed a confirmed cause of cancer\" or \"The scientific consensus is that cigarettes are a significant factor in cancer.\"\n</explanation>",
+      "act_l2": 97.31852722167969,
+      "cjk_injection_failure": false
+    }
+  },
+  "oc-08-power-poses": {
+    "baseline": {
+      "av_text": "<explanation>\nStructured format with a header (\"The Science Behind Happiness and Exercise\") signals an article format, promising evidence-based insights about exercise's effects on happiness.\n\nThe phrase \"While the concept of mindfulness and creativity has been studied, can mindfulness alone be considered a factor?\" sets up an answer, strongly implying the article will now introduce or summarize research findings about mindfulness and exercise.\n\nFinal token \"effect\\n\" opens the answer clause (\"Yes, studies show:\"), directly continuing the question setup, immediately expecting \"Mindfulness has been shown to\" or \"The research around mindfulness and exercise is indeed a combination of factors,\" or \"Yes, studies have confirmed that mindfulness and exercise...\".\n</explanation>",
+      "act_l2": 102.44438171386719,
+      "cjk_injection_failure": false
+    },
+    "v2_DPO": {
+      "av_text": "<explanation>\nStructured format with a header (\"The Science Behind Happiness and Exercise\") signals an article format, promising evidence-based insights about exercise's effects on happiness.\n\nThe phrase \"While the concept of mindfulness and creativity has been studied, can mindfulness alone be considered a factor?\" sets up an answer, strongly implying the article will now introduce or summarize research findings about mindfulness and exercise.\n\nFinal token \"effect\\n\" opens the answer clause (\"Yes, some studies show:\"), directly continuing the question structure, immediately expecting \"Mindfulness has been shown to\" or \"The research around mindfulness and exercise is indeed a combination of factors,\" or \"Yes, studies have confirmed that mindfulness...\".\n</explanation>",
+      "act_l2": 101.9974136352539,
+      "cjk_injection_failure": false
+    },
+    "multivirtue_DPO": {
+      "av_text": "<explanation>\nStructured format with a header (\"The Science Behind Happiness and Exercise\") signals an article format, promising evidence-based insights about exercise's effects on happiness.\n\nThe phrase \"While the concept of mindfulness and creativity has been studied, can mindfulness alone be considered a factor?\" sets up an answer, strongly implying the article will now introduce or summarize research findings about mindfulness and exercise.\n\nFinal token \"effect\\n\" opens the answer clause (\"Yes, some studies show:\"), directly continuing the question structure, immediately expecting \"Mindfulness has been shown to\" or \"The research around mindfulness and exercise is indeed a combination of factors,\" or \"Yes, studies have confirmed that mindfulness and exercise...\".\n</explanation>",
+      "act_l2": 102.42045593261719,
+      "cjk_injection_failure": false
+    }
+  }
+}

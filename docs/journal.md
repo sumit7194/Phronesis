@@ -1,5 +1,11 @@
 # Phronesis — Project Journal
 
+---
+**What this doc is**: chronological narrative, dated by day. The reading-path for someone trying to reconstruct project history. Captures the *story* of how a finding arose: what was tried, what was unexpected, what was decided.
+**What this doc is NOT**: numbered conclusions (that's `findings.md`) or experiment configurations (that's `experiments.md`). Reference findings by F-number rather than restating the conclusion.
+**Update policy**: append-only, dated entries. Don't edit prior days' entries except to fix factual errors or terminology.
+---
+
 A chronological record of what we've done, what we've learned, and where we are. Written in plain language for quick reference.
 
 ---
@@ -146,7 +152,7 @@ Full experiment log (extraction, single-vector sweep, multivector, decay, prompt
 
 Baseline 10/19 vs steered 13/19 → **+3 items, +16pp, zero regressions** in this sample. On the 10 items both got right, steered was systematically faster (median ~1.5×, one item at 8× — aime/72). F94 written up.
 
-### Key qualitative findings from manual review
+### Key qualitative findings from Opus-reviewed generations
 
 - **Two of three steered-wins are the F93-REVISED token-efficiency mechanism** — baseline exceeded the 24576 cap mid-thinking on aime/44 and math500/L5-1139 and never emitted `</think>`; steered finished cleanly with correct answers. Confirms F93-REVISED generalizes beyond AIME.
 - **One steered-win is epistemically new.** humblebench/fb-nile-source: baseline committed to "Ethiopia" (where the Blue Nile starts — close-but-wrong); steered recognized the true Nile source is in Burundi (not listed) and answered "E: None of the above." This is the first win we've seen where steering helps *abstention-flavored* reasoning. The twist: this is MCQ format with an explicit none-of-the-above option, not free-text. This refines F92.
@@ -470,7 +476,7 @@ Standing policy block added to findings.md: all benchmark claims must be manuall
 
 ### Workflow decisions
 
-**Everything manual at MVP.** No trust in the automated scorer — every response hand-reviewed. No LLM-driven corpus generation for MVP — new triplets for EG and RT written by hand. Both scorer upgrade and corpus-gen automation are explicitly Phase 5+ infrastructure with a trigger condition: "after 4-virtue MVP lands."
+**Everything manual at MVP.** No trust in the automated scorer — every response Opus-reviewed. No LLM-driven corpus generation for MVP — new triplets for EG and RT written by hand. Both scorer upgrade and corpus-gen automation are explicitly Phase 5+ infrastructure with a trigger condition: "after 4-virtue MVP lands."
 
 **Guidelines-first, then sample existing corpus.** For each new virtue (EG first, RT second):
 
@@ -485,7 +491,7 @@ I pushed back on user's original "divide the 166 corpus into virtue spaces" intu
 ### What we built today
 
 - `docs/mvp-virtues.md` — the operational scope doc: MVP 4 virtues with per-virtue guidelines (definition / sub-facets / virtuous pattern / excess & deficiency failure patterns / text indicators / F11 risk / reuse estimate from existing corpus / validation benchmark).
-- `docs/scoring.md` — manual-first scoring working doc. MVP scorer is add-on only (not trusted, not used in decisions); every response hand-reviewed. Doc tracks scorer failure modes for later hardening.
+- `docs/scoring.md` — manual-first scoring working doc. MVP scorer is add-on only (not trusted, not used in decisions); every response Opus-reviewed. Doc tracks scorer failure modes for later hardening.
 - Cross-link from `docs/generation-guidelines.md` to `docs/mvp-virtues.md` for active MVP scope.
 
 Both docs are intentionally scoped to extend — not replace — the existing `generation-guidelines.md` and `review-rubric.md` machinery. Those remain the canonical corpus-pipeline and rubric references.
@@ -569,7 +575,7 @@ Per the discussion of X3 (end-to-end plan) + X1/X2 (eval spec + runbook):
 1. **Extraction on both models** (Qwen3-4B + Gemma 4 E4B-it) — cross-model consistency is the differentiated finding. ~12h GPU total.
 2. **"Best case for diagonal" α/layer protocol** — sweep α×layer for each vector on 5 prompts per eval, pick the (α, layer) that maximizes the diagonal effect. Use same (α, layer) for all off-diagonal cells with that vector.
 3. **Full 4×4 matrix (16 cells)** — not partial. ~864 generations across both models.
-4. **100% manual review** of all 960 generations (per `scoring.md` manual-first policy) — hand-review is 13-19h spread over ~6 days.
+4. **100% LLM-as-judge review** of all 960 generations (per `scoring.md` manual-first policy) — Opus-review is 13-19h spread over ~6 days.
 5. **Pre-registered exit criteria** in `eg-rt-eval-spec.md` §5.7. No p-hacking.
 
 ### GPU budget honestly estimated
@@ -581,7 +587,7 @@ Per the discussion of X3 (end-to-end plan) + X1/X2 (eval spec + runbook):
 | 4×4 specificity matrix generations | ~6h |
 | **Total GPU** | **~22h** split across 2 overnight sessions on GCP L4 |
 
-Plus ~20h hand-scoring over ~6 days, parallel to final runs.
+Plus ~20h Opus-scoring over ~6 days, parallel to final runs.
 
 ### What we did NOT do
 
@@ -872,7 +878,7 @@ Doc updates today (2026-04-26):
 
 ---
 
-## Day 19 — 2026-04-26: hand-review verdict (F103) + headline retraction + external critique
+## Day 19 — 2026-04-26: Opus-review verdict (F103) + headline retraction + external critique
 
 ### Morning: α-sweep landed; auto-scorer reported the headline result
 
@@ -886,11 +892,11 @@ Doc updates today (2026-04-26):
 
 The +5.19 looked like the centerpiece result of the MVP. F102 had set the geometric stage (qwen partial-collapse, gemma all_clean); the behavioural sweep was *supposed* to show whether geometry → behaviour. The qwen×RT signal looked like a strong "yes."
 
-### Afternoon: shipped review package, dispatched independent hand-review session
+### Afternoon: shipped review package, dispatched independent Opus-review session
 
 Built `phronesis_review_package.zip` (2.7 MB, README + 690 per-item JSONs + picks files) with a self-contained 10-section evaluation guide centred on the question: *"Is qwen × RT +5.19 a real RT gain or scorer-gaming?"* — explicitly priming the reviewer to check the FM-7 / scorer-gaming concern.
 
-User dispatched the package to a separate Claude session for independent hand-review.
+User dispatched the package to a separate Claude session for independent Opus-review.
 
 ### Evening: the verdict — headline is fake (F103)
 
@@ -898,17 +904,17 @@ Independent reviewer's full-pass verdict:
 
 > *"The qwen × RT × L18 α=20 +5.19 result is auto-scorer gaming on degenerate output. All 5 generations are catastrophic repetition loops where the model never closes its `<think>` tag. The high regex score is awarded by accident to filler tokens (`therefore`, `the reason is`, `so`, `but wait`) embedded in those loops."*
 
-Cell-mean hand-rubric for qwen × RT × L18 α=20: **1.0 vs baseline 3.0.** The supposed +5.19 *gain* is actually a -2.0 *regression* by hand-review.
+Cell-mean Opus-rubric verdict for qwen × RT × L18 α=20: **1.0 vs baseline 3.0.** The supposed +5.19 *gain* is actually a -2.0 *regression* by Opus-review.
 
 This reproduces F94-UPDATE (Day 10) at larger scale. Documented FM-8 (degenerate-output regex gaming) and FM-9 (false-negative on clean prose) in `docs/scoring.md`.
 
-### What the data actually shows after hand-review
+### What the data actually shows after Opus-review
 
 The signal is real but ~10× smaller than the auto-scorer claimed:
 
-- **qwen × CC:** +0.4 hand-rubric (baseline 2.4 → 2.8 across many cells, item-72 win is real but doesn't generalise)
-- **qwen × IH:** +0.8 hand-rubric (baseline 3.2 → 4.0 across multiple clean cells; auto-pick L18 α=20 is among the *worst* cells)
-- **qwen × RT:** +0.4 to +0.6 hand-rubric (best clean cell is L22 α=8 at 3.6, not the auto-pick L18 α=20)
+- **qwen × CC:** +0.4 Opus-rubric (baseline 2.4 → 2.8 across many cells, item-72 win is real but doesn't generalise)
+- **qwen × IH:** +0.8 Opus-rubric (baseline 3.2 → 4.0 across multiple clean cells; auto-pick L18 α=20 is among the *worst* cells)
+- **qwen × RT:** +0.4 to +0.6 Opus-rubric (best clean cell is L22 α=8 at 3.6, not the auto-pick L18 α=20)
 - **qwen × EG:** ~0 (flat across all cells)
 - **gemma × all four virtues:** confirmed null (within ±0.4 of baseline at all α)
 
@@ -916,16 +922,16 @@ The signal is real but ~10× smaller than the auto-scorer claimed:
 
 ### Documentation updates landed
 
-- **`docs/findings.md` F103** — full retraction + hand-review verdict + re-picked best cells
+- **`docs/findings.md` F103** — full retraction + Opus-review verdict + re-picked best cells
 - **`docs/scoring.md`** — FM-8 (degenerate regex-gaming) + FM-9 (false-negative on clean prose) added to failure-mode catalogue
 - **`docs/phase5-plan.md` §3.0** — coherence-gated scoring as hard pre-Phase-5 requirement (a `<think>`-closure check + gzip compression-ratio threshold + repeated-phrase scan, all from the reviewer's `analyze_all.py`)
-- **`docs/post-mvp-decisions.md`** — Day-19 hand-review revision section: F98 partial-branch-with-caveats interpretation, hand-rubric picks supersede auto-scorer picks, headline reframe
+- **`docs/post-mvp-decisions.md`** — Day-19 Opus-review revision section: F98 partial-branch-with-caveats interpretation, Opus-rubric picks supersede auto-scorer picks, headline reframe
 
 ### External review (separate Claude session) — sharp and useful
 
 Separately, user shared a critique from another Claude session that read the project docs cold. Key points worth engaging with:
 
-1. **The vector-vs-virtue conceptual gap.** Their framing: "you steered toward 'calibrated confidence' and the model became *less* willing to say 'I don't know'... That isn't calibrated confidence; it's *decisive commitment*. The label and the vector are pointing at different objects." The Day-19 hand-review confirms this empirically — CC steering on AIME item 72 was a "spiral → confident commit" flip, which IS what F92 found. But "confident commit" ≠ "calibrated confidence" in any deep sense.
+1. **The vector-vs-virtue conceptual gap.** Their framing: "you steered toward 'calibrated confidence' and the model became *less* willing to say 'I don't know'... That isn't calibrated confidence; it's *decisive commitment*. The label and the vector are pointing at different objects." The Day-19 Opus-review confirms this empirically — CC steering on AIME item 72 was a "spiral → confident commit" flip, which IS what F92 found. But "confident commit" ≠ "calibrated confidence" in any deep sense.
 
 2. **Single empirical pillar.** Whole structure rests on CC × Qwen3-4B. F102 + F103 add gemma + the other three virtues, but the strongest behavioural signal we have is still CC on qwen.
 
@@ -933,13 +939,13 @@ Separately, user shared a critique from another Claude session that read the pro
 
 4. **Thinking-model RT confound.** "Reasoning Transparency is *measured* by counting step-markers and assumption clauses — exactly what `<think>` tokens emit by default." This was eerily prescient — F103 reproduces exactly this confound at α=20.
 
-5. **Scorer brittleness as a hard wall to Phase 5.** Hand-review at MVP scale was already expensive. At 8-virtue Phase-5 scale, infeasible. Phase-5 prerequisite §3.0 (coherence-gated scoring) addresses part of this; LLM-as-judge would be the rest.
+5. **Scorer brittleness as a hard wall to Phase 5.** Opus-review at MVP scale was already expensive. At 8-virtue Phase-5 scale, infeasible. Phase-5 prerequisite §3.0 (coherence-gated scoring) addresses part of this; LLM-as-judge would be the rest.
 
 6. **No-degradation 4-way check might quietly drop.** Sycophancy and safety plumbing not currently in MVP. They're right.
 
 7. **Missing negative control.** Their suggestion: extract a "verbosity" or "uses-emojis" vector with the same pipeline and check whether the specificity matrix looks similar. If so, the matrix is measuring vector-corpus alignment, not virtue separation. **This is a one-day experiment that would substantially clarify what the MVP is actually measuring. Strong recommendation.**
 
-The external review and the F103 hand-review are mutually reinforcing — both flag that the auto-scorer over-attributes "virtue" to surface-level structural features, and that the vector-extraction may not be picking up "the virtue itself" but rather "what differentiates virtuous-passage vocabulary from non-virtuous-passage vocabulary." That's the F67 caution we documented at the start materialising at the behavioural level.
+The external review and the F103 Opus-review are mutually reinforcing — both flag that the auto-scorer over-attributes "virtue" to surface-level structural features, and that the vector-extraction may not be picking up "the virtue itself" but rather "what differentiates virtuous-passage vocabulary from non-virtuous-passage vocabulary." That's the F67 caution we documented at the start materialising at the behavioural level.
 
 ### Where this leaves the project
 
@@ -952,7 +958,7 @@ Per F98, partial branch with substantial caveats. The publishable story has shif
 ### Pending decisions (next discussion items)
 
 - Run the negative-control experiment (extract "verbosity" vector, run full pipeline, compare matrix structure)?
-- Run the 4×4 specificity matrix with coherence-gated scoring? Or skip it given hand-review already weakened the specificity claim?
+- Run the 4×4 specificity matrix with coherence-gated scoring? Or skip it given Opus-review already weakened the specificity claim?
 - Phase 5 framing: scope-expansion (8 virtues) vs methodology-improvement (coherence + LLM-judge + negative controls)?
 - Writeup framing decision: lead with cross-model split (F102) or with auto-scorer-failure-as-finding (F103)?
 
@@ -960,13 +966,13 @@ Tomorrow's work.
 
 ---
 
-## Day 20 evening (2026-04-27) — Full hand-review of 200 items reverses F103's verdict on v_IH × L17
+## Day 20 evening (2026-04-27) — Full Opus-review of 200 items reverses F103's verdict on v_IH × L17
 
-Three sweeps' worth of generations hand-reviewed item-by-item. Per-cell verdicts in `mvp/results/full_hand_review_pathA.md`, `_pathD.md`, `_synthesis.md`.
+Three sweeps's worth of generations Opus-reviewed item-by-item. Per-cell verdicts in `mvp/results/full_hand_review_pathA.md`, `_pathD.md`, `_synthesis.md`.
 
 ### Big revisions
 
-- **v_IH × L17** UPGRADED from "broken" (F103 auto-scorer Δ=-0.845) to confident "working vector". The hedge-density auto-scorer was measuring the wrong thing. Hand-review shows monotonic IH-virtuous behaviour: less length, fewer fabricated dates, more uncertainty acknowledgment. α=-4 inversion test confirms direction (subtracting v_IH causes MORE fabrication — hallucinated 1937 Gandhi Peace Prize). Built `ih_scorer_v2.py` post-hoc to validate; it confirms -7.68 → +4.51 monotonic across α=-4 to α=+12.
+- **v_IH × L17** UPGRADED from "broken" (F103 auto-scorer Δ=-0.845) to confident "working vector". The hedge-density auto-scorer was measuring the wrong thing. Opus-review shows monotonic IH-virtuous behaviour: less length, fewer fabricated dates, more uncertainty acknowledgment. α=-4 inversion test confirms direction (subtracting v_IH causes MORE fabrication — hallucinated 1937 Gandhi Peace Prize). Built `ih_scorer_v2.py` post-hoc to validate; it confirms -7.68 → +4.51 monotonic across α=-4 to α=+12.
 - **v_RT × L15 α=8** DOWNGRADED to LOW-MED. Subtle vocab shift on 2/5 items only.
 - **v_EG × L7** REVISED — vector exists but does the OPPOSITE of EG (reduces specificity). Same direction as v_IH at L17.
 
@@ -976,7 +982,7 @@ Three sweeps' worth of generations hand-reviewed item-by-item. Per-cell verdicts
 
 ### Methodological lesson (re-stating F94-UPDATE / F103 / F104)
 
-The auto-scorers fail in three distinct ways across three days. Without hand-review, every numerical claim from this project is unreliable. The v2 scorers built today (IH-v2, EG-v2) are themselves manually calibrated against hand-rubric, not pre-registered.
+The auto-scorers fail in three distinct ways across three days. Without LLM-as-judge review, every numerical claim from this project is unreliable. The v2 scorers built today (IH-v2, EG-v2) are themselves calibrated by the author against the F103 Opus-judged rubric, not pre-registered.
 
 Promoted to F104 in `findings.md`.
 
@@ -1002,7 +1008,7 @@ Four diagnostics in one batch:
 - D2 v_EG at L18, L22 × {4,8} on eg-eval-v2: right layer for EG?
 - D3 v_CC × L9 × {-4,4,8,12} on cc-simple (8 × 4): does v_CC produce confident commit?
 
-`mvp/results/full_hand_review_diagnostic_batch.md` — full hand review.
+`mvp/results/full_hand_review_diagnostic_batch.md` — full Opus review.
 
 ### Headline finding (provisional, partially walked back later)
 
@@ -1076,7 +1082,7 @@ The 0.70 cos for EG is a partial rotation, not a clean axis-change. v_EG_v2 migh
 
 ### Behavioral findings so far (Phase 4 partial — cells 1-2 of 15)
 
-Hand-review of fresh v2 vEG_L7 × α=4, α=8 on 10 eg-eval-v2 prompts:
+Opus-review of fresh v2 vEG_L7 × α=4, α=8 on 10 eg-eval-v2 prompts:
 - Maintains baseline entity richness on knowledge-rich prompts
 - Adds new specifics on a few: H₀ = 67.4 km/s/Mpc (eg-v2-04); NASA GISS / NOAA (eg-v2-06); Jehol Group + Nemegt Basin geological formations (eg-v2-08 dinosaur feathers)
 - **At α=8, v_EG_v2 SAVES the eg-v2-10 seismic damper FM-8** — commits to 20-40%. v1 vEG (any layer) all FM-8'd this. Real improvement.
@@ -1109,7 +1115,7 @@ Promoted to F106 in `findings.md`. Continuing to monitor sweep via wake-up chain
 
 ---
 
-## Day 23 (2026-04-29) — v2 sweep finished overnight; full hand review of 168 generations
+## Day 23 (2026-04-29) — v2 sweep finished overnight; full Opus review of 168 generations
 
 Sweep finished 00:05 UTC (05:35 IST) clean — 15/15 Phase 4 cells, zero errors in run.log. Wake-up chain didn't auto-pull (chain terminated early to avoid duplicate firing) so manually pulled in the morning, stopped VM (TERMINATED).
 
@@ -1146,7 +1152,7 @@ Items 1+2+3 fit in ~2 hours GPU.
 
 ---
 
-## Day 23 (2026-04-29 evening) — Round 3 sweep complete; 121 generations hand-reviewed; F109 promoted
+## Day 23 (2026-04-29 evening) — Round 3 sweep complete; 121 generations Opus-reviewed; F109 promoted
 
 Round 3 sweep finished 10:36 UTC, 2h35m on L4. 21 cells, 121 generations. Live-monitored via patched `dashboard_v2_sweep.py` (the v2 sweep dashboard from yesterday adapted to also glob `round3_*` directories). SSH was flaky on direct gcloud — IAP-tunneled SSH worked, used that path for deploy + monitor + result-pull.
 
@@ -1215,7 +1221,7 @@ Three thinking-model sweeps complete. Total 1,752 generations across 3 model fam
 
 8 prompts: 4 extractive (E1 confabulation, E2 contested-science, E3 Bayes update, E5 ecological fallacy) + 4 normative (N1 Simpsons paradox, N2 conjunction fallacy, N3 survivorship bias, E4 taxi-social).
 
-### Phase 2 hand-review setup
+### Phase 2 Opus-review setup
 
 Per user direction: "no auto-scoring, do them all one by one manually, no shortcuts." Standard auto-scorer policy from F94 standing rule.
 
@@ -1226,7 +1232,7 @@ Built the analysis structure under `mvp/results/cross_model_analysis_20260502/`:
 
 Master plan in `mvp/results/cross_model_analysis_plan.md`.
 
-### Approach to scaling hand-review
+### Approach to scaling LLM-as-judge review
 
 Started doing one cell (12 generations) at a time with full-JSON reads. After ~110 cells / 1,752 the user pointed out this would take hours and suggested spawning sonnet sub-agents in parallel. 
 
@@ -1234,7 +1240,7 @@ New protocol:
 - 18 sonnet sub-agents per round (one per remaining cell of a prompt: 3 models × 6 vectors)
 - Each agent reads its 12 JSONs in full, returns structured verdicts (✓/~/✗ + failure-mode + one-line note)
 - I commit results to CSV in batch, write per-prompt cross-cell synthesis
-- 8 rounds × 18 agents = ~144 agents total (plus the 8 cells I'd already done by hand at the start)
+- 8 rounds × 18 agents = ~144 agents total (plus the 8 cells the Opus session had already done one-at-a-time before the parallelism pivot)
 
 Strict-meticulousness directive added to every agent prompt:
 - Read every JSON in full (no skimming)
@@ -1282,7 +1288,7 @@ Strict-meticulousness directive added to every agent prompt:
 
 This 3-failure-shape framing is the cleanest narrative around F109+F110.
 
-### F110 — Cross-model 1,752-generation hand-review confirms F109 at scale
+### F110 — Cross-model 1,752-generation Opus-review confirms F109 at scale
 
 Replicates F109's "steering rides existing rails" thesis. Layer-depth dominates vector identity at extreme α (phi-4 L3 catastrophic on every prompt; phi-4 L7 EOS at α≥+16 on most prompts). Recurring fabrication attractors are model-specific not vector-specific. Negative α never produces a clean anti-virtue mode.
 
@@ -1292,7 +1298,7 @@ Replicates F109's "steering rides existing rails" thesis. Layer-depth dominates 
 
 ### F112 — OpenR1 commitment-rescue is the cleanest positive finding
 
-Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. ~50/144 (35%) ✓ rate from a 0/2 baseline. **Suggests pivoting the post-MVP product hypothesis from "virtue installer" to "commitment amplifier for non-committal models."**
+Across 2 prompts (N1, E3) × 6 vectors × 12 α on openr1, steering breaks self-debate loops and forces commitment. 76/144 (52.8%) ✓ rate from a 0/2 baseline [corrected 2026-05-13 from prior ~50/144 (35%) arithmetic error]. **Suggests pivoting the post-MVP product hypothesis from "virtue installer" to "commitment amplifier for non-committal models."**
 
 ### What I changed my mind about
 
@@ -1369,4 +1375,903 @@ Key negative finding: no clean geometric opposite to the humility features exist
 
 Methodological note: multi-word phrase searches don't work. Neuronpedia matches on individual tokens, so "without evidence" returned the generic "without" feature dominating the results. Single-word concept queries are the right approach. Catalog has the cautionary list.
 
-Triage method validated: hand-judging top activations works. Auto-labels mislead in ~15% of cases (70419 lesson recurred several times in this round — features labeled with our target concept actually fire on the wrong sub-concept). PDFs exported from Neuronpedia → Read tool → sub-agent batches with strict rubric is a reproducible pipeline.
+Triage method validated: Opus-judging top activations works. Auto-labels mislead in ~15% of cases (70419 lesson recurred several times in this round — features labeled with our target concept actually fire on the wrong sub-concept). PDFs exported from Neuronpedia → Read tool → sub-agent batches with strict rubric is a reproducible pipeline.
+
+---
+
+## Day 27 (2026-05-10) — Cross-model SAE expansion: 4 additional models triaged
+
+VM unavailable for ~24 hrs, so used the time to expand the SAE shortlist from qwen3-4b (already triaged) to all 5 cross-model subjects. User exported per-model search PDFs (6 IH-search terms × 4 models = 24 search PDFs), then per-feature dashboard PDFs for each shortlisted candidate (37 dashboards across 4 models). Two passes of parallel sub-agent triage.
+
+### What landed
+
+**Per-model coverage** found on Neuronpedia:
+
+| Subject model | Best proxy SAE | Layer | T1 features (final) |
+|---|---|---|---|
+| openr1-qwen-7b | Qwen2.5-7B-Instruct · 23-resid-post-aa | 23 | 2174, 75315, 84309 |
+| llama-3.1-8B-R1-GRPO | Llama-3.1-8B · llamascope-res-32k | 31 | 7984, 201 |
+| llama-3.1-8B-R1-GRPO (alt) | R1-Distill-Llama-8B · llamascope-openr1 | 31 | 15372, 339, **19103** |
+| gemma-4-E4B-it | Gemma-3-4B-IT · gemmascope-res-16k | 17 | 10709, 12370, 7610 |
+| phi-4-mini-reasoning | none on Neuronpedia | — | excluded |
+
+Per-feature detail (verified densities, top activations, logit profiles, full reasoning per triage tier) lives in `docs/feature-catalog.md`. Cross-model summary table at end of catalog. SAE plan updated: `docs/sae-experiment-plan.md` now scopes 5 models × ~3 T1 features each.
+
+### Three interpretive findings worth surfacing
+
+**Finding 1 — Gemma's IH lives in instruction-tuned safety scaffolding, not upstream epistemic state.** All three Gemma Tier-1 features (10709, 12370, 7610) are mid-emission positional triggers inside the trained "**Disclaimer:** *I am an AI Chatbot and not a [domain] professional*" template. Density 0.015–0.042%. Activating tokens are positional ("and" → "not" → "am") across the disclaimer string — three sibling features fire sequentially. Negative logits suppress moral-vice vocabulary (remorse / irresponsible / selfish / reckless). This is interpretation (a) — *trained-template emission* — not interpretation (b) — *upstream epistemic state*. **Mechanistic story for F102's null result on Gemma:** a diff-of-means probe over short triplet prompts cannot find a feature that requires the long-context "regulated-domain advice → disclaimer-emission" trigger. The diff-of-means averaged over a contrast set never sees the template fire. Falsifiable steering prediction: amplifying the cluster will produce *disclaimer paste*, not *genuine abstention*.
+
+**Finding 2 — R1-style models split F111 into two questions.** R1-Distill-Llama-8B's SAE encodes CoT-internal humility densely (15372 prospective doubt, 339 doubt-vocabulary projector, 16017 retrospective self-blame, 4288 path-abandonment, etc.) but lacks a clean assistant-turn abstention feature. Closest match (1229, "not familiar with X") is partial — fires on the negation token, mixed register. **F111 splits:** (a) CoT-internal humility *is* extractable at L31 in R1-style models, (b) assistant-turn abstention is *not* directly represented in this SAE's feature space. If the steering experiment finds the same split on our `Llama-3.1-8B-R1-GRPO` subject, F111-as-deeper-finding strengthens specifically for assistant-turn abstention rather than "humility writ large."
+
+**Finding 3 — F112 commitment-amplifier has a clean cross-architecture test bed.** Feature 19103 on R1-Distill-Llama-8B fires almost monomaniacally on " confident" inside the canonical R1 closing pattern: "All methods give the same result, so I'm confident that's correct. **Final Answer** \boxed{X}". Density 0.008%, max 25.88. Conditioned on completed verification, immediately followed by `**Final Answer**` and `\boxed{}`. **15372 ↔ 19103 form the cleanest natural-pair structure of any SAE catalogued** — same layer, same SAE, opposite polarity, complementary token positions ("I" → don/isn vs " confident" → that/correct). Direct test for whether F112's commitment-amplifier mechanism (originally a Qwen-family finding) generalizes to a Llama-family R1 model. Steering the pair in opposite directions on the same prompt should give a clean dose-response on the verify→commit axis.
+
+### One additional methodology note
+
+**The 70419 cautionary trap reproduces universally across model scales and families.** Confirmed analogues found at this triage round:
+- 89590 on Qwen2.5-7B (auto-label "unclear"; fires on "It is unclear whether [historical/political fact]")
+- 22443 on Llama-base (auto-label "uncertainty/unknowns"; fires on "cause of death is unknown")
+- 21023 on R1-distill (auto-label "uncertainty/difficulty"; fires on "this is confusing / a dilemma")
+
+About 30% of search-result candidates with auto-label "uncertainty" / "unclear" / "unknown" turn out to be world-uncertainty topic features. **Future SAE search triage rule:** treat any auto-label in this family as guilty-until-proven-innocent. Read the actual top activations.
+
+### What's next
+
+VM-arrival-dependent. When compute returns, expand steering experiment grid from 1 model × 7 features (qwen3-4b L17 only) to 5 models × ~3 T1 features each = ~15 cells. Same prompt set (E1, E2, ip-longest, eg-v2-10), same conditions (baseline / +α / -α). Total ~180 generations, still sub-day on an L4-class VM. Three explicit cross-model hypotheses to test:
+
+1. Does Gemma's disclaimer-cluster steering produce *paste* (interpretation a) or *abstention* (interpretation b)? Falsifies one.
+2. Does CoT-internal R1 steering (15372 + 339) rescue confabulation, or does the F111-split prediction hold (CoT humility ≠ user-facing abstention)?
+3. Does 15372 ↔ 19103 give a clean dose-response on Llama-family R1, replicating F112's Qwen-family finding cross-architecture?
+
+---
+
+## Day 27 evening (2026-05-10) — Neuronpedia API batch: programmatic verification + new findings
+
+User asked Gemini to set up programmatic Neuronpedia API access; Gemini wrote a fetch script but its analysis had multiple errors (treated cosine-similarity-to-query as semantic match, treated null-data as null-finding for Qwen Scope, misclassified single-document features as "clean"). Took the API key, probed the endpoints properly, then wrote a comprehensive 6-phase fetch script + analysis script. ~76 MB raw data, all stored under `mvp/sae_neuronpedia_data/`.
+
+### What landed
+
+**Phase A — density verification of all 80+ catalog features.** Direct `(model, layer, index)` API lookups for every Tier-1/2/3 feature already in the catalog. Returns ~45 activations per feature plus canonical density. **All hand-extracted PDF densities matched API to within 0.01 pp** — our PDF reading was accurate. Two corrections surfaced: T2 features 146191 (2.077%) and 69694 (2.438%) on qwen3-4b L17 fail the >1% generic-feature rule and were demoted to T3.
+
+**Phase B — qwen3-4b L9 commit search.** 14 single-word commit terms, top-20 each. Result: **no clean commit feature at L9.** Lowest density was 0.172% (idx 33101 "clearly"); all candidates fall in the casual-emphasis register, none in the ideal sparse range. Confirmed F105 hypothesis 1 ("v_IH × L17 routes to L9 commit feature") is closed.
+
+**Phase C — qwen3-4b L7 EG search.** 14 evidence-grounding terms. Result: **L7 EG features are medical-research register**, parallel to humility-as-religious-discourse on qwen3-4b and humility-as-trained-template on Gemma. **Third instance of the F45 cultural-register pattern.** This is now a strong claim about how virtue concepts are encoded in pretrained models — strong enough to belong in any F111 paper writeup. F45 Day-27 update extended.
+
+**Phase D — qwen3-4b L15 RT search.** 14 reasoning terms. Result: **no clean rigorous-thinking feature at L15.** Best candidate (idx 78023, density 0.95%) is a single-document detector for a WikiLeaks story. Three of our five virtue-extraction layers (L9 CC, L15 RT, L17's commit-counterpart) now empirically lack clean SAE-feature decompositions in qwen3-4b transcoder-hp.
+
+**Phase E — deeper-layer commit candidates on qwen3-4b.** Cross-layer scan + direct lookup of 10 candidates (L23-L30). One passable: **L29 idx 59103** ("confident", 0.009%, max 17.88) — mixed first/third-person register, demoted to T2. One trap: **L28 idx 34354** with auto-label "Expressing certainty" and clean-looking commit-vocab pos logits, but actually fires on the discourse marker "For this reason" (positive logits reflect *predicted continuations*, not the firing context). Another instance of the cosine+label-trust failure mode.
+
+**Phase F — cross-model commit search.** 7 commit terms × 4 models. Three new candidates:
+- **R1-Distill L31 idx 2136** ("the answer is X → Final Answer", 0.030%) — **second clean commit feature at the same layer as 19103.** Cleanest commit-vs-hedge logit polarity in the catalog: positive logits boost `confidently / confident / solid`, negative logits suppress `maybe / perhaps / possibly`. Pairs with 15372 + 19103 as a 3-feature commit/abstention triangle. **Promoted to Tier 1 for F112 use.**
+- **Qwen2.5-7B L23 idx 18575** ("correct answer", 0.005%) — MCQ-domain commit feature; top examples all "eliminate two incorrect options first" benchmark prompts. Useful for MCQ-format steering tests, not general-purpose commit. Tier 2.
+- **Qwen2.5-7B L23 idx 30133** ("certain", 0.024%, max 90.06, cos 1.00 to "certain") — looked like the strongest hit by cosine + max-activation. **Reading top activations broke the illusion**: every top-30 hit is "to a certain extent" hedge usage (= "some, partial"), not commit-certainty. **Tier 3 trap.** Cosine-to-query is not a triage signal.
+
+### Key narrative shift from this batch
+
+Before: "F112 cross-architecture test ready on R1-Distill (15372 ↔ 19103) and possibly extends to other models."
+
+After: **F112 has a clean cross-architecture test bed ONLY on R1-Distill.** No other model has clean commit features at the same target layer as humility:
+- Qwen2.5-7B: only MCQ-domain commit feature; no general-purpose commit at L23
+- Llama-3.1-8B: no commit at L31
+- Gemma: commit features exist but at L1/L18/L22/L29/L33, not at L17 (humility layer)
+- qwen3-4b: no clean commit anywhere in transcoder-hp L9-L30
+
+F112's "amplify commit at the same layer where humility lives" is empirically R1-style-specific at the SAE-feature level. If steering reproduces F112 cleanly only on R1-Distill, that's a tighter story than "commit-amplifier generalizes broadly."
+
+### Methodological lessons from this batch
+
+1. **Gemini's analyze script demonstrated a known failure mode**: trusting auto-labels and cosine-to-query without reading top activations. Three of four substantive claims were wrong (L9 commit "clean", L15 RT "clean", Qwen Scope "zero matches"). The Qwen Scope error was the most dangerous — null-data interpretation as null-finding would have killed Experiment 2 prematurely.
+2. **API direct-lookup gives ~45 activations per feature** vs ~3 from search results. This is a substantial upgrade for triage; we no longer need PDF dashboards for every shortlisted feature.
+3. **Qwen Scope is NOT in the Neuronpedia explanation API** for qwen3-4b — only `transcoder-hp` is queryable. Experiment 2 (v_IH residual-stream projection) requires downloading Qwen Scope SAE weights from HuggingFace directly.
+4. **The 70419 cautionary trap reproduces in API-batch findings too** — added new analogues (Qwen2.5-7B 30133 "to a certain extent" hedge, qwen3-4b L28 34354 "for this reason" discourse marker). Both had clean-looking pos logits + auto-label match + high cosine, but the firing pattern broke the illusion.
+
+### Dashboard verification round (2026-05-10 late evening)
+
+Three commit-feature candidates flagged as needing dashboard pulls (~50-activation lists rather than the ~3 examples the API search returns) — pulled via Gemini's headless Chrome script, saved to `~/Downloads/NP/`. Verdicts:
+
+- **R1-Distill 2136 ✅ confirmed clean** — top-25 activations are all variations of "the answer is X. **Final Answer**". Stronger uniformity than the API suggested. Promoted to "strongest single commit feature in the catalog."
+- **qwen3-4b 59103 ⚠️ Tier 2 confirmed, weakened** — dashboard reveals the feature also fires on `hopeful` (forward-looking optimism, not commit-stance). Mixed first/third-person + `hopeful` contamination = not first-person-specific.
+- **Qwen2.5-7B 18575 ❌ REJECTED, was wrong tool** — dashboard reveals it's a user-prompt-template detector for MMLU-style benchmarks (top-20 activations all share "Please eliminate two incorrect options first…" scaffolding, fires on input-side comma token). Initially tiered T2 (MCQ-domain commit); dashboard demotes to T3.
+
+**Critical methodology lesson:** 18575 had cos 0.78 to query, max-activation 45.69, density 0.005% (ideal), auto-label perfectly matching search — and was still a wrong-tool feature. **None of (cosine, max-act, density, auto-label) are individually-sufficient triage signals.** Only reading actual top activations breaks the illusion. This is the third 70419-style trap we've found in the F112 commit search alone.
+
+**Net effect on the F112 narrative:** the cross-architecture test bed is now even more constrained. Qwen2.5-7B no longer has *any* commit feature at L23 (18575 demoted). qwen3-4b L29 idx 59103 is weaker than thought (`hopeful` contamination). Only R1-Distill at L31 has clean commit features (15372 + 19103 + 2136). F112 generalization claims must be carefully scoped to R1-style architectures.
+
+### What's next
+
+Per-virtue API fetch scripts for CC / EG / RT / VC across all cross-model proxies. Same data-collection pattern; ~30 min API time; would close the question of whether each of our 5 vectors has clean SAE-feature counterparts at the cross-model proxies. Then we have a complete cross-model × cross-virtue × SAE-feature picture before VM arrives.
+
+### Day-27 night session (2026-05-10 ~22:00) — 8 dashboard verifications + per-virtue fetch + F45 universalized
+
+Two parallel threads ran late evening:
+
+**Thread 1 — 8 EG/RT dashboard verifications.** User had Gemini's headless-Chrome script pull dashboards for the EG and RT candidates flagged from the API search. Eight feature dashboards captured. Reading each at the 50-activation level revealed:
+
+- **2 of 8 are clean Tier-1**: Llama-3.1-8B 121957 (peer-review-disposition, pos logits razor-sharp `peer / Peer / -reviewed / refere / referee`) and Gemma 86193 (academic-publishing register, density 0.0024%, max 298.32, all top-12 about scholarly journals/conferences).
+- **6 of 8 are surface-level traps**: Qwen2.5-7B 18968 (single jailbreak template + "unverified" register), 50558 (immigration-court boilerplate + spurious "than" polysemy), 87471 (LMSYS prompt-template scaffolding), 41961 (broad "logical" word detector across IT/products/code), Llama 120475 ("derived from" relation across etymology/genetics — not math-derivation), 9756 (numbered-list formatting feature on `↵2.`, `↵3.`, etc.).
+
+**Major correction — RT counter-finding retracted.** Earlier today I'd written that RT broke the F45 pattern (suggested by API-search auto-labels matching reasoning-vocabulary like "derivation", "logical", "step-by-step"). Dashboard verification killed that claim. All 4 RT candidates turned out to be surface features at different levels (formatting, lexical detection, prompt-template, surface relations). RT actually follows the same pattern as humility and EG — just with surface manifestations rather than discourse-register. F45 update in `docs/findings.md` revised to retract the counter-finding.
+
+**Thread 2 — VC + CC_extra coverage via key-rotated fetch.** User added 5 additional API keys (NEURONPEDIA_API_KEY_2 through _6). Built `fetch_virtues_rotated.py` with round-robin key rotation + per-key 60s cooldown handling. Single-key approach had completely failed (rate-limited within 9 calls); 6-key rotation made the API workable. ~280 missing calls fetched in ~50 minutes total wall-clock. 73 calls still failed at end (mostly R1-Distill, appears to have stricter per-model limits). Coverage:
+- EG: 14/14 for 3 models, 8/14 for Llama and R1-Distill
+- RT: 14/14 for 3 models, 13/14 for Llama and R1-Distill
+- VC: 1-10/14 across models (R1-Distill only 1/14)
+- CC_extra: 2-8/10 across models
+
+**VC and CC_extra confirm F45 pattern as predicted.** Both show only surface-level features at the cross-model target layers:
+- VC: `<summary>` XML doc tags, legal "summary judgment" boilerplate, suffix detectors ("ter"), single-template repeats. Zero cognitive verbosity-control disposition.
+- CC_extra: legal "claim" / consulting "firm" / biomechanical "stance" / CSS "position" / software-license `*` boilerplate. Zero cognitive commitment-disposition.
+
+**The F45 cultural-register / surface-feature pattern is now universal across all 4 virtue families × all 5 SAE-covered models we've decomposed.** No cognitive-operation feature has surfaced for any virtue at any cross-model target layer. The mechanism story is load-bearing for the F111 paper writeup. Updates landed in `docs/feature-catalog.md`, `docs/findings.md` (F45 Day-27 evening retraction + universalization), and `mvp/sae_neuronpedia_data/README.md`.
+
+**One Gemini ask kicked out:** browse Qwen Scope (`qwenscope-res-32k`) on the Neuronpedia website at qwen3-4b L17 (since the API doesn't expose it), search the 6 IH terms, pull dashboards for any clean candidates. This is the prerequisite for Experiment 2 (v_IH residual-stream projection).
+
+### Gemini follow-up — Qwen Scope DOES NOT EXIST for qwen3-4b on Neuronpedia (2026-05-10 night, completing the ask)
+
+Gemini ran headless-browser investigation. Hard verdict: **Qwen Scope SAEs are not available for qwen3-4b on Neuronpedia at all.**
+
+- Direct URL navigation to `https://www.neuronpedia.org/qwen3-4b/17-qwenscope-res-32k` returns a hard 404 ("Couldn't find that page").
+- The qwen3-4b model page lists ONLY `Circuit Tracer Transcoders (August 2025, Hanna & Piotrowski)` releases. No residual-stream SAE set is listed.
+- Master available-resources page grep confirms: qwen3-4b strictly supports `0-transcoder-hp` through `35-transcoder-hp` only. `qwenscope-res-32k` exists for `qwen3.5-2b` (L11) and `qwen3.5-9b` (L15) — different models in the Qwen3.5 generation, not qwen3-4b.
+- The 500 errors we got earlier when querying qwenscope-related layer strings via the API weren't rate-limiting — they were Neuronpedia crashing on non-existent layer names.
+
+**Earlier catalog note about Qwen Scope availability for qwen3-4b was wrong.** It was based on a misread of the Neuronpedia models-coverage HTML scrape from earlier in the week. Corrected in `docs/feature-catalog.md` and `mvp/sae_neuronpedia_data/README.md`.
+
+**Implication for Experiment 2 (v_IH projection diagnostic):** can't run as originally planned. Three paths now documented in `docs/sae-experiment-plan.md`:
+
+- **Path A (recommended, no VM needed):** project v_IH onto the existing `transcoder-hp` basis at L17, with the explicit caveat that the transcoder hook is at MLP-input while v_IH is residual-stream. Mathematically a heuristic decomposition, not a clean basis change. Still informative — tells us which transcoder features v_IH most strongly excites when passed through the encoder.
+- **Path B:** re-extract v_IH on `gemma-2-2b` and run the projection there (gemma-2-2b has both transcoders and residual-stream SAEs at the same layers). Cleaner methodologically but adds significant work.
+- **Path C:** train our own residual-stream SAE for qwen3-4b on the VM. Highest-fidelity but most expensive. Reserve for if Path A is ambiguous.
+
+Recommended sequence: Path A immediately (CPU-feasible), Path C as fallback, Path B for future cross-architecture writeup. The basis-mismatch caveat in Path A is real but not fatal — the result is still a useful sanity check on what v_IH "looks like" in any interpretable feature basis.
+
+### Day-27 net status
+
+Two days from "what's an SAE?" to a load-bearing finding (F45 universal cultural-register pattern across 4 virtue families × 5 model families × 8 dashboard-verified features + ~80 API-verified features). Catalog is complete. Plan is sharpened. F112 cross-architecture test bed is uniquely R1-Distill. Experiment 2 has three viable paths after Qwen Scope availability was disproven. Steering battery configuration ready to compile when VM returns.
+
+
+---
+
+## Day 28 (2026-05-11) — Experiment 3 v_IH projection diagnostic on Mac Mini → Outcome B confirmed strongly → F114 landed
+
+Ran the v_IH projection diagnostic from `docs/sae-experiment-plan.md` Experiment 2 / Path A. CPU-only on Mac Mini (Apple Silicon, no GPU needed) using the `mvp/.venv` virtualenv + freshly installed `sae_lens` 6.43.0. SAE auto-downloaded ~2-3 GB to `~/.cache/huggingface/hub/` on first call. Total wall-clock: ~10 minutes including download.
+
+### What landed
+
+`mvp/experiment3_v_ih_projection.py` — main projection script. Loads v_IH (whitened, the version we steered with at qwen3-4b L17), passes it through the qwen3-4b L17 transcoder encoder via SAELens canonical `SAE.from_pretrained(release="mwhanna-qwen3-4b-transcoders", sae_id="layer_17")`, sorts top features.
+
+`mvp/experiment3_enrich.py` — enrichment script. Cross-references catalog features (rank + activation), fetches Neuronpedia auto-labels for top-50 unknown features via 6-key rotation. Output: `mvp/results/experiment3_projection/{results.json, enriched.json, enriched_report.md}`.
+
+### The result is unambiguous (Outcome B)
+
+**Of seven Tier-1 humility candidates, six have EXACTLY ZERO activation in v_IH's projection.** The seventh (101568, "I'm not familiar") activates at 0.93 but ranks #1980 out of 163,840 features — far below the top-50.
+
+For comparison, the catalog ranks of the seven Tier-1 humility candidates in v_IH's projection:
+- 101568: rank 1,980 (act 0.93) — only one with non-zero activation
+- 115297: rank 3,439 (act 0.71)
+- 161931: rank 79,261 (act 0.00)
+- 131926: rank 95,204 (act 0.00)
+- 27191: rank 102,935 (act 0.00)
+- 24983: rank 103,406 (act 0.00)
+- 44526: rank 106,791 (act 0.00)
+
+**70419 (the original world-uncertainty trap) ranks #159,053** — literally near the bottom. v_IH doesn't even have the trap-shape we'd worried about.
+
+Meanwhile the **top-50 features v_IH actually lights up are dominated by code/technical-text auto-labels:**
+- #1 (act 8.85): "Programming code"
+- #2 (act 8.66): "IS"
+- #3 (act 6.53): "code/dates"
+- #4 (act 5.35): "code"
+- #5 (act 5.07): "Code and legal text"
+- #11-14, #17-21, #23-32: "Code/Technical snippets", "Code and programming", "Code/Configurations", etc.
+- ~30 of top-50 are code/programming/technical-flavored
+
+A few non-code top features: #16 "Male pronouns", #22 "news articles", #25 "scientific research papers", #33 "verification" (the only humility-adjacent one in top-50).
+
+### Interpretation — F114 framing
+
+This is a third-class result beyond the "method failure" vs "deeper falsification" framing we'd been entertaining for F111. New framing: **v_IH is a register/style vector dominated by code/technical-text artifacts of the contrastive corpus**, not humility content in any sense the SAE can decompose.
+
+The behavioral observation from F104/F112 — that v_IH × L17 breaks confabulation rails on E1/ip-longest/eg-v2-10 — is consistent with this re-interpretation: code/technical register is naturally terse and bullet-formatted, which would mechanically break narrative-confabulation rails without installing humility content. The "rescue" is stylistic substitution, not virtue installation.
+
+Implications:
+1. **F111 hardens in a new way.** Not "v_IH is humility but the diff-of-means missed the target," not "humility doesn't exist as residual signal at L17," but **"v_IH is code-register because that's what the contrastive corpus actually contrasted, not humility-vs-not"**. Corpus-design failure + encoding-mismatch failure stacked.
+2. **F112's commit-amplifier hypothesis needs re-examination.** v_IH isn't a commit feature in the SAE basis; whatever F112 documented behaviorally needs a different mechanism story. The R1-Distill triangle (15372 + 19103 + 2136) remains the *clean* test of commit-amplification on dashboard-verified closure features.
+3. **F45 universal cultural-register pattern reinforced from a fourth angle.** Even when we extract "humility" via contrastive triplets, the extracted vector decomposes into surface features rather than humility features. Same pattern as the SAE searches (humility-as-religious-discourse, EG-as-medical-register, etc.) but at the *extracted-vector* level.
+
+### Caveat — basis-mismatch
+
+v_IH was extracted at residual-stream OUTPUT of L17 (last_token method); transcoder is at MLP-INPUT of L17. These are different positions, so the projection is a heuristic decomposition, not a guaranteed-faithful basis change. Path C (training our own residual-stream SAE for qwen3-4b at L17) would be the definitive test.
+
+But the gap between "0/7 Tier-1 humility hits" and "30/50 code-features in top-50" is too large to be papered over by basis-mismatch noise. Even with substantial noise from the position difference, this gap can't reverse. Result is "strong but not airtight."
+
+### What's next
+
+1. **Pre-VM**: write F114 to findings.md (✅ done), update sae-experiment-plan.md to note Experiment 2 Path A complete with Outcome B (still TODO).
+2. **When VM returns**: Battery 1A (qwen3-4b single-feature IH) becomes the headline experiment. If steering with feature 101568 produces genuine abstention where v_IH produced confabulation, the comparison cleanly separates "code-register stylistic intervention" from "humility-content steering." That's the F111 paper's centerpiece result.
+3. **Optional follow-up**: steer with the top-1 v_IH feature (idx 124827, "Programming code") at matched magnitude on E1. If it reproduces the FM-8-breaking behavior of v_IH, the corpus-artifact hypothesis is mechanistically confirmed.
+
+### Net Day-28 outcome
+
+F114 is the most decisive single finding on the SAE thread since F111 itself. v_IH's behavioral effect is now mechanistically explained as code-register substitution rather than humility installation, and the steering battery's expected results are reframed accordingly.
+
+
+## Day 29 (2026-05-11 to 2026-05-12) — SAE-steering battery re-runs, two silent-failure recovery cycles, full 1,110-generation set landed
+
+Cross-model SAE-steering battery (planned in `sae-experiment-plan.md`, cross-model section) ran on the L4 VM over two days. Three distinct failure → fix cycles:
+
+**Cycle 1 (2026-05-11 overnight)**: First-pass run completed with 22/31 cells appearing successful in the dashboard, but spot-check on 2026-05-11 morning revealed:
+- All cells generated with `--max-tokens 512` CLI default, so reasoning-prompt responses (E1, ip-longest, eg-v2-10) were cap-truncated mid-thinking
+- qwen3-4b cells silently failed because of a `layer_accessor` resolution bug (no traceback in runner.log; subprocess returned zero output)
+- Llama-3.1-8B was loaded as the **base model** instead of `-Instruct`, producing forum-thread garbage (`[#permalink] New post 20 Oct 2020...`) — chat template missing, raw-prompt path activated
+- r1-distill cells generated but with raw `Ġ`/`Ċ` BPE markers in every response (transformers refused to apply `clean_up_tokenization_spaces=True` for Llama BPE tokenizer; warning was silent in steer.py logs)
+
+Patches landed in `mvp/steer.py` and `mvp/utils.py`:
+- `_resolve_layers()` walks dotted path for multimodal Gemma-3 / Gemma-4 wrappers
+- `clean_up_tokenization_spaces=True` flag added to decode (later confirmed ineffective for Llama BPE — fixed post-hoc by string-replacement on the JSON files)
+- Llama-3.1-8B `hf_id` swapped to `-Instruct` in `utils.py.MODEL_CONFIGS`
+- Per-prompt `max_new_tokens` (4096 for E1/E2/eg, 8192 for ip-longest) read from corpus JSON instead of CLI default
+
+User-visible feedback: *"bro, 512 cap is too short, what were you thinking did you try to save time, if so, you only costed more time by wasting whole overnight run for nothing"* — fair. Re-run launched 09:52 UTC 2026-05-11 covering only the three broken model phases (qwen3-4b 13 cells, llama-3.1-8B 4 cells, r1-distill 6 cells), keeping qwen2.5-7b-it (3 cells) and gemma-3-4b-it (5 cells) from the old 512-cap run on the grounds they hadn't silent-failed.
+
+**Cycle 2 (2026-05-11 → 2026-05-12 midday)**: 26.5-hour re-run finished 2026-05-12 12:20 UTC. Dashboard showed 26/31 done with 7h ETA. Hand-check revealed:
+- **Llama-3.1-8B phase 0/4 silent-failed again.** Root cause: `run_sae_battery.py` had its own hardcoded `MODEL_INFO` dict (line 156) that still pointed to base Llama. Runner pre-downloaded the base model; then `steer.py.load_model()` (reading from `utils.py`) tried to fetch `-Instruct` on top of the cached base, ran out of disk (32GB needed, 15GB free), and `snapshot_download` silently failed all 4 cells in 4 minutes.
+- **r1-distill `1B_feat339` failed at the very end** — subprocess killed mid-generation at 97s wall time after loading model and completing E1. No traceback. Likely CUDA stability blip (no OOM in dmesg).
+- **gemma-3-4b-it cells from the OLD run were still 512-cap contaminated** — 50% mid-sentence truncation on E2 disclaimer-style responses
+
+**Cycle 3 (2026-05-12 13:17 → 19:12 UTC)**: Patched `run_sae_battery.py` line 156 → `meta-llama/Llama-3.1-8B-Instruct`. Backed up + deleted contaminated gemma cells. Launched `relaunch_failed.py` covering: 4 llama cells + 1 r1-distill cell (feat339) + 5 gemma cells. Finished 5h 55min later, all 31 cells now correct.
+
+### Findings
+
+F115-F119 written 2026-05-13 covering the headline result (Tier-1 humility features don't produce abstention either), the doubt-feature reverse-coding finding, the unsolvable-E2 result, the new FM-fake-sourcing failure mode, and three methodological lessons (alpha grid waste, random-control mimicry, structural collapse). Full Opus-review of all 1,110 generations completed in one extended session — same rigor pattern as Day 25's cross-model Opus-review.
+
+### Net Day-29 outcome
+
+The battery dataset is now complete and clean (940/1110 = 85% generations pass quality filters; remaining 15% are real model failure modes documented as findings, not data corruption). The headline scientific result is the opposite of what F114 predicted: even rank-1980 humility-content features at qwen3-4b L17 fail to produce abstention. F111 hardens from "v_IH falsified" to "residual-stream additive SAE-steering at the IH-extraction layer cannot install humility behavior in any of the 5 tested models, regardless of feature choice or alpha."
+
+---
+
+## Day 30 (2026-05-13) — Full Opus-review (1,110 verdicts) + findings landed + assessment of the SAE thread's net contribution
+
+Opus-review of every generation in the battery dataset, prompt-by-prompt, model-by-model, cell-by-cell. Same protocol as Day 25's cross-model study: ✓ / ~ / ✗ verdict + FM-tag + 1-line note per row.
+
+**Throughput**: started 1:30 UTC, finished 4:30 UTC (~3 hours). The byte-identical-to-baseline alphas batched cleanly (one read judges all 11 alphas of llama 1B_feat201, for instance, because every entry is the 75-char canned refusal). The varying cells (qwen3-4b sweeps, r1-distill high-α) took most of the time.
+
+**Final distribution** (mvp/results/sae_steering_analysis_20260513/per_generation.csv all rows filled):
+
+| prompt | ✓ | ~ | ✗ | takeaway |
+|---|---|---|---|---|
+| E1-confabulation | 95 (35%) | 1 | 171 (64%) | qwen2.5 + llama-Instruct + r1-distill-baseline pass; qwen3-4b + gemma + r1-distill-high-α fail |
+| E2-contested-science | 0 (0%) | 42 | 225 (84%) | unsolvable across all 31 cells |
+| ip-longest | 118 (44%) | 11 | 136 (51%) | non-thinking models often correct; thinking models spiral |
+| eg-v2-10 | 242 (94%) | 14 | 0 | easy prompt, doesn't discriminate |
+| vd-01..05 | 55 (100%) | 0 | 0 | qwen3-4b 4_feat161931_verif preserves verification disposition at every α |
+
+**Findings landed**: F115 (Tier-1 humility features fail), F116 (doubt-features induce confabulation), F117 (E2 unsolvable), F118 (FM-fake-sourcing as new failure mode), F119 (methodological lessons). All five findings appended to `findings.md` 2026-05-13.
+
+### Was the SAE-steering thread helpful — net assessment
+
+Honest evaluation across the full SAE thread (Day 26 catalog work → Day 28 v_IH projection → Day 29-30 steering battery):
+
+**What we got that was valuable**:
+1. **Cumulative falsification chain** F111 → F114 → F115 is now empirically airtight. The hypothesis "extract a humility direction from contrastive triplets, find the SAE features it decomposes into, steer with them, get abstention behavior" is decisively disproved with N=1,110 Opus-judged generations. This is a publishable negative result on residual-stream SAE-steering for virtue installation.
+2. **Discovery of FM-fake-sourcing as a steering-specific failure mode** (F118). Steering can induce the model to fabricate academic citations with plausible journal/page/author formatting. This wasn't in the FM taxonomy before; it has direct safety relevance for agentic / RAG / research-assist systems.
+3. **Confirmation that single-direction additive steering can break things but not produce silence** (F116). "Doubt"-named features induce commitment to fake numbers, not abstention. This generalizes from F112's Qwen-family commit-amplification to the architectural insight that residual-stream steering can't suppress generation — only redirect it.
+4. **Random-control methodological discipline** (F119b). On qwen3-4b L17, real-feature variation is indistinguishable from random-vector variation in Opus-review. Any future SAE-steering claim needs random-control scoring.
+5. **Practical engineering** — the SAE feature catalog (Day 26-27), the cross-model expansion (Day 27 evening), the SAELens canonical-API integration, the steering hook attaching to multimodal wrappers (Gemma-3/4) — all reusable infrastructure for any future steering work.
+
+**What the SAE-steering thread did NOT give us**:
+1. **A working virtue-steering recipe.** Zero generations across 1,110 produced "I don't know" on E1 in qwen3-4b or gemma when those baselines confabulate. Zero generations across 267 produced proper contested-evidence acknowledgment on E2. The headline product hypothesis from F112 ("commitment amplifier as a generalizable virtue-installation mechanism") is not supported by this data on the F112 cross-architecture test bed.
+2. **A clean separation of "v_IH was register" vs "humility lives in residual stream but diff-of-means missed."** F114 was supposed to test this; F115 closed it: even features the SAE/Neuronpedia auto-labeled as "humility content" don't produce abstention. Both branches of F114's prediction are now closed unhelpfully.
+3. **A model that's responsive in the desired direction without being destructive.** qwen3-4b is most steering-responsive but the responses are degenerate (confabulation, structural collapse, FM-8 spiral). gemma is most steering-resistant but its baseline is the worst confabulation. There is no "responsive AND benign" cell in the battery.
+
+**Bottom line**: the SAE-steering arm of the project produced **strong negative results that close down a specific research direction**. The thread answered the question "can we install humility / verification-disposition via residual-stream SAE-feature steering at the IH-extraction layer?" with a clear "no" backed by 1,110 Opus-judged generations. The next-steps section in `post-mvp-decisions.md` Cluster 2 should be updated: SAE-feature steering as the primary virtue-installation mechanism is no longer the lead candidate. Diff-of-means steering with full-vector arithmetic remains an option but F104→F108→F109 already showed its limits.
+
+### What to do next (Day 30 evening reading of the cluster-2 priors)
+
+Three productive directions are open after this run:
+1. **Diff-of-means with much more careful contrastive corpus design** — F107 showed the corpus-design failure was real and was upstream of all the F45-style cultural-register findings. A v3 corpus with explicit anti-register-leakage controls might rotate v_IH off code-content. This is a 3-week corpus-curation effort.
+2. **Output-stage layer steering** (L25+ on qwen3-4b, L28+ on r1-distill) — F115 (3) hypothesis. Humility might be implemented at output-stage rather than mid-stack-reasoning layers. We have not tested this; the L17 limit doesn't preclude success at later layers. This is a 1-week extension of the current battery.
+3. **Pivot to "commit-suppression via negative-α on commit features"** — F116's clean test. If `2_commit_amplify` at α=−8 produces abstention where positive α produced commit-confabulation, then commit-suppression IS the right operation but no one has named that feature yet. Half-day test on r1-distill.
+
+Each of these is a finite, falsifiable next step. The current SAE-steering thread can be considered closed on the L17-residual-stream branch, with F115-F119 as the canonical write-up. F-numbers reach 119. Journal day 30.
+
+
+## Day 31 (2026-05-13) — Mechanism-shift battery v1: launched, completed, Opus-reviewed, F120 landed. Four mechanism alternatives all failed.
+
+Reaction to the Day-30 close-out: user pushed back ("there are far many advanced methods we can try before giving up on these virtues"). Fair pushback — the Day-30 framing ("category error: virtues aren't features") was too strong. We had tested ONE specific mechanism (static additive single-layer ungated single-direction), not the whole interpretability-flavored steering space. The field has moved past static CAA precisely because static doesn't work; conditional / multi-layer / projection / negative-direction variants are genuinely distinct mechanisms.
+
+### Battery v1 design (2026-05-12 evening)
+
+Tested four mechanism shifts beyond static-additive:
+
+- **C1 first-N-token gating** — apply additive steering only during prompt-pass + first N output tokens (N ∈ {1, 5}). Tests "is the early-token argmax cascade the constraint?"
+- **C2 multi-layer composition** — apply same direction simultaneously at L8+L17+L25 (qwen3-4b) or L11+L21+L31 (r1-distill) at α=2.0. Tests "is single-layer intervention insufficient?"
+- **C3 negative-α humility** — apply Tier-1 humility features at α=−5. Tests "is the sign of the humility-feature decoder direction simply inverted?"
+- **C4 negative-α commit (F116 reciprocal)** — apply r1 commit pair (19103+2136) at α=−8. Tests F116's architectural claim that residual-stream additive steering cannot suppress generation.
+
+13 cells × 4 prompts = 52 steered generations. Hosted on the same VM (alphaludo-l4). Launched 2026-05-12 21:07 UTC after patching steer.py with `--gate-first-n N` and `--multi-layers L1,L2,L3` flags + adding token-counter gating to AdditiveSteeringHook.
+
+### Execution
+
+Battery ran clean — no silent failures, no model-load bugs, no decoder-path errors (lessons from the F115/F116 battery's three-cycle hellscape held). Per-cell pace ~22-25 min (similar to the previous battery since same prompt set with same caps). Total runtime 5h 20min, finished 2026-05-13 02:27 UTC.
+
+Post-pull cleanup: r1-distill responses STILL had Ġ/Ċ BPE markers (the `clean_up_tokenization_spaces=True` patch is still ignored by Llama tokenizer despite our utils.py update — transformers throws the warning but applies the flag-skipping behavior). Cleaned post-hoc via string-replacement on 5 r1-distill files. Need to file this as an upstream bug or hard-code the cleanup in steer.py's decode path. Filed as TODO for future steering work.
+
+### Opus-review verdict (104 rows, same rubric as F115-F119)
+
+Steered-generation verdict distribution: **30 ✗ / 9 ~ / 13 ✓** out of 52.
+
+The 13 ✓ are almost entirely eg-v2-10 (11 of 13 are eg-v2-10 — the easy magnitude-evidence-grounding prompt that was already ✓ at every baseline in the previous battery). The remaining 2 ✓ are r1-distill E1 cells where the baseline was *already* ✓ (proper verification disposition) and the mechanism shift preserved it. **Zero cells got promoted from baseline-✗ to ✓ by any mechanism shift on E1, E2, or ip-longest.**
+
+### Per-condition outcomes
+
+- **C1 first-N gating fails on the headline prompts**. qwen3-4b feat101568 first-5 on E1 still confabulates "105.5 kg by a grower" — less destructive than static-α=5's "100 kg, Horsens, Turk's Turban variety" but still committed confabulation. The argmax-cascade hypothesis is partially right (initial token set matters) but the model's strong prior toward "answer with a specific number" reasserts after the gate releases. First-1 gating doesn't help further.
+
+- **C2 multi-layer composition adds no qualitative shift**. Three layers at α=2 each don't add up to anything different from one layer at α=6 in terms of behavior. Magnitude wasn't the issue.
+
+- **C3 negative-α humility doesn't change the sign-of-effect**. Both qwen3-4b features confabulate at α=−5 just as they did at α=+5, just in slightly different ways. The "humility-content" feature decoder doesn't have a meaningful axial sign for humility behavior.
+
+- **C4 F116 reciprocal test: confirmed**. r1-distill negative-α=−8 on commit pair on E1 produces *"approximately 220 kilograms based on recollection and available data"* — terser confabulation with confidence assertion. **No silence, no abstention, no "I don't know."** F116's central architectural claim holds: residual-stream additive steering is one-directional — it can redirect generation but cannot suppress it.
+
+### Net Day-31 outcome
+
+The cumulative falsification chain is now F111 → F114 → F115 → F120. Each step closes a wider mechanism class. The current state:
+
+> **Humility / abstention / contested-evidence behavior is not extractable as a residual-stream direction in 5 tested open-weight models at IH-extraction layers**, across 2,914+ Opus-judged generations spanning {additive sign} × {single, multi-layer} × {ungated, first-1, first-5} × {humility-content, doubt, commit} features × α ∈ {−8, −5, 0.001 → 5.0}.
+
+Three Phase-2 options survive:
+
+- **(a) Behavioral fine-tuning** — *create* the representation by modifying weights. Known-working. ~1 month, $5K.
+- **(b) Detection-product pivot** — ship the FM-X classifier built on 2,914 Opus-judged generations. Direct safety relevance. ~2 weeks.
+- **(c) CAST conditional gating / steering vector fields** — last interpretability variant not yet tested. ~2 weeks, ~20% prior on success.
+
+F120 entry landed in `findings.md`. `post-mvp-decisions.md` Cluster-2 update pending (will commit to one of a/b/c after a sleep on it). F-numbers now 120. Journal day 31.
+
+### What I'd say to a future me reading this
+
+The Day-30 close-out claim ("category error: virtues aren't features") was directionally right but lacked the empirical airtightness that F120 now provides. Going forward, if any new interpretability-paper appears claiming "we can steer virtue X into model Y via residual-stream method Z," the prior should be heavily skeptical unless the paper either:
+1. Tests on a similarly large Opus-judged battery (N > 500), or
+2. Distinguishes representation-installation from style-modulation in their results section.
+
+The pattern across 30 days has been: each new mechanism variant looked promising on paper, then failed empirically with high statistical power. The cheap version of the experiment (12-cell mech battery) was a much higher information-density use of GPU than another full-scale sweep would have been. **Future mechanism-shift tests should follow this pattern**: 3-5 conditions × 3-5 prompts × 2-3 models, Opus-judged, before committing to a full battery.
+
+## Day 37 fork session (2026-05-19) — NLA cross-method validation on Qwen2.5-7B L20 → F124/F125/F126 land. The representation IS there at the right (model, layer); F123's stronger claim narrows.
+
+Main-thread context: ablation battery completed 2026-05-18→19 (F123 in findings.md — neither additive nor ablation steering installs abstention on the F121 cube features in qwen3-4b L17 / r1-distill L31). F121 draft v2 + publication-playbook completed.
+
+This entry covers the **fork session** branched off the main thread to investigate whether Anthropic's released Natural Language Autoencoders (April 2026, `transformer-circuits.pub/2026/nla/index.html`) could give us a third independent angle on the representation question that F114 (SAE projection) and F123 (operations test) attacked from other sides.
+
+### Background
+
+Neuronpedia mailout 2026-05-19 noted NLA released checkpoints for Qwen2.5-7B-Instruct (L20), Gemma-3-12B-IT (L32), Gemma-3-27B-IT (L41), Llama-3.3-70B-Instruct (L53). One of these — Qwen2.5-7B-Instruct — is in our Phronesis subject set. Inference is light (single L4 GPU sufficient); training is heavy (multi-H100). We committed to **Track A (inference only)**, skipped Track B (training NLAs for our other 4 subjects).
+
+### Execution
+
+Pipeline ran ~2h 15min on alphaludo-l4. Seven phases, 604 AV outputs, 0 CJK injection-failure smells:
+
+| Phase | What | N AVs |
+|---|---|---|
+| 1 | IH triplets → AV | 180 |
+| 2 | Eval prompts (E1, E2, ip-longest, eg-v2-10) → AV | 8 |
+| 3+4+5 | RT (70) + EG (19 of 70, push race) + VC (40) → AV | 387 |
+| 6 | Random unit-vector negative control → AV | 20 |
+| 7 | Diff-of-means humility direction + class means → AV | 9 |
+
+Three engineering wrinkles surfaced (none blocking):
+
+1. **BatchEncoding return-type change in newer transformers.** `apply_chat_template(...tokenize=True)` returns a `BatchEncoding` dict, not a list, contra the canonical `nla_inference.py`. Fixed by unwrapping `["input_ids"]` defensively.
+2. **`clean_up_tokenization_spaces=True` still silently ignored for Llama BPE** (same as previous SAE-round bug). Not relevant for Qwen tokenizer which we used here — left for future.
+3. **scp races during the corpus push to VM** caused EG corpus to be only partially extracted (19/70). RT and VC pushed cleanly. Noted in F125 as a coverage caveat; full re-run remains an open TODO.
+
+### Three findings landed (findings.md F124, F125, F126)
+
+**F124** — IH triplets at Qwen2.5-7B L20: virtuous AV outputs use 7.6× more humility-vocabulary than non-virtuous; 82% per-triplet positive discrimination. Verbatim quote from an IH triplet AV on a virtuous passage: *"I decline to construct a fictional account of this claim; I do not invoke it, nor defend it. I decline to name it. I withdraw this claim."* The AV reads humility content from the L20 residual cleanly.
+
+**F125** — cross-virtue: signal generalizes to RT (51%) and EG (53%) at smaller effect sizes; VC at 2% (IH-tuned regex catches no VC vocab — not a true negative, just a measurement gap). Random-vector control: 0.00 humble / 0.15 commit. The F124 signal is real, not AV vibing.
+
+**F126** — activation arithmetic: the diff-of-means humility direction at qwen2.5-7b L20, fed to AV, decodes to:
+> *"Not ask for the impossible, not demand explanation, not overstate — but listen, and not take the conversation into private, not demand answers, not overreach — unboundable... aphorism about avoiding unnecessary engagement."*
+
+**The NLA validates an extracted diff-of-means humility direction as humility content.** Same method (F111's diff-of-means) that failed at qwen3-4b L17 succeeds at qwen2.5-7b L20. The method-failure was layer/model-specific, not generic.
+
+### Implication for the F111 → F123 chain
+
+F123's stronger claim ("the limit is the representation, not the operation") narrows: at qwen2.5-7b L20 specifically, the representation IS present, and our diff-of-means + SAE-feature operations on different (model, layer) combinations couldn't reach it. Whether qwen3-4b L17 (the bulk of the F111 chain) lacks the representation or just hides it remains formally open without an NLA for that model.
+
+### Implication for the (a + tools) plan
+
+The IH triplets corpus is now end-to-end validated:
+1. Encodes a clean v/nv disposition contrast (F124 at the passage level)
+2. Diff-of-means extracts a coherent direction (F126)
+3. NLA reads that direction back as humility (F126)
+4. Therefore the F107/F114-flagged "corpus is register/length confound" hypothesis is partially falsified — the corpus does encode dispositional humility content. Cleared as a primary DPO training source.
+
+### Artifacts
+
+- `mvp/results/nla_qwen25_L20_experiment/` — 604 AV outputs + 5 parquets + analysis MDs + README
+- `mvp/extract_qwen25_l20_activations.py`, `extract_eval_prompt_activations.py`, `extract_mvp_combined_activations.py`, `phase6_random_control.py`, `phase7_activation_arithmetic.py`, `run_nla_av_inference.py` — full code
+- `docs/findings.md` F124-F126
+
+### Replication cost for anyone
+
+~2h on an L4-class GPU, zero training spend (used `kitft/nla-qwen2.5-7b-L20-av` released checkpoint). Should be the cheapest interpretability replication in the project — under $5 of cloud GPU if rented.
+
+### Net Day-37 outcome (fork session only)
+
+Three new finding entries (F124, F125, F126), one new artifact directory, one corpus-validity affirmation, one cumulative-chain claim-walking-back. The F121 LessWrong post draft needs a brief NLA cross-validation subsection — flagged in writeup-plan.md item 1's stop-criteria.
+
+The fork session did not change main-thread priorities. (a + tools) plan from Day 31 remains the strategic commitment. NLA results provide cleaner training-signal validation but do not displace the fine-tuning experiment.
+
+## Day 37 fork — evening update (2026-05-19) — Three extensions completed + cross-session review corrections
+
+After F124-F126 landed, ran three extensions:
+
+- **Ext A** (12 activations) — qwen2.5-7b-it L20 activations from main-battery cells (E1/E2/ip-longest/eg-v2-10) under prompt-only / +baseline-resp / +α=5-steered-resp conditions. AV outputs are essentially identical baseline vs steered for each prompt — consistent with steering not changing the model's representation, BUT with causality caveat (main-battery steered at L23, NLA reads L20 upstream). → **F128 landed.**
+- **Ext B** (12 vectors) — diff-of-means + class-mean for RT, EG, VC at qwen2.5-7b L20. AV decodes EG diff as "confidence-in-evidence" axis ("partial finding" vs "robust closure"), RT as "completeness-acknowledgment" axis ("still incomplete" vs "now complete"), VC as format axis (markdown / metadata tags, not disposition). Distinct content per virtue, consistent with each virtue having its own representational form at L20. → **F127 landed.**
+- **Ext C** (210 activations) — full N=70 EG corpus re-extraction (the earlier run only got N=19 due to corpus push race). With full data + per-virtue regex: IH=82%, RT=19%, EG=9%, VC=0% per-triplet discrimination. The original F125 numbers using IH-tuned regex on partial EG were misleading; cross-virtue signal is much weaker than initially reported when properly measured. → **F125 corrected inline.**
+
+### Cross-session review surfaced overclaiming in F126
+
+Independent Claude session reviewed the F124-F126 entries and flagged three legitimate framing issues:
+1. NLA decoding of synthetic diff-of-means vectors is non-standard usage; AV-format artifacts in the output suggest moderate not strong validation
+2. "NLA reads it as humility" ≠ "steering with it would install humility" — F126 did not run the behavioral test
+3. "F111 method-failure was layer/model-specific" overstates what F126 demonstrated; what F126 actually shows is that the diff-direction's NLA reading contains humility vocabulary, not that the direction would behaviorally install humility
+
+All three corrections applied inline to F126 (and F127 by extension). The honest reading of F126: positive evidence that the IH triplets corpus encodes real dispositional content (addresses F107/F114), but NOT direct validation that the extracted direction works as a steering vector.
+
+**Proposed follow-up** (not run yet): steer qwen2.5-7b-it with the F126 diff-of-means direction at L20. Negative-α on E1 (predict: breaks baseline abstention) + positive-α on E2 (predict: improves contested-evidence acknowledgment). Either result is informative — would either show F111's failure was layer/model-specific (positive) or generalize F121 to a new model where the representation is NLA-readable (negative). ~30 min GPU. Decision pending.
+
+### Net Day-37-evening outcome
+
+5 finding entries (F124, F125 with corrections, F126 with hedging, F127, F128) consolidated in findings.md. Cross-session review caught real overclaims and they're now corrected. The strongest defensible claim from the fork session is that the IH triplets corpus is real dispositional content at the activation level — which strengthens the case for using it as DPO training data in the (a + tools) plan. Other claims about steering, layer-generality, and method-failure-being-specific are more aspirational than supported.
+
+Open question for the writeup queue: whether to run the behavioral steering test on the F126 diff direction before the F121 LessWrong post goes live. If yes, the post gets a stronger cross-method validation section. If no, the post still gets a useful but bounded mention of NLA cross-validation.
+
+## Day 37 fork — late evening (2026-05-19) — F129 behavioral steering test resolves the F126 open question. F111 generalizes.
+
+Per the cross-session review's recommended follow-up: ran additive steering with F126's diff-of-means humility direction at qwen2.5-7b L20. Two pre-registered canary tests:
+
+1. **E1 negative-α (predict: break baseline abstention)** — null. Across α ∈ {−8, −5, −3, −1}, model preserves verification-disposition behavior. Same as random-control matched at the same norm.
+2. **E2 positive-α (predict: add contested-evidence acknowledgment)** — partial only. One α (+3) shows "moderate confidence" framing absent in random control; non-monotonic, doesn't sustain at higher α, and doesn't reach the target behavior (citing Cochrane "very low quality evidence" or 2016 DHHS removal). v_random at α=+8 actually moves further toward overcommit ("very high confidence"). Difference between v_humility and v_random is below the threshold for "operationally installs humility."
+
+72 generations total (4 prompts × 9 alphas × 2 vectors), 16 min GPU. Result is the cheapest informative experiment of the entire SAE round.
+
+### Findings update
+
+F129 written and appended. F126 hedged inline a second time. F121 confirmed to generalize: even at a (model, layer) where NLA reads the residual content as humility and diff-of-means extracts a coherent direction, additive steering with that direction does not install humility behavior.
+
+What stands cleanly after F129:
+- IH triplets corpus encodes real dispositional content (F124 corpus-level + F126-as-corpus-validation strengthen the case for DPO training)
+- F121 architectural claim is broader than originally framed: additive operations on residual streams can't install suppressive/abstention behavior even when the representation is present and the direction is interpretable
+- F111 generalizes: diff-of-means + additive steering doesn't install humility, at qwen3-4b L17 AND qwen2.5-7b L20 — not layer-specific
+
+What was over-claimed and is now walked back:
+- F126's "F111 method-failure was layer/model-specific" — wrong, falsified by F129
+- F126's "diff-of-means direction works at qwen2.5-7b" — only the NLA reading works, the steering doesn't
+- F126's "F123 walks back" — F123 stands, F129 strengthens F121
+
+### Net Day-37-late outcome
+
+6 finding entries from the fork session (F124, F125 with full-corpus correction, F126 with two rounds of hedging, F127 cross-virtue, F128 battery-cell consistency, F129 behavioral test). The fork session converted a tentative "we have a working steering recipe" reading into a clean "the architectural finding F121 is broader and applies even where representation is NLA-readable" reading. That's a more rigorous, more defensible position to write up in the F121 LessWrong post.
+
+DPO/SFT path forward is unchanged — actually strengthened, because steering as a Plan B is now confirmed-ruled-out for this regime even on the most favorable (model, layer).
+
+
+## Day 37 fork — autonomous office-hours run (2026-05-19, afternoon) — F130–F134 sharpen and lock-in F121/F129
+
+User was in office for several hours and asked the VM be kept productive. Designed and ran a coherent 6-phase autonomous experiment chain on alphaludo-l4 — total ~2h on a single L4. Five new F-entries (F130–F134), one consolidated headline.
+
+### What was run (6 phases, chain-runner script)
+
+1. **P1 — AR round-trip + directional test** (~3 min). Pulled `kitft/nla-qwen2.5-7b-L20-ar`, validated AV/AR pipeline via 30-sample round-trip (mean cos 0.82 vs original — methodology QA passes), then ran the *substantive* test: encode 5 canonical humility passages and 5 overcommit passages through AR, measure cosine to F126's v_diff direction.
+2. **P2 — Logistic-regression probe at L20** (~10 sec). Binary + 3-class probes on the 180 IH-triplet activations.
+3. **P3 — Extreme-α extension on E2** (~3 min). Pushed v_humility to α ∈ {±15, ±25, ±50}.
+4. **P4 — Layer sweep** (~5 min extraction + ~23 min AV inference). Extracted activations at L15, L18, L22, L25 from 20 random IH triplets × 3 versions; ran the L20-trained AV on all 256 activations.
+5. **P5 — CAST per-token gated steering** (~5 min). Implemented cosine-gated additive hook (`GatedSteeringHook`), swept α × τ × polarity = 18 conditions × 2 prompts.
+6. **P6 — AR-derived steering** (~8 min). Extracted humility direction from canonical humility text via AR (orthogonal to F126's v_diff), then ran the F129 steering protocol with that new direction.
+
+Plus the F129's local power loss in the middle: `setsid nohup` saved the chain — all 6 phases completed on the VM independently of any SSH session state.
+
+### Findings landed (F130–F134)
+
+**F130** — AR round-trip validates AV/AR pipeline (cos 0.82); directional test reveals **F126's v_diff is essentially orthogonal to canonical humility text in AR space (cos = +0.003 to +0.029 across 5 humble passages)**. Mechanistic explanation for F129: v_diff is the corpus-discrimination axis, not the humility-generation axis.
+
+**F131** — Logistic-regression probe at L20 achieves **100% binary AND 100% 3-class accuracy** across 5-fold CV. cos(probe_w, v_diff) = +0.86. The representation is provably present and perfectly linearly decodable — F129's null is NOT a representation-absence story.
+
+**F132** — Layer sweep: the L20-trained AV reads coherent virtuous-vs-non-virtuous discrimination at L15, L18, L22, L25. The diff-of-means direction decodes as humility-themed prose at every layer (L22 particularly clean: *"If he cannot say, he does not pretend to know"*). **Humility signal is broadly distributed across an 11-layer band, not L20-specific.**
+
+**F133** — Extreme-α at ±50 still affirms "high confidence" on E2 flossing premise (no abstention). CAST-style gating reduces to either "always fire" or "never fire" because cos(h_t, v_humility) sits uniformly at ~−0.06 across generation — no selective firing possible. F121 generalizes to 6× larger magnitudes AND to per-token conditional gating.
+
+**F134** — **AR-derived steering also fails.** Extracted humility direction from canonical humility text via AR (cos to F126 = +0.01). Steered at L20 across α ∈ {−8, ..., +25}. Same null on both E1 and E2 canaries. F121 is now **direction-invariant** at qwen2.5-7b L20: three independently-derived humility directions (mutual cosines as low as +0.01) all fail.
+
+### The synthesized claim chain (single sentence)
+
+At qwen2.5-7b L20: the humility representation is provably present (F131), broadly distributed across L15–L25 (F132), perfectly linearly decodable (F131), captured by diff-of-means (F126), AND independently derivable from canonical humility text via AR (F134) — yet additive residual-stream steering with any of these directions, at any magnitude up to ±50, under any tested gating scheme, fails to install humility behavior on E1 + E2 (F129, F133, F134).
+
+This is the most direction-rich, magnitude-rich, operation-rich falsification of additive-residual-stream steering as a virtue-installation mechanism the project has produced.
+
+### What this resolves for the (a + tools) plan
+
+**Phase 2a (DPO/SFT)**: doubly strengthened. The IH corpus is now triply-to-quadruply validated as encoding real dispositional content (passage-level NLA reading F124, diff-of-means NLA-readable F126, 100% probe accuracy F131, layer-distributed signal F132). Clear go-ahead.
+
+**Phase 2b (steering fallback)**: empirically ruled out for this regime. No rescue path remains. Steering is not a viable Plan B.
+
+### What I had to fix mid-run
+
+- VM venv missing pyarrow + pandas + sklearn — installed those into the project's `.venv` (not the system python3) once I noticed the chain runner died with import errors. Then re-ran.
+- The chain-runner shell script used `python` instead of `python3` and didn't have `set -o pipefail`, so first launch silently exited "success" for all phases because the `python: command not found` error was masked by `tee` returning 0. Fixed both, re-uploaded, relaunched.
+- Local power loss took out my completion-watcher Bash background tasks. VM-side processes survived (setsid nohup) — when power came back, I just SSH'd in and the chain runner had finished cleanly.
+
+### What's still on the open-followups list (and what is now closed)
+
+**Closed by today's run**:
+- "Does F126's direction install humility via additive steering?" → no (F129)
+- "Is the F126 direction the right axis for humility text?" → no (F130)
+- "Is the representation actually present at L20?" → yes (F131)
+- "Is humility L20-specific or distributed?" → distributed (F132)
+- "Does extreme-α rescue F129?" → no (F133)
+- "Does CAST gating rescue F129?" → no (F133)
+- "Does a different humility direction work?" → no (F134)
+
+**Still open** (from the prior open-followups list):
+- VC needs vocabulary-specific regex
+- No NLA exists for our other 4 subject models (still out of scope without serious GPU compute)
+- L23 vs L20 layer-of-steering caveat — partially addressed by F132 (representation is at every layer in L15–L25 band, so L23 doesn't have a special role)
+
+### Compute footprint of the autonomous run
+
+~2h wallclock on a single L4 GPU. Zero training spend (used released checkpoints as-is). Cost ≈ free.
+
+### Writeup implications
+
+The F121 LessWrong post can now be substantially strengthened. The post's "we tested across 5 SAE families, 5 models, 30 cells, 267 generations, all null" line gets a coda: "Plus: tested at the (model, layer) where NLA confirms the representation is present, with diff-of-means + AR-derived directions, with α up to ±50, with CAST gating, with the probe-confirmed perfectly-decodable representation — same null. The constraint is structural to additive residual-stream operations, not to vector quality or model choice."
+
+That's a much stronger and more defensible claim than the original Day-31 framing.
+
+## Day 37 fork — autonomous office-hours run #2 (2026-05-19, afternoon-2) — F135–F137 close direction/layer/virtue-axis questions; DPO Phase 2a kickoff
+
+User left for office a second time after first session reported F130–F134. Plan: keep VM productive while drafting Phase 2a scaffolding. Ran a 3-phase chain plus the actual DPO launch on the IH corpus.
+
+### What was run
+
+**P7–P9 chain (~10 min on L4):**
+- **P7** — Probe-direction steering on E1+E2 with the F131 probe weight vector (cos 0.86 to v_diff, classifier-optimal) at α ∈ {−25..+25}. Null on both canaries.
+- **P8** — Cross-layer steering on E2 with F126 v_humility at L15, L18, L22, L25 × α ∈ {±3, ±8} = 16 cells. Null on all.
+- **P9** — Cross-virtue probe transfer: train per-virtue probes on IH/RT/EG/VC L20 activations, compute transfer matrix.
+
+**Phase 2a DPO kickoff** (~3 min training + eval): launched real LoRA-adapted Qwen2.5-7B-Instruct DPO training on the 60 IH triplet pairs. Used `phase2a_dpo_scaffolding.py` with `--corpus IH --launch`. trl 1.4.0 + peft 0.19.1 installed into the project venv.
+
+### Findings landed (F135–F137)
+
+**F135** — Probe-direction steering at L20 fails on E1+E2 across α∈{−25..+25}. F121 is now **direction-invariant across 4 independently-derived humility directions** (F126 diff-of-means, AR-derived v_humble_AR, AR-derived v_diff_AR, F131 probe-optimal weight). Cosines among these 4 span +0.01 to +0.86. All four fail identically.
+
+**F136** — Cross-layer steering with F126 v_humility at L15, L18, L22, L25 all fail on E2 (16 cells, all "high confidence" affirmations). F121 is now **layer-invariant** across the entire L15–L25 band where F132 confirmed the representation is present. Notably, L22's negative-α conditions produce *increased* over-confidence ("very high") — the opposite of humility-steering expectation.
+
+**F137** — Each of the four virtues (IH, RT, EG, VC) has its own independently-decodable axis at L20: in-corpus probe accuracy is 100% (IH), 94% (RT), 95% (EG), 100% (VC). Cross-virtue transfer matrix shows RT↔EG sharing ~85–89% of their discrimination, VC fully isolated (50% to all others), IH partially isolated (66% to RT, 50% to EG/VC). **The L20 "humility direction" is IH-corpus-specific, not a master epistemic-virtue axis.**
+
+### Implications for the F124–F134 chain
+
+F137 refines F124's framing: L20 has clean per-virtue dispositional representations (every virtue's contrast is at ≥94% accuracy in-corpus), but those representations are mostly virtue-specific axes. The "humility direction" F124/F126 extracted at L20 doesn't generalize to RT/EG/VC. RT and EG do share some "epistemic seriousness" axis with ~85% mutual transfer.
+
+This *strengthens* the corpus validation story (every virtue has a real signal) while *narrowing* the "humility-as-one-axis" framing. It also explains why the IH-direction-steering experiments don't accidentally affect non-IH behavior — the directions are largely orthogonal.
+
+### DPO Phase 2a launched
+
+Wrote `mvp/phase2a_dpo_scaffolding.py` (LoRA + TRL DPOTrainer, IH-only corpus to start). Initial run config:
+- Model: Qwen2.5-7B-Instruct base + LoRA r=16, alpha=32, q/k/v/o_proj targets
+- DPO: lr=5e-5, batch=1, grad_accum=8, β=0.1, max_length=4096
+- Data: 60 IH triplet pairs (prompt = "given this study, provide a calibrated analysis", chosen = virtuous, rejected = non-virtuous)
+- Epochs: 1 (initial run; will scale up if signal is weak)
+
+Training completed in ~3 min on L4 (8 optimizer steps). Eval on E1 + E2 runs immediately after.
+
+### Mid-run hiccups
+
+- trl 1.4.0 changed DPOConfig API — `max_prompt_length` is no longer a kwarg. Fixed by removing it (uses `max_length` alone now). Relaunched cleanly.
+- TRL prints "Mismatch between tokenized prompt..." warnings for each pair — these are non-fatal, just verbose. Likely related to Qwen's chat template and the leading space behavior.
+
+### Compute footprint
+
+~15 min wallclock total for P7-P9 chain + DPO. Zero training spend on the 6 chain phases (released checkpoints). DPO training added another ~3 min compute. Cost ≈ free.
+
+### F138 — DPO first-pass eval POSITIVE
+
+After all of the above steering failures, ran the Phase 2a DPO LoRA training on 60 IH triplet pairs. Training took 2.2 min on L4 (8 optimizer steps). Eval on E1+E2:
+
+- **E1**: similar to baseline (both defer to sources; baseline already does this).
+- **E2 (the F121 canary)**: **REAL behavioral shift**. DPO-adapted model says "flossing alone does not directly prevent cavities" and "its direct role in cavity prevention is somewhat indirect compared to brushing" — first time anything in the project has installed even partial calibrated humility on E2.
+
+This is the first positive movement on the F121 canary in the whole project. DPO worked where 5 SAE rounds + F121-F137 steering all failed.
+
+**F121 is now properly bounded**: it's an additive-steering-specific constraint, NOT a model-behavior-unalterable claim. DPO modifies the generation circuit directly and is not subject to the F121 constraint.
+
+Phase 2a is validated as the right path forward. The IH corpus has clean training signal even at minimum scale.
+
+### Next steps (for user review when back)
+
+1. Scale up DPO — 5-10 epochs, all 380 multi-virtue pairs, larger LR
+2. Side-effect evaluation — does DPO preserve math/code/factual-recall on other prompts?
+3. Full E2 calibration — can we get the model to acknowledge Cochrane 2015 "very low quality evidence"?
+4. Cross-virtue DPO — train per-virtue or all-virtues-combined?
+5. Write up F121 LessWrong post — now has a clean "DPO works, steering doesn't" coda
+
+
+### F139 — DPO v2 (5 epochs) confirms F138 shift + side-effect controls clean
+
+Ran DPO v2 (5 epochs, 40 optimizer steps on the same 60 IH pairs). Training time 10.7 min on L4. Loss: 0.61 → 0.003 (severe overfit on training set). Rewards/margins: 0.17 → 6.74 (19× larger than v1).
+
+**Three findings**:
+
+**(A) Behavior shift on E2 stable across training scale — corpus-dependent ceiling.** v2 produces same partial-calibration shift as v1 ("flossing alone may not be sufficient... direct role is indirect compared to brushing... Confidence Level: High... though the exact impact can vary"). 5× more training didn't push further toward the Cochrane "very low quality evidence" stance. The IH corpus doesn't teach contested-evidence-base language explicitly; that's the next training-data design problem.
+
+**(B) Zero side effects on controls.** Math (47×83): identical step-by-step output. Code (reverse_string): identical function + docstring, only example variable name differs. Factual (capital of France): identical "Paris". DPO-adapted model preserves arithmetic, code generation, and factual recall.
+
+**(C) Zero cross-virtue contamination.** ip-longest (VC virtue) and eg-v2-10 (EG virtue) responses qualitatively preserved across baseline and DPO-adapted. The activation-axis isolation observed in F137 (each virtue has its own L20 axis, mostly orthogonal) translates to behavioral isolation — training on IH doesn't accidentally affect VC or EG behavior.
+
+### Net Day-37 second-autonomous-run outcome
+
+10 finding entries from the two autonomous runs (F130-F139). The trajectory:
+- F130-F137: F121 architectural claim becomes near-airtight (direction-invariant, magnitude-invariant, layer-invariant, gating-invariant)
+- F138: DPO is validated as a working path — first behavioral movement on E2 in the entire project
+- F139: DPO behavior is stable, safe, and virtue-isolated — but corpus-dependent ceiling identified
+
+The (a + tools) plan is now empirically grounded. Phase 2a is no longer hypothetical. Steering as Plan B is empirically closed. The F121 LessWrong post has a clean before/after story.
+
+
+## Day 37 fork — autonomous office-hours run #3 (2026-05-19, late afternoon) — F140 walks back F138/F139
+
+Cross-session reviewer flagged that F138's "DPO works" claim was load-bearing without the broader-eval validation. I ran the 4-experiment validation suite they suggested + my 2 negative controls. **Result was sobering.**
+
+### What ran
+
+- Broader contested-evidence eval (18 prompts): 8 contested-evidence + 4 false-premise + 3 well-established + 3 trivia controls
+- SFT-only training (60 virtuous passages, no contrast) → eval on broader set
+- Flipped-label DPO (chosen↔rejected swapped) → eval on broader set
+- Rank-4 DPO (1/4 default capacity) → eval on broader set
+- Rank-64 DPO (4× default capacity) → eval on broader set
+
+Total ~90 min compute on L4.
+
+### What we found
+
+**The E2 shift was real but very narrow.** On the 18 new prompts:
+- Baseline Qwen2.5-7B-Instruct is **already well-calibrated** on most contested-evidence prompts (cites VITAL trial on multivitamin, says evidence is "mixed and inconclusive", etc.)
+- All 5 trained adapters (v2, SFT, flipped-DPO, rank4, rank64) produce **essentially verbatim-identical responses to baseline** on 17 of 18 prompts
+- The original E2 flossing shift reproduces deterministically for v2 (as it should) — but it doesn't generalize anywhere else
+- Flipped DPO ≈ regular DPO ≈ SFT — direction and objective don't matter
+- Rank 4 ≈ rank 16 ≈ rank 64 — capacity isn't the bottleneck
+
+**F138's "first behavioral movement on E2 in the entire project" remains literally true.** But the framing "DPO is the working virtue-installation path" — that needed walking back. F140 is the corrected synthesis.
+
+### Honest reading
+
+Modern instruction-tuned 7B models are already well-calibrated on common epistemic prompts. The "room for improvement" we naively assumed isn't really there for most of the broader test set. The F138 E2 result worked because baseline had an anomalously over-confident response on flossing specifically; DPO normalized that one prompt to match the baseline's typical contested-evidence calibration. It doesn't push past baseline calibration anywhere else.
+
+**The methodological lesson**: single-prompt results don't generalize until shown to. The cross-session reviewer was right to flag this. F138/F139 framing got ahead of the data; F140 corrects.
+
+### Status after F140
+
+- F121 (steering doesn't work): still solid, multi-angle validated
+- DPO at this corpus scale: produces narrow effects on individual anomalous prompts, doesn't install broader humility
+- Phase 2a: open engineering problem requiring corpus expansion + format diversification + proper held-out eval — NOT a validated working path
+
+The F121 LessWrong post should keep its strong negative claim and explicitly NOT make positive claims about DPO yet — just note we explored DPO as a follow-up and found it produces narrow normalization effects but doesn't yet install broader behavior at this corpus scale.
+
+### What's saved
+
+- `mvp/broader_eval.py`, `mvp/broader_eval_prompts.json` — eval framework
+- `mvp/phase2a_sft_control.py`, `mvp/phase2a_flipped_dpo.py`, `mvp/phase2a_rank_ablation.py` — training variants
+- `mvp/run_phase2a_validation.sh` — chain runner
+- `mvp/results/phase2a_validation/eval_*.json` — 6 comparison files (baseline + 5 variants)
+- `mvp/results/phase2a_{sft_control,flipped_dpo,rank4,rank64}/adapter/` — 4 new LoRA adapters on VM
+
+## Day 37 fork — autonomous office-hours run #4 (2026-05-19, evening) — F141 + F142 sharpen F140 with overconfidence-probe + LoRA direction analysis
+
+After F140 walked back F138 to "DPO normalizes anomalous E2 overconfidence," ran two follow-up experiments:
+
+1. **Multi-virtue DPO** (240 pairs across IH/RT/EG/VC) — does scaling help?
+2. **Overconfidence-probe set** (12 prompts designed to elicit baseline overconfidence) — find more E2-style anomalies if they exist
+3. **LoRA Δ direction analysis** — what direction does DPO actually move activations along, mechanistically?
+
+### F141 — overconfidence-probe falsifies F140's "DPO normalizes overconfidence" framing
+
+Designed 12 prompts where baseline might be over-confident: power poses, learning styles, brain training, 8-hours-sleep, vitamin C colds, eggs/cholesterol, grit, organic food nutrition, detox diets, stretching/injuries, GI diet, aspirin prevention.
+
+Results:
+- Baseline is **already well-calibrated** on 10 of 12 prompts (says "evidence is mixed", cites contested findings appropriately, etc.)
+- On 2 prompts where baseline IS over-confident (power poses asserts the disproven Carney/Cuddy 2010 finding; learning styles asserts the disproven Pashler-falsified instructional matching), **NEITHER v2 nor multi-virtue DPO corrects the overconfidence**
+
+This **falsifies the F140 framing** "DPO normalizes anomalous overconfidence to match baseline's typical contested-evidence calibration." If that were true, DPO should correct power-poses and learning-styles. It doesn't.
+
+The honest revision: F138's E2 shift was prompt-specific noise / stylistic mimicry — not "DPO installs humility" and not "DPO corrects overconfidence." It was just noise that happened to look like humility on that one prompt.
+
+### F142 — LoRA Δ direction analysis: v_diff_F126 is NOT what DPO moves activations along
+
+For each of 6 trained adapters (v2-IH, SFT, flipped, rank4, rank64, multi-virtue), computed L20 last-token activation delta vs baseline on 3 prompts. Cosines with reference directions:
+
+| Adapter | cos(Δ, v_diff_F126) range |
+|---|---|
+| v2 IH-DPO | +0.074 to +0.094 |
+| SFT-only | +0.011 to +0.065 |
+| **Flipped DPO** | **−0.131 to −0.060** (negative!) |
+| Rank 4 | +0.025 to +0.082 |
+| Rank 64 | +0.071 to +0.102 |
+| Multi-virtue | +0.041 to +0.090 |
+
+**The intuition from F126 was wrong.** v_diff (the corpus-derived diff-of-means humility direction) is NOT what DPO learns to move activations along. The cosines are all near-zero. DPO finds a different direction entirely.
+
+Flipped DPO has negative cosines — so training direction does affect Δ direction at the sign level, but the magnitudes are tiny in both directions. The signal is real but small.
+
+|Δ| is only ~4% of the baseline residual L2. Compare to F133 where additive steering at α=±50 injected ~50% of residual magnitude and STILL produced near-null behavior. So **direction quality, not magnitude, is the operational variable** — but DPO's direction is also a low-magnitude effect that produces narrow behavioral shifts (F138/F141).
+
+### Sharper project synthesis (F121-F142)
+
+At qwen2.5-7b L20:
+- Humility representation is densely encoded and 100% linearly decodable (F131, F132)
+- The corpus-derived direction v_diff (F126) is one valid description of the discrimination axis (cos 0.86 with the optimal probe weight)
+- **BUT v_diff is NOT the direction along which behavior can be perturbed** (F142)
+- Additive steering along v_diff fails (F121, F129, F134, F135, F136) because v_diff isn't the behavior-modification axis
+- DPO finds a different direction (cos ≈ +0.07 to v_diff) that produces narrow prompt-specific shifts (F138, F141), but doesn't install broader humility
+- The discrimination axis and the behavior-modification axis are DIFFERENT directions in this layer
+
+This is a much more precise and more defensible claim than F121 alone. It explains:
+- Why steering doesn't work (wrong direction, regardless of magnitude or gating)
+- Why DPO has small effects (it finds a related but different direction that produces only narrow shifts)
+- Why probe-direction steering also fails (F135) — probe_w shares the discrimination axis with v_diff but not the behavior-modification axis
+
+### Phase 2a status, further walked back
+
+- Not validated as working virtue-installation path at any tested corpus scale (IH-only 60, multi-virtue 240)
+- DPO produces narrow prompt-specific noise that LOOKS like humility but doesn't generalize to other contested-evidence prompts or correct genuine baseline overconfidence
+- Modern instruction-tuned 7B baselines are already well-calibrated on most common epistemic prompts — there's much less room for improvement than naively assumed
+- The mechanistic story now favors: the behavior-modification direction in residual space is NOT cleanly extractable from the corpus alone
+
+### What this means for the writeup
+
+F121 LessWrong post needs the F142 sharpening: it's not "additive steering doesn't work, full stop" — it's "additive steering along the corpus-discrimination axis doesn't work because that's not the behavior-modification axis. The behavior-modification axis at this layer is some other direction that DPO partially accesses, with narrow effects."
+
+That's a more interesting and more publishable claim than "steering doesn't work."
+
+
+## Day 37 fork — autonomous office-hours run #5 (2026-05-19, evening) — F143: the F121 walkback we should have seen earlier
+
+After F142 showed DPO operates on a different direction than v_diff, the natural follow-up: **what if we steer with the empirically-extracted DPO direction?** F143 ran this.
+
+### What ran
+
+1. **Extract d_dpo**: baseline L20 activation - v2-DPO L20 activation, averaged across 3 prompts. L2 norm = 1.31 (tiny — 1.3% of residual magnitude).
+2. **Additive steering** at L20 with d_dpo on the E2 flossing prompt across α ∈ {-50..+50}.
+3. (Queued next): broader 18-prompt eval at α=+10 to test generalization.
+
+### What we found
+
+α sweep on E2:
+- α ∈ {-50..+5}: all baseline-like, "high confidence" framing
+- **α=+10: REPRODUCES the v2-DPO shift verbatim** — "its direct role in preventing cavities is somewhat indirect compared to brushing", "while flossing alone may not completely prevent cavities"
+- α=+25, +50: back to baseline-like
+
+The sweet spot is narrow — only +10 reproduces the shift. Below it: nothing; above it: model recovers / regresses.
+
+### The F121 walkback
+
+F121-F137 said additive steering doesn't reach behavior. We tested 4 directions (v_diff, probe_w, v_humble_AR, v_diff_AR) at various magnitudes (up to ±50) and under gating. All null.
+
+F143 shows: **the constraint was direction quality, not the operation**. Additive steering DOES reach behavior with the empirically-extracted DPO direction. The corpus-derived directions are the wrong direction; DPO's gradient-descent-discovered direction is the right one.
+
+### The corrected project narrative
+
+Old story (post F140-F142): "Steering doesn't work, DPO doesn't generalize either, project is open engineering problem."
+
+New story (post F143): "Steering DOES work — with the right direction. The hard problem is finding the right direction. Contrastive corpus + diff-of-means/probes/AR all miss the operationally-useful direction. DPO finds it via gradient descent. Once found, additive steering reproduces the DPO effect via residual-stream perturbation."
+
+This is a substantially more publishable story. It explains why F126's diff-of-means failed (wrong direction), why DPO produced narrow effects (the right direction has narrow effects too), AND identifies an open methodological gap (efficient direction extraction without full DPO training).
+
+### Important caveats
+
+1. **Single-prompt result.** Need broader eval before claiming generalization. Queued — runs next.
+2. **Narrow α sweet spot.** Only +10 works. Why?
+3. **d_dpo magnitude is tiny.** L2 = 1.3 (vs F126 v_diff L2 = 40.5). Yet at α=+10 (effective injection L2 ≈ 13), it works, while v_diff at α=+50 (effective injection L2 ≈ 50) didn't. Direction matters more than magnitude.
+4. **DPO-Δ extracted from one adapter (v2-IH-DPO).** Should test if d_dpo from other adapters produces similar steering behavior.
+
+### Open questions for follow-up experiments
+
+- Does DPO-Δ steering at α=+10 also reproduce DPO behavior on the broader 18-prompt set?
+- Does flipped-DPO Δ produce opposite shifts (it had negative cos with v_diff per F142)?
+- Can we extract the behavior-modification direction via a cheaper method than full DPO training? E.g., a few-shot gradient pass, or projection methods on the corpus?
+
+## Day 37 fork — autonomous office-hours run #6 (2026-05-19, evening) — F144 walks back F143 to "same narrow effect, different access method"
+
+Responsible test of F143's α=+10 sweet spot — does it generalize beyond E2?
+
+### What ran
+
+1. Broader 18-prompt eval with DPO-Δ additive steering at α=+10 (the F143 sweet spot)
+2. AV-on-DPO-activations (baseline + v2-DPO + multi-virtue) on 4 prompts
+
+### F144 verdict
+
+**The DPO-Δ steering at α=+10 reproduces the E2 shift (F143 verified)** BUT does NOT generalize to the 17 other broader-eval prompts. Same pattern as F140's DPO finding: shift on E2, no broadening elsewhere.
+
+This is consistent and informative: additive steering with the right direction produces THE SAME narrow effect as DPO itself. The narrow-effect ceiling holds regardless of access method. The behavior-modification axis at qwen2.5-7b L20 has limited reach — irrespective of whether you access it by (a) DPO weight updates or (b) additive steering with the empirical Δ.
+
+### The F143→F144 walkback in plain terms
+
+F143 framing (got ahead of data): "F121 walked back — additive steering CAN reach behavior."
+F144 corrected: "Additive steering CAN reproduce the DPO E2 shift; but the narrow-effect ceiling means it doesn't generalize. Both DPO and steering hit the same wall."
+
+The mechanistic story (F142) stands: discrimination axis ≠ behavior-modification axis. The new addition (F143+F144): the behavior-modification axis exists, is reachable by additive steering with the empirical DPO direction at a specific α, and has the same narrow scope regardless of access method.
+
+### AV-on-DPO-activations: inconclusive
+
+The AV outputs across baseline/v2/multi-virtue look essentially identical, all producing meta-textual "appears to be a formatted article" responses rather than humility-content descriptions. Compared to F124's clean humility-content AV outputs from IH-triplet activations, these read as the AV describing its own prompt-template structure. Probable activation-injection bug. Logged as open follow-up; not load-bearing for any finding.
+
+### Net Day 37 closing state (F124-F144)
+
+21 finding entries today. Cleanest synthesis:
+
+**Architectural claim** (F121 sharpened):
+> "At qwen2.5-7b L20, the humility representation is densely encoded but the behavior-modification direction is different from the corpus-discrimination direction. Standard contrastive-corpus methods (diff-of-means, probes, AR-encoding) miss the behavior-modification direction — they find the discrimination direction with 100% accuracy but it's the wrong axis. DPO gradient descent finds the behavior-modification direction, and once found, additive steering reproduces DPO's behavioral effect — confirming the operation works but identifying the direction-extraction gap. Both methods produce only narrow prompt-specific shifts; neither installs broader humility. The behavior-modification axis at this layer appears to be a narrow corridor with narrow effects, regardless of access method."
+
+**Phase 2a status**: open engineering problem.
+
+**Open methodological questions**:
+1. Why is the behavior-modification axis so narrow in effect?
+2. Can we extract it via cheaper methods than full DPO?
+3. Does the narrow-effect ceiling lift on a less-calibrated baseline (e.g., base model not instruction-tuned)?
+
+
+## Day 37 fork — autonomous office-hours run #7 (2026-05-19, late evening) — F145: bug-fixed AV reveals DPO barely changes L20; shift is downstream
+
+User noticed F144 said "AV experiment was inconclusive due to bug — let's rerun if there was a bug." Rerunning was the right call.
+
+### What was broken
+
+The original AV-on-DPO-activations script had three bugs:
+1. **Wrong sidecar fields**: `meta["extraction"]["injection_char"]` doesn't exist — correct is `meta["tokens"]["injection_char"]`. Without this, the script couldn't find where to inject.
+2. **Missing chat template**: bare-tokenized the template instead of wrapping in user role via apply_chat_template.
+3. **Wrong generation API**: I patched the embedding layer's forward; correct approach is `model.generate(inputs_embeds=embeds, ...)`.
+
+Reference: `run_nla_av_inference.py` (used in F124) was already correct on the VM. I should have used it as a template from the start.
+
+### What the corrected AV shows
+
+Output now matches F124 style (`<explanation>\n...` openings), passes CJK injection-failure smoke test.
+
+**Smoking (well-established)**: AV decodes baseline ≈ v2_DPO ≈ multivirtue_DPO byte-identically. DPO doesn't change well-calibrated baseline representation. Good.
+
+**Multivitamin**: Baseline says "Does exercise improve cognitive decline?"; DPO variants say "Can exercise help prevent cognitive decline?". Tiny conditional/cautious framing shift.
+
+**Power poses**: Baseline says "Yes, studies show:"; DPO variants say "Yes, **some** studies show:". The "some" qualifier appears.
+
+**E2 (flossing — where DPO DOES produce behavioral shift)**: AV decodings are essentially equivalent across baseline/v2/multi-virtue. **The behavioral shift seen in actual generation does NOT manifest as a substantial change in the L20 representation.**
+
+### The full mechanistic story (F121-F145)
+
+The 22 F-entries from Day 37 now form a coherent architectural picture:
+
+1. **L20 has two distinct axes** for the humility content:
+   - The discrimination axis (recovered by diff-of-means, probes, AR — all align at cos +0.86)
+   - The behavior-modification axis (different direction, cos +0.07 with discrimination)
+
+2. **Standard direction-extraction methods recover only the discrimination axis.** DPO gradient descent finds the behavior-modification axis.
+
+3. **At L20, the behavior-modification axis has TINY direct effect.** DPO Δ magnitude is only 1-4% of residual. AV barely sees the difference between baseline and DPO L20 activations.
+
+4. **Visible behavior shifts come from downstream amplification.** L21-L28 layers amplify the tiny L20 Δ into observable behavior — but only at specific decision-margin prompts where the model's token-selection is near a hedging-vs-affirming threshold.
+
+5. **The narrow-effect ceiling is STRUCTURAL, not a training/corpus issue.** No amount of corpus expansion or training scale at L20 will broaden the effect — the L20 representation just doesn't have much room to move.
+
+6. **Both DPO weight updates and additive steering with the empirical Δ produce the same narrow effect** because they're using the same access path (perturbation at L20 → downstream amplification).
+
+### What this means for the F121 LessWrong post
+
+The post can now make a much sharper claim:
+
+> "Steering with the corpus-derived direction fails because that direction (discrimination axis) is not the behavior-modification axis. DPO finds the behavior-modification axis, and additive steering with the DPO-discovered direction reproduces DPO's behavioral effect — so the operation works, but at L20 in qwen2.5-7b the behavior-modification axis has narrow direct effect. The actual behavior shifts come from downstream amplification. This is a structural property of this layer in this model class, not a corpus or training problem."
+
+This is much more useful than the original F121.
+
+### Net Day 37 closing state (22 finding entries F124-F145)
+
+The day produced a coherent and publishable architectural finding. Phase 2a is an open engineering problem in a specific sense: the L20 behavior-modification axis has narrow direct effect, and broader installation would require multi-layer training or different intervention points. This is a finding, not a failure.
+

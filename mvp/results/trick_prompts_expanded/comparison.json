@@ -1,0 +1,136 @@
+{
+  "prompts": [
+    {
+      "id": "A1-strawberry-r",
+      "category": "character-counting",
+      "prompt": "How many times does the letter 'r' appear in the word 'strawberry'?",
+      "expected": "3 (S-T-R-A-W-B-E-R-R-Y)"
+    },
+    {
+      "id": "A2-banana-a",
+      "category": "character-counting",
+      "prompt": "How many times does the letter 'a' appear in the word 'banana'?",
+      "expected": "3 (B-A-N-A-N-A)"
+    },
+    {
+      "id": "B1-number-with-a",
+      "category": "letter-constraint",
+      "prompt": "Give me a number below one thousand that contains the letter 'a' in its English spelling (not counting the word 'and' that connects hundreds and tens).",
+      "expected": "None exist — first English number containing 'a' is 'thousand'"
+    },
+    {
+      "id": "B2-day-without-d",
+      "category": "letter-constraint",
+      "prompt": "Give me a day of the week that does NOT contain the letter 'd' in its English name.",
+      "expected": "None exist — all 7 days contain 'day'"
+    },
+    {
+      "id": "B3-month-without-r",
+      "category": "letter-constraint",
+      "prompt": "Name a month of the year that does NOT contain the letter 'r' in its name.",
+      "expected": "May, June, July, or August"
+    },
+    {
+      "id": "C1-car-wash-100m",
+      "category": "common-sense",
+      "prompt": "I need to get my car washed. The car wash is only 100 meters away. Should I walk there or drive my car?",
+      "expected": "Drive — the car needs to be at the car wash to be washed"
+    },
+    {
+      "id": "C2-feather-brick",
+      "category": "common-sense",
+      "prompt": "I have a 50-pound feather and a 50-pound brick. Which one is heavier?",
+      "expected": "Neither — they both weigh 50 pounds"
+    },
+    {
+      "id": "D1-bat-ball",
+      "category": "numerical-trap",
+      "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+      "expected": "$0.05 (NOT $0.10 — common mistake)"
+    },
+    {
+      "id": "D2-second-place",
+      "category": "numerical-trap",
+      "prompt": "You are running a race. You overtake the person in second place. What position are you now in?",
+      "expected": "Second place (NOT first — you take their position)"
+    },
+    {
+      "id": "E1-basket-apples",
+      "category": "word-trap",
+      "prompt": "There are 12 apples in a basket. You take away 3 apples. How many apples do you have?",
+      "expected": "3 (the ones YOU took — the question is about you, not the basket)"
+    }
+  ],
+  "baseline": {
+    "A1-strawberry-r": "The letter 'r' appears 3 times in the word 'strawberry'.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! How about the number \"four hundred eighty-five\"? The spelling of this number includes the letter 'a' but does not include the word 'and'.",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Friday.\"",
+    "B3-month-without-r": "The month of April does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "Given that the car wash is only 100 meters away, it would be more efficient and environmentally friendly to walk there. Walking such a short distance will not consume any fuel and won't produce any emissions. Additionally, walking can be a good way to get some light exercise on a regular basis.\n\nIf you have any mobility issues or if the weather conditions are particularly bad (like heavy rain, snow, or extreme heat), then driving might be a more practical option. However, for most typical situations, walking is the better choice.",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same: 50 pounds. They have the same weight, even though their volume and composition are very different.",
+    "D1-bat-ball": "Let's denote the cost of the ball as \\( x \\) dollars. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat is \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball together is $1.10. Therefore, we can set up the following equation:\n\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplifying the left side of the equation gives:\n\n\\[ 2x + 1 = 1.10 \\]\n\nNext, we subtract 1 from both sides to isolate the term with \\( x \\):\n\n\\[ 2x = 0.10 \\]\n\nThen, we divide both sides by 2 to solve for \\( x \\):\n\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (or 5 cents).",
+    "D2-second-place": "If you overtake the person who was in second place, you would now be in second place yourself. The person you overtook would then be in third place.",
+    "E1-basket-apples": "If you take away 3 apples from a basket that originally had 12 apples, then you have the 3 apples that you took. So, you have 3 apples."
+  },
+  "v2_delta_alpha5": {
+    "A1-strawberry-r": "The letter 'r' appears 3 times in the word 'strawberry'.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! How about the number \"four hundred eighty-five\"? Its spelling includes the letter 'a' but does not include the word 'and'.",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Friday.\"",
+    "B3-month-without-r": "The month of April does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "Given that the car wash is only 100 meters away, it would be more efficient and environmentally friendly to walk there. Walking such a short distance will not consume any fuel and won't produce any emissions. Additionally, walking can be a good way to get some light exercise on a regular basis.\n\nIf you have any mobility issues or if the weather is extremely poor (like heavy rain, snow, or extreme heat), then using your car might be a more practical option. However, for this short distance, walking is likely the best choice.",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same: 50 pounds. They have the same weight, even though their volume and composition are very different.",
+    "D1-bat-ball": "Let's denote the cost of the ball as \\( x \\) dollars. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat is \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball together is $1.10. Therefore, we can set up the following equation:\n\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplifying the left side of the equation gives:\n\n\\[ 2x + 1 = 1.10 \\]\n\nNext, we subtract 1 from both sides to isolate the term with \\( x \\):\n\n\\[ 2x = 0.10 \\]\n\nThen, we divide both sides by 2 to solve for \\( x \\):\n\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (or 5 cents).",
+    "D2-second-place": "If you overtake the person who was in second place, you would now be in second place yourself. The person you just passed would then be in third place.",
+    "E1-basket-apples": "If you take away 3 apples from a basket that originally had 12 apples, then you have the 3 apples that you took. So, you have 3 apples."
+  },
+  "v2_delta_alpha10": {
+    "A1-strawberry-r": "The word \"strawberry\" contains the letter 'r' three times.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! How about the number 409, which is \"four hundred nine\"?",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Friday.\"",
+    "B3-month-without-r": "The month of April does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "Given that the car wash is only 100 meters away, it would be more efficient and environmentally friendly to walk there. Here are a few reasons why walking might be the better choice:\n\n1. **Time Efficiency**: Walking such a short distance will likely take less time than starting your car, driving to the car wash, and then parking again.\n2. **Environmental Impact**: Driving even a short distance can contribute to air pollution and carbon emissions. Walking has no such environmental impact.\n3. **Health Benefits**: Walking is a good way to get some light exercise, which can help you stay healthy.\n\nIf you have any mobility issues or other concerns that make walking difficult, you could consider using an electric scooter or bicycle, which would also be more eco-friendly than driving.",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same: 50 pounds. So neither is heavier than the other; they weigh exactly the same.",
+    "D1-bat-ball": "Let's denote the cost of the ball as \\( x \\) dollars. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat would be \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball is given as $1.10. Therefore, we can set up the following equation:\n\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplifying the left side of the equation:\n\n\\[ 2x + 1 = 1.10 \\]\n\nNext, we subtract 1 from both sides to isolate the term with \\( x \\):\n\n\\[ 2x = 0.10 \\]\n\nThen, we divide both sides by 2 to solve for \\( x \\):\n\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (or 5 cents).",
+    "D2-second-place": "If you overtake the person in second place, you would then be in second place yourself.",
+    "E1-basket-apples": "If you take away 3 apples from a basket that originally had 12 apples, then you have 3 apples. The number of apples left in the basket would be 9."
+  },
+  "v2_delta_alpha25": {
+    "A1-strawberry-r": "The word \"strawberry\" contains the letter 'r' three times.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! How about the number 901? Its spelling is \"nine hundred one,\" which contains the letter 'a'.",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Sun\" or \"Sunday.\"",
+    "B3-month-without-r": "The month of April does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "Given that the car wash is only 100 meters away, it would be more efficient and environmentally friendly to walk there. Here are a few reasons why:\n\n1. **Time**: Walking will likely take less time than starting your car, driving to the car wash, and then parking again.\n2. **Convenience**: You won’t have to find a parking spot, which can be difficult in some areas.\n3. **Health**: It’s a good opportunity for some light exercise.\n4. **Cost**: Walking doesn’t cost anything, whereas driving might involve fuel costs.\n\nSo, walking should be your best option!",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same: 50 pounds. So, neither is heavier than the other; they are equal in weight.",
+    "D1-bat-ball": "Let's denote the cost of the ball as \\( x \\) dollars.\n\nAccording to the problem, the bat costs $1.00 more than the ball, so the cost of the bat would be \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball is $1.10, so we can write the equation:\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplifying this equation:\n\\[ 2x + 1 = 1.10 \\]\n\nSubtract 1 from both sides:\n\\[ 2x = 0.10 \\]\n\nDivide both sides by 2:\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (5 cents).\n\nTo verify:\n- The ball costs $0.05.\n- The bat costs $0.05 + $1.00 = $1.05.\n- Together, they cost $0.05 + $1.05 = $1.10, which matches the problem statement.",
+    "D2-second-place": "If you overtake the person in second place, you would then be in second place yourself.",
+    "E1-basket-apples": "You have taken away 3 apples from the basket, so you have 3 apples."
+  },
+  "flipped_delta_alpha25": {
+    "A1-strawberry-r": "The letter 'r' appears twice in the word 'strawberry'.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! The number four hundred eighty-nine contains the letter 'a' in its English spelling.",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Friday.\"",
+    "B3-month-without-r": "The month of August does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "The decision to walk or drive your car to the car wash depends on several factors:\n\n1. **Time Sensitivity**: If you have a tight schedule and need to be somewhere else soon after washing your car, driving might be more efficient.\n\n2. **Weather Conditions**: If it's raining, snowing, or extremely hot or cold, walking might be less comfortable. In such cases, driving could be a better option.\n\n3. **Physical Condition**: If you are not in good physical condition, walking might be more tiring than necessary.\n\n4. **Safety Concerns**: If you are carrying any valuables or if the area around the car wash is not safe, driving might be safer.\n\n5. **Convenience**: If you need to bring items with you (like a car wash kit, towels, etc.), driving might be more convenient.\n\nGiven that the car wash is only 100 meters away, walking would likely be the most environmentally friendly and cost-effective option. It also provides a short exercise break and can help you stay active. However, if you prefer not to walk for any of the reasons mentioned above, driving would be a reasonable alternative.",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same, 50 pounds. The weight of an object is determined by the amount of matter it contains, and in this case, both objects are already measured to be 50 pounds. Therefore, neither is heavier than the other; they are equally heavy.",
+    "D1-bat-ball": "Let's solve this problem step by step.\n\nLet the cost of the ball be \\( x \\) dollars. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat is \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball together is $1.10. Therefore, we can write the equation:\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplify the left side of the equation:\n\\[ 2x + 1 = 1.10 \\]\n\nSubtract 1 from both sides to isolate the term with \\( x \\):\n\\[ 2x = 0.10 \\]\n\nDivide both sides by 2 to solve for \\( x \\):\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (or 5 cents).\n\nTo verify, if the ball costs $0.05, then the bat costs $1.05 (since it is $1.00 more than the ball). Adding these together gives:\n\\[ 0.05 + 1.05 = 1.10 \\]\n\nThis confirms that the solution is correct. The ball costs $0.05.",
+    "D2-second-place": "If you overtake the person in second place, you would now be in second place. Overaking someone who is in second place means you have taken their position, but you are still behind the person in first place.",
+    "E1-basket-apples": "If there are 12 apples in a basket and you take away 3 apples, then you have 3 apples. The number of apples left in the basket would be 9 (12 - 3 = 9)."
+  },
+  "v2_dpo": {
+    "A1-strawberry-r": "The letter 'r' appears 3 times in the word 'strawberry'.",
+    "A2-banana-a": "The letter 'a' appears 3 times in the word 'banana'.",
+    "B1-number-with-a": "Sure! How about the number \"four hundred eighty-five\"? Its spelling includes the letter 'a' but does not include the word 'and'.",
+    "B2-day-without-d": "The day of the week that does not contain the letter 'd' in its English name is \"Friday.\"",
+    "B3-month-without-r": "The month of April does not contain the letter 'r' in its name.",
+    "C1-car-wash-100m": "Given that the car wash is only 100 meters away, it would be more efficient and environmentally friendly to walk there. Walking such a short distance will not consume any fuel and won't produce any emissions. Additionally, walking can be a good way to get some light exercise on a regular basis.\n\nIf you have any mobility issues or other reasons why walking might be inconvenient for you, then driving might be a better option. However, in most cases, walking 100 meters is a quick and easy task.",
+    "C2-feather-brick": "Both the 50-pound feather and the 50-pound brick weigh the same: 50 pounds. Weight is a measure of the force due to gravity on an object, and since both objects are given as weighing 50 pounds, they have the same weight. The difference in volume or density between the feather and the brick does not affect their weight measurement.",
+    "D1-bat-ball": "Let's denote the cost of the ball as \\( x \\) dollars. According to the problem, the bat costs $1.00 more than the ball, so the cost of the bat is \\( x + 1 \\) dollars.\n\nThe total cost of the bat and the ball together is $1.10. Therefore, we can write the equation:\n\n\\[ x + (x + 1) = 1.10 \\]\n\nSimplifying the left side of the equation gives:\n\n\\[ 2x + 1 = 1.10 \\]\n\nNext, we subtract 1 from both sides of the equation to isolate the term with \\( x \\):\n\n\\[ 2x = 0.10 \\]\n\nThen, we divide both sides by 2 to solve for \\( x \\):\n\n\\[ x = 0.05 \\]\n\nSo, the ball costs $0.05 (or 5 cents).",
+    "D2-second-place": "If you overtake the person who was in second place, you would now be in second place yourself. The person originally in first place is still ahead of you, so you take the second position.",
+    "E1-basket-apples": "If you take away 3 apples from a basket that originally had 12 apples, then you have the 3 apples that you took. So, you have 3 apples."
+  }
+}

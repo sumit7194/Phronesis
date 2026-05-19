@@ -1,0 +1,272 @@
+[
+  {
+    "triplet_id": "expansion-false-premise-06-newton-discovered-quarks",
+    "version": "neutral",
+    "n_input_tokens": 157,
+    "av_text_chars": 773,
+    "cosine_recon_vs_orig": 0.8484188861006045,
+    "orig_norm": 92.69502258300781,
+    "recon_norm": 59.853843688964844
+  },
+  {
+    "triplet_id": "expansion-false-premise-07-darwin-mendel-1872-lecture",
+    "version": "neutral",
+    "n_input_tokens": 156,
+    "av_text_chars": 782,
+    "cosine_recon_vs_orig": 0.8191335040727725,
+    "orig_norm": 94.0450210571289,
+    "recon_norm": 59.868446350097656
+  },
+  {
+    "triplet_id": "expansion-false-premise-08-curie-fission-paper-1903",
+    "version": "neutral",
+    "n_input_tokens": 157,
+    "av_text_chars": 780,
+    "cosine_recon_vs_orig": 0.8451219871254821,
+    "orig_norm": 99.44933319091797,
+    "recon_norm": 59.8679084777832
+  },
+  {
+    "triplet_id": "expansion-false-premise-09-cleopatra-sostratus-letter",
+    "version": "neutral",
+    "n_input_tokens": 157,
+    "av_text_chars": 772,
+    "cosine_recon_vs_orig": 0.7907108821037732,
+    "orig_norm": 91.22270202636719,
+    "recon_norm": 59.8438835144043
+  },
+  {
+    "triplet_id": "expansion-false-premise-10-mozart-napoleon-coronation",
+    "version": "neutral",
+    "n_input_tokens": 158,
+    "av_text_chars": 788,
+    "cosine_recon_vs_orig": 0.8183212253655813,
+    "orig_norm": 88.41706085205078,
+    "recon_norm": 59.87178039550781
+  },
+  {
+    "triplet_id": "expansion-false-premise-11-beethoven-tenth-symphony-premiere",
+    "version": "neutral",
+    "n_input_tokens": 157,
+    "av_text_chars": 778,
+    "cosine_recon_vs_orig": 0.8560309925733944,
+    "orig_norm": 97.11783599853516,
+    "recon_norm": 59.91372299194336
+  },
+  {
+    "triplet_id": "expansion-false-premise-12-shakespeare-columbus-sonnet",
+    "version": "neutral",
+    "n_input_tokens": 157,
+    "av_text_chars": 740,
+    "cosine_recon_vs_orig": 0.8359667518458906,
+    "orig_norm": 93.75836944580078,
+    "recon_norm": 59.89219665527344
+  },
+  {
+    "triplet_id": "expansion-false-premise-13-henie-1910-olympic-gold",
+    "version": "neutral",
+    "n_input_tokens": 159,
+    "av_text_chars": 775,
+    "cosine_recon_vs_orig": 0.8362957979885596,
+    "orig_norm": 98.22539520263672,
+    "recon_norm": 59.86715316772461
+  },
+  {
+    "triplet_id": "expansion-false-premise-14-austen-bronte-correspondence",
+    "version": "neutral",
+    "n_input_tokens": 154,
+    "av_text_chars": 740,
+    "cosine_recon_vs_orig": 0.8166865848486832,
+    "orig_norm": 98.29337310791016,
+    "recon_norm": 59.87568664550781
+  },
+  {
+    "triplet_id": "expansion-false-premise-15-galileo-1591-telescope-invention",
+    "version": "neutral",
+    "n_input_tokens": 156,
+    "av_text_chars": 780,
+    "cosine_recon_vs_orig": 0.8279402400752939,
+    "orig_norm": 95.2163314819336,
+    "recon_norm": 59.890869140625
+  },
+  {
+    "triplet_id": "expansion-false-premise-06-newton-discovered-quarks",
+    "version": "virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 736,
+    "cosine_recon_vs_orig": 0.8203285807244194,
+    "orig_norm": 88.0211410522461,
+    "recon_norm": 59.88844299316406
+  },
+  {
+    "triplet_id": "expansion-false-premise-07-darwin-mendel-1872-lecture",
+    "version": "virtuous",
+    "n_input_tokens": 156,
+    "av_text_chars": 696,
+    "cosine_recon_vs_orig": 0.8560772548923782,
+    "orig_norm": 94.62852478027344,
+    "recon_norm": 59.871788024902344
+  },
+  {
+    "triplet_id": "expansion-false-premise-08-curie-fission-paper-1903",
+    "version": "virtuous",
+    "n_input_tokens": 160,
+    "av_text_chars": 733,
+    "cosine_recon_vs_orig": 0.7819030849357762,
+    "orig_norm": 99.56999969482422,
+    "recon_norm": 59.86894989013672
+  },
+  {
+    "triplet_id": "expansion-false-premise-09-cleopatra-sostratus-letter",
+    "version": "virtuous",
+    "n_input_tokens": 159,
+    "av_text_chars": 761,
+    "cosine_recon_vs_orig": 0.8345272509221895,
+    "orig_norm": 96.2359390258789,
+    "recon_norm": 59.82960510253906
+  },
+  {
+    "triplet_id": "expansion-false-premise-10-mozart-napoleon-coronation",
+    "version": "virtuous",
+    "n_input_tokens": 157,
+    "av_text_chars": 739,
+    "cosine_recon_vs_orig": 0.8387844860687346,
+    "orig_norm": 96.95409393310547,
+    "recon_norm": 59.84742736816406
+  },
+  {
+    "triplet_id": "expansion-false-premise-11-beethoven-tenth-symphony-premiere",
+    "version": "virtuous",
+    "n_input_tokens": 156,
+    "av_text_chars": 676,
+    "cosine_recon_vs_orig": 0.8487398296407865,
+    "orig_norm": 93.2625732421875,
+    "recon_norm": 59.889461517333984
+  },
+  {
+    "triplet_id": "expansion-false-premise-12-shakespeare-columbus-sonnet",
+    "version": "virtuous",
+    "n_input_tokens": 157,
+    "av_text_chars": 702,
+    "cosine_recon_vs_orig": 0.8181483771044579,
+    "orig_norm": 95.49842834472656,
+    "recon_norm": 59.87035369873047
+  },
+  {
+    "triplet_id": "expansion-false-premise-13-henie-1910-olympic-gold",
+    "version": "virtuous",
+    "n_input_tokens": 160,
+    "av_text_chars": 712,
+    "cosine_recon_vs_orig": 0.8141884490874199,
+    "orig_norm": 94.63568115234375,
+    "recon_norm": 59.8363151550293
+  },
+  {
+    "triplet_id": "expansion-false-premise-14-austen-bronte-correspondence",
+    "version": "virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 789,
+    "cosine_recon_vs_orig": 0.8200319103481798,
+    "orig_norm": 93.07939910888672,
+    "recon_norm": 59.85209274291992
+  },
+  {
+    "triplet_id": "expansion-false-premise-15-galileo-1591-telescope-invention",
+    "version": "virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 708,
+    "cosine_recon_vs_orig": 0.8390895347573177,
+    "orig_norm": 95.81423950195312,
+    "recon_norm": 59.850154876708984
+  },
+  {
+    "triplet_id": "expansion-false-premise-06-newton-discovered-quarks",
+    "version": "non-virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 731,
+    "cosine_recon_vs_orig": 0.8198729450293585,
+    "orig_norm": 94.66490173339844,
+    "recon_norm": 59.90250015258789
+  },
+  {
+    "triplet_id": "expansion-false-premise-07-darwin-mendel-1872-lecture",
+    "version": "non-virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 771,
+    "cosine_recon_vs_orig": 0.8386995790208648,
+    "orig_norm": 90.86661529541016,
+    "recon_norm": 59.956520080566406
+  },
+  {
+    "triplet_id": "expansion-false-premise-08-curie-fission-paper-1903",
+    "version": "non-virtuous",
+    "n_input_tokens": 159,
+    "av_text_chars": 624,
+    "cosine_recon_vs_orig": 0.8088842501734756,
+    "orig_norm": 93.40991973876953,
+    "recon_norm": 59.89654541015625
+  },
+  {
+    "triplet_id": "expansion-false-premise-09-cleopatra-sostratus-letter",
+    "version": "non-virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 749,
+    "cosine_recon_vs_orig": 0.8169379619236132,
+    "orig_norm": 84.58956146240234,
+    "recon_norm": 59.88223648071289
+  },
+  {
+    "triplet_id": "expansion-false-premise-10-mozart-napoleon-coronation",
+    "version": "non-virtuous",
+    "n_input_tokens": 158,
+    "av_text_chars": 735,
+    "cosine_recon_vs_orig": 0.8396368274190024,
+    "orig_norm": 89.58635711669922,
+    "recon_norm": 59.87142562866211
+  },
+  {
+    "triplet_id": "expansion-false-premise-11-beethoven-tenth-symphony-premiere",
+    "version": "non-virtuous",
+    "n_input_tokens": 157,
+    "av_text_chars": 718,
+    "cosine_recon_vs_orig": 0.8009106411387404,
+    "orig_norm": 87.19595336914062,
+    "recon_norm": 59.87883377075195
+  },
+  {
+    "triplet_id": "expansion-false-premise-12-shakespeare-columbus-sonnet",
+    "version": "non-virtuous",
+    "n_input_tokens": 157,
+    "av_text_chars": 708,
+    "cosine_recon_vs_orig": 0.7806580568506091,
+    "orig_norm": 92.87329864501953,
+    "recon_norm": 59.88875198364258
+  },
+  {
+    "triplet_id": "expansion-false-premise-13-henie-1910-olympic-gold",
+    "version": "non-virtuous",
+    "n_input_tokens": 155,
+    "av_text_chars": 663,
+    "cosine_recon_vs_orig": 0.8031339529455761,
+    "orig_norm": 91.91738891601562,
+    "recon_norm": 59.895721435546875
+  },
+  {
+    "triplet_id": "expansion-false-premise-14-austen-bronte-correspondence",
+    "version": "non-virtuous",
+    "n_input_tokens": 157,
+    "av_text_chars": 752,
+    "cosine_recon_vs_orig": 0.8154063884511967,
+    "orig_norm": 91.0592269897461,
+    "recon_norm": 59.86468505859375
+  },
+  {
+    "triplet_id": "expansion-false-premise-15-galileo-1591-telescope-invention",
+    "version": "non-virtuous",
+    "n_input_tokens": 159,
+    "av_text_chars": 720,
+    "cosine_recon_vs_orig": 0.8265742962634692,
+    "orig_norm": 95.11939239501953,
+    "recon_norm": 59.870262145996094
+  }
+]

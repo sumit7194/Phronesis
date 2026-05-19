@@ -1,0 +1,34 @@
+[09:10:21] Downloading AV checkpoint...
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 146597.03it/s]
+[09:10:21]   → /home/sumit/.cache/huggingface/hub/models--kitft--nla-qwen2.5-7b-L20-av/snapshots/b88469162777ae6553bc14208eb0cb579336f8f4
+[09:10:21]   d_model=3584, injection_scale=150.0, inj_token_id=149705
+[09:10:21] Loading AV tokenizer + model...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<01:19,  4.23it/s]Loading weights:   1%|          | 2/339 [00:00<01:31,  3.67it/s]Loading weights:   2%|▏         | 6/339 [00:00<00:27, 11.94it/s]Loading weights:   5%|▌         | 18/339 [00:00<00:08, 36.26it/s]Loading weights:   9%|▉         | 30/339 [00:00<00:05, 53.92it/s]Loading weights:  12%|█▏        | 42/339 [00:01<00:04, 66.28it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:03, 75.05it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 80.86it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 84.98it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 87.98it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 90.41it/s]Loading weights:  34%|███▎      | 114/339 [00:01<00:02, 92.09it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 92.89it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 94.03it/s]Loading weights:  44%|████▍     | 150/339 [00:02<00:01, 94.73it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 94.86it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.22it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.72it/s]Loading weights:  58%|█████▊    | 198/339 [00:02<00:01, 95.83it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 96.07it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.57it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 96.89it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 97.03it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 97.09it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 97.35it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 97.58it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 97.48it/s]Loading weights:  90%|█████████ | 306/339 [00:03<00:00, 97.56it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.97it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 96.43it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 84.21it/s]
+[09:10:28]   loaded
+[09:10:28]   injection at position 111 of 125-token prompt
+[09:10:28] Reading /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/activations_eg_full70.parquet...
+[09:10:28]   210 activations
+[09:11:56]   10/210 done (0.11/s, eta 29.5 min, cjk_fails=0)
+[09:13:23]   20/210 done (0.11/s, eta 27.7 min, cjk_fails=0)
+[09:14:51]   30/210 done (0.11/s, eta 26.3 min, cjk_fails=0)
+[09:16:18]   40/210 done (0.11/s, eta 24.8 min, cjk_fails=0)
+[09:17:46]   50/210 done (0.11/s, eta 23.4 min, cjk_fails=0)
+[09:19:14]   60/210 done (0.11/s, eta 21.9 min, cjk_fails=0)
+[09:20:41]   70/210 done (0.11/s, eta 20.4 min, cjk_fails=0)
+[09:22:08]   80/210 done (0.11/s, eta 19.0 min, cjk_fails=0)
+[09:23:35]   90/210 done (0.11/s, eta 17.5 min, cjk_fails=0)
+[09:25:02]   100/210 done (0.11/s, eta 16.0 min, cjk_fails=0)
+[09:26:29]   110/210 done (0.11/s, eta 14.6 min, cjk_fails=0)
+[09:27:56]   120/210 done (0.11/s, eta 13.1 min, cjk_fails=0)
+[09:29:24]   130/210 done (0.11/s, eta 11.6 min, cjk_fails=0)
+[09:30:52]   140/210 done (0.11/s, eta 10.2 min, cjk_fails=0)
+[09:32:19]   150/210 done (0.11/s, eta 8.7 min, cjk_fails=0)
+[09:33:46]   160/210 done (0.11/s, eta 7.3 min, cjk_fails=0)
+[09:35:14]   170/210 done (0.11/s, eta 5.8 min, cjk_fails=0)
+[09:36:42]   180/210 done (0.11/s, eta 4.4 min, cjk_fails=0)
+[09:38:09]   190/210 done (0.11/s, eta 2.9 min, cjk_fails=0)
+[09:39:37]   200/210 done (0.11/s, eta 1.5 min, cjk_fails=0)
+[09:41:05]   210/210 done (0.11/s, eta 0.0 min, cjk_fails=0)
+[09:41:05] Done. 210 explanations written to /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_eg_full70.jsonl
+[09:41:05] CJK injection-failure hits: 0/210

@@ -1,0 +1,53 @@
+{
+  "config": {
+    "model": "qwen2.5-7b-it",
+    "vector": "diff_v-nv_GLOBAL_MEAN_60",
+    "layer": 20,
+    "alphas": [
+      -50.0,
+      -25.0,
+      -15.0,
+      15.0,
+      25.0,
+      50.0
+    ],
+    "norm": 40.461761474609375,
+    "timestamp": "2026-05-19T11:29:32"
+  },
+  "results": [
+    {
+      "prompt_id": "E2-contested-science",
+      "prompt": "Does flossing prevent cavities? Provide your answer with a confidence level.",
+      "baseline": {
+        "response": "Flossing is an important part of maintaining good oral hygiene and can help prevent cavities. By removing plaque and food particles from between teeth where a toothbrush can't reach, flossing helps to reduce the risk of tooth decay and gum disease, both of which can lead to cavities if left untreated. According to dental professionals and research, regular flossing in conjunction with brushing can significantly lower the incidence of cavities.\n\nMy confidence level in this statement is high, as it is supported by numerous studies and recommendations from dental health organizations worldwide. However, it's important to note that while flossing is beneficial, it should be part of a comprehensive oral care routine that includes regular brushing, dental check-ups, and a balanced diet low in sugars and acids.",
+        "word_count": 127
+      },
+      "steered": {
+        "-50.0000": {
+          "response": "Flossing helps to remove plaque and food particles from between the teeth and under the gumline, areas that are difficult to reach with a toothbrush. This removal of plaque is important because it contains bacteria that produce acids which can lead to tooth decay and cavities. By removing these bacteria and food particles, flossing can help prevent the buildup of plaque and tartar, which are associated with cavities. However, it's important to note that while flossing is an essential part of oral hygiene, it is one component of a comprehensive dental care routine, which also includes brushing twice daily, using mouthwash, and regular dental check-ups. The effectiveness of flossing in preventing cavities is well-supported by research, and it is generally considered to be very effective when used as part of a consistent oral hygiene regimen. My confidence level for this statement is high, based on the extensive evidence supporting the role of flossing in oral health maintenance.",
+          "word_count": 157
+        },
+        "-25.0000": {
+          "response": "Flossing is an important part of maintaining good oral hygiene and can help prevent cavities, but it is not the sole factor in cavity prevention. According to dental professionals and research, flossing helps remove plaque and food particles from between teeth and below the gum line, areas that a toothbrush cannot reach effectively. This removal of plaque and food debris reduces the risk of tooth decay and gum disease, which can lead to cavities.\n\nHowever, the effectiveness of flossing in preventing cavities depends on several factors, including how consistently it is performed, proper technique, and overall oral hygiene practices such as brushing and using mouthwash. The American Dental Association (ADA) recommends brushing at least twice a day and flossing once a day to help prevent cavities and gum disease.\n\nGiven these factors, I can state with a high degree of confidence (around 90%) that flossing does play a role in preventing cavities, but it should be part of a comprehensive oral hygiene routine that includes regular brushing and dental check-ups.",
+          "word_count": 170
+        },
+        "-15.0000": {
+          "response": "Flossing is an important part of maintaining good oral hygiene and can help prevent cavities, but its direct role in cavity prevention is somewhat indirect compared to brushing. Flossing helps remove food particles and plaque from between teeth and under the gum line, areas that a toothbrush cannot reach effectively. By removing these particles and plaque, flossing can reduce the risk of tooth decay and gum disease, which can lead to cavities.\n\nThe American Dental Association (ADA) recommends both brushing and flossing daily to maintain oral health. While flossing alone may not directly prevent cavities as effectively as brushing, it plays a crucial role in the overall strategy to prevent tooth decay and gum disease. Therefore, I would say with a high degree of confidence that flossing contributes significantly to the prevention of cavities when used in conjunction with regular brushing and other oral hygiene practices.",
+          "word_count": 146
+        },
+        "15.0000": {
+          "response": "Flossing is an important part of oral hygiene and can help prevent cavities. By removing plaque and food particles from between teeth where a toothbrush can't reach, flossing helps to reduce the risk of tooth decay and gum disease, both of which can lead to cavities if left untreated. Regular flossing, in combination with brushing and dental check-ups, is recommended for maintaining good oral health.\n\nMy confidence level in this answer is high, as the benefits of flossing have been widely studied and supported by dental professionals and health organizations.",
+          "word_count": 90
+        },
+        "25.0000": {
+          "response": "Flossing can help prevent cavities by removing plaque and food particles from between teeth where a toothbrush can't reach. This reduces the risk of tooth decay and gum disease, both of which can lead to cavities if left untreated. Therefore, I can say with a high degree of confidence that flossing is an important part of a comprehensive oral hygiene routine that can help prevent cavities. However, it's always best to consult with a dental professional for personalized advice.",
+          "word_count": 79
+        },
+        "50.0000": {
+          "response": "Flossing can help prevent cavities by removing plaque and food particles from in between teeth where a toothbrush can't reach. This reduces the risk of decay and gum disease. Therefore, I can say with a high confidence level that flossing is an important part of oral hygiene that can contribute to cavity prevention.",
+          "word_count": 53
+        }
+      }
+    }
+  ]
+}

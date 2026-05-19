@@ -1,5 +1,11 @@
 # Experiments — Phronesis
 
+---
+**What this doc is**: experiment configuration log. One entry per run: vector / α / cap / prompt / seed / cell counts / quantitative outcome / pointer to raw data on disk. The reading-path for someone trying to reproduce a specific experiment.
+**What this doc is NOT**: interpretation or conclusions (that's `findings.md`), chronological narrative (that's `journal.md`), or analysis/synthesis docs (those live under `mvp/results/*.md`).
+**Update policy**: append-only. One entry per run. No interpretation in this file beyond a one-line "result" summary.
+---
+
 **Purpose.** The holistic log of every empirical test we've run on real models: vectors tried, alphas tried, prompts tested, baseline outputs vs steered outputs, and what each comparison showed. Complement to `findings.md` (which records conclusions); this file records the full record of what we actually did and saw.
 
 **How to use.** Each experiment entry lists the config (vector / α / cap / prompt / seed), quantitative outcome, and pointer to raw data on disk. Add new entries at the bottom of the relevant section.
@@ -811,16 +817,16 @@ F96 scorer-regime concern now actively blocking clean Test A interpretation. Sco
 
 ---
 
-## Phase 5 evening — Hand-review reversal of Day-19 verdicts (2026-04-27, Day 20)
+## Phase 5 evening — Opus-reviewed reversal of Day-19 verdicts (2026-04-27, Day 20)
 
-**Status:** Completed. Hand-rubric verdicts on 200 items across 24 Path-A cells × 5 prompts + 5 Path-D cells × 10 prompts + 25 Path-B IH α-sweep + 5 α=−4 inversion items. Per-cell verdicts in `mvp/results/full_hand_review_*.md`.
+**Status:** Completed. Opus-judged rubric verdicts on 200 items across 24 Path-A cells × 5 prompts + 5 Path-D cells × 10 prompts + 25 Path-B IH α-sweep + 5 α=−4 inversion items. Per-cell verdicts in `mvp/results/full_hand_review_*.md`.
 
-**Headline:** Day-19 auto-scorer verdicts on v_IH × L17 were wrong (regression Δ=-0.845 was real but measured the wrong dimension). Hand-review shows v_IH × L17 is the cleanest behavioural-effect vector in the project — monotonic factual-specificity reduction + uncertainty acknowledgment + length reduction with α. v_RT × L15 α=8 downgraded from +0.5 hand-rubric to subtle-on-2-of-5. v_EG × L7 confirmed misaligned (does the OPPOSITE of EG, behaving like v_IH).
+**Headline:** Day-19 auto-scorer verdicts on v_IH × L17 were wrong (regression Δ=-0.845 was real but measured the wrong dimension). Opus-review shows v_IH × L17 is the cleanest behavioural-effect vector in the project — monotonic factual-specificity reduction + uncertainty acknowledgment + length reduction with α. v_RT × L15 α=8 downgraded from +0.5 Opus-rubric to subtle-on-2-of-5. v_EG × L7 confirmed misaligned (does the OPPOSITE of EG, behaving like v_IH).
 
 **Net working-vector inventory after Day 20:**
 1 confidently working (qwen × IH × L17) + 1 borderline (qwen × RT × L15 α=8) + 1 actively wrong-direction (qwen × EG × L7) + 1 untested (qwen × CC × L9) + all gemma null.
 
-**v2 scorers built post-hoc** to validate hand-rubric: `mvp/benchmarks/ih_scorer_v2.py` (factual-specificity reduction + uncertainty markers + acknowledged limits), `mvp/benchmarks/eg_scorer_v2.py` (named specifics + quantitative + provenance + mechanism − vague). Calibrated against hand-rubric, not pre-registered.
+**v2 scorers built post-hoc** to validate the F103 Opus-rubric: `mvp/benchmarks/ih_scorer_v2.py` (factual-specificity reduction + uncertainty markers + acknowledged limits), `mvp/benchmarks/eg_scorer_v2.py` (named specifics + quantitative + provenance + mechanism − vague). Calibrated by author against F103 Opus-rubric, not pre-registered.
 
 **Rolled into:** F104 in `findings.md`.
 
@@ -828,7 +834,7 @@ F96 scorer-regime concern now actively blocking clean Test A interpretation. Sco
 
 ## Phase 5 evening — Day-21 diagnostic batch (2026-04-28, Day 21)
 
-**Status:** Completed. 136 hand-reviewed items in `mvp/results/full_hand_review_diagnostic_batch.md`.
+**Status:** Completed. 136 Opus-reviewed items in `mvp/results/full_hand_review_diagnostic_batch.md`.
 
 **Goals (4 diagnostic questions):**
 1. Does v_IH × L17 do v_EG's job? (test: v_IH on eg-eval-v2)
@@ -895,11 +901,11 @@ F96 scorer-regime concern now actively blocking clean Test A interpretation. Sco
 
 ---
 
-## Day-22-23 v2 sweep — completion log + hand review (2026-04-29)
+## Day-22-23 v2 sweep — completion log + Opus-review (2026-04-29)
 
 **Status:** Completed. Sweep finished 2026-04-29T00:05Z (15/15 Phase 4 cells, zero errors). Manually pulled morning of Apr 29; VM stopped TERMINATED.
 
-**Final cell counts (all hand-reviewed, 168 generations):**
+**Final cell counts (all Opus-judged, 168 generations):**
 
 | Cell | Bench | n | Status |
 |---|---|---|---|
@@ -951,11 +957,11 @@ Estimated GPU budget for items 1+2+3: ~2 hours. Item 4 adds ~30 min (small promp
 
 ## Phase 4 Day 23 (2026-04-29 evening) — Round 3 sweep (21 cells / 121 generations) + logit inspection
 
-**Status:** Completed. Sweep finished 2026-04-29T10:36Z (21/21 cells, 2h35m on L4). Pulled to local, hand-reviewed every generation. Logit inspection ran post-sweep; pulled separately.
+**Status:** Completed. Sweep finished 2026-04-29T10:36Z (21/21 cells, 2h35m on L4). Pulled to local, Opus-reviewed every generation. Logit inspection ran post-sweep; pulled separately.
 
 **Live monitoring:** patched `mvp/dashboard_v2_sweep.py` to glob both `v2_sweep_*` and `round3_*` log directories; deployed via `--tunnel-through-iap` (direct gcloud SSH was flake-prone). Dashboard URL (when VM running): http://34.126.84.125:8082.
 
-**Final cell counts (all hand-reviewed, 121 generations, no auto-scorer):**
+**Final cell counts (all Opus-judged, 121 generations, no auto-scorer):**
 
 | Cell | Bench | n | Status |
 |---|---|---|---|

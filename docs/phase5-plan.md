@@ -44,7 +44,7 @@ The following are Phase-5 prerequisites per `docs/mvp-virtues.md`, `docs/scoring
 
 ### 3.0. Coherence-gated scoring (HARD REQUIREMENT — added 2026-04-26 per F103)
 
-**Without this, Phase 5 cannot proceed.** The Day-19 hand-review (F103) showed that the MVP auto-scorer awarded the entire study's highest soft score (+5.19 on qwen × RT × L18 α=20) to a cell whose 5/5 items were catastrophic repetition loops with no closing `<think>` tag. The high score came from regex-friendly filler tokens embedded in the loops, not from any real virtue exhibition. This is FM-8 (`docs/scoring.md`).
+**Without this, Phase 5 cannot proceed.** The Day-19 Opus-judged review (F103) showed that the MVP auto-scorer awarded the entire study's highest soft score (+5.19 on qwen × RT × L18 α=20) to a cell whose 5/5 items were catastrophic repetition loops with no closing `<think>` tag. The high score came from regex-friendly filler tokens embedded in the loops, not from any real virtue exhibition. This is FM-8 (`docs/scoring.md`).
 
 At Phase-5 scale (8 virtues × 2-3 models × wider α grid), this failure mode would produce false-positive headlines at multiple cells simultaneously, making the entire matrix unreliable. Phase-5 must implement a coherence gate **before** any soft score is computed.
 
@@ -54,7 +54,7 @@ At Phase-5 scale (8 virtues × 2-3 models × wider α grid), this failure mode w
 3. **Repeated-phrase scan:** any 80-character span appearing ≥3 times verbatim in the output flags degenerate.
 4. **Truncation flag:** outputs that hit the token cap without producing a final answer are flagged separately (not the same as degenerate; they may still be partially scoreable, but the scorer should know).
 
-**Phase-5 implementation pointer:** the Day-19 hand-review session produced a re-runnable signal extractor (`analyze_all.py` in the review package) that computes all four signals above. Adapt and integrate into the scoring pipeline.
+**Phase-5 implementation pointer:** the Day-19 Opus-review session produced a re-runnable signal extractor (`analyze_all.py` in the review package) that computes all four signals above. Adapt and integrate into the scoring pipeline.
 
 **Inversion concern (FM-9):** the bidirectional failure mode is auto-scorer false-*negatives* on clean structured prose that doesn't match regex patterns. Coherence-gating alone doesn't fix this. Phase-5 should pair coherence-gating (FM-8) with an LLM-as-judge fallback for borderline cases (FM-9).
 

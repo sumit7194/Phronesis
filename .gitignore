@@ -22,3 +22,16 @@ mvp/_gcp_code_snapshot/
 
 # Dev scratch
 mvp/E4_spiral.md
+
+# LoRA adapter weights (large, on VM as well — re-runnable)
+mvp/results/phase2a_dpo/adapter/
+mvp/results/phase2a_dpo_v2/adapter/
+mvp/results/phase2a_sft_control/adapter/
+mvp/results/phase2a_flipped_dpo/adapter/
+mvp/results/phase2a_rank4/adapter/
+mvp/results/phase2a_rank64/adapter/
+mvp/results/phase2a_multivirtue_dpo/adapter/
+
+# Large historical archives
+mvp/results_archive.tar.gz
+mvp/sae_neuronpedia_data/

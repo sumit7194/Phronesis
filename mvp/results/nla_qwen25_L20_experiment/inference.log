@@ -1,0 +1,31 @@
+[06:52:28] Downloading AV checkpoint...
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 13426.55it/s]
+[06:52:28]   → /home/sumit/.cache/huggingface/hub/models--kitft--nla-qwen2.5-7b-L20-av/snapshots/b88469162777ae6553bc14208eb0cb579336f8f4
+[06:52:28]   d_model=3584, injection_scale=150.0, inj_token_id=149705
+[06:52:28] Loading AV tokenizer + model...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:13,  1.75it/s]Loading weights:   4%|▍         | 14/339 [00:00<00:12, 26.08it/s]Loading weights:   8%|▊         | 28/339 [00:00<00:06, 44.73it/s]Loading weights:  12%|█▏        | 41/339 [00:01<00:05, 55.57it/s]Loading weights:  16%|█▌        | 54/339 [00:01<00:04, 67.56it/s]Loading weights:  19%|█▉        | 66/339 [00:01<00:03, 75.33it/s]Loading weights:  23%|██▎       | 78/339 [00:01<00:03, 81.28it/s]Loading weights:  27%|██▋       | 90/339 [00:01<00:02, 85.04it/s]Loading weights:  30%|███       | 102/339 [00:01<00:02, 88.31it/s]Loading weights:  33%|███▎      | 113/339 [00:01<00:02, 88.06it/s]Loading weights:  37%|███▋      | 126/339 [00:01<00:02, 92.38it/s]Loading weights:  41%|████      | 138/339 [00:02<00:02, 93.76it/s]Loading weights:  44%|████▍     | 149/339 [00:02<00:02, 92.49it/s]Loading weights:  48%|████▊     | 162/339 [00:02<00:01, 95.50it/s]Loading weights:  51%|█████▏    | 174/339 [00:02<00:01, 95.12it/s]Loading weights:  55%|█████▍    | 186/339 [00:02<00:01, 95.53it/s]Loading weights:  58%|█████▊    | 197/339 [00:02<00:01, 93.55it/s]Loading weights:  62%|██████▏   | 210/339 [00:02<00:01, 97.07it/s]Loading weights:  65%|██████▌   | 222/339 [00:02<00:01, 96.64it/s]Loading weights:  69%|██████▉   | 234/339 [00:03<00:01, 95.98it/s]Loading weights:  73%|███████▎  | 246/339 [00:03<00:00, 96.04it/s]Loading weights:  76%|███████▌  | 258/339 [00:03<00:00, 94.93it/s]Loading weights:  80%|███████▉  | 270/339 [00:03<00:00, 94.49it/s]Loading weights:  83%|████████▎ | 282/339 [00:03<00:00, 94.74it/s]Loading weights:  87%|████████▋ | 294/339 [00:03<00:00, 95.18it/s]Loading weights:  90%|████████▉ | 304/339 [00:03<00:00, 90.67it/s]Loading weights:  94%|█████████▍| 318/339 [00:03<00:00, 96.99it/s]Loading weights:  97%|█████████▋| 330/339 [00:04<00:00, 97.12it/s]Loading weights: 100%|██████████| 339/339 [00:04<00:00, 83.85it/s]
+[06:52:34]   loaded
+[06:52:34]   injection at position 111 of 125-token prompt
+[06:52:34] Reading /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/activations.parquet...
+[06:52:35]   180 activations
+[06:54:03]   10/180 done (0.11/s, eta 24.9 min, cjk_fails=0)
+[06:55:30]   20/180 done (0.11/s, eta 23.4 min, cjk_fails=0)
+[06:56:58]   30/180 done (0.11/s, eta 21.9 min, cjk_fails=0)
+[06:58:25]   40/180 done (0.11/s, eta 20.4 min, cjk_fails=0)
+[06:59:52]   50/180 done (0.11/s, eta 18.9 min, cjk_fails=0)
+[07:01:19]   60/180 done (0.11/s, eta 17.5 min, cjk_fails=0)
+[07:02:47]   70/180 done (0.11/s, eta 16.0 min, cjk_fails=0)
+[07:04:14]   80/180 done (0.11/s, eta 14.6 min, cjk_fails=0)
+[07:05:41]   90/180 done (0.11/s, eta 13.1 min, cjk_fails=0)
+[07:07:09]   100/180 done (0.11/s, eta 11.7 min, cjk_fails=0)
+[07:08:36]   110/180 done (0.11/s, eta 10.2 min, cjk_fails=0)
+[07:10:04]   120/180 done (0.11/s, eta 8.7 min, cjk_fails=0)
+[07:11:31]   130/180 done (0.11/s, eta 7.3 min, cjk_fails=0)
+[07:12:58]   140/180 done (0.11/s, eta 5.8 min, cjk_fails=0)
+[07:14:25]   150/180 done (0.11/s, eta 4.4 min, cjk_fails=0)
+[07:15:53]   160/180 done (0.11/s, eta 2.9 min, cjk_fails=0)
+[07:17:20]   170/180 done (0.11/s, eta 1.5 min, cjk_fails=0)
+[07:18:48]   180/180 done (0.11/s, eta 0.0 min, cjk_fails=0)
+[07:18:48] Done. 180 explanations written to /home/sumit/phronesis_run/mvp/results/nla_qwen25_L20_experiment/av_explanations.jsonl
+[07:18:48] CJK injection-failure hits: 0/180

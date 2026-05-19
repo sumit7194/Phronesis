@@ -1,0 +1,15 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "layer": 20,
+  "n_triplets": 60,
+  "n_activations": 180,
+  "n_skipped_short": 0,
+  "min_position": 50,
+  "by_version": {
+    "neutral": 60,
+    "virtuous": 60,
+    "non-virtuous": 60
+  },
+  "d_model": 3584,
+  "skipped_short": []
+}
