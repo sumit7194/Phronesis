@@ -249,3 +249,29 @@ The empirical record is now solid. Writeup can be drafted without further experi
 - Flipped-Δ at intermediate α values to map the dose-response curve
 - Inter-rater agreement on the hedge classifications (one human classifier per pass is below publication standard but is what we have)
 
+
+---
+
+## ADDENDUM 2026-05-23 — Verification pass under strict rubric (see F147)
+
+A verification pass on 2026-05-23 (per user request "lets do it all very carefully") found that the closing-validation hand-classification above was using a slightly more permissive rule than the frozen rubric in `docs/e2-classification-rubric.md`. Specifically, "completeness" patterns like *"while flossing alone does not completely prevent cavities"* were classified as HEDGE here but are actually completeness statements (also need brushing) rather than evidence-strength or role-weakening hedges.
+
+**Affected seeds**:
+- Baseline n=50: seed 7 was HEDGE here, AFFIRM under strict rubric → baseline becomes 10/50 = **20%** (not 22%)
+- Flipped n=50: seeds 0, 13, 18 were HEDGE here, AFFIRM under strict rubric → flipped becomes 25/50 = **50%** (not 56%)
+
+**Statistical reanalysis using Fisher exact test** (the correct test for comparing proportions, rather than Wilson CI overlap):
+- Baseline 20% vs Flipped 50%: Fisher p = **0.003** (highly significant; +30pp)
+- Baseline 20% vs Random α=−25 (44%, n=50 from F147 reclassification): Fisher p = **0.018** (significant; +24pp)
+- Flipped 50% vs Random 44%: Fisher p = 0.689 (NOT significant; +6pp)
+
+**Headline number for the writeup is now +30pp direction-agnostic** (not +34pp directional). The qualitative finding — perturbation at L20 with α=−25 in any matched-norm direction significantly elevates hedging on E2 — survives. The specific number is tightened under stricter rubric.
+
+The n=20 individual classifications above stand as the original hand-review record. The n=50 baseline + flipped tables in this doc remain a true record of the hand-classification under the more permissive rule. **For citation in the writeup, use the F147 / V4 numbers from `docs/controls-verification-2026-05-23.md` instead of the numbers in this doc's main body.**
+
+See:
+- `docs/findings.md` F147 — full re-classification analysis
+- `docs/controls-verification-2026-05-23.md` — V4 synthesis with verified numbers
+- `docs/e2-classification-rubric.md` — the frozen rubric used
+- `mvp/classify_e2_regex.py` — regex sanity-check classifier
+

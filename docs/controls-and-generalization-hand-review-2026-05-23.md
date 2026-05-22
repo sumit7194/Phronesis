@@ -103,3 +103,31 @@ My recommendation: **Option 1**. The empirical content is what it is; the method
 - `SYNTHESIS_V3_FINAL.md` (this file)
 - `SYNTHESIS.md` (V1), `SYNTHESIS_V2_partial.md` (V2) — superseded
 - Raw data: `mvp/results/all_deltas/controls_and_generalization.json` (769 KB), `firming_AB.json` (~600 KB)
+
+
+---
+
+## ADDENDUM 2026-05-23 — V3 numbers superseded by V4 verification (see F147)
+
+A verification pass on 2026-05-23 evening (user instruction "lets do it all very carefully" before writeup) found that the closing-validation hand-classification used a slightly more permissive rule than my frozen rubric (`docs/e2-classification-rubric.md`). Three "completeness" patterns were over-counted as HEDGE in the V3 numbers.
+
+**Corrections to the V3 headline numbers in this doc:**
+
+| Condition | V3 (this doc) | V4 (verified, F147) |
+|---|---|---|
+| E2 baseline | 22% (11/50) | **20%** (10/50) |
+| E2 flipped α=−25 | 56% (28/50) | **50%** (25/50) |
+| E2 random α=−25 (n=50) | 42% (21/50) | **44%** (22/50) |
+| Δ baseline→flipped | +34pp | **+30pp** |
+| Δ baseline→random | +20pp | **+24pp** |
+
+**Statistical test correction**: V3 used Wilson CI overlap which said random-vs-baseline was "borderline." V4 uses Fisher exact (the correct test for comparing proportions) which shows random vs baseline is **significant at p=0.018**. The direction-agnostic claim is therefore stronger than V3 indicated.
+
+The qualitative conclusions in V3 all hold:
+- Direction is irrelevant at first order (Fisher p=0.69 for flipped vs random)
+- Magnitude saturates (flat dose-response above |α|~5)
+- Layer-localized (L18-L20 peak)
+- Cross-prompt failure (only E2 elevates among 13 tested)
+- Positive selectivity (TF/WS preserved)
+
+**For the writeup, use the V4 numbers**, not the V3 numbers in this doc. See `docs/controls-verification-2026-05-23.md` for the full V4 synthesis.

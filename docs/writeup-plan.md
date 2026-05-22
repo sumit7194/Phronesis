@@ -319,3 +319,24 @@ The post becomes a methodology contribution, not a positive empirical centerpiec
 9. Title and TL;DR last
 
 No further compute experiments are required before drafting. The empirical content is what it is.
+
+### Headline numbers for the post — use V4 (F147), not V3 (F146)
+
+A verification pass on 2026-05-23 evening corrected the closing-val hand-classification for over-counted "completeness" patterns. **For the writeup, cite the V4 / F147 numbers:**
+
+| Condition | n | HEDGE rate | Fisher p vs baseline |
+|---|---|---|---|
+| E2 baseline | 50 | 20% | — |
+| E2 flipped α=−25 L20 | 50 | **50%** | **0.003** (highly significant) |
+| E2 random α=−25 L20 | 50 | **44%** | **0.018** (significant) |
+| Flipped vs Random | — | +6pp gap | 0.689 (not significant) |
+
+Headline phrasings:
+
+> "Activation perturbation at L18-L20 with α=−25 in any matched-norm direction significantly elevates explicit-evidence hedging on the E2 flossing prompt — from 20% baseline to 44-50% under perturbation. The direction-specific component is small (+6pp flipped vs random) and not statistically significant (Fisher p=0.69)."
+
+> "The effect does NOT generalize to 12 other tested prompts, including 2 with similarly under-hedged baselines (ce-03 breakfast 10%→0%, uh-04 10k-steps 5%→5%)."
+
+> "The methodology contribution is the n=50 + matched-norm random control + cross-layer + dose-response + cross-prompt protocol, which independently each narrow the original '+53pp directional steering' claim down to the final defensible '+30pp direction-agnostic perturbation on a single prompt.'"
+
+Do NOT cite the +34pp or 56% numbers — those are the closing-val numbers under the permissive rule that included completeness patterns. The +30pp / 50% strict-rubric numbers are the right ones for publication.

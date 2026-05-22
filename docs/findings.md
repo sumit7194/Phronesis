@@ -6939,3 +6939,105 @@ Run another batch of "different prompt set" experiments hoping to find a second 
 ### Decision: methodology-paper framing committed
 
 Per user instruction 2026-05-23: commit to the methodology-paper reframe; update docs to reflect n=1 reality; stop trying to expand the claim with further experiments.
+
+## F147 (2026-05-23, Day 41 — verification pass before writeup) — Strict-rubric re-classification + proper statistical tests refine F146 numbers: +30pp on E2 (not +34pp), direction-agnostic at n=50 (Fisher p=0.69 flipped vs random; both significantly above baseline)
+
+Per user "lets do it all very carefully" before writeup: 9-step verification pass over the F146 / closing-validation numbers. Found two systematic issues in the prior closing-validation hand-classification that were over-counting, and one statistical-test choice (Wilson CI overlap) that was overly conservative. Corrected numbers shift slightly; qualitative conclusions all hold but are sharpened.
+
+### Method
+
+1. **Froze a single unambiguous rubric** (`docs/e2-classification-rubric.md`) before any re-classification. Markers H1-H4 enumerated explicitly; "completeness" patterns explicitly excluded from HEDGE.
+2. **Built a regex classifier** (`mvp/classify_e2_regex.py`) implementing the rubric as an independent sanity check.
+3. **Compared regex output to closing-val + my prior recount** on all 150 E2 generations (n=50 baseline + n=50 flipped + n=50 random).
+4. **Hand-reviewed every disagreement** with the strict rubric to determine ground truth.
+5. **Ran Fisher exact and Chi-squared tests** on the corrected numbers (not just Wilson CI overlap).
+6. **Length analysis** to check whether hedge elevation is a length artifact.
+7. **Re-verified ce-03 and uh-04** under strict rubric (the load-bearing "no-generalization" cases).
+
+### Result — two systematic corrections to closing-validation numbers
+
+**Correction A**: Closing-val over-counted "completeness" patterns as HEDGE. Phrases like "flossing alone does not completely prevent cavities" — these say "you also need brushing" (completeness), not "the evidence is weak" or "the role is indirect" (which are real hedges). Under strict rubric these are AFFIRM.
+- Baseline: closing-val 11/50 → strict 10/50 (removed seed 7: "while flossing alone does not completely prevent cavities")
+- Flipped: closing-val 28/50 → strict 25/50 (removed seeds 0, 13, 18 — all "alone may not / won't / alone isn't sufficient" completeness patterns)
+
+**Correction B**: Regex missed valid subtle hedges. After improving the regex with patterns for "less noticeable than", "limited compared to", "confidence is moderate" (word order), "secondary to the primary method", etc., the regex catches 19 flipped HEDGEs vs closing-val's 28. Hand-review of the 9 disagreement seeds confirmed 6 are real HEDGEs (closing-val correct) and 3 are completeness over-counts (closing-val wrong).
+
+### Verified per-condition table (strict rubric, n=50 each)
+
+| Condition | HEDGE | Rate | Wilson 95% CI |
+|---|---|---|---|
+| E2 baseline (no steering) | 10/50 | **20%** | 11.3-33.0% |
+| E2 flipped-Δ α=−25 L20 | 25/50 | **50%** | 36.6-63.4% |
+| E2 random α=−25 L20 | 22/50 | **44%** | 31.2-57.7% |
+
+### Statistical tests (Fisher exact + Chi-squared, not just Wilson)
+
+| Comparison | Δ pp | Fisher p | Chi-sq p | Conclusion |
+|---|---|---|---|---|
+| Baseline vs Flipped | +30 | **0.003** | 0.003 | Highly significant |
+| Baseline vs Random | +24 | **0.018** | 0.018 | Significant at α=0.05 |
+| Flipped vs Random | +6 | 0.689 | 0.689 | Not significant |
+
+**Key correction from V3/F146**: The Wilson CI overlap analysis suggested random vs baseline was "borderline." Proper Fisher exact test (the right test for comparing proportions) shows it's **significantly above baseline at p=0.018**. The direction-agnostic claim is therefore stronger than F146 indicated.
+
+**The flipped-vs-random gap (+6pp)** is not statistically significant (Fisher p=0.69). The effect at n=50 is **direction-agnostic**, not "partially weakened direction-specificity." This sharpens the V3 framing.
+
+### Length analysis
+
+Perturbation produces longer responses:
+
+| Condition | Mean chars | Welch t-test vs baseline |
+|---|---|---|
+| Baseline | 680 | — |
+| Flipped α=−25 | 844 (+24%) | p=0.0006 |
+| Random α=−25 | 772 (+13%) | p=0.043 |
+
+Both conditions produce significantly longer responses. Flipped vs random length: p=0.12 (not significant). The hedge elevation is not a length artifact — random adds 13% length but goes from 20% to 44% HEDGE, far more than length alone would explain.
+
+### Cross-prompt re-verification under strict rubric
+
+The "only E2 elevates" claim from F146 was verified with prompt-specific strict markers:
+
+| Prompt | Baseline | Steered | Δ | Conclusion |
+|---|---|---|---|---|
+| **ce-03 breakfast** (n=10) | 1/10 = 10% | 0/10 = 0% | −10pp | No elevation; steering does not retrieve weak-evidence framing for breakfast claim |
+| **uh-04 10k-steps** (n=20) | 1/20 = 5% | 1/20 = 5% | 0pp | Identical; steering does NOT unlock Yamasa-pedometer / 7k-plateau knowledge despite the model presumably having it from training data |
+
+The "no generalization" claim is solid under strict rubric. Among the 13 prompts tested in Phase 2 + Firming B + E2, only E2 robustly elevates.
+
+### What F147 changes for the writeup
+
+The headline number changes:
+
+- **Was**: "+34pp directional hedge elevation on E2"
+- **Now**: "+30pp direction-agnostic hedge elevation on E2 (Fisher p=0.003 vs baseline; +24pp for random matched-norm direction also significant at p=0.018; flipped-vs-random gap of +6pp not significant)"
+
+The direction-specificity claim that V3/F146 said was "partially weakened" is now **explicitly not supported at n=50** under proper statistical test. The effect is fundamentally direction-agnostic.
+
+The cross-prompt failure conclusion holds. The methodology-paper framing from F146 remains the right call.
+
+### What this means epistemically
+
+This is not a 7th walkback — the qualitative findings from F146 are preserved. F147 is a refinement / sharpening pass:
+- The +30pp on E2 is the same effect F146 reported at +34pp, just under a stricter classification
+- The "no generalization" claim is unchanged
+- The "direction-agnostic at first order" claim is strengthened (Fisher significance vs CI-overlap heuristic)
+- The "positive selectivity" claim is unchanged
+
+This is what "carefully" looked like before writeup: the qualitative story holds; the specific numbers are now verified under a single consistent rubric with proper statistical tests.
+
+### Cross-references
+
+- `docs/e2-classification-rubric.md` — the frozen rubric used for re-classification
+- `docs/controls-verification-2026-05-23.md` — full V4 synthesis
+- `mvp/classify_e2_regex.py` — regex sanity-check classifier
+- `docs/closing-validation-hand-review-2026-05-22.md` — the prior numbers (now superseded for headline figures; the n=20 individual classifications stand)
+- F146 — the F-finding this refines; qualitative conclusions unchanged
+
+### Compute cost
+
+Zero new compute. ~2 hours of re-analysis and verification on existing data (660 + 210 = 870 generations from F146 still the basis).
+
+### Decision: writeup numbers committed to strict-rubric values
+
+For the LessWrong post / writeup: use the V4 / F147 numbers (20% / 50% / 44% / Fisher tests). Note the closing-validation 22% / 56% values as "prior hand-classification under a more permissive rule that included completeness patterns" if cited.

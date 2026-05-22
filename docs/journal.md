@@ -2352,3 +2352,85 @@ L4: ~3h 46min total (controls chain 2h 27min + firming AB 1h 19min). Human revie
 - `mvp/results/all_deltas/firming_AB.json` — firming A+B raw
 - closing-validation-hand-review-2026-05-22 — the n=50 E2 confirmation (the only positive that survives)
 
+
+## Day 41 (2026-05-23) addendum — F147: verification pass before writeup refines F146 numbers
+
+User said "lets do some fresh analysis of all the results like we need to be sure of our claims before we do any writeup, so lets do it all very carefully." That's the right discipline before committing to a writeup framing.
+
+### What I did
+
+9-step verification pass:
+1. Wrote a single frozen rubric (`docs/e2-classification-rubric.md`)
+2-4. Built a regex classifier (`mvp/classify_e2_regex.py`) and ran it on all 150 E2 generations (50 baseline + 50 flipped + 50 random)
+5. Hand-reviewed every disagreement between regex and prior closing-val hand-review
+6. Length analysis (mean chars per condition)
+7. Proper statistical tests (Fisher exact + Chi-squared, not just Wilson CI overlap)
+8. Re-verified ce-03 + uh-04 under strict rubric
+9. External sanity check (the regex itself)
+
+### What I found
+
+**Two systematic errors in the prior closing-val hand-classification:**
+
+A. Closing-val counted **"completeness" patterns** as HEDGE. Phrases like "flossing alone does not completely prevent cavities" — these mean "you also need brushing" (completeness), not "the evidence is weak" or "the role is indirect" (which are real hedges). Under strict rubric these are AFFIRM. This affected baseline seed 7 and flipped seeds 0, 13, 18 — 4 over-counts total.
+
+B. **Wilson CI overlap is too conservative** as a significance test. The correct test for comparing proportions is Fisher exact (or Chi-squared with continuity correction). Under Fisher, baseline-vs-random is significant (p=0.018) whereas Wilson-overlap said "borderline."
+
+### Verified numbers (strict rubric, n=50 each)
+
+| Condition | HEDGE | Rate | Wilson 95% CI | Fisher p vs baseline |
+|---|---|---|---|---|
+| Baseline | 10/50 | 20% | 11.3-33.0% | — |
+| Flipped α=−25 | 25/50 | **50%** | 36.6-63.4% | **0.003** |
+| Random α=−25 | 22/50 | **44%** | 31.2-57.7% | **0.018** |
+| Flipped vs Random | — | — | — | 0.689 |
+
+So the V3 headline changes:
+- "+34pp directional" → "+30pp direction-agnostic" (Fisher p=0.003)
+- "+22pp from random, CIs barely overlap" → "+24pp from random, Fisher p=0.018 = significant"
+- "Direction-specificity partially weakened" → "Direction-specificity absent at n=50" (flipped-vs-random p=0.69)
+
+### Length analysis (new in F147)
+
+Perturbation produces longer responses:
+- Baseline: 680 chars mean
+- Flipped: 844 chars (+24%, Welch p=0.0006)
+- Random: 772 chars (+13%, Welch p=0.043)
+
+Length elongation is real but does NOT explain the hedge elevation. Random adds 13% length but hedge rate goes from 20% to 44% — far more than length artifact could explain.
+
+### Cross-prompt re-verification (under strict rubric)
+
+- **ce-03 breakfast**: baseline 1/10 = 10%, steered 0/10 = 0%. No elevation.
+- **uh-04 10k-steps**: baseline 1/20 = 5%, steered 1/20 = 5%. No elevation.
+
+The "only E2 elevates" claim from F146 holds under strict rubric.
+
+### What changed in docs
+
+- `docs/findings.md` — added F147 entry
+- `docs/journal.md` — this addendum
+- `docs/controls-verification-2026-05-23.md` — new file, full V4 synthesis
+- `docs/e2-classification-rubric.md` — new file, frozen rubric
+- `mvp/classify_e2_regex.py` — new file, regex sanity-check classifier
+
+### Why this is NOT a 7th walkback
+
+The qualitative findings from F146 are preserved:
+- E2 elevates under perturbation (qualitative: yes; strict number: +30pp instead of +34pp)
+- Direction is irrelevant at first order (qualitative: yes; sharpened from "partially weakened" to "absent")
+- No generalization (qualitative: yes; numerical confirmation)
+- Positive selectivity (qualitative: yes; unchanged)
+
+F147 is a sharpening pass, not a walkback. The 6-walkback count from F146 holds.
+
+### Lesson for the future
+
+When a hand-classification number ends up in a published claim, the rubric should be frozen *before* classification, then a programmatic sanity-check should be run independently. The original closing-validation hand-review was done conscientiously but the implicit rule drifted slightly to include "completeness" patterns. This shifted the headline by 4pp. Not catastrophic, but worth catching before writeup. Bake this into the methodology section of the post: "every hedge-rate number comes with the rubric used to produce it; sanity-checked against a regex implementation of the same rubric."
+
+### Status
+
+V4 synthesis (`docs/controls-verification-2026-05-23.md`) is now the authoritative set of numbers for the writeup. F146 + F147 + the V4 synthesis + the rubric doc together are the complete artifact set for the LessWrong post.
+
+No more compute. No more refinements. The writeup is the next concrete output.
+
