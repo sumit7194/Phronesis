@@ -122,3 +122,44 @@ Based on the deep reads, the right framing is:
 - `docs/drafts/F121-steering-one-sidedness.md` — old draft, needs rewrite
 
 VM still on ludo. n=50 flipped-Δ queued in `docs/next-session-queue.md` for whenever it frees. **We can draft the post tonight without waiting.**
+
+---
+
+## ADDENDUM 2026-05-23 — Second-round prior-art search before writeup
+
+A second web-search pass before drafting the LessWrong post revealed substantially more prior art than this doc originally captured. The contribution claim shrinks accordingly.
+
+### Additional papers / sources to cite
+
+| Paper / source | arXiv / URL | What it covers |
+|---|---|---|
+| **The Rogue Scalpel: Activation Steering Compromises LLM Safety** | arXiv:2509.22067 (Sept 2025) | **Random-direction steering increases harmful compliance 0%→1-13%**. Also: 20 random vectors aggregated form a "universal attack." Direct prior art for our "direction-agnostic perturbation" finding, applied to safety rather than hedging. |
+| **Tan et al. — Analyzing the Generalization and Reliability of Steering Vectors** | arXiv:2407.12404 (July 2024) | Steerability highly variable across inputs; up to 50% of samples "anti-steerable" (shift in opposite direction). Brittle to reasonable prompt changes. Direct prior art for cross-prompt failure. NeurIPS 2024. |
+| **Tan et al. — Investigating Generalization of One-shot LLM Steering Vectors** | arXiv:2502.18862 (Feb 2025) | Follow-up on one-shot steering generalization. |
+| **Braun et al. — A Sober Look at Steering Vectors for LLMs** | (May 2025, Alignment Forum + blog post) | Anti-steerability follow-up; cited widely for steerability variability. |
+| **Understanding (Un)Reliability of Steering Vectors in LLMs** | arXiv:2505.22637 | ICLR 2025 Building Trust Workshop. Reliability framework. |
+| **DSAS — Dynamically Scaled Activation Steering** | arXiv:2512.03661 (Dec 2025) | Non-monotonic α-effect relationship. Adaptive modulation. |
+| **Taimeskhanov et al. 2026** | (cited in field guide) | "Stronger is worse" — α=3.0 can perform worse than α=2.0. Non-monotonic. |
+| **What Drives Representation Steering? A Mechanistic Case Study on Steering Refusal** | arXiv:2604.08524 | **Single-behavior mechanistic case study format** — direct format analog to what we'd write. Different behavioral domain (refusal). |
+| **EAST — Entropic Activation Steering for LLM Agents** | arXiv:2406.00244 | Closest behavioral domain (subjective uncertainty for agents). Controls agent action entropy. |
+| **Subhadip Mitra — Activation Steering in 2026: A Practitioner's Field Guide** | subhadipmitra.com 2026 blog | **Practitioner consolidation** of cross-prompt failure, non-monotonic dose, recommended controls. Notably does NOT mention matched-norm random-direction baselines — this is the one gap our work fills in their checklist. |
+
+### Updated contribution claim
+
+The original framing — "we discovered direction-specific epistemic-virtue steering" — was wrong (V3/F146 walkback). The revised framing — "we documented controls-bundle failure case study with novel methodology" — was also too strong. **The current honest framing**:
+
+> "We applied four already-published methodological cautions to a new behavioral domain (epistemic-virtue hedging on contested-evidence prompts in Qwen2.5-7B-Instruct). All four reproduce: matched-norm random direction works comparably (Rogue Scalpel-style), cross-prompt generalization fails (Tan et al.-style), dose-response is non-monotonic / saturating (DSAS-style), DPO-Δ-as-vector works (D-STEER-style). Our specific empirical artifact is a +30pp direction-agnostic effect on n=1 prompt that does not generalize."
+
+### What remains genuinely new
+
+1. **Behavioral domain**: epistemic-virtue hedging on contested-evidence prompts. Refusal, sycophancy, agent-uncertainty (EAST), calibration have been done; this specific framing has not.
+2. **The full 5-control bundle applied in one project** with raw numbers and confidence intervals. Each control individually has prior art; the bundle is somewhat original.
+3. **The "completeness vs evidence-strength" hedge classification distinction**: shifted our headline by 4pp. This is a small but original methodology note.
+4. **The 6-walkback narrative**: pedagogically useful, not a research finding.
+5. **Field-guide gap on matched-norm random baselines**: Subhadip Mitra's guide doesn't mention this control; our work confirms it should be standard.
+
+### Decision
+
+Confirmed: write the LessWrong post per the plan in `docs/drafts/lesswrong-replication-post-plan.md`. Frame as replication-on-new-domain with the controls bundle + classification rubric + field-guide gap as the constructive additions. Modest claim. ~2500 words.
+
+Do NOT pursue arXiv preprint unless LessWrong post lands well (>20 karma + substantive comments).
