@@ -2275,3 +2275,80 @@ This is much more useful than the original F121.
 
 The day produced a coherent and publishable architectural finding. Phase 2a is an open engineering problem in a specific sense: the L20 behavior-modification axis has narrow direct effect, and broader installation would require multi-layer training or different intervention points. This is a finding, not a failure.
 
+
+## Day 41 (2026-05-23) — F146: controls-and-generalization chain forces a 6th walkback; only E2 elevates
+
+The promised n=50 confirmation (queued in `next-session-queue.md` Tier 1) plus the four-phase controls chain and the two-phase firming chain ran today. 870 hand-classified generations in total. The result: only E2 (flossing) shows the hedge-elevation effect. None of the 12 other prompts tested replicate, including the two with similarly under-hedged baselines (ce-03 breakfast, uh-04 10k-steps).
+
+### What ran
+
+Two scripts on the L4 VM:
+
+1. **`mvp/controls_and_generalization_chain.py`** — 4 phases, ~2h 27min, 660 generations:
+   - Phase 1: direction-specificity controls (vdiff_matched, random, flipped α=±25 on E2 × n=20)
+   - Phase 2: 18 broader-eval prompts × baseline + steered × n=10
+   - Phase 3: cross-layer L15/L18/L22/L25 with flipped α=−25 × n=20
+   - Phase 4: dose-response α∈{−5,−10,−15,−20,−30,−40} at L20 × n=20
+
+2. **`mvp/firming_experiments.py`** — 2 phases, ~1h 19min, 210 generations:
+   - Firming A: n=50 random-direction at α=−25 L20 on E2 (tighten the direction-specificity control)
+   - Firming B: 4 new "popular health claim, baseline may under-hedge" prompts (collagen, organic, ACV, 10k-steps) × baseline + steered × n=20
+
+All under strict-rule hand-classification (HEDGE = explicit evidence-strength concession; operational/completeness caveats do not count). The same rule used in the n=50 confirmation that gave 28/50 = 56% on E2.
+
+### Result
+
+The original framing collapses except on E2. Six walkbacks chained:
+
+1. **Direction-specificity dies** at first order — Phase 1 + Firming A: random matched-norm direction at α=−25 produces 42% hedge (n=50, CI 28.8-56.4%) vs flipped 56% (CI 41.8-69.3%). CIs overlap; the 14pp gap is not statistically significant. Both significantly above baseline 22%. The bulk of the effect is direction-agnostic perturbation, with possible weak directional second-order structure that n=50 is underpowered to confirm.
+
+2. **Dose-response is flat, not gradient** — Phase 4: 25-35% across α from −5 to −40, CIs overlap. Step function above some threshold |α|~5, not a smoothly-scaling steering vector.
+
+3. **Effect is mid-layer-localized** — Phase 3: L15 15%, L18 45%, L20 35-56%, L22 30%, L25 20%. L18-L20 peak; tapers at edges. (This survives.)
+
+4. **Effect does NOT generalize across prompts** — Phase 2 + Firming B: only E2 elevates. 7 contested-evidence prompts are at-ceiling at baseline (already hedging appropriately). 2 contested-evidence prompts have under-hedged baselines (ce-03 breakfast 20%, uh-04 10k-steps 0%) — neither elevates under steering. 1 prompt (uh-03 ACV) actually decreases by 25pp. The "knowledge unlock" interpretation considered yesterday (perturbation surfaces latent contrarian knowledge where it exists) fails empirically: the model has the relevant knowledge about uh-04 (Yamasa pedometer marketing origin, 7k plateau in cohort studies) but the perturbation doesn't retrieve it.
+
+5. **Positive selectivity does survive** — Phase 2 trivia and well-established prompts: 100% correct/affirm in both conditions; steering doesn't introduce inappropriate hedging on smoking/exercise/sleep or distort "Paris" / "100°C" / "Shakespeare."
+
+6. **E2 itself survives at n=50**: 22% baseline → 56% steered, CIs separate. This is real but it is n=1 prompt.
+
+### What this means
+
+Six walkbacks: F94 → F103 → F138 → F138-replication → F143/F145 → F146. The user said earlier today "we can't keep adding findings and keep walking back." That instruction is the controlling one.
+
+Decision: commit to the methodology-paper framing. The writeup is no longer "epistemic-virtue installation via DPO-derived activation steering" but rather "Cross-prompt replication discipline — a case study in how steering 'discoveries' fail to generalize even to closely-related prompts." The empirical content is:
+- A specific E2 elevation (n=50) that is direction-agnostic, magnitude-saturated, layer-localized
+- A demonstration that under-hedged-baseline analogs (ce-03, uh-04) do not replicate
+- Positive selectivity (trivia/well-established preserved)
+- The full controls-and-generalization protocol itself as a methodology contribution
+
+Docs updated today:
+- `docs/findings.md` F146 entry
+- `docs/controls-and-generalization-hand-review-2026-05-23.md` (full synthesis with per-phase CIs and per-prompt classifications)
+- `docs/journal.md` (this entry)
+- `docs/writeup-plan.md` (methodology-paper reframe added at the end)
+- `docs/next-session-queue.md` (Tier 1 and Tier 2 marked done)
+
+### Process notes
+
+- The n=50 flipped-Δ confirmation (queued as Tier 1) gave 56% — original +34pp finding holds on E2. So the "load-bearing positive" survived its first big test. The collapse came at the next layer: controls (direction, dose, layer) and broader-prompt generalization.
+- First-sentence-scan of long detailed generations is **unreliable** for hedge-rate estimation. I initially estimated ce-08 cold-shower baseline at 60% from tails; full body reads gave 100%. Lesson: when doing strict-rule classification at this scale, dump full bodies and classify per-generation; do not infer from first sentences.
+- The "knowledge unlock" interpretation I drafted in V2 of the synthesis (after Phase 2 partial classification) does not hold when tested against uh-04. Recording this as a not-published intermediate hypothesis. Six walkbacks now includes the not-yet-published intermediate framing.
+- The user explicitly told me at the start of this session to wait for full results before adding findings. That discipline held — no docs were touched until all 870 generations were classified. Worth keeping as a habit for future sessions.
+
+### Decision on next steps
+
+Per user 2026-05-23: methodology-paper framing committed. No further extension experiments. The writeup work (drafting the post / paper) is the next concrete output. Compute experiments on this question are closed.
+
+### Compute cost
+
+L4: ~3h 46min total (controls chain 2h 27min + firming AB 1h 19min). Human review: ~6 hours of hand-classification.
+
+### Cross-references
+
+- F146 (findings.md) — full per-phase numbers and CIs
+- `controls-and-generalization-hand-review-2026-05-23.md` — comprehensive synthesis
+- `mvp/results/all_deltas/controls_and_generalization.json` — phase 1-4 raw
+- `mvp/results/all_deltas/firming_AB.json` — firming A+B raw
+- closing-validation-hand-review-2026-05-22 — the n=50 E2 confirmation (the only positive that survives)
+

@@ -1,77 +1,78 @@
 # Next session queue — Phronesis tasks waiting on VM availability
 
-VM is currently doing ludo RL training (started 2026-05-20 evening). Resume Phronesis work when VM frees up.
+**Status as of 2026-05-23, Day 41**: Tier 1 and Tier 2 are DONE. Tier 3 (writeup) is the only remaining queue. No more compute experiments.
 
-## Tier 1 — load-bearing for writeup framing (run before any writeup)
+## ✅ Tier 1 — load-bearing for writeup framing (DONE 2026-05-23)
 
-### Experiment: flipped-Δ at α=−25 on E2, n=50 sampled @ temp=0.7
+### Experiment: flipped-Δ at α=−25 on E2, n=50 — DONE
 
-**Why it matters**: The closing-validation chain found that flipped-Δ at α=−25 produces 55% hedge rate (n=20) vs baseline 14% (n=50) → +41pp distributional shift. This is the ONE positive empirical finding the prior literature (D-STEER, Pan et al., Pres et al.) doesn't predict. It's the only potential "centerpiece" of the writeup.
+Original closing-validation finding (+34pp) **survived n=50 confirmation**: 28/50 = 56% hedge under strict-rule hand-review (Wilson 41.8-69.3%), baseline 11/50 = 22% (Wilson 12.8-35.0%). CIs separate. **The E2 effect itself is robust.**
 
-But: this project has caught 4 walkbacks where small-n effects collapsed at larger N. We **must** confirm at n=50 before making it load-bearing.
+But the broader claim does NOT survive the controls-and-generalization chain (see Tier 2 below). The effect is direction-agnostic, magnitude-saturated, layer-localized, and n=1 prompt.
 
-**Decision tree**:
-- If n=50 lands at 50-60% hedge rate → original 55% holds, writeup has a positive centerpiece
-- If n=50 lands at 25-30% → effect is real but smaller; still worth reporting but less central
-- If n=50 lands at 14-20% → n=20 was variance, no positive centerpiece, writeup is purely methodological retrospective
+Outputs:
+- `mvp/results/all_deltas/flipped_alpha_neg25_n50.json`
+- `docs/closing-validation-hand-review-2026-05-22.md` (n=50 hand-classifications)
 
-**How to run**:
+## ✅ Tier 2 — controls and broader generalization (DONE 2026-05-23)
 
-```python
-# Mirror of seed_replication_e2_baseline.py but with flipped-Δ steering hook attached.
-# d_flipped is at mvp/results/all_deltas/d_flipped.npy
-# Use AdditiveSteeringHook(20, d_flipped, -25.0) on baseline Qwen2.5-7B-Instruct
-# Generate 50 samples at temp=0.7, count hedge patterns matching the same regex used in closing_validation analysis
-```
+All three optional Tier-2 items + a 4th phase (dose-response) + 2-phase firming chain. Per F146 in `findings.md`:
 
-**Compute**: ~10-15 min on L4 (50 generations × ~10s each + model load)
+1. **Flipped-Δ α=−25 on broader 18-prompt eval at n=10 each** — done. Only E2 elevates; most CE prompts at ceiling; under-hedged ce-03 breakfast does NOT elevate; TF and WS preserved.
+2. **Cross-layer flipped-Δ α=−25 at L15/L18/L22/L25 × n=20** — done. L18-L20 peak (35-45%); L15 (15%) and L25 (20%) at baseline.
+3. **Dose-response α ∈ {−5,−10,−15,−20,−30,−40} × n=20** — done. Flat at 25-35% across all magnitudes; step function not gradient.
+4. **n=50 random-direction confirmation at α=−25 L20** — done. 21/50 = 42% (CI 28.8-56.4%) vs flipped 56% (CI 41.8-69.3%); CIs overlap; effect largely direction-agnostic.
+5. **4 new "popular health claim, baseline may under-hedge" prompts** (collagen, organic, ACV, 10k-steps) × baseline + steered × n=20 — done. Only marginal/null effects; uh-04 10k-steps stays at 0% baseline AND 0% steered (severe under-hedging that the perturbation does not unlock).
 
-**Output**: `mvp/results/all_deltas/flipped_alpha_neg25_n50.json` + hedge count summary
+Total: 870 generations hand-classified. See:
+- `docs/controls-and-generalization-hand-review-2026-05-23.md` — full synthesis
+- `docs/findings.md` F146 — codified finding
+- `mvp/results/all_deltas/controls_and_generalization.json` (660 gens)
+- `mvp/results/all_deltas/firming_AB.json` (210 gens)
 
-## Tier 2 — would strengthen post if Tier 1 holds
+Turkey-tryptophan with flipped-Δ α=−25 was NOT run — given the broader-eval result showing no generalization, it was deprioritized. Not on the queue going forward.
 
-### Optional 1: flipped-Δ α=−25 on broader 18-prompt eval at n=20 each
-If E2 result holds at n=50, test whether the +41pp generalizes to other contested-evidence prompts. ~30 min compute.
+## Tier 3 — writeup (still open)
 
-### Optional 2: turkey-tryptophan flipped-Δ α=−25
-Closing validation showed v2-Δ α=+10 didn't correct turkey (it's just baseline's natural 25%). Does flipped-Δ at α=−25 do better? ~5 min.
+### Decision made (2026-05-23): methodology-paper framing
 
-### Optional 3: cross-layer flipped-Δ α=−25
-We already have L20 (+41pp) and L15 v2-Δ α=+25 (+16pp). Does flipped-Δ at L15/L18/L22/L25 with α=−25 also produce shift? Maps the operative subspace across layers. ~15 min.
+**From**: "epistemic-virtue installation via DPO-derived activation steering"
+**To**: "Cross-prompt replication discipline — a case study in how steering 'discoveries' fail to generalize"
 
-## Tier 3 — writeup, no compute needed
+See `docs/writeup-plan.md` FINAL REFRAME section for full writing plan, length/venue targets, what-to-claim / what-not-to-claim, and recommended writing order.
 
-### Literature read before drafting
-1. **D-STEER (arXiv:2512.11838)** — read Section 3 (extraction method) and Section 4.1 (spectral analysis). Confirm exact equivalence with F143 construction.
-2. **Pan et al. 2025 (arXiv:2502.09674)** — read Section 4 (near-orthogonality with probe direction). Understand the dominant-vs-non-dominant framing.
-3. **Pres et al. 2024 (arXiv:2410.17245)** — read Section 2 (desiderata) and Table 3 (myopia near-tie example). Internalize the methodology framing.
+### Literature read — DONE
 
-### Writeup decision (after literature read + Tier 1 result)
+1. ✅ **D-STEER (arXiv:2512.11838)** — see `prior-art-deep-read-2026-05-22.md`
+2. ✅ **Pan et al. 2025 (arXiv:2502.09674)** — see same
+3. ✅ **Pres et al. 2024 (arXiv:2410.17245)** — see same
 
-**Option A**: Workshop-paper-quality contribution, framed as field replication study extending three prior papers. Need Tier 1 result first to know if there's a positive centerpiece.
+### Writeup work remaining
 
-**Option B**: Project retrospective focused on the 4-walkback pattern as a process artifact. Less novel-finding, more methodological narrative.
+1. Read the 7 LessWrong exemplars in `publication-playbook.md` §A.1
+2. Draft post outline using the FINAL REFRAME in writeup-plan.md
+3. Write the post (2500-4000 words, LessWrong / Alignment Forum)
+4. Optional: arXiv preprint (6-8 pages, methodology paper)
 
-**Option C**: Archive without writeup. The Phronesis docs (`findings.md`, `journal.md`, `day37-overnight-status.md`) are the public record; no LessWrong post needed.
+### Files updated 2026-05-23
 
-Lean: A if flipped-Δ holds at n=50, B if it doesn't.
-
-### Files to update before writeup
-
-- `docs/writeup-plan.md` — rewrite reflecting prior-art landscape (currently has the pre-lit-review framing)
-- `docs/findings.md` F142/F143/F145 already have prior-art hedges added 2026-05-20
-- `docs/day37-overnight-status.md` has the full prior-art assessment in the THIRD ADDENDUM
+- `docs/findings.md` — F146 entry
+- `docs/journal.md` — Day 41 entry
+- `docs/writeup-plan.md` — FINAL REFRAME section at end
+- `docs/controls-and-generalization-hand-review-2026-05-23.md` — new file, full synthesis
+- `docs/next-session-queue.md` — this file
 
 ## Not on queue (motivated continuation traps)
 
+The list from before remains, plus:
+
 - More DPO configurations (already ruled out across rank 4/16/64 + SFT + flipped + multi-virtue)
-- More decision-margin prompts (already n=18, 0/18 at distribution; more won't change picture)
+- More decision-margin prompts (Phase 2 broader-eval and Firming B already added 12 new prompts; only E2 elevates)
 - More layers without NLA validation
-- More contrastive extraction methods (4 already tested: diff-of-means, AR-encoding, AR-diff, probe)
+- More contrastive extraction methods (already tested: diff-of-means, AR-encoding, AR-diff, probe)
+- **More "popular health claim" prompts hoping to find a second under-hedged baseline that elevates** — 13 prompts tested, only E2 elevates. Further attempts at this would be the 7th iteration of the "find more positive evidence" pattern. Stop.
+- **n=100 or higher confirmation of E2** — n=50 already separates CIs from baseline. Going higher tightens estimates but doesn't change the qualitative finding (which is n=1 prompt regardless of how robust the n is on that one prompt).
 
-## How to resume
+## How to resume (for writeup work)
 
-1. When VM is free, ssh to alphaludo-l4 (us-east1-c)
-2. Verify Phronesis project still intact: `ls ~/phronesis_run/mvp/results/all_deltas/d_flipped.npy`
-3. Run Tier 1 experiment (script template above)
-4. Pull result, analyze, decide writeup direction
+No VM needed for writeup. Open `docs/writeup-plan.md` FINAL REFRAME section, start drafting per the recommended order. All empirical content is in the docs already. The compute phase of this project is closed.

@@ -260,3 +260,62 @@ A literature scan on 2026-05-20 revealed that the core findings have direct prio
 **Implication**: the writeup framing in this doc (above) needs to be substantially walked back from "we discovered the discrimination-vs-behavior-modification axis distinction" to "we replicated three recent papers on a new behavioral domain (epistemic virtues) and found one empirical anomaly the prior frameworks don't predict (flipped-Δ at α=−25, +41pp on E2 — pending n=50 confirmation)."
 
 **Do not draft the post until**: (a) flipped-Δ n=50 result is in, (b) D-STEER and Pan et al. have been read directly (not via agent summary). The current writeup plan above this notice is partially obsolete.
+
+---
+
+## FINAL REFRAME (2026-05-23, Day 41 — post controls-and-generalization chain)
+
+Both gates above are now closed:
+- (a) **Flipped-Δ n=50 confirmed** at 56% hedge on E2 (Wilson 41.8-69.3%) — the +34pp finding survives its first replication.
+- (b) **D-STEER, Pan et al., Pres et al. all read** directly (see `prior-art-deep-read-2026-05-22.md`).
+
+But a third gate emerged from the controls-and-generalization chain that ran 2026-05-23: **cross-prompt generalization**. See F146 in `findings.md` and `controls-and-generalization-hand-review-2026-05-23.md` for the full result.
+
+**The headline finding for the writeup is no longer "directional epistemic-virtue steering generalizes."** It is:
+
+> "A specific perturbation pattern in Qwen2.5-7B-Instruct (matched-norm activation perturbation at L18-L20 with α≲−5, in any direction) elevates explicit-evidence hedging on one specific prompt (E2 flossing) from 22% to 42-56%. The effect is direction-agnostic at first order, magnitude-saturated above threshold, mid-layer-localized, and does NOT generalize to 12 other prompts tested, including 2 with similarly under-hedged baselines (ce-03 breakfast, uh-04 10k-steps). Positive selectivity preserved: trivia and well-established prompts unaffected."
+
+### Updated writeup framing
+
+**From**: "epistemic-virtue installation via DPO-derived activation steering"
+**To**: "Cross-prompt replication discipline — a case study in how steering 'discoveries' fail to generalize even to closely-related prompts"
+
+The post becomes a methodology contribution, not a positive empirical centerpiece. Empirical content:
+1. The E2 finding (direction-agnostic, magnitude-saturated, layer-localized, n=1 prompt)
+2. The controls chain that produced 5 sequential walkbacks of broader claims
+3. The cross-prompt replication failure on under-hedged-baseline analogs
+4. The methodology protocol itself (n=50 + matched-norm random + cross-layer + dose-response + 4+ under-hedged-baseline analogs) as recommended discipline for the field
+
+### Length and venue target (revised)
+
+- **LessWrong post**: 2,500-4,000 words. Title direction: *"Why our activation-steering 'epistemic-virtue' finding doesn't generalize, and why we still think it's worth writing up."* Frame: bounded-negative result with methodology contribution.
+- **arXiv preprint**: optional second pass at 6-8 pages. Frame: methodology paper with a focused empirical case study.
+- **Author voice**: solo, calibrated, no hedge-on-hedge. Cite Arditi 2024 (refusal), D-STEER (DPO-Δ-as-steering), Pan et al. (axis distinction), Pres et al. (seed-replication discipline). Position as replication-and-extension of these papers' methodologies, with a specific empirical case that fails to generalize.
+
+### What NOT to claim
+
+- Do NOT claim "we discovered a hedging direction." Random matched-norm performs comparably at α=−25.
+- Do NOT claim "steering scales with α." It's a step function above |α|~5.
+- Do NOT claim "steering installs broader humility." Only E2 elevates among 13 prompts tested.
+- Do NOT claim a "knowledge unlock" mechanism. uh-04 (10k-steps) refutes it — the model has the relevant knowledge but the perturbation doesn't retrieve it.
+
+### What CAN be claimed
+
+- The E2 effect itself at n=50 with controls (matched-norm random baseline, cross-layer, dose-response, cross-prompt replication failure as bounded negative)
+- Positive selectivity: no degradation of trivia or well-established claims under steering
+- The methodology protocol as a recommended discipline before claiming any steering effect generalizes
+- The architectural backbone from F142/F145 (discrimination axis ≠ behavior-modification axis; DPO finds the latter; downstream amplification produces visible behavior at decision-margin prompts) — but explicitly note this has direct prior art (D-STEER, Pan et al.) and our contribution here is replication on a new behavioral domain plus the cross-prompt failure analysis
+
+### Recommended writing order
+
+1. Read the 7 LessWrong exemplars in `publication-playbook.md` §A.1 (do this if not already done)
+2. Re-read D-STEER and Pan et al. directly (done; see `prior-art-deep-read-2026-05-22.md`)
+3. Draft outline with the reframe above
+4. Write the E2 result section first (concrete, defensible, central)
+5. Write the controls-chain section showing each walkback
+6. Write the cross-prompt-failure section (ce-03 + uh-04 are the killer cases)
+7. Write the methodology-recommendations section as the constructive payload
+8. Honest limitations section (n=1 prompt, prior-art overlap, single-model)
+9. Title and TL;DR last
+
+No further compute experiments are required before drafting. The empirical content is what it is.

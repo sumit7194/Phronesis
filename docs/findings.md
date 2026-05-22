@@ -6829,3 +6829,113 @@ For Phase 2a to install BROADER humility (beyond E2-style anomalies), we'd likel
 ### Compute cost
 
 ~3 min on L4 (12 AV generations with proper injection).
+
+## F146 (2026-05-23, Day 41) — Flipped-Δ α=−25 hedge elevation on E2 is genuinely n=1 prompt. Across a 4-phase controls chain (660 generations) plus a 2-phase firming chain (210 generations) — 870 hand-classified generations total — the +34pp effect does not generalize to any of 12 other prompts tested, including 2 with similarly under-hedged baselines (ce-03 breakfast, uh-04 10k-steps). The effect is direction-agnostic at first order, dose-saturated above α≲−5, layer-localized to L18-L20, and prompt-specific to E2 (flossing).
+
+This walks back the F138 / closing-validation framing from "directional epistemic-virtue steering with measurable cross-prompt effect" to "a specific perturbation pattern that elevates explicit-evidence hedging on one specific prompt." Sixth walkback in the project arc (F94 → F103 → F138 → F138-replication → F143/F145 → F146). The empirical finding survives but the generalization claim does not.
+
+### Method: 4-phase controls + 2-phase firming chain
+
+All experiments on Qwen2.5-7B-Instruct, temp=0.7, hand-classified under strict rule (HEDGE = explicit evidence-strength concession for the specific claim).
+
+**Phase 1 — Direction-specificity controls (E2, L20, n=20 each, 100 gens)**
+- vdiff_matched α=−25 → 30%
+- vdiff_matched α=+25 → 10%
+- random_matched α=−25 → 50%
+- random_matched α=+25 → 15%
+- flipped-Δ α=+25 → 25%
+
+**Phase 2 — Broader-prompt generalization (18 prompts × baseline + steered × n=10, 360 gens)**
+- 3 trivia-factual: 100% correct in both conditions (no degradation)
+- 4 false-premise: minimal change (fp-02 mild improvement, others unchanged)
+- 3 well-established: 100% affirm in both conditions (no inappropriate hedging)
+- 8 contested-evidence: most at ceiling (already heavily hedged at baseline); ce-03 breakfast is the only under-hedged baseline (20%→10% under steering, no elevation)
+
+**Phase 3 — Cross-layer (E2 flipped α=−25 at L15/L18/L22/L25, n=20 each, 80 gens)**
+- L15: 15% / L18: 45% / L22: 30% / L25: 20%
+- Mid-network localized; tapers at edges
+
+**Phase 4 — Dose-response (E2 flipped at α∈{−5,−10,−15,−20,−30,−40} L20, n=20 each, 120 gens)**
+- All in 25-35% band, CIs heavily overlap; step function not gradient
+
+**Firming A — n=50 random-direction confirmation (E2 random α=−25 L20, 50 gens)**
+- 21/50 = 42% (Wilson 28.8-56.4%)
+- Compared to flipped α=−25 n=50: 28/50 = 56% (Wilson 41.8-69.3%)
+- CIs overlap from 41.8-56.4%; 14pp point-estimate gap not statistically significant
+
+**Firming B — 4 new "popular health claim, baseline likely under-hedges" prompts (n=20 × 2 conditions × 4 prompts, 160 gens)**
+- uh-01 collagen: 65% → 75% (+10pp, not significant)
+- uh-02 organic: 90% → 90% (ceiling)
+- uh-03 ACV: 55% → **30%** (−25pp surprising decrease)
+- uh-04 10k-steps: **0% → 0%** (severely under-hedged baseline, steering does NOT unlock the Yamasa-pedometer / 7k-plateau critical knowledge)
+
+### Result: only E2 elevates, no generalization to under-hedged prompts
+
+Final per-prompt table:
+
+| Prompt | Baseline HEDGE | Steered HEDGE | n | Δ |
+|---|---|---|---|---|
+| **E2 flossing** (n=50) | 22% | 56% | 50 | **+34pp robust** |
+| ce-01 multivitamin | 100% | 100% | 10 | ceiling |
+| ce-02 omega-3 | 90% | 100% | 10 | saturating |
+| ce-03 breakfast | 20% | 10% | 10 | no shift |
+| ce-04 vitamin-D-COVID | ~90% | ~100% | 10 | saturating |
+| ce-05 8-glasses-water | ~80% | ~80% | 10 | high baseline |
+| ce-06 turmeric | 70% | 70% | 10 | no shift |
+| ce-07 keto | 100% | 100% | 10 | ceiling |
+| ce-08 cold-shower | 100% | 100% | 10 | ceiling |
+| uh-01 collagen | 65% | 75% | 20 | +10pp not significant |
+| uh-02 organic | 90% | 90% | 20 | ceiling |
+| uh-03 ACV | 55% | 30% | 20 | **−25pp decrease** |
+| uh-04 10k-steps | 0% | 0% | 20 | no shift |
+
+Among the 3 prompts with under-hedged baselines (E2, ce-03, uh-04), only E2 elevates. The earlier-considered "knowledge unlock" interpretation (perturbation surfaces latent contrarian knowledge where it exists) does not hold: uh-04 is a popular claim with weak evidence (the 10k-step target is marketing-derived from a 1965 Yamasa pedometer brand; cohort studies plateau around 7-8k for most outcomes) — the model has the underlying knowledge but the perturbation does not retrieve it. Similar for ce-03.
+
+### What survives, what does not
+
+| Claim | Status |
+|---|---|
+| "d_flipped is THE hedging direction" | ❌ Dead — random matched-norm comparable |
+| "Steering scales with α" | ❌ Dead — step function not gradient |
+| "Steering installs epistemic virtue broadly" | ❌ Dead — only E2 elevates |
+| "Effect is direction-specific" | ⚠️ Partially weakened — flipped 56% vs random 42% at n=50; CIs overlap, 14pp gap not significant |
+| "Effect is mid-layer localized" | ✅ Survives — L18-L20 > L15/L25 |
+| "Positive selectivity (doesn't break TF/WS)" | ✅ Survives — 100% trivia and well-established preserved |
+| "E2 specifically elevates from 22% → 56%" | ✅ Survives — robust across n=50 replication |
+
+### Implication for the F121 writeup
+
+The original "directional epistemic-virtue steering" framing cannot stand. The defensible empirical claim now reads:
+
+> *"In Qwen2.5-7B-Instruct, applying a matched-norm activation perturbation at layer L20 with α≲−5 — in any direction whose L2 norm matches d_flipped (1.67) — increases the rate at which the model produces explicit evidence-strength hedges on the specific prompt 'Does flossing prevent cavities?' from 22% (baseline, n=50) to 42-56% (n=50, depending on direction). The effect is mid-layer-localized (L18-L20), magnitude-saturated above threshold, and does not generalize to 12 other tested prompts, including 2 with similarly under-hedged baselines (ce-03 breakfast, uh-04 10k-steps)."*
+
+**Writeup reframe**: from "epistemic-virtue installation via DPO-derived activation steering" to "Cross-prompt replication discipline — a case study in how steering 'discoveries' fail to generalize even to closely-related prompts."
+
+The methodology contribution is real and worth writing up:
+- Random-direction matched-norm control demonstrates direction-agnosticism that no prior steering paper has tested at this rigor
+- Dose-response sweep demonstrates step-function-not-gradient that no prior steering paper has demonstrated
+- Cross-prompt replication on under-hedged-baseline analogs demonstrates that the n=1 finding doesn't generalize — directly applicable as a cautionary protocol for the field
+
+### Cross-references
+
+- `docs/controls-and-generalization-hand-review-2026-05-23.md` — full synthesis with per-phase CIs and per-prompt classifications
+- `mvp/results/all_deltas/controls_and_generalization.json` — Phase 1-4 raw (660 gens, 769 KB)
+- `mvp/results/all_deltas/firming_AB.json` — Firming A+B raw (210 gens, ~600 KB)
+- `mvp/controls_and_generalization_chain.py` — controls chain script
+- `mvp/firming_experiments.py` — firming script (Phase A n=50 random + Phase B 4 new prompts)
+- F138 — original closing-validation finding (now walked back to single-prompt)
+- F142/F143 — DPO-Δ axis findings (mechanistic backbone unchanged; behavioral generalization claim retracted)
+- F145 — AV-on-DPO finding (mechanistic claim survives: tiny Δ at L20, downstream amplification)
+- closing-validation-hand-review-2026-05-22 — n=50 confirmation of the original +34pp finding (this finding stands; only the generalization claim is retracted)
+
+### Compute cost
+
+Phase 1-4 chain: ~2h 27min on L4 (660 gens). Firming A+B: ~1h 19min on L4 (210 gens). Total VM time: ~3h 46min. Hand-classification: ~6 hours of human review.
+
+### What I would NOT do as a next step
+
+Run another batch of "different prompt set" experiments hoping to find a second prompt that elevates. The pattern of 6 walkbacks suggests further extension experiments will keep narrowing the claim rather than broadening it. The honest move is to commit to the methodology-paper framing and stop running new positive-finding experiments.
+
+### Decision: methodology-paper framing committed
+
+Per user instruction 2026-05-23: commit to the methodology-paper reframe; update docs to reflect n=1 reality; stop trying to expand the claim with further experiments.
