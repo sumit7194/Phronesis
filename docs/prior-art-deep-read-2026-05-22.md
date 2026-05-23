@@ -135,7 +135,7 @@ A second web-search pass before drafting the LessWrong post revealed substantial
 |---|---|---|
 | **The Rogue Scalpel: Activation Steering Compromises LLM Safety** | arXiv:2509.22067 (Sept 2025) | **Random-direction steering increases harmful compliance 0%→1-13%**. Also: 20 random vectors aggregated form a "universal attack." Direct prior art for our "direction-agnostic perturbation" finding, applied to safety rather than hedging. |
 | **Tan et al. — Analyzing the Generalization and Reliability of Steering Vectors** | arXiv:2407.12404 (July 2024) | Steerability highly variable across inputs; up to 50% of samples "anti-steerable" (shift in opposite direction). Brittle to reasonable prompt changes. Direct prior art for cross-prompt failure. NeurIPS 2024. |
-| **Tan et al. — Investigating Generalization of One-shot LLM Steering Vectors** | arXiv:2502.18862 (Feb 2025) | Follow-up on one-shot steering generalization. |
+| **Dunefsky & Cohan — One-shot Optimized Steering Vectors Mediate Safety-relevant Behaviors in LLMs** | arXiv:2502.18862 (Feb 2025) | One-shot optimized steering vectors for safety behaviors. (Originally misattributed in this doc to "Tan et al." — corrected 2026-05-23.) |
 | **Braun et al. — A Sober Look at Steering Vectors for LLMs** | (May 2025, Alignment Forum + blog post) | Anti-steerability follow-up; cited widely for steerability variability. |
 | **Understanding (Un)Reliability of Steering Vectors in LLMs** | arXiv:2505.22637 | ICLR 2025 Building Trust Workshop. Reliability framework. |
 | **DSAS — Dynamically Scaled Activation Steering** | arXiv:2512.03661 (Dec 2025) | Non-monotonic α-effect relationship. Adaptive modulation. |
