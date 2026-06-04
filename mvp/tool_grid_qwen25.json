@@ -1,0 +1,17 @@
+{
+  "_comment": "Path B tool-use grid — Qwen2.5-7B-Instruct (the fine-tune target). Steering vector is the DPO-derived IH delta at L20 (d_v2_IH). Random control: matched-norm, 3 seeds at a=8. Paths are relative to ~/phronesis_run/mvp.",
+  "model": "qwen2.5-7b-it",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L20_a4",  "steering": {"kind": "virtue", "vector_path": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 4.0}},
+    {"label": "v_IH_L20_a8",  "steering": {"kind": "virtue", "vector_path": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 8.0}},
+    {"label": "v_IH_L20_a16", "steering": {"kind": "virtue", "vector_path": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 16.0}},
+    {"label": "random_L20_a8_s42", "steering": {"kind": "random", "reference_vector": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 8.0, "seed": 42}},
+    {"label": "random_L20_a8_s1",  "steering": {"kind": "random", "reference_vector": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 8.0, "seed": 1}},
+    {"label": "random_L20_a8_s7",  "steering": {"kind": "random", "reference_vector": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 8.0, "seed": 7}}
+  ]
+}

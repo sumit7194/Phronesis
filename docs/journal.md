@@ -2434,3 +2434,17 @@ V4 synthesis (`docs/controls-verification-2026-05-23.md`) is now the authoritati
 
 No more compute. No more refinements. The writeup is the next concrete output.
 
+
+## Day 55-56 (2026-06-04 / 06-05) — Tool-use experiment finally run on VM (Path B)
+
+Ran the long-deferred "virtue + tools" experiment on the alphaludo-l4 VM (the AlphaLudo RL box; Ludo training paused). Findings F148-F152; full writeup in `docs/tool-use-experiment-2026-06.md`.
+
+- **qwen2.5-7b**: tool-use at ceiling (100% should-search), steering null. Resolves the old "is baseline already high?" / 68.8% question — yes, for this model.
+- **qwen3-4b**: v_IH L17 α16 gives a real invoke-calibration win (+88% discrimination), survives ALL controls (direction / virtue / dose / budget / model). The project's first robust positive steering effect.
+- **BUT** manual scoring of a 15-prompt false-premise battery (live DDG search) KILLED the answer-honesty thesis: v_IH confabulates MORE (5 vs 2), searched yet still committed to false premises. Better tool-calling ≠ better answers — the decoupling.
+- **Virtue-specificity**: IH-specific; CC raises search-quantity but doesn't discriminate; combined dilutes (hydra again).
+- **Mechanism**: decisiveness/self-trust knob; over-calling and confabulation are opposite miscalibrations (tool-calibration = confidence calibration). Single static direction can't fix both → conditional/PID steering is the agreed next direction.
+- **Qwen3.5-4b** replication in progress (newer-gen same-size thinking model; loads cleanly; IH vector extracted at probe 100%).
+
+Process note: manual review (per the F94/F119 discipline + user's explicit instruction to not trust auto-scoring) overturned the auto-metric/cherry-picked-example optimism. The Figma "win" was n=1 luck. Same walkback discipline as the steering arc — the exciting read didn't survive hand-checking.
+

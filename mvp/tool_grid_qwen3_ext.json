@@ -1,0 +1,19 @@
+{
+  "_comment": "qwen3-4b follow-up battery (same settings as original: 2048 tokens, mock). Appends to results/tool_use_grid/qwen3. Decisive controls (random a16) ordered first. Tests direction-specificity, virtue-specificity, and dose-response of the v_IH a16 tool-calibration effect.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "random_L17_a16_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "seed": 42}},
+    {"label": "random_L17_a16_s1",  "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "seed": 1}},
+    {"label": "random_L17_a16_s7",  "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "seed": 7}},
+    {"label": "v_EG_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-evidence-grounding/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "v_RT_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-reasoning-transparency/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "v_IH_L17_a24", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 24.0}},
+    {"label": "v_IH_L17_a32", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 32.0}},
+    {"label": "random_L17_a24_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 24.0, "seed": 42}},
+    {"label": "random_L17_a32_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 32.0, "seed": 42}}
+  ]
+}

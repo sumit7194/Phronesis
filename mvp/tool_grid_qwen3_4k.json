@@ -1,0 +1,13 @@
+{
+  "_comment": "qwen3-4b token-budget de-confound: 4096 tokens (vs 2048). Checks whether (a) baseline should-search invoke was depressed by thinking exhausting the budget, and (b) the v_IH a16 calibration effect survives an adequate budget. Separate output dir.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 4096,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "random_L17_a16_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "seed": 42}}
+  ]
+}

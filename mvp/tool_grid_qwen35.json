@@ -1,0 +1,17 @@
+{
+  "_comment": "Qwen3.5-4B replication of the qwen3-4b invoke-calibration result. IH vector extracted fresh (last_token, probe 100% at L14/16/18). L16 primary (~relative position of qwen3-4b L17). baseline + v_IH alpha-sweep + L14 alt + matched-norm random. Mock search (invoke-calibration axis). Tests whether the F148 effect replicates on a newer-gen thinking model.",
+  "model": "qwen3.5-4b",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L16_a8",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 8.0}},
+    {"label": "v_IH_L16_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 16.0}},
+    {"label": "v_IH_L16_a24", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 24.0}},
+    {"label": "v_IH_L14_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_14_virtue_vector.npy", "layer": 14, "alpha": 16.0}},
+    {"label": "random_L16_a16_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 16.0, "seed": 42}},
+    {"label": "random_L16_a16_s1",  "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 16.0, "seed": 1}}
+  ]
+}

@@ -47,6 +47,35 @@ MODEL_CONFIGS = {
         "thinking": False,               # No <think>/</think> tags
         "num_layers": 32,
         "hidden_dim": 3072,
+        # Phi-3.5's bundled modeling_phi3.py uses removed DynamicCache.from_legacy_cache;
+        # use built-in transformers Phi3 implementation instead.
+        "trust_remote_code": False,
+    },
+    "phi-4-mini-reasoning": {
+        # Microsoft Phi-4-mini-reasoning (3.8B) — same architecture as Phi-3.5-mini
+        # but reasoning-tuned with native <think>/</think> trace emission.
+        # Smoke-tested Day 23 evening: emits <think>...</think> via default chat template.
+        # NB: forcing attn_implementation="sdpa" — without it the first run hung at 0%
+        # GPU util / 759% CPU for 13 min on a single forward pass.
+        "hf_id": "microsoft/Phi-4-mini-reasoning",
+        "local_dir": "Phi-4-mini-reasoning",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,
+        "num_layers": 32,
+        "hidden_dim": 3072,
+        "trust_remote_code": False,
+        "attn_implementation": "sdpa",
+    },
+    "llama-3.1-8b-r1-grpo": {
+        "hf_id": "zztheaven/Llama-3.1-8B-Instruct-Open-R1-GRPO",
+        "local_dir": "Llama-3.1-8B-Instruct-Open-R1-GRPO",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,           # Open-R1 pure GRPO models organically emit <think> tags
+        "num_layers": 32,
+        "hidden_dim": 4096,
+        "attn_implementation": "sdpa", # Standard for Llama-3 models
     },
     "qwen3-4b": {
         "hf_id": "Qwen/Qwen3-4B",
@@ -56,6 +85,76 @@ MODEL_CONFIGS = {
         "thinking": True,           # has <think>...</think> tokens
         "num_layers": 36,
         "hidden_dim": 2560,
+    },
+    "qwen3.5-4b": {
+        # Qwen3.5-4B (released 2026-03). MoE + native-multimodal + Gated DeltaNet,
+        # but loads via AutoModelForCausalLM with decoder at model.layers (verified
+        # by probe_qwen35.py 2026-06-05). Residual-stream steering applies normally.
+        "hf_id": "Qwen/Qwen3.5-4B",
+        "local_dir": "Qwen3.5-4B",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,
+        "num_layers": 32,
+        "hidden_dim": 2560,
+        "trust_remote_code": True,
+    },
+    "open-r1-qwen-7b": {
+        "hf_id": "open-r1/OpenR1-Qwen-7B",
+        "local_dir": "OpenR1-Qwen-7B",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,
+        "num_layers": 28,
+        "hidden_dim": 3584,
+        "attn_implementation": "sdpa",
+    },
+    # Added 2026-05-11 — SAE-home models for the cross-model SAE-feature
+    # steering battery. These are the exact models each SAE was trained on,
+    # so SAE-features apply cleanly without transfer assumptions.
+    "qwen2.5-7b-it": {
+        "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+        "local_dir": "Qwen2.5-7B-Instruct",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": False,
+        "num_layers": 28,
+        "hidden_dim": 3584,
+        "attn_implementation": "sdpa",
+    },
+    "llama-3.1-8b": {
+        # Switched 2026-05-11 from base to -Instruct: base model produces
+        # forum-thread garbage on E1-style prompts (no instruction-following).
+        # SAE features (trained on base) should still mostly apply through the
+        # thin -Instruct post-training; documented caveat for the writeup.
+        "hf_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "local_dir": "Llama-3.1-8B-Instruct",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": False,
+        "num_layers": 32,
+        "hidden_dim": 4096,
+        "attn_implementation": "sdpa",
+    },
+    "deepseek-r1-distill-llama-8b": {
+        "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "local_dir": "DeepSeek-R1-Distill-Llama-8B",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,
+        "num_layers": 32,
+        "hidden_dim": 4096,
+        "attn_implementation": "sdpa",
+    },
+    "gemma-3-4b-it": {
+        "hf_id": "google/gemma-3-4b-it",
+        "local_dir": "gemma-3-4b-it",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.language_model.layers",
+        "thinking": False,
+        "num_layers": 34,
+        "hidden_dim": 2560,
+        "attn_implementation": "sdpa",
     },
 }
 
@@ -115,13 +214,17 @@ def load_model(model_name, device=None):
     print(f"Loading model: {model_name} ({model_path})")
     print(f"Device: {device}")
 
-    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+    # Some models (e.g. Phi-3.5) ship a bundled modeling_*.py that uses an older
+    # transformers cache API (DynamicCache.from_legacy_cache); newer transformers
+    # have removed it. For those, prefer the built-in implementation instead.
+    trust_remote = config.get("trust_remote_code", True)
+    tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=trust_remote)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     from_pretrained_kwargs = dict(
         torch_dtype=config["dtype"],
         device_map=device if device != "mps" else None,
-        trust_remote_code=True,
+        trust_remote_code=trust_remote,
     )
     if "attn_implementation" in config:
         from_pretrained_kwargs["attn_implementation"] = config["attn_implementation"]

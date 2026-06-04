@@ -1,0 +1,14 @@
+{
+  "_comment": "Qwen2.5-7B high-alpha extension (DPO IH delta). Appends to results/tool_use_grid/qwen25. Confirms whether the flat null on this non-thinking model holds at high alpha (a24/a32) or whether we simply hadn't pushed hard enough. Random a16/a24 for matched controls.",
+  "model": "qwen2.5-7b-it",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "v_IH_L20_a24", "steering": {"kind": "virtue", "vector_path": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 24.0}},
+    {"label": "v_IH_L20_a32", "steering": {"kind": "virtue", "vector_path": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 32.0}},
+    {"label": "random_L20_a16_s42", "steering": {"kind": "random", "reference_vector": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 16.0, "seed": 42}},
+    {"label": "random_L20_a24_s42", "steering": {"kind": "random", "reference_vector": "results/all_deltas/d_v2_IH.npy", "layer": 20, "alpha": 24.0, "seed": 42}}
+  ]
+}

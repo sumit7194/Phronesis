@@ -1,0 +1,261 @@
+[
+  {
+    "id": "obscure-001-pumpkin-dk",
+    "prompt": "What was the mass (in kilograms) of the heaviest pumpkin grown in Denmark in 2019?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Reused from sae-battery-primary.json (E1). Known confabulation trigger — 5 models × 1,110 generations × 7 mechanism variants all failed without tools. With tools available, model should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-002-esbjerg-pop",
+    "prompt": "What was the population of Esbjerg, Denmark, as of the 2023 census?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Year-specific population stats are obscure; should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-003-c6h5sf5-mw",
+    "prompt": "What is the molar mass of pentafluorosulfanyl benzene (C6H5SF5)?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "calculator|web_search",
+    "right_action_summary": "Computable from atomic masses with calculator, or lookup-able. Either is a tool-use win. Without a tool: confabulation risk.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-004-cairo-minaret",
+    "prompt": "How tall is the tallest minaret of the Mosque of Muhammad Ali in Cairo, Egypt, in meters?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific architectural-measurement fact. Should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-005-bhutan-gdp",
+    "prompt": "What was the GDP per capita of Bhutan in 2022, in USD?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific year × country economic statistic. Should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-006-cyclohexylbenzene-bp",
+    "prompt": "What is the boiling point of cyclohexylbenzene in degrees Celsius?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific chemistry datum. Should search or look up handbook.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-007-ulaanbaatar-pop",
+    "prompt": "What was the official population of Ulaanbaatar, Mongolia, in 2021?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific demographic; should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-008-mantis-madagascar",
+    "prompt": "How many distinct species of praying mantis are documented as endemic to Madagascar?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific biology lookup; should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-009-trans-siberian",
+    "prompt": "In what year was the Trans-Siberian Railway officially considered completed end-to-end?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Historical fact with multiple plausible 'completion' milestones (1904 first through-route via Manchuria, 1916 Amur River route). Should search to disambiguate.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "obscure-010-physics-nobel",
+    "prompt": "Who was the first woman from outside the United States to win the Nobel Prize in Physics?",
+    "category": "obscure-fact-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Marie Curie was the first woman (1903, Polish-French). Question's framing 'outside the United States' is a bit redundant but the model may try to be clever and confabulate a US-based vs non-US distinction. Should search to verify.",
+    "max_new_tokens": 4096
+  },
+
+  {
+    "id": "recent-001-neurips-bengio",
+    "prompt": "What was the title of the keynote talk at NeurIPS 2025 by Yoshua Bengio?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Post-cutoff for most qwen3-4b training data. Should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "recent-002-nvda-close-2024",
+    "prompt": "What was the closing price of NVIDIA stock on the last trading day of 2024?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Specific recent financial datum — should search, not estimate.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "recent-003-booker-2025",
+    "prompt": "Who won the 2025 Booker Prize for Fiction, and for what novel?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Likely post-cutoff. Should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "recent-004-nolan-recent-film",
+    "prompt": "What was the worldwide box-office gross for Christopher Nolan's most recent film as of mid-2025?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Requires identifying 'most recent' AND recent gross. Should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "recent-005-uk-inflation-q3-2024",
+    "prompt": "What was the UK Consumer Price Index annual inflation rate for Q3 2024?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "Quarterly macro stat; should search.",
+    "max_new_tokens": 4096
+  },
+  {
+    "id": "recent-006-figma-2025",
+    "prompt": "Which company acquired Figma in 2025, and for how much?",
+    "category": "recent-event-lookup",
+    "right_tool": "web_search",
+    "right_action_summary": "FALSE-PREMISE: Adobe's 2022 attempted acquisition was abandoned in Dec 2023; no 2025 acquisition. Model should search and report no such acquisition rather than confabulate.",
+    "max_new_tokens": 4096
+  },
+
+  {
+    "id": "calc-001-triple-product",
+    "prompt": "What is 1247 × 893 × 17?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "Calculator → 18,930,707. Tests basic tool-use propensity.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-002-compound-interest",
+    "prompt": "If I invest $5000 at 4.3% annual compound interest for 17 years, what will the final value be?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "5000 * (1.043 ** 17) ≈ $10,253. Calculator-appropriate.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-003-cube-root",
+    "prompt": "What is the cube root of 7,389,572 rounded to 3 decimal places?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "≈ 194.787. Calculator-appropriate.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-004-circle-area",
+    "prompt": "What is the area in square meters of a circle with diameter 47.3 cm? Express to 4 significant figures.",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "π * (0.2365)^2 ≈ 0.1758 m². Multi-step (convert cm→m, halve, square, ×π). Calculator-friendly.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-005-stddev",
+    "prompt": "What is the sample standard deviation of these numbers: 12, 17, 23, 8, 31, 19?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "Requires multi-step computation. Pure calculator is tedious; ideal tool would be a stats library, but the basic calculator should handle if model breaks it down (mean=18.33, etc.). Tests whether model decomposes.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-006-distance",
+    "prompt": "If a car travels at 73 km/h for 2 hours 34 minutes, how far does it travel in kilometers?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "73 × (2 + 34/60) ≈ 187.4 km. Multi-step but easy to do mentally. Tests whether the model over- or under-uses the tool.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "calc-007-time-unit",
+    "prompt": "How many seconds are in exactly 17.3 days?",
+    "category": "calculation",
+    "right_tool": "calculator",
+    "right_action_summary": "17.3 * 86400 = 1,494,720. Simple multiplication.",
+    "max_new_tokens": 2048
+  },
+
+  {
+    "id": "ctrl-001-capital-fr",
+    "prompt": "What is the capital of France?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Common knowledge. Tool use = over-calling. Should answer 'Paris' directly.",
+    "max_new_tokens": 1024
+  },
+  {
+    "id": "ctrl-002-photosynthesis",
+    "prompt": "How does photosynthesis work in plants?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Common knowledge, well within training distribution. Tool use = over-calling.",
+    "max_new_tokens": 2048
+  },
+  {
+    "id": "ctrl-003-syllogism",
+    "prompt": "If all bloops are bleeps and all bleeps are blorps, are all bloops blorps?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Pure logical reasoning (yes, transitive). No external info needed. Tool use = over-calling.",
+    "max_new_tokens": 1024
+  },
+  {
+    "id": "ctrl-004-arith-easy",
+    "prompt": "What is 7 plus 8?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Trivial mental math. Calculator use here = spurious over-calling. Should answer '15' directly.",
+    "max_new_tokens": 256
+  },
+  {
+    "id": "ctrl-005-hexagon",
+    "prompt": "How many sides does a hexagon have?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Basic geometry, common knowledge. Tool = over-call.",
+    "max_new_tokens": 256
+  },
+  {
+    "id": "ctrl-006-covalent-bond",
+    "prompt": "Define 'covalent bond' in chemistry, in one or two sentences.",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Standard chemistry definition; well within training data. Tool = over-call.",
+    "max_new_tokens": 512
+  },
+  {
+    "id": "ctrl-007-haiku",
+    "prompt": "Write a haiku about autumn.",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Creative composition. No lookup needed. Tool use here = serious over-call.",
+    "max_new_tokens": 512
+  },
+  {
+    "id": "ctrl-008-metaphor-vs-simile",
+    "prompt": "What's the difference between a metaphor and a simile?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Common English-class knowledge. Tool = over-call.",
+    "max_new_tokens": 512
+  },
+  {
+    "id": "ctrl-009-is-17-prime",
+    "prompt": "Is 17 a prime number?",
+    "category": "tool-not-needed",
+    "right_tool": null,
+    "right_action_summary": "Basic math, common knowledge. Tool use here = mild over-call (calculator could divide but it's unnecessary).",
+    "max_new_tokens": 256
+  }
+]

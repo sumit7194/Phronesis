@@ -1,0 +1,16 @@
+{
+  "_comment": "Full-virtue sweep on qwen3-4b to test virtue-specificity of the tool-calibration effect. CC (full + numeric), VC, and combined vs the IH/EG/RT we already have. Appends to results/tool_use_grid/qwen3. Vectors are last_token L17 (matched to IH). Forks the interpretation: IH-specific vs uncertainty-family (CC) vs any-virtue.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "v_CCfull_L17_a8",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0}},
+    {"label": "v_CCfull_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "v_CCfull_L17_a24", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 24.0}},
+    {"label": "v_CCnum_L17_a16",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-cc-numeric-only-symlinks/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "v_VC_L17_a16",     "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-verbosity-control/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "v_combined_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-combined/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}}
+  ]
+}

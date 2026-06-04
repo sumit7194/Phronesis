@@ -6,8 +6,8 @@
 **Update policy**: replaced or rewritten on major project-state shifts (typically a few times per phase). Not appended-to on every finding.
 ---
 
-**Last updated**: 2026-05-19 (Day 37) — F123 added after pre-registered ablation battery
-**Current status**: SAE-steering arm decisively closed. F123 (2026-05-19) ablation experiment confirms F121 contracts to additive-specific but the stronger replacement claim ("neither additive nor ablation reaches the representation") emerges. Both steering operations are dead-ends on these features. Strategic decision point: tool-use experiment (a + tools) is the natural next step.
+**Last updated**: 2026-06-05 — tool-use (Path B) experiment run on VM; see `docs/tool-use-experiment-2026-06.md` + findings F148–F152
+**Current status**: The deferred "virtue + tools" experiment ran on qwen2.5-7b + qwen3-4b. RESULT: IH-vector steering gives a real, direction-/virtue-/model-specific INVOKE-calibration win on the thinking model qwen3-4b (F148, F150) — the project's first robust positive — BUT it does NOT improve answer honesty; on false premises the steered model confabulates MORE (F149). "Better tool-calling ≠ better answers" (the decoupling). Tool-calibration = confidence calibration; a single static direction can't fix both over-calling and confabulation → conditional/PID steering is the agreed next direction. Qwen3.5-4b replication in progress. (Prior status, still valid for the steering arm: SAE-steering closed as a negative result; F121–F123.)
 
 This document is the single source of truth for what Phronesis is, what's been done, and what comes next. All historical detail lives elsewhere — see "Pointers" at the bottom.
 

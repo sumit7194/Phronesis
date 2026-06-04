@@ -1,0 +1,17 @@
+{
+  "_comment": "Path B tool-use grid — Qwen3-4B (the v1 model, for comparability + cross-model). Steering vector is the last-token IH virtue vector at L17. Random control: matched-norm, 3 seeds at a=8. Paths relative to ~/phronesis_run/mvp.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 2048,
+  "max_tokens_per_segment": 512,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L17_a4",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 4.0}},
+    {"label": "v_IH_L17_a8",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0}},
+    {"label": "v_IH_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "random_L17_a8_s42", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0, "seed": 42}},
+    {"label": "random_L17_a8_s1",  "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0, "seed": 1}},
+    {"label": "random_L17_a8_s7",  "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0, "seed": 7}}
+  ]
+}

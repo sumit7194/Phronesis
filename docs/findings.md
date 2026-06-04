@@ -7041,3 +7041,39 @@ Zero new compute. ~2 hours of re-analysis and verification on existing data (660
 ### Decision: writeup numbers committed to strict-rubric values
 
 For the LessWrong post / writeup: use the V4 / F147 numbers (20% / 50% / 44% / Fisher tests). Note the closing-validation 22% / 56% values as "prior hand-classification under a more permissive rule that included completeness patterns" if cited.
+
+---
+
+## F148 — Tool-use invoke-calibration: IH-vector α16 improves WHEN qwen3-4b reaches for search (2026-06-04)
+
+The deferred "virtue + tools" (Path B) experiment, finally run on the alphaludo-l4 VM. Harness: `<search>` stop-string protocol (web-search only), 32 prompts (16 should-search, 9 tool-not-needed controls, 7 calc). Metric: invoke-rate; **discrimination = should-search% − over-call%**.
+- **qwen2.5-7b**: should-search 100% at baseline, over-calls 6/9; steering (IH any α≤32) and random NULL. At ceiling, no headroom.
+- **qwen3-4b**: baseline discrimination +31% (should 12/16, over-call 4/9) → **v_IH L17 α16 = +88% (should 14/16, over-call 0/9)**. Searches more when it should AND stops over-calling.
+- Controls all hold: direction-specific (random ×3 seeds at α16 can't reproduce — suppresses everything), dose-responsive (peak α16, washes at α32), token-budget robust (2048=4096), model-specific (qwen2.5 flat). Queries + control answers hand-verified genuine, not degeneration.
+- The project's FIRST direction-/virtue-/model-robust positive steering effect. NARROW: it concerns the invoke DECISION only (see F149).
+
+## F149 — Answer-honesty WALKBACK: better tool-calling ≠ better answers (2026-06-05)
+
+15-prompt false-premise battery, live DuckDuckGo, HAND-SCORED (read every answer; no regex, per F94/F119).
+- baseline: 7 caught / 2 confabulated / 6 no-answer (token-exhausted).
+- v_IH α16: 8 caught / **5 confabulated** / 2 hedge / 0 no-answer.
+- **v_IH confabulated MORE (5 vs 2).** It searched on nearly all of these and STILL committed to the false premise (invented iPhone-16-Mini specs, a "mag 4.8" Paris quake, accepted the Amazon-Walmart merger). The single Figma "2025 acquisition" win (5-prompt peek) was not representative.
+- So F148's invoke-calibration does NOT carry to answer honesty. The "virtue+tools → more honest answers" thesis is FALSIFIED here. True-controls fine (no over-refusal of Qatar/Croatia).
+
+## F150 — Virtue-specificity: IH-specific; CC dissociates; combined dilutes (2026-06-05)
+
+Full virtue sweep on qwen3-4b at α16 (discrimination): **IH +88** | CC-full +56 | combined +46 | EG +39 | baseline +31 | CC-numeric +29 | VC +28 | random ~+13 | RT 0.
+- IH is the only DISCRIMINATION virtue (moves both levers). CC-full pushes should-search to 100% but keeps over-calling at 44% → "search MORE", not "search smarter" — IH and CC dissociate. Effect is IH-specific, not generic uncertainty-family.
+- combined < IH alone → mixing dilutes; single best vector wins (replicates F89 hydra hypothesis in the tool domain). Consistent with old geometry (IH the orthogonal odd-one-out vs CC/EG/RT).
+
+## F151 — Mechanism: tool-calibration IS confidence calibration; the decisiveness knob cuts both ways (2026-06-05)
+
+- v_IH α16's effect is **decisiveness / self-trust**. Trace evidence: baseline qwen3-4b reasons *"the capital is Paris, but wait, let me verify"* then searches — reflexive over-verification of KNOWN facts. v_IH stops this (good) but also makes it commit to FALSE premises (bad, F149).
+- Over-calling (under-confident, verifies the known) and confabulation (over-confident, commits to the false) are OPPOSITE miscalibrations on one axis. A single static "trust yourself" direction cannot win both → motivates **conditional/PID steering** (gate IH: fire when it genuinely knows, not when the premise is shaky). Confabulation occurs at turn-2 (result interpretation), where "commit" is the wrong push.
+- We did NOT instruct heavy searching (balanced system prompt). Small models over-call vs frontier models (real-world parity gap) — a confidence-calibration gap.
+
+## F152 — Qwen3.5-4b replication (in progress, 2026-06-05)
+
+Newer-generation same-size thinking model (MoE + native-multimodal + Gated DeltaNet, released 2026-03). Loads via AutoModelForCausalLM, decoder at model.layers (32 layers, hidden 2560) — residual-stream steering applies normally. IH last_token vector extracted clean (probe 100% at L14/16/18, sep ~1.0–1.5). Tool-use grid (baseline + v_IH L16 α8/16/24 + L14 alt + random) running. Tests whether F148 invoke-calibration replicates on a newer arch. [Lower stakes post-F149: replicating the narrow result, not the dead thesis.]
+
+**Full writeup:** `docs/tool-use-experiment-2026-06.md`.
