@@ -7121,4 +7121,17 @@ Drove Neuronpedia live (Safari → osascript/JS → `/api/explanation/search` + 
 Steered qwen3-4b confab with the verified SAE not-knowing decoders (`W_dec`, already unit-norm, steered at the native residual layer).
 - **Combined-Tier1 @ α8 (L17)**: preserves delivery (17/20) but does NOT beat baseline on catching — ~4–5 caught vs baseline ~9 — and confabulates on the SAME hard cases (Paris magnitude, Amazon merger). High α (16/32) rambles to the token cap (degradation).
 - So a corpus-free SAE "uncertainty" direction adds uncertainty-**language**, not catching-**behavior** → the **discrimination≠modification wall (F142) holds for SAE features too**, not just corpus diff-of-means.
-- **Net across F154–F157**: neither corpus diff-of-means NOR corpus-free SAE steering improves false-premise honesty; qwen3-4b's untouched baseline (~10/13) is the thing to beat. A single static "uncertainty" direction cannot *install* the epistemic behavior. [Remaining L17 high-α + the L29-native test were still queued/running on the (preemption-prone) Spot VM; predicted to confirm.]
+- **Net across F154–F157**: neither corpus diff-of-means NOR corpus-free SAE steering improves false-premise honesty; qwen3-4b's untouched baseline (~10/13) is the thing to beat. A single static "uncertainty" direction cannot *install* the epistemic behavior.
+
+**UPDATE (2026-06-06 04:00) — full L17 sweep complete (6 conditions, hand-scored, ran overnight via a self-healing monitor):**
+
+| condition | delivered/20 | verdict |
+|---|---|---|
+| baseline | 18 | ~10/13 false premises caught — strong |
+| combined α8 | 17 | no help (~4-5 caught), confabulates (Paris, Amazon) |
+| combined α16 | 17 | degrades — suppresses search, rambles, confabulates ("Switch Pro $399.99") |
+| combined α32 | 20* | *all rambling: search=0 on EVERY prompt, hits token cap, no real answers |
+| idk α16 | 15 | degrading |
+| idk α32 | 6 | mutes — searches 4× then emits no answer |
+
+**No dose of any SAE direction (combined or single 'I don't know') beats baseline — conclusive.** Higher α monotonically breaks the model (search-suppression → rambling → muting). The L29-native test (cleaner first-person features) remains the one untested variant, deferred due to Spot-VM/Mac infra instability. Bottom line for the steering program: activation-steering a static uncertainty direction does not produce calibrated epistemic behavior; the path forward is conditional/PID gating or an information-seeking objective, not a bigger/cleaner static vector.
