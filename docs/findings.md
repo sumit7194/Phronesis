@@ -7077,3 +7077,48 @@ Full virtue sweep on qwen3-4b at α16 (discrimination): **IH +88** | CC-full +56
 Newer-generation same-size thinking model (MoE + native-multimodal + Gated DeltaNet, released 2026-03). Loads via AutoModelForCausalLM, decoder at model.layers (32 layers, hidden 2560) — residual-stream steering applies normally. IH last_token vector extracted clean (probe 100% at L14/16/18, sep ~1.0–1.5). Tool-use grid (baseline + v_IH L16 α8/16/24 + L14 alt + random) running. Tests whether F148 invoke-calibration replicates on a newer arch. [Lower stakes post-F149: replicating the narrow result, not the dead thesis.]
 
 **Full writeup:** `docs/tool-use-experiment-2026-06.md`.
+
+## F153 — Tool-use harness: two bugs found + fixed (enabled clean confab scoring) (2026-06-05)
+
+Diagnosing the overnight Qwen3.5/OpenR1 "no-answer / malformed" failures showed they were harness bugs, NOT token-budget limits:
+1. **Per-segment cap kills long thinkers.** When a `<think>` block exceeds `max_tokens_per_segment`, `_generate_segment` returns `stopped_on="max_tokens"` and `run_trajectory` terminated the WHOLE trajectory → the real cause of F149's "no-answer" trajectories. Fix (config): set `max_tokens_per_segment = max_total_tokens` so a segment only caps at the global budget.
+2. **Stray `</search>` after results = instant death.** Qwen3.5/OpenR1 emit a bare `</search>` right after the injected `<result>` block (their native tool-result format isn't `<result>`), tripping `find_last_search_query→None → malformed_search_tag` → trajectory killed *before answering*. Fix: on malformed tag, strip the stray tag and **free-generate the final answer with NO search stop-string**. Validated offline in `mvp/test_recovery_offline.py` (both the bug-recovery and the unaffected-EOS path).
+3. **Scorer caveat:** `extract_thinking_and_answer()` needs a literal `<think>` open tag, but Qwen3.5 emits only `</think>` (open tag lives in the chat template) → `thinking_trace` empty, `final_answer` polluted with full reasoning → the runner's regex auto-scorer is meaningless. Always hand-score by splitting on the LAST `</think>` (see `mvp/verify_confab_delivered.py`).
+
+## F154 — Qwen3.5 confab: v_IH steering MUTES the model, monotonically with dose (2026-06-05)
+
+Clean re-run (fixed harness + 8192 budget), HAND-scored delivered-answer rate (text after last `</think>`, tags stripped):
+
+| dose | delivered/20 |
+|---|---|
+| baseline | 18 |
+| v_IH L16 α1 | 17 (≈ baseline) |
+| v_IH L16 α2 | 8 |
+| v_IH L16 α3 | 8 |
+| v_IH L16 α4 | 3 |
+
+- v_IH degrades answer DELIVERY monotonically with α. The model still reasons (often catches the premise in-thought) but then emits `</think><|im_end|>` with **no answer**, especially after a search. α1 ≈ baseline (harmless but no help); **no dose helps.**
+- The runner's auto-scores (90/90/90/75/85) were artifacts of the F153 scorer bug (scored reasoning content). Hand-scoring overturned them — F94/F119 vindicated again.
+
+## F155 — qwen3-4b confab: v_IH is a COMMIT-AMPLIFIER, not humility (2026-06-05)
+
+Clean re-run, HAND-scored. Both conditions deliver (baseline 18/20, v_IH_L17_α16 **20/20**) — v_IH does NOT mute qwen3-4b. But on false premises:
+- baseline: ~10/13 caught, 1 confabulation;
+- **v_IH_L17_α16: ~6 caught, 5 confabulations** — invented a Paris-quake magnitude ("4.8"), a *dead* Einstein's 1960 BBC "cosmic beer" interview, iPhone-16-Mini specs, a Switch-Pro price, Amazon-Walmart merger antitrust conditions — all of which baseline correctly flagged as false/nonexistent.
+- v_IH delivers MORE but the extra commitment is **confabulation** → behaviorally confirms F112 (commit-amplifier) and the SAE verdict (v_IH's top transcoder feature is a *code* feature, 0/50 humility features).
+- **With F154, both models agree v_IH ≠ humility**: Qwen3.5 mutes, qwen3-4b confabulates. The corpus diff-of-means "humility" vector is debunked across SAE-projection, recipe-instability (cosines 0.0–0.4), AND behavior.
+
+## F156 — Corpus-free SAE features (Neuronpedia): labels lie, real functional features exist, uncertainty is layer-distributed (2026-06-05)
+
+Drove Neuronpedia live (Safari → osascript/JS → `/api/explanation/search` + `/api/feature/...`) to find corpus-free uncertainty directions for qwen3-4b transcoders, as an alternative to the shaky corpus v_IH.
+- **~2/3 of auto-interp labels were WRONG** when activations were read: 34661 "humility" = *religious/Gospel* humility; 64569 "hedging language" = e-commerce *"You May Also Like / Shipping Information"*; 56085 "Qualifiers and hedging" = the **"-ish" morpheme**; 112974 "verification" = oncology/JS-disabled; 81593 "admit" = a sports exec. Manual activation-reading is mandatory.
+- **Verified-functional L17 features**: 131926 ("I don't know"), 131448 ("hard to answer without more information"), 160623 ("wholly ignorant"), 101568 ("I must confess"), 44526 ("if you are unsure").
+- **Multi-layer check (5/11/17/23/29/35)**: uncertainty features exist at EVERY layer (~20 each) — **distributed, not L17-special**. Cosine-to-label can't pick the layer (L23's top "lack of knowledge" @0.80 is a CODE feature). After verification, **L29 has the cleanest first-person features**: 10966 ("not 100% confident about it as I"), 21336 ("you don't know what to say").
+- Full curation: `mvp/sae_neuronpedia_data/functional_uncertainty_features_qwen3-4b_2026-06-05.md`. (6 NP API keys + prior dashboards in `~/Downloads/NP/`.)
+
+## F157 — Corpus-free SAE steering ALSO fails to improve catching (option A) (2026-06-05, L17 partial)
+
+Steered qwen3-4b confab with the verified SAE not-knowing decoders (`W_dec`, already unit-norm, steered at the native residual layer).
+- **Combined-Tier1 @ α8 (L17)**: preserves delivery (17/20) but does NOT beat baseline on catching — ~4–5 caught vs baseline ~9 — and confabulates on the SAME hard cases (Paris magnitude, Amazon merger). High α (16/32) rambles to the token cap (degradation).
+- So a corpus-free SAE "uncertainty" direction adds uncertainty-**language**, not catching-**behavior** → the **discrimination≠modification wall (F142) holds for SAE features too**, not just corpus diff-of-means.
+- **Net across F154–F157**: neither corpus diff-of-means NOR corpus-free SAE steering improves false-premise honesty; qwen3-4b's untouched baseline (~10/13) is the thing to beat. A single static "uncertainty" direction cannot *install* the epistemic behavior. [Remaining L17 high-α + the L29-native test were still queued/running on the (preemption-prone) Spot VM; predicted to confirm.]

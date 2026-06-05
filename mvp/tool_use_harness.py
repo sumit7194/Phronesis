@@ -436,6 +436,33 @@ class ToolUseRunner:
 
         return new_text, stopped_on, tokens_generated
 
+    def _generate_free(self, prompt_text: str, max_new_tokens: int) -> tuple[str, int]:
+        """Generate WITHOUT the </search> stop-string. Returns (new_text, n_tokens).
+
+        Used to salvage a final answer when a model (e.g. Qwen3.5, OpenR1) emits
+        a stray </search> right after the injected <result> block instead of
+        continuing to its answer. Without a stop-string the model is free to read
+        the results and write its response (a stray </search> in the text is just
+        text and is stripped during answer reconstruction).
+        """
+        import torch  # lazy
+        inputs = self.tokenizer(prompt_text, return_tensors="pt").to(self.device)
+        prompt_len = inputs["input_ids"].shape[1]
+        gen_kwargs = dict(
+            max_new_tokens=max_new_tokens,
+            do_sample=False,
+            pad_token_id=self.tokenizer.pad_token_id or self.tokenizer.eos_token_id,
+        )
+        with torch.no_grad():
+            out = self.model.generate(**inputs, **gen_kwargs)
+        new_tokens = out[0][prompt_len:]
+        tokens_generated = int(new_tokens.shape[0])
+        new_text = self.tokenizer.decode(new_tokens, skip_special_tokens=False)
+        for tok in [self.tokenizer.eos_token, self.tokenizer.pad_token]:
+            if tok and new_text.endswith(tok):
+                new_text = new_text[: -len(tok)]
+        return new_text, tokens_generated
+
     # ─── Trajectory ──────────────────────────────────────────────────────
 
     def run_trajectory(
@@ -502,8 +529,39 @@ class ToolUseRunner:
                 # stopped_on == "search_close": parse, search, append result, loop.
                 query = find_last_search_query(new_text)
                 if query is None:
-                    # Stop tag matched but no parseable query — treat as EOS.
-                    traj.termination_reason = "malformed_search_tag"
+                    # Stop tag matched but no parseable <search>…</search> query.
+                    # Reasoning models (Qwen3.5, OpenR1) sometimes emit a stray
+                    # </search> right after the injected <result> block instead
+                    # of continuing to their answer. Killing the trajectory here
+                    # loses the final answer entirely (this caused the F149
+                    # "no-answer" trajectories on Qwen3.5). Instead: drop the
+                    # stray segment, strip the trailing close tag, and
+                    # free-generate the answer with NO search stop-string.
+                    traj.segments.pop()  # remove the stray model segment
+                    current_text = current_text[: len(current_text) - len(new_text)]
+                    salvaged = new_text
+                    if salvaged.rstrip().endswith(SEARCH_CLOSE_TAG):
+                        salvaged = salvaged.rstrip()[: -len(SEARCH_CLOSE_TAG)]
+                    salvaged = salvaged.strip()
+                    if salvaged:
+                        current_text = current_text + salvaged
+                        traj.segments.append(Segment(
+                            type="model", text=salvaged,
+                            stopped_on="search_close_stripped", tokens_generated=0,
+                        ))
+                    remaining2 = self.max_total_tokens - tokens_used
+                    if remaining2 > 0:
+                        free_text, free_tokens = self._generate_free(
+                            current_text,
+                            max_new_tokens=min(self.max_tokens_per_segment, remaining2),
+                        )
+                        tokens_used += free_tokens
+                        traj.segments.append(Segment(
+                            type="model", text=free_text,
+                            stopped_on="eos", tokens_generated=free_tokens,
+                        ))
+                        current_text = current_text + free_text
+                    traj.termination_reason = "recovered_malformed_tag"
                     break
 
                 tool_calls += 1

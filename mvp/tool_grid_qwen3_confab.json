@@ -1,0 +1,12 @@
+{
+  "_comment": "qwen3-4b false-premise / answer-honesty battery (live DuckDuckGo). RE-RUN of F149 with the harness fix (malformed-tag recovery) + higher budget. max_tokens_per_segment == max_total_tokens so a long <think> block no longer kills the trajectory at the per-segment cap (the real cause of F149's 6 'no-answer' trajectories). HAND-SCORE the answers (no regex). Same 20 confab prompts; baseline + v_IH L17 a16 for direct comparison to the original run.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L17_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0}}
+  ]
+}

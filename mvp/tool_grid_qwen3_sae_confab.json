@@ -1,0 +1,16 @@
+{
+  "_comment": "OPTION A: corpus-free SAE-feature steering on qwen3-4b confab. Tests whether the MANUALLY-VERIFIED functional uncertainty decoders (W_dec, unit-normalized, steered at residual L17) increase false-premise CATCHING — vs the corpus v_IH which we found is a COMMIT-AMPLIFIER (5 confabulations). Combined = mean of Tier-1 unit decoders (131926/131448/160623/101568/44526); single = 131926 'I don't know'. HAND-SCORE delivered+catch (split on </think>). Alpha sweep 8/16/32 since unit-vector magnitude on qwen3-4b L17 is uncalibrated.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "sae_combined_a8",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty/combined_tier1_unit.npy", "layer": 17, "alpha": 8.0}},
+    {"label": "sae_combined_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty/combined_tier1_unit.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "sae_combined_a32", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty/combined_tier1_unit.npy", "layer": 17, "alpha": 32.0}},
+    {"label": "sae_idk_a16", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty/feat_131926_unit.npy", "layer": 17, "alpha": 16.0}},
+    {"label": "sae_idk_a32", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty/feat_131926_unit.npy", "layer": 17, "alpha": 32.0}}
+  ]
+}

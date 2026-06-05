@@ -1,0 +1,15 @@
+{
+  "_comment": "Qwen3.5-4B false-premise / answer-honesty battery (live DuckDuckGo). RE-RUN with the harness fix (malformed-tag recovery: Qwen3.5 emits a stray </search> after the <result> block, which previously killed every trajectory before it could answer) + higher budget + per-segment cap == total (so long <think> blocks don't kill the trajectory). The high-value Qwen3.5 test: does the newer model confabulate LESS on false premises than qwen3-4b (F149: 7 caught / 2 confab / 6 no-answer at baseline)? baseline + v_IH L16 a4 (low, non-breaking). HAND-SCORE the answers (no regex). Same 20 prompts as the qwen3-4b confab run for direct comparison.",
+  "model": "qwen3.5-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "v_IH_L16_a4", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 4.0}},
+    {"label": "v_IH_L16_a1", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 1.0}},
+    {"label": "v_IH_L16_a2", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 2.0}},
+    {"label": "v_IH_L16_a3", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-4b/triplets-intellectual-humility/last_token/layer_16_virtue_vector.npy", "layer": 16, "alpha": 3.0}}
+  ]
+}

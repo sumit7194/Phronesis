@@ -1,0 +1,14 @@
+{
+  "_comment": "LAYER TEST: steer qwen3-4b confab with the cleaner FIRST-PERSON uncertainty decoders at their NATIVE layer 29 (10966 'not 100% confident about it as I', combined L29 = mean of 10966+21336). Low alpha 4/8 to avoid the rambling we saw at high alpha. Compare to baseline + the L17 set + v_IH (commit-amplifier). HAND-SCORE (split on </think>). baseline reused from qwen3_sae_confab to save time.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "l29_combined_a4", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty_L29/combined_l29_unit.npy", "layer": 29, "alpha": 4.0}},
+    {"label": "l29_combined_a8", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty_L29/combined_l29_unit.npy", "layer": 29, "alpha": 8.0}},
+    {"label": "l29_10966_a8", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/sae_functional_uncertainty_L29/feat_10966_unit.npy", "layer": 29, "alpha": 8.0}}
+  ]
+}
