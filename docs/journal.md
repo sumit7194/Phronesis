@@ -2461,3 +2461,15 @@ Infra note: persisted findings to disk aggressively after losing in-chat-only wo
 
 Process note: same hand-scoring discipline — the runner's auto-scores (90/85, 100/100) were all artifacts; hand-reading the post-`</think>` answers overturned every one. The corpus-free SAE idea (the user's "option A") was a genuinely good shot, tested properly, came back negative — clean and well-evidenced, not abandoned. Still queued on the (preemption-prone) VM: the L17 high-α tail + an L29-native test.
 
+## Day 57 (2026-06-06) — L29 closes the steering arm; pivot to gate-signal validation
+
+Finished the L17 SAE sweep (F157: no dose beats baseline; completed overnight via the self-healing monitor) and ran the last variant, L29 (F158).
+
+- **L29 verdict:** the *best case* for static steering — cleanest first-person uncertainty features (10966 "not 100% confident", 21336 "you don't know"), correct native layer, gentle α4/α8 — is **non-destructive** (20/20 delivery; none of L17's muting/rambling) but **≈ baseline** on catching (fixes some cases, introduces others like the shared fp-01 "Microsoft acquired Notion" confab). Even at the ideal operating point, a static direction can't install the behavior. **The steering program is conclusively closed** — corpus + corpus-free, L17 + L29, both models.
+- **Pivot (agreed with user) to conditional gating + info-seeking.** The only live intervention is *gate an action* (read an internal "I don't know" signal → force a search / abstain), NOT gate a steering push (which inherits the dead steering). The better *next build* is an information-seeking metric (Battleship / 20-questions, info-gain-per-question), since we lack a trustworthy number for the competency. The two share a first step: a labeled known/unknown signal.
+- **First experiment (running):** gate-signal discrimination — does a verified SAE "I don't know" feature (A1) or semantic entropy (B3) fire on the prompts the model bluffs on but not the ones it knows, using our hand-scored confab battery as the answer key? If nothing discriminates, conditional gating is dead-on-arrival — a cheap, decisive check before building any controller.
+
+Infra: the Spot VM's guest sshd wedged after ~a day up (IAP "failed to connect to backend"); a hard `reset` cleared it and the persistent `1054` kernel pin auto-restored the GPU — recovery from both preemption and guest-wedge is now routine. (Several gcloud re-auths needed across the weekend.)
+
+Process: hand-read every L29 condition before documenting (the auto-scorer again called degraded/rambling runs "100%").
+
