@@ -5,6 +5,22 @@ Activation-steering experiments for installing epistemic-virtue behavior in Qwen
 **Author**: Sumit Pal
 **License**: MIT (code); MIT or CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
 
+## 📄 Publications & writeups
+
+Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Written with AI assistance; every generation was hand-read (not auto-scored) under the author's protocol — AI is not a listed author.
+
+| Writeup | One-line finding | Draft |
+|---|---|---|
+| **Timing, not direction** (tool use) | Steering toward "intellectual humility" helps a small model decide *when* to search but makes its answers *worse* — and the durable lever is intervention **timing** (turn-1 only), not direction; even that is direction-agnostic under a multi-seed random control. | [read](docs/drafts/lead-tool-use-timing-vs-direction.md) |
+| **Steering can't install abstention** (F121) | Neither additive sign-flip nor directional ablation installs abstention — the limit is the **representation, not the operation**. | [read](docs/drafts/F121-steering-one-sidedness.md) |
+| **A steering finding that wasn't** (Qwen2.5-7B) | An apparent direction-specific hedging effect dissolves into a **direction-agnostic, single-prompt** magnitude effect under a matched-norm random control. | [read](docs/drafts/lesswrong-replication-post-v4.md) |
+
+**Citable DOIs (Zenodo):**
+- Three writeups (preprint) → [10.5281/zenodo.20591976](https://doi.org/10.5281/zenodo.20591976)
+- **FM-X** failure-mode dataset (~2,966 labeled generations + the FM-1..FM-13 taxonomy) → [10.5281/zenodo.20592307](https://doi.org/10.5281/zenodo.20592307) · [dataset card](docs/drafts/fm-x-dataset-card.md)
+
+> **Throughline across all three:** static residual-stream steering doesn't *install* epistemic behavior in small LLMs; what survives controls is that *when* you intervene matters more than *which direction* you push.
+
 ## What this is
 
 A 6-week solo project that attempted to install epistemic-virtue hedging (calibrated uncertainty on contested-evidence prompts) via DPO-trained steering vectors at the residual stream of Qwen2.5-7B-Instruct. After six sequential walkbacks of broader claims under standard steering-vector controls (matched-norm random direction, cross-layer, dose-response, cross-prompt replication, n=50 seed replication, strict-rubric verification), the surviving empirical finding is:
@@ -15,7 +31,7 @@ This is a replication of recent steering-vector cautions ([Rogue Scalpel](https:
 
 ## Main artifacts
 
-- **Writeup**: [docs/drafts/lesswrong-replication-post-v3.md](docs/drafts/lesswrong-replication-post-v3.md) — the LessWrong post draft
+- **Writeup**: [docs/drafts/lesswrong-replication-post-v4.md](docs/drafts/lesswrong-replication-post-v4.md) — the replication post (final draft; see Publications above for all three writeups)
 - **Verified numbers + statistical tests**: [docs/controls-verification-2026-05-23.md](docs/controls-verification-2026-05-23.md)
 - **Classification rubric**: [docs/e2-classification-rubric.md](docs/e2-classification-rubric.md)
 - **Findings chronology** (147 F-numbered findings across the project arc): [docs/findings.md](docs/findings.md)
