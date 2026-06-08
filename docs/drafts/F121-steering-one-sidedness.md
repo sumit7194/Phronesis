@@ -1,6 +1,6 @@
 # Residual-stream steering cannot install abstention: neither additive sign-flip nor directional ablation reaches the representation
 
-*Draft for LessWrong / Alignment Forum. ~2,200 words. Last revised 2026-05-19 with ablation-experiment results appended (see §"Edit 2026-05-19" near the end).*
+*Author: Sumit. Part 2 of a 3-piece series on inference-time epistemic intervention in small LLMs (companion pieces: the tool-use "timing, not direction" result, and the Qwen2.5-7B matched-random-control replication). ~2,200 words. Written with AI assistance; all verdicts hand-read by the author (see disclosure). Venue-flexible — base for blog / Zenodo / arXiv variants.*
 
 *Epistemic status: empirical, N=2 models, prompts + code + ablation-battery data released. The headline architectural claim (neither additive sign-flip nor directional ablation can install abstention on these features in these models — the limit is the representation, not the operation) is what I'm most confident in; the cross-feature comparisons (humility vs doubt vs commit) are weaker because the feature-semantic labels are my own construct from SAE feature exploration, not a model-intrinsic property.*
 
@@ -258,7 +258,9 @@ The Anthropic Emotion Concepts case (positive calm reduces blackmail) is also re
 
 ### What this means for the path forward
 
-Steering on these features is dead. The Phronesis project's path forward is **behavioral fine-tuning** (DPO/SFT on humility-positive contrastive data) — the mainstream production mechanism that *creates* the representation by modifying weights, rather than searching for it in existing weights. The ablation result strengthens the case for committing fully to that path.
+Steering on these features is dead. At the time of writing this section I expected the path forward to be **behavioral fine-tuning** (DPO/SFT on humility-positive contrastive data) — the mainstream production mechanism that *creates* the representation by modifying weights rather than searching for it in existing weights.
+
+**Update (2026-06):** that path was tried and also did not deliver. LoRA-DPO produced one prompt-specific behavioral shift that did not generalize across a broader battery and did not correct genuine baseline overconfidence; mechanistically, the DPO weight-update direction was near-orthogonal to the corpus-derived direction (the discrimination axis and the behavior-modification axis are different directions in activation space). See the companion replication piece for that result. Where the project actually landed is a third place neither steering nor fine-tuning predicted: in a tool-use loop, the durable lever turned out to be *when* you intervene (perturb the model's decision to search, not its interpretation of the results), not *which direction* you push — and even that benefit is largely direction-agnostic once a multi-seed random control is run. See the companion lead piece ("Timing, not direction"). The throughline across all three results is the same one F121 opens with: **static residual-stream operations don't install epistemic behavior; the representation, not the operation, is the limit.**
 
 ### Falsifier list — what would falsify the *new* claim
 
@@ -285,7 +287,9 @@ The strengthened claim ("neither additive nor ablation on these features install
 
 I'm an independent researcher; this work was done on my own hardware, no funding or affiliation. The project — Phronesis — is a side project testing whether epistemic virtues can be installed into small open-weight LLMs via residual-stream steering, inspired by Anthropic's April 2026 Emotion Concepts paper.
 
-Working partner across the project has been a sequence of Claude Opus (4.6 and 4.7) sessions — for analysis, experiment design, generation review, and document synthesis. Strategic direction and decisions are mine; per-task execution is delegated. The verdicts in the cited CSVs are Opus-judged, not human-judged; I treat that as materially better than regex auto-scorers and materially worse than human inter-rater review.
+Working partner across the project has been a sequence of Claude Opus sessions — for analysis, experiment design, generation review, and document synthesis. Strategic direction and decisions are mine; per-task execution is delegated. The verdicts in the cited CSVs are Opus-judged, not human-judged; I treat that as materially better than regex auto-scorers and materially worse than human inter-rater review.
+
+*Disclosure: this work used an AI assistant (Anthropic's Claude) for orchestration, analysis, and drafting. The load-bearing verdicts were hand-read in full (not regex/auto-scored) by the AI assistant under the author's protocol, and reviewed by the author — i.e. "Opus-judged, not human-judged," as stated above; I treat that as materially better than auto-scorers and materially worse than human inter-rater review. The AI is not an author and bears no responsibility for the claims; any errors are mine. (arXiv and major-publisher norms permit AI-assisted drafting/analysis with disclosure but do not permit AI as a listed author.)*
 
 Code and data: [github.com/sumit7194/Phronesis](https://github.com/sumit7194/Phronesis) (commit hash to be added at publication time).
 

@@ -43,7 +43,7 @@ Direction extraction: trained a LoRA-DPO adapter on a humility-virtue contrastiv
 
 Intervention: additive steering hook on the L20 residual stream, `h_L20 += α · d_flipped`, applied at every forward pass during generation. Default α=−25, temp=0.7, 50 seeds per condition for headline numbers.
 
-Hedge classification: hand-classified by one human author under a frozen rubric with markers H1-H4 enumerated (see §6). A regex implementation serves as an independent sanity check. All raw outputs, classifications, and code are in the repo linked at the end.
+Hedge classification: every generation hand-read (not regex-scored) under a frozen rubric with markers H1-H4 enumerated (see §6); the classification was performed by the AI assistant under the rubric I set and froze, and reviewed by me. A regex implementation serves as an independent sanity check. All raw outputs, classifications, and code are in the repo linked at the end.
 
 ---
 
@@ -166,7 +166,7 @@ The original framing — "directional epistemic-virtue steering" — was wrong. 
 
 1. **Single model.** All numbers are from Qwen2.5-7B-Instruct. Whether the same direction-agnostic profile holds for Llama-3, Mistral, Gemma, or larger Qwen variants is untested. The matched-norm random control is the specific thing follow-on authors should run on their own DPO-derived steering attempts.
 
-2. **Single human classifier.** I am the only hand-rater; inter-rater agreement was not measured. The regex sanity-check is one mitigation but not equivalent to multiple independent classifiers. The headline numbers are rater-dependent within ~4pp given the rubric-drift finding.
+2. **Single classifier, no human inter-rater.** Classification was performed by one AI assistant under my frozen rubric and reviewed by me — there was no second independent rater and no human inter-rater agreement measured. The regex sanity-check is one mitigation but not equivalent to multiple independent classifiers. The headline numbers are rater-dependent within ~4pp given the rubric-drift finding.
 
 3. **13 prompts is a small generalization sample.** The "no generalization" conclusion could be falsified by adding a 14th prompt that elevates. I tested the 4 categories I considered diagnostic (contested-evidence, false-premise, well-established, trivia) plus 4 "under-hedged-baseline" analogs to E2; broader sets in other domains (legal, ethical, mathematical) remain untested.
 
@@ -203,7 +203,7 @@ All raw data (870 hand-classified generations across 6 phases), classification s
 - `mvp/results/all_deltas/flipped_alpha_neg25_n50.json` — n=50 flipped raw outputs
 - `mvp/results/all_deltas/firming_AB.json` — n=50 random + 4 under-hedged-baseline analog prompts
 
-This post and the underlying analysis were drafted with substantial assistance from Claude (Opus 4.7, 1M context). Project decisions, hypothesis-walkbacks, framing pushbacks, and final synthesis are mine; Claude executed the controls chain, performed hand-classifications under my rubric, and drafted prose against my outline.
+This post and the underlying analysis were drafted with substantial assistance from Claude (Anthropic), 1M-context sessions. Project decisions, hypothesis-walkbacks, framing pushbacks, and final synthesis are mine; Claude executed the controls chain, performed the generation classifications under my frozen rubric (regex sanity-checked), and drafted prose against my outline. The AI is not an author and bears no responsibility for the claims; any errors are mine. (arXiv and major-publisher norms permit AI-assisted drafting/analysis with disclosure but do not permit AI as a listed author.)
 
 **A note on the multi-session review process**: the walkback discipline that produced the final tight claim depended on running findings past separate Claude sessions in fresh context. A second Claude session reviewed the v1 draft of this post and caught a framing problem — the +30pp narrative was reading as direction-specific when the data actually showed direction-agnosticism. That cross-session pushback led to the v2 restructure; a third pass caught a citation error (D-STEER first author), an F-number cross-reference drift in the walkback footnote, and the rubric-arc consistency issue that §4 now addresses explicitly. The methodology of running drafts past independent sessions is part of how the walkbacks happened across the broader project; I recommend it for any work with significant LLM assistance.
 
