@@ -345,29 +345,48 @@ class ToolUseRunner:
         )
 
     def attach_steering(self, vector_path: str | Path, layer: int, alpha: float,
-                        label: str = "steered"):
-        from steer import AdditiveSteeringHook  # lazy: requires torch
-        if self._steering_hook is not None:
-            raise RuntimeError("Steering already attached. Call detach_steering() first.")
-        v = np.load(vector_path)
-        self._steering_hook = AdditiveSteeringHook(
-            layer_idx=layer, virtue_vector=v, alpha=alpha
-        )
-        self._steering_hook.attach(self.model)
+                        label: str = "steered", phase: str = "all"):
+        """Configure steering. phase controls WHEN the hook is active per trajectory:
+          - "all":        whole trajectory (original behavior)
+          - "pre_search": turn-1 only — steer until the first search results come
+                          back, then detach (the answer / turn-2 is unsteered)
+          - "post_search": turn-2 only — unsteered until the first search results,
+                          then steer (isolates the answer-step effect)
+        Actual hook on/off is managed per-trajectory in run_trajectory via _hook_on.
+        """
+        self.detach_steering()
+        self._steer_vec = np.load(vector_path)
+        self._steer_layer = int(layer)
+        self._steer_alpha = float(alpha)
+        self._steer_phase = phase
         self._steering_meta = {
             "vector_path": str(vector_path),
-            "layer": layer,
-            "alpha": alpha,
+            "layer": int(layer),
+            "alpha": float(alpha),
             "label": label,
-            "vector_shape": list(v.shape),
-            "vector_norm": float(np.linalg.norm(v)),
+            "phase": phase,
+            "vector_shape": list(self._steer_vec.shape),
+            "vector_norm": float(np.linalg.norm(self._steer_vec)),
         }
+        if phase != "post_search":
+            self._hook_on(True)
 
-    def detach_steering(self):
-        if self._steering_hook is not None:
+    def _hook_on(self, on: bool):
+        from steer import AdditiveSteeringHook  # lazy: requires torch
+        if on and self._steering_hook is None and getattr(self, "_steer_vec", None) is not None:
+            self._steering_hook = AdditiveSteeringHook(
+                layer_idx=self._steer_layer, virtue_vector=self._steer_vec, alpha=self._steer_alpha,
+            )
+            self._steering_hook.attach(self.model)
+        elif not on and self._steering_hook is not None:
             self._steering_hook.detach()
             self._steering_hook = None
-            self._steering_meta = None
+
+    def detach_steering(self):
+        self._hook_on(False)
+        self._steer_vec = None
+        self._steer_phase = "all"
+        self._steering_meta = None
 
     # ─── Prompt building ─────────────────────────────────────────────────
 
@@ -500,6 +519,11 @@ class ToolUseRunner:
             tokens_used = 0
             tool_calls = 0
 
+            # phase-gated steering: set this trajectory's turn-1 hook state
+            # (re-attach for pre_search/all; ensure off for post_search).
+            if getattr(self, "_steer_vec", None) is not None:
+                self._hook_on(getattr(self, "_steer_phase", "all") != "post_search")
+
             while True:
                 remaining = self.max_total_tokens - tokens_used
                 if remaining <= 0:
@@ -579,6 +603,15 @@ class ToolUseRunner:
                     results=[r.as_dict() for r in results],
                 ))
                 current_text = current_text + "\n" + results_block + "\n"
+
+                # phase-gated steering: flip at the turn-1 -> turn-2 boundary
+                # (first search results just came back).
+                if tool_calls == 1 and getattr(self, "_steer_vec", None) is not None:
+                    ph = getattr(self, "_steer_phase", "all")
+                    if ph == "pre_search":
+                        self._hook_on(False)   # answer/turn-2 unsteered
+                    elif ph == "post_search":
+                        self._hook_on(True)    # steer only the answer/turn-2
 
             traj.tool_call_count = tool_calls
 

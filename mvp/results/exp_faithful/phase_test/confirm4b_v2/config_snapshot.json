@@ -1,0 +1,66 @@
+{
+  "_comment": "Variations layer on the v_IH phase win: more random-seed perturbation controls (rule out a lucky seed) + other layers (is L17 special?) + another dose. Reuses confirm4b baseline + identical searches.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {
+      "label": "baseline",
+      "steering": null
+    },
+    {
+      "label": "random_L17_a16_pre_s7",
+      "steering": {
+        "kind": "random",
+        "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+        "seed": 7,
+        "layer": 17,
+        "alpha": 16.0,
+        "phase": "pre_search"
+      }
+    },
+    {
+      "label": "random_L17_a16_pre_s99",
+      "steering": {
+        "kind": "random",
+        "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+        "seed": 99,
+        "layer": 17,
+        "alpha": 16.0,
+        "phase": "pre_search"
+      }
+    },
+    {
+      "label": "vIH_L14_a16_pre",
+      "steering": {
+        "kind": "virtue",
+        "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_14_virtue_vector.npy",
+        "layer": 14,
+        "alpha": 16.0,
+        "phase": "pre_search"
+      }
+    },
+    {
+      "label": "vIH_L20_a16_pre",
+      "steering": {
+        "kind": "virtue",
+        "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy",
+        "layer": 20,
+        "alpha": 16.0,
+        "phase": "pre_search"
+      }
+    },
+    {
+      "label": "vIH_L17_a12_pre",
+      "steering": {
+        "kind": "virtue",
+        "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+        "layer": 17,
+        "alpha": 12.0,
+        "phase": "pre_search"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "_comment": "CONFIRMATION + CONTROLS for the qwen3-4b v_IH phase-gating win (pre=16 > baseline=13 > post=11 > all=10, hand-verified once). This re-runs everything on the SAME cached searches as the original phase grid (search cache copied in by run_experiment4.sh) so differences isolate steering, not search variance. Key additions: a FRESH baseline run (to compare generations vs the original baseline = reproducibility/determinism check) and the missing PERTURBATION CONTROLS (random vector, turn-1-only AND always-on). If random_pre also beats baseline, the 'win' is just turn-1 perturbation, not v_IH.",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "vIH_L17_a16_pre",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "phase": "pre_search"}},
+    {"label": "vIH_L17_a16_all",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "phase": "all"}},
+    {"label": "vIH_L17_a8_pre",   "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0,  "phase": "pre_search"}},
+    {"label": "random_L17_a16_pre", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "seed": 42, "layer": 17, "alpha": 16.0, "phase": "pre_search"}},
+    {"label": "random_L17_a16_all", "steering": {"kind": "random", "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "seed": 42, "layer": 17, "alpha": 16.0, "phase": "all"}}
+  ]
+}

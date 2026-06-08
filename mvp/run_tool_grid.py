@@ -192,9 +192,9 @@ def main():
         if s:
             runner.attach_steering(
                 vector_path=s["vector_path"], layer=int(s["layer"]),
-                alpha=float(s["alpha"]), label=label,
+                alpha=float(s["alpha"]), label=label, phase=s.get("phase", "all"),
             )
-            print("\n[%s] steering L%s a=%s (%s)" % (label, s["layer"], s["alpha"], s.get("kind")), flush=True)
+            print("\n[%s] steering L%s a=%s phase=%s (%s)" % (label, s["layer"], s["alpha"], s.get("phase", "all"), s.get("kind")), flush=True)
         else:
             print("\n[%s] baseline (no steering)" % label, flush=True)
 

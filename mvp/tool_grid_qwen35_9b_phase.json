@@ -1,0 +1,15 @@
+{
+  "_comment": "PHASE-GATING test (user's long-standing idea): steer turn-1 (decide-to-search reasoning) but NOT turn-2 (answer after results). Faithfulness vector on qwen3.5-9b L12. Compare all vs pre_search (turn-1 only) vs post_search (turn-2 only). pre_search at higher alpha too (turn-1-only can take more without breaking the answer). Reuses main-grid baseline.",
+  "model": "qwen3.5-9b",
+  "max_searches": 3,
+  "max_total_tokens": 6144,
+  "max_tokens_per_segment": 6144,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "faithful_L12_a8_all",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-9b/contextfocus/layer_12_faithful.npy", "layer": 12, "alpha": 8.0,  "phase": "all"}},
+    {"label": "faithful_L12_a8_pre",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-9b/contextfocus/layer_12_faithful.npy", "layer": 12, "alpha": 8.0,  "phase": "pre_search"}},
+    {"label": "faithful_L12_a8_post", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-9b/contextfocus/layer_12_faithful.npy", "layer": 12, "alpha": 8.0,  "phase": "post_search"}},
+    {"label": "faithful_L12_a16_pre", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3.5-9b/contextfocus/layer_12_faithful.npy", "layer": 12, "alpha": 16.0, "phase": "pre_search"}}
+  ]
+}

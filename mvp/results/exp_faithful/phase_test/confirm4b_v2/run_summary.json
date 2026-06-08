@@ -1,0 +1,231 @@
+{
+  "config": {
+    "_comment": "Variations layer on the v_IH phase win: more random-seed perturbation controls (rule out a lucky seed) + other layers (is L17 special?) + another dose. Reuses confirm4b baseline + identical searches.",
+    "model": "qwen3-4b",
+    "max_searches": 3,
+    "max_total_tokens": 8192,
+    "max_tokens_per_segment": 8192,
+    "top_k_results": 3,
+    "conditions": [
+      {
+        "label": "baseline",
+        "steering": null
+      },
+      {
+        "label": "random_L17_a16_pre_s7",
+        "steering": {
+          "kind": "random",
+          "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "seed": 7,
+          "layer": 17,
+          "alpha": 16.0,
+          "phase": "pre_search",
+          "vector_path": "results/exp_faithful/phase_test/confirm4b_v2/random_random_L17_a16_pre_s7_seed7.npy"
+        }
+      },
+      {
+        "label": "random_L17_a16_pre_s99",
+        "steering": {
+          "kind": "random",
+          "reference_vector": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "seed": 99,
+          "layer": 17,
+          "alpha": 16.0,
+          "phase": "pre_search",
+          "vector_path": "results/exp_faithful/phase_test/confirm4b_v2/random_random_L17_a16_pre_s99_seed99.npy"
+        }
+      },
+      {
+        "label": "vIH_L14_a16_pre",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_14_virtue_vector.npy",
+          "layer": 14,
+          "alpha": 16.0,
+          "phase": "pre_search"
+        }
+      },
+      {
+        "label": "vIH_L20_a16_pre",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_20_virtue_vector.npy",
+          "layer": 20,
+          "alpha": 16.0,
+          "phase": "pre_search"
+        }
+      },
+      {
+        "label": "vIH_L17_a12_pre",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "layer": 17,
+          "alpha": 12.0,
+          "phase": "pre_search"
+        }
+      }
+    ]
+  },
+  "n_prompts": 30,
+  "total_wall_s": 1854.7,
+  "per_condition": [
+    {
+      "label": "baseline",
+      "n": 30,
+      "invoke_rate_overall": 1.0,
+      "mean_tool_calls": 1.2,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 27,
+        "max_searches": 1,
+        "recovered_malformed_tag": 2
+      },
+      "mean_wall_s": 29.1,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 1.0
+        }
+      }
+    },
+    {
+      "label": "random_L17_a16_pre_s7",
+      "n": 30,
+      "invoke_rate_overall": 0.5333,
+      "mean_tool_calls": 0.533,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 19,
+        "max_total_tokens": 11
+      },
+      "mean_wall_s": 202.1,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 0.45
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.25
+        }
+      }
+    },
+    {
+      "label": "random_L17_a16_pre_s99",
+      "n": 30,
+      "invoke_rate_overall": 1.0,
+      "mean_tool_calls": 1.067,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 28,
+        "recovered_malformed_tag": 2
+      },
+      "mean_wall_s": 32.4,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 1.0
+        }
+      }
+    },
+    {
+      "label": "vIH_L14_a16_pre",
+      "n": 30,
+      "invoke_rate_overall": 0.8333,
+      "mean_tool_calls": 0.967,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 29,
+        "max_searches": 1
+      },
+      "mean_wall_s": 23.0,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 0.8333
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.0
+        }
+      }
+    },
+    {
+      "label": "vIH_L20_a16_pre",
+      "n": 30,
+      "invoke_rate_overall": 0.9333,
+      "mean_tool_calls": 1.0,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 30
+      },
+      "mean_wall_s": 20.5,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.5
+        }
+      }
+    },
+    {
+      "label": "vIH_L17_a12_pre",
+      "n": 30,
+      "invoke_rate_overall": 0.9333,
+      "mean_tool_calls": 1.133,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 27,
+        "recovered_malformed_tag": 1,
+        "max_searches": 2
+      },
+      "mean_wall_s": 18.4,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.5
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "config": {
+    "_comment": "PHASE-GATING on the ORIGINAL F148/F149 setup: v_IH (commit/decisiveness vector) on qwen3-4b L17. F148 found v_IH helps turn-1 (decide-to-search) but F149 found it hurts turn-2 (confabulates the answer). This tests the user's idea directly: pre_search (turn-1 only) should keep any turn-1 benefit WITHOUT the turn-2 confab harm; post_search (turn-2 only) should reproduce the harm; all = the known F149 confab-amplifier. Reuses the followup grid4b baseline (qwen3-4b on the same hard battery).",
+    "model": "qwen3-4b",
+    "max_searches": 3,
+    "max_total_tokens": 8192,
+    "max_tokens_per_segment": 8192,
+    "top_k_results": 3,
+    "conditions": [
+      {
+        "label": "baseline",
+        "steering": null
+      },
+      {
+        "label": "vIH_L17_a16_all",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "layer": 17,
+          "alpha": 16.0,
+          "phase": "all"
+        }
+      },
+      {
+        "label": "vIH_L17_a16_pre",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "layer": 17,
+          "alpha": 16.0,
+          "phase": "pre_search"
+        }
+      },
+      {
+        "label": "vIH_L17_a16_post",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "layer": 17,
+          "alpha": 16.0,
+          "phase": "post_search"
+        }
+      },
+      {
+        "label": "vIH_L17_a8_pre",
+        "steering": {
+          "kind": "virtue",
+          "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy",
+          "layer": 17,
+          "alpha": 8.0,
+          "phase": "pre_search"
+        }
+      }
+    ]
+  },
+  "n_prompts": 30,
+  "total_wall_s": 2231.8,
+  "per_condition": [
+    {
+      "label": "baseline",
+      "n": 30,
+      "invoke_rate_overall": 1.0,
+      "mean_tool_calls": 1.2,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 27,
+        "max_searches": 1,
+        "recovered_malformed_tag": 2
+      },
+      "mean_wall_s": 31.6,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 1.0
+        }
+      }
+    },
+    {
+      "label": "vIH_L17_a16_all",
+      "n": 30,
+      "invoke_rate_overall": 0.9,
+      "mean_tool_calls": 0.9,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 27,
+        "recovered_malformed_tag": 3
+      },
+      "mean_wall_s": 13.9,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.25
+        }
+      }
+    },
+    {
+      "label": "vIH_L17_a16_pre",
+      "n": 30,
+      "invoke_rate_overall": 0.9,
+      "mean_tool_calls": 1.0,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 29,
+        "max_searches": 1
+      },
+      "mean_wall_s": 15.7,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.25
+        }
+      }
+    },
+    {
+      "label": "vIH_L17_a16_post",
+      "n": 30,
+      "invoke_rate_overall": 1.0,
+      "mean_tool_calls": 1.033,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 26,
+        "recovered_malformed_tag": 4
+      },
+      "mean_wall_s": 24.2,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 1.0
+        }
+      }
+    },
+    {
+      "label": "vIH_L17_a8_pre",
+      "n": 30,
+      "invoke_rate_overall": 0.9667,
+      "mean_tool_calls": 1.067,
+      "errors": 0,
+      "termination_reasons": {
+        "eos": 27,
+        "recovered_malformed_tag": 2,
+        "max_searches": 1
+      },
+      "mean_wall_s": 20.6,
+      "by_category": {
+        "false-premise": {
+          "n": 20,
+          "invoke_rate": 1.0
+        },
+        "obscure-real": {
+          "n": 6,
+          "invoke_rate": 1.0
+        },
+        "true-control": {
+          "n": 4,
+          "invoke_rate": 0.75
+        }
+      }
+    }
+  ]
+}

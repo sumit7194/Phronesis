@@ -7144,3 +7144,49 @@ Ran the one untested variant (the L29-native first-person features, the stronges
 - **But no improvement on catching.** Hand-scored ~9–10/12 false premises caught — **≈ baseline**. It fixes some cases (caught fp-08 Switch-Pro, which baseline confabulated as "$350") but introduces others (**3 of 4 conditions confabulate fp-01 "Microsoft acquired Notion"**, where baseline gave a no-answer). Net wash.
 - **Interpretation (the strongest form of the negative):** the *best case for static steering* — cleanest verified first-person features, correct native layer, non-breaking dose — lands at **"harmless but useless."** So discrimination≠modification (F142) holds even at the ideal operating point: a static uncertainty direction cannot *install* false-premise catching, full stop. The steering program (corpus AND corpus-free, L17 AND L29) is now conclusively closed.
 - **Pivot:** next is to validate a **gate signal** ("does the model know this?") for conditional gating — *gate an action* (force search / abstain), not a steering push — and/or an **information-seeking metric**. Gate-signal discrimination test (A1 SAE-feature read on the confab battery) is the active experiment.
+
+## F159 — Re-score + hand-verification reframe the steering negative: PRIOR-OVERRIDE is the failure, and the two model generations fail oppositely (2026-06-07)
+
+A full re-score of all prior generations + hand-verification overturns the "flat negative" reading of the steering arc — not by showing steering works, but by identifying *why* it looked null and *what the real failure mechanism is*. (The Day-57 gate-signal test was deprioritized in favor of what this reframe points to.)
+
+- **Re-score (3,510 generations → one record).** A cheap model (Gemini, via an Antigravity loop) hand-read + labelled every generation across all sweeps into `mvp/results/consolidated_scores.{csv,jsonl}` (catch_abstain / is_correct / is_degenerate / win-tie-loss vs paired baseline). Raw counts: 54 win / 127 loss / 3,329 tie. **But the cheap scorer is NOT trustworthy** — verification found inverted catch labels (a confident pro-flossing baseline scored "caught") and notes stapled to the wrong rows (an Øresund-Bridge note on a Bayesian-coin-flip item). Same project-long lesson: never trust an auto/cheap scorer — hand-verify. All claims below rest on hand-reading the candidate cells, not Gemini's counts.
+- **There ARE real buried wins (partially revises F158).** Hand-reading the false-premise/obscure win cells: the **L29 SAE vectors genuinely make qwen3-4b catch fp-08 (Switch-Pro; baseline confabulates "$350") and fp-14 (Everest; baseline confabulates "3.2 m")** — real per-prompt flips the aggregate average erased. F158's "≈ baseline" held in aggregate but hid genuine per-prompt catches. Caveat: narrow (~2 of 15), and `combined_tier1` also catches fp-14 → not L29-exclusive.
+- **The unified failure mode: PRIOR-OVERRIDE.** Baseline qwen3-4b already catches ~13/15; it only confabulates where a plausible answer is retrievable from priors / sits next to a real fact. On those the **thinking trace shows the model verbalizing its own uncertainty** ("not sure… need to confirm… wait, maybe") **then overriding it with a confident guess.** The discriminator is *not* "does it hedge" (catch-cases hedge *more*) but **"does the doubt resolve into a stated contradiction"** — confab traces score ~0 contradiction-markers, catch traces ~3.4. The model *knows but doesn't act on it* (a self-expression failure, cf. LLM-honesty literature).
+- **What L29 actually does: grounds harder in retrieval.** Winning variants raise contradiction-resolution by making the model say "the results don't support this." That catches when retrieval clearly lacks support (fp-08/14) but **causes a NEW confabulation when retrieval contains a confusable fact** (fp-01 Notion: a "$10B valuation" hit → invents "Microsoft acquired Notion for $10B"). Not humility — *grounding*, with its own failure mode.
+- **Cross-model: the two generations fail OPPOSITELY.** qwen3-4b **under**-trusts retrieval (prior-override); qwen3.5-4b **over**-trusts it (retrieval-credulity — searches by default, grabs tangential hits, e.g. reports a real *France* quake for the fake *Paris* quake). This explains F154/F155: the *same* v_IH amplifies prior-override on qwen3-4b (commit-amplifier) but pushes an already-deferential qwen3.5 into search-loops/muteness. **One static direction can't fix both — they need opposite signs.**
+- **Reframe + new direction.** The "steering negative" is substantially a **near-ceiling baseline (13/15) + a broken scorer**, not proof steering can't work. The 2026 literature (ContextFocus arXiv 2601.04131; Anthropic persona vectors; SAE-vs-ActDiff 2510.01246; SAE-RSV refinement 2509.23799) targets the sharper feature our own digging arrived at — **contextual faithfulness / anti-prior-override** — which we never extracted our way (we used virtue-triplets, not a context-presence contrast). New experiment (running): a ContextFocus-style faithfulness vector on **qwen3.5-9b** vs a fresh harder battery, with a random-vector control + true-control guardrails. Build + autonomy in the Day-58 journal; plan in `~/.claude/plans/`.
+
+## F160 — Phase-gated steering: the "steer turn-1 only" IDEA is validated; the v_IH-specific catching win does NOT survive a multi-seed control (2026-06-08)
+
+The user's long-standing idea — steer **turn-1** (the decide-to-search reasoning) but NOT **turn-2** (the answer after results), to keep F148's invoke-benefit without F149's confab-harm — tested in the `<search>` harness on both models, with a full confirmation + control suite (fresh baseline, dose sweep, layer sweep, **multi-seed random-vector perturbation control**, true/obscure-real precision controls). All on **identical cached searches** (steering isolated from search noise) unless noted. HAND-scored every delivered answer (text after last `</think>`); never trusted the heuristic counts (they misled 3+ times — e.g. a "+2" that hand-verified to a wash).
+
+**qwen3.5-9b (ContextFocus faithfulness vector, L12): phase-gating is NULL.** baseline 13 · all 13 · pre ~12 · post ~12 — turn-1-only neither helps nor hurts. There was no turn-1 benefit to capture (the 9b lacks the F148 invoke-miss the 4b had), so phase-gating has nothing to gate. Consistent with the whole 9b faithfulness arc being a wash.
+
+**qwen3-4b (v_IH, L17): the phase DIRECTION is real, the v_IH DIRECTION is not.** Full /20 hand-scored, identical searches:
+
+| condition | catches/20 | degenerate-empty |
+|---|---|---|
+| baseline (cached) | 9 | 1 |
+| baseline (fresh search) | 10 | 2 |
+| vIH_a8_pre | 12 | 1 |
+| vIH_a12_pre | **14** | 2 |
+| vIH_a16_pre | 10 | 1 |
+| vIH_L14_a16_pre | 11 | 1 |
+| vIH_L20_a16_pre | 10 | 0 |
+| vIH_a16_**all** | 5 | 3 |
+| random_a16_pre **s42** | 6 | 5 |
+| random_a16_pre **s7** | 7 | 11 |
+| random_a16_pre **s99** | **12** | 0 |
+| random_a16_**all** | 3 | 7 |
+
+1. **Always-on steering robustly HARMS** (vIH_all 5, random_all 3 ≪ baseline 9), via confabulation + degenerate non-termination. Turn-1-only avoids it. Reproduces F149 and is the solid, model-independent result: *when* you steer matters more than *what* — pushing the post-retrieval answer is destructive regardless of direction.
+2. **v_IH turn-1-only reliably helps** (10–14 vs 9), robust across layers (L14/17/20) and doses (a8/a12/a16; best a12=14), low degeneration. "Steer only turn-1" genuinely captures a benefit the always-on version destroys.
+3. **But the multi-seed perturbation control kills the v_IH-specific reading.** A *random* turn-1 vector at **seed 99** also catches **12** (+3 over baseline, ties the best v_IH dose) with **zero** degeneration. The single seed run earlier (s42=6) only looked like clean specificity because it happened to degenerate; across seeds random spans 6→12. So the gain is largely a **generic turn-1 activation-perturbation** effect — *any* sufficiently non-destructive nudge to the turn-1 reasoning shifts the model toward grounding/skepticism — not the intellectual-humility direction per se. v_IH's only real edge over random is **reliability**: it consistently lands in the high-catch / low-degenerate regime across layers & doses, while random is a high-variance gamble.
+
+**Controls the user insisted on (all passed / informative):**
+- **Baseline reproducibility:** the fresh re-run baseline is **30/30 identical** to the long-reused baseline on the same searches — greedy decoding is fully deterministic; the reused baseline was a valid reference.
+- **Strict vs lenient scoring:** the historical "baseline 13/20" does NOT reproduce under strict hand-scoring (require a clear premise-denial, not a hedge) — it is **9–10/20**. Earlier counts were lenient; only the relative orderings hold.
+- **Search variance:** a fresh-ddgs baseline catches 10 vs cached 9 (≈ ±1 aggregate) even though **24/30 individual answers differ** — live search moves wording a lot but the catch-rate little.
+- **Precision:** no over-refusal — every condition answers all 6 obscure-real facts and all 4 true-controls correctly. The turn-1 catch gain is *selective*, not blanket skepticism.
+
+**Bottom line.** The durable, transferable result of the whole steering program: **the lever that works is *when* to intervene (phase: turn-1 yes, turn-2 no), not *which direction* (v_IH, faithfulness, SAE-uncertainty — all dissolve under controls).** A random turn-1 perturbation matches v_IH; an always-on push of any direction breaks the answer. This closes the v_IH-specificity question F148/F159 left open — it was never the humility direction, it was the timing. Methodological lesson logged: **future steering claims must clear a *multi-seed* random control** — a single seed (s42) would have falsely certified specificity here. Raw hand-scores: `mvp/results/exp_faithful/phase_test/CONFIRM_HANDSCORE.md`.

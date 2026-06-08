@@ -1,0 +1,15 @@
+{
+  "_comment": "PHASE-GATING on the ORIGINAL F148/F149 setup: v_IH (commit/decisiveness vector) on qwen3-4b L17. F148 found v_IH helps turn-1 (decide-to-search) but F149 found it hurts turn-2 (confabulates the answer). This tests the user's idea directly: pre_search (turn-1 only) should keep any turn-1 benefit WITHOUT the turn-2 confab harm; post_search (turn-2 only) should reproduce the harm; all = the known F149 confab-amplifier. Reuses the followup grid4b baseline (qwen3-4b on the same hard battery).",
+  "model": "qwen3-4b",
+  "max_searches": 3,
+  "max_total_tokens": 8192,
+  "max_tokens_per_segment": 8192,
+  "top_k_results": 3,
+  "conditions": [
+    {"label": "baseline", "steering": null},
+    {"label": "vIH_L17_a16_all",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "phase": "all"}},
+    {"label": "vIH_L17_a16_pre",  "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "phase": "pre_search"}},
+    {"label": "vIH_L17_a16_post", "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 16.0, "phase": "post_search"}},
+    {"label": "vIH_L17_a8_pre",   "steering": {"kind": "virtue", "vector_path": "results/vectors/qwen3-4b/triplets-intellectual-humility/last_token/layer_17_virtue_vector.npy", "layer": 17, "alpha": 8.0,  "phase": "pre_search"}}
+  ]
+}

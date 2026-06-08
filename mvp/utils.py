@@ -99,6 +99,21 @@ MODEL_CONFIGS = {
         "hidden_dim": 2560,
         "trust_remote_code": True,
     },
+    "qwen3.5-9b": {
+        # Qwen3.5-9B dense (released 2026-02, same family as 3.5-4B). Loads via
+        # AutoModelForCausalLM with decoder at model.layers. num_layers/hidden_dim
+        # below are PROVISIONAL — verify on the VM with probe_qwen35.py before
+        # relying on them for layer sweeps; structural fields (accessor/dtype/
+        # thinking) match the 3.5-4B entry.
+        "hf_id": "Qwen/Qwen3.5-9B",
+        "local_dir": "Qwen3.5-9B",
+        "dtype": torch.bfloat16,
+        "layer_accessor": "model.layers",
+        "thinking": True,
+        "num_layers": 32,    # verified via AutoConfig.text_config on VM 2026-06-07
+        "hidden_dim": 4096,  # verified (9B = same depth as 3.5-4B, wider hidden)
+        "trust_remote_code": True,
+    },
     "open-r1-qwen-7b": {
         "hf_id": "open-r1/OpenR1-Qwen-7B",
         "local_dir": "OpenR1-Qwen-7B",

@@ -1,0 +1,5 @@
+{
+  "_comment": "Fresh-ddgs baseline (no cache reuse) to measure run-to-run variance from live search alone, vs the fixed-cache baselines.",
+  "model": "qwen3-4b", "max_searches": 3, "max_total_tokens": 8192, "max_tokens_per_segment": 8192, "top_k_results": 3,
+  "conditions": [{"label": "baseline", "steering": null}]
+}
