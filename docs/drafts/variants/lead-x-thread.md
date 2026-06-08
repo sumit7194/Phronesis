@@ -60,7 +60,8 @@ Takeaways:
 • Use a MULTI-seed random control. Always.
 
 **10/**
-Full writeup (data, tables, the embarrassing parts): [LINK]
+Full writeup (data, tables, the embarrassing parts): https://sumit7194.github.io/Phronesis/docs/drafts/lead-tool-use-timing-vs-direction.html
+DOI: https://doi.org/10.5281/zenodo.20591976
 
 Independent research, done on one rented GPU. Written with AI assistance; every generation hand-read (not auto-scored) under my protocol; AI isn't an author, errors are mine.
 
