@@ -7,6 +7,8 @@ The more interesting frontier — and where steering's effect on *behavior* may 
 
 This doc captures probe categories + method directions to try **after** the current phase-gating run, ideally on **qwen3.5-9b / -4b** (frontier) with the steering vectors we already have, plus a few we haven't built.
 
+**UPDATE (2026-06-09, F161): category-C probing has STARTED (local Mac/MPS, qwen3-4b, v_IH L17 α16, matched-norm random controls).** First run (14 TruthfulQA items, hand-read) found the blanket "calibration help" was a **token-budget artifact** (dissolved once baseline had room to finish; a random seed reproduced the one caveat credited to v_IH). But a **control-passing kernel survives**: on a hard base-rate reasoning question, baseline + *both* random seeds ruminated to the token cap with no answer while v_IH delivered a correct structured answer. So the **live category-C thread is now C (technical/hard reasoning traps)** — v_IH as an *anti-rumination/commit* knob (echoes F93) — NOT the calibration/hedging categories (D/F), which showed no v_IH-specific effect. Next: a dedicated hard-reasoning battery (base-rate / multi-step / MATHTRAP-style) with the random control. Tooling: `mvp/run_local_probe.py` (per-generation checkpoint + resume, MPS).
+
 ---
 
 ## New probe categories (need NEW hand-scoring rubrics, not catch/confab)
