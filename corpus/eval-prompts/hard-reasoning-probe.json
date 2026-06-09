@@ -1,0 +1,82 @@
+[
+ {
+  "id": "hr-01-br-mammogram",
+  "category": "base-rate",
+  "source": "classic-cogsci",
+  "prompt": "1% of women at age forty who participate in routine screening have breast cancer. A mammogram detects cancer in 90% of women who have it, but also gives a false positive in 9% of women who do NOT have it. A woman in this group tests positive. What is the probability she actually has breast cancer? Give a number.",
+  "truth": "~9% (base-rate neglect makes people say ~90%)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-02-br-taxicab",
+  "category": "base-rate",
+  "source": "classic-cogsci",
+  "prompt": "A cab was involved in a hit-and-run at night. Two cab companies operate: 85% of cabs are Green, 15% are Blue. A witness said the cab was Blue. Tested under the same conditions, the witness correctly identifies each colour 80% of the time. What is the probability the cab involved was actually Blue?",
+  "truth": "~41% (base-rate neglect makes people say 80%)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-03-br-rare-disease",
+  "category": "base-rate",
+  "source": "classic-cogsci",
+  "prompt": "A disease affects 1 in 1000 people. A test is 99% accurate (1% false-positive rate, no false negatives). You test positive with no other information. Roughly what is the probability you have the disease?",
+  "truth": "~9% (base-rate neglect makes people say ~99%)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-04-br-linda-conjunction",
+  "category": "base-rate",
+  "source": "classic-cogsci",
+  "prompt": "Linda is 31, single, outspoken, and very bright. She majored in philosophy and as a student was deeply concerned with discrimination and social justice. Which is more probable: (a) Linda is a bank teller, or (b) Linda is a bank teller and is active in the feminist movement? Explain.",
+  "truth": "(a) \u2014 a conjunction cannot be more probable than one of its conjuncts (conjunction fallacy)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-05-bbh-logic",
+  "category": "bbh-logical-deduction",
+  "source": "BBH",
+  "prompt": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin. The owl is the leftmost. The robin is to the left of the raven. The quail is the rightmost. The raven is the third from the left.\nOptions:\n(A) The quail is the rightmost\n(B) The owl is the rightmost\n(C) The raven is the rightmost\n(D) The falcon is the rightmost\n(E) The robin is the rightmost\nGive the correct option and explain.",
+  "truth": "(A)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-06-bbh-logic",
+  "category": "bbh-logical-deduction",
+  "source": "BBH",
+  "prompt": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were five golfers: Rob, Ada, Dan, Joe, and Mel. Ada finished above Mel. Mel finished above Dan. Joe finished below Dan. Ada finished second.\nOptions:\n(A) Rob finished last\n(B) Ada finished last\n(C) Dan finished last\n(D) Joe finished last\n(E) Mel finished last\nGive the correct option and explain.",
+  "truth": "(D)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-07-bbh-logic",
+  "category": "bbh-logical-deduction",
+  "source": "BBH",
+  "prompt": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a shelf, there are five books: a yellow book, a gray book, a red book, a black book, and a white book. The gray book is to the left of the yellow book. The white book is to the left of the red book. The black book is to the right of the red book. The black book is to the left of the gray book.\nOptions:\n(A) The yellow book is the rightmost\n(B) The gray book is the rightmost\n(C) The red book is the rightmost\n(D) The black book is the rightmost\n(E) The white book is the rightmost\nGive the correct option and explain.",
+  "truth": "(A)",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-08-bbh-causal",
+  "category": "bbh-causal-judgement",
+  "source": "BBH",
+  "prompt": "How would a typical person answer each of the following questions about causation?\nA machine is set up in such a way that it will short circuit if both the black wire and the red wire touch the battery at the same time. The machine will not short circuit if just one of these wires touches the battery. The black wire is designated as the one that is supposed to touch the battery, while the red wire is supposed to remain in some other part of the machine. One day, the black wire and the red wire both end up touching the battery at the same time. There is a short circuit. Did the black wire cause the short circuit?\nOptions:\n- Yes\n- No",
+  "truth": "No",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-09-bbh-causal",
+  "category": "bbh-causal-judgement",
+  "source": "BBH",
+  "prompt": "How would a typical person answer each of the following questions about causation?\nMr. Wallace is highly influential in the organized crime scene. Although he commands the respect of many, there are also a number of people who stand to benefit from his death. Today, he was having lunch with one of his associates, Mr. Vincent. At one point during their meeting, Mr. Wallace left the table to go to the toilet. While he was gone, Mr. Vincent managed to slip a lethal dose of poison into his martini. The poison is known to take one hour (give or take 10 minutes, depending on the victim's body weight) to kill and would go unnoticed for the first half hour after consumption. When Mr. Wallace returned to the table, he finished his lunch and then drank the rest of his martini. The two men concluded their meeting a few minutes later. Mr. Wallace paid the bill and they both left the restaurant going in different directions. Mr. Wallace had another important business meeting about 15 minutes away in a remote part of the countryside. On an isolated stretch of road, he noticed that he was suddenly being followed by a van that had pulled out from the roadside. The van accelerated and began hitting his car from behind. Mr. Wallace recognized that the driver was Mr. Bruce, an associate of one of Mr. Wallace's rivals. He tried to evade the van but there was no time. The van relentlessly hit his car and pushed it off the side where it fell into a ravine and exploded. The remains of Mr. Wallace's body were discovered later that day. The chief coroner's report later revealed that Mr. Wallace had received fatal burns in the car explosion. The report also indicated, however, that a lethal dose of poison was found in Mr. Wallace's blood. Did the crime life cause Mr. Wallace's death?\nOptions:\n- Yes\n- No",
+  "truth": "No",
+  "max_new_tokens": 2048
+ },
+ {
+  "id": "hr-10-gsm8k",
+  "category": "gsm8k-multistep",
+  "source": "GSM8K",
+  "prompt": "Carla is downloading a 200 GB file. Normally she can download 2 GB/minute, but 40% of the way through the download, Windows forces a restart to install updates, which takes 20 minutes. Then Carla has to restart the download from the beginning. How load does it take to download the file?",
+  "truth": "160",
+  "max_new_tokens": 2048
+ }
+]
