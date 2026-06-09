@@ -3,11 +3,11 @@
 Activation-steering experiments for installing epistemic-virtue behavior in Qwen2.5-7B-Instruct via DPO-derived steering vectors.
 
 **Author**: Sumit Pal
-**License**: MIT (code); MIT or CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
+**License**: MIT (code); CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
 
 ## 📄 Publications & writeups
 
-Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Written with AI assistance; every generation was hand-read (not auto-scored) under the author's protocol — AI is not a listed author.
+Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Written with AI assistance. Scoring process: every load-bearing generation was read in full and judged by an **AI assistant (Anthropic Claude, Opus-family) under a frozen, human-authored rubric, with author review** — no regex/automatic scorers were used for any load-bearing verdict. The AI is not a listed author; errors are the author's.
 
 | Writeup | One-line finding | Draft |
 |---|---|---|

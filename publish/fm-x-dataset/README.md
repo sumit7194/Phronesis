@@ -28,7 +28,9 @@ size_categories:
 
 The parent project (Phronesis) spent ~2 months (April–June 2026) trying to install epistemic virtues (intellectual humility, evidence-grounding, calibrated confidence) into small open-weight LLMs via activation steering. The single most repeated lesson was methodological: **automatic scorers are unreliable on steered output, and in a consistent, catalogable way.** A regex scorer credited a degenerate repetition-loop with the highest score in an entire α-sweep (FM-8); it missed real virtue expressed in domain-technical prose (FM-9); it counted a hedge wrapped around a confabulated fact as "abstention" (FM-1).
 
-Rather than discard those mislabels, every one was hand-read, given a verdict, and — on failure — tagged with a reusable failure-mode code. This dataset is that labeled corpus. It is useful as: (a) a benchmark for LLM-as-judge / scorer robustness, (b) a concrete catalog of steered-LLM failure modes, and (c) the raw evidence behind the Phronesis findings.
+Rather than discard those mislabels, every generation was read in full by an **LLM judge (Anthropic Claude, Opus-family) under a frozen, human-authored protocol with author review**, given a verdict, and — on failure — tagged with a reusable failure-mode code. This dataset is that labeled corpus. It is useful as: (a) a study/comparison set for LLM-as-judge and scorer robustness, (b) a concrete catalog of steered-LLM failure modes, and (c) the raw evidence behind the Phronesis findings.
+
+> ⚠️ **Circularity caveat for use case (a):** the labels are themselves **LLM-judge outputs** (Claude, Opus-family). If you evaluate an LLM judge against this dataset — especially a Claude-family judge — agreement partly measures *consistency with Claude's judgments under this protocol*, not independent human ground truth. Treat the labels as a documented LLM-judge reference standard, not gold human annotation.
 
 ## Contents
 
@@ -64,7 +66,7 @@ Codes tag *why a verdict departs from what an automatic scorer would assign*. Sc
 
 *(FM-11 and FM-12 are extraction-pipeline bugs, not scoring failure modes, and are documented in the source repo for completeness but do not appear as row labels.)*
 
-The throughline (FM-8 + FM-9 together): **the auto-scorer is wrong at both ends of the quality distribution** — it over-credits degenerate output and under-credits good non-standard prose — which is why the project moved to mandatory hand-reading.
+The throughline (FM-8 + FM-9 together): **the auto-scorer is wrong at both ends of the quality distribution** — it over-credits degenerate output and under-credits good non-standard prose — which is why the project moved to mandatory full-text reading of every load-bearing generation (by the LLM judge under the protocol described below).
 
 ## Labeling protocol
 
