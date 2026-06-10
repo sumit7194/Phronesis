@@ -7213,7 +7213,7 @@ The F161 follow-up: 10 rumination-prone items (4 classic base-rate/Bayesian, 3 B
 - **Net verdict on the F161 kernel:** real, v_IH-specific (randoms never reproduce the rescues), but **narrow** — it fires reliably only where there is a *formula to commit to* (Bayes-style problems whose structure the model already knows), is redundant where baseline already commits (logic at adequate budget), and is absent or harmful where the bottleneck is interpretation/ambiguity rather than commitment. One line: **v_IH converts "knows-but-won't-commit" into delivered answers; it cannot convert "doesn't know" or "misreads" into correct ones.**
 - Caveats: N=10, single α, 2 random seeds, mixed budgets (3 items at 1280), single-pass AI hand-read under the standing protocol. Raw: `mvp/results/local_probe_hardreasoning.json` (local).
 
-## F163 — Rumination-triggered steering: matches always-on's benefit with ZERO degenerations (late onset is the safety mechanism, not selectivity); the trigger itself wasn't selective at T=768; novel-item commitment surfaces wrong priors (2026-06-11)
+## F163 — Rumination-triggered steering: matches always-on's benefit with ZERO degenerations (late onset is the safety mechanism, not selectivity); the trigger itself wasn't selective at T=768; novel-item commitment surfaces wrong priors (2026-06-10)
 
 Option-C experiment (pre-registered in commit e5b8ca3): generate unsteered; if `</think>` hasn't appeared by token 768, attach v_IH L17 α16 for the remainder. 16 items (10 F162 + 6 novel-number probability), 5 conditions (baseline / always-on / triggered-vIH / triggered-random ×2), qwen3-4b MPS, 2048 tokens, HAND-graded all 80 cells.
 

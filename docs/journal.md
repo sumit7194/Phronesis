@@ -2519,9 +2519,9 @@ Process: vetted benchmarks over clichés; hand-read every generation (no scorer)
 
 Process: same discipline — archived the 1280 generations before re-running (never destroy data), graded ends-of-text by hand, reported the narrowing honestly (5/10 vs 3/10 is a modest, domain-specific edge, not a headline).
 
-## Day 62 (2026-06-11) — Triggered steering lands overnight (F163): equal benefit, zero degenerations; the watchdog + caffeinate combo finally beat the power gremlins
+## Day 61, later (2026-06-10) — Triggered steering lands (F163): equal benefit, zero degenerations; the watchdog + caffeinate combo finally beat the interruptions
 
-The option-C run (80 cells) completed at 00:47 under a caffeinate-wrapped self-healing watchdog — the first full overnight run to survive the small-town power situation. Hand-graded all 80 cells in the morning.
+The option-C run (80 cells) completed at 12:47 under a caffeinate-wrapped self-healing watchdog — the first full unattended run to survive the interruption gauntlet. Hand-graded all 80 cells in the morning.
 
 - **Headline (F163):** triggered-vIH 6/16 = always-on 6/16 > baseline 5/16 > triggered-random 3/16 ×2. The trigger fired on ALL 16 items (T=768 is below qwen3-4b's normal thinking length on hard items), so selectivity failed — but **late onset eliminated all three of always-on's degenerations** while keeping its hit-rate. The safety comes from protecting the early trajectory, not from firing rarely. Direction-specificity held (randoms 3 vs 6).
 - **The run's gem:** novel conjunction item (pb-15). Famous Linda → everyone correct (memorized). Novel Mark-the-chess-player → the model's prior IS the fallacy, baseline waffles, and both steered arms confidently commit the wrong answer. Cleanest demonstration yet that the commit knob amplifies whatever inclination exists.
