@@ -2529,3 +2529,11 @@ The option-C run (80 cells) completed at 12:47 under a caffeinate-wrapped self-h
 - Process: pre-registered predictions (in the launch commit) graded explicitly — 1 partial, 2 held, 3 failed-with-an-unexpected-replacement. Reported the thin margins plainly.
 
 Next decision pending with the user: VM procurement (Mac needed for his own tests soon); candidate follow-ups = higher/content-based trigger threshold, or pivot to the evidence-gate harness with triggered-steering as a documented tool.
+
+## Day 61, evening (2026-06-10) — T=1200 sweep: the cleanest dissolution yet (F164)
+
+Raised the trigger to 1200 to chase selectivity. Got it — **perfect ruminator/solver separation** (fired 11/16, skipped exactly the items baseline solves, skipped≡baseline verified). And lost the benefit: the T=768 rescues truncated mid-answer because waiting 1200 tokens leaves no budget for the rescued answer to land; one triggered cell degenerated; and a random seed beat vIH on the fired subset (2 vs 1 — seed variance, F160's signature). **Selectivity and efficacy trade off directly through the token budget — at 2048 there's no sweet spot.** The honest chain across F163→F164: late-onset is safer than always-on; later-still is selective but impotent. The way out isn't a better threshold — it's a better *signal* (content-based / SAE-feature trigger, already in the weekend plan) or budget extension on fire (needs careful control design).
+
+The user's framing this morning — "lets hope this doesn't dissolve like the others, but we stay true to the scientific method even if we keep getting failures" — aged perfectly: prediction 1 held, 2 and 3 dissolved, and for once the dissolution came with its mechanism attached (truncated mid-rescue cells are directly visible in the data). That's a more useful negative than most positives.
+
+Process: pre-registered all three predictions before launch (chat record), graded all 48 cells by hand, verified skipped-item identity programmatically, reported the random-beats-vIH cell without flinching.
