@@ -37,6 +37,7 @@ def main():
     ap.add_argument("--layer", type=int, default=17)
     ap.add_argument("--alpha", type=float, default=16.0)
     ap.add_argument("--trigger-at", type=int, default=768)
+    ap.add_argument("--tag", default="trig", help="condition-name prefix (e.g. trig1200)")
     ap.add_argument("--max-new", type=int, default=2048)
     ap.add_argument("--reuse", default="results/local_probe_hardreasoning.json",
                     help="prior results file to copy comparable baseline/alwayson cells from (2048-budget only)")
@@ -47,7 +48,7 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     prompts = json.load(open(os.path.join(here, args.prompts)))
     vec = np.load(os.path.join(here, args.vector))
-    rands = {f"trig_rand_s{s+1}": np.random.RandomState(1000 + s).randn(vec.shape[0]).astype(np.float32) for s in range(2)}
+    rands = {f"{args.tag}_rand_s{s+1}": np.random.RandomState(1000 + s).randn(vec.shape[0]).astype(np.float32) for s in range(2)}
 
     out_path = os.path.join(here, args.output)
     by_id = {}
@@ -132,7 +133,7 @@ def main():
             if hook: hook.detach()
         return tok.decode(out2[0][in_len:], skip_special_tokens=True), meta
 
-    conds = ["baseline", "alwayson_a16", "trig_vIH", "trig_rand_s1", "trig_rand_s2"]
+    conds = ["baseline", "alwayson_a16", f"{args.tag}_vIH", f"{args.tag}_rand_s1", f"{args.tag}_rand_s2"]
     for p in prompts:
         msgs = [{"role": "user", "content": p["prompt"]}]
         rec = by_id.setdefault(p["id"], {})
@@ -144,7 +145,7 @@ def main():
                 rec[c] = delivered(gen_plain(msgs, args.max_new))
             elif c == "alwayson_a16":
                 rec[c] = delivered(gen_plain(msgs, args.max_new, v=vec, alpha=args.alpha))
-            elif c == "trig_vIH":
+            elif c == f"{args.tag}_vIH":
                 txt, meta = gen_triggered(msgs, args.max_new, vec)
                 rec[c] = delivered(txt); rec[c + "_meta"] = meta
             else:
