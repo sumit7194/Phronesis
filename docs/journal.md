@@ -2518,3 +2518,14 @@ Process: vetted benchmarks over clichés; hand-read every generation (no scorer)
 - **Infra.** The L4 VM is fully gone (low balance): data rescued via helper-VM disk surgery + chunked scp (sha256-verified, 1056 files), then instance/disk/firewalls deleted and billing closed. All future compute is local MPS until further notice.
 
 Process: same discipline — archived the 1280 generations before re-running (never destroy data), graded ends-of-text by hand, reported the narrowing honestly (5/10 vs 3/10 is a modest, domain-specific edge, not a headline).
+
+## Day 62 (2026-06-11) — Triggered steering lands overnight (F163): equal benefit, zero degenerations; the watchdog + caffeinate combo finally beat the power gremlins
+
+The option-C run (80 cells) completed at 00:47 under a caffeinate-wrapped self-healing watchdog — the first full overnight run to survive the small-town power situation. Hand-graded all 80 cells in the morning.
+
+- **Headline (F163):** triggered-vIH 6/16 = always-on 6/16 > baseline 5/16 > triggered-random 3/16 ×2. The trigger fired on ALL 16 items (T=768 is below qwen3-4b's normal thinking length on hard items), so selectivity failed — but **late onset eliminated all three of always-on's degenerations** while keeping its hit-rate. The safety comes from protecting the early trajectory, not from firing rarely. Direction-specificity held (randoms 3 vs 6).
+- **The run's gem:** novel conjunction item (pb-15). Famous Linda → everyone correct (memorized). Novel Mark-the-chess-player → the model's prior IS the fallacy, baseline waffles, and both steered arms confidently commit the wrong answer. Cleanest demonstration yet that the commit knob amplifies whatever inclination exists.
+- **New phenomenon: format-waffling.** On novel Bayes items the model reaches the right number then ruminates for thousands of tokens about *presentation* ("decimal or fraction?") — partly induced by the battery's own "Give a number." phrasing. Rumination ≠ uncertainty about content; sometimes it's indecision about form. Steering doesn't cut through it.
+- Process: pre-registered predictions (in the launch commit) graded explicitly — 1 partial, 2 held, 3 failed-with-an-unexpected-replacement. Reported the thin margins plainly.
+
+Next decision pending with the user: VM procurement (Mac needed for his own tests soon); candidate follow-ups = higher/content-based trigger threshold, or pivot to the evidence-gate harness with triggered-steering as a documented tool.
