@@ -1,3 +1,13 @@
+# Secrets / credentials (public repo — never commit these)
+.env
+.env.*
+*.pem
+*.key
+*-key.json
+service-account*.json
+.netrc
+.hf_token
+
 # macOS junk
 .DS_Store
 
