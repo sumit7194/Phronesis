@@ -1,0 +1,26 @@
+{
+  "1194": {
+    "desc": "don't know",
+    "norm": 0.9999999403953552
+  },
+  "57057": {
+    "desc": "I don't know but",
+    "norm": 0.9999999403953552
+  },
+  "20893": {
+    "desc": "I don't know/sure why",
+    "norm": 0.9999998807907104
+  },
+  "52108": {
+    "desc": "don't know why/how/where",
+    "norm": 0.9999999403953552
+  },
+  "17451": {
+    "desc": "uncertainty or knowledge",
+    "norm": 0.9999999403953552
+  },
+  "combined_tier1_unit": {
+    "desc": "mean of unit Tier-1 Qwen3-1.7B Layer 14 decoders",
+    "n_features": 5
+  }
+}
