@@ -72,37 +72,53 @@ def main():
 
     out_path = os.path.join(here, args.output)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    results = []
-    for i, p in enumerate(prompts):
+    by_id = {}
+    if os.path.exists(out_path):
+        try:
+            for r in json.load(open(out_path)):
+                by_id[r["id"]] = r
+            if by_id:
+                print(f"[resume] {len(by_id)} items present; filling only missing conditions", flush=True)
+        except Exception:
+            by_id = {}
+
+    def save():
+        json.dump(list(by_id.values()), open(out_path, "w"), indent=1)
+
+    # condition list: baseline + each vIH alpha + N random-seed controls at the first alpha
+    conds = [("baseline", None, None)]
+    if vec is not None:
+        for a in alphas:
+            conds.append((f"steered_a{int(a)}", vec, a))
+        a0 = alphas[0]
+        for s in range(args.random):
+            rv = np.random.RandomState(1000 + s).randn(vec.shape[0]).astype(np.float32)
+            conds.append((f"random_a{int(a0)}_s{s+1}", rv, a0))
+
+    for p in prompts:
         mnt = args.max_new or p.get("max_new_tokens", 700)
         msgs = [{"role": "user", "content": p["prompt"]}]
-        t = time.time()
-        rec = {k: p[k] for k in ("id", "category", "prompt", "expected_behavior", "truth", "myth", "source") if k in p}
-        rec["baseline"] = delivered(gen(msgs, mnt), cfg["thinking"])
-        for a in alphas:
-            if vec is None:
-                continue
-            hook = AdditiveSteeringHook(layer_idx=args.layer, virtue_vector=vec, alpha=a)
-            hook.attach(model, layer_accessor=cfg["layer_accessor"])
-            try:
-                rec[f"steered_a{int(a)}"] = delivered(gen(msgs, mnt), cfg["thinking"])
-            finally:
-                hook.detach()
-        # matched-norm random-vector controls at the first alpha (the hook unit-normalizes, so norm is matched by construction)
-        if args.random and vec is not None:
-            a0 = alphas[0]
-            for s in range(args.random):
-                rv = np.random.RandomState(1000 + s).randn(vec.shape[0]).astype(np.float32)
-                hook = AdditiveSteeringHook(layer_idx=args.layer, virtue_vector=rv, alpha=a0)
+        rec = by_id.get(p["id"])
+        if rec is None:
+            rec = {k: p[k] for k in ("id", "category", "prompt", "expected_behavior", "truth", "myth", "source") if k in p}
+            by_id[p["id"]] = rec
+        for name, v, a in conds:
+            if name in rec:
+                continue  # already generated (resume at the generation level)
+            t = time.time()
+            if v is None:
+                txt = gen(msgs, mnt)
+            else:
+                hook = AdditiveSteeringHook(layer_idx=args.layer, virtue_vector=v, alpha=a)
                 hook.attach(model, layer_accessor=cfg["layer_accessor"])
                 try:
-                    rec[f"random_a{int(a0)}_s{s+1}"] = delivered(gen(msgs, mnt), cfg["thinking"])
+                    txt = gen(msgs, mnt)
                 finally:
                     hook.detach()
-        results.append(rec)
-        json.dump(results, open(out_path, "w"), indent=1)  # checkpoint
-        print(f"[{i+1}/{len(prompts)}] {p['id']:28s} {time.time()-t:.0f}s", flush=True)
-    print(f"[done] {len(results)} prompts -> {out_path}")
+            rec[name] = delivered(txt, cfg["thinking"])
+            save()  # checkpoint after EVERY generation — survives frequent outages
+            print(f"  {p['id']:28s} {name:18s} {time.time()-t:.0f}s", flush=True)
+    print(f"[done] {len(by_id)} items -> {out_path}")
 
 if __name__ == "__main__":
     main()
