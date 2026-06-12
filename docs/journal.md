@@ -2537,3 +2537,12 @@ Raised the trigger to 1200 to chase selectivity. Got it — **perfect ruminator/
 The user's framing this morning — "lets hope this doesn't dissolve like the others, but we stay true to the scientific method even if we keep getting failures" — aged perfectly: prediction 1 held, 2 and 3 dissolved, and for once the dissolution came with its mechanism attached (truncated mid-rescue cells are directly visible in the data). That's a more useful negative than most positives.
 
 Process: pre-registered all three predictions before launch (chat record), graded all 48 cells by hand, verified skipped-item identity programmatically, reported the random-beats-vIH cell without flinching.
+
+## Day 63 (2026-06-12) — Ghost-state cleanup: a parallel session's undocumented work, snapshotted and triaged
+
+A parallel Claude session (user-driven, 06-11→12) did real work but committed and documented nothing. Reconstructed from artifacts and triaged:
+- **Kept (committed):** Qwen3-1.7B L14 SAE "functional uncertainty" feature exports — five auto-interp don't-know/uncertainty features (1194, 57057, 20893, 52108, 17451) as unit decoder rows + combined tier-1 vector + manifest, mirroring the F157 Tier-1 methodology on the new public Neuronpedia SAE. This is step 1 of the weekend SAE cross-verification plan, done.
+- **Snapshotted, not kept on main** (`snapshot/other-session-20260612`): a trigger×α overnight sweep harness (configs failed/died ~02:42, silent-kill signature), large dashboard extensions, modified extract_v2.py, unexplained re-extraction over the tracked qwen3-4b EG/RT vector files (provenance risk — restored to git truth), and `eg_v2_score=` regex auto-score rows in benchmark_probe (against the no-auto-scorer protocol — quarantined with the snapshot).
+- User doesn't recall the session's intent → conservative default applied: preserve everything verbatim on a branch, restore main to git truth, re-add only what could be independently verified (manifest + unit norms checked). Also recovered my own uncommitted run_local_probe improvements that the restore swept up.
+
+Lesson for multi-session work: parallel sessions should leave at least a one-line journal note or commit — undocumented working-tree state ages into archaeology within a day.
