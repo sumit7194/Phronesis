@@ -17,14 +17,16 @@ import numpy as np, torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from datasets import load_dataset
 
-HF_ID = "Qwen/Qwen3-4B"
-LAYERS = [4, 8, 12, 16, 20, 24, 28, 32, 36]
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="first N questions (0 = all 817)")
+    ap.add_argument("--model", default="Qwen/Qwen3-4B")
+    ap.add_argument("--layers", default="4,8,12,16,20,24,28,32,36")
+    ap.add_argument("--out-prefix", default="B", help="writes acts{prefix}.npy + meta{prefix}.json")
     ap.add_argument("--output-dir", default="results/legibility")
     args = ap.parse_args()
+    HF_ID = args.model
+    LAYERS = [int(x) for x in args.layers.split(",")]
     here = os.path.dirname(os.path.abspath(__file__))
     out_dir = os.path.join(here, args.output_dir); os.makedirs(out_dir, exist_ok=True)
 
@@ -79,11 +81,12 @@ def main():
                 acc = sum(it["correct"] for it in items) / len(items)
                 print(f"  {j+1}/{len(rows)}  acc={acc:.3f}  ({(time.time()-t0)/(j+1):.2f}s/q)", flush=True)
 
-    np.save(os.path.join(out_dir, "actsB.npy"), acts)
+    px = args.out_prefix
+    np.save(os.path.join(out_dir, f"acts{px}.npy"), acts)
     json.dump({"layers": LAYERS, "hf_id": HF_ID, "task": "truthfulqa_mc1", "items": items},
-              open(os.path.join(out_dir, "metaB.json"), "w"), indent=1)
+              open(os.path.join(out_dir, f"meta{px}.json"), "w"), indent=1)
     nc = sum(it["correct"] for it in items)
-    print(f"[done] {len(items)} q, correct={nc} ({nc/len(items):.1%}) -> actsB.npy", flush=True)
+    print(f"[done] {len(items)} q, correct={nc} ({nc/len(items):.1%}) -> acts{px}.npy", flush=True)
 
 if __name__ == "__main__":
     main()

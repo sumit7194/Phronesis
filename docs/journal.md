@@ -2564,3 +2564,13 @@ Ran B same day. Two honest course-corrections worth recording:
 - **Pivoted to TruthfulQA MC1** (cached, exact labels, no confabulation risk, and a better F121 fit — misconceptions ARE false premises). 817 q, MC1 log-prob scoring, model acc 28.4% (balanced 232/585). Labels hand-verified: picks truth on easy items, falls for the classic myths on the rest.
 - **Result:** linear AUC ≈ 0.65, nonlinear ≈ 0.65, floor 0.50. The "am-I-about-to-be-right" signal is **partially linearly legible and not scrambled** — neither pre-registered extreme. Combined with A: no scramble signature anywhere in this model.
 - **The payoff:** the boundary is readable as a linear direction yet abstention still won't install by a linear push (F121). So F121 is **legibility ≠ steerability** — a controllability/causal-lever problem, not an illegibility one. Lands right on top of F142 (discrimination ≠ steering). The two-experiment arc (A+B) turned an imported physics-toy law into a clean statement about *our* negatives: the Legibility Law's scrambled regime doesn't occur in Qwen3-4B, and F121 was never about illegibility.
+
+## Day 64, even later (2026-06-16) — Experiment C (F167): interpretable ≠ task-predictive; closed the A+B+C arc
+
+Did C the same evening (downloaded Qwen3-1.7B; the committed SAE uncertainty decoders are 1.7B-specific). Two findings:
+- **Replication:** supervised probe of the correctness boundary on 1.7B = AUC 0.635, basically B's 0.65 on 4B. Partial-legible, no-scramble holds across two models now.
+- **The actual result:** the auto-interp "I don't know / uncertainty" SAE features (the ones we committed from Neuronpedia) **do not read the boundary** — combined 0.531, fitted-5 0.535, all at floor. The model's real "am-I-wrong" signal is distributed, NOT in the human-labeled uncertainty features. *Interpretable ≠ task-predictive.* A feature that reads as "don't know" semantically isn't the feature carrying the calibration signal.
+- Honored the pre-registered gate: Part 2 (steer the uncertainty direction) not run, because the direction doesn't read the boundary in the first place — a legible-but-not-steerable test is moot for it.
+- This is a real caution for our own weekend plan: an SAE-feature-gated trigger on feat_1194 "don't know" would not gate on actual error risk. Good to know *before* building it.
+
+The arc (A+B+C) is a clean, self-contained mini-paper's worth of negative/refinement: an imported toy "law" doesn't transfer (no scramble regime in LLMs), the knowledge boundary is partially legible across models but not scrambled, and our F121 abstention failure is controllability — and even the obvious interpretable feature isn't the right lever. Honest, pre-registered, triangulated. Exactly the standard we hold.
