@@ -45,3 +45,7 @@ mvp/results/phase2a_multivirtue_dpo/adapter/
 # Large historical archives
 mvp/results_archive.tar.gz
 mvp/sae_neuronpedia_data/
+
+# Legibility Experiment A — raw activation tensor (74MB, regenerable from legibility_extract.py)
+mvp/results/legibility/actsA.npy
+mvp/results/legibility/extract.log

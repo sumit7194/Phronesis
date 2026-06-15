@@ -1,0 +1,78 @@
+{
+  "_note": "Experiment A entity tables. atomic_number values are EXACT. birth_year are well-known (verify if doubtful). population is in MILLIONS and APPROXIMATE (2020s, round figures) — used on a log10 scale, label noise tolerated; population is supportive-only per the prereg.",
+  "atomic_number": {
+    "transform": "identity",
+    "templates_parametric": [
+      "The atomic number of {E} is",
+      "{E} has atomic number",
+      "On the periodic table, the element {E} has atomic number"
+    ],
+    "templates_incontext": [
+      "{N} is an element with atomic number {V}. The atomic number of {N} is",
+      "Consider a fictional element called {N}, whose atomic number is {V}. {N} has atomic number",
+      "A chemistry textbook states: \"{N} has atomic number {V}.\" Therefore the atomic number of {N} is"
+    ],
+    "entities": {
+      "Hydrogen": 1, "Helium": 2, "Lithium": 3, "Beryllium": 4, "Boron": 5,
+      "Carbon": 6, "Nitrogen": 7, "Oxygen": 8, "Fluorine": 9, "Neon": 10,
+      "Sodium": 11, "Magnesium": 12, "Aluminium": 13, "Silicon": 14, "Phosphorus": 15,
+      "Sulfur": 16, "Chlorine": 17, "Argon": 18, "Potassium": 19, "Calcium": 20,
+      "Scandium": 21, "Titanium": 22, "Vanadium": 23, "Chromium": 24, "Manganese": 25,
+      "Iron": 26, "Cobalt": 27, "Nickel": 28, "Copper": 29, "Zinc": 30,
+      "Gallium": 31, "Germanium": 32, "Arsenic": 33, "Selenium": 34, "Bromine": 35,
+      "Krypton": 36, "Rubidium": 37, "Strontium": 38, "Yttrium": 39, "Zirconium": 40,
+      "Niobium": 41, "Molybdenum": 42, "Technetium": 43, "Ruthenium": 44, "Rhodium": 45,
+      "Palladium": 46, "Silver": 47, "Cadmium": 48, "Indium": 49, "Tin": 50,
+      "Antimony": 51, "Tellurium": 52, "Iodine": 53, "Xenon": 54
+    }
+  },
+  "birth_year": {
+    "transform": "identity",
+    "templates_parametric": [
+      "{E} was born in the year",
+      "The year of birth of {E} is",
+      "{E} was born in"
+    ],
+    "templates_incontext": [
+      "{N} was a person born in the year {V}. {N} was born in the year",
+      "Records show that {N} was born in {V}. The year of birth of {N} is",
+      "In this account, {N} was born in the year {V}. Therefore {N} was born in"
+    ],
+    "entities": {
+      "Albert Einstein": 1879, "Isaac Newton": 1643, "Charles Darwin": 1809, "Galileo Galilei": 1564,
+      "Marie Curie": 1867, "Nikola Tesla": 1856, "Thomas Edison": 1847, "Abraham Lincoln": 1809,
+      "Napoleon Bonaparte": 1769, "William Shakespeare": 1564, "Ludwig van Beethoven": 1770,
+      "Wolfgang Amadeus Mozart": 1756, "Johann Sebastian Bach": 1685, "Leonardo da Vinci": 1452,
+      "Michelangelo": 1475, "George Washington": 1732, "Thomas Jefferson": 1743, "Mahatma Gandhi": 1869,
+      "Winston Churchill": 1874, "Franklin D. Roosevelt": 1882, "John F. Kennedy": 1917,
+      "Joseph Stalin": 1878, "Vladimir Lenin": 1870, "Karl Marx": 1818, "Sigmund Freud": 1856,
+      "Pablo Picasso": 1881, "Vincent van Gogh": 1853, "Nelson Mandela": 1918, "Carl Friedrich Gauss": 1777,
+      "Leonhard Euler": 1707, "Niels Bohr": 1885, "Werner Heisenberg": 1901, "Erwin Schrodinger": 1887,
+      "James Clerk Maxwell": 1831, "Michael Faraday": 1791, "Louis Pasteur": 1822, "Stephen Hawking": 1942,
+      "Alan Turing": 1912, "Richard Feynman": 1918, "Charles Dickens": 1812
+    }
+  },
+  "population": {
+    "transform": "log10",
+    "templates_parametric": [
+      "The population of {E}, in millions, is approximately",
+      "In millions of people, {E} has a population of about",
+      "The number of people living in {E}, in millions, is roughly"
+    ],
+    "templates_incontext": [
+      "{N} is a country with a population of {V} million. The population of {N}, in millions, is approximately",
+      "A report states that {N} has {V} million inhabitants. In millions of people, {N} has a population of about",
+      "In this scenario, {N}'s population is {V} million. The number of people living in {N}, in millions, is roughly"
+    ],
+    "entities": {
+      "China": 1410, "India": 1410, "the United States": 335, "Indonesia": 275, "Pakistan": 240,
+      "Nigeria": 220, "Brazil": 215, "Bangladesh": 170, "Russia": 144, "Mexico": 130,
+      "Japan": 125, "the Philippines": 115, "Egypt": 110, "Vietnam": 98, "Iran": 88,
+      "Turkey": 85, "Germany": 83, "France": 68, "the United Kingdom": 67, "Italy": 59,
+      "South Korea": 52, "Spain": 47, "Argentina": 46, "Canada": 39, "Poland": 38,
+      "Ukraine": 38, "Saudi Arabia": 36, "Australia": 26, "Netherlands": 17, "Belgium": 12,
+      "Greece": 10, "Portugal": 10, "Sweden": 10, "Switzerland": 9, "Singapore": 6,
+      "Norway": 5.5, "Ireland": 5, "New Zealand": 5, "Luxembourg": 0.64, "Iceland": 0.37
+    }
+  }
+}
