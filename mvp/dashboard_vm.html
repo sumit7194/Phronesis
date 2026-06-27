@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Qwen3-32B thinking-recall</title>
+<style>
+ body{font-family:-apple-system,system-ui,sans-serif;background:#0e0f13;color:#e6e6e6;margin:0;padding:28px;}
+ h1{font-size:18px;font-weight:600;margin:0 0 4px} .sub{color:#8a8f98;font-size:13px;margin-bottom:20px}
+ .bar{height:26px;background:#1c1e26;border-radius:7px;overflow:hidden;margin:14px 0}
+ .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#22d3ee);transition:width .4s;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:12px;font-weight:600;color:#04111f}
+ .cards{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}
+ .card{background:#161821;border:1px solid #242736;border-radius:9px;padding:12px 16px;min-width:120px}
+ .card .k{color:#8a8f98;font-size:11px;text-transform:uppercase;letter-spacing:.04em} .card .v{font-size:22px;font-weight:600;margin-top:3px}
+ table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12.5px}
+ th,td{text-align:left;padding:7px 9px;border-bottom:1px solid #21232e;vertical-align:top}
+ th{color:#8a8f98;font-weight:500} .ok{color:#34d399} .no{color:#f87171}
+ .cmp{margin-top:18px;color:#8a8f98;font-size:13px}
+</style></head>
+<body>
+ <h1>Qwen3-32B · EntityQuestions thinking-recall <span id="status" style="color:#22d3ee"></span></h1>
+ <div class="sub">scale test of F169 — 200 obscure items, thinking vs no-thinking · auto-prefilter only (hand-score later)</div>
+ <div class="bar"><div class="fill" id="fill" style="width:0%">0%</div></div>
+ <div class="cards">
+   <div class="card"><div class="k">done</div><div class="v" id="done">–</div></div>
+   <div class="card"><div class="k">auto no-think</div><div class="v" id="ano">–</div></div>
+   <div class="card"><div class="k">auto think</div><div class="v" id="ath">–</div></div>
+   <div class="card"><div class="k">sec / item</div><div class="v" id="spi">–</div></div>
+   <div class="card"><div class="k">eta</div><div class="v" id="eta">–</div></div>
+ </div>
+ <div class="cmp">4B baseline (F169, hand-scored): no-think <b>22%</b> · think <b>24%</b> · Δ≈0 (null). Watching whether 32B breaks that.</div>
+ <h3 style="margin-top:22px;font-size:14px">recent items</h3>
+ <table id="tbl"><thead><tr><th>pop</th><th>question</th><th>gold</th><th>no-think</th><th>think</th></tr></thead><tbody></tbody></table>
+<script>
+async function tick(){
+ try{
+  const s=await(await fetch('status.json?_='+Date.now())).json();
+  const pct=Math.round(100*s.done/s.total);
+  document.getElementById('fill').style.width=pct+'%';
+  document.getElementById('fill').textContent=pct+'%';
+  document.getElementById('done').textContent=s.done+' / '+s.total;
+  document.getElementById('ano').textContent=(s.auto_nothink*100).toFixed(1)+'%';
+  document.getElementById('ath').textContent=(s.auto_think*100).toFixed(1)+'%';
+  document.getElementById('spi').textContent=s.s_per_item+'s';
+  document.getElementById('eta').textContent=s.eta_h+'h';
+  document.getElementById('status').textContent=s.done>=s.total?'· DONE ✓':'· running';
+  const tb=document.querySelector('#tbl tbody');tb.innerHTML='';
+  (s.recent||[]).slice().reverse().forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${r.pop}</td><td>${r.q}</td><td>${r.gold}</td><td>${r.nothink}</td><td>${r.think}</td>`;
+    tb.appendChild(tr);
+  });
+ }catch(e){document.getElementById('status').textContent='· waiting for status.json…';}
+}
+tick();setInterval(tick,5000);
+</script>
+</body></html>

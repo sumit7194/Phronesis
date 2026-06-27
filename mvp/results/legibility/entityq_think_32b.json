@@ -1,0 +1,3596 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "rows": [
+  {
+   "entity": "Alfonso de Nigris",
+   "q": "Where was Alfonso de Nigris born?",
+   "pop": 0.0,
+   "gold_raw": "Monterrey",
+   "gold": [
+    "monterrey",
+    "monterrey",
+    "nuevo leon",
+    "mexico"
+   ],
+   "nothink": "Guadalajara",
+   "think": "Mexico City",
+   "think_trace": "<think>\nOkay, I need to find out where Alfonso de Nigris was born. Let me start by recalling what I know about him. Alfonso de Nigris is a Mexican footballer, right? He plays as a forward. I think he's been part of some Mexican clubs. Now, the question is his birthplace.\n\nFirst, I should check relia",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Li Yim Lam",
+   "q": "Where was Li Yim Lam born?",
+   "pop": 2.0,
+   "gold_raw": "Hong Kong",
+   "gold": [
+    "hong kong",
+    "hong kong",
+    "china"
+   ],
+   "nothink": "Li Yim Lam was born in Macau.",
+   "think": "Guangdong",
+   "think_trace": "<think>\nOkay, I need to find out where Li Yim Lam was born. First, I should check if there's any notable person with that name. Maybe there's a famous individual with that name, perhaps in sports or another field. Let me think... Li Yim Lam sounds like a Chinese name. Maybe a martial artist or athle",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Shuran, Chaharmahal and Bakhtiari",
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "pop": 3.0,
+   "gold_raw": "Dinaran Rural District",
+   "gold": [
+    "dinaran rural district",
+    "dinaran rural district",
+    "chaharmahal and bakhtiari province",
+    "iran"
+   ],
+   "nothink": "Iran",
+   "think": "Iran",
+   "think_trace": "<think>\nOkay, I need to figure out where Shuran, Chaharmahal and Bakhtiari is located. Let me start by breaking down the names. \"Chaharmahal and Bakhtiari\" sounds familiar. I think Chaharmahal is a province in Iran. Wait, Chaharmahal and Bakhtiari Province is one of the provinces in Iran, right? So ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Deh Bagh, Kuzaran",
+   "q": "Where is Deh Bagh, Kuzaran located?",
+   "pop": 4.0,
+   "gold_raw": "Sanjabi Rural District",
+   "gold": [
+    "sanjabi rural district",
+    "sanjabi rural district",
+    "kermanshah province",
+    "iran"
+   ],
+   "nothink": "Iran",
+   "think": "Kerman Province, Iran",
+   "think_trace": "<think>\nOkay, I need to figure out where Deh Bagh, Kuzaran is located. Let me start by breaking down the name. \"Deh Bagh\" might be a village or a district. Kuzaran could be a province or a region. I'm not familiar with this exact location, so I'll have to do some research.\n\nFirst, I'll check if Kuza",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Ba\u015f Diz\u0259",
+   "q": "Where is Ba\u015f Diz\u0259 located?",
+   "pop": 5.0,
+   "gold_raw": "Ordubad District",
+   "gold": [
+    "ordubad district",
+    "ordubad district",
+    "nakhchivan autonomous republic",
+    "azerbaijan"
+   ],
+   "nothink": "Azerbaijan",
+   "think": "Diyarbak\u0131r Province, Turkey.",
+   "think_trace": "<think>\nOkay, I need to figure out where Ba\u015f Diz\u0259 is located. Let me start by recalling what I know. The name sounds like it could be a place in Turkey or another country with Turkish-speaking regions. The suffix \"-diz\u0259\" might be a local term or part of a larger region. I'm not immediately familiar ",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Nova Scotia Route 276",
+   "q": "Where is Nova Scotia Route 276 located?",
+   "pop": 6.0,
+   "gold_raw": "Nova Scotia",
+   "gold": [
+    "nova scotia",
+    "nova scotia",
+    "canada"
+   ],
+   "nothink": "Nova Scotia",
+   "think": "New Germany",
+   "think_trace": "<think>\nOkay, I need to figure out where Nova Scotia Route 276 is located. Let me start by recalling what I know about Nova Scotia's highway system. Nova Scotia is a province in Canada, so Route 276 would be a provincial highway there. I remember that in Canada, provincial highways are usually numbe",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Zeyarat-e Pain",
+   "q": "Where is Zeyarat-e Pain located?",
+   "pop": 7.0,
+   "gold_raw": "Jamabrud Rural District",
+   "gold": [
+    "jamabrud rural district",
+    "jamabrud rural district",
+    "tehran province",
+    "iran"
+   ],
+   "nothink": "Iran",
+   "think": "Zeyarat-e Pain is located in **Iran**.",
+   "think_trace": "<think>\nOkay, I need to figure out where Zeyarat-e Pain is located. Let me start by recalling what I know. The name sounds Persian or maybe from the Middle East. \"Zeyarat\" might be related to a place of visitation or pilgrimage, which is common in Islamic contexts. The suffix \"-e Pain\" could mean \"l",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "\u017begocino",
+   "q": "Where is \u017begocino located?",
+   "pop": 8.0,
+   "gold_raw": "Gmina Malechowo",
+   "gold": [
+    "gmina malechowo",
+    "gmina malechowo",
+    "s awno county",
+    "west pomeranian voivodeship",
+    "poland"
+   ],
+   "nothink": "Poland",
+   "think": "Poland",
+   "think_trace": "<think>\nOkay, I need to figure out where \u017begocino is located. Let me start by recalling what I know. The name sounds Polish, so maybe it's a place in Poland. I'll check if it's a city, town, or village.\n\nFirst, I'll try to remember if I've heard of \u017begocino before. Not sure. Maybe it's a smaller tow",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Murder in Grub Street",
+   "q": "Who is the author of Murder in Grub Street?",
+   "pop": 9.0,
+   "gold_raw": "Bruce Alexander Cook",
+   "gold": [
+    "bruce alexander cook",
+    "bruce alexander cook",
+    "bruce cook",
+    "an american writer"
+   ],
+   "nothink": "Anthony Horowitz",
+   "think": "Edmund Crispin",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Murder in Grub Street\" is. Let me start by recalling what I know. The title sounds familiar, maybe a classic mystery novel? Grub Street might refer to a real place, perhaps in London. I remember that Grub Street was historically associated with wri",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Elizaveta Axenova",
+   "q": "Where was Elizaveta Axenova born?",
+   "pop": 10.0,
+   "gold_raw": "Krasnoyarsk",
+   "gold": [
+    "krasnoyarsk",
+    "krasnoyarsk",
+    "krasnoyarsk krai",
+    "russia"
+   ],
+   "nothink": "Minsk",
+   "think": "Krasnoyarsk",
+   "think_trace": "<think>\nOkay, I need to find out where Elizaveta Axenova was born. Let me start by recalling if I know anything about her. Hmm, not sure. Maybe she's a public figure or an athlete? Let me think. The name sounds Eastern European. Axenova could be a Russian or Ukrainian surname.\n\nFirst, I should check",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Jock Morgan",
+   "q": "Where was Jock Morgan born?",
+   "pop": 11.0,
+   "gold_raw": "Penicuik",
+   "gold": [
+    "penicuik",
+    "penicuik",
+    "midlothian",
+    "scotland",
+    "united kingdom"
+   ],
+   "nothink": "Jock Morgan was born in Scotland.",
+   "think": "Wellington",
+   "think_trace": "<think>\nOkay, I need to find out where Jock Morgan was born. Let me start by recalling who Jock Morgan is. I think he's a New Zealand rugby player, maybe a former All Black. Let me check that first.\n\nFirst, I'll search for Jock Morgan's birthplace. I remember that some sources might mention his birt",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Gyula Sz\u00e9ch\u00e9nyi",
+   "q": "Where did Gyula Sz\u00e9ch\u00e9nyi die?",
+   "pop": 12.0,
+   "gold_raw": "Budapest",
+   "gold": [
+    "budapest",
+    "budapest",
+    "hungary",
+    "europe"
+   ],
+   "nothink": "Vienna",
+   "think": "Sz\u00e9ch\u00e9ny",
+   "think_trace": "<think>\nOkay, I need to find out where Gyula Sz\u00e9ch\u00e9nyi died. Let me start by recalling who he was. Gyula Sz\u00e9ch\u00e9nyi was a Hungarian nobleman and politician, part of the prominent Sz\u00e9ch\u00e9nyi family. I remember that some members of his family are notable, like his wife, Ilona Zr\u00ednyi, who was a poet.\n\nFi",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "April 2010 Kohat bombings",
+   "q": "Where is April 2010 Kohat bombings located?",
+   "pop": 12.0,
+   "gold_raw": "Kohat",
+   "gold": [
+    "kohat",
+    "kohat",
+    "khyber pakhtunkhwa",
+    "pakistan"
+   ],
+   "nothink": "Kohat, Pakistan",
+   "think": "Kohat, Pakistan.",
+   "think_trace": "<think>\nOkay, the user is asking about the location of the April 2010 Kohat bombings. Let me recall what I know about this event. Kohat is a city in Pakistan, right? I think it's in the Khyber Pakhtunkhwa province. The bombings happened there in April 2010. I need to confirm the exact city name. Som",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Cultural Exchanges festival",
+   "q": "Where is Cultural Exchanges festival located?",
+   "pop": 13.0,
+   "gold_raw": "De Montfort University",
+   "gold": [
+    "de montfort university",
+    "de montfort university",
+    "leicester",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "Cultural Exchanges Festival is located in **New York City**.",
+   "think": "Edinburgh",
+   "think_trace": "<think>\nOkay, the user is asking where the Cultural Exchanges festival is located. They want just the name briefly. Let me think.\n\nFirst, I need to recall if there's a specific festival called \"Cultural Exchanges.\" Wait, maybe they're referring to a known event. I remember there's a festival named \"",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Florence Township",
+   "q": "Where is Florence Township located?",
+   "pop": 14.0,
+   "gold_raw": "Burlington County",
+   "gold": [
+    "burlington county",
+    "burlington county",
+    "new jersey",
+    "united states"
+   ],
+   "nothink": "Michigan",
+   "think": "Michigan",
+   "think_trace": "<think>\nOkay, I need to figure out where Florence Township is located. Let me start by recalling what I know about townships in the United States. Townships are usually administrative divisions within counties, so Florence Township could be in any state that uses townships.\n\nFirst, I'll think of sta",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Maccabi Haifa",
+   "q": "Where is the headquarter of Maccabi Haifa?",
+   "pop": 15.0,
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "nothink": "Haifa, Israel.",
+   "think": "Haifa",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Maccabi Haifa is located. Let me start by recalling what I know about Maccabi Haifa. It's a well-known sports club in Israel, right? They have teams in various sports like football (soccer), basketball, and others. The name \"Haifa\" suggests ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Nathan Rocyn-Jones",
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "pop": 16.0,
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "University of Oxford",
+   "think": "University of Wales, Aberystwyth",
+   "think_trace": "<think>\nOkay, I need to find out where Nathan Rocyn-Jones was educated. Let me start by recalling if I know anything about him. Hmm, Nathan Rocyn-Jones... sounds familiar, maybe a public figure or someone in the media? Wait, could he be related to the UK's education system or a notable person in Wal",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Walne",
+   "q": "Where is Walne located?",
+   "pop": 17.0,
+   "gold_raw": "Gmina Nowinka",
+   "gold": [
+    "gmina nowinka",
+    "gmina nowinka",
+    "podlaskie voivodeship",
+    "poland"
+   ],
+   "nothink": "Walne is located in Poland.",
+   "think": "Poland",
+   "think_trace": "<think>\nOkay, I need to figure out where Walne is located. Let me start by recalling if I know any place named Walne. Hmm, not immediately coming to mind. Maybe it's a small town or a village? Let me think about possible countries or regions.\n\nFirst, I'll check if Walne is a real place. Sometimes na",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Gilly Campbell",
+   "q": "Where did Gilly Campbell die?",
+   "pop": 18.0,
+   "gold_raw": "Los Angeles",
+   "gold": [
+    "los angeles",
+    "los angeles",
+    "california",
+    "united states of america"
+   ],
+   "nothink": "Gilly Campbell died in **California**.",
+   "think": "London",
+   "think_trace": "<think>\nOkay, I need to find out where Gilly Campbell died. Let me start by recalling who Gilly Campbell is. I think she was a British actress, maybe from the 1950s or 60s. I remember she was in some TV shows or films. Now, the question is about her death location.\n\nFirst, I should verify her full n",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Thomas J. Van Alstyne",
+   "q": "Where was Thomas J. Van Alstyne educated?",
+   "pop": 19.0,
+   "gold_raw": "Hamilton College",
+   "gold": [
+    "hamilton college",
+    "hamilton college",
+    "a private college",
+    "a college"
+   ],
+   "nothink": "Yale University",
+   "think": "Union College",
+   "think_trace": "<think>\nOkay, I need to find out where Thomas J. Van Alstyne was educated. Let me start by recalling any information I have about him. I'm not sure who he is off the top of my head, so maybe he's a public figure or someone notable in a specific field.\n\nFirst, I'll try to remember if I've heard his n",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Hofkirchen im M\u00fchlkreis",
+   "q": "Where is Hofkirchen im M\u00fchlkreis located?",
+   "pop": 20.0,
+   "gold_raw": "Rohrbach District",
+   "gold": [
+    "rohrbach district",
+    "rohrbach district",
+    "upper austria",
+    "austria"
+   ],
+   "nothink": "Austria",
+   "think": "Upper Austria, Austria",
+   "think_trace": "<think>\nOkay, I need to figure out where Hofkirchen im M\u00fchlkreis is located. Let me start by breaking down the name. The \"im M\u00fchlkreis\" part probably refers to the M\u00fchlkreis region. I know that M\u00fchlkreis is a district in Austria, specifically in the state of Upper Austria. The term \"Hofkirchen\" migh",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Askerhallen",
+   "q": "Where is Askerhallen located?",
+   "pop": 21.0,
+   "gold_raw": "Asker",
+   "gold": [
+    "asker",
+    "asker",
+    "akershus",
+    "norway"
+   ],
+   "nothink": "Asker, Norway.",
+   "think": "Asker",
+   "think_trace": "<think>\nOkay, I need to figure out where Askerhallen is located. Let me start by recalling what I know. Askerhallen sounds like a venue name, maybe a sports hall or a cultural center. The name includes \"Asker,\" which might be a place. I think there's a town called Asker in Norway. Let me check that.",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Ambrosini SAI.2",
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "pop": 22.0,
+   "gold_raw": "SAI Ambrosini",
+   "gold": [
+    "sai ambrosini",
+    "sai ambrosini",
+    "italian aircraft manufacturer",
+    "italian company"
+   ],
+   "nothink": "Aermacchi",
+   "think": "Ambrosini",
+   "think_trace": "<think>\nOkay, I need to find out which company produced the Ambrosini SAI.2. Let me start by recalling what I know about Ambrosini aircraft. Ambrosini is an Italian aircraft manufacturer, right? They have a few models like the SAI.1 and SAI.2. The SAI.2 is a homebuilt aircraft, I think. But the ques",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Huron (Canadian band)",
+   "q": "What music label is Huron (Canadian band) represented by?",
+   "pop": 23.0,
+   "gold_raw": "Latent Recordings",
+   "gold": [
+    "latent recordings",
+    "latent recordings",
+    "a canadian record label"
+   ],
+   "nothink": "Huron is represented by **Dine Alone Records**.",
+   "think": "Paper Bag Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label Huron, the Canadian band, is represented by. Let me start by recalling what I know about Huron. They're a Canadian band, probably indie or alternative rock given their style. I remember they've been around for a while, maybe since the late 2000s or ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Stowe Open",
+   "q": "Where is Stowe Open located?",
+   "pop": 24.0,
+   "gold_raw": "Stowe",
+   "gold": [
+    "stowe",
+    "stowe",
+    "lamoille county",
+    "vermont",
+    "united states"
+   ],
+   "nothink": "Stowe Open is located in **Stowe, Vermont**.",
+   "think": "Vermont",
+   "think_trace": "<think>\nOkay, I need to figure out where Stowe Open is located. Let me start by recalling what I know about Stowe. Stowe is a town in Vermont, right? I think there's a ski resort there called Stowe Mountain Resort. Now, the question is about the Stowe Open. Maybe it's an event or a tournament held t",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Legh Old Hall",
+   "q": "Where is Legh Old Hall located?",
+   "pop": 25.0,
+   "gold_raw": "Mottram St Andrew",
+   "gold": [
+    "mottram st andrew",
+    "mottram st andrew",
+    "cheshire east",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "Cheshire, England",
+   "think": "Cheshire, England.",
+   "think_trace": "<think>\nOkay, I need to figure out where Legh Old Hall is located. Let me start by recalling what I know about Legh Old Hall. I think it's a historical building in England. Maybe in Cheshire? I remember that Cheshire has some old estates or manor houses. Let me check if Legh Old Hall is associated w",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Flaoui",
+   "q": "Where is Flaoui located?",
+   "pop": 26.0,
+   "gold_raw": "Beqaa Governorate",
+   "gold": [
+    "beqaa governorate",
+    "beqaa governorate",
+    "lebanon"
+   ],
+   "nothink": "Tunisia",
+   "think": "Morocco",
+   "think_trace": "<think>\nOkay, I need to figure out where Flaoui is located. First, I'll check if \"Flaoui\" is a place or a person. Since the question asks where it's located, it's likely a place. Let me start by searching for \"Flaoui\" in my knowledge base.\n\nHmm, I don't recall a well-known city or country named Flao",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Jan Westcott",
+   "q": "Where was Jan Westcott educated?",
+   "pop": 28.0,
+   "gold_raw": "Swarthmore College",
+   "gold": [
+    "swarthmore college",
+    "swarthmore college",
+    "swarthmore  pennsylvania",
+    "pennsylvania",
+    "united states"
+   ],
+   "nothink": "Oxford University",
+   "think": "King's College London",
+   "think_trace": "<think>\nOkay, I need to find out where Jan Westcott was educated. Let me start by recalling any information I have about her. Jan Westcott is a British author, known for her historical novels. I think she might have studied English literature or something related. \n\nFirst, I'll check her Wikipedia p",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Asocijacija Radioamatera Bosne i Hercegovine",
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "pop": 29.0,
+   "gold_raw": "Sarajevo",
+   "gold": [
+    "sarajevo",
+    "sarajevo",
+    "bosnia and herzegovina",
+    "europe"
+   ],
+   "nothink": "Sarajevo",
+   "think": "Sarajevo",
+   "think_trace": "<think>\nOkay, I need to find the headquarters of Asocijacija Radioamatera Bosne i Hercegovine. Let me start by translating the name. \"Asocijacija Radioamatera Bosne i Hercegovine\" is the Association of Radio Amateurs of Bosnia and Herzegovina. So, I'm looking for the head office location of this org",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Robert K. Sweeney",
+   "q": "Where was Robert K. Sweeney educated?",
+   "pop": 31.0,
+   "gold_raw": "Adelphi University",
+   "gold": [
+    "adelphi university",
+    "adelphi university",
+    "garden city  new york",
+    "new york",
+    "united states"
+   ],
+   "nothink": "University of Notre Dame",
+   "think": "University of California, Los Angeles",
+   "think_trace": "<think>\nOkay, I need to find out where Robert K. Sweeney was educated. Let me start by recalling any information I have about him. Robert K. Sweeney might be a public figure, maybe a politician or a notable person in some field. First, I should check if there are any well-known individuals with that",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Big Data Partnership",
+   "q": "Where is the headquarter of Big Data Partnership?",
+   "pop": 32.0,
+   "gold_raw": "London",
+   "gold": [
+    "london",
+    "london",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "Big Data Partnership is headquartered in **Dubai**.",
+   "think": "London",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Big Data Partnership is located. Let me start by recalling if I know anything about this company. Big Data Partnership... Hmm, I'm not immediately familiar with them. Maybe they're a consulting firm or a tech company specializing in big data",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Giuseppe Avitrano",
+   "q": "Where did Giuseppe Avitrano die?",
+   "pop": 34.0,
+   "gold_raw": "Naples",
+   "gold": [
+    "naples",
+    "naples",
+    "campania",
+    "italy"
+   ],
+   "nothink": "Giuseppe Avitabile died in Naples.",
+   "think": "Naples",
+   "think_trace": "<think>\nOkay, I need to find out where Giuseppe Avitrano died. Let me start by recalling what I know about him. He was an Italian footballer, right? I think he played as a defender. Now, the question is about his death location.\n\nFirst, I should check his Wikipedia page or other reliable sources. Le",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Sandra Chung",
+   "q": "Where was Sandra Chung educated?",
+   "pop": 35.0,
+   "gold_raw": "Harvard University",
+   "gold": [
+    "harvard university",
+    "harvard university",
+    "cambridge  massachusetts",
+    "united states"
+   ],
+   "nothink": "Harvard University",
+   "think": "University of British Columbia",
+   "think_trace": "<think>\nOkay, I need to find out where Sandra Chung was educated. Let me start by recalling who Sandra Chung is. She's a Canadian politician, right? I think she's a member of the Legislative Assembly of British Columbia. Now, her education background... I'm not sure. Maybe I should check her officia",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "MV Aqueity",
+   "q": "Which company is MV Aqueity produced by?",
+   "pop": 36.0,
+   "gold_raw": "A. & J. Inglis",
+   "gold": [
+    "a    j  inglis",
+    "a    j  inglis",
+    "a ship building company"
+   ],
+   "nothink": "COSCO Shipping Heavy Industry",
+   "think": "Meyer Werft",
+   "think_trace": "<think>\nOkay, I need to find out which company produced the MV Aqueity. Let me start by recalling what I know about the Aqueity. I think it's a cruise ship or maybe a luxury vessel. I remember that some companies like Royal Caribbean or Carnival have ships with unique names. Wait, the Aqueity... may",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Oberhaid",
+   "q": "Where is Oberhaid located?",
+   "pop": 38.0,
+   "gold_raw": "Westerwaldkreis",
+   "gold": [
+    "westerwaldkreis",
+    "westerwaldkreis",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "nothink": "Germany",
+   "think": "Bavaria",
+   "think_trace": "<think>\nOkay, I need to figure out where Oberhaid is located. Let me start by recalling what I know. Oberhaid sounds like a German name, so it's probably a town or village in Germany. The suffix \"-haid\" might be a local term, maybe related to a geographical feature. I'm not entirely sure, but I can ",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Robert M. Wallace",
+   "q": "Where did Robert M. Wallace die?",
+   "pop": 40.0,
+   "gold_raw": "Magnolia",
+   "gold": [
+    "magnolia",
+    "magnolia",
+    "columbia county",
+    "arkansas",
+    "united states"
+   ],
+   "nothink": "Robert M. Wallace died in California.",
+   "think": "Virginia",
+   "think_trace": "<think>\nOkay, I need to find out where Robert M. Wallace died. Let me start by recalling who he is. Robert M. Wallace was an American author and a former CIA officer. He wrote books about intelligence operations, like \"Spycatcher\" and \"The Man Who Saved the World.\" \n\nFirst, I should check his biogra",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bharathi Puthakalayam",
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "pop": 41.0,
+   "gold_raw": "Chennai",
+   "gold": [
+    "chennai",
+    "chennai",
+    "tamil nadu",
+    "india"
+   ],
+   "nothink": "Chennai",
+   "think": "Coimbatore",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Bharathi Puthakalayam is located. First, I should check if \"Bharathi Puthakalayam\" is a known organization or company. The name sounds Tamil, so maybe it's a publishing house or a cultural organization in Tamil Nadu, India.\n\nI'll start by se",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Kamal Abbas",
+   "q": "Where was Kamal Abbas born?",
+   "pop": 43.0,
+   "gold_raw": "Egypt",
+   "gold": [
+    "egypt",
+    "egypt",
+    "north africa",
+    "africa"
+   ],
+   "nothink": "Kamal Abbas was born in India.",
+   "think": "Hyderabad",
+   "think_trace": "<think>\nOkay, I need to find out where Kamal Abbas was born. Let me start by recalling any information I have about him. Kamal Abbas might be a public figure, perhaps in politics or entertainment. I'm not immediately familiar with his name, so I should check some sources.\n\nFirst, I'll try searching ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Benelux Film Distributors",
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "pop": 44.0,
+   "gold_raw": "Ghent",
+   "gold": [
+    "ghent",
+    "ghent",
+    "east flanders",
+    "belgium"
+   ],
+   "nothink": "Brussels",
+   "think": "Brussels",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Benelux Film Distributors is located. Let me start by recalling what I know about Benelux. The Benelux region consists of Belgium, the Netherlands, and Luxembourg. The term \"Benelux\" often refers to the economic union of these three countrie",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Mohole Mystery",
+   "q": "Who is the author of The Mohole Mystery?",
+   "pop": 46.0,
+   "gold_raw": "Hugh Walters",
+   "gold": [
+    "hugh walters",
+    "hugh walters",
+    "a british actor",
+    "a british person"
+   ],
+   "nothink": "Clive Cussler",
+   "think": "Doreen Cronin",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"The Mohole Mystery\" is. Let me start by recalling if I've heard of this book before. The title sounds familiar, maybe a mystery novel? I'm not sure. Let me think about authors known for mystery series. There's a possibility it's part of a series, m",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Alessandro Sgrigna",
+   "q": "Where was Alessandro Sgrigna born?",
+   "pop": 48.0,
+   "gold_raw": "Rome",
+   "gold": [
+    "rome",
+    "rome",
+    "lazio",
+    "italy"
+   ],
+   "nothink": "Rimini",
+   "think": "Verona",
+   "think_trace": "<think>\nOkay, I need to find out where Alessandro Sgrigna was born. Let me start by recalling any information I have about him. Alessandro Sgrigna is an Italian footballer, right? I think he plays as a defender. Now, for his birthplace... I'm not entirely sure, but I remember that some Italian playe",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "1899 U.S. Open",
+   "q": "Where is 1899 U.S. Open located?",
+   "pop": 49.0,
+   "gold_raw": "Baltimore Country Club",
+   "gold": [
+    "baltimore country club",
+    "baltimore country club",
+    "baltimore  maryland",
+    "united states"
+   ],
+   "nothink": "Pinehurst Resort",
+   "think": "Country Club of Buffalo",
+   "think_trace": "<think>\nOkay, I need to find out where the 1899 U.S. Open was held. Let me start by recalling what I know about the U.S. Open golf tournament. The U.S. Open is one of the major golf championships in the United States. It's been around since the late 19th century. The first U.S. Open was in 1895, so ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Red Rolfe Field at Biondi Park",
+   "q": "Who owns Red Rolfe Field at Biondi Park?",
+   "pop": 51.0,
+   "gold_raw": "Dartmouth College",
+   "gold": [
+    "dartmouth college",
+    "dartmouth college",
+    "a private university"
+   ],
+   "nothink": "City of San Leandro",
+   "think": "San Leandro",
+   "think_trace": "<think>\nOkay, I need to figure out who owns Red Rolfe Field at Biondi Park. Let me start by recalling what I know about Biondi Park. I think it's a sports complex, maybe in the San Francisco Bay Area. Red Rolfe Field might be a baseball field there. Now, ownership of such parks can be tricky. Someti",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Brittainey Raven",
+   "q": "Where was Brittainey Raven educated?",
+   "pop": 53.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "austin  texas",
+    "texas"
+   ],
+   "nothink": "Howard University",
+   "think": "University of California, Santa Barbara",
+   "think_trace": "<think>\nOkay, I need to find out where Brittainey Raven was educated. Let me start by recalling what I know about her. She's an American author known for her young adult fiction, especially the \"Wicked Lovely\" series. Now, her education... I'm not sure. Maybe she went to a university in the U.S.?\n\nI",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Tomlinson Stadium\u2013Kell Field",
+   "q": "Who owns Tomlinson Stadium\u2013Kell Field?",
+   "pop": 55.0,
+   "gold_raw": "Arkansas State University",
+   "gold": [
+    "arkansas state university",
+    "arkansas state university",
+    "a public university",
+    "a public university in arkansas",
+    "a public university in the united states"
+   ],
+   "nothink": "University of West Alabama",
+   "think": "University of Texas at San Antonio",
+   "think_trace": "<think>\nOkay, I need to find out who owns Tomlinson Stadium\u2013Kell Field. Let me start by recalling what I know about this stadium. I think it's associated with a university, maybe in Texas? I remember that some stadiums are named after people, so Tomlinson and Kell might be individuals connected to t",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Songs We Didn't Write",
+   "q": "What music label is Songs We Didn't Write represented by?",
+   "pop": 57.0,
+   "gold_raw": "Tooth & Nail Records",
+   "gold": [
+    "tooth   nail records",
+    "tooth   nail records",
+    "christian rock record label"
+   ],
+   "nothink": "Songs We Didn't Write is represented by **Big Machine Label Group**.",
+   "think": "Red Marquee Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents the band Songs We Didn't Write. Let me start by recalling if I know anything about this band. I'm not super familiar with them, so I'll have to look it up.\n\nFirst, I'll search for \"Songs We Didn't Write record label\" to get direct informa",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Francisco Gil de Taboada",
+   "q": "Where did Francisco Gil de Taboada die?",
+   "pop": 60.0,
+   "gold_raw": "Madrid",
+   "gold": [
+    "madrid",
+    "madrid",
+    "spain",
+    "europe"
+   ],
+   "nothink": "Spain",
+   "think": "Cape St. Vincent",
+   "think_trace": "<think>\nOkay, I need to find out where Francisco Gil de Taboada died. Let me start by recalling what I know about him. He was a Spanish naval officer, right? I think he was involved in some battles during the 18th century. Maybe the Battle of Trafalgar? Wait, no, Trafalgar was in 1805, and he might ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "John Kuempel",
+   "q": "Where was John Kuempel educated?",
+   "pop": 62.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "nothink": "University of Notre Dame",
+   "think": "University of Wisconsin-Madison",
+   "think_trace": "<think>\nOkay, I need to find out where John Kuempel was educated. Let me start by recalling any information I have about him. I'm not sure who he is off the top of my head, so maybe he's a public figure or someone notable in a specific field.\n\nFirst, I'll try to remember if I've heard his name in an",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Olga Mural Field at Schoonover Stadium",
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "pop": 64.0,
+   "gold_raw": "Kent State University",
+   "gold": [
+    "kent state university",
+    "kent state university",
+    "a public research university",
+    "a public research university in ohio",
+    "a public research university in kent  ohio"
+   ],
+   "nothink": "University of Nebraska at Omaha",
+   "think": "University of Nebraska at Omaha",
+   "think_trace": "<think>\nOkay, I need to figure out who owns Olga Mural Field at Schoonover Stadium. Let me start by recalling what I know about Schoonover Stadium. I think it's a sports venue, maybe a baseball or football field. The name Olga Mural Field suggests that there's a mural named after someone called Olga",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Royal Institution of Cornwall",
+   "q": "Where is Royal Institution of Cornwall located?",
+   "pop": 66.0,
+   "gold_raw": "Truro",
+   "gold": [
+    "truro",
+    "truro",
+    "cornwall",
+    "united kingdom"
+   ],
+   "nothink": "Truro",
+   "think": "Truro",
+   "think_trace": "<think>\nOkay, I need to find out where the Royal Institution of Cornwall is located. Let me start by recalling what I know. The Royal Institution of Cornwall sounds like it might be a historical or cultural organization in Cornwall, England. Cornwall is a county in the southwest of England, so maybe",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Plama Pleven",
+   "q": "Where is the headquarter of Plama Pleven?",
+   "pop": 68.0,
+   "gold_raw": "Pleven",
+   "gold": [
+    "pleven",
+    "pleven",
+    "bulgaria",
+    "europe"
+   ],
+   "nothink": "Pleven, Bulgaria.",
+   "think": "Pleven",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Plama Pleven is located. Let me start by recalling what I know about Plama Pleven. The name sounds Bulgarian because \"Pleven\" is a city in Bulgaria. Plama might be a company or organization based there.\n\nFirst, I'll check if Plama Pleven is ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Al Que Quiere!",
+   "q": "Who is the author of Al Que Quiere!?",
+   "pop": 71.0,
+   "gold_raw": "William Carlos Williams",
+   "gold": [
+    "william carlos williams",
+    "william carlos williams",
+    "an american poet",
+    "a poet"
+   ],
+   "nothink": "Jos\u00e9 Rizal",
+   "think": "Jos\u00e9 Antonio Fern\u00e1ndez",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Al Que Quiere!\" is. Let me start by recalling what I know about this book. The title \"Al Que Quiere!\" translates to \"To the One Who Wants!\" in English. I think it's a Spanish book, maybe a self-help or motivational book. \n\nI remember that some auth",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Elephant of Surprise",
+   "q": "Who is the author of The Elephant of Surprise?",
+   "pop": 73.0,
+   "gold_raw": "Brent Hartinger",
+   "gold": [
+    "brent hartinger",
+    "brent hartinger",
+    "an american writer"
+   ],
+   "nothink": "Haruki Murakami",
+   "think": "The author of *The Elephant of Surprise* is not widely recognized or documented ",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"The Elephant of Surprise\" is. Let me start by recalling if I've heard of this book before. Hmm, I'm not immediately familiar with the title. Maybe it's a lesser-known work or perhaps a recent publication.\n\nFirst, I should check if \"The Elephant of ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Maui News",
+   "q": "Who owns The Maui News?",
+   "pop": 75.0,
+   "gold_raw": "Ogden Newspapers",
+   "gold": [
+    "ogden newspapers",
+    "ogden newspapers",
+    "a newspaper publisher",
+    "a company"
+   ],
+   "nothink": "Gannett Co., Inc.",
+   "think": "Star Advertiser, Inc.",
+   "think_trace": "<think>\nOkay, I need to find out who owns The Maui News. Let me start by recalling what I know about The Maui News. It's a newspaper based in Maui, Hawaii. I think it might be part of a larger media company. I remember that some local newspapers are owned by bigger chains.\n\nFirst, I'll try to rememb",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "National Cycling Centre",
+   "q": "Who owns National Cycling Centre?",
+   "pop": 77.0,
+   "gold_raw": "Manchester",
+   "gold": [
+    "manchester",
+    "manchester",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "UK Sport",
+   "think": "British Cycling",
+   "think_trace": "<think>\nOkay, I need to find out who owns the National Cycling Centre. Let me start by recalling what I know. The National Cycling Centre is probably a sports facility in the UK, maybe related to the British Cycling team. I remember that some sports centers are owned by government bodies or specific",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Samantha Gillison",
+   "q": "Where was Samantha Gillison educated?",
+   "pop": 80.0,
+   "gold_raw": "Brown University",
+   "gold": [
+    "brown university",
+    "brown university",
+    "providence  rhode island",
+    "united states"
+   ],
+   "nothink": "University of Oxford",
+   "think": "University of Bristol",
+   "think_trace": "<think>\nOkay, I need to find out where Samantha Gillison was educated. Let me start by recalling what I know about her. She's a British actress, right? I think she's been in some TV shows and maybe some theater productions. Now, her education... I'm not sure. Maybe she went to a university in the UK",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Joseph Chappell Hutcheson, Jr.",
+   "q": "Where was Joseph Chappell Hutcheson, Jr. educated?",
+   "pop": 83.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "nothink": "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+   "think": "U.S. Military Academy",
+   "think_trace": "<think>\nOkay, I need to find out where Joseph Chappell Hutcheson, Jr. was educated. Let me start by recalling any information I have about him. I think he might be a historical figure or someone notable in a specific field. The name sounds familiar, maybe a politician or a military person.\n\nFirst, I",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Ernest Go\u00fcin",
+   "q": "Where did Ernest Go\u00fcin die?",
+   "pop": 86.0,
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "nothink": "Ernest Go\u00fcin died in Paris.",
+   "think": "Paris",
+   "think_trace": "<think>\nOkay, I need to find out where Ernest Go\u00fcin died. Let me start by recalling what I know about him. Ernest Go\u00fcin was a French politician, right? He was part of the government during the late 19th or early 20th century. Maybe he was a minister or something like that.\n\nFirst, I should check his",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "UnMerry Melodies",
+   "q": "Who performed UnMerry Melodies?",
+   "pop": 88.0,
+   "gold_raw": "Bigwig",
+   "gold": [
+    "bigwig",
+    "bigwig",
+    "a punk band",
+    "a band"
+   ],
+   "nothink": "Mel Brooks",
+   "think": "Kermit the Frog and Miss Piggy",
+   "think_trace": "<think>\nOkay, so I need to figure out who performed \"UnMerry Melodies.\" Let me start by recalling what I know about this song. The title sounds familiar, maybe from a movie or a musical? Wait, \"UnMerry Melodies\" rings a bell as a song from the movie \"The Muppets Take Manhattan,\" which is a 1984 film",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Chester D. Hubbard",
+   "q": "Where was Chester D. Hubbard educated?",
+   "pop": 91.0,
+   "gold_raw": "Wesleyan University",
+   "gold": [
+    "wesleyan university",
+    "wesleyan university",
+    "middletown  connecticut",
+    "connecticut",
+    "united states"
+   ],
+   "nothink": "Chester D. Hubbard was educated at the University of Chicago.",
+   "think": "United States Military Academy",
+   "think_trace": "<think>\nOkay, I need to find out where Chester D. Hubbard was educated. Let me start by recalling any information I have about him. I think he might be a historical figure or someone notable in a specific field. Maybe a politician or a military person? I'm not entirely sure.\n\nFirst, I'll try to reme",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Henry Becque",
+   "q": "Where did Henry Becque die?",
+   "pop": 94.0,
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "nothink": "Paris",
+   "think": "Paris",
+   "think_trace": "<think>\nOkay, I need to find out where Henry Becque died. Let me start by recalling what I know about him. Henry Becque was a French playwright, right? I think he was active in the late 19th century. His full name might be Henry Becque, but sometimes it's spelled with an accent, like B\u00e8que. \n\nFirst,",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Witching Culture",
+   "q": "Who is the author of Witching Culture?",
+   "pop": 97.0,
+   "gold_raw": "Sabina Magliocco",
+   "gold": [
+    "sabina magliocco",
+    "sabina magliocco",
+    "american folklorist",
+    "american"
+   ],
+   "nothink": "Linda Hutcheon",
+   "think": "Sabina Magliocco",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Witching Culture\" is. Let me start by recalling if I've heard of this book before. I'm not entirely sure, so maybe I should think about authors known for works related to witchcraft or cultural studies.\n\n\"Witching Culture\" sounds like it could be a",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "High Places",
+   "q": "What music label is High Places represented by?",
+   "pop": 100.0,
+   "gold_raw": "Thrill Jockey",
+   "gold": [
+    "thrill jockey",
+    "thrill jockey",
+    "an independent record label"
+   ],
+   "nothink": "Sub Pop",
+   "think": "Jagjaguwar",
+   "think_trace": "<think>\nOkay, I need to find out which music label High Places is represented by. Let me start by recalling what I know about High Places. They're an indie or alternative band, maybe from the 2000s or 2010s. I think they released some albums, but I'm not sure about the labels.\n\nFirst, I'll try to re",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "44 Blue Productions",
+   "q": "Where is the headquarter of 44 Blue Productions?",
+   "pop": 104.0,
+   "gold_raw": "Studio City",
+   "gold": [
+    "studio city",
+    "studio city",
+    "los angeles",
+    "california",
+    "united states"
+   ],
+   "nothink": "Los Angeles",
+   "think": "Los Angeles",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of 44 Blue Productions is located. Let me start by recalling what I know about this company. I'm not familiar with them off the top of my head, so I'll have to do a quick search.\n\nFirst, I'll check if \"44 Blue Productions\" is a known production",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Irene Hughes",
+   "q": "Where was Irene Hughes born?",
+   "pop": 108.0,
+   "gold_raw": "Tennessee",
+   "gold": [
+    "tennessee",
+    "tennessee",
+    "united states of america"
+   ],
+   "nothink": "Irene Hughes was born in Ireland.",
+   "think": "Irene Hughes was born in **England**.",
+   "think_trace": "<think>\nOkay, I need to find out where Irene Hughes was born. Let me start by recalling any information I have about her. I'm not sure who she is off the top of my head. Maybe she's a public figure, an actress, or someone notable in another field.\n\nFirst, I'll try to remember if I've heard of her be",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "10th Division",
+   "q": "Where is the headquarter of 10th Division?",
+   "pop": 111.0,
+   "gold_raw": "Nagoya",
+   "gold": [
+    "nagoya",
+    "nagoya",
+    "aichi prefecture",
+    "japan"
+   ],
+   "nothink": "Seoul",
+   "think": "Fort Carson",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of the 10th Division is located. Let me start by recalling what I know about military divisions. The 10th Division could refer to different military units depending on the country. The user didn't specify which country's 10th Division they're a",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Allegory of Virtue and Vice",
+   "q": "Who was Allegory of Virtue and Vice created by?",
+   "pop": 115.0,
+   "gold_raw": "Lorenzo Lotto",
+   "gold": [
+    "lorenzo lotto",
+    "lorenzo lotto",
+    "an italian painter",
+    "a painter"
+   ],
+   "nothink": "Allegory of Virtue and Vice was created by **Lucas Cranach the Elder**.",
+   "think": "Jan van der Straet",
+   "think_trace": "<think>\nOkay, I need to figure out who created the \"Allegory of Virtue and Vice.\" Let me start by recalling what I know about allegorical works. The title sounds familiar, maybe from Renaissance art? I think there's a painting with that title. I remember that some artists like Botticelli or Michelan",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Unknown Session",
+   "q": "What music label is Unknown Session represented by?",
+   "pop": 119.0,
+   "gold_raw": "Columbia Records",
+   "gold": [
+    "columbia records",
+    "columbia records",
+    "sony music entertainment"
+   ],
+   "nothink": "Unknown Session is not represented by a music label.",
+   "think": "RCA Records",
+   "think_trace": "<think>\nOkay, I need to figure out which music label represents Unknown Session. Let me start by recalling what I know about Unknown Session. They're a band or artist, right? Maybe they're indie or part of a larger label.\n\nFirst, I should check if there's any official information on their website or",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Zero Knowledge Systems",
+   "q": "Where is the headquarter of Zero Knowledge Systems?",
+   "pop": 124.0,
+   "gold_raw": "Montreal",
+   "gold": [
+    "montreal",
+    "montreal",
+    "quebec",
+    "canada"
+   ],
+   "nothink": "New York",
+   "think": "United States",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Zero Knowledge Systems is located. Let me start by recalling what I know about Zero Knowledge Systems. I think they're a company related to cybersecurity or blockchain technology, maybe involved in zero-knowledge proofs. \n\nFirst, I'll try to",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Portrait of Jacopo Strada",
+   "q": "Who was Portrait of Jacopo Strada created by?",
+   "pop": 128.0,
+   "gold_raw": "Titian",
+   "gold": [
+    "titian",
+    "titian",
+    "an italian painter",
+    "a painter"
+   ],
+   "nothink": "Titian",
+   "think": "Titian",
+   "think_trace": "<think>\nOkay, I need to figure out who created the Portrait of Jacopo Strada. Let me start by recalling what I know about Jacopo Strada. He was a 16th-century Venetian polymath, known for his work in various fields like art, science, and antiquities. Now, the portrait in question is likely a paintin",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Captain Nathan Hale",
+   "q": "Who was Captain Nathan Hale created by?",
+   "pop": 132.0,
+   "gold_raw": "Bela Pratt",
+   "gold": [
+    "bela pratt",
+    "bela pratt",
+    "an american artist"
+   ],
+   "nothink": "Captain Nathan Hale was created by **DC Comics**.",
+   "think": "Paul Gustavson and George Olesen",
+   "think_trace": "<think>\nOkay, so I need to figure out who created Captain Nathan Hale. Let me start by recalling what I know about Captain Nathan Hale. He's a character from the Marvel Universe, right? I remember he's a superhero, maybe part of the Marvel Knights team. But wait, Nathan Hale was also a real historic",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Daniel Vierge",
+   "q": "Where did Daniel Vierge die?",
+   "pop": 136.0,
+   "gold_raw": "Boulogne-Billancourt",
+   "gold": [
+    "boulogne billancourt",
+    "boulogne billancourt",
+    "hauts de seine",
+    "ile de france",
+    "france"
+   ],
+   "nothink": "Paris",
+   "think": "Leysin",
+   "think_trace": "<think>\nOkay, I need to find out where Daniel Vierge died. Let me start by recalling who he is. Daniel Vierge was a French painter associated with the Symbolist movement. I remember he was part of the Nabis group. Now, I need to figure out the location of his death.\n\nFirst, I'll check some basic fac",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "S\u00fcnb\u00fcl Efendi",
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "pop": 141.0,
+   "gold_raw": "Istanbul",
+   "gold": [
+    "istanbul",
+    "istanbul",
+    "turkey",
+    "asia"
+   ],
+   "nothink": "Izmir",
+   "think": "Istanbul",
+   "think_trace": "<think>\nOkay, I need to find out where S\u00fcnb\u00fcl Efendi died. First, I should confirm who S\u00fcnb\u00fcl Efendi is. From what I remember, he was a prominent Ottoman statesman and a grand vizier during the reign of Sultan Murad IV. His full name might be Mehmed Pasha S\u00fcnb\u00fcl Efendi.\n\nNow, I need to locate his de",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Maqsood Ahmed",
+   "q": "Where did Maqsood Ahmed die?",
+   "pop": 146.0,
+   "gold_raw": "Rawalpindi",
+   "gold": [
+    "rawalpindi",
+    "rawalpindi",
+    "punjab  pakistan",
+    "pakistan"
+   ],
+   "nothink": "Lahore",
+   "think": "Lahore",
+   "think_trace": "<think>\nOkay, I need to find out where Maqsood Ahmed died. First, I should check if there are any notable individuals named Maqsood Ahmed. There might be multiple people with that name, so I need to figure out which one the question is referring to.\n\nI'll start by searching online for \"Maqsood Ahmed",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Pages Stained With Blood",
+   "q": "Who is the author of Pages Stained With Blood?",
+   "pop": 151.0,
+   "gold_raw": "Mamoni Raisom Goswami",
+   "gold": [
+    "mamoni raisom goswami",
+    "mamoni raisom goswami",
+    "indira goswami",
+    "an indian writer"
+   ],
+   "nothink": "Don DeLillo",
+   "think": "Don Cosgrove",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Pages Stained With Blood\" is. Let me start by recalling if I've heard of this book before. The title sounds familiar, maybe a historical or true crime book? I think it might be related to the St. Valentine's Day Massacre or something similar.\n\nWait",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "William Coxe",
+   "q": "Where did William Coxe die?",
+   "pop": 156.0,
+   "gold_raw": "Bemerton",
+   "gold": [
+    "bemerton",
+    "bemerton",
+    "wiltshire",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "New York City",
+   "think": "Elizabeth",
+   "think_trace": "<think>\nOkay, I need to find out where William Coxe died. Let me start by recalling any information I have about him. William Coxe might be a historical figure, perhaps from the 18th or 19th century. I'm not sure about his exact identity, but maybe he was a politician or a notable person in colonial",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Carl Otto Czeschka",
+   "q": "Where did Carl Otto Czeschka die?",
+   "pop": 160.0,
+   "gold_raw": "Hamburg",
+   "gold": [
+    "hamburg",
+    "hamburg",
+    "germany",
+    "europe"
+   ],
+   "nothink": "Vienna",
+   "think": "Vienna",
+   "think_trace": "<think>\nOkay, I need to find out where Carl Otto Czeschka died. Let me start by recalling what I know about him. He was an Austrian painter, part of the Vienna Secession movement. I think he was active in the early 20th century. Now, I need to figure out his death location.\n\nFirst, I'll check some b",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Pierre Blanchar",
+   "q": "Who is Pierre Blanchar's child?",
+   "pop": 165.0,
+   "gold_raw": "Dominique Blanchar",
+   "gold": [
+    "dominique blanchar",
+    "dominique blanchar",
+    "a french actress",
+    "a woman"
+   ],
+   "nothink": "Pierre Blanchar's child is **Jean Blanchar**.",
+   "think": "H\u00e9l\u00e8ne Blanchar",
+   "think_trace": "<think>\nOkay, so I need to find out who Pierre Blanchar's child is. Let me start by recalling any information I have about Pierre Blanchar. I'm not immediately familiar with him, so maybe he's a historical figure or someone notable in a specific field. Let me think... Blanchar might be a French surn",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "\u0130dmanoca\u011f\u0131",
+   "q": "Where is the headquarter of \u0130dmanoca\u011f\u0131?",
+   "pop": 170.0,
+   "gold_raw": "Trabzon",
+   "gold": [
+    "trabzon",
+    "trabzon",
+    "turkey",
+    "asia"
+   ],
+   "nothink": "\u0130stanbul",
+   "think": "Kad\u0131k\u00f6y, Istanbul",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of \u0130dmanoca\u011f\u0131 is located. First, I should confirm what \u0130dmanoca\u011f\u0131 refers to. It might be a sports club or organization, possibly Turkish since \"oca\u011f\u0131\" means \"furnace\" or \"club\" in Turkish. Let me check if there's a well-known sports club by tha",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "USS Baya",
+   "q": "Which company is USS Baya produced by?",
+   "pop": 175.0,
+   "gold_raw": "General Dynamics Electric Boat",
+   "gold": [
+    "general dynamics electric boat",
+    "general dynamics electric boat",
+    "general dynamics corporation",
+    "general dynamics"
+   ],
+   "nothink": "USS Baya was produced by the **Electric Boat Company**.",
+   "think": "USS Baya was produced by the **U.S. Navy**.",
+   "think_trace": "<think>\nOkay, I need to find out which company produced the USS Baya. Let me start by recalling what I know about the USS Baya. The USS Baya was a submarine, probably from the United States Navy. The name \"Baya\" might be part of a class of submarines. I remember that submarines are often built by sp",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bit Managers",
+   "q": "Where is the headquarter of Bit Managers?",
+   "pop": 180.0,
+   "gold_raw": "Barcelona",
+   "gold": [
+    "barcelona",
+    "barcelona",
+    "catalonia",
+    "spain"
+   ],
+   "nothink": "Bit Managers is headquartered in **Switzerland**.",
+   "think": "Dubai",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Bit Managers is located. Let me start by recalling what I know about Bit Managers. I'm not very familiar with the company, so I'll have to do a quick search.\n\nFirst, I'll check if Bit Managers is a known company. Maybe it's related to crypto",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Haifa bus 16 suicide bombing",
+   "q": "Where is Haifa bus 16 suicide bombing located?",
+   "pop": 186.0,
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "nothink": "Haifa, Israel",
+   "think": "Technion",
+   "think_trace": "<think>\nOkay, the user is asking about the location of the Haifa bus 16 suicide bombing. Let me recall the details. I think this incident happened in Israel, specifically in Haifa. The bus number is 16, so the location would be where that bus route was when the attack occurred. From what I remember,",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Lying Cow",
+   "q": "Who was Lying Cow created by?",
+   "pop": 193.0,
+   "gold_raw": "Vincent van Gogh",
+   "gold": [
+    "vincent van gogh",
+    "vincent van gogh",
+    "a dutch painter",
+    "a painter"
+   ],
+   "nothink": "Lying Cow was created by **Yiying Lu**.",
+   "think": "Lying Cow was created by **Lying Cow**.",
+   "think_trace": "<think>\nOkay, I need to figure out who created Lying Cow. Let me start by recalling what I know about Lying Cow. It's a game, right? I think it's a puzzle game where you have to lie to progress. Maybe it's similar to games like \"The Witness\" but with deception elements.\n\nI remember that the creator ",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Jorge Jos\u00e9 Emiliano dos Santos",
+   "q": "Where did Jorge Jos\u00e9 Emiliano dos Santos die?",
+   "pop": 200.0,
+   "gold_raw": "Rio de Janeiro",
+   "gold": [
+    "rio de janeiro",
+    "rio de janeiro",
+    "brazil",
+    "south america"
+   ],
+   "nothink": "Jorge Jos\u00e9 Emiliano dos Santos died in Brazil.",
+   "think": "S\u00e3o Paulo",
+   "think_trace": "<think>\nOkay, I need to find out where Jorge Jos\u00e9 Emiliano dos Santos died. Let me start by recalling who he is. The name sounds familiar, maybe a Brazilian figure? I think he might be related to football, perhaps a player or coach. Let me check my memory. Oh, right, there was a Brazilian footballer",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Eric S. Hatch",
+   "q": "Where did Eric S. Hatch die?",
+   "pop": 207.0,
+   "gold_raw": "Torrington",
+   "gold": [
+    "torrington",
+    "torrington",
+    "litchfield county",
+    "connecticut",
+    "united states"
+   ],
+   "nothink": "Eric S. Hatch died in **California**.",
+   "think": "Concord",
+   "think_trace": "<think>\nOkay, I need to find out where Eric S. Hatch died. Let me start by recalling who he is. Eric S. Hatch was an American politician who served as a U.S. Representative from New Hampshire. He was part of the Republican Party and served in Congress from 1981 until his death.\n\nFirst, I should chec",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Crime as Forgiven by Against Me!",
+   "q": "Who performed Crime as Forgiven by Against Me!?",
+   "pop": 215.0,
+   "gold_raw": "Against Me!",
+   "gold": [
+    "against me",
+    "against me",
+    "a punk rock band",
+    "a band"
+   ],
+   "nothink": "Laura Jane Grace",
+   "think": "Laura Jane Grace",
+   "think_trace": "<think>\nOkay, so the user is asking who performed \"Crime as Forgiven\" by Against Me!. Let me think. First, I need to confirm the song title and the band. Against Me! is a punk rock band led by Laura Jane Grace. She's the main vocalist and songwriter.\n\nNow, the song \"Crime as Forgiven\" \u2013 I'm not imme",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Demon Theory",
+   "q": "Who is the author of Demon Theory?",
+   "pop": 222.0,
+   "gold_raw": "Stephen Graham Jones",
+   "gold": [
+    "stephen graham jones",
+    "stephen graham jones",
+    "a native american author"
+   ],
+   "nothink": "David Farland",
+   "think": "Michael S. Heiser",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Demon Theory\" is. Let me start by recalling if I've heard of this book before. I'm not immediately familiar with it, so maybe I should search my memory for similar titles or authors. Wait, \"Demon Theory\" sounds like it could be a non-fiction work, ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Magos, espadas y rosas",
+   "q": "Who performed Magos, espadas y rosas?",
+   "pop": 228.0,
+   "gold_raw": "Rata Blanca",
+   "gold": [
+    "rata blanca",
+    "rata blanca",
+    "argentine rock band",
+    "rock band"
+   ],
+   "nothink": "Ricardo Arjona",
+   "think": "Alejandro Sanz",
+   "think_trace": "<think>\nOkay, I need to figure out who performed \"Magos, espadas y rosas.\" Let me start by recalling what I know about this song. The title is in Spanish, so maybe it's a Spanish or Latin American artist. I think \"Magos, espadas y rosas\" translates to \"Wizards, swords, and roses,\" which sounds like ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Elizabeth le Despenser",
+   "q": "Who is Elizabeth le Despenser married to?",
+   "pop": 234.0,
+   "gold_raw": "John FitzAlan, 2nd Baron Arundel",
+   "gold": [
+    "john fitzalan  2nd baron arundel",
+    "john fitzalan  2nd baron arundel",
+    "baron arundel",
+    "baron maltravers",
+    "a noble"
+   ],
+   "nothink": "Hugh Despenser the Younger",
+   "think": "Thomas de Beaumont",
+   "think_trace": "<think>\nOkay, I need to find out who Elizabeth le Despenser was married to. Let me start by recalling any historical figures with that name. Elizabeth le Despenser might be a medieval English noblewoman. The Despenser family was prominent in the 14th century, related to the Despensers who were favor",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Todd Krygier",
+   "q": "Where was Todd Krygier born?",
+   "pop": 242.0,
+   "gold_raw": "Chicago Heights",
+   "gold": [
+    "chicago heights",
+    "chicago heights",
+    "cook county",
+    "illinois",
+    "united states"
+   ],
+   "nothink": "Todd Krygier was born in Canada.",
+   "think": "St. Louis, Missouri",
+   "think_trace": "<think>\nOkay, I need to find out where Todd Krygier was born. Let me start by recalling any information I have about him. Todd Krygier is a name I might recognize from sports, maybe hockey? I think he was a player in the NHL. Let me check that.\n\nFirst, I'll try to remember if I've heard of him befor",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Marx Augustin",
+   "q": "Where did Marx Augustin die?",
+   "pop": 249.0,
+   "gold_raw": "Vienna",
+   "gold": [
+    "vienna",
+    "vienna",
+    "austria",
+    "europe"
+   ],
+   "nothink": "Marx Augustin died in **Paris**.",
+   "think": "London",
+   "think_trace": "<think>\nOkay, I need to find out where Marx Augustin died. First, I should check if Marx Augustin is a real historical figure or if there's a possibility of a misspelling. Marx is a common name, but Marx Augustin doesn't ring a bell immediately. Maybe it's a mix-up with Karl Marx? But Karl Marx is a",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Robert Jameson",
+   "q": "Where was Robert Jameson educated?",
+   "pop": 258.0,
+   "gold_raw": "University of Edinburgh",
+   "gold": [
+    "university of edinburgh",
+    "university of edinburgh",
+    "edinburgh",
+    "scotland",
+    "united kingdom"
+   ],
+   "nothink": "University of Edinburgh",
+   "think": "University of Edinburgh",
+   "think_trace": "<think>\nOkay, I need to find out where Robert Jameson was educated. Let me start by recalling who Robert Jameson is. He was a Scottish geologist and mineralogist, right? I think he was associated with the University of Edinburgh because I remember something about him being a professor there. But wai",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "I Just Dropped by to Say Hello",
+   "q": "Who performed I Just Dropped by to Say Hello?",
+   "pop": 266.0,
+   "gold_raw": "Johnny Hartman",
+   "gold": [
+    "johnny hartman",
+    "johnny hartman",
+    "an american jazz singer",
+    "a singer"
+   ],
+   "nothink": "Perry Como",
+   "think": "Frank Sinatra",
+   "think_trace": "<think>\nOkay, so the user is asking who performed \"I Just Dropped by to Say Hello.\" Let me think. I remember that song is a classic, maybe from the 50s or 60s. The title sounds familiar. I think it's by someone like Frank Sinatra or maybe another big name from that era. Wait, wasn't it originally wr",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "EA Phenomic",
+   "q": "Where is the headquarter of EA Phenomic?",
+   "pop": 275.0,
+   "gold_raw": "Ingelheim am Rhein",
+   "gold": [
+    "ingelheim am rhein",
+    "ingelheim am rhein",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "nothink": "EA Phenomic's headquarters is in **Shanghai, China**.",
+   "think": "Redwood City",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of EA Phenomic is located. Let me start by recalling what I know about EA Phenomic. Wait, EA usually refers to Electronic Arts, but Phenomic might be a different company. Maybe it's a subsidiary or a related company? Or perhaps it's a typo or a",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Death of Nelson, 21 October 1805",
+   "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+   "pop": 283.0,
+   "gold_raw": "Arthur William Devis",
+   "gold": [
+    "arthur william devis",
+    "arthur william devis",
+    "a painter"
+   ],
+   "nothink": "William Charles Pugh",
+   "think": "J.C. Stothard",
+   "think_trace": "<think>\nOkay, I need to figure out who created \"The Death of Nelson, 21 October 1805.\" Let me start by recalling what I know about Admiral Horatio Nelson. He was a British naval hero who died during the Battle of Trafalgar in 1805. His death is a significant historical event, so there are likely art",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Battle of Chiari",
+   "q": "Where is Battle of Chiari located?",
+   "pop": 293.0,
+   "gold_raw": "Chiari",
+   "gold": [
+    "chiari",
+    "chiari",
+    "brescia",
+    "lombardy",
+    "italy"
+   ],
+   "nothink": "Lake Trasimeno",
+   "think": "Chiari",
+   "think_trace": "<think>\nOkay, I need to figure out where the Battle of Chiari is located. First, I remember that \"Chiari\" might be a place name. Let me think... Chiari could refer to a town or city. I think there's a place called Chiari in Italy. Maybe in the north? Like Lombardy region? I recall that there was a h",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Piccolomini Altarpiece",
+   "q": "Who was Piccolomini Altarpiece created by?",
+   "pop": 304.0,
+   "gold_raw": "Michelangelo",
+   "gold": [
+    "michelangelo",
+    "michelangelo",
+    "an italian"
+   ],
+   "nothink": "Sandro Botticelli",
+   "think": "Raphael",
+   "think_trace": "<think>\nOkay, I need to figure out who created the Piccolomini Altarpiece. Let me start by recalling what I know about famous altarpieces. The name Piccolomini might be associated with a family or a location. I remember that Raphael was a Renaissance artist known for his altarpieces. There's the Sis",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Michael Quinion",
+   "q": "Where was Michael Quinion educated?",
+   "pop": 313.0,
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "nothink": "University of Oxford",
+   "think": "Oxford University",
+   "think_trace": "<think>\nOkay, I need to find out where Michael Quinion was educated. Let me start by recalling who Michael Quinion is. He's known for his work on the website World Wide Words, which deals with language and word origins. Now, his education... I'm not sure off the top of my head.\n\nFirst, I'll try to r",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "1994 Masters Tournament",
+   "q": "Where is 1994 Masters Tournament located?",
+   "pop": 323.0,
+   "gold_raw": "Augusta National Golf Club",
+   "gold": [
+    "augusta national golf club",
+    "augusta national golf club",
+    "georgia",
+    "united states"
+   ],
+   "nothink": "Augusta National Golf Club",
+   "think": "Augusta National Golf Club",
+   "think_trace": "<think>\nOkay, so the user is asking where the 1994 Masters Tournament was located. They want just the name briefly. Let me think.\n\nFirst, I know the Masters Tournament is held at Augusta National Golf Club every year. But wait, does the location change? No, it's always in Augusta, Georgia. So regard",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Every Day I Have to Cry",
+   "q": "What music label is Every Day I Have to Cry represented by?",
+   "pop": 335.0,
+   "gold_raw": "Checker",
+   "gold": [
+    "checker",
+    "checker",
+    "chess records",
+    "us record label"
+   ],
+   "nothink": "Warner Bros. Records",
+   "think": "Motown Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents the song \"Every Day I Have to Cry.\" Let me start by recalling the song. I think it's a classic, maybe from the 60s or 70s. The title sounds familiar; perhaps it's by a Motown artist? Wait, \"Every Day I Have to Cry\" was originally recorded",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Brad St. Louis",
+   "q": "Where was Brad St. Louis educated?",
+   "pop": 346.0,
+   "gold_raw": "Missouri State University",
+   "gold": [
+    "missouri state university",
+    "missouri state university",
+    "springfield  missouri",
+    "missouri",
+    "united states"
+   ],
+   "nothink": "University of Toronto",
+   "think": "University of Calgary",
+   "think_trace": "<think>\nOkay, I need to find out where Brad St. Louis was educated. Let me start by recalling what I know about him. Brad St. Louis is a Canadian politician who served as a Member of the Legislative Assembly in Alberta. He was part of the Progressive Conservative party and represented the constituen",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Alfred Cooper",
+   "q": "Who is Alfred Cooper's child?",
+   "pop": 356.0,
+   "gold_raw": "Duff Cooper",
+   "gold": [
+    "duff cooper",
+    "duff cooper",
+    "a politician"
+   ],
+   "nothink": "Alfred Cooper's child is **David Cooper**.",
+   "think": "Charlie",
+   "think_trace": "<think>\nOkay, so I need to find out who Alfred Cooper's child is. Let me start by recalling any information I have about Alfred Cooper. Wait, Alfred Cooper could be a real person or maybe a fictional character. I'm not sure. Let me think... There's a character named Alfred in Batman comics, but his ",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Amos Fortune",
+   "q": "Where did Amos Fortune die?",
+   "pop": 367.0,
+   "gold_raw": "Jaffrey",
+   "gold": [
+    "jaffrey",
+    "jaffrey",
+    "new hampshire",
+    "united states"
+   ],
+   "nothink": "Vermont",
+   "think": "Concord, New Hampshire",
+   "think_trace": "<think>\nOkay, I need to figure out where Amos Fortune died. Let me start by recalling what I know about him. Amos Fortune was an African-American businessman and community leader in the 18th and 19th centuries. I remember he was born in Africa, captured during the slave trade, and eventually became ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Nokia N76",
+   "q": "Which company is Nokia N76 produced by?",
+   "pop": 376.0,
+   "gold_raw": "Nokia",
+   "gold": [
+    "nokia",
+    "nokia",
+    "finnish multinational telecommunications and information technology company",
+    "finnish company"
+   ],
+   "nothink": "Nokia",
+   "think": "Nokia",
+   "think_trace": "<think>\nOkay, I need to figure out which company produced the Nokia N76. Let me start by recalling what I know about Nokia. Nokia is a well-known company, primarily associated with mobile phones. They were a major player in the early 2000s before smartphones became dominant. The N76 model sounds lik",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Art Blakey Big Band",
+   "q": "Who performed Art Blakey Big Band?",
+   "pop": 390.0,
+   "gold_raw": "Art Blakey",
+   "gold": [
+    "art blakey",
+    "art blakey",
+    "art blakey and the jazz messengers",
+    "a jazz musician",
+    "a musician"
+   ],
+   "nothink": "Art Blakey",
+   "think": "Art Blakey's Jazz Messengers",
+   "think_trace": "<think>\nOkay, so the question is asking who performed Art Blakey Big Band. Let me think. Art Blakey was a jazz drummer and bandleader, right? He was known for leading the Jazz Messengers. Wait, the question is about the Art Blakey Big Band. I think he had different ensembles over the years. The Jazz",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Buzz Potamkin",
+   "q": "Where did Buzz Potamkin die?",
+   "pop": 404.0,
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "nothink": "Los Angeles",
+   "think": "Chicago",
+   "think_trace": "<think>\nOkay, I need to find out where Buzz Potamkin died. Let me start by recalling who he was. Buzz Potamkin was a radio and TV personality, known for his work in the mid-20th century. I think he was involved in broadcasting, maybe in New York or Chicago since those were big media hubs.\n\nFirst, I ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Democratic Forum for Labour and Liberties",
+   "q": "Who founded Democratic Forum for Labour and Liberties?",
+   "pop": 416.0,
+   "gold_raw": "Mustapha Ben Jafar",
+   "gold": [
+    "mustapha ben jafar",
+    "mustapha ben jafar",
+    "a tunisian politician",
+    "a politician"
+   ],
+   "nothink": "Mehdi Ben Barka founded Democratic Forum for Labour and Liberties.",
+   "think": "Slobodan Jovanovi\u0107",
+   "think_trace": "<think>\nOkay, I need to find out who founded the Democratic Forum for Labour and Liberties. Let me start by recalling what I know about political parties in different countries. The name sounds like it could be a European party, maybe from Eastern Europe or the Balkans. I'm not immediately familiar ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bank of Beijing",
+   "q": "Where is the headquarter of Bank of Beijing?",
+   "pop": 433.0,
+   "gold_raw": "Beijing",
+   "gold": [
+    "beijing",
+    "beijing",
+    "china",
+    "asia"
+   ],
+   "nothink": "Beijing",
+   "think": "Beijing",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Bank of Beijing is located. Let me start by recalling what I know. Bank of Beijing is a Chinese bank, so it's likely based in Beijing. But I should confirm that.\n\nFirst, I'll think about major banks in China. For example, the Industrial and ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Henry de Nassau, Lord Overkirk",
+   "q": "Who is Henry de Nassau, Lord Overkirk's child?",
+   "pop": 446.0,
+   "gold_raw": "Henry de Nassau d'Auverquerque, 1st Earl of Grantham",
+   "gold": [
+    "henry de nassau d auverquerque  1st earl of grantham",
+    "henry de nassau d auverquerque  1st earl of grantham",
+    "henry de nassau  lord overkirk s son",
+    "henry de nassau  lord overkirk s child"
+   ],
+   "nothink": "William III of England",
+   "think": "William of Nassau",
+   "think_trace": "<think>\nOkay, I need to find out who Henry de Nassau, Lord Overkirk's child is. Let me start by recalling what I know about the Nassau family. The Nassau family is a prominent European noble family, part of the House of Orange-Nassau, which has been significant in Dutch history. Lord Overkirk might ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Rivalry",
+   "q": "Who performed The Rivalry?",
+   "pop": 460.0,
+   "gold_raw": "Running Wild",
+   "gold": [
+    "running wild",
+    "running wild",
+    "a german heavy metal band",
+    "a band"
+   ],
+   "nothink": "The Rivalry was performed by **The Weeknd**.",
+   "think": "Shania Twain and Bryan Adams",
+   "think_trace": "<think>\nOkay, so I need to figure out who performed \"The Rivalry.\" Let me start by recalling what I know about this song. \"The Rivalry\" sounds familiar, but I'm not exactly sure who did it. Maybe it's a song title that's been covered by different artists?\n\nFirst, I'll think about possible genres. Co",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Tan Lark Sye",
+   "q": "Where did Tan Lark Sye die?",
+   "pop": 476.0,
+   "gold_raw": "Singapore",
+   "gold": [
+    "singapore",
+    "singapore",
+    "southeast asia",
+    "asia"
+   ],
+   "nothink": "Singapore",
+   "think": "Singapore",
+   "think_trace": "<think>\nOkay, I need to find out where Tan Lark Sye died. Let me start by recalling what I know about him. Tan Lark Sye was a prominent Chinese businessman and community leader in Singapore during the early 20th century. He was involved in various enterprises, including shipping and banking. \n\nFirst",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "McOndo",
+   "q": "Who is the author of McOndo?",
+   "pop": 488.0,
+   "gold_raw": "Alberto Fuguet",
+   "gold": [
+    "alberto fuguet",
+    "alberto fuguet",
+    "a chilean writer"
+   ],
+   "nothink": "The author of *McOndo* is **Aldo Pellegrini**.",
+   "think": "C\u00e9sar Aira",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"McOndo\" is. Let me start by recalling what I know about this book. \"McOndo\" is a novel that's part of the Latin American literary scene. I remember that it's associated with the \"McOndo\" movement, which is a literary movement that's a reaction agai",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Moshe Ivgy",
+   "q": "Who is Moshe Ivgy's child?",
+   "pop": 506.0,
+   "gold_raw": "Dana Ivgy",
+   "gold": [
+    "dana ivgy",
+    "dana ivgy",
+    "an actress"
+   ],
+   "nothink": "Yossi Benayoun",
+   "think": "Noa Kirel",
+   "think_trace": "<think>\nOkay, I need to find out who Moshe Ivgy's child is. Let me start by recalling what I know about Moshe Ivgy. He's an Israeli singer and songwriter, right? I think he's been active in the music scene for a while. Now, about his family... I remember that he has a daughter who's also in the musi",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Baniachang Upazila",
+   "q": "Where is Baniachang Upazila located?",
+   "pop": 521.0,
+   "gold_raw": "Habiganj District",
+   "gold": [
+    "habiganj district",
+    "habiganj district",
+    "sylhet division",
+    "bangladesh"
+   ],
+   "nothink": "Bangladesh",
+   "think": "Panchagarh District, Bangladesh.",
+   "think_trace": "<think>\nOkay, I need to figure out where Baniachang Upazila is located. First, I remember that \"Upazila\" is a term used in Bangladesh for a sub-district administrative division. So Baniachang Upazila must be in Bangladesh. Now, I need to recall which district it's part of. I think the name might be ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "AGS Airports",
+   "q": "Who owns AGS Airports?",
+   "pop": 535.0,
+   "gold_raw": "Macquarie Group",
+   "gold": [
+    "macquarie group",
+    "macquarie group",
+    "an australian investment bank",
+    "a financial services company"
+   ],
+   "nothink": "AGS Airports is owned by **AGS Group**.",
+   "think": "Infratil",
+   "think_trace": "<think>\nOkay, I need to find out who owns AGS Airports. Let me start by recalling what I know about AGS Airports. AGS Airports is a company that manages several airports in the UK. I remember that they operate smaller regional airports rather than the major ones like Heathrow or Gatwick.\n\nI think AG",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Sting",
+   "q": "Who was Sting created by?",
+   "pop": 550.0,
+   "gold_raw": "Gondolin",
+   "gold": [
+    "gondolin",
+    "gondolin",
+    "elves",
+    "middle earth"
+   ],
+   "nothink": "Gordon Matthew Thomas Sumner",
+   "think": "Gordon Sumner",
+   "think_trace": "<think>\nOkay, so I need to figure out who created Sting. Let me start by recalling what I know about Sting. He's a musician, right? I think he was part of a band called The Police. Wait, but the question is about who created him. Hmm, maybe they mean who created the character or the persona of Sting",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Ben Heppner",
+   "q": "Where did Ben Heppner die?",
+   "pop": 568.0,
+   "gold_raw": "Rosthern",
+   "gold": [
+    "rosthern",
+    "rosthern",
+    "saskatchewan",
+    "canada"
+   ],
+   "nothink": "Ben Heppner died in Toronto.",
+   "think": "Toronto",
+   "think_trace": "<think>\nOkay, I need to find out where Ben Heppner died. Let me start by recalling who he is. Ben Heppner was a Canadian tenor, right? I remember he was part of the group Tenors of the World or something like that. He had a successful career in opera and classical music.\n\nNow, the question is about ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Packard Executive",
+   "q": "Which company is Packard Executive produced by?",
+   "pop": 589.0,
+   "gold_raw": "Packard",
+   "gold": [
+    "packard",
+    "packard",
+    "packard motor car company",
+    "american motors corporation",
+    "automotive manufacturer"
+   ],
+   "nothink": "Packard",
+   "think": "Packard",
+   "think_trace": "<think>\nOkay, I need to figure out which company produced the Packard Executive. Let me start by recalling what I know about Packard. Packard was a well-known American automobile manufacturer, right? They were around in the early to mid-20th century. The Packard Executive sounds like a model they mi",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Agony in the Garden",
+   "q": "Where is Agony in the Garden located?",
+   "pop": 611.0,
+   "gold_raw": "National Gallery",
+   "gold": [
+    "national gallery",
+    "national gallery",
+    "london",
+    "england"
+   ],
+   "nothink": "Gethsemane",
+   "think": "Florence",
+   "think_trace": "<think>\nOkay, so I need to figure out where \"Agony in the Garden\" is located. Let me start by recalling what I know about this term. \"Agony in the Garden\" sounds like it could be a title of a painting or a sculpture, maybe related to a biblical scene. The Garden part might refer to the Garden of Get",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Leica M Monochrom",
+   "q": "Which company is Leica M Monochrom produced by?",
+   "pop": 634.0,
+   "gold_raw": "Leica Camera",
+   "gold": [
+    "leica camera",
+    "leica camera",
+    "german optics company",
+    "german company"
+   ],
+   "nothink": "Leica",
+   "think": "Leica Camera AG",
+   "think_trace": "<think>\nOkay, I need to figure out which company produces the Leica M Monochrom. Let me start by recalling what I know about Leica. Leica is a well-known brand in photography, especially for their cameras and lenses. The M Monochrom is a model I've heard about\u2014it's a rangefinder camera, right? I thi",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Yamaha Zuma 125",
+   "q": "Which company is Yamaha Zuma 125 produced by?",
+   "pop": 657.0,
+   "gold_raw": "Yamaha Motor Company",
+   "gold": [
+    "yamaha motor company",
+    "yamaha motor company",
+    "yamaha",
+    "japanese company"
+   ],
+   "nothink": "Yamaha",
+   "think": "Yamaha",
+   "think_trace": "<think>\nOkay, I need to figure out which company produces the Yamaha Zuma 125. Let's start by breaking down the name. The model is called Yamaha Zuma 125. The first part, \"Yamaha,\" is likely the brand name. Yamaha is a well-known Japanese company that makes various products like musical instruments,",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Rinc\u00f3n de Luz",
+   "q": "Who was Rinc\u00f3n de Luz created by?",
+   "pop": 679.0,
+   "gold_raw": "Cristina Morena",
+   "gold": [
+    "cristina morena",
+    "cristina morena",
+    "a television producer"
+   ],
+   "nothink": "Rinc\u00f3n de Luz was created by **Carlos F. Aramburuzabala**.",
+   "think": "Camila Rinc\u00f3n",
+   "think_trace": "<think>\nOkay, I need to find out who created Rinc\u00f3n de Luz. Let me start by recalling what I know. Rinc\u00f3n de Luz is a Spanish name, which translates to \"Corner of Light.\" It might be a brand, a place, or maybe a cultural initiative. I'm not immediately familiar with it, so I should probably search f",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "FC Kuressaare",
+   "q": "Where is the headquarter of FC Kuressaare?",
+   "pop": 702.0,
+   "gold_raw": "Kuressaare",
+   "gold": [
+    "kuressaare",
+    "kuressaare",
+    "saaremaa",
+    "estonia"
+   ],
+   "nothink": "Kuressaare",
+   "think": "Kuressaare",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of FC Kuressaare is located. Let me start by recalling what I know about FC Kuressaare. I think it's a football club, probably from a smaller country or region. The name \"Kuressaare\" sounds familiar; maybe it's related to a place in the Baltic ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Clarke Stadium",
+   "q": "Who owns Clarke Stadium?",
+   "pop": 727.0,
+   "gold_raw": "Edmonton",
+   "gold": [
+    "edmonton",
+    "edmonton",
+    "alberta",
+    "canada"
+   ],
+   "nothink": "City of Victoria",
+   "think": "City of Victoria",
+   "think_trace": "<think>\nOkay, I need to find out who owns Clarke Stadium. Let me start by recalling what I know about Clarke Stadium. It's a stadium in Canada, probably in British Columbia since the name sounds familiar there. I think it's in Victoria, maybe? I remember that some stadiums are owned by cities or spe",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bag It Up",
+   "q": "What music label is Bag It Up represented by?",
+   "pop": 750.0,
+   "gold_raw": "EMI",
+   "gold": [
+    "emi",
+    "emi",
+    "a british music recording and publishing company",
+    "a music recording and publishing company"
+   ],
+   "nothink": "Bag It Up is represented by **RCA Records**.",
+   "think": "Triple 6 Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents Bag It Up. Let me start by recalling what I know about Bag It Up. They're a band, probably in the punk or alternative scene since their name sounds like it could be from that genre. I'm not super familiar with their discography, so I migh",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Laredo Energy Arena",
+   "q": "Who owns Laredo Energy Arena?",
+   "pop": 778.0,
+   "gold_raw": "Laredo",
+   "gold": [
+    "laredo",
+    "laredo",
+    "texas",
+    "usa"
+   ],
+   "nothink": "Laredo Energy Arena is owned by the city of Laredo, Texas.",
+   "think": "David D'Amore",
+   "think_trace": "<think>\nOkay, I need to find out who owns the Laredo Energy Arena. Let me start by recalling what I know about the venue. The Laredo Energy Arena is located in Laredo, Texas. I think it's a sports and entertainment venue, maybe a stadium or arena.\n\nFirst, I should check if \"Laredo Energy Arena\" is t",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Tradewest",
+   "q": "Who owns Tradewest?",
+   "pop": 806.0,
+   "gold_raw": "Midway Games",
+   "gold": [
+    "midway games",
+    "midway games",
+    "an american video game company"
+   ],
+   "nothink": "Tradewest is owned by **Hasbro**.",
+   "think": "Tradewest is owned by its original founders, including John Harl.",
+   "think_trace": "<think>\nOkay, I need to figure out who owns Tradewest. Let me start by recalling what I know about Tradewest. Tradewest was a game publisher from the 1980s and 1990s, known for publishing role-playing games like \"RuneQuest\" and \"Tunnels & Trolls.\" They were active during the golden age of tabletop R",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Sensual Phrase",
+   "q": "Who was Sensual Phrase created by?",
+   "pop": 831.0,
+   "gold_raw": "Mayu Shinjo",
+   "gold": [
+    "mayu shinjo",
+    "mayu shinjo",
+    "a japanese manga artist",
+    "a manga artist"
+   ],
+   "nothink": "Sensual Phrase was created by **Yiannis Xenakis**.",
+   "think": "Kemco",
+   "think_trace": "<think>\nOkay, I need to find out who created Sensual Phrase. Let me start by recalling what I know about Sensual Phrase. It's a Japanese visual novel, right? So maybe it was developed by a Japanese company. I think the name might be related to a well-known game developer in Japan.\n\nWait, I remember ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Northampton Castle",
+   "q": "Who owns Northampton Castle?",
+   "pop": 862.0,
+   "gold_raw": "Simon I de Senlis, Earl of Huntingdon-Northampton",
+   "gold": [
+    "simon i de senlis  earl of huntingdon northampton",
+    "simon i de senlis  earl of huntingdon northampton",
+    "a norman nobleman"
+   ],
+   "nothink": "Northampton Borough Council",
+   "think": "Northampton Borough Council",
+   "think_trace": "<think>\nOkay, I need to find out who owns Northampton Castle. Let me start by recalling what I know about Northampton Castle. I think it's a historic building in Northampton, England. I remember that some castles in the UK are owned by local authorities or historical societies.\n\nFirst, I'll check if",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Command Decision",
+   "q": "Who is the author of Command Decision?",
+   "pop": 891.0,
+   "gold_raw": "William Wister Haines",
+   "gold": [
+    "william wister haines",
+    "william wister haines",
+    "an american screenwriter",
+    "a screenwriter"
+   ],
+   "nothink": "Andrew Roberts",
+   "think": "Carlo D'Este",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"Command Decision\" is. Let me start by recalling what I know. \"Command Decision\" sounds like a military or historical novel. Maybe it's a book about a significant military operation or leadership decisions during a war.\n\nI think the title might be r",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "2001 Malaysian Grand Prix",
+   "q": "Where is 2001 Malaysian Grand Prix located?",
+   "pop": 913.0,
+   "gold_raw": "Sepang International Circuit",
+   "gold": [
+    "sepang international circuit",
+    "sepang international circuit",
+    "selangor",
+    "malaysia"
+   ],
+   "nothink": "Sepang",
+   "think": "Sepang International Circuit",
+   "think_trace": "<think>\nOkay, I need to find out where the 2001 Malaysian Grand Prix was held. Let me start by recalling that the Malaysian Grand Prix is a Formula 1 race. I remember that the race usually takes place at the Sepang International Circuit. But wait, was there any year when it was held elsewhere? Let m",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "California State Route 166",
+   "q": "Where is California State Route 166 located?",
+   "pop": 954.0,
+   "gold_raw": "California",
+   "gold": [
+    "california",
+    "california",
+    "united states of america"
+   ],
+   "nothink": "California",
+   "think": "Central Valley",
+   "think_trace": "<think>\nOkay, I need to figure out where California State Route 166 is located. Let me start by recalling what I know about California highways. I know that California has a lot of state routes, each with their own numbers and locations. Route 166 isn't one I'm super familiar with, so I'll have to t",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Margaret Bentinck, Duchess of Portland",
+   "q": "Who is Margaret Bentinck, Duchess of Portland married to?",
+   "pop": 985.0,
+   "gold_raw": "William Bentinck, 2nd Duke of Portland",
+   "gold": [
+    "william bentinck  2nd duke of portland",
+    "william bentinck  2nd duke of portland",
+    "william bentinck",
+    "a duke",
+    "a peer"
+   ],
+   "nothink": "William Bentinck, Duke of Portland",
+   "think": "William Henry Bentinck",
+   "think_trace": "<think>\nOkay, so I need to figure out who Margaret Bentinck, Duchess of Portland was married to. Let me start by recalling what I know about British nobility titles. The Duchess of Portland would be the wife of the Duke of Portland. Now, Margaret Bentinck's surname is Bentinck, which is a Dutch nobl",
+   "think_finished": false,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Serena",
+   "q": "Who is Serena married to?",
+   "pop": 1016.0,
+   "gold_raw": "Stilicho",
+   "gold": [
+    "stilicho",
+    "stilicho",
+    "a roman army general",
+    "a roman"
+   ],
+   "nothink": "Serena is married to Alexis Ohanian.",
+   "think": "Alexis Ohanian",
+   "think_trace": "<think>\nOkay, so the question is asking who Serena is married to, and the answer should just be the name briefly. Let me think. Serena Williams is a famous tennis player, right? I remember she got married a few years back. Her husband's name... I think it's Alexis. Wait, Alexis what? Oh, right, Alex",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "J & T",
+   "q": "Where is the headquarter of J & T?",
+   "pop": 1055.0,
+   "gold_raw": "Bratislava",
+   "gold": [
+    "bratislava",
+    "bratislava",
+    "slovakia",
+    "europe"
+   ],
+   "nothink": "J&T Express's headquarters is in Guangzhou, China.",
+   "think": "Guangzhou",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of J&T is located. Let me start by recalling what I know about J&T. I think J&T is a company, maybe a logistics or delivery service. I remember hearing about J&T Express, which is a courier company based in China. But I'm not entirely sure if t",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Interstate 696",
+   "q": "Who owns Interstate 696?",
+   "pop": 1088.0,
+   "gold_raw": "Michigan Department of Transportation",
+   "gold": [
+    "michigan department of transportation",
+    "michigan department of transportation",
+    "michigan state government",
+    "united states government"
+   ],
+   "nothink": "No single owner; maintained by MDOT.",
+   "think": "Michigan Department of Transportation",
+   "think_trace": "<think>\nOkay, so I need to figure out who owns Interstate 696. Let me start by recalling what I know about interstates in the United States. I know that most interstates are part of the National Highway System, which is maintained by the federal government through the Federal Highway Administration ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "LG G2",
+   "q": "Which company is LG G2 produced by?",
+   "pop": 1137.0,
+   "gold_raw": "LG Electronics",
+   "gold": [
+    "lg electronics",
+    "lg electronics",
+    "a south korean company",
+    "a multinational company"
+   ],
+   "nothink": "LG",
+   "think": "LG",
+   "think_trace": "<think>\nOkay, so the user is asking which company produced the LG G2. Let me think. I know LG is a well-known electronics company, but maybe they're trying to confirm if LG is the manufacturer or if it's a different brand. The model number is LG G2, so the \"LG\" part usually stands for the company na",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Victoria Foyt",
+   "q": "Who is Victoria Foyt married to?",
+   "pop": 1168.0,
+   "gold_raw": "Henry Jaglom",
+   "gold": [
+    "henry jaglom",
+    "henry jaglom",
+    "an american film director",
+    "a film director"
+   ],
+   "nothink": "Tony George",
+   "think": "Bryan Herta",
+   "think_trace": "<think>\nOkay, I need to find out who Victoria Foyt is married to. Let me start by recalling what I know about Victoria Foyt. She's a racing driver, right? I think she's part of the Foyt racing family. The Foyts are known in motorsports, especially in IndyCar. Her father is A.J. Foyt, a legendary rac",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Battle of Lagos",
+   "q": "Where is Battle of Lagos located?",
+   "pop": 1209.0,
+   "gold_raw": "Lagos",
+   "gold": [
+    "lagos",
+    "lagos",
+    "nigeria",
+    "africa"
+   ],
+   "nothink": "Lagos, Nigeria",
+   "think": "Lagos Bay",
+   "think_trace": "<think>\nOkay, I need to figure out where the Battle of Lagos is located. Let me start by recalling what I know about battles named Lagos. I remember that there was a naval battle involving the British and French during the American Revolutionary War. The name Lagos might refer to Lagos Bay or the La",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Liacouras Center",
+   "q": "Who owns Liacouras Center?",
+   "pop": 1256.0,
+   "gold_raw": "Temple University",
+   "gold": [
+    "temple university",
+    "temple university",
+    "a public research university",
+    "a public research university in philadelphia  united states"
+   ],
+   "nothink": "Villanova University",
+   "think": "Saint Joseph's University",
+   "think_trace": "<think>\nOkay, I need to figure out who owns the Liacouras Center. Let me start by recalling what I know about the Liacouras Center. It's a sports and entertainment venue located in Philadelphia, Pennsylvania. I think it's associated with Saint Joseph's University because I remember that their basket",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Black Aria",
+   "q": "Who performed Black Aria?",
+   "pop": 1302.0,
+   "gold_raw": "Glenn Danzig",
+   "gold": [
+    "glenn danzig",
+    "glenn danzig",
+    "american rock musician",
+    "musician"
+   ],
+   "nothink": "Tupac Shakur",
+   "think": "Cher",
+   "think_trace": "<think>\nOkay, so I need to figure out who performed \"Black Aria.\" Let me start by recalling what I know about this piece. \"Black Aria\" sounds familiar, maybe from a movie or a song. Wait, I think it's from the movie \"The Witches of Eastwick.\" Let me check that. The main characters in that movie are ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Crayons",
+   "q": "What music label is Crayons represented by?",
+   "pop": 1346.0,
+   "gold_raw": "Burgundy Records",
+   "gold": [
+    "burgundy records",
+    "burgundy records"
+   ],
+   "nothink": "Crayons is represented by **XL Recordings**.",
+   "think": "Columbia Records Japan",
+   "think_trace": "<think>\nOkay, I need to find out which music label Crayons is represented by. Let me start by recalling what I know about Crayons. They're a band, probably Japanese since the name sounds familiar in that context. I think they're a visual kei band, maybe from the 90s or 2000s. Visual kei bands often ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "TrueCar",
+   "q": "Who founded TrueCar?",
+   "pop": 1405.0,
+   "gold_raw": "Scott Painter",
+   "gold": [
+    "scott painter",
+    "scott painter",
+    "an american investor",
+    "a person"
+   ],
+   "nothink": "Scott Painter",
+   "think": "Scott Painter",
+   "think_trace": "<think>\nOkay, I need to find out who founded TrueCar. Let me start by recalling what I know about TrueCar. It's a company related to car pricing and deals, right? I think they help consumers get better prices on new cars by connecting them with dealers. Now, the founder... I'm not sure. Maybe I've h",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Et in Arcadia ego",
+   "q": "Who was Et in Arcadia ego created by?",
+   "pop": 1468.0,
+   "gold_raw": "Guercino",
+   "gold": [
+    "guercino",
+    "guercino",
+    "an italian painter",
+    "a painter"
+   ],
+   "nothink": "Nicolas Poussin",
+   "think": "Nicolas Poussin",
+   "think_trace": "<think>\nOkay, so I need to figure out who created \"Et in Arcadia ego.\" Let me start by recalling what I know about this artwork. The title sounds familiar; I think it's a painting by a famous artist. The phrase \"Et in Arcadia ego\" is Latin, which translates to \"Even in Arcadia, I am.\" Arcadia is a r",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Jingkang Incident",
+   "q": "Where is Jingkang Incident located?",
+   "pop": 1521.0,
+   "gold_raw": "Kaifeng",
+   "gold": [
+    "kaifeng",
+    "kaifeng",
+    "henan",
+    "china"
+   ],
+   "nothink": "Kaifeng",
+   "think": "Kaifeng",
+   "think_trace": "<think>\nOkay, so I need to figure out where the Jingkang Incident took place. Let me start by recalling what I know about this event. The Jingkang Incident sounds familiar from Chinese history. I think it's related to the Jin Dynasty or maybe the Song Dynasty. Wait, the Jin Dynasty was a northern dy",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Planetary Resources",
+   "q": "Who founded Planetary Resources?",
+   "pop": 1587.0,
+   "gold_raw": "Peter Diamandis",
+   "gold": [
+    "peter diamandis",
+    "peter diamandis",
+    "an american businessman",
+    "a businessman"
+   ],
+   "nothink": "Eric Anderson and Peter Diamandis.",
+   "think": "Peter Diamandis",
+   "think_trace": "<think>\nOkay, I need to find out who founded Planetary Resources. Let me start by recalling what I know about Planetary Resources. I think it's a company related to space exploration or asteroid mining. I remember that some notable people in the tech industry might be involved.\n\nFirst, I'll try to r",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Battle of Cresson",
+   "q": "Where is Battle of Cresson located?",
+   "pop": 1644.0,
+   "gold_raw": "Nazareth",
+   "gold": [
+    "nazareth",
+    "nazareth",
+    "israel",
+    "middle east"
+   ],
+   "nothink": "Lebanon",
+   "think": "Lebanon",
+   "think_trace": "<think>\nOkay, I need to figure out where the Battle of Cresson is located. Let me start by recalling what I know about historical battles. The name \"Cresson\" might be a place in France since many battles there are named after towns or regions. I remember there's a Battle of Crecy, which was a signif",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "list of shahenshahs of the Sassanid Empire",
+   "q": "Who founded list of shahenshahs of the Sassanid Empire?",
+   "pop": 1723.0,
+   "gold_raw": "Ardashir I",
+   "gold": [
+    "ardashir i",
+    "ardashir i",
+    "a persian"
+   ],
+   "nothink": "Ardashir I founded the list of shahenshahs of the Sassanid Empire.",
+   "think": "Ardashir I",
+   "think_trace": "<think>\nOkay, so the user is asking who founded the list of shahenshahs of the Sassanid Empire. Let me break this down. First, I need to clarify what exactly they're asking. The term \"shahenshahs\" refers to the kings of kings in the Sassanid Empire. The question is about who created the list of thes",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Autonomy Corporation",
+   "q": "Who founded Autonomy Corporation?",
+   "pop": 1808.0,
+   "gold_raw": "Michael Richard Lynch",
+   "gold": [
+    "michael richard lynch",
+    "michael richard lynch",
+    "an irish businessman",
+    "a businessman"
+   ],
+   "nothink": "Richard Sutherland",
+   "think": "Mike Lynch",
+   "think_trace": "<think>\nOkay, I need to find out who founded Autonomy Corporation. Let me start by recalling what I know about Autonomy. I think it's a company related to software or maybe AI. Wait, wasn't there a company called Autonomy that was involved in information management? I remember something about a scan",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Real Roxanne",
+   "q": "What music label is The Real Roxanne represented by?",
+   "pop": 1896.0,
+   "gold_raw": "Select Records",
+   "gold": [
+    "select records",
+    "select records"
+   ],
+   "nothink": "Roxanne Records",
+   "think": "4th & B'way Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents The Real Roxanne. Let me start by recalling what I know about her. The Real Roxanne is a rapper from the 1980s and 1990s, known for her work with the group U.T.F.O. She had a solo career as well. \n\nFirst, I should check her discography. H",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Adrianne Allen",
+   "q": "Who is Adrianne Allen's child?",
+   "pop": 1983.0,
+   "gold_raw": "Anna Massey",
+   "gold": [
+    "anna massey",
+    "anna massey",
+    "an actress"
+   ],
+   "nothink": "Adrianne Allen's child is not publicly known or disclosed.",
+   "think": "Adrianne Allen's child is not publicly disclosed.",
+   "think_trace": "<think>\nOkay, I need to find out who Adrianne Allen's child is. Let me start by recalling who Adrianne Allen is. She's an actress, right? I think she's been in some TV shows or movies. Maybe I've heard her name in a recent project.\n\nFirst, I should check her profile on a reliable source like IMDb. L",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Vine Deloria, Jr.",
+   "q": "Who is Vine Deloria, Jr.'s child?",
+   "pop": 2096.0,
+   "gold_raw": "Philip J. Deloria",
+   "gold": [
+    "philip j  deloria",
+    "philip j  deloria",
+    "philip deloria",
+    "a historian"
+   ],
+   "nothink": "Dee Dee DeLoria",
+   "think": "Vine Deloria III",
+   "think_trace": "<think>\nOkay, I need to find out who Vine Deloria Jr.'s child is. Let me start by recalling what I know about Vine Deloria Jr. He was a prominent Native American activist, author, and scholar, known for his work in advocating for Native American rights and his writings on law and religion. Now, I ne",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Liberty Shoes",
+   "q": "Where is the headquarter of Liberty Shoes?",
+   "pop": 2185.0,
+   "gold_raw": "Karnal",
+   "gold": [
+    "karnal",
+    "karnal",
+    "haryana",
+    "india"
+   ],
+   "nothink": "Bangladesh",
+   "think": "Woburn, Massachusetts",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of Liberty Shoes is located. Let me start by recalling if I know anything about Liberty Shoes. I'm not too familiar with the brand, so I'll have to do a quick search.\n\nFirst, I'll check if Liberty Shoes is a well-known company. Maybe they're ba",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Mad War",
+   "q": "Where is Mad War located?",
+   "pop": 2296.0,
+   "gold_raw": "Kingdom of France",
+   "gold": [
+    "kingdom of france",
+    "kingdom of france",
+    "western europe"
+   ],
+   "nothink": "Mad War is located in France.",
+   "think": "Japan",
+   "think_trace": "<think>\nOkay, so I need to figure out where the Mad War is located. First off, I'm not entirely sure what the Mad War refers to. It might be a historical event, a fictional conflict, or maybe a game. Let me start by breaking down the term.\n\n\"Mad War\" sounds like it could be a nickname for a specific",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Fujiwara no Ch\u014dshi",
+   "q": "Who is Fujiwara no Ch\u014dshi married to?",
+   "pop": 2371.0,
+   "gold_raw": "Go-Horikawa",
+   "gold": [
+    "go horikawa",
+    "go horikawa",
+    "emperor of japan"
+   ],
+   "nothink": "Fujiwara no Ch\u014dshi is married to Emperor Saga.",
+   "think": "Emperor Ichij\u014d",
+   "think_trace": "<think>\nOkay, so I need to find out who Fujiwara no Ch\u014dshi is married to. First, I should confirm who Fujiwara no Ch\u014dshi is. The Fujiwara clan was a prominent family in Japanese history, especially during the Heian period. The name Ch\u014dshi might refer to a specific member of that clan.\n\nWait, maybe I",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Santissima Annunziata",
+   "q": "Who founded Santissima Annunziata?",
+   "pop": 2371.0,
+   "gold_raw": "Servite Order",
+   "gold": [
+    "servite order",
+    "servite order",
+    "roman catholic religious order",
+    "religious order"
+   ],
+   "nothink": "Cosimo I de' Medici",
+   "think": "Saint Francis of Paola",
+   "think_trace": "<think>\nOkay, so I need to find out who founded Santissima Annunziata. Let me start by recalling what I know about Santissima Annunziata. I think it's a religious order or maybe a convent. Wait, Santissima Annunziata translates to \"Most Holy Annunciation,\" which is a common name for churches or reli",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The Serenade",
+   "q": "Who was The Serenade created by?",
+   "pop": 2371.0,
+   "gold_raw": "Judith Leyster",
+   "gold": [
+    "judith leyster",
+    "judith leyster",
+    "a dutch golden age painter",
+    "a painter"
+   ],
+   "nothink": "The Serenade was created by **Tom Lehrer**.",
+   "think": "Wolfgang Amadeus Mozart",
+   "think_trace": "<think>\nOkay, I need to figure out who created \"The Serenade.\" Let me start by recalling what I know about this piece. The Serenade might refer to a musical work, possibly a classical piece. I remember that composers like Mozart wrote serenades. For example, Mozart's Serenade No. 13 for strings in G",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Carlton Centre",
+   "q": "Who owns Carlton Centre?",
+   "pop": 2376.0,
+   "gold_raw": "Transnet",
+   "gold": [
+    "transnet",
+    "transnet",
+    "a south african company"
+   ],
+   "nothink": "The property is owned by **Carlton Centre (Pty) Ltd**, a company listed on the *",
+   "think": "Redefine Properties",
+   "think_trace": "<think>\nOkay, I need to find out who owns the Carlton Centre. Let me start by recalling what I know about the Carlton Centre. It's a prominent building in Johannesburg, South Africa, right? I think it's one of the tallest buildings in the country. Now, ownership... I remember that it was developed b",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bill Nye\u2013Ken Ham debate",
+   "q": "Where is Bill Nye\u2013Ken Ham debate located?",
+   "pop": 2486.0,
+   "gold_raw": "Creation Museum",
+   "gold": [
+    "creation museum",
+    "creation museum",
+    "petersburg  kentucky",
+    "united states"
+   ],
+   "nothink": "Creation Museum",
+   "think": "Creation Museum",
+   "think_trace": "<think>\nOkay, I need to figure out where the Bill Nye vs. Ken Ham debate took place. Let me start by recalling what I know about this event. Bill Nye is a science educator, and Ken Ham is a creationist. Their debate was pretty famous, probably around 2014. I think it was organized by a creationist o",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "SS Oriana",
+   "q": "Which company is SS Oriana produced by?",
+   "pop": 2619.0,
+   "gold_raw": "Vickers-Armstrongs",
+   "gold": [
+    "vickers armstrongs",
+    "vickers armstrongs",
+    "british engineering company",
+    "british company"
+   ],
+   "nothink": "COSCO Shipbuilding",
+   "think": "P&O",
+   "think_trace": "<think>\nOkay, I need to find out which company produced the SS Oriana. Let me start by recalling what I know about the SS Oriana. I think it's a ship, maybe a cruise ship or a passenger liner. The name Oriana might be associated with a cruise line. I remember that P&O is a company that has had ships",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "New Glasgow",
+   "q": "Where is New Glasgow located?",
+   "pop": 2742.0,
+   "gold_raw": "Pictou County",
+   "gold": [
+    "pictou county",
+    "pictou county",
+    "nova scotia",
+    "canada"
+   ],
+   "nothink": "Nova Scotia",
+   "think": "Nova Scotia, Canada",
+   "think_trace": "<think>\nOkay, I need to figure out where New Glasgow is located. Let me start by recalling any information I have about places named New Glasgow. I know Glasgow is a major city in Scotland, but there's also a city named New Glasgow in Canada. I think it's in Nova Scotia. Wait, Nova Scotia has severa",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Caroline John",
+   "q": "Who is Caroline John married to?",
+   "pop": 2898.0,
+   "gold_raw": "Geoffrey Beevers",
+   "gold": [
+    "geoffrey beevers",
+    "geoffrey beevers",
+    "a british actor",
+    "a man"
+   ],
+   "nothink": "David Jason",
+   "think": "David Troughton",
+   "think_trace": "<think>\nOkay, I need to find out who Caroline John is married to. Let me start by recalling who Caroline John is. She's an English actress known for her role as Liz Shaw in Doctor Who. Now, I need to check her marital status.\n\nFirst, I'll think about her personal life. I remember she was married to ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Teach For America",
+   "q": "Who founded Teach For America?",
+   "pop": 3048.0,
+   "gold_raw": "Wendy Kopp",
+   "gold": [
+    "wendy kopp",
+    "wendy kopp",
+    "an american nonprofit executive",
+    "a nonprofit executive"
+   ],
+   "nothink": "Wendy Kopp",
+   "think": "Wendy Kopp",
+   "think_trace": "<think>\nOkay, I need to find out who founded Teach For America. Let me start by recalling what I know. Teach For America is a program that places teachers in under-resourced schools. I think it was started in the 1980s or 1990s. Maybe by someone involved in education reform.\n\nWait, I remember that W",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Fe del Mundo",
+   "q": "Where was Fe del Mundo educated?",
+   "pop": 3257.0,
+   "gold_raw": "Harvard Medical School",
+   "gold": [
+    "harvard medical school",
+    "harvard medical school",
+    "boston",
+    "massachusetts",
+    "united states"
+   ],
+   "nothink": "University of Santo Tomas",
+   "think": "University of Chicago",
+   "think_trace": "<think>\nOkay, I need to find out where Fe del Mundo was educated. Let me start by recalling who she is. Fe del Mundo was a Filipino pediatrician known for her work in child health. I remember she was the first woman president of the Philippine Medical Association. Now, regarding her education, I thi",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "American Tabloid",
+   "q": "Who is the author of American Tabloid?",
+   "pop": 3384.0,
+   "gold_raw": "James Ellroy",
+   "gold": [
+    "james ellroy",
+    "james ellroy",
+    "an american novelist",
+    "a novelist"
+   ],
+   "nothink": "James Ellroy",
+   "think": "Don DeLillo",
+   "think_trace": "<think>\nOkay, I need to find out who the author of \"American Tabloid\" is. Let me start by recalling what I know. The title sounds familiar, maybe a novel or a non-fiction book. I think it might be a novel, possibly from the 90s or 2000s. The word \"Tabloid\" makes me think of sensationalism or media, ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Tales of Suspense",
+   "q": "Who owns Tales of Suspense?",
+   "pop": 3568.0,
+   "gold_raw": "Marvel Comics",
+   "gold": [
+    "marvel comics",
+    "marvel comics",
+    "a comic book publisher"
+   ],
+   "nothink": "Marvel Comics",
+   "think": "Marvel Comics",
+   "think_trace": "<think>\nOkay, so I need to figure out who owns Tales of Suspense. Let me start by recalling what Tales of Suspense is. I think it's a comic book series. From what I remember, Marvel Comics has a lot of titles, and some of their characters started in different series. For example, Iron Man first appe",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Kaitlin Hopkins",
+   "q": "Where was Kaitlin Hopkins born?",
+   "pop": 3745.0,
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "nothink": "Kaitlin Hopkins was born in New Zealand.",
+   "think": "San Antonio",
+   "think_trace": "<think>\nOkay, I need to find out where Kaitlin Hopkins was born. Let me start by recalling if I know anything about her. Kaitlin Hopkins... Hmm, I'm not immediately familiar with her name. Maybe she's a public figure, an athlete, or someone in entertainment?\n\nFirst, I should check if there are any n",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Battle of Sinop",
+   "q": "Where is Battle of Sinop located?",
+   "pop": 3966.0,
+   "gold_raw": "Sinop",
+   "gold": [
+    "sinop",
+    "sinop",
+    "brazil",
+    "south america"
+   ],
+   "nothink": "Sinop",
+   "think": "Sinop, Turkey.",
+   "think_trace": "<think>\nOkay, I need to figure out where the Battle of Sinop is located. Let me start by recalling what I know about this battle. I think it was a historical naval battle, maybe involving Russia and the Ottoman Empire. The name \"Sinop\" sounds familiar; I believe Sinop is a city in Turkey. Let me con",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Milosh",
+   "q": "Who is Milosh married to?",
+   "pop": 4221.0,
+   "gold_raw": "Alexa Nikolas",
+   "gold": [
+    "alexa nikolas",
+    "alexa nikolas",
+    "an american actress",
+    "a woman"
+   ],
+   "nothink": "Milosh is married to **Miley Cyrus**.",
+   "think": "Rachel Hurd-Wood",
+   "think_trace": "<think>\nOkay, so I need to figure out who Milosh is married to. First, I should confirm who Milosh is. There might be multiple people named Milosh, so I need to narrow it down. The most well-known Milosh could be Milos Forman, the Czech-American film director. Wait, but the question is about Milosh,",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "SK Telecom",
+   "q": "Who owns SK Telecom?",
+   "pop": 4480.0,
+   "gold_raw": "SK Group",
+   "gold": [
+    "sk group",
+    "sk group",
+    "a south korean conglomerate"
+   ],
+   "nothink": "SK Group",
+   "think": "SK Group",
+   "think_trace": "<think>\nOkay, I need to figure out who owns SK Telecom. Let me start by recalling what I know about SK Telecom. It's a major South Korean telecommunications company, right? I think SK Telecom is part of the SK Group, which is a large conglomerate in South Korea. The SK Group has various subsidiaries",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Battle of the Paracel Islands",
+   "q": "Where is Battle of the Paracel Islands located?",
+   "pop": 4713.0,
+   "gold_raw": "Paracel Islands",
+   "gold": [
+    "paracel islands",
+    "paracel islands",
+    "south china sea",
+    "asia"
+   ],
+   "nothink": "South China Sea",
+   "think": "Paracel Islands",
+   "think_trace": "<think>\nOkay, I need to figure out where the Battle of the Paracel Islands is located. Let me start by recalling what I know about the Paracel Islands. They are a group of islands in the South China Sea, right? I remember that there have been disputes between China and Vietnam over these islands. Th",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "The Protectors",
+   "q": "Who was The Protectors created by?",
+   "pop": 5027.0,
+   "gold_raw": "Gerry Anderson",
+   "gold": [
+    "gerry anderson",
+    "gerry anderson",
+    "an english television creator and filmmaker",
+    "a television creator and filmmaker"
+   ],
+   "nothink": "Stan Lee and John Buscema.",
+   "think": "Roy Thomas",
+   "think_trace": "<think>\nOkay, I need to figure out who created The Protectors. Let me start by recalling what I know about The Protectors. They're a group of characters in Marvel Comics, right? I think they might be a team similar to the Avengers or the X-Men. Wait, the user is asking specifically about the creator",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "The One That Got Away",
+   "q": "Who was The One That Got Away created by?",
+   "pop": 5322.0,
+   "gold_raw": "Jake Owen",
+   "gold": [
+    "jake owen",
+    "jake owen",
+    "an american country singer",
+    "a singer"
+   ],
+   "nothink": "Taylor Swift",
+   "think": "Katy Perry",
+   "think_trace": "<think>\nOkay, I need to figure out who created \"The One That Got Away.\" Let me start by recalling what I know about this song. I think it's a song by a well-known artist. The title sounds familiar; maybe it's by Katy Perry? Wait, Katy Perry has a song called \"The One That Got Away,\" right? Let me co",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Pujie",
+   "q": "Who is Pujie married to?",
+   "pop": 5713.0,
+   "gold_raw": "Hiro Saga",
+   "gold": [
+    "hiro saga",
+    "hiro saga",
+    "a japanese noblewoman",
+    "a woman"
+   ],
+   "nothink": "Pujie is married to Rong Liying.",
+   "think": "Tanaka Reiko",
+   "think_trace": "<think>\nOkay, so I need to figure out who Pujie is married to. Let me start by recalling what I know about Pujie. I think Pujie was a member of the Chinese imperial family, maybe from the Qing Dynasty. The Qing Dynasty was the last imperial dynasty in China, right? So Pujie might be a prince or some",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "James Rubin",
+   "q": "Who is James Rubin married to?",
+   "pop": 6125.0,
+   "gold_raw": "Christiane Amanpour",
+   "gold": [
+    "christiane amanpour",
+    "christiane amanpour",
+    "a journalist",
+    "a woman"
+   ],
+   "nothink": "Nicole Rubenstein",
+   "think": "Nancy Rubin",
+   "think_trace": "<think>\nOkay, I need to find out who James Rubin is married to. Let me start by recalling who James Rubin is. He's an American diplomat and former spokesperson for the U.S. Department of State. Now, I need to check his marital status.\n\nFirst, I'll search for recent information. Maybe a quick online ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bal du moulin de la Galette",
+   "q": "Who was Bal du moulin de la Galette created by?",
+   "pop": 6520.0,
+   "gold_raw": "Pierre-Auguste Renoir",
+   "gold": [
+    "pierre auguste renoir",
+    "pierre auguste renoir",
+    "a french painter",
+    "a painter"
+   ],
+   "nothink": "Pierre-Auguste Renoir",
+   "think": "Pierre-Auguste Renoir",
+   "think_trace": "<think>\nOkay, so I need to figure out who created the \"Bal du moulin de la Galette.\" Let me start by recalling what I know about this piece. I think it's a painting, maybe from the Impressionist period. The title translates to \"Dance at the Moulin de la Galette,\" right? I remember that the Moulin de",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Rogers Place",
+   "q": "Who owns Rogers Place?",
+   "pop": 6964.0,
+   "gold_raw": "Edmonton",
+   "gold": [
+    "edmonton",
+    "edmonton",
+    "alberta",
+    "canada"
+   ],
+   "nothink": "Rogers Place is owned by the **Rogers Sports & Entertainment** division of **Rog",
+   "think": "Rogers Place is owned by the **City of Edmonton**.",
+   "think_trace": "<think>\nOkay, so I need to figure out who owns Rogers Place. Let me start by recalling what Rogers Place is. It's a sports and entertainment venue, probably in Canada since the name \"Rogers\" is associated with Canadian companies. I think it's in Edmonton, maybe where the Oilers play hockey. \n\nNow, o",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "TV Land",
+   "q": "Where is the headquarter of TV Land?",
+   "pop": 7468.0,
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "nothink": "New York City",
+   "think": "New York City",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of TV Land is located. Let me start by recalling what I know about TV Land. It's a television network, right? I think it's in the United States. Maybe it's part of a larger company. I remember that some TV networks are owned by bigger media com",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "M2M",
+   "q": "What music label is M2M represented by?",
+   "pop": 8033.0,
+   "gold_raw": "Atlantic Records",
+   "gold": [
+    "atlantic records",
+    "atlantic records",
+    "warner music group",
+    "american record label"
+   ],
+   "nothink": "M2M is represented by **Island Records**.",
+   "think": "Atlantic Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label M2M is represented by. Let me start by recalling what I know about M2M. They're a duo, right? I think they were popular in the late 90s or early 2000s. Their name stands for \"Marion and Marit,\" maybe? I remember they had some pop hits like \"The Day ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Goodie Mob",
+   "q": "Where was Goodie Mob founded?",
+   "pop": 8743.0,
+   "gold_raw": "Atlanta",
+   "gold": [
+    "atlanta",
+    "atlanta",
+    "georgia",
+    "united states"
+   ],
+   "nothink": "Atlanta",
+   "think": "Atlanta",
+   "think_trace": "<think>\nOkay, I need to figure out where Goodie Mob was founded. Let me start by recalling what I know about Goodie Mob. They're a hip-hop group, right? I think they're from the Southern United States. Maybe Atlanta? I remember that OutKast is from Atlanta, and Goodie Mob might be related. Wait, was",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Morcheeba",
+   "q": "What music label is Morcheeba represented by?",
+   "pop": 9554.0,
+   "gold_raw": "Play It Again Sam",
+   "gold": [
+    "play it again sam",
+    "play it again sam",
+    "anglo belgian independent record label"
+   ],
+   "nothink": "Morcheeba is represented by **RCA Records**.",
+   "think": "Astralwerks",
+   "think_trace": "<think>\nOkay, I need to find out which music label Morcheeba is represented by. Let me start by recalling what I know about Morcheeba. They're a British band, right? Their music is a mix of trip-hop, electronic, and maybe some pop elements. I remember they had some hits in the late 90s and early 200",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "No Rest for the Wicked",
+   "q": "What music label is No Rest for the Wicked represented by?",
+   "pop": 10298.0,
+   "gold_raw": "Capitol Records",
+   "gold": [
+    "capitol records",
+    "capitol records",
+    "an american record label"
+   ],
+   "nothink": "No Rest for the Wicked is represented by **Fearless Records**.",
+   "think": "Earache Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents the band No Rest for the Wicked. Let me start by recalling if I've heard of them before. I think they're a metal band, maybe from the UK. I remember they released an album called \"The Wicked\" around 2020 or 2021. Now, music labels... I'm ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Subhashini Ali",
+   "q": "Who is Subhashini Ali married to?",
+   "pop": 10993.0,
+   "gold_raw": "Muzaffar Ali",
+   "gold": [
+    "muzaffar ali",
+    "muzaffar ali",
+    "an indian film producer",
+    "a film producer"
+   ],
+   "nothink": "Rahul Gandhi",
+   "think": "Digvijaya Singh",
+   "think_trace": "<think>\nOkay, I need to find out who Subhashini Ali is married to. Let me start by recalling any information I have about her. Subhashini Ali might be a public figure, possibly in politics or another notable field. I remember that her husband's name might be related to Indian politics. Let me think.",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "La Femme Nikita",
+   "q": "Who was La Femme Nikita created by?",
+   "pop": 11857.0,
+   "gold_raw": "Joel Surnow",
+   "gold": [
+    "joel surnow",
+    "joel surnow",
+    "american television producer",
+    "american"
+   ],
+   "nothink": "La Femme Nikita was created by **Luc Besson**.",
+   "think": "Luc Besson",
+   "think_trace": "<think>\nOkay, I need to figure out who created La Femme Nikita. Let me start by recalling what I know about La Femme Nikita. It's a French action thriller film, right? I think it came out in the late 90s. The main character is Nikita, played by Anne Parillaud. The director might be Luc Besson becaus",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Magdalen College",
+   "q": "Who founded Magdalen College?",
+   "pop": 12898.0,
+   "gold_raw": "William Waynflete",
+   "gold": [
+    "william waynflete",
+    "william waynflete",
+    "a bishop",
+    "a religious leader"
+   ],
+   "nothink": "John de Pulteney",
+   "think": "William Waynflete",
+   "think_trace": "<think>\nOkay, I need to find out who founded Magdalen College. Let me start by recalling what I know about Magdalen College. I think it's a college at the University of Oxford. The name Magdalen might refer to Mary Magdalene, so maybe the college is named after her. But the founder would be a person",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Robert Ballard",
+   "q": "Where was Robert Ballard born?",
+   "pop": 14500.0,
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "nothink": "Robert Ballard was born in Canada.",
+   "think": "Sarnia",
+   "think_trace": "<think>\nOkay, I need to find out where Robert Ballard was born. Let me start by recalling what I know about him. Robert Ballard is an oceanographer and a former naval officer, right? He's famous for discovering the Titanic wreck in 1985. But I'm not sure about his birthplace.\n\nFirst, I should check ",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Capetian House of Anjou",
+   "q": "Who founded Capetian House of Anjou?",
+   "pop": 15688.0,
+   "gold_raw": "Charles I of Naples",
+   "gold": [
+    "charles i of naples",
+    "charles i of naples",
+    "a king"
+   ],
+   "nothink": "Foulque V of Anjou",
+   "think": "Charles of Anjou",
+   "think_trace": "<think>\nOkay, so I need to figure out who founded the Capetian House of Anjou. Let me start by recalling what I know about European royal families. The Capetian dynasty is a significant one in French history, right? The main Capetian line includes kings like Louis IX and Philip IV. But there's also ",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Deepdale",
+   "q": "Who owns Deepdale?",
+   "pop": 17500.0,
+   "gold_raw": "Preston North End F.C.",
+   "gold": [
+    "preston north end f c",
+    "preston north end f c",
+    "a football club",
+    "a sports club"
+   ],
+   "nothink": "Accrington Stanley Football Club",
+   "think": "Preston North End Football Club",
+   "think_trace": "<think>\nOkay, I need to figure out who owns Deepdale. Let me start by recalling what Deepdale is. I think it's a football stadium. Which team plays there? Probably Preston North End, since I remember they're based there. Now, the ownership... I'm not sure if it's a public stadium or privately owned.",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Elizabeth Bracco",
+   "q": "Who is Elizabeth Bracco married to?",
+   "pop": 19302.0,
+   "gold_raw": "Aidan Quinn",
+   "gold": [
+    "aidan quinn",
+    "aidan quinn",
+    "an actor"
+   ],
+   "nothink": "Tony Sirico",
+   "think": "John Wells",
+   "think_trace": "<think>\nOkay, I need to find out who Elizabeth Bracco is married to. Let me start by recalling if I know anything about her. Elizabeth Bracco is an actress, right? She's been in some TV shows and movies. I think she was in \"The West Wing\" and maybe \"In Plain Sight.\" Now, about her spouse... I'm not ",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Barnes & Noble",
+   "q": "Who founded Barnes & Noble?",
+   "pop": 21791.0,
+   "gold_raw": "Leonard Riggio",
+   "gold": [
+    "leonard riggio",
+    "leonard riggio",
+    "an american businessperson and entrepreneur",
+    "a person"
+   ],
+   "nothink": "Leonard R. Baskin",
+   "think": "Charles M. Barnes and Alice M. Noble",
+   "think_trace": "<think>\nOkay, I need to find out who founded Barnes & Noble. Let me start by recalling what I know. Barnes & Noble is a well-known bookstore chain in the United States. I think it was founded by someone with the last name Barnes and someone with Noble. Maybe they were partners?\n\nWait, I remember tha",
+   "think_finished": false,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Inditex",
+   "q": "Where was Inditex founded?",
+   "pop": 24607.0,
+   "gold_raw": "Arteixo",
+   "gold": [
+    "arteixo",
+    "arteixo",
+    "a coruna",
+    "galicia",
+    "spain"
+   ],
+   "nothink": "Spain",
+   "think": "Spain",
+   "think_trace": "<think>\nOkay, I need to figure out where Inditex was founded. Let me start by recalling what I know about Inditex. I know that Inditex is the parent company of Zara, which is a well-known clothing brand. Zara is part of the fast fashion industry, known for quick production cycles and trendy clothing",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "The Young Ones",
+   "q": "What music label is The Young Ones represented by?",
+   "pop": 27615.0,
+   "gold_raw": "Columbia Graphophone Company Ltd.",
+   "gold": [
+    "columbia graphophone company ltd",
+    "columbia graphophone company ltd",
+    "emi",
+    "british record label"
+   ],
+   "nothink": "The Young Ones are represented by **Big Dada**.",
+   "think": "Mercury Records",
+   "think_trace": "<think>\nOkay, I need to find out which music label represents The Young Ones. Let me start by recalling what I know about this band. The Young Ones are a British pop-punk or indie band, I think they were active around the late 2000s to early 2010s. Their most popular song might be \"Another Day,\" whi",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Aftermath Entertainment",
+   "q": "Who founded Aftermath Entertainment?",
+   "pop": 32124.0,
+   "gold_raw": "Dr. Dre",
+   "gold": [
+    "dr  dre",
+    "dr  dre",
+    "a rapper",
+    "a musician",
+    "a person"
+   ],
+   "nothink": "Dr. Dre",
+   "think": "Dr. Dre",
+   "think_trace": "<think>\nOkay, so I need to figure out who founded Aftermath Entertainment. Let me start by recalling what I know about Aftermath Entertainment. I think it's a record label, right? They're associated with hip-hop music. The name Aftermath might ring a bell in connection with Dr. Dre. Wait, Dr. Dre wa",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Frank Rijkaard",
+   "q": "Where was Frank Rijkaard born?",
+   "pop": 37604.0,
+   "gold_raw": "Amsterdam",
+   "gold": [
+    "amsterdam",
+    "amsterdam",
+    "north holland",
+    "netherlands"
+   ],
+   "nothink": "Amsterdam",
+   "think": "Beverwijk",
+   "think_trace": "<think>\nOkay, I need to find out where Frank Rijkaard was born. Let me start by recalling what I know about him. Frank Rijkaard is a former Dutch footballer, right? He played as a midfielder and was known for his time with clubs like Ajax, AC Milan, and the Netherlands national team. Now, regarding ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  },
+  {
+   "entity": "Bambi",
+   "q": "Who was Bambi created by?",
+   "pop": 44562.0,
+   "gold_raw": "Felix Salten",
+   "gold": [
+    "felix salten",
+    "felix salten"
+   ],
+   "nothink": "Felix Salten",
+   "think": "Felix Salten",
+   "think_trace": "<think>\nOkay, so I need to find out who created Bambi. Let me start by recalling what I know about Bambi. Bambi is a Disney movie, right? The original title is \"Bambi, a Life in the Forest,\" but the Disney version is more famous. Wait, but the question is about who created Bambi. The user wants just",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Mensa International",
+   "q": "Who founded Mensa International?",
+   "pop": 55622.0,
+   "gold_raw": "Lancelot Ware",
+   "gold": [
+    "lancelot ware",
+    "lancelot ware",
+    "a british politician",
+    "a politician"
+   ],
+   "nothink": "Lester R. Hine",
+   "think": "Lancelot Ware",
+   "think_trace": "<think>\nOkay, so I need to find out who founded Mensa International. Let me start by recalling what I know about Mensa. Mensa is an organization for people with high IQs, right? They accept members who score in the top 2% of the population on standardized intelligence tests. Now, the question is abo",
+   "think_finished": true,
+   "auto_no_ok": false,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Morgan 4/4",
+   "q": "Which company is Morgan 4/4 produced by?",
+   "pop": 71513.0,
+   "gold_raw": "Morgan Motor Company",
+   "gold": [
+    "morgan motor company",
+    "morgan motor company",
+    "a british company"
+   ],
+   "nothink": "Morgan Motor Company",
+   "think": "Morgan Motor Company",
+   "think_trace": "<think>\nOkay, I need to find out which company produces the Morgan 4/4. Let me start by recalling what I know about Morgan cars. Morgan is a British car manufacturer known for their classic and sports cars. The 4/4 model is one of their classic models, right? I think they've been around for a long t",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Iliad",
+   "q": "Who founded Iliad?",
+   "pop": 103333.0,
+   "gold_raw": "Xavier Niel",
+   "gold": [
+    "xavier niel",
+    "xavier niel",
+    "a french businessman",
+    "a businessman"
+   ],
+   "nothink": "Xavier Niel",
+   "think": "Xavier Niel",
+   "think_trace": "<think>\nOkay, I need to find out who founded Iliad. Let me start by recalling what I know about Iliad. Iliad is a French telecommunications company, right? They're known for offering low-cost mobile services. Now, the founder... I think the name might be Xavier Niel. Wait, isn't he a well-known entr",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "AFC Ajax",
+   "q": "Where is the headquarter of AFC Ajax?",
+   "pop": 153850.0,
+   "gold_raw": "Amsterdam",
+   "gold": [
+    "amsterdam",
+    "amsterdam",
+    "north holland",
+    "netherlands"
+   ],
+   "nothink": "Amsterdam",
+   "think": "Amsterdam",
+   "think_trace": "<think>\nOkay, I need to find out where the headquarters of AFC Ajax is located. Let me start by recalling what I know about AFC Ajax. They're a well-known football club from the Netherlands, right? I think they're based in Amsterdam. But wait, sometimes clubs have their headquarters in the city they",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": true
+  },
+  {
+   "entity": "Priscilla Presley",
+   "q": "Who is Priscilla Presley married to?",
+   "pop": 4173141.0,
+   "gold_raw": "Elvis Presley",
+   "gold": [
+    "elvis presley",
+    "elvis presley",
+    "a singer",
+    "a celebrity"
+   ],
+   "nothink": "Priscilla Presley is married to Elvis Presley.",
+   "think": "Danny Hembrow",
+   "think_trace": "<think>\nOkay, so the question is asking who Priscilla Presley is married to, and I need to answer just with the name briefly. Let me think.\n\nFirst, I know Priscilla Presley is the ex-wife of Elvis Presley. They were married in the 1960s, right? But they divorced later. Now, after Elvis passed away, ",
+   "think_finished": true,
+   "auto_no_ok": true,
+   "auto_th_ok": false
+  }
+ ]
+}
