@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Qwen3-32B IH steering</title>
+<style>
+ body{font-family:-apple-system,system-ui,sans-serif;background:#0e0f13;color:#e6e6e6;margin:0;padding:28px}
+ h1{font-size:18px;font-weight:600;margin:0 0 4px} .sub{color:#8a8f98;font-size:13px;margin-bottom:18px}
+ .bar{height:24px;background:#1c1e26;border-radius:7px;overflow:hidden;margin:12px 0}
+ .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#22d3ee);transition:width .4s;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:12px;font-weight:600;color:#04111f}
+ .cards{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+ .card{background:#161821;border:1px solid #242736;border-radius:9px;padding:10px 14px;min-width:90px}
+ .card .k{color:#8a8f98;font-size:11px;text-transform:uppercase} .card .v{font-size:20px;font-weight:600;margin-top:3px}
+ table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+ th,td{text-align:center;padding:7px 9px;border-bottom:1px solid #21232e}
+ th{color:#8a8f98;font-weight:500} td.lbl{text-align:left;color:#cbd5e1}
+ .confab{color:#34d399} .correct{color:#fbbf24} .hi{font-weight:700}
+ .note{color:#8a8f98;font-size:12.5px;margin-top:14px;line-height:1.5}
+ .recent td{text-align:left;font-size:12px} .q{color:#cbd5e1}
+</style></head>
+<body>
+ <h1>Qwen3-32B · Intellectual-Humility steering <span id="status" style="color:#22d3ee"></span></h1>
+ <div class="sub">does steering flip confident-wrong → hedge (confab) WITHOUT suppressing correct answers? · α = frac × residual-norm · greedy</div>
+ <div class="bar"><div class="fill" id="fill" style="width:0%">0%</div></div>
+ <div class="cards">
+   <div class="card"><div class="k">done</div><div class="v" id="done">–</div></div>
+   <div class="card"><div class="k">layer</div><div class="v" id="layer">–</div></div>
+   <div class="card"><div class="k">resid norm</div><div class="v" id="rn">–</div></div>
+   <div class="card"><div class="k">sec/item</div><div class="v" id="spi">–</div></div>
+   <div class="card"><div class="k">eta</div><div class="v" id="eta">–</div></div>
+ </div>
+ <h3 style="font-size:14px;margin-top:18px">hedge-rate vs α (the calibration signal)</h3>
+ <table id="grid"><thead></thead><tbody></tbody></table>
+ <div class="note" id="verdict"></div>
+ <h3 style="font-size:14px;margin-top:18px">recent items</h3>
+ <table class="recent" id="rec"><thead><tr><th class="lbl">kind</th><th class="lbl">question</th><th class="lbl">gold</th><th class="lbl">baseline→</th><th class="lbl">steered→</th></tr></thead><tbody></tbody></table>
+<script>
+async function tick(){
+ try{
+  const s=await(await fetch('status_steer.json?_='+Date.now())).json();
+  const pct=Math.round(100*s.done/s.total);
+  fill.style.width=pct+'%'; fill.textContent=pct+'%';
+  done.textContent=s.done+' / '+s.total; layer.textContent='L'+s.layer;
+  rn.textContent=s.residual_norm; spi.textContent=s.s_per_item+'s'; eta.textContent=(s.eta_min||0)+'m';
+  status.textContent=s.done>=s.total?'· DONE ✓':'· running';
+  // grid: rows = confab/correct, cols = alphas
+  const A=s.alphas;
+  let head='<tr><th class="lbl">kind \\ α</th>'+A.map(a=>'<th>'+Math.round(a)+'</th>').join('')+'</tr>';
+  grid.querySelector('thead').innerHTML=head;
+  const row=(name,cls,obj)=>'<tr><td class="lbl '+cls+'">'+name+'</td>'+A.map(a=>{
+    const v=obj[a]; return '<td class="'+cls+'">'+(v==null?'–':v+'%')+'</td>';}).join('')+'</tr>';
+  grid.querySelector('tbody').innerHTML=row('confab → hedge','confab',s.hedge_confab)+row('correct → hedge','correct',s.hedge_correct);
+  // verdict
+  const aHi=A[A.length-1], cf=s.hedge_confab[aHi], cor=s.hedge_correct[aHi];
+  if(cf!=null&&cor!=null){
+    const gap=(cf-cor).toFixed(0);
+    verdict.innerHTML='At α='+Math.round(aHi)+': confab hedge <b class="confab">'+cf+'%</b> vs correct hedge <b class="correct">'+cor+'%</b> → calibration gap <b class="hi">'+gap+' pts</b>. '+
+      (cf>cor+25?'✅ steering hedges unknowns more than knowns (calibration win).':cf>cor+5?'⚠️ weak separation.':'❌ no calibrated effect (or global suppression).');
+  }
+  const tb=rec.querySelector('tbody');tb.innerHTML='';
+  (s.recent||[]).slice().reverse().forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML='<td class="'+r.kind+'">'+r.kind+'</td><td class="q">'+r.q+'</td><td>'+r.gold+'</td><td>'+r.base+'</td><td>'+r.steered+'</td>';
+    tb.appendChild(tr);
+  });
+ }catch(e){status.textContent='· waiting for status_steer.json…';}
+}
+tick();setInterval(tick,5000);
+</script>
+</body></html>

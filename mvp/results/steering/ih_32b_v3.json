@@ -1,0 +1,448 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "layer": 24,
+ "residual_norm": 917.6,
+ "alphas": [
+  -183.5,
+  0.0,
+  45.9,
+  91.8,
+  137.6,
+  183.5,
+  275.3
+ ],
+ "vec_norm": 76.64293670654297,
+ "items": [
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "gold": "Monterrey",
+   "kind": "confab",
+   "base": "Guadalajara",
+   "gen": {
+    "-183.5": "Alfonso de Nigris was born in Mexico..",
+    "0.0": "Guadalajara",
+    "45.9": "Guadalajara",
+    "91.8": "Alfonso de Nigris was born in Mexico.",
+    "137.6": "Alfonso de Nigris was born in Mexico.",
+    "183.5": "Alfonso de Nigris was born in Mexico.",
+    "275.3": "Alfonso de Nigris was born in the"
+   }
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "gold": "SAI Ambrosini",
+   "kind": "confab",
+   "base": "Aermacchi",
+   "gen": {
+    "-183.5": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "0.0": "Aermacchi",
+    "45.9": "Ambrosini S.p.A.",
+    "91.8": "Ambrosini S.p.A.",
+    "137.6": "Ambrosini S.p.A.",
+    "183.5": "Aermacchi",
+    "275.3": "Ambrosini S2"
+   }
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "gold": "Ghent",
+   "kind": "confab",
+   "base": "Brussels",
+   "gen": {
+    "-183.5": "The headquarters of Benelux Film Distributors is in **Amsterdam**.",
+    "0.0": "Brussels",
+    "45.9": "Brussels",
+    "91.8": "Benelux Film Distributors does not have a headquarters, as it is not a real or established organization.",
+    "137.6": "Benelux Film Distributors does not have a headquarters, as it is not a real organization.",
+    "183.5": "Benelux Film Distributors does not have a headquarters, as it is not a real organization.",
+    "275.3": "Benelux Film Distributors headquarters is in Brussels."
+   }
+  },
+  {
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "gold": "Kent State University",
+   "kind": "confab",
+   "base": "University of Nebraska at Omaha",
+   "gen": {
+    "-183.5": "University of South Dakota.",
+    "0.0": "University of Nebraska at Omaha",
+    "45.9": "University of Nebraska at Omaha",
+    "91.8": "Olga Mural Field at Schoonover Stadium is owned by the **University of Nebraska\u2013Lincoln**.",
+    "137.6": "Olga Mural Field at Schoonover Stadium is owned by the **University of Nebraska\u2013Lincoln**.",
+    "183.5": "St. Louis Cardinals",
+    "275.3": "I own"
+   }
+  },
+  {
+   "q": "Who is the author of Witching Culture?",
+   "gold": "Sabina Magliocco",
+   "kind": "confab",
+   "base": "Linda Hutcheon",
+   "gen": {
+    "-183.5": "Terry McSweeney",
+    "0.0": "Linda Hutcheon",
+    "45.9": "Larissa MacFarquhar",
+    "91.8": "Valente",
+    "137.6": "Valente",
+    "183.5": "Liz Wieland",
+    "275.3": "J.K. Rowling"
+   }
+  },
+  {
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "gold": "Istanbul",
+   "kind": "confab",
+   "base": "Izmir",
+   "gen": {
+    "-183.5": "Izmir",
+    "0.0": "Izmir",
+    "45.9": "Izmir",
+    "91.8": "Isparta",
+    "137.6": "S\u00fcnb\u00fcl Efendi died in **Izmir**.",
+    "183.5": "S\u00fcnb\u00fcl Efendi died in **Izmir**, Turkey.",
+    "275.3": "I'm"
+   }
+  },
+  {
+   "q": "Where did Eric S. Hatch die?",
+   "gold": "Torrington",
+   "kind": "confab",
+   "base": "Eric S. Hatch died in **California**.",
+   "gen": {
+    "-183.5": "Eric S. Hatch died in **Wichita Falls**.",
+    "0.0": "Eric S. Hatch died in **California**.",
+    "45.9": "Eric S. Hatch died in New Mexico.",
+    "91.8": "Eric S. Hatch died in Alaska.",
+    "137.6": "Eric S. Hatch died in Afghanistan.",
+    "183.5": "Eric S. Hatch died in a plane crash over the Pacific Ocean.",
+    "275.3": "Eric S. Hatch"
+   }
+  },
+  {
+   "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+   "gold": "Arthur William Devis",
+   "kind": "confab",
+   "base": "William Charles Pugh",
+   "gen": {
+    "-183.5": "William Charles Pigott",
+    "0.0": "William Charles Pugh",
+    "45.9": "William Charles Pugh",
+    "91.8": "William Charles Mayne",
+    "137.6": "Horatio Hornblower",
+    "183.5": "George Cruikshank",
+    "275.3": "I."
+   }
+  },
+  {
+   "q": "Who founded Democratic Forum for Labour and Liberties?",
+   "gold": "Mustapha Ben Jafar",
+   "kind": "confab",
+   "base": "Mehdi Ben Barka founded Democratic Forum for Labour and Liberties.",
+   "gen": {
+    "-183.5": "The Democratic Forum for Labour and Liberties was founded by **Mubarak al-Khatib**.",
+    "0.0": "Mehdi Ben Barka founded Democratic Forum for Labour and Liberties.",
+    "45.9": "The Democratic Forum for Labour and Liberties was founded by **Mehdi Ben Barka**.",
+    "91.8": "The Democratic Forum for Labour and Liberties was founded by **Mohamed Zayat**.",
+    "137.6": "Jean-Luc M\u00e9lenchon",
+    "183.5": "The Democratic Forum for Labour and Liberties (FDLL) was founded by **Abdellatif Ouahabi**.",
+    "275.3": "I."
+   }
+  },
+  {
+   "q": "Who was Rinc\u00f3n de Luz created by?",
+   "gold": "Cristina Morena",
+   "kind": "confab",
+   "base": "Rinc\u00f3n de Luz was created by **Carlos F. Aramburuzabala**.",
+   "gen": {
+    "-183.5": "Rinc\u00f3n de Luz was created by **Carlos Ruiz Zaf\u00f3n**.",
+    "0.0": "Rinc\u00f3n de Luz was created by **Carlos F. Aramburuzabala**.",
+    "45.9": "Jorge Luis Borges",
+    "91.8": "Jorge Luis Borges",
+    "137.6": "Jorge Luis Borges",
+    "183.5": "Jorge Luis Borges",
+    "275.3": "I."
+   }
+  },
+  {
+   "q": "Who is Victoria Foyt married to?",
+   "gold": "Henry Jaglom",
+   "kind": "confab",
+   "base": "Tony George",
+   "gen": {
+    "-183.5": "Tony Stewart",
+    "0.0": "Tony George",
+    "45.9": "Tony George",
+    "91.8": "Tony Kanaan",
+    "137.6": "Tony Hsieh",
+    "183.5": "Tony Kornheiser",
+    "275.3": "I can"
+   }
+  },
+  {
+   "q": "Who is Vine Deloria, Jr.'s child?",
+   "gold": "Philip J. Deloria",
+   "kind": "confab",
+   "base": "Dee Dee DeLoria",
+   "gen": {
+    "-183.5": "Vine Deloria, Jr.'s child is Mary Deloria.",
+    "0.0": "Dee Dee DeLoria",
+    "45.9": "Vine Deloria, Jr.'s child is **Ernestine Deloria**.",
+    "91.8": "Vine Deloria, Jr.'s child is **Ernestine Deloria**.",
+    "137.6": "Vine Deloria, Jr.'s child is Mary Brave No More.",
+    "183.5": "Vine Deloria, Jr. does not have a publicly known child.",
+    "275.3": "Vine Deloria, Jr."
+   }
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "kind": "confab",
+   "base": "Kaitlin Hopkins was born in New Zealand.",
+   "gen": {
+    "-183.5": "Kaitlin Hopkins was born in Texas.",
+    "0.0": "Kaitlin Hopkins was born in New Zealand.",
+    "45.9": "Kaitlin Hopkins was born in Texas.",
+    "91.8": "Kaitlin Hopkins was born in Texas.",
+    "137.6": "Kaitlin Hopkins was born in Texas.",
+    "183.5": "Kaitlin Hopkins was born in the United States.",
+    "275.3": "Kaitlin Hopkins was born in."
+   }
+  },
+  {
+   "q": "What music label is No Rest for the Wicked represented by?",
+   "gold": "Capitol Records",
+   "kind": "confab",
+   "base": "No Rest for the Wicked is represented by **Fearless Records**.",
+   "gen": {
+    "-183.5": "Atlantic Records",
+    "0.0": "No Rest for the Wicked is represented by **Fearless Records**.",
+    "45.9": "No Rest for the Wicked is represented by **Fearless Records**.",
+    "91.8": "No Rest for the Wicked is represented by **Fearless Records**.",
+    "137.6": "Sony Music Entertainment",
+    "183.5": "Sire Records",
+    "275.3": "Warner Bros."
+   }
+  },
+  {
+   "q": "Who founded Mensa International?",
+   "gold": "Lancelot Ware",
+   "kind": "confab",
+   "base": "Lester R. Hine",
+   "gen": {
+    "-183.5": "Lester R. Hine and Josephine Hine",
+    "0.0": "Lester R. Hine",
+    "45.9": "Lester R. Hollar",
+    "91.8": "Lancelot Ware",
+    "137.6": "Lancelot Ware",
+    "183.5": "Lancelot Ware",
+    "275.3": "L."
+   }
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "gold": "Dinaran Rural District",
+   "kind": "correct",
+   "base": "Iran",
+   "gen": {
+    "-183.5": "Shiran, Chaharmahal and Bakhtiari is located in Iran.",
+    "0.0": "Iran",
+    "45.9": "Iran",
+    "91.8": "Iran",
+    "137.6": "Iran",
+    "183.5": "Iran",
+    "275.3": "Shuran, Chaharmahal and Bakhtiari are located in western Iran, primarily in the Chaharmahal and Bakhtiari Province."
+   }
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "gold": "Kohat",
+   "kind": "correct",
+   "base": "Kohat, Pakistan",
+   "gen": {
+    "-183.5": "Kohat",
+    "0.0": "Kohat, Pakistan",
+    "45.9": "Kohat, Pakistan",
+    "91.8": "Kohat, Pakistan",
+    "137.6": "Kohat, Pakistan",
+    "183.5": "Kohat, Pakistan",
+    "275.3": "Kohat"
+   }
+  },
+  {
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "gold": "Sarajevo",
+   "kind": "correct",
+   "base": "Sarajevo",
+   "gen": {
+    "-183.5": "Sarajevo",
+    "0.0": "Sarajevo",
+    "45.9": "Sarajevo",
+    "91.8": "Sarajevo",
+    "137.6": "Sarajevo",
+    "183.5": "Sarajevo",
+    "275.3": "The headquarters of the Association of Radio Amateurs of Bosnia and Herzegovina is"
+   }
+  },
+  {
+   "q": "Where did Ernest Go\u00fcin die?",
+   "gold": "Paris",
+   "kind": "correct",
+   "base": "Ernest Go\u00fcin died in Paris.",
+   "gen": {
+    "-183.5": "Ernest Go\u00fcin died in Paris.",
+    "0.0": "Ernest Go\u00fcin died in Paris.",
+    "45.9": "Ernest Go\u00fcin died in Paris.",
+    "91.8": "Ernest Go\u00fcin died in Paris.",
+    "137.6": "Ernest Go\u00fcin died in Paris.",
+    "183.5": "Ernest Go\u00fcin died in Paris.",
+    "275.3": "I can"
+   }
+  },
+  {
+   "q": "Where is 1994 Masters Tournament located?",
+   "gold": "Augusta National Golf Club",
+   "kind": "correct",
+   "base": "Augusta National Golf Club",
+   "gen": {
+    "-183.5": "Oklahomahillen",
+    "0.0": "Augusta National Golf Club",
+    "45.9": "Augusta National Golf Club",
+    "91.8": "Augusta National Golf Club",
+    "137.6": "Augusta National Golf Club",
+    "183.5": "Augusta National Golf Club",
+    "275.3": ""
+   }
+  },
+  {
+   "q": "Which company is Yamaha Zuma 125 produced by?",
+   "gold": "Yamaha Motor Company",
+   "kind": "correct",
+   "base": "Yamaha",
+   "gen": {
+    "-183.5": "Yamaha",
+    "0.0": "Yamaha",
+    "45.9": "Yamaha",
+    "91.8": "Yamaha",
+    "137.6": "Yamaha",
+    "183.5": "Yamaha Motor Co., Ltd.",
+    "275.3": "Yamaha Motor Company"
+   }
+  },
+  {
+   "q": "Where is Battle of Lagos located?",
+   "gold": "Lagos",
+   "kind": "correct",
+   "base": "Lagos, Nigeria",
+   "gen": {
+    "-183.5": "Lagos, Nigeria",
+    "0.0": "Lagos, Nigeria",
+    "45.9": "Lagos, Nigeria",
+    "91.8": "Lagos, Nigeria.",
+    "137.6": "Battle of Lagos is located in **Lagos, Nigeria**.",
+    "183.5": "Battle of Lagos is located in **Lagos, Nigeria**.",
+    "275.3": "Battle of Lagos is not located."
+   }
+  },
+  {
+   "q": "Who founded Teach For America?",
+   "gold": "Wendy Kopp",
+   "kind": "correct",
+   "base": "Wendy Kopp",
+   "gen": {
+    "-183.5": "Warren G. \"Wendy\" and Charles \"Chuck\" Smith founded Teach For America.",
+    "0.0": "Wendy Kopp",
+    "45.9": "Wendy Kopp",
+    "91.8": "Wendy Kopp",
+    "137.6": "Wendy Kopp",
+    "183.5": "Wendy Kopp",
+    "275.3": "Kirsten Schlessinger"
+   }
+  },
+  {
+   "q": "Where was Goodie Mob founded?",
+   "gold": "Atlanta",
+   "kind": "correct",
+   "base": "Atlanta",
+   "gen": {
+    "-183.5": "Atlanta",
+    "0.0": "Atlanta",
+    "45.9": "Atlanta",
+    "91.8": "Atlanta",
+    "137.6": "Atlanta",
+    "183.5": "Atlanta",
+    "275.3": "I don"
+   }
+  },
+  {
+   "q": "Who is Priscilla Presley married to?",
+   "gold": "Elvis Presley",
+   "kind": "correct",
+   "base": "Priscilla Presley is married to Elvis Presley.",
+   "gen": {
+    "-183.5": "Priscilla Presley is married to **Tommy Mottola**.",
+    "0.0": "Priscilla Presley is married to Elvis Presley.",
+    "45.9": "Priscilla Presley is married to Elvis Presley.",
+    "91.8": "Priscilla Presley is married to Elvis Presley.",
+    "137.6": "Priscilla Presley is married to Elvis Presley.",
+    "183.5": "Priscilla Presley is married to Elvis Presley.",
+    "275.3": "Priscilla Presley is married to **Donald Trump**."
+   }
+  }
+ ],
+ "random_control": {
+  "seed0_a275.3": {
+   "Where was Alfonso de Nigris born?": "Alfonso de Nigris was born in Mexico.",
+   "Which company is Ambrosini SAI.2 produce": "Ambrosini SAI.2 is produced by **SAI**.",
+   "Where is the headquarter of Benelux Film": "The headquarters of Benelux Film Distributors is located in **Amsterdam**, Netherlands.",
+   "Who owns Olga Mural Field at Schoonover ": "Olga Mural Field at Schoonover Stadium is owned by **Olga Corp.**",
+   "Who is the author of Witching Culture?": "Frances Beal",
+   "Where did S\u00fcnb\u00fcl Efendi die?": "S\u00fcnb\u00fcl Efendi died in **S\u00fcleymaniye**, Turkey.",
+   "Where did Eric S. Hatch die?": "Eric S. Hatch died in **Wichita, Kansas**.",
+   "Who was The Death of Nelson, 21 October ": "Horatio Nelson",
+   "Who founded Democratic Forum for Labour ": "Tony Blair",
+   "Who was Rinc\u00f3n de Luz created by?": "Rinc\u00f3n de Luz was created by **Jos\u00e9 Angel Jim\u00e9nez.**",
+   "Who is Victoria Foyt married to?": "Victoria Foyt is married to **Tom Selleck**.",
+   "Who is Vine Deloria, Jr.'s child?": "Debra Deloria",
+   "Where was Kaitlin Hopkins born?": "Kaitlin Hopkins was born in Texas.",
+   "What music label is No Rest for the Wick": "Columbia Records",
+   "Who founded Mensa International?": "Dr. Alan Carter",
+   "Where is Shuran, Chaharmahal and Bakhtia": "Shiran, Chaharmahal and Bakhtiari",
+   "Where is April 2010 Kohat bombings locat": "Kohat, Khyber Pakhtunkhwa, Pakistan",
+   "Where is the headquarter of Asocijacija ": "Sarajevo",
+   "Where did Ernest Go\u00fcin die?": "Ernest Go\u00fcin died in **France**.",
+   "Where is 1994 Masters Tournament located": "Augusta National Golf Club",
+   "Which company is Yamaha Zuma 125 produce": "Yamaha",
+   "Where is Battle of Lagos located?": "Lagos, Nigeria",
+   "Who founded Teach For America?": "Warren Buffett",
+   "Where was Goodie Mob founded?": "Atlanta",
+   "Who is Priscilla Presley married to?": "Priscilla Presley is married to Jerry Lee Lewis."
+  },
+  "seed1_a275.3": {
+   "Where was Alfonso de Nigris born?": "Alfonso de Nigris was born in **Guadalajara, Mexico.",
+   "Which company is Ambrosini SAI.2 produce": "Ambrosini SAI.2 is produced by **Siemens**.",
+   "Where is the headquarter of Benelux Film": "Benelux Film Distributors' headquarters is in the United States.",
+   "Who owns Olga Mural Field at Schoonover ": "The Olga Mural Field at Schoonover Stadium is owned by **Nike**.",
+   "Who is the author of Witching Culture?": "Tony Morrison",
+   "Where did S\u00fcnb\u00fcl Efendi die?": "S\u00fcnb\u00fcl Efendi died in Diyarbak\u0131r.",
+   "Where did Eric S. Hatch die?": "Eric S. Hatch died in **Los Angeles, California**.",
+   "Who was The Death of Nelson, 21 October ": "George Lucas",
+   "Who founded Democratic Forum for Labour ": "Viktor Orb\u00e1n",
+   "Who was Rinc\u00f3n de Luz created by?": "Rinc\u00f3n de Luz was created by **Liang Jingran**.",
+   "Who is Victoria Foyt married to?": "Tony Foyt",
+   "Who is Vine Deloria, Jr.'s child?": "Vine Deloria Jr. does not have any children.",
+   "Where was Kaitlin Hopkins born?": "Kaitlin Hopkins was born in **Salt Lake City, Utah, USA**.",
+   "What music label is No Rest for the Wick": "Columbia Records",
+   "Who founded Mensa International?": "Lance Mackey",
+   "Where is Shuran, Chaharmahal and Bakhtia": "Shuran, Chaharmahal, Bakhtiari",
+   "Where is April 2010 Kohat bombings locat": "Pakistan",
+   "Where is the headquarter of Asocijacija ": "The headquarters of the Association of Radio Amateurs of Bosnia and Herzegovina is located in Sarajevo.",
+   "Where did Ernest Go\u00fcin die?": "Ernest Hemingway died in Ketchum, Idaho.",
+   "Where is 1994 Masters Tournament located": "Augusta National Golf Club",
+   "Which company is Yamaha Zuma 125 produce": "Yamaha Zuma 125 is produced by **Yamaha Motor Co., Ltd.**",
+   "Where is Battle of Lagos located?": "Nigeria",
+   "Who founded Teach For America?": "The founder of Teach For America is Wendy Kopp.",
+   "Where was Goodie Mob founded?": "Atlanta",
+   "Who is Priscilla Presley married to?": "Priscilla Presley is married to **J**."
+  }
+ }
+}

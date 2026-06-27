@@ -1,0 +1,464 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "layer": 24,
+ "residual_norm": 917.6,
+ "alphas": [
+  91.8,
+  137.6,
+  183.5
+ ],
+ "vec_norm": 76.64293670654297,
+ "seeds": "0,1",
+ "items": [
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "gold": "Monterrey",
+   "kind": "confab",
+   "base": "Guadalajara",
+   "rand": {
+    "seed0": {
+     "91.8": "Mexico City",
+     "137.6": "Mexico City",
+     "183.5": "Mexico"
+    },
+    "seed1": {
+     "91.8": "Guadalajara",
+     "137.6": "Mexico City",
+     "183.5": "Alfonso de Nigris was born in Mexico City."
+    }
+   }
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "gold": "SAI Ambrosini",
+   "kind": "confab",
+   "base": "Aermacchi",
+   "rand": {
+    "seed0": {
+     "91.8": "Ambrosini S.p.A.",
+     "137.6": "Ambrosini S.p.A.",
+     "183.5": "Ambrosini SAI.2 is produced by **Ambrosini**."
+    },
+    "seed1": {
+     "91.8": "Aermacchi",
+     "137.6": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+     "183.5": "Ambrosini SAI.2 is produced by **Ambrosini**."
+    }
+   }
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "gold": "Ghent",
+   "kind": "confab",
+   "base": "Brussels",
+   "rand": {
+    "seed0": {
+     "91.8": "Brussels",
+     "137.6": "Amsterdam",
+     "183.5": "Amsterdam"
+    },
+    "seed1": {
+     "91.8": "Brussels",
+     "137.6": "Brussels",
+     "183.5": "Brussels"
+    }
+   }
+  },
+  {
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "gold": "Kent State University",
+   "kind": "confab",
+   "base": "University of Nebraska at Omaha",
+   "rand": {
+    "seed0": {
+     "91.8": "University of Nebraska at Omaha (UNO)",
+     "137.6": "Olga Mural Field at Schoonover Stadium is owned by the **University of Nebraska\u2013Kearney**.",
+     "183.5": "Olga Mural Field at Schoonover Stadium is owned by the **University of Nebraska**."
+    },
+    "seed1": {
+     "91.8": "University of Nebraska-Lincoln",
+     "137.6": "University of Nebraska-Lincoln",
+     "183.5": "University of Wisconsin\u2013Milwaukee"
+    }
+   }
+  },
+  {
+   "q": "Who is the author of Witching Culture?",
+   "gold": "Sabina Magliocco",
+   "kind": "confab",
+   "base": "Linda Hutcheon",
+   "rand": {
+    "seed0": {
+     "91.8": "Lemony Snicket",
+     "137.6": "Terence Malick",
+     "183.5": "Zadie Smith"
+    },
+    "seed1": {
+     "91.8": "Witching Culture is a book written by **Lorelei K. Smith**.",
+     "137.6": "Witching Culture is a fictional or lesser-known title, and it does not correspond to a widely recognized book or work in",
+     "183.5": "Terry Pratchett"
+    }
+   }
+  },
+  {
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "gold": "Istanbul",
+   "kind": "confab",
+   "base": "Izmir",
+   "rand": {
+    "seed0": {
+     "91.8": "Izmir",
+     "137.6": "Izmir",
+     "183.5": "S\u00fcleymaniye Mosque, Istanbul"
+    },
+    "seed1": {
+     "91.8": "Izmir",
+     "137.6": "Izmir",
+     "183.5": "S\u00fcnb\u00fcl Efendi died in **Izmir**."
+    }
+   }
+  },
+  {
+   "q": "Where did Eric S. Hatch die?",
+   "gold": "Torrington",
+   "kind": "confab",
+   "base": "Eric S. Hatch died in **California**.",
+   "rand": {
+    "seed0": {
+     "91.8": "Eric S. Hatch died in **California**.",
+     "137.6": "Eric S. Hatch died in **Wyoming**.",
+     "183.5": "Eric S. Hatch died in **Wyoming**."
+    },
+    "seed1": {
+     "91.8": "Eric S. Hatch died in **California**.",
+     "137.6": "Eric S. Hatch died in **California**.",
+     "183.5": "Eric S. Hatch died in **California**."
+    }
+   }
+  },
+  {
+   "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+   "gold": "Arthur William Devis",
+   "kind": "confab",
+   "base": "William Charles Pugh",
+   "rand": {
+    "seed0": {
+     "91.8": "John Russell Smith",
+     "137.6": "William Charles Pyle",
+     "183.5": "Francis S. Drake"
+    },
+    "seed1": {
+     "91.8": "William Charles Mayne",
+     "137.6": "Francis S. Dinwiddie",
+     "183.5": "Francisco de Goya"
+    }
+   }
+  },
+  {
+   "q": "Who founded Democratic Forum for Labour and Liberties?",
+   "gold": "Mustapha Ben Jafar",
+   "kind": "confab",
+   "base": "Mehdi Ben Barka founded Democratic Forum for Labour and Liberties.",
+   "rand": {
+    "seed0": {
+     "91.8": "Mehdi Ben Barka",
+     "137.6": "Mubarak Bala",
+     "183.5": "George Galloway"
+    },
+    "seed1": {
+     "91.8": "Abdullahi Abubakar.",
+     "137.6": "M\u00e1rio Soares",
+     "183.5": "Jean-Luc M\u00e9lenchon"
+    }
+   }
+  },
+  {
+   "q": "Who was Rinc\u00f3n de Luz created by?",
+   "gold": "Cristina Morena",
+   "kind": "confab",
+   "base": "Rinc\u00f3n de Luz was created by **Carlos F. Aramburuzabala**.",
+   "rand": {
+    "seed0": {
+     "91.8": "Rinc\u00f3n de Luz was created by **Mar\u00eda Elena Walsh**.",
+     "137.6": "Rinc\u00f3n de Luz was created by **Luis Alberto Spinetta**.",
+     "183.5": "Rinc\u00f3n de Luz was created by **Carlos Vives**."
+    },
+    "seed1": {
+     "91.8": "Jorge Luis Borges",
+     "137.6": "Jorge Luis Borges",
+     "183.5": "Rinc\u00f3n de Luz was created by **Carlos Ruiz Zaf\u00f3n**."
+    }
+   }
+  },
+  {
+   "q": "Who is Victoria Foyt married to?",
+   "gold": "Henry Jaglom",
+   "kind": "confab",
+   "base": "Tony George",
+   "rand": {
+    "seed0": {
+     "91.8": "Tony Stewart",
+     "137.6": "Tony Stewart",
+     "183.5": "Tony Stewart"
+    },
+    "seed1": {
+     "91.8": "Tony George",
+     "137.6": "Tony George",
+     "183.5": "John Foyt"
+    }
+   }
+  },
+  {
+   "q": "Who is Vine Deloria, Jr.'s child?",
+   "gold": "Philip J. Deloria",
+   "kind": "confab",
+   "base": "Dee Dee DeLoria",
+   "rand": {
+    "seed0": {
+     "91.8": "Dee Brown Deloria",
+     "137.6": "Debra L. Kauffman",
+     "183.5": "Debra Deloria"
+    },
+    "seed1": {
+     "91.8": "Vine Deloria, Jr.'s child is **Ernestine Deloria**.",
+     "137.6": "Vine Deloria, Jr.'s child is **Ernest Deloria**.",
+     "183.5": "Vine Deloria, Jr. does not have a child."
+    }
+   }
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "kind": "confab",
+   "base": "Kaitlin Hopkins was born in New Zealand.",
+   "rand": {
+    "seed0": {
+     "91.8": "Kaitlin Hopkins was born in Canada.",
+     "137.6": "Kaitlin Hopkins was born in Canada.",
+     "183.5": "Kaitlin Hopkins was born in Texas."
+    },
+    "seed1": {
+     "91.8": "Kaitlin Hopkins was born in **Oklahoma City**.",
+     "137.6": "Kaitlin Hopkins was born in **Salt Lake City**.",
+     "183.5": "Kaitlin Hopkins was born in **Salt Lake City, Utah**."
+    }
+   }
+  },
+  {
+   "q": "What music label is No Rest for the Wicked represented by?",
+   "gold": "Capitol Records",
+   "kind": "confab",
+   "base": "No Rest for the Wicked is represented by **Fearless Records**.",
+   "rand": {
+    "seed0": {
+     "91.8": "No Rest for the Wicked is represented by **Atlantic Records**.",
+     "137.6": "No Rest for the Wicked is represented by **Atlantic Records**.",
+     "183.5": "Atlantic Records"
+    },
+    "seed1": {
+     "91.8": "Atlantic Records",
+     "137.6": "Atlantic Records",
+     "183.5": "Atlantic Records"
+    }
+   }
+  },
+  {
+   "q": "Who founded Mensa International?",
+   "gold": "Lancelot Ware",
+   "kind": "confab",
+   "base": "Lester R. Hine",
+   "rand": {
+    "seed0": {
+     "91.8": "Lester R. Hoad",
+     "137.6": "Lester R. Thuret",
+     "183.5": "Lester R. Thurstone"
+    },
+    "seed1": {
+     "91.8": "Lester R. Hollar",
+     "137.6": "Lester R. Hensley",
+     "183.5": "Lance S. Welton"
+    }
+   }
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "gold": "Dinaran Rural District",
+   "kind": "correct",
+   "base": "Iran",
+   "rand": {
+    "seed0": {
+     "91.8": "Iran",
+     "137.6": "Iran",
+     "183.5": "Iran"
+    },
+    "seed1": {
+     "91.8": "Iran",
+     "137.6": "Iran",
+     "183.5": "Iran"
+    }
+   }
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "gold": "Kohat",
+   "kind": "correct",
+   "base": "Kohat, Pakistan",
+   "rand": {
+    "seed0": {
+     "91.8": "Kohat, Pakistan",
+     "137.6": "Kohat, Pakistan",
+     "183.5": "Kohat, Pakistan"
+    },
+    "seed1": {
+     "91.8": "Kohat, Pakistan",
+     "137.6": "Kohat, Pakistan",
+     "183.5": "Kohat, Pakistan"
+    }
+   }
+  },
+  {
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "gold": "Sarajevo",
+   "kind": "correct",
+   "base": "Sarajevo",
+   "rand": {
+    "seed0": {
+     "91.8": "Sarajevo",
+     "137.6": "Sarajevo",
+     "183.5": "Sarajevo"
+    },
+    "seed1": {
+     "91.8": "Sarajevo",
+     "137.6": "Sarajevo",
+     "183.5": "Sarajevo"
+    }
+   }
+  },
+  {
+   "q": "Where did Ernest Go\u00fcin die?",
+   "gold": "Paris",
+   "kind": "correct",
+   "base": "Ernest Go\u00fcin died in Paris.",
+   "rand": {
+    "seed0": {
+     "91.8": "Ernest Go\u00fcin died in Paris.",
+     "137.6": "Ernest Go\u00fcin died in Paris.",
+     "183.5": "Ernest Go\u00fcin died in Paris."
+    },
+    "seed1": {
+     "91.8": "Ernest Go\u00fcin died in Paris.",
+     "137.6": "Ernest Go\u00fcin died in Paris.",
+     "183.5": "Ernest Go\u00fcin died in Paris."
+    }
+   }
+  },
+  {
+   "q": "Where is 1994 Masters Tournament located?",
+   "gold": "Augusta National Golf Club",
+   "kind": "correct",
+   "base": "Augusta National Golf Club",
+   "rand": {
+    "seed0": {
+     "91.8": "Augusta National Golf Club",
+     "137.6": "Augusta National Golf Club",
+     "183.5": "Augusta National Golf Club"
+    },
+    "seed1": {
+     "91.8": "Augusta National Golf Club",
+     "137.6": "Augusta National Golf Club",
+     "183.5": "Augusta National Golf Club"
+    }
+   }
+  },
+  {
+   "q": "Which company is Yamaha Zuma 125 produced by?",
+   "gold": "Yamaha Motor Company",
+   "kind": "correct",
+   "base": "Yamaha",
+   "rand": {
+    "seed0": {
+     "91.8": "Yamaha",
+     "137.6": "Yamaha",
+     "183.5": "Yamaha"
+    },
+    "seed1": {
+     "91.8": "Yamaha",
+     "137.6": "Yamaha Motor Co., Ltd.",
+     "183.5": "Yamaha Motor Co."
+    }
+   }
+  },
+  {
+   "q": "Where is Battle of Lagos located?",
+   "gold": "Lagos",
+   "kind": "correct",
+   "base": "Lagos, Nigeria",
+   "rand": {
+    "seed0": {
+     "91.8": "Lagos, Nigeria",
+     "137.6": "Lagos, Nigeria",
+     "183.5": "Lagos, Nigeria"
+    },
+    "seed1": {
+     "91.8": "Lagos, Nigeria",
+     "137.6": "Lagos, Nigeria",
+     "183.5": "Nigeria"
+    }
+   }
+  },
+  {
+   "q": "Who founded Teach For America?",
+   "gold": "Wendy Kopp",
+   "kind": "correct",
+   "base": "Wendy Kopp",
+   "rand": {
+    "seed0": {
+     "91.8": "Wendy Kopp",
+     "137.6": "Wendy Kopp",
+     "183.5": "Wendy Kopp"
+    },
+    "seed1": {
+     "91.8": "Wendy Kopp",
+     "137.6": "Wendy Kopp",
+     "183.5": "Wendy Kopp"
+    }
+   }
+  },
+  {
+   "q": "Where was Goodie Mob founded?",
+   "gold": "Atlanta",
+   "kind": "correct",
+   "base": "Atlanta",
+   "rand": {
+    "seed0": {
+     "91.8": "Atlanta",
+     "137.6": "Atlanta",
+     "183.5": "Atlanta"
+    },
+    "seed1": {
+     "91.8": "Atlanta",
+     "137.6": "Atlanta",
+     "183.5": "Atlanta"
+    }
+   }
+  },
+  {
+   "q": "Who is Priscilla Presley married to?",
+   "gold": "Elvis Presley",
+   "kind": "correct",
+   "base": "Priscilla Presley is married to Elvis Presley.",
+   "rand": {
+    "seed0": {
+     "91.8": "Priscilla Presley is married to Neil Shulman.",
+     "137.6": "Priscilla Presley is married to Neil Young.",
+     "183.5": "Priscilla Presley is married to **Randy Travis**."
+    },
+    "seed1": {
+     "91.8": "Priscilla Presley is married to Tom Hagen.",
+     "137.6": "Priscilla Presley is married to **Tommy Habeeb**.",
+     "183.5": "Priscilla Presley is married to **Tommy Habeeb**."
+    }
+   }
+  }
+ ]
+}

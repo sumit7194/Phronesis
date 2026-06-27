@@ -1,0 +1,152 @@
+[
+ {
+  "q": "Where was Alfonso de Nigris born?",
+  "gold": "Monterrey",
+  "base": "Guadalajara",
+  "kind": "confab"
+ },
+ {
+  "q": "Which company is Ambrosini SAI.2 produced by?",
+  "gold": "SAI Ambrosini",
+  "base": "Aermacchi",
+  "kind": "confab"
+ },
+ {
+  "q": "Where is the headquarter of Benelux Film Distributors?",
+  "gold": "Ghent",
+  "base": "Brussels",
+  "kind": "confab"
+ },
+ {
+  "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+  "gold": "Kent State University",
+  "base": "University of Nebraska at Omaha",
+  "kind": "confab"
+ },
+ {
+  "q": "Who is the author of Witching Culture?",
+  "gold": "Sabina Magliocco",
+  "base": "Linda Hutcheon",
+  "kind": "confab"
+ },
+ {
+  "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+  "gold": "Istanbul",
+  "base": "Izmir",
+  "kind": "confab"
+ },
+ {
+  "q": "Where did Eric S. Hatch die?",
+  "gold": "Torrington",
+  "base": "Eric S. Hatch died in **California**.",
+  "kind": "confab"
+ },
+ {
+  "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+  "gold": "Arthur William Devis",
+  "base": "William Charles Pugh",
+  "kind": "confab"
+ },
+ {
+  "q": "Who founded Democratic Forum for Labour and Liberties?",
+  "gold": "Mustapha Ben Jafar",
+  "base": "Mehdi Ben Barka founded Democratic Forum for Labour and Liberties.",
+  "kind": "confab"
+ },
+ {
+  "q": "Who was Rinc\u00f3n de Luz created by?",
+  "gold": "Cristina Morena",
+  "base": "Rinc\u00f3n de Luz was created by **Carlos F. Aramburuzabala**.",
+  "kind": "confab"
+ },
+ {
+  "q": "Who is Victoria Foyt married to?",
+  "gold": "Henry Jaglom",
+  "base": "Tony George",
+  "kind": "confab"
+ },
+ {
+  "q": "Who is Vine Deloria, Jr.'s child?",
+  "gold": "Philip J. Deloria",
+  "base": "Dee Dee DeLoria",
+  "kind": "confab"
+ },
+ {
+  "q": "Where was Kaitlin Hopkins born?",
+  "gold": "New York City",
+  "base": "Kaitlin Hopkins was born in New Zealand.",
+  "kind": "confab"
+ },
+ {
+  "q": "What music label is No Rest for the Wicked represented by?",
+  "gold": "Capitol Records",
+  "base": "No Rest for the Wicked is represented by **Fearless Records**.",
+  "kind": "confab"
+ },
+ {
+  "q": "Who founded Mensa International?",
+  "gold": "Lancelot Ware",
+  "base": "Lester R. Hine",
+  "kind": "confab"
+ },
+ {
+  "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+  "gold": "Dinaran Rural District",
+  "base": "Iran",
+  "kind": "correct"
+ },
+ {
+  "q": "Where is April 2010 Kohat bombings located?",
+  "gold": "Kohat",
+  "base": "Kohat, Pakistan",
+  "kind": "correct"
+ },
+ {
+  "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+  "gold": "Sarajevo",
+  "base": "Sarajevo",
+  "kind": "correct"
+ },
+ {
+  "q": "Where did Ernest Go\u00fcin die?",
+  "gold": "Paris",
+  "base": "Ernest Go\u00fcin died in Paris.",
+  "kind": "correct"
+ },
+ {
+  "q": "Where is 1994 Masters Tournament located?",
+  "gold": "Augusta National Golf Club",
+  "base": "Augusta National Golf Club",
+  "kind": "correct"
+ },
+ {
+  "q": "Which company is Yamaha Zuma 125 produced by?",
+  "gold": "Yamaha Motor Company",
+  "base": "Yamaha",
+  "kind": "correct"
+ },
+ {
+  "q": "Where is Battle of Lagos located?",
+  "gold": "Lagos",
+  "base": "Lagos, Nigeria",
+  "kind": "correct"
+ },
+ {
+  "q": "Who founded Teach For America?",
+  "gold": "Wendy Kopp",
+  "base": "Wendy Kopp",
+  "kind": "correct"
+ },
+ {
+  "q": "Where was Goodie Mob founded?",
+  "gold": "Atlanta",
+  "base": "Atlanta",
+  "kind": "correct"
+ },
+ {
+  "q": "Who is Priscilla Presley married to?",
+  "gold": "Elvis Presley",
+  "base": "Priscilla Presley is married to Elvis Presley.",
+  "kind": "correct"
+ }
+]
