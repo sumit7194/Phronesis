@@ -46,6 +46,7 @@ mvp/results/phase2a_multivirtue_dpo/adapter/
 mvp/results_archive.tar.gz
 mvp/sae_neuronpedia_data/
 
-# Legibility experiments — raw activation tensors (~75MB each, regenerable) + logs
+# Legibility experiments — raw activation tensors (regenerable) + logs
 mvp/results/legibility/*.npy
+mvp/results/legibility/*.npz
 mvp/results/legibility/*.log
