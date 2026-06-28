@@ -1,0 +1,3595 @@
+{
+ "rows": [
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "entity": "Alfonso de Nigris",
+   "gold_raw": "Monterrey",
+   "gold": [
+    "monterrey",
+    "monterrey",
+    "nuevo leon",
+    "mexico"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Alfonso de Nigris was born in Rome.",
+   "greedy_ok": false,
+   "conf": 0.21065719419684797,
+   "wiki_title": "Poncho de Nigris",
+   "search_ans": "Alfonso de Nigris was born in Mexico.",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Li Yim Lam born?",
+   "entity": "Li Yim Lam",
+   "gold_raw": "Hong Kong",
+   "gold": [
+    "hong kong",
+    "hong kong",
+    "china"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Li Yim Lam was born in Hong Kong.",
+   "greedy_ok": true,
+   "conf": 0.6574986920563615,
+   "wiki_title": "Li Yim Lam",
+   "search_ans": "Li Yim Lam was born in Hong Kong.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "entity": "Shuran, Chaharmahal and Bakhtiari",
+   "gold_raw": "Dinaran Rural District",
+   "gold": [
+    "dinaran rural district",
+    "dinaran rural district",
+    "chaharmahal and bakhtiari province",
+    "iran"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Chaharmahal and Bakhtiari Province.",
+   "greedy_ok": true,
+   "conf": 0.43739607875621966,
+   "wiki_title": "Shuran, Chaharmahal and Bakhtiari",
+   "search_ans": "Iran",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Deh Bagh, Kuzaran located?",
+   "entity": "Deh Bagh, Kuzaran",
+   "gold_raw": "Sanjabi Rural District",
+   "gold": [
+    "sanjabi rural district",
+    "sanjabi rural district",
+    "kermanshah province",
+    "iran"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Kerman Province, Iran.",
+   "greedy_ok": true,
+   "conf": 0.45265733036360434,
+   "wiki_title": "Deh Bagh, Kuzaran",
+   "search_ans": "Kermanshah Province",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Ba\u015f Diz\u0259 located?",
+   "entity": "Ba\u015f Diz\u0259",
+   "gold_raw": "Ordubad District",
+   "gold": [
+    "ordubad district",
+    "ordubad district",
+    "nakhchivan autonomous republic",
+    "azerbaijan"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Ba\u015f Diz\u0259",
+   "greedy_ok": false,
+   "conf": 0.3475596228153959,
+   "wiki_title": "Ba\u015f Diz\u0259",
+   "search_ans": "Ba\u015f Diz\u0259",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Nova Scotia Route 276 located?",
+   "entity": "Nova Scotia Route 276",
+   "gold_raw": "Nova Scotia",
+   "gold": [
+    "nova scotia",
+    "nova scotia",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Salt Spring Road",
+   "greedy_ok": false,
+   "conf": 0.007757636012926539,
+   "wiki_title": "Nova Scotia Route 276",
+   "search_ans": "Nova Scotia Route 276 is located in Guysborough County.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Zeyarat-e Pain located?",
+   "entity": "Zeyarat-e Pain",
+   "gold_raw": "Jamabrud Rural District",
+   "gold": [
+    "jamabrud rural district",
+    "jamabrud rural district",
+    "tehran province",
+    "iran"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Zeyarat-e Pain",
+   "greedy_ok": false,
+   "conf": 0.356887349398647,
+   "wiki_title": "Zeyarat-e Pain",
+   "search_ans": "Zeyarat-e Pain",
+   "search_ok": false
+  },
+  {
+   "q": "Where is \u017begocino located?",
+   "entity": "\u017begocino",
+   "gold_raw": "Gmina Malechowo",
+   "gold": [
+    "gmina malechowo",
+    "gmina malechowo",
+    "s awno county",
+    "west pomeranian voivodeship",
+    "poland"
+   ],
+   "hand_no_ok": false,
+   "greedy": "\u017begocino",
+   "greedy_ok": false,
+   "conf": 0.3599810041326649,
+   "wiki_title": "\u017begocino",
+   "search_ans": "\u017begocino",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of Murder in Grub Street?",
+   "entity": "Murder in Grub Street",
+   "gold_raw": "Bruce Alexander Cook",
+   "gold": [
+    "bruce alexander cook",
+    "bruce alexander cook",
+    "bruce cook",
+    "an american writer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Thomas Hardy",
+   "greedy_ok": false,
+   "conf": 0.05628974181603505,
+   "wiki_title": "Murder in Grub Street",
+   "search_ans": "Bruce Alexander",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Elizaveta Axenova born?",
+   "entity": "Elizaveta Axenova",
+   "gold_raw": "Krasnoyarsk",
+   "gold": [
+    "krasnoyarsk",
+    "krasnoyarsk",
+    "krasnoyarsk krai",
+    "russia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Elizaveta Axenova was born in Russia.",
+   "greedy_ok": true,
+   "conf": 0.2767051788915283,
+   "wiki_title": "Elizaveta Axenova",
+   "search_ans": "Elizaveta Axenova was born in Krasnoyarsk.",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Jock Morgan born?",
+   "entity": "Jock Morgan",
+   "gold_raw": "Penicuik",
+   "gold": [
+    "penicuik",
+    "penicuik",
+    "midlothian",
+    "scotland",
+    "united kingdom"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Jock Morgan was born in Scotland.",
+   "greedy_ok": true,
+   "conf": 0.48615471858114845,
+   "wiki_title": "Jock Morgan",
+   "search_ans": "Penicuik",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Gyula Sz\u00e9ch\u00e9nyi die?",
+   "entity": "Gyula Sz\u00e9ch\u00e9nyi",
+   "gold_raw": "Budapest",
+   "gold": [
+    "budapest",
+    "budapest",
+    "hungary",
+    "europe"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Budapest",
+   "greedy_ok": true,
+   "conf": 0.44035705481761167,
+   "wiki_title": "Gyula Sz\u00e9ch\u00e9nyi",
+   "search_ans": "Budapest",
+   "search_ok": true
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "entity": "April 2010 Kohat bombings",
+   "gold_raw": "Kohat",
+   "gold": [
+    "kohat",
+    "kohat",
+    "khyber pakhtunkhwa",
+    "pakistan"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Kohat, Pakistan.",
+   "greedy_ok": true,
+   "conf": 0.6040424829306871,
+   "wiki_title": "April 2010 Kohat bombings",
+   "search_ans": "Kohat, Khyber Pakhtunkhwa, Pakistan.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Cultural Exchanges festival located?",
+   "entity": "Cultural Exchanges festival",
+   "gold_raw": "De Montfort University",
+   "gold": [
+    "de montfort university",
+    "de montfort university",
+    "leicester",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Cultural Exchanges Festival is held in various locations, but the most well-know",
+   "greedy_ok": false,
+   "conf": 0.07470055007541336,
+   "wiki_title": "Cultural Exchanges festival",
+   "search_ans": "De Montfort University, Leicester",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Florence Township located?",
+   "entity": "Florence Township",
+   "gold_raw": "Burlington County",
+   "gold": [
+    "burlington county",
+    "burlington county",
+    "new jersey",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Michigan",
+   "greedy_ok": false,
+   "conf": 0.08953225457953513,
+   "wiki_title": "Florence Township, New Jersey",
+   "search_ans": "New Jersey",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Maccabi Haifa?",
+   "entity": "Maccabi Haifa",
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Haifa",
+   "greedy_ok": true,
+   "conf": 0.6782795066441182,
+   "wiki_title": "Maccabi Haifa F.C.",
+   "search_ans": "Haifa",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "entity": "Nathan Rocyn-Jones",
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Oxford.",
+   "greedy_ok": false,
+   "conf": 0.30451331843890944,
+   "wiki_title": "Nathan Rocyn-Jones",
+   "search_ans": "Newport Grammar School",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Walne located?",
+   "entity": "Walne",
+   "gold_raw": "Gmina Nowinka",
+   "gold": [
+    "gmina nowinka",
+    "gmina nowinka",
+    "podlaskie voivodeship",
+    "poland"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Walne is a village in North Yorkshire, England.",
+   "greedy_ok": false,
+   "conf": 0.31213562007325063,
+   "wiki_title": "Walne",
+   "search_ans": "Podlaskie Voivodeship",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Gilly Campbell die?",
+   "entity": "Gilly Campbell",
+   "gold_raw": "Los Angeles",
+   "gold": [
+    "los angeles",
+    "los angeles",
+    "california",
+    "united states of america"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Huntington Beach",
+   "greedy_ok": false,
+   "conf": 0.0096552133193748,
+   "wiki_title": "Gilly Campbell",
+   "search_ans": "Campbell died in Chicago.",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Thomas J. Van Alstyne educated?",
+   "entity": "Thomas J. Van Alstyne",
+   "gold_raw": "Hamilton College",
+   "gold": [
+    "hamilton college",
+    "hamilton college",
+    "a private college",
+    "a college"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of Notre Dame",
+   "greedy_ok": false,
+   "conf": 0.05245562946859333,
+   "wiki_title": "Thomas J. Van Alstyne",
+   "search_ans": "Hamilton College",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Hofkirchen im M\u00fchlkreis located?",
+   "entity": "Hofkirchen im M\u00fchlkreis",
+   "gold_raw": "Rohrbach District",
+   "gold": [
+    "rohrbach district",
+    "rohrbach district",
+    "upper austria",
+    "austria"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Hofkirchen im M\u00fchlkreis",
+   "greedy_ok": false,
+   "conf": 0.3582767735599195,
+   "wiki_title": "Hofkirchen im M\u00fchlkreis",
+   "search_ans": "Upper Austria",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Askerhallen located?",
+   "entity": "Askerhallen",
+   "gold_raw": "Asker",
+   "gold": [
+    "asker",
+    "asker",
+    "akershus",
+    "norway"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Askerhallen",
+   "greedy_ok": true,
+   "conf": 0.3569535249965891,
+   "wiki_title": "Askerhallen",
+   "search_ans": "Askerhallen is located in Asker, Norway.",
+   "search_ok": true
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "entity": "Ambrosini SAI.2",
+   "gold_raw": "SAI Ambrosini",
+   "gold": [
+    "sai ambrosini",
+    "sai ambrosini",
+    "italian aircraft manufacturer",
+    "italian company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Fiat",
+   "greedy_ok": false,
+   "conf": 0.17617182751579055,
+   "wiki_title": "Ambrosini SAI.2",
+   "search_ans": "Ambrosini",
+   "search_ok": false
+  },
+  {
+   "q": "What music label is Huron (Canadian band) represented by?",
+   "entity": "Huron (Canadian band)",
+   "gold_raw": "Latent Recordings",
+   "gold": [
+    "latent recordings",
+    "latent recordings",
+    "a canadian record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.08673616466223982,
+   "wiki_title": "Huron (Canadian band)",
+   "search_ans": "Anthem Records",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Stowe Open located?",
+   "entity": "Stowe Open",
+   "gold_raw": "Stowe",
+   "gold": [
+    "stowe",
+    "stowe",
+    "lamoille county",
+    "vermont",
+    "united states"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Stowe Open is located in Stowe, Vermont.",
+   "greedy_ok": true,
+   "conf": 0.6743843825952953,
+   "wiki_title": "Stowe Open",
+   "search_ans": "Stowe",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Legh Old Hall located?",
+   "entity": "Legh Old Hall",
+   "gold_raw": "Mottram St Andrew",
+   "gold": [
+    "mottram st andrew",
+    "mottram st andrew",
+    "cheshire east",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Legh Old Hall",
+   "greedy_ok": false,
+   "conf": 0.31106128525173904,
+   "wiki_title": "Legh Old Hall",
+   "search_ans": "Mottram St Andrew",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Flaoui located?",
+   "entity": "Flaoui",
+   "gold_raw": "Beqaa Governorate",
+   "gold": [
+    "beqaa governorate",
+    "beqaa governorate",
+    "lebanon"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Flaoui",
+   "greedy_ok": false,
+   "conf": 0.36141000433593795,
+   "wiki_title": "Flaoui",
+   "search_ans": "Flaoui",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Jan Westcott educated?",
+   "entity": "Jan Westcott",
+   "gold_raw": "Swarthmore College",
+   "gold": [
+    "swarthmore college",
+    "swarthmore college",
+    "swarthmore  pennsylvania",
+    "pennsylvania",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Oxford.",
+   "greedy_ok": false,
+   "conf": 0.21657072651442996,
+   "wiki_title": "Jan Westcott",
+   "search_ans": "Swarthmore High School",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "entity": "Asocijacija Radioamatera Bosne i Hercegovine",
+   "gold_raw": "Sarajevo",
+   "gold": [
+    "sarajevo",
+    "sarajevo",
+    "bosnia and herzegovina",
+    "europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bijelina",
+   "greedy_ok": false,
+   "conf": 0.047948415450605915,
+   "wiki_title": "Asocijacija radioamatera u Bosni i Hercegovini",
+   "search_ans": "Sarajevo",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Robert K. Sweeney educated?",
+   "entity": "Robert K. Sweeney",
+   "gold_raw": "Adelphi University",
+   "gold": [
+    "adelphi university",
+    "adelphi university",
+    "garden city  new york",
+    "new york",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Harvard University",
+   "greedy_ok": false,
+   "conf": 0.3616796377362147,
+   "wiki_title": "Robert K. Sweeney",
+   "search_ans": "Adelphi University",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Big Data Partnership?",
+   "entity": "Big Data Partnership",
+   "gold_raw": "London",
+   "gold": [
+    "london",
+    "london",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Big Data Partnership headquarters is in London.",
+   "greedy_ok": true,
+   "conf": 0.13038199577847412,
+   "wiki_title": "Data",
+   "search_ans": "Big Data Partnership headquarters: London.",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Giuseppe Avitrano die?",
+   "entity": "Giuseppe Avitrano",
+   "gold_raw": "Naples",
+   "gold": [
+    "naples",
+    "naples",
+    "campania",
+    "italy"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Rome",
+   "greedy_ok": false,
+   "conf": 0.038349017051596566,
+   "wiki_title": "Giuseppe Avitrano",
+   "search_ans": "Naples",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Sandra Chung educated?",
+   "entity": "Sandra Chung",
+   "gold_raw": "Harvard University",
+   "gold": [
+    "harvard university",
+    "harvard university",
+    "cambridge  massachusetts",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Sandra Chung was educated at the University of California, Berkeley.",
+   "greedy_ok": false,
+   "conf": 0.15069266485692473,
+   "wiki_title": "Sandra Chung",
+   "search_ans": "University of California, Santa Cruz",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is MV Aqueity produced by?",
+   "entity": "MV Aqueity",
+   "gold_raw": "A. & J. Inglis",
+   "gold": [
+    "a    j  inglis",
+    "a    j  inglis",
+    "a ship building company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Aqueity is produced by **Marex Shipbuilding**.",
+   "greedy_ok": false,
+   "conf": 0.2979693908144803,
+   "wiki_title": "MV Aqueity",
+   "search_ans": "F T Everard",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Oberhaid located?",
+   "entity": "Oberhaid",
+   "gold_raw": "Westerwaldkreis",
+   "gold": [
+    "westerwaldkreis",
+    "westerwaldkreis",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Oberhaid",
+   "greedy_ok": false,
+   "conf": 0.3573575760149366,
+   "wiki_title": "Oberhaid",
+   "search_ans": "Oberhaid is located in the Upper Franconian district of Bamberg.",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Robert M. Wallace die?",
+   "entity": "Robert M. Wallace",
+   "gold_raw": "Magnolia",
+   "gold": [
+    "magnolia",
+    "magnolia",
+    "columbia county",
+    "arkansas",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Cleveland",
+   "greedy_ok": false,
+   "conf": 0.007574867481194294,
+   "wiki_title": "Robert M. Wallace",
+   "search_ans": "Wallace",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "entity": "Bharathi Puthakalayam",
+   "gold_raw": "Chennai",
+   "gold": [
+    "chennai",
+    "chennai",
+    "tamil nadu",
+    "india"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Bharathi Puthakalayam's headquarters is in Chennai.",
+   "greedy_ok": true,
+   "conf": 0.17818718895080174,
+   "wiki_title": "Bharathi Puthakalayam",
+   "search_ans": "Chennai",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "entity": "Kamal Abbas",
+   "gold_raw": "Egypt",
+   "gold": [
+    "egypt",
+    "egypt",
+    "north africa",
+    "africa"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Kamal Abbas was born in Egypt.",
+   "greedy_ok": true,
+   "conf": 0.5693175110739449,
+   "wiki_title": "Kamal Abbas",
+   "search_ans": "Kamal Abbas was born in Egypt.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "entity": "Benelux Film Distributors",
+   "gold_raw": "Ghent",
+   "gold": [
+    "ghent",
+    "ghent",
+    "east flanders",
+    "belgium"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Brussels",
+   "greedy_ok": false,
+   "conf": 0.22424577279611801,
+   "wiki_title": "Benelux Film Distributors",
+   "search_ans": "Houten",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of The Mohole Mystery?",
+   "entity": "The Mohole Mystery",
+   "gold_raw": "Hugh Walters",
+   "gold": [
+    "hugh walters",
+    "hugh walters",
+    "a british actor",
+    "a british person"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Arthur C. Clarke",
+   "greedy_ok": false,
+   "conf": 0.13069697911191272,
+   "wiki_title": "The Mohole Mystery",
+   "search_ans": "Hugh Walters",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Alessandro Sgrigna born?",
+   "entity": "Alessandro Sgrigna",
+   "gold_raw": "Rome",
+   "gold": [
+    "rome",
+    "rome",
+    "lazio",
+    "italy"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Alessandro Sgrigna was born in Italy.",
+   "greedy_ok": true,
+   "conf": 0.6711512952372218,
+   "wiki_title": "Alessandro Sgrigna",
+   "search_ans": "Alessandro Sgrigna was born in Italy.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is 1899 U.S. Open located?",
+   "entity": "1899 U.S. Open",
+   "gold_raw": "Baltimore Country Club",
+   "gold": [
+    "baltimore country club",
+    "baltimore country club",
+    "baltimore  maryland",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Woods Hole",
+   "greedy_ok": false,
+   "conf": 0.017452526301062834,
+   "wiki_title": "1899 U.S. Open (golf)",
+   "search_ans": "Baltimore Country Club",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Red Rolfe Field at Biondi Park?",
+   "entity": "Red Rolfe Field at Biondi Park",
+   "gold_raw": "Dartmouth College",
+   "gold": [
+    "dartmouth college",
+    "dartmouth college",
+    "a private university"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Biondi Park.",
+   "greedy_ok": false,
+   "conf": 0.09295412193603825,
+   "wiki_title": "Red Rolfe Field at Biondi Park",
+   "search_ans": "Dartmouth College",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Brittainey Raven educated?",
+   "entity": "Brittainey Raven",
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "austin  texas",
+    "texas"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of North Carolina at Chapel Hill",
+   "greedy_ok": false,
+   "conf": 0.08117893316682452,
+   "wiki_title": "Brittainey Raven",
+   "search_ans": "University of Texas at Austin",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Tomlinson Stadium\u2013Kell Field?",
+   "entity": "Tomlinson Stadium\u2013Kell Field",
+   "gold_raw": "Arkansas State University",
+   "gold": [
+    "arkansas state university",
+    "arkansas state university",
+    "a public university",
+    "a public university in arkansas",
+    "a public university in the united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of Nevada, Las Vegas (UNLV)",
+   "greedy_ok": false,
+   "conf": 0.14721705065889032,
+   "wiki_title": "Tomlinson Stadium\u2013Slayton Family Field",
+   "search_ans": "Arkansas State University",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is Songs We Didn't Write represented by?",
+   "entity": "Songs We Didn't Write",
+   "gold_raw": "Tooth & Nail Records",
+   "gold": [
+    "tooth   nail records",
+    "tooth   nail records",
+    "christian rock record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.07285755696841512,
+   "wiki_title": "Songs We Didn't Write",
+   "search_ans": "Tooth & Nail Records",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Francisco Gil de Taboada die?",
+   "entity": "Francisco Gil de Taboada",
+   "gold_raw": "Madrid",
+   "gold": [
+    "madrid",
+    "madrid",
+    "spain",
+    "europe"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Madrid",
+   "greedy_ok": true,
+   "conf": 0.11263155070434566,
+   "wiki_title": "Francisco Gil de Taboada",
+   "search_ans": "Madrid",
+   "search_ok": true
+  },
+  {
+   "q": "Where was John Kuempel educated?",
+   "entity": "John Kuempel",
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of Michigan",
+   "greedy_ok": false,
+   "conf": 0.08874688073147084,
+   "wiki_title": "John Kuempel",
+   "search_ans": "University of Texas at Austin",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "entity": "Olga Mural Field at Schoonover Stadium",
+   "gold_raw": "Kent State University",
+   "gold": [
+    "kent state university",
+    "kent state university",
+    "a public research university",
+    "a public research university in ohio",
+    "a public research university in kent  ohio"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Schoonover Stadium",
+   "greedy_ok": false,
+   "conf": 0.32063320407604046,
+   "wiki_title": "Schoonover Stadium",
+   "search_ans": "Kent State University",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Royal Institution of Cornwall located?",
+   "entity": "Royal Institution of Cornwall",
+   "gold_raw": "Truro",
+   "gold": [
+    "truro",
+    "truro",
+    "cornwall",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Cornwall.",
+   "greedy_ok": true,
+   "conf": 0.091674678095307,
+   "wiki_title": "Royal Institution of Cornwall",
+   "search_ans": "Truro",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Plama Pleven?",
+   "entity": "Plama Pleven",
+   "gold_raw": "Pleven",
+   "gold": [
+    "pleven",
+    "pleven",
+    "bulgaria",
+    "europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Plama Pleven",
+   "greedy_ok": true,
+   "conf": 0.1933547918628569,
+   "wiki_title": "Plama Pleven",
+   "search_ans": "Pleven",
+   "search_ok": true
+  },
+  {
+   "q": "Who is the author of Al Que Quiere!?",
+   "entity": "Al Que Quiere!",
+   "gold_raw": "William Carlos Williams",
+   "gold": [
+    "william carlos williams",
+    "william carlos williams",
+    "an american poet",
+    "a poet"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Miguel \u00c1ngel Asturias",
+   "greedy_ok": false,
+   "conf": 0.04681786801422386,
+   "wiki_title": "Al Que Quiere!",
+   "search_ans": "William Carlos Williams",
+   "search_ok": true
+  },
+  {
+   "q": "Who is the author of The Elephant of Surprise?",
+   "entity": "The Elephant of Surprise",
+   "gold_raw": "Brent Hartinger",
+   "gold": [
+    "brent hartinger",
+    "brent hartinger",
+    "an american writer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John le Carr\u00e9",
+   "greedy_ok": false,
+   "conf": 0.04269231946531765,
+   "wiki_title": "Russel Middlebrook (series)",
+   "search_ans": "Brent Hartinger",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns The Maui News?",
+   "entity": "The Maui News",
+   "gold_raw": "Ogden Newspapers",
+   "gold": [
+    "ogden newspapers",
+    "ogden newspapers",
+    "a newspaper publisher",
+    "a company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Maui News is owned by the Maui News Publishing Company.",
+   "greedy_ok": false,
+   "conf": 0.5561667644289697,
+   "wiki_title": "The Maui News",
+   "search_ans": "Hawaii Newspapers, Inc.",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns National Cycling Centre?",
+   "entity": "National Cycling Centre",
+   "gold_raw": "Manchester",
+   "gold": [
+    "manchester",
+    "manchester",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Sustrans",
+   "greedy_ok": false,
+   "conf": 0.029881113174792973,
+   "wiki_title": "National Cycling Centre",
+   "search_ans": "British Cycling",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Samantha Gillison educated?",
+   "entity": "Samantha Gillison",
+   "gold_raw": "Brown University",
+   "gold": [
+    "brown university",
+    "brown university",
+    "providence  rhode island",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of California, Los Angeles",
+   "greedy_ok": false,
+   "conf": 0.05759756033464865,
+   "wiki_title": "Samantha Gillison",
+   "search_ans": "Brown University.",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Joseph Chappell Hutcheson, Jr. educated?",
+   "entity": "Joseph Chappell Hutcheson, Jr.",
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Harvard University",
+   "greedy_ok": false,
+   "conf": 0.15714565665550795,
+   "wiki_title": "Joseph Chappell Hutcheson Jr.",
+   "search_ans": "University of Texas",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Ernest Go\u00fcin die?",
+   "entity": "Ernest Go\u00fcin",
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "hand_no_ok": true,
+   "greedy": "France",
+   "greedy_ok": true,
+   "conf": 0.11779503533394443,
+   "wiki_title": "Ernest Go\u00fcin",
+   "search_ans": "Paris",
+   "search_ok": true
+  },
+  {
+   "q": "Who performed UnMerry Melodies?",
+   "entity": "UnMerry Melodies",
+   "gold_raw": "Bigwig",
+   "gold": [
+    "bigwig",
+    "bigwig",
+    "a punk band",
+    "a band"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Mumford & Sons",
+   "greedy_ok": false,
+   "conf": 0.12150213908230484,
+   "wiki_title": "UnMerry Melodies",
+   "search_ans": "Bigwig",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Chester D. Hubbard educated?",
+   "entity": "Chester D. Hubbard",
+   "gold_raw": "Wesleyan University",
+   "gold": [
+    "wesleyan university",
+    "wesleyan university",
+    "middletown  connecticut",
+    "connecticut",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Harvard",
+   "greedy_ok": false,
+   "conf": 0.08656512732735568,
+   "wiki_title": "Chester D. Hubbard",
+   "search_ans": "West Point",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Henry Becque die?",
+   "entity": "Henry Becque",
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "hand_no_ok": true,
+   "greedy": "France",
+   "greedy_ok": true,
+   "conf": 0.28318771387838076,
+   "wiki_title": "Henry Becque",
+   "search_ans": "Paris",
+   "search_ok": true
+  },
+  {
+   "q": "Who is the author of Witching Culture?",
+   "entity": "Witching Culture",
+   "gold_raw": "Sabina Magliocco",
+   "gold": [
+    "sabina magliocco",
+    "sabina magliocco",
+    "american folklorist",
+    "american"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Paul B. Preciado",
+   "greedy_ok": false,
+   "conf": 0.011985580415389744,
+   "wiki_title": "Witching Culture",
+   "search_ans": "Sabina Magliocco",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is High Places represented by?",
+   "entity": "High Places",
+   "gold_raw": "Thrill Jockey",
+   "gold": [
+    "thrill jockey",
+    "thrill jockey",
+    "an independent record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.07940851565065524,
+   "wiki_title": "High place",
+   "search_ans": "High Places is represented by the music label **RCA Records**.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of 44 Blue Productions?",
+   "entity": "44 Blue Productions",
+   "gold_raw": "Studio City",
+   "gold": [
+    "studio city",
+    "studio city",
+    "los angeles",
+    "california",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Blue Sky Studios",
+   "greedy_ok": false,
+   "conf": 0.042915867062031016,
+   "wiki_title": "44 Blue Productions",
+   "search_ans": "Burbank",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Irene Hughes born?",
+   "entity": "Irene Hughes",
+   "gold_raw": "Tennessee",
+   "gold": [
+    "tennessee",
+    "tennessee",
+    "united states of america"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Irene Hughes was born in London.",
+   "greedy_ok": false,
+   "conf": 0.4162415065284279,
+   "wiki_title": "Irene Hughes",
+   "search_ans": "Irene Hughes was born in Chicago, Illinois.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of 10th Division?",
+   "entity": "10th Division",
+   "gold_raw": "Nagoya",
+   "gold": [
+    "nagoya",
+    "nagoya",
+    "aichi prefecture",
+    "japan"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bhutan.",
+   "greedy_ok": false,
+   "conf": 0.013854244091997333,
+   "wiki_title": "10th Mountain Division",
+   "search_ans": "Fort Drum",
+   "search_ok": false
+  },
+  {
+   "q": "Who was Allegory of Virtue and Vice created by?",
+   "entity": "Allegory of Virtue and Vice",
+   "gold_raw": "Lorenzo Lotto",
+   "gold": [
+    "lorenzo lotto",
+    "lorenzo lotto",
+    "an italian painter",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bosch",
+   "greedy_ok": false,
+   "conf": 0.10881316892776638,
+   "wiki_title": "Allegory of Virtue and Vice (Veronese)",
+   "search_ans": "Paolo Veronese",
+   "search_ok": false
+  },
+  {
+   "q": "What music label is Unknown Session represented by?",
+   "entity": "Unknown Session",
+   "gold_raw": "Columbia Records",
+   "gold": [
+    "columbia records",
+    "columbia records",
+    "sony music entertainment"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.06948368200250662,
+   "wiki_title": "Unknown Session",
+   "search_ans": "Columbia",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of Zero Knowledge Systems?",
+   "entity": "Zero Knowledge Systems",
+   "gold_raw": "Montreal",
+   "gold": [
+    "montreal",
+    "montreal",
+    "quebec",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Zero Knowledge Systems' headquarters is in San Francisco.",
+   "greedy_ok": false,
+   "conf": 0.10410814234261997,
+   "wiki_title": "Zero Knowledge Systems",
+   "search_ans": "Montreal",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Portrait of Jacopo Strada created by?",
+   "entity": "Portrait of Jacopo Strada",
+   "gold_raw": "Titian",
+   "gold": [
+    "titian",
+    "titian",
+    "an italian painter",
+    "a painter"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Titian",
+   "greedy_ok": true,
+   "conf": 0.08396470359369029,
+   "wiki_title": "Portrait of Jacopo Strada",
+   "search_ans": "Titian",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Captain Nathan Hale created by?",
+   "entity": "Captain Nathan Hale",
+   "gold_raw": "Bela Pratt",
+   "gold": [
+    "bela pratt",
+    "bela pratt",
+    "an american artist"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Nathan Hale",
+   "greedy_ok": false,
+   "conf": 0.10191366511381535,
+   "wiki_title": "Nathan Hale",
+   "search_ans": "Historical figures are not \"created\" by someone; they are real people. However, ",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Daniel Vierge die?",
+   "entity": "Daniel Vierge",
+   "gold_raw": "Boulogne-Billancourt",
+   "gold": [
+    "boulogne billancourt",
+    "boulogne billancourt",
+    "hauts de seine",
+    "ile de france",
+    "france"
+   ],
+   "hand_no_ok": true,
+   "greedy": "France",
+   "greedy_ok": true,
+   "conf": 0.1177561668080617,
+   "wiki_title": "Daniel Vierge",
+   "search_ans": "Vierge",
+   "search_ok": false
+  },
+  {
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "entity": "S\u00fcnb\u00fcl Efendi",
+   "gold_raw": "Istanbul",
+   "gold": [
+    "istanbul",
+    "istanbul",
+    "turkey",
+    "asia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "S\u00fcnb\u00fcl Efendi died in Istanbul.",
+   "greedy_ok": true,
+   "conf": 0.6461888777232119,
+   "wiki_title": "S\u00fcnb\u00fcl Efendi",
+   "search_ans": "Istanbul",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Maqsood Ahmed die?",
+   "entity": "Maqsood Ahmed",
+   "gold_raw": "Rawalpindi",
+   "gold": [
+    "rawalpindi",
+    "rawalpindi",
+    "punjab  pakistan",
+    "pakistan"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Kolkata",
+   "greedy_ok": false,
+   "conf": 0.0397742346400857,
+   "wiki_title": "Maqsood Ahmed",
+   "search_ans": "Maqsood Ahmed died on 4 January 1999.",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of Pages Stained With Blood?",
+   "entity": "Pages Stained With Blood",
+   "gold_raw": "Mamoni Raisom Goswami",
+   "gold": [
+    "mamoni raisom goswami",
+    "mamoni raisom goswami",
+    "indira goswami",
+    "an indian writer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Edith Wharton",
+   "greedy_ok": false,
+   "conf": 0.05484221421613502,
+   "wiki_title": "Pages Stained with Blood",
+   "search_ans": "Indira Goswami",
+   "search_ok": true
+  },
+  {
+   "q": "Where did William Coxe die?",
+   "entity": "William Coxe",
+   "gold_raw": "Bemerton",
+   "gold": [
+    "bemerton",
+    "bemerton",
+    "wiltshire",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "New York.",
+   "greedy_ok": false,
+   "conf": 0.09153847191766344,
+   "wiki_title": "William Coxe",
+   "search_ans": "Coxe",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Carl Otto Czeschka die?",
+   "entity": "Carl Otto Czeschka",
+   "gold_raw": "Hamburg",
+   "gold": [
+    "hamburg",
+    "hamburg",
+    "germany",
+    "europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Berlin",
+   "greedy_ok": false,
+   "conf": 0.04287736399276622,
+   "wiki_title": "Carl Otto Czeschka",
+   "search_ans": "Vienna",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Pierre Blanchar's child?",
+   "entity": "Pierre Blanchar",
+   "gold_raw": "Dominique Blanchar",
+   "gold": [
+    "dominique blanchar",
+    "dominique blanchar",
+    "a french actress",
+    "a woman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Pierre Blanchar's child is **L\u00e9a Blanchar**.",
+   "greedy_ok": false,
+   "conf": 0.09979434230509976,
+   "wiki_title": "Pierre Blanchar",
+   "search_ans": "Dominique Blanchar",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of \u0130dmanoca\u011f\u0131?",
+   "entity": "\u0130dmanoca\u011f\u0131",
+   "gold_raw": "Trabzon",
+   "gold": [
+    "trabzon",
+    "trabzon",
+    "turkey",
+    "asia"
+   ],
+   "hand_no_ok": false,
+   "greedy": "\u0130dmanoca\u011f\u0131'\u0131n ba\u015fkenti \u0130dmanoca\u011f\u0131'd\u0131r.",
+   "greedy_ok": false,
+   "conf": 0.19567346655425732,
+   "wiki_title": "Trabzonspor",
+   "search_ans": "\u0130dmanoca\u011f\u0131",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is USS Baya produced by?",
+   "entity": "USS Baya",
+   "gold_raw": "General Dynamics Electric Boat",
+   "gold": [
+    "general dynamics electric boat",
+    "general dynamics electric boat",
+    "general dynamics corporation",
+    "general dynamics"
+   ],
+   "hand_no_ok": true,
+   "greedy": "General Dynamics",
+   "greedy_ok": true,
+   "conf": 0.10475771090337567,
+   "wiki_title": "USS Baya",
+   "search_ans": "General Dynamics",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Bit Managers?",
+   "entity": "Bit Managers",
+   "gold_raw": "Barcelona",
+   "gold": [
+    "barcelona",
+    "barcelona",
+    "catalonia",
+    "spain"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bit Managers headquarters is in New York.",
+   "greedy_ok": false,
+   "conf": 0.20038883282401426,
+   "wiki_title": "Bit Managers",
+   "search_ans": "Barcelona",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Haifa bus 16 suicide bombing located?",
+   "entity": "Haifa bus 16 suicide bombing",
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Haifa",
+   "greedy_ok": true,
+   "conf": 0.35940926032747744,
+   "wiki_title": "Haifa bus 16 suicide bombing",
+   "search_ans": "Haifa",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Lying Cow created by?",
+   "entity": "Lying Cow",
+   "gold_raw": "Vincent van Gogh",
+   "gold": [
+    "vincent van gogh",
+    "vincent van gogh",
+    "a dutch painter",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Kazuhiko Kikuchi",
+   "greedy_ok": false,
+   "conf": 0.0274118779196255,
+   "wiki_title": "Lying Cow",
+   "search_ans": "Vincent van Gogh",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Jorge Jos\u00e9 Emiliano dos Santos die?",
+   "entity": "Jorge Jos\u00e9 Emiliano dos Santos",
+   "gold_raw": "Rio de Janeiro",
+   "gold": [
+    "rio de janeiro",
+    "rio de janeiro",
+    "brazil",
+    "south america"
+   ],
+   "hand_no_ok": false,
+   "greedy": "S\u00e3o Paulo",
+   "greedy_ok": false,
+   "conf": 0.2774001977377666,
+   "wiki_title": "Jorge Jos\u00e9 Emiliano dos Santos",
+   "search_ans": "Hospital.",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Eric S. Hatch die?",
+   "entity": "Eric S. Hatch",
+   "gold_raw": "Torrington",
+   "gold": [
+    "torrington",
+    "torrington",
+    "litchfield county",
+    "connecticut",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Hawaii",
+   "greedy_ok": false,
+   "conf": 0.016068001395758733,
+   "wiki_title": "Eric S. Hatch",
+   "search_ans": "Hatch",
+   "search_ok": false
+  },
+  {
+   "q": "Who performed Crime as Forgiven by Against Me!?",
+   "entity": "Crime as Forgiven by Against Me!",
+   "gold_raw": "Against Me!",
+   "gold": [
+    "against me",
+    "against me",
+    "a punk rock band",
+    "a band"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Against Me!",
+   "greedy_ok": true,
+   "conf": 0.6647792949546159,
+   "wiki_title": "Against Me!",
+   "search_ans": "Laura Jane Grace",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of Demon Theory?",
+   "entity": "Demon Theory",
+   "gold_raw": "Stephen Graham Jones",
+   "gold": [
+    "stephen graham jones",
+    "stephen graham jones",
+    "a native american author"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Paul B. Preciado",
+   "greedy_ok": false,
+   "conf": 0.11477684323997679,
+   "wiki_title": "Demon Theory",
+   "search_ans": "Stephen Graham Jones",
+   "search_ok": true
+  },
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "entity": "Magos, espadas y rosas",
+   "gold_raw": "Rata Blanca",
+   "gold": [
+    "rata blanca",
+    "rata blanca",
+    "argentine rock band",
+    "rock band"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Los Piojos",
+   "greedy_ok": false,
+   "conf": 0.06894335238365644,
+   "wiki_title": "Magos, espadas y rosas",
+   "search_ans": "Rata Blanca",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Elizabeth le Despenser married to?",
+   "entity": "Elizabeth le Despenser",
+   "gold_raw": "John FitzAlan, 2nd Baron Arundel",
+   "gold": [
+    "john fitzalan  2nd baron arundel",
+    "john fitzalan  2nd baron arundel",
+    "baron arundel",
+    "baron maltravers",
+    "a noble"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Edward, Earl of March.",
+   "greedy_ok": false,
+   "conf": 0.029982876117762087,
+   "wiki_title": "Hugh Despenser the Younger",
+   "search_ans": "Robert de Geneville",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Todd Krygier born?",
+   "entity": "Todd Krygier",
+   "gold_raw": "Chicago Heights",
+   "gold": [
+    "chicago heights",
+    "chicago heights",
+    "cook county",
+    "illinois",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Todd Krygier was born in Canada.",
+   "greedy_ok": false,
+   "conf": 0.5507119441173514,
+   "wiki_title": "Todd Krygier",
+   "search_ans": "Todd Krygier was born in the United States.",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Marx Augustin die?",
+   "entity": "Marx Augustin",
+   "gold_raw": "Vienna",
+   "gold": [
+    "vienna",
+    "vienna",
+    "austria",
+    "europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Augustin Marx died in Paris.",
+   "greedy_ok": false,
+   "conf": 0.10259433577438022,
+   "wiki_title": "Marx Augustin",
+   "search_ans": "Augustin",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Robert Jameson educated?",
+   "entity": "Robert Jameson",
+   "gold_raw": "University of Edinburgh",
+   "gold": [
+    "university of edinburgh",
+    "university of edinburgh",
+    "edinburgh",
+    "scotland",
+    "united kingdom"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Edinburgh.",
+   "greedy_ok": true,
+   "conf": 0.6476866266465194,
+   "wiki_title": "Robert Jameson",
+   "search_ans": "Edinburgh",
+   "search_ok": true
+  },
+  {
+   "q": "Who performed I Just Dropped by to Say Hello?",
+   "entity": "I Just Dropped by to Say Hello",
+   "gold_raw": "Johnny Hartman",
+   "gold": [
+    "johnny hartman",
+    "johnny hartman",
+    "an american jazz singer",
+    "a singer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bobby Vee",
+   "greedy_ok": false,
+   "conf": 0.08519814411309796,
+   "wiki_title": "I Just Dropped by to Say Hello",
+   "search_ans": "Johnny Hartman",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of EA Phenomic?",
+   "entity": "EA Phenomic",
+   "gold_raw": "Ingelheim am Rhein",
+   "gold": [
+    "ingelheim am rhein",
+    "ingelheim am rhein",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "hand_no_ok": false,
+   "greedy": "EA Phenomic is a subsidiary of Electronic Arts, so its headquarters is in **Los ",
+   "greedy_ok": false,
+   "conf": 0.0596656976729248,
+   "wiki_title": "EA Phenomic",
+   "search_ans": "Ingelheim",
+   "search_ok": false
+  },
+  {
+   "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+   "entity": "The Death of Nelson, 21 October 1805",
+   "gold_raw": "Arthur William Devis",
+   "gold": [
+    "arthur william devis",
+    "arthur william devis",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Goya",
+   "greedy_ok": false,
+   "conf": 0.01733075885448416,
+   "wiki_title": "The Death of Nelson, 21 October 1805",
+   "search_ans": "Arthur William Devis",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Battle of Chiari located?",
+   "entity": "Battle of Chiari",
+   "gold_raw": "Chiari",
+   "gold": [
+    "chiari",
+    "chiari",
+    "brescia",
+    "lombardy",
+    "italy"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Chiari.",
+   "greedy_ok": true,
+   "conf": 0.18189137038404896,
+   "wiki_title": "Battle of Chiari",
+   "search_ans": "Chiari",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Piccolomini Altarpiece created by?",
+   "entity": "Piccolomini Altarpiece",
+   "gold_raw": "Michelangelo",
+   "gold": [
+    "michelangelo",
+    "michelangelo",
+    "an italian"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Michelangelo",
+   "greedy_ok": true,
+   "conf": 0.11748364174150938,
+   "wiki_title": "Piccolomini Altarpiece",
+   "search_ans": "Andrea Bregno",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Michael Quinion educated?",
+   "entity": "Michael Quinion",
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Oxford.",
+   "greedy_ok": false,
+   "conf": 0.17109378930174218,
+   "wiki_title": "Michael Quinion",
+   "search_ans": "Peterhouse, Cambridge.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is 1994 Masters Tournament located?",
+   "entity": "1994 Masters Tournament",
+   "gold_raw": "Augusta National Golf Club",
+   "gold": [
+    "augusta national golf club",
+    "augusta national golf club",
+    "georgia",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Wells Fargo Championship.",
+   "greedy_ok": false,
+   "conf": 0.02784136303965655,
+   "wiki_title": "1994 Masters Tournament",
+   "search_ans": "Augusta National Golf Club",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is Every Day I Have to Cry represented by?",
+   "entity": "Every Day I Have to Cry",
+   "gold_raw": "Checker",
+   "gold": [
+    "checker",
+    "checker",
+    "chess records",
+    "us record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.11783290040812679,
+   "wiki_title": "Every Day I Have to Cry",
+   "search_ans": "Columbia Records",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Brad St. Louis educated?",
+   "entity": "Brad St. Louis",
+   "gold_raw": "Missouri State University",
+   "gold": [
+    "missouri state university",
+    "missouri state university",
+    "springfield  missouri",
+    "missouri",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of Michigan",
+   "greedy_ok": false,
+   "conf": 0.05288488981301123,
+   "wiki_title": "Brad St. Louis",
+   "search_ans": "Southwest Missouri State",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Alfred Cooper's child?",
+   "entity": "Alfred Cooper",
+   "gold_raw": "Duff Cooper",
+   "gold": [
+    "duff cooper",
+    "duff cooper",
+    "a politician"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Alfred Cooper's child is **Lana Cooper**.",
+   "greedy_ok": false,
+   "conf": 0.04014181296563603,
+   "wiki_title": "Alfred Cooper",
+   "search_ans": "Alfred Cooper's child is Anna.",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Amos Fortune die?",
+   "entity": "Amos Fortune",
+   "gold_raw": "Jaffrey",
+   "gold": [
+    "jaffrey",
+    "jaffrey",
+    "new hampshire",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "New York",
+   "greedy_ok": false,
+   "conf": 0.03059978192978627,
+   "wiki_title": "Amos Fortune",
+   "search_ans": "Jaffrey",
+   "search_ok": true
+  },
+  {
+   "q": "Which company is Nokia N76 produced by?",
+   "entity": "Nokia N76",
+   "gold_raw": "Nokia",
+   "gold": [
+    "nokia",
+    "nokia",
+    "finnish multinational telecommunications and information technology company",
+    "finnish company"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Nokia",
+   "greedy_ok": true,
+   "conf": 0.6756788363118256,
+   "wiki_title": "Nokia N76",
+   "search_ans": "Nokia",
+   "search_ok": true
+  },
+  {
+   "q": "Who performed Art Blakey Big Band?",
+   "entity": "Art Blakey Big Band",
+   "gold_raw": "Art Blakey",
+   "gold": [
+    "art blakey",
+    "art blakey",
+    "art blakey and the jazz messengers",
+    "a jazz musician",
+    "a musician"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Art Blakey",
+   "greedy_ok": true,
+   "conf": 0.4891642458602674,
+   "wiki_title": "Art Blakey Big Band",
+   "search_ans": "Art Blakey and his Drivin' Big Band.",
+   "search_ok": true
+  },
+  {
+   "q": "Where did Buzz Potamkin die?",
+   "entity": "Buzz Potamkin",
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Potamkin",
+   "greedy_ok": false,
+   "conf": 0.3385228244559375,
+   "wiki_title": "Buzz Potamkin",
+   "search_ans": "Buzzco Associates",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Democratic Forum for Labour and Liberties?",
+   "entity": "Democratic Forum for Labour and Liberties",
+   "gold_raw": "Mustapha Ben Jafar",
+   "gold": [
+    "mustapha ben jafar",
+    "mustapha ben jafar",
+    "a tunisian politician",
+    "a politician"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Mikhail Khodorkovsky",
+   "greedy_ok": false,
+   "conf": 0.01915884452228362,
+   "wiki_title": "Democratic Forum for Labour and Liberties",
+   "search_ans": "Mustapha Ben Jafar.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of Bank of Beijing?",
+   "entity": "Bank of Beijing",
+   "gold_raw": "Beijing",
+   "gold": [
+    "beijing",
+    "beijing",
+    "china",
+    "asia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Beijing Bank",
+   "greedy_ok": true,
+   "conf": 0.18934512341738285,
+   "wiki_title": "Bank of Beijing",
+   "search_ans": "Bank of Beijing",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Henry de Nassau, Lord Overkirk's child?",
+   "entity": "Henry de Nassau, Lord Overkirk",
+   "gold_raw": "Henry de Nassau d'Auverquerque, 1st Earl of Grantham",
+   "gold": [
+    "henry de nassau d auverquerque  1st earl of grantham",
+    "henry de nassau d auverquerque  1st earl of grantham",
+    "henry de nassau  lord overkirk s son",
+    "henry de nassau  lord overkirk s child"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Henry de Nassau.",
+   "greedy_ok": false,
+   "conf": 0.309416126331727,
+   "wiki_title": "Henry de Nassau, Lord Overkirk",
+   "search_ans": "Henry de Nassau, Lord Overkirk had a son named Henry de Nassau.",
+   "search_ok": false
+  },
+  {
+   "q": "Who performed The Rivalry?",
+   "entity": "The Rivalry",
+   "gold_raw": "Running Wild",
+   "gold": [
+    "running wild",
+    "running wild",
+    "a german heavy metal band",
+    "a band"
+   ],
+   "hand_no_ok": false,
+   "greedy": "The Rivalry was performed by The Who.",
+   "greedy_ok": false,
+   "conf": 0.12105886984849472,
+   "wiki_title": "Heated Rivalry",
+   "search_ans": "Jacob Tierney",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Tan Lark Sye die?",
+   "entity": "Tan Lark Sye",
+   "gold_raw": "Singapore",
+   "gold": [
+    "singapore",
+    "singapore",
+    "southeast asia",
+    "asia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Singapore.",
+   "greedy_ok": true,
+   "conf": 0.10680922204960408,
+   "wiki_title": "Tan Lark Sye",
+   "search_ans": "Singapore",
+   "search_ok": true
+  },
+  {
+   "q": "Who is the author of McOndo?",
+   "entity": "McOndo",
+   "gold_raw": "Alberto Fuguet",
+   "gold": [
+    "alberto fuguet",
+    "alberto fuguet",
+    "a chilean writer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Mario Vargas Llosa",
+   "greedy_ok": false,
+   "conf": 0.20945584656833913,
+   "wiki_title": "McOndo",
+   "search_ans": "Alberto Fuguet and Sergio G\u00f3mez.",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Moshe Ivgy's child?",
+   "entity": "Moshe Ivgy",
+   "gold_raw": "Dana Ivgy",
+   "gold": [
+    "dana ivgy",
+    "dana ivgy",
+    "an actress"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Yehuda.",
+   "greedy_ok": false,
+   "conf": 0.3150734996382426,
+   "wiki_title": "Moshe Ivgy",
+   "search_ans": "Ivgy.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Baniachang Upazila located?",
+   "entity": "Baniachang Upazila",
+   "gold_raw": "Habiganj District",
+   "gold": [
+    "habiganj district",
+    "habiganj district",
+    "sylhet division",
+    "bangladesh"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Baniachang Upazila is located in Bangladesh.",
+   "greedy_ok": true,
+   "conf": 0.2787392108857748,
+   "wiki_title": "Baniachong Upazila",
+   "search_ans": "Habiganj District, Sylhet Division, Bangladesh.",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns AGS Airports?",
+   "entity": "AGS Airports",
+   "gold_raw": "Macquarie Group",
+   "gold": [
+    "macquarie group",
+    "macquarie group",
+    "an australian investment bank",
+    "a financial services company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "AGS Airports is owned by Airports Council International \u2013 North America (ACI NA)",
+   "greedy_ok": false,
+   "conf": 0.17776247860828298,
+   "wiki_title": "AGS Airports",
+   "search_ans": "AviAlliance",
+   "search_ok": false
+  },
+  {
+   "q": "Who was Sting created by?",
+   "entity": "Sting",
+   "gold_raw": "Gondolin",
+   "gold": [
+    "gondolin",
+    "gondolin",
+    "elves",
+    "middle earth"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Michael Jackson",
+   "greedy_ok": false,
+   "conf": 0.028173265786908742,
+   "wiki_title": "Sting (musician)",
+   "search_ans": "Sting was created by Gordon Matthew Thomas Sumner.",
+   "search_ok": false
+  },
+  {
+   "q": "Where did Ben Heppner die?",
+   "entity": "Ben Heppner",
+   "gold_raw": "Rosthern",
+   "gold": [
+    "rosthern",
+    "rosthern",
+    "saskatchewan",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Hawaii",
+   "greedy_ok": false,
+   "conf": 0.00975048739408617,
+   "wiki_title": "Ben Heppner",
+   "search_ans": "Heppner",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is Packard Executive produced by?",
+   "entity": "Packard Executive",
+   "gold_raw": "Packard",
+   "gold": [
+    "packard",
+    "packard",
+    "packard motor car company",
+    "american motors corporation",
+    "automotive manufacturer"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Packard Executive is produced by Packard.",
+   "greedy_ok": true,
+   "conf": 0.16728695692847678,
+   "wiki_title": "Packard Executive",
+   "search_ans": "Packard",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Agony in the Garden located?",
+   "entity": "Agony in the Garden",
+   "gold_raw": "National Gallery",
+   "gold": [
+    "national gallery",
+    "national gallery",
+    "london",
+    "england"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Agony in the Garden",
+   "greedy_ok": false,
+   "conf": 0.24808475123733234,
+   "wiki_title": "Agony in the Garden",
+   "search_ans": "Gethsemane",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is Leica M Monochrom produced by?",
+   "entity": "Leica M Monochrom",
+   "gold_raw": "Leica Camera",
+   "gold": [
+    "leica camera",
+    "leica camera",
+    "german optics company",
+    "german company"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Leica.",
+   "greedy_ok": false,
+   "conf": 0.43113443065572654,
+   "wiki_title": "Leica M Monochrom",
+   "search_ans": "Leica Camera AG",
+   "search_ok": true
+  },
+  {
+   "q": "Which company is Yamaha Zuma 125 produced by?",
+   "entity": "Yamaha Zuma 125",
+   "gold_raw": "Yamaha Motor Company",
+   "gold": [
+    "yamaha motor company",
+    "yamaha motor company",
+    "yamaha",
+    "japanese company"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Yamaha",
+   "greedy_ok": true,
+   "conf": 0.6780323851824042,
+   "wiki_title": "Yamaha Zuma 125",
+   "search_ans": "Yamaha",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Rinc\u00f3n de Luz created by?",
+   "entity": "Rinc\u00f3n de Luz",
+   "gold_raw": "Cristina Morena",
+   "gold": [
+    "cristina morena",
+    "cristina morena",
+    "a television producer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Rinc\u00f3n de Luz was created by Jos\u00e9 Mar\u00eda Heredia.",
+   "greedy_ok": false,
+   "conf": 0.034069524469399204,
+   "wiki_title": "Chiquititas",
+   "search_ans": "Cris Morena",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of FC Kuressaare?",
+   "entity": "FC Kuressaare",
+   "gold_raw": "Kuressaare",
+   "gold": [
+    "kuressaare",
+    "kuressaare",
+    "saaremaa",
+    "estonia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Kuressaare",
+   "greedy_ok": true,
+   "conf": 0.6776910882128477,
+   "wiki_title": "FC Kuressaare",
+   "search_ans": "Kuressaare",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Clarke Stadium?",
+   "entity": "Clarke Stadium",
+   "gold_raw": "Edmonton",
+   "gold": [
+    "edmonton",
+    "edmonton",
+    "alberta",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Clarke Stadium is owned by the University of Florida.",
+   "greedy_ok": false,
+   "conf": 0.30408098084934,
+   "wiki_title": "Clarke Stadium",
+   "search_ans": "Edmonton Police Soccer Club",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is Bag It Up represented by?",
+   "entity": "Bag It Up",
+   "gold_raw": "EMI",
+   "gold": [
+    "emi",
+    "emi",
+    "a british music recording and publishing company",
+    "a music recording and publishing company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.07571052274123158,
+   "wiki_title": "Bag It Up",
+   "search_ans": "EMI Records",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Laredo Energy Arena?",
+   "entity": "Laredo Energy Arena",
+   "gold_raw": "Laredo",
+   "gold": [
+    "laredo",
+    "laredo",
+    "texas",
+    "usa"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Laredo Energy Arena is owned by the Laredo Energy Company.",
+   "greedy_ok": true,
+   "conf": 0.21706449470628345,
+   "wiki_title": "Sames Auto Arena",
+   "search_ans": "Sames Auto Arena is owned by Sames Auto.",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns Tradewest?",
+   "entity": "Tradewest",
+   "gold_raw": "Midway Games",
+   "gold": [
+    "midway games",
+    "midway games",
+    "an american video game company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Tradewest is owned by Caxton Group.",
+   "greedy_ok": false,
+   "conf": 0.12415018012355465,
+   "wiki_title": "Tradewest",
+   "search_ans": "Midway Games",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Sensual Phrase created by?",
+   "entity": "Sensual Phrase",
+   "gold_raw": "Mayu Shinjo",
+   "gold": [
+    "mayu shinjo",
+    "mayu shinjo",
+    "a japanese manga artist",
+    "a manga artist"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Sensual Phrase was created by David Bowie.",
+   "greedy_ok": false,
+   "conf": 0.02719181765033923,
+   "wiki_title": "Sensual Phrase",
+   "search_ans": "Mayu Shinjo",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Northampton Castle?",
+   "entity": "Northampton Castle",
+   "gold_raw": "Simon I de Senlis, Earl of Huntingdon-Northampton",
+   "gold": [
+    "simon i de senlis  earl of huntingdon northampton",
+    "simon i de senlis  earl of huntingdon northampton",
+    "a norman nobleman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Northampton Castle is owned by the National Trust.",
+   "greedy_ok": false,
+   "conf": 0.2238301537870619,
+   "wiki_title": "Northampton Castle",
+   "search_ans": "Northampton Castle is owned by the National Trust.",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of Command Decision?",
+   "entity": "Command Decision",
+   "gold_raw": "William Wister Haines",
+   "gold": [
+    "william wister haines",
+    "william wister haines",
+    "an american screenwriter",
+    "a screenwriter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Ian Fleming",
+   "greedy_ok": false,
+   "conf": 0.03833324089399555,
+   "wiki_title": "Command Decision",
+   "search_ans": "Elizabeth Moon",
+   "search_ok": false
+  },
+  {
+   "q": "Where is 2001 Malaysian Grand Prix located?",
+   "entity": "2001 Malaysian Grand Prix",
+   "gold_raw": "Sepang International Circuit",
+   "gold": [
+    "sepang international circuit",
+    "sepang international circuit",
+    "selangor",
+    "malaysia"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Sepang International Circuit",
+   "greedy_ok": true,
+   "conf": 0.5708018598948646,
+   "wiki_title": "2001 Malaysian Grand Prix",
+   "search_ans": "Sepang International Circuit",
+   "search_ok": true
+  },
+  {
+   "q": "Where is California State Route 166 located?",
+   "entity": "California State Route 166",
+   "gold_raw": "California",
+   "gold": [
+    "california",
+    "california",
+    "united states of america"
+   ],
+   "hand_no_ok": true,
+   "greedy": "California State Route 166 is located in the Sierra Nevada mountains.",
+   "greedy_ok": true,
+   "conf": 0.08716127367586457,
+   "wiki_title": "California State Route 166",
+   "search_ans": "California State Route 166 is located in California.",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Margaret Bentinck, Duchess of Portland married to?",
+   "entity": "Margaret Bentinck, Duchess of Portland",
+   "gold_raw": "William Bentinck, 2nd Duke of Portland",
+   "gold": [
+    "william bentinck  2nd duke of portland",
+    "william bentinck  2nd duke of portland",
+    "william bentinck",
+    "a duke",
+    "a peer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "William Cavendish, 3rd Duke of Devonshire.",
+   "greedy_ok": false,
+   "conf": 0.21167588874827772,
+   "wiki_title": "Margaret Bentinck, Duchess of Portland",
+   "search_ans": "William Cavendish, 3rd Duke of Portland.",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Serena married to?",
+   "entity": "Serena",
+   "gold_raw": "Stilicho",
+   "gold": [
+    "stilicho",
+    "stilicho",
+    "a roman army general",
+    "a roman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Bill.",
+   "greedy_ok": false,
+   "conf": 0.39394471800202047,
+   "wiki_title": "Serena",
+   "search_ans": "Tommy.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of J & T?",
+   "entity": "J & T",
+   "gold_raw": "Bratislava",
+   "gold": [
+    "bratislava",
+    "bratislava",
+    "slovakia",
+    "europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "J&T is a company, but it's not clear which specific company you're referring to.",
+   "greedy_ok": false,
+   "conf": 0.09677162596354845,
+   "wiki_title": "J. T. Walsh",
+   "search_ans": "J & T is a fictional company, and there is no real-world company named J & T wit",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns Interstate 696?",
+   "entity": "Interstate 696",
+   "gold_raw": "Michigan Department of Transportation",
+   "gold": [
+    "michigan department of transportation",
+    "michigan department of transportation",
+    "michigan state government",
+    "united states government"
+   ],
+   "hand_no_ok": false,
+   "greedy": "State of Illinois.",
+   "greedy_ok": false,
+   "conf": 0.1159329185017839,
+   "wiki_title": "Interstate 696",
+   "search_ans": "Federal Government",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is LG G2 produced by?",
+   "entity": "LG G2",
+   "gold_raw": "LG Electronics",
+   "gold": [
+    "lg electronics",
+    "lg electronics",
+    "a south korean company",
+    "a multinational company"
+   ],
+   "hand_no_ok": true,
+   "greedy": "LG",
+   "greedy_ok": false,
+   "conf": 0.630094044872655,
+   "wiki_title": "LG G2",
+   "search_ans": "LG",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Victoria Foyt married to?",
+   "entity": "Victoria Foyt",
+   "gold_raw": "Henry Jaglom",
+   "gold": [
+    "henry jaglom",
+    "henry jaglom",
+    "an american film director",
+    "a film director"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John Foyt II.",
+   "greedy_ok": false,
+   "conf": 0.09277424133066615,
+   "wiki_title": "Victoria Foyt",
+   "search_ans": "David Foyt",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Battle of Lagos located?",
+   "entity": "Battle of Lagos",
+   "gold_raw": "Lagos",
+   "gold": [
+    "lagos",
+    "lagos",
+    "nigeria",
+    "africa"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Lagos, Nigeria.",
+   "greedy_ok": true,
+   "conf": 0.35958784673322164,
+   "wiki_title": "Battle of Lagos",
+   "search_ans": "Lagos",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Liacouras Center?",
+   "entity": "Liacouras Center",
+   "gold_raw": "Temple University",
+   "gold": [
+    "temple university",
+    "temple university",
+    "a public research university",
+    "a public research university in philadelphia  united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Liacouras Center is owned by the University of Pennsylvania.",
+   "greedy_ok": false,
+   "conf": 0.6083216920948943,
+   "wiki_title": "Liacouras Center",
+   "search_ans": "Temple University",
+   "search_ok": true
+  },
+  {
+   "q": "Who performed Black Aria?",
+   "entity": "Black Aria",
+   "gold_raw": "Glenn Danzig",
+   "gold": [
+    "glenn danzig",
+    "glenn danzig",
+    "american rock musician",
+    "musician"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Muse",
+   "greedy_ok": false,
+   "conf": 0.023040825594999686,
+   "wiki_title": "Black Aria",
+   "search_ans": "Glenn Danzig",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is Crayons represented by?",
+   "entity": "Crayons",
+   "gold_raw": "Burgundy Records",
+   "gold": [
+    "burgundy records",
+    "burgundy records"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Crayons is represented by Atlantic Records.",
+   "greedy_ok": false,
+   "conf": 0.07863496111632422,
+   "wiki_title": "Crayon",
+   "search_ans": "Crayons are not a music label.",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded TrueCar?",
+   "entity": "TrueCar",
+   "gold_raw": "Scott Painter",
+   "gold": [
+    "scott painter",
+    "scott painter",
+    "an american investor",
+    "a person"
+   ],
+   "hand_no_ok": false,
+   "greedy": "TrueCar was founded by David M. Hensley.",
+   "greedy_ok": false,
+   "conf": 0.012851341970023905,
+   "wiki_title": "TrueCar",
+   "search_ans": "TrueCar was founded by David M. Meltzer.",
+   "search_ok": false
+  },
+  {
+   "q": "Who was Et in Arcadia ego created by?",
+   "entity": "Et in Arcadia ego",
+   "gold_raw": "Guercino",
+   "gold": [
+    "guercino",
+    "guercino",
+    "an italian painter",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John Milton",
+   "greedy_ok": false,
+   "conf": 0.01925444637475483,
+   "wiki_title": "Et in Arcadia ego (Poussin)",
+   "search_ans": "Nicolas Poussin",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Jingkang Incident located?",
+   "entity": "Jingkang Incident",
+   "gold_raw": "Kaifeng",
+   "gold": [
+    "kaifeng",
+    "kaifeng",
+    "henan",
+    "china"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Jingkang Incident is located in Beijing, China.",
+   "greedy_ok": true,
+   "conf": 0.31857222364860294,
+   "wiki_title": "Jingkang incident",
+   "search_ans": "Bianjing (Kaifeng)",
+   "search_ok": true
+  },
+  {
+   "q": "Who founded Planetary Resources?",
+   "entity": "Planetary Resources",
+   "gold_raw": "Peter Diamandis",
+   "gold": [
+    "peter diamandis",
+    "peter diamandis",
+    "an american businessman",
+    "a businessman"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Planetary Resources was founded by Peter D. Diamandis.",
+   "greedy_ok": false,
+   "conf": 0.054835109167978374,
+   "wiki_title": "Planetary Resources",
+   "search_ans": "Planetary Resources was founded by Peter D. Diamandis.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Battle of Cresson located?",
+   "entity": "Battle of Cresson",
+   "gold_raw": "Nazareth",
+   "gold": [
+    "nazareth",
+    "nazareth",
+    "israel",
+    "middle east"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Cresson, Pennsylvania",
+   "greedy_ok": false,
+   "conf": 0.6827526310919347,
+   "wiki_title": "Battle of Cresson",
+   "search_ans": "Cresson",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded list of shahenshahs of the Sassanid Empire?",
+   "entity": "list of shahenshahs of the Sassanid Empire",
+   "gold_raw": "Ardashir I",
+   "gold": [
+    "ardashir i",
+    "ardashir i",
+    "a persian"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Darius the Mede",
+   "greedy_ok": false,
+   "conf": 0.03630431983093552,
+   "wiki_title": "List of monarchs of the Sasanian Empire",
+   "search_ans": "Ardashir I",
+   "search_ok": true
+  },
+  {
+   "q": "Who founded Autonomy Corporation?",
+   "entity": "Autonomy Corporation",
+   "gold_raw": "Michael Richard Lynch",
+   "gold": [
+    "michael richard lynch",
+    "michael richard lynch",
+    "an irish businessman",
+    "a businessman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "David C. Smith",
+   "greedy_ok": false,
+   "conf": 0.0015177566316392937,
+   "wiki_title": "Autonomy Corporation",
+   "search_ans": "Autonomy Corporation was founded by Mike Lynch.",
+   "search_ok": false
+  },
+  {
+   "q": "What music label is The Real Roxanne represented by?",
+   "entity": "The Real Roxanne",
+   "gold_raw": "Select Records",
+   "gold": [
+    "select records",
+    "select records"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.2934417391341427,
+   "wiki_title": "The Real Roxanne",
+   "search_ans": "Select Records",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Adrianne Allen's child?",
+   "entity": "Adrianne Allen",
+   "gold_raw": "Anna Massey",
+   "gold": [
+    "anna massey",
+    "anna massey",
+    "an actress"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Adrianne Allen's child is Lila.",
+   "greedy_ok": false,
+   "conf": 0.07680940800178589,
+   "wiki_title": "Adrianne Allen",
+   "search_ans": "Daniel Massey",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Vine Deloria, Jr.'s child?",
+   "entity": "Vine Deloria, Jr.",
+   "gold_raw": "Philip J. Deloria",
+   "gold": [
+    "philip j  deloria",
+    "philip j  deloria",
+    "philip deloria",
+    "a historian"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Vine Deloria, Jr. had a child named Vine Deloria III.",
+   "greedy_ok": false,
+   "conf": 0.39370330574216644,
+   "wiki_title": "Vine Deloria Jr.",
+   "search_ans": "Vine Deloria, Jr. had a daughter named Vine Deloria III.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of Liberty Shoes?",
+   "entity": "Liberty Shoes",
+   "gold_raw": "Karnal",
+   "gold": [
+    "karnal",
+    "karnal",
+    "haryana",
+    "india"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Liberty Shoes headquarters is in New York, NY.",
+   "greedy_ok": false,
+   "conf": 0.13872895816573672,
+   "wiki_title": "Liberty Shoes",
+   "search_ans": "Karnal",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Mad War located?",
+   "entity": "Mad War",
+   "gold_raw": "Kingdom of France",
+   "gold": [
+    "kingdom of france",
+    "kingdom of france",
+    "western europe"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Mad War is located in the Philippines.",
+   "greedy_ok": false,
+   "conf": 0.07920673992019937,
+   "wiki_title": "Mad War",
+   "search_ans": "Mad War",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Fujiwara no Ch\u014dshi married to?",
+   "entity": "Fujiwara no Ch\u014dshi",
+   "gold_raw": "Go-Horikawa",
+   "gold": [
+    "go horikawa",
+    "go horikawa",
+    "emperor of japan"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Fujiwara no Ch\u014dshi is married to Emperor K\u014dk\u014d.",
+   "greedy_ok": false,
+   "conf": 0.08033407844461164,
+   "wiki_title": "Konoe Nagako",
+   "search_ans": "Emperor Go-Horikawa",
+   "search_ok": true
+  },
+  {
+   "q": "Who founded Santissima Annunziata?",
+   "entity": "Santissima Annunziata",
+   "gold_raw": "Servite Order",
+   "gold": [
+    "servite order",
+    "servite order",
+    "roman catholic religious order",
+    "religious order"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Santa Maria Novella",
+   "greedy_ok": false,
+   "conf": 0.06716304205040426,
+   "wiki_title": "Santissima Annunziata",
+   "search_ans": "Santa Maria Novella",
+   "search_ok": false
+  },
+  {
+   "q": "Who was The Serenade created by?",
+   "entity": "The Serenade",
+   "gold_raw": "Judith Leyster",
+   "gold": [
+    "judith leyster",
+    "judith leyster",
+    "a dutch golden age painter",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Gustav Mahler",
+   "greedy_ok": false,
+   "conf": 0.030306355371018962,
+   "wiki_title": "Serenade",
+   "search_ans": "Handel",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns Carlton Centre?",
+   "entity": "Carlton Centre",
+   "gold_raw": "Transnet",
+   "gold": [
+    "transnet",
+    "transnet",
+    "a south african company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Carlton Centre is owned by **Westfield**.",
+   "greedy_ok": false,
+   "conf": 0.3359376926800137,
+   "wiki_title": "Carlton Centre",
+   "search_ans": "Savills Africa Holdings",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Bill Nye\u2013Ken Ham debate located?",
+   "entity": "Bill Nye\u2013Ken Ham debate",
+   "gold_raw": "Creation Museum",
+   "gold": [
+    "creation museum",
+    "creation museum",
+    "petersburg  kentucky",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Creationism vs. Evolution",
+   "greedy_ok": false,
+   "conf": 0.1644883674251926,
+   "wiki_title": "Bill Nye\u2013Ken Ham debate",
+   "search_ans": "Creation Museum in Petersburg, Kentucky.",
+   "search_ok": true
+  },
+  {
+   "q": "Which company is SS Oriana produced by?",
+   "entity": "SS Oriana",
+   "gold_raw": "Vickers-Armstrongs",
+   "gold": [
+    "vickers armstrongs",
+    "vickers armstrongs",
+    "british engineering company",
+    "british company"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Oriana is produced by Sony.",
+   "greedy_ok": false,
+   "conf": 0.43094501486383796,
+   "wiki_title": "SS Oriana (1959)",
+   "search_ans": "Vickers-Armstrongs",
+   "search_ok": true
+  },
+  {
+   "q": "Where is New Glasgow located?",
+   "entity": "New Glasgow",
+   "gold_raw": "Pictou County",
+   "gold": [
+    "pictou county",
+    "pictou county",
+    "nova scotia",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Glasgow",
+   "greedy_ok": false,
+   "conf": 0.1760833894849636,
+   "wiki_title": "New Glasgow, Nova Scotia",
+   "search_ans": "New Glasgow is located in Nova Scotia, Canada.",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Caroline John married to?",
+   "entity": "Caroline John",
+   "gold_raw": "Geoffrey Beevers",
+   "gold": [
+    "geoffrey beevers",
+    "geoffrey beevers",
+    "a british actor",
+    "a man"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John.",
+   "greedy_ok": false,
+   "conf": 0.09062536188098913,
+   "wiki_title": "Caroline John",
+   "search_ans": "David John",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Teach For America?",
+   "entity": "Teach For America",
+   "gold_raw": "Wendy Kopp",
+   "gold": [
+    "wendy kopp",
+    "wendy kopp",
+    "an american nonprofit executive",
+    "a nonprofit executive"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Jane Gerber",
+   "greedy_ok": false,
+   "conf": 0.005834272472011656,
+   "wiki_title": "Teach for America",
+   "search_ans": "Elaine Weiss.",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Fe del Mundo educated?",
+   "entity": "Fe del Mundo",
+   "gold_raw": "Harvard Medical School",
+   "gold": [
+    "harvard medical school",
+    "harvard medical school",
+    "boston",
+    "massachusetts",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "University of the Philippines",
+   "greedy_ok": false,
+   "conf": 0.6756071727168343,
+   "wiki_title": "Fe del Mundo",
+   "search_ans": "University of the Philippines",
+   "search_ok": false
+  },
+  {
+   "q": "Who is the author of American Tabloid?",
+   "entity": "American Tabloid",
+   "gold_raw": "James Ellroy",
+   "gold": [
+    "james ellroy",
+    "james ellroy",
+    "an american novelist",
+    "a novelist"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Hunter S. Thompson",
+   "greedy_ok": false,
+   "conf": 0.09085974941480067,
+   "wiki_title": "American Tabloid",
+   "search_ans": "James Ellroy",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Tales of Suspense?",
+   "entity": "Tales of Suspense",
+   "gold_raw": "Marvel Comics",
+   "gold": [
+    "marvel comics",
+    "marvel comics",
+    "a comic book publisher"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Marvel Comics",
+   "greedy_ok": true,
+   "conf": 0.47211651336342564,
+   "wiki_title": "Tales of Suspense",
+   "search_ans": "Marvel Comics",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "entity": "Kaitlin Hopkins",
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Kaitlin Hopkins was born in Canada.",
+   "greedy_ok": false,
+   "conf": 0.5042645314682161,
+   "wiki_title": "Kaitlin Hopkins",
+   "search_ans": "Kaitlin Hopkins was born in Los Angeles, California.",
+   "search_ok": false
+  },
+  {
+   "q": "Where is Battle of Sinop located?",
+   "entity": "Battle of Sinop",
+   "gold_raw": "Sinop",
+   "gold": [
+    "sinop",
+    "sinop",
+    "brazil",
+    "south america"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Sinop, Turkey.",
+   "greedy_ok": true,
+   "conf": 0.7038921076558203,
+   "wiki_title": "Battle of Sinop",
+   "search_ans": "Sinop",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Milosh married to?",
+   "entity": "Milosh",
+   "gold_raw": "Alexa Nikolas",
+   "gold": [
+    "alexa nikolas",
+    "alexa nikolas",
+    "an american actress",
+    "a woman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Sandra.",
+   "greedy_ok": false,
+   "conf": 0.12638270590989714,
+   "wiki_title": "Milosh",
+   "search_ans": "Amanda Milosh",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns SK Telecom?",
+   "entity": "SK Telecom",
+   "gold_raw": "SK Group",
+   "gold": [
+    "sk group",
+    "sk group",
+    "a south korean conglomerate"
+   ],
+   "hand_no_ok": false,
+   "greedy": "SK Telecom is owned by SK Communications.",
+   "greedy_ok": false,
+   "conf": 0.1291414053948207,
+   "wiki_title": "SK Telecom",
+   "search_ans": "SK Group",
+   "search_ok": true
+  },
+  {
+   "q": "Where is Battle of the Paracel Islands located?",
+   "entity": "Battle of the Paracel Islands",
+   "gold_raw": "Paracel Islands",
+   "gold": [
+    "paracel islands",
+    "paracel islands",
+    "south china sea",
+    "asia"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Paracel Islands.",
+   "greedy_ok": true,
+   "conf": 0.3971725811736317,
+   "wiki_title": "Battle of the Paracel Islands",
+   "search_ans": "Paracel Islands",
+   "search_ok": true
+  },
+  {
+   "q": "Who was The Protectors created by?",
+   "entity": "The Protectors",
+   "gold_raw": "Gerry Anderson",
+   "gold": [
+    "gerry anderson",
+    "gerry anderson",
+    "an english television creator and filmmaker",
+    "a television creator and filmmaker"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John Carpenter",
+   "greedy_ok": false,
+   "conf": 0.0075168833457529205,
+   "wiki_title": "The Protectors",
+   "search_ans": "Gerry Anderson",
+   "search_ok": true
+  },
+  {
+   "q": "Who was The One That Got Away created by?",
+   "entity": "The One That Got Away",
+   "gold_raw": "Jake Owen",
+   "gold": [
+    "jake owen",
+    "jake owen",
+    "an american country singer",
+    "a singer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "John Travolta",
+   "greedy_ok": false,
+   "conf": 0.012884909632587701,
+   "wiki_title": "The One That Got Away (Katy Perry song)",
+   "search_ans": "Katy Perry",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Pujie married to?",
+   "entity": "Pujie",
+   "gold_raw": "Hiro Saga",
+   "gold": [
+    "hiro saga",
+    "hiro saga",
+    "a japanese noblewoman",
+    "a woman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Pujie is married to Zhou Xun.",
+   "greedy_ok": false,
+   "conf": 0.07186360856324032,
+   "wiki_title": "Pujie",
+   "search_ans": "Hiro Saga",
+   "search_ok": true
+  },
+  {
+   "q": "Who is James Rubin married to?",
+   "entity": "James Rubin",
+   "gold_raw": "Christiane Amanpour",
+   "gold": [
+    "christiane amanpour",
+    "christiane amanpour",
+    "a journalist",
+    "a woman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Linda Rubin",
+   "greedy_ok": false,
+   "conf": 0.08528872380975772,
+   "wiki_title": "James Rubin",
+   "search_ans": "Lynne Rubin",
+   "search_ok": false
+  },
+  {
+   "q": "Who was Bal du moulin de la Galette created by?",
+   "entity": "Bal du moulin de la Galette",
+   "gold_raw": "Pierre-Auguste Renoir",
+   "gold": [
+    "pierre auguste renoir",
+    "pierre auguste renoir",
+    "a french painter",
+    "a painter"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Paul C\u00e9zanne",
+   "greedy_ok": false,
+   "conf": 0.09151021212394488,
+   "wiki_title": "Bal du moulin de la Galette",
+   "search_ans": "Pierre-Auguste Renoir",
+   "search_ok": true
+  },
+  {
+   "q": "Who owns Rogers Place?",
+   "entity": "Rogers Place",
+   "gold_raw": "Edmonton",
+   "gold": [
+    "edmonton",
+    "edmonton",
+    "alberta",
+    "canada"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Rogers Place is owned by Rogers Communications.",
+   "greedy_ok": false,
+   "conf": 0.40312727466997705,
+   "wiki_title": "Rogers Place",
+   "search_ans": "Rogers Place is owned by the City of Edmonton.",
+   "search_ok": true
+  },
+  {
+   "q": "Where is the headquarter of TV Land?",
+   "entity": "TV Land",
+   "gold_raw": "New York City",
+   "gold": [
+    "new york city",
+    "new york city",
+    "new york",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "New York City",
+   "greedy_ok": true,
+   "conf": 0.12815879867365218,
+   "wiki_title": "TV Land",
+   "search_ans": "Los Angeles",
+   "search_ok": false
+  },
+  {
+   "q": "What music label is M2M represented by?",
+   "entity": "M2M",
+   "gold_raw": "Atlantic Records",
+   "gold": [
+    "atlantic records",
+    "atlantic records",
+    "warner music group",
+    "american record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "M2M is represented by **RCA Records**.",
+   "greedy_ok": false,
+   "conf": 0.12077418492112975,
+   "wiki_title": "M2M (band)",
+   "search_ans": "Atlantic Records",
+   "search_ok": true
+  },
+  {
+   "q": "Where was Goodie Mob founded?",
+   "entity": "Goodie Mob",
+   "gold_raw": "Atlanta",
+   "gold": [
+    "atlanta",
+    "atlanta",
+    "georgia",
+    "united states"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Detroit",
+   "greedy_ok": false,
+   "conf": 0.1801063122652726,
+   "wiki_title": "Goodie Mob",
+   "search_ans": "Atlanta",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is Morcheeba represented by?",
+   "entity": "Morcheeba",
+   "gold_raw": "Play It Again Sam",
+   "gold": [
+    "play it again sam",
+    "play it again sam",
+    "anglo belgian independent record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Virgin EMI.",
+   "greedy_ok": false,
+   "conf": 0.06218212983815692,
+   "wiki_title": "Morcheeba",
+   "search_ans": "Mute Records",
+   "search_ok": false
+  },
+  {
+   "q": "What music label is No Rest for the Wicked represented by?",
+   "entity": "No Rest for the Wicked",
+   "gold_raw": "Capitol Records",
+   "gold": [
+    "capitol records",
+    "capitol records",
+    "an american record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "No Rest for the Wicked is represented by **Epitaph Records**.",
+   "greedy_ok": false,
+   "conf": 0.07145683946026611,
+   "wiki_title": "Ain't No Rest for the Wicked",
+   "search_ans": "Relentless Records",
+   "search_ok": false
+  },
+  {
+   "q": "Who is Subhashini Ali married to?",
+   "entity": "Subhashini Ali",
+   "gold_raw": "Muzaffar Ali",
+   "gold": [
+    "muzaffar ali",
+    "muzaffar ali",
+    "an indian film producer",
+    "a film producer"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Rahul Gandhi",
+   "greedy_ok": false,
+   "conf": 0.0937328075376428,
+   "wiki_title": "Subhashini Ali",
+   "search_ans": "Ramesh Chandra Ali",
+   "search_ok": false
+  },
+  {
+   "q": "Who was La Femme Nikita created by?",
+   "entity": "La Femme Nikita",
+   "gold_raw": "Joel Surnow",
+   "gold": [
+    "joel surnow",
+    "joel surnow",
+    "american television producer",
+    "american"
+   ],
+   "hand_no_ok": false,
+   "greedy": "James Cameron",
+   "greedy_ok": false,
+   "conf": 0.031117712978877894,
+   "wiki_title": "La Femme Nikita (film)",
+   "search_ans": "Luc Besson",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Magdalen College?",
+   "entity": "Magdalen College",
+   "gold_raw": "William Waynflete",
+   "gold": [
+    "william waynflete",
+    "william waynflete",
+    "a bishop",
+    "a religious leader"
+   ],
+   "hand_no_ok": false,
+   "greedy": "William of Wykeham",
+   "greedy_ok": false,
+   "conf": 0.4025620568616393,
+   "wiki_title": "Magdalen College, Oxford",
+   "search_ans": "William of Waynflete",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Robert Ballard born?",
+   "entity": "Robert Ballard",
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Robert Ballard was born in Hamilton, Ontario.",
+   "greedy_ok": false,
+   "conf": 0.10799563738922092,
+   "wiki_title": "Robert Ballard",
+   "search_ans": "Robert Ballard was born in the United States.",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Capetian House of Anjou?",
+   "entity": "Capetian House of Anjou",
+   "gold_raw": "Charles I of Naples",
+   "gold": [
+    "charles i of naples",
+    "charles i of naples",
+    "a king"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Louis I of Anjou",
+   "greedy_ok": false,
+   "conf": 0.25073352220994116,
+   "wiki_title": "Capetian House of Anjou",
+   "search_ans": "Charles I of Anjou.",
+   "search_ok": false
+  },
+  {
+   "q": "Who owns Deepdale?",
+   "entity": "Deepdale",
+   "gold_raw": "Preston North End F.C.",
+   "gold": [
+    "preston north end f c",
+    "preston north end f c",
+    "a football club",
+    "a sports club"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Tottenham Hotspur.",
+   "greedy_ok": false,
+   "conf": 0.13141319537063842,
+   "wiki_title": "Deepdale",
+   "search_ans": "Preston North End F.C.",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "entity": "Elizabeth Bracco",
+   "gold_raw": "Aidan Quinn",
+   "gold": [
+    "aidan quinn",
+    "aidan quinn",
+    "an actor"
+   ],
+   "hand_no_ok": false,
+   "greedy": "David Lee Bracco Jr.",
+   "greedy_ok": false,
+   "conf": 0.05131171352744858,
+   "wiki_title": "Elizabeth Bracco",
+   "search_ans": "Vito Spatafore",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Barnes & Noble?",
+   "entity": "Barnes & Noble",
+   "gold_raw": "Leonard Riggio",
+   "gold": [
+    "leonard riggio",
+    "leonard riggio",
+    "an american businessperson and entrepreneur",
+    "a person"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Barnes & Noble was founded by Malcolm W. Barnes and his brother John R. Barnes.",
+   "greedy_ok": false,
+   "conf": 0.02874633210624487,
+   "wiki_title": "Barnes & Noble",
+   "search_ans": "Michael Barnes and Richard Noble.",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Inditex founded?",
+   "entity": "Inditex",
+   "gold_raw": "Arteixo",
+   "gold": [
+    "arteixo",
+    "arteixo",
+    "a coruna",
+    "galicia",
+    "spain"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Madrid",
+   "greedy_ok": false,
+   "conf": 0.7024089993369594,
+   "wiki_title": "Inditex",
+   "search_ans": "Arteixo",
+   "search_ok": true
+  },
+  {
+   "q": "What music label is The Young Ones represented by?",
+   "entity": "The Young Ones",
+   "gold_raw": "Columbia Graphophone Company Ltd.",
+   "gold": [
+    "columbia graphophone company ltd",
+    "columbia graphophone company ltd",
+    "emi",
+    "british record label"
+   ],
+   "hand_no_ok": false,
+   "greedy": "RCA Records",
+   "greedy_ok": false,
+   "conf": 0.05890669866315856,
+   "wiki_title": "The Young Ones (TV series)",
+   "search_ans": "Not applicable. The Young Ones is a television show, not a music label.",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Aftermath Entertainment?",
+   "entity": "Aftermath Entertainment",
+   "gold_raw": "Dr. Dre",
+   "gold": [
+    "dr  dre",
+    "dr  dre",
+    "a rapper",
+    "a musician",
+    "a person"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Aftermath Entertainment was founded by Dr. Dre.",
+   "greedy_ok": true,
+   "conf": 0.6829820480864389,
+   "wiki_title": "Aftermath Entertainment",
+   "search_ans": "Dr Dre",
+   "search_ok": false
+  },
+  {
+   "q": "Where was Frank Rijkaard born?",
+   "entity": "Frank Rijkaard",
+   "gold_raw": "Amsterdam",
+   "gold": [
+    "amsterdam",
+    "amsterdam",
+    "north holland",
+    "netherlands"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Frank Rijkaard was born in the Netherlands.",
+   "greedy_ok": true,
+   "conf": 0.4490915236678678,
+   "wiki_title": "Frank Rijkaard",
+   "search_ans": "Frank Rijkaard was born in the Netherlands.",
+   "search_ok": true
+  },
+  {
+   "q": "Who was Bambi created by?",
+   "entity": "Bambi",
+   "gold_raw": "Felix Salten",
+   "gold": [
+    "felix salten",
+    "felix salten"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Erich Fromm",
+   "greedy_ok": false,
+   "conf": 0.1647097617891381,
+   "wiki_title": "Bambi",
+   "search_ans": "Walt Disney",
+   "search_ok": false
+  },
+  {
+   "q": "Who founded Mensa International?",
+   "entity": "Mensa International",
+   "gold_raw": "Lancelot Ware",
+   "gold": [
+    "lancelot ware",
+    "lancelot ware",
+    "a british politician",
+    "a politician"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Aldous Huxley.",
+   "greedy_ok": false,
+   "conf": 0.07610735155052194,
+   "wiki_title": "Mensa International",
+   "search_ans": "Aldous Huxley",
+   "search_ok": false
+  },
+  {
+   "q": "Which company is Morgan 4/4 produced by?",
+   "entity": "Morgan 4/4",
+   "gold_raw": "Morgan Motor Company",
+   "gold": [
+    "morgan motor company",
+    "morgan motor company",
+    "a british company"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Morgan.",
+   "greedy_ok": false,
+   "conf": 0.5720158840711351,
+   "wiki_title": "Morgan 4/4",
+   "search_ans": "Morgan Motor Company",
+   "search_ok": true
+  },
+  {
+   "q": "Who founded Iliad?",
+   "entity": "Iliad",
+   "gold_raw": "Xavier Niel",
+   "gold": [
+    "xavier niel",
+    "xavier niel",
+    "a french businessman",
+    "a businessman"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Homer",
+   "greedy_ok": false,
+   "conf": 0.6795737351202396,
+   "wiki_title": "Iliad",
+   "search_ans": "Homer",
+   "search_ok": false
+  },
+  {
+   "q": "Where is the headquarter of AFC Ajax?",
+   "entity": "AFC Ajax",
+   "gold_raw": "Amsterdam",
+   "gold": [
+    "amsterdam",
+    "amsterdam",
+    "north holland",
+    "netherlands"
+   ],
+   "hand_no_ok": true,
+   "greedy": "Amsterdam",
+   "greedy_ok": true,
+   "conf": 0.676849920544017,
+   "wiki_title": "AFC Ajax",
+   "search_ans": "Amsterdam",
+   "search_ok": true
+  },
+  {
+   "q": "Who is Priscilla Presley married to?",
+   "entity": "Priscilla Presley",
+   "gold_raw": "Elvis Presley",
+   "gold": [
+    "elvis presley",
+    "elvis presley",
+    "a singer",
+    "a celebrity"
+   ],
+   "hand_no_ok": false,
+   "greedy": "Morgan Freeman.",
+   "greedy_ok": false,
+   "conf": 0.200243907140677,
+   "wiki_title": "Priscilla Presley",
+   "search_ans": "Elvis Presley",
+   "search_ok": true
+  }
+ ]
+}
