@@ -1,0 +1,18 @@
+{
+ "base": 0.22,
+ "auroc": {
+  "P(True)": 0.7223921911421911,
+  "seq_logprob": 0.7795017482517481,
+  "-mean_entropy": 0.774256993006993,
+  "-semantic_ent": 0.763548951048951
+ },
+ "auroc_combined": 0.796474358974359,
+ "f173": {
+  "confab": 0.78,
+  "known": 0.29
+ },
+ "pathB": {
+  "confab_abstain": 0.7777777777777778,
+  "known_abstain": 1.0
+ }
+}
