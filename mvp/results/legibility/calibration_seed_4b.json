@@ -1,0 +1,381 @@
+{
+ "model": "Qwen3-4B",
+ "target": "bidirectional calibration",
+ "note": "hand-cleaned off-diagonal cells of knowledge_edge_4b; lenient-granola rubric",
+ "hedge_targets": [
+  {
+   "q": "Where is Walne located?",
+   "gold": "Gmina Nowinka",
+   "model_wrong": "Walne is a village in North Yorkshire, England.",
+   "p_true": 0.9991,
+   "se": 1.3592,
+   "strong": false
+  },
+  {
+   "q": "Where was Robert K. Sweeney educated?",
+   "gold": "Adelphi University",
+   "model_wrong": "Harvard University",
+   "p_true": 0.5603,
+   "se": 0.639,
+   "strong": true
+  },
+  {
+   "q": "Which company is MV Aqueity produced by?",
+   "gold": "A. & J. Inglis",
+   "model_wrong": "Aqueity is produced by **Marex Shipbuilding**.",
+   "p_true": 0.9846,
+   "se": 1.1935,
+   "strong": false
+  },
+  {
+   "q": "Where did Robert M. Wallace die?",
+   "gold": "Magnolia",
+   "model_wrong": "Cleveland",
+   "p_true": 0.502,
+   "se": 2.3026,
+   "strong": false
+  },
+  {
+   "q": "Who owns Tomlinson Stadium\u2013Kell Field?",
+   "gold": "Arkansas State University",
+   "model_wrong": "University of Nevada, Las Vegas (UNLV)",
+   "p_true": 0.646,
+   "se": 1.973,
+   "strong": false
+  },
+  {
+   "q": "Who owns The Maui News?",
+   "gold": "Ogden Newspapers",
+   "model_wrong": "Maui News is owned by the Maui News Publishing Company.",
+   "p_true": 0.9931,
+   "se": 0.5004,
+   "strong": true
+  },
+  {
+   "q": "Where was Irene Hughes born?",
+   "gold": "Tennessee",
+   "model_wrong": "Irene Hughes was born in London.",
+   "p_true": 0.8093,
+   "se": 0.639,
+   "strong": true
+  },
+  {
+   "q": "Who was Allegory of Virtue and Vice created by?",
+   "gold": "Lorenzo Lotto",
+   "model_wrong": "Bosch",
+   "p_true": 0.9429,
+   "se": 1.2206,
+   "strong": false
+  },
+  {
+   "q": "Where did Carl Otto Czeschka die?",
+   "gold": "Hamburg",
+   "model_wrong": "Berlin",
+   "p_true": 0.7311,
+   "se": 1.5048,
+   "strong": false
+  },
+  {
+   "q": "Who was Lying Cow created by?",
+   "gold": "Vincent van Gogh",
+   "model_wrong": "Kazuhiko Kikuchi",
+   "p_true": 0.6567,
+   "se": 1.8344,
+   "strong": false
+  },
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "gold": "Rata Blanca",
+   "model_wrong": "Los Piojos",
+   "p_true": 0.9984,
+   "se": 1.6434,
+   "strong": false
+  },
+  {
+   "q": "Where was Todd Krygier born?",
+   "gold": "Chicago Heights",
+   "model_wrong": "Todd Krygier was born in Canada.",
+   "p_true": 0.6741,
+   "se": -0.0,
+   "strong": true
+  },
+  {
+   "q": "Who performed I Just Dropped by to Say Hello?",
+   "gold": "Johnny Hartman",
+   "model_wrong": "Bobby Vee",
+   "p_true": 0.8977,
+   "se": 1.5048,
+   "strong": false
+  },
+  {
+   "q": "Who performed The Rivalry?",
+   "gold": "Running Wild",
+   "model_wrong": "The Rivalry was performed by The Who.",
+   "p_true": 0.9185,
+   "se": 2.164,
+   "strong": false
+  },
+  {
+   "q": "Who owns Clarke Stadium?",
+   "gold": "Edmonton",
+   "model_wrong": "Clarke Stadium is owned by the University of Florida.",
+   "p_true": 0.8366,
+   "se": 1.3592,
+   "strong": false
+  },
+  {
+   "q": "Who owns Tradewest?",
+   "gold": "Midway Games",
+   "model_wrong": "Tradewest is owned by Caxton Group.",
+   "p_true": 0.9963,
+   "se": 2.164,
+   "strong": false
+  },
+  {
+   "q": "Who owns Liacouras Center?",
+   "gold": "Temple University",
+   "model_wrong": "Liacouras Center is owned by the University of Pennsylvania.",
+   "p_true": 0.9894,
+   "se": 0.3251,
+   "strong": true
+  },
+  {
+   "q": "Where is Battle of Cresson located?",
+   "gold": "Nazareth",
+   "model_wrong": "Cresson, Pennsylvania",
+   "p_true": 0.954,
+   "se": -0.0,
+   "strong": true
+  },
+  {
+   "q": "Who is Vine Deloria, Jr.'s child?",
+   "gold": "Philip J. Deloria",
+   "model_wrong": "Vine Deloria, Jr. had a child named Vine Deloria III.",
+   "p_true": 0.9864,
+   "se": 1.3592,
+   "strong": false
+  },
+  {
+   "q": "Who owns Carlton Centre?",
+   "gold": "Transnet",
+   "model_wrong": "Carlton Centre is owned by **Westfield**.",
+   "p_true": 0.9991,
+   "se": 1.2275,
+   "strong": false
+  },
+  {
+   "q": "Which company is SS Oriana produced by?",
+   "gold": "Vickers-Armstrongs",
+   "model_wrong": "Oriana is produced by Sony.",
+   "p_true": 0.5564,
+   "se": 0.3251,
+   "strong": true
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "model_wrong": "Kaitlin Hopkins was born in Canada.",
+   "p_true": 0.8044,
+   "se": 0.3251,
+   "strong": true
+  },
+  {
+   "q": "Who is Milosh married to?",
+   "gold": "Alexa Nikolas",
+   "model_wrong": "Sandra.",
+   "p_true": 0.8872,
+   "se": 1.6094,
+   "strong": false
+  },
+  {
+   "q": "Who is James Rubin married to?",
+   "gold": "Christiane Amanpour",
+   "model_wrong": "Linda Rubin",
+   "p_true": 0.9902,
+   "se": 1.6094,
+   "strong": false
+  },
+  {
+   "q": "Who owns Rogers Place?",
+   "gold": "Edmonton",
+   "model_wrong": "Rogers Place is owned by Rogers Communications.",
+   "p_true": 0.9996,
+   "se": 1.3592,
+   "strong": false
+  },
+  {
+   "q": "Who founded Magdalen College?",
+   "gold": "William Waynflete",
+   "model_wrong": "William of Wykeham",
+   "p_true": 0.9978,
+   "se": 0.639,
+   "strong": true
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "model_wrong": "David Lee Bracco Jr.",
+   "p_true": 0.9924,
+   "se": 2.164,
+   "strong": false
+  },
+  {
+   "q": "Where was Inditex founded?",
+   "gold": "Arteixo",
+   "model_wrong": "Madrid",
+   "p_true": 1.0,
+   "se": -0.0,
+   "strong": true
+  },
+  {
+   "q": "Who founded Iliad?",
+   "gold": "Xavier Niel",
+   "model_wrong": "Homer",
+   "p_true": 0.9998,
+   "se": -0.0,
+   "strong": true
+  }
+ ],
+ "commit_targets": [
+  {
+   "q": "Where did Gyula Sz\u00e9ch\u00e9nyi die?",
+   "gold": "Budapest",
+   "model_correct": "Budapest",
+   "p_true": 0.3942,
+   "se": -0.0
+  },
+  {
+   "q": "Where is the headquarter of Big Data Partnership?",
+   "gold": "London",
+   "model_correct": "Big Data Partnership headquarters is in London.",
+   "p_true": 0.0001,
+   "se": 0.8979
+  },
+  {
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "gold": "Chennai",
+   "model_correct": "Bharathi Puthakalayam's headquarters is in Chennai.",
+   "p_true": 0.0025,
+   "se": 0.8018
+  },
+  {
+   "q": "Where did Francisco Gil de Taboada die?",
+   "gold": "Madrid",
+   "model_correct": "Madrid",
+   "p_true": 0.0142,
+   "se": 0.5004
+  },
+  {
+   "q": "Where did Henry Becque die?",
+   "gold": "Paris",
+   "model_correct": "France",
+   "p_true": 0.1656,
+   "se": -0.0
+  },
+  {
+   "q": "Who was Portrait of Jacopo Strada created by?",
+   "gold": "Titian",
+   "model_correct": "Titian",
+   "p_true": 0.0067,
+   "se": 1.0549
+  },
+  {
+   "q": "Where did Daniel Vierge die?",
+   "gold": "Boulogne-Billancourt",
+   "model_correct": "France",
+   "p_true": 0.4707,
+   "se": 0.639
+  },
+  {
+   "q": "Where is Haifa bus 16 suicide bombing located?",
+   "gold": "Haifa",
+   "model_correct": "Haifa",
+   "p_true": 0.096,
+   "se": -0.0
+  },
+  {
+   "q": "Where is Battle of Chiari located?",
+   "gold": "Chiari",
+   "model_correct": "Chiari.",
+   "p_true": 0.0015,
+   "se": 0.3251
+  },
+  {
+   "q": "Who was Piccolomini Altarpiece created by?",
+   "gold": "Michelangelo",
+   "model_correct": "Michelangelo",
+   "p_true": 0.0003,
+   "se": 0.673
+  },
+  {
+   "q": "Who performed Art Blakey Big Band?",
+   "gold": "Art Blakey",
+   "model_correct": "Art Blakey",
+   "p_true": 0.498,
+   "se": -0.0
+  },
+  {
+   "q": "Where is the headquarter of Bank of Beijing?",
+   "gold": "Beijing",
+   "model_correct": "Beijing Bank",
+   "p_true": 0.0003,
+   "se": 0.6109
+  },
+  {
+   "q": "Where did Tan Lark Sye die?",
+   "gold": "Singapore",
+   "model_correct": "Singapore.",
+   "p_true": 0.1037,
+   "se": 0.8018
+  },
+  {
+   "q": "Where is Baniachang Upazila located?",
+   "gold": "Habiganj District",
+   "model_correct": "Baniachang Upazila is located in Bangladesh.",
+   "p_true": 0.3979,
+   "se": 0.8018
+  },
+  {
+   "q": "Which company is Packard Executive produced by?",
+   "gold": "Packard",
+   "model_correct": "Packard Executive is produced by Packard.",
+   "p_true": 0.3594,
+   "se": 0.9433
+  },
+  {
+   "q": "Which company is Leica M Monochrom produced by?",
+   "gold": "Leica Camera",
+   "model_correct": "Leica.",
+   "p_true": 0.2894,
+   "se": -0.0
+  },
+  {
+   "q": "Who owns Laredo Energy Arena?",
+   "gold": "Laredo",
+   "model_correct": "Laredo Energy Arena is owned by the Laredo Energy Company.",
+   "p_true": 0.1413,
+   "se": 0.6109
+  },
+  {
+   "q": "Where is California State Route 166 located?",
+   "gold": "California",
+   "model_correct": "California State Route 166 is located in the Sierra Nevada mountains.",
+   "p_true": 0.0004,
+   "se": 1.4185
+  },
+  {
+   "q": "Where is Battle of Lagos located?",
+   "gold": "Lagos",
+   "model_correct": "Lagos, Nigeria.",
+   "p_true": 0.1023,
+   "se": -0.0
+  },
+  {
+   "q": "Who founded Planetary Resources?",
+   "gold": "Peter Diamandis",
+   "model_correct": "Planetary Resources was founded by Peter D. Diamandis.",
+   "p_true": 0.0005,
+   "se": 1.8344
+  }
+ ]
+}
