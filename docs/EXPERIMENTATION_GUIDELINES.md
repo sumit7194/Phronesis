@@ -55,7 +55,7 @@ For any generation-based measurement, the default battery is **more than one run
 - **Launch long VM jobs via `setsid` + a self-redirecting script**, never a bare `nohup &` in an SSH command — transient SSH/IAP drops silently swallow the launch and lose the log.
 - **Wire a live dashboard** (`status.json` + polling HTML, served via `setsid`) into every substantial VM generation run — don't rely only on `tail`. (Standing user preference.)
 - **Never disturb shared environments** (e.g. the `td_ludo*` / AlphaLudo env on the VM). Use isolated venvs.
-- **Halt billing when done:** stop the VM, delete transient firewall rules; preserve the disk/cache.
+- **VM lifecycle (user directive 2026-06-29): keep the VM UP while more VM work is plausibly coming** — idle for a few minutes (verify, code, check results, decide next run) is fine. **Shut down only when VM work is genuinely exhausted** ("can't think of anything else to do on the VM"). The binding risk is **L4 stockout on restart**, not idle billing — do NOT reflexively stop after every test, and do NOT optimize billing unless the user explicitly asks. On shutdown: stop the VM, delete transient firewall rules; the disk/cache persists.
 
 ## §9 — Measuring confidence / knowledge boundary (method standard)
 From [model-confidence-knowledge-boundary.md](research/model-confidence-knowledge-boundary.md):
