@@ -1,0 +1,446 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "layer": 17,
+ "cos": {
+  "10": -0.861189067363739,
+  "14": -0.8739727735519409,
+  "17": -0.8887346386909485,
+  "20": -0.9147413372993469
+ },
+ "residual_norm": 601.1,
+ "alphas": [
+  -48.1,
+  0.0,
+  6.0,
+  12.0,
+  24.0,
+  36.1,
+  48.1,
+  72.1
+ ],
+ "hedge_eval": [
+  {
+   "q": "Which company is SS Oriana produced by?",
+   "gold": "Vickers-Armstrongs",
+   "baseline_wrong": "Oriana is produced by Sony.",
+   "real": {
+    "-48.1": ".",
+    "0.0": "Oriana is produced by Sony.",
+    "6.0": "Oriana is produced by Sony.",
+    "12.0": "Sony.",
+    "24.0": "Samsung",
+    "36.1": "If you're unsure, it's better to say \"I don't know.\" But if you're certain, just say \"I don't know.\"",
+    "48.1": "If you're unsure I can only say I don But I don Maybe you could you just don But I don Maybe you could you just  Maybe I",
+    "72.1": "But I I I I I I I I I  I  I  I  I  I  I  I  I  I  I  I  I  I  I  I"
+   },
+   "rand": {
+    "6.0|seed0": "Oriana is produced by Sony.",
+    "6.0|seed1": "Oriana is produced by Sony.",
+    "6.0|seed2": "Oriana is produced by Sony.",
+    "12.0|seed0": "Oriana is produced by **Sony Music Entertainment**.",
+    "12.0|seed1": "Oriana is produced by Sony.",
+    "12.0|seed2": "Oriana",
+    "24.0|seed0": "Columbia.",
+    "24.0|seed1": "Oriana is produced by Sony Pictures Classics. Sony.",
+    "24.0|seed2": "Oriana.",
+    "36.1|seed0": "**Columbia**.",
+    "36.1|seed1": "The company SS Oriana is produced by is **Oriana**.",
+    "36.1|seed2": "Oriana.",
+    "48.1|seed0": "**Oriana** is the company that produced the **SS Oriana**. So, the answer is **Oriana**.",
+    "48.1|seed1": "Okay, the question is asking which company is SS Oriana produced by? The answer is simply the name of the company, and t",
+    "48.1|seed2": "Oriana.",
+    "72.1|seed0": "the company that made the oceana is the oceana company. and the oceana is the oceana company. and the oceana is the ocea",
+    "72.1|seed1": "The is the is 1. 1. 1.  2.  The 1.  1.  1.  1.  1.",
+    "72.1|seed2": "A:"
+   }
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "baseline_wrong": "Kaitlin Hopkins was born in Canada.",
+   "real": {
+    "-48.1": ".",
+    "0.0": "Kaitlin Hopkins was born in Canada.",
+    "6.0": "Kaitlin Hopkins was born in Canada.",
+    "12.0": "Kaitlin Hopkins was born in Canada.",
+    "24.0": "Kaitlin Hopkins was born in Canada.",
+    "36.1": "I don't know. But if you're unsure about the answer, maybe you should think carefully.",
+    "48.1": "I don But I don I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "Kaitlin Hopkins was born in Canada.",
+    "6.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "6.0|seed2": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed0": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed2": "Kansas City",
+    "24.0|seed0": "Kaitlin Hopkins was born in **Tulsa, Oklahoma**.",
+    "24.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "24.0|seed2": "Kaitlin Hopkins was born in the United States.",
+    "36.1|seed0": "Kaitlin Hopkins was born in **Georgia**.",
+    "36.1|seed1": "Kaitlin Hopkins was born in the United States. Answer: Kaitlin Hopkins.",
+    "36.1|seed2": "Kaitlin Hopkins.",
+    "48.1|seed0": "The answer is **Kaitlin**.",
+    "48.1|seed1": "Okay, the question is asking where Kaitlin Hopkins was born. The answer is simply the name \"Kaitlin Hopkins,\" but the us",
+    "48.1|seed2": "Answer: Kaitlin Hopkins.",
+    "72.1|seed0": "the answer is the name that you can see in the mirror. and the answer is the name that you can see in the the mirror. an",
+    "72.1|seed1": "The is 1, 2,  3,  4,  1,  1,  1,  1,  1,  1,",
+    "72.1|seed2": "Answer: This is the question, but the answer is the, the, the, the, the, the, the, the, the, the, the, the, the, the, th"
+   }
+  },
+  {
+   "q": "Who is Milosh married to?",
+   "gold": "Alexa Nikolas",
+   "baseline_wrong": "Sandra.",
+   "real": {
+    "-48.1": "is the name of the, and is the city,, is the city,, is the city,, is the city,, is the city,, is the city,, is the city",
+    "0.0": "Sandra.",
+    "6.0": "Sandra.",
+    "12.0": "Lilja.",
+    "24.0": "Lena.",
+    "36.1": "Maybe I can't be sure, but I don't know. I'm not certain.",
+    "48.1": "If you don I don I just don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I ",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "Sandra.",
+    "6.0|seed1": "Milosh is married to Jelena.",
+    "6.0|seed2": "Sandra.",
+    "12.0|seed0": "Sandra.",
+    "12.0|seed1": "Milosh is married to Mira.",
+    "12.0|seed2": "Sara",
+    "24.0|seed0": "Svetlana.",
+    "24.0|seed1": "Milosh is married to Mila.",
+    "24.0|seed2": "Milosh is married to Milos.",
+    "36.1|seed0": "The answer is **Svetlana**.",
+    "36.1|seed1": "Milosh is married to Milosh, but the question is a bit confusing. The name \"Milosh\" can refer to different people, so it",
+    "36.1|seed2": "Milosh is married to Mila.",
+    "48.1|seed0": "The answer is **Milo\u0161**.",
+    "48.1|seed1": "Okay, the question is asking about who Milosh is married to. The answer is simply the name \"Milosh,\" and the user is ask",
+    "48.1|seed2": "Answer: Milosh",
+    "72.1|seed0": "the person who's looking at the screen might be thinking of the person who's looking at the screen, and maybe you're loo",
+    "72.1|seed1": "The is  the  was  of  1  1  1   1  1  1   1   The  1   The",
+    "72.1|seed2": "A:"
+   }
+  },
+  {
+   "q": "Who is James Rubin married to?",
+   "gold": "Christiane Amanpour",
+   "baseline_wrong": "Linda Rubin",
+   "real": {
+    "-48.1": "is the name of the city,, is the city,, is the city,, is the city,, is the city,, is the,, is the,, is the,,",
+    "0.0": "Linda Rubin",
+    "6.0": "Linda Rubin.",
+    "12.0": "Linda Rubin.",
+    "24.0": "Lori.",
+    "36.1": "Maybe I can't be sure, but I don't know. I'm not certain. But if you want to be safe, maybe you should ask someone else.",
+    "48.1": "If you don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "Linda Rubin.",
+    "6.0|seed1": "Linda Rubin",
+    "6.0|seed2": "Linda Rubin",
+    "12.0|seed0": "Linda Rubin.",
+    "12.0|seed1": "Linda Rubin",
+    "12.0|seed2": "Linda",
+    "24.0|seed0": "Sally Rubin.",
+    "24.0|seed1": "Justine Rubin",
+    "24.0|seed2": "Sarah",
+    "36.1|seed0": "The answer is **Mira**.",
+    "36.1|seed1": "James Rubin is married to Rachel Rubin. Answer: Rachel Rubin.",
+    "36.1|seed2": "James Rubin is married to Rachel.",
+    "48.1|seed0": "The answer is **James Rubin**.",
+    "48.1|seed1": "Okay, the question is asking about James Rubin, and specifically, who he is married to. The answer is simply the name of",
+    "48.1|seed2": "James Rubin is married to the name: Sarah.",
+    "72.1|seed0": "the answer is the name that you're looking at is the one that you're looking at. and the answer is the name that you're ",
+    "72.1|seed1": "The is  the  was  of  as  was  was  was  was  was  was  was  was  was  was  was  was  was  was  was",
+    "72.1|seed2": "Answer: James Rubin is the name, as the. As the. As the. As the. As the. As the. As the. As the. As the. As the. As the"
+   }
+  },
+  {
+   "q": "Who owns Rogers Place?",
+   "gold": "Edmonton",
+   "baseline_wrong": "Rogers Place is owned by Rogers Communications.",
+   "real": {
+    "-48.1": "is the name of the, which is located in the,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "Rogers Place is owned by Rogers Communications.",
+    "6.0": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0": "Rogers Place is owned by **Rogers Communications**.",
+    "36.1": "Rogers Place.",
+    "48.1": "If you're not sure I can't just say \"I don't know\" but I'm not sure I'm not sure I'm not sure I'm not sure I'm not sure ",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I  I  I  I  I  I  I  I  I"
+   },
+   "rand": {
+    "6.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "6.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "6.0|seed2": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed2": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed2": "Rogers Place.",
+    "36.1|seed0": "Rogers Place.",
+    "36.1|seed1": "Rogers Place is owned by the city of Vancouver, British Columbia, through its development authority. The name is a brand",
+    "36.1|seed2": "Rogers Place.",
+    "48.1|seed0": "Rogers Place.",
+    "48.1|seed1": "The name of the building is \"Rogers Place.\" But why is this building called \"Rogers Place\" when it is not a person? The ",
+    "48.1|seed2": "Rogers Place. Answered.",
+    "72.1|seed0": "</think>",
+    "72.1|seed1": "The 2016 World 2016: The 2016 World 2 1. 1. 2. 1. 1.  1",
+    "72.1|seed2": "Answer:"
+   }
+  },
+  {
+   "q": "Who founded Magdalen College?",
+   "gold": "William Waynflete",
+   "baseline_wrong": "William of Wykeham",
+   "real": {
+    "-48.1": "is the name of the college,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "William of Wykeham",
+    "6.0": "William of Wykeham",
+    "12.0": "William of Ware.",
+    "24.0": "William of Knighton.",
+    "36.1": "I don't know. But if you're not sure\uff0cyou might want to check a source.",
+    "48.1": "I don I don But I can't be sure. Maybe you could you just say \"I don I don I don I don I don I don I don I don I don I d",
+    "72.1": "But I I I But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "William of Wykeham.",
+    "6.0|seed1": "William of Wykeham",
+    "6.0|seed2": "William of Wykeham",
+    "12.0|seed0": "William of Wykeham.",
+    "12.0|seed1": "Magdalen College was founded by William of Wykeham.",
+    "12.0|seed2": "William of Wykeham",
+    "24.0|seed0": "William of Wykeham.",
+    "24.0|seed1": "Magdalen College was founded by William of Wykeham.",
+    "24.0|seed2": "Magdalen College was founded by William of Wykeham.",
+    "36.1|seed0": "The answer is: **Magdalen College**.",
+    "36.1|seed1": "Magdalen College was founded by William of Wyke, a 13th-century Englishman. The name \"Magdalen College\" is derived from ",
+    "36.1|seed2": "William.",
+    "48.1|seed0": "The answer is Magdalen College.",
+    "48.1|seed1": "Who founded Magdalen College? Answer with just the name, as briefly as possible.",
+    "48.1|seed2": "Who founded Magdalen College? Answer with just the name, as briefly as possible.",
+    "72.1|seed0": "the answer is the person who founded magdalen college is the one who's in the class, and you can use the final answer to",
+    "72.1|seed1": "The 1514, the name of the 111, 121, 12, 12, 1, 1, 1, 1",
+    "72.1|seed2": "Answer:"
+   }
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "baseline_wrong": "David Lee Bracco Jr.",
+   "real": {
+    "-48.1": "is the name of the, and the name of the is,..,........................",
+    "0.0": "David Lee Bracco Jr.",
+    "6.0": "David Simon",
+    "12.0": "David Simon.",
+    "24.0": "David Simon.",
+    "36.1": "Maybe you should just say \"I don't know.\" But if you want to guess, maybe you could say \"It's possible they're not sure.",
+    "48.1": "If you don I don I just don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I don I ",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "David Lee Bracco.",
+    "6.0|seed1": "David Simon",
+    "6.0|seed2": "David Lee Bracco",
+    "12.0|seed0": "Patrick Bracco.",
+    "12.0|seed1": "Elizabeth Bracco is married to Matthew Broderick.",
+    "12.0|seed2": "David Letterman",
+    "24.0|seed0": "Patrick Bracco.",
+    "24.0|seed1": "Elizabeth Bracco is married to Matthew Broderick.",
+    "24.0|seed2": "David.",
+    "36.1|seed0": "The answer is **Michael**.",
+    "36.1|seed1": "Elizabeth Bracco is married to David Ruffin, a former professional football player. The answer is David Ruffin.",
+    "36.1|seed2": "Elizabeth Bracco is married to Michael.",
+    "48.1|seed0": "The answer is **Elizabeth Bracco**.",
+    "48.1|seed1": "Okay, the question is about who Elizabeth Bracco is married to. The answer is simply the name Elizabeth, and the user is",
+    "48.1|seed2": "Elizabeth Bracco is married to:",
+    "72.1|seed0": "the person who's looking at the screen might be thinking of the person who's looking at the screen, and maybe you're loo",
+    "72.1|seed1": "The is (was)  was, was, was, was, was, was, was, was, was, was, was, was, was, was, was, was, was,",
+    "72.1|seed2": "A: 0"
+   }
+  },
+  {
+   "q": "Where was Inditex founded?",
+   "gold": "Arteixo",
+   "baseline_wrong": "Madrid",
+   "real": {
+    "-48.1": "is the name of the company,, is the city,, is the,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "Madrid",
+    "6.0": "Madrid",
+    "12.0": "Madrid",
+    "24.0": "Zara.",
+    "36.1": "If you don't know, just say so. But I'm not sure.",
+    "48.1": "I'm not sure, but I'm not sure. But if you don I could you please try to think about I'm not sure. But I'm not sure I'm ",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "Madrid",
+    "6.0|seed1": "Madrid",
+    "6.0|seed2": "Madrid",
+    "12.0|seed0": "Madrid",
+    "12.0|seed1": "Madrid",
+    "12.0|seed2": "Madrid",
+    "24.0|seed0": "Madrid.",
+    "24.0|seed1": "Inditex was founded in Spain.",
+    "24.0|seed2": "Madrid",
+    "36.1|seed0": "Spain.",
+    "36.1|seed1": "The name of the company is inditex, but the question is asking where it was founded. The answer is not a country, but th",
+    "36.1|seed2": "Answer: Zara.",
+    "48.1|seed0": "</think>",
+    "48.1|seed1": "The name of inditex is a brand name, but it is not a company. The term \"inditex\" is used by different companies, and the",
+    "48.1|seed2": "Answer: Inditex.",
+    "72.1|seed0": "the final answer is the place where indetex is now. and the place where you see the indetex in the end. and the place wh",
+    "72.1|seed1": "The is the the, 1. 1. 1.  1.  1.  1.  1.  1.  1.",
+    "72.1|seed2": "A"
+   }
+  },
+  {
+   "q": "Who founded Iliad?",
+   "gold": "Xavier Niel",
+   "baseline_wrong": "Homer",
+   "real": {
+    "-48.1": "is the name of the, which is the city,, is the city,, is the city,, is the city,, is the city,, is the city,, is the cit",
+    "0.0": "Homer",
+    "6.0": "Homer.",
+    "12.0": "Homer.",
+    "24.0": "Homer.",
+    "36.1": "Homer.",
+    "48.1": "But I'm not sure. But if you want to just say \"I don't know.\" Maybe I'm not sure but I can't be sure I'm not sure I don ",
+    "72.1": "But I I but I I I but I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   },
+   "rand": {
+    "6.0|seed0": "Homer",
+    "6.0|seed1": "Homer",
+    "6.0|seed2": "Homer",
+    "12.0|seed0": "Homer.",
+    "12.0|seed1": "Homer",
+    "12.0|seed2": "Homer",
+    "24.0|seed0": "Homer.",
+    "24.0|seed1": "Iliad was founded by Homer.",
+    "24.0|seed2": "Homer",
+    "36.1|seed0": "Homer.",
+    "36.1|seed1": "Iliad was founded by a group of individuals, but the question is asking for just the name. The answer is not a person, b",
+    "36.1|seed2": "Homer.",
+    "48.1|seed0": "The answer is **Homer**.",
+    "48.1|seed1": "The answer is not known. The name of the author of the iliad is not known, and the iliad is a very old epic poem. The il",
+    "48.1|seed2": "Yes, that's correct. The founder of Iliad is the name Homer, which is the same as the author of the epic poem. So, the a",
+    "72.1|seed0": "the iled is the one who's in the head, and you can see the sun in the sky, and that's what you're looking at. and you ca",
+    "72.1|seed1": "The 1st, 1. The 1. 1. 1. 1.  The 1.  1.  1.  1.",
+    "72.1|seed2": "Answer:"
+   }
+  }
+ ],
+ "commit_extract_n": 13,
+ "known_eval": [
+  {
+   "q": "Where is Baniachang Upazila located?",
+   "gold": "Habiganj District",
+   "baseline_correct": "Baniachang Upazila is located in Bangladesh.",
+   "real": {
+    "-48.1": "is the city of Baniachang,, is located in the state of Bihar,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "Baniachang Upazila is located in Bangladesh.",
+    "6.0": "Baniachang Upazila is located in Bangladesh.",
+    "12.0": "Baniachang Upazila is located in Bangladesh.",
+    "24.0": "Baniachang Upazila is located in Bangladesh.",
+    "36.1": "Baniachang Upazila is located in **Chandpur District**.",
+    "48.1": "If you are unsure but I can only say \"maybe\". But I don Please try to think.",
+    "72.1": "But I I But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   }
+  },
+  {
+   "q": "Which company is Packard Executive produced by?",
+   "gold": "Packard",
+   "baseline_correct": "Packard Executive is produced by Packard.",
+   "real": {
+    "-48.1": ".",
+    "0.0": "Packard Executive is produced by Packard.",
+    "6.0": "Packard Executive is produced by **Packard Bell**.",
+    "12.0": "Packard Executive is produced by **Packard Bell**.",
+    "24.0": "Packard Executive is produced by **Ford**.",
+    "36.1": "If you're unsure, it's better to say \"I don't know.\" But if you're confident, just say \"I don't know.\"",
+    "48.1": "If you're unsure I might be wrong, but I'm not sure. But I'm not sure I'm not sure I'm not sure I'm not sure I'm not sur",
+    "72.1": "But I I I I I I I I I I I I I I I I I  I  I  I  I  I  I  I  I  I  I  I"
+   }
+  },
+  {
+   "q": "Which company is Leica M Monochrom produced by?",
+   "gold": "Leica Camera",
+   "baseline_correct": "Leica.",
+   "real": {
+    "-48.1": "is the name of the, which is the manufacturer of the Leica M Monochrom......................",
+    "0.0": "Leica.",
+    "6.0": "Leica.",
+    "12.0": "Leica.",
+    "24.0": "Leica.",
+    "36.1": "Leica.",
+    "48.1": "If you're unsure I can only say I don I but I'm not sure. But I'm not sure. Maybe you could you could you could you coul",
+    "72.1": "But I I I  I  I  I  I  I  I  I  I  I  I  I  I  I  I  I  I  I  I"
+   }
+  },
+  {
+   "q": "Who owns Laredo Energy Arena?",
+   "gold": "Laredo",
+   "baseline_correct": "Laredo Energy Arena is owned by the Laredo Energy Company.",
+   "real": {
+    "-48.1": "is the name of the city,, is the city,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "Laredo Energy Arena is owned by the Laredo Energy Company.",
+    "6.0": "Laredo Energy Arena is owned by the City of Laredo.",
+    "12.0": "Laredo Energy Arena \u2013 Owner: Laredo Energy.",
+    "24.0": "Laredo Energy Arena \u2013 ownership unknown.",
+    "36.1": "**Laredo Energy Arena**",
+    "48.1": "If you're not sure I can only say \"I don't know\" but I'm not sure I'm not sure I'm not sure I'm not sure I'm not sure I'",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I  I I"
+   }
+  },
+  {
+   "q": "Where is California State Route 166 located?",
+   "gold": "California",
+   "baseline_correct": "California State Route 166 is located in the Sierra Nevada mountains.",
+   "real": {
+    "-48.1": "is the city of, is the city of, is the city of, is the city of, is the city of, is the city of, is the city of, is the c",
+    "0.0": "California State Route 166 is located in the Sierra Nevada mountains.",
+    "6.0": "California State Route 166 is located in the Sierra Nevada mountains.",
+    "12.0": "California State Route 166 is a minor state highway in California.",
+    "24.0": "California State Route 166 is a road in California.",
+    "36.1": "Possible answers: \"I don't know.\" But if you're unsure, it's better to say so.",
+    "48.1": "If you're unsure I can only say I don But I don Maybe I can just say I don But I don Maybe I",
+    "72.1": "But I I I But I I I But I I I But I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   }
+  },
+  {
+   "q": "Where is Battle of Lagos located?",
+   "gold": "Lagos",
+   "baseline_correct": "Lagos, Nigeria.",
+   "real": {
+    "-48.1": "is the city,, is the city,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",
+    "0.0": "Lagos, Nigeria.",
+    "6.0": "Lagos, Nigeria.",
+    "12.0": "Battle of Lagos.",
+    "24.0": "Battle of Lagos.",
+    "36.1": "Lagos.",
+    "48.1": "But I'm not sure. Maybe you could think of it as \"I don't know.\" But if you want to be safe",
+    "72.1": "But I I I But I I I I I I I I I I I I I I I I I  I  I  I  I  I  I  I  I  I"
+   }
+  },
+  {
+   "q": "Who founded Planetary Resources?",
+   "gold": "Peter Diamandis",
+   "baseline_correct": "Planetary Resources was founded by Peter D. Diamandis.",
+   "real": {
+    "-48.1": "is the name of the, which is the company that is located in the state of Kansas,,.,.,.,.,.,.,.,.,.,.,",
+    "0.0": "Planetary Resources was founded by Peter D. Diamandis.",
+    "6.0": "Planetary Resources was founded by Peter D. Diamandis.",
+    "12.0": "Planetary Resources was founded by Peter D. Beck.",
+    "24.0": "Elon Musk",
+    "36.1": "Maybe I can try to think... I remember that Planetary Resources was started by some people who might be in the space ind",
+    "48.1": "I don",
+    "72.1": "But I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I"
+   }
+  }
+ ]
+}

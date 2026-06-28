@@ -34,7 +34,8 @@ def main():
     ap.add_argument("--model", default="Qwen/Qwen3-4B")
     ap.add_argument("--seed", default="results/legibility/calibration_seed_4b.json")
     ap.add_argument("--layers", default="10,14,17,20")
-    ap.add_argument("--alpha-fracs", default="-1,0,0.1,0.2,0.4,0.7")
+    ap.add_argument("--steer-layer", type=int, default=17)
+    ap.add_argument("--alpha-fracs", default="-0.08,0,0.01,0.02,0.04,0.06,0.08,0.12")
     ap.add_argument("--rand-seeds", default="0,1,2")
     ap.add_argument("--device", default="mps")
     ap.add_argument("--out", default="results/legibility/steer_calibration_4b.json")
@@ -90,8 +91,8 @@ def main():
     norms={L: float(np.linalg.norm(v_hedge[L])) for L in SWEEP}
     print("\n  Layer | cos(v_hedge,v_commit) | |v_hedge|");
     for L in SWEEP: print(f"  {L:>5} | {cos[L]:>+20.3f} | {norms[L]:.1f}", flush=True)
-    best=min(SWEEP, key=lambda L: cos[L])   # most-negative cos = cleanest single-axis layer
-    print(f"[extract] steering layer = {best} (cos={cos[best]:+.3f})", flush=True)
+    best=args.steer_layer   # steer at the 4B workhorse layer (cos-min layer printed for reference)
+    print(f"[extract] steering layer = {best} (cos={cos[best]:+.3f}); cos-min was L{min(SWEEP,key=lambda L:cos[L])}", flush=True)
 
     # calibrate alpha to residual norm at best layer
     rn=[]
@@ -127,21 +128,34 @@ def main():
     for it in h_eval:
         rec=dict(q=it["q"], gold=it["gold"], baseline_wrong=it["model_wrong"], real={}, rand={})
         for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
-        aHi=ALPHAS[-1]
-        for s,rv in rand_vecs.items(): rec["rand"][f"seed{s}"]=gen(it["q"], rv, aHi)
+        for a in ALPHAS:                                  # random control at EVERY positive alpha (F171 lesson)
+            if a<=0: continue
+            for s,rv in rand_vecs.items(): rec["rand"][f"{a}|seed{s}"]=gen(it["q"], rv, a)
         result["hedge_eval"].append(rec)
         json.dump(result, open(args.out,"w"), indent=1)
         if args.device=="mps": torch.mps.empty_cache()
-        print(f"  {it['q'][:40]:40s} base->[{rec['real'][str(0.0)][:24]}] aHi->[{rec['real'][str(aHi)][:24]}]", flush=True)
-    # hedge-rate summary (auto prefilter; hand-read later)
-    def hrate(key,a=None):
-        xs=result["hedge_eval"]
-        if key=="real": return np.mean([is_hedge(r["real"][str(a)]) for r in xs])
-        return np.mean([is_hedge(list(r["rand"].values())[0]) for r in xs])  # placeholder
-    print("\n=== hedge-rate (auto) vs alpha (v_hedge) ===")
-    for a in ALPHAS: print(f"  a={a:>7.1f}: {np.mean([is_hedge(r['real'][str(a)]) for r in result['hedge_eval']]):.0%}")
-    aHi=ALPHAS[-1]
-    for s in rand_vecs: print(f"  RANDOM seed{s} @a={aHi}: {np.mean([is_hedge(r['rand'][f'seed{s}']) for r in result['hedge_eval']]):.0%}")
+        print(f"  {it['q'][:40]:40s} base->[{rec['real'][str(0.0)][:22]}] hi->[{rec['real'][str(ALPHAS[-1])][:22]}]", flush=True)
+    # COMPLETING TEST: does v_hedge ALSO hedge items the model KNOWS? (calibration vs global push)
+    print("\n[steer] v_hedge on held-out KNOWN items (commit-targets) ...", flush=True)
+    result["known_eval"]=[]
+    for it in c_eval:
+        rec=dict(q=it["q"], gold=it["gold"], baseline_correct=it["model_correct"], real={})
+        for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
+        result["known_eval"].append(rec)
+        json.dump(result, open(args.out,"w"), indent=1)
+        if args.device=="mps": torch.mps.empty_cache()
+        print(f"  KNOWN {it['q'][:32]:32s} base->[{rec['real']['0.0'][:20]}] hi->[{rec['real'][str(ALPHAS[-1])][:20]}]", flush=True)
+
+    # hedge-rate summary (auto prefilter; hand-read later): v_hedge vs mean-random, per alpha
+    xs=result["hedge_eval"]
+    print("\n=== hedge-rate (auto): v_hedge vs random (mean of 3 seeds), per alpha ===")
+    for a in ALPHAS:
+        real=np.mean([is_hedge(r['real'][str(a)]) for r in xs])
+        if a>0:
+            rnd=np.mean([is_hedge(r['rand'][f'{a}|seed{s}']) for r in xs for s in rand_vecs])
+            print(f"  a={a:>7.1f}: v_hedge={real:.0%}   random={rnd:.0%}")
+        else:
+            print(f"  a={a:>7.1f}: v_hedge={real:.0%}")
     json.dump(result, open(args.out,"w"), indent=1)
     print(f"[done] -> {args.out}", flush=True)
 
