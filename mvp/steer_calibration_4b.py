@@ -1,0 +1,149 @@
+#!/usr/bin/env python
+"""Path A — grounded calibration steering on Qwen3-4B. Prereg: docs/prereg-grounded-calibration-steering.md.
+
+Tests whether a vector built from the GROUNDED, model-conditioned calibration seed (F172) beats
+multi-seed random controls at moving the 4B — i.e. was the F160/F171 steering null a DATA problem,
+or is steering the wrong tool? Extracts v_hedge (confident-wrong -> uncertainty) and v_commit
+(correct-but-doubts -> assert) via diff-of-means; reports cos(v_hedge,v_commit) (single-axis test);
+then steers v_hedge on HELD-OUT confab items (alpha-sweep calibrated to residual norm) vs >=3 random
+seeds + baseline + sign control. Greedy primary. All raw saved. Local (MPS).
+"""
+import argparse, json, os, math
+import numpy as np, torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+HEDGE = ("not sure","don't know","do not know","dont know","can't","cannot","no reliable","unable",
+         "not certain","unaware","don't have","do not have","not aware","no information","insufficient",
+         "not able","couldn't","could not find","don't have reliable","not confident","i'm not")
+def is_hedge(a): al=a.lower(); return any(h in al for h in HEDGE)
+
+class Hook:
+    def __init__(self, layer, vec, alpha):
+        self.layer, self.alpha = layer, alpha
+        v=torch.tensor(vec,dtype=torch.float32); self.v=(v/(v.norm()+1e-10)).unsqueeze(0).unsqueeze(0); self.h=None
+    def fn(self,m,i,o):
+        h=o[0] if isinstance(o,tuple) else o
+        h=h+self.alpha*self.v.to(h.device).to(h.dtype)
+        return (h,)+o[1:] if isinstance(o,tuple) else h
+    def attach(self,model): self.h=model.model.layers[self.layer].register_forward_hook(self.fn)
+    def detach(self):
+        if self.h: self.h.remove(); self.h=None
+
+def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--model", default="Qwen/Qwen3-4B")
+    ap.add_argument("--seed", default="results/legibility/calibration_seed_4b.json")
+    ap.add_argument("--layers", default="10,14,17,20")
+    ap.add_argument("--alpha-fracs", default="-1,0,0.1,0.2,0.4,0.7")
+    ap.add_argument("--rand-seeds", default="0,1,2")
+    ap.add_argument("--device", default="mps")
+    ap.add_argument("--out", default="results/legibility/steer_calibration_4b.json")
+    args=ap.parse_args()
+    SWEEP=[int(x) for x in args.layers.split(",")]
+
+    seed=json.load(open(args.seed))
+    hedge_t, commit_t = seed["hedge_targets"], seed["commit_targets"]
+    # entity lookup (seed lacks it) from the knowledge-edge data
+    q2ent={r["q"]: r.get("entity") for r in json.load(open("results/legibility/knowledge_edge_4b.json"))["rows"]}
+    # split: extract on 2/3, hold out 1/3 (deterministic index split)
+    def split(L,frac=0.69): k=int(len(L)*frac); return L[:k], L[k:]
+    h_ext,h_eval = split(hedge_t); c_ext,c_eval = split(commit_t)
+    print(f"[data] hedge {len(h_ext)}ext/{len(h_eval)}eval | commit {len(c_ext)}ext/{len(c_eval)}eval | layers {SWEEP}", flush=True)
+
+    tok=AutoTokenizer.from_pretrained(args.model)
+    dtype=torch.float16 if args.device=="mps" else torch.bfloat16
+    model=AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=dtype).to(args.device).eval()
+    print("[load] done", flush=True)
+
+    def hedge_text(e): return f"I'm not sure — I don't have reliable information about {e} and could be wrong."
+
+    @torch.no_grad()
+    def acts(q, response):
+        m=[{"role":"user","content":q+" Answer with just the name, as briefly as possible."}]
+        try: enc=tok.apply_chat_template(m, add_generation_prompt=True, return_tensors="pt", return_dict=True, enable_thinking=False)
+        except TypeError: enc=tok.apply_chat_template(m, add_generation_prompt=True, return_tensors="pt", return_dict=True)
+        rsp=tok(response, add_special_tokens=False, return_tensors="pt")
+        ids=torch.cat([enc["input_ids"], rsp["input_ids"]],1).to(args.device)
+        hs=model(input_ids=ids, output_hidden_states=True).hidden_states
+        return {L: hs[L+1][0,-1,:].float().cpu().numpy() for L in SWEEP}
+
+    def build_vec(items, assert_key, virtuous="hedge"):
+        # virtuous='hedge' -> v = mean(hedge) - mean(assert); virtuous='assert' -> v = mean(assert)-mean(hedge)
+        A={L:[] for L in SWEEP}; H={L:[] for L in SWEEP}
+        for it in items:
+            a=acts(it["q"], it[assert_key]); h=acts(it["q"], hedge_text(_entity(it)))
+            for L in SWEEP: A[L].append(a[L]); H[L].append(h[L])
+        vecs={}
+        for L in SWEEP:
+            am=np.mean(A[L],0); hm=np.mean(H[L],0)
+            vecs[L]=(hm-am) if virtuous=="hedge" else (am-hm)
+        return vecs, A, H
+
+    def _entity(it):  # entity name for the hedge template
+        return q2ent.get(it["q"]) or it.get("entity") or "this"
+
+    print("[extract] v_hedge ...", flush=True)
+    v_hedge,_,_ = build_vec(h_ext, "model_wrong", "hedge")
+    print("[extract] v_commit ...", flush=True)
+    v_commit,_,_ = build_vec(c_ext, "model_correct", "assert")
+    cos={L: float(np.dot(v_hedge[L],v_commit[L])/(np.linalg.norm(v_hedge[L])*np.linalg.norm(v_commit[L])+1e-10)) for L in SWEEP}
+    norms={L: float(np.linalg.norm(v_hedge[L])) for L in SWEEP}
+    print("\n  Layer | cos(v_hedge,v_commit) | |v_hedge|");
+    for L in SWEEP: print(f"  {L:>5} | {cos[L]:>+20.3f} | {norms[L]:.1f}", flush=True)
+    best=min(SWEEP, key=lambda L: cos[L])   # most-negative cos = cleanest single-axis layer
+    print(f"[extract] steering layer = {best} (cos={cos[best]:+.3f})", flush=True)
+
+    # calibrate alpha to residual norm at best layer
+    rn=[]
+    def cap(m,i,o): h=o[0] if isinstance(o,tuple) else o; rn.append(float(h[0].norm(dim=-1).mean()))
+    hh=model.model.layers[best].register_forward_hook(cap)
+    with torch.no_grad():
+        for it in h_eval[:5]: acts(it["q"], "x")
+    hh.remove(); rnorm=float(np.mean(rn))
+    ALPHAS=[round(float(f)*rnorm,1) for f in args.alpha_fracs.split(",")]
+    print(f"[calib] resid norm @L{best} ~ {rnorm:.0f}; alphas={ALPHAS}", flush=True)
+
+    @torch.no_grad()
+    def gen(q, vec, alpha):
+        m=[{"role":"user","content":q+" Answer with just the name, as briefly as possible."}]
+        try: enc=tok.apply_chat_template(m, add_generation_prompt=True, return_tensors="pt", return_dict=True, enable_thinking=False)
+        except TypeError: enc=tok.apply_chat_template(m, add_generation_prompt=True, return_tensors="pt", return_dict=True)
+        enc={k:v.to(args.device) for k,v in enc.items()}; L=enc["input_ids"].shape[1]
+        hook=Hook(best,vec,alpha) if alpha!=0 else None
+        if hook: hook.attach(model)
+        try: o=model.generate(**enc, max_new_tokens=40, do_sample=False, pad_token_id=tok.eos_token_id)
+        finally:
+            if hook: hook.detach()
+        txt=tok.decode(o[0][L:], skip_special_tokens=True)
+        return next((l.strip() for l in txt.split("\n") if l.strip()), "")[:120]
+
+    # STEER eval: v_hedge on held-out confab items (does hedge-rate rise vs random?)
+    vh=v_hedge[best]
+    rand_vecs={s: (lambda r: r/np.linalg.norm(r)*np.linalg.norm(vh))(np.random.default_rng(s).standard_normal(vh.shape).astype(np.float32))
+               for s in [int(s) for s in args.rand_seeds.split(",")]}
+    result=dict(model=args.model, layer=best, cos=cos, residual_norm=rnorm, alphas=ALPHAS,
+                hedge_eval=[], commit_extract_n=len(c_ext))
+    print("\n[steer] v_hedge on held-out confab items ...", flush=True)
+    for it in h_eval:
+        rec=dict(q=it["q"], gold=it["gold"], baseline_wrong=it["model_wrong"], real={}, rand={})
+        for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
+        aHi=ALPHAS[-1]
+        for s,rv in rand_vecs.items(): rec["rand"][f"seed{s}"]=gen(it["q"], rv, aHi)
+        result["hedge_eval"].append(rec)
+        json.dump(result, open(args.out,"w"), indent=1)
+        if args.device=="mps": torch.mps.empty_cache()
+        print(f"  {it['q'][:40]:40s} base->[{rec['real'][str(0.0)][:24]}] aHi->[{rec['real'][str(aHi)][:24]}]", flush=True)
+    # hedge-rate summary (auto prefilter; hand-read later)
+    def hrate(key,a=None):
+        xs=result["hedge_eval"]
+        if key=="real": return np.mean([is_hedge(r["real"][str(a)]) for r in xs])
+        return np.mean([is_hedge(list(r["rand"].values())[0]) for r in xs])  # placeholder
+    print("\n=== hedge-rate (auto) vs alpha (v_hedge) ===")
+    for a in ALPHAS: print(f"  a={a:>7.1f}: {np.mean([is_hedge(r['real'][str(a)]) for r in result['hedge_eval']]):.0%}")
+    aHi=ALPHAS[-1]
+    for s in rand_vecs: print(f"  RANDOM seed{s} @a={aHi}: {np.mean([is_hedge(r['rand'][f'seed{s}']) for r in result['hedge_eval']]):.0%}")
+    json.dump(result, open(args.out,"w"), indent=1)
+    print(f"[done] -> {args.out}", flush=True)
+
+if __name__=="__main__":
+    main()
