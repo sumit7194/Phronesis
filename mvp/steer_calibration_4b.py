@@ -38,6 +38,8 @@ def main():
     ap.add_argument("--alpha-fracs", default="-0.08,0,0.01,0.02,0.04,0.06,0.08,0.12")
     ap.add_argument("--rand-seeds", default="0,1,2")
     ap.add_argument("--device", default="mps")
+    ap.add_argument("--quant", type=int, default=0)               # 1 = 4-bit (for 32B on VM)
+    ap.add_argument("--ke", default="results/legibility/knowledge_edge_4b.json")  # entity lookup
     ap.add_argument("--out", default="results/legibility/steer_calibration_4b.json")
     args=ap.parse_args()
     SWEEP=[int(x) for x in args.layers.split(",")]
@@ -45,15 +47,21 @@ def main():
     seed=json.load(open(args.seed))
     hedge_t, commit_t = seed["hedge_targets"], seed["commit_targets"]
     # entity lookup (seed lacks it) from the knowledge-edge data
-    q2ent={r["q"]: r.get("entity") for r in json.load(open("results/legibility/knowledge_edge_4b.json"))["rows"]}
+    q2ent={r["q"]: r.get("entity") for r in json.load(open(args.ke))["rows"]}
     # split: extract on 2/3, hold out 1/3 (deterministic index split)
     def split(L,frac=0.69): k=int(len(L)*frac); return L[:k], L[k:]
     h_ext,h_eval = split(hedge_t); c_ext,c_eval = split(commit_t)
     print(f"[data] hedge {len(h_ext)}ext/{len(h_eval)}eval | commit {len(c_ext)}ext/{len(c_eval)}eval | layers {SWEEP}", flush=True)
 
     tok=AutoTokenizer.from_pretrained(args.model)
-    dtype=torch.float16 if args.device=="mps" else torch.bfloat16
-    model=AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=dtype).to(args.device).eval()
+    if args.quant:
+        from transformers import BitsAndBytesConfig
+        bnb=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                               bnb_4bit_compute_dtype=torch.float16, bnb_4bit_use_double_quant=True)
+        model=AutoModelForCausalLM.from_pretrained(args.model, quantization_config=bnb, device_map="cuda").eval()
+        args.device="cuda"
+    else:
+        model=AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16).to(args.device).eval()
     print("[load] done", flush=True)
 
     def hedge_text(e): return f"I'm not sure — I don't have reliable information about {e} and could be wrong."
