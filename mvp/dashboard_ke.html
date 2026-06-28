@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Qwen3-32B knowledge-edge</title>
+<style>
+ body{font-family:-apple-system,system-ui,sans-serif;background:#0e0f13;color:#e6e6e6;margin:0;padding:28px}
+ h1{font-size:18px;font-weight:600;margin:0 0 4px} .sub{color:#8a8f98;font-size:13px;margin-bottom:18px}
+ .bar{height:24px;background:#1c1e26;border-radius:7px;overflow:hidden;margin:12px 0}
+ .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#22d3ee);transition:width .4s;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:12px;font-weight:600;color:#04111f}
+ .cards{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+ .card{background:#161821;border:1px solid #242736;border-radius:9px;padding:10px 14px;min-width:90px}
+ .card .k{color:#8a8f98;font-size:11px;text-transform:uppercase} .card .v{font-size:20px;font-weight:600;margin-top:3px}
+ table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12.5px}
+ th,td{text-align:left;padding:7px 9px;border-bottom:1px solid #21232e} th{color:#8a8f98;font-weight:500}
+ .cmp{color:#8a8f98;font-size:13px;margin-top:16px}
+</style></head>
+<body>
+ <h1>Qwen3-32B · knowledge-edge map <span id="status" style="color:#22d3ee"></span></h1>
+ <div class="sub">scale test of F172 — 200 obscure items, confidence signals (P(True), entropy, pass@k, semantic entropy)</div>
+ <div class="bar"><div class="fill" id="fill" style="width:0%">0%</div></div>
+ <div class="cards">
+   <div class="card"><div class="k">done</div><div class="v" id="done">–</div></div>
+   <div class="card"><div class="k">greedy acc</div><div class="v" id="ga">–</div></div>
+   <div class="card"><div class="k">pass@k</div><div class="v" id="pk">–</div></div>
+   <div class="card"><div class="k">sec/item</div><div class="v" id="spi">–</div></div>
+   <div class="card"><div class="k">eta</div><div class="v" id="eta">–</div></div>
+ </div>
+ <div class="cmp">4B baseline (F172): greedy 22% · pass@k 29.5% · confidence-reader AUROC ~0.80. Watching whether 32B reads its own edge too.</div>
+ <h3 style="font-size:14px;margin-top:18px">recent items</h3>
+ <table id="tbl"><thead><tr><th>pop</th><th>question</th><th>gold</th><th>greedy</th><th>P(True)</th></tr></thead><tbody></tbody></table>
+<script>
+async function tick(){
+ try{
+  const s=await(await fetch('status.json?_='+Date.now())).json();
+  const p=Math.round(100*s.done/s.total);
+  fill.style.width=p+'%'; fill.textContent=p+'%';
+  done.textContent=s.done+' / '+s.total; ga.textContent=(s.auto_greedy*100).toFixed(0)+'%';
+  pk.textContent=(s.auto_passk*100).toFixed(0)+'%'; spi.textContent=s.s_per_item+'s'; eta.textContent=s.eta_h+'h';
+  status.textContent=s.done>=s.total?'· DONE ✓':'· running';
+  const tb=document.querySelector('#tbl tbody'); tb.innerHTML='';
+  (s.recent||[]).slice().reverse().forEach(r=>{const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${r.pop}</td><td>${r.q}</td><td>${r.gold}</td><td>${r.greedy}</td><td>${(r.p_true).toFixed(2)}</td>`;tb.appendChild(tr);});
+ }catch(e){status.textContent='· waiting for status.json…';}
+}
+tick();setInterval(tick,5000);
+</script>
+</body></html>
