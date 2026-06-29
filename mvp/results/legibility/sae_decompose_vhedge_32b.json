@@ -1,73 +1,170 @@
 {
- "layer": 32,
- "trainer": 2,
- "topk": 8,
- "max_abs_cos": 0.06419262290000916,
- "mean_abs_cos": 0.011245042085647583,
+ "vector": "v_hedge[L36]",
+ "sae": "qwen3-32b/32-resid-batchtopk-65k (adamkarvonen, both 65k trainers)",
+ "max_abs_cos": 0.287,
+ "random_baseline_max_cos": 0.064,
+ "finding": "top features are STRUCTURAL/format + ENTITY/GEOGRAPHIC content; NO robust epistemic-uncertainty feature; only weak unconfirmed f12502 'not possible'. Explains F179 global-refuse.",
+ "n_robust": 10,
  "features": [
   {
-   "rank": 0,
-   "feat": 46510,
-   "cos": 0.0642,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/46510"
+   "feat": 3144,
+   "cos_vhedge": 0.287,
+   "cross_trainer_cos": 0.228,
+   "robust": false,
+   "label": ": followed by other words",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/3144"
   },
   {
-   "rank": 1,
-   "feat": 45877,
-   "cos": 0.063,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/45877"
+   "feat": 8531,
+   "cos_vhedge": 0.282,
+   "cross_trainer_cos": 0.742,
+   "robust": true,
+   "label": "end of sentence punctuation",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/8531"
   },
   {
-   "rank": 2,
-   "feat": 5585,
-   "cos": 0.0591,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/5585"
+   "feat": 24855,
+   "cos_vhedge": -0.247,
+   "cross_trainer_cos": 0.549,
+   "robust": false,
+   "label": "US cities and their contexts",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/24855"
   },
   {
-   "rank": 3,
-   "feat": 36224,
-   "cos": 0.0581,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/36224"
+   "feat": 28681,
+   "cos_vhedge": -0.219,
+   "cross_trainer_cos": 0.834,
+   "robust": true,
+   "label": "/* comments and code blocks",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/28681"
   },
   {
-   "rank": 4,
-   "feat": 46415,
-   "cos": 0.0551,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/46415"
+   "feat": 12502,
+   "cos_vhedge": 0.213,
+   "cross_trainer_cos": 0.025,
+   "robust": false,
+   "label": "not possible",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/12502"
   },
   {
-   "rank": 5,
-   "feat": 19152,
-   "cos": 0.0531,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/19152"
+   "feat": 33089,
+   "cos_vhedge": -0.203,
+   "cross_trainer_cos": 0.891,
+   "robust": true,
+   "label": "country names",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/33089"
   },
   {
-   "rank": 6,
-   "feat": 2571,
-   "cos": 0.0529,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/2571"
+   "feat": 30923,
+   "cos_vhedge": 0.196,
+   "cross_trainer_cos": 0.148,
+   "robust": false,
+   "label": "right next door",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/30923"
   },
   {
-   "rank": 7,
-   "feat": 25905,
-   "cos": -0.0529,
-   "label": "",
-   "pos": "",
-   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/25905"
+   "feat": 54285,
+   "cos_vhedge": -0.184,
+   "cross_trainer_cos": 0.041,
+   "robust": false,
+   "label": "city or region names",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/54285"
+  },
+  {
+   "feat": 14758,
+   "cos_vhedge": 0.184,
+   "cross_trainer_cos": 0.008,
+   "robust": false,
+   "label": "refer to, referring to",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/14758"
+  },
+  {
+   "feat": 20692,
+   "cos_vhedge": -0.181,
+   "cross_trainer_cos": 0.895,
+   "robust": true,
+   "label": "US states",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/20692"
+  },
+  {
+   "feat": 60942,
+   "cos_vhedge": -0.179,
+   "cross_trainer_cos": 0.724,
+   "robust": true,
+   "label": "university name abbreviations",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/60942"
+  },
+  {
+   "feat": 62840,
+   "cos_vhedge": 0.172,
+   "cross_trainer_cos": 0.831,
+   "robust": true,
+   "label": "Chinese characters",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/62840"
+  },
+  {
+   "feat": 14742,
+   "cos_vhedge": 0.168,
+   "cross_trainer_cos": -0.008,
+   "robust": false,
+   "label": ".cpp or author",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/14742"
+  },
+  {
+   "feat": 26472,
+   "cos_vhedge": 0.167,
+   "cross_trainer_cos": 0.687,
+   "robust": true,
+   "label": "most popular",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/26472"
+  },
+  {
+   "feat": 14015,
+   "cos_vhedge": -0.165,
+   "cross_trainer_cos": 0.378,
+   "robust": false,
+   "label": "Cape Cod County",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/14015"
+  },
+  {
+   "feat": 9477,
+   "cos_vhedge": 0.16,
+   "cross_trainer_cos": 0.672,
+   "robust": true,
+   "label": "Chinese punctuation",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/9477"
+  },
+  {
+   "feat": 20116,
+   "cos_vhedge": 0.159,
+   "cross_trainer_cos": 0.004,
+   "robust": false,
+   "label": "starting a sentence with \"as\", \"one\", \"this\", etc",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/20116"
+  },
+  {
+   "feat": 8217,
+   "cos_vhedge": 0.158,
+   "cross_trainer_cos": 0.168,
+   "robust": false,
+   "label": "but, so, if, or, while",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/8217"
+  },
+  {
+   "feat": 10131,
+   "cos_vhedge": 0.157,
+   "cross_trainer_cos": 0.928,
+   "robust": true,
+   "label": "\" and \"",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/10131"
+  },
+  {
+   "feat": 52341,
+   "cos_vhedge": 0.154,
+   "cross_trainer_cos": 0.982,
+   "robust": true,
+   "label": "Version or Inc",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/52341"
   }
  ]
 }
