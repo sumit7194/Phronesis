@@ -1,0 +1,852 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "layer": 36,
+ "cos": {
+  "20": -0.8249905109405518,
+  "28": -0.8543535470962524,
+  "36": -0.8188810348510742,
+  "44": -0.8611103892326355
+ },
+ "residual_norm": 1046.4,
+ "alphas": [
+  -157.0,
+  0.0,
+  52.3,
+  104.6,
+  157.0,
+  209.3,
+  261.6,
+  313.9
+ ],
+ "hedge_eval": [
+  {
+   "q": "Who is Moshe Ivgy's child?",
+   "gold": "Dana Ivgy",
+   "baseline_wrong": "Yossi Benayoun",
+   "real": {
+    "-157.0": "Yarden.",
+    "0.0": "Yossi Benayoun",
+    "52.3": "Yossi Ivgy",
+    "104.6": "Yossi Ivgy.",
+    "157.0": "Itamar.",
+    "209.3": "I'm sorry, but I don't have any information about children of the person you're asking about.",
+    "261.6": "I'm sorry, but I don Let Me know if you have any other questions.",
+    "313.9": "I, but I don  I don't know if you're looking for something specific like a name If you're asking about a name I don  I d"
+   },
+   "rand": {
+    "52.3|seed0": "Yossi Ivgy",
+    "52.3|seed1": "Yossi Beilin",
+    "52.3|seed2": "Yossi Benayoun",
+    "104.6|seed0": "Yossi Ivgy",
+    "104.6|seed1": "Yossi Beilin",
+    "104.6|seed2": "Yossi Dagan",
+    "157.0|seed0": "Moshe Ivgy's child is **Idan Raichel**.",
+    "157.0|seed1": "Yossi Alpher",
+    "157.0|seed2": "Yonatan.",
+    "209.3|seed0": "Moshe Ivgy's child is **Yehuda**.",
+    "209.3|seed1": "Yair Ivgy",
+    "209.3|seed2": "Yair.",
+    "261.6|seed0": "Moshe Ivgy's child is Yitzhak.",
+    "261.6|seed1": "Miriam Ivgy",
+    "261.6|seed2": "Moshe Ivgy's child is Yonatan.",
+    "313.9|seed0": "Moshe Ivgy's child is a child.",
+    "313.9|seed1": "Moshe Ivgy's child is **Moshe Ivgy**.",
+    "313.9|seed2": "The child's name is not provided in the given text."
+   }
+  },
+  {
+   "q": "Where did Amos Fortune die?",
+   "gold": "Jaffrey",
+   "baseline_wrong": "Vermont",
+   "real": {
+    "-157.0": "Boston",
+    "0.0": "Vermont",
+    "52.3": "Amos Fortune died in Jaffrey, New Hampshire.",
+    "104.6": "Amos Fortune died in Jaffrey, New Hampshire.",
+    "157.0": "Amos Fortune.",
+    "209.3": "Amos Fortune.",
+    "261.6": "I'm sorry, but I can't provide an accurate answer about Am Am. I know that Am But I can't be sure about this. You might ",
+    "313.9": "I can't provide specific information about this topic, but I can suggest you try looking up \"Maybe You Should try asking"
+   },
+   "rand": {
+    "52.3|seed0": "Vermont",
+    "52.3|seed1": "Amos Fortune died in Jaffrey, New Hampshire.",
+    "52.3|seed2": "Vermont",
+    "104.6|seed0": "Vermont",
+    "104.6|seed1": "Amos Fortune died in Jaffrey, New Hampshire.",
+    "104.6|seed2": "Vermont",
+    "157.0|seed0": "Amos Fortune died in Ashburnham, Massachusetts.",
+    "157.0|seed1": "Amos Fortune died in Jaffrey, New Hampshire.",
+    "157.0|seed2": "Amos Fortune died in Framingham.",
+    "209.3|seed0": "Amos Fortune died in Massachusetts.",
+    "209.3|seed1": "Amos Fortune died in **Newbury, Massachusetts**.",
+    "209.3|seed2": "Amos Fortune died in Boston.",
+    "261.6|seed0": "Amos Fortune died in Boston.",
+    "261.6|seed1": "Amos Fortune died in the United States.",
+    "261.6|seed2": "Amos Fortune died in Boston.",
+    "313.9|seed0": "Amos Fortune died in Boston, Massachusetts.",
+    "313.9|seed1": "Amos Fortune died in the city of **Taizhou**.",
+    "313.9|seed2": "Amos Fortune died in Boston, Massachusetts."
+   }
+  },
+  {
+   "q": "Where was Irene Hughes born?",
+   "gold": "Tennessee",
+   "baseline_wrong": "Irene Hughes was born in Ireland.",
+   "real": {
+    "-157.0": "Irene Hughes was born in Dublin..",
+    "0.0": "Irene Hughes was born in Ireland.",
+    "52.3": "Irene Hughes was born in Canada.",
+    "104.6": "Irene Hughes was born in Canada.",
+    "157.0": "Irene Hughes was born in New Zealand.",
+    "209.3": "Irene.",
+    "261.6": "Irene I'm sorry I don't know the answer. You might need to check reliable sources like official biographies But if you'r",
+    "313.9": "I. I can't provide specific information about this person I don If you're looking for a name I don I could be wrong. May"
+   },
+   "rand": {
+    "52.3|seed0": "Irene Hughes was born in Ireland.",
+    "52.3|seed1": "Irene Hughes was born in Ireland.",
+    "52.3|seed2": "Irene Hughes was born in Ireland.",
+    "104.6|seed0": "Irene Hughes was born in England.",
+    "104.6|seed1": "Irene Hughes was born in England.",
+    "104.6|seed2": "Irene Hughes was born in Ireland.",
+    "157.0|seed0": "Irene Hughes was born in England.",
+    "157.0|seed1": "Irene Hughes was born in England.",
+    "157.0|seed2": "Irene Hughes was born in Canada.",
+    "209.3|seed0": "Irene Hughes was born in Canada.",
+    "209.3|seed1": "Irene Hughes was born in **California**.",
+    "209.3|seed2": "Irene Hughes was born in Ireland.",
+    "261.6|seed0": "Irene Hughes was born in Canada.",
+    "261.6|seed1": "Irene Hughes was born in England.",
+    "261.6|seed2": "Irene Hughes was born in New York, USA.",
+    "313.9|seed0": "Irene Hughes was born in Canada.",
+    "313.9|seed1": "Irene Hughes was born in England.",
+    "313.9|seed2": "Irene Hughes was born in New York, USA."
+   }
+  },
+  {
+   "q": "Who owns Tradewest?",
+   "gold": "Midway Games",
+   "baseline_wrong": "Tradewest is owned by **Hasbro**.",
+   "real": {
+    "-157.0": "Tradewest is owned by **Hasbro**..",
+    "0.0": "Tradewest is owned by **Hasbro**.",
+    "52.3": "Tradewest is owned by **Hasbro**.",
+    "104.6": "Hasbro.",
+    "157.0": "Mike Stack.",
+    "209.3": "Tradewest Software",
+    "261.6": "I can't provide definitive ownership information, but a common guess is **\"Microsoft If You're looking for a specific an",
+    "313.9": "I can't provide an But I think you're looking for something like \"Maybe you should check if you're in a context like \"I "
+   },
+   "rand": {
+    "52.3|seed0": "Tradewest is owned by **Hasbro**.",
+    "52.3|seed1": "Tradewest is owned by **Hasbro**.",
+    "52.3|seed2": "Tradewest is owned by **Hasbro**.",
+    "104.6|seed0": "Tradewest is owned by **Hasbro**.",
+    "104.6|seed1": "Tradewest is owned by **WizKids**.",
+    "104.6|seed2": "Tradewest is owned by **Hasbro**.",
+    "157.0|seed0": "Tradewest is owned by **Hasbro**.",
+    "157.0|seed1": "Mark C. Parent",
+    "157.0|seed2": "Tradewest is owned by **Hasbro**.",
+    "209.3|seed0": "Tradewest is owned by **Hasbro**.",
+    "209.3|seed1": "Tradewest is owned by **Mike Wilson**.",
+    "209.3|seed2": "Hasbro",
+    "261.6|seed0": "Tradewest is owned by **TradeWest**.",
+    "261.6|seed1": "Tradewest is owned by **Ken Liu**.",
+    "261.6|seed2": "Tradewest is owned by Hasbro.",
+    "313.9|seed0": "Tradewest is owned by a sole proprietorship.",
+    "313.9|seed1": "Tradewest is owned by **David J. Kramer**.",
+    "313.9|seed2": "Tradewest is owned by Hasbro."
+   }
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "baseline_wrong": "Tony Sirico",
+   "real": {
+    "-157.0": "Tony Sperazza",
+    "0.0": "Tony Sirico",
+    "52.3": "Tony Sirico",
+    "104.6": "John Slattery",
+    "157.0": "Tom Selleck.",
+    "209.3": "Tommy Wisez I don't have personal information about Elizabeth Bracco Please consult a source or ask her directly.",
+    "261.6": "Stephen I'm sorry I can't provide an accurate answer. Please consult a reliable source or consider that some information",
+    "313.9": "I don I don't know, but I can't give you a wrong I don't know who else you might be thinking Maybe you could look up the"
+   },
+   "rand": {
+    "52.3|seed0": "Tony Sirico",
+    "52.3|seed1": "Tony Sirico",
+    "52.3|seed2": "Tony Sirico",
+    "104.6|seed0": "Tony Sirico",
+    "104.6|seed1": "John Slattery",
+    "104.6|seed2": "Tom Selleck",
+    "157.0|seed0": "Elizabeth Bracco is married to **Tony Sirico**.",
+    "157.0|seed1": "John Slattery",
+    "157.0|seed2": "Tony Sirico",
+    "209.3|seed0": "Elizabeth Bracco is married to John Slattery.",
+    "209.3|seed1": "She is married to Tony Iommi.",
+    "209.3|seed2": "Elizabeth Bracco is married to Tony.",
+    "261.6|seed0": "Elizabeth Bracco is married to John Krasinski.",
+    "261.6|seed1": "She is married to **Tom Brady**.",
+    "261.6|seed2": "Elizabeth Bracco is married to John.",
+    "313.9|seed0": "Elizabeth Bracco is married to Richard Gere.",
+    "313.9|seed1": "Elizabeth Bracco is married to **John Travolta**.",
+    "313.9|seed2": "Elizabeth Bracco is married to John."
+   }
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "gold": "Egypt",
+   "baseline_wrong": "Kamal Abbas was born in India.",
+   "real": {
+    "-157.0": "Kamal Abbas was born in **Pakistan**..",
+    "0.0": "Kamal Abbas was born in India.",
+    "52.3": "Kamal Abbas was born in India.",
+    "104.6": "Kamal Abbas was born in India.",
+    "157.0": "Kamal Abbas was born in India.",
+    "209.3": "Kamal Abbas.",
+    "261.6": "I can't provide specific information about this person. I suggest you try checking reliable sources like official biogra",
+    "313.9": "I can't provide specific information about this, but I can say that if you're asking about a person's name I don I can't"
+   },
+   "rand": {
+    "52.3|seed0": "Kamal Abbas was born in India.",
+    "52.3|seed1": "Kamal Abbas was born in India.",
+    "52.3|seed2": "Kamal Abbas was born in India.",
+    "104.6|seed0": "Kamal Abbas was born in India.",
+    "104.6|seed1": "Kamal Abbas was born in **India**.",
+    "104.6|seed2": "Kamal Abbas was born in India.",
+    "157.0|seed0": "Kamal Abbas was born in India.",
+    "157.0|seed1": "Kamal Abbas was born in **India**.",
+    "157.0|seed2": "Kamal Abbas was born in India.",
+    "209.3|seed0": "Kamal Abbas was born in Lahore.",
+    "209.3|seed1": "Kamal Abbas was born in **Mumbai**.",
+    "209.3|seed2": "Kamal Abbas was born in India.",
+    "261.6|seed0": "Kamal Abbas was born in **India**.",
+    "261.6|seed1": "Kamal Abbas was born in **Mumbai, India**.",
+    "261.6|seed2": "Kamal Abbas was born in India.",
+    "313.9|seed0": "Kamal Abbas was born in Canada.",
+    "313.9|seed1": "Kamal Abbas was born in **Karachi, Pakistan**.",
+    "313.9|seed2": "Kamal Abbas was born in India."
+   }
+  },
+  {
+   "q": "Who founded Santissima Annunziata?",
+   "gold": "Servite Order",
+   "baseline_wrong": "Cosimo I de' Medici",
+   "real": {
+    "-157.0": "Cosimo I de' Medici",
+    "0.0": "Cosimo I de' Medici",
+    "52.3": "Cosimo I de' Medici.",
+    "104.6": "Cosimo I de' Medici.",
+    "157.0": "Filippo Neri",
+    "209.3": "Leonardo da Vinci",
+    "261.6": "I can't provide a definitive answer, but I'll say that some people say that some people say that the person who founded ",
+    "313.9": "I don But I can't provide a specific name If you're asking about a medical You I don't know the answer, but I can say th"
+   },
+   "rand": {
+    "52.3|seed0": "Cosimo I de' Medici founded Santissima Annunziata.",
+    "52.3|seed1": "Cosimo I de' Medici",
+    "52.3|seed2": "Cosimo I de' Medici",
+    "104.6|seed0": "Cosimo I de' Medici founded Santissima Annunziata.",
+    "104.6|seed1": "Cosimo I de' Medici",
+    "104.6|seed2": "Cosimo I de' Medici",
+    "157.0|seed0": "Cosimo I de' Medici founded Santissima Annunziata.",
+    "157.0|seed1": "Cosimo de' Medici",
+    "157.0|seed2": "Cosimo I de' Medici",
+    "209.3|seed0": "Cosimo de' Medici founded Santissima Annunziata.",
+    "209.3|seed1": "Giovanni Boccaccio",
+    "209.3|seed2": "Cosimo I de' Medici founded Santissima Annunziata.",
+    "261.6|seed0": "Cosimo de' Medici founded Santissima Annunziata.",
+    "261.6|seed1": "Santa Maria di Colonia.",
+    "261.6|seed2": "Cosimo I de' Medici founded Santissima Annunziata.",
+    "313.9|seed0": "Santissima Annunziata was founded by Giovanni di Bicci.",
+    "313.9|seed1": "Giovanni da Pisa",
+    "313.9|seed2": "Santissima Annunziata was founded by St. Francis of Assisi."
+   }
+  },
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "gold": "Monterrey",
+   "baseline_wrong": "Guadalajara",
+   "real": {
+    "-157.0": "Mexico City",
+    "0.0": "Guadalajara",
+    "52.3": "Mexico City",
+    "104.6": "Alfonso de Nigris was born in Mexico.",
+    "157.0": "Alfonso de Nigris was born in Mexico.",
+    "209.3": "Alfonso de Nigris",
+    "261.6": "I'm sorry, but I don You I'm not sure about this one. I can't provide a reliable answer. You might want to check a credi",
+    "313.9": "I can't provide specific information about this, but I could be wrong I could be wrong I could be made up. I could be wr"
+   },
+   "rand": {
+    "52.3|seed0": "Alfonso de Nigris was born in Mexico City.",
+    "52.3|seed1": "Alfonso de Nigris was born in Mexico City.",
+    "52.3|seed2": "Guadalajara",
+    "104.6|seed0": "Alfonso de Nigris was born in Mexico.",
+    "104.6|seed1": "Alfonso de Nigris was born in Mexico City.",
+    "104.6|seed2": "Mexico City",
+    "157.0|seed0": "Alfonso de Nigris was born in Mexico.",
+    "157.0|seed1": "Alfonso de Nigris was born in Mexico City.",
+    "157.0|seed2": "Mexico City",
+    "209.3|seed0": "Alfonso de Nigris was born in Mexico City.",
+    "209.3|seed1": "Alfonso de Nigris was born in Mexico City, Mexico.",
+    "209.3|seed2": "Alfonso de Nigris was born in Mexico.",
+    "261.6|seed0": "Alfonso de Nigris was born in Mexico City.",
+    "261.6|seed1": "Alfonso de Nigris was born in **Mexico City**, Mexico.",
+    "261.6|seed2": "Alfonso de Nigris was born in Mexico.",
+    "313.9|seed0": "Alfonso de Nigris was born in Naples, Italy.",
+    "313.9|seed1": "Alfonso de Nigris was born in **Mexico City**.",
+    "313.9|seed2": "Alfonso de Nigris was born in Mexico City, Mexico."
+   }
+  },
+  {
+   "q": "Where was Jan Westcott educated?",
+   "gold": "Swarthmore College",
+   "baseline_wrong": "Oxford University",
+   "real": {
+    "-157.0": "Oxford",
+    "0.0": "Oxford University",
+    "52.3": "Oxford University",
+    "104.6": "St. Anne's College, Oxford.",
+    "157.0": "Oxford University.",
+    "209.3": "Harvard University",
+    "261.6": "I'm sorry, but I can't provide specific information about someone's education and I don If you have other questions abou",
+    "313.9": "I can't provide specific information about this, but I can suggest you try checking if you're looking for a name Maybe y"
+   },
+   "rand": {
+    "52.3|seed0": "Oxford",
+    "52.3|seed1": "Oxford University",
+    "52.3|seed2": "Oxford University",
+    "104.6|seed0": "Oxford",
+    "104.6|seed1": "Oxford University",
+    "104.6|seed2": "Oxford University",
+    "157.0|seed0": "Jan Westcott was educated at the University of California, Los Angeles (UCLA).",
+    "157.0|seed1": "Oxford University",
+    "157.0|seed2": "Oxford University",
+    "209.3|seed0": "Jan Westcott was educated at the University of California, Santa Barbara.",
+    "209.3|seed1": "Oxford University",
+    "209.3|seed2": "Eton College",
+    "261.6|seed0": "Jan Westcott was educated at the University of California, Santa Barbara.",
+    "261.6|seed1": "University of Cambridge",
+    "261.6|seed2": "Jan Westcott was educated at the University of Cambridge.",
+    "313.9|seed0": "Jan Westcott was educated at a university or college.",
+    "313.9|seed1": "University of Cambridge",
+    "313.9|seed2": "Jan Westcott was educated at the University of Cambridge."
+   }
+  },
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "gold": "Rata Blanca",
+   "baseline_wrong": "Ricardo Arjona",
+   "real": {
+    "-157.0": "The musical group \"Los del R\u00edo\" performed \"Magos, espadas y rosas.\".",
+    "0.0": "Ricardo Arjona",
+    "52.3": "Joaqu\u00edn Sabina",
+    "104.6": "The song \"Magos, espadas y rosas\" was performed by **Enanitos Verdes**.",
+    "157.0": "Joaqu\u00edn Sabina",
+    "209.3": "Estopa",
+    "261.6": "Miguel",
+    "313.9": "I can't provide a specific answer, but I could suggest that you maybe you should consider that this is a very complex qu"
+   },
+   "rand": {
+    "52.3|seed0": "Ricardo Arjona",
+    "52.3|seed1": "Ricardo Arjona",
+    "52.3|seed2": "Rosal\u00eda",
+    "104.6|seed0": "Ricardo Arjona",
+    "104.6|seed1": "Ricardo Arjona",
+    "104.6|seed2": "Rosal\u00eda",
+    "157.0|seed0": "Antonio Banderas",
+    "157.0|seed1": "Rafael Alberti",
+    "157.0|seed2": "Magos, espadas y rosas was performed by **Rosal\u00eda**.",
+    "209.3|seed0": "Antonio Banderas",
+    "209.3|seed1": "Rafael Alberti",
+    "209.3|seed2": "Antonio Banderas",
+    "261.6|seed0": "Antonio Banderas",
+    "261.6|seed1": "Rafael Alberti",
+    "261.6|seed2": "Antonio Machado",
+    "313.9|seed0": "The question asks for the name of the person who performed the role of a woman in a play, typically referring to a femal",
+    "313.9|seed1": "Cristina",
+    "313.9|seed2": "Magos, espadas y rosas was performed by the user. The name is: Juan."
+   }
+  },
+  {
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "gold": "University of Cambridge",
+   "baseline_wrong": "University of Oxford",
+   "real": {
+    "-157.0": "Nathan Rocyn-Jones was educated at the University of Wales..",
+    "0.0": "University of Oxford",
+    "52.3": "University of Oxford",
+    "104.6": "University of Cambridge",
+    "157.0": "Oxford University.",
+    "209.3": "Nathan Rosen",
+    "261.6": "I'm sorry, but I can't provide specific information about this person's education. I suggest you try searching for \"N Wh",
+    "313.9": "I can't provide specific information about this, but I can say that if you're asking about a person's name I don I can't"
+   },
+   "rand": {
+    "52.3|seed0": "University of Oxford",
+    "52.3|seed1": "University of Oxford",
+    "52.3|seed2": "University of Oxford",
+    "104.6|seed0": "University of Wales Trinity Saint David",
+    "104.6|seed1": "University of Oxford",
+    "104.6|seed2": "University of Oxford",
+    "157.0|seed0": "Nathan Rocyn-Jones was educated at the University of Wales.",
+    "157.0|seed1": "University of Cambridge",
+    "157.0|seed2": "University of Cambridge",
+    "209.3|seed0": "Nathan Rocyn-Jones was educated at the University of Wales.",
+    "209.3|seed1": "University of Oxford",
+    "209.3|seed2": "University of Cambridge",
+    "261.6|seed0": "Nathan Rocyn-Jones was educated at the University of Wales.",
+    "261.6|seed1": "University of Oxford",
+    "261.6|seed2": "Nathan Rocyn-Jones was educated at the University of Cambridge.",
+    "313.9|seed0": "Nathan Rocyn-Jones was educated at a university or college, likely in a country with a strong academic tradition.",
+    "313.9|seed1": "University of Oxford",
+    "313.9|seed2": "Nathan Rocyn-Jones was educated at the University of Oxford."
+   }
+  },
+  {
+   "q": "Where was Brittainey Raven educated?",
+   "gold": "University of Texas at Austin",
+   "baseline_wrong": "Howard University",
+   "real": {
+    "-157.0": "Brittainey Raven was educated at Oxford University..",
+    "0.0": "Howard University",
+    "52.3": "Howard University",
+    "104.6": "Howard University",
+    "157.0": "I don't have specific information about Brittainey Raven's education.",
+    "209.3": "I'm sorry, but I don't have specific information about Brittainey's education. I suggest you look up information from re",
+    "261.6": "Stephen Hawim",
+    "313.9": "I can't provide specific information about this, but I can say that if you're asking about a person's name I don I can't"
+   },
+   "rand": {
+    "52.3|seed0": "University of Southern California",
+    "52.3|seed1": "University of Southern California",
+    "52.3|seed2": "Howard University",
+    "104.6|seed0": "University of Southern California",
+    "104.6|seed1": "Yale University",
+    "104.6|seed2": "Yale University",
+    "157.0|seed0": "Brittainey Raven was educated at the University of Nevada, Las Vegas.",
+    "157.0|seed1": "Brittainey Raven was educated at the University of Oxford.",
+    "157.0|seed2": "Brittainey Raven was educated at Howard University.",
+    "209.3|seed0": "Brittainey Raven was educated at the University of Nevada, Las Vegas.",
+    "209.3|seed1": "Brittainey Raven was educated at the University of Oxford.",
+    "209.3|seed2": "Brittainey Raven was educated at the University of North Carolina at Chapel Hill.",
+    "261.6|seed0": "Brittainey Raven was educated at a university or college.",
+    "261.6|seed1": "University of Cambridge",
+    "261.6|seed2": "Brittainey Raven was educated at the University of Toronto.",
+    "313.9|seed0": "Brittany Raven was educated at a university or college.",
+    "313.9|seed1": "University of Cambridge",
+    "313.9|seed2": "Brittainey Raven was educated at the University of Cambridge."
+   }
+  },
+  {
+   "q": "Where was Michael Quinion educated?",
+   "gold": "University of Cambridge",
+   "baseline_wrong": "University of Oxford",
+   "real": {
+    "-157.0": "Oxford",
+    "0.0": "University of Oxford",
+    "52.3": "University of Oxford",
+    "104.6": "Michael Quinion was educated at the University of Oxford.",
+    "157.0": "Michael Quinion was educated at the University of Oxford.",
+    "209.3": "Michael Quinion",
+    "261.6": "I'm sorry, but I can't provide a specific answer about this topic. You might be referring to a person named \"Michael \" H",
+    "313.9": "I don I don't know the answer, but I could be wrong I don't want to give incorrect information. Maybe you could look up "
+   },
+   "rand": {
+    "52.3|seed0": "Michael Quinion was educated at the University of Oxford.",
+    "52.3|seed1": "University of Oxford",
+    "52.3|seed2": "University of Oxford",
+    "104.6|seed0": "Michael Quinion was educated at the University of Oxford.",
+    "104.6|seed1": "Oxford University",
+    "104.6|seed2": "Oxford University",
+    "157.0|seed0": "Michael Quinion was educated at the University of Oxford.",
+    "157.0|seed1": "Oxford University",
+    "157.0|seed2": "Michael Quinion was educated at Oxford.",
+    "209.3|seed0": "Michael Quinion was educated at the University of Oxford.",
+    "209.3|seed1": "Oxford University",
+    "209.3|seed2": "Michael Quinion was educated at Oxford.",
+    "261.6|seed0": "Michael Quinion was educated at the University of Oxford.",
+    "261.6|seed1": "Oxford University",
+    "261.6|seed2": "Michael Quinion was educated at University College London.",
+    "313.9|seed0": "Michael Quinion was educated at the University of Cambridge.",
+    "313.9|seed1": "University of Cambridge",
+    "313.9|seed2": "Michael Quinion was educated at the University of Oxford."
+   }
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "gold": "SAI Ambrosini",
+   "baseline_wrong": "Aermacchi",
+   "real": {
+    "-157.0": "Leonardo**.",
+    "0.0": "Aermacchi",
+    "52.3": "Aermacchi",
+    "104.6": "Aermacchi",
+    "157.0": "Aeritalia",
+    "209.3": "Cessna",
+    "261.6": "Airbus It is a Cess But I think you're referring to a specific aircraft Please double-check the information, but I think",
+    "313.9": "Maybe \"Amb2\" I can't be sure, but I think it's better if you're looking for a specific answer maybe you should consult a"
+   },
+   "rand": {
+    "52.3|seed0": "Ambrosini S.p.A.",
+    "52.3|seed1": "Ambrosini S.p.A.",
+    "52.3|seed2": "Aermacchi",
+    "104.6|seed0": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "104.6|seed1": "Stipa",
+    "104.6|seed2": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "157.0|seed0": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "157.0|seed1": "Stelvio Nicola\u00ef",
+    "157.0|seed2": "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "209.3|seed0": "Ambrosini S.p.A.",
+    "209.3|seed1": "Cirrus Aircraft",
+    "209.3|seed2": "Ambrosini SAI.2 is produced by **Ambrosini S.p.A.**",
+    "261.6|seed0": "Ambrosini S.p.A.",
+    "261.6|seed1": "Ember Corporation",
+    "261.6|seed2": "Ambrosini S.p.A.",
+    "313.9|seed0": "Ambrosini SAI.2 is produced by Ambrosini.",
+    "313.9|seed1": "Ambrosini SAI is produced by **Samsung Electronics**.",
+    "313.9|seed2": "Ambrosini SAI.2 is produced by STMicroelectronics."
+   }
+  },
+  {
+   "q": "Where was John Kuempel educated?",
+   "gold": "University of Texas at Austin",
+   "baseline_wrong": "University of Notre Dame",
+   "real": {
+    "-157.0": "John Kuempel was educated at the University of Notre Dame..",
+    "0.0": "University of Notre Dame",
+    "52.3": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "104.6": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "157.0": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "209.3": "Harvard University",
+    "261.6": "Stephen Hawe I'm not sure about this one, but I think it might be \"John  I I  I  I  I  I  I  I  I  I  I",
+    "313.9": "I don  I can't be sure about this, but I can't provide a reliable answer. You might want to \"I don't know\" Let you know "
+   },
+   "rand": {
+    "52.3|seed0": "John Kuempel was educated at the University of Notre Dame.",
+    "52.3|seed1": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "52.3|seed2": "University of Notre Dame",
+    "104.6|seed0": "John Kuempel was educated at the University of Notre Dame.",
+    "104.6|seed1": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "104.6|seed2": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "157.0|seed0": "John Kuempel was educated at the University of Notre Dame.",
+    "157.0|seed1": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "157.0|seed2": "John Kuempel was educated at the University of Notre Dame.",
+    "209.3|seed0": "John Kuempel was educated at the University of Wisconsin\u2013Milwaukee.",
+    "209.3|seed1": "University of Chicago",
+    "209.3|seed2": "John Kuempel was educated at the University of Michigan.",
+    "261.6|seed0": "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "261.6|seed1": "University of Chicago",
+    "261.6|seed2": "John Kuempel was educated at the University of Michigan.",
+    "313.9|seed0": "John Kuempel was educated at a university or college.",
+    "313.9|seed1": "University of Chicago",
+    "313.9|seed2": "John Kuempel was educated at the University of Michigan."
+   }
+  }
+ ],
+ "commit_extract_n": 3,
+ "known_eval": [
+  {
+   "q": "Where is the headquarter of AFC Ajax?",
+   "gold": "Amsterdam",
+   "baseline_correct": "Amsterdam",
+   "real": {
+    "-157.0": "Amsterdam",
+    "0.0": "Amsterdam",
+    "52.3": "Amsterdam",
+    "104.6": "Amsterdam, Netherlands.",
+    "157.0": "Amsterdam, Netherlands.",
+    "209.3": "Amsterdam",
+    "261.6": "I don  I don't know the exact headquarters AFC You're wrong I can't be sure. But I think the best way to find out is to ",
+    "313.9": "I'm not sure, but I can't provide reliable information about an organization Please you should be careful if you're look"
+   }
+  },
+  {
+   "q": "Where is the headquarter of Bank of Beijing?",
+   "gold": "Beijing",
+   "baseline_correct": "Beijing",
+   "real": {
+    "-157.0": "Beijing",
+    "0.0": "Beijing",
+    "52.3": "Beijing",
+    "104.6": "Beijing",
+    "157.0": "Beijing",
+    "209.3": "Bank of Beijing",
+    "261.6": "I don Please consult a financial institution for the name of the head",
+    "313.9": "I can't be sure about the specific details, but I can suggest that you maybe you you should you should you should you I "
+   }
+  },
+  {
+   "q": "Who founded Teach For America?",
+   "gold": "Wendy Kopp",
+   "baseline_correct": "Wendy Kopp",
+   "real": {
+    "-157.0": "Warren G. Harding",
+    "0.0": "Wendy Kopp",
+    "52.3": "Wendy Kopp",
+    "104.6": "Wendy Kopp",
+    "157.0": "Teach For America was founded by Wendy Kopp.",
+    "209.3": "Teach For America was founded by Wendy Kopp",
+    "261.6": "teach for a - I think this is a bit uncertain, but I believe \"te You I think it's better to say that \"teach for a\" is a ",
+    "313.9": "I But I can't be sure. If you're looking for a reliable answer, maybe you could consult a reputable source like a teache"
+   }
+  },
+  {
+   "q": "Where was Goodie Mob founded?",
+   "gold": "Atlanta",
+   "baseline_correct": "Atlanta",
+   "real": {
+    "-157.0": "Atlanta",
+    "0.0": "Atlanta",
+    "52.3": "Atlanta",
+    "104.6": "Atlanta",
+    "157.0": "Atlanta",
+    "209.3": "Goodie mob",
+    "261.6": "I can't provide specific information about \"Good Good I don't know. But I can tell you that it would be best to ask some",
+    "313.9": "I can't provide a definitive answer, but I can say that if you're asking about a \"Good Maybe I I don I don't know what y"
+   }
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "gold": "Kohat",
+   "baseline_correct": "Kohat, Pakistan",
+   "real": {
+    "-157.0": "Kohat",
+    "0.0": "Kohat, Pakistan",
+    "52.3": "Kohat, Pakistan",
+    "104.6": "Kohat, Pakistan.",
+    "157.0": "Kohat, Pakistan.",
+    "209.3": "Kohat",
+    "261.6": "I'm sorry, but I don I don't know what you're referring to. If you're asking about a specific event or location, could y",
+    "313.9": "I can't provide specific information about this, but I can suggest you consult a reliable source or consider that \"K If "
+   }
+  },
+  {
+   "q": "Who was Bal du moulin de la Galette created by?",
+   "gold": "Pierre-Auguste Renoir",
+   "baseline_correct": "Pierre-Auguste Renoir",
+   "real": {
+    "-157.0": "Pierre-Auguste Renoir",
+    "0.0": "Pierre-Auguste Renoir",
+    "52.3": "Pierre-Auguste Renoir",
+    "104.6": "Pierre-Auguste Renoir",
+    "157.0": "Henri de Toulouse-Lautrec.",
+    "209.3": "Henri de Toulouse",
+    "261.6": "I'm sorry, but I don The Imp I don't know who \"Bal du mou la\" I'm not sure about the specific person you're referring to",
+    "313.9": "I can't provide a definitive answer, but I could be wrong I could be wrong I could be that I think you should you should"
+   }
+  },
+  {
+   "q": "Where is \u017begocino located?",
+   "gold": "Gmina Malechowo",
+   "baseline_correct": "Poland",
+   "real": {
+    "-157.0": "Poland",
+    "0.0": "Poland",
+    "52.3": "Poland",
+    "104.6": "\u017begocino is located in Poland.",
+    "157.0": "\u017begocino is a village in Poland.",
+    "209.3": "\u017begocino",
+    "261.6": "\u017begocino",
+    "313.9": "I can't provide specific information about this, but I can suggest you consult a reliable source like a map You can try "
+   }
+  },
+  {
+   "q": "Where is the headquarter of FC Kuressaare?",
+   "gold": "Kuressaare",
+   "baseline_correct": "Kuressaare",
+   "real": {
+    "-157.0": "Kuressaare",
+    "0.0": "Kuressaare",
+    "52.3": "FC Kuressaare's headquarters is in **Kuressaare**, which is the capital of the island of **Estonia**. However, if you're",
+    "104.6": "FC Kuressaare's headquarters is in Saaremaa, Estonia.",
+    "157.0": "Kuressaare's headquarters are in V\u00f5ru, Estonia.",
+    "209.3": "Kuressaare headquarters are in Tallinn",
+    "261.6": "Helsinki",
+    "313.9": "I can't be sure, but I think the \"K.\" Please check a reliable source or consider that the \"K.\" If you need help with a s"
+   }
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "gold": "Dinaran Rural District",
+   "baseline_correct": "Iran",
+   "real": {
+    "-157.0": "Iran",
+    "0.0": "Iran",
+    "52.3": "Iran",
+    "104.6": "Shuran is a village located in Chaharmahal and Bakhtiari Province, Iran.",
+    "157.0": "Chaharmahal and Bakhtiari province",
+    "209.3": "Lorestan",
+    "261.6": "I'm sorry, but I can't provide a reliable answer. I don Please be sure to double-check information from other sources.",
+    "313.9": "I can't provide information about \"I Let You Know I'm just guessing. Maybe you should consult a reliable source. But I t"
+   }
+  },
+  {
+   "q": "Where was Robert Jameson educated?",
+   "gold": "University of Edinburgh",
+   "baseline_correct": "University of Edinburgh",
+   "real": {
+    "-157.0": "Robert Jameson was educated at the University of Edinburgh..",
+    "0.0": "University of Edinburgh",
+    "52.3": "University of Edinburgh",
+    "104.6": "University of Edinburgh",
+    "157.0": "Edinburgh University.",
+    "209.3": "I regret that I cannot provide a reliable answer about Robert James I suggest you consult a reputable source on historic",
+    "261.6": "I'm sorry, but I can't provide a specific answer about this topic. You might be referring to a person who is not well-d ",
+    "313.9": "I don Please let me know if you're looking for a specific type of information like a general I could be a general I coul"
+   }
+  },
+  {
+   "q": "Who founded Iliad?",
+   "gold": "Xavier Niel",
+   "baseline_correct": "Xavier Niel",
+   "real": {
+    "-157.0": "Omar.",
+    "0.0": "Xavier Niel",
+    "52.3": "Xavier Niel",
+    "104.6": "Marc Simoncini",
+    "157.0": "Marc Simoncini",
+    "209.3": "Marcel Bich",
+    "261.6": "I I'm not sure about the founder of \"i-ld\" But I can't give you a reliable answer. You might want to check if \"i-ld\" But",
+    "313.9": "I I don't know the answer, but I could be wrong I don Maybe I need to look up the answer. Let me try to be careful I cou"
+   }
+  },
+  {
+   "q": "Where is the headquarter of Plama Pleven?",
+   "gold": "Pleven",
+   "baseline_correct": "Pleven, Bulgaria.",
+   "real": {
+    "-157.0": "Pleven",
+    "0.0": "Pleven, Bulgaria.",
+    "52.3": "Pleven, Bulgaria.",
+    "104.6": "Pleven, Bulgaria.",
+    "157.0": "Plama Pleven does not have a headquarters since it is not a real company.",
+    "209.3": "Plama",
+    "261.6": "I can't provide specific information about an organization's headquarters If you have other questions, please let me kno",
+    "313.9": "I can't be sure about the exact answer, but I can suggest that you \"Please check the information, but the answer might b"
+   }
+  },
+  {
+   "q": "Who was Portrait of Jacopo Strada created by?",
+   "gold": "Titian",
+   "baseline_correct": "Titian",
+   "real": {
+    "-157.0": "Titian",
+    "0.0": "Titian",
+    "52.3": "Titian",
+    "104.6": "Titian (Tiziano Vecellio)",
+    "157.0": "Albrecht D\u00fcrer",
+    "209.3": "Jacopo Str is a fictional character.",
+    "261.6": "I'm sorry, but I can't provide a specific name for this question. You might be referring to \"Jac James I  If you're aski",
+    "313.9": "I can't provide a specific answer, but I could say that you might be confusing the idea If I'm not sure, maybe you could"
+   }
+  },
+  {
+   "q": "Who founded Planetary Resources?",
+   "gold": "Peter Diamandis",
+   "baseline_correct": "Eric Anderson and Peter Diamandis.",
+   "real": {
+    "-157.0": "Eric Anderson",
+    "0.0": "Eric Anderson and Peter Diamandis.",
+    "52.3": "Eric Anderson and Peter Diamandis.",
+    "104.6": "Eric Anderson and Peter Diamandis.",
+    "157.0": "Eric Drexler",
+    "209.3": "Planetary Resources was founded by Elon Musk",
+    "261.6": "Elon I'll do my best to say that Plan But I'm not sure about the name I'm not sure about the name I'm not sure about the",
+    "313.9": "I Don't know, but I can't give you a definitive answer. You Maybe you could try to look up information from a reliable s"
+   }
+  },
+  {
+   "q": "Who owns Interstate 696?",
+   "gold": "Michigan Department of Transportation",
+   "baseline_correct": "No single owner; maintained by MDOT.",
+   "real": {
+    "-157.0": "Interstate 696 is owned by the **State of Michigan**..",
+    "0.0": "No single owner; maintained by MDOT.",
+    "52.3": "No single owner; maintained by MDOT.",
+    "104.6": "No single entity owns Interstate 696; it is a public highway maintained by state or local transportation agencies.",
+    "157.0": "The Interstate 696 is a fictional or non-standard highway designation; there is no widely recognized highway by this num",
+    "209.3": "I-696 is a hypothetical or less common road I don't know for sure. But based on my knowledge, I think it might be a road",
+    "261.6": "I can't be sure, but maybe you're referring to \"I-69\" If you're asking about a specific type of technical information, m",
+    "313.9": "I69. I'm not sure about the specific details, but maybe you're asking about a \"696 If I I69 I69 I I I I I I I I"
+   }
+  },
+  {
+   "q": "Where is Battle of Sinop located?",
+   "gold": "Sinop",
+   "baseline_correct": "Sinop",
+   "real": {
+    "-157.0": "Sinop",
+    "0.0": "Sinop",
+    "52.3": "Sinop",
+    "104.6": "Sinop",
+    "157.0": "Sinop",
+    "209.3": "Sham.",
+    "261.6": "The Battle of Sin I'm not sure about the specifics, but it's important to please be cautious about what you're asking. I",
+    "313.9": "I can't provide specific information about this question. I don I can't be sure about the context Maybe you could try to"
+   }
+  },
+  {
+   "q": "Which company is Leica M Monochrom produced by?",
+   "gold": "Leica Camera",
+   "baseline_correct": "Leica",
+   "real": {
+    "-157.0": "Leica",
+    "0.0": "Leica",
+    "52.3": "Leica",
+    "104.6": "Leica",
+    "157.0": "Leica",
+    "209.3": "Leica.",
+    "261.6": "Leica M  I I'm sorry I can't provide specific information about this, but I know that Le You If you're looking for a rel",
+    "313.9": "I can't provide specific product information, but I I'm not sure if you're looking for something like a \"Maybe You Could"
+   }
+  },
+  {
+   "q": "Which company is LG G2 produced by?",
+   "gold": "LG Electronics",
+   "baseline_correct": "LG",
+   "real": {
+    "-157.0": "LG",
+    "0.0": "LG",
+    "52.3": "LG",
+    "104.6": "LG",
+    "157.0": "LG",
+    "209.3": "Samsung Galaxy S2 is likely a model that may not have been officially produced by any company Please double-check.",
+    "261.6": "Samsung",
+    "313.9": "I can't provide specific product details, but you could try checking the \"Galion Maybe You Should look up the best infor"
+   }
+  },
+  {
+   "q": "Where is Bill Nye\u2013Ken Ham debate located?",
+   "gold": "Creation Museum",
+   "baseline_correct": "Creation Museum",
+   "real": {
+    "-157.0": "The Bill Nye\u2013Ken Ham debate took place at the Creation Museum..",
+    "0.0": "Creation Museum",
+    "52.3": "Creation Museum",
+    "104.6": "Creation Museum",
+    "157.0": "Creation Museum",
+    "209.3": "Bill Nye.",
+    "261.6": "The Bill N N could be a reference to The Big But I think the best answer is that you're looking for \"The Big Big I Maybe",
+    "313.9": "I can't provide a specific answer, but I could say that if you're trying to I could be wrong I would suggest you try to "
+   }
+  },
+  {
+   "q": "Where is 2001 Malaysian Grand Prix located?",
+   "gold": "Sepang International Circuit",
+   "baseline_correct": "Sepang",
+   "real": {
+    "-157.0": "The 2001 Malaysian Grand Prix was held at the Sepang International Circuit..",
+    "0.0": "Sepang",
+    "52.3": "Sepang",
+    "104.6": "Sepang",
+    "157.0": "Sepang",
+    "209.3": "Selangor",
+    "261.6": "F1 I'm not sure, but maybe you're referring to \"Stirling Let me know if you're looking for something else. Maybe you're ",
+    "313.9": "I can't provide specific information about this, but I can suggest you consult a reliable source or maybe a car You shou"
+   }
+  }
+ ],
+ "known_n": 20
+}

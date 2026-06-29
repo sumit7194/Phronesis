@@ -1,0 +1,73 @@
+{
+ "layer": 32,
+ "trainer": 2,
+ "topk": 8,
+ "max_abs_cos": 0.06419262290000916,
+ "mean_abs_cos": 0.011245042085647583,
+ "features": [
+  {
+   "rank": 0,
+   "feat": 46510,
+   "cos": 0.0642,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/46510"
+  },
+  {
+   "rank": 1,
+   "feat": 45877,
+   "cos": 0.063,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/45877"
+  },
+  {
+   "rank": 2,
+   "feat": 5585,
+   "cos": 0.0591,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/5585"
+  },
+  {
+   "rank": 3,
+   "feat": 36224,
+   "cos": 0.0581,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/36224"
+  },
+  {
+   "rank": 4,
+   "feat": 46415,
+   "cos": 0.0551,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/46415"
+  },
+  {
+   "rank": 5,
+   "feat": 19152,
+   "cos": 0.0531,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/19152"
+  },
+  {
+   "rank": 6,
+   "feat": 2571,
+   "cos": 0.0529,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/2571"
+  },
+  {
+   "rank": 7,
+   "feat": 25905,
+   "cos": -0.0529,
+   "label": "",
+   "pos": "",
+   "url": "https://www.neuronpedia.org/qwen3-32b/32-resid-batchtopk-65k/25905"
+  }
+ ]
+}
