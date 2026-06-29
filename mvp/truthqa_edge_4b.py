@@ -14,7 +14,7 @@ from datasets import load_dataset
 def norm(s):
     s="".join(c for c in unicodedata.normalize("NFKD",str(s)) if not unicodedata.combining(c))
     return re.sub(r"[^a-z0-9 ]"," ",s.lower()).strip()
-def first_line(t): return next((l.strip() for l in t.split("\n") if l.strip()),"")[:100]
+def first_line(t): return next((l.strip() for l in t.split("\n") if l.strip()),"")[:300]
 
 def main():
     ap=argparse.ArgumentParser()
@@ -28,7 +28,8 @@ def main():
     ap.add_argument("--status", default="results/legibility/status_tqa.json")
     args=ap.parse_args()
 
-    ds=load_dataset("truthful_qa","generation")["validation"]
+    try: ds=load_dataset("truthful_qa","generation")["validation"]
+    except Exception: ds=load_dataset("truthfulqa/truthful_qa","generation")["validation"]  # datasets>=5 repo-id
     sel=np.linspace(0,len(ds)-1,min(args.n,len(ds))).astype(int)
     items=[dict(q=ds[int(i)]["question"], best=ds[int(i)]["best_answer"],
                 corr=[norm(x) for x in ds[int(i)]["correct_answers"]],
@@ -67,7 +68,7 @@ def main():
     @torch.no_grad()
     def greedy_scores(q):
         e=enc_chat(q); L=e["input_ids"].shape[1]
-        o=model.generate(**e,max_new_tokens=40,do_sample=False,pad_token_id=tok.eos_token_id,output_scores=True,return_dict_in_generate=True)
+        o=model.generate(**e,max_new_tokens=80,do_sample=False,pad_token_id=tok.eos_token_id,output_scores=True,return_dict_in_generate=True)
         seq=o.sequences[0][L:]; ans=first_line(tok.decode(seq,skip_special_tokens=True))
         lps,ents=[],[]
         for st,lg in enumerate(o.scores):
@@ -79,7 +80,7 @@ def main():
         e=enc_chat(q); L=e["input_ids"].shape[1]; outs=[]
         for s in range(k):
             torch.manual_seed(3000+s)
-            o=model.generate(**e,max_new_tokens=40,do_sample=True,temperature=args.temp,top_p=0.95,pad_token_id=tok.eos_token_id)
+            o=model.generate(**e,max_new_tokens=80,do_sample=True,temperature=args.temp,top_p=0.95,pad_token_id=tok.eos_token_id)
             outs.append(first_line(tok.decode(o[0][L:],skip_special_tokens=True)))
         return outs
     @torch.no_grad()
@@ -100,7 +101,7 @@ def main():
     for j in range(start,len(items)):
         it=items[j]
         g,lp,ent=greedy_scores(it["q"]); smp=sample_k(it["q"],args.k); pt=p_true(it["q"],g); se,nc=sem_ent(smp)
-        results.append(dict(q=it["q"], best=it["best"], gold_ok=score(g,it), greedy=g,
+        results.append(dict(q=it["q"], best=it["best"], correct=it["corr"], incorrect=it["inc"], gold_ok=score(g,it), greedy=g,
                             seq_logprob=round(lp,4), mean_entropy=round(ent,4), p_true=round(pt,4),
                             samples=smp, semantic_entropy=round(se,4), n_clusters=nc,
                             passk=any(score(s,it) for s in smp)))
