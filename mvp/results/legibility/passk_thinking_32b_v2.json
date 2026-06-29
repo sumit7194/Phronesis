@@ -1,0 +1,1312 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "k": 3,
+ "rows": [
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "entity": "Alfonso de Nigris",
+   "pop": 0.0,
+   "gold_raw": "Monterrey",
+   "gold": [
+    "monterrey",
+    "monterrey",
+    "nuevo leon",
+    "mexico"
+   ],
+   "nothink_samples": [
+    "Mexico City",
+    "Alfonso de Nigris was born in Mexico City.",
+    "Guadalajara"
+   ],
+   "think_samples": [
+    "Mexico City",
+    "Mexico City",
+    "Guadalajara"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where was Li Yim Lam born?",
+   "entity": "Li Yim Lam",
+   "pop": 2.0,
+   "gold_raw": "Hong Kong",
+   "gold": [
+    "hong kong",
+    "hong kong",
+    "china"
+   ],
+   "nothink_samples": [
+    "Li Yim Lam was born in Guangdong, China.",
+    "Li Yim Lam was born in Hong Kong.",
+    "Li Yim Lam was born in Guangdong."
+   ],
+   "think_samples": [
+    "Macau",
+    "Heyuan, Guangdong",
+    "China"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "entity": "Shuran, Chaharmahal and Bakhtiari",
+   "pop": 3.0,
+   "gold_raw": "Dinaran Rural District",
+   "gold": [
+    "dinaran rural district",
+    "dinaran rural district",
+    "chaharmahal and bakhtiari province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "Iran",
+    "Chaharmahal and Bakhtiari province, Iran.",
+    "Chaharmahal and Bakhtiari Province"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Deh Bagh, Kuzaran located?",
+   "entity": "Deh Bagh, Kuzaran",
+   "pop": 4.0,
+   "gold_raw": "Sanjabi Rural District",
+   "gold": [
+    "sanjabi rural district",
+    "sanjabi rural district",
+    "kermanshah province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "Kerman Province",
+    "Chaharmahal and Bakhtiari Province, Iran",
+    "Kermanshah Province"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Ba\u015f Diz\u0259 located?",
+   "entity": "Ba\u015f Diz\u0259",
+   "pop": 5.0,
+   "gold_raw": "Ordubad District",
+   "gold": [
+    "ordubad district",
+    "ordubad district",
+    "nakhchivan autonomous republic",
+    "azerbaijan"
+   ],
+   "nothink_samples": [
+    "Azerbaijan",
+    "Azerbaijan",
+    "Azerbaijan"
+   ],
+   "think_samples": [
+    "Quba Rayon, Azerbaijan",
+    "Fizuli District, Azerbaijan",
+    "Azerbaijan"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Nova Scotia Route 276 located?",
+   "entity": "Nova Scotia Route 276",
+   "pop": 6.0,
+   "gold_raw": "Nova Scotia",
+   "gold": [
+    "nova scotia",
+    "nova scotia",
+    "canada"
+   ],
+   "nothink_samples": [
+    "Nova Scotia",
+    "Nova Scotia, Canada.",
+    "Nova Scotia"
+   ],
+   "think_samples": [
+    "Nova Scotia Route 276 is located in the Annapolis Valley.",
+    "George Coles Highway",
+    "Nova Scotia Route 276 is located in the Annapolis Valley."
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Zeyarat-e Pain located?",
+   "entity": "Zeyarat-e Pain",
+   "pop": 7.0,
+   "gold_raw": "Jamabrud Rural District",
+   "gold": [
+    "jamabrud rural district",
+    "jamabrud rural district",
+    "tehran province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "Iran",
+    "Kermanshah Province, Iran.",
+    "Gilan Province, Iran"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is \u017begocino located?",
+   "entity": "\u017begocino",
+   "pop": 8.0,
+   "gold_raw": "Gmina Malechowo",
+   "gold": [
+    "gmina malechowo",
+    "gmina malechowo",
+    "s awno county",
+    "west pomeranian voivodeship",
+    "poland"
+   ],
+   "nothink_samples": [
+    "Poland",
+    "Poland",
+    "Poland"
+   ],
+   "think_samples": [
+    "Greater Poland Voivodeship",
+    "\u017begocino",
+    "Poland"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Who is the author of Murder in Grub Street?",
+   "entity": "Murder in Grub Street",
+   "pop": 9.0,
+   "gold_raw": "Bruce Alexander Cook",
+   "gold": [
+    "bruce alexander cook",
+    "bruce alexander cook",
+    "bruce cook",
+    "an american writer"
+   ],
+   "nothink_samples": [
+    "Anthony Horowitz",
+    "Anthony Horowitz",
+    "Anthony Horowitz"
+   ],
+   "think_samples": [
+    "C. S. Harris",
+    "Anthony Berkeley Cox",
+    "Robert Barnard"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Elizaveta Axenova born?",
+   "entity": "Elizaveta Axenova",
+   "pop": 10.0,
+   "gold_raw": "Krasnoyarsk",
+   "gold": [
+    "krasnoyarsk",
+    "krasnoyarsk",
+    "krasnoyarsk krai",
+    "russia"
+   ],
+   "nothink_samples": [
+    "Minsk",
+    "Minsk",
+    "Minsk"
+   ],
+   "think_samples": [
+    "Minsk",
+    "Leningrad",
+    "Russia"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Jock Morgan born?",
+   "entity": "Jock Morgan",
+   "pop": 11.0,
+   "gold_raw": "Penicuik",
+   "gold": [
+    "penicuik",
+    "penicuik",
+    "midlothian",
+    "scotland",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Jock Morgan was born in Dunedin, New Zealand.",
+    "Jock Morgan was born in Scotland.",
+    "Jock Morgan was born in Scotland."
+   ],
+   "think_samples": [
+    "Glasgow",
+    "Glasgow",
+    "Llandeilo"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Gyula Sz\u00e9ch\u00e9nyi die?",
+   "entity": "Gyula Sz\u00e9ch\u00e9nyi",
+   "pop": 12.0,
+   "gold_raw": "Budapest",
+   "gold": [
+    "budapest",
+    "budapest",
+    "hungary",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Gyula Sz\u00e9ch\u00e9nyi died in **Vienna**.",
+    "Vienna",
+    "Vienna"
+   ],
+   "think_samples": [
+    "Kom\u00e1rom",
+    "Vienna",
+    "Budapest"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "entity": "April 2010 Kohat bombings",
+   "pop": 12.0,
+   "gold_raw": "Kohat",
+   "gold": [
+    "kohat",
+    "kohat",
+    "khyber pakhtunkhwa",
+    "pakistan"
+   ],
+   "nothink_samples": [
+    "Kohat, Pakistan",
+    "Kohat, Pakistan",
+    "Kohat, Pakistan."
+   ],
+   "think_samples": [
+    "Kohat",
+    "Kohat",
+    "Kohat, Pakistan"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Cultural Exchanges festival located?",
+   "entity": "Cultural Exchanges festival",
+   "pop": 13.0,
+   "gold_raw": "De Montfort University",
+   "gold": [
+    "de montfort university",
+    "de montfort university",
+    "leicester",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Cultural Exchanges Festival is located in **Guangzhou, China**.",
+    "Cultural Exchanges festival is located in **New York City**.",
+    "Cultural Exchanges Festival is located in **London**."
+   ],
+   "think_samples": [
+    "Chengdu",
+    "Chengdu",
+    "London"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Florence Township located?",
+   "entity": "Florence Township",
+   "pop": 14.0,
+   "gold_raw": "Burlington County",
+   "gold": [
+    "burlington county",
+    "burlington county",
+    "new jersey",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Michigan, USA.",
+    "New Jersey, USA",
+    "Michigan"
+   ],
+   "think_samples": [
+    "New Jersey",
+    "New Jersey",
+    "New Jersey"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is the headquarter of Maccabi Haifa?",
+   "entity": "Maccabi Haifa",
+   "pop": 15.0,
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "nothink_samples": [
+    "Haifa, Israel.",
+    "Haifa, Israel",
+    "Haifa, Israel."
+   ],
+   "think_samples": [
+    "Haifa",
+    "Haifa",
+    "Haifa"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "entity": "Nathan Rocyn-Jones",
+   "pop": 16.0,
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "University of Oxford",
+    "University of Oxford",
+    "University of Wales Trinity Saint David"
+   ],
+   "think_samples": [
+    "Aberystwyth University",
+    "University of Wales, Aberystwyth",
+    "University of Wales, Aberystwyth"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Walne located?",
+   "entity": "Walne",
+   "pop": 17.0,
+   "gold_raw": "Gmina Nowinka",
+   "gold": [
+    "gmina nowinka",
+    "gmina nowinka",
+    "podlaskie voivodeship",
+    "poland"
+   ],
+   "nothink_samples": [
+    "Walne is located in Poland.",
+    "England",
+    "Wales"
+   ],
+   "think_samples": [
+    "Cumbria",
+    "France",
+    "Wolne"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Gilly Campbell die?",
+   "entity": "Gilly Campbell",
+   "pop": 18.0,
+   "gold_raw": "Los Angeles",
+   "gold": [
+    "los angeles",
+    "los angeles",
+    "california",
+    "united states of america"
+   ],
+   "nothink_samples": [
+    "Gilly Campbell died in **California**.",
+    "Gilly Campbell died in **Los Angeles**.",
+    "Gilly Campbell died in California."
+   ],
+   "think_samples": [
+    "Queen Elizabeth Hospital, Woolwich",
+    "Happy James Nursing Home",
+    "Santa Monica"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Thomas J. Van Alstyne educated?",
+   "entity": "Thomas J. Van Alstyne",
+   "pop": 19.0,
+   "gold_raw": "Hamilton College",
+   "gold": [
+    "hamilton college",
+    "hamilton college",
+    "a private college",
+    "a college"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "Columbia University"
+   ],
+   "think_samples": [
+    "Harvard University, University of Chicago",
+    "University of Pennsylvania",
+    "University of Pennsylvania"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Hofkirchen im M\u00fchlkreis located?",
+   "entity": "Hofkirchen im M\u00fchlkreis",
+   "pop": 20.0,
+   "gold_raw": "Rohrbach District",
+   "gold": [
+    "rohrbach district",
+    "rohrbach district",
+    "upper austria",
+    "austria"
+   ],
+   "nothink_samples": [
+    "Austria",
+    "Austria",
+    "Austria"
+   ],
+   "think_samples": [
+    "Upper Austria",
+    "Upper Austria",
+    "Austria"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Askerhallen located?",
+   "entity": "Askerhallen",
+   "pop": 21.0,
+   "gold_raw": "Asker",
+   "gold": [
+    "asker",
+    "asker",
+    "akershus",
+    "norway"
+   ],
+   "nothink_samples": [
+    "Asker, Norway.",
+    "Askerhallen is located in Asker, Norway.",
+    "Askerhallen is located in Asker, Norway."
+   ],
+   "think_samples": [
+    "Askerhallen is located in Asker, Norway.",
+    "Asker",
+    "Asker"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "entity": "Ambrosini SAI.2",
+   "pop": 22.0,
+   "gold_raw": "SAI Ambrosini",
+   "gold": [
+    "sai ambrosini",
+    "sai ambrosini",
+    "italian aircraft manufacturer",
+    "italian company"
+   ],
+   "nothink_samples": [
+    "Aermacchi",
+    "Aermacchi",
+    "Ambrosini S.p.A."
+   ],
+   "think_samples": [
+    "Ambrosini Aeronautica",
+    "Aeronautica Ambrosini",
+    "Ambrosini SAI"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Huron (Canadian band) represented by?",
+   "entity": "Huron (Canadian band)",
+   "pop": 23.0,
+   "gold_raw": "Latent Recordings",
+   "gold": [
+    "latent recordings",
+    "latent recordings",
+    "a canadian record label"
+   ],
+   "nothink_samples": [
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Dine Alone Records**."
+   ],
+   "think_samples": [
+    "Paper Bag Records",
+    "Dine Alone Records",
+    "Paperbag Records"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Stowe Open located?",
+   "entity": "Stowe Open",
+   "pop": 24.0,
+   "gold_raw": "Stowe",
+   "gold": [
+    "stowe",
+    "stowe",
+    "lamoille county",
+    "vermont",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Stowe Open is located in **Vermont**.",
+    "Vermont",
+    "Stowe Open is located in **Stowe, Vermont**."
+   ],
+   "think_samples": [
+    "Buckinghamshire",
+    "Stowe, Vermont.",
+    "Vermont"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Legh Old Hall located?",
+   "entity": "Legh Old Hall",
+   "pop": 25.0,
+   "gold_raw": "Mottram St Andrew",
+   "gold": [
+    "mottram st andrew",
+    "mottram st andrew",
+    "cheshire east",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Cheshire, England",
+    "Cheshire, England",
+    "Cheshire, England"
+   ],
+   "think_samples": [
+    "Cheshire",
+    "Cheshire",
+    "Knutsford"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Flaoui located?",
+   "entity": "Flaoui",
+   "pop": 26.0,
+   "gold_raw": "Beqaa Governorate",
+   "gold": [
+    "beqaa governorate",
+    "beqaa governorate",
+    "lebanon"
+   ],
+   "nothink_samples": [
+    "Morocco",
+    "Tunisia",
+    "Morocco"
+   ],
+   "think_samples": [
+    "Morocco",
+    "Casablanca, Morocco",
+    "Morocco."
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Jan Westcott educated?",
+   "entity": "Jan Westcott",
+   "pop": 28.0,
+   "gold_raw": "Swarthmore College",
+   "gold": [
+    "swarthmore college",
+    "swarthmore college",
+    "swarthmore  pennsylvania",
+    "pennsylvania",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Oxford",
+    "Oxford University",
+    "Oxford University"
+   ],
+   "think_samples": [
+    "University of East Anglia",
+    "University of Manchester",
+    "University of Oxford"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "entity": "Asocijacija Radioamatera Bosne i Hercegovine",
+   "pop": 29.0,
+   "gold_raw": "Sarajevo",
+   "gold": [
+    "sarajevo",
+    "sarajevo",
+    "bosnia and herzegovina",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Sarajevo",
+    "Sarajevo",
+    "Sarajevo"
+   ],
+   "think_samples": [
+    "Sarajevo",
+    "Sarajevo",
+    "Sarajevo"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where was Robert K. Sweeney educated?",
+   "entity": "Robert K. Sweeney",
+   "pop": 31.0,
+   "gold_raw": "Adelphi University",
+   "gold": [
+    "adelphi university",
+    "adelphi university",
+    "garden city  new york",
+    "new york",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "University of California, Los Angeles"
+   ],
+   "think_samples": [
+    "Boston College",
+    "United States Naval Academy",
+    "Rider University"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Big Data Partnership?",
+   "entity": "Big Data Partnership",
+   "pop": 32.0,
+   "gold_raw": "London",
+   "gold": [
+    "london",
+    "london",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Big Data Partnership is headquartered in **London**.",
+    "Big Data Partnership is headquartered in **Toronto**.",
+    "Big Data Partnership is headquartered in **Dubai**."
+   ],
+   "think_samples": [
+    "London",
+    "Singapore",
+    "London"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where did Giuseppe Avitrano die?",
+   "entity": "Giuseppe Avitrano",
+   "pop": 34.0,
+   "gold_raw": "Naples",
+   "gold": [
+    "naples",
+    "naples",
+    "campania",
+    "italy"
+   ],
+   "nothink_samples": [
+    "Avetrano",
+    "Giuseppe Avitabile died in Naples.",
+    "Giuseppe Avetrano died in Naples."
+   ],
+   "think_samples": [
+    "Rome",
+    "Italy",
+    "San Luca"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Sandra Chung educated?",
+   "entity": "Sandra Chung",
+   "pop": 35.0,
+   "gold_raw": "Harvard University",
+   "gold": [
+    "harvard university",
+    "harvard university",
+    "cambridge  massachusetts",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "Sandra Chung was educated at Harvard University."
+   ],
+   "think_samples": [
+    "Seoul Institute of the Arts",
+    "University of British Columbia",
+    "University of British Columbia"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Which company is MV Aqueity produced by?",
+   "entity": "MV Aqueity",
+   "pop": 36.0,
+   "gold_raw": "A. & J. Inglis",
+   "gold": [
+    "a    j  inglis",
+    "a    j  inglis",
+    "a ship building company"
+   ],
+   "nothink_samples": [
+    "Carnival Corporation",
+    "COSCO Shipping Heavy Industry",
+    "COSCO Shipping Heavy Industry"
+   ],
+   "think_samples": [
+    "Royal Caribbean Cruise Line",
+    "L\u00fcrssen",
+    "BP"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Oberhaid located?",
+   "entity": "Oberhaid",
+   "pop": 38.0,
+   "gold_raw": "Westerwaldkreis",
+   "gold": [
+    "westerwaldkreis",
+    "westerwaldkreis",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "nothink_samples": [
+    "Germany",
+    "Germany",
+    "Germany"
+   ],
+   "think_samples": [
+    "Germany",
+    "Bavaria, Germany",
+    "Bad Kissingen"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where did Robert M. Wallace die?",
+   "entity": "Robert M. Wallace",
+   "pop": 40.0,
+   "gold_raw": "Magnolia",
+   "gold": [
+    "magnolia",
+    "magnolia",
+    "columbia county",
+    "arkansas",
+    "united states"
+   ],
+   "nothink_samples": [
+    "California",
+    "Robert M. Wallace died in Bethesda.",
+    "Robert M. Wallace died in **California**."
+   ],
+   "think_samples": [
+    "Washington, D.C.",
+    "Virginia Beach",
+    "Miami Beach"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "entity": "Bharathi Puthakalayam",
+   "pop": 41.0,
+   "gold_raw": "Chennai",
+   "gold": [
+    "chennai",
+    "chennai",
+    "tamil nadu",
+    "india"
+   ],
+   "nothink_samples": [
+    "Chennai",
+    "Chennai",
+    "Chennai"
+   ],
+   "think_samples": [
+    "Coimbatore",
+    "Chennai",
+    "Chennai"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "entity": "Kamal Abbas",
+   "pop": 43.0,
+   "gold_raw": "Egypt",
+   "gold": [
+    "egypt",
+    "egypt",
+    "north africa",
+    "africa"
+   ],
+   "nothink_samples": [
+    "Kamal Abbas was born in India.",
+    "Pakistan",
+    "Kamal Abbas was born in India."
+   ],
+   "think_samples": [
+    "Madurai",
+    "India",
+    "Mumbai"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "entity": "Benelux Film Distributors",
+   "pop": 44.0,
+   "gold_raw": "Ghent",
+   "gold": [
+    "ghent",
+    "ghent",
+    "east flanders",
+    "belgium"
+   ],
+   "nothink_samples": [
+    "Benelux Film Distributors does not have a headquarters, as it is not a known ent",
+    "Luxembourg City",
+    "Luxembourg City"
+   ],
+   "think_samples": [
+    "Brussels",
+    "Brussels",
+    "Brussels"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of The Mohole Mystery?",
+   "entity": "The Mohole Mystery",
+   "pop": 46.0,
+   "gold_raw": "Hugh Walters",
+   "gold": [
+    "hugh walters",
+    "hugh walters",
+    "a british actor",
+    "a british person"
+   ],
+   "nothink_samples": [
+    "Clive Cussler",
+    "Clive Cussler",
+    "Arthur C. Clarke"
+   ],
+   "think_samples": [
+    "Robert Silverberg",
+    "John D. Ralston",
+    "James G. Wilson"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Alessandro Sgrigna born?",
+   "entity": "Alessandro Sgrigna",
+   "pop": 48.0,
+   "gold_raw": "Rome",
+   "gold": [
+    "rome",
+    "rome",
+    "lazio",
+    "italy"
+   ],
+   "nothink_samples": [
+    "Rimini",
+    "Alessandro Sgrigna was born in **Rimini**.",
+    "Italy"
+   ],
+   "think_samples": [
+    "Rimini",
+    "Brescia",
+    "Piacenza"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is 1899 U.S. Open located?",
+   "entity": "1899 U.S. Open",
+   "pop": 49.0,
+   "gold_raw": "Baltimore Country Club",
+   "gold": [
+    "baltimore country club",
+    "baltimore country club",
+    "baltimore  maryland",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Pinehurst Resort",
+    "Pinehurst Resort",
+    "Pinehurst Resort"
+   ],
+   "think_samples": [
+    "Myopia Hunt Club",
+    "Country Club of Rochester",
+    "Chicago Golf Club"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Red Rolfe Field at Biondi Park?",
+   "entity": "Red Rolfe Field at Biondi Park",
+   "pop": 51.0,
+   "gold_raw": "Dartmouth College",
+   "gold": [
+    "dartmouth college",
+    "dartmouth college",
+    "a private university"
+   ],
+   "nothink_samples": [
+    "City of San Leandro",
+    "City of San Leandro",
+    "City of East Rutherford"
+   ],
+   "think_samples": [
+    "University of Iowa",
+    "Iona College",
+    "Davenport"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Brittainey Raven educated?",
+   "entity": "Brittainey Raven",
+   "pop": 53.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "austin  texas",
+    "texas"
+   ],
+   "nothink_samples": [
+    "Howard University",
+    "Howard University",
+    "Howard University"
+   ],
+   "think_samples": [
+    "University of Southern California",
+    "University of Southern California",
+    "Brown University"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Tomlinson Stadium\u2013Kell Field?",
+   "entity": "Tomlinson Stadium\u2013Kell Field",
+   "pop": 55.0,
+   "gold_raw": "Arkansas State University",
+   "gold": [
+    "arkansas state university",
+    "arkansas state university",
+    "a public university",
+    "a public university in arkansas",
+    "a public university in the united states"
+   ],
+   "nothink_samples": [
+    "University of Mary Hardin-Baylor",
+    "University of Louisiana at Lafayette",
+    "University of Louisiana at Monroe (ULM)"
+   ],
+   "think_samples": [
+    "Texas A&M University",
+    "Katy Independent School District",
+    "University of Louisiana at Lafayette"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Songs We Didn't Write represented by?",
+   "entity": "Songs We Didn't Write",
+   "pop": 57.0,
+   "gold_raw": "Tooth & Nail Records",
+   "gold": [
+    "tooth   nail records",
+    "tooth   nail records",
+    "christian rock record label"
+   ],
+   "nothink_samples": [
+    "Atlantic Records",
+    "Big Machine Records",
+    "Atlantic Records"
+   ],
+   "think_samples": [
+    "Integrity Music",
+    "Flicker Records",
+    "Forefront Records"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Francisco Gil de Taboada die?",
+   "entity": "Francisco Gil de Taboada",
+   "pop": 60.0,
+   "gold_raw": "Madrid",
+   "gold": [
+    "madrid",
+    "madrid",
+    "spain",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Spain",
+    "Vi\u00f1a del Mar",
+    "Spain"
+   ],
+   "think_samples": [
+    "Lepanto",
+    "Seville",
+    "Aculzintla"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was John Kuempel educated?",
+   "entity": "John Kuempel",
+   "pop": 62.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "nothink_samples": [
+    "John Kuempel was educated at the University of Michigan.",
+    "University of Minnesota",
+    "University of Notre Dame"
+   ],
+   "think_samples": [
+    "University of Minnesota",
+    "University of Wisconsin-Madison",
+    "Harvard University"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "entity": "Olga Mural Field at Schoonover Stadium",
+   "pop": 64.0,
+   "gold_raw": "Kent State University",
+   "gold": [
+    "kent state university",
+    "kent state university",
+    "a public research university",
+    "a public research university in ohio",
+    "a public research university in kent  ohio"
+   ],
+   "nothink_samples": [
+    "University of Findlay",
+    "University of Nebraska at Omaha (UNO)",
+    "Olga Mural Field at Schoonover Stadium is owned by **Springfield College**."
+   ],
+   "think_samples": [
+    "University of Missouri-Kansas City",
+    "University of Nebraska at Omaha",
+    "City of Topeka"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Royal Institution of Cornwall located?",
+   "entity": "Royal Institution of Cornwall",
+   "pop": 66.0,
+   "gold_raw": "Truro",
+   "gold": [
+    "truro",
+    "truro",
+    "cornwall",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Truro",
+    "Truro",
+    "Truro"
+   ],
+   "think_samples": [
+    "Truro",
+    "Truro",
+    "Truro"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  }
+ ]
+}
