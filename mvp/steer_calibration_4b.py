@@ -40,6 +40,8 @@ def main():
     ap.add_argument("--device", default="mps")
     ap.add_argument("--quant", type=int, default=0)               # 1 = 4-bit (for 32B on VM)
     ap.add_argument("--ke", default="results/legibility/knowledge_edge_4b.json")  # entity lookup
+    ap.add_argument("--known-eval", default=None)   # JSON list [{q,gold,model_correct}] of model-KNOWN items (selectivity test); falls back to commit-targets if unset
+    ap.add_argument("--save-vec", default=None)      # np.save v_hedge {layer:vec} here (for SAE decomposition)
     ap.add_argument("--out", default="results/legibility/steer_calibration_4b.json")
     args=ap.parse_args()
     SWEEP=[int(x) for x in args.layers.split(",")]
@@ -101,6 +103,9 @@ def main():
     for L in SWEEP: print(f"  {L:>5} | {cos[L]:>+20.3f} | {norms[L]:.1f}", flush=True)
     best=args.steer_layer   # steer at the 4B workhorse layer (cos-min layer printed for reference)
     print(f"[extract] steering layer = {best} (cos={cos[best]:+.3f}); cos-min was L{min(SWEEP,key=lambda L:cos[L])}", flush=True)
+    if args.save_vec:       # persist v_hedge (+v_commit) for SAE decomposition (Neuronpedia)
+        np.save(args.save_vec, {**{L:v_hedge[L] for L in SWEEP}, **{f"commit_{L}":v_commit[L] for L in SWEEP}}, allow_pickle=True)
+        print(f"[save-vec] v_hedge/v_commit (layers {SWEEP}) -> {args.save_vec}", flush=True)
 
     # calibrate alpha to residual norm at best layer
     rn=[]
@@ -144,9 +149,13 @@ def main():
         if args.device=="mps": torch.mps.empty_cache()
         print(f"  {it['q'][:40]:40s} base->[{rec['real'][str(0.0)][:22]}] hi->[{rec['real'][str(ALPHAS[-1])][:22]}]", flush=True)
     # COMPLETING TEST: does v_hedge ALSO hedge items the model KNOWS? (calibration vs global push)
-    print("\n[steer] v_hedge on held-out KNOWN items (commit-targets) ...", flush=True)
-    result["known_eval"]=[]
-    for it in c_eval:
+    known_items=c_eval   # default: tiny commit-target set
+    if args.known_eval:  # proper known pool: model-KNOWN items from knowledge-edge (selectivity test, n>>2)
+        known_items=json.load(open(args.known_eval))
+        print(f"[known] using proper known-eval set: {len(known_items)} model-known items (vs {len(c_eval)} commit-targets)", flush=True)
+    print("\n[steer] v_hedge on held-out KNOWN items ...", flush=True)
+    result["known_eval"]=[]; result["known_n"]=len(known_items)
+    for it in known_items:
         rec=dict(q=it["q"], gold=it["gold"], baseline_correct=it["model_correct"], real={})
         for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
         result["known_eval"].append(rec)

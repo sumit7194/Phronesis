@@ -1,0 +1,102 @@
+[
+ {
+  "q": "Where is the headquarter of AFC Ajax?",
+  "gold": "Amsterdam",
+  "model_correct": "Amsterdam"
+ },
+ {
+  "q": "Where is the headquarter of Bank of Beijing?",
+  "gold": "Beijing",
+  "model_correct": "Beijing"
+ },
+ {
+  "q": "Who founded Teach For America?",
+  "gold": "Wendy Kopp",
+  "model_correct": "Wendy Kopp"
+ },
+ {
+  "q": "Where was Goodie Mob founded?",
+  "gold": "Atlanta",
+  "model_correct": "Atlanta"
+ },
+ {
+  "q": "Where is April 2010 Kohat bombings located?",
+  "gold": "Kohat",
+  "model_correct": "Kohat, Pakistan"
+ },
+ {
+  "q": "Who was Bal du moulin de la Galette created by?",
+  "gold": "Pierre-Auguste Renoir",
+  "model_correct": "Pierre-Auguste Renoir"
+ },
+ {
+  "q": "Where is \u017begocino located?",
+  "gold": "Gmina Malechowo",
+  "model_correct": "Poland"
+ },
+ {
+  "q": "Where is the headquarter of FC Kuressaare?",
+  "gold": "Kuressaare",
+  "model_correct": "Kuressaare"
+ },
+ {
+  "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+  "gold": "Dinaran Rural District",
+  "model_correct": "Iran"
+ },
+ {
+  "q": "Where was Robert Jameson educated?",
+  "gold": "University of Edinburgh",
+  "model_correct": "University of Edinburgh"
+ },
+ {
+  "q": "Who founded Iliad?",
+  "gold": "Xavier Niel",
+  "model_correct": "Xavier Niel"
+ },
+ {
+  "q": "Where is the headquarter of Plama Pleven?",
+  "gold": "Pleven",
+  "model_correct": "Pleven, Bulgaria."
+ },
+ {
+  "q": "Who was Portrait of Jacopo Strada created by?",
+  "gold": "Titian",
+  "model_correct": "Titian"
+ },
+ {
+  "q": "Who founded Planetary Resources?",
+  "gold": "Peter Diamandis",
+  "model_correct": "Eric Anderson and Peter Diamandis."
+ },
+ {
+  "q": "Who owns Interstate 696?",
+  "gold": "Michigan Department of Transportation",
+  "model_correct": "No single owner; maintained by MDOT."
+ },
+ {
+  "q": "Where is Battle of Sinop located?",
+  "gold": "Sinop",
+  "model_correct": "Sinop"
+ },
+ {
+  "q": "Which company is Leica M Monochrom produced by?",
+  "gold": "Leica Camera",
+  "model_correct": "Leica"
+ },
+ {
+  "q": "Which company is LG G2 produced by?",
+  "gold": "LG Electronics",
+  "model_correct": "LG"
+ },
+ {
+  "q": "Where is Bill Nye\u2013Ken Ham debate located?",
+  "gold": "Creation Museum",
+  "model_correct": "Creation Museum"
+ },
+ {
+  "q": "Where is 2001 Malaysian Grand Prix located?",
+  "gold": "Sepang International Circuit",
+  "model_correct": "Sepang"
+ }
+]
