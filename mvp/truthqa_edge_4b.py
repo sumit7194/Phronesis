@@ -23,6 +23,7 @@ def main():
     ap.add_argument("--k", type=int, default=10)
     ap.add_argument("--temp", type=float, default=0.7)
     ap.add_argument("--device", default="mps")
+    ap.add_argument("--quant", type=int, default=0)
     ap.add_argument("--out", default="results/legibility/truthqa_edge_4b.json")
     ap.add_argument("--status", default="results/legibility/status_tqa.json")
     args=ap.parse_args()
@@ -46,7 +47,14 @@ def main():
         except Exception: results=[]
     start=len(results)
     tok=AutoTokenizer.from_pretrained(args.model)
-    model=AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16).to(args.device).eval()
+    if getattr(args,"quant",0):
+        from transformers import BitsAndBytesConfig
+        bnb=BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                               bnb_4bit_compute_dtype=torch.float16, bnb_4bit_use_double_quant=True)
+        model=AutoModelForCausalLM.from_pretrained(args.model, quantization_config=bnb, device_map="cuda").eval()
+        args.device="cuda"
+    else:
+        model=AutoModelForCausalLM.from_pretrained(args.model, torch_dtype=torch.float16).to(args.device).eval()
     A_id=tok("A",add_special_tokens=False)["input_ids"][0]; B_id=tok("B",add_special_tokens=False)["input_ids"][0]
     print(f"[load] done ({start} resumed)", flush=True)
 

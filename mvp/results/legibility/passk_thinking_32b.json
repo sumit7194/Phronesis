@@ -1,0 +1,3015 @@
+{
+ "model": "Qwen/Qwen3-32B",
+ "k": 5,
+ "rows": [
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "entity": "Alfonso de Nigris",
+   "pop": 0.0,
+   "gold_raw": "Monterrey",
+   "gold": [
+    "monterrey",
+    "monterrey",
+    "nuevo leon",
+    "mexico"
+   ],
+   "nothink_samples": [
+    "Mexico City",
+    "Alfonso de Nigris was born in Mexico City.",
+    "Guadalajara",
+    "Alfonso de Nigris was born in Mexico City.",
+    "Alfonso de Nigris was born in Mexico City."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Li Yim Lam born?",
+   "entity": "Li Yim Lam",
+   "pop": 2.0,
+   "gold_raw": "Hong Kong",
+   "gold": [
+    "hong kong",
+    "hong kong",
+    "china"
+   ],
+   "nothink_samples": [
+    "Li Yim Lam was born in Guangdong, China.",
+    "Li Yim Lam was born in Hong Kong.",
+    "Li Yim Lam was born in Guangdong.",
+    "Li Yim Lam was born in Macau.",
+    "Hong Kong"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "entity": "Shuran, Chaharmahal and Bakhtiari",
+   "pop": 3.0,
+   "gold_raw": "Dinaran Rural District",
+   "gold": [
+    "dinaran rural district",
+    "dinaran rural district",
+    "chaharmahal and bakhtiari province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "Iran",
+    "<think>",
+    "Chaharmahal and Bakhtiari Province",
+    "Iran",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Deh Bagh, Kuzaran located?",
+   "entity": "Deh Bagh, Kuzaran",
+   "pop": 4.0,
+   "gold_raw": "Sanjabi Rural District",
+   "gold": [
+    "sanjabi rural district",
+    "sanjabi rural district",
+    "kermanshah province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Sistan and Baluchestan Province, Iran."
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Ba\u015f Diz\u0259 located?",
+   "entity": "Ba\u015f Diz\u0259",
+   "pop": 5.0,
+   "gold_raw": "Ordubad District",
+   "gold": [
+    "ordubad district",
+    "ordubad district",
+    "nakhchivan autonomous republic",
+    "azerbaijan"
+   ],
+   "nothink_samples": [
+    "Azerbaijan",
+    "Azerbaijan",
+    "Azerbaijan",
+    "Azerbaijan",
+    "Azerbaijan"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Nova Scotia Route 276 located?",
+   "entity": "Nova Scotia Route 276",
+   "pop": 6.0,
+   "gold_raw": "Nova Scotia",
+   "gold": [
+    "nova scotia",
+    "nova scotia",
+    "canada"
+   ],
+   "nothink_samples": [
+    "Nova Scotia",
+    "Nova Scotia, Canada.",
+    "Nova Scotia",
+    "Nova Scotia, Canada.",
+    "Nova Scotia, Canada."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Zeyarat-e Pain located?",
+   "entity": "Zeyarat-e Pain",
+   "pop": 7.0,
+   "gold_raw": "Jamabrud Rural District",
+   "gold": [
+    "jamabrud rural district",
+    "jamabrud rural district",
+    "tehran province",
+    "iran"
+   ],
+   "nothink_samples": [
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran",
+    "Iran"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is \u017begocino located?",
+   "entity": "\u017begocino",
+   "pop": 8.0,
+   "gold_raw": "Gmina Malechowo",
+   "gold": [
+    "gmina malechowo",
+    "gmina malechowo",
+    "s awno county",
+    "west pomeranian voivodeship",
+    "poland"
+   ],
+   "nothink_samples": [
+    "Poland",
+    "Poland",
+    "Poland",
+    "Poland",
+    "Poland"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of Murder in Grub Street?",
+   "entity": "Murder in Grub Street",
+   "pop": 9.0,
+   "gold_raw": "Bruce Alexander Cook",
+   "gold": [
+    "bruce alexander cook",
+    "bruce alexander cook",
+    "bruce cook",
+    "an american writer"
+   ],
+   "nothink_samples": [
+    "Anthony Horowitz",
+    "Anthony Horowitz",
+    "Anthony Horowitz",
+    "Anthony Horowitz",
+    "C.J. Sansom"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Elizaveta Axenova born?",
+   "entity": "Elizaveta Axenova",
+   "pop": 10.0,
+   "gold_raw": "Krasnoyarsk",
+   "gold": [
+    "krasnoyarsk",
+    "krasnoyarsk",
+    "krasnoyarsk krai",
+    "russia"
+   ],
+   "nothink_samples": [
+    "Minsk",
+    "Minsk",
+    "Minsk",
+    "Riga",
+    "Minsk"
+   ],
+   "think_samples": [
+    "<think>",
+    "Leningrad",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Jock Morgan born?",
+   "entity": "Jock Morgan",
+   "pop": 11.0,
+   "gold_raw": "Penicuik",
+   "gold": [
+    "penicuik",
+    "penicuik",
+    "midlothian",
+    "scotland",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Jock Morgan was born in Dunedin, New Zealand.",
+    "Jock Morgan was born in Scotland.",
+    "Jock Morgan was born in Scotland.",
+    "Jock Morgan was born in Scotland.",
+    "England"
+   ],
+   "think_samples": [
+    "<think>",
+    "Glasgow",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Gyula Sz\u00e9ch\u00e9nyi die?",
+   "entity": "Gyula Sz\u00e9ch\u00e9nyi",
+   "pop": 12.0,
+   "gold_raw": "Budapest",
+   "gold": [
+    "budapest",
+    "budapest",
+    "hungary",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Gyula Sz\u00e9ch\u00e9nyi died in **Vienna**.",
+    "Vienna",
+    "Vienna",
+    "Vienna",
+    "Gyula Sz\u00e9ch\u00e9nyi died in Vienna."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "entity": "April 2010 Kohat bombings",
+   "pop": 12.0,
+   "gold_raw": "Kohat",
+   "gold": [
+    "kohat",
+    "kohat",
+    "khyber pakhtunkhwa",
+    "pakistan"
+   ],
+   "nothink_samples": [
+    "Kohat, Pakistan",
+    "Kohat, Pakistan",
+    "Kohat, Pakistan.",
+    "Kohat, Pakistan",
+    "Kohat, Pakistan"
+   ],
+   "think_samples": [
+    "Kohat",
+    "Kohat",
+    "Kohat, Pakistan",
+    "Kohat, Pakistan.",
+    "Kohat"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Cultural Exchanges festival located?",
+   "entity": "Cultural Exchanges festival",
+   "pop": 13.0,
+   "gold_raw": "De Montfort University",
+   "gold": [
+    "de montfort university",
+    "de montfort university",
+    "leicester",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Cultural Exchanges Festival is located in **Guangzhou, China**.",
+    "Cultural Exchanges festival is located in **New York City**.",
+    "Cultural Exchanges Festival is located in **London**.",
+    "Venice",
+    "Cultural Exchanges Festival is located in **Wuhan**."
+   ],
+   "think_samples": [
+    "<think>",
+    "Chengdu",
+    "London",
+    "<think>",
+    ""
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Florence Township located?",
+   "entity": "Florence Township",
+   "pop": 14.0,
+   "gold_raw": "Burlington County",
+   "gold": [
+    "burlington county",
+    "burlington county",
+    "new jersey",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Michigan, USA.",
+    "New Jersey, USA",
+    "Michigan",
+    "Michigan",
+    "Michigan, USA."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "New Jersey",
+    "<think>",
+    "New Jersey"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Maccabi Haifa?",
+   "entity": "Maccabi Haifa",
+   "pop": 15.0,
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "nothink_samples": [
+    "Haifa, Israel.",
+    "Haifa, Israel",
+    "Haifa, Israel.",
+    "Haifa, Israel.",
+    "Haifa, Israel"
+   ],
+   "think_samples": [
+    "<think>",
+    "Haifa",
+    "Haifa",
+    "Haifa",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "entity": "Nathan Rocyn-Jones",
+   "pop": 16.0,
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "University of Oxford",
+    "University of Oxford",
+    "University of Wales Trinity Saint David",
+    "University of Oxford",
+    "University of Wales Trinity Saint David"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Walne located?",
+   "entity": "Walne",
+   "pop": 17.0,
+   "gold_raw": "Gmina Nowinka",
+   "gold": [
+    "gmina nowinka",
+    "gmina nowinka",
+    "podlaskie voivodeship",
+    "poland"
+   ],
+   "nothink_samples": [
+    "Walne is located in Poland.",
+    "England",
+    "Wales",
+    "Walne is located in England.",
+    "England"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Gilly Campbell die?",
+   "entity": "Gilly Campbell",
+   "pop": 18.0,
+   "gold_raw": "Los Angeles",
+   "gold": [
+    "los angeles",
+    "los angeles",
+    "california",
+    "united states of america"
+   ],
+   "nothink_samples": [
+    "Gilly Campbell died in **California**.",
+    "Gilly Campbell died in **Los Angeles**.",
+    "Gilly Campbell died in California.",
+    "Gilly Campbell died in **London**.",
+    "Gilly Campbell died in **Los Angeles**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Santa Monica",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Thomas J. Van Alstyne educated?",
+   "entity": "Thomas J. Van Alstyne",
+   "pop": 19.0,
+   "gold_raw": "Hamilton College",
+   "gold": [
+    "hamilton college",
+    "hamilton college",
+    "a private college",
+    "a college"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "Columbia University",
+    "Harvard University",
+    "Columbia University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Hofkirchen im M\u00fchlkreis located?",
+   "entity": "Hofkirchen im M\u00fchlkreis",
+   "pop": 20.0,
+   "gold_raw": "Rohrbach District",
+   "gold": [
+    "rohrbach district",
+    "rohrbach district",
+    "upper austria",
+    "austria"
+   ],
+   "nothink_samples": [
+    "Austria",
+    "Austria",
+    "Austria",
+    "Austria",
+    "Austria"
+   ],
+   "think_samples": [
+    "Upper Austria",
+    "<think>",
+    "Austria",
+    "<think>",
+    "Upper Austria"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Where is Askerhallen located?",
+   "entity": "Askerhallen",
+   "pop": 21.0,
+   "gold_raw": "Asker",
+   "gold": [
+    "asker",
+    "asker",
+    "akershus",
+    "norway"
+   ],
+   "nothink_samples": [
+    "Asker, Norway.",
+    "Askerhallen is located in Asker, Norway.",
+    "Askerhallen is located in Asker, Norway.",
+    "Asker, Norway.",
+    "Asker, Norway"
+   ],
+   "think_samples": [
+    "Askerhallen is located in Asker, Norway.",
+    "<think>",
+    "<think>",
+    "Asker, Norway.",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": true
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "entity": "Ambrosini SAI.2",
+   "pop": 22.0,
+   "gold_raw": "SAI Ambrosini",
+   "gold": [
+    "sai ambrosini",
+    "sai ambrosini",
+    "italian aircraft manufacturer",
+    "italian company"
+   ],
+   "nothink_samples": [
+    "Aermacchi",
+    "Aermacchi",
+    "Ambrosini S.p.A.",
+    "Ambrosini SAI.2 is produced by **Ambrosini**.",
+    "Aermacchi"
+   ],
+   "think_samples": [
+    "<think>",
+    "Aeronautica Ambrosini",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Huron (Canadian band) represented by?",
+   "entity": "Huron (Canadian band)",
+   "pop": 23.0,
+   "gold_raw": "Latent Recordings",
+   "gold": [
+    "latent recordings",
+    "latent recordings",
+    "a canadian record label"
+   ],
+   "nothink_samples": [
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Dine Alone Records**.",
+    "Huron is represented by **Sony Music Canada**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Stowe Open located?",
+   "entity": "Stowe Open",
+   "pop": 24.0,
+   "gold_raw": "Stowe",
+   "gold": [
+    "stowe",
+    "stowe",
+    "lamoille county",
+    "vermont",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Stowe Open is located in **Vermont**.",
+    "Vermont",
+    "Stowe Open is located in **Stowe, Vermont**.",
+    "Stowe Open is located in **Vermont**.",
+    "Vermont"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Vermont",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Legh Old Hall located?",
+   "entity": "Legh Old Hall",
+   "pop": 25.0,
+   "gold_raw": "Mottram St Andrew",
+   "gold": [
+    "mottram st andrew",
+    "mottram st andrew",
+    "cheshire east",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Cheshire, England",
+    "Cheshire, England",
+    "Cheshire, England",
+    "Cheshire, England.",
+    "Cheshire, England"
+   ],
+   "think_samples": [
+    "<think>",
+    "Cheshire",
+    "Knutsford",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Flaoui located?",
+   "entity": "Flaoui",
+   "pop": 26.0,
+   "gold_raw": "Beqaa Governorate",
+   "gold": [
+    "beqaa governorate",
+    "beqaa governorate",
+    "lebanon"
+   ],
+   "nothink_samples": [
+    "Morocco",
+    "Tunisia",
+    "Morocco",
+    "Tunisia",
+    "Tunisia"
+   ],
+   "think_samples": [
+    "Morocco",
+    "<think>",
+    "Morocco.",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Jan Westcott educated?",
+   "entity": "Jan Westcott",
+   "pop": 28.0,
+   "gold_raw": "Swarthmore College",
+   "gold": [
+    "swarthmore college",
+    "swarthmore college",
+    "swarthmore  pennsylvania",
+    "pennsylvania",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Oxford",
+    "Oxford University",
+    "Oxford University",
+    "Oxford",
+    "St. Hilda's School, Waterloo, Ontario"
+   ],
+   "think_samples": [
+    "<think>",
+    "University of Manchester",
+    "University of Oxford",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Asocijacija Radioamatera Bosne i Hercegovine?",
+   "entity": "Asocijacija Radioamatera Bosne i Hercegovine",
+   "pop": 29.0,
+   "gold_raw": "Sarajevo",
+   "gold": [
+    "sarajevo",
+    "sarajevo",
+    "bosnia and herzegovina",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Sarajevo",
+    "Sarajevo",
+    "Sarajevo",
+    "Sarajevo",
+    "Sarajevo"
+   ],
+   "think_samples": [
+    "<think>",
+    "Sarajevo",
+    "Sarajevo",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Robert K. Sweeney educated?",
+   "entity": "Robert K. Sweeney",
+   "pop": 31.0,
+   "gold_raw": "Adelphi University",
+   "gold": [
+    "adelphi university",
+    "adelphi university",
+    "garden city  new york",
+    "new york",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "University of California, Los Angeles",
+    "Harvard University",
+    "Harvard University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Big Data Partnership?",
+   "entity": "Big Data Partnership",
+   "pop": 32.0,
+   "gold_raw": "London",
+   "gold": [
+    "london",
+    "london",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Big Data Partnership is headquartered in **London**.",
+    "Big Data Partnership is headquartered in **Toronto**.",
+    "Big Data Partnership is headquartered in **Dubai**.",
+    "Big Data Partnership is headquartered in **Dubai, UAE**.",
+    "Big Data Partnership is headquartered in **London**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Giuseppe Avitrano die?",
+   "entity": "Giuseppe Avitrano",
+   "pop": 34.0,
+   "gold_raw": "Naples",
+   "gold": [
+    "naples",
+    "naples",
+    "campania",
+    "italy"
+   ],
+   "nothink_samples": [
+    "Avetrano",
+    "Giuseppe Avitabile died in Naples.",
+    "Giuseppe Avetrano died in Naples.",
+    "Caserta",
+    "Giuseppe Avetrano died in Naples."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Sandra Chung educated?",
+   "entity": "Sandra Chung",
+   "pop": 35.0,
+   "gold_raw": "Harvard University",
+   "gold": [
+    "harvard university",
+    "harvard university",
+    "cambridge  massachusetts",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Yale University",
+    "Harvard University",
+    "Sandra Chung was educated at Harvard University.",
+    "Harvard University",
+    "Harvard University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "University of British Columbia",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Which company is MV Aqueity produced by?",
+   "entity": "MV Aqueity",
+   "pop": 36.0,
+   "gold_raw": "A. & J. Inglis",
+   "gold": [
+    "a    j  inglis",
+    "a    j  inglis",
+    "a ship building company"
+   ],
+   "nothink_samples": [
+    "Carnival Corporation",
+    "COSCO Shipping Heavy Industry",
+    "COSCO Shipping Heavy Industry",
+    "MV Aqueity is produced by **Mitsui O.S.K. Lines (MOL)**.",
+    "COSCO Shipping Heavy Industry"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Oberhaid located?",
+   "entity": "Oberhaid",
+   "pop": 38.0,
+   "gold_raw": "Westerwaldkreis",
+   "gold": [
+    "westerwaldkreis",
+    "westerwaldkreis",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "nothink_samples": [
+    "Germany",
+    "Germany",
+    "Germany",
+    "Germany",
+    "Germany"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Robert M. Wallace die?",
+   "entity": "Robert M. Wallace",
+   "pop": 40.0,
+   "gold_raw": "Magnolia",
+   "gold": [
+    "magnolia",
+    "magnolia",
+    "columbia county",
+    "arkansas",
+    "united states"
+   ],
+   "nothink_samples": [
+    "California",
+    "Robert M. Wallace died in Bethesda.",
+    "Robert M. Wallace died in **California**.",
+    "California",
+    "Robert M. Wallace died in Santa Monica."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "California"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "entity": "Bharathi Puthakalayam",
+   "pop": 41.0,
+   "gold_raw": "Chennai",
+   "gold": [
+    "chennai",
+    "chennai",
+    "tamil nadu",
+    "india"
+   ],
+   "nothink_samples": [
+    "Chennai",
+    "Chennai",
+    "Chennai",
+    "Chennai",
+    "Chennai"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "entity": "Kamal Abbas",
+   "pop": 43.0,
+   "gold_raw": "Egypt",
+   "gold": [
+    "egypt",
+    "egypt",
+    "north africa",
+    "africa"
+   ],
+   "nothink_samples": [
+    "Kamal Abbas was born in India.",
+    "Pakistan",
+    "Kamal Abbas was born in India.",
+    "Kamal Abbas was born in Baghdad.",
+    "Kamal Abbas was born in Pakistan."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Lahore"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "entity": "Benelux Film Distributors",
+   "pop": 44.0,
+   "gold_raw": "Ghent",
+   "gold": [
+    "ghent",
+    "ghent",
+    "east flanders",
+    "belgium"
+   ],
+   "nothink_samples": [
+    "Benelux Film Distributors does not have a headquarters, as it is not a known ent",
+    "Luxembourg City",
+    "Luxembourg City",
+    "Brussels",
+    "Brussels"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of The Mohole Mystery?",
+   "entity": "The Mohole Mystery",
+   "pop": 46.0,
+   "gold_raw": "Hugh Walters",
+   "gold": [
+    "hugh walters",
+    "hugh walters",
+    "a british actor",
+    "a british person"
+   ],
+   "nothink_samples": [
+    "Clive Cussler",
+    "Clive Cussler",
+    "Arthur C. Clarke",
+    "John W. Lloyd",
+    "Clive Cussler"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Alessandro Sgrigna born?",
+   "entity": "Alessandro Sgrigna",
+   "pop": 48.0,
+   "gold_raw": "Rome",
+   "gold": [
+    "rome",
+    "rome",
+    "lazio",
+    "italy"
+   ],
+   "nothink_samples": [
+    "Rimini",
+    "Alessandro Sgrigna was born in **Rimini**.",
+    "Italy",
+    "Rimini",
+    "Rimini"
+   ],
+   "think_samples": [
+    "Rimini",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is 1899 U.S. Open located?",
+   "entity": "1899 U.S. Open",
+   "pop": 49.0,
+   "gold_raw": "Baltimore Country Club",
+   "gold": [
+    "baltimore country club",
+    "baltimore country club",
+    "baltimore  maryland",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Pinehurst Resort",
+    "Pinehurst Resort",
+    "Pinehurst Resort",
+    "Peabody, Massachusetts",
+    "Pinehurst Resort"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Red Rolfe Field at Biondi Park?",
+   "entity": "Red Rolfe Field at Biondi Park",
+   "pop": 51.0,
+   "gold_raw": "Dartmouth College",
+   "gold": [
+    "dartmouth college",
+    "dartmouth college",
+    "a private university"
+   ],
+   "nothink_samples": [
+    "City of San Leandro",
+    "City of San Leandro",
+    "City of East Rutherford",
+    "City of San Leandro",
+    "St. John's University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Brittainey Raven educated?",
+   "entity": "Brittainey Raven",
+   "pop": 53.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "austin  texas",
+    "texas"
+   ],
+   "nothink_samples": [
+    "Howard University",
+    "Howard University",
+    "Howard University",
+    "Howard University",
+    "Howard University"
+   ],
+   "think_samples": [
+    "",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Tomlinson Stadium\u2013Kell Field?",
+   "entity": "Tomlinson Stadium\u2013Kell Field",
+   "pop": 55.0,
+   "gold_raw": "Arkansas State University",
+   "gold": [
+    "arkansas state university",
+    "arkansas state university",
+    "a public university",
+    "a public university in arkansas",
+    "a public university in the united states"
+   ],
+   "nothink_samples": [
+    "University of Mary Hardin-Baylor",
+    "University of Louisiana at Lafayette",
+    "University of Louisiana at Monroe (ULM)",
+    "University of New Orleans",
+    "University of Louisiana at Lafayette"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Songs We Didn't Write represented by?",
+   "entity": "Songs We Didn't Write",
+   "pop": 57.0,
+   "gold_raw": "Tooth & Nail Records",
+   "gold": [
+    "tooth   nail records",
+    "tooth   nail records",
+    "christian rock record label"
+   ],
+   "nothink_samples": [
+    "Atlantic Records",
+    "Big Machine Records",
+    "Atlantic Records",
+    "Songs We Didn't Write is represented by **Atlantic Records**.",
+    "Big Machine Records"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Francisco Gil de Taboada die?",
+   "entity": "Francisco Gil de Taboada",
+   "pop": 60.0,
+   "gold_raw": "Madrid",
+   "gold": [
+    "madrid",
+    "madrid",
+    "spain",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Spain",
+    "Vi\u00f1a del Mar",
+    "Spain",
+    "Madrid",
+    "Spain"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was John Kuempel educated?",
+   "entity": "John Kuempel",
+   "pop": 62.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "nothink_samples": [
+    "John Kuempel was educated at the University of Michigan.",
+    "University of Minnesota",
+    "University of Notre Dame",
+    "John Kuempel was educated at the University of Wisconsin\u2013Madison.",
+    "John Kuempel was educated at the University of Chicago."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns Olga Mural Field at Schoonover Stadium?",
+   "entity": "Olga Mural Field at Schoonover Stadium",
+   "pop": 64.0,
+   "gold_raw": "Kent State University",
+   "gold": [
+    "kent state university",
+    "kent state university",
+    "a public research university",
+    "a public research university in ohio",
+    "a public research university in kent  ohio"
+   ],
+   "nothink_samples": [
+    "University of Findlay",
+    "University of Nebraska at Omaha (UNO)",
+    "Olga Mural Field at Schoonover Stadium is owned by **Springfield College**.",
+    "University of Indianapolis",
+    "St. Louis University."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Royal Institution of Cornwall located?",
+   "entity": "Royal Institution of Cornwall",
+   "pop": 66.0,
+   "gold_raw": "Truro",
+   "gold": [
+    "truro",
+    "truro",
+    "cornwall",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Truro",
+    "Truro",
+    "Truro",
+    "Truro",
+    "Truro"
+   ],
+   "think_samples": [
+    "<think>",
+    "Truro",
+    "Truro",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Plama Pleven?",
+   "entity": "Plama Pleven",
+   "pop": 68.0,
+   "gold_raw": "Pleven",
+   "gold": [
+    "pleven",
+    "pleven",
+    "bulgaria",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Pleven, Bulgaria",
+    "Pleven, Bulgaria",
+    "Pleven, Bulgaria.",
+    "Pleven, Bulgaria.",
+    "Pleven, Bulgaria."
+   ],
+   "think_samples": [
+    "<think>",
+    "Pleven",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of Al Que Quiere!?",
+   "entity": "Al Que Quiere!",
+   "pop": 71.0,
+   "gold_raw": "William Carlos Williams",
+   "gold": [
+    "william carlos williams",
+    "william carlos williams",
+    "an american poet",
+    "a poet"
+   ],
+   "nothink_samples": [
+    "Roberto Arlt",
+    "Roberto Arlt",
+    "Jos\u00e9 Rizal",
+    "Jos\u00e9 Rizal",
+    "Ricky Martin"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of The Elephant of Surprise?",
+   "entity": "The Elephant of Surprise",
+   "pop": 73.0,
+   "gold_raw": "Brent Hartinger",
+   "gold": [
+    "brent hartinger",
+    "brent hartinger",
+    "an american writer"
+   ],
+   "nothink_samples": [
+    "Haruki Murakami",
+    "Haruki Murakami",
+    "Chinua Achebe",
+    "David E. Williams",
+    "Uche Ndundu"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns The Maui News?",
+   "entity": "The Maui News",
+   "pop": 75.0,
+   "gold_raw": "Ogden Newspapers",
+   "gold": [
+    "ogden newspapers",
+    "ogden newspapers",
+    "a newspaper publisher",
+    "a company"
+   ],
+   "nothink_samples": [
+    "Gannett Co., Inc.",
+    "Gannett Co., Inc.",
+    "Gannett Co., Inc.",
+    "Gannett Co., Inc.",
+    "Gannett Co., Inc."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Black Press Media Group",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who owns National Cycling Centre?",
+   "entity": "National Cycling Centre",
+   "pop": 77.0,
+   "gold_raw": "Manchester",
+   "gold": [
+    "manchester",
+    "manchester",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "UK Sport",
+    "UK Sport",
+    "UK Sport",
+    "UK Sport",
+    "UK Sport"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "British Cycling",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Samantha Gillison educated?",
+   "entity": "Samantha Gillison",
+   "pop": 80.0,
+   "gold_raw": "Brown University",
+   "gold": [
+    "brown university",
+    "brown university",
+    "providence  rhode island",
+    "united states"
+   ],
+   "nothink_samples": [
+    "University of Oxford",
+    "Samantha Gillison was educated at the University of Cambridge.",
+    "Samantha Gillison was educated at the University of Oxford.",
+    "University of Sydney",
+    "Oxford University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Sylvia Young Theatre School",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Joseph Chappell Hutcheson, Jr. educated?",
+   "entity": "Joseph Chappell Hutcheson, Jr.",
+   "pop": 83.0,
+   "gold_raw": "University of Texas at Austin",
+   "gold": [
+    "university of texas at austin",
+    "university of texas at austin",
+    "university of texas",
+    "texas",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+    "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+    "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+    "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+    "Princeton University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Ernest Go\u00fcin die?",
+   "entity": "Ernest Go\u00fcin",
+   "pop": 86.0,
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "nothink_samples": [
+    "Ernest Go\u00fcin died in Paris.",
+    "Ernest Go\u00fcin died in Paris.",
+    "Ernest Go\u00fcin died in Paris.",
+    "Ernest Go\u00fcin died in Paris.",
+    "Ernest Go\u00fcin died in **Paris**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Paris"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who performed UnMerry Melodies?",
+   "entity": "UnMerry Melodies",
+   "pop": 88.0,
+   "gold_raw": "Bigwig",
+   "gold": [
+    "bigwig",
+    "bigwig",
+    "a punk band",
+    "a band"
+   ],
+   "nothink_samples": [
+    "Mel Brooks",
+    "Al Jolson",
+    "Mel Brooks",
+    "Mel Blanc",
+    "Mel Brooks"
+   ],
+   "think_samples": [
+    "<think>",
+    "The Partridge Family",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Chester D. Hubbard educated?",
+   "entity": "Chester D. Hubbard",
+   "pop": 91.0,
+   "gold_raw": "Wesleyan University",
+   "gold": [
+    "wesleyan university",
+    "wesleyan university",
+    "middletown  connecticut",
+    "connecticut",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Chester D. Hubbard was educated at the University of Minnesota.",
+    "Chester D. Hubbard was educated at the University of Minnesota.",
+    "Chester D. Hubbard was educated at the University of Kansas.",
+    "Chester D. Hubbard was educated at the University of Nebraska.",
+    "Chester D. Hubbard was educated at the University of Chicago."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Henry Becque die?",
+   "entity": "Henry Becque",
+   "pop": 94.0,
+   "gold_raw": "Paris",
+   "gold": [
+    "paris",
+    "paris",
+    "ile de france",
+    "france"
+   ],
+   "nothink_samples": [
+    "Brussels",
+    "Paris",
+    "Brussels",
+    "Paris",
+    "Paris"
+   ],
+   "think_samples": [
+    "<think>",
+    "Paris",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of Witching Culture?",
+   "entity": "Witching Culture",
+   "pop": 97.0,
+   "gold_raw": "Sabina Magliocco",
+   "gold": [
+    "sabina magliocco",
+    "sabina magliocco",
+    "american folklorist",
+    "american"
+   ],
+   "nothink_samples": [
+    "Linda Hess",
+    "Lorri Taylor",
+    "Linda Hoffman",
+    "Larissa Lai",
+    "Linda S. Frederick"
+   ],
+   "think_samples": [
+    "<think>",
+    "Sabina Magliocco",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is High Places represented by?",
+   "entity": "High Places",
+   "pop": 100.0,
+   "gold_raw": "Thrill Jockey",
+   "gold": [
+    "thrill jockey",
+    "thrill jockey",
+    "an independent record label"
+   ],
+   "nothink_samples": [
+    "Merge Records",
+    "Sub Pop",
+    "Sub Pop",
+    "Sub Pop",
+    "Sub Pop"
+   ],
+   "think_samples": [
+    "<think>",
+    "Kranky",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of 44 Blue Productions?",
+   "entity": "44 Blue Productions",
+   "pop": 104.0,
+   "gold_raw": "Studio City",
+   "gold": [
+    "studio city",
+    "studio city",
+    "los angeles",
+    "california",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Los Angeles",
+    "Los Angeles",
+    "44 Blue Productions headquarters is in **Los Angeles**.",
+    "New York City",
+    "Los Angeles"
+   ],
+   "think_samples": [
+    "New York",
+    "London",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Irene Hughes born?",
+   "entity": "Irene Hughes",
+   "pop": 108.0,
+   "gold_raw": "Tennessee",
+   "gold": [
+    "tennessee",
+    "tennessee",
+    "united states of america"
+   ],
+   "nothink_samples": [
+    "Irene Hughes was born in Ireland.",
+    "Irene Hughes was born in Canada.",
+    "Irene Hughes was born in Ireland.",
+    "Irene Hughes was born in Dublin.",
+    "Irene Hughes was born in Ireland."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Liverpool",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of 10th Division?",
+   "entity": "10th Division",
+   "pop": 111.0,
+   "gold_raw": "Nagoya",
+   "gold": [
+    "nagoya",
+    "nagoya",
+    "aichi prefecture",
+    "japan"
+   ],
+   "nothink_samples": [
+    "United States Army Center of Military History",
+    "Seoul",
+    "Seoul",
+    "Rajshahi",
+    "Pyongyang"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was Allegory of Virtue and Vice created by?",
+   "entity": "Allegory of Virtue and Vice",
+   "pop": 115.0,
+   "gold_raw": "Lorenzo Lotto",
+   "gold": [
+    "lorenzo lotto",
+    "lorenzo lotto",
+    "an italian painter",
+    "a painter"
+   ],
+   "nothink_samples": [
+    "William Blake",
+    "Allegory of Virtue and Vice was created by **Sandro Botticelli**.",
+    "William Blake",
+    "Michelangelo",
+    "Albrecht D\u00fcrer"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Titian",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Unknown Session represented by?",
+   "entity": "Unknown Session",
+   "pop": 119.0,
+   "gold_raw": "Columbia Records",
+   "gold": [
+    "columbia records",
+    "columbia records",
+    "sony music entertainment"
+   ],
+   "nothink_samples": [
+    "Unknown Session is represented by **Atlantic Records**.",
+    "Unknown Session is represented by **XL Recordings**.",
+    "Unknown Session is not represented by a music label.",
+    "Unknown Session is not represented by a music label.",
+    "Unknown Session is not represented by a music label."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Zero Knowledge Systems?",
+   "entity": "Zero Knowledge Systems",
+   "pop": 124.0,
+   "gold_raw": "Montreal",
+   "gold": [
+    "montreal",
+    "montreal",
+    "quebec",
+    "canada"
+   ],
+   "nothink_samples": [
+    "Zero Knowledge Systems is headquartered in **Toronto**.",
+    "Tel Aviv",
+    "New York",
+    "New York",
+    "Zero Knowledge Systems is headquartered in **Zurich, Switzerland**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was Portrait of Jacopo Strada created by?",
+   "entity": "Portrait of Jacopo Strada",
+   "pop": 128.0,
+   "gold_raw": "Titian",
+   "gold": [
+    "titian",
+    "titian",
+    "an italian painter",
+    "a painter"
+   ],
+   "nothink_samples": [
+    "Titian",
+    "Titian",
+    "Titian",
+    "Titian",
+    "Titian"
+   ],
+   "think_samples": [
+    "Giuseppe Arcimboldo",
+    "Titian",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was Captain Nathan Hale created by?",
+   "entity": "Captain Nathan Hale",
+   "pop": 132.0,
+   "gold_raw": "Bela Pratt",
+   "gold": [
+    "bela pratt",
+    "bela pratt",
+    "an american artist"
+   ],
+   "nothink_samples": [
+    "Captain Nathan Hale was created by **Stan Lee**.",
+    "Captain Nathan Hale was created by Joe Simon and Jack Kirby.",
+    "Captain Nathan Hale was created by **Harley K. Miller**.",
+    "John Ford.",
+    "Captain Nathan Hale was created by **DC Comics**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Daniel Vierge die?",
+   "entity": "Daniel Vierge",
+   "pop": 136.0,
+   "gold_raw": "Boulogne-Billancourt",
+   "gold": [
+    "boulogne billancourt",
+    "boulogne billancourt",
+    "hauts de seine",
+    "ile de france",
+    "france"
+   ],
+   "nothink_samples": [
+    "Daniel Vierge died in **Paris**.",
+    "Ch\u00e2lons-en-Champagne",
+    "Montpellier",
+    "Rennes",
+    "Paris"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Saint-Bonnet-en-Champsaur"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "entity": "S\u00fcnb\u00fcl Efendi",
+   "pop": 141.0,
+   "gold_raw": "Istanbul",
+   "gold": [
+    "istanbul",
+    "istanbul",
+    "turkey",
+    "asia"
+   ],
+   "nothink_samples": [
+    "Izmir",
+    "Izmir",
+    "S\u00fcleymaniye Mosque",
+    "Izmir",
+    "Izmir"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Istanbul"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Maqsood Ahmed die?",
+   "entity": "Maqsood Ahmed",
+   "pop": 146.0,
+   "gold_raw": "Rawalpindi",
+   "gold": [
+    "rawalpindi",
+    "rawalpindi",
+    "punjab  pakistan",
+    "pakistan"
+   ],
+   "nothink_samples": [
+    "Islamabad",
+    "Lahore",
+    "Maqsood Ahmed died in **Pakistan**.",
+    "Pakistan",
+    "Lahore"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "Karachi",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of Pages Stained With Blood?",
+   "entity": "Pages Stained With Blood",
+   "pop": 151.0,
+   "gold_raw": "Mamoni Raisom Goswami",
+   "gold": [
+    "mamoni raisom goswami",
+    "mamoni raisom goswami",
+    "indira goswami",
+    "an indian writer"
+   ],
+   "nothink_samples": [
+    "John Lescroart",
+    "Don DeLillo",
+    "W. E. B. Griffin",
+    "David C. Jones",
+    "R. S. Surtees"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did William Coxe die?",
+   "entity": "William Coxe",
+   "pop": 156.0,
+   "gold_raw": "Bemerton",
+   "gold": [
+    "bemerton",
+    "bemerton",
+    "wiltshire",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "William Coxe died in **England**.",
+    "Westminster",
+    "Cheltenham",
+    "New York City",
+    "Philadelphia."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Carl Otto Czeschka die?",
+   "entity": "Carl Otto Czeschka",
+   "pop": 160.0,
+   "gold_raw": "Hamburg",
+   "gold": [
+    "hamburg",
+    "hamburg",
+    "germany",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Vienna",
+    "Vienna",
+    "Vienna",
+    "Vienna",
+    "Vienna"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is Pierre Blanchar's child?",
+   "entity": "Pierre Blanchar",
+   "pop": 165.0,
+   "gold_raw": "Dominique Blanchar",
+   "gold": [
+    "dominique blanchar",
+    "dominique blanchar",
+    "a french actress",
+    "a woman"
+   ],
+   "nothink_samples": [
+    "Pierre Blanchar's child is **\u00c9lisabeth**.",
+    "Sophie Blanchar",
+    "Pierre Boulle.",
+    "Sophie Blanchar",
+    "Jeanne d'Arc (Arc de Triomphe)"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of \u0130dmanoca\u011f\u0131?",
+   "entity": "\u0130dmanoca\u011f\u0131",
+   "pop": 170.0,
+   "gold_raw": "Trabzon",
+   "gold": [
+    "trabzon",
+    "trabzon",
+    "turkey",
+    "asia"
+   ],
+   "nothink_samples": [
+    "\u0130stanbul",
+    "Izmir",
+    "\u0130stanbul",
+    "\u0130zmir",
+    "\u0130stanbul"
+   ],
+   "think_samples": [
+    "Trabzon",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": true,
+   "nothink_pass1": false,
+   "think_pass1": true
+  },
+  {
+   "q": "Which company is USS Baya produced by?",
+   "entity": "USS Baya",
+   "pop": 175.0,
+   "gold_raw": "General Dynamics Electric Boat",
+   "gold": [
+    "general dynamics electric boat",
+    "general dynamics electric boat",
+    "general dynamics corporation",
+    "general dynamics"
+   ],
+   "nothink_samples": [
+    "Boeing",
+    "General Dynamics Electric Boat",
+    "General Dynamics Electric Boat",
+    "General Dynamics Electric Boat",
+    "USS Baya was produced by the **Electric Boat Company**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of Bit Managers?",
+   "entity": "Bit Managers",
+   "pop": 180.0,
+   "gold_raw": "Barcelona",
+   "gold": [
+    "barcelona",
+    "barcelona",
+    "catalonia",
+    "spain"
+   ],
+   "nothink_samples": [
+    "Bit Managers is headquartered in **Switzerland**.",
+    "Luxembourg",
+    "Bit Managers is headquartered in **Switzerland**.",
+    "Bit Managers is based in Singapore.",
+    "Singapore"
+   ],
+   "think_samples": [
+    "<think>",
+    "Zug, Switzerland",
+    "<think>",
+    "London",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Haifa bus 16 suicide bombing located?",
+   "entity": "Haifa bus 16 suicide bombing",
+   "pop": 186.0,
+   "gold_raw": "Haifa",
+   "gold": [
+    "haifa",
+    "haifa",
+    "israel",
+    "middle east"
+   ],
+   "nothink_samples": [
+    "Haifa, Israel",
+    "Haifa, Israel",
+    "Haifa, Israel",
+    "Haifa, Israel.",
+    "Haifa Bus 16 suicide bombing is located in **Haifa, Israel**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was Lying Cow created by?",
+   "entity": "Lying Cow",
+   "pop": 193.0,
+   "gold_raw": "Vincent van Gogh",
+   "gold": [
+    "vincent van gogh",
+    "vincent van gogh",
+    "a dutch painter",
+    "a painter"
+   ],
+   "nothink_samples": [
+    "Lying Cow was created by **Yiying Lu**.",
+    "Lying Cow was created by **Bing**.",
+    "Lying Cow was created by **Kwame Nkrumah**.",
+    "David Herman",
+    "Lying Cow was created by a Chinese netizen named \"Xiaohongniu\" (Little Red Bull)"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Jorge Jos\u00e9 Emiliano dos Santos die?",
+   "entity": "Jorge Jos\u00e9 Emiliano dos Santos",
+   "pop": 200.0,
+   "gold_raw": "Rio de Janeiro",
+   "gold": [
+    "rio de janeiro",
+    "rio de janeiro",
+    "brazil",
+    "south america"
+   ],
+   "nothink_samples": [
+    "Rio de Janeiro",
+    "Jorge Jos\u00e9 Emiliano dos Santos died in **Brazil**.",
+    "Rio de Janeiro",
+    "Brazil",
+    "Croatia"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Eric S. Hatch die?",
+   "entity": "Eric S. Hatch",
+   "pop": 207.0,
+   "gold_raw": "Torrington",
+   "gold": [
+    "torrington",
+    "torrington",
+    "litchfield county",
+    "connecticut",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Eric S. Hatch died in **California**.",
+    "Eric S. Hatch died in **California**.",
+    "Eric S. Hatch died in **Albuquerque**.",
+    "Eric S. Hatch died in **Phoenix, Arizona**.",
+    "Eric S. Hatch died in Santa Fe."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Ann Arbor, Michigan"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who performed Crime as Forgiven by Against Me!?",
+   "entity": "Crime as Forgiven by Against Me!",
+   "pop": 215.0,
+   "gold_raw": "Against Me!",
+   "gold": [
+    "against me",
+    "against me",
+    "a punk rock band",
+    "a band"
+   ],
+   "nothink_samples": [
+    "Laura Jane Grace.",
+    "Laura Jane Grace",
+    "Laura Jane Grace",
+    "Laura Jane Harris.",
+    "Laura Jane Grace"
+   ],
+   "think_samples": [
+    "<think>",
+    "Laura Jane Grace",
+    "<think>",
+    "<think>",
+    "Laura Jane Grace"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is the author of Demon Theory?",
+   "entity": "Demon Theory",
+   "pop": 222.0,
+   "gold_raw": "Stephen Graham Jones",
+   "gold": [
+    "stephen graham jones",
+    "stephen graham jones",
+    "a native american author"
+   ],
+   "nothink_samples": [
+    "Matthew L. Jockers",
+    "Liz Pichon",
+    "David Wong",
+    "David Brin",
+    "Michael C. Wise"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "entity": "Magos, espadas y rosas",
+   "pop": 228.0,
+   "gold_raw": "Rata Blanca",
+   "gold": [
+    "rata blanca",
+    "rata blanca",
+    "argentine rock band",
+    "rock band"
+   ],
+   "nothink_samples": [
+    "Rosal\u00eda",
+    "Jes\u00fas Vidal",
+    "Roc\u00edo Mendon\u00e7a",
+    "Ricky Martin",
+    "Ricardo Arjona"
+   ],
+   "think_samples": [
+    "Loquillo",
+    "",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who is Elizabeth le Despenser married to?",
+   "entity": "Elizabeth le Despenser",
+   "pop": 234.0,
+   "gold_raw": "John FitzAlan, 2nd Baron Arundel",
+   "gold": [
+    "john fitzalan  2nd baron arundel",
+    "john fitzalan  2nd baron arundel",
+    "baron arundel",
+    "baron maltravers",
+    "a noble"
+   ],
+   "nothink_samples": [
+    "Hugh Despenser the Younger",
+    "Hugh Despenser the Younger",
+    "Hugh Despenser the Younger",
+    "Hugh Despenser the Younger",
+    "Hugh Despenser the Younger"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Todd Krygier born?",
+   "entity": "Todd Krygier",
+   "pop": 242.0,
+   "gold_raw": "Chicago Heights",
+   "gold": [
+    "chicago heights",
+    "chicago heights",
+    "cook county",
+    "illinois",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Todd Krygier was born in Canada.",
+    "Toronto",
+    "Wichita, Kansas",
+    "California",
+    "St. Louis, Missouri"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where did Marx Augustin die?",
+   "entity": "Marx Augustin",
+   "pop": 249.0,
+   "gold_raw": "Vienna",
+   "gold": [
+    "vienna",
+    "vienna",
+    "austria",
+    "europe"
+   ],
+   "nothink_samples": [
+    "Marx Augustin died in **Germany**.",
+    "London",
+    "Marx Augustin died in **Paris**.",
+    "Rome",
+    "London"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Robert Jameson educated?",
+   "entity": "Robert Jameson",
+   "pop": 258.0,
+   "gold_raw": "University of Edinburgh",
+   "gold": [
+    "university of edinburgh",
+    "university of edinburgh",
+    "edinburgh",
+    "scotland",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "University of Edinburgh",
+    "Edinburgh Academy",
+    "University of Edinburgh",
+    "University of Edinburgh",
+    "Edinburgh University"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "University of Edinburgh"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Who performed I Just Dropped by to Say Hello?",
+   "entity": "I Just Dropped by to Say Hello",
+   "pop": 266.0,
+   "gold_raw": "Johnny Hartman",
+   "gold": [
+    "johnny hartman",
+    "johnny hartman",
+    "an american jazz singer",
+    "a singer"
+   ],
+   "nothink_samples": [
+    "Perry Como",
+    "Perry Como",
+    "Pete Townshend",
+    "Louis Armstrong",
+    "Doris Day"
+   ],
+   "think_samples": [
+    "The Animals",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is the headquarter of EA Phenomic?",
+   "entity": "EA Phenomic",
+   "pop": 275.0,
+   "gold_raw": "Ingelheim am Rhein",
+   "gold": [
+    "ingelheim am rhein",
+    "ingelheim am rhein",
+    "rhineland palatinate",
+    "germany"
+   ],
+   "nothink_samples": [
+    "EA Phenomic's headquarters is in **Shanghai**.",
+    "EA Phenomic's headquarters is in **Shanghai, China**.",
+    "EA Games",
+    "EA Sports is headquartered in Redwood City, California. However, there is no kno",
+    "EA Phenomic's headquarters is in **Beijing**."
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was The Death of Nelson, 21 October 1805 created by?",
+   "entity": "The Death of Nelson, 21 October 1805",
+   "pop": 283.0,
+   "gold_raw": "Arthur William Devis",
+   "gold": [
+    "arthur william devis",
+    "arthur william devis",
+    "a painter"
+   ],
+   "nothink_samples": [
+    "William Charles Pugh",
+    "William Charles Pugh",
+    "William Charles Bryant",
+    "John Russell.",
+    "George Romney"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is Battle of Chiari located?",
+   "entity": "Battle of Chiari",
+   "pop": 293.0,
+   "gold_raw": "Chiari",
+   "gold": [
+    "chiari",
+    "chiari",
+    "brescia",
+    "lombardy",
+    "italy"
+   ],
+   "nothink_samples": [
+    "Lake Trasimeno",
+    "Lake Trasimeno",
+    "Lake Trasimeno",
+    "Chiari, Italy.",
+    "Lake Trasimeno"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Who was Piccolomini Altarpiece created by?",
+   "entity": "Piccolomini Altarpiece",
+   "pop": 304.0,
+   "gold_raw": "Michelangelo",
+   "gold": [
+    "michelangelo",
+    "michelangelo",
+    "an italian"
+   ],
+   "nothink_samples": [
+    "Michelangelo",
+    "Pietro Perugino",
+    "Sandro Botticelli",
+    "Michelangelo",
+    "Sandro Botticelli"
+   ],
+   "think_samples": [
+    "<think>",
+    "Raphael",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": true,
+   "think_passk": false,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "Where was Michael Quinion educated?",
+   "entity": "Michael Quinion",
+   "pop": 313.0,
+   "gold_raw": "University of Cambridge",
+   "gold": [
+    "university of cambridge",
+    "university of cambridge",
+    "cambridge",
+    "england",
+    "united kingdom"
+   ],
+   "nothink_samples": [
+    "Michael Quinion was educated at Magdalen College, Oxford.",
+    "Oxford University",
+    "Michael Quinion was educated at the University of Oxford.",
+    "University of Oxford",
+    "Michael Quinion was educated at the University of Oxford."
+   ],
+   "think_samples": [
+    "Oxford University",
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  },
+  {
+   "q": "Where is 1994 Masters Tournament located?",
+   "entity": "1994 Masters Tournament",
+   "pop": 323.0,
+   "gold_raw": "Augusta National Golf Club",
+   "gold": [
+    "augusta national golf club",
+    "augusta national golf club",
+    "georgia",
+    "united states"
+   ],
+   "nothink_samples": [
+    "Augusta National Golf Club",
+    "Augusta National Golf Club",
+    "Augusta National Golf Club",
+    "Augusta National Golf Club",
+    "Augusta National Golf Club"
+   ],
+   "think_samples": [
+    "<think>",
+    "Augusta National",
+    "<think>",
+    "<think>",
+    "Augusta National Golf Club"
+   ],
+   "nothink_passk": true,
+   "think_passk": true,
+   "nothink_pass1": true,
+   "think_pass1": false
+  },
+  {
+   "q": "What music label is Every Day I Have to Cry represented by?",
+   "entity": "Every Day I Have to Cry",
+   "pop": 335.0,
+   "gold_raw": "Checker",
+   "gold": [
+    "checker",
+    "checker",
+    "chess records",
+    "us record label"
+   ],
+   "nothink_samples": [
+    "Warner Bros. Records",
+    "Warner Bros. Records",
+    "Warner Bros. Records",
+    "Motown",
+    "Warner Bros. Records"
+   ],
+   "think_samples": [
+    "<think>",
+    "<think>",
+    "<think>",
+    "<think>",
+    "Motown Records"
+   ],
+   "nothink_passk": false,
+   "think_passk": false,
+   "nothink_pass1": false,
+   "think_pass1": false
+  }
+ ]
+}

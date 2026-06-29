@@ -71,11 +71,17 @@ def main():
             torch.manual_seed(2000+s)
             o=model.generate(**e,max_new_tokens=mx,do_sample=True,temperature=args.temp,top_p=0.95,pad_token_id=tok.eos_token_id)
             ids=o[0].tolist()
-            if thinking:
-                c=find_close(ids[L:]); ans=first_line(tok.decode(ids[L+c:] if c else ids[L:], skip_special_tokens=True))
-            else:
-                ans=first_line(tok.decode(ids[L:], skip_special_tokens=True))
-            outs.append(ans)
+            if not thinking:
+                outs.append(first_line(tok.decode(ids[L:], skip_special_tokens=True))); continue
+            c=find_close(ids[L:])
+            if c is not None:                                   # closed naturally -> answer is after </think>
+                outs.append(first_line(tok.decode(ids[L+c:], skip_special_tokens=True)))
+            else:                                               # force-close </think>, then generate the answer (F169)
+                ids2=ids+close_ids; inp=torch.tensor([ids2],device=args.device)
+                o2=model.generate(input_ids=inp, attention_mask=torch.ones_like(inp), max_new_tokens=40,
+                                  do_sample=True, temperature=args.temp, top_p=0.95, pad_token_id=tok.eos_token_id)
+                f=o2[0].tolist(); cc=find_close(f)
+                outs.append(first_line(tok.decode(f[cc:] if cc else f[len(ids2):], skip_special_tokens=True)))
         return outs
 
     t0=time.time()
