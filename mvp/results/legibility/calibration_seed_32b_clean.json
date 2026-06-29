@@ -1,0 +1,463 @@
+{
+ "model": "Qwen3-32B",
+ "target": "bidirectional calibration (HAND-CLEANED)",
+ "note": "hand-read all 50 auto hedge-targets; dropped 4 ambiguous (H11/13/18/27); 46 genuine confident confabs. Auto-seed was 92% clean -> seed was NOT the cause of the steering null.",
+ "hedge_targets": [
+  {
+   "q": "Where did Carl Otto Czeschka die?",
+   "gold": "Hamburg",
+   "model_wrong": "Vienna",
+   "p_true": 0.9241,
+   "se": -0.0,
+   "entity": "Carl Otto Czeschka",
+   "strong": true
+  },
+  {
+   "q": "Who owns Northampton Castle?",
+   "gold": "Simon I de Senlis, Earl of Huntingdon-Northampton",
+   "model_wrong": "Northampton Borough Council",
+   "p_true": 0.9149,
+   "se": -0.0,
+   "entity": "Northampton Castle",
+   "strong": true
+  },
+  {
+   "q": "Who was The One That Got Away created by?",
+   "gold": "Jake Owen",
+   "model_wrong": "Taylor Swift",
+   "p_true": 0.7549,
+   "se": -0.0,
+   "entity": "The One That Got Away",
+   "strong": true
+  },
+  {
+   "q": "What music label is Every Day I Have to Cry represented by?",
+   "gold": "Checker",
+   "model_wrong": "Warner Bros. Records",
+   "p_true": 0.7058,
+   "se": -0.0,
+   "entity": "Every Day I Have to Cry",
+   "strong": true
+  },
+  {
+   "q": "Who was Piccolomini Altarpiece created by?",
+   "gold": "Michelangelo",
+   "model_wrong": "Sandro Botticelli",
+   "p_true": 0.6514,
+   "se": -0.0,
+   "entity": "Piccolomini Altarpiece",
+   "strong": true
+  },
+  {
+   "q": "Where is 1899 U.S. Open located?",
+   "gold": "Baltimore Country Club",
+   "model_wrong": "Pinehurst Resort",
+   "p_true": 0.9579,
+   "se": 0.3251,
+   "entity": "1899 U.S. Open",
+   "strong": true
+  },
+  {
+   "q": "Who is the author of Murder in Grub Street?",
+   "gold": "Bruce Alexander Cook",
+   "model_wrong": "Anthony Horowitz",
+   "p_true": 0.852,
+   "se": 0.3251,
+   "entity": "Murder in Grub Street",
+   "strong": true
+  },
+  {
+   "q": "Who owns The Maui News?",
+   "gold": "Ogden Newspapers",
+   "model_wrong": "Gannett Co., Inc.",
+   "p_true": 0.8176,
+   "se": 0.3251,
+   "entity": "The Maui News",
+   "strong": true
+  },
+  {
+   "q": "Where is the headquarter of \u0130dmanoca\u011f\u0131?",
+   "gold": "Trabzon",
+   "model_wrong": "\u0130stanbul",
+   "p_true": 0.7549,
+   "se": 0.3251,
+   "entity": "\u0130dmanoca\u011f\u0131",
+   "strong": true
+  },
+  {
+   "q": "Who owns Liacouras Center?",
+   "gold": "Temple University",
+   "model_wrong": "Villanova University",
+   "p_true": 0.7549,
+   "se": 0.3251,
+   "entity": "Liacouras Center",
+   "strong": true
+  },
+  {
+   "q": "Where is Florence Township located?",
+   "gold": "Burlington County",
+   "model_wrong": "Michigan",
+   "p_true": 0.9669,
+   "se": 0.5004,
+   "entity": "Florence Township",
+   "strong": true
+  },
+  {
+   "q": "Who is Victoria Foyt married to?",
+   "gold": "Henry Jaglom",
+   "model_wrong": "Tony George",
+   "p_true": 0.852,
+   "se": 0.6109,
+   "entity": "Victoria Foyt",
+   "strong": true
+  },
+  {
+   "q": "Who is Henry de Nassau, Lord Overkirk's child?",
+   "gold": "Henry de Nassau d'Auverquerque, 1st Earl of Grantham",
+   "model_wrong": "William III of England",
+   "p_true": 0.9325,
+   "se": 0.639,
+   "entity": "Henry de Nassau, Lord Overkirk",
+   "strong": true
+  },
+  {
+   "q": "Where did Maqsood Ahmed die?",
+   "gold": "Rawalpindi",
+   "model_wrong": "Lahore",
+   "p_true": 0.8176,
+   "se": 0.673,
+   "entity": "Maqsood Ahmed",
+   "strong": true
+  },
+  {
+   "q": "Where is Flaoui located?",
+   "gold": "Beqaa Governorate",
+   "model_wrong": "Tunisia",
+   "p_true": 0.9941,
+   "se": 0.8018,
+   "entity": "Flaoui",
+   "strong": false
+  },
+  {
+   "q": "Where was Joseph Chappell Hutcheson, Jr. educated?",
+   "gold": "University of Texas at Austin",
+   "model_wrong": "Joseph Chappell Hutcheson, Jr. was educated at the University of Virginia.",
+   "p_true": 0.867,
+   "se": 0.8018,
+   "entity": "Joseph Chappell Hutcheson, Jr.",
+   "strong": false
+  },
+  {
+   "q": "Where was Elizaveta Axenova born?",
+   "gold": "Krasnoyarsk",
+   "model_wrong": "Minsk",
+   "p_true": 0.8176,
+   "se": 0.9404,
+   "entity": "Elizaveta Axenova",
+   "strong": false
+  },
+  {
+   "q": "Which company is MV Aqueity produced by?",
+   "gold": "A. & J. Inglis",
+   "model_wrong": "COSCO Shipping Heavy Industry",
+   "p_true": 0.7311,
+   "se": 0.9404,
+   "entity": "MV Aqueity",
+   "strong": false
+  },
+  {
+   "q": "Where is the headquarter of Liberty Shoes?",
+   "gold": "Karnal",
+   "model_wrong": "Bangladesh",
+   "p_true": 0.9399,
+   "se": 0.9503,
+   "entity": "Liberty Shoes",
+   "strong": false
+  },
+  {
+   "q": "Where was Alessandro Sgrigna born?",
+   "gold": "Rome",
+   "model_wrong": "Rimini",
+   "p_true": 0.9997,
+   "se": 1.0889,
+   "entity": "Alessandro Sgrigna",
+   "strong": false
+  },
+  {
+   "q": "Where was Fe del Mundo educated?",
+   "gold": "Harvard Medical School",
+   "model_wrong": "University of Santo Tomas",
+   "p_true": 0.974,
+   "se": 1.0889,
+   "entity": "Fe del Mundo",
+   "strong": false
+  },
+  {
+   "q": "Who is the author of Command Decision?",
+   "gold": "William Wister Haines",
+   "model_wrong": "Andrew Roberts",
+   "p_true": 0.7982,
+   "se": 1.0889,
+   "entity": "Command Decision",
+   "strong": false
+  },
+  {
+   "q": "Where is Agony in the Garden located?",
+   "gold": "National Gallery",
+   "model_wrong": "Gethsemane",
+   "p_true": 0.6225,
+   "se": 1.0889,
+   "entity": "Agony in the Garden",
+   "strong": false
+  },
+  {
+   "q": "Where was Todd Krygier born?",
+   "gold": "Chicago Heights",
+   "model_wrong": "Todd Krygier was born in Canada.",
+   "p_true": 0.982,
+   "se": 1.1683,
+   "entity": "Todd Krygier",
+   "strong": false
+  },
+  {
+   "q": "Where is Battle of Cresson located?",
+   "gold": "Nazareth",
+   "model_wrong": "Lebanon",
+   "p_true": 0.9669,
+   "se": 1.1683,
+   "entity": "Battle of Cresson",
+   "strong": false
+  },
+  {
+   "q": "What music label is M2M represented by?",
+   "gold": "Atlantic Records",
+   "model_wrong": "M2M is represented by **Island Records**.",
+   "p_true": 0.7773,
+   "se": 1.1683,
+   "entity": "M2M",
+   "strong": false
+  },
+  {
+   "q": "Who is Elizabeth le Despenser married to?",
+   "gold": "John FitzAlan, 2nd Baron Arundel",
+   "model_wrong": "Hugh Despenser the Younger",
+   "p_true": 0.7549,
+   "se": 1.1683,
+   "entity": "Elizabeth le Despenser",
+   "strong": false
+  },
+  {
+   "q": "Where is the headquarter of Benelux Film Distributors?",
+   "gold": "Ghent",
+   "model_wrong": "Brussels",
+   "p_true": 0.8808,
+   "se": 1.1935,
+   "entity": "Benelux Film Distributors",
+   "strong": false
+  },
+  {
+   "q": "Where was Robert Ballard born?",
+   "gold": "Paris",
+   "model_wrong": "Robert Ballard was born in Canada.",
+   "p_true": 0.974,
+   "se": 1.2206,
+   "entity": "Robert Ballard",
+   "strong": false
+  },
+  {
+   "q": "Where did Ben Heppner die?",
+   "gold": "Rosthern",
+   "model_wrong": "Ben Heppner died in Toronto.",
+   "p_true": 0.9707,
+   "se": 1.2206,
+   "entity": "Ben Heppner",
+   "strong": false
+  },
+  {
+   "q": "Where is Battle of Chiari located?",
+   "gold": "Chiari",
+   "model_wrong": "Lake Trasimeno",
+   "p_true": 0.7982,
+   "se": 1.2206,
+   "entity": "Battle of Chiari",
+   "strong": false
+  },
+  {
+   "q": "Who is Moshe Ivgy's child?",
+   "gold": "Dana Ivgy",
+   "model_wrong": "Yossi Benayoun",
+   "p_true": 0.9149,
+   "se": 1.2799,
+   "entity": "Moshe Ivgy",
+   "strong": false
+  },
+  {
+   "q": "Where did Amos Fortune die?",
+   "gold": "Jaffrey",
+   "model_wrong": "Vermont",
+   "p_true": 0.7311,
+   "se": 1.2799,
+   "entity": "Amos Fortune",
+   "strong": false
+  },
+  {
+   "q": "Where was Irene Hughes born?",
+   "gold": "Tennessee",
+   "model_wrong": "Irene Hughes was born in Ireland.",
+   "p_true": 0.9579,
+   "se": 1.3138,
+   "entity": "Irene Hughes",
+   "strong": false
+  },
+  {
+   "q": "Who owns Tradewest?",
+   "gold": "Midway Games",
+   "model_wrong": "Tradewest is owned by **Hasbro**.",
+   "p_true": 0.7982,
+   "se": 1.3592,
+   "entity": "Tradewest",
+   "strong": false
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "model_wrong": "Tony Sirico",
+   "p_true": 0.7773,
+   "se": 1.3592,
+   "entity": "Elizabeth Bracco",
+   "strong": false
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "gold": "Egypt",
+   "model_wrong": "Kamal Abbas was born in India.",
+   "p_true": 0.9526,
+   "se": 1.4185,
+   "entity": "Kamal Abbas",
+   "strong": false
+  },
+  {
+   "q": "Who founded Santissima Annunziata?",
+   "gold": "Servite Order",
+   "model_wrong": "Cosimo I de' Medici",
+   "p_true": 0.9149,
+   "se": 1.4185,
+   "entity": "Santissima Annunziata",
+   "strong": false
+  },
+  {
+   "q": "Where was Alfonso de Nigris born?",
+   "gold": "Monterrey",
+   "model_wrong": "Guadalajara",
+   "p_true": 0.8808,
+   "se": 1.4185,
+   "entity": "Alfonso de Nigris",
+   "strong": false
+  },
+  {
+   "q": "Where was Jan Westcott educated?",
+   "gold": "Swarthmore College",
+   "model_wrong": "Oxford University",
+   "p_true": 0.8176,
+   "se": 1.4185,
+   "entity": "Jan Westcott",
+   "strong": false
+  },
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "gold": "Rata Blanca",
+   "model_wrong": "Ricardo Arjona",
+   "p_true": 0.9241,
+   "se": 1.4708,
+   "entity": "Magos, espadas y rosas",
+   "strong": false
+  },
+  {
+   "q": "Where was Nathan Rocyn-Jones educated?",
+   "gold": "University of Cambridge",
+   "model_wrong": "University of Oxford",
+   "p_true": 0.7982,
+   "se": 1.4708,
+   "entity": "Nathan Rocyn-Jones",
+   "strong": false
+  },
+  {
+   "q": "Where was Brittainey Raven educated?",
+   "gold": "University of Texas at Austin",
+   "model_wrong": "Howard University",
+   "p_true": 0.9903,
+   "se": 1.4979,
+   "entity": "Brittainey Raven",
+   "strong": false
+  },
+  {
+   "q": "Where was Michael Quinion educated?",
+   "gold": "University of Cambridge",
+   "model_wrong": "University of Oxford",
+   "p_true": 0.8933,
+   "se": 1.4979,
+   "entity": "Michael Quinion",
+   "strong": false
+  },
+  {
+   "q": "Which company is Ambrosini SAI.2 produced by?",
+   "gold": "SAI Ambrosini",
+   "model_wrong": "Aermacchi",
+   "p_true": 0.9241,
+   "se": 1.5048,
+   "entity": "Ambrosini SAI.2",
+   "strong": false
+  },
+  {
+   "q": "Where was John Kuempel educated?",
+   "gold": "University of Texas at Austin",
+   "model_wrong": "University of Notre Dame",
+   "p_true": 0.9047,
+   "se": 1.5048,
+   "entity": "John Kuempel",
+   "strong": false
+  }
+ ],
+ "commit_targets": [
+  {
+   "q": "Where is the headquarter of Bharathi Puthakalayam?",
+   "gold": "Chennai",
+   "model_correct": "Chennai",
+   "p_true": 0.0851,
+   "se": 0.6109,
+   "entity": "Bharathi Puthakalayam"
+  },
+  {
+   "q": "Where did Francisco Gil de Taboada die?",
+   "gold": "Madrid",
+   "model_correct": "Spain",
+   "p_true": 0.5312,
+   "se": 1.2206,
+   "entity": "Francisco Gil de Taboada"
+  },
+  {
+   "q": "Where is Baniachang Upazila located?",
+   "gold": "Habiganj District",
+   "model_correct": "Bangladesh",
+   "p_true": 0.0953,
+   "se": 0.639,
+   "entity": "Baniachang Upazila"
+  },
+  {
+   "q": "Who was Bambi created by?",
+   "gold": "Felix Salten",
+   "model_correct": "Felix Salten",
+   "p_true": 0.2227,
+   "se": 0.639,
+   "entity": "Bambi"
+  },
+  {
+   "q": "Who is Priscilla Presley married to?",
+   "gold": "Elvis Presley",
+   "model_correct": "Priscilla Presley is married to Elvis Presley.",
+   "p_true": 0.2689,
+   "se": 1.7481,
+   "entity": "Priscilla Presley"
+  }
+ ]
+}
