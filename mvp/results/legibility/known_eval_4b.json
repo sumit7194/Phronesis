@@ -1,0 +1,102 @@
+[
+ {
+  "q": "Where is April 2010 Kohat bombings located?",
+  "gold": "Kohat",
+  "model_correct": "Kohat, Pakistan."
+ },
+ {
+  "q": "Where is the headquarter of Maccabi Haifa?",
+  "gold": "Haifa",
+  "model_correct": "Haifa"
+ },
+ {
+  "q": "Which company is Yamaha Zuma 125 produced by?",
+  "gold": "Yamaha Motor Company",
+  "model_correct": "Yamaha"
+ },
+ {
+  "q": "Where is 2001 Malaysian Grand Prix located?",
+  "gold": "Sepang International Circuit",
+  "model_correct": "Sepang International Circuit"
+ },
+ {
+  "q": "Where is the headquarter of AFC Ajax?",
+  "gold": "Amsterdam",
+  "model_correct": "Amsterdam"
+ },
+ {
+  "q": "Where is Stowe Open located?",
+  "gold": "Stowe",
+  "model_correct": "Stowe Open is located in Stowe, Vermont."
+ },
+ {
+  "q": "Which company is Nokia N76 produced by?",
+  "gold": "Nokia",
+  "model_correct": "Nokia"
+ },
+ {
+  "q": "Which company is LG G2 produced by?",
+  "gold": "LG Electronics",
+  "model_correct": "LG"
+ },
+ {
+  "q": "Who owns Tales of Suspense?",
+  "gold": "Marvel Comics",
+  "model_correct": "Marvel Comics"
+ },
+ {
+  "q": "Where is the headquarter of FC Kuressaare?",
+  "gold": "Kuressaare",
+  "model_correct": "Kuressaare"
+ },
+ {
+  "q": "Where was Alessandro Sgrigna born?",
+  "gold": "Rome",
+  "model_correct": "Alessandro Sgrigna was born in Italy."
+ },
+ {
+  "q": "Where was Li Yim Lam born?",
+  "gold": "Hong Kong",
+  "model_correct": "Li Yim Lam was born in Hong Kong."
+ },
+ {
+  "q": "Where is Deh Bagh, Kuzaran located?",
+  "gold": "Sanjabi Rural District",
+  "model_correct": "Kerman Province, Iran."
+ },
+ {
+  "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+  "gold": "Istanbul",
+  "model_correct": "S\u00fcnb\u00fcl Efendi died in Istanbul."
+ },
+ {
+  "q": "Where was Robert Jameson educated?",
+  "gold": "University of Edinburgh",
+  "model_correct": "Edinburgh."
+ },
+ {
+  "q": "Where was Jock Morgan born?",
+  "gold": "Penicuik",
+  "model_correct": "Jock Morgan was born in Scotland."
+ },
+ {
+  "q": "Where was Elizaveta Axenova born?",
+  "gold": "Krasnoyarsk",
+  "model_correct": "Elizaveta Axenova was born in Russia."
+ },
+ {
+  "q": "Who performed Crime as Forgiven by Against Me!?",
+  "gold": "Against Me!",
+  "model_correct": "Against Me!"
+ },
+ {
+  "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+  "gold": "Dinaran Rural District",
+  "model_correct": "Chaharmahal and Bakhtiari Province."
+ },
+ {
+  "q": "Where was Kamal Abbas born?",
+  "gold": "Egypt",
+  "model_correct": "Kamal Abbas was born in Egypt."
+ }
+]

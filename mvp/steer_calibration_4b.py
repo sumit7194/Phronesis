@@ -8,7 +8,7 @@ or is steering the wrong tool? Extracts v_hedge (confident-wrong -> uncertainty)
 then steers v_hedge on HELD-OUT confab items (alpha-sweep calibrated to residual norm) vs >=3 random
 seeds + baseline + sign control. Greedy primary. All raw saved. Local (MPS).
 """
-import argparse, json, os, math
+import argparse, json, os, math, time
 import numpy as np, torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -42,6 +42,9 @@ def main():
     ap.add_argument("--ke", default="results/legibility/knowledge_edge_4b.json")  # entity lookup
     ap.add_argument("--known-eval", default=None)   # JSON list [{q,gold,model_correct}] of model-KNOWN items (selectivity test); falls back to commit-targets if unset
     ap.add_argument("--save-vec", default=None)      # np.save v_hedge {layer:vec} here (for SAE decomposition)
+    ap.add_argument("--hedge-mode", default="template", choices=["template","natural"])  # natural = content-controlled (F179 fix): entity-free diverse hedges vs length-matched confident wraps
+    ap.add_argument("--pool", default="last", choices=["last","mean"])  # mean = mean-pool response tokens (kills last-token format bias)
+    ap.add_argument("--status", default=None)        # live status.json for the dashboard
     ap.add_argument("--out", default="results/legibility/steer_calibration_4b.json")
     args=ap.parse_args()
     SWEEP=[int(x) for x in args.layers.split(",")]
@@ -67,6 +70,25 @@ def main():
     print("[load] done", flush=True)
 
     def hedge_text(e): return f"I'm not sure — I don't have reliable information about {e} and could be wrong."
+    # content-controlled mode (F179 fix): entity-FREE diverse hedges vs length-matched confident wraps.
+    # Both sides are full first-person sentences of similar length; the only systematic difference is
+    # epistemic stance (residual confound: the answer token appears on the assert side).
+    NAT_HEDGES=[
+        "I'm not sure about this one — I don't think I know the answer.",
+        "Honestly, I can't recall this reliably, so I'd rather not guess.",
+        "I don't know this with any confidence; my memory here is shaky.",
+        "That's beyond what I reliably remember — I could easily be wrong.",
+        "I'd only be guessing here, and I don't trust my own guess.",
+        "I genuinely can't say — this isn't something I know well.",
+    ]
+    NAT_ASSERTS=[
+        "The answer is {a} — I'm completely sure about that.",
+        "It's {a}, without any doubt in my mind at all.",
+        "That would be {a}; I know this one for certain.",
+        "Definitely {a} — I'm fully confident in that answer.",
+        "It's {a}, no question about it — I know this well.",
+        "I'm certain it's {a}; this is something I clearly remember.",
+    ]
 
     @torch.no_grad()
     def acts(q, response):
@@ -76,13 +98,21 @@ def main():
         rsp=tok(response, add_special_tokens=False, return_tensors="pt")
         ids=torch.cat([enc["input_ids"], rsp["input_ids"]],1).to(args.device)
         hs=model(input_ids=ids, output_hidden_states=True).hidden_states
+        p0=enc["input_ids"].shape[1]   # response tokens start here
+        if args.pool=="mean":
+            return {L: hs[L+1][0,p0:,:].mean(0).float().cpu().numpy() for L in SWEEP}
         return {L: hs[L+1][0,-1,:].float().cpu().numpy() for L in SWEEP}
 
     def build_vec(items, assert_key, virtuous="hedge"):
         # virtuous='hedge' -> v = mean(hedge) - mean(assert); virtuous='assert' -> v = mean(assert)-mean(hedge)
         A={L:[] for L in SWEEP}; H={L:[] for L in SWEEP}
-        for it in items:
-            a=acts(it["q"], it[assert_key]); h=acts(it["q"], hedge_text(_entity(it)))
+        for i,it in enumerate(items):
+            if args.hedge_mode=="natural":
+                a_txt=NAT_ASSERTS[i%len(NAT_ASSERTS)].format(a=it[assert_key])
+                h_txt=NAT_HEDGES[i%len(NAT_HEDGES)]
+            else:
+                a_txt=it[assert_key]; h_txt=hedge_text(_entity(it))
+            a=acts(it["q"], a_txt); h=acts(it["q"], h_txt)
             for L in SWEEP: A[L].append(a[L]); H[L].append(h[L])
         vecs={}
         for L in SWEEP:
@@ -136,8 +166,26 @@ def main():
     rand_vecs={s: (lambda r: r/np.linalg.norm(r)*np.linalg.norm(vh))(np.random.default_rng(s).standard_normal(vh.shape).astype(np.float32))
                for s in [int(s) for s in args.rand_seeds.split(",")]}
     result=dict(model=args.model, layer=best, cos=cos, residual_norm=rnorm, alphas=ALPHAS,
-                hedge_eval=[], commit_extract_n=len(c_ext))
+                hedge_eval=[], commit_extract_n=len(c_ext),
+                hedge_mode=args.hedge_mode, pool=args.pool)
+    t0=time.time()
+    def write_status(total):
+        if not args.status: return
+        n=len(result["hedge_eval"])+len(result.get("known_eval",[]))
+        per=(time.time()-t0)/max(1,n)
+        hc={str(a): round(100*np.mean([is_hedge(r["real"][str(a)]) for r in result["hedge_eval"]])) if result["hedge_eval"] else None for a in ALPHAS}
+        kh={str(a): round(100*np.mean([is_hedge(r["real"][str(a)]) for r in result.get("known_eval",[])])) if result.get("known_eval") else None for a in ALPHAS}
+        rec=[dict(kind=k, q=r["q"][:38], gold=r["gold"], base=r["real"][str(0.0)][:22], steered=(r["real"][str(ALPHAS[-1])] or "∅")[:22])
+             for k,xs in (("confab",result["hedge_eval"][-3:]),("correct",result.get("known_eval",[])[-3:])) for r in xs]
+        json.dump(dict(done=n,total=total,layer=best,residual_norm=round(rnorm),s_per_item=round(per,1),
+                       eta_min=round((total-n)*per/60),alphas=ALPHAS,hedge_confab=hc,hedge_correct=kh,recent=rec),
+                  open(args.status,"w"), indent=1)
     print("\n[steer] v_hedge on held-out confab items ...", flush=True)
+    known_items=c_eval   # default: tiny commit-target set
+    if args.known_eval:  # proper known pool: model-KNOWN items from knowledge-edge (selectivity test, n>>2)
+        known_items=json.load(open(args.known_eval))
+        print(f"[known] using proper known-eval set: {len(known_items)} model-known items (vs {len(c_eval)} commit-targets)", flush=True)
+    TOTAL=len(h_eval)+len(known_items)
     for it in h_eval:
         rec=dict(q=it["q"], gold=it["gold"], baseline_wrong=it["model_wrong"], real={}, rand={})
         for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
@@ -145,21 +193,17 @@ def main():
             if a<=0: continue
             for s,rv in rand_vecs.items(): rec["rand"][f"{a}|seed{s}"]=gen(it["q"], rv, a)
         result["hedge_eval"].append(rec)
-        json.dump(result, open(args.out,"w"), indent=1)
+        json.dump(result, open(args.out,"w"), indent=1); write_status(TOTAL)
         if args.device=="mps": torch.mps.empty_cache()
         print(f"  {it['q'][:40]:40s} base->[{rec['real'][str(0.0)][:22]}] hi->[{rec['real'][str(ALPHAS[-1])][:22]}]", flush=True)
     # COMPLETING TEST: does v_hedge ALSO hedge items the model KNOWS? (calibration vs global push)
-    known_items=c_eval   # default: tiny commit-target set
-    if args.known_eval:  # proper known pool: model-KNOWN items from knowledge-edge (selectivity test, n>>2)
-        known_items=json.load(open(args.known_eval))
-        print(f"[known] using proper known-eval set: {len(known_items)} model-known items (vs {len(c_eval)} commit-targets)", flush=True)
     print("\n[steer] v_hedge on held-out KNOWN items ...", flush=True)
     result["known_eval"]=[]; result["known_n"]=len(known_items)
     for it in known_items:
         rec=dict(q=it["q"], gold=it["gold"], baseline_correct=it["model_correct"], real={})
         for a in ALPHAS: rec["real"][str(a)]=gen(it["q"], vh, a)
         result["known_eval"].append(rec)
-        json.dump(result, open(args.out,"w"), indent=1)
+        json.dump(result, open(args.out,"w"), indent=1); write_status(TOTAL)
         if args.device=="mps": torch.mps.empty_cache()
         print(f"  KNOWN {it['q'][:32]:32s} base->[{rec['real']['0.0'][:20]}] hi->[{rec['real'][str(ALPHAS[-1])][:20]}]", flush=True)
 
