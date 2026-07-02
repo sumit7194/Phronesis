@@ -1,0 +1,23 @@
+{
+ "comparison": "template vs content-controlled v_hedge, Qwen3-32B SAE resid_L32 (adamkarvonen 65k)",
+ "template_top_robust": [
+  "end-of-sentence punctuation",
+  "code/comment blocks",
+  "country names",
+  "US states",
+  "university-name abbreviations"
+ ],
+ "content_controlled_top_robust": [
+  "not sure if",
+  "don't know",
+  "not necessarily",
+  "end-of-sentence punctuation",
+  "opinion not really"
+ ],
+ "template_maxcos": 0.287,
+ "cc_maxcos": 0.301,
+ "random_baseline": 0.06,
+ "behavior": "template=global(F179, knowns-kept 0%); content-controlled=partial-selective (frac0.15: ~33% confab clean-hedge hand-read, ~50% knowns kept, beats random 0%)",
+ "finding": "Content-control (entity-free matched-length hedges + mean-pool response tokens) SHEDS geographic/format features and isolates epistemic-uncertainty features. Mechanism+behavior converge. F179 null was PARTLY method artifact; residual one-axis limit survives.",
+ "status": "TIER A mechanism / TIER B behavior; pending 4B-CC comparison + LLM-judged hedge scoring"
+}
