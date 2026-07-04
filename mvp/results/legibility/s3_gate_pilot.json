@@ -1,0 +1,210 @@
+[
+ {
+  "idx": 0,
+  "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+  "T": 1021,
+  "gate_cut": 257,
+  "gate_ok": false,
+  "gate_saved": 0.75,
+  "gate_last": 1020,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": false,
+  "rand": [
+   [
+    271,
+    false
+   ],
+   [
+    282,
+    false
+   ],
+   [
+    255,
+    false
+   ]
+  ]
+ },
+ {
+  "idx": 1,
+  "gold": "p - q",
+  "T": 2048,
+  "gate_cut": 532,
+  "gate_ok": true,
+  "gate_saved": 0.74,
+  "gate_last": 2008,
+  "last_ok": true,
+  "last_saved": 0.02,
+  "full_ok": true,
+  "rand": [
+   [
+    557,
+    true
+   ],
+   [
+    529,
+    true
+   ],
+   [
+    533,
+    true
+   ]
+  ]
+ },
+ {
+  "idx": 2,
+  "gold": "\\frac{14}{3}",
+  "T": 1758,
+  "gate_cut": 494,
+  "gate_ok": false,
+  "gate_saved": 0.72,
+  "gate_last": 1757,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": true,
+  "rand": [
+   [
+    508,
+    false
+   ],
+   [
+    470,
+    false
+   ],
+   [
+    547,
+    false
+   ]
+  ]
+ },
+ {
+  "idx": 3,
+  "gold": "9",
+  "T": 1955,
+  "gate_cut": 490,
+  "gate_ok": true,
+  "gate_saved": 0.75,
+  "gate_last": 1954,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": true,
+  "rand": [
+   [
+    488,
+    true
+   ],
+   [
+    488,
+    true
+   ],
+   [
+    488,
+    true
+   ]
+  ]
+ },
+ {
+  "idx": 4,
+  "gold": "\\text{Evelyn}",
+  "T": 2048,
+  "gate_cut": 528,
+  "gate_ok": false,
+  "gate_saved": 0.74,
+  "gate_last": 2047,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": true,
+  "rand": [
+   [
+    534,
+    false
+   ],
+   [
+    521,
+    false
+   ],
+   [
+    512,
+    false
+   ]
+  ]
+ },
+ {
+  "idx": 5,
+  "gold": "42",
+  "T": 1564,
+  "gate_cut": 392,
+  "gate_ok": true,
+  "gate_saved": 0.75,
+  "gate_last": 1563,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": true,
+  "rand": [
+   [
+    391,
+    true
+   ],
+   [
+    391,
+    true
+   ],
+   [
+    391,
+    true
+   ]
+  ]
+ },
+ {
+  "idx": 6,
+  "gold": "27",
+  "T": 2048,
+  "gate_cut": 519,
+  "gate_ok": true,
+  "gate_saved": 0.75,
+  "gate_last": 2047,
+  "last_ok": true,
+  "last_saved": 0.0,
+  "full_ok": true,
+  "rand": [
+   [
+    512,
+    true
+   ],
+   [
+    559,
+    true
+   ],
+   [
+    512,
+    true
+   ]
+  ]
+ },
+ {
+  "idx": 7,
+  "gold": "90^\\circ",
+  "T": 2048,
+  "gate_cut": 512,
+  "gate_ok": true,
+  "gate_saved": 0.75,
+  "gate_last": 2008,
+  "last_ok": true,
+  "last_saved": 0.02,
+  "full_ok": true,
+  "rand": [
+   [
+    524,
+    true
+   ],
+   [
+    532,
+    true
+   ],
+   [
+    512,
+    true
+   ]
+  ]
+ }
+]
