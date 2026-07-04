@@ -1,0 +1,34 @@
+[
+ {
+  "idx": 9,
+  "gold": "4",
+  "baseline": {
+   "ans": "12",
+   "ok": false
+  },
+  "generic": {
+   "ans": "12",
+   "ok": false
+  },
+  "specific": {
+   "ans": "6",
+   "ok": false
+  }
+ },
+ {
+  "idx": 25,
+  "gold": "480",
+  "baseline": {
+   "ans": "840",
+   "ok": false
+  },
+  "generic": {
+   "ans": "480",
+   "ok": true
+  },
+  "specific": {
+   "ans": "480",
+   "ok": true
+  }
+ }
+]

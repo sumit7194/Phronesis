@@ -1,6 +1,6 @@
 # Phronesis
 
-Activation-steering experiments for installing epistemic-virtue behavior in Qwen2.5-7B-Instruct via DPO-derived steering vectors.
+Activation-steering experiments for installing epistemic-virtue behavior in small LLMs. Two arcs: **(1)** hedging / abstention on Qwen2.5-7B — *published*, see below; **(2)** an ongoing **reasoning-calibration pivot** on Qwen3-4B — *when should a reasoning model keep thinking, backtrack, or commit?* (2026-07, [current work](#-current-work-2026-07-reasoning-calibration-pivot)).
 
 **Author**: Sumit Pal
 **License**: MIT (code); CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
@@ -21,7 +21,20 @@ Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Wri
 
 > **Throughline across all three:** static residual-stream steering doesn't *install* epistemic behavior in small LLMs; what survives controls is that *when* you intervene matters more than *which direction* you push.
 
+## 🔬 Current work (2026-07): reasoning-calibration pivot
+
+The project has moved from *whether you can steer hedging* to *when a reasoning model should keep thinking, backtrack, or commit* — **calibration as a compute-time control problem**. Everything below is **local (Apple-Silicon, Qwen3-4B), small-n, and not yet written up** — formal writeups will follow. Full chronology: [docs/findings.md](docs/findings.md) (F181–F187); method plan: [docs/exp-gated-controller-2026-07.md](docs/exp-gated-controller-2026-07.md).
+
+- **A measurement crisis, caught and fixed (F182).** Most of Qwen3-4B's apparent "reasoning failures" were *truncation + LaTeX-scoring artifacts*, not reasoning errors — true accuracy is ~85% MATH-500 / ~95% GSM8K. Robust scoring + force-commit-on-truncation are now harness defaults.
+- **A 2-axis virtue library, read at the right layer (F184–F185).** Content-controlled extraction finds the reasoning "decisiveness" axis is stable at **layer 14** (not 17); projecting activations onto it reads the model's *own* deliberate↔conclude state at **+4σ** — an activation gate has a real signal to fire on.
+- **But the efficiency gate is null on this model (F186).** Qwen3-4B answers *late* and doesn't over-think solved problems, so gating-to-save-compute ties a budget-matched random control. The **read** half of read-then-act validates; the **act-for-efficiency** half needs a model that actually over-thinks.
+- **Two worlds of reasoning-failure (F187).** When the 4B *does* fail, it's either **rumination** — a generic *"stop circling, commit"* nudge (no injected knowledge) rescues it — or a **capability wall**, where no nudge, and not even the handed-over insight, helps. On the 4B rumination is real but **rare (~3% of items)** and carries a signature: easy arithmetic wrapped in one interpretive wrinkle. Next: a pre-declared falsification scan (Mac) before any GPU spend.
+
+> **Throughline of the new arc:** the machinery to *read* a reasoning model's internal commitment state is real and cheap to validate locally — but whether *acting* on it helps is regime-dependent, and an honest negative control decides it every time.
+
 ## What this is
+
+*(This section describes the published arc 1 — the Qwen2.5-7B hedging/abstention work. For the ongoing Qwen3-4B reasoning-calibration work, see [Current work](#-current-work-2026-07-reasoning-calibration-pivot) above.)*
 
 A 6-week solo project that attempted to install epistemic-virtue hedging (calibrated uncertainty on contested-evidence prompts) via DPO-trained steering vectors at the residual stream of Qwen2.5-7B-Instruct. After six sequential walkbacks of broader claims under standard steering-vector controls (matched-norm random direction, cross-layer, dose-response, cross-prompt replication, n=50 seed replication, strict-rubric verification), the surviving empirical finding is:
 
@@ -34,7 +47,8 @@ This is a replication of recent steering-vector cautions ([Rogue Scalpel](https:
 - **Writeup**: [docs/drafts/lesswrong-replication-post-v4.md](docs/drafts/lesswrong-replication-post-v4.md) — the replication post (final draft; see Publications above for all three writeups)
 - **Verified numbers + statistical tests**: [docs/controls-verification-2026-05-23.md](docs/controls-verification-2026-05-23.md)
 - **Classification rubric**: [docs/e2-classification-rubric.md](docs/e2-classification-rubric.md)
-- **Findings chronology** (147 F-numbered findings across the project arc): [docs/findings.md](docs/findings.md)
+- **Findings chronology** (187 F-numbered findings across the project arc; reasoning pivot = F181–F187): [docs/findings.md](docs/findings.md)
+- **Reasoning-arc method plan** (gated-controller S1→S2→S3): [docs/exp-gated-controller-2026-07.md](docs/exp-gated-controller-2026-07.md)
 - **Project journal**: [docs/journal.md](docs/journal.md)
 - **Prior-art deep read**: [docs/prior-art-deep-read-2026-05-22.md](docs/prior-art-deep-read-2026-05-22.md)
 

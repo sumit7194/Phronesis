@@ -1,4 +1,4 @@
 title: Phronesis
-description: Activation-steering experiments on installing epistemic virtues in small LLMs — three findings + a failure-mode dataset.
+description: Activation-steering experiments on installing epistemic virtues in small LLMs — published hedging/abstention findings + a failure-mode dataset, plus an ongoing reasoning-calibration pivot (Qwen3-4B, 2026-07).
 theme: jekyll-theme-cayman
 show_downloads: false

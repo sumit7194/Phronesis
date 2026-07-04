@@ -1,0 +1,335 @@
+{
+ "tally": {
+  "solved": 29,
+  "worldA": 1,
+  "worldB": 2
+ },
+ "rows": [
+  {
+   "qid": "gsm8k-7fe800ad20",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "500",
+   "base_ans": "500",
+   "base_ok": true,
+   "base_tokens": 1781,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-389c696982",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "27",
+   "base_ans": "27",
+   "base_ok": true,
+   "base_tokens": 1766,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-50d0ca3b8f",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "7300",
+   "base_ans": "7300",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-48fc09e49f",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "18",
+   "base_ans": "18",
+   "base_ok": true,
+   "base_tokens": 1207,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-f4a354059c",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "45",
+   "base_ans": "45",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-8b726d69b5",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "27",
+   "base_ans": "27",
+   "base_ok": true,
+   "base_tokens": 1511,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-545dda4511",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "25",
+   "base_ans": "25",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-649f8d7e4a",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "82",
+   "base_ans": "82",
+   "base_ok": true,
+   "base_tokens": 1061,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-47c57a4458",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "20",
+   "base_ans": "20",
+   "base_ok": true,
+   "base_tokens": 1958,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-0c6fc35232",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "2",
+   "base_ans": "2",
+   "base_ok": true,
+   "base_tokens": 1649,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-941f89c7e4",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "79",
+   "base_ans": "79",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-bfbdad0201",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "6",
+   "base_ans": "6",
+   "base_ok": true,
+   "base_tokens": 1069,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-4c0fe0da49",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "50",
+   "base_ans": "50",
+   "base_ok": true,
+   "base_tokens": 1520,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-84acdcb9ad",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "40",
+   "base_ans": "40",
+   "base_ok": true,
+   "base_tokens": 1283,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-80cdff0fd7",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "27",
+   "base_ans": "27",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-d62b943cd3",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "base_tokens": 1667,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-06e18b2f25",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "3",
+   "base_ans": "4",
+   "base_ok": false,
+   "base_tokens": 2048,
+   "nudge_ans": "3",
+   "nudge_ok": true,
+   "world": "A"
+  },
+  {
+   "qid": "gsm8k-462f6181e1",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "3430",
+   "base_ans": "3430",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-940d3be1aa",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "370",
+   "base_ans": "370",
+   "base_ok": true,
+   "base_tokens": 1313,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-7822df4e03",
+   "source": "gsm8k",
+   "tag": "gsm8k",
+   "gold": "360",
+   "base_ans": "360",
+   "base_ok": true,
+   "base_tokens": 1134,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-d4ec812029",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-67af752310",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "x=5",
+   "base_ans": "5",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-8dd85b04b8",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "10",
+   "base_ans": "10",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-7d3aea1c09",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "1,-2",
+   "base_ans": "1",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-0e74d7a3aa",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "144",
+   "base_ans": "144",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-7d641d5ad0",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "70 \\sqrt{2}",
+   "base_ans": "130",
+   "base_ok": false,
+   "base_tokens": 2048,
+   "nudge_ans": "130",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "math500-e50e6a7c19",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "1.25",
+   "base_ans": "1.25",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-0264ba9654",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-bc26d2c4cb",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "203",
+   "base_ans": "203",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-31fec8342e",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "12",
+   "base_ans": "12",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  },
+  {
+   "qid": "math500-f7e19514a0",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "(6,31,-1)",
+   "base_ans": "(-9, -16, -1)",
+   "base_ok": false,
+   "base_tokens": 2048,
+   "nudge_ans": "(-27, -16, 1)",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "math500-3b434313c9",
+   "source": "math500",
+   "tag": "math-L5",
+   "gold": "4",
+   "base_ans": "4",
+   "base_ok": true,
+   "base_tokens": 2048,
+   "world": "solved"
+  }
+ ]
+}
