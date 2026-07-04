@@ -1,0 +1,62 @@
+[
+ {
+  "idx": 4,
+  "type": "truncated",
+  "gold": "\\text{Evelyn}",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "Each student's dot corresponds",
+  "forcestop_ans": "Evelyn",
+  "forcestop_ok": false
+ },
+ {
+  "idx": 6,
+  "type": "truncated",
+  "gold": "27",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "So, the sum of any three conse",
+  "forcestop_ans": "27",
+  "forcestop_ok": true
+ },
+ {
+  "idx": 9,
+  "type": "truncated",
+  "gold": "4",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "This is a sequence of **three ",
+  "forcestop_ans": "12",
+  "forcestop_ok": false
+ },
+ {
+  "idx": 17,
+  "type": "truncated",
+  "gold": "\\pi",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "But if we consider the general",
+  "forcestop_ans": "\u03c0",
+  "forcestop_ok": false
+ },
+ {
+  "idx": 1,
+  "type": "genuinely_wrong",
+  "gold": "p - q",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "Therefore, I think",
+  "forcestop_ans": "p - q",
+  "forcestop_ok": true
+ },
+ {
+  "idx": 7,
+  "type": "genuinely_wrong",
+  "gold": "90^\\circ",
+  "source": "math500",
+  "base_ok": false,
+  "base_ans": "For the first line, let me tak",
+  "forcestop_ans": "90",
+  "forcestop_ok": true
+ }
+]
