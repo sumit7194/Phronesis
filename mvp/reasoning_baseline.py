@@ -74,9 +74,14 @@ def score(pred, gold, source):
     except Exception:
         pass
     def sn(s):
-        s = re.sub(r"\\(left|right|!|,|;)", "", str(s))
+        s = str(s)
+        s = re.sub(r"\\text\s*\{([^{}]*)\}", r"\1", s)          # \text{Evelyn} -> Evelyn
+        s = re.sub(r"\\mathrm\s*\{([^{}]*)\}", r"\1", s)
+        s = s.replace(r"\pi", "π").replace(r"\Pi", "π")           # \pi <-> π
+        s = re.sub(r"\^?\s*\\?circ", "", s).replace("°", "")     # ^\circ / degree
+        s = re.sub(r"\\(left|right|!|,|;|quad|qquad|\$)", "", s)
         s = re.sub(r"\s+", "", s).replace(r"\dfrac", r"\frac")
-        return s.strip().rstrip(".")
+        return s.strip().rstrip(".").strip("$").lower()
     return bool(sn(gold)) and sn(gold) == sn(pred)
 
 def main():

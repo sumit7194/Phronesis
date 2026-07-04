@@ -1,0 +1,402 @@
+[
+ {
+  "idx": 0,
+  "source": "math500",
+  "gold": "\\left( 3, \\frac{\\pi}{2} \\right)",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 1,
+  "source": "math500",
+  "gold": "p - q",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "p - q",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 2,
+  "source": "math500",
+  "gold": "\\frac{14}{3}",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 3,
+  "source": "math500",
+  "gold": "9",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 4,
+  "source": "math500",
+  "gold": "\\text{Evelyn}",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "Evelyn",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 5,
+  "source": "math500",
+  "gold": "42",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 6,
+  "source": "math500",
+  "gold": "27",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "27",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 7,
+  "source": "math500",
+  "gold": "90^\\circ",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "90",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 8,
+  "source": "math500",
+  "gold": "3\\sqrt{13}",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 9,
+  "source": "math500",
+  "gold": "4",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "12",
+  "commit_ok": false,
+  "true_ok": false
+ },
+ {
+  "idx": 10,
+  "source": "math500",
+  "gold": "2220",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "2220",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 11,
+  "source": "math500",
+  "gold": "\\frac{3}{56}",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "1",
+  "commit_ok": false,
+  "true_ok": false
+ },
+ {
+  "idx": 12,
+  "source": "math500",
+  "gold": "284",
+  "old_ok": false,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 13,
+  "source": "math500",
+  "gold": "5",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 14,
+  "source": "math500",
+  "gold": "\\sqrt{51}",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 15,
+  "source": "math500",
+  "gold": "6 - 5i",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "6 - 5i",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 16,
+  "source": "math500",
+  "gold": "-50",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "-50",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 17,
+  "source": "math500",
+  "gold": "\\pi",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "\u03c0",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 18,
+  "source": "math500",
+  "gold": "28",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "56",
+  "commit_ok": false,
+  "true_ok": false
+ },
+ {
+  "idx": 19,
+  "source": "math500",
+  "gold": "3",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "3",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 20,
+  "source": "gsm8k",
+  "gold": "193",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 21,
+  "source": "gsm8k",
+  "gold": "6",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 22,
+  "source": "gsm8k",
+  "gold": "12",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 23,
+  "source": "gsm8k",
+  "gold": "5",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "5",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 24,
+  "source": "gsm8k",
+  "gold": "30",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 25,
+  "source": "gsm8k",
+  "gold": "480",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "840",
+  "commit_ok": false,
+  "true_ok": false
+ },
+ {
+  "idx": 26,
+  "source": "gsm8k",
+  "gold": "91",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "91",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 27,
+  "source": "gsm8k",
+  "gold": "336",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 28,
+  "source": "gsm8k",
+  "gold": "9",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "9.00",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 29,
+  "source": "gsm8k",
+  "gold": "4",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 30,
+  "source": "gsm8k",
+  "gold": "160",
+  "old_ok": false,
+  "robust_ok": false,
+  "commit_ans": "160",
+  "commit_ok": true,
+  "true_ok": true
+ },
+ {
+  "idx": 31,
+  "source": "gsm8k",
+  "gold": "17",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 32,
+  "source": "gsm8k",
+  "gold": "5",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 33,
+  "source": "gsm8k",
+  "gold": "100",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 34,
+  "source": "gsm8k",
+  "gold": "10",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 35,
+  "source": "gsm8k",
+  "gold": "7",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 36,
+  "source": "gsm8k",
+  "gold": "16",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 37,
+  "source": "gsm8k",
+  "gold": "32",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 38,
+  "source": "gsm8k",
+  "gold": "30",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ },
+ {
+  "idx": 39,
+  "source": "gsm8k",
+  "gold": "9",
+  "old_ok": true,
+  "robust_ok": true,
+  "commit_ans": null,
+  "commit_ok": false,
+  "true_ok": true
+ }
+]
