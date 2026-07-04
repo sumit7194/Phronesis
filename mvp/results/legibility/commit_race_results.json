@@ -1,0 +1,508 @@
+[
+ {
+  "idx": 0,
+  "level": "4",
+  "gold": "550",
+  "q": "Karla drove her vehicle 12,000 miles last year. How many gallons of gasoline wou",
+  "A_base": {
+   "ans": "550",
+   "ok": true,
+   "closed": true,
+   "forced": false,
+   "gen_tokens": 1496,
+   "trace_chars": 4309
+  },
+  "B_early": {
+   "ans": "550",
+   "ok": true,
+   "closed": true,
+   "forced": false,
+   "gen_tokens": 1496,
+   "trace_chars": 4309
+  },
+  "C_vector": {
+   "ans": "550",
+   "ok": true,
+   "closed": true,
+   "forced": false,
+   "gen_tokens": 1496,
+   "trace_chars": 4309
+  },
+  "D_rand0": {
+   "ans": "550",
+   "ok": true,
+   "closed": true,
+   "forced": false,
+   "gen_tokens": 1496,
+   "trace_chars": 4309
+  },
+  "D_rand1": {
+   "ans": "550",
+   "ok": true,
+   "closed": true,
+   "forced": false,
+   "gen_tokens": 1496,
+   "trace_chars": 4309
+  }
+ },
+ {
+  "idx": 1,
+  "level": "5",
+  "gold": "64",
+  "q": "What is the average of the two smallest positive integer solutions to the congru",
+  "A_base": {
+   "ans": "64",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5463
+  },
+  "B_early": {
+   "ans": "64",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4097
+  },
+  "C_vector": {
+   "ans": "64",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5645
+  },
+  "D_rand0": {
+   "ans": "64",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5369
+  },
+  "D_rand1": {
+   "ans": "64",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5241
+  }
+ },
+ {
+  "idx": 2,
+  "level": "4",
+  "gold": "106^\\circ",
+  "q": "Altitudes $\\overline{AD}$ and $\\overline{BE}$ of $\\triangle ABC$ intersect at $H",
+  "A_base": {
+   "ans": "106",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 7624
+  },
+  "B_early": {
+   "ans": "106",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 5686
+  },
+  "C_vector": {
+   "ans": "106",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 7271
+  },
+  "D_rand0": {
+   "ans": "106",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 7281
+  },
+  "D_rand1": {
+   "ans": "106",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 7518
+  }
+ },
+ {
+  "idx": 3,
+  "level": "5",
+  "gold": "0",
+  "q": "Let $a,$ $b,$ $c,$ $d$ be distinct complex numbers such that $|a| = |b| = |c| = ",
+  "A_base": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6536
+  },
+  "B_early": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4907
+  },
+  "C_vector": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6109
+  },
+  "D_rand0": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6929
+  },
+  "D_rand1": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6320
+  }
+ },
+ {
+  "idx": 4,
+  "level": "4",
+  "gold": "40",
+  "q": "If 4 daps = 7 yaps, and 5 yaps = 3 baps, how many daps equal 42 baps?",
+  "A_base": {
+   "ans": "40",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5488
+  },
+  "B_early": {
+   "ans": "40",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4162
+  },
+  "C_vector": {
+   "ans": "40",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5811
+  },
+  "D_rand0": {
+   "ans": "40",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5635
+  },
+  "D_rand1": {
+   "ans": "40",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5736
+  }
+ },
+ {
+  "idx": 5,
+  "level": "4",
+  "gold": "121",
+  "q": "When the positive integers with exactly three positive divisors are listed in as",
+  "A_base": {
+   "ans": "121",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6076
+  },
+  "B_early": {
+   "ans": "121",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4624
+  },
+  "C_vector": {
+   "ans": "121",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6235
+  },
+  "D_rand0": {
+   "ans": "121",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6363
+  },
+  "D_rand1": {
+   "ans": "121",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5597
+  }
+ },
+ {
+  "idx": 6,
+  "level": "4",
+  "gold": "66",
+  "q": "A group of $N$ students, where $N < 50$, is on a field trip. If their teacher pu",
+  "A_base": {
+   "ans": "66",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5325
+  },
+  "B_early": {
+   "ans": "66",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4219
+  },
+  "C_vector": {
+   "ans": "66",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5555
+  },
+  "D_rand0": {
+   "ans": "66",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5608
+  },
+  "D_rand1": {
+   "ans": "66",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5685
+  }
+ },
+ {
+  "idx": 7,
+  "level": "5",
+  "gold": "(6,31,-1)",
+  "q": "The polynomial $x^3 - 3x^2 + 4x - 1$ is a factor of $x^9 + px^6 + qx^3 + r.$  En",
+  "A_base": {
+   "ans": "(-9, -16, -1)",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 4474
+  },
+  "B_early": {
+   "ans": "(-9, 16, -1)",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 3612
+  },
+  "C_vector": {
+   "ans": "(-9, -22, -1)",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 4423
+  },
+  "D_rand0": {
+   "ans": "(-9, -26, -1)",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 4775
+  },
+  "D_rand1": {
+   "ans": "(-9, -16, -1)",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 4648
+  }
+ },
+ {
+  "idx": 8,
+  "level": "4",
+  "gold": "12",
+  "q": "Compute\n\\[\\frac{1}{\\cos^2 10^\\circ} + \\frac{1}{\\sin^2 20^\\circ} + \\frac{1}{\\sin^",
+  "A_base": {
+   "ans": "12",
+   "ok": true,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6182
+  },
+  "B_early": {
+   "ans": "34",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4644
+  },
+  "C_vector": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6055
+  },
+  "D_rand0": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6312
+  },
+  "D_rand1": {
+   "ans": "16",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6262
+  }
+ },
+ {
+  "idx": 9,
+  "level": "5",
+  "gold": "\\dfrac{17}{50}",
+  "q": "What is the probability that a randomly selected integer in the set $$\\{1,2,3,\\l",
+  "A_base": {
+   "ans": "17/50",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5908
+  },
+  "B_early": {
+   "ans": "17/50",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4570
+  },
+  "C_vector": {
+   "ans": "17/50",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5994
+  },
+  "D_rand0": {
+   "ans": "17/50",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 5992
+  },
+  "D_rand1": {
+   "ans": "17/50",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6123
+  }
+ },
+ {
+  "idx": 10,
+  "level": "5",
+  "gold": "\\frac{3}{2}",
+  "q": "Point $A$ lies somewhere within or on the square which has opposite corners at $",
+  "A_base": {
+   "ans": "2",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6580
+  },
+  "B_early": {
+   "ans": "2",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 1568,
+   "trace_chars": 4758
+  },
+  "C_vector": {
+   "ans": "2",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6486
+  },
+  "D_rand0": {
+   "ans": "3",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6189
+  },
+  "D_rand1": {
+   "ans": "2",
+   "ok": false,
+   "closed": false,
+   "forced": true,
+   "gen_tokens": 2080,
+   "trace_chars": 6601
+  }
+ }
+]
