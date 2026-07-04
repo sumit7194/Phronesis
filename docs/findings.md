@@ -7507,3 +7507,10 @@ Gated-controller S2 (`mvp/s2_trajectory.py`): project each token's L14 residual 
 - **NUANCE 1 — local, not global.** The 10-bin projection arc is FLAT (hovers ~0); the signal spikes at individual conclude/deliberate tokens but does not smoothly climb across the trace. → gate on per-token projection crossing a threshold, not on a global trend.
 - **NUANCE 2 (open) — word vs. state.** Deliberate/conclude moments were defined by marker-word regex, and the vector was built from phrases with similar words, so part of the +4σ could be lexical (reading the word) rather than the cognitive state. A useful gate must read the state. NEXT check: projection at NON-marker tokens in deliberate vs conclude regions, and whether it leads the marker (predictive). Heatmap visualization built to inspect this.
 - **Status:** S1 (2-axis library, L14) + S2 (signal reads state) both PASS on Mac/4B, free, power-loss-safe. Remaining Mac validation: resolve nuance-2, then S3 (gate+vector pilot with random-gate + always-on + baseline controls, efficiency metric). Only then scale to GPU.
+
+### F185 — S2 word-vs-state RESOLVED: genuine state, lexically amplified (2026-07-04)
+
+Checked projection on NON-marker tokens (excluding the "Wait"/"Therefore" words themselves) in ±4-token windows around deliberate vs conclude markers:
+- #6: near-deliberate −0.68z vs near-conclude +0.42z (gap +1.1σ); #7: −1.01 vs +0.50 (gap +1.5σ).
+- **The signal spreads to the surrounding reasoning (~+1.3σ on non-marker tokens)**, while marker tokens carry +4σ. So the L14 reasoning-decisiveness projection is a **genuine internal-state signal, sharpest at the surface commitment words** — NOT purely lexical. → an activation gate can read the *state* (usable between/around commitment words), not just echo the token.
+- **S2 fully passes.** Heatmap artifact confirms visually (cold through searching passages, warm approaching the answer). Next: S3 gate+vector pilot (per-token projection threshold as the gate; random-gate + always-on + baseline controls; efficiency metric).
