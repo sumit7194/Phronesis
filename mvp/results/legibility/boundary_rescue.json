@@ -1,0 +1,484 @@
+{
+ "rows": [
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "13",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "13",
+   "ans": "13",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "13",
+   "ans": "13",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "13",
+   "ans": "13",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "26",
+   "ans": "18",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "26",
+   "ans": "18",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "26",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "26",
+   "ans": "18",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "2",
+   "ans": "3",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "2",
+   "ans": "4",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "2",
+   "ans": "2",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "2",
+   "ans": "2",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "35",
+   "ans": "40",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "35",
+   "ans": "40",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "35",
+   "ans": "40",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "35",
+   "ans": "40",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "2",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "2",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "2",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "2",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "240",
+   "ans": "300",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "240",
+   "ans": "300",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "240",
+   "ans": "300",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "240",
+   "ans": "300",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "cond": "baseline",
+   "gold": "18",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "cond": "antirum",
+   "gold": "18",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "cond": "verify",
+   "gold": "18",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "cond": "boundary",
+   "gold": "18",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "cond": "baseline",
+   "gold": "16",
+   "ans": "100",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "cond": "antirum",
+   "gold": "16",
+   "ans": "16",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "cond": "verify",
+   "gold": "16",
+   "ans": "16",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "cond": "boundary",
+   "gold": "16",
+   "ans": "16",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "cond": "baseline",
+   "gold": "30",
+   "ans": "1700",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "cond": "antirum",
+   "gold": "30",
+   "ans": "30",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "cond": "verify",
+   "gold": "30",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "cond": "boundary",
+   "gold": "30",
+   "ans": "16",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "cond": "baseline",
+   "gold": "324",
+   "ans": "329",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "cond": "antirum",
+   "gold": "324",
+   "ans": "324",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "cond": "verify",
+   "gold": "324",
+   "ans": "329",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "cond": "boundary",
+   "gold": "324",
+   "ans": "324",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "cond": "baseline",
+   "gold": "8",
+   "ans": "6",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "cond": "antirum",
+   "gold": "8",
+   "ans": "8",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "cond": "verify",
+   "gold": "8",
+   "ans": "8",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "cond": "boundary",
+   "gold": "8",
+   "ans": "6",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "cond": "baseline",
+   "gold": "23",
+   "ans": "24",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "cond": "antirum",
+   "gold": "23",
+   "ans": "23",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "cond": "verify",
+   "gold": "23",
+   "ans": "23",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "cond": "boundary",
+   "gold": "23",
+   "ans": "23",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "13",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "26",
+   "ans": "18",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "2",
+   "ans": "2",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "35",
+   "ans": "40",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "2",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "240",
+   "ans": "300",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "cond": "placebo",
+   "gold": "18",
+   "ans": "12",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "cond": "placebo",
+   "gold": "16",
+   "ans": "16",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "cond": "placebo",
+   "gold": "30",
+   "ans": "20",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "cond": "placebo",
+   "gold": "324",
+   "ans": "249",
+   "ok": false
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "cond": "placebo",
+   "gold": "8",
+   "ans": "8",
+   "ok": true
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "cond": "placebo",
+   "gold": "23",
+   "ans": "23",
+   "ok": true
+  }
+ ]
+}

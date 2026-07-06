@@ -7580,3 +7580,22 @@ Confirmed F188's "confidently-wrong-at-a-boundary" third mode on an *internal si
 **Infra.** MPS graph-cache grows unboundedly under variable-length generation → filled disk (~0.2 G/item; ~12 G over 48 items, released on process exit). Fixed by **chunked restarts** (wrapper relaunches the resumable script; each fresh process clears the cache) + a disk-guard that stops gracefully < 3 GiB. 156/158 completed (2 HARD dropped when end-chunks shrank; negligible).
 
 **Where this lands the arc.** Calibration on the 4B's reasoning is *mostly good* (P(True) AUROC 0.75, self-flags 85% of errors) — the exploitable gap is the narrow **overconfident-boundary** class. That's a concrete, Mac-found target: a controller that (a) trusts P(True) as the general error-gate, and (b) fires an explicit boundary-verification when a problem has a boundary/membership structure (detectable — F188's classifiers did it). **Caveats:** N=156 one model; confidently-wrong n=2 (real, hand-verified, but small); verbalized-confidence parsing failed often (its 0.52 is partly noise, but the direction matches F178); P(True) via single Yes/No probe (no ensembling).
+
+## F190 — the "boundary-check nudge" is an ILLUSION (≈ placebo); nudge-rescue is mostly greedy-trajectory perturbation; the overconfident-boundary core is DOUBLY stuck (undetectable + uncorrectable) (2026-07-06)
+
+Tested F189's proposed fix — does an explicit boundary-verification nudge rescue the confidently-wrong boundary errors P(True) can't catch? Took the 12 known GSM8K failures (**7 WRINKLE boundary + 5 HARD** as a capability-specificity control) and ran each under 5 conditions: baseline / **placebo** (content-free) / antirum ("stop circling, commit") / verify ("double-check") / boundary ("recount off-by-one / thresholds / who-counts"). `mvp/boundary_rescue.py`, `results/legibility/boundary_rescue.json`. All 12 hand-verified as genuine answer-flips (no scoring artifacts).
+
+**TIER A — rescue rates (of 12 baseline failures):**
+| | placebo | antirum | verify | boundary |
+|---|---|---|---|---|
+| WRINKLE (n=7) | 1/7 | 1/7 | 2/7 | 2/7 |
+| HARD (n=5) | 3/5 | **5/5** | 3/5 | 3/5 |
+| ALL (n=12) | 4/12 | 6/12 | 5/12 | 5/12 |
+
+**TIER A — the boundary hypothesis is falsified TWICE.** (1) `boundary` ≡ `verify` on every single target — the boundary-specific wording did nothing a generic "double-check" didn't. (2) The **placebo control** (a neutral "*this is question 7; the season is autumn*" note) rescues **4/12 — tying verify/boundary (5/12)**. So the "verification rescues boundary errors" story is a **greedy-trajectory PERTURBATION artifact, not nudge content.** Without the placebo we would have banked "verification helps 5/12"; the control shows ~all of it is jostling a deterministic decode.
+
+**TIER A — the inversion + the doubly-stuck core.** Against the hypothesis: the "HARD capability" failures were *soft* (antirum 5/5, all genuine flips — they were under-committed/incomplete, not capability walls), while the **boundary errors are the stubborn ones — 5 of 7 (#408, #1000, #339, #724, #1034) resist all 5 conditions**, placebo and content alike. So the overconfident-boundary mode is **doubly stuck: P(True) can't detect it (F189) AND no prompt corrects it (F190).** Confidence predicts *perturbation-stability*: low-P(True) errors flip under any jostle; confident boundary errors don't move.
+
+**TIER B — the one signal above placebo:** `antirum` (persevere/commit) rescued 5/5 HARD vs placebo's 3/5 — 2 extra incomplete-hard cases (#1052, #800) perturbation alone didn't fix. Suggests *under-committed* failures have a small genuine content-effect (consistent with F187 rumination-rescue), but **n=5 → flagged, not claimed.**
+
+**Implications / next.** The 4B's real calibration gap (confident boundary errors) is not promptable — it would need training or an *external* check (tool/verifier), not a nudge. And the finding predicts a clean, testable alternative for the *perturbation-sensitive* (low-confidence) errors: **self-consistency (majority vote over sampled decodes) should rescue those but NOT the stable boundary errors** — a natural Mac follow-up. **Caveats:** n=12 (7+5), one model, one placebo variant, greedy single-shot per cell; rescue counts are 1-4 items so treat as pattern not rate. Meta: the placebo control is exactly what kept us from banking a false positive — the keep-each-other-honest practice ([[feedback-mutual-honesty-practice]]) working as intended.

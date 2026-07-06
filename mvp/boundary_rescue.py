@@ -22,6 +22,10 @@ NUDGES = {
     "boundary": "\n\n(Before you commit, explicitly re-check any boundary in this problem: off-by-one / fencepost counting, "
                 "strict vs inclusive thresholds like 'more than' vs 'at least' vs 'exactly', and precisely which people or "
                 "items are included in what the question asks. Recount that step, then commit.)",
+    # PLACEBO CONTROL: neutral parenthetical, same position/length, ZERO reasoning/metacognitive guidance.
+    # If this rescues ~as many as the real nudges -> rescue is greedy-trajectory PERTURBATION of low-confidence
+    # errors, not nudge content (and boundary/verify/antirum "working" is an illusion).
+    "placebo":  "\n\n(Note: this is question 7 of today's problem set. The current season is autumn.)",
 }
 
 def main():
