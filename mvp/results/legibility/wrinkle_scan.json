@@ -1,0 +1,426 @@
+{
+ "tally": {
+  "WRINKLE": {
+   "n": 19,
+   "solved": 15,
+   "A": 1,
+   "B": 3
+  },
+  "PLAIN": {
+   "n": 25,
+   "solved": 23,
+   "A": 0,
+   "B": 2
+  }
+ },
+ "rows": [
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "13",
+   "base_ans": "12",
+   "base_ok": false,
+   "nudge_ans": "13",
+   "nudge_ok": true,
+   "world": "A"
+  },
+  {
+   "qid": "gsm8k-test-223",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "31",
+   "base_ans": "31",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-281",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "500",
+   "base_ans": "500",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-291",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "8",
+   "base_ans": "8",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "2",
+   "base_ans": "12",
+   "base_ok": false,
+   "nudge_ans": "12",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "gsm8k-test-402",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "284",
+   "base_ans": "284",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-523",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "81",
+   "base_ans": "81",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-609",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "4",
+   "base_ans": "4",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-653",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "20",
+   "base_ans": "20",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-684",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "6",
+   "base_ans": "6",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-706",
+   "group": "WRINKLE",
+   "type": "b",
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "type": "b",
+   "gold": "240",
+   "base_ans": "300",
+   "base_ok": false,
+   "nudge_ans": "300",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "gsm8k-test-765",
+   "group": "WRINKLE",
+   "type": "b",
+   "gold": "32",
+   "base_ans": "32",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-780",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "310",
+   "base_ans": "310",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-907",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "205",
+   "base_ans": "205",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-934",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "1800",
+   "base_ans": "1800",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "35",
+   "base_ans": "40",
+   "base_ok": false,
+   "nudge_ans": "40",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "gsm8k-test-1133",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "2",
+   "base_ans": "2",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1143",
+   "group": "WRINKLE",
+   "type": "a",
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-817",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "10",
+   "base_ans": "10",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-335",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "20",
+   "base_ans": "8",
+   "base_ok": false,
+   "nudge_ans": "8",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "gsm8k-test-1005",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "101",
+   "base_ans": "101",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-105",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "28",
+   "base_ans": "28",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-159",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "18",
+   "base_ans": "18",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-208",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "90",
+   "base_ans": "90",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-914",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "42",
+   "base_ans": "42",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-126",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "13",
+   "base_ans": "13",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-513",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "188",
+   "base_ans": "188",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-81",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "623",
+   "base_ans": "623",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-190",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "100",
+   "base_ans": "100",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1103",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "300",
+   "base_ans": "300",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1070",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "38",
+   "base_ans": "38",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-154",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "50",
+   "base_ans": "50",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-595",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "1509",
+   "base_ans": "1509",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-200",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "250",
+   "base_ans": "250",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1083",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "35",
+   "base_ans": "35",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-129",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "6",
+   "base_ans": "6",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-273",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "16",
+   "base_ans": "16",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-541",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "5",
+   "base_ans": "5",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-134",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "400",
+   "base_ans": "400",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-1010",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "189",
+   "base_ans": "63",
+   "base_ok": false,
+   "nudge_ans": "22.5",
+   "nudge_ok": false,
+   "world": "B"
+  },
+  {
+   "qid": "gsm8k-test-108",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "24",
+   "base_ans": "24",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-533",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "70",
+   "base_ans": "70",
+   "base_ok": true,
+   "world": "solved"
+  },
+  {
+   "qid": "gsm8k-test-101",
+   "group": "PLAIN",
+   "type": null,
+   "gold": "20",
+   "base_ans": "20",
+   "base_ok": true,
+   "world": "solved"
+  }
+ ]
+}

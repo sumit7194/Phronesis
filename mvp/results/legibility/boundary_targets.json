@@ -1,0 +1,18 @@
+{
+ "WRINKLE": [
+  "gsm8k-test-12",
+  "gsm8k-test-408",
+  "gsm8k-test-1193",
+  "gsm8k-test-1000",
+  "gsm8k-test-339",
+  "gsm8k-test-724",
+  "gsm8k-test-1034"
+ ],
+ "HARD": [
+  "gsm8k-test-1039",
+  "gsm8k-test-1052",
+  "gsm8k-test-800",
+  "gsm8k-test-403",
+  "gsm8k-test-172"
+ ]
+}

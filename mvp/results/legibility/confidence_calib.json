@@ -1,0 +1,1564 @@
+{
+ "rows": [
+  {
+   "qid": "gsm8k-test-1145",
+   "group": "PLAIN",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": 0.9,
+   "tokens": 1838
+  },
+  {
+   "qid": "gsm8k-test-1176",
+   "group": "PLAIN",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.1037,
+   "vconf": 0.36,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1144",
+   "group": "PLAIN",
+   "gold": "24",
+   "ans": "24",
+   "correct": true,
+   "p_true": 0.9931,
+   "vconf": 0.9,
+   "tokens": 1356
+  },
+  {
+   "qid": "gsm8k-test-435",
+   "group": "PLAIN",
+   "gold": "35",
+   "ans": "35",
+   "correct": true,
+   "p_true": 0.9922,
+   "vconf": null,
+   "tokens": 998
+  },
+  {
+   "qid": "gsm8k-test-423",
+   "group": "PLAIN",
+   "gold": "20",
+   "ans": "20",
+   "correct": true,
+   "p_true": 0.9935,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1198",
+   "group": "PLAIN",
+   "gold": "96",
+   "ans": "96",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": null,
+   "tokens": 1322
+  },
+  {
+   "qid": "gsm8k-test-427",
+   "group": "PLAIN",
+   "gold": "539",
+   "ans": "539",
+   "correct": true,
+   "p_true": 0.0511,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-208",
+   "group": "PLAIN",
+   "gold": "90",
+   "ans": "90",
+   "correct": true,
+   "p_true": 0.0001,
+   "vconf": 0.8,
+   "tokens": 1751
+  },
+  {
+   "qid": "gsm8k-test-1130",
+   "group": "PLAIN",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.7663,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-757",
+   "group": "PLAIN",
+   "gold": "142",
+   "ans": "142",
+   "correct": true,
+   "p_true": 0.9831,
+   "vconf": 0.92,
+   "tokens": 1380
+  },
+  {
+   "qid": "gsm8k-test-317",
+   "group": "PLAIN",
+   "gold": "310",
+   "ans": "310",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": null,
+   "tokens": 944
+  },
+  {
+   "qid": "gsm8k-test-200",
+   "group": "PLAIN",
+   "gold": "250",
+   "ans": "250",
+   "correct": true,
+   "p_true": 0.1128,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-90",
+   "group": "PLAIN",
+   "gold": "28",
+   "ans": "28",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.8,
+   "tokens": 1287
+  },
+  {
+   "qid": "gsm8k-test-1009",
+   "group": "PLAIN",
+   "gold": "420",
+   "ans": "420",
+   "correct": true,
+   "p_true": 0.0008,
+   "vconf": null,
+   "tokens": 1589
+  },
+  {
+   "qid": "gsm8k-test-1147",
+   "group": "PLAIN",
+   "gold": "280",
+   "ans": "280",
+   "correct": true,
+   "p_true": 0.9573,
+   "vconf": 0.01,
+   "tokens": 1690
+  },
+  {
+   "qid": "gsm8k-test-353",
+   "group": "PLAIN",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.9,
+   "tokens": 1638
+  },
+  {
+   "qid": "gsm8k-test-33",
+   "group": "PLAIN",
+   "gold": "70",
+   "ans": "70",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.9,
+   "tokens": 1082
+  },
+  {
+   "qid": "gsm8k-test-137",
+   "group": "PLAIN",
+   "gold": "4000",
+   "ans": "4000",
+   "correct": true,
+   "p_true": 0.9511,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-129",
+   "group": "PLAIN",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9935,
+   "vconf": 0.93,
+   "tokens": 756
+  },
+  {
+   "qid": "gsm8k-test-78",
+   "group": "PLAIN",
+   "gold": "70",
+   "ans": "70",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.7,
+   "tokens": 715
+  },
+  {
+   "qid": "gsm8k-test-437",
+   "group": "PLAIN",
+   "gold": "84",
+   "ans": "84",
+   "correct": true,
+   "p_true": 0.0007,
+   "vconf": null,
+   "tokens": 2005
+  },
+  {
+   "qid": "gsm8k-test-600",
+   "group": "PLAIN",
+   "gold": "160",
+   "ans": "160",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 1.0,
+   "tokens": 1039
+  },
+  {
+   "qid": "gsm8k-test-66",
+   "group": "PLAIN",
+   "gold": "48",
+   "ans": "48",
+   "correct": true,
+   "p_true": 0.0027,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1173",
+   "group": "PLAIN",
+   "gold": "32",
+   "ans": "32",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.95,
+   "tokens": 1635
+  },
+  {
+   "qid": "gsm8k-test-822",
+   "group": "PLAIN",
+   "gold": "15",
+   "ans": "15",
+   "correct": true,
+   "p_true": 0.9975,
+   "vconf": 0.9,
+   "tokens": 954
+  },
+  {
+   "qid": "gsm8k-test-1117",
+   "group": "PLAIN",
+   "gold": "50",
+   "ans": "50",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-452",
+   "group": "PLAIN",
+   "gold": "20",
+   "ans": "20",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 1.0,
+   "tokens": 1427
+  },
+  {
+   "qid": "gsm8k-test-575",
+   "group": "PLAIN",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.9971,
+   "vconf": 0.9,
+   "tokens": 1027
+  },
+  {
+   "qid": "gsm8k-test-734",
+   "group": "PLAIN",
+   "gold": "100",
+   "ans": "100",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": null,
+   "tokens": 1910
+  },
+  {
+   "qid": "gsm8k-test-1252",
+   "group": "PLAIN",
+   "gold": "23",
+   "ans": "23",
+   "correct": true,
+   "p_true": 0.5234,
+   "vconf": null,
+   "tokens": 1552
+  },
+  {
+   "qid": "gsm8k-test-9",
+   "group": "PLAIN",
+   "gold": "460",
+   "ans": "460",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": null,
+   "tokens": 1066
+  },
+  {
+   "qid": "gsm8k-test-188",
+   "group": "PLAIN",
+   "gold": "55",
+   "ans": "55",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 1.0,
+   "tokens": 773
+  },
+  {
+   "qid": "gsm8k-test-1156",
+   "group": "PLAIN",
+   "gold": "240",
+   "ans": "240",
+   "correct": true,
+   "p_true": 0.9767,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-698",
+   "group": "PLAIN",
+   "gold": "25",
+   "ans": "25",
+   "correct": true,
+   "p_true": 0.0006,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1036",
+   "group": "PLAIN",
+   "gold": "85",
+   "ans": "85",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 1181
+  },
+  {
+   "qid": "gsm8k-test-184",
+   "group": "PLAIN",
+   "gold": "120",
+   "ans": "120",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-641",
+   "group": "PLAIN",
+   "gold": "3",
+   "ans": "3",
+   "correct": true,
+   "p_true": 0.046,
+   "vconf": 0.9,
+   "tokens": 898
+  },
+  {
+   "qid": "gsm8k-test-791",
+   "group": "PLAIN",
+   "gold": "1260",
+   "ans": "1260",
+   "correct": true,
+   "p_true": 0.9993,
+   "vconf": 0.07,
+   "tokens": 1658
+  },
+  {
+   "qid": "gsm8k-test-562",
+   "group": "PLAIN",
+   "gold": "800",
+   "ans": "800",
+   "correct": true,
+   "p_true": 0.9777,
+   "vconf": null,
+   "tokens": 1314
+  },
+  {
+   "qid": "gsm8k-test-721",
+   "group": "PLAIN",
+   "gold": "3",
+   "ans": "6",
+   "correct": false,
+   "p_true": 0.0011,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-65",
+   "group": "PLAIN",
+   "gold": "36",
+   "ans": "36",
+   "correct": true,
+   "p_true": 0.9903,
+   "vconf": 0.02,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-154",
+   "group": "PLAIN",
+   "gold": "50",
+   "ans": "50",
+   "correct": true,
+   "p_true": 0.9325,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-239",
+   "group": "PLAIN",
+   "gold": "84",
+   "ans": "84",
+   "correct": true,
+   "p_true": 0.0041,
+   "vconf": null,
+   "tokens": 1522
+  },
+  {
+   "qid": "gsm8k-test-1019",
+   "group": "PLAIN",
+   "gold": "2304",
+   "ans": "2304",
+   "correct": true,
+   "p_true": 0.0001,
+   "vconf": 0.9,
+   "tokens": 1627
+  },
+  {
+   "qid": "gsm8k-test-238",
+   "group": "PLAIN",
+   "gold": "73",
+   "ans": "73",
+   "correct": true,
+   "p_true": 0.363,
+   "vconf": null,
+   "tokens": 1798
+  },
+  {
+   "qid": "gsm8k-test-706",
+   "group": "WRINKLE",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.8,
+   "tokens": 1954
+  },
+  {
+   "qid": "gsm8k-test-953",
+   "group": "WRINKLE",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9967,
+   "vconf": null,
+   "tokens": 893
+  },
+  {
+   "qid": "gsm8k-test-348",
+   "group": "WRINKLE",
+   "gold": "9",
+   "ans": "9",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.9,
+   "tokens": 1675
+  },
+  {
+   "qid": "gsm8k-test-198",
+   "group": "WRINKLE",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.8397,
+   "vconf": null,
+   "tokens": 1488
+  },
+  {
+   "qid": "gsm8k-test-12",
+   "group": "WRINKLE",
+   "gold": "13",
+   "ans": "12",
+   "correct": false,
+   "p_true": 0.0012,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-408",
+   "group": "WRINKLE",
+   "gold": "26",
+   "ans": "18",
+   "correct": false,
+   "p_true": 0.9627,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1171",
+   "group": "WRINKLE",
+   "gold": "225",
+   "ans": "225",
+   "correct": true,
+   "p_true": 0.0136,
+   "vconf": 0.04,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1057",
+   "group": "WRINKLE",
+   "gold": "144",
+   "ans": "144",
+   "correct": true,
+   "p_true": 0.001,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1053",
+   "group": "WRINKLE",
+   "gold": "32",
+   "ans": "32",
+   "correct": true,
+   "p_true": 0.3923,
+   "vconf": null,
+   "tokens": 1125
+  },
+  {
+   "qid": "gsm8k-test-223",
+   "group": "WRINKLE",
+   "gold": "31",
+   "ans": "31",
+   "correct": true,
+   "p_true": 0.982,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-592",
+   "group": "WRINKLE",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 0.9997,
+   "vconf": 1.0,
+   "tokens": 866
+  },
+  {
+   "qid": "gsm8k-test-539",
+   "group": "WRINKLE",
+   "gold": "12",
+   "ans": "12",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 713
+  },
+  {
+   "qid": "gsm8k-test-934",
+   "group": "WRINKLE",
+   "gold": "1800",
+   "ans": "1800",
+   "correct": true,
+   "p_true": 0.2628,
+   "vconf": 0.8,
+   "tokens": 1422
+  },
+  {
+   "qid": "gsm8k-test-551",
+   "group": "WRINKLE",
+   "gold": "36",
+   "ans": "36",
+   "correct": true,
+   "p_true": 0.133,
+   "vconf": null,
+   "tokens": 1729
+  },
+  {
+   "qid": "gsm8k-test-571",
+   "group": "WRINKLE",
+   "gold": "260",
+   "ans": "260",
+   "correct": true,
+   "p_true": 0.4301,
+   "vconf": null,
+   "tokens": 1152
+  },
+  {
+   "qid": "gsm8k-test-281",
+   "group": "WRINKLE",
+   "gold": "500",
+   "ans": "500",
+   "correct": true,
+   "p_true": 0.9994,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-684",
+   "group": "WRINKLE",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9982,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-765",
+   "group": "WRINKLE",
+   "gold": "32",
+   "ans": "32",
+   "correct": true,
+   "p_true": 0.9864,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-402",
+   "group": "WRINKLE",
+   "gold": "284",
+   "ans": "284",
+   "correct": true,
+   "p_true": 0.0351,
+   "vconf": 0.02,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-889",
+   "group": "WRINKLE",
+   "gold": "12",
+   "ans": "12",
+   "correct": true,
+   "p_true": 0.0017,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-467",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.9954,
+   "vconf": 1.0,
+   "tokens": 819
+  },
+  {
+   "qid": "gsm8k-test-501",
+   "group": "WRINKLE",
+   "gold": "12",
+   "ans": "12",
+   "correct": true,
+   "p_true": 0.0583,
+   "vconf": 0.9,
+   "tokens": 999
+  },
+  {
+   "qid": "gsm8k-test-284",
+   "group": "WRINKLE",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.9993,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-474",
+   "group": "WRINKLE",
+   "gold": "40",
+   "ans": "40",
+   "correct": true,
+   "p_true": 0.0792,
+   "vconf": 0.05,
+   "tokens": 1165
+  },
+  {
+   "qid": "gsm8k-test-936",
+   "group": "WRINKLE",
+   "gold": "100",
+   "ans": "100",
+   "correct": true,
+   "p_true": 0.0656,
+   "vconf": null,
+   "tokens": 1559
+  },
+  {
+   "qid": "gsm8k-test-1193",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "3",
+   "correct": false,
+   "p_true": 0.999,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1000",
+   "group": "WRINKLE",
+   "gold": "35",
+   "ans": "40",
+   "correct": false,
+   "p_true": 0.0132,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-339",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "12",
+   "correct": false,
+   "p_true": 0.02,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1235",
+   "group": "WRINKLE",
+   "gold": "12",
+   "ans": "12",
+   "correct": true,
+   "p_true": 0.1112,
+   "vconf": null,
+   "tokens": 992
+  },
+  {
+   "qid": "gsm8k-test-436",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.0268,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-291",
+   "group": "WRINKLE",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.9604,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-815",
+   "group": "WRINKLE",
+   "gold": "11",
+   "ans": "11",
+   "correct": true,
+   "p_true": 0.4073,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1133",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.848,
+   "vconf": 0.02,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-588",
+   "group": "WRINKLE",
+   "gold": "93000",
+   "ans": "93000",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": 0.9,
+   "tokens": 1123
+  },
+  {
+   "qid": "gsm8k-test-603",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.0421,
+   "vconf": 0.9,
+   "tokens": 928
+  },
+  {
+   "qid": "gsm8k-test-392",
+   "group": "WRINKLE",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 0.8081,
+   "vconf": 1.0,
+   "tokens": 753
+  },
+  {
+   "qid": "gsm8k-test-1246",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 1.0,
+   "tokens": 948
+  },
+  {
+   "qid": "gsm8k-test-425",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.0567,
+   "vconf": 0.04,
+   "tokens": 1083
+  },
+  {
+   "qid": "gsm8k-test-446",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.9998,
+   "vconf": 0.9,
+   "tokens": 695
+  },
+  {
+   "qid": "gsm8k-test-1254",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.0006,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-531",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.9124,
+   "vconf": 0.9,
+   "tokens": 1025
+  },
+  {
+   "qid": "gsm8k-test-1042",
+   "group": "WRINKLE",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.9664,
+   "vconf": 1.0,
+   "tokens": 1064
+  },
+  {
+   "qid": "gsm8k-test-979",
+   "group": "WRINKLE",
+   "gold": "3",
+   "ans": "3",
+   "correct": true,
+   "p_true": 0.8856,
+   "vconf": null,
+   "tokens": 1927
+  },
+  {
+   "qid": "gsm8k-test-1143",
+   "group": "WRINKLE",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 0.1871,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-500",
+   "group": "WRINKLE",
+   "gold": "9",
+   "ans": "9",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.9,
+   "tokens": 1238
+  },
+  {
+   "qid": "gsm8k-test-628",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.5467,
+   "vconf": 0.01,
+   "tokens": 1262
+  },
+  {
+   "qid": "gsm8k-test-653",
+   "group": "WRINKLE",
+   "gold": "20",
+   "ans": "20",
+   "correct": true,
+   "p_true": 0.9998,
+   "vconf": 0.9,
+   "tokens": 1408
+  },
+  {
+   "qid": "gsm8k-test-523",
+   "group": "WRINKLE",
+   "gold": "81",
+   "ans": "81",
+   "correct": true,
+   "p_true": 0.0013,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-780",
+   "group": "WRINKLE",
+   "gold": "310",
+   "ans": "310",
+   "correct": true,
+   "p_true": 0.0351,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-581",
+   "group": "WRINKLE",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9997,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-978",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.0001,
+   "vconf": 0.8,
+   "tokens": 1167
+  },
+  {
+   "qid": "gsm8k-test-760",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.1603,
+   "vconf": 0.8,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-377",
+   "group": "WRINKLE",
+   "gold": "25",
+   "ans": "25",
+   "correct": true,
+   "p_true": 0.8355,
+   "vconf": 1.0,
+   "tokens": 996
+  },
+  {
+   "qid": "gsm8k-test-1046",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-939",
+   "group": "WRINKLE",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 0.5351,
+   "vconf": 0.9,
+   "tokens": 843
+  },
+  {
+   "qid": "gsm8k-test-942",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.0086,
+   "vconf": null,
+   "tokens": 1706
+  },
+  {
+   "qid": "gsm8k-test-1210",
+   "group": "WRINKLE",
+   "gold": "14",
+   "ans": "14",
+   "correct": true,
+   "p_true": 0.9909,
+   "vconf": null,
+   "tokens": 950
+  },
+  {
+   "qid": "gsm8k-test-468",
+   "group": "WRINKLE",
+   "gold": "16",
+   "ans": "16",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 1.0,
+   "tokens": 1067
+  },
+  {
+   "qid": "gsm8k-test-724",
+   "group": "WRINKLE",
+   "gold": "240",
+   "ans": "300",
+   "correct": false,
+   "p_true": 0.0002,
+   "vconf": 0.9,
+   "tokens": 1033
+  },
+  {
+   "qid": "gsm8k-test-57",
+   "group": "WRINKLE",
+   "gold": "83",
+   "ans": "83",
+   "correct": true,
+   "p_true": 0.4149,
+   "vconf": null,
+   "tokens": 1902
+  },
+  {
+   "qid": "gsm8k-test-907",
+   "group": "WRINKLE",
+   "gold": "205",
+   "ans": "205",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-630",
+   "group": "WRINKLE",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.0061,
+   "vconf": 0.9,
+   "tokens": 1231
+  },
+  {
+   "qid": "gsm8k-test-382",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.9928,
+   "vconf": 0.9,
+   "tokens": 1598
+  },
+  {
+   "qid": "gsm8k-test-573",
+   "group": "WRINKLE",
+   "gold": "69",
+   "ans": "69",
+   "correct": true,
+   "p_true": 0.0302,
+   "vconf": 0.95,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-609",
+   "group": "WRINKLE",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.9995,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-966",
+   "group": "WRINKLE",
+   "gold": "2",
+   "ans": "2:00",
+   "correct": true,
+   "p_true": 0.7311,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1034",
+   "group": "WRINKLE",
+   "gold": "18",
+   "ans": "12",
+   "correct": false,
+   "p_true": 0.0027,
+   "vconf": 0.06,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1020",
+   "group": "WRINKLE",
+   "gold": "156",
+   "ans": "156",
+   "correct": true,
+   "p_true": 0.0474,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-769",
+   "group": "HARD",
+   "gold": "20",
+   "ans": "20",
+   "correct": true,
+   "p_true": 0.1689,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-308",
+   "group": "HARD",
+   "gold": "14",
+   "ans": "14",
+   "correct": true,
+   "p_true": 0.6442,
+   "vconf": 0.9,
+   "tokens": 1145
+  },
+  {
+   "qid": "gsm8k-test-313",
+   "group": "HARD",
+   "gold": "8400",
+   "ans": "8400",
+   "correct": true,
+   "p_true": 0.1294,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-387",
+   "group": "HARD",
+   "gold": "2000",
+   "ans": "2000",
+   "correct": true,
+   "p_true": 0.0002,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-517",
+   "group": "HARD",
+   "gold": "50",
+   "ans": "50",
+   "correct": true,
+   "p_true": 0.9659,
+   "vconf": null,
+   "tokens": 1213
+  },
+  {
+   "qid": "gsm8k-test-1043",
+   "group": "HARD",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.9124,
+   "vconf": null,
+   "tokens": 1643
+  },
+  {
+   "qid": "gsm8k-test-548",
+   "group": "HARD",
+   "gold": "100",
+   "ans": "100",
+   "correct": true,
+   "p_true": 0.0015,
+   "vconf": 0.9,
+   "tokens": 1860
+  },
+  {
+   "qid": "gsm8k-test-91",
+   "group": "HARD",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.9985,
+   "vconf": 0.95,
+   "tokens": 1057
+  },
+  {
+   "qid": "gsm8k-test-1068",
+   "group": "HARD",
+   "gold": "40",
+   "ans": "40",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.8,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-748",
+   "group": "HARD",
+   "gold": "4400",
+   "ans": "4400",
+   "correct": true,
+   "p_true": 0.363,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-750",
+   "group": "HARD",
+   "gold": "255",
+   "ans": "255",
+   "correct": true,
+   "p_true": 0.6225,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-847",
+   "group": "HARD",
+   "gold": "16",
+   "ans": "16",
+   "correct": true,
+   "p_true": 0.0001,
+   "vconf": 0.1,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-441",
+   "group": "HARD",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9433,
+   "vconf": 0.8,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1050",
+   "group": "HARD",
+   "gold": "131250",
+   "ans": "131250",
+   "correct": true,
+   "p_true": 0.9716,
+   "vconf": null,
+   "tokens": 1772
+  },
+  {
+   "qid": "gsm8k-test-928",
+   "group": "HARD",
+   "gold": "147",
+   "ans": "147",
+   "correct": true,
+   "p_true": 0.995,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1039",
+   "group": "HARD",
+   "gold": "16",
+   "ans": "100",
+   "correct": false,
+   "p_true": 0.0007,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-449",
+   "group": "HARD",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.9982,
+   "vconf": null,
+   "tokens": 1272
+  },
+  {
+   "qid": "gsm8k-test-1264",
+   "group": "HARD",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.9841,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-503",
+   "group": "HARD",
+   "gold": "48",
+   "ans": "48",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.6,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-475",
+   "group": "HARD",
+   "gold": "10",
+   "ans": "10",
+   "correct": true,
+   "p_true": 0.9994,
+   "vconf": null,
+   "tokens": 1327
+  },
+  {
+   "qid": "gsm8k-test-624",
+   "group": "HARD",
+   "gold": "142",
+   "ans": "142",
+   "correct": true,
+   "p_true": 0.0047,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-540",
+   "group": "HARD",
+   "gold": "240",
+   "ans": "240",
+   "correct": true,
+   "p_true": 0.2878,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-554",
+   "group": "HARD",
+   "gold": "48",
+   "ans": "48",
+   "correct": true,
+   "p_true": 0.9999,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-505",
+   "group": "HARD",
+   "gold": "11",
+   "ans": "11",
+   "correct": true,
+   "p_true": 0.8597,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-476",
+   "group": "HARD",
+   "gold": "16",
+   "ans": "16",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": 0.95,
+   "tokens": 1498
+  },
+  {
+   "qid": "gsm8k-test-508",
+   "group": "HARD",
+   "gold": "25",
+   "ans": "25",
+   "correct": true,
+   "p_true": 0.7122,
+   "vconf": 0.01,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-773",
+   "group": "HARD",
+   "gold": "6",
+   "ans": "6",
+   "correct": true,
+   "p_true": 0.7058,
+   "vconf": null,
+   "tokens": 1735
+  },
+  {
+   "qid": "gsm8k-test-1052",
+   "group": "HARD",
+   "gold": "30",
+   "ans": "1700",
+   "correct": false,
+   "p_true": 0.0169,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-341",
+   "group": "HARD",
+   "gold": "4",
+   "ans": "4",
+   "correct": true,
+   "p_true": 0.6859,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-800",
+   "group": "HARD",
+   "gold": "324",
+   "ans": "329",
+   "correct": false,
+   "p_true": 0.3074,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-201",
+   "group": "HARD",
+   "gold": "8",
+   "ans": "8",
+   "correct": true,
+   "p_true": 0.9748,
+   "vconf": 0.9,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-396",
+   "group": "HARD",
+   "gold": "56",
+   "ans": "56",
+   "correct": true,
+   "p_true": 1.0,
+   "vconf": null,
+   "tokens": 1844
+  },
+  {
+   "qid": "gsm8k-test-403",
+   "group": "HARD",
+   "gold": "8",
+   "ans": "6",
+   "correct": false,
+   "p_true": 0.0018,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-172",
+   "group": "HARD",
+   "gold": "23",
+   "ans": "24",
+   "correct": false,
+   "p_true": 0.0021,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-560",
+   "group": "HARD",
+   "gold": "2",
+   "ans": "2",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-546",
+   "group": "HARD",
+   "gold": "23",
+   "ans": "23",
+   "correct": true,
+   "p_true": 0.0447,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-777",
+   "group": "HARD",
+   "gold": "70",
+   "ans": "70\\%",
+   "correct": true,
+   "p_true": 0.02,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-962",
+   "group": "HARD",
+   "gold": "6600",
+   "ans": "6600",
+   "correct": true,
+   "p_true": 0.0,
+   "vconf": 0.0,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-1217",
+   "group": "HARD",
+   "gold": "210",
+   "ans": "210",
+   "correct": true,
+   "p_true": 0.9846,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-796",
+   "group": "HARD",
+   "gold": "11",
+   "ans": "11",
+   "correct": true,
+   "p_true": 0.6826,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-843",
+   "group": "HARD",
+   "gold": "7000",
+   "ans": "7000",
+   "correct": true,
+   "p_true": 0.7607,
+   "vconf": null,
+   "tokens": 2048
+  },
+  {
+   "qid": "gsm8k-test-607",
+   "group": "HARD",
+   "gold": "5",
+   "ans": "5",
+   "correct": true,
+   "p_true": 0.9914,
+   "vconf": 0.9,
+   "tokens": 1652
+  },
+  {
+   "qid": "gsm8k-test-1166",
+   "group": "HARD",
+   "gold": "31",
+   "ans": "31",
+   "correct": true,
+   "p_true": 0.0321,
+   "vconf": null,
+   "tokens": 2048
+  }
+ ]
+}

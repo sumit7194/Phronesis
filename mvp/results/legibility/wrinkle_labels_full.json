@@ -1,0 +1,7616 @@
+[
+ {
+  "qid": "gsm8k-test-0",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "straight subtract then multiply"
+ },
+ {
+  "qid": "gsm8k-test-1",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "simple fraction addition"
+ },
+ {
+  "qid": "gsm8k-test-2",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent increase then subtract cost"
+ },
+ {
+  "qid": "gsm8k-test-3",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "straight multiplication"
+ },
+ {
+  "qid": "gsm8k-test-4",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus two meals"
+ },
+ {
+  "qid": "gsm8k-test-5",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "alternating price arithmetic"
+ },
+ {
+  "qid": "gsm8k-test-6",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained multiples then sum"
+ },
+ {
+  "qid": "gsm8k-test-7",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "restart download time calc"
+ },
+ {
+  "qid": "gsm8k-test-8",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "multi-leg distance arithmetic"
+ },
+ {
+  "qid": "gsm8k-test-9",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "regular plus overtime pay"
+ },
+ {
+  "qid": "gsm8k-test-10",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "multiply then percent reduce sum"
+ },
+ {
+  "qid": "gsm8k-test-11",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "dozens times prices summed"
+ },
+ {
+  "qid": "gsm8k-test-12",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "years until profit crosses zero threshold"
+ },
+ {
+  "qid": "gsm8k-test-13",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse fraction work-back multi-step"
+ },
+ {
+  "qid": "gsm8k-test-14",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "successive percentage remainder"
+ },
+ {
+  "qid": "gsm8k-test-15",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compare two percent gains"
+ },
+ {
+  "qid": "gsm8k-test-16",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add two distances"
+ },
+ {
+  "qid": "gsm8k-test-17",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two rates times hours times weeks"
+ },
+ {
+  "qid": "gsm8k-test-18",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "eggs per day to dozens"
+ },
+ {
+  "qid": "gsm8k-test-19",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "average speed remaining leg"
+ },
+ {
+  "qid": "gsm8k-test-20",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "water fractions minus spill"
+ },
+ {
+  "qid": "gsm8k-test-21",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-person age reasoning back in time"
+ },
+ {
+  "qid": "gsm8k-test-22",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "grouped customer purchases summed"
+ },
+ {
+  "qid": "gsm8k-test-23",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate times hours elapsed"
+ },
+ {
+  "qid": "gsm8k-test-24",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse percent discount"
+ },
+ {
+  "qid": "gsm8k-test-25",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract items then divide"
+ },
+ {
+  "qid": "gsm8k-test-26",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "quantities times prices summed"
+ },
+ {
+  "qid": "gsm8k-test-27",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "servings over days times price"
+ },
+ {
+  "qid": "gsm8k-test-28",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distance between two stops"
+ },
+ {
+  "qid": "gsm8k-test-29",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two heels plus five equals boots"
+ },
+ {
+  "qid": "gsm8k-test-30",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split then add ten"
+ },
+ {
+  "qid": "gsm8k-test-31",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "three guesses averaged"
+ },
+ {
+  "qid": "gsm8k-test-32",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours per day times week"
+ },
+ {
+  "qid": "gsm8k-test-33",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum-and-difference two coins"
+ },
+ {
+  "qid": "gsm8k-test-34",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained fewer/more relations"
+ },
+ {
+  "qid": "gsm8k-test-35",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent more points summed"
+ },
+ {
+  "qid": "gsm8k-test-36",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "yogurts over days times unit price"
+ },
+ {
+  "qid": "gsm8k-test-37",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "income minus spend residual sets"
+ },
+ {
+  "qid": "gsm8k-test-38",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "miles over total hours speed"
+ },
+ {
+  "qid": "gsm8k-test-39",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained rates plus time-split multi-step"
+ },
+ {
+  "qid": "gsm8k-test-40",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained multiples of age"
+ },
+ {
+  "qid": "gsm8k-test-41",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "triple distance minus reach"
+ },
+ {
+  "qid": "gsm8k-test-42",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total pieces minus remaining"
+ },
+ {
+  "qid": "gsm8k-test-43",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining calories to grams"
+ },
+ {
+  "qid": "gsm8k-test-44",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus supply cost"
+ },
+ {
+  "qid": "gsm8k-test-45",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "articles across days times hours"
+ },
+ {
+  "qid": "gsm8k-test-46",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "start plus package minus used"
+ },
+ {
+  "qid": "gsm8k-test-47",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "count and price of ties"
+ },
+ {
+  "qid": "gsm8k-test-48",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit conversion then divide"
+ },
+ {
+  "qid": "gsm8k-test-49",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total units minus occupied fraction"
+ },
+ {
+  "qid": "gsm8k-test-50",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "eggs to dozens times week price"
+ },
+ {
+  "qid": "gsm8k-test-51",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distance out then return time"
+ },
+ {
+  "qid": "gsm8k-test-52",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remove weight remaining via toys"
+ },
+ {
+  "qid": "gsm8k-test-53",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two days revenue difference"
+ },
+ {
+  "qid": "gsm8k-test-54",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum adopted and born kittens"
+ },
+ {
+  "qid": "gsm8k-test-55",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract then divide into bags"
+ },
+ {
+  "qid": "gsm8k-test-56",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "budget divided by ticket cost"
+ },
+ {
+  "qid": "gsm8k-test-57",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "max boxes not exceeding weight limit floor"
+ },
+ {
+  "qid": "gsm8k-test-58",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add percentage fee and charges"
+ },
+ {
+  "qid": "gsm8k-test-59",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "clusters plus individual fruit"
+ },
+ {
+  "qid": "gsm8k-test-60",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract categories from total"
+ },
+ {
+  "qid": "gsm8k-test-61",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum plus ten percent insurance"
+ },
+ {
+  "qid": "gsm8k-test-62",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent per year over ten years"
+ },
+ {
+  "qid": "gsm8k-test-63",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half year each rate summed"
+ },
+ {
+  "qid": "gsm8k-test-64",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "miles per gallon times tank"
+ },
+ {
+  "qid": "gsm8k-test-65",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours per session times weeks"
+ },
+ {
+  "qid": "gsm8k-test-66",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "players plus coaches times schools"
+ },
+ {
+  "qid": "gsm8k-test-67",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained gem counts summed"
+ },
+ {
+  "qid": "gsm8k-test-68",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "students to teachers division"
+ },
+ {
+  "qid": "gsm8k-test-69",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus allowance received"
+ },
+ {
+  "qid": "gsm8k-test-70",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "classes times students times price"
+ },
+ {
+  "qid": "gsm8k-test-71",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum instructions two recipes"
+ },
+ {
+  "qid": "gsm8k-test-72",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "counts times prices summed"
+ },
+ {
+  "qid": "gsm8k-test-73",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "price plus interest split months"
+ },
+ {
+  "qid": "gsm8k-test-74",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "round prices then multiply sum"
+ },
+ {
+  "qid": "gsm8k-test-75",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "halving levels then average"
+ },
+ {
+  "qid": "gsm8k-test-76",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ratios then difference"
+ },
+ {
+  "qid": "gsm8k-test-77",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compare package prices savings"
+ },
+ {
+  "qid": "gsm8k-test-78",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "apply percent discount"
+ },
+ {
+  "qid": "gsm8k-test-79",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fractions taken minus remainder"
+ },
+ {
+  "qid": "gsm8k-test-80",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add and subtract sticker counts"
+ },
+ {
+  "qid": "gsm8k-test-81",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "multiple minus offset then sum"
+ },
+ {
+  "qid": "gsm8k-test-82",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "nested multiplication of counts"
+ },
+ {
+  "qid": "gsm8k-test-83",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum-and-difference won lost"
+ },
+ {
+  "qid": "gsm8k-test-84",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "years times vacations per year"
+ },
+ {
+  "qid": "gsm8k-test-85",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ring durations summed"
+ },
+ {
+  "qid": "gsm8k-test-86",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "salary raise over years annualized"
+ },
+ {
+  "qid": "gsm8k-test-87",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "split combined by ratio"
+ },
+ {
+  "qid": "gsm8k-test-88",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "bags per guest times cost"
+ },
+ {
+  "qid": "gsm8k-test-89",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "adults plus children portions"
+ },
+ {
+  "qid": "gsm8k-test-90",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained relations then sum"
+ },
+ {
+  "qid": "gsm8k-test-91",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-sibling age relation chain"
+ },
+ {
+  "qid": "gsm8k-test-92",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "slower plus percent speed improve"
+ },
+ {
+  "qid": "gsm8k-test-93",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "dogs cats rabbits summed"
+ },
+ {
+  "qid": "gsm8k-test-94",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction sleep then difference"
+ },
+ {
+  "qid": "gsm8k-test-95",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "volume loss back to tomatoes"
+ },
+ {
+  "qid": "gsm8k-test-96",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add new minus given away"
+ },
+ {
+  "qid": "gsm8k-test-97",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained doorbell presses summed"
+ },
+ {
+  "qid": "gsm8k-test-98",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekday glasses weekend adjusted"
+ },
+ {
+  "qid": "gsm8k-test-99",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate covers distance total time"
+ },
+ {
+  "qid": "gsm8k-test-100",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "successive fraction remainder"
+ },
+ {
+  "qid": "gsm8k-test-101",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "multiple then sum together"
+ },
+ {
+  "qid": "gsm8k-test-102",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "inner dimensions volume times three"
+ },
+ {
+  "qid": "gsm8k-test-103",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total hours minus known shows"
+ },
+ {
+  "qid": "gsm8k-test-104",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse multi-step add subtract halve"
+ },
+ {
+  "qid": "gsm8k-test-105",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "price minus cashback per gallon"
+ },
+ {
+  "qid": "gsm8k-test-106",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two rectangle areas averaged"
+ },
+ {
+  "qid": "gsm8k-test-107",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate over distance water total"
+ },
+ {
+  "qid": "gsm8k-test-108",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "teachers lessons cleanings multiplied"
+ },
+ {
+  "qid": "gsm8k-test-109",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "flowers per day minus failures"
+ },
+ {
+  "qid": "gsm8k-test-110",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse chained multiples"
+ },
+ {
+  "qid": "gsm8k-test-111",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sell price minus cost profit"
+ },
+ {
+  "qid": "gsm8k-test-112",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio share of total"
+ },
+ {
+  "qid": "gsm8k-test-113",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "pairs times children times price"
+ },
+ {
+  "qid": "gsm8k-test-114",
+  "label": "HARD",
+  "type": null,
+  "reason": "cross-person percent salary multi-step"
+ },
+ {
+  "qid": "gsm8k-test-115",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "pads times sheets times weeks"
+ },
+ {
+  "qid": "gsm8k-test-116",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "day-by-day sleep summed"
+ },
+ {
+  "qid": "gsm8k-test-117",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two-rate distance summed"
+ },
+ {
+  "qid": "gsm8k-test-118",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "added third then work back"
+ },
+ {
+  "qid": "gsm8k-test-119",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total plus used minus other"
+ },
+ {
+  "qid": "gsm8k-test-120",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "more-than then sum together"
+ },
+ {
+  "qid": "gsm8k-test-121",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained prices times counts"
+ },
+ {
+  "qid": "gsm8k-test-122",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus cost rate times time"
+ },
+ {
+  "qid": "gsm8k-test-123",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction quit then subtract ten"
+ },
+ {
+  "qid": "gsm8k-test-124",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "month minus offset then sum"
+ },
+ {
+  "qid": "gsm8k-test-125",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rides times tickets summed"
+ },
+ {
+  "qid": "gsm8k-test-126",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus two known days"
+ },
+ {
+  "qid": "gsm8k-test-127",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly cost times twelve"
+ },
+ {
+  "qid": "gsm8k-test-128",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "adjust count then apply relation"
+ },
+ {
+  "qid": "gsm8k-test-129",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "successive fractions of total"
+ },
+ {
+  "qid": "gsm8k-test-130",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "items plus fee plus tip"
+ },
+ {
+  "qid": "gsm8k-test-131",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "capacity minus completed questions"
+ },
+ {
+  "qid": "gsm8k-test-132",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "four times plus twenty-two"
+ },
+ {
+  "qid": "gsm8k-test-133",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remainder as percentage"
+ },
+ {
+  "qid": "gsm8k-test-134",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "nested ratio of total bees"
+ },
+ {
+  "qid": "gsm8k-test-135",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours times rate times week"
+ },
+ {
+  "qid": "gsm8k-test-136",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "income minus supply expenses"
+ },
+ {
+  "qid": "gsm8k-test-137",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "yield times harvests per year"
+ },
+ {
+  "qid": "gsm8k-test-138",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained set sizes summed"
+ },
+ {
+  "qid": "gsm8k-test-139",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-interval bee flow bookkeeping"
+ },
+ {
+  "qid": "gsm8k-test-140",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse multiple then apply other"
+ },
+ {
+  "qid": "gsm8k-test-141",
+  "label": "HARD",
+  "type": null,
+  "reason": "two racers unit-convert time gap"
+ },
+ {
+  "qid": "gsm8k-test-142",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "tires per vehicle times cost"
+ },
+ {
+  "qid": "gsm8k-test-143",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total cost then change"
+ },
+ {
+  "qid": "gsm8k-test-144",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse multi-step fry work-back"
+ },
+ {
+  "qid": "gsm8k-test-145",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly class hours times weeks"
+ },
+ {
+  "qid": "gsm8k-test-146",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "lengths converted summed feet"
+ },
+ {
+  "qid": "gsm8k-test-147",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly bananas times two"
+ },
+ {
+  "qid": "gsm8k-test-148",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "back-and-forth distances difference"
+ },
+ {
+  "qid": "gsm8k-test-149",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "quantities times prices summed"
+ },
+ {
+  "qid": "gsm8k-test-150",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add emerged subtract hidden"
+ },
+ {
+  "qid": "gsm8k-test-151",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then two-thirds depth"
+ },
+ {
+  "qid": "gsm8k-test-152",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two catchers fish summed"
+ },
+ {
+  "qid": "gsm8k-test-153",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "simple-interest increments over periods"
+ },
+ {
+  "qid": "gsm8k-test-154",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "toy prices summed"
+ },
+ {
+  "qid": "gsm8k-test-155",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "lost income versus fee difference"
+ },
+ {
+  "qid": "gsm8k-test-156",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "budget minus purchases summed"
+ },
+ {
+  "qid": "gsm8k-test-157",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "eggs needed divided by basket, exact"
+ },
+ {
+  "qid": "gsm8k-test-158",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "age equations two unknowns"
+ },
+ {
+  "qid": "gsm8k-test-159",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "twice plus two"
+ },
+ {
+  "qid": "gsm8k-test-160",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekday weekend miles summed"
+ },
+ {
+  "qid": "gsm8k-test-161",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hat jacket pants averaged summed"
+ },
+ {
+  "qid": "gsm8k-test-162",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "legs per group summed"
+ },
+ {
+  "qid": "gsm8k-test-163",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained bird ages summed"
+ },
+ {
+  "qid": "gsm8k-test-164",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "minimums plus half times year"
+ },
+ {
+  "qid": "gsm8k-test-165",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "peel plus cut times sixty"
+ },
+ {
+  "qid": "gsm8k-test-166",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "profit back to lemon cost"
+ },
+ {
+  "qid": "gsm8k-test-167",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "successive fractions minus expenses"
+ },
+ {
+  "qid": "gsm8k-test-168",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained crab counts summed"
+ },
+ {
+  "qid": "gsm8k-test-169",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours times rate two weeks"
+ },
+ {
+  "qid": "gsm8k-test-170",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction of votes remainder"
+ },
+ {
+  "qid": "gsm8k-test-171",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse chained flower relations"
+ },
+ {
+  "qid": "gsm8k-test-172",
+  "label": "HARD",
+  "type": null,
+  "reason": "nested age relation past reasoning"
+ },
+ {
+  "qid": "gsm8k-test-173",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two relay total times difference"
+ },
+ {
+  "qid": "gsm8k-test-174",
+  "label": "HARD",
+  "type": null,
+  "reason": "probability comparison expressed as percent"
+ },
+ {
+  "qid": "gsm8k-test-175",
+  "label": "HARD",
+  "type": null,
+  "reason": "total straw back-solve rats per cage"
+ },
+ {
+  "qid": "gsm8k-test-176",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "principal plus monthly interest"
+ },
+ {
+  "qid": "gsm8k-test-177",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "profit over per-bag margin"
+ },
+ {
+  "qid": "gsm8k-test-178",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "costs summed then split"
+ },
+ {
+  "qid": "gsm8k-test-179",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate times minutes"
+ },
+ {
+  "qid": "gsm8k-test-180",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly insects to daily flock"
+ },
+ {
+  "qid": "gsm8k-test-181",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "track pink versus white difference"
+ },
+ {
+  "qid": "gsm8k-test-182",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "budget minus crayons cost"
+ },
+ {
+  "qid": "gsm8k-test-183",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum then times eight"
+ },
+ {
+  "qid": "gsm8k-test-184",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus distributed carrots"
+ },
+ {
+  "qid": "gsm8k-test-185",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus men women"
+ },
+ {
+  "qid": "gsm8k-test-186",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained monthly cards summed"
+ },
+ {
+  "qid": "gsm8k-test-187",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "split sentences two rates summed"
+ },
+ {
+  "qid": "gsm8k-test-188",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "pails times liters summed"
+ },
+ {
+  "qid": "gsm8k-test-189",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "raise plus bonus over year"
+ },
+ {
+  "qid": "gsm8k-test-190",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "acres tons barrels multiplied"
+ },
+ {
+  "qid": "gsm8k-test-191",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cheese slices across meals summed"
+ },
+ {
+  "qid": "gsm8k-test-192",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "existing plus bags of pens"
+ },
+ {
+  "qid": "gsm8k-test-193",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "score needed for target average"
+ },
+ {
+  "qid": "gsm8k-test-194",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two phases distance summed"
+ },
+ {
+  "qid": "gsm8k-test-195",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two candy weights summed"
+ },
+ {
+  "qid": "gsm8k-test-196",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained daily cakes summed"
+ },
+ {
+  "qid": "gsm8k-test-197",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "plates cost back to cup"
+ },
+ {
+  "qid": "gsm8k-test-198",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "mow times until affords, ceiling threshold"
+ },
+ {
+  "qid": "gsm8k-test-199",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "perimeter over walking speed"
+ },
+ {
+  "qid": "gsm8k-test-200",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus two known days"
+ },
+ {
+  "qid": "gsm8k-test-201",
+  "label": "HARD",
+  "type": null,
+  "reason": "two-variable leak rate algebra"
+ },
+ {
+  "qid": "gsm8k-test-202",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours to afford divides evenly"
+ },
+ {
+  "qid": "gsm8k-test-203",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "loan plus interest minus payments"
+ },
+ {
+  "qid": "gsm8k-test-204",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "more-than then sum flowers"
+ },
+ {
+  "qid": "gsm8k-test-205",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ages then average"
+ },
+ {
+  "qid": "gsm8k-test-206",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus three known scores"
+ },
+ {
+  "qid": "gsm8k-test-207",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "puzzle times minutes summed"
+ },
+ {
+  "qid": "gsm8k-test-208",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remainder doubled added back"
+ },
+ {
+  "qid": "gsm8k-test-209",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fewer then sum flowers"
+ },
+ {
+  "qid": "gsm8k-test-210",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "amount plus third summed"
+ },
+ {
+  "qid": "gsm8k-test-211",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two rentals hours summed"
+ },
+ {
+  "qid": "gsm8k-test-212",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "straight bus+car days addition"
+ },
+ {
+  "qid": "gsm8k-test-213",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "recompute counts then percentage"
+ },
+ {
+  "qid": "gsm8k-test-214",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum costs minus gift card"
+ },
+ {
+  "qid": "gsm8k-test-215",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "combined rate then time"
+ },
+ {
+  "qid": "gsm8k-test-216",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential percentage removals"
+ },
+ {
+  "qid": "gsm8k-test-217",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "price plus tax plus registration"
+ },
+ {
+  "qid": "gsm8k-test-218",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "straight multiplication of shells"
+ },
+ {
+  "qid": "gsm8k-test-219",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "bugs plus ants total"
+ },
+ {
+  "qid": "gsm8k-test-220",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract two thirds fractions"
+ },
+ {
+  "qid": "gsm8k-test-221",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "vines to meet weekly demand, ceiling"
+ },
+ {
+  "qid": "gsm8k-test-222",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "slices divided by eight exactly"
+ },
+ {
+  "qid": "gsm8k-test-223",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "iterated pen-refill until ink runs low"
+ },
+ {
+  "qid": "gsm8k-test-224",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then triple"
+ },
+ {
+  "qid": "gsm8k-test-225",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ages then sum"
+ },
+ {
+  "qid": "gsm8k-test-226",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fraction removals"
+ },
+ {
+  "qid": "gsm8k-test-227",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive counts then difference"
+ },
+ {
+  "qid": "gsm8k-test-228",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "letters times pages times rate"
+ },
+ {
+  "qid": "gsm8k-test-229",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "daily calls plus extra subtracted"
+ },
+ {
+  "qid": "gsm8k-test-230",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse-engineer unknown from final total"
+ },
+ {
+  "qid": "gsm8k-test-231",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "difference equals twice fish"
+ },
+ {
+  "qid": "gsm8k-test-232",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours times rate times discount"
+ },
+ {
+  "qid": "gsm8k-test-233",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum costs divide by three"
+ },
+ {
+  "qid": "gsm8k-test-234",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "bags times weight times price"
+ },
+ {
+  "qid": "gsm8k-test-235",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute both totals then difference"
+ },
+ {
+  "qid": "gsm8k-test-236",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total boys minus known girls classes"
+ },
+ {
+  "qid": "gsm8k-test-237",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract then add apps"
+ },
+ {
+  "qid": "gsm8k-test-238",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive today counts then sum"
+ },
+ {
+  "qid": "gsm8k-test-239",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percentage less then multiply"
+ },
+ {
+  "qid": "gsm8k-test-240",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "new per-stall count times eight"
+ },
+ {
+  "qid": "gsm8k-test-241",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "coin values summed to dollars"
+ },
+ {
+  "qid": "gsm8k-test-242",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sections times weight minus termites"
+ },
+ {
+  "qid": "gsm8k-test-243",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "per-book fee plus flat fee"
+ },
+ {
+  "qid": "gsm8k-test-244",
+  "label": "HARD",
+  "type": null,
+  "reason": "interlocking constraints across apples bananas"
+ },
+ {
+  "qid": "gsm8k-test-245",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cookies to flour ratio scaled"
+ },
+ {
+  "qid": "gsm8k-test-246",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two thirds pennies to dollars"
+ },
+ {
+  "qid": "gsm8k-test-247",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "boxes times marbles plus gift"
+ },
+ {
+  "qid": "gsm8k-test-248",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive trees then difference"
+ },
+ {
+  "qid": "gsm8k-test-249",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained amounts then sum"
+ },
+ {
+  "qid": "gsm8k-test-250",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total price minus budget"
+ },
+ {
+  "qid": "gsm8k-test-251",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract fees and loan"
+ },
+ {
+  "qid": "gsm8k-test-252",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained times with percentage longer"
+ },
+ {
+  "qid": "gsm8k-test-253",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two ad-type costs summed"
+ },
+ {
+  "qid": "gsm8k-test-254",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half of half of sixteen"
+ },
+ {
+  "qid": "gsm8k-test-255",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "three bag counts summed"
+ },
+ {
+  "qid": "gsm8k-test-256",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "windows per house times two"
+ },
+ {
+  "qid": "gsm8k-test-257",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract parts then split sleeves"
+ },
+ {
+  "qid": "gsm8k-test-258",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "packets times prices summed"
+ },
+ {
+  "qid": "gsm8k-test-259",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive his lines each scene"
+ },
+ {
+  "qid": "gsm8k-test-260",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fraction removals to D"
+ },
+ {
+  "qid": "gsm8k-test-261",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "holes times minutes to hours"
+ },
+ {
+  "qid": "gsm8k-test-262",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum plus twenty years added"
+ },
+ {
+  "qid": "gsm8k-test-263",
+  "label": "HARD",
+  "type": null,
+  "reason": "two-equation age algebra setup"
+ },
+ {
+  "qid": "gsm8k-test-264",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two item quantities priced summed"
+ },
+ {
+  "qid": "gsm8k-test-265",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive spots counts then half"
+ },
+ {
+  "qid": "gsm8k-test-266",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "people then pizzas needed ceiling"
+ },
+ {
+  "qid": "gsm8k-test-267",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining length divided bead size"
+ },
+ {
+  "qid": "gsm8k-test-268",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "doubled stories summed"
+ },
+ {
+  "qid": "gsm8k-test-269",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double age plus three"
+ },
+ {
+  "qid": "gsm8k-test-270",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "coin total minus cost"
+ },
+ {
+  "qid": "gsm8k-test-271",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract star rows divide five"
+ },
+ {
+  "qid": "gsm8k-test-272",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "trucks by weight capacity, ceiling"
+ },
+ {
+  "qid": "gsm8k-test-273",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distance over half speed time"
+ },
+ {
+  "qid": "gsm8k-test-274",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum medals times ten"
+ },
+ {
+  "qid": "gsm8k-test-275",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract adult bars split children"
+ },
+ {
+  "qid": "gsm8k-test-276",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "work minutes over rate earnings"
+ },
+ {
+  "qid": "gsm8k-test-277",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive points add over-twenty bonus"
+ },
+ {
+  "qid": "gsm8k-test-278",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract washed by ages"
+ },
+ {
+  "qid": "gsm8k-test-279",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "consumption per day then weeks"
+ },
+ {
+  "qid": "gsm8k-test-280",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "target minus summed sales"
+ },
+ {
+  "qid": "gsm8k-test-281",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "count Carmen's bids interleaved off-by-one"
+ },
+ {
+  "qid": "gsm8k-test-282",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "mileage cost plus monthly bonus"
+ },
+ {
+  "qid": "gsm8k-test-283",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "twice sum of two days"
+ },
+ {
+  "qid": "gsm8k-test-284",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "pages per sheet fold, off-by-count"
+ },
+ {
+  "qid": "gsm8k-test-285",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half minus rides remainder"
+ },
+ {
+  "qid": "gsm8k-test-286",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-year sales interlocking constraints"
+ },
+ {
+  "qid": "gsm8k-test-287",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly pay times April weeks"
+ },
+ {
+  "qid": "gsm8k-test-288",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "twenty percent lost count"
+ },
+ {
+  "qid": "gsm8k-test-289",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining half split afternoon"
+ },
+ {
+  "qid": "gsm8k-test-290",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "scale weeks by rate ratio"
+ },
+ {
+  "qid": "gsm8k-test-291",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "limbs every-N-days to fifteen cutoff"
+ },
+ {
+  "qid": "gsm8k-test-292",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract expenses and savings"
+ },
+ {
+  "qid": "gsm8k-test-293",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "eggs per day times seven"
+ },
+ {
+  "qid": "gsm8k-test-294",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ages resolve Trent"
+ },
+ {
+  "qid": "gsm8k-test-295",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-layer age population indirection"
+ },
+ {
+  "qid": "gsm8k-test-296",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split of 105 defense"
+ },
+ {
+  "qid": "gsm8k-test-297",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "invited minus ill minus committed"
+ },
+ {
+  "qid": "gsm8k-test-298",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum marbles times weight"
+ },
+ {
+  "qid": "gsm8k-test-299",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "volume times cost per foot"
+ },
+ {
+  "qid": "gsm8k-test-300",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive groups then total children"
+ },
+ {
+  "qid": "gsm8k-test-301",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "wires to poles ratio"
+ },
+ {
+  "qid": "gsm8k-test-302",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total left minus men remaining"
+ },
+ {
+  "qid": "gsm8k-test-303",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained prices to pen"
+ },
+ {
+  "qid": "gsm8k-test-304",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "combined pencils into boxes, ceiling"
+ },
+ {
+  "qid": "gsm8k-test-305",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ice cubes count plus cream"
+ },
+ {
+  "qid": "gsm8k-test-306",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "new records times two trade"
+ },
+ {
+  "qid": "gsm8k-test-307",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "junior senior counts times pay"
+ },
+ {
+  "qid": "gsm8k-test-308",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse boarding from final count"
+ },
+ {
+  "qid": "gsm8k-test-309",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential add subtract lollipops"
+ },
+ {
+  "qid": "gsm8k-test-310",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining percent times rate hours"
+ },
+ {
+  "qid": "gsm8k-test-311",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then subtract lollipops"
+ },
+ {
+  "qid": "gsm8k-test-312",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute rewards subtract from spend"
+ },
+ {
+  "qid": "gsm8k-test-313",
+  "label": "HARD",
+  "type": null,
+  "reason": "compare two multi-step tax scenarios"
+ },
+ {
+  "qid": "gsm8k-test-314",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percentage then half ruins"
+ },
+ {
+  "qid": "gsm8k-test-315",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two offer totals difference"
+ },
+ {
+  "qid": "gsm8k-test-316",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum guns divide by four"
+ },
+ {
+  "qid": "gsm8k-test-317",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "batches times sugar summed"
+ },
+ {
+  "qid": "gsm8k-test-318",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost then two percent changes"
+ },
+ {
+  "qid": "gsm8k-test-319",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive counts then difference"
+ },
+ {
+  "qid": "gsm8k-test-320",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "split 200 with offset group"
+ },
+ {
+  "qid": "gsm8k-test-321",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive counts times legs"
+ },
+ {
+  "qid": "gsm8k-test-322",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add weekly balls then subtract dropped"
+ },
+ {
+  "qid": "gsm8k-test-323",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive weights sum plus container"
+ },
+ {
+  "qid": "gsm8k-test-324",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential outfit additions"
+ },
+ {
+  "qid": "gsm8k-test-325",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "increased daily times June days"
+ },
+ {
+  "qid": "gsm8k-test-326",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive C and B difference"
+ },
+ {
+  "qid": "gsm8k-test-327",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two table types legs summed"
+ },
+ {
+  "qid": "gsm8k-test-328",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract son husband from bag"
+ },
+ {
+  "qid": "gsm8k-test-329",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two shirts discount price"
+ },
+ {
+  "qid": "gsm8k-test-330",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two daily revenues percentage more"
+ },
+ {
+  "qid": "gsm8k-test-331",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly costs times twelve"
+ },
+ {
+  "qid": "gsm8k-test-332",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive each day sum hours"
+ },
+ {
+  "qid": "gsm8k-test-333",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract needed pots from bought"
+ },
+ {
+  "qid": "gsm8k-test-334",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract sweater brother from start"
+ },
+ {
+  "qid": "gsm8k-test-335",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "shows percent gives total sightseeing"
+ },
+ {
+  "qid": "gsm8k-test-336",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost minus savings minus earnings"
+ },
+ {
+  "qid": "gsm8k-test-337",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive trees twice combined"
+ },
+ {
+  "qid": "gsm8k-test-338",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract purchases add extra"
+ },
+ {
+  "qid": "gsm8k-test-339",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "budget divided per-person cost, headcount off-by-one"
+ },
+ {
+  "qid": "gsm8k-test-340",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "daily savings times five days"
+ },
+ {
+  "qid": "gsm8k-test-341",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse gumballs to candy pounds"
+ },
+ {
+  "qid": "gsm8k-test-342",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "solve twice-son-minus-five"
+ },
+ {
+  "qid": "gsm8k-test-343",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "miles per day into service interval"
+ },
+ {
+  "qid": "gsm8k-test-344",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "average stuffing then batches summed"
+ },
+ {
+  "qid": "gsm8k-test-345",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two legs distance over speed"
+ },
+ {
+  "qid": "gsm8k-test-346",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "boys total minus absent boys"
+ },
+ {
+  "qid": "gsm8k-test-347",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "twice girls plus girls total"
+ },
+ {
+  "qid": "gsm8k-test-348",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "minimum third score meets threshold"
+ },
+ {
+  "qid": "gsm8k-test-349",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive categories subtract from fifty"
+ },
+ {
+  "qid": "gsm8k-test-350",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute then subtract earned points"
+ },
+ {
+  "qid": "gsm8k-test-351",
+  "label": "HARD",
+  "type": null,
+  "reason": "many gift components layered pricing"
+ },
+ {
+  "qid": "gsm8k-test-352",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "three days sales minus returns"
+ },
+ {
+  "qid": "gsm8k-test-353",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive Saturday sum weekly hours"
+ },
+ {
+  "qid": "gsm8k-test-354",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "functioning equipment after percentage returned"
+ },
+ {
+  "qid": "gsm8k-test-355",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half sheep each rate summed"
+ },
+ {
+  "qid": "gsm8k-test-356",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining rolls times eight pieces"
+ },
+ {
+  "qid": "gsm8k-test-357",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fraction removals yellow"
+ },
+ {
+  "qid": "gsm8k-test-358",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse Monday count multi-day sum"
+ },
+ {
+  "qid": "gsm8k-test-359",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minus pairs and loose"
+ },
+ {
+  "qid": "gsm8k-test-360",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then subtract cookies"
+ },
+ {
+  "qid": "gsm8k-test-361",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "principal plus interest divided months"
+ },
+ {
+  "qid": "gsm8k-test-362",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two distances then difference"
+ },
+ {
+  "qid": "gsm8k-test-363",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive friend pesos summed"
+ },
+ {
+  "qid": "gsm8k-test-364",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "profit divided hours open"
+ },
+ {
+  "qid": "gsm8k-test-365",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half females plus three teachers"
+ },
+ {
+  "qid": "gsm8k-test-366",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "average five test scores"
+ },
+ {
+  "qid": "gsm8k-test-367",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two item quantities priced summed"
+ },
+ {
+  "qid": "gsm8k-test-368",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add third fraction messages"
+ },
+ {
+  "qid": "gsm8k-test-369",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ticket cost minus bracelet"
+ },
+ {
+  "qid": "gsm8k-test-370",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ribbon divided total gifts"
+ },
+ {
+  "qid": "gsm8k-test-371",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split then difference"
+ },
+ {
+  "qid": "gsm8k-test-372",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "bundle cost minus cable"
+ },
+ {
+  "qid": "gsm8k-test-373",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "editing over total time percentage"
+ },
+ {
+  "qid": "gsm8k-test-374",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double grid plus twenty books"
+ },
+ {
+  "qid": "gsm8k-test-375",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential add subtract cards"
+ },
+ {
+  "qid": "gsm8k-test-376",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract fractions and slices"
+ },
+ {
+  "qid": "gsm8k-test-377",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "days to save until reaches cost"
+ },
+ {
+  "qid": "gsm8k-test-378",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive bug counts summed"
+ },
+ {
+  "qid": "gsm8k-test-379",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum age gaps difference"
+ },
+ {
+  "qid": "gsm8k-test-380",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ounces times calories per ounce"
+ },
+ {
+  "qid": "gsm8k-test-381",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "daily pay times yearly days"
+ },
+ {
+  "qid": "gsm8k-test-382",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "bags each ingredient ceiling then difference"
+ },
+ {
+  "qid": "gsm8k-test-383",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reduced hours watts to kilowatts"
+ },
+ {
+  "qid": "gsm8k-test-384",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum stripes divide count average"
+ },
+ {
+  "qid": "gsm8k-test-385",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sandwiches meat cheese costs"
+ },
+ {
+  "qid": "gsm8k-test-386",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive counts combined total"
+ },
+ {
+  "qid": "gsm8k-test-387",
+  "label": "HARD",
+  "type": null,
+  "reason": "back out jog from remaining steps"
+ },
+ {
+  "qid": "gsm8k-test-388",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reading time plus travel early"
+ },
+ {
+  "qid": "gsm8k-test-389",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two months payroll after expiry"
+ },
+ {
+  "qid": "gsm8k-test-390",
+  "label": "HARD",
+  "type": null,
+  "reason": "buy-one-get-half taffy plus items"
+ },
+ {
+  "qid": "gsm8k-test-391",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two packs discount plus finale"
+ },
+ {
+  "qid": "gsm8k-test-392",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "dozens needed for thirty days ceiling"
+ },
+ {
+  "qid": "gsm8k-test-393",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "one percent then five percent"
+ },
+ {
+  "qid": "gsm8k-test-394",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "four blouses discounted total"
+ },
+ {
+  "qid": "gsm8k-test-395",
+  "label": "HARD",
+  "type": null,
+  "reason": "back out average-trees from combined total"
+ },
+ {
+  "qid": "gsm8k-test-396",
+  "label": "HARD",
+  "type": null,
+  "reason": "heads-and-bumps two-equation system"
+ },
+ {
+  "qid": "gsm8k-test-397",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum multi-period distances"
+ },
+ {
+  "qid": "gsm8k-test-398",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained fraction sizes to Timothy"
+ },
+ {
+  "qid": "gsm8k-test-399",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "comb elevation minus Oliver's"
+ },
+ {
+  "qid": "gsm8k-test-400",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum banks plus capital"
+ },
+ {
+  "qid": "gsm8k-test-401",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "boats remove then fraction ran"
+ },
+ {
+  "qid": "gsm8k-test-402",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "tiered months summing to 24 boundary"
+ },
+ {
+  "qid": "gsm8k-test-403",
+  "label": "HARD",
+  "type": null,
+  "reason": "layered savings-split original-price algebra"
+ },
+ {
+  "qid": "gsm8k-test-404",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "vehicle capacities summed"
+ },
+ {
+  "qid": "gsm8k-test-405",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two feeder types birds summed"
+ },
+ {
+  "qid": "gsm8k-test-406",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive three item prices summed"
+ },
+ {
+  "qid": "gsm8k-test-407",
+  "label": "HARD",
+  "type": null,
+  "reason": "back out starting cards from earnings"
+ },
+ {
+  "qid": "gsm8k-test-408",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "prepared-for-half versus everyone shortfall"
+ },
+ {
+  "qid": "gsm8k-test-409",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive sister letters summed"
+ },
+ {
+  "qid": "gsm8k-test-410",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum items apply discount"
+ },
+ {
+  "qid": "gsm8k-test-411",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost minus saved money"
+ },
+ {
+  "qid": "gsm8k-test-412",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained fraction dragons to Bruce"
+ },
+ {
+  "qid": "gsm8k-test-413",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "split gas quarter then pints"
+ },
+ {
+  "qid": "gsm8k-test-414",
+  "label": "HARD",
+  "type": null,
+  "reason": "one-percent-left constraint back-solve bars"
+ },
+ {
+  "qid": "gsm8k-test-415",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining split among four"
+ },
+ {
+  "qid": "gsm8k-test-416",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining pieces weight after two"
+ },
+ {
+  "qid": "gsm8k-test-417",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum oranges divide eight people"
+ },
+ {
+  "qid": "gsm8k-test-418",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "onions stock cost per serving"
+ },
+ {
+  "qid": "gsm8k-test-419",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "area width perimeter with yards"
+ },
+ {
+  "qid": "gsm8k-test-420",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive beads difference between sisters"
+ },
+ {
+  "qid": "gsm8k-test-421",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add baking subtract window cooling"
+ },
+ {
+  "qid": "gsm8k-test-422",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-leg triathlon back-solve run time"
+ },
+ {
+  "qid": "gsm8k-test-423",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained movie lengths to A"
+ },
+ {
+  "qid": "gsm8k-test-424",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "straight rate and money computation"
+ },
+ {
+  "qid": "gsm8k-test-425",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "floor division of eggs into trays"
+ },
+ {
+  "qid": "gsm8k-test-426",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then subtract two totals"
+ },
+ {
+  "qid": "gsm8k-test-427",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus cost profit calc"
+ },
+ {
+  "qid": "gsm8k-test-428",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two products summed"
+ },
+ {
+  "qid": "gsm8k-test-429",
+  "label": "HARD",
+  "type": null,
+  "reason": "nonobvious savings equation setup"
+ },
+ {
+  "qid": "gsm8k-test-430",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit price then new total"
+ },
+ {
+  "qid": "gsm8k-test-431",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "trade then value all jewels"
+ },
+ {
+  "qid": "gsm8k-test-432",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two people times days"
+ },
+ {
+  "qid": "gsm8k-test-433",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "volume then bags cost"
+ },
+ {
+  "qid": "gsm8k-test-434",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent increase then sum"
+ },
+ {
+  "qid": "gsm8k-test-435",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "combine then percentage"
+ },
+ {
+  "qid": "gsm8k-test-436",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "total weight ceiling-divided into truck trips"
+ },
+ {
+  "qid": "gsm8k-test-437",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly earnings times four"
+ },
+ {
+  "qid": "gsm8k-test-438",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained percent and subtraction"
+ },
+ {
+  "qid": "gsm8k-test-439",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half plus starting amount"
+ },
+ {
+  "qid": "gsm8k-test-440",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add fractional tip to bill"
+ },
+ {
+  "qid": "gsm8k-test-441",
+  "label": "HARD",
+  "type": null,
+  "reason": "position tracking nonobvious direction setup"
+ },
+ {
+  "qid": "gsm8k-test-442",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total cards minus kept, divide"
+ },
+ {
+  "qid": "gsm8k-test-443",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two discounted totals compared"
+ },
+ {
+  "qid": "gsm8k-test-444",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained multiples per room times rooms"
+ },
+ {
+  "qid": "gsm8k-test-445",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "pairs to shoes, add subtract"
+ },
+ {
+  "qid": "gsm8k-test-446",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "cupcakes ceiling-divided into pans"
+ },
+ {
+  "qid": "gsm8k-test-447",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute paper price then change"
+ },
+ {
+  "qid": "gsm8k-test-448",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-stage fraction remaining chain"
+ },
+ {
+  "qid": "gsm8k-test-449",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse algebra from cookies to sticks"
+ },
+ {
+  "qid": "gsm8k-test-450",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit conversion then percentage"
+ },
+ {
+  "qid": "gsm8k-test-451",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "one-fourth equals 20, scale up"
+ },
+ {
+  "qid": "gsm8k-test-452",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total minutes over days divided"
+ },
+ {
+  "qid": "gsm8k-test-453",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "books bought divided by kids"
+ },
+ {
+  "qid": "gsm8k-test-454",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "inclusion-exclusion then subtract"
+ },
+ {
+  "qid": "gsm8k-test-455",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "groups times members plus guides"
+ },
+ {
+  "qid": "gsm8k-test-456",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "markup hotel plus plane tickets"
+ },
+ {
+  "qid": "gsm8k-test-457",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half and triple then sum"
+ },
+ {
+  "qid": "gsm8k-test-458",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction of weight then combine"
+ },
+ {
+  "qid": "gsm8k-test-459",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "goal minus earnings sum"
+ },
+ {
+  "qid": "gsm8k-test-460",
+  "label": "HARD",
+  "type": null,
+  "reason": "capacity remaining compared, nonobvious framing"
+ },
+ {
+  "qid": "gsm8k-test-461",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction of oranges times rate"
+ },
+ {
+  "qid": "gsm8k-test-462",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "three times minus twenty"
+ },
+ {
+  "qid": "gsm8k-test-463",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "miles per week over speed"
+ },
+ {
+  "qid": "gsm8k-test-464",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total oats divided into bags"
+ },
+ {
+  "qid": "gsm8k-test-465",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two fractions chained"
+ },
+ {
+  "qid": "gsm8k-test-466",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "average of three temperatures"
+ },
+ {
+  "qid": "gsm8k-test-467",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "remaining amount divided by daily saving"
+ },
+ {
+  "qid": "gsm8k-test-468",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "capacity boundary, eggs exceeding tray count"
+ },
+ {
+  "qid": "gsm8k-test-469",
+  "label": "HARD",
+  "type": null,
+  "reason": "bogo plus coupon per-unit nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-470",
+  "label": "HARD",
+  "type": null,
+  "reason": "pyramid layers heights, unit conversion setup"
+ },
+ {
+  "qid": "gsm8k-test-471",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "minutes per hour times days"
+ },
+ {
+  "qid": "gsm8k-test-472",
+  "label": "HARD",
+  "type": null,
+  "reason": "age algebra nonobvious tense setup"
+ },
+ {
+  "qid": "gsm8k-test-473",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two trips times days cost"
+ },
+ {
+  "qid": "gsm8k-test-474",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "total oranges divided into pies"
+ },
+ {
+  "qid": "gsm8k-test-475",
+  "label": "HARD",
+  "type": null,
+  "reason": "break-even equation between venues"
+ },
+ {
+  "qid": "gsm8k-test-476",
+  "label": "HARD",
+  "type": null,
+  "reason": "system of three linked equations"
+ },
+ {
+  "qid": "gsm8k-test-477",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fractions of skein summed"
+ },
+ {
+  "qid": "gsm8k-test-478",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "grouped gifts plus extras"
+ },
+ {
+  "qid": "gsm8k-test-479",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained widths then couch length"
+ },
+ {
+  "qid": "gsm8k-test-480",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse total to per-pack price"
+ },
+ {
+  "qid": "gsm8k-test-481",
+  "label": "HARD",
+  "type": null,
+  "reason": "cheapest lumber optimization nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-482",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "dogs times pairs cost"
+ },
+ {
+  "qid": "gsm8k-test-483",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly cost minus pass"
+ },
+ {
+  "qid": "gsm8k-test-484",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute related counts then sum"
+ },
+ {
+  "qid": "gsm8k-test-485",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Rose total divided by four"
+ },
+ {
+  "qid": "gsm8k-test-486",
+  "label": "HARD",
+  "type": null,
+  "reason": "date-span days then calorie division"
+ },
+ {
+  "qid": "gsm8k-test-487",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "week pay minus spent"
+ },
+ {
+  "qid": "gsm8k-test-488",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distance times rate water"
+ },
+ {
+  "qid": "gsm8k-test-489",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained percent remaining"
+ },
+ {
+  "qid": "gsm8k-test-490",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split of total"
+ },
+ {
+  "qid": "gsm8k-test-491",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus cost profit"
+ },
+ {
+  "qid": "gsm8k-test-492",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "punches per minute times minutes"
+ },
+ {
+  "qid": "gsm8k-test-493",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained multiples from Suzanne"
+ },
+ {
+  "qid": "gsm8k-test-494",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half then fraction spent"
+ },
+ {
+  "qid": "gsm8k-test-495",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double plus forty minutes"
+ },
+ {
+  "qid": "gsm8k-test-496",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum items times grandchildren"
+ },
+ {
+  "qid": "gsm8k-test-497",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-day remaining fraction chain"
+ },
+ {
+  "qid": "gsm8k-test-498",
+  "label": "HARD",
+  "type": null,
+  "reason": "four chained relative rates summed"
+ },
+ {
+  "qid": "gsm8k-test-499",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract sold add returned"
+ },
+ {
+  "qid": "gsm8k-test-500",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "tulips divided into rows, both colors"
+ },
+ {
+  "qid": "gsm8k-test-501",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "third of raisins divided into batches"
+ },
+ {
+  "qid": "gsm8k-test-502",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "extra consumption weekly cost difference"
+ },
+ {
+  "qid": "gsm8k-test-503",
+  "label": "HARD",
+  "type": null,
+  "reason": "work-rate scaling with unit conversion"
+ },
+ {
+  "qid": "gsm8k-test-504",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse sofas to chairs, multiple relations"
+ },
+ {
+  "qid": "gsm8k-test-505",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse headphone price to extra CDs"
+ },
+ {
+  "qid": "gsm8k-test-506",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "baseline hours plus exceptions"
+ },
+ {
+  "qid": "gsm8k-test-507",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained on-off with three-times-fewer ambiguity"
+ },
+ {
+  "qid": "gsm8k-test-508",
+  "label": "HARD",
+  "type": null,
+  "reason": "two-person future age algebra"
+ },
+ {
+  "qid": "gsm8k-test-509",
+  "label": "HARD",
+  "type": null,
+  "reason": "back out monitor from total"
+ },
+ {
+  "qid": "gsm8k-test-510",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "boys shells plus multiple"
+ },
+ {
+  "qid": "gsm8k-test-511",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse George then double"
+ },
+ {
+  "qid": "gsm8k-test-512",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained age offsets"
+ },
+ {
+  "qid": "gsm8k-test-513",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "four thicknesses summed"
+ },
+ {
+  "qid": "gsm8k-test-514",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "target minus weekly vlogs"
+ },
+ {
+  "qid": "gsm8k-test-515",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half bill plus full tip"
+ },
+ {
+  "qid": "gsm8k-test-516",
+  "label": "HARD",
+  "type": null,
+  "reason": "many-step add spend triple chain"
+ },
+ {
+  "qid": "gsm8k-test-517",
+  "label": "HARD",
+  "type": null,
+  "reason": "half-month split saving nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-518",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum item costs then change"
+ },
+ {
+  "qid": "gsm8k-test-519",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "difference of per-task earnings"
+ },
+ {
+  "qid": "gsm8k-test-520",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split of hundred"
+ },
+ {
+  "qid": "gsm8k-test-521",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "round trip times days"
+ },
+ {
+  "qid": "gsm8k-test-522",
+  "label": "HARD",
+  "type": null,
+  "reason": "re-write everything doubling nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-523",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "phone-tree exponential round, fencepost risk"
+ },
+ {
+  "qid": "gsm8k-test-524",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "months loss added to final"
+ },
+ {
+  "qid": "gsm8k-test-525",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "five times minus two"
+ },
+ {
+  "qid": "gsm8k-test-526",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum items then discount"
+ },
+ {
+  "qid": "gsm8k-test-527",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum items then change"
+ },
+ {
+  "qid": "gsm8k-test-528",
+  "label": "HARD",
+  "type": null,
+  "reason": "tiered commission over threshold"
+ },
+ {
+  "qid": "gsm8k-test-529",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "needed minus already have"
+ },
+ {
+  "qid": "gsm8k-test-530",
+  "label": "HARD",
+  "type": null,
+  "reason": "warm-time formula then three-mile diff"
+ },
+ {
+  "qid": "gsm8k-test-531",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "target divided by weekly earnings"
+ },
+ {
+  "qid": "gsm8k-test-532",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sub plus thrice cost"
+ },
+ {
+  "qid": "gsm8k-test-533",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "split buttons times holes"
+ },
+ {
+  "qid": "gsm8k-test-534",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained halving fractions"
+ },
+ {
+  "qid": "gsm8k-test-535",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse from half-recommended, reduce to four"
+ },
+ {
+  "qid": "gsm8k-test-536",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two cage groups summed"
+ },
+ {
+  "qid": "gsm8k-test-537",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained weights then average"
+ },
+ {
+  "qid": "gsm8k-test-538",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "start angle plus rate times hours"
+ },
+ {
+  "qid": "gsm8k-test-539",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "candles needed divided into packs"
+ },
+ {
+  "qid": "gsm8k-test-540",
+  "label": "HARD",
+  "type": null,
+  "reason": "first-week pages via rate nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-541",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two fractions eaten subtracted"
+ },
+ {
+  "qid": "gsm8k-test-542",
+  "label": "HARD",
+  "type": null,
+  "reason": "future-age triple algebra"
+ },
+ {
+  "qid": "gsm8k-test-543",
+  "label": "HARD",
+  "type": null,
+  "reason": "tiered tooth payments halved chain"
+ },
+ {
+  "qid": "gsm8k-test-544",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "back out Mark and Anna sum"
+ },
+ {
+  "qid": "gsm8k-test-545",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sales minus other earnings"
+ },
+ {
+  "qid": "gsm8k-test-546",
+  "label": "HARD",
+  "type": null,
+  "reason": "split-week spending two figure types"
+ },
+ {
+  "qid": "gsm8k-test-547",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum multiple item costs"
+ },
+ {
+  "qid": "gsm8k-test-548",
+  "label": "HARD",
+  "type": null,
+  "reason": "weekly deficit times month nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-549",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly removal times 24 months"
+ },
+ {
+  "qid": "gsm8k-test-550",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus costs profit"
+ },
+ {
+  "qid": "gsm8k-test-551",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "total crayons divided into muffins"
+ },
+ {
+  "qid": "gsm8k-test-552",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "area times summed per-foot rates"
+ },
+ {
+  "qid": "gsm8k-test-553",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum birds over seven days average"
+ },
+ {
+  "qid": "gsm8k-test-554",
+  "label": "HARD",
+  "type": null,
+  "reason": "nested arithmetic instruction sequence"
+ },
+ {
+  "qid": "gsm8k-test-555",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract then add together"
+ },
+ {
+  "qid": "gsm8k-test-556",
+  "label": "HARD",
+  "type": null,
+  "reason": "percentage off then scale nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-557",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "convert and sum movie minutes"
+ },
+ {
+  "qid": "gsm8k-test-558",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent-less then combine houses"
+ },
+ {
+  "qid": "gsm8k-test-559",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum both people's utensils"
+ },
+ {
+  "qid": "gsm8k-test-560",
+  "label": "HARD",
+  "type": null,
+  "reason": "per-pair from discounted boxes nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-561",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute both earnings difference"
+ },
+ {
+  "qid": "gsm8k-test-562",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "calories burned times water rate"
+ },
+ {
+  "qid": "gsm8k-test-563",
+  "label": "HARD",
+  "type": null,
+  "reason": "percent relations off blue nonobvious"
+ },
+ {
+  "qid": "gsm8k-test-564",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "third measurement then average"
+ },
+ {
+  "qid": "gsm8k-test-565",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "loss versus gain over weeks"
+ },
+ {
+  "qid": "gsm8k-test-566",
+  "label": "HARD",
+  "type": null,
+  "reason": "multiple invite sources summed carefully"
+ },
+ {
+  "qid": "gsm8k-test-567",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained relative weights"
+ },
+ {
+  "qid": "gsm8k-test-568",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compare two total prices"
+ },
+ {
+  "qid": "gsm8k-test-569",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "protein per day times week"
+ },
+ {
+  "qid": "gsm8k-test-570",
+  "label": "HARD",
+  "type": null,
+  "reason": "twice-five-years-ago age algebra"
+ },
+ {
+  "qid": "gsm8k-test-571",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "remaining cost divided by hourly wage"
+ },
+ {
+  "qid": "gsm8k-test-572",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "angle sum ratio then largest"
+ },
+ {
+  "qid": "gsm8k-test-573",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "total cents divided by nickel price"
+ },
+ {
+  "qid": "gsm8k-test-574",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "legs per animal summed"
+ },
+ {
+  "qid": "gsm8k-test-575",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "increase then subtract two"
+ },
+ {
+  "qid": "gsm8k-test-576",
+  "label": "HARD",
+  "type": null,
+  "reason": "three-year varying purchase plus gifts"
+ },
+ {
+  "qid": "gsm8k-test-577",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate then additional-distance time"
+ },
+ {
+  "qid": "gsm8k-test-578",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute rates times hours summed"
+ },
+ {
+  "qid": "gsm8k-test-579",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained doubling spend subtracted"
+ },
+ {
+  "qid": "gsm8k-test-580",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two-rate lemonade earnings summed"
+ },
+ {
+  "qid": "gsm8k-test-581",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "rotations lifetime divided to years"
+ },
+ {
+  "qid": "gsm8k-test-582",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "doubled washings then per-pump cost"
+ },
+ {
+  "qid": "gsm8k-test-583",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "discounted total then remaining money"
+ },
+ {
+  "qid": "gsm8k-test-584",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "butter per dozen times week"
+ },
+ {
+  "qid": "gsm8k-test-585",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost difference of two lengths"
+ },
+ {
+  "qid": "gsm8k-test-586",
+  "label": "HARD",
+  "type": null,
+  "reason": "extended-months escalating funding sum"
+ },
+ {
+  "qid": "gsm8k-test-587",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum meat ounces with conversion"
+ },
+ {
+  "qid": "gsm8k-test-588",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "March-days count times posts"
+ },
+ {
+  "qid": "gsm8k-test-589",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekly water cost times year"
+ },
+ {
+  "qid": "gsm8k-test-590",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum several item costs"
+ },
+ {
+  "qid": "gsm8k-test-591",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double then add growth"
+ },
+ {
+  "qid": "gsm8k-test-592",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "bull weight divided by daily sales"
+ },
+ {
+  "qid": "gsm8k-test-593",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained fraction remaining seat allocation"
+ },
+ {
+  "qid": "gsm8k-test-594",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "lights total minus broken"
+ },
+ {
+  "qid": "gsm8k-test-595",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining plays summed"
+ },
+ {
+  "qid": "gsm8k-test-596",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sessions times hours times rate"
+ },
+ {
+  "qid": "gsm8k-test-597",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-step consumption then half given"
+ },
+ {
+  "qid": "gsm8k-test-598",
+  "label": "HARD",
+  "type": null,
+  "reason": "future-age reverse then forward"
+ },
+ {
+  "qid": "gsm8k-test-599",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two totals compared difference"
+ },
+ {
+  "qid": "gsm8k-test-600",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total flowers times fraction"
+ },
+ {
+  "qid": "gsm8k-test-601",
+  "label": "HARD",
+  "type": null,
+  "reason": "unit conversion kb to Mb/hour"
+ },
+ {
+  "qid": "gsm8k-test-602",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two-rate days towed summed"
+ },
+ {
+  "qid": "gsm8k-test-603",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "height gap divided by yearly growth"
+ },
+ {
+  "qid": "gsm8k-test-604",
+  "label": "HARD",
+  "type": null,
+  "reason": "profit then commission chain"
+ },
+ {
+  "qid": "gsm8k-test-605",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained percents then men count"
+ },
+ {
+  "qid": "gsm8k-test-606",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained offsets then sum"
+ },
+ {
+  "qid": "gsm8k-test-607",
+  "label": "HARD",
+  "type": null,
+  "reason": "relative-speed catch-up time"
+ },
+ {
+  "qid": "gsm8k-test-608",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "back out chained fish counts"
+ },
+ {
+  "qid": "gsm8k-test-609",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "per-class cost threshold, misses allowed"
+ },
+ {
+  "qid": "gsm8k-test-610",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double rate times week"
+ },
+ {
+  "qid": "gsm8k-test-611",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute Reggie then Lynn"
+ },
+ {
+  "qid": "gsm8k-test-612",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit prices then five each"
+ },
+ {
+  "qid": "gsm8k-test-613",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "volume times seconds dig"
+ },
+ {
+  "qid": "gsm8k-test-614",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained feature costs summed"
+ },
+ {
+  "qid": "gsm8k-test-615",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "raise plus bonus times year"
+ },
+ {
+  "qid": "gsm8k-test-616",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum wardrobe item costs"
+ },
+ {
+  "qid": "gsm8k-test-617",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "combined daily articles times days"
+ },
+ {
+  "qid": "gsm8k-test-618",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained family-age relations"
+ },
+ {
+  "qid": "gsm8k-test-619",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "portions times bags weight"
+ },
+ {
+  "qid": "gsm8k-test-620",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two distances summed"
+ },
+ {
+  "qid": "gsm8k-test-621",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two-rate digging time summed"
+ },
+ {
+  "qid": "gsm8k-test-622",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two cupcakes times people count"
+ },
+ {
+  "qid": "gsm8k-test-623",
+  "label": "HARD",
+  "type": null,
+  "reason": "multiplied likes plus recent, careful chain"
+ },
+ {
+  "qid": "gsm8k-test-624",
+  "label": "HARD",
+  "type": null,
+  "reason": "two-day discounted totals difference"
+ },
+ {
+  "qid": "gsm8k-test-625",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse green then second-month fraction"
+ },
+ {
+  "qid": "gsm8k-test-626",
+  "label": "HARD",
+  "type": null,
+  "reason": "free hour then doubling paid hours"
+ },
+ {
+  "qid": "gsm8k-test-627",
+  "label": "HARD",
+  "type": null,
+  "reason": "reverse wage withheld from balance"
+ },
+ {
+  "qid": "gsm8k-test-628",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "eggs needed converted to dozens"
+ },
+ {
+  "qid": "gsm8k-test-629",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction done then remaining pages"
+ },
+ {
+  "qid": "gsm8k-test-630",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "days-to-finish before deadline gap"
+ },
+ {
+  "qid": "gsm8k-test-631",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly costs times year plus"
+ },
+ {
+  "qid": "gsm8k-test-632",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained cooking times combined half"
+ },
+ {
+  "qid": "gsm8k-test-633",
+  "label": "HARD",
+  "type": null,
+  "reason": "two mixture costs difference fractions"
+ },
+ {
+  "qid": "gsm8k-test-634",
+  "label": "HARD",
+  "type": null,
+  "reason": "legs-heads system of equations"
+ },
+ {
+  "qid": "gsm8k-test-635",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "markup times week plus donut"
+ },
+ {
+  "qid": "gsm8k-test-636",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract known costs from total"
+ },
+ {
+  "qid": "gsm8k-test-637",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total hours divided by rate"
+ },
+ {
+  "qid": "gsm8k-test-638",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent then multiply sleep"
+ },
+ {
+  "qid": "gsm8k-test-639",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained amounts then average"
+ },
+ {
+  "qid": "gsm8k-test-640",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum quarters plus overtime"
+ },
+ {
+  "qid": "gsm8k-test-641",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "nested percentages"
+ },
+ {
+  "qid": "gsm8k-test-642",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum ingredients times muffins"
+ },
+ {
+  "qid": "gsm8k-test-643",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "pool and divide equally"
+ },
+ {
+  "qid": "gsm8k-test-644",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost then change"
+ },
+ {
+  "qid": "gsm8k-test-645",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-condition mood bookkeeping non-obvious"
+ },
+ {
+  "qid": "gsm8k-test-646",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "solve simple linear equation"
+ },
+ {
+  "qid": "gsm8k-test-647",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit convert then divide"
+ },
+ {
+  "qid": "gsm8k-test-648",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-step changing dog counts"
+ },
+ {
+  "qid": "gsm8k-test-649",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fractions of remainder"
+ },
+ {
+  "qid": "gsm8k-test-650",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "goal minus current total"
+ },
+ {
+  "qid": "gsm8k-test-651",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate times hours times days"
+ },
+ {
+  "qid": "gsm8k-test-652",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "proportional scaling"
+ },
+ {
+  "qid": "gsm8k-test-653",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "must count Jack; exceed threshold"
+ },
+ {
+  "qid": "gsm8k-test-654",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained differences then sum"
+ },
+ {
+  "qid": "gsm8k-test-655",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse percent plus addition"
+ },
+ {
+  "qid": "gsm8k-test-656",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half each mode times"
+ },
+ {
+  "qid": "gsm8k-test-657",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract elapsed from total"
+ },
+ {
+  "qid": "gsm8k-test-658",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum item costs"
+ },
+ {
+  "qid": "gsm8k-test-659",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum then subtract eaten"
+ },
+ {
+  "qid": "gsm8k-test-660",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "solve linear twins triplets"
+ },
+ {
+  "qid": "gsm8k-test-661",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract homework from time"
+ },
+ {
+  "qid": "gsm8k-test-662",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "find candy cost then scale"
+ },
+ {
+  "qid": "gsm8k-test-663",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate times months summed"
+ },
+ {
+  "qid": "gsm8k-test-664",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent of total then subtract"
+ },
+ {
+  "qid": "gsm8k-test-665",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained prices times counts"
+ },
+ {
+  "qid": "gsm8k-test-666",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained differences summed"
+ },
+ {
+  "qid": "gsm8k-test-667",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chairs needed minus have"
+ },
+ {
+  "qid": "gsm8k-test-668",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "nested percentages"
+ },
+ {
+  "qid": "gsm8k-test-669",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-person chained clues then threshold"
+ },
+ {
+  "qid": "gsm8k-test-670",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "count only great-grandbabies layer"
+ },
+ {
+  "qid": "gsm8k-test-671",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract two percentages"
+ },
+ {
+  "qid": "gsm8k-test-672",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining then halve for pairs"
+ },
+ {
+  "qid": "gsm8k-test-673",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent seen plus backyard"
+ },
+ {
+  "qid": "gsm8k-test-674",
+  "label": "HARD",
+  "type": null,
+  "reason": "group size then drinks snacks cost"
+ },
+ {
+  "qid": "gsm8k-test-675",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "combined minus two trucks"
+ },
+ {
+  "qid": "gsm8k-test-676",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "per-group counts times amounts"
+ },
+ {
+  "qid": "gsm8k-test-677",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split minus spend"
+ },
+ {
+  "qid": "gsm8k-test-678",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "divide speed times time"
+ },
+ {
+  "qid": "gsm8k-test-679",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate then total hours"
+ },
+ {
+  "qid": "gsm8k-test-680",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent of percent complement"
+ },
+ {
+  "qid": "gsm8k-test-681",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "days times rate"
+ },
+ {
+  "qid": "gsm8k-test-682",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rates times hours summed"
+ },
+ {
+  "qid": "gsm8k-test-683",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum then apply discount"
+ },
+ {
+  "qid": "gsm8k-test-684",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "buy-2-get-1 deal threshold with budget"
+ },
+ {
+  "qid": "gsm8k-test-685",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "difference of eaten over days"
+ },
+ {
+  "qid": "gsm8k-test-686",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fraction of area times tiles"
+ },
+ {
+  "qid": "gsm8k-test-687",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compare two total costs"
+ },
+ {
+  "qid": "gsm8k-test-688",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "price increase times count"
+ },
+ {
+  "qid": "gsm8k-test-689",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum calorie components"
+ },
+ {
+  "qid": "gsm8k-test-690",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cost then change"
+ },
+ {
+  "qid": "gsm8k-test-691",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained percentages"
+ },
+ {
+  "qid": "gsm8k-test-692",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sacks given times weight"
+ },
+ {
+  "qid": "gsm8k-test-693",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum then subtract last week"
+ },
+ {
+  "qid": "gsm8k-test-694",
+  "label": "HARD",
+  "type": null,
+  "reason": "two-mode foot taps over minutes"
+ },
+ {
+  "qid": "gsm8k-test-695",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "damage minus costs avoided"
+ },
+ {
+  "qid": "gsm8k-test-696",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract repaired chairs"
+ },
+ {
+  "qid": "gsm8k-test-697",
+  "label": "HARD",
+  "type": null,
+  "reason": "two groups fractions of pizzas"
+ },
+ {
+  "qid": "gsm8k-test-698",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compute times then average"
+ },
+ {
+  "qid": "gsm8k-test-699",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse linear with units"
+ },
+ {
+  "qid": "gsm8k-test-700",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fractions of windows summed"
+ },
+ {
+  "qid": "gsm8k-test-701",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "blue over total percent"
+ },
+ {
+  "qid": "gsm8k-test-702",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fractions of remainder"
+ },
+ {
+  "qid": "gsm8k-test-703",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total pieces divided by pack"
+ },
+ {
+  "qid": "gsm8k-test-704",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "smores needed then boxes"
+ },
+ {
+  "qid": "gsm8k-test-705",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained ages summed"
+ },
+ {
+  "qid": "gsm8k-test-706",
+  "label": "WRINKLE",
+  "type": "b",
+  "reason": "split among Greg plus 3 siblings"
+ },
+ {
+  "qid": "gsm8k-test-707",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum weighted book weights"
+ },
+ {
+  "qid": "gsm8k-test-708",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percentages then complement"
+ },
+ {
+  "qid": "gsm8k-test-709",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "difference after transfer"
+ },
+ {
+  "qid": "gsm8k-test-710",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cubes used then subtract"
+ },
+ {
+  "qid": "gsm8k-test-711",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained then difference"
+ },
+ {
+  "qid": "gsm8k-test-712",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "two prices times counts"
+ },
+ {
+  "qid": "gsm8k-test-713",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract categories from total"
+ },
+ {
+  "qid": "gsm8k-test-714",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "subtract fraction then add"
+ },
+ {
+  "qid": "gsm8k-test-715",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "per-class boys count"
+ },
+ {
+  "qid": "gsm8k-test-716",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential add triple subtract"
+ },
+ {
+  "qid": "gsm8k-test-717",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum animals divide by days"
+ },
+ {
+  "qid": "gsm8k-test-718",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "revenue minus pack cost"
+ },
+ {
+  "qid": "gsm8k-test-719",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "compare two park totals"
+ },
+ {
+  "qid": "gsm8k-test-720",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "price diff times weekly volume"
+ },
+ {
+  "qid": "gsm8k-test-721",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "groups needed minus have"
+ },
+ {
+  "qid": "gsm8k-test-722",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "weekday weekend chairs summed"
+ },
+ {
+  "qid": "gsm8k-test-723",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential add subtract halve"
+ },
+ {
+  "qid": "gsm8k-test-724",
+  "label": "WRINKLE",
+  "type": "b",
+  "reason": "Jenna plus 4 roommates share count"
+ },
+ {
+  "qid": "gsm8k-test-725",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "dozens minus broken summed"
+ },
+ {
+  "qid": "gsm8k-test-726",
+  "label": "HARD",
+  "type": null,
+  "reason": "multi-tier sticker button exchange rates"
+ },
+ {
+  "qid": "gsm8k-test-727",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum matches with double"
+ },
+ {
+  "qid": "gsm8k-test-728",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split of 33"
+ },
+ {
+  "qid": "gsm8k-test-729",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained size counts summed"
+ },
+ {
+  "qid": "gsm8k-test-730",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "apply discount"
+ },
+ {
+  "qid": "gsm8k-test-731",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "songs times playlists times length"
+ },
+ {
+  "qid": "gsm8k-test-732",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percentages then complement"
+ },
+ {
+  "qid": "gsm8k-test-733",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "reverse fractions to total"
+ },
+ {
+  "qid": "gsm8k-test-734",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "ratio split of cases"
+ },
+ {
+  "qid": "gsm8k-test-735",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum three purchases"
+ },
+ {
+  "qid": "gsm8k-test-736",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "percent more plus base"
+ },
+ {
+  "qid": "gsm8k-test-737",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining money divided by price"
+ },
+ {
+  "qid": "gsm8k-test-738",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "oranges times cost times liters"
+ },
+ {
+  "qid": "gsm8k-test-739",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "derive Ahmed then sum"
+ },
+ {
+  "qid": "gsm8k-test-740",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hourly plus bonus two days"
+ },
+ {
+  "qid": "gsm8k-test-741",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sales counts then difference"
+ },
+ {
+  "qid": "gsm8k-test-742",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining goal divided by corn"
+ },
+ {
+  "qid": "gsm8k-test-743",
+  "label": "HARD",
+  "type": null,
+  "reason": "remaining time fraction then percentage"
+ },
+ {
+  "qid": "gsm8k-test-744",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fractions kept"
+ },
+ {
+  "qid": "gsm8k-test-745",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "drive time both ways plus museum"
+ },
+ {
+  "qid": "gsm8k-test-746",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "wheels used subtract from box"
+ },
+ {
+  "qid": "gsm8k-test-747",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "apply discount"
+ },
+ {
+  "qid": "gsm8k-test-748",
+  "label": "HARD",
+  "type": null,
+  "reason": "nested fractions with special pricing"
+ },
+ {
+  "qid": "gsm8k-test-749",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum pounds times prices"
+ },
+ {
+  "qid": "gsm8k-test-750",
+  "label": "HARD",
+  "type": null,
+  "reason": "derive hike speed then distances"
+ },
+ {
+  "qid": "gsm8k-test-751",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "point components then difference"
+ },
+ {
+  "qid": "gsm8k-test-752",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining cost split in two"
+ },
+ {
+  "qid": "gsm8k-test-753",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "usual plus double days summed"
+ },
+ {
+  "qid": "gsm8k-test-754",
+  "label": "HARD",
+  "type": null,
+  "reason": "ratio constraint solves fish bought"
+ },
+ {
+  "qid": "gsm8k-test-755",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distance fuel cost weekly"
+ },
+ {
+  "qid": "gsm8k-test-756",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "coin values then fraction spent"
+ },
+ {
+  "qid": "gsm8k-test-757",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "yields times plants summed"
+ },
+ {
+  "qid": "gsm8k-test-758",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fractions complement of total"
+ },
+ {
+  "qid": "gsm8k-test-759",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half cost minus savings"
+ },
+ {
+  "qid": "gsm8k-test-760",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "logs to reach freezing threshold"
+ },
+ {
+  "qid": "gsm8k-test-761",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "groups fraction times shells"
+ },
+ {
+  "qid": "gsm8k-test-762",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential get off on"
+ },
+ {
+  "qid": "gsm8k-test-763",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "caps times value times days"
+ },
+ {
+  "qid": "gsm8k-test-764",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "regular plus overtime pay"
+ },
+ {
+  "qid": "gsm8k-test-765",
+  "label": "WRINKLE",
+  "type": "b",
+  "reason": "do cubs count as lions"
+ },
+ {
+  "qid": "gsm8k-test-766",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "discount then change"
+ },
+ {
+  "qid": "gsm8k-test-767",
+  "label": "HARD",
+  "type": null,
+  "reason": "growing workforce paid over months"
+ },
+ {
+  "qid": "gsm8k-test-768",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "songs times counts summed"
+ },
+ {
+  "qid": "gsm8k-test-769",
+  "label": "HARD",
+  "type": null,
+  "reason": "raise history then compare rates"
+ },
+ {
+  "qid": "gsm8k-test-770",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "difference of two costs"
+ },
+ {
+  "qid": "gsm8k-test-771",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half plus then sum"
+ },
+ {
+  "qid": "gsm8k-test-772",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "students teachers trees summed"
+ },
+ {
+  "qid": "gsm8k-test-773",
+  "label": "HARD",
+  "type": null,
+  "reason": "goats making 30 percent of new total"
+ },
+ {
+  "qid": "gsm8k-test-774",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours played subtract from goal"
+ },
+ {
+  "qid": "gsm8k-test-775",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "speed gap times time"
+ },
+ {
+  "qid": "gsm8k-test-776",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum then premium"
+ },
+ {
+  "qid": "gsm8k-test-777",
+  "label": "HARD",
+  "type": null,
+  "reason": "multiple grade pass rates combined"
+ },
+ {
+  "qid": "gsm8k-test-778",
+  "label": "HARD",
+  "type": null,
+  "reason": "chips to area then length dimension"
+ },
+ {
+  "qid": "gsm8k-test-779",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total ordered minus sold"
+ },
+ {
+  "qid": "gsm8k-test-780",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "iterated doubling to May cutoff, additional"
+ },
+ {
+  "qid": "gsm8k-test-781",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total earned divide by days"
+ },
+ {
+  "qid": "gsm8k-test-782",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "leftover marshmallows split two"
+ },
+ {
+  "qid": "gsm8k-test-783",
+  "label": "HARD",
+  "type": null,
+  "reason": "four players varying play lengths quarters"
+ },
+ {
+  "qid": "gsm8k-test-784",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained ratio ingredients fill jar"
+ },
+ {
+  "qid": "gsm8k-test-785",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sum two purchases"
+ },
+ {
+  "qid": "gsm8k-test-786",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "needed minus have"
+ },
+ {
+  "qid": "gsm8k-test-787",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sell give-away remainder"
+ },
+ {
+  "qid": "gsm8k-test-788",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remaining split among students"
+ },
+ {
+  "qid": "gsm8k-test-789",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "hours summed convert minutes"
+ },
+ {
+  "qid": "gsm8k-test-790",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then halve cars"
+ },
+ {
+  "qid": "gsm8k-test-791",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cycles tasks pay times days"
+ },
+ {
+  "qid": "gsm8k-test-792",
+  "label": "HARD",
+  "type": null,
+  "reason": "cross-game chained scoring references"
+ },
+ {
+  "qid": "gsm8k-test-793",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "tins difference of two"
+ },
+ {
+  "qid": "gsm8k-test-794",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "solve chained linear cards"
+ },
+ {
+  "qid": "gsm8k-test-795",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained counts summed"
+ },
+ {
+  "qid": "gsm8k-test-796",
+  "label": "HARD",
+  "type": null,
+  "reason": "shipping plus refund loss multi-part"
+ },
+ {
+  "qid": "gsm8k-test-797",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "money minus purchases"
+ },
+ {
+  "qid": "gsm8k-test-798",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "monthly minus three weeks"
+ },
+ {
+  "qid": "gsm8k-test-799",
+  "label": "HARD",
+  "type": null,
+  "reason": "several time components over month"
+ },
+ {
+  "qid": "gsm8k-test-800",
+  "label": "HARD",
+  "type": null,
+  "reason": "extra items beyond included counts"
+ },
+ {
+  "qid": "gsm8k-test-801",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained amounts then percent more"
+ },
+ {
+  "qid": "gsm8k-test-802",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained multipliers unit convert"
+ },
+ {
+  "qid": "gsm8k-test-803",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "speed times total hours"
+ },
+ {
+  "qid": "gsm8k-test-804",
+  "label": "HARD",
+  "type": null,
+  "reason": "speed inverse time count irrelevant"
+ },
+ {
+  "qid": "gsm8k-test-805",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained counts summed"
+ },
+ {
+  "qid": "gsm8k-test-806",
+  "label": "HARD",
+  "type": null,
+  "reason": "back-solve purse from multiple credits"
+ },
+ {
+  "qid": "gsm8k-test-807",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "slices made minus eaten"
+ },
+ {
+  "qid": "gsm8k-test-808",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cows needed minus have"
+ },
+ {
+  "qid": "gsm8k-test-809",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "fractions times length summed"
+ },
+ {
+  "qid": "gsm8k-test-810",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "total cost minus have"
+ },
+ {
+  "qid": "gsm8k-test-811",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "paid minus price"
+ },
+ {
+  "qid": "gsm8k-test-812",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "money minus purchases"
+ },
+ {
+  "qid": "gsm8k-test-813",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained ratio socks dishes references"
+ },
+ {
+  "qid": "gsm8k-test-814",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "remainder both plus math-only"
+ },
+ {
+  "qid": "gsm8k-test-815",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "groups fitting fixed time minus intermission"
+ },
+ {
+  "qid": "gsm8k-test-816",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "simple interest times years"
+ },
+ {
+  "qid": "gsm8k-test-817",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "no-collar no-button difference"
+ },
+ {
+  "qid": "gsm8k-test-818",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "trays times price"
+ },
+ {
+  "qid": "gsm8k-test-819",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sold subtracted from farms"
+ },
+ {
+  "qid": "gsm8k-test-820",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "yearly cost divide by pairs"
+ },
+ {
+  "qid": "gsm8k-test-821",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "baskets with discount summed"
+ },
+ {
+  "qid": "gsm8k-test-822",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "half rooms times time hours"
+ },
+ {
+  "qid": "gsm8k-test-823",
+  "label": "HARD",
+  "type": null,
+  "reason": "cumulative-then-double across three years"
+ },
+ {
+  "qid": "gsm8k-test-824",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained ages solve linear system"
+ },
+ {
+  "qid": "gsm8k-test-825",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "double then add gallons"
+ },
+ {
+  "qid": "gsm8k-test-826",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "tips then percent less summed"
+ },
+ {
+  "qid": "gsm8k-test-827",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "given away subtracted"
+ },
+ {
+  "qid": "gsm8k-test-828",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "yearly badges then difference"
+ },
+ {
+  "qid": "gsm8k-test-829",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "loaves slices price over hours"
+ },
+ {
+  "qid": "gsm8k-test-830",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "gold plus silver total"
+ },
+ {
+  "qid": "gsm8k-test-831",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "distributed and eaten subtracted"
+ },
+ {
+  "qid": "gsm8k-test-832",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained counts subtract from total"
+ },
+ {
+  "qid": "gsm8k-test-833",
+  "label": "HARD",
+  "type": null,
+  "reason": "chained differences solve linear total"
+ },
+ {
+  "qid": "gsm8k-test-834",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained weights"
+ },
+ {
+  "qid": "gsm8k-test-835",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "cups needed then boxes cost"
+ },
+ {
+  "qid": "gsm8k-test-836",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Keenan share divided by weeks"
+ },
+ {
+  "qid": "gsm8k-test-837",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "sequential fractions eaten summed"
+ },
+ {
+  "qid": "gsm8k-test-838",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "unit prices times counts"
+ },
+ {
+  "qid": "gsm8k-test-839",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "bolts cost then change"
+ },
+ {
+  "qid": "gsm8k-test-840",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "rate times hours"
+ },
+ {
+  "qid": "gsm8k-test-841",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "add then lose fraction"
+ },
+ {
+  "qid": "gsm8k-test-842",
+  "label": "HARD",
+  "type": null,
+  "reason": "weighted percentages across question types"
+ },
+ {
+  "qid": "gsm8k-test-843",
+  "label": "HARD",
+  "type": null,
+  "reason": "back-solve cost from profit"
+ },
+ {
+  "qid": "gsm8k-test-844",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "boys equal split then difference"
+ },
+ {
+  "qid": "gsm8k-test-845",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "chained fractions summed"
+ },
+ {
+  "qid": "gsm8k-test-846",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "profit minus new rope cost"
+ },
+ {
+  "qid": "gsm8k-test-847",
+  "label": "HARD",
+  "type": null,
+  "reason": "solve future-age equation from present"
+ },
+ {
+  "qid": "gsm8k-test-848",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Multi-step budget subtraction, unambiguous"
+ },
+ {
+  "qid": "gsm8k-test-849",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Reverse: (65-15)/2, single quantity"
+ },
+ {
+  "qid": "gsm8k-test-850",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Simple subtraction of gifts"
+ },
+ {
+  "qid": "gsm8k-test-851",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add with doubling, straightforward"
+ },
+ {
+  "qid": "gsm8k-test-852",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "80% into pairs, single calc"
+ },
+ {
+  "qid": "gsm8k-test-853",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum three bird groups"
+ },
+ {
+  "qid": "gsm8k-test-854",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Compare petal totals, subtract"
+ },
+ {
+  "qid": "gsm8k-test-855",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction chain to percent"
+ },
+ {
+  "qid": "gsm8k-test-856",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ratio conversion, single answer"
+ },
+ {
+  "qid": "gsm8k-test-857",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Reverse solve for carrot price"
+ },
+ {
+  "qid": "gsm8k-test-858",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Hours times raised wage"
+ },
+ {
+  "qid": "gsm8k-test-859",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract lawn earnings from total"
+ },
+ {
+  "qid": "gsm8k-test-860",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sequential weight additions"
+ },
+ {
+  "qid": "gsm8k-test-861",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Revenue minus payment, profit"
+ },
+ {
+  "qid": "gsm8k-test-862",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Compare two counts, subtract"
+ },
+ {
+  "qid": "gsm8k-test-863",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction more, then sum"
+ },
+ {
+  "qid": "gsm8k-test-864",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract then divide"
+ },
+ {
+  "qid": "gsm8k-test-865",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Compute pages, compare"
+ },
+ {
+  "qid": "gsm8k-test-866",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Leftover soup divided into child bowls"
+ },
+ {
+  "qid": "gsm8k-test-867",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Simple purchase total"
+ },
+ {
+  "qid": "gsm8k-test-868",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Material per mask scaled up"
+ },
+ {
+  "qid": "gsm8k-test-869",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total divided by ticket count"
+ },
+ {
+  "qid": "gsm8k-test-870",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract activity hours from day"
+ },
+ {
+  "qid": "gsm8k-test-871",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract used from each color"
+ },
+ {
+  "qid": "gsm8k-test-872",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Double then subtract loss"
+ },
+ {
+  "qid": "gsm8k-test-873",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction and subtraction"
+ },
+ {
+  "qid": "gsm8k-test-874",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age algebra, straightforward"
+ },
+ {
+  "qid": "gsm8k-test-875",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Twice plus, then sum"
+ },
+ {
+  "qid": "gsm8k-test-876",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Rate times hours times pay"
+ },
+ {
+  "qid": "gsm8k-test-877",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total time divided by rate"
+ },
+ {
+  "qid": "gsm8k-test-878",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Solve remaining balloons algebraically"
+ },
+ {
+  "qid": "gsm8k-test-879",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total miles divided by interval"
+ },
+ {
+  "qid": "gsm8k-test-880",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sequential hours, sum"
+ },
+ {
+  "qid": "gsm8k-test-881",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total cost split in half"
+ },
+ {
+  "qid": "gsm8k-test-882",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum fruit, subtract eaten"
+ },
+ {
+  "qid": "gsm8k-test-883",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum group counts"
+ },
+ {
+  "qid": "gsm8k-test-884",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Profit per lollipop times count"
+ },
+ {
+  "qid": "gsm8k-test-885",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained multiples, sum pets"
+ },
+ {
+  "qid": "gsm8k-test-886",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total slices divided by daily rate"
+ },
+ {
+  "qid": "gsm8k-test-887",
+  "label": "PLAIN",
+  "type": "a",
+  "reason": "Age-span months; off-by-one on years counted"
+ },
+ {
+  "qid": "gsm8k-test-888",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract cinnamon, split rows"
+ },
+ {
+  "qid": "gsm8k-test-889",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Trips in 8 hours, least-number ceiling"
+ },
+ {
+  "qid": "gsm8k-test-890",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half pool minus daily drain"
+ },
+ {
+  "qid": "gsm8k-test-891",
+  "label": "HARD",
+  "type": null,
+  "reason": "Many-step budget with mixed prices"
+ },
+ {
+  "qid": "gsm8k-test-892",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Calories per pastry, sum"
+ },
+ {
+  "qid": "gsm8k-test-893",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum days, divide by five"
+ },
+ {
+  "qid": "gsm8k-test-894",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Distance difference, subtract"
+ },
+ {
+  "qid": "gsm8k-test-895",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus known toys"
+ },
+ {
+  "qid": "gsm8k-test-896",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age system, solve Peter"
+ },
+ {
+  "qid": "gsm8k-test-897",
+  "label": "PLAIN",
+  "type": "b",
+  "reason": "Girls total; whether Maria/mom count ambiguous"
+ },
+ {
+  "qid": "gsm8k-test-898",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Boxes to tables, subtract owned"
+ },
+ {
+  "qid": "gsm8k-test-899",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two totals averaged"
+ },
+ {
+  "qid": "gsm8k-test-900",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Revenue difference over month"
+ },
+ {
+  "qid": "gsm8k-test-901",
+  "label": "HARD",
+  "type": null,
+  "reason": "Hourly add-on vs flat, compare savings"
+ },
+ {
+  "qid": "gsm8k-test-902",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Hay per animal, sum"
+ },
+ {
+  "qid": "gsm8k-test-903",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multi-step spend then divisible pens"
+ },
+ {
+  "qid": "gsm8k-test-904",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Letters plus 50, sum"
+ },
+ {
+  "qid": "gsm8k-test-905",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Rows times columns times schools"
+ },
+ {
+  "qid": "gsm8k-test-906",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total bottles minus distributed"
+ },
+ {
+  "qid": "gsm8k-test-907",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Part-hour rounds up labor, 2.25 to 3"
+ },
+ {
+  "qid": "gsm8k-test-908",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Cost minus resale, net loss"
+ },
+ {
+  "qid": "gsm8k-test-909",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum item revenues"
+ },
+ {
+  "qid": "gsm8k-test-910",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multi-leg swim with rest, varied speed"
+ },
+ {
+  "qid": "gsm8k-test-911",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Seven times minus 40"
+ },
+ {
+  "qid": "gsm8k-test-912",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add and subtract stickers"
+ },
+ {
+  "qid": "gsm8k-test-913",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Commission percentages, sum"
+ },
+ {
+  "qid": "gsm8k-test-914",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age relations, solve Leo"
+ },
+ {
+  "qid": "gsm8k-test-915",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Three-share total, solve Azibo"
+ },
+ {
+  "qid": "gsm8k-test-916",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Thickness to sheets to pages"
+ },
+ {
+  "qid": "gsm8k-test-917",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Time span times rate"
+ },
+ {
+  "qid": "gsm8k-test-918",
+  "label": "HARD",
+  "type": null,
+  "reason": "Sleep window minus interruptions, time arithmetic"
+ },
+ {
+  "qid": "gsm8k-test-919",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction of cups, sum utensils"
+ },
+ {
+  "qid": "gsm8k-test-920",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Beds minus occupied and admitted"
+ },
+ {
+  "qid": "gsm8k-test-921",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction chain to boyfriend emails"
+ },
+ {
+  "qid": "gsm8k-test-922",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age chain multiplication"
+ },
+ {
+  "qid": "gsm8k-test-923",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Overstated by 20%, solve real"
+ },
+ {
+  "qid": "gsm8k-test-924",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ratio chain, sum balls"
+ },
+ {
+  "qid": "gsm8k-test-925",
+  "label": "HARD",
+  "type": null,
+  "reason": "Holes accumulate, filled-in, day-four inference"
+ },
+ {
+  "qid": "gsm8k-test-926",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two equal plus larger, sum"
+ },
+ {
+  "qid": "gsm8k-test-927",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "50% more than supplies"
+ },
+ {
+  "qid": "gsm8k-test-928",
+  "label": "HARD",
+  "type": null,
+  "reason": "Three-way linked equations, solve Stan"
+ },
+ {
+  "qid": "gsm8k-test-929",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Episodes times length"
+ },
+ {
+  "qid": "gsm8k-test-930",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Net south displacement, subtract north"
+ },
+ {
+  "qid": "gsm8k-test-931",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum dozens, subtract eaten"
+ },
+ {
+  "qid": "gsm8k-test-932",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ages computed, summed"
+ },
+ {
+  "qid": "gsm8k-test-933",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Time per string type, sum"
+ },
+ {
+  "qid": "gsm8k-test-934",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "First two full price, rest half; boundary count"
+ },
+ {
+  "qid": "gsm8k-test-935",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add seven, sum both teams"
+ },
+ {
+  "qid": "gsm8k-test-936",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Perimeter of rectangle; may forget all sides"
+ },
+ {
+  "qid": "gsm8k-test-937",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Give away, keep quarter, sell rest"
+ },
+ {
+  "qid": "gsm8k-test-938",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half plus four, sum states"
+ },
+ {
+  "qid": "gsm8k-test-939",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Hours to afford; ceiling on whole hours"
+ },
+ {
+  "qid": "gsm8k-test-940",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Compute shares, subtract"
+ },
+ {
+  "qid": "gsm8k-test-941",
+  "label": "HARD",
+  "type": null,
+  "reason": "Cross-day dependent sales, mixed prices"
+ },
+ {
+  "qid": "gsm8k-test-942",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Bottles needed; ceiling of ounces"
+ },
+ {
+  "qid": "gsm8k-test-943",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "40% cheaper, sum both"
+ },
+ {
+  "qid": "gsm8k-test-944",
+  "label": "HARD",
+  "type": null,
+  "reason": "Future-age constraints, solve two ages now"
+ },
+ {
+  "qid": "gsm8k-test-945",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Beads from three, sum"
+ },
+ {
+  "qid": "gsm8k-test-946",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Catch chain, divide into servings"
+ },
+ {
+  "qid": "gsm8k-test-947",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Groups computed, summed"
+ },
+ {
+  "qid": "gsm8k-test-948",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Five times, average two sizes"
+ },
+ {
+  "qid": "gsm8k-test-949",
+  "label": "HARD",
+  "type": null,
+  "reason": "Spacing-fencepost plants then subtract owned, cost"
+ },
+ {
+  "qid": "gsm8k-test-950",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half daily times seven"
+ },
+ {
+  "qid": "gsm8k-test-951",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Per-basket cost times five"
+ },
+ {
+  "qid": "gsm8k-test-952",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Soil used subtracted, divide roses"
+ },
+ {
+  "qid": "gsm8k-test-953",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Yearly savings vs shoe price; whole-shoe floor"
+ },
+ {
+  "qid": "gsm8k-test-954",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Peel time plus cook time"
+ },
+ {
+  "qid": "gsm8k-test-955",
+  "label": "HARD",
+  "type": null,
+  "reason": "Cooling and warming phases netted over time"
+ },
+ {
+  "qid": "gsm8k-test-956",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age relation, subtract for first sighting"
+ },
+ {
+  "qid": "gsm8k-test-957",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Frequency times twelve, sum"
+ },
+ {
+  "qid": "gsm8k-test-958",
+  "label": "HARD",
+  "type": null,
+  "reason": "Trips from ratio, split remaining fraction"
+ },
+ {
+  "qid": "gsm8k-test-959",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Howl chain, sum, convert minutes"
+ },
+ {
+  "qid": "gsm8k-test-960",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract parental gifts from price"
+ },
+ {
+  "qid": "gsm8k-test-961",
+  "label": "HARD",
+  "type": null,
+  "reason": "Average-defined age constraint, solve Wilfred"
+ },
+ {
+  "qid": "gsm8k-test-962",
+  "label": "HARD",
+  "type": null,
+  "reason": "Everyone-else donation triple, ambiguous inclusion sum"
+ },
+ {
+  "qid": "gsm8k-test-963",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half cookies divided by 15"
+ },
+ {
+  "qid": "gsm8k-test-964",
+  "label": "HARD",
+  "type": null,
+  "reason": "Weighted shares to percentage each adult"
+ },
+ {
+  "qid": "gsm8k-test-965",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract rounds and appointments from hours"
+ },
+ {
+  "qid": "gsm8k-test-966",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Latest start = 5pm minus total time backward"
+ },
+ {
+  "qid": "gsm8k-test-967",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total bars divided by box count"
+ },
+ {
+  "qid": "gsm8k-test-968",
+  "label": "HARD",
+  "type": null,
+  "reason": "Per-session cost times weekly times month"
+ },
+ {
+  "qid": "gsm8k-test-969",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Per-box difference, subtract"
+ },
+ {
+  "qid": "gsm8k-test-970",
+  "label": "HARD",
+  "type": null,
+  "reason": "Monthly births compounding over year, population growth"
+ },
+ {
+  "qid": "gsm8k-test-971",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Volume times factor times price"
+ },
+ {
+  "qid": "gsm8k-test-972",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained counts, sum sticks"
+ },
+ {
+  "qid": "gsm8k-test-973",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Distance difference, subtract"
+ },
+ {
+  "qid": "gsm8k-test-974",
+  "label": "HARD",
+  "type": null,
+  "reason": "Two age halves, gender fractions, sum females"
+ },
+ {
+  "qid": "gsm8k-test-975",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Lap chain, compare Bethany Quinn"
+ },
+ {
+  "qid": "gsm8k-test-976",
+  "label": "HARD",
+  "type": null,
+  "reason": "Two-day layered fractions, remaining to full"
+ },
+ {
+  "qid": "gsm8k-test-977",
+  "label": "HARD",
+  "type": null,
+  "reason": "Two decay-rate phases, reverse to initial"
+ },
+ {
+  "qid": "gsm8k-test-978",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Weeks to save target; ceiling of whole weeks"
+ },
+ {
+  "qid": "gsm8k-test-979",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "How many plums affordable; floor on remaining money"
+ },
+ {
+  "qid": "gsm8k-test-980",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Kept packs removed, divide among friends"
+ },
+ {
+  "qid": "gsm8k-test-981",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "5% compound over three years"
+ },
+ {
+  "qid": "gsm8k-test-982",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Per-album count times album groups"
+ },
+ {
+  "qid": "gsm8k-test-983",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Pages over rate times time"
+ },
+ {
+  "qid": "gsm8k-test-984",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Checkouts and check-ins netted"
+ },
+ {
+  "qid": "gsm8k-test-985",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add three days, triple included"
+ },
+ {
+  "qid": "gsm8k-test-986",
+  "label": "HARD",
+  "type": null,
+  "reason": "Split categories, partial correctness across three"
+ },
+ {
+  "qid": "gsm8k-test-987",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Price relation, solve small count"
+ },
+ {
+  "qid": "gsm8k-test-988",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily sandwiches times seven"
+ },
+ {
+  "qid": "gsm8k-test-989",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sales minus helper payments"
+ },
+ {
+  "qid": "gsm8k-test-990",
+  "label": "PLAIN",
+  "type": "b",
+  "reason": "Friends found = 100 minus twins minus 10"
+ },
+ {
+  "qid": "gsm8k-test-991",
+  "label": "HARD",
+  "type": null,
+  "reason": "Chained tool multipliers times dwarves times days"
+ },
+ {
+  "qid": "gsm8k-test-992",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Proportional price for eight pack"
+ },
+ {
+  "qid": "gsm8k-test-993",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Remaining owed times 10%"
+ },
+ {
+  "qid": "gsm8k-test-994",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multiple percent losses plus additions across colors"
+ },
+ {
+  "qid": "gsm8k-test-995",
+  "label": "HARD",
+  "type": null,
+  "reason": "Chained conditional probabilities, complement"
+ },
+ {
+  "qid": "gsm8k-test-996",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Seats subtracted, divide among graduates"
+ },
+ {
+  "qid": "gsm8k-test-997",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained multiples to small beans"
+ },
+ {
+  "qid": "gsm8k-test-998",
+  "label": "HARD",
+  "type": null,
+  "reason": "Pay minus expenses over total hours worked"
+ },
+ {
+  "qid": "gsm8k-test-999",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two item costs summed"
+ },
+ {
+  "qid": "gsm8k-test-1000",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Bottles every 3ft with fencepost gaps timing"
+ },
+ {
+  "qid": "gsm8k-test-1001",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total apples divided by pack size"
+ },
+ {
+  "qid": "gsm8k-test-1002",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Cheese cost subtracted from cash"
+ },
+ {
+  "qid": "gsm8k-test-1003",
+  "label": "HARD",
+  "type": null,
+  "reason": "Loans plus lost wages vs income gain payback"
+ },
+ {
+  "qid": "gsm8k-test-1004",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained daily deliveries, sum"
+ },
+ {
+  "qid": "gsm8k-test-1005",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two group costs summed"
+ },
+ {
+  "qid": "gsm8k-test-1006",
+  "label": "HARD",
+  "type": null,
+  "reason": "Win/loss chain then average of signed amounts"
+ },
+ {
+  "qid": "gsm8k-test-1007",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Countries times cities times people"
+ },
+ {
+  "qid": "gsm8k-test-1008",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Convert heights, subtract difference"
+ },
+ {
+  "qid": "gsm8k-test-1009",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Three-share total, solve first"
+ },
+ {
+  "qid": "gsm8k-test-1010",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction of day over weeks per painter"
+ },
+ {
+  "qid": "gsm8k-test-1011",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Set relations, solve first set"
+ },
+ {
+  "qid": "gsm8k-test-1012",
+  "label": "HARD",
+  "type": null,
+  "reason": "21% depreciation compounded three years"
+ },
+ {
+  "qid": "gsm8k-test-1013",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract English and German fractions"
+ },
+ {
+  "qid": "gsm8k-test-1014",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Distance driven subtracted from total"
+ },
+ {
+  "qid": "gsm8k-test-1015",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Cups per day to gallons over days"
+ },
+ {
+  "qid": "gsm8k-test-1016",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Board/descend net across stops"
+ },
+ {
+  "qid": "gsm8k-test-1017",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum item prices with sale, coupon"
+ },
+ {
+  "qid": "gsm8k-test-1018",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Area equals tiles, times cost"
+ },
+ {
+  "qid": "gsm8k-test-1019",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "60% more, times twelve months"
+ },
+ {
+  "qid": "gsm8k-test-1020",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Loads with capacity ceiling per week times year"
+ },
+ {
+  "qid": "gsm8k-test-1021",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Weekend total times four weeks"
+ },
+ {
+  "qid": "gsm8k-test-1022",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Accumulate stickers across years"
+ },
+ {
+  "qid": "gsm8k-test-1023",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily consumption divided into supply"
+ },
+ {
+  "qid": "gsm8k-test-1024",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Solve Jake, compute Silvia, sum"
+ },
+ {
+  "qid": "gsm8k-test-1025",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Split total with offset difference"
+ },
+ {
+  "qid": "gsm8k-test-1026",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum itemized doctor charges"
+ },
+ {
+  "qid": "gsm8k-test-1027",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "80% responded times five days"
+ },
+ {
+  "qid": "gsm8k-test-1028",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained multiples, sum days"
+ },
+ {
+  "qid": "gsm8k-test-1029",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Average four test scores"
+ },
+ {
+  "qid": "gsm8k-test-1030",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Eaten fractions, leftovers summed"
+ },
+ {
+  "qid": "gsm8k-test-1031",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two coupon counts times costs"
+ },
+ {
+  "qid": "gsm8k-test-1032",
+  "label": "HARD",
+  "type": null,
+  "reason": "Order-eat-reorder sandwich sequence times meatballs"
+ },
+ {
+  "qid": "gsm8k-test-1033",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Quarter failed, remaining tons delivered"
+ },
+ {
+  "qid": "gsm8k-test-1034",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Buy-one-half-off pairs pricing over six pounds"
+ },
+ {
+  "qid": "gsm8k-test-1035",
+  "label": "HARD",
+  "type": null,
+  "reason": "Guest count minus absences, over-20 surcharge"
+ },
+ {
+  "qid": "gsm8k-test-1036",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions spent, sum remaining"
+ },
+ {
+  "qid": "gsm8k-test-1037",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total daily minus two monkeys"
+ },
+ {
+  "qid": "gsm8k-test-1038",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half plus full puzzle pieces"
+ },
+ {
+  "qid": "gsm8k-test-1039",
+  "label": "HARD",
+  "type": null,
+  "reason": "Dozen-vs-single pricing then quarters change"
+ },
+ {
+  "qid": "gsm8k-test-1040",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum three item revenues"
+ },
+ {
+  "qid": "gsm8k-test-1041",
+  "label": "HARD",
+  "type": null,
+  "reason": "Chained train timings summed to wait"
+ },
+ {
+  "qid": "gsm8k-test-1042",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "More weeks to reach 200; remaining then rate"
+ },
+ {
+  "qid": "gsm8k-test-1043",
+  "label": "HARD",
+  "type": null,
+  "reason": "Buy-sell percent chain to net discount"
+ },
+ {
+  "qid": "gsm8k-test-1044",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Seconds in four hours times springs"
+ },
+ {
+  "qid": "gsm8k-test-1045",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Twice plus fifteen"
+ },
+ {
+  "qid": "gsm8k-test-1046",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Halfway back home adds distance; total path"
+ },
+ {
+  "qid": "gsm8k-test-1047",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Individual vs bunch cost difference"
+ },
+ {
+  "qid": "gsm8k-test-1048",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Split with offset, solve Sam"
+ },
+ {
+  "qid": "gsm8k-test-1049",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Growth rate times years"
+ },
+ {
+  "qid": "gsm8k-test-1050",
+  "label": "HARD",
+  "type": null,
+  "reason": "Split 300 by percents, three prices summed"
+ },
+ {
+  "qid": "gsm8k-test-1051",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Net bales per hour times six"
+ },
+ {
+  "qid": "gsm8k-test-1052",
+  "label": "HARD",
+  "type": null,
+  "reason": "Weekly minutes then weekend fractions, convert hours"
+ },
+ {
+  "qid": "gsm8k-test-1053",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Drop height, second bounce; count bounces carefully"
+ },
+ {
+  "qid": "gsm8k-test-1054",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Height chain to fourth child inches"
+ },
+ {
+  "qid": "gsm8k-test-1055",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Apples to bags times price"
+ },
+ {
+  "qid": "gsm8k-test-1056",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Reverse halving from 270"
+ },
+ {
+  "qid": "gsm8k-test-1057",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Gallons needed rounds up, then cost"
+ },
+ {
+  "qid": "gsm8k-test-1058",
+  "label": "HARD",
+  "type": null,
+  "reason": "Remaining shaken/unshaken ratio to probability"
+ },
+ {
+  "qid": "gsm8k-test-1059",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Opposite speeds summed times hours"
+ },
+ {
+  "qid": "gsm8k-test-1060",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Days off then rate multiply, straight calc"
+ },
+ {
+  "qid": "gsm8k-test-1061",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained age offsets, single answer"
+ },
+ {
+  "qid": "gsm8k-test-1062",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two times, subtract difference"
+ },
+ {
+  "qid": "gsm8k-test-1063",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum breaks times days, convert hours"
+ },
+ {
+  "qid": "gsm8k-test-1064",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus two known runners"
+ },
+ {
+  "qid": "gsm8k-test-1065",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add and subtract discounted purchases"
+ },
+ {
+  "qid": "gsm8k-test-1066",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Reverse fractions from changed count"
+ },
+ {
+  "qid": "gsm8k-test-1067",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained multiplication of ages"
+ },
+ {
+  "qid": "gsm8k-test-1068",
+  "label": "HARD",
+  "type": null,
+  "reason": "Retirement savings setup non-obvious, many steps"
+ },
+ {
+  "qid": "gsm8k-test-1069",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Divide 100 by 4 then 5"
+ },
+ {
+  "qid": "gsm8k-test-1070",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add two, subtract coupon"
+ },
+ {
+  "qid": "gsm8k-test-1071",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Simple average of heel heights"
+ },
+ {
+  "qid": "gsm8k-test-1072",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Compute needed rate minus planned rate"
+ },
+ {
+  "qid": "gsm8k-test-1073",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum of counts times prices"
+ },
+ {
+  "qid": "gsm8k-test-1074",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract two fractions of total"
+ },
+ {
+  "qid": "gsm8k-test-1075",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add and subtract temperature changes"
+ },
+ {
+  "qid": "gsm8k-test-1076",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add saved, subtract spending"
+ },
+ {
+  "qid": "gsm8k-test-1077",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out per-book cost"
+ },
+ {
+  "qid": "gsm8k-test-1078",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "20% increase on enrollment"
+ },
+ {
+  "qid": "gsm8k-test-1079",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Unit rate then scale up"
+ },
+ {
+  "qid": "gsm8k-test-1080",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum female, sum male, subtract"
+ },
+ {
+  "qid": "gsm8k-test-1081",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum three chore times"
+ },
+ {
+  "qid": "gsm8k-test-1082",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Distance times round trips per month"
+ },
+ {
+  "qid": "gsm8k-test-1083",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sofie total, halve for Brian"
+ },
+ {
+  "qid": "gsm8k-test-1084",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out fifth worker rate"
+ },
+ {
+  "qid": "gsm8k-test-1085",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions of dog weight, sum"
+ },
+ {
+  "qid": "gsm8k-test-1086",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Reverse halving chain from final"
+ },
+ {
+  "qid": "gsm8k-test-1087",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ounces times M&M, divide bags"
+ },
+ {
+  "qid": "gsm8k-test-1088",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half circumference divided by daily distance"
+ },
+ {
+  "qid": "gsm8k-test-1089",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained multipliers on speed"
+ },
+ {
+  "qid": "gsm8k-test-1090",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "System of two-part sums, subtract"
+ },
+ {
+  "qid": "gsm8k-test-1091",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Boxes count, weights, convert pounds"
+ },
+ {
+  "qid": "gsm8k-test-1092",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Usable feet, logs, planks, price"
+ },
+ {
+  "qid": "gsm8k-test-1093",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Brother double, mother sum, total"
+ },
+ {
+  "qid": "gsm8k-test-1094",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Beach time, half sidewalk time, add"
+ },
+ {
+  "qid": "gsm8k-test-1095",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Remaining amount divided by weekly rate"
+ },
+ {
+  "qid": "gsm8k-test-1096",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum grouped bird counts"
+ },
+ {
+  "qid": "gsm8k-test-1097",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out then subtract"
+ },
+ {
+  "qid": "gsm8k-test-1098",
+  "label": "HARD",
+  "type": null,
+  "reason": "Weighted-mixture temperature setup non-obvious"
+ },
+ {
+  "qid": "gsm8k-test-1099",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily additions times 21 days, sum"
+ },
+ {
+  "qid": "gsm8k-test-1100",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Discounted total divided by bagels"
+ },
+ {
+  "qid": "gsm8k-test-1101",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two rates times days, dozens"
+ },
+ {
+  "qid": "gsm8k-test-1102",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract green and red from total"
+ },
+ {
+  "qid": "gsm8k-test-1103",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Trees times lemons times ten years"
+ },
+ {
+  "qid": "gsm8k-test-1104",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ratio to women count, subtract 20"
+ },
+ {
+  "qid": "gsm8k-test-1105",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Counts from earnings, sum sunflowers"
+ },
+ {
+  "qid": "gsm8k-test-1106",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Cost minus revenue on 60% sold"
+ },
+ {
+  "qid": "gsm8k-test-1107",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Three dozen divided by four"
+ },
+ {
+  "qid": "gsm8k-test-1108",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fish times daily cost times May days"
+ },
+ {
+  "qid": "gsm8k-test-1109",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Subtract given, add bought"
+ },
+ {
+  "qid": "gsm8k-test-1110",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total distance over total time"
+ },
+ {
+  "qid": "gsm8k-test-1111",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two probabilities multiplied"
+ },
+ {
+  "qid": "gsm8k-test-1112",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out counts, sum, divide three"
+ },
+ {
+  "qid": "gsm8k-test-1113",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Weekdays plus weekend carrot counts"
+ },
+ {
+  "qid": "gsm8k-test-1114",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Second song 60% longer, sum"
+ },
+ {
+  "qid": "gsm8k-test-1115",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Profit per device times count"
+ },
+ {
+  "qid": "gsm8k-test-1116",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained height offsets, halve"
+ },
+ {
+  "qid": "gsm8k-test-1117",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Bow counts, purple fraction percentage"
+ },
+ {
+  "qid": "gsm8k-test-1118",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus two known day-sums"
+ },
+ {
+  "qid": "gsm8k-test-1119",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions of land sold, sum revenue"
+ },
+ {
+  "qid": "gsm8k-test-1120",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half age minus ten"
+ },
+ {
+  "qid": "gsm8k-test-1121",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Masks per outing times outings times days"
+ },
+ {
+  "qid": "gsm8k-test-1122",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained finds, subtract from total"
+ },
+ {
+  "qid": "gsm8k-test-1123",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Apartment counts, collections, pay"
+ },
+ {
+  "qid": "gsm8k-test-1124",
+  "label": "HARD",
+  "type": null,
+  "reason": "Many age-tiered yields, convoluted setup"
+ },
+ {
+  "qid": "gsm8k-test-1125",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Add one-fifth of hundred"
+ },
+ {
+  "qid": "gsm8k-test-1126",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Linear system for rope lengths"
+ },
+ {
+  "qid": "gsm8k-test-1127",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half yellow, thirds of rest"
+ },
+ {
+  "qid": "gsm8k-test-1128",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Bedroom areas, living room, rest, sum"
+ },
+ {
+  "qid": "gsm8k-test-1129",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Doubling counts summed over five days"
+ },
+ {
+  "qid": "gsm8k-test-1130",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "20% more pods, cycles per dollar"
+ },
+ {
+  "qid": "gsm8k-test-1131",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Bills lost, halved, tripled, converted"
+ },
+ {
+  "qid": "gsm8k-test-1132",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Halves and quarters of goals, sum"
+ },
+ {
+  "qid": "gsm8k-test-1133",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Days until chalk below 2-inch recycle threshold"
+ },
+ {
+  "qid": "gsm8k-test-1134",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions on varsity, subtract from total"
+ },
+ {
+  "qid": "gsm8k-test-1135",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Thrice plus two"
+ },
+ {
+  "qid": "gsm8k-test-1136",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Drilled plus capped, percentage of teeth"
+ },
+ {
+  "qid": "gsm8k-test-1137",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction spoiled times price refund"
+ },
+ {
+  "qid": "gsm8k-test-1138",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Books per dollar, split three schools"
+ },
+ {
+  "qid": "gsm8k-test-1139",
+  "label": "HARD",
+  "type": null,
+  "reason": "Convoluted pocket/throw tracking, easy to miscount"
+ },
+ {
+  "qid": "gsm8k-test-1140",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Bags count times price"
+ },
+ {
+  "qid": "gsm8k-test-1141",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Slices needed divided by slices per pie"
+ },
+ {
+  "qid": "gsm8k-test-1142",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Three plus two day mileage"
+ },
+ {
+  "qid": "gsm8k-test-1143",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Net snowball growth to reach 60 threshold"
+ },
+ {
+  "qid": "gsm8k-test-1144",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Age 20 years ago, back out Jim"
+ },
+ {
+  "qid": "gsm8k-test-1145",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained increments, sum eaten slices"
+ },
+ {
+  "qid": "gsm8k-test-1146",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multi-day order/use ledger, non-obvious setup"
+ },
+ {
+  "qid": "gsm8k-test-1147",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Hours times rate plus bonus"
+ },
+ {
+  "qid": "gsm8k-test-1148",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Triple blood times ten sharks"
+ },
+ {
+  "qid": "gsm8k-test-1149",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sequential entry counts summed"
+ },
+ {
+  "qid": "gsm8k-test-1150",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Red plus double black, times five"
+ },
+ {
+  "qid": "gsm8k-test-1151",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Per-bottle price, more bottles, sum"
+ },
+ {
+  "qid": "gsm8k-test-1152",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two-day tree counts summed"
+ },
+ {
+  "qid": "gsm8k-test-1153",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Solve four-x-plus-eight equals forty"
+ },
+ {
+  "qid": "gsm8k-test-1154",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions of remaining fish, sum"
+ },
+ {
+  "qid": "gsm8k-test-1155",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Counts minus stolen and used"
+ },
+ {
+  "qid": "gsm8k-test-1156",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "House height minus first floor"
+ },
+ {
+  "qid": "gsm8k-test-1157",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Percentages of remaining shells"
+ },
+ {
+  "qid": "gsm8k-test-1158",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Average implies total, subtract three known"
+ },
+ {
+  "qid": "gsm8k-test-1159",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "40% loan, 60% used, leftover"
+ },
+ {
+  "qid": "gsm8k-test-1160",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum weights times price"
+ },
+ {
+  "qid": "gsm8k-test-1161",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sell price minus cost profit"
+ },
+ {
+  "qid": "gsm8k-test-1162",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Rates times days summed"
+ },
+ {
+  "qid": "gsm8k-test-1163",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total balloons minus leftover"
+ },
+ {
+  "qid": "gsm8k-test-1164",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Combine two amounts, times eight"
+ },
+ {
+  "qid": "gsm8k-test-1165",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fraction capacities, combine schools"
+ },
+ {
+  "qid": "gsm8k-test-1166",
+  "label": "HARD",
+  "type": null,
+  "reason": "Interest plus monthly payments remainder, non-obvious"
+ },
+ {
+  "qid": "gsm8k-test-1167",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total changes, half by Jordan"
+ },
+ {
+  "qid": "gsm8k-test-1168",
+  "label": "HARD",
+  "type": null,
+  "reason": "Volume, packing, fraction, then difference"
+ },
+ {
+  "qid": "gsm8k-test-1169",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sequential boarding, capacity minus total"
+ },
+ {
+  "qid": "gsm8k-test-1170",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Old and increased visit costs summed"
+ },
+ {
+  "qid": "gsm8k-test-1171",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Groups of 8 from 40, ceiling on group count"
+ },
+ {
+  "qid": "gsm8k-test-1172",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Tables and frames costs summed"
+ },
+ {
+  "qid": "gsm8k-test-1173",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Split into 1:4, longer piece"
+ },
+ {
+  "qid": "gsm8k-test-1174",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Meatballs per pound, seasoning per pound"
+ },
+ {
+  "qid": "gsm8k-test-1175",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total width times two"
+ },
+ {
+  "qid": "gsm8k-test-1176",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two-tier per-minute pricing summed"
+ },
+ {
+  "qid": "gsm8k-test-1177",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Twice Monday plus one inch"
+ },
+ {
+  "qid": "gsm8k-test-1178",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total treats, back out cupcakes"
+ },
+ {
+  "qid": "gsm8k-test-1179",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Discounted both plus nail art"
+ },
+ {
+  "qid": "gsm8k-test-1180",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Issues per magazine summed"
+ },
+ {
+  "qid": "gsm8k-test-1181",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained offsets to find Kim"
+ },
+ {
+  "qid": "gsm8k-test-1182",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Increase then decrease percentages"
+ },
+ {
+  "qid": "gsm8k-test-1183",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Standard and discounted lessons summed"
+ },
+ {
+  "qid": "gsm8k-test-1184",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Mean of nine quiz scores"
+ },
+ {
+  "qid": "gsm8k-test-1185",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Original minus one-quarter kept"
+ },
+ {
+  "qid": "gsm8k-test-1186",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Fractions eaten and given, sell rest"
+ },
+ {
+  "qid": "gsm8k-test-1187",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Nine is three-quarters, back out"
+ },
+ {
+  "qid": "gsm8k-test-1188",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Distance over three days, percentage"
+ },
+ {
+  "qid": "gsm8k-test-1189",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum eaten and pie grapes"
+ },
+ {
+  "qid": "gsm8k-test-1190",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Present teachers plus substitutes"
+ },
+ {
+  "qid": "gsm8k-test-1191",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Weekly cost times weeks in year"
+ },
+ {
+  "qid": "gsm8k-test-1192",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total cleaning time, percentage of day"
+ },
+ {
+  "qid": "gsm8k-test-1193",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Books over per-bookcase capacity, ceiling count"
+ },
+ {
+  "qid": "gsm8k-test-1194",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Revenue minus cost profit"
+ },
+ {
+  "qid": "gsm8k-test-1195",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half red, fractions of rest"
+ },
+ {
+  "qid": "gsm8k-test-1196",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Discounted bag over sticks, cents"
+ },
+ {
+  "qid": "gsm8k-test-1197",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Needed total correct minus first test"
+ },
+ {
+  "qid": "gsm8k-test-1198",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out strawberry, compute blueberry"
+ },
+ {
+  "qid": "gsm8k-test-1199",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Games times points times years"
+ },
+ {
+  "qid": "gsm8k-test-1200",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Dropped, found, minus bead"
+ },
+ {
+  "qid": "gsm8k-test-1201",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back-calculate calls through conversion rates"
+ },
+ {
+  "qid": "gsm8k-test-1202",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Flashlights and candle groups summed"
+ },
+ {
+  "qid": "gsm8k-test-1203",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total chips divided by five"
+ },
+ {
+  "qid": "gsm8k-test-1204",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Side times summed with multipliers"
+ },
+ {
+  "qid": "gsm8k-test-1205",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half chains, sum items"
+ },
+ {
+  "qid": "gsm8k-test-1206",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Calls per day times five"
+ },
+ {
+  "qid": "gsm8k-test-1207",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Difference per painting times six"
+ },
+ {
+  "qid": "gsm8k-test-1208",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Grouped water amounts summed"
+ },
+ {
+  "qid": "gsm8k-test-1209",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half distance each, times over speeds"
+ },
+ {
+  "qid": "gsm8k-test-1210",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "56 sticks needs boxes of 8, round up"
+ },
+ {
+  "qid": "gsm8k-test-1211",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Main plus four additional phones"
+ },
+ {
+  "qid": "gsm8k-test-1212",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Dozen doughnuts times price times June"
+ },
+ {
+  "qid": "gsm8k-test-1213",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Photos per day, divide total"
+ },
+ {
+  "qid": "gsm8k-test-1214",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Item costs summed times weeks"
+ },
+ {
+  "qid": "gsm8k-test-1215",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Faster speed, words over rate"
+ },
+ {
+  "qid": "gsm8k-test-1216",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Day counts plus average rest of week"
+ },
+ {
+  "qid": "gsm8k-test-1217",
+  "label": "HARD",
+  "type": null,
+  "reason": "Four-tier popping rates, extra residual step"
+ },
+ {
+  "qid": "gsm8k-test-1218",
+  "label": "HARD",
+  "type": null,
+  "reason": "Extra tart gallon doubles juice, ambiguous"
+ },
+ {
+  "qid": "gsm8k-test-1219",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily food times animals times week"
+ },
+ {
+  "qid": "gsm8k-test-1220",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Legs summed then paired"
+ },
+ {
+  "qid": "gsm8k-test-1221",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus blue and yellow"
+ },
+ {
+  "qid": "gsm8k-test-1222",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Net eastward distance from house"
+ },
+ {
+  "qid": "gsm8k-test-1223",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Successive depreciation percentages"
+ },
+ {
+  "qid": "gsm8k-test-1224",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus color counts"
+ },
+ {
+  "qid": "gsm8k-test-1225",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Hotel plus bus fraction summed"
+ },
+ {
+  "qid": "gsm8k-test-1226",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Back out Dallas, subtract from 52"
+ },
+ {
+  "qid": "gsm8k-test-1227",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Two adults child plus popcorn"
+ },
+ {
+  "qid": "gsm8k-test-1228",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total weight times one percent"
+ },
+ {
+  "qid": "gsm8k-test-1229",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Rectangle perimeter of fence"
+ },
+ {
+  "qid": "gsm8k-test-1230",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Older age plus 16, average"
+ },
+ {
+  "qid": "gsm8k-test-1231",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum found minus cracked"
+ },
+ {
+  "qid": "gsm8k-test-1232",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Three plate costs times twelve"
+ },
+ {
+  "qid": "gsm8k-test-1233",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half Steve plus two hours"
+ },
+ {
+  "qid": "gsm8k-test-1234",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily feed times pigs times week"
+ },
+ {
+  "qid": "gsm8k-test-1235",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Needed hot dogs, round up 6-packs"
+ },
+ {
+  "qid": "gsm8k-test-1236",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Revenue minus tray cost"
+ },
+ {
+  "qid": "gsm8k-test-1237",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus three days distributed"
+ },
+ {
+  "qid": "gsm8k-test-1238",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Coin values summed in cents"
+ },
+ {
+  "qid": "gsm8k-test-1239",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sisters, two brothers ages summed"
+ },
+ {
+  "qid": "gsm8k-test-1240",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Meditation and yoga times four weeks"
+ },
+ {
+  "qid": "gsm8k-test-1241",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Shirt counts times areas summed"
+ },
+ {
+  "qid": "gsm8k-test-1242",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Small plus 50% more, sum"
+ },
+ {
+  "qid": "gsm8k-test-1243",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Anne height, minus, minus growth"
+ },
+ {
+  "qid": "gsm8k-test-1244",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Daily bars times price times two weeks"
+ },
+ {
+  "qid": "gsm8k-test-1245",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "BOGO discount plus shoe discount"
+ },
+ {
+  "qid": "gsm8k-test-1246",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Leftover money over ticket price, floor count"
+ },
+ {
+  "qid": "gsm8k-test-1247",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum all four purchases"
+ },
+ {
+  "qid": "gsm8k-test-1248",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Ingredient costs, profit per jar times ten"
+ },
+ {
+  "qid": "gsm8k-test-1249",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Coin counts times values summed"
+ },
+ {
+  "qid": "gsm8k-test-1250",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Sum spending, subtract from forty"
+ },
+ {
+  "qid": "gsm8k-test-1251",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Open days times cars times pay"
+ },
+ {
+  "qid": "gsm8k-test-1252",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Track cookie counts through operations"
+ },
+ {
+  "qid": "gsm8k-test-1253",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Half at each price summed"
+ },
+ {
+  "qid": "gsm8k-test-1254",
+  "label": "WRINKLE",
+  "type": "a",
+  "reason": "Net fill rate below dig, weeks to zero"
+ },
+ {
+  "qid": "gsm8k-test-1255",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Difference of enrollments"
+ },
+ {
+  "qid": "gsm8k-test-1256",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total minus two known cookie types"
+ },
+ {
+  "qid": "gsm8k-test-1257",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multi-item miscount ledger, back out lost beakers"
+ },
+ {
+  "qid": "gsm8k-test-1258",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Screws needed, subtract from forty"
+ },
+ {
+  "qid": "gsm8k-test-1259",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Chained offsets, sum all raised"
+ },
+ {
+  "qid": "gsm8k-test-1260",
+  "label": "HARD",
+  "type": null,
+  "reason": "Speed/distance relay setup non-obvious"
+ },
+ {
+  "qid": "gsm8k-test-1261",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Line needed minus already have"
+ },
+ {
+  "qid": "gsm8k-test-1262",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Per-reservation revenue times days"
+ },
+ {
+  "qid": "gsm8k-test-1263",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Cost plus profit, divide per melon"
+ },
+ {
+  "qid": "gsm8k-test-1264",
+  "label": "HARD",
+  "type": null,
+  "reason": "Multiple ages with birth-year offsets, tangled"
+ },
+ {
+  "qid": "gsm8k-test-1265",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Oranges each in hour, difference"
+ },
+ {
+  "qid": "gsm8k-test-1266",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Discounted part plus labor cost"
+ },
+ {
+  "qid": "gsm8k-test-1267",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Classic legs system, chickens"
+ },
+ {
+  "qid": "gsm8k-test-1268",
+  "label": "PLAIN",
+  "type": null,
+  "reason": "Total slices divided among four people"
+ }
+]

@@ -64,7 +64,12 @@ def score(pred, gold, source):
     if source == "gpqa_diamond":
         return pred.strip().upper()[:1] == gold.strip().upper()[:1]
     if source in ("gsm8k", "aime"):
-        try: return abs(float(re.sub(r"[^\d.\-]", "", pred)) - float(re.sub(r"[^\d.\-]", "", gold))) < 1e-4
+        def _num(s):
+            s = str(s).strip()
+            m = re.fullmatch(r"(\d{1,2}):(\d{2})\s*([ap]\.?m\.?)?", s, re.I)  # time-of-day "2:00" -> 2.0 hours
+            if m: return int(m.group(1)) + int(m.group(2)) / 60.0
+            return float(re.sub(r"[^\d.\-]", "", s))
+        try: return abs(_num(pred) - _num(gold)) < 1e-4
         except Exception: return pred.strip() == gold.strip()
     # math500 / competition: math_verify, then a whitespace/delimiter-normalized string fallback
     # (math_verify is reliable on scalars/fractions but breaks on tuples/intervals/sets — validated 2026-07-02)
