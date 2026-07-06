@@ -23,7 +23,8 @@
 - **F189–F190** the boundary mode is the one that matters — and it resists both detection and prompting.
 
 ## Open / next
-- **Mac (next, user-approved, ~1–2h):** self-consistency test — F190 predicts majority-vote-over-samples rescues the *perturbation-sensitive low-confidence* errors but **not** the stable boundary errors. Clean falsifiable follow-up.
+- **Mac (RUNNING overnight 2026-07-07, prereg'd):** global-workspace replication on Qwen3-4B — Anthropic's J-lens paper (transformer-circuits 2026/workspace) via official `anthropics/jacobian-lens` repo. T0 ignition + T1 stratification + T2 lens fit + T2b swap positive-control + **T3 workspace-loading on the F189 boundary items** (does the correct answer ever enter the workspace on P(True)-blind errors?). Prereg: `docs/prereg-workspace-mac.md`; results land in `mvp/results/workspace/MORNING_SUMMARY.md`.
+- **Mac (queued, user-approved, ~1–2h):** self-consistency test — F190 predicts majority-vote-over-samples rescues the *perturbation-sensitive low-confidence* errors but **not** the stable boundary errors. Clean falsifiable follow-up.
 - **GPU-blocked:** rumination-rescue on a real over-thinker (R1-Distill-7B); any cross-model / scale claim; whether *training* closes the boundary gap.
 - **Consolidation debt:** gate→search + the whole reasoning arc (F180–F190) are unpublished. Draft mini-writeups at earned tier before opening the next thread.
 
