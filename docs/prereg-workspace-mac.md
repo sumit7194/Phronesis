@@ -116,6 +116,34 @@ hypothesis-shaping result, not a claim.
 
 ---
 
+## AMENDMENT A1 (2026-07-07 ~10:00, before any amended-T3 data collected)
+
+**What happened overnight:** Mac slept/swap-thrashed (10 GB swap on the 16 GB machine at
+dim_batch=8) → lens fitted on n=1 prompt; QC gate correctly FAILED (J-lens top-10 48/72 vs
+logit 52/72; swaps at chance 2/38 vs 4.4% random) → all overnight lens-dependent results are
+**inconclusive by prereg**. Fit resumed at dim_batch=4 with a 14:00 deadline; t2b/t3/t1-jlens
+re-run against the topped-up lens.
+
+**T3 design flaw found (before any interpretable T3 data):** Qwen3 tokenizes numbers
+digit-by-digit → only 3/12 target items have single-token gold answers; also the correct-
+comparator pool file had only 3 rows. Original T3 metrics are unmeasurable as designed.
+
+**Amended T3 (T3b):** per WRINKLE item, hand-curated **pivotal wrinkle-concept tokens**
+(declared in `mvp/workspace_t3b_stimuli.json` before running), e.g. strict-inequality
+("exceed"/"start earning"), include-yourself headcount ("herself"/" 5"), fencepost
+("between"/"first"). Within-item contrast: (a) the model's own failing greedy trace vs
+(b) a teacher-forced correct solution (hand-written, in the stimuli file). Nulls: 3 random
+word tokens + 1 random digit per item.
+
+**Amended H3.1:** wrinkle-concept loading (best lens rank / max cos) is LOW in the model's
+failing trace and HIGH under the teacher-forced correct solution of the same item; nulls low
+in both. **Falsifier:** concept loads comparably in the failing trace (the model "sees" the
+wrinkle in-workspace and still fails → the workspace account of F189 blindness is wrong, at
+least in readout form), or fails to load even in the teacher-forced correct text (lens too
+weak / concept mis-chosen → inconclusive, check QC first).
+**Caps:** hand-curated concepts = researcher degrees of freedom, declared-before-run but
+n=7 → tier B ceiling, hypothesis-shaping. HARD items measured too but exploratory only.
+
 ## Ops (§8)
 Driver `mvp/run_workspace_overnight.sh` under `caffeinate -dims`; stages are separate processes
 (MPS memory fully released between); `results/workspace/status.json` heartbeat; disk guard ≥3 GB

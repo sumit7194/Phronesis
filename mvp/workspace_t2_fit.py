@@ -8,9 +8,11 @@ whatever n was reached. Resumable: re-running continues from the checkpoint.
   --until "HH:MM"    stop starting prompts after this local time (default 07:00)
   --max-prompts N    cap (default 100)
 """
-import argparse, datetime, json, os, sys, time
+import argparse, datetime, json, logging, os, sys, time
 
 import torch
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 sys.path.insert(0, os.path.dirname(__file__))
 from workspace_common import (FIT_CKPT, FIT_LAYERS, LENS_PATH, RESULTS_DIR, disk_ok,
@@ -19,7 +21,10 @@ import jlens
 from jlens import fitting
 from jlens.lens import JacobianLens
 
-DIM_BATCH = 8  # from smoke test: 7.8 min/prompt, 11.6GB alloc — the 16GB ceiling
+DIM_BATCH = 4  # was 8: 11.6GB alloc pushed the 16GB machine into ~10GB swap and the
+               # overnight fit crawled (1 prompt / 6.7h). Halved to keep out of swap;
+               # same total FLOPs, 2x the backward passes. dim_batch is not part of the
+               # estimator, so resuming a dim_batch=8 checkpoint with 4 is valid.
 
 
 def deadline_epoch(hhmm):

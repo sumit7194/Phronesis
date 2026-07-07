@@ -93,6 +93,20 @@ def main():
     else:
         lines.append("- MISSING")
 
+    t3b = load("t3b_wrinkle.json")
+    lines.append("\n## Tier 3b — Wrinkle-concept loading (amendment A1)")
+    if t3b:
+        lines.append(f"- lens n_prompts={t3b['lens_n_prompts']}, band={t3b['band']}")
+        for g, arms in t3b["summary"].items():
+            for arm, m in arms.items():
+                lines.append(f"- **{g} / {arm}**: concept {json.dumps(m['concept'])} · "
+                             f"null {json.dumps(m['null'])} · poscontrol {json.dumps(m['poscontrol'])}")
+        lines.append("- H3.1-amended read: concept ranks fail>>teacher with nulls flat "
+                     "supports the workspace account; comparable ranks falsify it "
+                     "(see amendment A1). n=7 -> tier B max.")
+    else:
+        lines.append("- MISSING")
+
     lines.append("\n---\nRaw: results/workspace/*.json, *.npz · status: status.json · "
                  "logs: results/workspace/logs/")
     out = os.path.join(RES, "MORNING_SUMMARY.md")
