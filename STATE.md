@@ -25,7 +25,7 @@
 
 ## Open / next
 - **Mac (RUNNING now):** `mvp/incubation_screen.py` — stage-0 screen for the **workspace-incubation experiment** (user's idea, design v2 in `docs/idea-workspace-incubation.md` after two-Claude convergence). Candidates = greedy-fail ∧ pass@k-hit (F187 rumination family), full traces saved. Then: hand-read moves → frozen hint/control pairs (`mvp/incubation_stimuli_draft.json`) → behavioral 2×2 → read-arm (logit lens suffices at 4B). Injection arm **gated** on a validated lens.
-- **Mac (next quiet night):** J-lens top-up to n≈50–100 (dim_batch=4, lid open, nothing else running — 2026-07-07 lesson: dim_batch=8 → 10GB swap thrash; fit crawled to n=1 overnight, machine also slept) → decides "under-fitted vs unnecessary-at-4B" + revalidates swaps → unlocks injection arm.
+- **Mac (next quiet night):** J-lens top-up to n≈50–100 (dim_batch=4, nothing else heavy running — 2026-07-07 lesson: dim_batch=8 → 10GB swap thrash; fit crawled to n=1 overnight — pure swap thrash, no sleep: the Mac mini never sleeps) → decides "under-fitted vs unnecessary-at-4B" + revalidates swaps → unlocks injection arm.
 - **Mac (queued, user-approved):** self-consistency test — F190 predicts majority-vote rescues perturbation-sensitive errors but not boundary errors.
 - **GPU-blocked:** R1-Distill-7B rumination-rescue; cross-scale claims; whether training closes the boundary gap; 27B+ J-lens (Neuronpedia hosts Qwen3.6-27B readouts for comparison).
 - **Consolidation debt:** gate→search + reasoning arc (F180–F191) + workspace day-1 unpublished. F191 + T0 are writeup-ready sections.

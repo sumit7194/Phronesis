@@ -98,6 +98,11 @@ def main():
             a = extract_answer(full_s, src)
             row["samples"].append({"trace": full_s, "answer": a,
                                    "ok": bool(score(a, gold, src))})
+            # early-stop: 3 solving traces are enough for move-identification, and
+            # candidacy (>=1 solve) is already decided — saves ~half the sampling cost
+            # without biasing the candidate set.
+            if sum(s["ok"] for s in row["samples"]) >= 3:
+                break
         row["passk"] = row["greedy_ok"] or any(s["ok"] for s in row["samples"])
         row["candidate"] = (not row["greedy_ok"]) and any(s["ok"] for s in row["samples"])
         done_rows.append(row)
