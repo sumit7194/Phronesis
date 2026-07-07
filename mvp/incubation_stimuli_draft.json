@@ -1,0 +1,42 @@
+{
+  "_note": "DRAFT schema + 2 worked example pairs for the incubation experiment (docs/idea-workspace-incubation.md v2). Real pairs are built per-candidate AFTER incubation_screen.py identifies each item's missing move, and FROZEN before any incubation runs. Constraints every pair must satisfy: (1) hint task is from an unrelated surface domain but its natural solution narrates the move explicitly; (2) control task matches domain, length, and difficulty but uses a different move; (3) the 4B must solve BOTH distractors greedy (verify before freezing); (4) neither distractor shares numbers/entities with the stuck problem.",
+  "schema": {
+    "candidate_qid": "from incubation_screen.json",
+    "missing_move": "one of the move taxonomy",
+    "hint_task": {"q": "...", "gold": "...", "why_hint": "how its solution narrates the move"},
+    "control_task": {"q": "...", "gold": "...", "why_matched": "same domain/length, different move"},
+    "verified_4b_solves_both": false
+  },
+  "move_taxonomy": ["work-backwards", "complementary-counting", "invariant-parity",
+                    "substitution", "symmetry-pairing", "pigeonhole", "extreme-case-bounding"],
+  "worked_examples": [
+    {
+      "missing_move": "work-backwards",
+      "hint_task": {
+        "q": "A water tank is drained in stages. Each hour, exactly half of the water present at the start of that hour is removed, and then 3 more liters are removed. After 3 hours the tank is empty. How many liters were in the tank at the beginning?",
+        "gold": "42",
+        "why_hint": "the clean solution starts from the final state (0 liters) and inverts each stage backwards: (0+3)*2=6, (6+3)*2=18, (18+3)*2=42 — the trace naturally says 'work backwards from the end'"
+      },
+      "control_task": {
+        "q": "A water tank starts with 40 liters. Each hour, exactly half of the water present at the start of that hour is removed, and then 2 more liters are removed. How many liters remain after 3 hours?",
+        "gold": "1.5",
+        "why_matched": "same tank/halving surface story and length, but solved by direct forward simulation — no inversion needed"
+      },
+      "verified_4b_solves_both": false
+    },
+    {
+      "missing_move": "complementary-counting",
+      "hint_task": {
+        "q": "A librarian numbers 200 boxes from 1 to 200. She puts a red sticker on every box whose number is divisible by 4 or by 5. How many boxes get no sticker?",
+        "gold": "120",
+        "why_hint": "the natural solution counts the complement: 200 - (50 + 40 - 10) = 120 — the trace says 'count the ones that DO and subtract from the total'"
+      },
+      "control_task": {
+        "q": "A librarian numbers 200 boxes from 1 to 200. She puts a red sticker on every box whose number is divisible by 4, and a blue sticker on every box whose number is divisible by 10. How many boxes get both stickers?",
+        "gold": "10",
+        "why_matched": "same boxes/stickers surface story and length, but solved directly via lcm(4,10)=20 — counting, not complementing"
+      },
+      "verified_4b_solves_both": false
+    }
+  ]
+}
