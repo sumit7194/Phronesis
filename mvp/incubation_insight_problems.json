@@ -1,0 +1,165 @@
+{
+  "_note": "E0 stimuli v1 (docs/research-workspace-incubation-lit.md, five-properties definition). All problems are semantically reconstructed variants of classic insight problems (ancestor recorded; BRAINTEASER lesson). Answers hand-verified by Claude 2026-07-07. tier=main: kernel is a METHOD (1-2 tokens). tier=poscontrol: RAT items where kernel==answer (max-leakage injection sanity tier). gold_aliases used by the auto-scorer (prefilter only, per guidelines §3 - hand-read before any claim).",
+  "problems": [
+    {
+      "id": "ins-tray-domino", "tier": "main", "family": "parity-coloring",
+      "ancestor": "mutilated chessboard",
+      "question": "A bakery tray holds 36 brownies in 6 rows of 6. The corner brownie nearest the window and the corner brownie diagonally opposite it have been eaten. The baker has 17 small boxes, and each box fits exactly two brownies that sit side-by-side (sharing an edge) on the tray. Can she box all 34 remaining brownies? Answer yes or no.",
+      "gold": "no", "gold_aliases": ["no"],
+      "minimal_hint": "Think about checkerboard colors.",
+      "explicit_hint": "Imagine the tray colored like a checkerboard. Every side-by-side pair covers one dark and one light square. Check what colors the two eaten brownies were.",
+      "kernel_tokens": ["checkerboard", "color", "parity"],
+      "notes": "diagonally opposite corners of 6x6 share a color -> 16 vs 18 imbalance"
+    },
+    {
+      "id": "ins-robot-cables", "tier": "main", "family": "parity-handshake",
+      "ancestor": "handshake lemma / odd-degree sum",
+      "question": "Seven service robots stand in a workshop. The technician wants to connect data cables so that each robot is connected to exactly three other robots (one cable per pair). Is this possible? Answer yes or no.",
+      "gold": "no", "gold_aliases": ["no"],
+      "minimal_hint": "Add up all cable ends.",
+      "explicit_hint": "Each cable has two ends. Add up the total number of cable ends required across all robots and check whether that total is even.",
+      "kernel_tokens": ["ends", "odd", "parity"],
+      "notes": "7 x 3 = 21 odd -> impossible"
+    },
+    {
+      "id": "ins-switch-flip", "tier": "main", "family": "parity-invariant",
+      "ancestor": "cup-flipping puzzle",
+      "question": "A control panel has 9 switches; exactly 4 are ON. In one move you must toggle exactly two switches (any two). Can you reach a state where all 9 switches are ON? Answer yes or no.",
+      "gold": "no", "gold_aliases": ["no"],
+      "minimal_hint": "Track odd versus even.",
+      "explicit_hint": "Each move changes the number of ON switches by -2, 0, or +2, so whether that count is even or odd never changes. Compare the starting count with the target count.",
+      "kernel_tokens": ["even", "parity", "invariant"],
+      "notes": "ON-count parity invariant; 4 even, 9 odd"
+    },
+    {
+      "id": "ins-raffle-tears", "tier": "main", "family": "counting-invariant",
+      "ancestor": "chocolate-bar breaking",
+      "question": "A librarian has one sheet of 40 raffle tickets printed in a 5-by-8 grid. She repeatedly picks up one piece and tears it into exactly two pieces along a printed line. How many tears does she need in total to separate all 40 tickets? Give the final answer as a number.",
+      "gold": "39", "gold_aliases": ["39"],
+      "minimal_hint": "Count pieces after each tear.",
+      "explicit_hint": "Every single tear increases the total number of pieces by exactly one, no matter how she tears. She starts with 1 piece and needs 40.",
+      "kernel_tokens": ["pieces", "invariant"],
+      "notes": "pieces-1; grid shape is a red herring"
+    },
+    {
+      "id": "ins-battery-diff", "tier": "main", "family": "parity-invariant",
+      "ancestor": "blackboard |a-b| game",
+      "question": "Nine power cells have charge levels 1, 2, 3, 4, 5, 6, 7, 8, 9. A machine repeatedly takes any two cells and replaces them with a single cell whose charge is the difference of the two (larger minus smaller). Eventually one cell remains. Can its charge be 0? Answer yes or no.",
+      "gold": "no", "gold_aliases": ["no"],
+      "minimal_hint": "Think about odd and even.",
+      "explicit_hint": "Replacing a and b with a-b never changes whether the total sum is odd or even. The starting sum is 45.",
+      "kernel_tokens": ["odd", "parity", "sum"],
+      "notes": "sum parity invariant; 45 odd, 0 even"
+    },
+    {
+      "id": "ins-tank-drain", "tier": "main", "family": "work-backwards",
+      "ancestor": "lily-pond / doubling inversion",
+      "question": "A water tank is drained in stages. At the start of each hour, exactly half of the water then in the tank is pumped out, and at the end of that hour 3 more liters are drained. After 3 full hours the tank is exactly empty. How many liters did the tank hold at the beginning? Give the final answer as a number.",
+      "gold": "42", "gold_aliases": ["42"],
+      "minimal_hint": "Work backwards from empty.",
+      "explicit_hint": "Start from the empty tank and undo each hour in reverse: first undo the 3-liter drain (add 3), then undo the halving (double). Do this three times.",
+      "kernel_tokens": ["backwards", "reverse"],
+      "notes": "(0+3)*2=6, (6+3)*2=18, (18+3)*2=42; forward algebra also works so may not fail - screen decides"
+    },
+    {
+      "id": "ins-locker-digit", "tier": "main", "family": "complementary-counting",
+      "ancestor": "at-least-one digit counting",
+      "question": "A school's lockers are numbered 100 through 999. The janitor paints a star on every locker whose number contains at least one digit 4. How many lockers get a star? Give the final answer as a number.",
+      "gold": "252", "gold_aliases": ["252"],
+      "minimal_hint": "Count the opposite first.",
+      "explicit_hint": "Instead of counting numbers that contain a 4, count the numbers that contain no 4 at all, and subtract that from the total of 900.",
+      "kernel_tokens": ["complement", "subtract", "opposite"],
+      "notes": "900 - 8*9*9 = 252"
+    },
+    {
+      "id": "ins-drone-canyon", "tier": "main", "family": "superposition",
+      "ancestor": "monk on the mountain",
+      "question": "A survey drone flies the single marked route up a canyon, taking off at 6:00 am Monday from the base station and landing at the summit pad at 2:00 pm, with variable speed and several hovering pauses. On Tuesday it flies back down the same route, again leaving at 6:00 am and arriving at the base at 2:00 pm, with a completely different speed profile. Must there be some point on the route that the drone passes at exactly the same clock time on both days? Answer yes or no.",
+      "gold": "yes", "gold_aliases": ["yes"],
+      "minimal_hint": "Imagine both flights together.",
+      "explicit_hint": "Picture Monday's drone and Tuesday's drone flying on the same day: one starts at the base, the other at the summit, during the same 6:00-2:00 window on the one route - they must pass each other somewhere.",
+      "kernel_tokens": ["together", "meet", "overlay"],
+      "notes": "intermediate-value / superposition reframe"
+    },
+    {
+      "id": "ins-gumball-three", "tier": "main", "family": "pigeonhole-worst-case",
+      "ancestor": "sock drawer / pigeonhole",
+      "question": "A vending machine holds a large mix of gumballs in 6 different colors and dispenses one random gumball per coin. How many coins must you spend to be absolutely certain of getting at least 3 gumballs of the same color? Give the final answer as a number.",
+      "gold": "13", "gold_aliases": ["13"],
+      "minimal_hint": "Consider the worst case.",
+      "explicit_hint": "Imagine the unluckiest possible sequence: you keep getting gumballs without ever collecting 3 of any color for as long as possible. Count how long that can last, then add one.",
+      "kernel_tokens": ["worst", "pigeonhole"],
+      "notes": "2*6+1 = 13"
+    },
+    {
+      "id": "ins-kayak-cap", "tier": "main", "family": "reference-frame",
+      "ancestor": "hat in the river",
+      "question": "A kayaker paddles upstream on a river that flows at 2 km/h. As she passes under a bridge her cap falls into the water, but she does not notice. She keeps paddling upstream at constant effort for 10 minutes, then realizes, turns around instantly, and paddles downstream with the same constant effort. How many minutes after turning does she reach her floating cap? Give the final answer as a number.",
+      "gold": "10", "gold_aliases": ["10"],
+      "minimal_hint": "Think relative to the water.",
+      "explicit_hint": "Work in the frame of the flowing water: relative to the water the cap never moves, and the kayaker paddles away from it for 10 minutes at some speed and then back toward it at the same speed.",
+      "kernel_tokens": ["relative", "frame", "current"],
+      "notes": "river speed 2 km/h is a fixation decoy; answer independent of it"
+    },
+    {
+      "id": "ins-tunnel-drone", "tier": "main", "family": "total-time-reframe",
+      "ancestor": "fly between trains",
+      "question": "Two maintenance robots start 300 meters apart in a straight tunnel and roll toward each other, one at 1 m/s and the other at 2 m/s. The moment they start, a drone takes off from the first robot flying at 6 m/s, flies straight to the second robot, instantly turns around, flies back to the first, and keeps shuttling between them until the robots meet. How many meters does the drone fly in total? Give the final answer as a number.",
+      "gold": "600", "gold_aliases": ["600"],
+      "minimal_hint": "Find the total time.",
+      "explicit_hint": "Do not sum the zigzag legs. First compute how many seconds pass before the robots meet, then multiply that time by the drone's speed.",
+      "kernel_tokens": ["time", "total"],
+      "notes": "300/(1+2)=100 s -> 600 m; series-summing is the fixation"
+    },
+    {
+      "id": "ins-cable-adapter", "tier": "main", "family": "algebraic-reframe",
+      "ancestor": "bat and ball (CRT)",
+      "question": "A charging cable and a travel adapter cost 41 dollars together. The cable costs 37 dollars more than the adapter. How many dollars does the adapter cost? Give the final answer as a number.",
+      "gold": "2", "gold_aliases": ["2"],
+      "minimal_hint": "Set up an equation.",
+      "explicit_hint": "Let the adapter cost x, so the cable costs x + 37. Their sum is 41; solve for x rather than subtracting 37 from 41.",
+      "kernel_tokens": ["equation", "algebra"],
+      "notes": "intuitive-but-wrong answer is 4; CRT family is heavily discussed in training data - screen decides"
+    },
+    {
+      "id": "ins-paint-swap", "tier": "main", "family": "symmetry-conservation",
+      "ancestor": "wine-water / tea-milk paradox",
+      "question": "A jar holds 500 ml of blue paint and another jar holds 500 ml of yellow paint. You move one spoonful of blue paint into the yellow jar and stir completely. Then you move one spoonful of the mixture back into the blue jar. Is the amount of yellow paint now in the blue jar greater than, less than, or equal to the amount of blue paint in the yellow jar?",
+      "gold": "equal", "gold_aliases": ["equal", "the same", "same"],
+      "minimal_hint": "Think about conservation of volume.",
+      "explicit_hint": "Both jars end with exactly 500 ml. Whatever blue paint is missing from the blue jar must be sitting in the yellow jar, and the space it left behind is filled by exactly that much yellow.",
+      "kernel_tokens": ["conservation", "symmetry", "exchange"],
+      "notes": "kernel-vs-answer overlap risk flagged: 'equal' is the answer; kernels chosen to avoid it"
+    },
+    {
+      "id": "rat-cottage-swiss-cake", "tier": "poscontrol", "family": "RAT",
+      "ancestor": "Mednick RAT (classic item)",
+      "question": "Find the single English word that forms a common compound word or two-word phrase with each of these three words: cottage, swiss, cake.",
+      "gold": "cheese", "gold_aliases": ["cheese"],
+      "minimal_hint": "It is a dairy product.",
+      "explicit_hint": "Think of a dairy product: cottage ___, swiss ___, ___cake.",
+      "kernel_tokens": ["cheese"],
+      "notes": "kernel==answer by design (positive-control tier for injection leakage)"
+    },
+    {
+      "id": "rat-cracker-fly-fighter", "tier": "poscontrol", "family": "RAT",
+      "ancestor": "Mednick RAT (classic item)",
+      "question": "Find the single English word that forms a common compound word with each of these three words: cracker, fly, fighter.",
+      "gold": "fire", "gold_aliases": ["fire"],
+      "minimal_hint": "It is hot and bright.",
+      "explicit_hint": "Think of something hot: ___cracker, ___fly, ___fighter.",
+      "kernel_tokens": ["fire"],
+      "notes": "kernel==answer by design"
+    },
+    {
+      "id": "rat-sandwich-house-golf", "tier": "poscontrol", "family": "RAT",
+      "ancestor": "Mednick RAT (classic item)",
+      "question": "Find the single English word that forms a common compound word or two-word phrase with each of these three words: sandwich, house, golf.",
+      "gold": "club", "gold_aliases": ["club"],
+      "minimal_hint": "It is a place to gather.",
+      "explicit_hint": "Think of a word for a members' group: club sandwich, clubhouse, golf club.",
+      "kernel_tokens": ["club"],
+      "notes": "kernel==answer by design"
+    }
+  ]
+}
