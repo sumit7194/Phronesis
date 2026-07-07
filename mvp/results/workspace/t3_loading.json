@@ -1,0 +1,105 @@
+{
+  "prereg": "docs/prereg-workspace-mac.md#tier-3",
+  "seed": 23,
+  "lens_n_prompts": 1,
+  "band": [
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28
+  ],
+  "rows": [
+    {
+      "qid": "gsm8k-test-12",
+      "group": "WRINKLE",
+      "skip": "gold multi-token"
+    },
+    {
+      "qid": "gsm8k-709f8afb0f",
+      "group": "CORRECT",
+      "skip": "gold multi-token"
+    },
+    {
+      "qid": "gsm8k-6fc53ce9b7",
+      "group": "CORRECT",
+      "skip": "gold multi-token"
+    },
+    {
+      "qid": "gsm8k-80e0f82fe1",
+      "group": "CORRECT",
+      "gold": {
+        "best_rank": 271,
+        "max_loading": 0.05153018608689308
+      },
+      "ans": "6",
+      "reproduced_error": false,
+      "gold_verbalized_in_trace": true,
+      "null_words": [
+        "4",
+        "9",
+        "3"
+      ],
+      "produced": {
+        "best_rank": 271,
+        "max_loading": 0.05153018608689308
+      },
+      "null_0": {
+        "best_rank": 83,
+        "max_loading": 0.05344941094517708
+      },
+      "null_1": {
+        "best_rank": 1487,
+        "max_loading": 0.04207055643200874
+      },
+      "null_2": {
+        "best_rank": 559,
+        "max_loading": 0.047746993601322174
+      }
+    }
+  ],
+  "summary": {
+    "WRINKLE": {
+      "gold": {
+        "n": 0,
+        "median_best_rank": null,
+        "frac_top10": null
+      },
+      "null_0": {
+        "n": 0,
+        "median_best_rank": null,
+        "frac_top10": null
+      }
+    },
+    "HARD": {
+      "gold": {
+        "n": 0,
+        "median_best_rank": null,
+        "frac_top10": null
+      },
+      "null_0": {
+        "n": 0,
+        "median_best_rank": null,
+        "frac_top10": null
+      }
+    },
+    "CORRECT": {
+      "gold": {
+        "n": 1,
+        "median_best_rank": 271.0,
+        "frac_top10": 0.0
+      },
+      "null_0": {
+        "n": 1,
+        "median_best_rank": 83.0,
+        "frac_top10": 0.0
+      }
+    }
+  },
+  "runtime_min": 6.3
+}

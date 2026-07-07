@@ -1,0 +1,1135 @@
+{
+  "prereg": "docs/prereg-workspace-mac.md#amendment-a1",
+  "seed": 31,
+  "lens_n_prompts": 20,
+  "band": [
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28
+  ],
+  "rows": [
+    {
+      "qid": "gsm8k-test-12",
+      "group": "WRINKLE",
+      "gold": "13",
+      "ans": "12",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:earning",
+        "concept:exceed",
+        "concept:profit",
+        "concept:start",
+        "concept:surpass",
+        "null:harbor",
+        "null:velvet",
+        "null_digit:7",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "7",
+      "fail_trace": {
+        "concept:exceed": {
+          "best_rank": 3,
+          "max_loading": 0.20665456354618073
+        },
+        "concept:surpass": {
+          "best_rank": 4,
+          "max_loading": 0.18406128883361816
+        },
+        "concept:start": {
+          "best_rank": 1,
+          "max_loading": 0.14226406812667847
+        },
+        "concept:earning": {
+          "best_rank": 1,
+          "max_loading": 0.14570637047290802
+        },
+        "concept:profit": {
+          "best_rank": 1,
+          "max_loading": 0.18290767073631287
+        },
+        "null:harbor": {
+          "best_rank": 17,
+          "max_loading": 0.08134418725967407
+        },
+        "null:velvet": {
+          "best_rank": 1835,
+          "max_loading": 0.06992720812559128
+        },
+        "null_digit:7": {
+          "best_rank": 1,
+          "max_loading": 0.10251050442457199
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 2,
+          "max_loading": 0.08222120255231857
+        }
+      },
+      "teacher_correct": {
+        "concept:exceed": {
+          "best_rank": 1,
+          "max_loading": 0.2242949903011322
+        },
+        "concept:surpass": {
+          "best_rank": 4,
+          "max_loading": 0.1827731728553772
+        },
+        "concept:start": {
+          "best_rank": 1,
+          "max_loading": 0.1308954656124115
+        },
+        "concept:earning": {
+          "best_rank": 1,
+          "max_loading": 0.15528573095798492
+        },
+        "concept:profit": {
+          "best_rank": 1,
+          "max_loading": 0.2034849226474762
+        },
+        "null:harbor": {
+          "best_rank": 327,
+          "max_loading": 0.0716007873415947
+        },
+        "null:velvet": {
+          "best_rank": 892,
+          "max_loading": 0.051775623112916946
+        },
+        "null_digit:7": {
+          "best_rank": 13,
+          "max_loading": 0.09328767657279968
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 12,
+          "max_loading": 0.06751737743616104
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-408",
+      "group": "WRINKLE",
+      "gold": "26",
+      "ans": "18",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:first",
+        "concept:leftover",
+        "concept:not",
+        "concept:remaining",
+        "null:lantern",
+        "null:piano",
+        "null_digit:2",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "2",
+      "fail_trace": {
+        "concept:remaining": {
+          "best_rank": 1,
+          "max_loading": 0.1576920747756958
+        },
+        "concept:leftover": {
+          "best_rank": 16,
+          "max_loading": 0.12212887406349182
+        },
+        "concept:not": {
+          "best_rank": 5,
+          "max_loading": 0.09136456251144409
+        },
+        "concept:first": {
+          "best_rank": 3,
+          "max_loading": 0.10273260623216629
+        },
+        "null:piano": {
+          "best_rank": 454,
+          "max_loading": 0.10533216595649719
+        },
+        "null:lantern": {
+          "best_rank": 116,
+          "max_loading": 0.097584068775177
+        },
+        "null_digit:2": {
+          "best_rank": 21,
+          "max_loading": 0.06200781464576721
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 1,
+          "max_loading": 0.06049197539687157
+        }
+      },
+      "teacher_correct": {
+        "concept:remaining": {
+          "best_rank": 1,
+          "max_loading": 0.217400923371315
+        },
+        "concept:leftover": {
+          "best_rank": 1,
+          "max_loading": 0.23021410405635834
+        },
+        "concept:not": {
+          "best_rank": 1,
+          "max_loading": 0.14191710948944092
+        },
+        "concept:first": {
+          "best_rank": 1,
+          "max_loading": 0.1097349226474762
+        },
+        "null:piano": {
+          "best_rank": 1639,
+          "max_loading": 0.09476140141487122
+        },
+        "null:lantern": {
+          "best_rank": 46,
+          "max_loading": 0.1010420173406601
+        },
+        "null_digit:2": {
+          "best_rank": 6,
+          "max_loading": 0.07413280010223389
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 7,
+          "max_loading": 0.06211160495877266
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-1193",
+      "group": "WRINKLE",
+      "gold": "2",
+      "ans": "3",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:case",
+        "concept:each",
+        "concept:whole",
+        "null:anchor",
+        "null:glacier",
+        "null:piano",
+        "null_digit:9",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "9",
+      "fail_trace": {
+        "concept:case": {
+          "best_rank": 1,
+          "max_loading": 0.15960200130939484
+        },
+        "concept:whole": {
+          "best_rank": 11,
+          "max_loading": 0.11190597712993622
+        },
+        "concept:each": {
+          "best_rank": 1,
+          "max_loading": 0.2684363126754761
+        },
+        "null:anchor": {
+          "best_rank": 53,
+          "max_loading": 0.10481221973896027
+        },
+        "null:piano": {
+          "best_rank": 63,
+          "max_loading": 0.0967085063457489
+        },
+        "null:glacier": {
+          "best_rank": 269,
+          "max_loading": 0.0891636461019516
+        },
+        "null_digit:9": {
+          "best_rank": 30,
+          "max_loading": 0.07339749485254288
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 14,
+          "max_loading": 0.07409707456827164
+        }
+      },
+      "teacher_correct": {
+        "concept:case": {
+          "best_rank": 88,
+          "max_loading": 0.07744620740413666
+        },
+        "concept:whole": {
+          "best_rank": 1,
+          "max_loading": 0.10187236219644547
+        },
+        "concept:each": {
+          "best_rank": 1,
+          "max_loading": 0.176488995552063
+        },
+        "null:anchor": {
+          "best_rank": 165,
+          "max_loading": 0.08441611379384995
+        },
+        "null:piano": {
+          "best_rank": 100,
+          "max_loading": 0.09592131525278091
+        },
+        "null:glacier": {
+          "best_rank": 763,
+          "max_loading": 0.07160477340221405
+        },
+        "null_digit:9": {
+          "best_rank": 12,
+          "max_loading": 0.07002916187047958
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 9,
+          "max_loading": 0.0664474368095398
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-1000",
+      "group": "WRINKLE",
+      "gold": "35",
+      "ans": "40",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:between",
+        "concept:first",
+        "concept:gap",
+        "concept:gaps",
+        "null:lantern",
+        "null:walnut",
+        "null_digit:9",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "9",
+      "fail_trace": {
+        "concept:between": {
+          "best_rank": 1,
+          "max_loading": 0.15002663433551788
+        },
+        "concept:first": {
+          "best_rank": 1,
+          "max_loading": 0.15962153673171997
+        },
+        "concept:gap": {
+          "best_rank": 4,
+          "max_loading": 0.12974070012569427
+        },
+        "concept:gaps": {
+          "best_rank": 1,
+          "max_loading": 0.15917745232582092
+        },
+        "null:lantern": {
+          "best_rank": 55,
+          "max_loading": 0.09423784166574478
+        },
+        "null:walnut": {
+          "best_rank": 1578,
+          "max_loading": 0.09724956750869751
+        },
+        "null_digit:9": {
+          "best_rank": 17,
+          "max_loading": 0.060230232775211334
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 2,
+          "max_loading": 0.07205621898174286
+        }
+      },
+      "teacher_correct": {
+        "concept:between": {
+          "best_rank": 1,
+          "max_loading": 0.14807257056236267
+        },
+        "concept:first": {
+          "best_rank": 1,
+          "max_loading": 0.17683503031730652
+        },
+        "concept:gap": {
+          "best_rank": 14,
+          "max_loading": 0.11462105810642242
+        },
+        "concept:gaps": {
+          "best_rank": 2,
+          "max_loading": 0.1537780910730362
+        },
+        "null:lantern": {
+          "best_rank": 80,
+          "max_loading": 0.08101674914360046
+        },
+        "null:walnut": {
+          "best_rank": 1366,
+          "max_loading": 0.07747438549995422
+        },
+        "null_digit:9": {
+          "best_rank": 21,
+          "max_loading": 0.06135312467813492
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 17,
+          "max_loading": 0.07148086279630661
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-339",
+      "group": "WRINKLE",
+      "gold": "2",
+      "ans": "12",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:friends",
+        "concept:herself",
+        "concept:include",
+        "concept:includes",
+        "null:compass",
+        "null:glacier",
+        "null:piano",
+        "null_digit:5",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "5",
+      "fail_trace": {
+        "concept:herself": {
+          "best_rank": 1,
+          "max_loading": 0.14348337054252625
+        },
+        "concept:include": {
+          "best_rank": 3,
+          "max_loading": 0.12161768972873688
+        },
+        "concept:includes": {
+          "best_rank": 2,
+          "max_loading": 0.14530643820762634
+        },
+        "concept:friends": {
+          "best_rank": 1,
+          "max_loading": 0.19903257489204407
+        },
+        "null:compass": {
+          "best_rank": 192,
+          "max_loading": 0.07554619014263153
+        },
+        "null:glacier": {
+          "best_rank": 770,
+          "max_loading": 0.09008973091840744
+        },
+        "null:piano": {
+          "best_rank": 182,
+          "max_loading": 0.10273274034261703
+        },
+        "null_digit:5": {
+          "best_rank": 1,
+          "max_loading": 0.08885740488767624
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 10,
+          "max_loading": 0.08723859488964081
+        }
+      },
+      "teacher_correct": {
+        "concept:herself": {
+          "best_rank": 1,
+          "max_loading": 0.2024185210466385
+        },
+        "concept:include": {
+          "best_rank": 2,
+          "max_loading": 0.2413298487663269
+        },
+        "concept:includes": {
+          "best_rank": 1,
+          "max_loading": 0.2778058648109436
+        },
+        "concept:friends": {
+          "best_rank": 1,
+          "max_loading": 0.19519850611686707
+        },
+        "null:compass": {
+          "best_rank": 2282,
+          "max_loading": 0.06171305850148201
+        },
+        "null:glacier": {
+          "best_rank": 1778,
+          "max_loading": 0.06427845358848572
+        },
+        "null:piano": {
+          "best_rank": 104,
+          "max_loading": 0.11264042556285858
+        },
+        "null_digit:5": {
+          "best_rank": 22,
+          "max_loading": 0.06850993633270264
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 3,
+          "max_loading": 0.07604897022247314
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-724",
+      "group": "WRINKLE",
+      "gold": "240",
+      "ans": "300",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:Jenna",
+        "concept:five",
+        "concept:herself",
+        "null:harbor",
+        "null:marble",
+        "null:piano",
+        "null_digit:4",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "4",
+      "fail_trace": {
+        "concept:five": {
+          "best_rank": 1,
+          "max_loading": 0.15837974846363068
+        },
+        "concept:herself": {
+          "best_rank": 9,
+          "max_loading": 0.08827859908342361
+        },
+        "concept:Jenna": {
+          "best_rank": 90,
+          "max_loading": 0.09038501232862473
+        },
+        "null:piano": {
+          "best_rank": 377,
+          "max_loading": 0.09283849596977234
+        },
+        "null:harbor": {
+          "best_rank": 41,
+          "max_loading": 0.08069850504398346
+        },
+        "null:marble": {
+          "best_rank": 564,
+          "max_loading": 0.07308879494667053
+        },
+        "null_digit:4": {
+          "best_rank": 54,
+          "max_loading": 0.06104140728712082
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 43,
+          "max_loading": 0.06810079514980316
+        }
+      },
+      "teacher_correct": {
+        "concept:five": {
+          "best_rank": 3,
+          "max_loading": 0.1377836912870407
+        },
+        "concept:herself": {
+          "best_rank": 1,
+          "max_loading": 0.15691247582435608
+        },
+        "concept:Jenna": {
+          "best_rank": 144,
+          "max_loading": 0.08141504973173141
+        },
+        "null:piano": {
+          "best_rank": 610,
+          "max_loading": 0.0898795872926712
+        },
+        "null:harbor": {
+          "best_rank": 270,
+          "max_loading": 0.06069241091609001
+        },
+        "null:marble": {
+          "best_rank": 723,
+          "max_loading": 0.049352459609508514
+        },
+        "null_digit:4": {
+          "best_rank": 58,
+          "max_loading": 0.06723742187023163
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 67,
+          "max_loading": 0.060514532029628754
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-1034",
+      "group": "WRINKLE",
+      "gold": "18",
+      "ans": "12",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:half",
+        "concept:pair",
+        "concept:pairs",
+        "concept:promotion",
+        "null:anchor",
+        "null:lantern",
+        "null:piano",
+        "null_digit:9",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "9",
+      "fail_trace": {
+        "concept:half": {
+          "best_rank": 1,
+          "max_loading": 0.2588390111923218
+        },
+        "concept:pair": {
+          "best_rank": 1,
+          "max_loading": 0.10137111693620682
+        },
+        "concept:pairs": {
+          "best_rank": 1,
+          "max_loading": 0.12417181581258774
+        },
+        "concept:promotion": {
+          "best_rank": 4,
+          "max_loading": 0.12205096334218979
+        },
+        "null:lantern": {
+          "best_rank": 38,
+          "max_loading": 0.10267353057861328
+        },
+        "null:piano": {
+          "best_rank": 339,
+          "max_loading": 0.10344621539115906
+        },
+        "null:anchor": {
+          "best_rank": 279,
+          "max_loading": 0.09929485619068146
+        },
+        "null_digit:9": {
+          "best_rank": 64,
+          "max_loading": 0.04794711247086525
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 34,
+          "max_loading": 0.06338252127170563
+        }
+      },
+      "teacher_correct": {
+        "concept:half": {
+          "best_rank": 1,
+          "max_loading": 0.24088658392429352
+        },
+        "concept:pair": {
+          "best_rank": 1,
+          "max_loading": 0.1393389105796814
+        },
+        "concept:pairs": {
+          "best_rank": 1,
+          "max_loading": 0.18259933590888977
+        },
+        "concept:promotion": {
+          "best_rank": 55,
+          "max_loading": 0.09843842685222626
+        },
+        "null:lantern": {
+          "best_rank": 701,
+          "max_loading": 0.08017350733280182
+        },
+        "null:piano": {
+          "best_rank": 947,
+          "max_loading": 0.10254494845867157
+        },
+        "null:anchor": {
+          "best_rank": 315,
+          "max_loading": 0.09354208409786224
+        },
+        "null_digit:9": {
+          "best_rank": 832,
+          "max_loading": 0.05030611902475357
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 361,
+          "max_loading": 0.06237015873193741
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-1039",
+      "group": "HARD",
+      "gold": "16",
+      "ans": "100",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:change",
+        "concept:dozen",
+        "concept:quarters",
+        "null:compass",
+        "null:lantern",
+        "null_digit:6",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "6",
+      "fail_trace": {
+        "concept:dozen": {
+          "best_rank": 1,
+          "max_loading": 0.1492181420326233
+        },
+        "concept:change": {
+          "best_rank": 1,
+          "max_loading": 0.16087540984153748
+        },
+        "concept:quarters": {
+          "best_rank": 2,
+          "max_loading": 0.12775446474552155
+        },
+        "null:lantern": {
+          "best_rank": 38,
+          "max_loading": 0.1012759804725647
+        },
+        "null:compass": {
+          "best_rank": 411,
+          "max_loading": 0.0612008161842823
+        },
+        "null_digit:6": {
+          "best_rank": 3,
+          "max_loading": 0.07294632494449615
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 11,
+          "max_loading": 0.0637916848063469
+        }
+      },
+      "teacher_correct": {
+        "concept:dozen": {
+          "best_rank": 1,
+          "max_loading": 0.1584939956665039
+        },
+        "concept:change": {
+          "best_rank": 1,
+          "max_loading": 0.15024535357952118
+        },
+        "concept:quarters": {
+          "best_rank": 9,
+          "max_loading": 0.11059246957302094
+        },
+        "null:lantern": {
+          "best_rank": 1003,
+          "max_loading": 0.08660005033016205
+        },
+        "null:compass": {
+          "best_rank": 2833,
+          "max_loading": 0.06131447106599808
+        },
+        "null_digit:6": {
+          "best_rank": 66,
+          "max_loading": 0.06820400059223175
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 6,
+          "max_loading": 0.06379533559083939
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-1052",
+      "group": "HARD",
+      "gold": "30",
+      "ans": "1700",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:fraction",
+        "concept:weekend",
+        "concept:weekly",
+        "null:marble",
+        "null:walnut",
+        "null_digit:6",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "6",
+      "fail_trace": {
+        "concept:weekly": {
+          "best_rank": 1,
+          "max_loading": 0.1762004941701889
+        },
+        "concept:fraction": {
+          "best_rank": 1,
+          "max_loading": 0.1332211196422577
+        },
+        "concept:weekend": {
+          "best_rank": 2,
+          "max_loading": 0.17600800096988678
+        },
+        "null:marble": {
+          "best_rank": 272,
+          "max_loading": 0.07912784069776535
+        },
+        "null:walnut": {
+          "best_rank": 1154,
+          "max_loading": 0.09725694358348846
+        },
+        "null_digit:6": {
+          "best_rank": 32,
+          "max_loading": 0.06086885184049606
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 4,
+          "max_loading": 0.05378245562314987
+        }
+      },
+      "teacher_correct": {
+        "concept:weekly": {
+          "best_rank": 1,
+          "max_loading": 0.19095325469970703
+        },
+        "concept:fraction": {
+          "best_rank": 1,
+          "max_loading": 0.13075189292430878
+        },
+        "concept:weekend": {
+          "best_rank": 1,
+          "max_loading": 0.1997213363647461
+        },
+        "null:marble": {
+          "best_rank": 244,
+          "max_loading": 0.06727515161037445
+        },
+        "null:walnut": {
+          "best_rank": 1735,
+          "max_loading": 0.09172675758600235
+        },
+        "null_digit:6": {
+          "best_rank": 10,
+          "max_loading": 0.0772656500339508
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 1,
+          "max_loading": 0.06378277391195297
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-800",
+      "group": "HARD",
+      "gold": "324",
+      "ans": "329",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:additional",
+        "concept:extra",
+        "concept:included",
+        "null:anchor",
+        "null:glacier",
+        "null:lantern",
+        "null_digit:7",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "7",
+      "fail_trace": {
+        "concept:included": {
+          "best_rank": 1,
+          "max_loading": 0.17571590840816498
+        },
+        "concept:extra": {
+          "best_rank": 1,
+          "max_loading": 0.18759392201900482
+        },
+        "concept:additional": {
+          "best_rank": 1,
+          "max_loading": 0.1966589391231537
+        },
+        "null:lantern": {
+          "best_rank": 1,
+          "max_loading": 0.11811328679323196
+        },
+        "null:glacier": {
+          "best_rank": 736,
+          "max_loading": 0.07695125788450241
+        },
+        "null:anchor": {
+          "best_rank": 36,
+          "max_loading": 0.10915682464838028
+        },
+        "null_digit:7": {
+          "best_rank": 9,
+          "max_loading": 0.05897221341729164
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 6,
+          "max_loading": 0.05393844470381737
+        }
+      },
+      "teacher_correct": {
+        "concept:included": {
+          "best_rank": 6,
+          "max_loading": 0.13393567502498627
+        },
+        "concept:extra": {
+          "best_rank": 1,
+          "max_loading": 0.18050949275493622
+        },
+        "concept:additional": {
+          "best_rank": 1,
+          "max_loading": 0.177065908908844
+        },
+        "null:lantern": {
+          "best_rank": 1,
+          "max_loading": 0.11763421446084976
+        },
+        "null:glacier": {
+          "best_rank": 614,
+          "max_loading": 0.0645119845867157
+        },
+        "null:anchor": {
+          "best_rank": 240,
+          "max_loading": 0.09248553961515427
+        },
+        "null_digit:7": {
+          "best_rank": 19,
+          "max_loading": 0.07529590278863907
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 5,
+          "max_loading": 0.0732472836971283
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-403",
+      "group": "HARD",
+      "gold": "8",
+      "ans": "6",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:rest",
+        "concept:savings",
+        "concept:third",
+        "null:anchor",
+        "null:compass",
+        "null:velvet",
+        "null_digit:4",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "4",
+      "fail_trace": {
+        "concept:savings": {
+          "best_rank": 1,
+          "max_loading": 0.14721880853176117
+        },
+        "concept:third": {
+          "best_rank": 36,
+          "max_loading": 0.09160703420639038
+        },
+        "concept:rest": {
+          "best_rank": 1,
+          "max_loading": 0.11428581178188324
+        },
+        "null:velvet": {
+          "best_rank": 78,
+          "max_loading": 0.07722091674804688
+        },
+        "null:anchor": {
+          "best_rank": 50,
+          "max_loading": 0.09921097755432129
+        },
+        "null:compass": {
+          "best_rank": 468,
+          "max_loading": 0.052157849073410034
+        },
+        "null_digit:4": {
+          "best_rank": 177,
+          "max_loading": 0.05156257003545761
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 57,
+          "max_loading": 0.07240244001150131
+        }
+      },
+      "teacher_correct": {
+        "concept:savings": {
+          "best_rank": 1,
+          "max_loading": 0.14772917330265045
+        },
+        "concept:third": {
+          "best_rank": 49,
+          "max_loading": 0.06838090717792511
+        },
+        "concept:rest": {
+          "best_rank": 12,
+          "max_loading": 0.11350954324007034
+        },
+        "null:velvet": {
+          "best_rank": 276,
+          "max_loading": 0.09594640135765076
+        },
+        "null:anchor": {
+          "best_rank": 177,
+          "max_loading": 0.13754555583000183
+        },
+        "null:compass": {
+          "best_rank": 443,
+          "max_loading": 0.06335269659757614
+        },
+        "null_digit:4": {
+          "best_rank": 7,
+          "max_loading": 0.07480289041996002
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 6,
+          "max_loading": 0.07996997982263565
+        }
+      }
+    },
+    {
+      "qid": "gsm8k-test-172",
+      "group": "HARD",
+      "gold": "23",
+      "ans": "24",
+      "reproduced_error": true,
+      "tracked": [
+        "concept:Jan",
+        "concept:Jean",
+        "concept:Mark",
+        "null:lantern",
+        "null:piano",
+        "null:walnut",
+        "null_digit:7",
+        "poscontrol:ans_digit"
+      ],
+      "null_digit": "7",
+      "fail_trace": {
+        "concept:Jan": {
+          "best_rank": 64,
+          "max_loading": 0.0729900524020195
+        },
+        "concept:Jean": {
+          "best_rank": 40,
+          "max_loading": 0.08581960946321487
+        },
+        "concept:Mark": {
+          "best_rank": 31,
+          "max_loading": 0.08655035495758057
+        },
+        "null:walnut": {
+          "best_rank": 1480,
+          "max_loading": 0.09457897394895554
+        },
+        "null:lantern": {
+          "best_rank": 124,
+          "max_loading": 0.09301947057247162
+        },
+        "null:piano": {
+          "best_rank": 49,
+          "max_loading": 0.09793618321418762
+        },
+        "null_digit:7": {
+          "best_rank": 41,
+          "max_loading": 0.0632186010479927
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 2,
+          "max_loading": 0.06897655129432678
+        }
+      },
+      "teacher_correct": {
+        "concept:Jan": {
+          "best_rank": 24,
+          "max_loading": 0.08294037729501724
+        },
+        "concept:Jean": {
+          "best_rank": 29,
+          "max_loading": 0.09249477088451385
+        },
+        "concept:Mark": {
+          "best_rank": 145,
+          "max_loading": 0.09296801686286926
+        },
+        "null:walnut": {
+          "best_rank": 2133,
+          "max_loading": 0.13074733316898346
+        },
+        "null:lantern": {
+          "best_rank": 364,
+          "max_loading": 0.12342117726802826
+        },
+        "null:piano": {
+          "best_rank": 206,
+          "max_loading": 0.13286614418029785
+        },
+        "null_digit:7": {
+          "best_rank": 16,
+          "max_loading": 0.07031864672899246
+        },
+        "poscontrol:ans_digit": {
+          "best_rank": 1,
+          "max_loading": 0.09090808033943176
+        }
+      }
+    }
+  ],
+  "summary": {
+    "WRINKLE": {
+      "fail_trace": {
+        "concept": {
+          "n": 7,
+          "median": 1.0,
+          "frac_top10": 1.0
+        },
+        "null": {
+          "n": 7,
+          "median": 53.0,
+          "frac_top10": 0.0
+        },
+        "poscontrol": {
+          "n": 7,
+          "median": 10.0,
+          "frac_top10": 0.5714285714285714
+        }
+      },
+      "teacher_correct": {
+        "concept": {
+          "n": 7,
+          "median": 1.0,
+          "frac_top10": 1.0
+        },
+        "null": {
+          "n": 7,
+          "median": 104.0,
+          "frac_top10": 0.0
+        },
+        "poscontrol": {
+          "n": 7,
+          "median": 12.0,
+          "frac_top10": 0.42857142857142855
+        }
+      }
+    },
+    "HARD": {
+      "fail_trace": {
+        "concept": {
+          "n": 5,
+          "median": 1.0,
+          "frac_top10": 0.8
+        },
+        "null": {
+          "n": 5,
+          "median": 49.0,
+          "frac_top10": 0.2
+        },
+        "poscontrol": {
+          "n": 5,
+          "median": 6.0,
+          "frac_top10": 0.6
+        }
+      },
+      "teacher_correct": {
+        "concept": {
+          "n": 5,
+          "median": 1.0,
+          "frac_top10": 0.8
+        },
+        "null": {
+          "n": 5,
+          "median": 206.0,
+          "frac_top10": 0.2
+        },
+        "poscontrol": {
+          "n": 5,
+          "median": 5.0,
+          "frac_top10": 1.0
+        }
+      }
+    }
+  },
+  "runtime_min": 65.5
+}

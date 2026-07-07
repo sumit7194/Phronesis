@@ -1,0 +1,1766 @@
+{
+  "prereg": "docs/prereg-workspace-mac.md#tier-2b",
+  "seed": 11,
+  "lens_n_prompts": 20,
+  "band": [
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28
+  ],
+  "qc_multihop": {
+    "jlens": {
+      "n": 72,
+      "hit_top1": 16,
+      "hit_top10": 51
+    },
+    "logit": {
+      "n": 72,
+      "hit_top1": 21,
+      "hit_top10": 52
+    }
+  },
+  "qc_rows": {
+    "jlens": [
+      {
+        "name": "carnival-ocean",
+        "best_rank": 6
+      },
+      {
+        "name": "amazon-language",
+        "best_rank": 1
+      },
+      {
+        "name": "mars-color",
+        "best_rank": 4
+      },
+      {
+        "name": "spider-legs",
+        "best_rank": 1
+      },
+      {
+        "name": "basketball-players",
+        "best_rank": 1
+      },
+      {
+        "name": "paper-continent",
+        "best_rank": 17
+      },
+      {
+        "name": "christmas-season",
+        "best_rank": 2
+      },
+      {
+        "name": "osu-rival-mascot",
+        "best_rank": 3
+      },
+      {
+        "name": "topeka-west",
+        "best_rank": 1
+      },
+      {
+        "name": "atomic-79-symbol",
+        "best_rank": 16
+      },
+      {
+        "name": "atomic-26-symbol",
+        "best_rank": 8
+      },
+      {
+        "name": "atomic-29-symbol",
+        "best_rank": 3
+      },
+      {
+        "name": "atomic-80-state",
+        "best_rank": 7
+      },
+      {
+        "name": "atomic-29-flame",
+        "best_rank": 3
+      },
+      {
+        "name": "planet-3-moons",
+        "best_rank": 1
+      },
+      {
+        "name": "month-3-godof",
+        "best_rank": 2
+      },
+      {
+        "name": "spaceneedle-border",
+        "best_rank": 1
+      },
+      {
+        "name": "rhyme-rain-neighbor",
+        "best_rank": 3
+      },
+      {
+        "name": "rhyme-door-doubled",
+        "best_rank": 51
+      },
+      {
+        "name": "rhyme-chair-flag",
+        "best_rank": 623
+      },
+      {
+        "name": "rhyme-spoon-orbit",
+        "best_rank": 7
+      },
+      {
+        "name": "etym-wargod-month",
+        "best_rank": 17
+      },
+      {
+        "name": "etym-frigg-position",
+        "best_rank": 7
+      },
+      {
+        "name": "etym-saturn-position",
+        "best_rank": 5
+      },
+      {
+        "name": "chem-photosynthesis-Z",
+        "best_rank": 2
+      },
+      {
+        "name": "chem-atmosphere-Z",
+        "best_rank": 2
+      },
+      {
+        "name": "chem-organic-Z",
+        "best_rank": 14
+      },
+      {
+        "name": "chem-bones-Z",
+        "best_rank": 1
+      },
+      {
+        "name": "func-pumps-chambers",
+        "best_rank": 5
+      },
+      {
+        "name": "func-filters-count",
+        "best_rank": 3
+      },
+      {
+        "name": "birthstone-emerald-month",
+        "best_rank": 59
+      },
+      {
+        "name": "violin-strings",
+        "best_rank": 2
+      },
+      {
+        "name": "super-largest-country-capital",
+        "best_rank": 6
+      },
+      {
+        "name": "super-smallest-continent",
+        "best_rank": 32
+      },
+      {
+        "name": "super-populous-capital",
+        "best_rank": 2
+      },
+      {
+        "name": "super-largest-island-nation",
+        "best_rank": 2
+      },
+      {
+        "name": "colosseum-currency",
+        "best_rank": 5
+      },
+      {
+        "name": "greatwall-ocean",
+        "best_rank": 4
+      },
+      {
+        "name": "holiday-independence-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "holiday-christmas-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "holiday-halloween-monthnum",
+        "best_rank": 2
+      },
+      {
+        "name": "holiday-valentines-monthnum",
+        "best_rank": 2
+      },
+      {
+        "name": "month-1-godof",
+        "best_rank": 1
+      },
+      {
+        "name": "etym-janus-monthnum",
+        "best_rank": 2
+      },
+      {
+        "name": "month-7-namedafter",
+        "best_rank": 1
+      },
+      {
+        "name": "etym-caesar-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "inv-sunrise-opposite",
+        "best_rank": 4
+      },
+      {
+        "name": "inv-balloon-opposite",
+        "best_rank": 4255
+      },
+      {
+        "name": "inv-roots-opposite",
+        "best_rank": 783
+      },
+      {
+        "name": "inv-antarctica-opposite",
+        "best_rank": 5
+      },
+      {
+        "name": "rhyme-tree-squared",
+        "best_rank": 37
+      },
+      {
+        "name": "rhyme-hive-plusone",
+        "best_rank": 173
+      },
+      {
+        "name": "rhyme-fix-halved",
+        "best_rank": 147
+      },
+      {
+        "name": "rhyme-shoe-doubled",
+        "best_rank": 291
+      },
+      {
+        "name": "tajmahal-continent",
+        "best_rank": 14
+      },
+      {
+        "name": "louvre-language",
+        "best_rank": 1
+      },
+      {
+        "name": "firstletter-halloween-month",
+        "best_rank": 3
+      },
+      {
+        "name": "firstletter-valentines-month",
+        "best_rank": 4
+      },
+      {
+        "name": "firstletter-populous-country",
+        "best_rank": 4
+      },
+      {
+        "name": "firstletter-paris-country",
+        "best_rank": 4
+      },
+      {
+        "name": "firstletter-greatwall-country",
+        "best_rank": 2
+      },
+      {
+        "name": "succ-halloween-nextmonth",
+        "best_rank": 1
+      },
+      {
+        "name": "pred-valentines-prevmonth",
+        "best_rank": 1
+      },
+      {
+        "name": "dual-stars-visible-opposite",
+        "best_rank": 18
+      },
+      {
+        "name": "dual-photosynthesis-opposite",
+        "best_rank": 4
+      },
+      {
+        "name": "letterpos-water-symbol",
+        "best_rank": 175
+      },
+      {
+        "name": "letterpos-oxygen-symbol",
+        "best_rank": 601
+      },
+      {
+        "name": "letterpos-carbon-symbol",
+        "best_rank": 204
+      },
+      {
+        "name": "letterpos-nitrogen-symbol",
+        "best_rank": 363
+      },
+      {
+        "name": "dbl-armistice-antonym",
+        "best_rank": 5
+      },
+      {
+        "name": "dbl-obituary-antonym",
+        "best_rank": 1
+      },
+      {
+        "name": "dbl-altitude-antonym",
+        "best_rank": 95
+      }
+    ],
+    "logit": [
+      {
+        "name": "carnival-ocean",
+        "best_rank": 16
+      },
+      {
+        "name": "amazon-language",
+        "best_rank": 7
+      },
+      {
+        "name": "mars-color",
+        "best_rank": 2
+      },
+      {
+        "name": "spider-legs",
+        "best_rank": 2
+      },
+      {
+        "name": "basketball-players",
+        "best_rank": 19
+      },
+      {
+        "name": "paper-continent",
+        "best_rank": 8
+      },
+      {
+        "name": "christmas-season",
+        "best_rank": 1
+      },
+      {
+        "name": "osu-rival-mascot",
+        "best_rank": 25
+      },
+      {
+        "name": "topeka-west",
+        "best_rank": 1
+      },
+      {
+        "name": "atomic-79-symbol",
+        "best_rank": 2
+      },
+      {
+        "name": "atomic-26-symbol",
+        "best_rank": 1
+      },
+      {
+        "name": "atomic-29-symbol",
+        "best_rank": 2
+      },
+      {
+        "name": "atomic-80-state",
+        "best_rank": 6
+      },
+      {
+        "name": "atomic-29-flame",
+        "best_rank": 1
+      },
+      {
+        "name": "planet-3-moons",
+        "best_rank": 1
+      },
+      {
+        "name": "month-3-godof",
+        "best_rank": 2
+      },
+      {
+        "name": "spaceneedle-border",
+        "best_rank": 29
+      },
+      {
+        "name": "rhyme-rain-neighbor",
+        "best_rank": 3
+      },
+      {
+        "name": "rhyme-door-doubled",
+        "best_rank": 9
+      },
+      {
+        "name": "rhyme-chair-flag",
+        "best_rank": 55
+      },
+      {
+        "name": "rhyme-spoon-orbit",
+        "best_rank": 12
+      },
+      {
+        "name": "etym-wargod-month",
+        "best_rank": 8
+      },
+      {
+        "name": "etym-frigg-position",
+        "best_rank": 4
+      },
+      {
+        "name": "etym-saturn-position",
+        "best_rank": 2
+      },
+      {
+        "name": "chem-photosynthesis-Z",
+        "best_rank": 1
+      },
+      {
+        "name": "chem-atmosphere-Z",
+        "best_rank": 3
+      },
+      {
+        "name": "chem-organic-Z",
+        "best_rank": 8
+      },
+      {
+        "name": "chem-bones-Z",
+        "best_rank": 1
+      },
+      {
+        "name": "func-pumps-chambers",
+        "best_rank": 2
+      },
+      {
+        "name": "func-filters-count",
+        "best_rank": 3
+      },
+      {
+        "name": "birthstone-emerald-month",
+        "best_rank": 3
+      },
+      {
+        "name": "violin-strings",
+        "best_rank": 10
+      },
+      {
+        "name": "super-largest-country-capital",
+        "best_rank": 15
+      },
+      {
+        "name": "super-smallest-continent",
+        "best_rank": 64
+      },
+      {
+        "name": "super-populous-capital",
+        "best_rank": 8
+      },
+      {
+        "name": "super-largest-island-nation",
+        "best_rank": 58
+      },
+      {
+        "name": "colosseum-currency",
+        "best_rank": 11
+      },
+      {
+        "name": "greatwall-ocean",
+        "best_rank": 2
+      },
+      {
+        "name": "holiday-independence-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "holiday-christmas-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "holiday-halloween-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "holiday-valentines-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "month-1-godof",
+        "best_rank": 1
+      },
+      {
+        "name": "etym-janus-monthnum",
+        "best_rank": 2
+      },
+      {
+        "name": "month-7-namedafter",
+        "best_rank": 1
+      },
+      {
+        "name": "etym-caesar-monthnum",
+        "best_rank": 1
+      },
+      {
+        "name": "inv-sunrise-opposite",
+        "best_rank": 1
+      },
+      {
+        "name": "inv-balloon-opposite",
+        "best_rank": 11
+      },
+      {
+        "name": "inv-roots-opposite",
+        "best_rank": 47
+      },
+      {
+        "name": "inv-antarctica-opposite",
+        "best_rank": 2
+      },
+      {
+        "name": "rhyme-tree-squared",
+        "best_rank": 51
+      },
+      {
+        "name": "rhyme-hive-plusone",
+        "best_rank": 47
+      },
+      {
+        "name": "rhyme-fix-halved",
+        "best_rank": 93
+      },
+      {
+        "name": "rhyme-shoe-doubled",
+        "best_rank": 38
+      },
+      {
+        "name": "tajmahal-continent",
+        "best_rank": 2
+      },
+      {
+        "name": "louvre-language",
+        "best_rank": 2
+      },
+      {
+        "name": "firstletter-halloween-month",
+        "best_rank": 1
+      },
+      {
+        "name": "firstletter-valentines-month",
+        "best_rank": 1
+      },
+      {
+        "name": "firstletter-populous-country",
+        "best_rank": 64
+      },
+      {
+        "name": "firstletter-paris-country",
+        "best_rank": 2
+      },
+      {
+        "name": "firstletter-greatwall-country",
+        "best_rank": 2
+      },
+      {
+        "name": "succ-halloween-nextmonth",
+        "best_rank": 1
+      },
+      {
+        "name": "pred-valentines-prevmonth",
+        "best_rank": 1
+      },
+      {
+        "name": "dual-stars-visible-opposite",
+        "best_rank": 2
+      },
+      {
+        "name": "dual-photosynthesis-opposite",
+        "best_rank": 2
+      },
+      {
+        "name": "letterpos-water-symbol",
+        "best_rank": 16
+      },
+      {
+        "name": "letterpos-oxygen-symbol",
+        "best_rank": 48
+      },
+      {
+        "name": "letterpos-carbon-symbol",
+        "best_rank": 56
+      },
+      {
+        "name": "letterpos-nitrogen-symbol",
+        "best_rank": 10
+      },
+      {
+        "name": "dbl-armistice-antonym",
+        "best_rank": 1
+      },
+      {
+        "name": "dbl-obituary-antonym",
+        "best_rank": 1
+      },
+      {
+        "name": "dbl-altitude-antonym",
+        "best_rank": 7
+      }
+    ]
+  },
+  "swap_summary": {
+    "n_items": 90,
+    "n_gated": 38,
+    "swap_s1_hits": 5,
+    "swap_s2_hits": 0,
+    "noop_ok": 38,
+    "rand_hits_total": 6,
+    "rand_trials": 114,
+    "rand_broke_base": 65
+  },
+  "swap_rows": [
+    {
+      "name": "amazon-language",
+      "category": "multihop",
+      "base_ok": true,
+      "base_next": " Portuguese",
+      "swap_s1": " Spanish",
+      "swap_s1_hit": true,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        true,
+        true,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "animal-cover-turtle",
+      "category": "animal-cover",
+      "base_ok": false,
+      "base_next": " sc"
+    },
+    {
+      "name": "animal-legs-buffalo2",
+      "category": "animal-legs",
+      "base_ok": false,
+      "base_next": " "
+    },
+    {
+      "name": "animal-nose-elephant",
+      "category": "animal-nose",
+      "base_ok": true,
+      "base_next": " trunk",
+      "swap_s1": " prob",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "atomic-80-state",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": " a"
+    },
+    {
+      "name": "basketball-players",
+      "skip": "multi-token"
+    },
+    {
+      "name": "beverage-source-wine",
+      "category": "beverage-source",
+      "base_ok": false,
+      "base_next": " same"
+    },
+    {
+      "name": "bird-color-swan",
+      "skip": "multi-token"
+    },
+    {
+      "name": "bird-country-eagle",
+      "skip": "multi-token"
+    },
+    {
+      "name": "bird-time-owl",
+      "category": "bird-time",
+      "base_ok": false,
+      "base_next": " when"
+    },
+    {
+      "name": "birthstone-emerald-month",
+      "skip": "multi-token"
+    },
+    {
+      "name": "chem-atmosphere-Z",
+      "skip": "multi-token"
+    },
+    {
+      "name": "chem-bones-Z",
+      "skip": "multi-token"
+    },
+    {
+      "name": "chem-organic-Z",
+      "skip": "multi-token"
+    },
+    {
+      "name": "chem-photosynthesis-Z",
+      "skip": "multi-token"
+    },
+    {
+      "name": "christmas-season",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": "1"
+    },
+    {
+      "name": "city-state-Philadelphia",
+      "category": "city-state",
+      "base_ok": true,
+      "base_next": " Pennsylvania",
+      "swap_s1": " Pennsylvania",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "colosseum-currency",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": " euro"
+    },
+    {
+      "name": "element-color-gold2",
+      "category": "element-color",
+      "base_ok": false,
+      "base_next": " gold"
+    },
+    {
+      "name": "etym-frigg-position",
+      "skip": "multi-token"
+    },
+    {
+      "name": "etym-saturn-position",
+      "skip": "multi-token"
+    },
+    {
+      "name": "etym-wargod-month",
+      "skip": "multi-token"
+    },
+    {
+      "name": "ex-city-capital-Barcelona-Toronto",
+      "category": "city-capital",
+      "base_ok": true,
+      "base_next": " Madrid",
+      "swap_s1": " Brussels",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex-city-capital-Lyon-Naples",
+      "category": "city-capital",
+      "base_ok": true,
+      "base_next": " Paris",
+      "swap_s1": " Geneva",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex-city-capital-Naples-Barcelona",
+      "category": "city-capital",
+      "base_ok": true,
+      "base_next": " Rome",
+      "swap_s1": " Rome",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex-city-capital-Toronto-Lyon",
+      "category": "city-capital",
+      "base_ok": true,
+      "base_next": " Ottawa",
+      "swap_s1": " Ottawa",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex-city-continent-Toronto-Lyon",
+      "category": "city-continent",
+      "base_ok": true,
+      "base_next": " North",
+      "swap_s1": " called",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex-city-currency-Toronto-Beijing",
+      "category": "city-currency",
+      "base_ok": true,
+      "base_next": " Canadian",
+      "swap_s1": " Canadian",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "name": "ex-city-currency-Toronto-Mumbai",
+      "skip": "multi-token"
+    },
+    {
+      "name": "ex-city-language-Lyon-Naples",
+      "category": "city-language",
+      "base_ok": true,
+      "base_next": " French",
+      "swap_s1": " Italian",
+      "swap_s1_hit": true,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        false
+      ]
+    },
+    {
+      "name": "ex-element-state-26-8",
+      "category": "element-state",
+      "base_ok": true,
+      "base_next": " solid",
+      "swap_s1": " solid",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex-element-state-26-80",
+      "category": "element-state",
+      "base_ok": true,
+      "base_next": " solid",
+      "swap_s1": " solid",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex-element-state-8-26",
+      "category": "element-state",
+      "base_ok": false,
+      "base_next": " a"
+    },
+    {
+      "name": "ex-element-state-8-80",
+      "category": "element-state",
+      "base_ok": false,
+      "base_next": " a"
+    },
+    {
+      "name": "ex-element-state-80-8",
+      "category": "element-state",
+      "base_ok": false,
+      "base_next": " a"
+    },
+    {
+      "name": "ex-element-symbol-11-26",
+      "category": "element-symbol",
+      "base_ok": true,
+      "base_next": " Na",
+      "swap_s1": " Na",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " iron",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex-element-symbol-26-79",
+      "category": "element-symbol",
+      "base_ok": true,
+      "base_next": " Fe",
+      "swap_s1": " Ni",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "ex-planet-color-third-fourth",
+      "category": "planet-color",
+      "base_ok": false,
+      "base_next": " green"
+    },
+    {
+      "name": "ex2-city-capital-Munich",
+      "category": "city-capital",
+      "base_ok": false,
+      "base_next": " Munich"
+    },
+    {
+      "name": "ex2-city-capital-Osaka",
+      "category": "city-capital",
+      "base_ok": false,
+      "base_next": " Kyoto"
+    },
+    {
+      "name": "ex2-city-continent-Lima",
+      "category": "city-continent",
+      "base_ok": true,
+      "base_next": " South",
+      "swap_s1": " South",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " Peru",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex2-city-continent-Sydney",
+      "category": "city-continent",
+      "base_ok": true,
+      "base_next": " Australia",
+      "swap_s1": " called",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex2-city-language-Cairo",
+      "category": "city-language",
+      "base_ok": true,
+      "base_next": " Arabic",
+      "swap_s1": " Russian",
+      "swap_s1_hit": true,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "ex2-city-language-Moscow",
+      "category": "city-language",
+      "base_ok": true,
+      "base_next": " Russian",
+      "swap_s1": " Russian",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex2-language-capital-Greek",
+      "category": "language-capital",
+      "base_ok": true,
+      "base_next": " Athens",
+      "swap_s1": " Athens",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex2-language-capital-Hungarian",
+      "category": "language-capital",
+      "base_ok": true,
+      "base_next": " Budapest",
+      "swap_s1": " Warsaw",
+      "swap_s1_hit": true,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "name": "ex2-language-capital-Polish",
+      "category": "language-capital",
+      "base_ok": true,
+      "base_next": " Warsaw",
+      "swap_s1": " Warsaw",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " Greece",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "ex2-language-capital-Swedish",
+      "category": "language-capital",
+      "base_ok": true,
+      "base_next": " Stockholm",
+      "swap_s1": " Stockholm",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " Hungary",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "name": "ex2-river-capital-Thames",
+      "category": "river-capital",
+      "base_ok": true,
+      "base_next": " London",
+      "swap_s1": " London",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "food-animal-butter",
+      "category": "food-animal",
+      "base_ok": true,
+      "base_next": " cow",
+      "swap_s1": " cow",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " honey",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "food-animal-honey",
+      "category": "food-animal",
+      "base_ok": false,
+      "base_next": " honey"
+    },
+    {
+      "name": "fruit-grows-grape",
+      "category": "fruit-grows",
+      "base_ok": true,
+      "base_next": " vine",
+      "swap_s1": " wo",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "func-filters-count",
+      "skip": "multi-token"
+    },
+    {
+      "name": "func-pumps-chambers",
+      "skip": "multi-token"
+    },
+    {
+      "name": "gem-color-ruby",
+      "category": "gem-color",
+      "base_ok": false,
+      "base_next": " s"
+    },
+    {
+      "name": "gem-source-pearl",
+      "skip": "multi-token"
+    },
+    {
+      "name": "greatwall-ocean",
+      "category": "multihop",
+      "base_ok": true,
+      "base_next": " Pacific",
+      "swap_s1": "2",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": " China",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        true,
+        true,
+        true
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "holiday-month-christmas2",
+      "category": "holiday-month",
+      "base_ok": true,
+      "base_next": " December",
+      "swap_s1": " December",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "instr-body-trumpet",
+      "category": "instr-played",
+      "base_ok": false,
+      "base_next": " mouth"
+    },
+    {
+      "name": "instr-hit-drums",
+      "category": "instr-played",
+      "base_ok": false,
+      "base_next": " a"
+    },
+    {
+      "name": "mars-color",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": " green"
+    },
+    {
+      "name": "month-3-godof",
+      "category": "multihop",
+      "base_ok": true,
+      "base_next": " war",
+      "swap_s1": "1",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "organ-acid-stomach",
+      "category": "organ-function",
+      "base_ok": false,
+      "base_next": " the"
+    },
+    {
+      "name": "organ-count-kidney2",
+      "category": "organ-count",
+      "base_ok": false,
+      "base_next": " "
+    },
+    {
+      "name": "organ-location-brain",
+      "skip": "multi-token"
+    },
+    {
+      "name": "organ-location-heart",
+      "category": "organ-location",
+      "base_ok": false,
+      "base_next": " heart"
+    },
+    {
+      "name": "osu-rival-mascot",
+      "skip": "multi-token"
+    },
+    {
+      "name": "paper-continent",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": " Europe"
+    },
+    {
+      "name": "person-century-lincoln",
+      "skip": "multi-token"
+    },
+    {
+      "name": "person-country-napoleon",
+      "category": "person-country",
+      "base_ok": true,
+      "base_next": " France",
+      "swap_s1": " Belgium",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "person-country-shakespeare",
+      "category": "person-country",
+      "base_ok": false,
+      "base_next": " the"
+    },
+    {
+      "name": "person-firstname-darwin",
+      "category": "person-firstname",
+      "base_ok": true,
+      "base_next": " Charles",
+      "swap_s1": " Charles",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "person-firstname-einstein",
+      "category": "person-firstname",
+      "base_ok": true,
+      "base_next": " Albert",
+      "swap_s1": " Isaac",
+      "swap_s1_hit": true,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "person-firstname-mozart",
+      "category": "person-firstname",
+      "base_ok": false,
+      "base_next": " Mozart"
+    },
+    {
+      "name": "person-firstname-newton",
+      "category": "person-firstname",
+      "base_ok": true,
+      "base_next": " Isaac",
+      "swap_s1": " Isaac",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " Newton",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "person-firstname-shakespeare",
+      "category": "person-firstname",
+      "base_ok": true,
+      "base_next": " William",
+      "swap_s1": " William",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "planet-3-moons",
+      "skip": "multi-token"
+    },
+    {
+      "name": "planet-rings-saturn2",
+      "category": "planet-feature",
+      "base_ok": true,
+      "base_next": " rings",
+      "swap_s1": " large",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": false,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "rhyme-chair-flag",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": "1"
+    },
+    {
+      "name": "rhyme-rain-neighbor",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": "1"
+    },
+    {
+      "name": "rhyme-spoon-orbit",
+      "category": "multihop",
+      "base_ok": true,
+      "base_next": " Earth",
+      "swap_s1": " Earth",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "season-next-winter",
+      "category": "season-next",
+      "base_ok": true,
+      "base_next": " spring",
+      "swap_s1": " spring",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "spaceneedle-border",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": "3"
+    },
+    {
+      "name": "spider-legs",
+      "skip": "multi-token"
+    },
+    {
+      "name": "sport-equip-tennis",
+      "category": "sport-equip",
+      "base_ok": false,
+      "base_next": " tennis"
+    },
+    {
+      "name": "super-populous-capital",
+      "category": "multihop",
+      "base_ok": false,
+      "base_next": "2"
+    },
+    {
+      "name": "super-smallest-continent",
+      "category": "multihop",
+      "base_ok": true,
+      "base_next": " Europe",
+      "swap_s1": " Europe",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": "!",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        true,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "tree-product-oak",
+      "skip": "multi-token"
+    },
+    {
+      "name": "vehicle-power-bicycle",
+      "category": "vehicle-power",
+      "base_ok": true,
+      "base_next": " legs",
+      "swap_s1": " legs",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
+      "swap_s2": " bicycle",
+      "swap_s2_hit": false,
+      "swap_s2_kept_base": false,
+      "noop_ok": true,
+      "rand_hits": [
+        false,
+        false,
+        false
+      ],
+      "rand_broke_base": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "name": "violin-strings",
+      "skip": "multi-token"
+    }
+  ],
+  "runtime_min": 2.2
+}
