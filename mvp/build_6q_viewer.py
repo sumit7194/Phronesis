@@ -7,7 +7,7 @@ Re-run with --suffix _masked (bigger lens) tomorrow to regenerate against n~100.
 """
 import argparse, html, json, os
 
-ORDER = ["q1_no_a", "q2_math_solved", "q3_gsm_rescuable", "q4_math_wall",
+ORDER = ["q1_no_a", "q1_plain", "q2_math_solved", "q3_gsm_rescuable", "q4_math_wall",
          "q5_gsm_solved", "q6_gsm_failed"]
 LAYERS = ["14", "20", "26"]
 TOPN = 8
@@ -44,7 +44,7 @@ def main():
             cells.append(layer_c)
         data[qid] = {"id": qid, "category": d["category"], "gold": str(d["gold"]),
                      "answer": str(d["answer"]), "correct": bool(d["correct"]),
-                     "question": stim.get(qid, {}).get("question", ""),
+                     "question": d.get("question") or stim.get(qid, {}).get("question", ""),
                      "think_idx": think_idx,
                      "lens_n": d.get("lens_n", 45) if isinstance(d.get("lens_n"), int) else 45,
                      "n_tokens": d["n_tokens"], "toks": toks, "cells": cells}
