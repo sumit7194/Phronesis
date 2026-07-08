@@ -91,7 +91,7 @@ h1{font-size:16px;margin:0 0 8px}
 .badge.bad{background:rgba(248,81,73,.15);color:var(--bad)}
 .qtext{margin-top:8px;color:var(--text);font-size:13px;max-width:1100px}
 .wrap{display:grid;grid-template-columns:1fr 380px;gap:0;height:calc(100vh - 168px)}
-@media(max-width:900px){.wrap{grid-template-columns:1fr;height:auto}}
+@media(max-width:900px) and (min-width:761px){.wrap{grid-template-columns:1fr 320px}}
 .stream{overflow-y:auto;padding:16px 18px;border-right:1px solid var(--border)}
 .controls{display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
 .controls input{background:var(--panel);border:1px solid var(--border);color:var(--text);
@@ -122,6 +122,26 @@ h1{font-size:16px;margin:0 0 8px}
 .fill{height:100%;background:var(--bar)}
 .hint{color:var(--dim);font-size:11.5px;margin-top:6px}
 footer{padding:8px 18px;border-top:1px solid var(--border);color:var(--dim);font-size:11.5px}
+/* ---- mobile: single column + concept panel as a bottom sheet ---- */
+@media(max-width:760px){
+ body{font-size:15px}
+ header{position:static;padding:12px 14px}
+ h1{font-size:14px}
+ .tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+ .tab{flex:0 0 auto;padding:8px 12px}
+ .qbox{font-size:13px;max-height:22vh;overflow-y:auto}
+ .wrap{display:block;height:auto}
+ .stream{border-right:0;padding:12px 14px calc(46vh + 20px)}
+ .controls input{width:44vw}
+ .tok{padding:2px 0}
+ .side{position:fixed;left:0;right:0;bottom:0;max-height:46vh;padding:10px 14px 16px;
+  border-top:2px solid var(--accent);border-radius:14px 14px 0 0;z-index:30;
+  box-shadow:0 -10px 30px rgba(0,0,0,.35)}
+ .side::before{content:"";display:block;width:40px;height:4px;border-radius:2px;
+  background:var(--border);margin:0 auto 8px}
+ .side h3{margin-top:0}
+ footer{padding-bottom:calc(46vh + 12px)}
+}
 </style></head>
 <body>
 <header>
