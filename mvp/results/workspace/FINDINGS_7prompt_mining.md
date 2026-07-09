@@ -54,3 +54,22 @@ the purest non-commitment failure. (4h gen; swap-limited.)
   x {q1,q3,q6,q5}, reading whether steering moves the doubt-load. Review this evening.
 - Commit-gate: build a doubt-load reader from J-space; test against commit/confidence vectors.
 - Re-run mining on the n~110 lens (fit paused at n=72) for sharper labels.
+
+## F-F · Second-order probe (prereg-second-order.md; 120 entries, 68 pass gates; tier B, n=4 probes)
+- **H-mag SUPPORTED:** along LOADED concept directions, 2nd-order term = **13–60% of the linear
+  term at eps=12%** (9/9 gated entries; median ~0.3). The workspace map is NOT locally linear
+  along concept directions. → resolves the J-lens≈logit puzzle (hypothesis): both are FIRST-order
+  readings; the structure a linear lens misses at 4B is *second*-order, so no linear correction helps.
+- **H-spec LARGELY SUPPORTED (14/20):** |b| along concept dirs (13–154) vs random dirs (~0.7–15,
+  usually <5) — **curvature separates meaningful from random directions spectacularly**; losses
+  are only vs the semantically-adjacent other-concept dir (Paris vs Tokyo = both capital-city dirs).
+- **H-state SUPPORTED in the mid band (L14/L20), mixed at L26:** same direction is 2–5x more
+  curved when the concept is LOADED (e.g. japan L20 79 vs 27; hot L20 41 vs 14) → curvature tracks
+  the ACTIVE workspace slot, not just the direction.
+- **Sign structure (headline texture):** b>0 at L14/L20 (super-linear AMPLIFICATION toward the
+  concept), b<0 at L26 (SATURATION). Mechanistic echo of T0 ignition: mid-band commits
+  (amplifies), late band is already committed (saturates).
+- **H-asym leaning (6/9):** pushing AWAY from a loaded concept is the more nonlinear side.
+- Caveats: 4 probes, 1 model, eps=12% is largish, fp16; directions from the n=45 lens (but the
+  measured object is the TRUE network). Next: scale to 20-50 concepts; try curvature-as-a-lens
+  (rank concepts by |b| rather than linear readout).
