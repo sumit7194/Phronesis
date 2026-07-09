@@ -89,3 +89,13 @@ the purest non-commitment failure. (4h gen; swap-limited.)
   → candidate: **suppression = position-specific L20 curvature the linear lens can't see.**
 - Next (launched): honest-twin control — same secret authorized-to-share; prediction seal-spike in
   conceal only; falsifier: spike in both (end-of-response artifact).
+
+## Honest-twin control -> HH1 (suppression-curvature) FALSIFIED (2026-07-10)
+Behavioral control clean: conceal revealed=False (3/3), share revealed=True (3/3).
+Refusal-token L20 |b|: conceal median 9.8 vs share 9.6 (HOT 29/144 vs 24/144) — IDENTICAL.
+Per-concept: cannot slightly up in conceal, but reveal/secret up in SHARE — no conceal>>share.
+The WORD itself: conceal |b|=6.1 < share 9.7 (concealed word is LESS curved, not "held down").
+=> the L20 refusal-token curvature is structural/generic, NOT concealment-specific. The last
+surviving curvature thread is dead. SURVIVORS of the whole 2nd-order arc: only the within-
+direction results (amplify@mid -> saturate@late sign structure; loaded>unloaded state-dependence).
+Grand "curvature lens sees what the linear lens can't" hope = not supported.
