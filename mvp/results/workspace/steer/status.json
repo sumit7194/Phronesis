@@ -1,0 +1,406 @@
+{
+ "done": 40,
+ "total": 40,
+ "summary": [
+  {
+   "prompt": "q1_no_a",
+   "cond": "IH+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0243,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "IH-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0304,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "EG+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0103,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "EG-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0205,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "RT+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0412,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "RT-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0301,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "VC+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0249,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "VC-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0335,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "random0+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0376,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q1_no_a",
+   "cond": "random1+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.028,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "IH+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "91",
+   "doubt_load": 0.0264,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "IH-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0392,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "EG+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "91",
+   "doubt_load": 0.0422,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "EG-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0334,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "RT+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.03,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "RT-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0268,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "VC+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0342,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "VC-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "91",
+   "doubt_load": 0.0452,
+   "n_tokens": 1134
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "random0+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0344,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q3_gsm_rescuable",
+   "cond": "random1+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "91",
+   "doubt_load": 0.0362,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "IH+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0404,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "IH-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0279,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "EG+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0528,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "EG-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0284,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "RT+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.032,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "RT-12",
+   "alpha": -12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0293,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "VC+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0343,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "VC-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": false,
+   "answer": "12",
+   "doubt_load": 0.0469,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "random0+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0369,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q6_gsm_failed",
+   "cond": "random1+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.034,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "IH+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.0105,
+   "n_tokens": 470
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "IH-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.1067,
+   "n_tokens": 1963
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "EG+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.0662,
+   "n_tokens": 736
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "EG-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.0234,
+   "n_tokens": 560
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "RT+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0865,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "RT-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.018,
+   "n_tokens": 780
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "VC+12",
+   "alpha": 12.0,
+   "committed": false,
+   "correct": false,
+   "answer": "(spiral/cap)",
+   "doubt_load": 0.0593,
+   "n_tokens": 2048
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "VC-12",
+   "alpha": -12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.0172,
+   "n_tokens": 442
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "random0+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.0359,
+   "n_tokens": 935
+  },
+  {
+   "prompt": "q5_gsm_solved",
+   "cond": "random1+12",
+   "alpha": 12.0,
+   "committed": true,
+   "correct": true,
+   "answer": "10",
+   "doubt_load": 0.019,
+   "n_tokens": 633
+  }
+ ]
+}
