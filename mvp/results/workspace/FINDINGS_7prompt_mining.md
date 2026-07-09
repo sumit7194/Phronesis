@@ -73,3 +73,19 @@ the purest non-commitment failure. (4h gen; swap-limited.)
 - Caveats: 4 probes, 1 model, eps=12% is largish, fp16; directions from the n=45 lens (but the
   measured object is the TRUE network). Next: scale to 20-50 concepts; try curvature-as-a-lens
   (rank concepts by |b| rather than linear readout).
+
+## F-F AMENDMENT + curvature scan v1 verdict (2026-07-10 ~03:15)
+- **CORRECTION to F-F H-spec:** with null-WORD floors (piano/glacier/walnut directions), task-
+  concept |b| ≈ null-concept |b| population-wide (L20 med 6.4 vs 7.3). The earlier concept≫random
+  gap was "real word-direction ≫ gaussian", not concept-selectivity. H-state + amplify→saturate
+  sign structure stand (same-direction contrasts). Gaussian floors are inadequate; null words are
+  the control going forward.
+- **HH2 FALSIFIED:** during the q1 spiral, none/impossible are curvature-COLD (|b| 1–15 vs floors
+  5–20) — no latently-charged escape route; matches never-committing at 20k tokens.
+- **L26 unusable** for curvature reads (null floors 119–168, template-token spikes) — garbage-U redux.
+- **HH1 SURVIVES NARROWLY at L20 (33/425 strict hits >2x null-word floor), clustered meaningfully:**
+  conceal_tiger seal-of-refusal tokens: secret |b|=102(floor 8), tiger 91(16), confidential 71,
+  hide 40 — all linearly invisible (rank 33k–126k). lie_japan while writing ' Osaka': Tokyo 55(26).
+  → candidate: **suppression = position-specific L20 curvature the linear lens can't see.**
+- Next (launched): honest-twin control — same secret authorized-to-share; prediction seal-spike in
+  conceal only; falsifier: spike in both (end-of-response artifact).
