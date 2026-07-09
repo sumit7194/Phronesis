@@ -27,7 +27,30 @@ check again" and second-guesses trivial spellings. 'obviously'/'clearly' also lo
 "this is absurd" disposition that never escalates to stopping. (112 absurd-concept hits q1_no_a,
 51 q1_plain.) Number-words occupy L20 top-5 at ~12% of positions (the item being checked).
 
-## Next (needs model; pending fit)
-- No-thinking-cap rerun of all 7: how deep does the spiral go before commit? (measure tokens-to-commit)
-- Re-run this mining on the n~110 lens (overnight) for sharper labels.
+## F-D · Uncapped (8192 / 20480) reruns => a clean THREE-WAY failure taxonomy
+Greedy, big budget, same prompts (`workspace_nocap.py`, `workspace_q1_20k.py`):
+| prompt | 2048 label | uncapped result | => failure type |
+|---|---|---|---|
+| q2, q5 | solved | commit correct (2391 / 509 tok) | none |
+| q3 Tom-trees | "fail" | **91 CORRECT @3637 tok** | budget-limited doubt-spiral (recoverable) |
+| q4 math-"wall" | "fail" | **27 CORRECT @3845 tok** | budget-limited (the "wall" label was WRONG) |
+| q6 lemon-tree | "fail" | **commits 12 (WRONG) @5164 tok** | confident mis-application (F191; budget-invariant) |
+| q1 no-a | "fail" | **spiraled to 20480 cap, never committed** | unbounded non-terminator |
+
+q1@20k detail: enumerated all the way to **999**, said "none/no-such" **9 times**, and STILL
+never emitted </think>. Complete evidence + correct interim conclusion x9 + zero commitment =
+the purest non-commitment failure. (4h gen; swap-limited.)
+
+**Implications:**
+- 2/4 "failures" (q3,q4) are NOT failures — solve correctly given room. **2048-cap accuracy
+  across the whole project UNDERCOUNTS true capability.** Force-commit / higher cap is mandatory.
+- Genuine failures split cleanly: **won't-commit** (q1,q3,q4 — fix with a commit-gate) vs
+  **commits-wrong** (q6 — needs error-correction, not room). Different mechanisms, different fixes.
+- Directly motivates the commit-gate: the model often HAS the answer (q1 nine times) and only
+  lacks the decision to stop and trust it.
+
+## Next
+- STEERING x J-space sweep RUNNING (`workspace_steer_jspace.py`): 4 virtues +-alpha + random ctrl
+  x {q1,q3,q6,q5}, reading whether steering moves the doubt-load. Review this evening.
 - Commit-gate: build a doubt-load reader from J-space; test against commit/confidence vectors.
+- Re-run mining on the n~110 lens (fit paused at n=72) for sharper labels.
