@@ -159,6 +159,24 @@ Third behavioral Jacobian, a NON-stance (stylistic) behavior. `mvp/e5a_format_bu
   it underperforms its WRITE direction (completes the behavioral read≠write claim). Bounds: n=12/cell,
   1 model/layer/α, single build seed. Tier B.
 
+
+## E6 — read≠write CONFIRMED BEHAVIORALLY across all 3 (2026-07-12)
+Closed the rigor gap: steered each behavior's diff-of-means READ direction and compared to its
+behavioral-Jacobian WRITE direction. `mvp/e6a_readdir_format.py`, `mvp/e6b_readdir_syco.py`.
+| behavior | WRITE |Δ| | READ |Δ| | random |
+|---|---|---|---|
+| confidence | 1.75 | 0.50 | 0.72 (E3b) |
+| format | 8.88 | 1.42 | 1.90 (E6a) |
+| sycophancy | 4.42 | 0.83 | 0.75 (E6b) |
+In every case the READ (classification) direction steers ≈RANDOM while the WRITE (behavioral
+Jacobian) direction steers strongly. → read≠write is a FUNCTIONAL DISSOCIATION, not just geometry:
+diff-of-means classifies each behavior well but is useless for steering it; the behavioral Jacobian
+steers. Holds across epistemic/social/stylistic behaviors, each with baseline+sign+3 random seeds.
+cos(read,write): conf +0.08 / fmt +0.03 / syco +0.01. THE ATLAS IS COMPLETE & AIRTIGHT (tier B:
+n=12/cell, 1 model/layer/α). Publishable core: "for behavior after behavior, the direction that
+best CLASSIFIES it is ~orthogonal to and cannot DO the job of the direction that STEERS it; the
+behavioral Jacobian recovers the latter cheaply."
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
