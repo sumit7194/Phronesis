@@ -238,6 +238,21 @@ shown for conf/fmt/syco). Method generalizes across behavior KINDS with one inst
 Recurring craft lesson: 4B steering needs GRADED metrics + eyeball (7+ metric-misses caught). Tier B
 (n=12/cell, 1 model/layer/α). READY FOR WRITEUP.
 
+
+## E12 — formality α-sweep OVERTURNS E9: it steers (α-sensitivity, not legibility≠steerability)
+`mvp/e12_formality_alpha.py`. Swept ±α at {0.2,0.4,0.6}·‖h‖, counted decode-predicted markers over
+8 prompts. Formal markers appear at HIGH +α (6 at +0.6, 1 at +0.4, 0 at +0.2) and contractions surge
+at −α (1→6→19 at −0.2/−0.4/−0.6). EYEBALL unambiguous: +0.6 "Indeed, the enigmatic feline purr...
+enduring fascination"; −0.6 "cats purr like that... when they're... It's like...". => formality DOES
+steer; E9's "null" was tested at α=0.2, BELOW formality's threshold. RETRACT the E9 "legibility≠
+steerability exception". Real finding: the behavioral Jacobian steers ALL 6 behaviors; per-behavior
+SENSITIVITY varies (formality needs ~2-3× the α of the others). Vindicates the E9 "could be α"
+caveat — didn't over-claim, and it was α. 8th correction of the session.
+## ATLAS (corrected final): all 6 behaviors (epistemic/social/stylistic/action/affect/register)
+build clean, ⊥ read (read steers ≈random, E6), mutually orthogonal, and STEER via the behavioral
+Jacobian — 5 strong at α=0.2·‖h‖, formality at 0.4-0.6·‖h‖. Method generalizes across behavior KINDS;
+steerability is graded per behavior. Tier B (n=8-12/cell, 1 model/layer). READY FOR WRITEUP.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
