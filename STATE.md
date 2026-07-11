@@ -4,7 +4,7 @@
 
 # Phronesis — current state
 
-**Last updated:** 2026-07-10 · **Latest:** J-space days 2–4 closed (jspace-experiments.md F-A…F-F); curvature falsified; commit-gate prereg frozen · **Model in play:** Qwen3-4B (fp16, Apple-Silicon/MPS) · **GPU:** none (GCP quota-blocked)
+**Last updated:** 2026-07-12 · **Latest:** lens-info E-series (prereg-lens-info) — E1 decision-variable NULL (firmed), E3 behavioral-Jacobian POSITIVE (beats random-steering ~5×, sign-inverted puzzle) · **Model in play:** Qwen3-4B (fp16, Apple-Silicon/MPS) · **GPU:** none (GCP quota-blocked)
 
 ## Best current claims (by arc)
 
@@ -25,7 +25,9 @@
 - **F189–F191** boundary mode: undetectable, unpromptable, and concept-present → application failure (see table).
 
 ## Open / next
-- **Mac (NEXT — prereg frozen 07-10):** **commit-gate arc**, `docs/prereg-commit-gate-2026-07.md`. S1 = resume `mvp/incubation_screen.py` (paused 10/80, 3 candidates) — the screen doubles as behavioral mining for BOTH commit-gate and incubation stage-0. Then S2 detector bake-off (L20 doubt-load + L14 decisiveness vs **text baselines** — must beat text or it's a boundary result) → S3 closed loop (gate vs random-timing ×3 seeds vs fixed vs 8k-ceiling). Key dodge: F186 nulled gating in the *solved* regime; this targets the *failure* regime where answers arrive early (F-A).
+- **Mac (HOT — sign puzzle to crack):** behavioral-Jacobian follow-up (`docs/prereg-lens-info-2026-07.md` E3). v_behav BEATS random-steering ~5× (|Δcommit| 2.58 vs 0.47) — first crack in the random-matches curse — but sign is INVERTED & one-sided. NEXT: finer α-sweep near 0; probe what −v_behav *removes* (construct-gap vs curvature); replicate on a 2nd behavior/layer; then decide if it's writeup-worthy. Vectors saved `mvp/results/workspace/v_behav_L{14,20}.npy`.
+- **Mac (E-series done tonight):** E1 decision-variable = clean NULL (answer-race doesn't separate fail/success, Δgold_leads=0.000 de-confounded) → answer-token race is NOT a commit-gate detector. E2 self-surprise = invalid (greedy-vs-sampled confound), needs greedy-correct redo. 3 measurement confounds caught+fixed (leading-digit, decoding-mode, hedge-word floor→Opus judge).
+- **Mac (NEXT — prereg frozen 07-10):** **commit-gate arc**, `docs/prereg-commit-gate-2026-07.md`. S1 screen DONE (73/80, **19 candidates**, gate cleared; 7 items left, low priority). E1 null means S2 detector should lean on **doubt-load (F-B)** not the answer-race. Then S2 bake-off vs text baselines → S3 closed loop (gate vs random-timing ×3 vs fixed vs 8k-ceiling). Dodge: F186 nulled gating in *solved* regime; target *failure* regime (F-A).
 - **Mac (queued):** incubation behavioral 2×2 after S1 (`docs/idea-workspace-incubation.md`; hint/control pairs in `mvp/incubation_stimuli_draft.json`); self-consistency test (F190 predicts majority-vote rescues perturbation-sensitive but not boundary errors); J-lens top-up to n≈100 (dim_batch=4 ONLY) — settles under-fitted-vs-unnecessary, unlocks injection arm.
 - **GPU-blocked:** R1-Distill-7B rumination-rescue + commit-gate replication (tier-A path); cross-scale claims; whether training closes the boundary gap; 27B+ J-lens; emergent (not instructed) deception.
 - **Consolidation debt:** gate→search + reasoning arc (F180–F191) + workspace days 1–4 unpublished; jspace F-A…F-F need findings.md numbers. F191 + T0 + the won't-commit taxonomy are writeup-ready sections.
