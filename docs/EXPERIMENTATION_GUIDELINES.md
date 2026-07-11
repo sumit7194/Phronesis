@@ -82,3 +82,16 @@ From [model-confidence-knowledge-boundary.md](research/model-confidence-knowledg
 
 ## Changelog
 - **v1.0 (2026-06-28):** Initial floor, synthesized from F100–F171 (esp. the F122/F160/F171 random-control lessons, the F169/F170 measurement-mismatch retraction, the F171 α-scale lesson, the read≠write wall), the IH construct literature, and the model-confidence/knowledge-boundary methods review.
+
+## §11 — Prior-art / novelty check BEFORE the arc (added 2026-07-12)
+- **Do a literature search at PREREG time, not writeup time.** Before committing effort to an arc,
+  search for the core claim + its neighbors and write a short "prior art" paragraph in the prereg:
+  what's already known, what (if anything) would be new. This is part of §1, not optional.
+- **Earned by:** 2026-07-12 lit-check found ALL THREE project headline arcs (behavioral-Jacobian
+  read≠write atlas, gate→search confidence-gating, F191 trace-answer dissociation) already covered by
+  active 2025-26 literature — after the work was done and called "publishable." Rigor was never the
+  problem; unchecked novelty was.
+- **Positioning rule:** if the finding exists, say so and reposition honestly — independent
+  small-model REPLICATION, a controlled NEGATIVE result (our strength; state it as replication/null,
+  not discovery), or a METHOD note. Never present a known result as novel. A replication clearly
+  labelled as such is honest and useful; a mislabelled "discovery" is not.
