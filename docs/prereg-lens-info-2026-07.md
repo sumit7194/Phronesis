@@ -167,3 +167,35 @@ behind E1–E3; characterization only.
   sign at α=13). Inverted-U + one-sidedness lean toward construct-gap. Tier B (n=12, 1 judge/behavior/
   layer/model). → first principled direction to beat random-steering in the project; sign mechanism
   is next session's opening question (α-sweep finer near 0; probe what −v_behav removes).
+- 2026-07-12 (E3 Part D + decode — SIGN PUZZLE RESOLVED; E3-B/C "commitment" claim CORRECTED):
+  Logit-lens decode of v_behav_L20: **+pole = confidence tokens** (' confident',' assured',' realise',
+  きっと); **−pole = pure negation** (' not', 不是/并非/而不是 "is not/rather than"). So −v_behav is a
+  NEGATION direction. Control (`mvp/e3d_valence.py`): steered −v_behav on 12 prompts whose correct
+  answer is affirmative ("Yes, well-supported"). Hand-read: baseline 10 affirm/2 hedge/0 deny →
+  −v_behav 4 affirm/4 hedge/**4 outright WRONG "No"s**; only bedrock physics facts (light speed, ice,
+  gravity) resisted flipping. → −v_behav injects "No/not" regardless of correctness. **The E3-B/C
+  "steers commitment, beats random" headline was a CONFOUND**: on the skepticism prompt-set, negation
+  = the decisive-correct verdict, so negation masqueraded as commitment. RETRACTED as "commitment",
+  CORRECTED to "steers negation/valence". Root cause = MY objective: B put `" not"` in the hedge set,
+  so the gradient found logical negation, not epistemic hedging. STILL TRUE: behavioral-Jacobian
+  method works (real, interpretable, random-beating direction via autograd; read⟂write holds). Length
+  confound also checked & clean (corr(commit,len)=+0.06). → FIX: redefine B with pure epistemic-hedge
+  tokens (maybe/perhaps/possibly/uncertain), EXCLUDE negation; rerun A→D; a true confidence direction
+  should beat random AND pass the affirm-prompt valence control. `mvp/e3e_clean.py`.
+- 2026-07-12 (E3 CLEAN RERUN — genuine confidence-steering direction; the real positive):
+  redefined B with epistemic tokens only (confident/certain/… vs maybe/perhaps/uncertain/unsure),
+  negation EXCLUDED. Decode of clean v_behav_L20 (`mvp/e3e_clean.py`): **+pole = confidence**
+  (' confident',的确/indeed,' assured'), **−pole = pure epistemic uncertainty** (' unsure',不知道/don't
+  know,' unclear',不确定) — no negation. Consistent (pairwise-cos +0.39), orthogonal to diff-of-means
+  (+0.08, read⟂write holds). Steering test on the 12 affirm-prompts + blinded judge (commit+valence,
+  `mvp/e3f_clean_steer.py`): **(1) sign CORRECT** — behav+ commit 8.83 (Δ+1.08), behav− 6.00 (Δ−1.75),
+  signed spread +2.83 (+=confident, −=uncertain, as predicted; the flawed version's inversion WAS the
+  negation contamination). **(2) beats random** — |Δ|behav− 1.75 vs random floor 0.72 (~2.4×); the
+  controlled bidirectional spread is something random can't make (caveat: behav+ 1.08 only marginal
+  vs noisiest random seed 1.0). **(3) valence PRESERVED** — 1 soft deny across behav± vs the negation
+  dir's 4 hard wrong "No"s; behav+ even flipped 2 baseline hedges → confident-correct affirm (12/12).
+  → the behavioral-Jacobian method yields a real, interpretable, random-beating, valence-preserving
+  CONFIDENCE-steering direction when the objective is clean. LESSON: the token-level objective IS the
+  experiment (negation in the hedge set → negation knob). Tier B (n=12, 1 judge/α/layer/model; +dir
+  marginal). NEXT: replicate on skeptic-prompts (behav+ should make decisive-No MORE confident too);
+  α-sweep; 2nd behavior → control atlas; this is the read≠write writeup's core result.
