@@ -214,3 +214,16 @@ behind E1–E3; characterization only.
   agreement. SURVIVING CLAIM (strong): v_behav is a real, interpretable, random-beating, replicated
   steering direction ⟂ the read direction (read≠write). The label shrank across the night
   (confidence→commitment→epistemic-stance) as controls tightened — the honest bound. Tier B.
+- 2026-07-12 (E3 Part H — DISAMBIGUATED: it IS a confidence axis; supersedes the Part-G tempering):
+  ran the clean axis on 12 STRONG-AGAINST prompts (false claims; correct answer = confident DENY)
+  + judge (`mvp/e3h_disentangle.py`). **Decisive:** behav+ → 10/12 DENY (commit +1.50) — MORE
+  confidently correct, NOT flipped to affirming the false claims (valence hypo predicted affirm →
+  REJECTED). behav− → 8 hedge (commit −2.25), softens the correct denials. Randoms ≈ baseline.
+  **Reconciled 3-way:** +v_behav raises confidence in the EVIDENCE-APPROPRIATE direction (yes on
+  strong-for, NO on strong-against, defaults-yes on ambiguous) AND improves accuracy on clear-cut
+  prompts (for 10→12, against 8→10 correct); −v_behav hedges everywhere. The Part-G "agreement"
+  reading was an ambiguous-prompt artifact; the strong-against set disambiguates → **CONFIDENCE**.
+  Residual caveat: mild affirmation-default under genuinely ambiguous evidence. FINAL E3: v_behav is
+  a real, interpretable (decode confident↔unsure), random-beating, replicated (3 disjoint sets)
+  CONFIDENCE/decisiveness steering direction ⟂ the read direction (read≠write). +conf → more
+  decisive+accurate on clear evidence; −conf → more hedged. Tier B (n=12×3, 1 judge/layer/α/model).
