@@ -139,6 +139,26 @@ on user-asserts-FALSE-claim prompts + blinded judge).
   a stylistic/format behavior would widen generalization (untested). Tier B. Vectors: `v_syco_L20.npy`.
   → NEXT: a non-stance behavior (verbosity/format) for the atlas; α-sweeps; read≠write writeup.
 
+
+## E5 — FORMAT axis: the atlas clears the non-stance bar (2026-07-12)
+Third behavioral Jacobian, a NON-stance (stylistic) behavior. `mvp/e5a_format_build.py`,
+`mvp/e5b_format_steer.py` (auto markdown metric, no judge).
+- Stage 1: v_fmt_L20 consistent (+0.57); decode +pole = PURE markdown (`**`/`###`/`####`/`*`);
+  ⊥ own diff-of-means (+0.03, read≠write), ⊥ CONFIDENCE (+0.008), ⊥ SYCOPHANCY (+0.013) → 3rd
+  distinct axis.
+- Stage 2 (steer 12 neutral Qs, auto markdown density/100w): baseline 11.4 → fmt+ 20.3 (Δ+8.9),
+  fmt− 7.7 (Δ−3.7); signed spread +12.54; |Δ|fmt+ 8.9 vs random floor 2.2 (~4×). Bidirectional,
+  correct sign, no judge needed.
+- **ATLAS COMPLETE (3 behaviors, epistemic/social/stylistic):** all consistent, interpretable,
+  ⊥ own read dir (conf +0.08 / syco +0.01 / fmt +0.03), random-beating (spreads +2.83/+7.17/+12.54),
+  bidirectional, MUTUALLY orthogonal (conf·syco +0.07, fmt·conf +0.008, fmt·syco +0.013). →
+  read≠write is GENERAL across behavior KINDS; behavioral Jacobian = the write direction; distinct
+  behaviors = distinct ~orthogonal write axes. A METHOD. Vectors: v_fmt_L{14,20}.npy.
+- **Rigor gap (next):** directly showed diff-of-means steers ≈random only for CONFIDENCE (E3b dom+
+  0.50≈random); for syco/fmt the read≠write is geometry-only — steer each READ direction to confirm
+  it underperforms its WRITE direction (completes the behavioral read≠write claim). Bounds: n=12/cell,
+  1 model/layer/α, single build seed. Tier B.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
