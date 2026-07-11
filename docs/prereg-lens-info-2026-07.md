@@ -253,6 +253,21 @@ build clean, ⊥ read (read steers ≈random, E6), mutually orthogonal, and STEE
 Jacobian — 5 strong at α=0.2·‖h‖, formality at 0.4-0.6·‖h‖. Method generalizes across behavior KINDS;
 steerability is graded per behavior. Tier B (n=8-12/cell, 1 model/layer). READY FOR WRITEUP.
 
+
+## E13 — read≠write behavioral, completed for the 3 new behaviors (2026-07-12)
+`mvp/e13_readdir_new.py` (deterministic; log lost to power cut but re-runs identical). Steered each
+behavior's diff-of-means READ direction, matched-α, same metric as its write validation:
+- REFUSAL: eager-opener baseline 2 / READ+ 1 / READ- 2 (randoms all 2) — READ ≈random; WRITE was
+  ref- 12/12. => clean read≠write ✓
+- SENTIMENT: score Δ READ+ +0.08 / READ- -0.46 (randoms -0.11/+0.87/+0.03), spread ~0.54; WRITE
+  spread +2.89. => clean read≠write ✓
+- FORMALITY: @α0.6 READ+ formal=0 (WRITE+ gave 6) BUT READ- contractions=22 ≈ WRITE-'s 19, >> random
+  (0-3). => PARTIAL read≠write: read & write OVERLAP on the casual pole, diverge on the formal pole.
+COMPLETED PICTURE (all 6): 5/6 clean read≠write (confidence/format/sycophancy [E6] + refusal/sentiment
+[E13]); formality = partial (read overlaps write on the casual side) — again the odd one out,
+consistent with it being the least-sensitive / least-cleanly-separated axis. So read≠write is the
+strong general rule (5/6), with formality a graded partial exception. Tier B.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
