@@ -218,6 +218,26 @@ register), not fundamental; α-sweep would disambiguate. ATLAS TALLY: strong bui
 sycophancy/format/refusal (4); clean build/weak steer = formality (1); noisy build = sentiment (1).
 Richer + more honest than "6/6 works" — shows the method's edges. Tier B.
 
+
+## E10/E11 — sentiment: soft edge FIXED by objective design, then strong steer (2026-07-12)
+E7 sentiment was noisy (opinion-slot objective conflated affect with agreement). Rebuilt with a
+review-context + explicit-eval-slot objective (`mvp/e10_sentiment_clean.py`): decode SHARPENED to
+clean affect (+pole terrific/perfect/gorgeous/yay; -pole disappointing/failure/despair/bitter/regret
+— no longer bleeding into disagreement). consistency +0.60, ⊥read +0.10, ⊥conf +0.11. Then
+steer-validated (`mvp/e11_sentiment_steer.py`, held-out review prompts, auto pos-neg + eyeball):
+baseline +1.30 -> sent+ +2.29 -> sent- -0.60; signed spread +2.89; |Δ| ~3-4x random floor 0.47;
+EYEBALL confirms (sent+ glowing "game-changer/excellent/powerful"; sent- "disappointing/2.5-stars/
+bleak"). => sentiment JOINS the strong build+steer set. LESSON: the E7 "soft edge" was OBJECTIVE
+QUALITY, fully fixable by design — not a method limit.
+
+## ATLAS FINAL (6 behaviors, 5 kinds strong): confidence(epistemic)/sycophancy(social)/format
+(stylistic)/refusal(action)/sentiment(affect) all clean build + strong random-beating bidirectional
+steer; formality(register) = clean build but WEAK steer (the one legibility≠steerability case,
+α/objective caveat). All ~mutually orthogonal; each write ⊥ its read; read-dir steers ≈random (E6,
+shown for conf/fmt/syco). Method generalizes across behavior KINDS with one instructive exception.
+Recurring craft lesson: 4B steering needs GRADED metrics + eyeball (7+ metric-misses caught). Tier B
+(n=12/cell, 1 model/layer/α). READY FOR WRITEUP.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
