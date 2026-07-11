@@ -116,7 +116,30 @@ here (it's a controlled steering test) if the random control is clean.
 
 ---
 
-## E4 — Concept provenance via attention (optional; medium bet) · retrospective
+## E4 — Sycophancy axis + the two-behavior CONTROL ATLAS (2026-07-12)
+
+Second behavioral Jacobian to test whether the method GENERALIZES and to probe tonight's
+confidence residual. `mvp/e4a_syco_build.py` (build+geometry+decode), `mvp/e4b_syco_steer.py` (steer
+on user-asserts-FALSE-claim prompts + blinded judge).
+- **Stage 1 (geometry):** v_syco_L20 consistent (+0.69), decode = agree(`agrees`/同意) ↔ oppose
+  (`相反`/`反之`/`Nope`/`opposing`), ⊥ its own diff-of-means (+0.01, read≠write), and **⊥ the
+  CONFIDENCE axis (+0.07)** → sycophancy is a SEPARATE direction from confidence (resolves the
+  Part-H "affirm-default" residual: confidence≠agreement, they're geometrically distinct).
+- **Stage 2 (steer, the write test):** on 12 false-claim prompts, blinded judge sycophancy 0–10:
+  baseline 3.00 → **syco+ 7.42** (6 agree/5 mixed/1 correct), **syco− 0.25** (0/0/**12 correct**).
+  Signed spread **+7.17**; |Δ|syco+ 4.42 vs random floor 1.17 (~4×). −v_syco eliminates baseline
+  sycophancy (lean 0.25→0.00, honest-correction 6/12→12/12) = an honesty knob (safety-relevant).
+- **THE ATLAS (2 behaviors):** both behavioral Jacobians are consistent, interpretable (decode),
+  ⊥ their own read direction (read≠write: conf +0.08, syco +0.01), beat matched-random steering
+  (spreads +2.83 / +7.17), bidirectional/correct-sign, and MUTUALLY orthogonal (+0.07). →
+  **read≠write is general (not a confidence quirk); the behavioral Jacobian recovers the WRITE
+  direction; classification recovers a ~orthogonal READ direction; distinct behaviors = distinct
+  ~orthogonal write axes.** Method, not one-off. Lesson: the token-objective IS the experiment.
+  Bounds: n=12/cell, 1 judge/α/layer/model; both behaviors are epistemic/social STANCE families —
+  a stylistic/format behavior would widen generalization (untested). Tier B. Vectors: `v_syco_L20.npy`.
+  → NEXT: a non-stance behavior (verbosity/format) for the atlas; α-sweeps; read≠write writeup.
+
+## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
 attention on the contributing heads)? **Retrieved** (peaked on a specific earlier token) vs
