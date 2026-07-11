@@ -192,6 +192,19 @@ objective you give it; construct validity depends on objective quality (some con
 a slot). This is the method's stated soft edge. Vectors: v_{refusal,sentiment,formality}_L20.npy.
 NEXT: steer-validate refusal (safety: over-refusal framing); cleaner sentiment objective.
 
+
+## E8 — refusal axis steer-validated (4th behaviorally-confirmed axis) (2026-07-12)
+`mvp/e8_refusal_steer.py`, over-refusal framing, 12 benign-but-refusal-prone prompts (no harmful
+content). Auto hard-refusal detector was FLOOR-BOUND (baseline 0/12, caught only 1 case) — 7th
+metric-miss of the session; the eyeball + corrected metric (eager-compliance opener rate
+"Sure/Certainly/...") show a MAXIMAL clean effect: baseline 2/12, ref+ 0/12 (caution; hard-refuses
+the one dual-use lock prompt "cannot provide... criminal"), ref- 12/12 (every response opens
+"Sure! Here's how..."). Random 2/12 each (= baseline exactly). Signed spread +12/12, random |Δ|=0.
+=> refuse<->comply axis steers compliance-eagerness perfectly bidirectionally, beats random totally.
+4th behaviorally-validated axis (with confidence/sycophancy/format). LESSON (add to guidelines):
+for 4B steering effects, GRADED opener-rate metrics beat STRICT binary detectors — the naive metric
+repeatedly floor-misses a real effect. Tier B.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
