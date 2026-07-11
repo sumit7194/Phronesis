@@ -205,6 +205,19 @@ the one dual-use lock prompt "cannot provide... criminal"), ref- 12/12 (every re
 for 4B steering effects, GRADED opener-rate metrics beat STRICT binary detectors — the naive metric
 repeatedly floor-misses a real effect. Tier B.
 
+
+## E9 — formality: clean geometry but WEAK STEERING (legibility≠steerability edge) (2026-07-12)
+`mvp/e9_formality_steer.py`. Formality has the cleanest GEOMETRY of the six (consistency +0.76,
+clean formal↔casual decode, ⊥read +0.08) yet BARELY STEERS: auto formality-score Δ formal+ -0.10
+(≈random floor 0.88), signed spread +0.53; EYEBALL confirms (formal+/- nearly identical register,
+neither shows the decode's markers — only a mild effusiveness shift). => a behavioral-Jacobian
+direction can be consistent+interpretable+⊥read and STILL not move behavior — legibility≠steerability
+(F166/F168/F171 theme) applies even to the WRITE direction for some behaviors. Caveat: α=0.2·‖h‖,
+opening-token objective — could be α/objective-scope (opening markers don't propagate to global
+register), not fundamental; α-sweep would disambiguate. ATLAS TALLY: strong build+steer = confidence/
+sycophancy/format/refusal (4); clean build/weak steer = formality (1); noisy build = sentiment (1).
+Richer + more honest than "6/6 works" — shows the method's edges. Tier B.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
