@@ -177,6 +177,21 @@ n=12/cell, 1 model/layer/α). Publishable core: "for behavior after behavior, th
 best CLASSIFIES it is ~orthogonal to and cannot DO the job of the direction that STEERS it; the
 behavioral Jacobian recovers the latter cheaply."
 
+
+## E7 — atlas expansion to 6 behaviors: behavior space is ~orthogonal (2026-07-12)
+Added refusal(action), sentiment(affect), formality(register) to confidence/sycophancy/format.
+`mvp/e7_atlas_expand.py`. FULL write-write cosine matrix off-diagonal |cos| mean=0.06 max=0.13 =>
+all 6 write directions ~MUTUALLY ORTHOGONAL (no clustering; refusal faintly anti-correlated -0.06..-0.13).
+=> behavior space is high-dimensional; each behavior an independent control axis.
+Decodes: refusal CLEAN (+Unfortunately/Sorry <-> -Sure/Certainly, consistency +0.36, ⊥read +0.07);
+formality CLEAN-ish (+Indeed/Moreover <-> -basically/Stuff, consistency +0.76, ⊥read +0.08);
+sentiment NOISY (consistency +0.53 but +pole scattered, -pole clearly negative but bleeds into
+disagreement) => objective didn't cleanly isolate affect. LESSON GENERALIZED: high consistency does
+NOT guarantee a clean construct — the behavioral Jacobian returns a consistent direction for whatever
+objective you give it; construct validity depends on objective quality (some constructs entangled at
+a slot). This is the method's stated soft edge. Vectors: v_{refusal,sentiment,formality}_L20.npy.
+NEXT: steer-validate refusal (safety: over-refusal framing); cleaner sentiment objective.
+
 ## E4b — Concept provenance via attention (optional; medium bet) · retrospective
 
 **Kind:** provenance. When a concept is rank-1 in the workspace, which earlier tokens fed it (via
