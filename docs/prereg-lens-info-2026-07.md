@@ -199,3 +199,18 @@ behind E1–E3; characterization only.
   experiment (negation in the hedge set → negation knob). Tier B (n=12, 1 judge/α/layer/model; +dir
   marginal). NEXT: replicate on skeptic-prompts (behav+ should make decisive-No MORE confident too);
   α-sweep; 2nd behavior → control atlas; this is the read≠write writeup's core result.
+- 2026-07-12 (E3 Part G — skeptic-prompt replication TEMPERS the "confidence knob" claim):
+  ran the clean axis on 12 skeptic (calibrated-confidence) prompts + judge (`mvp/e3g_clean_skeptic.py`).
+  **Valence pattern REPLICATES & beats random:** +v_behav→affirm/support, −v_behav→doubt/deny on BOTH
+  disjoint sets; skeptic baseline (3/9/0 affirm/hedge/deny) → behav+ 6/6/0, behav− 0/6/6, while all 3
+  random seeds stay hedgy like baseline (~3/9/0). Random can't make that bidirectional split → real,
+  random-beating, replicated direction. **BUT the "clean-sign commitment knob" does NOT generalize:**
+  signed commit spread +2.83 (affirm) vs +0.00 (skeptic) — on skeptic prompts BOTH directions raise
+  decisiveness. Reason: injecting uncertainty (−v_behav) *softens* strong-evidence prompts (commit↓)
+  but tips weak-evidence prompts into decisive "insufficient/no" (commit↑). So "commitment" was the
+  wrong readout; the axis is better described as **epistemic-stance/agreement (+support/−doubt)**, and
+  CONFIDENCE-vs-AGREEMENT remain ENTANGLED (decode says confidence; behavior says agreement; on eval
+  prompts they correlate). To disentangle: prompts allowing confident-disagreement vs uncertain-
+  agreement. SURVIVING CLAIM (strong): v_behav is a real, interpretable, random-beating, replicated
+  steering direction ⟂ the read direction (read≠write). The label shrank across the night
+  (confidence→commitment→epistemic-stance) as controls tightened — the honest bound. Tier B.
