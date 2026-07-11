@@ -379,3 +379,22 @@ behind E1–E3; characterization only.
   a real, interpretable (decode confident↔unsure), random-beating, replicated (3 disjoint sets)
   CONFIDENCE/decisiveness steering direction ⟂ the read direction (read≠write). +conf → more
   decisive+accurate on clear evidence; −conf → more hedged. Tier B (n=12×3, 1 judge/layer/α/model).
+
+## PRIOR-ART CHECK (2026-07-12) — the atlas core is NOT novel
+Web lit-check (user-prompted, correcting a novelty overclaim). Mapping our claims to existing work:
+- "classification direction ≠ steering direction" (our read≠write core) = **Im & Li 2025, "A Unified
+  Understanding and Evaluation of Steering Methods"** (arXiv:2502.02716) — compares diff-of-means,
+  probes, PCA, AND gradient methods; concludes steering-efficacy vs classification-accuracy are
+  distinct objectives. This IS our headline, published Feb 2025.
+- "decodable but not steerable / functional dissociation" = arXiv:2605.05715 ("Decodable but Not
+  Corrected by Fixed Residual-Stream Linear Steering"), 2604.13068 ("Detection Without Correction"),
+  2605.25151 ("Representation Without Control"). Active 2026 theme.
+- "behavioral Jacobian = gradient of an output objective → steering direction" = GRAINS
+  (arXiv:2507.18043) + gradient-optimized steering vectors generally.
+- refusal/sycophancy/sentiment/formality steering; works-for-style/fails-for-reasoning-recall =
+  CAA / Rimsky et al. 2023 (arXiv:2312.06681) and the steering literature.
+- "many near-orthogonal directions steer similarly" (our F179) = steering-reliability lit (2505.22637).
+VERDICT: this arc is a 4B REPLICATION / pedagogy, not a novel finding. Do NOT write up as new.
+Mandatory before any writeup: careful read of Im&Li 2502.02716 and GRAINS 2507.18043. Craft lessons
+(decode-to-verify the objective; graded metrics + eyeball; 8+ metric-misses) remain valid as method
+notes. META: lit-check BEFORE claiming novelty — this session drifted into "publishable" without it.
