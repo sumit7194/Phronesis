@@ -1,0 +1,380 @@
+[
+ {
+  "q": "What is the capital of France?",
+  "gold": "Paris",
+  "answer": "Paris",
+  "correct": true,
+  "gold_rank_ws_L20": 44560,
+  "gold_rank_out": 3,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u7b54\u6848'",
+   "'\u043b\u043e\u0436\u0438\u0442\u044c'",
+   "'\u043a\u0430\u043b'",
+   "'\u9ed1\u767d'",
+   "'integral'",
+   "'\u79d8\u8bc0'",
+   "'\u1ed8'"
+  ]
+ },
+ {
+  "q": "Who wrote the play Romeo and Juliet?",
+  "gold": "Shakespeare",
+  "answer": "William Shakespeare",
+  "correct": true,
+  "gold_rank_ws_L20": 113781,
+  "gold_rank_out": 151,
+  "cat": "correct",
+  "top_ws": [
+   "'angkan'",
+   "' *['",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u043a\u0430\u043b'",
+   "'<|endoftext|>'",
+   "' setContent'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u4e0d\u5c3d'",
+   "' Infinite'",
+   "'\u043e\u043f'"
+  ]
+ },
+ {
+  "q": "What is the largest planet in our solar syste",
+  "gold": "Jupiter",
+  "answer": "Jupiter",
+  "correct": true,
+  "gold_rank_ws_L20": 30668,
+  "gold_rank_out": 2,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "' Infinite'",
+   "'angkan'",
+   "'\u6700\u591a\u7684'",
+   "'\u56de\u7b54'",
+   "'\u043b\u043e\u0436\u0438\u0442\u044c'",
+   "'\u6700\u957f'",
+   "' infinite'",
+   "'\u9ed1\u767d'",
+   "'\u7b54\u6848'"
+  ]
+ },
+ {
+  "q": "What is the chemical symbol for iron?",
+  "gold": "Fe",
+  "answer": "Fe",
+  "correct": true,
+  "gold_rank_ws_L20": 123364,
+  "gold_rank_out": 2,
+  "cat": "correct",
+  "top_ws": [
+   "' Infinite'",
+   "' *['",
+   "'angkan'",
+   "'\u1ed8'",
+   "'<|endoftext|>'",
+   "'\u6027\u5f3a'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\ufffd'",
+   "'\u5173\u952e\u662f'",
+   "'syntax'"
+  ]
+ },
+ {
+  "q": "Who painted the Mona Lisa?",
+  "gold": "Vinci",
+  "answer": "Leonardo da Vinci.",
+  "correct": true,
+  "gold_rank_ws_L20": 127341,
+  "gold_rank_out": 536,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u043a\u0430\u043b'",
+   "'\u7b54\u6848'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u56de\u7b54'",
+   "'\u043b\u043e\u0436\u0438\u0442\u044c'",
+   "' setContent'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u0441\u043a\u043e\u0440'"
+  ]
+ },
+ {
+  "q": "What is the capital of Australia?",
+  "gold": "Canberra",
+  "answer": "Canberra",
+  "correct": true,
+  "gold_rank_ws_L20": 57057,
+  "gold_rank_out": 1,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'\u9ed1\u767d'",
+   "'<|endoftext|>'",
+   "'\u043a\u0430\u043b'",
+   "'eday'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u56de\u7b54'",
+   "'\u0441\u043a\u043e\u0440'"
+  ]
+ },
+ {
+  "q": "What is the capital of Turkey?",
+  "gold": "Ankara",
+  "answer": "Ankara",
+  "correct": true,
+  "gold_rank_ws_L20": 73685,
+  "gold_rank_out": 1,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'<|endoftext|>'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u9ed1\u767d'",
+   "'\u79d8\u8bc0'",
+   "'\u043a\u0430\u043b'",
+   "'\u529e\u6cd5'"
+  ]
+ },
+ {
+  "q": "What is the capital of Canada?",
+  "gold": "Ottawa",
+  "answer": "Ottawa",
+  "correct": true,
+  "gold_rank_ws_L20": 12708,
+  "gold_rank_out": 1,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'\u9ed1\u767d'",
+   "'<|endoftext|>'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u8bf7\u8f93\u5165'",
+   "'eday'",
+   "'\u043a\u0430\u043b'",
+   "'\u043b\u043e\u0436\u0438\u0442\u044c'"
+  ]
+ },
+ {
+  "q": "What is the capital of Brazil?",
+  "gold": "Bras",
+  "answer": "Bras\u00edlia",
+  "correct": true,
+  "gold_rank_ws_L20": 119527,
+  "gold_rank_out": 2,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'<|endoftext|>'",
+   "'\u9ed1\u767d'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u79d8\u8bc0'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u529e\u6cd5'",
+   "'\u043a\u0430\u043b'"
+  ]
+ },
+ {
+  "q": "What is the capital of Switzerland?",
+  "gold": "Bern",
+  "answer": "Bern",
+  "correct": true,
+  "gold_rank_ws_L20": 104024,
+  "gold_rank_out": 7,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'\u79d8\u8bc0'",
+   "'\u9ed1\u767d'",
+   "'<|endoftext|>'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u043a\u0430\u043b'",
+   "'eday'"
+  ]
+ },
+ {
+  "q": "What is the capital of Kazakhstan?",
+  "gold": "Astana",
+  "answer": "Nur-Sultan",
+  "correct": false,
+  "gold_rank_ws_L20": 138007,
+  "gold_rank_out": 16,
+  "cat": "halluc_truth_ABSENT",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'<|endoftext|>'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u79d8\u8bc0'",
+   "'\u9ed1\u767d'",
+   "'\u53cc\u811a'",
+   "'dap'"
+  ]
+ },
+ {
+  "q": "What is the currency of Sweden?",
+  "gold": "krona",
+  "answer": "Swedish krona",
+  "correct": true,
+  "gold_rank_ws_L20": 4950,
+  "gold_rank_out": 14,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'<|endoftext|>'",
+   "'\u043a\u0430\u043b'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u9ed1\u767d'",
+   "' setContent'",
+   "'\u529e\u6cd5'",
+   "'\u6d41\u6cea'"
+  ]
+ },
+ {
+  "q": "Who wrote the novel 1984?",
+  "gold": "Orwell",
+  "answer": "George Orwell",
+  "correct": true,
+  "gold_rank_ws_L20": 105484,
+  "gold_rank_out": 229,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u9ed1\u767d'",
+   "'\u56de\u7b54'",
+   "'\u7b54\u6848'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u043a\u0430\u043b'",
+   "'\u043e\u043f'",
+   "'\u4e0d\u5c3d'"
+  ]
+ },
+ {
+  "q": "What is the capital of New Zealand?",
+  "gold": "Wellington",
+  "answer": "Wellington",
+  "correct": true,
+  "gold_rank_ws_L20": 20221,
+  "gold_rank_out": 1,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'\u7b54\u6848'",
+   "'<|endoftext|>'",
+   "'\u79d8\u8bc0'",
+   "'\u9ed1\u767d'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u4f4e\u58f0'"
+  ]
+ },
+ {
+  "q": "Who won the Nobel Peace Prize in 2019?",
+  "gold": "Abiy",
+  "answer": "The Nobel Peace Prize in 2019 was awarde",
+  "correct": false,
+  "gold_rank_ws_L20": 54412,
+  "gold_rank_out": 9948,
+  "cat": "halluc_truth_ABSENT",
+  "top_ws": [
+   "'angkan'",
+   "' *['",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u9ed1\u767d'",
+   "'\u2713'",
+   "'<|endoftext|>'",
+   "'\u8bf7\u8f93\u5165'",
+   "'\u56de\u7b54'",
+   "'\u043a\u0430\u043b'",
+   "'\u7b54\u6848'"
+  ]
+ },
+ {
+  "q": "What is the capital of Myanmar?",
+  "gold": "Naypyidaw",
+  "answer": "Yangon",
+  "correct": false,
+  "gold_rank_ws_L20": 97685,
+  "gold_rank_out": 3,
+  "cat": "halluc_truth_ABSENT",
+  "top_ws": [
+   "' *['",
+   "'angkan'",
+   "'<|endoftext|>'",
+   "'\u7b54\u6848'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u0441\u043a\u043e\u0440'",
+   "'\u529e\u6cd5'",
+   "'\u9ed1\u767d'",
+   "'\u79d8\u8bc0'",
+   "'\u4f4e\u58f0'"
+  ]
+ },
+ {
+  "q": "What is the smallest country in the world?",
+  "gold": "Vatican",
+  "answer": "Vatican City",
+  "correct": true,
+  "gold_rank_ws_L20": 1482,
+  "gold_rank_out": 3,
+  "cat": "correct",
+  "top_ws": [
+   "' *['",
+   "'\u9ed1\u767d'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u56de\u7b54'",
+   "' shortest'",
+   "' mn'",
+   "'\u6700\u591a\u7684'",
+   "'\u6d41\u6cea'",
+   "'angkan'",
+   "' Infinite'"
+  ]
+ },
+ {
+  "q": "What element has the atomic number 79?",
+  "gold": "gold",
+  "answer": "Gold",
+  "correct": true,
+  "gold_rank_ws_L20": 79749,
+  "gold_rank_out": 6,
+  "cat": "correct",
+  "top_ws": [
+   "'angkan'",
+   "' Infinite'",
+   "'<|endoftext|>'",
+   "' *['",
+   "'\ufffd'",
+   "'\u1ed8'",
+   "' mn'",
+   "'\u4e00\u4e2a\u591a'",
+   "'\u043a\u0430\u043b'",
+   "'\u6700\u591a\u7684'"
+  ]
+ }
+]
