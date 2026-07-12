@@ -1,0 +1,104 @@
+{
+ "n": 146,
+ "n_correct": 134,
+ "n_wrong": 12,
+ "cat_counts": {
+  "capital": 57,
+  "element": 29,
+  "year": 20,
+  "misc": 40
+ },
+ "cat_acc": {
+  "capital": 0.89,
+  "year": 0.95,
+  "misc": 0.88,
+  "element": 1.0
+ },
+ "probe_auroc": {
+  "20": 0.546,
+  "26": 0.583,
+  "30": 0.585,
+  "33": 0.63
+ },
+ "best_layer": 33,
+ "n_hallucinations": 12,
+ "halluc_gold_minrank": {
+  "median": 2,
+  "present_le20": 9,
+  "absent_gt1000": 1
+ },
+ "halluc_examples": [
+  {
+   "q": "What is the capital of Tuvalu?",
+   "gold": "Funafuti",
+   "answer": "Faleatau",
+   "gold_minrank": 6
+  },
+  {
+   "q": "What is the capital of Belize?",
+   "gold": "Belmopan",
+   "answer": "Belize City",
+   "gold_minrank": 0
+  },
+  {
+   "q": "What is the capital of Bolivia?",
+   "gold": "Sucre",
+   "answer": "La Paz",
+   "gold_minrank": 2
+  },
+  {
+   "q": "What is the capital of Burundi?",
+   "gold": "Gitega",
+   "answer": "Bujumbura.",
+   "gold_minrank": 1601
+  },
+  {
+   "q": "What is the capital of Benin?",
+   "gold": "Porto-Novo",
+   "answer": "Cotonou",
+   "gold_minrank": 0
+  },
+  {
+   "q": "What is the capital of Comoros?",
+   "gold": "Moroni",
+   "answer": "Moussoundou",
+   "gold_minrank": 3
+  },
+  {
+   "q": "In what year did the printing press was ",
+   "gold": "1440",
+   "answer": "1450",
+   "gold_minrank": 15
+  },
+  {
+   "q": "What is the currency of Poland?",
+   "gold": "zloty",
+   "answer": "Z\u0142oty",
+   "gold_minrank": 89
+  },
+  {
+   "q": "What is the longest river in Asia?",
+   "gold": "Yangtze",
+   "answer": "Yarlung Zangbo River",
+   "gold_minrank": 0
+  },
+  {
+   "q": "What is the largest species of shark?",
+   "gold": "whale",
+   "answer": "The great white shark.",
+   "gold_minrank": 0
+  },
+  {
+   "q": "Who composed the Four Seasons?",
+   "gold": "Vivaldi",
+   "answer": "Arcangelo Corelli.",
+   "gold_minrank": 251
+  },
+  {
+   "q": "What is the tallest animal in the world?",
+   "gold": "giraffe",
+   "answer": "The tallest animal in the world is the A",
+   "gold_minrank": 0
+  }
+ ]
+}
