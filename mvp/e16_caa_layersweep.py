@@ -24,9 +24,16 @@ def main():
     tok,hf,_=load_model(); Aid,Bid=letter_ids(tok)
     gen=json.load(open(os.path.join(D,"generate.json")))[:NBUILD]; test=json.load(open(os.path.join(D,"test_ab.json")))
     sylet=lambda e:e["answer_matching_behavior"].strip("() ")
-    match={L:[] for L in LAYERS}; nonmatch={L:[] for L in LAYERS}; grads={L:[] for L in LAYERS}; norms={L:[] for L in LAYERS}
-    print(f"[build] {NBUILD} pairs, layers {LAYERS}",flush=True)
+    CKPT=os.path.join(WS,"e16_build_ckpt.npy")
+    if os.path.exists(CKPT):
+        c=np.load(CKPT,allow_pickle=True).item()
+        match=c["match"]; nonmatch=c["nonmatch"]; grads=c["grads"]; norms=c["norms"]; start=c["n"]
+        print(f"[build] RESUMED from ckpt at {start}/{NBUILD}",flush=True)
+    else:
+        match={L:[] for L in LAYERS}; nonmatch={L:[] for L in LAYERS}; grads={L:[] for L in LAYERS}; norms={L:[] for L in LAYERS}; start=0
+    print(f"[build] {NBUILD} pairs, layers {LAYERS} (from {start})",flush=True)
     for gi,e in enumerate(gen):
+        if gi<start: continue
         base=pids(tok,e["question"]); sl=sylet(e); nl="B" if sl=="A" else "A"
         caps={}
         hs=[hf.model.layers[L].register_forward_hook((lambda L:(lambda m,i,o:caps.__setitem__(L,o[0] if isinstance(o,tuple) else o)))(L)) for L in LAYERS]
@@ -48,7 +55,11 @@ def main():
         for h in hs: h.remove()
         del out,caps,emb,gs
         if DEVICE=="mps": torch.mps.empty_cache()
-        if (gi+1)%50==0: print(f"  build {gi+1}/{NBUILD}",flush=True)
+        if (gi+1)%25==0:
+            np.save(CKPT,{"match":match,"nonmatch":nonmatch,"grads":grads,"norms":norms,"n":gi+1})
+            print(f"  build {gi+1}/{NBUILD} (ckpt saved)",flush=True)
+    np.save(CKPT,{"match":match,"nonmatch":nonmatch,"grads":grads,"norms":norms,"n":NBUILD})
+    print("[build] complete, ckpt saved",flush=True)
     vdom={L:np.mean(match[L],0)-np.mean(nonmatch[L],0) for L in LAYERS}   # +=more syc
     vbeh={L:np.mean(grads[L],0) for L in LAYERS}                           # +=less syc
     nrm={L:float(np.mean(norms[L])) for L in LAYERS}
@@ -70,23 +81,25 @@ def main():
     base_margin=steer_rate(LAYERS[0],None,0)   # layer-independent
     rate=lambda ms: round(float(np.mean([m>0 for m in ms])),3)
     anti=lambda ms: round(float(np.mean(np.array(ms)>np.array(base_margin))),3)
-    res={"baseline_rate":rate(base_margin),"alpha_frac":0.2,"per_layer":{}}
+    res=json.load(open(OUT)) if os.path.exists(OUT) else {"baseline_rate":rate(base_margin),"alpha_frac":0.2,"per_layer":{}}
     print(f"\nbaseline sycophancy rate = {res['baseline_rate']}\n{'layer':>5} {'domReduce':>10} {'behavReduce':>12} {'randMean':>9}  (rate; lower=less syc)")
     for L in LAYERS:
+        if str(L) in res["per_layer"]:
+            r=res["per_layer"][str(L)]; print(f"{L:>5} {r['dom_reduce_rate']:>10} {r['behav_reduce_rate']:>12} {r['rand_rate_mean']:>9}   (cached)"); continue
         a=0.2*nrm[L]
         dm=steer_rate(L,vdom[L],-a); bm=steer_rate(L,vbeh[L],+a)
         rr=[steer_rate(L,rng.standard_normal(vdom[L].shape),a) for _ in range(3)]
-        res["per_layer"][L]={"dom_reduce_rate":rate(dm),"behav_reduce_rate":rate(bm),
+        res["per_layer"][str(L)]={"dom_reduce_rate":rate(dm),"behav_reduce_rate":rate(bm),
             "rand_rate_mean":round(float(np.mean([rate(r) for r in rr])),3),
             "dom_anti":anti(dm),"behav_anti":anti(bm),"rand_anti_mean":round(float(np.mean([anti(r) for r in rr])),3),
             "cos_dom_behav":round(float(np.dot(vdom[L]/np.linalg.norm(vdom[L]),vbeh[L]/np.linalg.norm(vbeh[L]))),3),"alpha":round(a,2)}
-        r=res["per_layer"][L]
+        r=res["per_layer"][str(L)]
         print(f"{L:>5} {r['dom_reduce_rate']:>10} {r['behav_reduce_rate']:>12} {r['rand_rate_mean']:>9}   cos={r['cos_dom_behav']:+.2f}",flush=True)
         json.dump(res,open(OUT,"w"),indent=1)
-    dombest=min(LAYERS,key=lambda L:res["per_layer"][L]["dom_reduce_rate"])
-    behbest=min(LAYERS,key=lambda L:res["per_layer"][L]["behav_reduce_rate"])
-    res["fair"]={"dom_best_layer":dombest,"dom_best_rate":res["per_layer"][dombest]["dom_reduce_rate"],
-                 "behav_best_layer":behbest,"behav_best_rate":res["per_layer"][behbest]["behav_reduce_rate"],
+    dombest=min(LAYERS,key=lambda L:res["per_layer"][str(L)]["dom_reduce_rate"])
+    behbest=min(LAYERS,key=lambda L:res["per_layer"][str(L)]["behav_reduce_rate"])
+    res["fair"]={"dom_best_layer":dombest,"dom_best_rate":res["per_layer"][str(dombest)]["dom_reduce_rate"],
+                 "behav_best_layer":behbest,"behav_best_rate":res["per_layer"][str(behbest)]["behav_reduce_rate"],
                  "baseline":res["baseline_rate"]}
     json.dump(res,open(OUT,"w"),indent=1)
     print(f"\n=== FAIR (each method at its OWN best layer) ===")
