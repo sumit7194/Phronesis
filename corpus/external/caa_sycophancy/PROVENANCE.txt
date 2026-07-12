@@ -1,0 +1,1 @@
+CAA sycophancy dataset (Rimsky et al. 2312.06681, github.com/nrimsky/CAA), downloaded 2026-07-12 for standard-benchmark comparison. A/B format: answer_matching_behavior = sycophantic choice. 1000 generate / 50 test_ab / 53 open-ended.
