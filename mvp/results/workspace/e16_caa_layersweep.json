@@ -1,0 +1,73 @@
+{
+ "baseline_rate": 0.66,
+ "alpha_frac": 0.2,
+ "per_layer": {
+  "10": {
+   "dom_reduce_rate": 0.76,
+   "behav_reduce_rate": 0.6,
+   "rand_rate_mean": 0.673,
+   "dom_anti": 0.5,
+   "behav_anti": 0.32,
+   "rand_anti_mean": 0.553,
+   "cos_dom_behav": -0.054,
+   "alpha": 7.89
+  },
+  "14": {
+   "dom_reduce_rate": 0.7,
+   "behav_reduce_rate": 0.64,
+   "rand_rate_mean": 0.687,
+   "dom_anti": 0.38,
+   "behav_anti": 0.3,
+   "rand_anti_mean": 0.407,
+   "cos_dom_behav": -0.001,
+   "alpha": 9.05
+  },
+  "16": {
+   "dom_reduce_rate": 0.6,
+   "behav_reduce_rate": 0.62,
+   "rand_rate_mean": 0.693,
+   "dom_anti": 0.28,
+   "behav_anti": 0.3,
+   "rand_anti_mean": 0.407,
+   "cos_dom_behav": -0.049,
+   "alpha": 9.51
+  },
+  "18": {
+   "dom_reduce_rate": 0.6,
+   "behav_reduce_rate": 0.68,
+   "rand_rate_mean": 0.74,
+   "dom_anti": 0.32,
+   "behav_anti": 0.3,
+   "rand_anti_mean": 0.48,
+   "cos_dom_behav": -0.072,
+   "alpha": 11.27
+  },
+  "20": {
+   "dom_reduce_rate": 0.7,
+   "behav_reduce_rate": 0.6,
+   "rand_rate_mean": 0.7,
+   "dom_anti": 0.3,
+   "behav_anti": 0.32,
+   "rand_anti_mean": 0.313,
+   "cos_dom_behav": -0.085,
+   "alpha": 14.35
+  },
+  "24": {
+   "dom_reduce_rate": 0.68,
+   "behav_reduce_rate": 0.68,
+   "rand_rate_mean": 0.673,
+   "dom_anti": 0.3,
+   "behav_anti": 0.32,
+   "rand_anti_mean": 0.547,
+   "cos_dom_behav": -0.09,
+   "alpha": 27.33
+  }
+ },
+ "fair": {
+  "dom_best_layer": 16,
+  "dom_best_rate": 0.6,
+  "behav_best_layer": 10,
+  "behav_best_rate": 0.6,
+  "baseline": 0.66
+ }
+}
