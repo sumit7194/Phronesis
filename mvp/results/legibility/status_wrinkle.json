@@ -1,0 +1,19 @@
+{
+ "done": 44,
+ "total": 44,
+ "current": "PLAIN",
+ "tally": {
+  "WRINKLE": {
+   "n": 19,
+   "solved": 15,
+   "A": 1,
+   "B": 3
+  },
+  "PLAIN": {
+   "n": 25,
+   "solved": 23,
+   "A": 0,
+   "B": 2
+  }
+ }
+}

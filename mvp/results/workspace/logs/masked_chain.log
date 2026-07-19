@@ -1,0 +1,4 @@
+[07-08 16:16:03] === STAGE remask_n45 START (all 6, current lens) ===
+[07-08 16:22:11] === remask_n45 END rc=0 ===
+[07-08 16:22:11] preserved n45 masked outputs as *_masked_n45
+[07-08 16:22:11] === STAGE lens_fit START (resume n=45 -> ~100, until 08:00) ===

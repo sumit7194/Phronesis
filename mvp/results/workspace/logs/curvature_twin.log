@@ -1,0 +1,11 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<18:06,  2.74s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:04, 61.54it/s]Loading weights:  48%|████▊     | 192/398 [00:04<00:03, 58.91it/s]Loading weights:  58%|█████▊    | 231/398 [00:04<00:02, 60.99it/s]Loading weights:  65%|██████▍   | 257/398 [00:05<00:02, 55.82it/s]Loading weights:  69%|██████▉   | 276/398 [00:05<00:02, 59.51it/s]Loading weights:  73%|███████▎  | 291/398 [00:06<00:02, 49.23it/s]Loading weights:  76%|███████▌  | 302/398 [00:06<00:02, 45.46it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:02, 41.38it/s]Loading weights:  81%|████████  | 322/398 [00:07<00:01, 39.25it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 37.69it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 36.38it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 34.30it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:00, 33.23it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 31.42it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 30.93it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 43.03it/s]
+[load] L20 eps=0.08
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[tiger/conceal] revealed=False plen=50 n=261 probing 8 pos
+[tiger/share] revealed=True plen=52 n=176 probing 8 pos
+[copper/conceal] revealed=False plen=50 n=213 probing 8 pos
+[copper/share] revealed=True plen=52 n=211 probing 8 pos
+[walrus/conceal] revealed=False plen=50 n=270 probing 8 pos
+[walrus/share] revealed=True plen=52 n=205 probing 8 pos
+[done] 624 rows, 10.6 min

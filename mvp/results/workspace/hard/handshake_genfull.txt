@@ -1,0 +1,152 @@
+<think>
+Okay, so there's this problem about a party where everyone shook hands with each other exactly once, and there were 66 handshakes in total. The question is asking how many people were at the party. Hmm, let me think about how to approach this.
+
+First, I remember that when people shake hands with each other, it's like a combination problem. Each handshake is between two people, and we don't want to count the same handshake more than once. So, if there are n people at the party, the number of handshakes should be the number of ways to choose 2 people out of n, right?
+
+Wait, yeah, combinations. The formula for combinations is C(n, 2) which is n! / (2! * (n - 2)!). Simplifying that, it would be (n * (n - 1)) / 2. Because n! divided by (n - 2)! is n*(n-1), and then divided by 2! which is 2. So the total number of handshakes is (n(n - 1))/2.
+
+And the problem says that this total is 66. So I can set up the equation:
+
+(n(n - 1))/2 = 66
+
+Now, I need to solve for n. Let me write that equation again:
+
+(n² - n)/2 = 66
+
+Multiply both sides by 2 to eliminate the denominator:
+
+n² - n = 132
+
+Then, bring 132 to the left side:
+
+n² - n - 132 = 0
+
+So now I have a quadratic equation: n² - n - 132 = 0
+
+To solve this quadratic equation, I can use the quadratic formula. The quadratic formula is n = [ -b ± sqrt(b² - 4ac) ] / (2a). In this equation, a = 1, b = -1, and c = -132.
+
+Plugging those into the formula:
+
+n = [ -(-1) ± sqrt( (-1)² - 4 * 1 * (-132) ) ] / (2 * 1)
+
+Simplify that:
+
+n = [1 ± sqrt(1 + 528)] / 2
+
+Because (-1)^2 is 1, and then -4ac is -4*1*(-132) which is +528. So inside the square root, it's 1 + 528 = 529.
+
+So sqrt(529) is... Hmm, 23 squared is 529 because 20 squared is 400, 23 squared is 529. Let me check: 23*23 is 529. Yes, that's right.
+
+So then:
+
+n = [1 ± 23]/2
+
+So there are two solutions here:
+
+n = (1 + 23)/2 = 24/2 = 12
+
+and
+
+n = (1 - 23)/2 = (-22)/2 = -11
+
+But the number of people can't be negative, so we discard -11. Therefore, n = 12.
+
+Wait, let me check if that makes sense. If there are 12 people, the number of handshakes would be 12*11/2 = 66. Yep, that's exactly the number given in the problem. So that seems correct.
+
+But let me think again if there's another way to approach this, just to confirm. Maybe by trial and error? Let's see. If there are 10 people, the number of handshakes would be 10*9/2 = 45. That's too low. 11 people would be 11*10/2 = 55. Still less than 66. 12 people: 12*11/2 = 66. Perfect. So that's the answer.
+
+Alternatively, maybe I can think of it as each person shaking hands with n-1 people. But since each handshake is counted twice in that approach (once for each participant), so the total number of handshakes would be n(n - 1)/2. Which is the same formula as before. So that's consistent.
+
+So yeah, the answer is 12 people. I think that's solid. I don't see any mistakes in my reasoning. The quadratic equation was set up correctly, solved properly, and checked with trial and error. All methods lead to 12. So I think that's the right answer.
+
+**Final Answer**
+The number of people at the party is \boxed{12}.
+</think>
+
+To determine how many people were at the party, we start by recognizing that each person shakes hands with every other person exactly once. This is a classic **combinatorics problem** involving **pairwise combinations**.
+
+---
+
+### Step 1: Understanding the Problem
+
+If there are $ n $ people at the party, the total number of unique handshakes is the number of ways to choose 2 people out of $ n $, since each handshake involves exactly two people. This is given by the combination formula:
+
+$$
+\binom{n}{2} = \frac{n(n - 1)}{2}
+$$
+
+We are told that the total number of handshakes is 66. So we set up the equation:
+
+$$
+\frac{n(n - 1)}{2} = 66
+$$
+
+---
+
+### Step 2: Solve the Equation
+
+Multiply both sides by 2 to eliminate the denominator:
+
+$$
+n(n - 1) = 132
+$$
+
+Now expand the left-hand side:
+
+$$
+n^2 - n = 132
+$$
+
+Bring all terms to one side to form a standard quadratic equation:
+
+$$
+n^2 - n - 132 = 0
+$$
+
+---
+
+### Step 3: Solve the Quadratic Equation
+
+We apply the quadratic formula:
+
+$$
+n = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+Here, $ a = 1 $, $ b = -1 $, and $ c = -132 $. Plugging in:
+
+$$
+n = \frac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(-132)}}{2(1)} = \frac{1 \pm \sqrt{1 + 528}}{2} = \frac{1 \pm \sqrt{529}}{2}
+$$
+
+$$
+\sqrt{529} = 23
+$$
+
+So:
+
+$$
+n = \frac{1 + 23}{2} = \frac{24}{2} = 12 \quad \text{or} \quad n = \frac{1 - 23}{2} = \frac{-22}{2} = -11
+$$
+
+Since the number of people cannot be negative, we discard $ -11 $.
+
+---
+
+### Step 4: Verify the Solution
+
+Let’s verify that 12 people would result in 66 handshakes:
+
+$$
+\binom{12}{2} = \frac{12 \times 11}{2} = \frac{132}{2} = 66
+$$
+
+This matches the given total number of handshakes.
+
+---
+
+### Final Answer
+
+$$
+\boxed{12}
+$$

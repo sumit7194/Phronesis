@@ -1,0 +1,11 @@
+{
+ "done": 45,
+ "total": 45,
+ "s_per_item": 245.5,
+ "pass1": {
+  "gsm8k": 0.67,
+  "math500": 0.27,
+  "aime": 0.0
+ },
+ "eta_min": 0
+}

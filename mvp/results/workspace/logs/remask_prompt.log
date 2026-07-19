@@ -1,0 +1,30 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:41,  2.22s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 71.55it/s]Loading weights:  42%|████▏     | 166/398 [00:02<00:03, 74.00it/s]Loading weights:  48%|████▊     | 193/398 [00:03<00:03, 55.13it/s]Loading weights:  53%|█████▎    | 210/398 [00:04<00:03, 58.28it/s]Loading weights:  56%|█████▋    | 224/398 [00:04<00:03, 53.38it/s]Loading weights:  59%|█████▉    | 235/398 [00:04<00:02, 55.04it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:02, 54.61it/s]Loading weights:  64%|██████▍   | 256/398 [00:04<00:02, 57.07it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 57.98it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 56.36it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:01, 57.89it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 58.33it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 59.54it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 49.12it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 42.70it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 39.50it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 36.51it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 34.25it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 33.03it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 31.86it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 47.78it/s]
+[load] lens n=45, band=[14, 20, 26], wordlike tokens=121220
+[q1_no_a] masked readout...
+    [808] tok=' none' -> others, really, couldn, weren, except, none, actually, anyway
+    [1036] tok=' none' -> others, again, even, couldn, really, except, other, here
+    [1208] tok=' none' -> again, others, even, all, couldn, yet, really, other
+    saved q1_no_a_masked (2032 pos)
+[q2_math_solved] masked readout...
+    [94] tok=' prime' -> kingdoms, atoms, 这样一, 玟, 瓒, maths, 什么事, fucking
+    [95] tok=' factor' -> ings, ities, oids, izes, 了我的, ises, ization, coefficients
+    [129] tok=' prime' -> clusters, atoms, primes, digits, themselves, rectangles, names, colonies
+    saved q2_math_solved_masked (2032 pos)
+[q3_gsm_rescuable] masked readout...
+    [21] tok=' trees' -> resets, planted, eaten, cages, randomly, respawn, recursively, saved
+    [32] tok=' trees' -> 成功, 存活, 生存, 扩建, resets, nests, 村里, 总数
+    [46] tok=' trees' -> weren, survivors, counted, survived, still, were, couldn, wasn
+    saved q3_gsm_rescuable_masked (2032 pos)
+[q4_math_wall] masked readout...
+    [367] tok=' prime' -> so, sig, thus, character, exponent, attribute, denomination, attributes
+    [1606] tok=' prime' -> so, thus, therefore, hence, denomination, but, coin, exponent
+    saved q4_math_wall_masked (2032 pos)
+[q5_gsm_solved] masked readout...
+    saved q5_gsm_solved_masked (545 pos)
+[q6_gsm_failed] masked readout...
+    [52] tok=' tree' -> 种植, planting, Grow, grow, growers, growth, planted, 增长
+    [68] tok=' tree' -> started, bought, profit, owned, sold, starts, planted, start
+    [103] tok=' tree' -> couldn, planting, planted, grown, wasn, didn, plants, plant
+    saved q6_gsm_failed_masked (2032 pos)
+[done] 6.3 min

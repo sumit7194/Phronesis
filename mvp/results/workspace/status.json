@@ -1,0 +1,80 @@
+{
+  "stages": {
+    "t0": {
+      "updated": "2026-07-07 02:38:58",
+      "state": "done",
+      "runtime_min": 13.9,
+      "n_country_items": 640
+    },
+    "t1_logit": {
+      "updated": "2026-07-07 02:45:23",
+      "state": "done",
+      "runtime_min": 6.3
+    },
+    "t2_fit": {
+      "updated": "2026-07-09 00:10:20",
+      "progress": "2 prompts this run",
+      "minutes_to_deadline": 470
+    },
+    "t2b": {
+      "updated": "2026-07-08 08:42:34",
+      "state": "done",
+      "qc": {
+        "jlens": {
+          "n": 72,
+          "hit_top1": 18,
+          "hit_top10": 51
+        },
+        "logit": {
+          "n": 72,
+          "hit_top1": 21,
+          "hit_top10": 52
+        }
+      },
+      "swaps": {
+        "n_items": 90,
+        "n_gated": 38,
+        "swap_s1_hits": 4,
+        "swap_s2_hits": 0,
+        "noop_ok": 38,
+        "rand_hits_total": 5,
+        "rand_trials": 114,
+        "rand_broke_base": 64
+      },
+      "runtime_min": 2.3
+    },
+    "t3": {
+      "updated": "2026-07-07 09:39:18",
+      "state": "done",
+      "summary": {
+        "WRINKLE": {
+          "n": 0,
+          "median_best_rank": null,
+          "frac_top10": null
+        },
+        "HARD": {
+          "n": 0,
+          "median_best_rank": null,
+          "frac_top10": null
+        },
+        "CORRECT": {
+          "n": 1,
+          "median_best_rank": 271.0,
+          "frac_top10": 0.0
+        }
+      },
+      "runtime_min": 6.3
+    },
+    "t1_jlens": {
+      "updated": "2026-07-07 15:24:30",
+      "state": "done",
+      "runtime_min": 2.6
+    },
+    "t3b": {
+      "updated": "2026-07-07 15:21:40",
+      "state": "done",
+      "runtime_min": 65.5
+    }
+  },
+  "last_stage": "t2_fit"
+}

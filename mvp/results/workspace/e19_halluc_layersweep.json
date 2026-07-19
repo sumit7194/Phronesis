@@ -1,0 +1,450 @@
+[
+ {
+  "q": "What is the capital of Bhutan?",
+  "gold": "Thimphu",
+  "answer": "Thimphu",
+  "correct": true,
+  "min_rank": 7,
+  "ranks": {
+   "14": 61377,
+   "20": 38547,
+   "26": 5598,
+   "30": 889,
+   "33": 7,
+   "out": 8
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Eritrea?",
+  "gold": "Asmara",
+  "answer": "Asmara",
+  "correct": true,
+  "min_rank": 13,
+  "ranks": {
+   "14": 46293,
+   "20": 64178,
+   "26": 829,
+   "30": 715,
+   "33": 23,
+   "out": 13
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Mongolia?",
+  "gold": "Ulaanbaatar",
+  "answer": "Ulaanbaatar",
+  "correct": true,
+  "min_rank": 19,
+  "ranks": {
+   "14": 101293,
+   "20": 15067,
+   "26": 2446,
+   "30": 4539,
+   "33": 1580,
+   "out": 19
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Nepal?",
+  "gold": "Kathmandu",
+  "answer": "Kathmandu",
+  "correct": true,
+  "min_rank": 0,
+  "ranks": {
+   "14": 28296,
+   "20": 10447,
+   "26": 1000,
+   "30": 13,
+   "33": 0,
+   "out": 1
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Slovenia?",
+  "gold": "Ljubljana",
+  "answer": "Ljubljana",
+  "correct": true,
+  "min_rank": 110,
+  "ranks": {
+   "14": 133935,
+   "20": 18411,
+   "26": 495,
+   "30": 2062,
+   "33": 110,
+   "out": 9792
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Ecuador?",
+  "gold": "Quito",
+  "answer": "Quito",
+  "correct": true,
+  "min_rank": 20,
+  "ranks": {
+   "14": 129835,
+   "20": 25216,
+   "26": 3225,
+   "30": 4771,
+   "33": 20,
+   "out": 32
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Uruguay?",
+  "gold": "Montevideo",
+  "answer": "Montevideo",
+  "correct": true,
+  "min_rank": 0,
+  "ranks": {
+   "14": 16907,
+   "20": 100642,
+   "26": 11107,
+   "30": 664,
+   "33": 0,
+   "out": 9
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Laos?",
+  "gold": "Vientiane",
+  "answer": "Vientiane",
+  "correct": true,
+  "min_rank": 106,
+  "ranks": {
+   "14": 119892,
+   "20": 42426,
+   "26": 9906,
+   "30": 20575,
+   "33": 339,
+   "out": 106
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Ghana?",
+  "gold": "Accra",
+  "answer": "Accra",
+  "correct": true,
+  "min_rank": 0,
+  "ranks": {
+   "14": 44026,
+   "20": 60882,
+   "26": 14636,
+   "30": 42,
+   "33": 0,
+   "out": 8
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the capital of Latvia?",
+  "gold": "Riga",
+  "answer": "Riga",
+  "correct": true,
+  "min_rank": 6,
+  "ranks": {
+   "14": 86528,
+   "20": 109832,
+   "26": 562,
+   "30": 9687,
+   "33": 6,
+   "out": 49
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "Who wrote One Hundred Years of Solitude?",
+  "gold": "Marquez",
+  "answer": "Gabriel Garc\u00eda M\u00e1rquez.",
+  "correct": false,
+  "min_rank": 561,
+  "ranks": {
+   "14": 25057,
+   "20": 105029,
+   "26": 4990,
+   "30": 4734,
+   "33": 561,
+   "out": 79174
+  },
+  "cat": "truth_ABSENT"
+ },
+ {
+  "q": "Who wrote Crime and Punishment?",
+  "gold": "Dostoevsky",
+  "answer": "Fyodor Dostoevsky.",
+  "correct": true,
+  "min_rank": 255,
+  "ranks": {
+   "14": 87331,
+   "20": 20744,
+   "26": 3154,
+   "30": 10546,
+   "33": 255,
+   "out": 6342
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "Who was the first person to reach the So",
+  "gold": "Amundsen",
+  "answer": "Roald Amundsen.",
+  "correct": true,
+  "min_rank": 265,
+  "ranks": {
+   "14": 17420,
+   "20": 941,
+   "26": 9254,
+   "30": 2395,
+   "33": 265,
+   "out": 18438
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "Who discovered penicillin?",
+  "gold": "Fleming",
+  "answer": "Alexander Fleming.",
+  "correct": true,
+  "min_rank": 1,
+  "ranks": {
+   "14": 24380,
+   "20": 40516,
+   "26": 1123,
+   "30": 18,
+   "33": 1,
+   "out": 40
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the chemical symbol for tungsten",
+  "gold": "W",
+  "answer": "W",
+  "correct": true,
+  "min_rank": 3,
+  "ranks": {
+   "14": 78804,
+   "20": 31057,
+   "26": 379,
+   "30": 3,
+   "33": 3,
+   "out": 17
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the atomic number of uranium?",
+  "gold": "92",
+  "answer": "92",
+  "correct": true,
+  "min_rank": 39,
+  "ranks": {
+   "14": 130485,
+   "20": 15106,
+   "26": 39,
+   "30": 3886,
+   "33": 4849,
+   "out": 125014
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the largest moon of Saturn?",
+  "gold": "Titan",
+  "answer": "Titan",
+  "correct": true,
+  "min_rank": 0,
+  "ranks": {
+   "14": 100768,
+   "20": 85512,
+   "26": 71,
+   "30": 1,
+   "33": 0,
+   "out": 2
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the deepest ocean trench?",
+  "gold": "Mariana",
+  "answer": "Mariana Trench.",
+  "correct": true,
+  "min_rank": 1,
+  "ranks": {
+   "14": 29710,
+   "20": 70287,
+   "26": 7099,
+   "30": 167,
+   "33": 1,
+   "out": 11
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the tallest waterfall in the wor",
+  "gold": "Angel",
+  "answer": "Angel Falls.",
+  "correct": true,
+  "min_rank": 1,
+  "ranks": {
+   "14": 26132,
+   "20": 66733,
+   "26": 9719,
+   "30": 2472,
+   "33": 1,
+   "out": 12
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the smallest bone in the human b",
+  "gold": "stapes",
+  "answer": "The smallest bone in the human body",
+  "correct": true,
+  "min_rank": 22,
+  "ranks": {
+   "14": 139407,
+   "20": 148890,
+   "26": 90933,
+   "30": 6862,
+   "33": 545,
+   "out": 22
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the currency of Vietnam?",
+  "gold": "dong",
+  "answer": "Vietnam Dong.",
+  "correct": true,
+  "min_rank": 11,
+  "ranks": {
+   "14": 37076,
+   "20": 85773,
+   "26": 34718,
+   "30": 199,
+   "33": 11,
+   "out": 154
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the currency of Poland?",
+  "gold": "zloty",
+  "answer": "Z\u0142oty",
+  "correct": false,
+  "min_rank": 88,
+  "ranks": {
+   "14": 147938,
+   "20": 138986,
+   "26": 2183,
+   "30": 1895,
+   "33": 89,
+   "out": 88
+  },
+  "cat": "truth_ABSENT"
+ },
+ {
+  "q": "In what year was the Eiffel Tower comple",
+  "gold": "1889",
+  "answer": "1889",
+  "correct": true,
+  "min_rank": 9,
+  "ranks": {
+   "14": 150293,
+   "20": 25427,
+   "26": 9,
+   "30": 28,
+   "33": 27,
+   "out": 54312
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "In what year did the Berlin Wall fall?",
+  "gold": "1989",
+  "answer": "1989",
+  "correct": true,
+  "min_rank": 1,
+  "ranks": {
+   "14": 149802,
+   "20": 27276,
+   "26": 18,
+   "30": 5,
+   "33": 1,
+   "out": 151489
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the national animal of Scotland?",
+  "gold": "unicorn",
+  "answer": "The national animal of Scotland is ",
+  "correct": false,
+  "min_rank": 17,
+  "ranks": {
+   "14": 149556,
+   "20": 126368,
+   "26": 10449,
+   "30": 354,
+   "33": 21,
+   "out": 17
+  },
+  "cat": "truth_PRESENT"
+ },
+ {
+  "q": "What is the largest species of shark?",
+  "gold": "whale",
+  "answer": "The great white shark.",
+  "correct": false,
+  "min_rank": 0,
+  "ranks": {
+   "14": 119035,
+   "20": 113418,
+   "26": 31,
+   "30": 5,
+   "33": 0,
+   "out": 15
+  },
+  "cat": "truth_PRESENT"
+ },
+ {
+  "q": "Who painted The Starry Night?",
+  "gold": "Gogh",
+  "answer": "Vincent van Gogh",
+  "correct": true,
+  "min_rank": 1053,
+  "ranks": {
+   "14": 150944,
+   "20": 42467,
+   "26": 1053,
+   "30": 3924,
+   "33": 52588,
+   "out": 147632
+  },
+  "cat": "correct"
+ },
+ {
+  "q": "What is the longest river in Asia?",
+  "gold": "Yangtze",
+  "answer": "Yarlung Zangbo River",
+  "correct": false,
+  "min_rank": 0,
+  "ranks": {
+   "14": 32494,
+   "20": 12177,
+   "26": 536,
+   "30": 22,
+   "33": 0,
+   "out": 5
+  },
+  "cat": "truth_PRESENT"
+ }
+]

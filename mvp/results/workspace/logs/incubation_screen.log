@@ -1,0 +1,126 @@
+[data] 80 items from math500,gsm8k_probe
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:38,  2.21s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.64it/s]Loading weights:  45%|████▌     | 180/398 [00:03<00:03, 70.14it/s]Loading weights:  54%|█████▍    | 214/398 [00:04<00:03, 55.01it/s]Loading weights:  59%|█████▉    | 236/398 [00:04<00:02, 54.61it/s]Loading weights:  63%|██████▎   | 252/398 [00:04<00:02, 57.19it/s]Loading weights:  67%|██████▋   | 265/398 [00:05<00:02, 59.26it/s]Loading weights:  70%|██████▉   | 277/398 [00:05<00:02, 60.48it/s]Loading weights:  72%|███████▏  | 287/398 [00:05<00:01, 58.54it/s]Loading weights:  74%|███████▍  | 296/398 [00:05<00:01, 55.95it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:01, 53.46it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 50.38it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 50.67it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 53.94it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 55.70it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 53.91it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 54.93it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 46.14it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 41.66it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 52.43it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 0 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [1/80] math500-2bb63d7b2c     greedy=OK passk=OK candidate=False (cands so far: 0, disk 11G)
+2026-07-07 15:38:49.448 Python[30660:525846] Error creating directory 
+ The volume ‚ÄúMacintosh HD‚Äù is out of space. You can‚Äôt save the file ‚Äúmpsgraph-30660-2026-07-07_15_38_48-2155852458‚Äù because the volume ‚ÄúMacintosh HD‚Äù is out of space.
+  [2/80] math500-596af4e939     greedy=x passk=x candidate=False (cands so far: 0, disk 5G)
+[STOP] disk low (2.2 GiB). Resumable.
+[done] 2 screened, 0 candidates -> results/workspace/incubation_screen.json
+[data] 80 items from math500,gsm8k_probe
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:35,  2.21s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.85it/s]Loading weights:  43%|████▎     | 172/398 [00:02<00:02, 76.11it/s]Loading weights:  51%|█████     | 202/398 [00:03<00:02, 71.87it/s]Loading weights:  56%|█████▌    | 223/398 [00:03<00:02, 69.23it/s]Loading weights:  60%|██████    | 239/398 [00:04<00:03, 48.02it/s]Loading weights:  63%|██████▎   | 250/398 [00:04<00:03, 48.68it/s]Loading weights:  65%|██████▌   | 259/398 [00:04<00:02, 49.10it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 49.25it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 51.08it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 53.32it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 55.79it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 57.97it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 60.38it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 62.23it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 64.47it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 62.58it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 46.03it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 39.48it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 37.91it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 52.19it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 0 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [1/80] math500-2bb63d7b2c     greedy=OK passk=OK candidate=False (cands so far: 0, disk 8G)
+[STOP] disk low (2.2 GiB). Resumable.
+[done] 1 screened, 0 candidates -> results/workspace/incubation_screen.json
+[data] 80 items from math500,gsm8k_probe
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:41,  2.22s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.80it/s]Loading weights:  44%|████▎     | 174/398 [00:02<00:02, 77.05it/s]Loading weights:  52%|█████▏    | 206/398 [00:03<00:02, 73.17it/s]Loading weights:  57%|█████▋    | 228/398 [00:04<00:03, 50.24it/s]Loading weights:  61%|██████    | 243/398 [00:04<00:02, 52.61it/s]Loading weights:  64%|██████▍   | 255/398 [00:04<00:02, 54.10it/s]Loading weights:  67%|██████▋   | 266/398 [00:05<00:02, 53.56it/s]Loading weights:  69%|██████▉   | 275/398 [00:05<00:02, 53.35it/s]Loading weights:  71%|███████   | 283/398 [00:05<00:02, 50.68it/s]Loading weights:  73%|███████▎  | 290/398 [00:05<00:02, 47.86it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 50.02it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 52.81it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 55.24it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 55.46it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 52.24it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:01, 41.62it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 37.43it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 34.18it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 32.68it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 49.00it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 1 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-07-07 17:35:56.556 Python[32172:564547] Error creating directory 
+ The volume ‚ÄúMacintosh HD‚Äù is out of space. You can‚Äôt save the file ‚Äúmpsgraph-32172-2026-07-07_17_35_56-3816300363‚Äù because the volume ‚ÄúMacintosh HD‚Äù is out of space.
+2026-07-07 17:35:56.682 Python[32172:564547] Error creating directory 
+ The volume ‚ÄúMacintosh HD‚Äù is out of space. You can‚Äôt save the file ‚Äúmpsgraph-32172-2026-07-07_17_35_56-695469990‚Äù because the volume ‚ÄúMacintosh HD‚Äù is out of space.
+  [2/80] math500-596af4e939     greedy=x passk=x candidate=False (cands so far: 0, disk 8G)
+[STOP] disk low (0.3 GiB). Resumable.
+[done] 2 screened, 0 candidates -> results/workspace/incubation_screen.json
+[data] 80 items from gsm8k_probe,math500
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:03<21:18,  3.22s/it]Loading weights:  32%|███▏      | 126/398 [00:03<00:05, 53.06it/s]Loading weights:  48%|████▊     | 191/398 [00:04<00:03, 52.63it/s]Loading weights:  58%|█████▊    | 229/398 [00:05<00:03, 44.73it/s]Loading weights:  64%|██████▎   | 253/398 [00:06<00:03, 41.41it/s]Loading weights:  68%|██████▊   | 270/398 [00:07<00:03, 33.69it/s]Loading weights:  71%|███████   | 282/398 [00:08<00:03, 31.26it/s]Loading weights:  73%|███████▎  | 291/398 [00:08<00:03, 28.63it/s]Loading weights:  75%|███████▌  | 300/398 [00:08<00:03, 28.05it/s]Loading weights:  78%|███████▊  | 311/398 [00:09<00:03, 28.67it/s]Loading weights:  81%|████████  | 322/398 [00:09<00:02, 28.88it/s]Loading weights:  84%|████████▎ | 333/398 [00:10<00:02, 29.87it/s]Loading weights:  86%|████████▋ | 344/398 [00:10<00:01, 30.05it/s]Loading weights:  89%|████████▉ | 355/398 [00:10<00:01, 29.87it/s]Loading weights:  92%|█████████▏| 366/398 [00:11<00:01, 29.15it/s]Loading weights:  95%|█████████▍| 377/398 [00:11<00:00, 28.14it/s]Loading weights:  97%|█████████▋| 388/398 [00:11<00:00, 28.72it/s]Loading weights: 100%|██████████| 398/398 [00:11<00:00, 33.31it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 2 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [3/80] gsm8k-709f8afb0f       greedy=OK passk=OK candidate=False (cands so far: 0, disk 21G)
+  [4/80] gsm8k-80e0f82fe1       greedy=OK passk=OK candidate=False (cands so far: 0, disk 19G)
+  [5/80] gsm8k-6fc53ce9b7       greedy=OK passk=OK candidate=False (cands so far: 0, disk 18G)
+  [6/80] gsm8k-1fc5b7f415       greedy=x passk=OK candidate=True (cands so far: 1, disk 17G)
+  [7/80] gsm8k-d23e76cdcc       greedy=OK passk=OK candidate=False (cands so far: 1, disk 24G)
+  [8/80] gsm8k-9614e66131       greedy=x passk=OK candidate=True (cands so far: 2, disk 21G)
+  [9/80] gsm8k-b476c01e6e       greedy=x passk=OK candidate=True (cands so far: 3, disk 32G)
+  [10/80] gsm8k-a0a1e2d480       greedy=OK passk=OK candidate=False (cands so far: 3, disk 30G)
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-43975-s77efb0z'}
+  warnings.warn(
+[data] 80 items from gsm8k_probe,math500
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:52,  2.40s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 68.97it/s]Loading weights:  47%|████▋     | 188/398 [00:03<00:03, 57.38it/s]Loading weights:  57%|█████▋    | 225/398 [00:04<00:03, 55.93it/s]Loading weights:  63%|██████▎   | 250/398 [00:04<00:02, 58.20it/s]Loading weights:  68%|██████▊   | 269/398 [00:05<00:02, 50.56it/s]Loading weights:  71%|███████   | 282/398 [00:05<00:02, 46.54it/s]Loading weights:  73%|███████▎  | 292/398 [00:06<00:02, 42.56it/s]Loading weights:  75%|███████▌  | 300/398 [00:06<00:02, 38.26it/s]Loading weights:  78%|███████▊  | 311/398 [00:07<00:02, 36.10it/s]Loading weights:  81%|████████  | 322/398 [00:07<00:02, 34.81it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 33.47it/s]Loading weights:  86%|████████▋ | 344/398 [00:08<00:01, 32.47it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 30.78it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 30.23it/s]Loading weights:  95%|█████████▍| 377/398 [00:09<00:00, 30.16it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 29.81it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 41.13it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 10 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [11/80] gsm8k-ec338c9488       greedy=x passk=OK candidate=True (cands so far: 4, disk 28G)
+  [12/80] gsm8k-5377384f0e       greedy=OK passk=OK candidate=False (cands so far: 4, disk 21G)
+  [13/80] gsm8k-b7f54eb6f4       greedy=x passk=OK candidate=True (cands so far: 5, disk 17G)
+  [14/80] gsm8k-0ecd50064c       greedy=OK passk=OK candidate=False (cands so far: 5, disk 17G)
+  [15/80] gsm8k-e06b7791d4       greedy=OK passk=OK candidate=False (cands so far: 5, disk 17G)
+  [16/80] gsm8k-315ae0ca4e       greedy=OK passk=OK candidate=False (cands so far: 5, disk 16G)
+  [17/80] gsm8k-e8f9948982       greedy=OK passk=OK candidate=False (cands so far: 5, disk 15G)
+  [18/80] gsm8k-927d712d3e       greedy=OK passk=OK candidate=False (cands so far: 5, disk 16G)
+  [19/80] gsm8k-58351f6d4a       greedy=OK passk=OK candidate=False (cands so far: 5, disk 15G)
+  [20/80] gsm8k-b0cd5948aa       greedy=OK passk=OK candidate=False (cands so far: 5, disk 14G)
+  [21/80] gsm8k-5894f503d7       greedy=OK passk=OK candidate=False (cands so far: 5, disk 11G)
+  [22/80] gsm8k-bfd2ed504e       greedy=OK passk=OK candidate=False (cands so far: 5, disk 12G)
+  [23/80] gsm8k-7fe800ad20       greedy=OK passk=OK candidate=False (cands so far: 5, disk 11G)
+  [24/80] gsm8k-389c696982       greedy=OK passk=OK candidate=False (cands so far: 5, disk 15G)
+  [25/80] gsm8k-50d0ca3b8f       greedy=x passk=OK candidate=True (cands so far: 6, disk 14G)
+  [26/80] gsm8k-48fc09e49f       greedy=OK passk=OK candidate=False (cands so far: 6, disk 13G)
+  [27/80] gsm8k-f4a354059c       greedy=x passk=OK candidate=True (cands so far: 7, disk 10G)
+  [28/80] gsm8k-8b726d69b5       greedy=OK passk=OK candidate=False (cands so far: 7, disk 21G)
+  [29/80] gsm8k-545dda4511       greedy=x passk=OK candidate=True (cands so far: 8, disk 18G)
+  [30/80] gsm8k-649f8d7e4a       greedy=OK passk=OK candidate=False (cands so far: 8, disk 20G)
+  [31/80] gsm8k-47c57a4458       greedy=OK passk=OK candidate=False (cands so far: 8, disk 19G)
+  [32/80] gsm8k-0c6fc35232       greedy=OK passk=OK candidate=False (cands so far: 8, disk 18G)
+[data] 80 items from gsm8k_probe,math500
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<19:39,  2.97s/it]Loading weights:  32%|███▏      | 126/398 [00:03<00:04, 57.01it/s]Loading weights:  46%|████▋     | 185/398 [00:04<00:03, 55.57it/s]Loading weights:  55%|█████▌    | 220/398 [00:04<00:03, 56.31it/s]Loading weights:  61%|██████▏   | 244/398 [00:05<00:02, 56.41it/s]Loading weights:  66%|██████▌   | 261/398 [00:05<00:02, 53.39it/s]Loading weights:  69%|██████▉   | 274/398 [00:05<00:02, 54.78it/s]Loading weights:  72%|███████▏  | 285/398 [00:06<00:02, 54.13it/s]Loading weights:  74%|███████▍  | 294/398 [00:06<00:01, 52.49it/s]Loading weights:  76%|███████▌  | 302/398 [00:06<00:01, 48.92it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:02, 41.77it/s]Loading weights:  81%|████████  | 322/398 [00:07<00:01, 38.26it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 37.21it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 35.07it/s]Loading weights:  89%|████████▉ | 355/398 [00:08<00:01, 33.18it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 31.44it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 30.45it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 29.06it/s]Loading weights:  98%|█████████▊| 392/398 [00:09<00:00, 26.71it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 41.32it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 32 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [33/80] gsm8k-941f89c7e4       greedy=x passk=OK candidate=True (cands so far: 9, disk 29G)
+  [34/80] gsm8k-bfbdad0201       greedy=OK passk=OK candidate=False (cands so far: 9, disk 10G)
+  [35/80] gsm8k-4c0fe0da49       greedy=OK passk=OK candidate=False (cands so far: 9, disk 10G)
+  [36/80] gsm8k-84acdcb9ad       greedy=OK passk=OK candidate=False (cands so far: 9, disk 13G)
+  [37/80] gsm8k-80cdff0fd7       greedy=x passk=OK candidate=True (cands so far: 10, disk 12G)
+  [38/80] gsm8k-d62b943cd3       greedy=OK passk=OK candidate=False (cands so far: 10, disk 12G)
+  [39/80] gsm8k-06e18b2f25       greedy=x passk=OK candidate=True (cands so far: 11, disk 12G)
+  [40/80] gsm8k-462f6181e1       greedy=x passk=OK candidate=True (cands so far: 12, disk 12G)
+  [41/80] gsm8k-940d3be1aa       greedy=OK passk=OK candidate=False (cands so far: 12, disk 9G)
+  [42/80] gsm8k-7822df4e03       greedy=OK passk=OK candidate=False (cands so far: 12, disk 11G)
+  [43/80] math500-96e5cb432e     greedy=OK passk=OK candidate=False (cands so far: 12, disk 7G)
+  [44/80] math500-7ffac5d537     greedy=OK passk=OK candidate=False (cands so far: 12, disk 10G)
+  [45/80] math500-eeb01e68ed     greedy=x passk=x candidate=False (cands so far: 12, disk 9G)
+  [46/80] math500-b152e95721     greedy=OK passk=OK candidate=False (cands so far: 12, disk 7G)
+  [47/80] math500-151775eb64     greedy=x passk=OK candidate=True (cands so far: 13, disk 6G)
+[STOP] disk low (0.9 GiB). Resumable.
+[done] 47 screened, 13 candidates -> results/workspace/incubation_screen.json
+[data] 80 items from gsm8k_probe,math500
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:00,  2.27s/it]Loading weights:  32%|███▏      | 126/398 [00:02<00:03, 73.46it/s]Loading weights:  47%|████▋     | 186/398 [00:03<00:02, 76.90it/s]Loading weights:  56%|█████▌    | 223/398 [00:03<00:02, 71.57it/s]Loading weights:  62%|██████▏   | 248/398 [00:04<00:02, 74.74it/s]Loading weights:  67%|██████▋   | 267/398 [00:04<00:01, 74.50it/s]Loading weights:  71%|███████   | 282/398 [00:05<00:02, 42.93it/s]Loading weights:  74%|███████▎  | 293/398 [00:05<00:02, 44.62it/s]Loading weights:  76%|███████▌  | 302/398 [00:05<00:02, 45.22it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 46.83it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 50.02it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 54.59it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 56.76it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 58.19it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 59.59it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 60.54it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 61.91it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 56.27it/s]
+[load] Qwen/Qwen3-4B on mps; resume: 47 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [48/80] math500-56cda89921     greedy=x passk=x candidate=False (cands so far: 13, disk 13G)
+  [49/80] math500-e1667484e4     greedy=OK passk=OK candidate=False (cands so far: 13, disk 11G)
+  [50/80] math500-1c382b91d7     greedy=x passk=OK candidate=True (cands so far: 14, disk 11G)
+  [51/80] math500-6293f5902f     greedy=x passk=OK candidate=True (cands so far: 15, disk 7G)
+  [52/80] math500-d8efc99f37     greedy=x passk=x candidate=False (cands so far: 15, disk 17G)
+  [53/80] math500-d380170419     greedy=OK passk=OK candidate=False (cands so far: 15, disk 18G)
+  [54/80] math500-eee453b9a7     greedy=OK passk=OK candidate=False (cands so far: 15, disk 18G)
+  [55/80] math500-86a3c2e596     greedy=OK passk=OK candidate=False (cands so far: 15, disk 18G)
+  [56/80] math500-1cffd1a004     greedy=x passk=x candidate=False (cands so far: 15, disk 19G)
+  [57/80] math500-687b740c7d     greedy=x passk=x candidate=False (cands so far: 15, disk 18G)
+  [58/80] math500-149e8ae496     greedy=x passk=x candidate=False (cands so far: 15, disk 17G)
+  [59/80] math500-a477ae7a7c     greedy=x passk=x candidate=False (cands so far: 15, disk 16G)
+  [60/80] math500-3254623dd0     greedy=x passk=OK candidate=True (cands so far: 16, disk 15G)
+  [61/80] math500-cfe54dfd19     greedy=OK passk=OK candidate=False (cands so far: 16, disk 14G)
+  [62/80] math500-9578b829c6     greedy=x passk=x candidate=False (cands so far: 16, disk 15G)
+  [63/80] math500-d4ec812029     greedy=x passk=x candidate=False (cands so far: 16, disk 9G)
+  [64/80] math500-67af752310     greedy=OK passk=OK candidate=False (cands so far: 16, disk 8G)
+  [65/80] math500-8dd85b04b8     greedy=x passk=OK candidate=True (cands so far: 17, disk 13G)
+  [66/80] math500-7d3aea1c09     greedy=x passk=OK candidate=True (cands so far: 18, disk 12G)
+  [67/80] math500-0e74d7a3aa     greedy=x passk=x candidate=False (cands so far: 18, disk 11G)
+  [68/80] math500-8385be473f     greedy=OK passk=OK candidate=False (cands so far: 18, disk 11G)
+  [69/80] math500-720f2d3ca6     greedy=OK passk=OK candidate=False (cands so far: 18, disk 11G)
+  [70/80] math500-4bc305d1cb     greedy=OK passk=OK candidate=False (cands so far: 18, disk 12G)
+  [71/80] math500-35293187f3     greedy=x passk=x candidate=False (cands so far: 18, disk 10G)
+  [72/80] math500-19a8e905b0     greedy=x passk=OK candidate=True (cands so far: 19, disk 10G)
+  [73/80] math500-8b9092721a     greedy=x passk=x candidate=False (cands so far: 19, disk 11G)

@@ -1,0 +1,21 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:03<23:03,  3.49s/it]Loading weights:  31%|███       | 124/398 [00:03<00:05, 47.70it/s]Loading weights:  43%|████▎     | 172/398 [00:05<00:05, 38.28it/s]Loading weights:  50%|█████     | 199/398 [00:06<00:05, 37.43it/s]Loading weights:  55%|█████▍    | 217/398 [00:06<00:05, 34.04it/s]Loading weights:  58%|█████▊    | 230/398 [00:07<00:04, 34.15it/s]Loading weights:  60%|██████    | 240/398 [00:07<00:04, 32.86it/s]Loading weights:  62%|██████▏   | 248/398 [00:08<00:04, 30.10it/s]Loading weights:  64%|██████▍   | 256/398 [00:08<00:05, 28.33it/s]Loading weights:  67%|██████▋   | 267/398 [00:08<00:04, 29.12it/s]Loading weights:  70%|██████▉   | 278/398 [00:09<00:04, 29.25it/s]Loading weights:  73%|███████▎  | 289/398 [00:09<00:03, 29.10it/s]Loading weights:  75%|███████▌  | 300/398 [00:09<00:03, 29.27it/s]Loading weights:  78%|███████▊  | 311/398 [00:10<00:03, 28.58it/s]Loading weights:  81%|████████  | 322/398 [00:10<00:02, 28.63it/s]Loading weights:  84%|████████▎ | 333/398 [00:11<00:02, 28.66it/s]Loading weights:  86%|████████▋ | 344/398 [00:11<00:01, 29.12it/s]Loading weights:  89%|████████▉ | 355/398 [00:11<00:01, 28.26it/s]Loading weights:  92%|█████████▏| 366/398 [00:12<00:01, 26.58it/s]Loading weights:  95%|█████████▍| 377/398 [00:12<00:00, 23.31it/s]Loading weights:  95%|█████████▌| 380/398 [00:13<00:01, 17.58it/s]Loading weights: 100%|██████████| 398/398 [00:13<00:00, 29.65it/s]
+[load] 14 chains, 0 done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  superstition_state   medium           hop1=True hop2=True composed=True
+  relativity_year      hard-year        hop1=True hop2=True composed=True
+  evolution_ship       hard-obscure     hop1=True hop2=True composed=True
+  penicillin_nat       medium           hop1=True hop2=False composed=False
+  monalisa_country     easy-control-country hop1=True hop2=True composed=True
+  hamlet_town          hard-obscure     hop1=True hop2=True composed=True
+  gravity_uni          medium           hop1=True hop2=True composed=True
+  telephone_death      hard-obscure     hop1=True hop2=True composed=False  <== CANDIDATE (knows pieces, fails to connect)
+  dna_year             hard-year        hop1=True hop2=True composed=True
+  odyssey_lang         medium           hop1=True hop2=True composed=True
+  backprop_rule        ml-connect       hop1=True hop2=True composed=True
+  transformer_paper    ml-connect       hop1=True hop2=True composed=True
+  photosynth_color     medium           hop1=True hop2=True composed=True
+  everest_country      easy-control     hop1=True hop2=True composed=True
+
+[done] 1/14 candidates (knows both hops, fails composed):
+  telephone_death      bridge=Bell             composed_said='The person who patented the first practical telephone was Al'

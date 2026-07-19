@@ -1,0 +1,20 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:47,  2.24s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.67it/s]Loading weights:  44%|████▍     | 177/398 [00:02<00:02, 77.42it/s]Loading weights:  53%|█████▎    | 210/398 [00:03<00:02, 76.00it/s]Loading weights:  59%|█████▊    | 233/398 [00:03<00:02, 76.11it/s]Loading weights:  63%|██████▎   | 251/398 [00:04<00:02, 71.40it/s]Loading weights:  67%|██████▋   | 265/398 [00:04<00:01, 68.76it/s]Loading weights:  69%|██████▉   | 276/398 [00:05<00:03, 40.34it/s]Loading weights:  71%|███████▏  | 284/398 [00:05<00:02, 40.26it/s]Loading weights:  73%|███████▎  | 291/398 [00:05<00:02, 39.01it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:02, 41.34it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 45.71it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 49.79it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 53.61it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 57.83it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 57.59it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 59.21it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 59.95it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 62.54it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.81it/s]
+[load] lens n=20, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[norms] {10: 272.0, 12: 276.9, 14: 280.2, 16: 288.1, 18: 292.7, 20: 304.0, 22: 316.9, 24: 353.5, 26: 387.1, 28: 433.0}
+[baseline]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  baseline               -> wrong(number)   | numbers like twenty-three? twenty-three. "three" doesn't hav
+  inject:none@a0.1       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:none@a0.2       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:none@a0.4       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:none@a0.8       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:none@a1.2       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:impossible@a0.1 -> degenerate(spam:impossible) |  impossible impossible impossible impossible impossible impo
+  inject:impossible@a0.2 -> degenerate(spam:impossible) |  impossible impossible impossible impossible impossible impo
+  inject:impossible@a0.4 -> degenerate(spam:impossible) |  impossible impossible impossible impossible impossible impo
+  inject:impossible@a0.8 -> degenerate(spam:impossible) |  impossible impossible impossible impossible impossible impo
+  inject:impossible@a1.2 -> degenerate(spam:impossible) |  impossible impossible impossible impossible impossible impo
+  random@a0.4#s0         -> degenerate(spam:answer) |  answer answer answer answer answer of answer answer of answ
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-60676-zkvi8o3f'}
+  warnings.warn(

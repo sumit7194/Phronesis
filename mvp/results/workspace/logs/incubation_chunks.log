@@ -1,0 +1,10 @@
+[16:32:20] chunk 1 start (free 8G)
+[16:45:25] chunk 1 end rc=0 :: [done] 1 screened, 0 candidates -> results/workspace/incubation_screen.json
+[17:01:25] chunk 2 start (free 8G)
+[17:51:48] chunk 2 end rc=0 :: [done] 2 screened, 0 candidates -> results/workspace/incubation_screen.json
+[18:18:49] chunk 1 start (free 16G)
+[2026-07-10 06:25:27] S1 resume launched by commit-gate prereg (session da35d3c8)
+[06:25:28] chunk 1 start (free 29G)
+[20:38:04] chunk 1 start (free 31G)
+[03:45:32] chunk 1 end rc=0 :: [done] 47 screened, 13 candidates -> results/workspace/incubation_screen.json
+[03:46:32] chunk 2 start (free 12G)

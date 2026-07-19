@@ -1,0 +1,60 @@
+{
+ "lens_n": 45,
+ "band": [
+  14,
+  20,
+  26
+ ],
+ "topk": 25,
+ "primary": 20,
+ "items": [
+  {
+   "id": "q1_no_a",
+   "category": "empty-set / brute-force fail",
+   "gold": "none",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "q2_math_solved",
+   "category": "math \u2014 solved",
+   "gold": "9",
+   "answer": "9",
+   "correct": true,
+   "n_tokens": 2048
+  },
+  {
+   "id": "q3_gsm_rescuable",
+   "category": "gsm8k \u2014 rescuable failure (greedy-fail, passk-hit)",
+   "gold": "91",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "q4_math_wall",
+   "category": "math \u2014 wall (greedy+passk fail)",
+   "gold": "27",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "q5_gsm_solved",
+   "category": "gsm8k \u2014 solved",
+   "gold": "10",
+   "answer": "10",
+   "correct": true,
+   "n_tokens": 561
+  },
+  {
+   "id": "q6_gsm_failed",
+   "category": "gsm8k \u2014 failed (WRINKLE boundary, F191)",
+   "gold": "13",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  }
+ ]
+}

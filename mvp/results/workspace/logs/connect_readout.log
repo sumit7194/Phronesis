@@ -1,0 +1,33 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:03<20:32,  3.11s/it]Loading weights:  32%|███▏      | 126/398 [00:03<00:04, 54.81it/s]Loading weights:  47%|████▋     | 188/398 [00:04<00:04, 49.30it/s]Loading weights:  56%|█████▋    | 224/398 [00:06<00:04, 39.22it/s]Loading weights:  62%|██████▏   | 247/398 [00:06<00:04, 37.14it/s]Loading weights:  66%|██████▌   | 263/398 [00:07<00:03, 38.07it/s]Loading weights:  69%|██████▉   | 275/398 [00:07<00:03, 36.84it/s]Loading weights:  71%|███████▏  | 284/398 [00:08<00:03, 33.75it/s]Loading weights:  73%|███████▎  | 291/398 [00:08<00:03, 30.51it/s]Loading weights:  75%|███████▌  | 300/398 [00:08<00:03, 29.24it/s]Loading weights:  78%|███████▊  | 311/398 [00:09<00:03, 28.13it/s]Loading weights:  81%|████████  | 322/398 [00:09<00:02, 28.09it/s]Loading weights:  84%|████████▎ | 333/398 [00:10<00:02, 28.25it/s]Loading weights:  86%|████████▋ | 344/398 [00:10<00:01, 28.14it/s]Loading weights:  89%|████████▉ | 355/398 [00:10<00:01, 28.31it/s]Loading weights:  92%|█████████▏| 366/398 [00:11<00:01, 28.47it/s]Loading weights:  95%|█████████▍| 377/398 [00:11<00:00, 28.06it/s]Loading weights:  97%|█████████▋| 388/398 [00:11<00:00, 28.86it/s]Loading weights: 100%|██████████| 398/398 [00:11<00:00, 33.30it/s]
+  superstition_state   think   composed_ok=True bridge_rank=1000000000 gold_rank=1
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  superstition_state   NOTHINK composed_ok=True bridge_rank=1000000000 gold_rank=1 ans='The performer of the 1972 song'
+  relativity_year      think   composed_ok=True bridge_rank=1 gold_rank=1000000000
+  relativity_year      NOTHINK composed_ok=True bridge_rank=1 gold_rank=1000000000 ans='The developer of the general t'
+  evolution_ship       think   composed_ok=True bridge_rank=1 gold_rank=1000000000
+  evolution_ship       NOTHINK composed_ok=True bridge_rank=4 gold_rank=1000000000 ans='The ship was the *HMS Beagle*.'
+  penicillin_nat       think   composed_ok=False bridge_rank=1 gold_rank=1
+  penicillin_nat       NOTHINK composed_ok=True bridge_rank=7 gold_rank=1 ans='The person who discovered peni'
+  monalisa_country     think   composed_ok=True bridge_rank=1 gold_rank=1
+  monalisa_country     NOTHINK composed_ok=False bridge_rank=1 gold_rank=5 ans='France.'
+  hamlet_town          think   composed_ok=True bridge_rank=1 gold_rank=1000000000
+  hamlet_town          NOTHINK composed_ok=True bridge_rank=1 gold_rank=1000000000 ans='The author of the play *Hamlet'
+  gravity_uni          think   composed_ok=True bridge_rank=1 gold_rank=1
+  gravity_uni          NOTHINK composed_ok=True bridge_rank=1 gold_rank=1 ans='Isaac Newton studied at Trinit'
+  telephone_death      think   composed_ok=False bridge_rank=25 gold_rank=1
+  telephone_death      NOTHINK composed_ok=True bridge_rank=111 gold_rank=2 ans='The person who patented the fi'
+  dna_year             think   composed_ok=True bridge_rank=2 gold_rank=1000000000
+  dna_year             NOTHINK composed_ok=True bridge_rank=17 gold_rank=1000000000 ans='The person who, with Francis C'
+  odyssey_lang         think   composed_ok=True bridge_rank=1 gold_rank=1
+  odyssey_lang         NOTHINK composed_ok=True bridge_rank=1 gold_rank=1 ans='The ancient epic *Iliad* was o'
+  backprop_rule        think   composed_ok=True bridge_rank=1000000000 gold_rank=26
+  backprop_rule        NOTHINK composed_ok=True bridge_rank=1000000000 gold_rank=120 ans='Chain rule.'
+  transformer_paper    think   composed_ok=True bridge_rank=44 gold_rank=49
+  transformer_paper    NOTHINK composed_ok=True bridge_rank=65 gold_rank=29 ans='The title of the paper that fi'
+  photosynth_color     think   composed_ok=True bridge_rank=1000000000 gold_rank=1
+  photosynth_color     NOTHINK composed_ok=True bridge_rank=1000000000 gold_rank=38 ans='The green pigment that enables'
+  everest_country      think   composed_ok=True bridge_rank=1 gold_rank=2
+  everest_country      NOTHINK composed_ok=True bridge_rank=1 gold_rank=2 ans='The tallest mountain above sea'
+[done] 1.5 min -> results/workspace/connect/
+wrote results/workspace/steer_viewer.html (31 KB), 30 prompts, 96 views

@@ -1,0 +1,25 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:44,  2.23s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.28it/s]Loading weights:  45%|████▌     | 181/398 [00:03<00:02, 73.78it/s]Loading weights:  54%|█████▍    | 215/398 [00:03<00:02, 73.12it/s]Loading weights:  60%|██████    | 239/398 [00:03<00:02, 77.81it/s]Loading weights:  65%|██████▍   | 258/398 [00:04<00:01, 76.06it/s]Loading weights:  69%|██████▊   | 273/398 [00:04<00:01, 78.06it/s]Loading weights:  72%|███████▏  | 286/398 [00:05<00:02, 41.12it/s]Loading weights:  74%|███████▍  | 296/398 [00:05<00:02, 42.70it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:02, 42.97it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:02, 42.78it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 47.15it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 51.24it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 55.61it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 56.13it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.41it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 59.46it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 62.00it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 56.73it/s]
+[load] lens n=20, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[norms] {10: 272.0, 12: 276.9, 14: 280.2, 16: 288.1, 18: 292.7, 20: 304.0, 22: 316.9, 24: 353.5, 26: 387.1, 28: 433.0}
+[baseline]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  baseline               -> wrong(number)   | numbers like twenty-three? twenty-three. "three" doesn't hav
+  inject:none@a0.5       -> wrong(number)   | 000000000000000000000000000000000000000000000000000000000000
+  inject:none@a1.0       -> correct(none)   |  above
+ none of the above
+ none of the above
+ none of the ab
+  inject:none@a2.0       -> correct(none)   |  above
+ none of the above
+ none of the above
+ none of the ab
+  inject:none@a4.0       -> correct(none)   |  above
+ none of the above
+ none of the above
+ none of the ab
+  inject:none@a8.0       -> degenerate(spam:none) |  none none none none none none none none none none none none
+  inject:impossible@a0.5 -> wrong(number)   | ms conflicting. wait, maybe the problem is not from 1 to 100
+  inject:impossible@a1.0 -> correct(none)   | he number of terms is 1000. but that's impossible. so maybe 
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-61618-wfkqf0wq'}
+  warnings.warn(

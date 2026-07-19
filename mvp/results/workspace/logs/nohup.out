@@ -1,0 +1,16 @@
+[02:25:02] overnight run begins (pid 2161)
+[02:25:02] === STAGE t0 START ===
+[02:38:59] === STAGE t0 END rc=0 ===
+[02:38:59] === STAGE t1_logit START ===
+[02:45:24] === STAGE t1_logit END rc=0 ===
+[02:45:24] === STAGE t2_fit START ===
+[09:30:19] === STAGE t2_fit END rc=0 ===
+[09:30:19] === STAGE t2b START ===
+[09:32:56] === STAGE t2b END rc=0 ===
+[09:32:56] === STAGE t3 START ===
+[09:39:21] === STAGE t3 END rc=0 ===
+[09:39:21] === STAGE t1_jlens START ===
+[09:42:12] === STAGE t1_jlens END rc=0 ===
+[09:42:12] === STAGE summary START ===
+[09:42:12] === STAGE summary END rc=0 ===
+[09:42:12] overnight run complete

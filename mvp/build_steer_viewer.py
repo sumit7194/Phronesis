@@ -89,6 +89,26 @@ def main():
                                     "group": "deception", "conditions": conds}
         manifest["order"].append(pid)
 
+    # --- connection-gap chains (think vs no-think composed) ---
+    for f in sorted(glob.glob(f"{WS}/connect/*__think.json")):
+        cid = os.path.basename(f).replace("__think.json", "")
+        conds = []
+        for regime in ("think", "nothink"):
+            p = f"{WS}/connect/{cid}__{regime}.json"
+            if not os.path.exists(p):
+                continue
+            s = json.load(open(p)).get("_sum", {})
+            ok, brk = bool(s.get("composed_ok")), s.get("bridge_rank")
+            conds.append({"cond": regime, "kind": "connect", "file": f"connect/{cid}__{regime}.json",
+                          "dot": "commit-ok" if ok else "spiral",
+                          "stat": (f"bridge r{brk}" if brk is not None else ""),
+                          "title": f"composed {'✓' if ok else '✗'} · bridge rank {brk} · gold rank {s.get('gold_rank')}"})
+        if conds:
+            d = json.load(open(f))
+            manifest["prompts"][cid] = {"question": d.get("question", cid), "gold": str(d.get("gold", "")),
+                                        "group": "connection (2-hop)", "conditions": conds}
+            manifest["order"].append(cid)
+
     html = TEMPLATE.replace("__PAYLOAD__", json.dumps(manifest, ensure_ascii=False))
     out = f"{WS}/steer_viewer.html"
     with open(out, "w") as fh:

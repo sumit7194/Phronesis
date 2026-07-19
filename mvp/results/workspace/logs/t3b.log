@@ -1,0 +1,102 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:48,  2.24s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.41it/s]Loading weights:  47%|████▋     | 186/398 [00:03<00:02, 77.04it/s]Loading weights:  56%|█████▋    | 224/398 [00:03<00:02, 72.73it/s]Loading weights:  67%|██████▋   | 267/398 [00:03<00:01, 92.29it/s]Loading weights:  73%|███████▎  | 292/398 [00:05<00:01, 54.22it/s]Loading weights:  78%|███████▊  | 310/398 [00:05<00:01, 56.90it/s]Loading weights:  81%|████████▏ | 324/398 [00:05<00:01, 51.02it/s]Loading weights:  84%|████████▍ | 335/398 [00:05<00:01, 53.44it/s]Loading weights:  87%|████████▋ | 345/398 [00:06<00:00, 55.04it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 55.10it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.33it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.38it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.17it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 58.76it/s]
+[14:16:30] lens n_prompts=20, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[14:16:49]   [1/12] WRINKLE gsm8k-test-12      concept best-rank fail=1 teacher=1
+[14:16:49] generating gsm8k-test-408
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[14:22:52]   [2/12] WRINKLE gsm8k-test-408     concept best-rank fail=1 teacher=1
+[14:22:52] generating gsm8k-test-1193
+[14:29:03]   [3/12] WRINKLE gsm8k-test-1193    concept best-rank fail=1 teacher=1
+[14:29:03] generating gsm8k-test-1000
+[14:35:01]   [4/12] WRINKLE gsm8k-test-1000    concept best-rank fail=1 teacher=1
+[14:35:01] generating gsm8k-test-339
+[14:41:01]   [5/12] WRINKLE gsm8k-test-339     concept best-rank fail=1 teacher=1
+[14:41:01] generating gsm8k-test-724
+[14:43:31]   [6/12] WRINKLE gsm8k-test-724     concept best-rank fail=1 teacher=1
+[14:43:31] generating gsm8k-test-1034
+[14:49:46]   [7/12] WRINKLE gsm8k-test-1034    concept best-rank fail=1 teacher=1
+[14:49:46] generating gsm8k-test-1039
+[14:55:55]   [8/12] HARD    gsm8k-test-1039    concept best-rank fail=1 teacher=1
+[14:55:55] generating gsm8k-test-1052
+[15:02:08]   [9/12] HARD    gsm8k-test-1052    concept best-rank fail=1 teacher=1
+[15:02:08] generating gsm8k-test-800
+[15:08:14]   [10/12] HARD    gsm8k-test-800     concept best-rank fail=1 teacher=1
+[15:08:14] generating gsm8k-test-403
+[15:15:02]   [11/12] HARD    gsm8k-test-403     concept best-rank fail=1 teacher=1
+[15:15:02] generating gsm8k-test-172
+[15:21:40]   [12/12] HARD    gsm8k-test-172     concept best-rank fail=31 teacher=24
+[15:21:40] t3b done:
+{
+ "WRINKLE": {
+  "fail_trace": {
+   "concept": {
+    "n": 7,
+    "median": 1.0,
+    "frac_top10": 1.0
+   },
+   "null": {
+    "n": 7,
+    "median": 53.0,
+    "frac_top10": 0.0
+   },
+   "poscontrol": {
+    "n": 7,
+    "median": 10.0,
+    "frac_top10": 0.5714285714285714
+   }
+  },
+  "teacher_correct": {
+   "concept": {
+    "n": 7,
+    "median": 1.0,
+    "frac_top10": 1.0
+   },
+   "null": {
+    "n": 7,
+    "median": 104.0,
+    "frac_top10": 0.0
+   },
+   "poscontrol": {
+    "n": 7,
+    "median": 12.0,
+    "frac_top10": 0.42857142857142855
+   }
+  }
+ },
+ "HARD": {
+  "fail_trace": {
+   "concept": {
+    "n": 5,
+    "median": 1.0,
+    "frac_top10": 0.8
+   },
+   "null": {
+    "n": 5,
+    "median": 49.0,
+    "frac_top10": 0.2
+   },
+   "poscontrol": {
+    "n": 5,
+    "median": 6.0,
+    "frac_top10": 0.6
+   }
+  },
+  "teacher_correct": {
+   "concept": {
+    "n": 5,
+    "median": 1.0,
+    "frac_top10": 0.8
+   },
+   "null": {
+    "n": 5,
+    "median": 206.0,
+    "frac_top10": 0.2
+   },
+   "poscontrol": {
+    "n": 5,
+    "median": 5.0,
+    "frac_top10": 1.0
+   }
+  }
+ }
+}

@@ -1,0 +1,30 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:52,  2.25s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.99it/s]Loading weights:  46%|████▋     | 185/398 [00:03<00:02, 72.69it/s]Loading weights:  56%|█████▌    | 221/398 [00:04<00:03, 55.12it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:02, 52.72it/s]Loading weights:  66%|██████▌   | 262/398 [00:05<00:02, 56.97it/s]Loading weights:  70%|██████▉   | 277/398 [00:05<00:02, 59.95it/s]Loading weights:  73%|███████▎  | 290/398 [00:05<00:02, 53.13it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 53.51it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 54.95it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 57.14it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 57.30it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 60.87it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 59.76it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 50.70it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 44.77it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 41.05it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 52.26it/s]
+[load] lens n=45, band=[14, 20, 26], wordlike tokens=121220
+[q1_no_a] masked readout...
+    [808] tok=' none' -> others, really, couldn, weren, except, none, actually, anyway
+    [1036] tok=' none' -> others, again, even, couldn, really, except, other, here
+    [1208] tok=' none' -> again, others, even, all, couldn, yet, really, other
+    saved q1_no_a_masked (1976 pos)
+[q2_math_solved] masked readout...
+    [94] tok=' prime' -> kingdoms, atoms, 这样一, 玟, 瓒, maths, 什么事, fucking
+    [95] tok=' factor' -> ings, ities, oids, izes, 了我的, ises, ization, coefficients
+    [129] tok=' prime' -> clusters, atoms, primes, digits, themselves, rectangles, names, colonies
+    saved q2_math_solved_masked (2012 pos)
+[q3_gsm_rescuable] masked readout...
+    [89] tok=' trees' -> couldn, grown, 慢慢地, survivors, ㅤ, trees, weren, 就开始
+    [122] tok=' trees' -> initially, beginning, 慢慢地, somewhere, 就开始, weren, each, wasn
+    [133] tok=' trees' -> but, normally, added, each, after, themselves, somewhere, replacement
+    saved q3_gsm_rescuable_masked (1971 pos)
+[q4_math_wall] masked readout...
+    [367] tok=' prime' -> so, sig, thus, character, exponent, attribute, denomination, attributes
+    [1606] tok=' prime' -> so, thus, therefore, hence, denomination, but, coin, exponent
+    saved q4_math_wall_masked (2007 pos)
+[q5_gsm_solved] masked readout...
+    saved q5_gsm_solved_masked (508 pos)
+[q6_gsm_failed] masked readout...
+    [103] tok=' tree' -> couldn, planting, planted, grown, wasn, didn, plants, plant
+    [118] tok=' tree' -> planted, couldn, 的成功, grown, didn, 成功, plants, wasn
+    [151] tok=' tree' -> each, costs, that, but, so, cost, conditions, something
+    saved q6_gsm_failed_masked (1959 pos)
+[done] 6.1 min

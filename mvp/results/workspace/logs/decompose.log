@@ -1,0 +1,24 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:02,  2.27s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.77it/s]Loading weights:  48%|████▊     | 191/398 [00:03<00:02, 73.19it/s]Loading weights:  58%|█████▊    | 231/398 [00:03<00:02, 76.76it/s]Loading weights:  65%|██████▌   | 259/398 [00:04<00:01, 75.51it/s]Loading weights:  70%|███████   | 280/398 [00:04<00:01, 73.34it/s]Loading weights:  74%|███████▍  | 296/398 [00:05<00:02, 45.66it/s]Loading weights:  77%|███████▋  | 307/398 [00:05<00:01, 47.20it/s]Loading weights:  80%|███████▉  | 317/398 [00:05<00:01, 48.67it/s]Loading weights:  82%|████████▏ | 326/398 [00:05<00:01, 49.80it/s]Loading weights:  84%|████████▍ | 334/398 [00:06<00:01, 49.99it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 52.53it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.54it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.15it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.62it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.88it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 56.94it/s]
+[load] lens n=20, layers=[14, 20, 26], vocab=151936
+[trace] 1096 tokens (72 prompt + 1024 reasoning)
+[layer 14] decomposing 1024 positions...
+    layer step 1/25
+    layer step 6/25
+    layer step 11/25
+    layer step 16/25
+    layer step 21/25
+[layer 20] decomposing 1024 positions...
+    layer step 1/25
+    layer step 6/25
+    layer step 11/25
+    layer step 16/25
+    layer step 21/25
+[layer 26] decomposing 1024 positions...
+    layer step 1/25
+    layer step 6/25
+    layer step 11/25
+    layer step 16/25
+    layer step 21/25
+[done] 1.7 min. neg-concept hits: 10
+  -> results/workspace/decompose_none.json + .txt

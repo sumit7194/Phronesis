@@ -1,0 +1,9 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:57,  2.26s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.81it/s]Loading weights:  47%|████▋     | 187/398 [00:03<00:02, 76.99it/s]Loading weights:  57%|█████▋    | 225/398 [00:03<00:02, 72.95it/s]Loading weights:  63%|██████▎   | 251/398 [00:04<00:01, 76.63it/s]Loading weights:  68%|██████▊   | 271/398 [00:04<00:01, 73.25it/s]Loading weights:  72%|███████▏  | 287/398 [00:05<00:02, 40.50it/s]Loading weights:  75%|███████▍  | 298/398 [00:05<00:02, 42.20it/s]Loading weights:  77%|███████▋  | 307/398 [00:05<00:02, 43.70it/s]Loading weights:  79%|███████▉  | 315/398 [00:06<00:01, 43.96it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 43.91it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 48.86it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 53.46it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.55it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.42it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 58.48it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 61.82it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.76it/s]
+[09:39:56] 50 chunks, 15 layers, lens=jlens
+[09:39:59]   chunk 0/50
+[09:40:26]   chunk 10/50
+[09:40:53]   chunk 20/50
+[09:41:20]   chunk 30/50
+[09:41:47]   chunk 40/50
+[09:42:11] t1 (jlens) done in 2.8 min -> /Users/sumit/Github/Phronesis/mvp/results/workspace/t1_strat_jlens.json

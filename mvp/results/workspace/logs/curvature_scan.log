@@ -1,0 +1,101 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<16:28,  2.49s/it]Loading weights:  32%|███▏      | 126/398 [00:02<00:04, 67.88it/s]Loading weights:  49%|████▊     | 194/398 [00:04<00:03, 56.74it/s]Loading weights:  59%|█████▊    | 233/398 [00:04<00:02, 59.38it/s]Loading weights:  65%|██████▌   | 260/398 [00:05<00:02, 57.79it/s]Loading weights:  70%|███████   | 279/398 [00:05<00:02, 56.64it/s]Loading weights:  74%|███████▍  | 294/398 [00:05<00:01, 59.24it/s]Loading weights:  77%|███████▋  | 306/398 [00:05<00:01, 59.07it/s]Loading weights:  80%|███████▉  | 317/398 [00:06<00:01, 59.76it/s]Loading weights:  82%|████████▏ | 326/398 [00:06<00:01, 58.49it/s]Loading weights:  84%|████████▍ | 334/398 [00:06<00:01, 52.98it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 45.88it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 40.46it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 37.90it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 34.19it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 33.30it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 48.23it/s]
+[load] lens n=45, layers=[20, 26], eps=0.08
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[q1_spiral] 11 positions, 14 concepts
+    q1_spiral L20 pos36 done (16 rows, 2.2m)
+    q1_spiral L20 pos70 done (32 rows, 2.3m)
+    q1_spiral L20 pos72 done (48 rows, 2.4m)
+    q1_spiral L20 pos262 done (64 rows, 2.9m)
+    q1_spiral L20 pos452 done (80 rows, 3.6m)
+    q1_spiral L20 pos499 done (96 rows, 4.5m)
+    q1_spiral L20 pos642 done (112 rows, 5.7m)
+    q1_spiral L20 pos808 done (128 rows, 7.5m)
+    q1_spiral L20 pos832 done (144 rows, 9.4m)
+    q1_spiral L20 pos1022 done (160 rows, 12.0m)
+    q1_spiral L20 pos1023 done (176 rows, 14.6m)
+    q1_spiral L26 pos36 done (192 rows, 14.8m)
+    q1_spiral L26 pos70 done (208 rows, 14.9m)
+    q1_spiral L26 pos72 done (224 rows, 15.0m)
+    q1_spiral L26 pos262 done (240 rows, 15.5m)
+    q1_spiral L26 pos452 done (256 rows, 16.3m)
+    q1_spiral L26 pos499 done (272 rows, 17.2m)
+    q1_spiral L26 pos642 done (288 rows, 18.3m)
+    q1_spiral L26 pos808 done (304 rows, 20.1m)
+    q1_spiral L26 pos832 done (320 rows, 22.1m)
+    q1_spiral L26 pos1022 done (336 rows, 24.6m)
+    q1_spiral L26 pos1023 done (352 rows, 27.3m)
+[q6_boundary] 12 positions, 13 concepts
+    q6_boundary L20 pos44 done (367 rows, 29.6m)
+    q6_boundary L20 pos87 done (382 rows, 29.8m)
+    q6_boundary L20 pos89 done (397 rows, 29.9m)
+    q6_boundary L20 pos188 done (412 rows, 30.2m)
+    q6_boundary L20 pos275 done (427 rows, 30.7m)
+    q6_boundary L20 pos307 done (442 rows, 31.2m)
+    q6_boundary L20 pos330 done (457 rows, 31.7m)
+    q6_boundary L20 pos462 done (472 rows, 32.5m)
+    q6_boundary L20 pos648 done (487 rows, 33.6m)
+    q6_boundary L20 pos835 done (502 rows, 35.3m)
+    q6_boundary L20 pos1022 done (517 rows, 37.8m)
+    q6_boundary L20 pos1023 done (532 rows, 40.4m)
+    q6_boundary L26 pos44 done (547 rows, 40.6m)
+    q6_boundary L26 pos87 done (562 rows, 40.7m)
+    q6_boundary L26 pos89 done (577 rows, 40.8m)
+    q6_boundary L26 pos188 done (592 rows, 41.1m)
+    q6_boundary L26 pos275 done (607 rows, 41.6m)
+    q6_boundary L26 pos307 done (622 rows, 42.1m)
+    q6_boundary L26 pos330 done (637 rows, 42.6m)
+    q6_boundary L26 pos462 done (652 rows, 43.4m)
+    q6_boundary L26 pos648 done (667 rows, 44.5m)
+    q6_boundary L26 pos835 done (682 rows, 46.1m)
+    q6_boundary L26 pos1022 done (697 rows, 48.5m)
+    q6_boundary L26 pos1023 done (712 rows, 50.7m)
+[conceal_tiger] 11 positions, 11 concepts
+    conceal_tiger L20 pos24 done (725 rows, 51.1m)
+    conceal_tiger L20 pos47 done (738 rows, 51.2m)
+    conceal_tiger L20 pos49 done (751 rows, 51.3m)
+    conceal_tiger L20 pos59 done (764 rows, 51.3m)
+    conceal_tiger L20 pos75 done (777 rows, 51.4m)
+    conceal_tiger L20 pos81 done (790 rows, 51.6m)
+    conceal_tiger L20 pos113 done (803 rows, 51.7m)
+    conceal_tiger L20 pos145 done (816 rows, 51.9m)
+    conceal_tiger L20 pos177 done (829 rows, 52.2m)
+    conceal_tiger L20 pos210 done (842 rows, 52.5m)
+    conceal_tiger L20 pos211 done (855 rows, 52.8m)
+    conceal_tiger L26 pos24 done (868 rows, 52.8m)
+    conceal_tiger L26 pos47 done (881 rows, 52.9m)
+    conceal_tiger L26 pos49 done (894 rows, 52.9m)
+    conceal_tiger L26 pos59 done (907 rows, 53.0m)
+    conceal_tiger L26 pos75 done (920 rows, 53.1m)
+    conceal_tiger L26 pos81 done (933 rows, 53.2m)
+    conceal_tiger L26 pos113 done (946 rows, 53.4m)
+    conceal_tiger L26 pos145 done (959 rows, 53.6m)
+    conceal_tiger L26 pos177 done (972 rows, 53.8m)
+    conceal_tiger L26 pos210 done (985 rows, 54.1m)
+    conceal_tiger L26 pos211 done (998 rows, 54.4m)
+[lie_japan] 12 positions, 11 concepts
+    lie_japan L20 pos31 done (1011 rows, 55.9m)
+    lie_japan L20 pos61 done (1024 rows, 56.0m)
+    lie_japan L20 pos63 done (1037 rows, 56.1m)
+    lie_japan L20 pos92 done (1050 rows, 56.2m)
+    lie_japan L20 pos107 done (1063 rows, 56.4m)
+    lie_japan L20 pos170 done (1076 rows, 56.6m)
+    lie_japan L20 pos198 done (1089 rows, 56.9m)
+    lie_japan L20 pos333 done (1102 rows, 57.4m)
+    lie_japan L20 pos468 done (1115 rows, 58.1m)
+    lie_japan L20 pos603 done (1128 rows, 59.0m)
+    lie_japan L20 pos738 done (1141 rows, 60.2m)
+    lie_japan L20 pos739 done (1154 rows, 61.4m)
+    lie_japan L26 pos31 done (1167 rows, 61.5m)
+    lie_japan L26 pos61 done (1180 rows, 61.6m)
+    lie_japan L26 pos63 done (1193 rows, 61.6m)
+    lie_japan L26 pos92 done (1206 rows, 61.8m)
+    lie_japan L26 pos107 done (1219 rows, 61.9m)
+    lie_japan L26 pos170 done (1232 rows, 62.2m)
+    lie_japan L26 pos198 done (1245 rows, 62.4m)
+    lie_japan L26 pos333 done (1258 rows, 62.9m)
+    lie_japan L26 pos468 done (1271 rows, 63.6m)
+    lie_japan L26 pos603 done (1284 rows, 64.5m)
+    lie_japan L26 pos738 done (1297 rows, 65.7m)
+    lie_japan L26 pos739 done (1310 rows, 66.8m)
+[done] 1310 rows, 66.8 min

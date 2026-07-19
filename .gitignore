@@ -49,4 +49,10 @@ mvp/sae_neuronpedia_data/
 # Legibility experiments — raw activation tensors (regenerable) + logs
 mvp/results/legibility/*.npy
 mvp/results/legibility/*.npz
+
+# Large regenerable artifacts (lens, fit checkpoints, activation captures) — rebuild locally,
+# never commit (GitHub hard-rejects >100MB and these bloat the repo). This is why sync failed before.
+*.pt
+mvp/results/workspace/*.npy
+mvp/results/workspace/*.npz
 mvp/results/legibility/*.log

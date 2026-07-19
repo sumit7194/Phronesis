@@ -1,0 +1,60 @@
+{
+ "lens_n": 45,
+ "band": [
+  14,
+  20,
+  26
+ ],
+ "topk": 25,
+ "primary": 20,
+ "items": [
+  {
+   "id": "bat_ball",
+   "category": "insight-trap (intuitive vs thinking)",
+   "gold": "0.05",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "snail_well",
+   "category": "boundary / off-by-one",
+   "gold": "8",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "handshake",
+   "category": "constraint / quadratic insight",
+   "gold": "12",
+   "answer": "12",
+   "correct": true,
+   "n_tokens": 1665
+  },
+  {
+   "id": "digit7",
+   "category": "counting tedium (spiral/wall)",
+   "gold": "300",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "make_change",
+   "category": "combinatorial wall",
+   "gold": "242",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  },
+  {
+   "id": "three_squares",
+   "category": "insight / number theory (empty-set style)",
+   "gold": "7",
+   "answer": "(no box)",
+   "correct": false,
+   "n_tokens": 2048
+  }
+ ]
+}

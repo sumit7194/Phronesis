@@ -1,0 +1,236 @@
+[
+ {
+  "q": "What is the capital of Bhutan?",
+  "gold": "Thimphu",
+  "completion": "\n\n<think>\nHere's a thinking process:\n\n1.  **Identify the User's Question**: The user asks \"What is the capital of Bhutan",
+  "correct": false,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   56,
+   84,
+   "LOGIT_LENS",
+   "phu"
+  ],
+  "cat": "truth_IN_workspace",
+  "n_objs": 145
+ },
+ {
+  "q": "What is the capital of Comoros?",
+  "gold": "Moroni",
+  "completion": "\n\n<think>\n\n</think>\n\nMoroni<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   61,
+   13,
+   "LOGIT_LENS",
+   " Mor"
+  ],
+  "cat": "correct",
+  "n_objs": 25
+ },
+ {
+  "q": "What is the capital of Palau?",
+  "gold": "Ngerulmud",
+  "completion": "\n\n<think>\n\n</think>\n\nNgerulmud<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   62,
+   19,
+   "LOGIT_LENS",
+   "ger"
+  ],
+  "cat": "correct",
+  "n_objs": 28
+ },
+ {
+  "q": "What is the capital of Nauru?",
+  "gold": "Yaren",
+  "completion": "\n\n<think>\n\n</think>\n\nYaren<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   61,
+   14,
+   "JACOBIAN_LENS",
+   " Yar"
+  ],
+  "cat": "correct",
+  "n_objs": 26
+ },
+ {
+  "q": "What is the currency of Bhutan?",
+  "gold": "ngultrum",
+  "completion": "\n\n<think>\n\n</think>\n\nNgultrum<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   61,
+   20,
+   "LOGIT_LENS",
+   "trum"
+  ],
+  "cat": "correct",
+  "n_objs": 26
+ },
+ {
+  "q": "Who wrote One Hundred Years of Solitude?",
+  "gold": "Marquez",
+  "completion": "\n\n<think>\n\n</think>\n\nGabriel Garc\u00eda M\u00e1rquez<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   59,
+   22,
+   "LOGIT_LENS",
+   " M\u00e1r"
+  ],
+  "cat": "correct",
+  "n_objs": 29
+ },
+ {
+  "q": "What is the largest species of shark?",
+  "gold": "whale",
+  "completion": "\n\n<think>\n\n</think>\n\nWhale shark<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   25,
+   7,
+   "JACOBIAN_LENS",
+   " whales"
+  ],
+  "cat": "correct",
+  "n_objs": 26
+ },
+ {
+  "q": "What is the longest river in Asia?",
+  "gold": "Yangtze",
+  "completion": "\n\n<think>\n\n</think>\n\nYangtze River<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   61,
+   13,
+   "LOGIT_LENS",
+   " Yang"
+  ],
+  "cat": "correct",
+  "n_objs": 27
+ },
+ {
+  "q": "Who composed The Four Seasons?",
+  "gold": "Vivaldi",
+  "completion": "\n\n<think>\n\n</think>\n\nAntonio Vivaldi<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   58,
+   18,
+   "LOGIT_LENS",
+   "ival"
+  ],
+  "cat": "correct",
+  "n_objs": 25
+ },
+ {
+  "q": "What is the smallest bone in the human body?",
+  "gold": "stapes",
+  "completion": "\n\n<think>\n\n</think>\n\nStapes<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   62,
+   21,
+   "LOGIT_LENS",
+   "apes"
+  ],
+  "cat": "correct",
+  "n_objs": 27
+ },
+ {
+  "q": "What is the capital of Kazakhstan?",
+  "gold": "Astana",
+  "completion": "\n\n<think>\n\n</think>\n\nAstana<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   59,
+   6,
+   "LOGIT_LENS",
+   " Ast"
+  ],
+  "cat": "correct",
+  "n_objs": 24
+ },
+ {
+  "q": "Who won the Nobel Peace Prize in 2019?",
+  "gold": "Abiy",
+  "completion": "\n\n<think>\n\n</think>\n\nAbiy Ahmed Ali<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": false,
+  "where": null,
+  "cat": "correct",
+  "n_objs": 32
+ },
+ {
+  "q": "What is the tallest waterfall in the world?",
+  "gold": "Angel",
+  "completion": "\n\n<think>\n\n</think>\n\nAngel Falls<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   60,
+   8,
+   "LOGIT_LENS",
+   "Angel"
+  ],
+  "cat": "correct",
+  "n_objs": 26
+ },
+ {
+  "q": "What is the deepest lake in the world?",
+  "gold": "Baikal",
+  "completion": "\n\n<think>\n\n</think>\n\nLake Baikal<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   58,
+   21,
+   "LOGIT_LENS",
+   "ikal"
+  ],
+  "cat": "correct",
+  "n_objs": 27
+ },
+ {
+  "q": "What is the capital of Burkina Faso?",
+  "gold": "Ouagadougou",
+  "completion": "\n\n<think>\n\n</think>\n\nOuagadougou<|endoftext|>",
+  "correct": true,
+  "gold_in_workspace": true,
+  "where": [
+   0,
+   60,
+   22,
+   "JACOBIAN_LENS",
+   "oug"
+  ],
+  "cat": "correct",
+  "n_objs": 30
+ }
+]

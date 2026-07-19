@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<18:15,  2.76s/it]Loading weights:  31%|███       | 124/398 [00:02<00:04, 60.84it/s]Loading weights:  49%|████▉     | 196/398 [00:03<00:03, 65.46it/s]Loading weights:  60%|██████    | 239/398 [00:04<00:02, 68.20it/s]Loading weights:  67%|██████▋   | 268/398 [00:04<00:01, 68.37it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:01, 67.75it/s]Loading weights:  77%|███████▋  | 305/398 [00:05<00:01, 70.34it/s]Loading weights:  80%|████████  | 319/398 [00:06<00:02, 37.33it/s]Loading weights:  83%|████████▎ | 329/398 [00:06<00:01, 39.43it/s]Loading weights:  85%|████████▍ | 338/398 [00:06<00:01, 41.82it/s]Loading weights:  87%|████████▋ | 346/398 [00:07<00:01, 43.07it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:00, 44.82it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 48.51it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 51.72it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 56.15it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 51.37it/s]
+[08:40:37] lens n_prompts=45, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[08:40:39]   qc 0/93
+[08:41:00]   qc 20/93
+[08:41:42]   qc 80/93
+[08:41:50] QC: {'jlens': {'n': 72, 'hit_top1': 18, 'hit_top10': 51}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}}
+[08:41:51]   swap 0/90
+[08:42:03]   swap 30/90
+[08:42:07]   swap 40/90
+[08:42:17]   swap 50/90
+[08:42:21]   swap 60/90
+[08:42:24]   swap 70/90
+[08:42:30]   swap 80/90
+[08:42:34] t2b done: QC {'jlens': {'n': 72, 'hit_top1': 18, 'hit_top10': 51}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}} SWAPS {'n_items': 90, 'n_gated': 38, 'swap_s1_hits': 4, 'swap_s2_hits': 0, 'noop_ok': 38, 'rand_hits_total': 5, 'rand_trials': 114, 'rand_broke_base': 64}

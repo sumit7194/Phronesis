@@ -1,0 +1,303 @@
+<think>
+Okay, let's see. There's this snail at the bottom of a 10-meter well. Every day, it climbs up 3 meters, but then each night, it slips back 2 meters. The question is, on which day does it first reach the top and escape? Hmm, I need to figure this out step by step.
+
+First, let me make sure I understand the problem correctly. The snail starts at the bottom, which I assume is 0 meters. The well is 10 meters deep. Each day, the snail climbs up 3 meters, but then during the night, it slips back 2 meters. So, each full day-night cycle, the net gain is 3 - 2 = 1 meter. But wait, maybe I need to think about it differently. Because if the snail reaches the top during the day, it doesn't slip back, right? So maybe the last day it doesn't slip back. That's an important point. So, if the snail reaches or exceeds 10 meters during the day, it escapes and doesn't slip back that night. So, I need to consider that.
+
+So, let me try to model this day by day.
+
+Let me think of each day as starting at the beginning of the day, then climbing, then slipping back at night. But if it reaches the top during the day, it's done.
+
+So, starting at day 1:
+
+Start at 0 meters.
+
+Day 1: Climbs 3 meters, so reaches 3 meters. Then slips back 2 meters, so ends at 1 meter.
+
+Day 2: Climbs another 3 meters, so 1 + 3 = 4 meters. Then slips back 2, so 2 meters.
+
+Day 3: Climbs 3, so 2 + 3 = 5. Slips back to 3.
+
+Day 4: Climbs to 3 + 3 = 6. Slips back to 4.
+
+Day 5: Climbs to 4 + 3 = 7. Slips back to 5.
+
+Day 6: Climbs to 5 + 3 = 8. Slips back to 6.
+
+Day 7: Climbs to 6 + 3 = 9. Slips back to 7.
+
+Day 8: Climbs to 7 + 3 = 10. Wait, 10 meters is the top. So, does it escape here?
+
+But hold on, on day 8, during the day, it climbs 3 meters from 7 to 10. Since it reaches the top, it doesn't slip back. Therefore, it escapes on day 8.
+
+But let me check my steps again to make sure I didn't make a mistake.
+
+Let me write down each day's progress:
+
+Start: 0 meters.
+
+After day 1 climb: 3 meters. Then slip to 1.
+
+After day 2 climb: 1 + 3 = 4. Slip to 2.
+
+After day 3 climb: 2 + 3 = 5. Slip to 3.
+
+After day 4 climb: 3 + 3 = 6. Slip to 4.
+
+After day 5 climb: 4 + 3 = 7. Slip to 5.
+
+After day 6 climb: 5 + 3 = 8. Slip to 6.
+
+After day 7 climb: 6 + 3 = 9. Slip to 7.
+
+After day 8 climb: 7 + 3 = 10. So, reaches 10 meters. Since it's at the top, it escapes. Therefore, day 8.
+
+But wait, let me check if maybe on day 7, after climbing, it's at 9 meters. Then slips back to 7. Then on day 8, climbs 3 meters to 10. So, yes, day 8.
+
+But let me think again. Maybe there's a different way to calculate this. Because each day, the net gain is 1 meter, except the last day. So, if the snail needs to get to 10 meters, but on the last day, it can climb 3 meters without slipping back.
+
+So, maybe we can think of it as: how many days does it take to get to a point where, when it climbs 3 meters, it can reach 10 meters.
+
+So, let's think of the snail's position at the start of each day. Let me denote the position at the start of day n as S_n.
+
+Then, during day n, it climbs 3 meters, so reaches S_n + 3. If that is >= 10, then it escapes on day n. Otherwise, it slips back 2 meters, so S_{n+1} = S_n + 3 - 2 = S_n + 1.
+
+So, starting with S_1 = 0.
+
+So, let's compute S_n:
+
+S_1 = 0
+
+After day 1: climbs to 3, slips to 1. So S_2 = 1.
+
+After day 2: climbs to 1 + 3 = 4, slips to 2. S_3 = 2.
+
+After day 3: climbs to 2 + 3 = 5, slips to 3. S_4 = 3.
+
+After day 4: climbs to 3 + 3 = 6, slips to 4. S_5 = 4.
+
+After day 5: climbs to 4 + 3 = 7, slips to 5. S_6 = 5.
+
+After day 6: climbs to 5 + 3 = 8, slips to 6. S_7 = 6.
+
+After day 7: climbs to 6 + 3 = 9, slips to 7. S_8 = 7.
+
+After day 8: climbs to 7 + 3 = 10. So, escapes on day 8.
+
+So, that seems consistent. Therefore, the answer is day 8.
+
+But let me check another way. Let's think about how much the snail needs to climb. Since each day it makes a net gain of 1 meter, except the last day. So, if the snail needs to get to 10 meters, but on the last day, it can climb 3 meters. So, maybe we can think of how much it needs to get before the last day.
+
+So, if on the last day, it can climb 3 meters to reach 10. So, before that day, it needs to be at 10 - 3 = 7 meters. So, how many days does it take to get to 7 meters?
+
+Since each day, the net gain is 1 meter. So, starting from 0, to reach 7 meters, it would take 7 days. But wait, but each day, the snail is at S_n, then climbs 3, slips back 2. So, the position at the start of day n is S_n = (n - 1) * 1. Because each day, net gain is 1. Wait, but that would be if it's not considering the last day. Wait, but if it's getting to 7 meters at the start of day 8, then on day 8, it climbs 3 meters to 10. So, that would be 7 days to get to 7 meters. But according to the previous calculation, after day 7, the snail is at 7 meters? Wait, no. Wait, after day 7, the snail is at 7 meters? Wait, according to the previous steps, after day 7, the snail is at 7 meters. Then on day 8, it climbs 3 meters to 10. So, that would be day 8. So, that seems to match.
+
+But if we think of the net gain per day as 1 meter, then to get to 7 meters, it would take 7 days. But starting from 0, after day 1, it's 1 meter. After day 2, 2 meters. So, yes, after day n, it's at n meters. Wait, but that seems conflicting with the previous steps. Wait, no. Wait, in the previous steps, after day 1, it's at 1 meter. After day 2, 2 meters. After day 3, 3 meters. So, after day n, it's at n meters. Therefore, to reach 7 meters, it would take 7 days. Then on day 8, it climbs 3 meters to 10. Therefore, day 8. So that seems to be the case.
+
+But let me check that. If after day 7, it's at 7 meters. Then on day 8, climbs 3 meters to 10. So, that's correct.
+
+But let me think again. If the snail is at 7 meters at the start of day 8, then climbs 3 meters during the day, so 7 + 3 = 10. So, yes, that's the top. Therefore, day 8.
+
+But let me check if there's a different way to think about it. For example, maybe the snail can reach the top earlier?
+
+Wait, let's think about the position after each day's climb, before slipping back.
+
+So, on day 1, climbs to 3. That's before slipping.
+
+On day 2, climbs to 4.
+
+Day 3: 5.
+
+Day 4: 6.
+
+Day 5: 7.
+
+Day 6: 8.
+
+Day 7: 9.
+
+Day 8: 10.
+
+So, on day 8, during the day, it reaches 10. Therefore, day 8.
+
+But if you think about it, on day 7, after climbing, it's at 9 meters. Then slips back to 7. Then on day 8, climbs to 10. So, that's correct.
+
+Alternatively, if you think of the snail's progress:
+
+Each day, it's making a net gain of 1 meter, except the last day. So, if the snail needs to get to 10 meters, but on the last day, it can climb 3 meters. So, the total distance it needs to cover is 10 meters. But since on the last day, it can climb 3 meters, so before that day, it needs to be at 10 - 3 = 7 meters. So, how many days does it take to get to 7 meters?
+
+Since each day, the net gain is 1 meter, so 7 meters would take 7 days. Therefore, on day 8, it can climb out.
+
+But here's another thought: if the snail is at 7 meters at the start of day 8, then climbs 3 meters to 10. So, that's day 8. Therefore, the answer is day 8.
+
+But let me check if maybe the snail can reach the top earlier. For example, on day 7, after climbing, it's at 9 meters. Then slips back to 7. So, on day 8, climbs to 10. So, that's day 8.
+
+Alternatively, if the snail reaches 10 meters during the day, it's done. So, if on day 7, it's at 7 meters at the start of the day. Climbs 3 meters to 10. Wait, but that would be day 7. Wait, but according to previous steps, on day 7, after climbing, it's at 9 meters. Wait, why is that?
+
+Wait, maybe my previous calculation was wrong. Let me retrace.
+
+Start at 0.
+
+Day 1:
+
+Start: 0.
+
+Climb: 0 + 3 = 3. Then slip back to 3 - 2 = 1.
+
+So, end of day 1: 1.
+
+Day 2:
+
+Start: 1.
+
+Climb: 1 + 3 = 4. Slip back to 4 - 2 = 2.
+
+End of day 2: 2.
+
+Day 3:
+
+Start: 2.
+
+Climb: 2 + 3 = 5. Slip back to 5 - 2 = 3.
+
+End of day 3: 3.
+
+Day 4:
+
+Start: 3.
+
+Climb: 3 + 3 = 6. Slip back to 6 - 2 = 4.
+
+End of day 4: 4.
+
+Day 5:
+
+Start: 4.
+
+Climb: 4 + 3 = 7. Slip back to 7 - 2 = 5.
+
+End of day 5: 5.
+
+Day 6:
+
+Start: 5.
+
+Climb: 5 + 3 = 8. Slip back to 8 - 2 = 6.
+
+End of day 6: 6.
+
+Day 7:
+
+Start: 6.
+
+Climb: 6 + 3 = 9. Slip back to 9 - 2 = 7.
+
+End of day 7: 7.
+
+Day 8:
+
+Start: 7.
+
+Climb: 7 + 3 = 10. Since it reaches 10, it escapes. So, day 8.
+
+So, that's correct. Therefore, the answer is day 8.
+
+But let me check another way. Suppose we think of the snail's position at the start of each day. Let me denote that as S(n). Then, S(1) = 0.
+
+Then, after climbing, it's at S(n) + 3. If that is >= 10, then it escapes on day n. Otherwise, it slips back to S(n) + 3 - 2 = S(n) + 1. Therefore, S(n+1) = S(n) + 1.
+
+So, S(n) = S(1) + (n - 1)*1 = n - 1.
+
+Wait, so S(n) = n - 1. Therefore, at the start of day n, the snail is at n - 1 meters.
+
+Therefore, during day n, it climbs to (n - 1) + 3 = n + 2 meters. If that is >= 10, then it escapes on day n.
+
+So, solving n + 2 >= 10 => n >= 8. Therefore, on day 8, it escapes.
+
+Therefore, the answer is day 8.
+
+So, that seems to confirm the previous result.
+
+Alternatively, if we think of the formula: the snail needs to reach 10 meters. Each day, it gains 1 meter, except the last day where it gains 3 meters. So, the total distance is 10 meters. So, the snail needs to cover 10 meters, but the last day's climb is 3 meters. Therefore, the distance before the last day is 10 - 3 = 7 meters. Since each day it gains 1 meter, it takes 7 days to reach 7 meters. Then on day 8, it climbs 3 meters to 10. Therefore, day 8.
+
+So, all methods lead to day 8. Therefore, the answer is day 8.
+
+But let me check if there's a possible mistake here. For example, if the snail reaches the top during the day, but maybe the problem counts the day when it escapes as the day it reaches the top. So, if on day 8, it reaches the top during the day, then day 8 is the answer.
+
+Alternatively, maybe someone might think that the snail reaches 10 meters on day 7? Let me check.
+
+At the start of day 7, the snail is at 6 meters. Climbs 3 meters to 9 meters. Then slips back to 7. So, on day 7, it's at 7 meters. Then on day 8, climbs to 10. So, day 8.
+
+Alternatively, if someone thought that the snail reaches 10 meters on day 7, but that's not the case. Because on day 7, after climbing, it's at 9 meters, then slips back. So, it's not 10 meters until day 8.
+
+Alternatively, maybe someone might think that the snail can reach 10 meters on day 7 if it doesn't slip back. But the problem says that each night it slips back. So, unless it reaches the top during the day, it slips back. Therefore, the answer is day 8.
+
+Therefore, I think the answer is day 8.
+
+**Final Answer**
+The snail first reaches the top and escapes on day \boxed{8}.
+</think>
+
+To determine on which day the snail first reaches the top of the 10-meter well, we need to carefully track the snail's progress over each day and night cycle.
+
+---
+
+### **Understanding the Problem**
+
+- The snail starts at the bottom of a 10-meter well.
+- Each **day**, it climbs **3 meters**.
+- Each **night**, it slips back **2 meters**.
+- If the snail reaches or exceeds the top of the well **during the day**, it **escapes** and **does not slip back** that night.
+
+---
+
+### **Step-by-Step Progression**
+
+Let’s track the snail’s position at the **start of each day** and after each **climb and slip**:
+
+- **Start of Day 1**: 0 meters  
+  - Climbs to: 0 + 3 = **3 meters**  
+  - Slips back to: 3 - 2 = **1 meter**
+
+- **Start of Day 2**: 1 meter  
+  - Climbs to: 1 + 3 = **4 meters**  
+  - Slips back to: 4 - 2 = **2 meters**
+
+- **Start of Day 3**: 2 meters  
+  - Climbs to: 2 + 3 = **5 meters**  
+  - Slips back to: 5 - 2 = **3 meters**
+
+- **Start of Day 4**: 3 meters  
+  - Climbs to: 3 + 3 = **6 meters**  
+  - Slips back to: 6 - 2 = **4 meters**
+
+- **Start of Day 5**: 4 meters  
+  - Climbs to: 4 + 3 = **7 meters**  
+  - Slips back to: 7 - 2 = **5 meters**
+
+- **Start of Day 6**: 5 meters  
+  - Climbs to: 5 + 3 = **8 meters**  
+  - Slips back to: 8 - 2 = **6 meters**
+
+- **Start of Day 7**: 6 meters  
+  - Climbs to: 6 + 3 = **9 meters**  
+  - Slips back to: 9 - 2 = **7 meters**
+
+- **Start of Day 8**: 7 meters  
+  - Climbs to: 7 + 3 = **10 meters**  
+  - **Escapes** (reaches the top during the day)
+
+---
+
+### **Key Insight**
+
+Each full day-night cycle results in a **net gain of 1 meter**. However, on the **last day**, the snail **does not slip back** if it reaches the top during the day. Therefore, the snail only needs to reach **7 meters at the start of day 8**, and then climbs 3 meters to escape.
+
+---
+
+### **Conclusion**
+
+The snail first reaches the top and escapes on **day 8**.
+
+$$
+\boxed{8}
+$$

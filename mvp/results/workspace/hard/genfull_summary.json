@@ -1,0 +1,42 @@
+[
+ {
+  "id": "bat_ball",
+  "gold": "0.05",
+  "answer": "0.05",
+  "correct": true,
+  "gen_tokens": 2708,
+  "closed_think": true,
+  "gold_in_reasoning": 24,
+  "secs": 476
+ },
+ {
+  "id": "snail_well",
+  "gold": "8",
+  "answer": "8",
+  "correct": true,
+  "gen_tokens": 4227,
+  "closed_think": true,
+  "gold_in_reasoning": 60,
+  "secs": 946
+ },
+ {
+  "id": "handshake",
+  "gold": "12",
+  "answer": "12",
+  "correct": true,
+  "gen_tokens": 1610,
+  "closed_think": true,
+  "gold_in_reasoning": 14,
+  "secs": 264
+ },
+ {
+  "id": "digit7",
+  "gold": "300",
+  "answer": "300",
+  "correct": true,
+  "gen_tokens": 8003,
+  "closed_think": true,
+  "gold_in_reasoning": 50,
+  "secs": 2599
+ }
+]

@@ -1,0 +1,38 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:49,  2.24s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 71.75it/s]Loading weights:  43%|████▎     | 171/398 [00:03<00:03, 56.94it/s]Loading weights:  50%|█████     | 199/398 [00:03<00:03, 57.72it/s]Loading weights:  55%|█████▍    | 218/398 [00:04<00:03, 54.47it/s]Loading weights:  58%|█████▊    | 232/398 [00:04<00:02, 56.62it/s]Loading weights:  61%|██████▏   | 244/398 [00:04<00:02, 57.56it/s]Loading weights:  64%|██████▍   | 254/398 [00:05<00:02, 55.85it/s]Loading weights:  66%|██████▌   | 263/398 [00:05<00:02, 56.03it/s]Loading weights:  68%|██████▊   | 271/398 [00:05<00:02, 53.49it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 48.35it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 49.12it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 51.38it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 52.32it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 50.73it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 53.32it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 54.82it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:00, 51.43it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 43.52it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 38.86it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 38.27it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 49.47it/s]
+[02:25:27] condition countries: 640 items
+[02:25:29]   item 0/640
+[02:25:57]   item 50/640
+[02:26:25]   item 100/640
+[02:26:53]   item 150/640
+[02:27:21]   item 200/640
+[02:27:49]   item 250/640
+[02:28:17]   item 300/640
+[02:28:46]   item 350/640
+[02:29:14]   item 400/640
+[02:29:42]   item 450/640
+[02:30:10]   item 500/640
+[02:30:38]   item 550/640
+[02:31:07]   item 600/640
+[02:31:29] condition alt_words: 480 items
+[02:31:29]   item 0/480
+[02:31:57]   item 50/480
+[02:32:25]   item 100/480
+[02:32:54]   item 150/480
+[02:33:22]   item 200/480
+[02:33:50]   item 250/480
+[02:34:18]   item 300/480
+[02:34:47]   item 350/480
+[02:35:15]   item 400/480
+[02:35:43]   item 450/480
+[02:35:59] condition random_dir seed 0: 160 items
+[02:36:00]   item 0/160
+[02:36:28]   item 50/160
+[02:36:56]   item 100/160
+[02:37:24]   item 150/160
+[02:37:29] condition random_dir seed 1: 160 items
+[02:37:30]   item 0/160
+[02:37:57]   item 50/160
+[02:38:25]   item 100/160
+[02:38:53]   item 150/160
+[02:38:58] t0 done in 13.9 min

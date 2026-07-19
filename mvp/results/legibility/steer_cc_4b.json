@@ -1,0 +1,644 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "layer": 17,
+ "cos": {
+  "10": -0.9336925745010376,
+  "14": -0.9352959394454956,
+  "17": -0.9388495683670044,
+  "20": -0.9427836537361145
+ },
+ "residual_norm": 601.1,
+ "alphas": [
+  -48.1,
+  0.0,
+  6.0,
+  12.0,
+  24.0,
+  36.1,
+  48.1,
+  72.1
+ ],
+ "hedge_eval": [
+  {
+   "q": "Which company is SS Oriana produced by?",
+   "gold": "Vickers-Armstrongs",
+   "baseline_wrong": "Oriana is produced by Sony.",
+   "real": {
+    "-48.1": "The company is SS Oriana, produced by the company. The name is just the name.",
+    "0.0": "Oriana is produced by Sony.",
+    "6.0": "Oriana is produced by Sony.",
+    "12.0": "Sony.",
+    "24.0": "SS Oriana is not a specific real-world ship or product. It might be a fictional or obscure reference. If you're asking a",
+    "36.1": "I don't know the answer to that. It's better to guess. But I should just make up a guess. Maybe I can figure it out. I d",
+    "48.1": "I'm not sure. It's possible to guess. But it's better to just make up a guess. It's better to say I don't know for sure.",
+    "72.1": "I'm not sure if I know the know for this. it might be able to guess! it's not sure if I can be sure to be certain. it mi"
+   },
+   "rand": {
+    "6.0|seed0": "Oriana is produced by Sony.",
+    "6.0|seed1": "Oriana is produced by Sony.",
+    "6.0|seed2": "Oriana is produced by Sony.",
+    "12.0|seed0": "Oriana is produced by **Sony Music Entertainment**.",
+    "12.0|seed1": "Oriana is produced by Sony.",
+    "12.0|seed2": "Oriana",
+    "24.0|seed0": "Columbia.",
+    "24.0|seed1": "Oriana is produced by Sony Pictures Classics. Sony.",
+    "24.0|seed2": "Oriana.",
+    "36.1|seed0": "**Columbia**.",
+    "36.1|seed1": "The company SS Oriana is produced by is **Oriana**.",
+    "36.1|seed2": "Oriana.",
+    "48.1|seed0": "**Oriana** is the company that produced the **SS Oriana**. So, the answer is **Oriana**.",
+    "48.1|seed1": "Okay, the question is asking which company is SS Oriana produced by? The answer is simply the name of the company, and t",
+    "48.1|seed2": "Oriana.",
+    "72.1|seed0": "the company that made the oceana is the oceana company. and the oceana is the oceana company. and the oceana is the ocea",
+    "72.1|seed1": "The is the is 1. 1. 1.  2.  The 1.  1.  1.  1.  1.",
+    "72.1|seed2": "A:"
+   }
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "baseline_wrong": "Kaitlin Hopkins was born in Canada.",
+   "real": {
+    "-48.1": "The name of the city, Kansas, is the birthplace of Kaitlin Hopkins.",
+    "0.0": "Kaitlin Hopkins was born in Canada.",
+    "6.0": "Kaitlin Hopkins was born in Canada.",
+    "12.0": "Kaitlin Hopkins was born in Canada.",
+    "24.0": "I don't have specific information about Kaitlin Hopkins' birthplace. You might want to check a reliable source for accur",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. Would you like me to try to figure it out?",
+    "48.1": "I'm not sure! It's not certain to know the exact answer. It's better to guess than to make up something up. It's better ",
+    "72.1": "I don'm know for sure! it might be able to guess the be sure to be accurate. it don't know for sure either. it might be "
+   },
+   "rand": {
+    "6.0|seed0": "Kaitlin Hopkins was born in Canada.",
+    "6.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "6.0|seed2": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed0": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "12.0|seed2": "Kansas City",
+    "24.0|seed0": "Kaitlin Hopkins was born in **Tulsa, Oklahoma**.",
+    "24.0|seed1": "Kaitlin Hopkins was born in Canada.",
+    "24.0|seed2": "Kaitlin Hopkins was born in the United States.",
+    "36.1|seed0": "Kaitlin Hopkins was born in **Georgia**.",
+    "36.1|seed1": "Kaitlin Hopkins was born in the United States. Answer: Kaitlin Hopkins.",
+    "36.1|seed2": "Kaitlin Hopkins.",
+    "48.1|seed0": "The answer is **Kaitlin**.",
+    "48.1|seed1": "Okay, the question is asking where Kaitlin Hopkins was born. The answer is simply the name \"Kaitlin Hopkins,\" but the us",
+    "48.1|seed2": "Answer: Kaitlin Hopkins.",
+    "72.1|seed0": "the answer is the name that you can see in the mirror. and the answer is the name that you can see in the the mirror. an",
+    "72.1|seed1": "The is 1, 2,  3,  4,  1,  1,  1,  1,  1,  1,",
+    "72.1|seed2": "Answer: This is the question, but the answer is the, the, the, the, the, the, the, the, the, the, the, the, the, the, th"
+   }
+  },
+  {
+   "q": "Who is Milosh married to?",
+   "gold": "Alexa Nikolas",
+   "baseline_wrong": "Sandra.",
+   "real": {
+    "-48.1": "The name of the city, the city of Philadelphia, is the city of Philadelphia, the city of Philadelphia, the city of Phila",
+    "0.0": "Sandra.",
+    "6.0": "Milosh is married to Jelena.",
+    "12.0": "Milosh is not married to anyone.",
+    "24.0": "I don't have information about that. Would you like me to look it up?",
+    "36.1": "I don't have information about that. It's better to guess than to give a wrong answer. Would you like me to look it up?",
+    "48.1": "I don't know for sure. It's better to guess than to say something wrong. It's better to just make up a guess. Maybe I sh",
+    "72.1": "I don'm know for sure. it might be able to guess! it's not sure to be certain about this. it might be able to tell you f"
+   },
+   "rand": {
+    "6.0|seed0": "Sandra.",
+    "6.0|seed1": "Milosh is married to Jelena.",
+    "6.0|seed2": "Sandra.",
+    "12.0|seed0": "Sandra.",
+    "12.0|seed1": "Milosh is married to Mira.",
+    "12.0|seed2": "Sara",
+    "24.0|seed0": "Svetlana.",
+    "24.0|seed1": "Milosh is married to Mila.",
+    "24.0|seed2": "Milosh is married to Milos.",
+    "36.1|seed0": "The answer is **Svetlana**.",
+    "36.1|seed1": "Milosh is married to Mila, a name that has been used by several notable individuals. However, the question of who Milosh",
+    "36.1|seed2": "Milosh is married to Mila.",
+    "48.1|seed0": "The answer is **Milo\u0161**.",
+    "48.1|seed1": "Okay, the question is asking about who Milosh is married to. The answer is simply the name \"Milosh,\" and the user is ask",
+    "48.1|seed2": "Answer: Milosh",
+    "72.1|seed0": "the person who's looking at the screen might be thinking of the person who's looking at the screen, and maybe you're loo",
+    "72.1|seed1": "The is  the  was  of  1  1  1   1  1  1   1   The  1   The",
+    "72.1|seed2": "A:"
+   }
+  },
+  {
+   "q": "Who is James Rubin married to?",
+   "gold": "Christiane Amanpour",
+   "baseline_wrong": "Linda Rubin",
+   "real": {
+    "-48.1": "The name of the city, as briefly as Possible.",
+    "0.0": "Linda Rubin",
+    "6.0": "Linda Rubin.",
+    "12.0": "Linda Rubin.",
+    "24.0": "I don't have information about James Rubin's personal relationships. It's best to avoid making assumptions about private",
+    "36.1": "I don't have the information to know for sure. It's better to guess than to give you the wrong answer. Would you like me",
+    "48.1": "I don't know for sure. It's better to guess than to say I'm not sure. But I'm not certain either. It's better to just ma",
+    "72.1": "I don'm know for sure. it might be able to guess! it's not sure to be certain about this. it don't know for sure either."
+   },
+   "rand": {
+    "6.0|seed0": "Linda Rubin.",
+    "6.0|seed1": "Linda Rubin",
+    "6.0|seed2": "Linda Rubin",
+    "12.0|seed0": "Linda Rubin.",
+    "12.0|seed1": "Linda Rubin",
+    "12.0|seed2": "Linda",
+    "24.0|seed0": "Sally Rubin.",
+    "24.0|seed1": "Justine Rubin",
+    "24.0|seed2": "Sarah",
+    "36.1|seed0": "The answer is **Mira**.",
+    "36.1|seed1": "James Rubin is married to Rachel Rubin. Answer: Rachel Rubin.",
+    "36.1|seed2": "James Rubin is married to Rachel.",
+    "48.1|seed0": "The answer is **James Rubin**.",
+    "48.1|seed1": "Okay, the question is asking about James Rubin, and specifically, who he is married to. The answer is simply the name of",
+    "48.1|seed2": "James Rubin is married to the name: Sarah.",
+    "72.1|seed0": "the answer is the name that you're looking at is the one that you're looking at. and the answer is the name that you're ",
+    "72.1|seed1": "The is  the  was  of  as  was  was  was  was  was  was  was  was  was  was  was  was  was  was  was",
+    "72.1|seed2": "Answer: James Rubin is the name, as the. As the. As the. As the. As the. As the. As the. As the. As the. As the. As the"
+   }
+  },
+  {
+   "q": "Who owns Rogers Place?",
+   "gold": "Edmonton",
+   "baseline_wrong": "Rogers Place is owned by Rogers Communications.",
+   "real": {
+    "-48.1": "The name of the building is Rogers Place, and it is owned by the Rogers Corporation. The building is located in Toronto,",
+    "0.0": "Rogers Place is owned by Rogers Communications.",
+    "6.0": "Rogers Place is owned by the City of Vancouver.",
+    "12.0": "Rogers Place is owned by the City of Vancouver.",
+    "24.0": "Rogers Place is owned by the City of Vancouver.",
+    "36.1": "I don't know the answer for sure, but I can't just make up a guess. It's better to say I'm unsure. Would you like me to ",
+    "48.1": "I don't know for sure. It's not clear if I can tell you what I don't know. It's better to guess than to make up somethin",
+    "72.1": "I'm not sure I know the know the be guess! it might be able to tell you for sure. it don't know for sure either. it migh"
+   },
+   "rand": {
+    "6.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "6.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "6.0|seed2": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "12.0|seed2": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed0": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed1": "Rogers Place is owned by **Rogers Communications**.",
+    "24.0|seed2": "Rogers Place.",
+    "36.1|seed0": "Rogers Place.",
+    "36.1|seed1": "Rogers Place is owned by the city of Vancouver, British Columbia, through its development authority. The name is a brand",
+    "36.1|seed2": "Rogers Place.",
+    "48.1|seed0": "Rogers Place.",
+    "48.1|seed1": "The name of the building is \"Rogers Place.\" But why is this building called \"Rogers Place\" when it is not a person? The ",
+    "48.1|seed2": "Rogers Place. Answered.",
+    "72.1|seed0": "</think>",
+    "72.1|seed1": "The 2016 World 2016: The 2016 World 2 1. 1. 2. 1. 1.  1",
+    "72.1|seed2": "Answer:"
+   }
+  },
+  {
+   "q": "Who founded Magdalen College?",
+   "gold": "William Waynflete",
+   "baseline_wrong": "William of Wykeham",
+   "real": {
+    "-48.1": "The name of the college is Magdalen College, founded in 1444 by Sir Thomas, the founder of the college. The college is l",
+    "0.0": "William of Wykeham",
+    "6.0": "William of Wykeham.",
+    "12.0": "Magdalen College was founded by William of Wykeham.",
+    "24.0": "The founder of Magdalen College is unknown.",
+    "36.1": "I don't know the answer for sure, but I can't recall the exact information. It's better to guess than to give a wrong an",
+    "48.1": "I don't know for sure. It's better to guess than to make up a guess. But I'm not certain. It's better to just guess than",
+    "72.1": "I'm not sure if I know the know for this! It might be able to guess the be sure to be certain. It's not sure to be able "
+   },
+   "rand": {
+    "6.0|seed0": "William of Wykeham.",
+    "6.0|seed1": "William of Wykeham",
+    "6.0|seed2": "William of Wykeham",
+    "12.0|seed0": "William of Wykeham.",
+    "12.0|seed1": "Magdalen College was founded by William of Wykeham.",
+    "12.0|seed2": "William of Wykeham",
+    "24.0|seed0": "William of Wykeham.",
+    "24.0|seed1": "Magdalen College was founded by William of Wykeham.",
+    "24.0|seed2": "Magdalen College was founded by William of Wykeham.",
+    "36.1|seed0": "The answer is: **Magdalen College**.",
+    "36.1|seed1": "Magdalen College was founded by William of Wyke, a 13th-century Englishman. The name \"Magdalen College\" is derived from ",
+    "36.1|seed2": "William.",
+    "48.1|seed0": "The answer is Magdalen College.",
+    "48.1|seed1": "Who founded Magdalen College? Answer with just the name, as briefly as possible.",
+    "48.1|seed2": "Who founded Magdalen College? Answer with just the name, as briefly as possible.",
+    "72.1|seed0": "the answer is the person who founded magdalen college is the one who's in the class, and you can use the final answer to",
+    "72.1|seed1": "The 1514, the name of the 111, 121, 12, 12, 1, 1, 1, 1",
+    "72.1|seed2": "Answer:"
+   }
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "baseline_wrong": "David Lee Bracco Jr.",
+   "real": {
+    "-48.1": "The name of the city, as briefly as Possible. The name of the City, as briefly as Possible. The Name of The City. The Na",
+    "0.0": "David Lee Bracco Jr.",
+    "6.0": "David Simon.",
+    "12.0": "David Simon.",
+    "24.0": "I don't have information about that. It's better to ask for help. Would you like me to look it up for you?",
+    "36.1": "I don't have the information to know for sure. It's better to guess than to give you the wrong answer. Would you like me",
+    "48.1": "I'm not sure. It's better to guess than to make up a guess. It's better to just say I don't know for sure. But I'm not c",
+    "72.1": "I don'm know for sure. it might be able to guess! it's not sure to be certain about this. it don't know for sure either."
+   },
+   "rand": {
+    "6.0|seed0": "David Lee Bracco.",
+    "6.0|seed1": "David Chase",
+    "6.0|seed2": "David Lee Bracco",
+    "12.0|seed0": "Patrick Bracco.",
+    "12.0|seed1": "Elizabeth Bracco is married to Matthew Broderick.",
+    "12.0|seed2": "David Letterman",
+    "24.0|seed0": "Patrick Bracco.",
+    "24.0|seed1": "Elizabeth Bracco is married to Matthew Broderick.",
+    "24.0|seed2": "David.",
+    "36.1|seed0": "The answer is **Michael**.",
+    "36.1|seed1": "Elizabeth Bracco is married to David Ruffin, a former professional football player. The answer is David Ruffin.",
+    "36.1|seed2": "Elizabeth Bracco is married to Michael.",
+    "48.1|seed0": "**Elizabeth Bracco** is married to **Michael**.",
+    "48.1|seed1": "Okay, the question is asking for the name of the person who is Elizabeth Bracco married to, and the answer is simply the",
+    "48.1|seed2": "Elizabeth Bracco is married to:",
+    "72.1|seed0": "the person who's looking at the screen might be thinking of the person who's looking at the screen, and maybe you're loo",
+    "72.1|seed1": "The is (was)  was, was, was, was, was, was, was, was, was, was, was, was, was, was, was, was, was,",
+    "72.1|seed2": "A: 0"
+   }
+  },
+  {
+   "q": "Where was Inditex founded?",
+   "gold": "Arteixo",
+   "baseline_wrong": "Madrid",
+   "real": {
+    "-48.1": "Where was Inditex founded? Answer with just the name, as briefly as Possible.",
+    "0.0": "Madrid",
+    "6.0": "Madrid",
+    "12.0": "Zara.",
+    "24.0": "Inditex was founded in Spain.",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. But I'm not certain. Would you like me to try t",
+    "48.1": "I'm not sure. It's better to guess. But I don't want to make up anything up. It's better to just say I'm not sure. Maybe",
+    "72.1": "I'm not sure if I know the know the be guess! It might be able to tell you for sure. I'm not sure if I know the know for"
+   },
+   "rand": {
+    "6.0|seed0": "Madrid",
+    "6.0|seed1": "Madrid",
+    "6.0|seed2": "Madrid",
+    "12.0|seed0": "Madrid",
+    "12.0|seed1": "Madrid",
+    "12.0|seed2": "Madrid",
+    "24.0|seed0": "Madrid.",
+    "24.0|seed1": "Inditex was founded in Spain.",
+    "24.0|seed2": "Madrid",
+    "36.1|seed0": "Spain.",
+    "36.1|seed1": "The name of the company is inditex, but the question is asking where it was founded. The answer is not a country, but th",
+    "36.1|seed2": "Answer: Zara.",
+    "48.1|seed0": "</think>",
+    "48.1|seed1": "The name of inditex is a brand name, but it is not a company. The term \"inditex\" is used by different companies, and the",
+    "48.1|seed2": "Answer: Inditex.",
+    "72.1|seed0": "the final answer is the place where indetex is now. and the place where you see the indetex in the end. and the place wh",
+    "72.1|seed1": "The is the the, 1. 1. 1.  1.  1.  1.  1.  1.  1.",
+    "72.1|seed2": "A"
+   }
+  },
+  {
+   "q": "Who founded Iliad?",
+   "gold": "Xavier Niel",
+   "baseline_wrong": "Homer",
+   "real": {
+    "-48.1": "The name is the Iliad, founded by the poet Homer. But the name is not the Iliad, and the poet is Homer. But the name is ",
+    "0.0": "Homer",
+    "6.0": "Homer.",
+    "12.0": "Homer.",
+    "24.0": "Homer.",
+    "36.1": "I don't know who founded Iliad. It's better to guess than to make up a answer. But I think I can tell you for sure. I'm ",
+    "48.1": "I don't know for sure. It's not certain who created the story. But I'm not sure if I can remember the right answer. It's",
+    "72.1": "I don don know for sure! it might be able to guess properly. it don know if I know for sure either know for sure if I kn"
+   },
+   "rand": {
+    "6.0|seed0": "Homer",
+    "6.0|seed1": "Homer",
+    "6.0|seed2": "Homer",
+    "12.0|seed0": "Homer.",
+    "12.0|seed1": "Homer",
+    "12.0|seed2": "Homer",
+    "24.0|seed0": "Homer.",
+    "24.0|seed1": "Iliad was founded by Homer.",
+    "24.0|seed2": "Homer",
+    "36.1|seed0": "Homer.",
+    "36.1|seed1": "Iliad was founded by a group of individuals, but the question is asking for just the name. The answer is not a person, b",
+    "36.1|seed2": "Homer.",
+    "48.1|seed0": "The answer is **Homer**.",
+    "48.1|seed1": "The answer is not known. The name of the author of the iliad is not known, and the iliad is a very old epic poem. The il",
+    "48.1|seed2": "Yes, that's correct. The founder of Iliad is the name Homer, which is the same as the author of the epic poem. So, the a",
+    "72.1|seed0": "the iled is the one who's in the head, and you can see the sun in the sky, and that's what you're looking at. and you ca",
+    "72.1|seed1": "The 1st, 1. The 1. 1. 1. 1.  The 1.  1.  1.  1.",
+    "72.1|seed2": "Answer:"
+   }
+  }
+ ],
+ "commit_extract_n": 13,
+ "hedge_mode": "natural",
+ "pool": "mean",
+ "known_eval": [
+  {
+   "q": "Where is April 2010 Kohat bombings located?",
+   "gold": "Kohat",
+   "baseline_correct": "Kohat, Pakistan.",
+   "real": {
+    "-48.1": "The name of the city, Kohat, is located in the Punjab province of Pakistan. The city is located in the Punjab province, ",
+    "0.0": "Kohat, Pakistan.",
+    "6.0": "Kohat, Pakistan.",
+    "12.0": "Kohat, Pakistan.",
+    "24.0": "Kohat is a location in Pakistan. You might want to check the exact details. Let me know if you need more information!",
+    "36.1": "It's not sure. I can't recall the exact details. You might want to check a map. Would you like me to look it up?",
+    "48.1": "It don't know for sure. It's better to guess. But I'm not sure. Maybe I can figure it out. Let try to remember. I'm not ",
+    "72.1": "I'm not sure I know the be sure to guess! it might be better to just try to guess. it might be able to figure out if I'm"
+   }
+  },
+  {
+   "q": "Where is the headquarter of Maccabi Haifa?",
+   "gold": "Haifa",
+   "baseline_correct": "Haifa",
+   "real": {
+    "-48.1": "The headquarter of Maccabi Haifa is located in Haifa, Israel. The name is the sole name of the club. The club is located",
+    "0.0": "Haifa",
+    "6.0": "Haifa",
+    "12.0": "Haifa",
+    "24.0": "Maccabi Haifa.",
+    "36.1": "I don't have the ability to provide a direct answer. It's better to just guess. But I'm not sure. Maybe I should try to ",
+    "48.1": "I'm not sure. It's better to guess. But I'd like to try to figure this out. Maybe I should just guess. It's better to re",
+    "72.1": "I'm not sure if I know the know for sure. I'm not sure if I can be sure to be accurate. it might be able to guess proper"
+   }
+  },
+  {
+   "q": "Which company is Yamaha Zuma 125 produced by?",
+   "gold": "Yamaha Motor Company",
+   "baseline_correct": "Yamaha",
+   "real": {
+    "-48.1": "Yes, the company is Yamaha. The Zuma 125 is produced by Yamaha. The name is the same. The company is the manufacturer of",
+    "0.0": "Yamaha",
+    "6.0": "Yamaha",
+    "12.0": "Yamaha",
+    "24.0": "Yamaha.",
+    "36.1": "I'm not sure. It's possible I know the answer. But I'd rather guess than give a wrong answer. It's better to say I'm uns",
+    "48.1": "I'm not sure. It's possible to know for sure without checking. It's better to guess than to give a wrong answer. It's be",
+    "72.1": "I'm not sure I know the know for sure. it might be able to guess! it don be be sure to be able to tell for sure. it migh"
+   }
+  },
+  {
+   "q": "Where is 2001 Malaysian Grand Prix located?",
+   "gold": "Sepang International Circuit",
+   "baseline_correct": "Sepang International Circuit",
+   "real": {
+    "-48.1": "The 2001 Malaysian Grand Prix is located in Malaysia. The race is held at the Sepang International Circuit. The race is ",
+    "0.0": "Sepang International Circuit",
+    "6.0": "Sepang International Circuit",
+    "12.0": "Sepang International Circuit",
+    "24.0": "The 2001 Malaysian Grand Prix was held at the Sepang International Circuit.",
+    "36.1": "I can't provide a direct answer without knowing the exact location. It's best to just guess. But I'd rather make up a gu",
+    "48.1": "I'm not sure! It's not certain to know the exact answer without checking. It's better to guess than to give a wrong answ",
+    "72.1": "I'm not sure if I know the have a good guess! it might be able to figure out the be sure to be sure. it'm not sure if I "
+   }
+  },
+  {
+   "q": "Where is the headquarter of AFC Ajax?",
+   "gold": "Amsterdam",
+   "baseline_correct": "Amsterdam",
+   "real": {
+    "-48.1": "The headquarter of AFC Ajax is located in Amsterdam, Netherlands. However, the name is not mentioned in the answer. The ",
+    "0.0": "Amsterdam",
+    "6.0": "Amsterdam",
+    "12.0": "Amsterdam.",
+    "24.0": "AFC Ajax is based in Amsterdam.",
+    "36.1": "I don't have the ability to provide a reliable answer without checking. It's better to guess than to give a wrong answer",
+    "48.1": "I'm not sure. It's better to guess. But I'm not certain. It's better to just make up an answer. Let's try to figure this",
+    "72.1": "I'm not sure if I know the know for sure. it might be able to guess! it's not sure if I can remember the be sure to be s"
+   }
+  },
+  {
+   "q": "Where is Stowe Open located?",
+   "gold": "Stowe",
+   "baseline_correct": "Stowe Open is located in Stowe, Vermont.",
+   "real": {
+    "-48.1": "Where is Stowe Open located? Answer with just the name, as briefly as Possible.",
+    "0.0": "Stowe Open is located in Stowe, Vermont.",
+    "6.0": "Stowe Open is located in Stowe, Vermont.",
+    "12.0": "Stowe Open is located in Vermont.",
+    "24.0": "Stowe Open is not a widely recognized term. Could you clarify what you're referring to?",
+    "36.1": "I'm not sure where Stowe Open is. Could you clarify what you mean by \"Stowe Open\"? Is it a specific event or place you'r",
+    "48.1": "I'm not sure! It's not certain. But I don't know for sure. It's better to guess than to make up an answer. Maybe I shoul",
+    "72.1": "I'm not sure I know the know for sure. I'm not sure if I can be sure to be certain. I'm not sure if I can be sure to be "
+   }
+  },
+  {
+   "q": "Which company is Nokia N76 produced by?",
+   "gold": "Nokia",
+   "baseline_correct": "Nokia",
+   "real": {
+    "-48.1": "The company is Nokia. The N76 is produced by Nokia.",
+    "0.0": "Nokia",
+    "6.0": "Nokia",
+    "12.0": "Nokia.",
+    "24.0": "Nokia.",
+    "36.1": "I'm not sure. It's possible I know the answer. But I'd rather guess than give a wrong answer. It's better to say I'm uns",
+    "48.1": "I'm not sure. It might be able to guess! But it's better to just make up a guess. It's better to say I'm not sure. Maybe",
+    "72.1": "I'm not sure if I know the know for this. it might be able to guess! it's not sure if I can be sure to give a guess. it "
+   }
+  },
+  {
+   "q": "Which company is LG G2 produced by?",
+   "gold": "LG Electronics",
+   "baseline_correct": "LG",
+   "real": {
+    "-48.1": "The company is LG. The LG G2 is produced by LG.",
+    "0.0": "LG",
+    "6.0": "LG",
+    "12.0": "LG.",
+    "24.0": "LG. I can't answer that. I'm not sure what you're asking. Would you like me to help you figure it out?",
+    "36.1": "I'm not sure. It's better to guess. But I'd like to just make up a guess. Maybe I should try to figure it out. Let me th",
+    "48.1": "I'm not sure. It might be able to guess! But it's better to just make up a guess. It's better to say I'm not sure. It's ",
+    "72.1": "I'm not sure I know the know for this. it might be able to guess! it'm not sure if I can be sure to give a guess. it mig"
+   }
+  },
+  {
+   "q": "Who owns Tales of Suspense?",
+   "gold": "Marvel Comics",
+   "baseline_correct": "Marvel Comics",
+   "real": {
+    "-48.1": "The name is the owner of Tales of Suspense.",
+    "0.0": "Marvel Comics",
+    "6.0": "Marvel Comics.",
+    "12.0": "Marvel Comics.",
+    "24.0": "Tales of Suspense is a fictional work, so I don't own it. But I can help you find the answer! Would you like me to look ",
+    "36.1": "I don't own the answer, but I can't be sure. It's better to guess than to give a wrong answer. Maybe I should just say I",
+    "48.1": "I'm not sure I know the answer for sure. It's possible to just guess. But I'd be confident if I tried to guess. It's bet",
+    "72.1": "I'm not sure I know for sure! it might be able to guess the know for sure. it don be be able to tell for sure either kno"
+   }
+  },
+  {
+   "q": "Where is the headquarter of FC Kuressaare?",
+   "gold": "Kuressaare",
+   "baseline_correct": "Kuressaare",
+   "real": {
+    "-48.1": "The headquarter of FC Kuressaare is located in Kuressaare, Estonia. The name is the sole name of the football club. The ",
+    "0.0": "Kuressaare",
+    "6.0": "Kuressaare",
+    "12.0": "Kuressaare.",
+    "24.0": "Kuressaare.",
+    "36.1": "I don't have the exact information. It's better to guess than to give a wrong answer. Would you like me to try to figure",
+    "48.1": "I'm not sure! It's better to guess than to make up an answer. It's better to just say I don't know for sure. But I'd be ",
+    "72.1": "I'm not sure if I know the know for sure. it might be able to guess! it's not sure if I can remember the be sure to be s"
+   }
+  },
+  {
+   "q": "Where was Alessandro Sgrigna born?",
+   "gold": "Rome",
+   "baseline_correct": "Alessandro Sgrigna was born in Italy.",
+   "real": {
+    "-48.1": "The name of the city, where the birthplace of Alessandro Sgrigna.",
+    "0.0": "Alessandro Sgrigna was born in Italy.",
+    "6.0": "Alessandro Sgrigna was born in Italy.",
+    "12.0": "Alessandro Sgrigna.",
+    "24.0": "Alessandro Sgrigna was born in Italy.",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. Maybe I should just say I'm not sure. But I'd r",
+    "48.1": "I'm not sure! It might be able to guess the right answer. It's better to just make up a guess. But I don't want to give ",
+    "72.1": "I don'm know for sure! it might be able to guess the be sure to be certain about this. it don't know for sure either. it"
+   }
+  },
+  {
+   "q": "Where was Li Yim Lam born?",
+   "gold": "Hong Kong",
+   "baseline_correct": "Li Yim Lam was born in Hong Kong.",
+   "real": {
+    "-48.1": "Where was Li Yim Lam born? Answer with just the name, as briefly as Possible.",
+    "0.0": "Li Yim Lam was born in Hong Kong.",
+    "6.0": "Li Yim Lam was born in Hong Kong.",
+    "12.0": "Li Yim Lam was born in Hong Kong.",
+    "24.0": "I don't have the information to provide an accurate answer. It's best to avoid making up details about someone's backgro",
+    "36.1": "I don't know the answer to that. It's better to guess than to give a wrong answer. But I'm not sure. Maybe I can look it",
+    "48.1": "I don't know for sure. It's better to guess than to make up something up. It's better to just say I don't know. But I'm ",
+    "72.1": "I don'm know for sure. it might be able to guess! it's not sure to be able to answer that properly. it might be able to "
+   }
+  },
+  {
+   "q": "Where is Deh Bagh, Kuzaran located?",
+   "gold": "Sanjabi Rural District",
+   "baseline_correct": "Kerman Province, Iran.",
+   "real": {
+    "-48.1": "The name of the city is Deh Bagh, Kuzaran. The city is located in the province of Kerman, Iran. The city is located in t",
+    "0.0": "Kerman Province, Iran.",
+    "6.0": "Khorasan Razavi Province, Iran.",
+    "12.0": "Khorasan Razavi Province, Iran.",
+    "24.0": "Deh Bagh, Kuzaran is a location that may not be precisely known. However, I can't provide an exact answer without more c",
+    "36.1": "I'm not sure. It's possible I know where exactly is. But I should be sure. Maybe I can look it up. Let me try to recall.",
+    "48.1": "I'm not sure. It's not certain. But I think I know. It's better to guess than to say something wrong. Maybe I should jus",
+    "72.1": "I'm not sure if I know the know for sure. it might be able to guess. it don't know for sure either. it might be able to "
+   }
+  },
+  {
+   "q": "Where did S\u00fcnb\u00fcl Efendi die?",
+   "gold": "Istanbul",
+   "baseline_correct": "S\u00fcnb\u00fcl Efendi died in Istanbul.",
+   "real": {
+    "-48.1": "Where of S\u00fcnb\u00fcl Efendi, the name of the city, the city of S\u00fcnb\u00fcl Efendi, the city of S\u00fcnb\u00fcl Efendi, the city of S\u00fcn",
+    "0.0": "S\u00fcnb\u00fcl Efendi died in Istanbul.",
+    "6.0": "S\u00fcnb\u00fcl Efendi died in Istanbul.",
+    "12.0": "S\u00fcnb\u00fcl Efendi died in Istanbul.",
+    "24.0": "I don't have the information to provide an accurate answer. It's best to avoid making up details about this person. Woul",
+    "36.1": "I don't know the answer to that. It's better to guess. But I shouldn't just make up things. Maybe I should look it up. L",
+    "48.1": "I'm not sure. It's better to guess. But I don't know for sure. It's better to just say I'm not sure. Maybe I can figure ",
+    "72.1": "I don'm know for sure. I'm not sure if I know the know for sure. it might be able to guess. I'm not sure if I know for s"
+   }
+  },
+  {
+   "q": "Where was Robert Jameson educated?",
+   "gold": "University of Edinburgh",
+   "baseline_correct": "Edinburgh.",
+   "real": {
+    "-48.1": "Where was Robert Jameson educated? Answer with just the name, as briefly as Possible.",
+    "0.0": "Edinburgh.",
+    "6.0": "Robert Jameson was educated at the University of Edinburgh.",
+    "12.0": "Robert Jameson was educated at the University of Edinburgh.",
+    "24.0": "Robert Jameson's formal education is unclear, but I cannot provide a specific answer without more information. Would you",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. But I should just make up a guess. Maybe I can ",
+    "48.1": "I don't know for sure. It's not certain to be able to answer this accurately. It's better to guess than to make up a gue",
+    "72.1": "I don'm know for sure. I'm not certain if I remember this accurately. it might be able to guess properly. it'd be better"
+   }
+  },
+  {
+   "q": "Where was Jock Morgan born?",
+   "gold": "Penicuik",
+   "baseline_correct": "Jock Morgan was born in Scotland.",
+   "real": {
+    "-48.1": "Where was Jock Morgan born? Answer with just the name, as briefly as Possible.",
+    "0.0": "Jock Morgan was born in Scotland.",
+    "6.0": "Jock Morgan was born in Scotland.",
+    "12.0": "Jock Morgan was born in Scotland.",
+    "24.0": "Jock Morgan was born in Scotland.",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. Maybe I should just say I'm not sure. But I'd r",
+    "48.1": "I'm not sure! It's possible to guess. But it's better to just make up a guess. It's better to say I don't know for sure.",
+    "72.1": "I don'm know for sure! it might be able to guess the be sure to be certain about this. it don't know for sure either. it"
+   }
+  },
+  {
+   "q": "Where was Elizaveta Axenova born?",
+   "gold": "Krasnoyarsk",
+   "baseline_correct": "Elizaveta Axenova was born in Russia.",
+   "real": {
+    "-48.1": "The name of the city, Elizaveta Axenova is born.",
+    "0.0": "Elizaveta Axenova was born in Russia.",
+    "6.0": "Elizaveta Axenova was born in **Moscow**.",
+    "12.0": "Elizaveta Axenova.",
+    "24.0": "I don't have the information to provide a specific answer. Please let me know if you'd like me to look it up for you.",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. But I shouldn't just make up a guess. Maybe I c",
+    "48.1": "I'm not sure! It might be able to guess the right answer. It's better to just make up a guess. But it's not sure. Maybe ",
+    "72.1": "I don'm know for sure! it might be able to guess the be sure to be certain about this. it don't know for sure either. it"
+   }
+  },
+  {
+   "q": "Who performed Crime as Forgiven by Against Me!?",
+   "gold": "Against Me!",
+   "baseline_correct": "Against Me!",
+   "real": {
+    "-48.1": "The band Against Me! performed the song \"Crime as Forgiven\" in 1986. The band is located in New York, New York. The band",
+    "0.0": "Against Me!",
+    "6.0": "Against Me!",
+    "12.0": "Against Me!",
+    "24.0": "The song \"Crime as Forgiven\" might be a misremembered title. Against Me! hasn't released a song by that exact name. You ",
+    "36.1": "I'm not sure I can answer that without looking it up! But I'll take a guess. Maybe I should just try to remember. Let me",
+    "48.1": "I'm not sure I know the answer! It's possible I've heard of this before. Would you like me to guess? It's better to just",
+    "72.1": "I don be be sure to know for sure! it might be able to guess properly. it don be be sure to know for be sure to be sure "
+   }
+  },
+  {
+   "q": "Where is Shuran, Chaharmahal and Bakhtiari located?",
+   "gold": "Dinaran Rural District",
+   "baseline_correct": "Chaharmahal and Bakhtiari Province.",
+   "real": {
+    "-48.1": "Where is Shuran, Chaharmahal and Bakhtiari? Answer with just the name, as briefly as possible.",
+    "0.0": "Chaharmahal and Bakhtiari Province.",
+    "6.0": "Iran.",
+    "12.0": "Shuran, Chaharmahal and Bakhtiari is located in Iran.",
+    "24.0": "Shuran, Chaharmahal and Bakhtiari are locations in Iran. I cannot provide the exact name without more context. Please cl",
+    "36.1": "I'm not sure. It's possible I know the answer. But I don't want to guess. It's better to just say I'm not sure. Let me t",
+    "48.1": "I'm not sure. It might be able to guess. But it's better to just make up a guess. It's better to say I don't know for su",
+    "72.1": "I'm not sure if I know the know for sure. it might be able to guess. it'm not sure if I can be sure to be right. it migh"
+   }
+  },
+  {
+   "q": "Where was Kamal Abbas born?",
+   "gold": "Egypt",
+   "baseline_correct": "Kamal Abbas was born in Egypt.",
+   "real": {
+    "-48.1": "Where was Kamal Abbas born? Answer with just the name, as briefly as Possible.",
+    "0.0": "Kamal Abbas was born in Egypt.",
+    "6.0": "Kamal Abbas was born in Egypt.",
+    "12.0": "Kamal Abbas was born in Egypt.",
+    "24.0": "Kamal Abbas was born in Egypt.",
+    "36.1": "I don't know for sure. It's better to guess than to give a wrong answer. But I should just say \"I'm not sure.\" Maybe I c",
+    "48.1": "I'm not sure. It's better to guess than to make up a guess. It's better to just say I don't know for sure. But I'm not c",
+    "72.1": "I don'm know for sure! it might be able to guess the be sure to be accurate. it don't know for sure either. it might be "
+   }
+  }
+ ],
+ "known_n": 20
+}

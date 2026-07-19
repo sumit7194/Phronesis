@@ -1,7 +1,7 @@
 {
   "prereg": "docs/prereg-workspace-mac.md#tier-2b",
   "seed": 11,
-  "lens_n_prompts": 20,
+  "lens_n_prompts": 45,
   "band": [
     10,
     12,
@@ -17,7 +17,7 @@
   "qc_multihop": {
     "jlens": {
       "n": 72,
-      "hit_top1": 16,
+      "hit_top1": 18,
       "hit_top10": 51
     },
     "logit": {
@@ -30,11 +30,11 @@
     "jlens": [
       {
         "name": "carnival-ocean",
-        "best_rank": 6
+        "best_rank": 7
       },
       {
         "name": "amazon-language",
-        "best_rank": 1
+        "best_rank": 2
       },
       {
         "name": "mars-color",
@@ -50,7 +50,7 @@
       },
       {
         "name": "paper-continent",
-        "best_rank": 17
+        "best_rank": 15
       },
       {
         "name": "christmas-season",
@@ -58,7 +58,7 @@
       },
       {
         "name": "osu-rival-mascot",
-        "best_rank": 3
+        "best_rank": 2
       },
       {
         "name": "topeka-west",
@@ -66,19 +66,19 @@
       },
       {
         "name": "atomic-79-symbol",
-        "best_rank": 16
+        "best_rank": 17
       },
       {
         "name": "atomic-26-symbol",
-        "best_rank": 8
+        "best_rank": 5
       },
       {
         "name": "atomic-29-symbol",
-        "best_rank": 3
+        "best_rank": 1
       },
       {
         "name": "atomic-80-state",
-        "best_rank": 7
+        "best_rank": 3
       },
       {
         "name": "atomic-29-flame",
@@ -102,11 +102,11 @@
       },
       {
         "name": "rhyme-door-doubled",
-        "best_rank": 51
+        "best_rank": 27
       },
       {
         "name": "rhyme-chair-flag",
-        "best_rank": 623
+        "best_rank": 617
       },
       {
         "name": "rhyme-spoon-orbit",
@@ -114,7 +114,7 @@
       },
       {
         "name": "etym-wargod-month",
-        "best_rank": 17
+        "best_rank": 14
       },
       {
         "name": "etym-frigg-position",
@@ -122,7 +122,7 @@
       },
       {
         "name": "etym-saturn-position",
-        "best_rank": 5
+        "best_rank": 6
       },
       {
         "name": "chem-photosynthesis-Z",
@@ -130,7 +130,7 @@
       },
       {
         "name": "chem-atmosphere-Z",
-        "best_rank": 2
+        "best_rank": 1
       },
       {
         "name": "chem-organic-Z",
@@ -150,7 +150,7 @@
       },
       {
         "name": "birthstone-emerald-month",
-        "best_rank": 59
+        "best_rank": 61
       },
       {
         "name": "violin-strings",
@@ -162,11 +162,11 @@
       },
       {
         "name": "super-smallest-continent",
-        "best_rank": 32
+        "best_rank": 30
       },
       {
         "name": "super-populous-capital",
-        "best_rank": 2
+        "best_rank": 1
       },
       {
         "name": "super-largest-island-nation",
@@ -178,7 +178,7 @@
       },
       {
         "name": "greatwall-ocean",
-        "best_rank": 4
+        "best_rank": 3
       },
       {
         "name": "holiday-independence-monthnum",
@@ -218,11 +218,11 @@
       },
       {
         "name": "inv-balloon-opposite",
-        "best_rank": 4255
+        "best_rank": 2032
       },
       {
         "name": "inv-roots-opposite",
-        "best_rank": 783
+        "best_rank": 672
       },
       {
         "name": "inv-antarctica-opposite",
@@ -230,23 +230,23 @@
       },
       {
         "name": "rhyme-tree-squared",
-        "best_rank": 37
+        "best_rank": 25
       },
       {
         "name": "rhyme-hive-plusone",
-        "best_rank": 173
+        "best_rank": 75
       },
       {
         "name": "rhyme-fix-halved",
-        "best_rank": 147
+        "best_rank": 82
       },
       {
         "name": "rhyme-shoe-doubled",
-        "best_rank": 291
+        "best_rank": 52
       },
       {
         "name": "tajmahal-continent",
-        "best_rank": 14
+        "best_rank": 15
       },
       {
         "name": "louvre-language",
@@ -254,7 +254,7 @@
       },
       {
         "name": "firstletter-halloween-month",
-        "best_rank": 3
+        "best_rank": 2
       },
       {
         "name": "firstletter-valentines-month",
@@ -266,7 +266,7 @@
       },
       {
         "name": "firstletter-paris-country",
-        "best_rank": 4
+        "best_rank": 3
       },
       {
         "name": "firstletter-greatwall-country",
@@ -290,23 +290,23 @@
       },
       {
         "name": "letterpos-water-symbol",
-        "best_rank": 175
+        "best_rank": 283
       },
       {
         "name": "letterpos-oxygen-symbol",
-        "best_rank": 601
+        "best_rank": 748
       },
       {
         "name": "letterpos-carbon-symbol",
-        "best_rank": 204
+        "best_rank": 119
       },
       {
         "name": "letterpos-nitrogen-symbol",
-        "best_rank": 363
+        "best_rank": 436
       },
       {
         "name": "dbl-armistice-antonym",
-        "best_rank": 5
+        "best_rank": 7
       },
       {
         "name": "dbl-obituary-antonym",
@@ -314,7 +314,7 @@
       },
       {
         "name": "dbl-altitude-antonym",
-        "best_rank": 95
+        "best_rank": 76
       }
     ],
     "logit": [
@@ -611,12 +611,12 @@
   "swap_summary": {
     "n_items": 90,
     "n_gated": 38,
-    "swap_s1_hits": 5,
+    "swap_s1_hits": 4,
     "swap_s2_hits": 0,
     "noop_ok": 38,
-    "rand_hits_total": 6,
+    "rand_hits_total": 5,
     "rand_trials": 114,
-    "rand_broke_base": 65
+    "rand_broke_base": 64
   },
   "swap_rows": [
     {
@@ -624,9 +624,9 @@
       "category": "multihop",
       "base_ok": true,
       "base_next": " Portuguese",
-      "swap_s1": " Spanish",
-      "swap_s1_hit": true,
-      "swap_s1_kept_base": false,
+      "swap_s1": " Portuguese",
+      "swap_s1_hit": false,
+      "swap_s1_kept_base": true,
       "swap_s2": "!",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
@@ -674,7 +674,7 @@
       "rand_broke_base": [
         false,
         true,
-        true
+        false
       ]
     },
     {
@@ -867,7 +867,7 @@
         false
       ],
       "rand_broke_base": [
-        false,
+        true,
         true,
         true
       ]
@@ -903,7 +903,7 @@
       "swap_s1": " Canadian",
       "swap_s1_hit": false,
       "swap_s1_kept_base": true,
-      "swap_s2": "!",
+      "swap_s2": " Canada",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
       "noop_ok": true,
@@ -1017,7 +1017,7 @@
       "swap_s1": " Na",
       "swap_s1_hit": false,
       "swap_s1_kept_base": true,
-      "swap_s2": " iron",
+      "swap_s2": "!",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
       "noop_ok": true,
@@ -1093,7 +1093,7 @@
       "rand_broke_base": [
         true,
         true,
-        true
+        false
       ]
     },
     {
@@ -1206,7 +1206,7 @@
         false
       ],
       "rand_broke_base": [
-        false,
+        true,
         true,
         false
       ]
@@ -1288,7 +1288,7 @@
       "swap_s1": " cow",
       "swap_s1_hit": false,
       "swap_s1_kept_base": true,
-      "swap_s2": " honey",
+      "swap_s2": "-",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
       "noop_ok": true,
@@ -1363,12 +1363,12 @@
       "swap_s2_kept_base": false,
       "noop_ok": true,
       "rand_hits": [
-        true,
+        false,
         true,
         true
       ],
       "rand_broke_base": [
-        true,
+        false,
         true,
         true
       ]
@@ -1520,7 +1520,7 @@
         false
       ],
       "rand_broke_base": [
-        true,
+        false,
         false,
         false
       ]
@@ -1562,7 +1562,7 @@
       "swap_s1": " Isaac",
       "swap_s1_hit": false,
       "swap_s1_kept_base": true,
-      "swap_s2": " Newton",
+      "swap_s2": " Shakespeare",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
       "noop_ok": true,
@@ -1573,7 +1573,7 @@
       ],
       "rand_broke_base": [
         true,
-        false,
+        true,
         true
       ]
     },
@@ -1644,9 +1644,9 @@
       "category": "multihop",
       "base_ok": true,
       "base_next": " Earth",
-      "swap_s1": " Earth",
+      "swap_s1": " Saturn",
       "swap_s1_hit": false,
-      "swap_s1_kept_base": true,
+      "swap_s1_kept_base": false,
       "swap_s2": "!",
       "swap_s2_hit": false,
       "swap_s2_kept_base": false,
@@ -1762,5 +1762,5 @@
       "skip": "multi-token"
     }
   ],
-  "runtime_min": 2.2
+  "runtime_min": 2.3
 }

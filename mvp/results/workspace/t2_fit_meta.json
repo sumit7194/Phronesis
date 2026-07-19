@@ -1,5 +1,5 @@
 {
-  "n_prompts": 20,
+  "n_prompts": 45,
   "source_layers": [
     4,
     6,
@@ -19,5 +19,5 @@
   ],
   "dim_batch": 4,
   "corpus": "wikitext seed0 128tok",
-  "saved": "2026-07-07 14:13:16"
+  "saved": "2026-07-08 08:40:06"
 }

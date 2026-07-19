@@ -1,0 +1,124 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<19:15,  2.91s/it]Loading weights:  31%|███▏      | 125/398 [00:03<00:04, 57.41it/s]Loading weights:  45%|████▌     | 180/398 [00:04<00:03, 54.64it/s]Loading weights:  53%|█████▎    | 212/398 [00:04<00:03, 55.23it/s]Loading weights:  59%|█████▉    | 234/398 [00:05<00:02, 55.36it/s]Loading weights:  63%|██████▎   | 250/398 [00:05<00:02, 57.96it/s]Loading weights:  66%|██████▌   | 263/398 [00:05<00:02, 59.43it/s]Loading weights:  69%|██████▉   | 274/398 [00:05<00:02, 58.40it/s]Loading weights:  71%|███████▏  | 284/398 [00:05<00:02, 56.26it/s]Loading weights:  73%|███████▎  | 292/398 [00:06<00:02, 51.71it/s]Loading weights:  75%|███████▌  | 300/398 [00:06<00:02, 46.99it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 48.03it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 49.50it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 51.89it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 44.36it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 39.32it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:00, 35.91it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 32.98it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 31.36it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 45.09it/s]
+[load] lens n=45, layers=[14, 20, 26], eps=[0.015, 0.03, 0.06, 0.12, 0.24]
+  france  loaded   L14 concept  a=+8.364 b=+30.206 rel=0.22 R2=0.9987 stable=True dev+=+0.403 dev-=+0.551
+  france  loaded   L14 other    a=-21.607 b=+37.661 rel=0.10 R2=0.9728 stable=False dev+=+1.468 dev-=+0.501
+  france  loaded   L14 rand0    a=-1.458 b=+9.459 rel=0.39 R2=0.9908 stable=True dev+=+0.081 dev-=+0.044
+  france  loaded   L14 rand1    a=+0.632 b=+13.375 rel=1.27 R2=0.9921 stable=True dev+=+0.112 dev-=+0.076
+  france  loaded   L14 rand2    a=-2.427 b=+22.198 rel=0.55 R2=0.9982 stable=True dev+=+0.166 dev-=+0.162
+  france  loaded   L20 concept  a=+7.740 b=+22.766 rel=0.18 R2=0.9989 stable=True dev+=+0.352 dev-=+0.319
+  france  loaded   L20 other    a=-20.063 b=-0.288 rel=0.00 R2=0.9919 stable=True dev+=+1.236 dev-=+0.374
+  france  loaded   L20 rand0    a=-3.247 b=+8.372 rel=0.15 R2=0.9982 stable=True dev+=+0.077 dev-=+0.063
+  france  loaded   L20 rand1    a=+2.591 b=-5.950 rel=0.14 R2=0.9953 stable=True dev+=-0.077 dev-=-0.033
+  france  loaded   L20 rand2    a=+2.486 b=+3.587 rel=0.09 R2=0.9968 stable=True dev+=+0.030 dev-=+0.080
+  france  loaded   L26 concept  a=+12.327 b=-100.552 rel=0.49 R2=0.9921 stable=True dev+=-0.167 dev-=-0.958
+  france  loaded   L26 other    a=-14.716 b=-117.816 rel=0.48 R2=0.9217 stable=True dev+=+0.282 dev-=-1.032
+  france  loaded   L26 rand0    a=-3.168 b=+9.012 rel=0.17 R2=0.9999 stable=True dev+=+0.083 dev-=+0.057
+  france  loaded   L26 rand1    a=+1.444 b=+4.838 rel=0.20 R2=0.9978 stable=True dev+=+0.045 dev-=+0.048
+  france  loaded   L26 rand2    a=+0.791 b=-8.495 rel=0.64 R2=0.9936 stable=True dev+=-0.064 dev-=-0.046
+  france  unloaded L14 concept  a=+3.127 b=+5.618 rel=0.11 R2=0.9998 stable=True dev+=+0.047 dev-=+0.039
+  france  unloaded L14 other    a=+0.547 b=-7.099 rel=0.78 R2=0.9775 stable=False dev+=+0.005 dev-=-0.036
+  france  unloaded L14 rand0    a=+0.277 b=+1.245 rel=0.27 R2=0.9650 stable=False dev+=+0.014 dev-=+0.006
+  france  unloaded L14 rand1    a=+0.557 b=+0.762 rel=0.08 R2=0.9951 stable=False dev+=+0.011 dev-=+0.012
+  france  unloaded L14 rand2    a=-0.291 b=+0.504 rel=0.10 R2=0.9413 stable=False dev+=+0.012 dev-=+0.004
+  france  unloaded L20 concept  a=+7.394 b=+13.556 rel=0.11 R2=0.9998 stable=True dev+=+0.121 dev-=+0.077
+  france  unloaded L20 other    a=+1.330 b=-21.949 rel=0.99 R2=0.9982 stable=False dev+=+0.044 dev-=-0.094
+  france  unloaded L20 rand0    a=+0.359 b=-2.180 rel=0.36 R2=0.9907 stable=True dev+=-0.020 dev-=-0.016
+  france  unloaded L20 rand1    a=+0.668 b=+0.767 rel=0.07 R2=0.9889 stable=False dev+=+0.014 dev-=+0.006
+  france  unloaded L20 rand2    a=+0.414 b=+1.962 rel=0.28 R2=0.9937 stable=True dev+=+0.025 dev-=+0.026
+  france  unloaded L26 concept  a=+42.572 b=+60.164 rel=0.08 R2=0.9997 stable=True dev+=+0.755 dev-=+0.642
+  france  unloaded L26 other    a=+17.321 b=-52.273 rel=0.18 R2=0.9999 stable=True dev+=-0.223 dev-=-0.392
+  france  unloaded L26 rand0    a=-0.256 b=-2.523 rel=0.59 R2=0.9800 stable=True dev+=-0.016 dev-=-0.007
+  france  unloaded L26 rand1    a=+1.353 b=+0.971 rel=0.04 R2=0.9979 stable=True dev+=+0.010 dev-=+0.014
+  france  unloaded L26 rand2    a=+0.893 b=+2.652 rel=0.18 R2=0.9960 stable=True dev+=+0.026 dev-=+0.025
+  japan   loaded   L14 concept  a=-10.076 b=+71.847 rel=0.43 R2=0.9585 stable=True dev+=+0.990 dev-=+1.400
+  japan   loaded   L14 other    a=+2.568 b=+36.245 rel=0.85 R2=0.9952 stable=True dev+=+0.270 dev-=+0.074
+  japan   loaded   L14 rand0    a=-0.820 b=+8.607 rel=0.63 R2=0.9864 stable=True dev+=+0.083 dev-=+0.073
+  japan   loaded   L14 rand1    a=+0.544 b=+2.958 rel=0.33 R2=0.9874 stable=False dev+=+0.013 dev-=+0.018
+  japan   loaded   L14 rand2    a=+1.240 b=+4.131 rel=0.20 R2=0.9959 stable=False dev+=+0.023 dev-=+0.039
+  japan   loaded   L20 concept  a=-14.581 b=+78.559 rel=0.32 R2=0.9826 stable=True dev+=+1.187 dev-=+1.469
+  japan   loaded   L20 other    a=+7.725 b=+8.176 rel=0.06 R2=0.9997 stable=True dev+=+0.136 dev-=+0.099
+  japan   loaded   L20 rand0    a=-1.487 b=+1.319 rel=0.05 R2=0.9971 stable=False dev+=+0.007 dev-=+0.009
+  japan   loaded   L20 rand1    a=+1.554 b=-3.048 rel=0.12 R2=0.9975 stable=False dev+=-0.030 dev-=-0.017
+  japan   loaded   L20 rand2    a=+0.379 b=+2.340 rel=0.37 R2=0.9811 stable=False dev+=+0.017 dev-=+0.014
+  japan   loaded   L26 concept  a=-9.868 b=-45.108 rel=0.27 R2=0.9988 stable=True dev+=+0.512 dev-=+0.081
+  japan   loaded   L26 other    a=+6.347 b=-66.576 rel=0.63 R2=0.9990 stable=False dev+=-0.199 dev-=-0.254
+  japan   loaded   L26 rand0    a=-2.398 b=-5.071 rel=0.13 R2=0.9989 stable=False dev+=-0.025 dev-=-0.038
+  japan   loaded   L26 rand1    a=-0.616 b=-3.445 rel=0.34 R2=0.9925 stable=False dev+=-0.020 dev-=-0.011
+  japan   loaded   L26 rand2    a=+0.134 b=-6.582 rel=2.95 R2=0.9853 stable=True dev+=-0.047 dev-=-0.046
+  japan   unloaded L14 concept  a=+2.085 b=-14.444 rel=0.42 R2=0.9981 stable=False dev+=+0.027 dev-=-0.058
+  japan   unloaded L14 other    a=+1.720 b=+5.461 rel=0.19 R2=0.9992 stable=True dev+=+0.055 dev-=+0.040
+  japan   unloaded L14 rand0    a=-0.134 b=-1.366 rel=0.61 R2=0.8443 stable=True dev+=-0.003 dev-=-0.012
+  japan   unloaded L14 rand1    a=+0.492 b=-1.756 rel=0.21 R2=0.9916 stable=False dev+=-0.008 dev-=-0.005
+  japan   unloaded L14 rand2    a=-0.158 b=-0.176 rel=0.07 R2=0.8434 stable=False dev+=+0.009 dev-=+0.001
+  japan   unloaded L20 concept  a=+4.427 b=-26.504 rel=0.36 R2=0.9990 stable=True dev+=-0.020 dev-=-0.168
+  japan   unloaded L20 other    a=+4.921 b=+11.337 rel=0.14 R2=0.9997 stable=True dev+=+0.105 dev-=+0.071
+  japan   unloaded L20 rand0    a=+0.234 b=-0.158 rel=0.04 R2=0.9723 stable=False dev+=-0.001 dev-=+0.003
+  japan   unloaded L20 rand1    a=+0.575 b=+0.777 rel=0.08 R2=0.9905 stable=False dev+=+0.009 dev-=+0.005
+  japan   unloaded L20 rand2    a=+0.226 b=+1.214 rel=0.32 R2=0.9907 stable=True dev+=+0.020 dev-=+0.019
+  japan   unloaded L26 concept  a=+35.787 b=-95.148 rel=0.16 R2=0.9998 stable=True dev+=-0.330 dev-=-0.672
+  japan   unloaded L26 other    a=+21.737 b=+41.063 rel=0.11 R2=0.9998 stable=True dev+=+0.477 dev-=+0.443
+  japan   unloaded L26 rand0    a=-2.857 b=+2.317 rel=0.05 R2=0.9998 stable=True dev+=+0.021 dev-=+0.024
+  japan   unloaded L26 rand1    a=+0.262 b=+3.781 rel=0.87 R2=0.9846 stable=True dev+=+0.031 dev-=+0.035
+  japan   unloaded L26 rand2    a=+2.742 b=+3.093 rel=0.07 R2=0.9997 stable=True dev+=+0.030 dev-=+0.028
+  hot     loaded   L14 concept  a=-3.335 b=+78.916 rel=1.42 R2=0.9610 stable=False dev+=+0.197 dev-=+0.709
+  hot     loaded   L14 other    a=+2.087 b=+28.636 rel=0.82 R2=0.9965 stable=True dev+=+0.171 dev-=+0.016
+  hot     loaded   L14 rand0    a=-0.835 b=+2.169 rel=0.16 R2=0.9919 stable=False dev+=+0.006 dev-=-0.006
+  hot     loaded   L14 rand1    a=+0.231 b=-0.728 rel=0.19 R2=0.8769 stable=False dev+=-0.012 dev-=-0.019
+  hot     loaded   L14 rand2    a=-0.255 b=+0.719 rel=0.17 R2=0.9042 stable=False dev+=-0.001 dev-=-0.015
+  hot     loaded   L20 concept  a=-4.101 b=+40.852 rel=0.60 R2=0.9952 stable=True dev+=+0.117 dev-=+0.320
+  hot     loaded   L20 other    a=+5.484 b=+19.183 rel=0.21 R2=0.9998 stable=True dev+=+0.139 dev-=+0.080
+  hot     loaded   L20 rand0    a=+0.924 b=+2.853 rel=0.19 R2=0.9873 stable=False dev+=-0.001 dev-=+0.017
+  hot     loaded   L20 rand1    a=+1.376 b=-0.044 rel=0.00 R2=0.9986 stable=False dev+=-0.009 dev-=-0.007
+  hot     loaded   L20 rand2    a=-0.987 b=-0.604 rel=0.04 R2=0.9815 stable=False dev+=-0.007 dev-=-0.025
+  hot     loaded   L26 concept  a=+2.516 b=-75.104 rel=1.79 R2=0.9951 stable=True dev+=-0.130 dev-=-0.511
+  hot     loaded   L26 other    a=+5.443 b=-1.407 rel=0.02 R2=0.9996 stable=False dev+=-0.028 dev-=-0.003
+  hot     loaded   L26 rand0    a=-0.610 b=-0.279 rel=0.03 R2=0.9897 stable=False dev+=-0.005 dev-=-0.011
+  hot     loaded   L26 rand1    a=-0.909 b=-3.026 rel=0.20 R2=0.9878 stable=False dev+=-0.032 dev-=-0.031
+  hot     loaded   L26 rand2    a=-0.987 b=-1.515 rel=0.09 R2=0.9934 stable=False dev+=-0.022 dev-=-0.009
+  hot     unloaded L14 concept  a=+2.777 b=-0.075 rel=0.00 R2=0.9990 stable=True dev+=+0.073 dev-=+0.052
+  hot     unloaded L14 other    a=+1.832 b=+8.679 rel=0.28 R2=0.9986 stable=True dev+=+0.077 dev-=+0.056
+  hot     unloaded L14 rand0    a=+1.130 b=+1.001 rel=0.05 R2=0.9950 stable=False dev+=+0.013 dev-=+0.003
+  hot     unloaded L14 rand1    a=-0.226 b=+1.858 rel=0.49 R2=0.9843 stable=True dev+=+0.027 dev-=+0.028
+  hot     unloaded L14 rand2    a=-0.512 b=+4.212 rel=0.49 R2=0.9783 stable=True dev+=+0.054 dev-=+0.032
+  hot     unloaded L20 concept  a=+8.253 b=-14.195 rel=0.10 R2=1.0000 stable=True dev+=-0.045 dev-=-0.072
+  hot     unloaded L20 other    a=+3.316 b=+4.449 rel=0.08 R2=0.9994 stable=True dev+=+0.040 dev-=+0.046
+  hot     unloaded L20 rand0    a=-0.228 b=+2.278 rel=0.60 R2=0.9822 stable=True dev+=+0.020 dev-=+0.012
+  hot     unloaded L20 rand1    a=-1.344 b=+0.925 rel=0.04 R2=0.9977 stable=False dev+=+0.005 dev-=+0.011
+  hot     unloaded L20 rand2    a=-0.245 b=-0.914 rel=0.22 R2=0.9422 stable=False dev+=+0.006 dev-=+0.002
+  hot     unloaded L26 concept  a=+35.182 b=-95.205 rel=0.16 R2=0.9982 stable=True dev+=-0.902 dev-=-0.497
+  hot     unloaded L26 other    a=+2.722 b=-4.995 rel=0.11 R2=0.9990 stable=False dev+=-0.030 dev-=+0.022
+  hot     unloaded L26 rand0    a=-1.310 b=+2.793 rel=0.13 R2=0.9990 stable=False dev+=+0.032 dev-=+0.030
+  hot     unloaded L26 rand1    a=-2.124 b=+1.408 rel=0.04 R2=0.9993 stable=True dev+=+0.013 dev-=+0.019
+  hot     unloaded L26 rand2    a=+0.300 b=+0.617 rel=0.12 R2=0.9925 stable=False dev+=+0.011 dev-=+0.005
+  secret  loaded   L14 concept  a=-4.476 b=-17.219 rel=0.23 R2=0.9917 stable=False dev+=+0.068 dev-=-0.209
+  secret  loaded   L14 other    a=-8.372 b=-8.390 rel=0.06 R2=0.9972 stable=True dev+=-0.066 dev-=-0.270
+  secret  loaded   L14 rand0    a=+5.188 b=-19.268 rel=0.22 R2=0.9941 stable=True dev+=-0.302 dev-=-0.377
+  secret  loaded   L14 rand1    a=-3.697 b=+1.070 rel=0.02 R2=0.9976 stable=True dev+=+0.022 dev-=+0.017
+  secret  loaded   L14 rand2    a=-2.731 b=-7.895 rel=0.17 R2=0.9937 stable=False dev+=-0.016 dev-=-0.054
+  secret  loaded   L20 concept  a=+6.133 b=-44.747 rel=0.44 R2=0.9976 stable=True dev+=-0.252 dev-=-0.397
+  secret  loaded   L20 other    a=+8.695 b=+9.152 rel=0.06 R2=0.9998 stable=True dev+=+0.019 dev-=+0.051
+  secret  loaded   L20 rand0    a=+7.411 b=-6.422 rel=0.05 R2=0.9992 stable=True dev+=-0.085 dev-=-0.009
+  secret  loaded   L20 rand1    a=+4.076 b=+20.987 rel=0.31 R2=0.9936 stable=True dev+=+0.058 dev-=+0.161
+  secret  loaded   L20 rand2    a=+1.205 b=+13.167 rel=0.66 R2=0.9254 stable=True dev+=+0.090 dev-=+0.043
+  secret  loaded   L26 concept  a=+68.910 b=-153.713 rel=0.13 R2=0.9994 stable=True dev+=-1.957 dev-=-1.071
+  secret  loaded   L26 other    a=+28.250 b=-4.240 rel=0.01 R2=0.9992 stable=False dev+=-0.210 dev-=+0.203
+  secret  loaded   L26 rand0    a=+10.488 b=-5.445 rel=0.03 R2=0.9997 stable=True dev+=-0.063 dev-=-0.023
+  secret  loaded   L26 rand1    a=-1.942 b=-8.761 rel=0.27 R2=0.9939 stable=True dev+=-0.064 dev-=-0.092
+  secret  loaded   L26 rand2    a=+2.998 b=-14.014 rel=0.28 R2=0.9976 stable=True dev+=-0.157 dev-=-0.086
+  secret  unloaded L14 concept  a=+2.879 b=-13.133 rel=0.27 R2=0.9997 stable=True dev+=-0.013 dev-=-0.076
+  secret  unloaded L14 other    a=+0.160 b=+5.416 rel=2.03 R2=0.9654 stable=True dev+=+0.059 dev-=+0.031
+  secret  unloaded L14 rand0    a=+0.949 b=+1.433 rel=0.09 R2=0.9975 stable=False dev+=+0.015 dev-=+0.012
+  secret  unloaded L14 rand1    a=+1.025 b=+4.052 rel=0.24 R2=0.9981 stable=True dev+=+0.049 dev-=+0.049
+  secret  unloaded L14 rand2    a=-0.739 b=+4.579 rel=0.37 R2=0.9933 stable=True dev+=+0.053 dev-=+0.040
+  secret  unloaded L20 concept  a=+6.646 b=-16.268 rel=0.15 R2=0.9999 stable=True dev+=-0.040 dev-=-0.097
+  secret  unloaded L20 other    a=+1.981 b=+4.669 rel=0.14 R2=0.9990 stable=True dev+=+0.047 dev-=+0.035
+  secret  unloaded L20 rand0    a=+0.148 b=-0.407 rel=0.16 R2=0.9286 stable=False dev+=-0.002 dev-=-0.002
+  secret  unloaded L20 rand1    a=+0.559 b=+1.902 rel=0.20 R2=0.9932 stable=False dev+=+0.019 dev-=+0.016
+  secret  unloaded L20 rand2    a=-0.686 b=+0.489 rel=0.04 R2=0.9945 stable=True dev+=+0.016 dev-=+0.019
+  secret  unloaded L26 concept  a=+38.960 b=-56.675 rel=0.09 R2=1.0000 stable=True dev+=-0.230 dev-=-0.363
+  secret  unloaded L26 other    a=+6.931 b=-5.015 rel=0.04 R2=0.9998 stable=False dev+=-0.027 dev-=+0.043
+  secret  unloaded L26 rand0    a=-1.011 b=+0.272 rel=0.02 R2=0.9972 stable=False dev+=+0.004 dev-=+0.008
+  secret  unloaded L26 rand1    a=-0.713 b=+1.019 rel=0.09 R2=0.9939 stable=True dev+=+0.011 dev-=+0.016
+  secret  unloaded L26 rand2    a=-0.713 b=-1.161 rel=0.10 R2=0.9970 stable=False dev+=-0.004 dev-=-0.004
+[done] 120 entries, 2.0 min -> results/workspace/second_order/results.json

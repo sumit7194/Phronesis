@@ -1,0 +1,16 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:28,  2.19s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.73it/s]Loading weights:  44%|████▎     | 174/398 [00:02<00:02, 76.53it/s]Loading weights:  52%|█████▏    | 205/398 [00:03<00:02, 73.95it/s]Loading weights:  57%|█████▋    | 227/398 [00:03<00:02, 71.58it/s]Loading weights:  61%|██████    | 243/398 [00:03<00:02, 74.52it/s]Loading weights:  65%|██████▍   | 257/398 [00:04<00:03, 41.07it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:03, 42.96it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 45.16it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 47.73it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 49.86it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 52.07it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 54.73it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 57.33it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 59.98it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 57.90it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 47.82it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 41.01it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 38.86it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 52.05it/s]
+[load] lens n=45, L14, alpha=12.0, 4x10 runs
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  [1/40] q1_no_a          IH+12        commit=False ok=False doubt=0.0243 ans='(spiral/cap)'
+  [2/40] q1_no_a          IH-12        commit=False ok=False doubt=0.0304 ans='(spiral/cap)'
+  [3/40] q1_no_a          EG+12        commit=False ok=False doubt=0.0103 ans='(spiral/cap)'
+  [4/40] q1_no_a          EG-12        commit=False ok=False doubt=0.0205 ans='(spiral/cap)'
+  [5/40] q1_no_a          RT+12        commit=False ok=False doubt=0.0412 ans='(spiral/cap)'
+  [6/40] q1_no_a          RT-12        commit=False ok=False doubt=0.0301 ans='(spiral/cap)'
+  [7/40] q1_no_a          VC+12        commit=False ok=False doubt=0.0249 ans='(spiral/cap)'
+  [8/40] q1_no_a          VC-12        commit=False ok=False doubt=0.0335 ans='(spiral/cap)'
+  [9/40] q1_no_a          random0+12   commit=False ok=False doubt=0.0376 ans='(spiral/cap)'
+  [10/40] q1_no_a          random1+12   commit=False ok=False doubt=0.0280 ans='(spiral/cap)'
+  [11/40] q3_gsm_rescuable IH+12        commit=True ok=True doubt=0.0264 ans='91'
+  [12/40] q3_gsm_rescuable IH-12        commit=False ok=False doubt=0.0392 ans='(spiral/cap)'

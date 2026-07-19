@@ -1,0 +1,135 @@
+2026-07-08 16:22:14,867 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:14,899 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+2026-07-08 16:22:15,188 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 16:22:15,189 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 16:22:15,219 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 16:22:15,500 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 16:22:15,781 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 16:22:16,330 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B "HTTP/1.1 200 OK"
+2026-07-08 16:22:16,667 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:16,701 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:42,  2.22s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 74.46it/s]Loading weights:  48%|████▊     | 193/398 [00:03<00:02, 74.35it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 72.20it/s]Loading weights:  66%|██████▌   | 262/398 [00:04<00:02, 51.89it/s]Loading weights:  71%|███████   | 281/398 [00:05<00:02, 51.45it/s]Loading weights:  74%|███████▍  | 295/398 [00:05<00:01, 54.25it/s]Loading weights:  77%|███████▋  | 307/398 [00:05<00:01, 55.80it/s]Loading weights:  80%|███████▉  | 318/398 [00:05<00:01, 56.68it/s]Loading weights:  82%|████████▏ | 327/398 [00:06<00:01, 55.97it/s]Loading weights:  84%|████████▍ | 335/398 [00:06<00:01, 55.10it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 55.63it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 56.29it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.27it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 45.54it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 41.04it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 53.25it/s]
+2026-07-08 16:22:24,784 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:24,815 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/generation_config.json "HTTP/1.1 200 OK"
+2026-07-08 16:22:31,795 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:32,234 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:32,268 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-07-08 16:22:32,544 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:32,828 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-07-08 16:22:33,871 HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-07-08 16:22:34,206 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:34,480 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 200 OK"
+2026-07-08 16:22:34,792 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:35,100 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-07-08 16:22:35,643 HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-07-08 16:22:35,905 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:36,183 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 16:22:36,512 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:36,840 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-07-08 16:22:37,116 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 16:22:37,456 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+[16:22:38] fit corpus: 120 prompts; deadline 08:00; layers [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+2026-07-08 16:22:38,310 fit: n_layers=36 d_model=2560, fitting 15 source layers (target=L35) on 120 prompts
+2026-07-08 16:22:38,472   resuming from checkpoint: 45/120 prompts processed
+2026-07-08 16:36:58,219   prompt 46/120  seq_len=128 n_valid=111  860s  max||J||/sqrt(d)=3.311  max_d_mean=4.68e-02
+2026-07-08 16:51:13,018   prompt 47/120  seq_len=128 n_valid=111  854s  max||J||/sqrt(d)=4.637  max_d_mean=6.72e-02
+2026-07-08 17:05:32,043   prompt 48/120  seq_len=128 n_valid=111  859s  max||J||/sqrt(d)=5.069  max_d_mean=7.05e-02
+2026-07-08 17:19:58,146   prompt 49/120  seq_len=128 n_valid=111  866s  max||J||/sqrt(d)=5.902  max_d_mean=8.12e-02
+2026-07-08 17:34:28,452   prompt 50/120  seq_len=128 n_valid=111  870s  max||J||/sqrt(d)=2.992  max_d_mean=3.42e-02
+2026-07-08 17:49:24,670   prompt 51/120  seq_len=128 n_valid=111  896s  max||J||/sqrt(d)=4.734  max_d_mean=6.38e-02
+2026-07-08 18:18:14,128   prompt 52/120  seq_len=128 n_valid=111  1729s  max||J||/sqrt(d)=2.887  max_d_mean=3.65e-02
+2026-07-08 18:33:03,107   prompt 53/120  seq_len=128 n_valid=111  888s  max||J||/sqrt(d)=4.953  max_d_mean=6.38e-02
+2026-07-08 18:47:44,051   prompt 54/120  seq_len=128 n_valid=111  880s  max||J||/sqrt(d)=2.753  max_d_mean=3.23e-02
+2026-07-08 19:02:22,284   prompt 55/120  seq_len=128 n_valid=111  877s  max||J||/sqrt(d)=5.231  max_d_mean=6.54e-02
+2026-07-08 19:17:06,100   prompt 56/120  seq_len=128 n_valid=111  883s  max||J||/sqrt(d)=2.775  max_d_mean=3.21e-02
+2026-07-08 19:31:33,775   prompt 57/120  seq_len=128 n_valid=111  867s  max||J||/sqrt(d)=8.275  max_d_mean=1.03e-01
+2026-07-08 19:45:51,128   prompt 58/120  seq_len=128 n_valid=111  856s  max||J||/sqrt(d)=4.737  max_d_mean=5.58e-02
+2026-07-08 20:00:06,413   prompt 59/120  seq_len=128 n_valid=111  855s  max||J||/sqrt(d)=3.025  max_d_mean=3.21e-02
+2026-07-08 20:14:24,794   prompt 60/120  seq_len=128 n_valid=111  858s  max||J||/sqrt(d)=2.898  max_d_mean=3.31e-02
+2026-07-08 20:28:46,992   prompt 61/120  seq_len=128 n_valid=111  862s  max||J||/sqrt(d)=3.139  max_d_mean=3.55e-02
+2026-07-08 20:43:21,129   prompt 62/120  seq_len=128 n_valid=111  873s  max||J||/sqrt(d)=3.319  max_d_mean=3.75e-02
+2026-07-08 20:57:52,977   prompt 63/120  seq_len=128 n_valid=111  871s  max||J||/sqrt(d)=4.044  max_d_mean=4.42e-02
+2026-07-08 21:12:29,825   prompt 64/120  seq_len=128 n_valid=111  876s  max||J||/sqrt(d)=3.270  max_d_mean=3.35e-02
+2026-07-08 21:27:11,259   prompt 65/120  seq_len=128 n_valid=111  880s  max||J||/sqrt(d)=2.692  max_d_mean=2.60e-02
+2026-07-08 21:41:33,274   prompt 66/120  seq_len=128 n_valid=111  861s  max||J||/sqrt(d)=4.080  max_d_mean=4.33e-02
+2026-07-08 21:55:51,992   prompt 67/120  seq_len=128 n_valid=111  858s  max||J||/sqrt(d)=2.648  max_d_mean=2.59e-02
+2026-07-08 22:10:20,363   prompt 68/120  seq_len=128 n_valid=111  867s  max||J||/sqrt(d)=3.400  max_d_mean=3.29e-02
+2026-07-08 22:24:37,249   prompt 69/120  seq_len=128 n_valid=111  856s  max||J||/sqrt(d)=3.327  max_d_mean=3.16e-02
+2026-07-08 22:38:56,163   prompt 70/120  seq_len=128 n_valid=111  858s  max||J||/sqrt(d)=4.460  max_d_mean=4.33e-02
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-4876-q3o1orfj'}
+  warnings.warn(
+2026-07-08 23:14:02,423 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 23:14:02,424 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 23:14:02,449 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:14:02,710 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:02,735 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:14:02,993 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 23:14:03,269 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:14:03,865 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B "HTTP/1.1 200 OK"
+2026-07-08 23:14:04,117 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:04,143 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<18:05,  2.73s/it]Loading weights:  31%|███       | 124/398 [00:02<00:04, 61.07it/s]Loading weights:  48%|████▊     | 190/398 [00:04<00:03, 56.53it/s]Loading weights:  57%|█████▋    | 228/398 [00:04<00:02, 58.65it/s]Loading weights:  64%|██████▍   | 254/398 [00:05<00:02, 60.43it/s]Loading weights:  69%|██████▊   | 273/398 [00:05<00:02, 58.55it/s]Loading weights:  72%|███████▏  | 288/398 [00:05<00:01, 60.23it/s]Loading weights:  75%|███████▌  | 300/398 [00:06<00:01, 50.12it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 45.16it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 41.44it/s]Loading weights:  84%|████████▎ | 333/398 [00:07<00:01, 39.58it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 37.58it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 34.34it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 31.91it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 30.90it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 30.36it/s]Loading weights: 100%|██████████| 398/398 [00:09<00:00, 43.74it/s]
+2026-07-08 23:14:13,827 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:13,854 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/generation_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:14:32,306 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:32,592 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:32,622 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-07-08 23:14:32,898 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:33,193 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-07-08 23:14:34,221 HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-07-08 23:14:34,515 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:34,775 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 200 OK"
+2026-07-08 23:14:35,039 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:35,295 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-07-08 23:14:35,695 HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-07-08 23:14:36,016 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:36,277 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:14:36,542 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:36,816 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:14:37,143 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:14:37,389 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+[23:14:38] fit corpus: 120 prompts; deadline 08:00; layers [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+2026-07-08 23:14:38,275 fit: n_layers=36 d_model=2560, fitting 15 source layers (target=L35) on 120 prompts
+2026-07-08 23:14:38,563   resuming from checkpoint: 70/120 prompts processed
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-17192-i201_oxx'}
+  warnings.warn(
+2026-07-08 23:41:23,511 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:23,559 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+2026-07-08 23:41:23,854 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 23:41:23,855 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-07-08 23:41:23,887 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:41:24,151 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-07-08 23:41:24,399 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:41:24,917 HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen3-4B "HTTP/1.1 200 OK"
+2026-07-08 23:41:25,189 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:25,274 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:25,  2.18s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.73it/s]Loading weights:  42%|████▏     | 166/398 [00:02<00:02, 78.30it/s]Loading weights:  48%|████▊     | 193/398 [00:03<00:02, 71.17it/s]Loading weights:  53%|█████▎    | 212/398 [00:04<00:03, 48.37it/s]Loading weights:  57%|█████▋    | 225/398 [00:04<00:03, 49.72it/s]Loading weights:  59%|█████▉    | 236/398 [00:04<00:03, 51.35it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:03, 50.68it/s]Loading weights:  64%|██████▍   | 256/398 [00:04<00:02, 54.07it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 55.91it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 56.08it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:01, 57.47it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 57.96it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 59.39it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 60.20it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 49.56it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 43.33it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 39.50it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 35.33it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 34.19it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 33.42it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 48.79it/s]
+2026-07-08 23:41:34,051 HTTP Request: HEAD https://huggingface.co/Qwen/Qwen3-4B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:34,080 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen3-4B/1cfa9a7208912126459214e8b04321603b3df60c/generation_config.json "HTTP/1.1 200 OK"
+2026-07-08 23:41:46,244 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:46,486 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:46,523 HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/Salesforce/wikitext/b08601e04326c79dfdd32d625aee71d232d685c3/README.md "HTTP/1.1 200 OK"
+2026-07-08 23:41:46,782 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:47,073 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext.py "HTTP/1.1 404 Not Found"
+2026-07-08 23:41:48,108 HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/wikitext/wikitext.py "HTTP/1.1 200 OK"
+2026-07-08 23:41:48,365 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:48,621 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/revision/b08601e04326c79dfdd32d625aee71d232d685c3 "HTTP/1.1 200 OK"
+2026-07-08 23:41:48,864 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:49,108 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-07-08 23:41:49,490 HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=wikitext "HTTP/1.1 404 Not Found"
+2026-07-08 23:41:49,765 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:50,026 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3/wikitext-103-raw-v1?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:41:50,283 HTTP Request: GET https://huggingface.co/api/datasets/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:50,585 HTTP Request: GET https://huggingface.co/api/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-07-08 23:41:50,868 HTTP Request: HEAD https://huggingface.co/datasets/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-07-08 23:41:51,153 HTTP Request: HEAD https://huggingface.co/datasets/Salesforce/wikitext/resolve/b08601e04326c79dfdd32d625aee71d232d685c3/dataset_infos.json "HTTP/1.1 404 Not Found"
+[23:41:51] fit corpus: 120 prompts; deadline 08:00; layers [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+2026-07-08 23:41:51,972 fit: n_layers=36 d_model=2560, fitting 15 source layers (target=L35) on 120 prompts
+2026-07-08 23:41:52,139   resuming from checkpoint: 70/120 prompts processed
+2026-07-08 23:56:09,894   prompt 71/120  seq_len=128 n_valid=111  858s  max||J||/sqrt(d)=3.476  max_d_mean=3.20e-02
+2026-07-09 00:10:21,049   prompt 72/120  seq_len=128 n_valid=111  851s  max||J||/sqrt(d)=4.404  max_d_mean=4.19e-02
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-18036-djbxntbi'}
+  warnings.warn(

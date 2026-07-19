@@ -1,0 +1,48 @@
+{
+ "done": 93,
+ "total": 100,
+ "s_per_item": 137.3,
+ "eta_h": 0.27,
+ "nothink_passk": 0.323,
+ "think_passk": 0.366,
+ "nothink_pass1": 0.247,
+ "think_pass1": 0.269,
+ "recent": [
+  {
+   "q": "Who performed Magos, espadas y rosas?",
+   "gold": "Rata Blanca",
+   "nt_pk": false,
+   "th_pk": false
+  },
+  {
+   "q": "Who is Elizabeth le Despenser married to?",
+   "gold": "John FitzAlan, 2nd Baron Arundel",
+   "nt_pk": false,
+   "th_pk": false
+  },
+  {
+   "q": "Where was Todd Krygier born?",
+   "gold": "Chicago Heights",
+   "nt_pk": false,
+   "th_pk": false
+  },
+  {
+   "q": "Where did Marx Augustin die?",
+   "gold": "Vienna",
+   "nt_pk": false,
+   "th_pk": false
+  },
+  {
+   "q": "Where was Robert Jameson educated?",
+   "gold": "University of Edinburgh",
+   "nt_pk": true,
+   "th_pk": true
+  },
+  {
+   "q": "Who performed I Just Dropped by to Say Hello?",
+   "gold": "Johnny Hartman",
+   "nt_pk": false,
+   "th_pk": false
+  }
+ ]
+}

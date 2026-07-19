@@ -1,0 +1,10 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:18,  2.16s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.06it/s]Loading weights:  41%|████▏     | 165/398 [00:02<00:02, 78.03it/s]Loading weights:  48%|████▊     | 192/398 [00:03<00:02, 72.84it/s]Loading weights:  53%|█████▎    | 211/398 [00:03<00:02, 78.20it/s]Loading weights:  57%|█████▋    | 227/398 [00:03<00:02, 70.45it/s]Loading weights:  60%|██████    | 240/398 [00:03<00:02, 75.12it/s]Loading weights:  63%|██████▎   | 252/398 [00:04<00:01, 73.86it/s]Loading weights:  66%|██████▌   | 263/398 [00:04<00:01, 70.74it/s]Loading weights:  68%|██████▊   | 272/398 [00:05<00:03, 32.13it/s]Loading weights:  70%|███████   | 279/398 [00:05<00:03, 32.86it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 37.24it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:02, 42.22it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 46.67it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 50.89it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 55.39it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 59.33it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 58.82it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 60.15it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 53.64it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 45.20it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.45it/s]
+Traceback (most recent call last):
+  File "/tmp/elicit_test.py", line 19, in <module>
+    print(f"== {k}: {ask(p)!r}")
+                     ~~~^^^
+  File "/tmp/elicit_test.py", line 9, in ask
+    o=hf.generate(input_ids=ids,attention_mask=torch.ones_like(ids),max_new_tokens=mx,do_sample=False,pad_token_id=tok.eos_token_id)
+                                               ~~~~~~~~~~~~~~~^^^^^
+TypeError: ones_like(): argument 'input' (position 1) must be Tensor, not BatchEncoding

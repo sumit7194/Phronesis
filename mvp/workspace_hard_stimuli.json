@@ -1,0 +1,16 @@
+{
+ "questions": [
+  {"id":"bat_ball","category":"insight-trap (intuitive vs thinking)","expect":"?","gold":"0.05",
+   "question":"A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost, in dollars?"},
+  {"id":"snail_well","category":"boundary / off-by-one","expect":"?","gold":"8",
+   "question":"A snail is at the bottom of a 10 meter well. Each day it climbs up 3 meters, and each night it slips back 2 meters. On which day does it first reach the top and escape?"},
+  {"id":"handshake","category":"constraint / quadratic insight","expect":"?","gold":"12",
+   "question":"At a party, every person shook hands with every other person exactly once. There were 66 handshakes in total. How many people were at the party?"},
+  {"id":"digit7","category":"counting tedium (spiral/wall)","expect":"?","gold":"300",
+   "question":"How many times does the digit 7 appear when you write out all of the integers from 1 to 1000 inclusive?"},
+  {"id":"make_change","category":"combinatorial wall","expect":"?","gold":"242",
+   "question":"In how many different ways can you make change for exactly one dollar using any number of pennies, nickels, dimes, and quarters?"},
+  {"id":"three_squares","category":"insight / number theory (empty-set style)","expect":"?","gold":"7",
+   "question":"What is the smallest positive integer that cannot be written as the sum of at most three perfect squares? (1, 4, 9, 16, ... are perfect squares; a square may be reused.)"}
+ ]
+}

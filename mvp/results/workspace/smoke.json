@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "load_s": 17.1,
+  "n_layers": 36,
+  "d_model": 2560,
+  "greedy_next": " Paris",
+  "dim_batch_8": {
+    "fwd_s": 2.65,
+    "bwd_s_per_pass": 1.461,
+    "n_passes": 320,
+    "est_per_prompt_s": 470.0,
+    "grads_finite": true,
+    "mps_alloc_gb": 11.63
+  },
+  "chosen_dim_batch": 8,
+  "source_layers": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24,
+    26,
+    28,
+    30,
+    32
+  ]
+}

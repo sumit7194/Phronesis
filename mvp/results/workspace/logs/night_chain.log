@@ -1,0 +1,7 @@
+[07-08 02:48:58] === STAGE lens_topup START (resume n=20 -> up to n=100, dim_batch=4) ===
+[07-08 08:40:11] === lens_topup END rc=0 ; lens meta: {  "n_prompts": 45,  "source_layers": [    4,    6,    8,    10,    12,    14,    16,    18,    20,    22,    24,    26,    28,    30,    32  ],  "dim_batch": 4,  "corpus": "wikitext seed0 128tok",  "saved": "2026-07-08 08:40:06"} ===
+[07-08 08:40:11] === STAGE qc_recheck START (does the bigger lens beat logit lens now?) ===
+[07-08 08:42:35] === qc_recheck END rc=0 ===
+[07-08 08:42:35] === STAGE decompose_real START (workspace sparse decomposition on the PROPER lens) ===
+[07-08 08:44:14] === decompose_real END rc=0 ; neg-hits: neg-concept hits: 7 ===
+[07-08 08:44:14] === NIGHT CHAIN COMPLETE ===

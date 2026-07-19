@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:22,  2.32s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 70.46it/s]Loading weights:  45%|████▌     | 181/398 [00:03<00:03, 72.17it/s]Loading weights:  54%|█████▍    | 215/398 [00:03<00:02, 72.00it/s]Loading weights:  60%|██████    | 239/398 [00:03<00:02, 73.49it/s]Loading weights:  65%|██████▍   | 257/398 [00:05<00:03, 45.96it/s]Loading weights:  68%|██████▊   | 270/398 [00:05<00:02, 48.77it/s]Loading weights:  71%|███████   | 281/398 [00:05<00:02, 48.85it/s]Loading weights:  73%|███████▎  | 290/398 [00:05<00:02, 48.40it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 50.46it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 53.14it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 55.80it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 59.09it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 62.23it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 60.17it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 61.25it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 61.70it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 63.27it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.34it/s]
+[09:30:52] lens n_prompts=1, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[09:30:54]   qc 0/93
+[09:31:16]   qc 20/93
+[09:32:01]   qc 80/93
+[09:32:09] QC: {'jlens': {'n': 72, 'hit_top1': 12, 'hit_top10': 48}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}}
+[09:32:10]   swap 0/90
+[09:32:23]   swap 30/90
+[09:32:28]   swap 40/90
+[09:32:37]   swap 50/90
+[09:32:41]   swap 60/90
+[09:32:44]   swap 70/90
+[09:32:51]   swap 80/90
+[09:32:55] t2b done: QC {'jlens': {'n': 72, 'hit_top1': 12, 'hit_top10': 48}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}} SWAPS {'n_items': 90, 'n_gated': 38, 'swap_s1_hits': 2, 'swap_s2_hits': 0, 'noop_ok': 38, 'rand_hits_total': 5, 'rand_trials': 114, 'rand_broke_base': 44}

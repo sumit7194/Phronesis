@@ -1,0 +1,15 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:38,  2.21s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 74.25it/s]Loading weights:  47%|████▋     | 186/398 [00:03<00:02, 77.42it/s]Loading weights:  56%|█████▋    | 224/398 [00:03<00:02, 73.41it/s]Loading weights:  63%|██████▎   | 250/398 [00:03<00:01, 77.04it/s]Loading weights:  68%|██████▊   | 270/398 [00:04<00:01, 76.92it/s]Loading weights:  72%|███████▏  | 286/398 [00:04<00:01, 78.69it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:02, 38.38it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:02, 40.44it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 43.69it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 47.44it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 51.82it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 53.05it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 55.74it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 57.61it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.39it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 56.94it/s]
+[14:14:11] lens n_prompts=20, band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[14:14:13]   qc 0/93
+[14:14:33]   qc 20/93
+[14:15:16]   qc 80/93
+[14:15:23] QC: {'jlens': {'n': 72, 'hit_top1': 16, 'hit_top10': 51}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}}
+[14:15:25]   swap 0/90
+[14:15:36]   swap 30/90
+[14:15:41]   swap 40/90
+[14:15:50]   swap 50/90
+[14:15:54]   swap 60/90
+[14:15:56]   swap 70/90
+[14:16:03]   swap 80/90
+[14:16:07] t2b done: QC {'jlens': {'n': 72, 'hit_top1': 16, 'hit_top10': 51}, 'logit': {'n': 72, 'hit_top1': 21, 'hit_top10': 52}} SWAPS {'n_items': 90, 'n_gated': 38, 'swap_s1_hits': 5, 'swap_s2_hits': 0, 'noop_ok': 38, 'rand_hits_total': 6, 'rand_trials': 114, 'rand_broke_base': 65}

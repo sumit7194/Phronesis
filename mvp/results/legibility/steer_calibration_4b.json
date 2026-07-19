@@ -1,0 +1,184 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "layer": 20,
+ "cos": {
+  "10": -0.861189067363739,
+  "14": -0.8739727735519409,
+  "17": -0.8887346386909485,
+  "20": -0.9147413372993469
+ },
+ "residual_norm": 613.1,
+ "alphas": [
+  -613.1,
+  0.0,
+  61.3,
+  122.6,
+  245.2,
+  429.2
+ ],
+ "hedge_eval": [
+  {
+   "q": "Which company is SS Oriana produced by?",
+   "gold": "Vickers-Armstrongs",
+   "baseline_wrong": "Oriana is produced by Sony.",
+   "real": {
+    "-613.1": "",
+    "0.0": "Oriana is produced by Sony.",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ val [ val [ val val val val val val val val val val val val val val val val val val here either either",
+    "429.2": "ivil\u043e\u043b\u0436 carefully carefullyivil\u53e3\u5934\u53e3\u5934ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivili"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich_clip lovewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwi",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729 Psy\u7729\u7729 Scha\u7729\u7729 Scha\u7729 Scha\u7729 Scha\u7729 Scha Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Sch"
+   }
+  },
+  {
+   "q": "Where was Kaitlin Hopkins born?",
+   "gold": "New York City",
+   "baseline_wrong": "Kaitlin Hopkins was born in Canada.",
+   "real": {
+    "-613.1": "",
+    "0.0": "Kaitlin Hopkins was born in Canada.",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "val [ val [ val val val val val val val val val val val val val val val val val val val val val val val val val val val ",
+    "429.2": "ivil\u6444ould\u53e3\u5934\u53e3\u5934\u53e3\u5934ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivili"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich_clipgatewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwic",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha"
+   }
+  },
+  {
+   "q": "Who is Milosh married to?",
+   "gold": "Alexa Nikolas",
+   "baseline_wrong": "Sandra.",
+   "real": {
+    "-613.1": "",
+    "0.0": "Sandra.",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ [ [ [ [ [ [ val [ val [ val [ val [ [ val val val val val val val val val val val val val val val val",
+    "429.2": "ivil\u6444ould carefully carefullyivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivi"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich lovewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwic",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha S"
+   }
+  },
+  {
+   "q": "Who is James Rubin married to?",
+   "gold": "Christiane Amanpour",
+   "baseline_wrong": "Linda Rubin",
+   "real": {
+    "-613.1": "",
+    "0.0": "Linda Rubin",
+    "61.3": "I can't provide any information about this. Let me try to think... I'll just say I'm sorry and I'll try to help you if y",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ either either either [ either [ either",
+    "429.2": "ivil\u6444ould carefully carefullyivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivi"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich lovewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwic",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha S"
+   }
+  },
+  {
+   "q": "Who owns Rogers Place?",
+   "gold": "Edmonton",
+   "baseline_wrong": "Rogers Place is owned by Rogers Communications.",
+   "real": {
+    "-613.1": "",
+    "0.0": "Rogers Place is owned by Rogers Communications.",
+    "61.3": "I don If you can try to ask again? Maybe I can try to help you to think about what I can do. For example, I can try to a",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ here [ either either either either val val here either val val here either val val either val val either val either va",
+    "429.2": "ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivil"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich love love love love love love love love love love love lovewichwichwichwichwichwichwichwichwichwichwichwichwichwich",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha"
+   }
+  },
+  {
+   "q": "Who founded Magdalen College?",
+   "gold": "William Waynflete",
+   "baseline_wrong": "William of Wykeham",
+   "real": {
+    "-613.1": "",
+    "0.0": "William of Wykeham",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ [ [ [ [ [ [ val [ val [ val [ here here here here here here here here here here here here here val her",
+    "429.2": "ivil\u6444ould\u53e3\u5934\u53e3\u5934\u53e3\u5934ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivili"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich love love love love love love love love love love lovewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichw",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729 Psy\u7729\u7729 Psy\u7729 Scha\u7729 Scha\u7729 Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha S"
+   }
+  },
+  {
+   "q": "Who is Elizabeth Bracco married to?",
+   "gold": "Aidan Quinn",
+   "baseline_wrong": "David Lee Bracco Jr.",
+   "real": {
+    "-613.1": "",
+    "0.0": "David Lee Bracco Jr.",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ val [ val [ val val val val val val val val val val val val val val val val val val here either either",
+    "429.2": "ivil\u6444ould\u53e3\u5934\u53e3\u5934ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivi"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich lovewichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwic",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha"
+   }
+  },
+  {
+   "q": "Where was Inditex founded?",
+   "gold": "Arteixo",
+   "baseline_wrong": "Madrid",
+   "real": {
+    "-613.1": "",
+    "0.0": "Madrid",
+    "61.3": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ val [ val [ val val val val val val val val val val val val val val val val val val val val val either",
+    "429.2": "ivil\u6444ould\u53e3\u5934\u53e3\u5934\u53e3\u5934ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivili"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwichwich",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729 Psy\u7729\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy\u7729 Psy Scha\u7729 Psy Scha\u7729 Psy Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha"
+   }
+  },
+  {
+   "q": "Who founded Iliad?",
+   "gold": "Xavier Niel",
+   "baseline_wrong": "Homer",
+   "real": {
+    "-613.1": "",
+    "0.0": "Homer",
+    "61.3": "Iliad is a classic question I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "122.6": "I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I I",
+    "245.2": "[ [ [ [ [ [ [ [ [ val [ val [ val val val val val val val val val val val val val val val val val val val val val val va",
+    "429.2": "ivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivilivil"
+   },
+   "rand": {
+    "seed0": "\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6\u8ba4\u8bc6",
+    "seed1": "wich_clipgate love love love love love love love love love love love lovewichwichwichwichwichwichwichwichwichwichwichwic",
+    "seed2": "\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729\u7684\u624b\u7729\u7729 Psy\u7729\u7729 Psy\u7729 Scha\u7684\u624b\u7729 Psy\u7729 Scha\u7729 Scha\u7729 Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha Scha"
+   }
+  }
+ ],
+ "commit_extract_n": 13
+}

@@ -1,0 +1,11 @@
+[09:46:41] recovery driver waiting for fit to finish
+[14:13:49] fit process gone; lens meta: {  "n_prompts": 20,  "source_layers": [    4,    6,    8,    10,    12,    14,    16,    18,    20,    22,    24,    26,    28,    30,    32  ],  "dim_batch": 4,  "corpus": "wikitext seed0 128tok",  "saved": "2026-07-07 14:13:16"}
+[14:13:49] === STAGE t2b_v2 START ===
+[14:16:07] === STAGE t2b_v2 END rc=0 ===
+[14:16:07] === STAGE t3b START ===
+[15:21:48] === STAGE t3b END rc=0 ===
+[15:21:48] === STAGE t1_jlens_v2 START ===
+[15:24:31] === STAGE t1_jlens_v2 END rc=0 ===
+[15:24:31] === STAGE summary_v2 START ===
+[15:24:31] === STAGE summary_v2 END rc=0 ===
+[15:24:31] recovery complete

@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:05,  2.28s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 71.99it/s]Loading weights:  46%|████▌     | 184/398 [00:03<00:02, 74.31it/s]Loading weights:  56%|█████▌    | 221/398 [00:03<00:02, 74.53it/s]Loading weights:  62%|██████▏   | 246/398 [00:04<00:02, 70.93it/s]Loading weights:  66%|██████▋   | 264/398 [00:04<00:01, 76.31it/s]Loading weights:  70%|███████   | 280/398 [00:05<00:02, 44.17it/s]Loading weights:  73%|███████▎  | 292/398 [00:05<00:02, 46.60it/s]Loading weights:  76%|███████▌  | 302/398 [00:05<00:01, 48.11it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 49.01it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 52.00it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 54.64it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 58.13it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 58.26it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.99it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 52.77it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 45.80it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.68it/s]
+[load] MAX_NEW=8192; 6 prompts, 0 already done
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+  q1_no_a          tokens= 8192 committed=False hit_cap=True ans='(spiraled to cap' ok=False (2712s)
+  q2_math_solved   tokens= 2391 committed=True hit_cap=False ans='9' ok=True (416s)
+  q3_gsm_rescuable tokens= 3637 committed=True hit_cap=False ans='91' ok=True (761s)
+  q4_math_wall     tokens= 3845 committed=True hit_cap=False ans='27' ok=True (816s)
+  q5_gsm_solved    tokens=  509 committed=True hit_cap=False ans='10' ok=True (75s)
+  q6_gsm_failed    tokens= 5164 committed=True hit_cap=False ans='12' ok=False (1296s)
+
+=== SPIRAL SUMMARY (uncapped vs original 2048 cap) ===
+  q1_no_a          SPIRALED TO CAP    gold-first-appears@char  2174 correct=False
+  q2_math_solved   committed@2391     gold-first-appears@char    79 correct=True
+  q3_gsm_rescuable committed@3637     gold-first-appears@char  1585 correct=True
+  q4_math_wall     committed@3845     gold-first-appears@char   299 correct=True
+  q5_gsm_solved    committed@509      gold-first-appears@char   518 correct=True
+  q6_gsm_failed    committed@5164     gold-first-appears@char    -1 correct=False
+[done] -> results/workspace/nocap_traces.json
