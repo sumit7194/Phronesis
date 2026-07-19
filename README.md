@@ -34,6 +34,17 @@ The project has moved from *whether you can steer hedging* to *when a reasoning 
 
 > **Throughline of the new arc:** the machinery to *read* a reasoning model's internal state is real and cheap to validate locally — P(True) catches 85% of its errors. What survives honest controls is narrow: the one real calibration gap is **overconfidence at boundaries**, and it resists both detection *and* prompting. Every headline here had to survive a control built to kill it; several didn't.
 
+### Update (2026-07, latest) — workspace read, and two corrections
+
+> **[STATE.md](STATE.md) is the live dashboard** (best claim per arc, evidence tier, controls). Latest since F190:
+
+- **Workspace / J-lens read (F191).** A Jacobian-lens read of the mid-layer residual "workspace" shows boundary errors are **concept-present**: the pivotal concept (e.g. the strict-inequality constraint) reads out at ~rank 1 while the model still commits the error — one trace even *verbalizes* the rule then violates it. The failure is **mis-application of a loaded concept**, not missing awareness.
+- **Read-then-act gating** roughly **doubles** calibrated accuracy (gate an action on a confidence read: 4B 24→55%, 32B 33→59%). Strong, but likely overlaps recent published work — treated as replication until a novelty check clears.
+- **Correction — the reasoning-"failure" set was truncation-contaminated.** Several curated "failures" (incl. one labeled a *capability wall*) simply hit a 2048-token cap mid-thought; **uncapped, they solve correctly**. Only genuinely budget-robust failures (a strategy-spiral and a confident off-by-one) survive — and the mid-layer lens is blind to numeric commit-errors (numbers live in late layers). *Always run uncapped before labeling a failure.*
+- **Null — deception "concealment" on hosted 70B/27B.** A natural-language read of the internal state during instructed lying just **echoes the prompt framing** (a truthful answer reads the same as a lie; one model fired "deception" words on 8/8 *honest* answers). No genuine concealment signal on either Llama-70B or Gemma-27B. A GPU-free hosted-model pipeline (Neuronpedia) was validated as infrastructure in the process.
+
+> **Honest standing:** rigor is real; novelty is the gap. Literature checks put the headline arcs (behavioral-Jacobian read≠write, gate→search, boundary-error mechanics) alongside parallel 2025–26 work. The durable value is **honest negatives, independent 4B replications, and method discipline** — including catching the project's own over-claims (the truncation artifact above was caught, not shipped).
+
 ## What this is
 
 *(This section describes the published arc 1 — the Qwen2.5-7B hedging/abstention work. For the ongoing Qwen3-4B reasoning-calibration work, see [Current work](#-current-work-2026-07-reasoning-calibration-pivot) above.)*
@@ -49,7 +60,7 @@ This is a replication of recent steering-vector cautions ([Rogue Scalpel](https:
 - **Writeup**: [docs/drafts/lesswrong-replication-post-v4.md](docs/drafts/lesswrong-replication-post-v4.md) — the replication post (final draft; see Publications above for all three writeups)
 - **Verified numbers + statistical tests**: [docs/controls-verification-2026-05-23.md](docs/controls-verification-2026-05-23.md)
 - **Classification rubric**: [docs/e2-classification-rubric.md](docs/e2-classification-rubric.md)
-- **Findings chronology** (187 F-numbered findings across the project arc; reasoning pivot = F181–F187): [docs/findings.md](docs/findings.md)
+- **Findings chronology** (F1–F191 across the project arc; reasoning + workspace pivot = F181–F191): [docs/findings.md](docs/findings.md) · **live status: [STATE.md](STATE.md)**
 - **Reasoning-arc method plan** (gated-controller S1→S2→S3): [docs/exp-gated-controller-2026-07.md](docs/exp-gated-controller-2026-07.md)
 - **Project journal**: [docs/journal.md](docs/journal.md)
 - **Prior-art deep read**: [docs/prior-art-deep-read-2026-05-22.md](docs/prior-art-deep-read-2026-05-22.md)
