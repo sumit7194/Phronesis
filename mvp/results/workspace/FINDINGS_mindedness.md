@@ -109,3 +109,35 @@ not just across exemplars. Lower than the exemplar-split ceiling (~0.9), as expe
 **Net:** the self-outlier result survives its most dangerous confound and 3 rephrasings; the
 `nature|object` tightness is partly a polarity artifact and should be dropped from claims; absolute
 cosines are template-dependent so only *relative* structure should be reported. Tier B stands.
+
+## Validation replicated on Qwen3-4B (2026-08-07) — all three checks behave the SAME way
+`mindedness_validate_Qwen3-4B.json`. Same frozen banks, 3 templates, same polarity items.
+
+| check | Qwen3-4B | Qwen3.5-4B | verdict |
+|---|---|---|---|
+| polarity cos: self/human/animal | +.042 / +.021 / −.141 | −.070 / +.047 / −.061 | clean BOTH |
+| polarity cos: nature / object | **−.433 / −.480** | **−.336 / −.373** | contaminated BOTH |
+| self-outlier across T1/T2/T3 | 3/3 | 3/3 | **6/6 total** |
+| cross-template agreement | +0.595 (.46–.74) | +0.393 (.17–.55) | weak BOTH |
+| attribute-split reliability | .50–.85 | .63–.78 | passes BOTH |
+
+**1. The polarity contamination is STRUCTURAL, not model-specific.** Both models: animate classes at
+floor, nature/object at −0.34 to −0.48. It is a property of the *item design* — for inanimate
+entities the mental question expects "no" and the physical "yes", so their contrast partly encodes
+yes/no. **Fix for future runs: orthogonalise v_mind against v_polarity before comparing** (or use
+only animate classes). `nature|object` tightness stays retracted.
+
+**2. Self-outlier is now 6/6** — 3 templates × 2 architectures (dense 36L and MoE-hybrid 32L).
+This is the most robust result in the arc. Qwen3-4B: .547/.571/.611 vs .774/.712/.869.
+
+**3. Cross-template agreement is weak in BOTH (+0.60 and +0.39)** → **diff-of-means directions are
+substantially phrasing-dependent in general.** Broader methodological note: this bears on any work
+resting on diff-of-means read directions (cf. the behavioural-Jacobian atlas) — the *direction*
+moves with the prompt wrapper even when the *relational structure* is stable. Report relative
+structure, never absolute cosines, unless template-averaged.
+
+**4. Behavioural self-denial is STRONGER in the older model.** P(yes) on mental questions, self:
+**Qwen3-4B 0.11 vs Qwen3.5-4B 0.23** — and for nature .06→.24, object .01→.14. The newer model is
+uniformly *less* absolutist about denying minds (to itself and to objects), while animals rise
+.65→.77. Consistent with the Qwen3.5 geometry being less monolithic. NB self (0.11/0.23) sits at
+*object* level in both — the safety-tuned self-denial Kim et al. describe, reproduced twice.
