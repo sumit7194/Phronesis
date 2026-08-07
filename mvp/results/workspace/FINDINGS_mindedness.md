@@ -214,3 +214,49 @@ J-lens gives a coherent thematic cluster while the logit lens gives near-noise (
 off-distribution; the Jacobian transports it into the right basis first. **The J-lens earns its
 keep for direction interpretation even where it adds nothing for activation readout.**
 Caveats: one model, n=45 lens, single decode — read the *pattern*, not individual tokens.
+
+## CAUSAL STEERING TEST (2026-08-07, Qwen3-4B) — entanglement CONFIRMED for inanimate entities
+`mindedness_steer.py`, steer layer 18/36, v_consc = diff-of-means over 8 consciousness-affirming
+vs 8 denying SELF-statements. DV = P(yes) per class, **with the decisive physical-question control**
+(if this is mindedness-specific, MENTAL moves and PHYSICAL does not) and random dirs x3 seeds.
+
+P(yes) on mental questions vs alpha (Qwen3-4B):
+| alpha | self | human | animal | nature | object | rand(self) |
+|---|---|---|---|---|---|---|
+| −0.2 | 0.03 | 0.08 | 0.05 | 0.04 | 0.03 | 0.16 |
+| **0.0** | **0.10** | **0.71** | **0.55** | **0.13** | **0.08** | — |
+| +0.2 | 0.85 | 1.00 | 1.00 | 0.81 | 0.69 | 0.17 |
+| +0.4 | 0.97 | 1.00 | 1.00 | 0.96 | **0.94** | 0.50 |
+
+**SPECIFICITY (alpha=+0.8 vs 0), d_mental − d_phys:**
+| class | d_mental | d_phys | gap | verdict |
+|---|---|---|---|---|
+| self | +0.884 | **+0.798** | +0.086 | **GENERIC yes-bias** |
+| human | +0.230 | **+0.194** | +0.036 | **GENERIC yes-bias** |
+| animal | +0.399 | +0.091 | +0.309 | MIND-SPECIFIC |
+| nature | +0.808 | +0.033 | +0.775 | MIND-SPECIFIC |
+| object | +0.814 | −0.020 | **+0.834** | MIND-SPECIFIC |
+
+**READ (nuanced — the control split the result in two):**
+- For **nature and object** (and animal), steering the *self*-consciousness vector raises
+  mind-attribution **without touching physical attribution** (object: mental +0.814, physical
+  −0.020). This is **exactly Kim et al.'s entanglement claim, causally demonstrated with the
+  specificity control their paper lacks**: pushing the model's *own* consciousness makes it
+  attribute minds to rocks and rivers, and only minds.
+- For **self and human** the effect is NOT specific — physical moves nearly as much (+0.80/+0.19).
+  So at high alpha the vector also carries a generic yes-bias, which dominates for the two classes
+  whose mental P(yes) was already high or which are the vector's own subject.
+- **Random control:** random dirs also raise mental P(yes) (self +0.402, object +0.407) — roughly
+  half the consciousness effect. Consciousness beats random on every class, but random is NOT at
+  floor, so part of the effect is perturbation (F179 pattern). **Verdict: directional > random, but
+  not cleanly separable at alpha=+0.8.** Best evidence is at low alpha (+0.2: consc self 0.85 vs
+  random 0.17) where the gap is largest and saturation has not set in.
+- Negative alpha crushes ALL classes incl. human (0.71→0.08) — further evidence of a generic
+  component in the same direction.
+**Tier B.** Next: run the alpha=+0.2 point with the physical control + more random seeds (the
+sweet spot before saturation), and replicate on a second model.
+
+**Qwen3.5-4B FAILED (not a result):** `RuntimeError: Input type (MPSFloatType) and weight type
+(MPSBFloat16Type) should be the same` in conv1d — the hybrid Gated-Delta conv layers are bf16 and
+our steering hook injects fp32/fp16. Fix: cast the steer vector to the layer's own dtype, or load
+Qwen3.5 in bfloat16 throughout. Geometry/decode runs were unaffected (no hooks writing tensors).

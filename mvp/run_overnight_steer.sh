@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 LOG=results/workspace/logs/mindedness_steer.log
-THRESH_MB=5000
+THRESH_MB=7000
 for spec in "Qwen/Qwen3-4B:Qwen3-4B" "Qwen/Qwen3.5-4B:Qwen3_5-4B"; do
   M="${spec%%:*}"; T="${spec##*:}"
   echo "=== $M $(date '+%H:%M') ===" >> "$LOG"

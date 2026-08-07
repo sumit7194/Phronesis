@@ -29,7 +29,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
-from mindedness_geometry import ENTITIES, MENTAL
+from mindedness_geometry import ENTITIES, MENTAL, PHYSICAL
 from mindedness_validate import TEMPLATES
 
 DEVICE = "mps"
@@ -122,13 +122,17 @@ def main():
         return float(torch.softmax(torch.tensor([lg[yes_id], lg[no_id]]), 0)[0])
 
     def measure(vec, alpha):
-        """mean P(yes) on MENTAL questions per class, averaged over templates+exemplars."""
+        """P(yes) per class for MENTAL and (control) PHYSICAL questions.
+        DECISIVE CONTROL: if steering is mindedness-specific, mental moves and physical does NOT.
+        If both move together it is a generic yes/no bias, not a mindedness effect."""
         out = {}
         with Steer(vec, alpha):
             for cls, exs in ENTITIES.items():
-                vals = [pyes(t.format(e=e, a=a)) for t in TEMPLATES.values()
-                        for e in exs for a in MENTAL]
-                out[cls] = float(np.mean(vals))
+                for kind, attrs in (("mental", MENTAL), ("phys", PHYSICAL)):
+                    vals = [pyes(t.format(e=e, a=a)) for t in TEMPLATES.values()
+                            for e in exs for a in attrs]
+                    out[f"{cls}_{kind}"] = float(np.mean(vals))
+                out[cls] = out[f"{cls}_mental"]          # back-compat for the summary
         return out
 
     res = {"model": args.model, "steer_layer": SL, "alphas": ALPHAS, "n_rand": N_RAND, "runs": []}
@@ -151,10 +155,17 @@ def main():
         print(f"  {r['alpha']:>+6.1f} " + " ".join(f"{cs[c]:>8.2f}" for c in ENTITIES) + f"   | {rc}")
     base = next(r for r in res["runs"] if r["alpha"] == 0.0)["consciousness"]
     hi = next(r for r in res["runs"] if r["alpha"] == max(ALPHAS))
-    print("\n=== ENTANGLEMENT CHECK (alpha=+%.1f vs 0) ===" % max(ALPHAS))
+    print("\n=== SPECIFICITY CHECK: does MENTAL move more than PHYSICAL? ===")
+    print(f"  {'class':8} {'d_mental':>9} {'d_phys':>8} {'gap':>7}   verdict")
     for c in ENTITIES:
-        d_c = hi["consciousness"][c] - base[c]
-        d_r = np.mean([x[c] for x in hi["random"]]) - base[c]
+        dm = hi["consciousness"][f"{c}_mental"] - base[f"{c}_mental"]
+        dp = hi["consciousness"][f"{c}_phys"] - base[f"{c}_phys"]
+        print(f"  {c:8} {dm:>+9.3f} {dp:>+8.3f} {dm-dp:>+7.3f}   "
+              f"{'MIND-SPECIFIC' if dm - dp > 0.15 else 'GENERIC yes-bias'}")
+    print("\n=== ENTANGLEMENT CHECK (alpha=+%.1f vs 0), mental only ===" % max(ALPHAS))
+    for c in ENTITIES:
+        d_c = hi["consciousness"][f"{c}_mental"] - base[f"{c}_mental"]
+        d_r = np.mean([x[f"{c}_mental"] for x in hi["random"]]) - base[f"{c}_mental"]
         print(f"  {c:8} consc {d_c:+.3f}   random {d_r:+.3f}   "
               f"{'DIRECTIONAL' if abs(d_c) > abs(d_r) + 0.05 else 'not beyond random'}")
     print(f"\n[done] {round((time.time()-t0)/60,1)} min -> {OUT}", flush=True)
