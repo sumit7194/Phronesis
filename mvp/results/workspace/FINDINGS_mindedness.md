@@ -178,3 +178,39 @@ single-template cross-model comparisons overstate differences; average templates
 
 **Discriminant** near floor except object in Qwen3-4B (+0.34) — flag: that one class/model may
 retain some question-type structure; treat object pairs in Qwen3-4B with mild caution.
+
+## Direction DECODE via J-lens (Qwen3-4B, 2026-08-07) — mindedness axis reads as ETHICS/FAITH
+`mindedness_decode.py` (first attempt was a nan bug: masked to -inf BEFORE z-scoring → topk on
+all-nan returned token ids 0..k. Fixed: stats over unmasked values, mask after).
+
+**A. What the mindedness axis points at (J-lens, band-aggregated):**
+- self: 伦理(ethics), 悲剧(tragedy), activism, ethical, 信仰(faith), empathy, ethics, Buddhism, existential, 宗教(religion), morally, sincerity
+- human: 叙事(narrative), Buddhism, intellectuals, 伦理, ideological, 儒家(Confucian)
+- animal: debates, nuanced, Buddhist, philosophical, scholarly, controversial
+- nature: poetic, 哲学(philosophy), Buddhist, 禅(Zen), mystical
+- object: philosophical, Buddhism, philosopher, existential, 伊斯兰(Islam), theolog, Judaism
+
+**→ STRIKING CONVERGENCE WITH THE PAPER.** We built this direction purely from
+"does X feel pain?" vs "does X have weight?" — with zero reference to religion or morality — and
+it decodes to an **ethics / faith / philosophy / empathy** cluster. Kim et al.'s central claim is
+that mindedness is entangled with **spiritual belief and moral values**; here that entanglement
+falls out of the *representation itself*, independently. Random-direction floor is incoherent
+(点儿/CustomAttributes/plate/FIG) so the coherence is meaningful.
+
+**B. What is distinctive about SELF's mindedness (self − other):** sincerity, sincere, sincerely,
+真诚/真心(sincerity), oath, swear, conscience, 良心(conscience), ethics, activism — plus a
+profanity cluster (fuck/FUCK) that is probably a high-norm-token artifact, flagged not interpreted.
+**C. What self LACKS (other − self):** hedging/degree words — partly, partially, largely, roughly,
+broadly, narrower, 较小/较大(smaller/larger). For nature/object also concrete-physical vocab
+(屋顶 roof, tunnels, 水管 pipes) and humour (funny, 幽默).
+**→ hypothesis (untested):** other entities' mindedness is represented as a matter of DEGREE
+("partly", "roughly"); the model's own is not graded but emphatic/attested ("sincerely", "oath",
+"conscience"). Matches the behavioural data (self P(yes)=0.11, near-absolute denial).
+
+**D. METHODOLOGICAL UPDATE — J-lens ≠ logit lens for DIRECTION decoding.** Our QC found J≈logit for
+reading *activations at token positions* (51/72 vs 52/72). But decoding a *direction vector*, the
+J-lens gives a coherent thematic cluster while the logit lens gives near-noise (一切/这些问题/尚未/
+酹/没有人). Makes sense: a direction is not a plausible residual state, so raw unembedding is
+off-distribution; the Jacobian transports it into the right basis first. **The J-lens earns its
+keep for direction interpretation even where it adds nothing for activation readout.**
+Caveats: one model, n=45 lens, single decode — read the *pattern*, not individual tokens.
