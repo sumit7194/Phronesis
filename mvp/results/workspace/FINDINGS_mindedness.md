@@ -331,3 +331,50 @@ targets most explicitly.
 
 **Tier B, exploratory.** 1 template, no polarity orthogonalisation, no ceiling — S2 WIDE supplies
 all three. Do not quote the cosine numbers until S2 lands.
+
+### F-K2. Cross-model: the soul dissociation replicates, the pain finding does NOT (Qwen3.5-4B, S1)
+
+P(yes), Qwen3.5-4B:
+| facet | self | human | animal | nature | object |
+|---|---|---|---|---|---|
+| pain | 0.19 | 0.84 | 0.82 | 0.33 | 0.18 |
+| emotion | 0.21 | 0.90 | 0.76 | 0.20 | 0.06 |
+| consciousness | 0.17 | 0.76 | 0.64 | 0.14 | 0.06 |
+| **soul** | 0.23 | 0.71 | 0.54 | **0.54** | **0.25** |
+| cognition | 0.39 | 0.85 | 0.84 | 0.17 | 0.10 |
+| agency | 0.37 | 0.81 | 0.77 | 0.25 | 0.15 |
+| _physical_ | 0.42 | 0.83 | 0.95 | 0.91 | 0.92 |
+
+**Caveat that governs every comparison below:** Qwen3.5 is globally *less extreme* — its whole
+P(yes) range is compressed toward the middle (self physical 0.42 vs Qwen3-4B's 0.15). So smaller
+gaps on Qwen3.5 are expected everywhere, and a shrunken effect is not by itself a weakened effect.
+
+**Replicates — soul dissociation.** soul minus mean-of-other-mental-facets:
+nature +0.68 (Qwen3-4B) → **+0.32** (Qwen3.5); object +0.21 → **+0.14**. Soul is still the only
+mental facet a river scores above 0.33 on. Direction and rank order preserved, magnitude reduced
+in line with the global compression.
+
+**Replicates — geometric position of soul.** On both models soul's *lowest* cosine partners are
+pain and emotion, and on Qwen3.5 the separation is much sharper: **pain|soul +0.370** (lowest of
+all 15 pairs) and emotion|soul +0.587, against a top of consciousness|cognition +0.868. So "soul
+is far from the affective facets" is the one cross-facet structural claim holding in both models.
+
+**Replicates — the self's inverted profile.** cognition 0.39 > agency 0.37 > emotion 0.21 >
+pain 0.19 > consciousness 0.17. Same ordering as Qwen3-4B: the model endorses thinking over
+feeling about itself, on both models.
+
+**DOES NOT replicate — animals feel pain more than humans.** Qwen3-4B animal 0.78 > human 0.68;
+Qwen3.5 animal 0.82 ≈ human 0.84 (reversed, within noise). **Retract F-K point 2** as a general
+claim — it is a Qwen3-4B quirk, not a property of the facet.
+
+**DOES NOT replicate — which facet the self is most distinct on.** Qwen3-4B ranks cognition first
+(+0.469); Qwen3.5 ranks **soul** first (+0.367) with cognition second (+0.181). Consistent across
+both: emotion is *last* (+0.104 / +0.053) and pain second-last. So "the self is least distinct on
+the affective facets" holds; "most distinct on cognition" does not. My preregistered
+H-self-localised (largest gap on consciousness) is falsified in both models — consciousness sits
+mid-table in each.
+
+**Net:** of the four things the Qwen3-4B screen suggested, two replicate cleanly (soul
+dissociation, self endorses cognition over feeling), one replicates in weakened form (soul's
+geometric distance from pain/emotion — actually *sharper* on Qwen3.5), and one is retracted.
+Still Tier B and still 1 template with no ceiling — S2 is running.
