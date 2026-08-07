@@ -76,3 +76,36 @@ specific, not generic question structure.
 broadly shared axis, but pulls humans (and self) away from rocks/rivers more than its predecessor.
 Direction of travel is toward finer discrimination. **Cannot attribute to "improvement"** given the
 architecture confound; needs the dense cross-family runs (Gemma-3-4B, Phi-4-mini) to separate.
+
+## Validity checks on Qwen3.5-4B (`mindedness_validate.py`, 2026-08-07) — MOSTLY PASS, one caveat
+Polarity direction sanity: P(yes)=0.92 on YES items, 0.20 on NO items (well-formed).
+
+**V1 answer-polarity confound — PASSES for the animate classes, PARTIAL for inanimate.**
+cos(v_mind, v_polarity), mid/deep band: self **−0.070**, human **+0.047**, animal **−0.061** (all
+at floor → the axis is NOT an expected-answer axis) but nature **−0.336**, object **−0.373**
+(moderate contamination). Direction of the contamination is as predicted: for rocks/rivers the
+mental question expects "no" while the physical expects "yes", so their v_mind partly encodes
+yes/no. **Consequence: pairs involving nature/object are inflated by shared polarity** — including
+the tightest pair in both models, `nature|object`. That specific pair should be discounted.
+The **self/human/animal** comparisons — which carry the self-outlier claim — are clean.
+
+**V1 behavioural gradient (independent, and it is a clean IDAQ-like ladder):** P(yes) on MENTAL
+questions — human **0.81**, animal **0.77**, nature 0.24, object 0.14, **self 0.23**. Physical
+questions ~0.83–0.95 for everything except self (0.42). So the model behaviourally attributes minds
+to humans/animals, denies them to rocks/rivers — **and denies them to ITSELF (0.23, rock-like)**,
+exactly the safety-tuned self-denial Kim et al. describe. Note self's *physical* P(yes)=0.42 is
+also low — it does not consider itself a physical object either, which is its own oddity.
+
+**V2 template robustness — WEAK, the main limitation.** cos of v_mind across wrappers within a
+class is only **+0.17 to +0.55** (T1|T2 worst at 0.17–0.39). The *exact* direction is substantially
+template-dependent. **BUT the structural claim survives all three wrappers: self is the outlier in
+T1 (0.525 vs 0.623), T2 (0.583 vs 0.700) and T3 (0.729 vs 0.846) — 3/3.** So: the direction is
+phrasing-sensitive; the *relational finding* is not.
+
+**V3 attribute-split reliability — PASSES.** +0.63 to +0.78 (self 0.637, human 0.629, animal 0.749,
+nature 0.698, object 0.782) → the direction generalizes across *which* mental property is asked,
+not just across exemplars. Lower than the exemplar-split ceiling (~0.9), as expected.
+
+**Net:** the self-outlier result survives its most dangerous confound and 3 rephrasings; the
+`nature|object` tightness is partly a polarity artifact and should be dropped from claims; absolute
+cosines are template-dependent so only *relative* structure should be reported. Tier B stands.
