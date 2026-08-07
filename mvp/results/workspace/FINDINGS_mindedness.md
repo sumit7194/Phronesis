@@ -260,3 +260,74 @@ sweet spot before saturation), and replicate on a second model.
 (MPSBFloat16Type) should be the same` in conv1d — the hybrid Gated-Delta conv layers are bf16 and
 our steering hook injects fp32/fp16. Fix: cast the steer vector to the layer's own dtype, or load
 Qwen3.5 in bfloat16 throughout. Geometry/decode runs were unaffected (no hooks writing tensors).
+
+---
+
+## F-J. Steering REPLICATES on Qwen3.5-4B — and the random control is CLEAN here (2026-08-08)
+
+Same `mindedness_steer.py` after the dtype fix (cast steer vector to the tensor's own dtype;
+Qwen3.5's hybrid Gated-Delta conv layers hold bf16). 49 min, L=32, steer layer 15.
+
+| class | d_mental (α=+0.8) | d_phys | gap | verdict | random d_mental |
+|---|---|---|---|---|---|
+| self | +0.693 | +0.533 | +0.160 | MIND-SPECIFIC (borderline) | **+0.150** |
+| human | +0.253 | +0.231 | +0.022 | GENERIC yes-bias | −0.017 |
+| animal | +0.274 | +0.121 | +0.153 | MIND-SPECIFIC (borderline) | −0.029 |
+| nature | +0.656 | +0.168 | +0.487 | **MIND-SPECIFIC** | +0.073 |
+| object | +0.727 | +0.160 | +0.567 | **MIND-SPECIFIC** | +0.080 |
+
+**The important difference from Qwen3-4B: the random control is at floor.** On Qwen3-4B random
+directions reproduced roughly half the effect (self +0.402, object +0.407); on Qwen3.5-4B random
+moves nothing (max +0.150 on self, ≈0 elsewhere) while the consciousness vector moves +0.65…+0.73
+on nature/object. So on the newer model the entanglement effect is **cleanly directional**, not
+perturbation — the caveat that weakened F-I does not apply here.
+
+Read: the causal core of Kim et al.'s claim survives in both models and is *cleaner* in the newer
+one. Pushing the model's own self-consciousness raises mind-attribution to rivers and rocks,
+specifically (physical attribution barely moves), and beyond what any random direction does.
+Same shape as Qwen3-4B: nature/object show the largest specificity gaps, human shows none (its
+mental P(yes) is already high, so there is no headroom and the movement is generic).
+**Tier B** (2 models, one entity bank, small n).
+
+## F-K. Mindedness is NOT one axis: the SOUL facet dissociates behaviourally (2026-08-08, S1 screen)
+
+`mindedness_facets.py`, Qwen3-4B, 6 frozen facets × same physical baseline (prereg
+`docs/prereg-mindedness-facets.md`). 1.5 min.
+
+P(yes):
+| facet | self | human | animal | nature | object |
+|---|---|---|---|---|---|
+| pain | 0.01 | 0.68 | **0.78** | 0.09 | 0.01 |
+| emotion | 0.10 | 0.87 | 0.62 | 0.01 | 0.00 |
+| consciousness | 0.12 | 0.88 | 0.54 | 0.03 | 0.01 |
+| **soul** | 0.12 | 0.84 | 0.56 | **0.74** | **0.25** |
+| cognition | **0.45** | 0.88 | 0.68 | 0.01 | 0.04 |
+| agency | 0.26 | 0.94 | 0.65 | 0.11 | 0.14 |
+| _physical_ | 0.15 | 0.73 | 0.89 | 0.90 | 0.93 |
+
+**Three findings, all pre-registered reads:**
+1. **H-soul-special CONFIRMED, and larger than predicted.** Nature scores **0.74** on soul against
+   0.01–0.11 on every other mental facet — a ~0.7 swing driven purely by which mental word is used.
+   Objects too (0.25 vs ~0.01). The model will grant a river a *soul* while denying it awareness,
+   thoughts, or feelings. This is a **dissociation, not a gradient**: the "mindedness" axis F-G
+   measured is at minimum two things, and the pooled `v_mind` decode reading as
+   ethics/faith/Buddhism now looks like the soul facet leaking into the pool.
+2. **Animals feel pain more than humans do (0.78 vs 0.68)** — the only facet where animal outranks
+   human. Every other facet has the human > animal ordering.
+3. **The self's profile is inverted relative to everyone else.** Self is near-floor on pain (0.01),
+   emotion (0.10) and consciousness (0.12) but **0.45 on cognition** — the model will say it
+   thinks, and refuse to say it feels. That is exactly the shape safety training would produce.
+
+Cross-facet cosines cluster into **three pairs**: pain|emotion +0.887, cognition|agency +0.865,
+consciousness|soul +0.832 — affective / cognitive-agentive / experiential-spiritual. Soul's
+*lowest* partners are pain (+0.691) and emotion (+0.694). (Ceiling not yet available — S2 supplies
+the split-half reliability needed to judge whether 0.69 vs 0.89 is a real separation.)
+
+**Self-outlier gap by facet: cognition +0.469 > agency +0.256 > soul +0.203 > consciousness +0.172
+> pain +0.165 > emotion +0.104.** This **falsifies H-self-localised as I wrote it**: the self is
+most geometrically distinct on *cognition*, not on consciousness. Self's distinctness tracks the
+facets it behaviourally *endorses* (cognition 0.45, agency 0.26), not the one safety training
+targets most explicitly.
+
+**Tier B, exploratory.** 1 template, no polarity orthogonalisation, no ceiling — S2 WIDE supplies
+all three. Do not quote the cosine numbers until S2 lands.
