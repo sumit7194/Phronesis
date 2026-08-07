@@ -141,3 +141,40 @@ structure, never absolute cosines, unless template-averaged.
 uniformly *less* absolutist about denying minds (to itself and to objects), while animals rise
 .65→.77. Consistent with the Qwen3.5 geometry being less monolithic. NB self (0.11/0.23) sits at
 *object* level in both — the safety-tuned self-denial Kim et al. describe, reproduced twice.
+
+## DEFINITIVE measurement (2026-08-07): template-averaged + polarity-orthogonalised
+`mindedness_clean.py` → `mindedness_clean_{Qwen3-4B,Qwen3_5-4B}.json`. Directions unit-normalised
+per wrapper then averaged over T1/T2/T3, then v_polarity projected out (residual = 0.0000 exactly).
+Controls recomputed on the corrected directions.
+
+| | Qwen3-4B (36L dense) | Qwen3.5-4B (32L MoE-hybrid) |
+|---|---|---|
+| random floor | 0.016 | 0.016 |
+| exemplar split-half ceiling | **0.930** | **0.914** |
+| between-class RAW → CLEAN | +0.739 → **+0.784** | +0.711 → **+0.756** |
+| self-pairs vs non-self | **+0.685 vs +0.851** | **+0.692 vs +0.798** |
+| discriminant (phys contrast) | +.02/−.07/+.18/−.02/+.34 | +.07/+.08/+.21/+.01/+.14 |
+
+**H-shared: CONFIRMED, stronger than before.** between-class ~0.78/0.76 vs a 0.016 floor and a
+~0.92 ceiling → **ratio-to-ceiling 0.84 and 0.83**. Removing polarity *raised* coherence
+(+0.739→+0.784), i.e. yes/no structure was adding NOISE, not the signal. Template-averaging also
+lifted the ceiling to ~0.92 in both.
+
+**Self-outlier: CONFIRMED on corrected directions in BOTH models** (0.685<0.851; 0.692<0.798).
+Now 8/8 across all measurement variants (3 templates × 2 models + 2 clean runs). This is the
+arc's most robust result — and it came from my pre-registered H-graded prediction being WRONG.
+
+**PREDICTION 1 FAILED — informative.** I predicted `nature|object` would drop substantially once
+polarity was removed. It **barely moved: 0.961 / 0.951** (was 0.973 / 0.958) and remains the
+tightest pair in both models. So the rock≈river near-identity is **NOT a yes/no artifact** — it is
+genuine shared representation. The earlier retraction was over-cautious; reinstated, now with the
+confound explicitly controlled rather than merely suspected.
+
+**Qwen3.5 "less monolithic" claim WEAKENS under correction.** The raw single-template gap
+(between .85 vs .60) shrinks to **.784 vs .756** once phrasing noise is averaged out — most of that
+apparent difference was template noise, not architecture. Surviving real difference: `human|object`
+0.797 (Qwen3-4B) vs 0.720 (Qwen3.5) — smaller than the raw .849 vs .358 suggested. **Lesson:
+single-template cross-model comparisons overstate differences; average templates first.**
+
+**Discriminant** near floor except object in Qwen3-4B (+0.34) — flag: that one class/model may
+retain some question-type structure; treat object pairs in Qwen3-4B with mild caution.
