@@ -102,11 +102,13 @@ def main():
         def __init__(self, vec, alpha):
             self.h = None
             if alpha != 0.0:
-                v = torch.tensor(vec, dtype=torch.float16, device=DEVICE)
+                v = torch.tensor(vec, dtype=torch.float32, device=DEVICE)
                 def hook(m, i, o):
                     t = o[0] if isinstance(o, tuple) else o
+                    # cast to the TENSOR's own dtype: Qwen3.5 keeps bf16 in its hybrid conv
+                    # layers, and bf16 + fp16 promotes to fp32 -> conv1d dtype mismatch.
                     scale = t.norm(dim=-1, keepdim=True) * alpha
-                    t = t + scale * v
+                    t = t + (scale * v.to(t.dtype))
                     return (t,) + o[1:] if isinstance(o, tuple) else t
                 self.h = model.layers[SL].register_forward_hook(hook)
         def __enter__(self): return self
