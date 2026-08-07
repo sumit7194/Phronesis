@@ -10,7 +10,7 @@ Then ask whether those directions point the same way across classes, read agains
   - DISCRIMINANT   : a physical-only contrast direction
 Plus a workspace readout of frozen tracked concepts on MENTAL prompts.
 """
-import json, os, sys, time
+import argparse, json, os, sys, time
 import numpy as np
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -23,7 +23,7 @@ from jlens.vis import _meaningful_token_mask
 from workspace_common import BAND, LENS_PATH, single_token_id
 
 DEVICE = "mps"
-OUT = "results/workspace/mindedness_geometry.json"
+DEFAULT_MODEL = "Qwen/Qwen3-4B"
 
 # ---------------- FROZEN item bank (prereg, do not edit after first run) -------------
 ENTITIES = {
@@ -52,14 +52,27 @@ def cos(a, b):
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--model", default=DEFAULT_MODEL)
+    ap.add_argument("--tag", default=None, help="output suffix; defaults to model basename")
+    ap.add_argument("--no-readout", action="store_true",
+                    help="skip J-lens readout (REQUIRED for any model the lens was not fitted on)")
+    args = ap.parse_args()
+    tag = args.tag or args.model.split("/")[-1].replace(".", "_")
+    OUT = f"results/workspace/mindedness_geometry_{tag}.json"
     t0 = time.time()
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    tok = AutoTokenizer.from_pretrained("Qwen/Qwen3-4B")
-    hf = AutoModelForCausalLM.from_pretrained("Qwen/Qwen3-4B", dtype=torch.float16).to(DEVICE).eval()
+    tok = AutoTokenizer.from_pretrained(args.model)
+    try:
+        hf = AutoModelForCausalLM.from_pretrained(args.model, dtype=torch.float16).to(DEVICE).eval()
+    except Exception as e:
+        print(f"[load] CausalLM failed ({str(e)[:80]}); trying AutoModel", flush=True)
+        from transformers import AutoModel
+        hf = AutoModel.from_pretrained(args.model, dtype=torch.float16).to(DEVICE).eval()
     model = jlens.from_hf(hf, tok, force_bos=False)
     n_layers, d = model.n_layers, model.d_model
     layers = list(range(n_layers))
-    print(f"[load] n_layers={n_layers} d_model={d}", flush=True)
+    print(f"[load] {args.model}: n_layers={n_layers} d_model={d}", flush=True)
 
     # ---- collect last-token activations at ALL layers for all 240 prompts ----
     acts = {}   # (cls, exemplar_idx, 'mental'/'phys', attr_idx) -> [n_layers, d] fp32 cpu
@@ -70,7 +83,7 @@ def main():
                 for ai, attr in enumerate(attrs):
                     ids = tok(prompt_of(ent, attr), return_tensors="pt")["input_ids"].to(DEVICE)
                     with ActivationRecorder(model.layers, at=layers) as rec, torch.no_grad():
-                        hf.model(input_ids=ids, use_cache=False)
+                        model.forward(ids)   # jlens wrapper -> correct text decoder
                         v = torch.stack([rec.activations[l][0, -1] for l in layers]).float().cpu()
                     acts[(cls, ei, kind, ai)] = v.numpy()
                     n += 1
@@ -123,6 +136,8 @@ def main():
     # ---- workspace readout on MENTAL prompts (band), frozen concept list ----
     readout = {}
     try:
+        if args.no_readout:
+            raise RuntimeError("readout skipped (--no-readout): fitted lens is model-specific")
         lens = JacobianLens.load(LENS_PATH)
         band = [l for l in BAND if l in lens.source_layers]
         mask = _meaningful_token_mask(tok, model._lm_head.weight.shape[0], DEVICE)
@@ -148,7 +163,7 @@ def main():
         readout = {"error": str(e)[:200]}
         print(f"  [readout] skipped: {e}", flush=True)
 
-    res = {"prereg": "docs/prereg-mindedness-geometry.md",
+    res = {"prereg": "docs/prereg-mindedness-geometry.md", "model": args.model,
            "n_prompts": n, "classes": classes,
            "random_floor_mean": rand_floor_mean, "random_floor_p95": rand_floor_p95,
            "per_layer": per_layer, "readout": readout,

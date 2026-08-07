@@ -45,3 +45,34 @@ base-vs-instruct checkpoints; the paper itself concedes causal mediation is unte
 Prior art: the paper + a large representation-similarity literature → this is **independent
 confirmation of a premise**, not a novel discovery. Lit-check "concept entanglement / RSA across
 categories" before any writeup.
+
+## Cross-model #1: Qwen3.5-4B (2026-08-07) — shared axis REPLICATES, weaker; self-outlier holds
+`mindedness_geometry_Qwen3_5-4B.json`. Same frozen item bank, 240 prompts, 80s. 32 layers,
+d_model 2560 (same width → identical random floor 0.016/p95 0.035). Confounded: newer gen **AND**
+MoE **AND** hybrid Gated-Delta attention **AND** multimodal — a difference cannot be attributed to
+"newer/better" alone.
+
+| | Qwen3-4B (36L, dense) | Qwen3.5-4B (32L, MoE+hybrid) |
+|---|---|---|
+| random floor | 0.016 | 0.016 (identical) |
+| ceiling (best layer) | 0.929 (L9) | 0.905 (L22) |
+| between-class @best | ~0.85 | ~0.60 |
+| ratio-to-ceiling, shallow→deep | 0.91 → 0.72 | 0.80 → 0.62 |
+| self-pairs mean | +0.752 | +0.533 |
+| non-self pairs mean | +0.907 | +0.637 |
+
+**Replicates:** (1) shared axis far above floor (0.016) — H-shared holds again; (2) **self is still
+the outlier** (self-pairs 0.533 < non-self 0.637; and in Qwen3-4B 0.752 < 0.907); (3) ratio falls
+with depth in both → **entity-specific separation with depth replicates**; (4) `nature|object`
+is the single tightest pair in BOTH models (0.973 / 0.958) — inanimate entities are near-identical.
+**Differs:** the whole structure is **weaker/more differentiated** in Qwen3.5 (between-class ~0.60
+vs ~0.85; ratio 0.62–0.80 vs 0.72–0.91), and the peak-reliability layer moves late (L22/32=0.69
+depth) vs early (L9/36=0.26). Also **human|object collapses to 0.358** and human decouples from
+nature (0.443) — Qwen3.5 distinguishes humans from inanimate things far more sharply.
+**Discriminant** stays near floor in both (|.03–.21|), so the axis remains mental-vs-physical
+specific, not generic question structure.
+
+**Read:** the newer model has a *less monolithic* mindedness representation — it still has one
+broadly shared axis, but pulls humans (and self) away from rocks/rivers more than its predecessor.
+Direction of travel is toward finer discrimination. **Cannot attribute to "improvement"** given the
+architecture confound; needs the dense cross-family runs (Gemma-3-4B, Phi-4-mini) to separate.
