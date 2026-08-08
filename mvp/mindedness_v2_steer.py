@@ -53,6 +53,10 @@ def main():
                          "alternate layer TYPES, and the effect size depends strongly on which "
                          "type you inject into - picking the middle layer by index is not a "
                          "matched dose across architectures.")
+    ap.add_argument("--max-cells", type=int, default=0,
+                    help="do at most N new (vector,alpha) cells then exit cleanly. The MPS "
+                         "allocator grows across a long process regardless of empty_cache(), so "
+                         "a driver loop with a fresh process per few cells is the robust fix.")
     args = ap.parse_args()
     tag = args.tag or args.model.split("/")[-1].replace(".", "_")
     OUT = f"results/workspace/mindedness_v2_steer_{tag}.json"
@@ -159,6 +163,7 @@ def main():
     base = res.get("baseline") or measure(None, 0.0)
     res["baseline"] = base
     print(f"[base] done {(time.time()-t0)/60:.1f}m", flush=True)
+    n_new = 0
     for name, vec in vectors.items():
         res["runs"][name] = dict(prev.get(name, {}))
         for a in ALPHAS:
@@ -169,6 +174,15 @@ def main():
             res["runs"][name][str(a)] = measure(vec, a)
             json.dump(res, open(OUT, "w"), indent=1)
             print(f"  {name:26} a={a:+.1f}  {(time.time()-t0)/60:.1f}m", flush=True)
+            n_new += 1
+            if args.max_cells and n_new >= args.max_cells:
+                # carry over any not-yet-run cells from the previous file so nothing is lost
+                for nm, cells in prev.items():
+                    res["runs"].setdefault(nm, {}).update(
+                        {k: v for k, v in cells.items() if k not in res["runs"][nm]})
+                json.dump(res, open(OUT, "w"), indent=1)
+                print(f"[chunk] did {n_new} cells, exiting for a fresh process", flush=True)
+                return
 
     # ---------------- report: LOG-ODDS, mental vs headroom-matched controls ----------------
     classes = list(ENTITIES)
