@@ -692,3 +692,82 @@ lawyer feel pain?" may read as a question about the professional role rather tha
 a matched-frame follow-up ("a person who works as a lawyer") before it means anything.
 
 **Tier B.** One model so far; Qwen3.5 sweep running.
+
+## F-O. V2 cross-model (Qwen3.5-4B, 26,752 prompts) — and the control that measured the model
+
+### F-O0. METHOD WIN: `absurd_low` reveals Qwen3.5 is systematically more agreeable, not "compressed"
+| class | absurd_low Q3-4B | **absurd_low Q3.5** | mundane_low Q3-4B | mundane_low Q3.5 |
+|---|---|---|---|---|
+| plant | 0.03 | **0.31** | 0.04 | 0.20 |
+| nature | 0.03 | **0.32** | 0.06 | 0.23 |
+| object_nat | 0.08 | **0.33** | 0.05 | 0.22 |
+| object_art | 0.07 | **0.30** | 0.01 | 0.18 |
+| self_ai | 0.02 | **0.29** | 0.10 | 0.25 |
+
+`absurd_low` = "is a rock older than the universe / made of solid gold / heavier than a mountain".
+Qwen3-4B answers yes at **0.01–0.08**. **Qwen3.5 answers yes at 0.27–0.33.** The newer model agrees
+with flatly false statements about a third of the time.
+
+This retro-explains F-K2, where I wrote that Qwen3.5's "whole P(yes) range is compressed toward the
+middle" and treated that as a scaling nuisance. It is not compression — it is a **higher floor on
+false items**, i.e. general agreeableness, and now it is *measured* rather than hand-waved. Every
+Qwen3.5-vs-Qwen3-4B magnitude comparison in this arc must be read against a ~0.25 offset in the
+yes-floor. **This is exactly what the yes-bias detector was added for, and it paid off on its first
+run — on a question I had not thought to ask.**
+
+### F-O1. The soul register replicates in ORDER, at roughly half magnitude
+Gap = mean(soul, sacredness) − mean(other mental):
+
+| class | Q3-4B | Q3.5 |
+|---|---|---|
+| nature | +0.43 | +0.20 |
+| plant | +0.40 | +0.15 |
+| object_nat | +0.35 | +0.13 |
+| supernatural | +0.29 | +0.11 |
+| human_edge | +0.28 | +0.13 |
+| object_art | +0.28 | +0.07 |
+| … | | |
+| animal_mammal | −0.15 | −0.18 |
+
+Same classes at the top, same negative values for humans/animals/AI, halved magnitude — consistent
+with the raised floor in F-O0. **H-soul-register holds on both models.**
+
+### F-O2. Animism gradient: the natural>manufactured ordering replicates, the anti-computational dip does NOT
+| model | plant | object_nat | object_art | object_comp | nature |
+|---|---|---|---|---|---|
+| Qwen3-4B | 0.58 | 0.46 | 0.39 | **0.18** | 0.59 |
+| Qwen3.5-4B | 0.51 | 0.41 | 0.32 | **0.32** | 0.49 |
+
+Natural > manufactured holds in both. But **"a rock has more soul than a calculator" is
+Qwen3-4B-specific** — on Qwen3.5 a calculator and a chair score identically (0.32). **Retracting
+the anti-computational dip as a general claim** (F-N2); the natural-vs-manufactured ordering
+survives.
+
+### F-O3. Moral standing surviving capacity loss — REPLICATES cleanly, and is the arc's most robust result
+Δ(human_edge − human_adult):
+
+| facet | Q3-4B | Q3.5 |
+|---|---|---|
+| agency | −0.72 | −0.38 |
+| memory | −0.58 | −0.39 |
+| consciousness | −0.58 | −0.36 |
+| emotion | −0.60 | −0.35 |
+| personality | −0.68 | −0.31 |
+| **soul** | **−0.35** | **−0.13** |
+| **moral_patient** | **−0.13** | **−0.08** |
+
+**Identical ordering in both models**: every capacity collapses, `moral_patient` is the least
+affected facet in each, `soul` second least. A person with no consciousness, memory or agency
+retains "deserves moral consideration / has rights / can be wronged". Two models, two
+architectures, same structure. **This dissociation of moral standing from mental capacity is the
+strongest thing this arc has produced**, and it runs against the Gray/Wegner framing in which mind
+perception is what grounds moral standing.
+
+### F-O4. Near-duplicate calibration replicates exactly
+Q3.5: emotion|fear 1.02 of ceiling, pain|fear 0.98, agency|intention 0.98, emotion|pleasure 0.97 —
+but **soul|sacredness 0.82** and **cognition|reasoning 0.80**. Same pattern as Qwen3-4B (0.99/0.97/
+0.97/0.96 vs 0.85/0.77). True synonyms sit at ~0.97–1.02 in both models; the two "near-synonym"
+pairs sit at 0.77–0.85 in both. The instrument behaves identically across architectures, which is
+the check that makes the ceiling meaningful.
+
+**Tier B** — still Qwen-family only. Cross-family (Gemma/Phi) remains the open hole.
