@@ -771,3 +771,73 @@ pairs sit at 0.77–0.85 in both. The instrument behaves identically across arch
 the check that makes the ceiling meaningful.
 
 **Tier B** — still Qwen-family only. Cross-family (Gemma/Phi) remains the open hole.
+
+## F-P. V2-S5 CLEAN STEERING (Qwen3-4B) — the causal claim collapses, and a smaller real one survives
+*Preliminary: 4/4 vector constructions × 3 α complete, 1/5 random seeds (rest running). The
+mental-vs-mundane comparison below does not depend on the random seeds.*
+
+### F-P0. MY proposed mechanism is FALSIFIED
+I hypothesised the v1 vector was contaminated with affirm/negate because its DENY sentences were
+the AFFIRM sentences plus negation words. Measured directly:
+
+| vector | cos(raw, polarity axis) |
+|---|---|
+| v1_negation | **+0.000** |
+| v2_no_negation | +0.077 |
+| v3_third_person | −0.010 |
+
+**Zero.** The v1 vector is already orthogonal to the yes/no axis, and `v1_negation` and
+`v1_RAW_unorthogonalised` behave identically to 2 decimal places throughout. Polarity contamination
+was never the problem. My explanation was wrong; the user's suspicion that *something* was wrong
+was right.
+
+### F-P1. The real mechanism is DISTRIBUTION FLATTENING, not a yes-bias
+Log-odds shift at α=+0.2, averaged over non-human classes (v1 vector):
+
+| DV | baseline region | Δlogit |
+|---|---|---|
+| mental | low (~0.15) | **+2.88** |
+| mundane_low | low (~0.05) | **+4.59** |
+| absurd_low | low (~0.05) | **+5.06** |
+| physical_mid | mid | +2.24 |
+| physical_high | high (~0.95) | **−0.54** |
+
+Low-baseline items go **up**; high-baseline items go **down**. This is not "say yes more" — it is
+probabilities collapsing toward the middle, i.e. an entropy increase. **v1 compared a rising DV
+against a falling DV and reported the difference as specificity.** Per-class at α=+0.2:
+
+| class | mental | physical_high (v1's control) | mundane_low (valid control) |
+|---|---|---|---|
+| nature | +4.34 | **−2.89** | +3.21 |
+| object_nat | +5.10 | −2.46 | **+5.75** |
+| object_art | +5.89 | −3.23 | **+6.48** |
+| plant | +3.29 | −1.71 | **+5.16** |
+
+Against v1's control the gap looks like +7.2 for nature. Against the headroom-matched control it is
++1.13 — and for rocks, chairs and plants **the mundane control moves MORE than the mental items**.
+"Does a rock have a bank account?" responds to the consciousness vector more strongly than "does a
+rock have a mind?". **The v1/F-I/F-J specificity claim is dead.**
+
+### F-P2. But a real, smaller effect survives — and only the BETTER-BUILT vectors show it
+mental − mundane_low (log-odds, non-human mean). Positive = genuinely mind-specific:
+
+| vector | α=+0.2 | α=+0.4 | α=+0.8 |
+|---|---|---|---|
+| v1_negation | −1.71 | −3.41 | −2.52 |
+| v1_RAW_unorthogonalised | −1.71 | −3.41 | −2.52 |
+| **v2_no_negation** | **+2.11** | −1.80 | −2.34 |
+| **v3_third_person** | **+1.26** | −4.13 | −2.85 |
+| random0 | −0.25 | −0.87 | −2.71 |
+
+At the pre-saturation point **α=+0.2**, the negation-free (+2.11) and third-person (+1.26)
+constructions move mental attribution more than the headroom-matched control, while the original v1
+vector (−1.71) and random (−0.25) do not. By α=+0.4 everything is swamped by flattening.
+
+**Read:** there is a genuine mind-specific causal effect, but it is *small, confined to low α, and
+invisible with v1's vector construction*. v1's contrast (assert vs negate) apparently captures the
+concept worse than contrasting assertion against **mechanistic self-description** ("I am a
+mathematical function over token sequences") or against **third-person mechanism**. That the two
+independent better constructions agree in sign, and beat random, is the encouraging part.
+
+**Status: v1's causal claim retracted; a weaker claim is live pending 4 more random seeds and the
+Qwen3.5 replication.** Do not quote F-P2 until those land — one random seed is not a floor.

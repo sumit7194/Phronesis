@@ -130,13 +130,27 @@ def main():
                     - np.mean([resid(s) for s in VECTOR_SETS[n][1]], 0)), v_pol))
                for n in VECTOR_SETS},
            "runs": {}}
-    base = measure(None, 0.0)
+    # resume: reuse any (vector, alpha) cells already on disk. A power cut mid-sweep should cost
+    # the current condition, not the 98 minutes before it (2026-08-08).
+    prev = {}
+    if os.path.exists(OUT):
+        try:
+            old = json.load(open(OUT))
+            if old.get("baseline") and old.get("steer_layer") == SL:
+                prev = old.get("runs", {})
+                res["baseline"] = old["baseline"]
+                print(f"[resume] found {sum(len(v) for v in prev.values())} completed cells", flush=True)
+        except Exception as e:
+            print(f"[resume] ignoring unreadable {OUT}: {str(e)[:80]}", flush=True)
+    base = res.get("baseline") or measure(None, 0.0)
     res["baseline"] = base
     print(f"[base] done {(time.time()-t0)/60:.1f}m", flush=True)
     for name, vec in vectors.items():
-        res["runs"][name] = {}
+        res["runs"][name] = dict(prev.get(name, {}))
         for a in ALPHAS:
             if a == 0.0:
+                continue
+            if str(a) in res["runs"][name]:
                 continue
             res["runs"][name][str(a)] = measure(vec, a)
             json.dump(res, open(OUT, "w"), indent=1)

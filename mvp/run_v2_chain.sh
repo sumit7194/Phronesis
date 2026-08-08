@@ -42,8 +42,8 @@ guarded "v2-sweep Qwen3.5-4B" .venv/bin/python mindedness_v2_sweep.py --model Qw
 
 LOG=results/workspace/logs/v2_rest.log
 SW=results/workspace/mindedness_v2_sweep_Qwen3_5-4B.json
-needs "$SW" "S3-gw Qwen3.5-4B" && guarded "S3-gw Qwen3.5-4B" .venv/bin/python mindedness_v2_gw.py --tag Qwen3_5-4B
-guarded "S4-forced Qwen3-4B"   .venv/bin/python mindedness_v2_forced.py --model Qwen/Qwen3-4B   --tag Qwen3-4B
+guarded "S3-gw Qwen3.5-4B" .venv/bin/python mindedness_v2_gw.py --tag Qwen3_5-4B
+# S4-forced Qwen3-4B done 19:09
 guarded "S5-steer Qwen3-4B"    .venv/bin/python mindedness_v2_steer.py  --model Qwen/Qwen3-4B   --tag Qwen3-4B
 guarded "S4-forced Qwen3.5-4B" .venv/bin/python mindedness_v2_forced.py --model Qwen/Qwen3.5-4B --tag Qwen3_5-4B
 guarded "S5-steer Qwen3.5-4B"  .venv/bin/python mindedness_v2_steer.py  --model Qwen/Qwen3.5-4B --tag Qwen3_5-4B
