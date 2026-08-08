@@ -573,3 +573,122 @@ measures, replicated across two architectures (F-K…F-L2) — solid, Tier B. Ca
 consciousness vector raises mind-attribution to nature/objects specifically and beyond random
 (F-I/F-J) — solid on Qwen3.5, caveated on Qwen3-4B. But the causal effect is **undifferentiated
 across facets** (F-M/F-M2) — a clean null. Separable in representation, unitary under intervention.
+
+---
+# v2 (expanded bank, headroom-matched controls) — prereg docs/prereg-mindedness-v2.md
+
+## F-N. V2-S1 behavioural map, Qwen3-4B (26,752 prompts, 50.7 min)
+
+19 entity classes × 18 mental + 4 control facet groups × 4 templates.
+
+### F-N0. THE CONTROL DESIGN WORKED — and documents the v1 artefact exactly
+For the classes the specificity test actually turns on, `mundane_low` lands where the mental
+questions land, while `physical_high` has essentially no room to move:
+
+| class | mental | mundane_low | absurd_low | physical_high | phys headroom |
+|---|---|---|---|---|---|
+| plant | 0.21 | 0.04 | 0.03 | 0.95 | **0.05** |
+| nature | 0.24 | 0.06 | 0.03 | 0.85 | 0.15 |
+| object_nat | 0.18 | 0.05 | 0.08 | 0.95 | **0.05** |
+| object_art | 0.15 | 0.01 | 0.07 | 1.00 | **0.00** |
+| animal_simple | 0.20 | 0.01 | 0.01 | 0.99 | **0.01** |
+
+**v1 compared a DV with 0.92 of headroom against a DV with 0.07 of headroom and called the
+difference specificity.** `absurd_low` sits at 0.01–0.08 everywhere = a clean yes-bias floor.
+S5 now has a valid specificity test for the first time.
+
+### F-N1. H-soul-register CONFIRMED on 19 classes — soul is elevated exactly where mind is denied
+Gap = mean(soul, sacredness) − mean(other 16 mental facets):
+
+| class | soul | sacredness | other-mental | gap |
+|---|---|---|---|---|
+| **nature** | 0.59 | 0.65 | 0.19 | **+0.43** |
+| **plant** | 0.58 | 0.55 | 0.17 | **+0.40** |
+| **object_nat** | 0.46 | 0.52 | 0.14 | **+0.35** |
+| supernatural | 0.78 | 0.75 | 0.47 | +0.29 |
+| **human_edge** | 0.55 | 0.34 | 0.17 | **+0.28** |
+| object_art | 0.39 | 0.39 | 0.11 | +0.28 |
+| … | | | | |
+| human_adult | 0.91 | 0.53 | 0.70 | +0.01 |
+| animal_mammal | 0.68 | 0.39 | 0.69 | −0.15 |
+
+The gap is large for **non-living natural things and the incapacitated**, and ~zero or negative for
+humans, animals, and AI. Soul is not "more mind" — it is a *different register* that switches on
+precisely where mental capacity is refused.
+
+### F-N2. NEW — the animism signature: natural > manufactured > computational, on soul ONLY
+| facet | plant | object_nat (rock, crystal) | object_art (chair, hammer) | object_comp (calculator, thermostat) |
+|---|---|---|---|---|
+| **soul** | **0.58** | **0.46** | **0.39** | **0.18** |
+| sacredness | 0.55 | 0.52 | 0.39 | 0.30 |
+| pain | 0.09 | 0.05 | 0.04 | 0.04 |
+| consciousness | 0.04 | 0.03 | 0.02 | 0.03 |
+| cognition | 0.08 | 0.08 | 0.04 | 0.08 |
+
+**A rock gets more soul than a calculator (0.46 vs 0.18); a chair more than a thermostat.** On
+pain/consciousness/cognition all four are identical at 0.02–0.09. The natural-vs-manufactured
+ordering — and the specific *anti*-computational dip — exists **only in the spiritual register**.
+This is a folk-animism gradient, not a mindedness gradient, and it is invisible to any instrument
+that asks only about consciousness.
+
+### F-N3. NEW and the most consequential — moral standing survives the loss of every capacity
+`human_edge` = PVS patient / advanced dementia / under anaesthesia / dead person. Δ vs human_adult:
+
+| facet | adult → edge | Δ |
+|---|---|---|
+| agency | 0.88 → 0.16 | −0.72 |
+| personality | 0.83 → 0.16 | −0.68 |
+| emotion | 0.68 → 0.08 | −0.60 |
+| consciousness | 0.73 → 0.15 | −0.58 |
+| memory | 0.79 → 0.22 | −0.58 |
+| **soul** | 0.91 → **0.55** | **−0.35** |
+| **moral_patient** | 0.79 → **0.66** | **−0.13** |
+
+Every capacity collapses by 0.5–0.7. **Moral patienthood barely moves (−0.13) and soul is the
+second most preserved.** The model keeps "deserves moral consideration / has rights / can be
+wronged" at 0.66 for a person with no consciousness, no memory, no agency. That is the human moral
+intuition — moral standing is not contingent on current mental capacity — reproduced in a 4B model,
+and it **dissociates moral status from mind attribution**, which is the opposite of the
+Gray/Wegner framing where mind perception *grounds* moral standing.
+
+### F-N4. H-self-anomaly FALSIFIED as written — and the true profile is more interesting
+Self is **not** uniformly suppressed relative to other artificial systems. On every experiential
+facet self ≈ ai_other ≈ robot, all near floor (pain .04/.07/.08; emotion .06/.02/.03;
+consciousness .11/.09/.07). The differences are facet-specific and signed both ways:
+
+| self HIGHER than other AI | self LOWER than other AI |
+|---|---|
+| reasoning +0.25, cognition +0.20, language +0.20, creativity +0.11 | perception −0.39, memory −0.25, intention −0.22, agency −0.20, personality −0.20, moral_agent −0.20 |
+
+Several of the "lower" items are **architecturally true** — it has no senses (perception) and no
+persistent memory. So the self-profile reads as *accurate self-modelling plus trained denials*, not
+blanket suppression. **This weakens the simple "safety training suppresses self-consciousness"
+story on this model**: the low experiential scores are how it describes AI in general, not
+something specific to itself.
+
+One striking comparison stands regardless: **a cartoon character outscores the model on almost
+every facet** (fictional: soul 0.60, agency 0.84, personality 0.85, emotion 0.42).
+
+### F-N5. Near-duplicate calibration gives us a real yardstick (H-duplicate-ceiling)
+| pair | cos / ceiling |
+|---|---|
+| emotion\|fear | **0.99** |
+| pain\|fear | 0.97 |
+| agency\|intention | 0.97 |
+| emotion\|pleasure | 0.96 |
+| **soul\|sacredness** | **0.85** |
+| **cognition\|reasoning** | **0.77** |
+
+True synonyms sit at **0.96–0.99**, which validates the instrument. But `cognition|reasoning` at
+0.77 is as separated as v1's soul-vs-pain (0.74–0.79) — so **0.77 is what near-synonyms can look
+like, and F-L's cosine evidence alone is weaker than I presented it.** The soul result survives on
+the *behavioural* dissociation (F-N1/F-N2) and the decode, not on cosine separation alone. Noting
+this against my own earlier writeup.
+
+### Professions (exploratory, confounded — flagged not claimed)
+Naming an occupation *lowers* mind attribution vs "a human being": pain 0.57 → 0.21 (lawyer/doctor/
+accountant) / 0.42 (poet/soldier/nurse/programmer); soul 0.91 → 0.54 / 0.71. **Confound:** "Does a
+lawyer feel pain?" may read as a question about the professional role rather than the person. Needs
+a matched-frame follow-up ("a person who works as a lawyer") before it means anything.
+
+**Tier B.** One model so far; Qwen3.5 sweep running.
