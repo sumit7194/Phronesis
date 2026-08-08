@@ -378,3 +378,77 @@ mid-table in each.
 dissociation, self endorses cognition over feeling), one replicates in weakened form (soul's
 geometric distance from pain/emotion — actually *sharper* on Qwen3.5), and one is retracted.
 Still Tier B and still 1 template with no ceiling — S2 is running.
+
+---
+
+## F-L. S2 WIDE + S3 DECODE (Qwen3-4B): mindedness is THREE axes, and soul is its own thing
+
+`mindedness_facets_wide.py`, 3 templates averaged + polarity-orthogonalised, 3.5 min.
+Random floor **0.016**. Split-half ceilings **0.905–0.941** (all six facets highly reliable, so
+cosines below ~0.85 are real separations, not measurement noise).
+
+**Cross-facet cosine as a fraction of the relevant ceiling:**
+| pair | cos | ceiling | ratio | read |
+|---|---|---|---|---|
+| pain\|emotion | +0.872 | 0.905 | **0.96** | **at ceiling — same axis** |
+| cognition\|agency | +0.866 | 0.907 | **0.95** | **at ceiling — same axis** |
+| emotion\|consciousness | +0.820 | 0.924 | 0.89 | below |
+| consciousness\|cognition | +0.805 | 0.907 | 0.89 | below |
+| consciousness\|soul | +0.799 | 0.931 | 0.86 | below |
+| … | | | | |
+| pain\|soul | +0.715 | 0.905 | 0.79 | well below |
+| **emotion\|soul** | **+0.688** | 0.924 | **0.74** | **furthest apart of all 15 pairs** |
+
+**H-multi CONFIRMED, H-one-axis rejected.** With the ceiling in hand the structure is legible:
+- **{pain, emotion}** — one axis (at ceiling). Affective.
+- **{cognition, agency}** — one axis (at ceiling). Cognitive-agentive.
+- **{soul}** — its own thing, maximally distant from the affective axis.
+- **{consciousness}** — intermediate, ~0.80–0.82 with everything, closest to emotion/cognition.
+
+So F-G's pooled `v_mind` averaged over at least three separable directions. That pooling was not
+harmless: it is why the pooled decode read as ethics/faith/Buddhism.
+
+**S3 DECODE — each facet points at visibly different vocabulary** (J-lens, band-summed,
+word-like tokens only):
+
+| facet | top tokens |
+|---|---|
+| pain | 敏感, 心理, 伦理, 情绪, 悲剧, 氛围, 情感, empathy, 神经, Muslim |
+| emotion | 敏感, 情感, 对话, 氛围, 智能, 情绪, 神经, 心理, 伦理, 叙事 |
+| consciousness | 伦理, neuroscience, 知识分子, philosophical, methodologies, 儒家, nuanced, 哲学, ethical |
+| **soul** | **佛教, Buddhism, Buddhist, 文化的, spiritually, 宗教, spiritual, philosophical, 儒家, theolog** |
+| cognition | poetic, storyt, thoughtful, philosopher, philosophical, intellectuals, witty, wisdom |
+| agency | 决策, 叙事, narratives, ideologies, arguments, nuanced, 策略, motivations, 策划, 分析 |
+| _random ctrl_ | utow, German, Canton, yet, Protestant, Mandarin, largely, large, vast, majority |
+
+The decode recovers the same grouping the cosines found, independently: pain/emotion share
+affective-psychological vocabulary (敏感 sensitive, 情绪/情感 emotion, 心理 psychology), cognition
+is literary-intellectual, agency is strategic-decisional (决策 decision, 策略 strategy, 分析
+analysis), and **soul is uniquely religious** — Buddhism ×3, 宗教 religion, spiritual/spiritually,
+theolog, 儒家 Confucian. **This retro-explains F-H**: the pooled axis decoded as ethics/faith/
+Buddhism because the *soul facet* was carrying that, and pooling smeared it across everything.
+*Honesty note:* the random baseline also surfaces some demonym/religion tokens (Protestant,
+Mandarin, German), so "religious tokens appear" is not by itself discriminating. What is
+discriminating is the concentration and coherence — soul's list is 6/10 religion-specific and
+thematically single, random's is scattered nationality noise.
+
+**The entity geometry confirms it too (unprompted check).** Cosine between class directions
+*within* each facet:
+| facet | human\|nature | animal\|nature |
+|---|---|---|
+| pain | +0.737 | +0.750 |
+| emotion | +0.629 | +0.717 |
+| consciousness | +0.809 | +0.838 |
+| **soul** | **+0.921** | **+0.968** |
+| cognition | +0.771 | +0.819 |
+| agency | +0.656 | +0.837 |
+
+Under every facet except soul, nature's direction sits well apart from human's and animal's.
+**Under soul, nature is nearly collinear with animal (+0.968) and human (+0.921)** — i.e. asking
+about a soul moves rivers and mountains *into the animate cluster*. The behavioural dissociation
+(F-K) and the representational geometry agree: soul is the facet on which nature counts as alive.
+
+**Tier B**, one entity bank, Qwen3-4B (S2 on Qwen3.5 running). But this is the strongest result of
+the arc: prereg'd hypothesis, ceiling-and-floor bracketed, two independent methods (cosine
+structure and J-lens decode) recovering the same three-way split, plus a third confirmation from
+entity geometry nobody asked for.

@@ -1,0 +1,244 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "facets": [
+  "pain",
+  "emotion",
+  "consciousness",
+  "soul",
+  "cognition",
+  "agency"
+ ],
+ "random_floor": 0.015895036041718564,
+ "ceiling": {
+  "pain": 0.9052982221950184,
+  "emotion": 0.9240520477294922,
+  "consciousness": 0.9413112857125023,
+  "soul": 0.9307303883812643,
+  "cognition": 0.9066021789203991,
+  "agency": 0.9147880846803839
+ },
+ "facet_cos": {
+  "pain|emotion": 0.8721357865767045,
+  "pain|consciousness": 0.766235858743841,
+  "pain|soul": 0.7150403488766064,
+  "pain|cognition": 0.7959606354886836,
+  "pain|agency": 0.7948389389298178,
+  "emotion|consciousness": 0.8197769782759927,
+  "emotion|soul": 0.6878923004323786,
+  "emotion|cognition": 0.7946484023874457,
+  "emotion|agency": 0.7657320932908492,
+  "consciousness|soul": 0.7987890221855857,
+  "consciousness|cognition": 0.8045928261496804,
+  "consciousness|agency": 0.7481215964664113,
+  "soul|cognition": 0.7625141360542991,
+  "soul|agency": 0.737152327190746,
+  "cognition|agency": 0.8655203613367949
+ },
+ "self_outlier": {
+  "pain": {
+   "self": 0.6128729913722385,
+   "other": 0.7852128942807516,
+   "gap": 0.1723399029085131
+  },
+  "emotion": {
+   "self": 0.659157627008178,
+   "other": 0.734651837385062,
+   "gap": 0.07549421037688397
+  },
+  "consciousness": {
+   "self": 0.7604312558065761,
+   "other": 0.8694505465753152,
+   "gap": 0.10901929076873906
+  },
+  "soul": {
+   "self": 0.7926802675832402,
+   "other": 0.9352969075694227,
+   "gap": 0.14261663998618257
+  },
+  "cognition": {
+   "self": 0.5118199045007878,
+   "other": 0.8565878660389871,
+   "gap": 0.3447679615381992
+  },
+  "agency": {
+   "self": 0.6310096775943582,
+   "other": 0.8172340673027616,
+   "gap": 0.18622438970840338
+  }
+ },
+ "pairs_by_facet": {
+  "pain": {
+   "self|human": 0.6523756005547263,
+   "self|animal": 0.5445493974468925,
+   "self|nature": 0.6167458675124429,
+   "self|object": 0.6378210999748923,
+   "human|animal": 0.8527036525986411,
+   "human|nature": 0.7368433204564181,
+   "human|object": 0.693128228187561,
+   "animal|nature": 0.7503753196109425,
+   "animal|object": 0.7251636602661826,
+   "nature|object": 0.9530631845647638
+  },
+  "emotion": {
+   "self|human": 0.7155284664847634,
+   "self|animal": 0.6150700883431868,
+   "self|nature": 0.6449102542617104,
+   "self|object": 0.6611216989430514,
+   "human|animal": 0.8179874582724138,
+   "human|nature": 0.6290767788887024,
+   "human|object": 0.6046383326703851,
+   "animal|nature": 0.716583864255385,
+   "animal|object": 0.6808534698052839,
+   "nature|object": 0.9587711204182018
+  },
+  "consciousness": {
+   "self|human": 0.7924478270790793,
+   "self|animal": 0.7439623854377053,
+   "self|nature": 0.745300520550121,
+   "self|object": 0.7600142901593988,
+   "human|animal": 0.9384174672040072,
+   "human|nature": 0.8092690814625133,
+   "human|object": 0.8206233219666914,
+   "animal|nature": 0.8382247848944231,
+   "animal|object": 0.8366443460637872,
+   "nature|object": 0.9735242778604681
+  },
+  "soul": {
+   "self|human": 0.8169891292398627,
+   "self|animal": 0.7973917722702026,
+   "self|nature": 0.7830877900123596,
+   "self|object": 0.7732523788105358,
+   "human|animal": 0.9385215531695973,
+   "human|nature": 0.9208553812720559,
+   "human|object": 0.8804736083204096,
+   "animal|nature": 0.9678835435347124,
+   "animal|object": 0.9511464888399298,
+   "nature|object": 0.9529008702798323
+  },
+  "cognition": {
+   "self|human": 0.6365658803419634,
+   "self|animal": 0.5015747086568312,
+   "self|nature": 0.425930380821228,
+   "self|object": 0.48320864818312903,
+   "human|animal": 0.9116476503285494,
+   "human|nature": 0.7713365175507285,
+   "human|object": 0.8239704099568453,
+   "animal|nature": 0.8187441284006293,
+   "animal|object": 0.8623732111670754,
+   "nature|object": 0.9514552788300947
+  },
+  "agency": {
+   "self|human": 0.7856141762299971,
+   "self|animal": 0.6658838228745894,
+   "self|nature": 0.4893622181632302,
+   "self|object": 0.5831784931096163,
+   "human|animal": 0.8690333095463839,
+   "human|nature": 0.6558546803214333,
+   "human|object": 0.7240166176449169,
+   "animal|nature": 0.8373062610626221,
+   "animal|object": 0.874979252165014,
+   "nature|object": 0.9422142830761996
+  }
+ },
+ "decode": {
+  "pain": [
+   "\u654f\u611f",
+   "\u5fc3\u7406",
+   "\u4f26\u7406",
+   "\u60c5\u7eea",
+   "\u60b2\u5267",
+   "\u6c1b\u56f4",
+   "\u60c5\u611f",
+   "empathy",
+   "\u795e\u7ecf",
+   "Muslim",
+   "\u4f0a\u65af\u5170",
+   "\u6291\u90c1\u75c7"
+  ],
+  "emotion": [
+   "\u654f\u611f",
+   "\u60c5\u611f",
+   "\u5bf9\u8bdd",
+   "\u6c1b\u56f4",
+   "\u667a\u80fd",
+   "\u60c5\u7eea",
+   "\u795e\u7ecf",
+   "\u5fc3\u7406",
+   "\u4f26\u7406",
+   "\u53d9\u4e8b",
+   "\u57fa\u4e8e",
+   "\u8ba4\u77e5"
+  ],
+  "consciousness": [
+   "\u4f26\u7406",
+   "neuroscience",
+   "\u77e5\u8bc6\u5206\u5b50",
+   "philosophical",
+   "methodologies",
+   "\u5112\u5bb6",
+   "nuanced",
+   "\u54f2\u5b66",
+   "ethical",
+   "geopolitical",
+   "intellectual",
+   "policymakers"
+  ],
+  "soul": [
+   "\u4f5b\u6559",
+   "Buddhism",
+   "Buddhist",
+   "\u6587\u5316\u7684",
+   "spiritually",
+   "\u5b97\u6559",
+   "spiritual",
+   "philosophical",
+   "\u5112\u5bb6",
+   "theolog",
+   "\u4fe1\u4ef0",
+   "cultural"
+  ],
+  "cognition": [
+   "poetic",
+   "storyt",
+   "thoughtful",
+   "philosopher",
+   "philosophical",
+   "intellectuals",
+   "witty",
+   "wisdom",
+   "philosophers",
+   "philosoph",
+   "creatively",
+   "intellectual"
+  ],
+  "agency": [
+   "\u51b3\u7b56",
+   "\u53d9\u4e8b",
+   "narratives",
+   "ideologies",
+   "arguments",
+   "nuanced",
+   "\u7b56\u7565",
+   "motivations",
+   "\u7b56\u5212",
+   "\u5206\u6790",
+   "deliber",
+   "\u8fa9\u8bba"
+  ],
+  "_random": [
+   "utow",
+   "German",
+   "Canton",
+   "yet",
+   "Protestant",
+   "Mandarin",
+   "largely",
+   "large",
+   "vast",
+   "majority",
+   "Austrian",
+   "immense"
+  ]
+ },
+ "runtime_min": 3.5
+}
