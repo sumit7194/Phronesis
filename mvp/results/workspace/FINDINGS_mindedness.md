@@ -452,3 +452,37 @@ about a soul moves rivers and mountains *into the animate cluster*. The behaviou
 the arc: prereg'd hypothesis, ceiling-and-floor bracketed, two independent methods (cosine
 structure and J-lens decode) recovering the same three-way split, plus a third confirmation from
 entity geometry nobody asked for.
+
+### F-L2. The three-axis structure REPLICATES on Qwen3.5-4B (S2 wide, 5.9 min)
+
+Independent architecture (MoE + hybrid Gated-Delta attention, 32L). Floor 0.016, ceilings
+0.885–0.925. Cosines expressed as a fraction of the relevant ceiling, both models side by side:
+
+| pair | Qwen3-4B | Qwen3.5-4B | |
+|---|---|---|---|
+| cognition\|agency | 0.95 | **0.94** | **at ceiling in BOTH** |
+| pain\|emotion | 0.96 | **0.93** | **at ceiling in BOTH** |
+| emotion\|cognition | 0.88 | 0.93 | |
+| consciousness\|soul | 0.86 | 0.82 | |
+| emotion\|soul | 0.74 | 0.75 | |
+| soul\|agency | 0.81 | 0.74 | |
+| **pain\|soul** | 0.79 | **0.65** | **lowest pair in BOTH** |
+
+**The two at-ceiling pairs are identical across models**: {pain, emotion} and {cognition, agency}
+are each one axis in both architectures. **Soul occupies the bottom of the table in both**, and
+its distance from pain is *larger* on Qwen3.5 (0.65 vs 0.79 of ceiling) — the sharpest separation
+either model produced. The three-axis decomposition is not a Qwen3-4B artefact.
+
+One difference worth naming: on Qwen3.5 `emotion|cognition` climbs to 0.93, so the affective and
+cognitive axes are less cleanly divided there than on Qwen3-4B (0.88). The *soul* separation is
+what is stable; the affective-vs-cognitive boundary is somewhat model-dependent.
+
+**Entity geometry replicates exactly** — under soul, nature is nearly collinear with animal
+(+0.938) and human (+0.893), against +0.68…+0.80 for all five other facets. Both models put
+rivers into the animate cluster only when asked about souls.
+
+**Combined read for the arc (F-K → F-L2).** "Does X have a mind?" is not one question to these
+models. It is at least three, and the *spiritual* one behaves differently from the rest in four
+independent ways: behavioural P(yes) (rivers get souls, not awareness), cross-facet cosine
+(furthest from the affective axis), J-lens decode (uniquely religious vocabulary), and entity
+geometry (nature joins the animate cluster). Two models, two architectures.

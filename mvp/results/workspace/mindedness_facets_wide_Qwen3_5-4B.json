@@ -1,0 +1,144 @@
+{
+ "model": "Qwen/Qwen3.5-4B",
+ "facets": [
+  "pain",
+  "emotion",
+  "consciousness",
+  "soul",
+  "cognition",
+  "agency"
+ ],
+ "random_floor": 0.015895036041718564,
+ "ceiling": {
+  "pain": 0.8879365735583835,
+  "emotion": 0.9063711696200901,
+  "consciousness": 0.9251339197158813,
+  "soul": 0.9198139627774555,
+  "cognition": 0.9007722735404968,
+  "agency": 0.8850233634312946
+ },
+ "facet_cos": {
+  "pain|emotion": 0.82681718799803,
+  "pain|consciousness": 0.706800925731659,
+  "pain|soul": 0.5764304147826301,
+  "pain|cognition": 0.6961896691057416,
+  "pain|agency": 0.6681393947866228,
+  "emotion|consciousness": 0.787219410472446,
+  "emotion|soul": 0.6803329156504737,
+  "emotion|cognition": 0.8365464753574795,
+  "emotion|agency": 0.7639256940947639,
+  "consciousness|soul": 0.7576481289333767,
+  "consciousness|cognition": 0.8216697374979655,
+  "consciousness|agency": 0.6809096038341522,
+  "soul|cognition": 0.7308433890342713,
+  "soul|agency": 0.6528889848126306,
+  "cognition|agency": 0.8287579311264885
+ },
+ "self_outlier": {
+  "pain": {
+   "self": 0.6503297454781002,
+   "other": 0.7560133481467212,
+   "gap": 0.10568360266862098
+  },
+  "emotion": {
+   "self": 0.6404675990343094,
+   "other": 0.7357243531280093,
+   "gap": 0.09525675409369994
+  },
+  "consciousness": {
+   "self": 0.6991100327836143,
+   "other": 0.8139907607325801,
+   "gap": 0.11488072794896587
+  },
+  "soul": {
+   "self": 0.6974104079935286,
+   "other": 0.9021872701468293,
+   "gap": 0.2047768621533007
+  },
+  "cognition": {
+   "self": 0.654063309232394,
+   "other": 0.7930378637931965,
+   "gap": 0.13897455456080254
+  },
+  "agency": {
+   "self": 0.6444503830538856,
+   "other": 0.7844937609301673,
+   "gap": 0.14004337787628174
+  }
+ },
+ "pairs_by_facet": {
+  "pain": {
+   "self|human": 0.6697718103726705,
+   "self|animal": 0.5586021873686049,
+   "self|nature": 0.6728507147894965,
+   "self|object": 0.7000942693816291,
+   "human|animal": 0.793002168337504,
+   "human|nature": 0.7089690698517693,
+   "human|object": 0.6339021854930453,
+   "animal|nature": 0.7764727274576823,
+   "animal|object": 0.684822142124176,
+   "nature|object": 0.9389117956161499
+  },
+  "emotion": {
+   "self|human": 0.6450124184290568,
+   "self|animal": 0.6040901872846816,
+   "self|nature": 0.6461365090476142,
+   "self|object": 0.666631281375885,
+   "human|animal": 0.7218048572540283,
+   "human|nature": 0.6831827958424886,
+   "human|object": 0.6684958140055338,
+   "animal|nature": 0.7311362955305312,
+   "animal|object": 0.6710508796903822,
+   "nature|object": 0.9386754764450921
+  },
+  "consciousness": {
+   "self|human": 0.717322395907508,
+   "self|animal": 0.6716816690233018,
+   "self|nature": 0.6826455924246047,
+   "self|object": 0.7247904737790426,
+   "human|animal": 0.8911971052487692,
+   "human|nature": 0.7613966464996338,
+   "human|object": 0.7494220203823514,
+   "animal|nature": 0.777564095126258,
+   "animal|object": 0.7533461385303073,
+   "nature|object": 0.9510185586081611
+  },
+  "soul": {
+   "self|human": 0.7457414799266391,
+   "self|animal": 0.6856591105461121,
+   "self|nature": 0.6693120665020413,
+   "self|object": 0.6889289749993218,
+   "human|animal": 0.8998811443646749,
+   "human|nature": 0.8927208052741157,
+   "human|object": 0.8393104275067648,
+   "animal|nature": 0.9378582967652215,
+   "animal|object": 0.9069604078928629,
+   "nature|object": 0.9363925390773349
+  },
+  "cognition": {
+   "self|human": 0.7267870306968689,
+   "self|animal": 0.6387661430570815,
+   "self|nature": 0.5858775774637858,
+   "self|object": 0.6648224857118394,
+   "human|animal": 0.8183911111619737,
+   "human|nature": 0.7238259249263339,
+   "human|object": 0.7489701377020942,
+   "animal|nature": 0.7498091061909994,
+   "animal|object": 0.7769814862145318,
+   "nature|object": 0.940249416563246
+  },
+  "agency": {
+   "self|human": 0.688467992676629,
+   "self|animal": 0.6418160729938083,
+   "self|nature": 0.6051451630062528,
+   "self|object": 0.6423723035388522,
+   "human|animal": 0.7955486045943366,
+   "human|nature": 0.6794372863239713,
+   "human|object": 0.6915730569097731,
+   "animal|nature": 0.7991903358035617,
+   "animal|object": 0.7988360656632317,
+   "nature|object": 0.9423772162861295
+  }
+ },
+ "runtime_min": 5.9
+}
