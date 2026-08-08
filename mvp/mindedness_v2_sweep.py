@@ -76,7 +76,35 @@ def main():
     P = {}      # (tmpl, cls, exemplar_idx, facet, attr_idx) -> P(yes)
     total = counts()["prompts_full_sweep"]
     done = 0
+
+    # ---- per-template checkpointing: a power cut costs one template, not the whole run ----
+    def ck(tn):
+        return f"results/workspace/.v2ckpt_{tag}_{tn}.npz"
+
+    def save_ckpt(tn):
+        arrs = {"|".join(map(str, k)): v for k, v in A.items() if k[0] == tn}
+        arrs["__P__"] = np.array(json.dumps(
+            {"|".join(map(str, k)): v for k, v in P.items() if k[0] == tn}), dtype=object)
+        np.savez_compressed(ck(tn), **arrs)
+
+    def load_ckpt(tn):
+        z = np.load(ck(tn), allow_pickle=True)
+        for k in z.files:
+            if k == "__P__":
+                for kk, v in json.loads(str(z[k])).items():
+                    a, b, c, dd, e = kk.split("|")
+                    P[(a, b, int(c), dd, int(e))] = v
+            else:
+                a, b, c, dd = k.split("|")
+                A[(a, b, int(c), dd)] = z[k]
+        return sum(1 for kk in P if kk[0] == tn)
+
     for tn, tmpl in TEMPLATES.items():
+        if os.path.exists(ck(tn)):
+            n = load_ckpt(tn)
+            done += n
+            print(f"  [{tn}] RESUMED from checkpoint ({n} prompts)", flush=True)
+            continue
         for cls, exs in ENTITIES.items():
             for ei, e in enumerate(exs):
                 for fac, attrs in ALL_FACETS.items():
@@ -90,6 +118,8 @@ def main():
             el = time.time() - t0
             print(f"  [{tn}] {cls:14} {done}/{total}  {el/60:.1f}m  eta {el/max(done,1)*(total-done)/60:.0f}m",
                   flush=True)
+        save_ckpt(tn)
+        print(f"  [{tn}] checkpoint saved", flush=True)
     # polarity direction per template (unrelated yes/no items, lexically varied negations)
     pol = []
     for tn, tmpl in TEMPLATES.items():
