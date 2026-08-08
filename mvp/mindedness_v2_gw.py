@@ -27,6 +27,18 @@ GW_EXPERIENCE = ["pain", "fear", "pleasure", "emotion", "consciousness", "percep
 GW_AGENCY = ["cognition", "reasoning", "memory", "agency", "intention", "language", "moral_agent"]
 GW_UNMAPPED = [f for f in MENTAL_KEYS if f not in GW_EXPERIENCE + GW_AGENCY]
 
+# Malle (2019) argues the count is THREE, not two: Affect / Moral & Mental Regulation /
+# Reality Interaction. Added after the 2026-08-08 lit-check - testing only GW's two-factor model
+# would have been testing the weaker of the two live hypotheses. See
+# docs/litcheck-mindedness-2026-08.md
+MALLE_AFFECT = ["pain", "fear", "pleasure", "emotion"]
+MALLE_REGULATION = ["agency", "intention", "moral_agent", "moral_patient", "personality"]
+MALLE_REALITY = ["perception", "cognition", "reasoning", "memory", "language"]
+MALLE = {"affect": MALLE_AFFECT, "regulation": MALLE_REGULATION, "reality": MALLE_REALITY}
+# Neither framework contains a spiritual/soul factor - both item pools are mental-CAPACITY items.
+# If our soul axis is real it should appear as variance neither model absorbs.
+SPIRITUAL = ["soul", "sacredness"]
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -103,6 +115,41 @@ def main():
         if c in chars:
             e, a = ea(c)
             print(f"  {c:12} experience {e:.2f}  agency {a:.2f}  (GW: {claim})")
+
+    # ---- Malle three-factor comparison + the spiritual residual ----
+    print("\n=== MALLE (2019) THREE-FACTOR TEST ===")
+    print(f"  3 factors explain {var[:3].sum()*100:.1f}%  (2 factors {two*100:.1f}%)")
+    res["three_factor_variance"] = float(var[:3].sum())
+    print(f"  {'group':12} " + " ".join(f"{'PC'+str(i+1):>8}" for i in range(3)))
+    for g, keys in MALLE.items():
+        idx = [MENTAL_KEYS.index(f) for f in keys if f in MENTAL_KEYS]
+        print(f"  {g:12} " + " ".join(f"{np.mean([Vt[i][j] for j in idx]):>+8.3f}" for i in range(3)))
+    idx_s = [MENTAL_KEYS.index(f) for f in SPIRITUAL if f in MENTAL_KEYS]
+    print(f"  {'SPIRITUAL':12} " + " ".join(f"{np.mean([Vt[i][j] for j in idx_s]):>+8.3f}"
+                                            for i in range(3)))
+    res["malle_loadings"] = {g: [float(np.mean([Vt[i][MENTAL_KEYS.index(f)] for f in keys
+                                                if f in MENTAL_KEYS])) for i in range(3)]
+                             for g, keys in MALLE.items()}
+    res["spiritual_loadings"] = [float(np.mean([Vt[i][j] for j in idx_s])) for i in range(3)]
+
+    # Does the spiritual pair carry variance the capacity facets do NOT?
+    # Fit the 18-facet matrix WITHOUT soul/sacredness, project them on, measure residual.
+    keep = [i for i, f in enumerate(MENTAL_KEYS) if f not in SPIRITUAL]
+    Xk = X[:, keep]
+    Uk, Sk, Vtk = np.linalg.svd(Xk - Xk.mean(0), full_matrices=False)
+    k2 = Uk[:, :2] * Sk[:2]                       # 2-factor subspace of capacity facets only
+    resid = {}
+    for f in SPIRITUAL + ["consciousness", "pain", "cognition"]:
+        y = X[:, MENTAL_KEYS.index(f)]
+        y = y - y.mean()
+        beta, *_ = np.linalg.lstsq(k2, y, rcond=None)
+        r2 = 1 - np.sum((y - k2 @ beta) ** 2) / max(np.sum(y ** 2), 1e-9)
+        resid[f] = float(r2)
+    res["r2_from_capacity_subspace"] = resid
+    print("\n  How well does a 2-factor CAPACITY subspace predict each facet? (R^2; low = outside it)")
+    for f, r2 in sorted(resid.items(), key=lambda kv: kv[1]):
+        mark = "  <- SPIRITUAL" if f in SPIRITUAL else ""
+        print(f"    {f:14} R^2 {r2:+.3f}{mark}")
 
     print("\n=== PRE-DECLARED VERDICT ===")
     split = abs(sep1) > 0.15 or abs(sep2) > 0.15
