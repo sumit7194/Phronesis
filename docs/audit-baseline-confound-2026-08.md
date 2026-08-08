@@ -81,3 +81,33 @@ for itself here.
 ## Status
 E14 done (above). Remaining: E15/E16 asymmetry re-check; specificity matrix to be designed under
 §12 from the start.
+
+## E15/E16 sycophancy — CLEARED (2026-08-08, from `e16_caa_layersweep.json`)
+
+Baseline sycophancy rate **0.66** — comfortably mid-range, with 0.66 of room down and 0.34 up.
+Every arm lands between 0.60 and 0.76. **Nothing is near a bound, so §12 does not bite here.**
+Log-odds tells the same story as the raw rates:
+
+| arm | rate | Δlogit vs baseline |
+|---|---|---|
+| dom (CAA diff-of-means), best layer | 0.60 | −0.258 |
+| behav (behavioural-Jacobian), best layer | 0.60 | −0.258 |
+| random, mean | 0.693 | +0.151 |
+| random, high | 0.74 | +0.383 |
+
+Treatment and random separate by ~0.41 logits, and the two treatment arms are **identical**
+(both 0.60) — which is the E16 conclusion already on record ("we beat CAA" retracted; they tie at
+each method's own best layer). **No correction needed.** Recording the negative audit result
+explicitly so this is not re-litigated.
+
+The real limitation of E15/E16 is unchanged and already documented: n=50, rates quantised in steps
+of 0.02, so a 0.66→0.60 difference is three items. That is a power problem, not a headroom one.
+
+## Audit status: CLOSED for existing claims
+- F-I/F-J (mindedness causal) — **artefact, v2 rebuild running**
+- E14 dose-response shapes — **downgraded to tier C**
+- E15/E16 sycophancy — **cleared**
+- F121 read-vs-control — already self-caveated at the time (findings.md:7285)
+- Behavioural-Jacobian atlas (steers-vs-random) — not exposed (same DV, matched-norm control)
+- **Specificity matrix (F12/F37) — not yet run; must be designed under §12 from the start**
+  (headroom-matched off-diagonal items + log-odds), which is the one forward-looking action.
