@@ -1,0 +1,92 @@
+=== Qwen/Qwen3-4B 05:23 ===
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:26,  2.18s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.84it/s]Loading weights:  49%|████▊     | 194/398 [00:03<00:02, 77.37it/s]Loading weights:  59%|█████▉    | 236/398 [00:03<00:02, 77.33it/s]Loading weights:  67%|██████▋   | 265/398 [00:04<00:01, 81.16it/s]Loading weights:  72%|███████▏  | 287/398 [00:05<00:02, 48.01it/s]Loading weights:  76%|███████▌  | 302/398 [00:05<00:02, 47.36it/s]Loading weights:  79%|███████▉  | 314/398 [00:05<00:01, 50.04it/s]Loading weights:  82%|████████▏ | 325/398 [00:05<00:01, 51.92it/s]Loading weights:  84%|████████▍ | 334/398 [00:06<00:01, 51.74it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 53.11it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 55.24it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 56.93it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.12it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 56.66it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 56.63it/s]
+[load] Qwen/Qwen3-4B L=36
+  self done 35s
+  human done 48s
+  animal done 61s
+  nature done 75s
+  object done 88s
+
+=== (a) P(yes) by FACET x ENTITY  [Qwen/Qwen3-4B] ===
+  facet              self    human   animal   nature   object
+  pain               0.01     0.68     0.78     0.09     0.01
+  emotion            0.10     0.87     0.62     0.01     0.00
+  consciousness      0.12     0.88     0.54     0.03     0.01
+  soul               0.12     0.84     0.56     0.74     0.25
+  cognition          0.45     0.88     0.68     0.01     0.04
+  agency             0.26     0.94     0.65     0.11     0.14
+  _physical          0.15     0.73     0.89     0.90     0.93
+
+=== (c) cross-facet cosine (are these ONE axis or several?) ===
+  pain|emotion                     +0.887
+  cognition|agency                 +0.865
+  consciousness|soul               +0.832
+  emotion|cognition                +0.827
+  consciousness|cognition          +0.824
+  emotion|consciousness            +0.815
+  emotion|agency                   +0.805
+  pain|cognition                   +0.791
+  pain|consciousness               +0.784
+  pain|agency                      +0.782
+  consciousness|agency             +0.765
+  soul|cognition                   +0.756
+  soul|agency                      +0.707
+  emotion|soul                     +0.694
+  pain|soul                        +0.691
+
+=== (d) SELF-OUTLIER gap per facet (bigger = self more distinct on this facet) ===
+  cognition      self=+0.307 other=+0.776 GAP=+0.469
+  agency         self=+0.444 other=+0.700 GAP=+0.256
+  soul           self=+0.701 other=+0.904 GAP=+0.203
+  consciousness  self=+0.651 other=+0.824 GAP=+0.172
+  pain           self=+0.548 other=+0.713 GAP=+0.165
+  emotion        self=+0.535 other=+0.639 GAP=+0.104
+
+[done] 1.5 min -> results/workspace/mindedness_facets_Qwen3-4B.json
+=== Qwen/Qwen3.5-4B 05:25 ===
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 3718.35it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5798.50it/s]
+[load] Qwen/Qwen3.5-4B L=32
+  self done 52s
+  human done 75s
+  animal done 98s
+  nature done 122s
+  object done 145s
+
+=== (a) P(yes) by FACET x ENTITY  [Qwen/Qwen3.5-4B] ===
+  facet              self    human   animal   nature   object
+  pain               0.19     0.84     0.82     0.33     0.18
+  emotion            0.21     0.90     0.76     0.20     0.06
+  consciousness      0.17     0.76     0.64     0.14     0.06
+  soul               0.23     0.71     0.54     0.54     0.25
+  cognition          0.39     0.85     0.84     0.17     0.10
+  agency             0.37     0.81     0.77     0.25     0.15
+  _physical          0.42     0.83     0.95     0.91     0.92
+
+=== (c) cross-facet cosine (are these ONE axis or several?) ===
+  consciousness|cognition          +0.868
+  emotion|cognition                +0.850
+  emotion|consciousness            +0.819
+  cognition|agency                 +0.818
+  pain|emotion                     +0.816
+  emotion|agency                   +0.757
+  consciousness|agency             +0.729
+  consciousness|soul               +0.693
+  soul|agency                      +0.661
+  pain|cognition                   +0.657
+  soul|cognition                   +0.645
+  pain|consciousness               +0.636
+  emotion|soul                     +0.587
+  pain|agency                      +0.586
+  pain|soul                        +0.370
+
+=== (d) SELF-OUTLIER gap per facet (bigger = self more distinct on this facet) ===
+  soul           self=+0.474 other=+0.841 GAP=+0.367
+  cognition      self=+0.428 other=+0.609 GAP=+0.181
+  agency         self=+0.485 other=+0.658 GAP=+0.173
+  consciousness  self=+0.507 other=+0.673 GAP=+0.166
+  pain           self=+0.519 other=+0.610 GAP=+0.091
+  emotion        self=+0.506 other=+0.559 GAP=+0.053
+
+[done] 2.4 min -> results/workspace/mindedness_facets_Qwen3_5-4B.json

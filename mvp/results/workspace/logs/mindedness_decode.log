@@ -1,0 +1,35 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<16:20,  2.47s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:04, 68.01it/s]Loading weights:  49%|████▉     | 195/398 [00:04<00:03, 57.73it/s]Loading weights:  59%|█████▉    | 236/398 [00:04<00:02, 54.65it/s]Loading weights:  66%|██████▌   | 263/398 [00:05<00:02, 57.54it/s]Loading weights:  71%|███████   | 283/398 [00:05<00:02, 57.33it/s]Loading weights:  75%|███████▍  | 298/398 [00:05<00:01, 59.78it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 54.19it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 53.17it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 47.02it/s]Loading weights:  86%|████████▋ | 344/398 [00:07<00:01, 42.98it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 40.00it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 36.34it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 36.39it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 34.13it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 46.98it/s]
+[load] Qwen/Qwen3-4B L=36; lens n=45; decode band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[dirs] built 105s
+
+=== A. what the mindedness axis points at (J-lens, band-aggregated) ===
+  self     !, ", #, $, %, &, ', (, ), *, +, ,
+  human    !, ", #, $, %, &, ', (, ), *, +, ,
+  animal   !, ", #, $, %, &, ', (, ), *, +, ,
+  nature   !, ", #, $, %, &, ', (, ), *, +, ,
+  object   !, ", #, $, %, &, ', (, ), *, +, ,
+
+=== A'. same via LOGIT lens (QC: J~=logit at 4B — do they agree?) ===
+  self     !, ", #, $, %, &, ', (, ), *, +, ,
+  human    !, ", #, $, %, &, ', (, ), *, +, ,
+  animal   !, ", #, $, %, &, ', (, ), *, +, ,
+  nature   !, ", #, $, %, &, ', (, ), *, +, ,
+  object   !, ", #, $, %, &, ', (, ), *, +, ,
+
+=== B. SELF minus other  (what is distinctive about self's mindedness) ===
+  self−human   !, ", #, $, %, &, ', (, ), *, +, ,
+  self−animal  !, ", #, $, %, &, ', (, ), *, +, ,
+  self−nature  !, ", #, $, %, &, ', (, ), *, +, ,
+  self−object  !, ", #, $, %, &, ', (, ), *, +, ,
+
+=== B'. other minus SELF (what self LACKS) ===
+  human  −self !, ", #, $, %, &, ', (, ), *, +, ,
+  animal −self !, ", #, $, %, &, ', (, ), *, +, ,
+  nature −self !, ", #, $, %, &, ', (, ), *, +, ,
+  object −self !, ", #, $, %, &, ', (, ), *, +, ,
+
+=== C. random-direction floor (should be incoherent) ===
+  !, ", #, $, %, &, ', (, ), *, +, ,
+  !, ", #, $, %, &, ', (, ), *, +, ,
+
+[done] 1.8 min -> results/workspace/mindedness_decode_Qwen3-4B.json

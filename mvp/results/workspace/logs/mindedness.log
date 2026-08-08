@@ -1,0 +1,37 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:38,  2.21s/it]Loading weights:  32%|███▏      | 126/398 [00:02<00:03, 75.55it/s]Loading weights:  48%|████▊     | 190/398 [00:03<00:02, 75.67it/s]Loading weights:  58%|█████▊    | 229/398 [00:04<00:02, 56.65it/s]Loading weights:  64%|██████▍   | 254/398 [00:04<00:02, 58.00it/s]Loading weights:  68%|██████▊   | 272/398 [00:05<00:02, 56.65it/s]Loading weights:  72%|███████▏  | 286/398 [00:05<00:01, 59.46it/s]Loading weights:  75%|███████▍  | 298/398 [00:05<00:01, 59.92it/s]Loading weights:  78%|███████▊  | 309/398 [00:05<00:01, 61.21it/s]Loading weights:  80%|████████  | 319/398 [00:05<00:01, 60.74it/s]Loading weights:  82%|████████▏ | 328/398 [00:05<00:01, 58.61it/s]Loading weights:  84%|████████▍ | 336/398 [00:06<00:01, 55.02it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 52.80it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 44.17it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 38.45it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 37.06it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 35.51it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 51.62it/s]
+[load] n_layers=36 d_model=2560
+[acts] 240 prompts, 49s
+  [readout] self: sentient#36, mind#104, conscious#372, experience#433, aware#741, think#809
+  [readout] human: mind#85, sentient#144, think#654, experience#1421, aware#1525, piano#2200
+  [readout] animal: mind#72, sentient#152, think#251, experience#1147, aware#1435, piano#1762
+  [readout] nature: mind#69, think#167, sentient#190, experience#1300, aware#1756, piano#1836
+  [readout] object: mind#71, sentient#161, think#195, experience#1438, aware#1685, piano#2163
+
+=== SPLIT-HALF CEILING vs BETWEEN-CLASS (mid band L10-30) ===
+random floor |cos|: mean=0.016 p95=0.035
+  L12  ceiling=+0.902  between=+0.813  ratio=0.90
+  L16  ceiling=+0.888  between=+0.756  ratio=0.85
+  L20  ceiling=+0.920  between=+0.746  ratio=0.81
+  L24  ceiling=+0.914  between=+0.654  ratio=0.72
+  L28  ceiling=+0.918  between=+0.638  ratio=0.69
+
+=== best-reliability layer L9 (ceiling 0.929) ===
+  nature|object      cos=+0.973
+  animal|object      cos=+0.956
+  animal|nature      cos=+0.950
+  human|animal       cos=+0.900
+  self|human         cos=+0.855
+  human|object       cos=+0.849
+  human|nature       cos=+0.812
+  self|animal        cos=+0.738
+  self|object        cos=+0.728
+  self|nature        cos=+0.685
+  discriminant (v_mind vs physical-contrast):
+    self     +0.143
+    human    +0.133
+    animal   +0.018
+    nature   -0.042
+    object   +0.011
+
+[done] 1.2 min -> results/workspace/mindedness_geometry.json

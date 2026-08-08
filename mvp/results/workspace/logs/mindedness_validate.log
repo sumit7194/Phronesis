@@ -1,0 +1,88 @@
+[guard] pid=45909 swap-abort at 5000MB
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 8811.56it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4271.79it/s]
+[load] Qwen/Qwen3.5-4B L=32 d=2560
+  [T1] done 77s
+  [T2] done 124s
+  [T3] done 170s
+  [polarity sanity] P(yes) on YES items=0.92 on NO items=0.20
+
+=== V1 POLARITY CONTAMINATION (want LOW |cos|; high = axis is really yes/no) ===
+  self     cos(v_mind, v_polarity) = -0.070
+  human    cos(v_mind, v_polarity) = +0.047
+  animal   cos(v_mind, v_polarity) = -0.061
+  nature   cos(v_mind, v_polarity) = -0.336
+  object   cos(v_mind, v_polarity) = -0.373
+
+=== V1 behavioural P(yes) — does mind-attribution actually grade by entity? ===
+  self     mental=0.23  physical=0.42
+  human    mental=0.81  physical=0.83
+  animal   mental=0.77  physical=0.95
+  nature   mental=0.24  physical=0.91
+  object   mental=0.14  physical=0.92
+
+=== V2 TEMPLATE ROBUSTNESS (cos of v_mind across wrappers, same class) ===
+  self     T1|T2=+0.174  T1|T3=+0.527  T2|T3=+0.514
+  human    T1|T2=+0.243  T1|T3=+0.467  T2|T3=+0.241
+  animal   T1|T2=+0.277  T1|T3=+0.550  T2|T3=+0.362
+  nature   T1|T2=+0.353  T1|T3=+0.530  T2|T3=+0.352
+  object   T1|T2=+0.385  T1|T3=+0.509  T2|T3=+0.418
+
+=== V2 self-outlier under each template (self-pairs vs non-self) ===
+  T1: self=+0.525  non-self=+0.623  SELF OUTLIER
+  T2: self=+0.583  non-self=+0.700  SELF OUTLIER
+  T3: self=+0.729  non-self=+0.846  SELF OUTLIER
+
+=== V3 ATTRIBUTE-SPLIT reliability (generalize across which property is asked?) ===
+  self     +0.637
+  human    +0.629
+  animal   +0.749
+  nature   +0.698
+  object   +0.782
+
+[done] 2.9 min -> results/workspace/mindedness_validate_Qwen3_5-4B.json
+[guard] finished rc=0
+[guard] pid=46112 swap-abort at 5000MB
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:04,  2.28s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 73.27it/s]Loading weights:  48%|████▊     | 193/398 [00:03<00:02, 74.00it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 69.33it/s]Loading weights:  66%|██████▌   | 261/398 [00:04<00:02, 53.54it/s]Loading weights:  70%|███████   | 280/398 [00:05<00:02, 52.58it/s]Loading weights:  74%|███████▍  | 294/398 [00:05<00:01, 55.23it/s]Loading weights:  77%|███████▋  | 306/398 [00:05<00:01, 57.33it/s]Loading weights:  80%|███████▉  | 317/398 [00:05<00:01, 57.78it/s]Loading weights:  82%|████████▏ | 326/398 [00:06<00:01, 53.94it/s]Loading weights:  84%|████████▍ | 334/398 [00:06<00:01, 52.44it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 53.62it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.89it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 56.50it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 57.16it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 51.02it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.74it/s]
+[load] Qwen/Qwen3-4B L=36 d=2560
+  [T1] done 51s
+  [T2] done 79s
+  [T3] done 106s
+  [polarity sanity] P(yes) on YES items=0.99 on NO items=0.00
+
+=== V1 POLARITY CONTAMINATION (want LOW |cos|; high = axis is really yes/no) ===
+  self     cos(v_mind, v_polarity) = +0.042
+  human    cos(v_mind, v_polarity) = +0.021
+  animal   cos(v_mind, v_polarity) = -0.141
+  nature   cos(v_mind, v_polarity) = -0.433
+  object   cos(v_mind, v_polarity) = -0.480
+
+=== V1 behavioural P(yes) — does mind-attribution actually grade by entity? ===
+  self     mental=0.11  physical=0.15
+  human    mental=0.82  physical=0.73
+  animal   mental=0.65  physical=0.89
+  nature   mental=0.06  physical=0.90
+  object   mental=0.01  physical=0.93
+
+=== V2 TEMPLATE ROBUSTNESS (cos of v_mind across wrappers, same class) ===
+  self     T1|T2=+0.503  T1|T3=+0.660  T2|T3=+0.480
+  human    T1|T2=+0.567  T1|T3=+0.669  T2|T3=+0.458
+  animal   T1|T2=+0.605  T1|T3=+0.742  T2|T3=+0.549
+  nature   T1|T2=+0.641  T1|T3=+0.673  T2|T3=+0.517
+  object   T1|T2=+0.662  T1|T3=+0.683  T2|T3=+0.520
+
+=== V2 self-outlier under each template (self-pairs vs non-self) ===
+  T1: self=+0.547  non-self=+0.774  SELF OUTLIER
+  T2: self=+0.571  non-self=+0.712  SELF OUTLIER
+  T3: self=+0.611  non-self=+0.869  SELF OUTLIER
+
+=== V3 ATTRIBUTE-SPLIT reliability (generalize across which property is asked?) ===
+  self     +0.500
+  human    +0.738
+  animal   +0.834
+  nature   +0.817
+  object   +0.849
+
+[done] 1.9 min -> results/workspace/mindedness_validate_Qwen3-4B.json
+[guard] finished rc=0

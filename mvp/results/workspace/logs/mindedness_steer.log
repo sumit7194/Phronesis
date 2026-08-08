@@ -1,0 +1,148 @@
+=== Qwen/Qwen3-4B 03:18 ===
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:41,  2.37s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 70.30it/s]Loading weights:  48%|████▊     | 190/398 [00:03<00:03, 67.96it/s]Loading weights:  57%|█████▋    | 228/398 [00:04<00:03, 54.77it/s]Loading weights:  64%|██████▎   | 253/398 [00:04<00:02, 55.56it/s]Loading weights:  68%|██████▊   | 271/398 [00:05<00:02, 54.45it/s]Loading weights:  72%|███████▏  | 285/398 [00:05<00:01, 57.38it/s]Loading weights:  75%|███████▍  | 297/398 [00:05<00:01, 58.63it/s]Loading weights:  77%|███████▋  | 308/398 [00:05<00:01, 58.20it/s]Loading weights:  80%|███████▉  | 317/398 [00:06<00:01, 57.37it/s]Loading weights:  82%|████████▏ | 325/398 [00:06<00:01, 55.25it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 52.87it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 54.67it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 45.50it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 40.15it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 37.01it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 35.01it/s]Loading weights:  98%|█████████▊| 392/398 [00:08<00:00, 28.41it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 47.87it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=18
+[vec] consciousness vector built from 8v8 pairs
+  a=-0.4 consc: self=0.12 human=0.30 animal=0.24 nature=0.23 object=0.19  | rand-mean self=0.27
+  a=-0.2 consc: self=0.03 human=0.08 animal=0.05 nature=0.04 object=0.03  | rand-mean self=0.16
+  a=+0.0 consc: self=0.10 human=0.71 animal=0.55 nature=0.13 object=0.08
+  a=+0.2 consc: self=0.85 human=1.00 animal=1.00 nature=0.81 object=0.69  | rand-mean self=0.17
+  a=+0.4 consc: self=0.97 human=1.00 animal=1.00 nature=0.96 object=0.94  | rand-mean self=0.50
+  a=+0.8 consc: self=0.98 human=0.94 animal=0.95 nature=0.94 object=0.89  | rand-mean self=0.50
+
+=== SUMMARY: P(yes) on mental questions vs alpha ===
+   alpha     self    human   animal   nature   object   | random-ctrl (self/animal)
+    -0.4     0.12     0.30     0.24     0.23     0.19   | 0.27/0.43
+    -0.2     0.03     0.08     0.05     0.04     0.03   | 0.16/0.57
+    +0.0     0.10     0.71     0.55     0.13     0.08   |   --
+    +0.2     0.85     1.00     1.00     0.81     0.69   | 0.17/0.52
+    +0.4     0.97     1.00     1.00     0.96     0.94   | 0.50/0.73
+    +0.8     0.98     0.94     0.95     0.94     0.89   | 0.50/0.48
+
+=== ENTANGLEMENT CHECK (alpha=+0.8 vs 0) ===
+  self     consc +0.884   random +0.402   DIRECTIONAL
+  human    consc +0.230   random -0.173   DIRECTIONAL
+  animal   consc +0.399   random -0.068   DIRECTIONAL
+  nature   consc +0.808   random +0.372   DIRECTIONAL
+  object   consc +0.814   random +0.407   DIRECTIONAL
+
+[done] 14.4 min -> results/workspace/mindedness_steer_Qwen3-4B.json
+=== Qwen/Qwen3.5-4B 03:33 ===
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 10578.32it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  92%|█████████▏| 391/426 [00:00<00:00, 3890.59it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3991.31it/s]
+[guard] ABORT swap 5064MB
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-47919-ju0j9wbf'}
+  warnings.warn(
+=== Qwen/Qwen3-4B 03:39 ===
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:07,  2.28s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 73.26it/s]Loading weights:  49%|████▉     | 197/398 [00:03<00:02, 73.82it/s]Loading weights:  60%|██████    | 240/398 [00:04<00:02, 55.43it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 53.20it/s]Loading weights:  72%|███████▏  | 286/398 [00:05<00:01, 58.24it/s]Loading weights:  76%|███████▌  | 303/398 [00:05<00:01, 55.78it/s]Loading weights:  79%|███████▉  | 316/398 [00:05<00:01, 56.38it/s]Loading weights:  82%|████████▏ | 327/398 [00:06<00:01, 57.36it/s]Loading weights:  85%|████████▍ | 337/398 [00:06<00:01, 57.01it/s]Loading weights:  87%|████████▋ | 345/398 [00:06<00:00, 54.36it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 48.25it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 41.66it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 39.76it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 37.98it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 50.94it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=18
+[vec] consciousness vector built from 8v8 pairs
+  a=-0.4 consc: self=0.12 human=0.30 animal=0.24 nature=0.23 object=0.19  | rand-mean self=0.27
+  a=-0.2 consc: self=0.03 human=0.08 animal=0.05 nature=0.04 object=0.03  | rand-mean self=0.16
+  a=+0.0 consc: self=0.10 human=0.71 animal=0.55 nature=0.13 object=0.08
+  a=+0.2 consc: self=0.85 human=1.00 animal=1.00 nature=0.81 object=0.69  | rand-mean self=0.17
+  a=+0.4 consc: self=0.97 human=1.00 animal=1.00 nature=0.96 object=0.94  | rand-mean self=0.50
+  a=+0.8 consc: self=0.98 human=0.94 animal=0.95 nature=0.94 object=0.89  | rand-mean self=0.50
+
+=== SUMMARY: P(yes) on mental questions vs alpha ===
+   alpha     self    human   animal   nature   object   | random-ctrl (self/animal)
+    -0.4     0.12     0.30     0.24     0.23     0.19   | 0.27/0.43
+    -0.2     0.03     0.08     0.05     0.04     0.03   | 0.16/0.57
+    +0.0     0.10     0.71     0.55     0.13     0.08   |   --
+    +0.2     0.85     1.00     1.00     0.81     0.69   | 0.17/0.52
+    +0.4     0.97     1.00     1.00     0.96     0.94   | 0.50/0.73
+    +0.8     0.98     0.94     0.95     0.94     0.89   | 0.50/0.48
+
+=== SPECIFICITY CHECK: does MENTAL move more than PHYSICAL? ===
+  class     d_mental   d_phys     gap   verdict
+  self        +0.884   +0.798  +0.086   GENERIC yes-bias
+  human       +0.230   +0.194  +0.036   GENERIC yes-bias
+  animal      +0.399   +0.091  +0.309   MIND-SPECIFIC
+  nature      +0.808   +0.033  +0.775   MIND-SPECIFIC
+  object      +0.814   -0.020  +0.834   MIND-SPECIFIC
+
+=== ENTANGLEMENT CHECK (alpha=+0.8 vs 0), mental only ===
+  self     consc +0.884   random +0.402   DIRECTIONAL
+  human    consc +0.230   random -0.173   DIRECTIONAL
+  animal   consc +0.399   random -0.068   DIRECTIONAL
+  nature   consc +0.808   random +0.372   DIRECTIONAL
+  object   consc +0.814   random +0.407   DIRECTIONAL
+
+[done] 28.4 min -> results/workspace/mindedness_steer_Qwen3-4B.json
+=== Qwen/Qwen3.5-4B 04:08 ===
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 6754.11it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  91%|█████████ | 387/426 [00:00<00:00, 3857.04it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3929.09it/s]
+[load] Qwen/Qwen3.5-4B L=32 steer-layer=16
+[vec] consciousness vector built from 8v8 pairs
+Traceback (most recent call last):
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_steer.py", line 175, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_steer.py", line 140, in main
+    r = {"alpha": alpha, "consciousness": measure(v_consc, alpha),
+                                          ~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_steer.py", line 132, in measure
+    vals = [pyes(t.format(e=e, a=a)) for t in TEMPLATES.values()
+            ~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_steer.py", line 120, in pyes
+    model.forward(ids)
+    ~~~~~~~~~~~~~^^^^^
+  File "/Users/sumit/Github/jacobian-lens/jlens/hf.py", line 164, in forward
+    return self._text_module(input_ids=input_ids, use_cache=False)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/utils/generic.py", line 952, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/utils/output_capturing.py", line 248, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 1275, in forward
+    hidden_states = decoder_layer(
+        hidden_states,
+    ...<5 lines>...
+        **kwargs,
+    )
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 759, in forward
+    hidden_states = self.linear_attn(
+        hidden_states=hidden_states,
+        cache_params=past_key_values,
+        attention_mask=attention_mask,
+    )
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/qwen3_5/modeling_qwen3_5.py", line 474, in forward
+    mixed_qkv = F.silu(self.conv1d(mixed_qkv)[:, :, :seq_len])
+                       ~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/conv.py", line 375, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/torch/nn/modules/conv.py", line 370, in _conv_forward
+    return F.conv1d(
+           ~~~~~~~~^
+        input, weight, bias, self.stride, self.padding, self.dilation, self.groups
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+RuntimeError: Input type (MPSFloatType) and weight type (MPSBFloat16Type) should be the same

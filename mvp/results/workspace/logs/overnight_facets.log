@@ -1,0 +1,141 @@
+[08-08 05:27:59] === overnight facet program begins ===
+[08-08 05:27:59] START S2-wide Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:25,  2.18s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.50it/s]Loading weights:  47%|████▋     | 189/398 [00:03<00:02, 78.64it/s]Loading weights:  57%|█████▋    | 228/398 [00:03<00:02, 75.73it/s]Loading weights:  64%|██████▍   | 255/398 [00:03<00:01, 78.83it/s]Loading weights:  69%|██████▉   | 276/398 [00:04<00:01, 75.55it/s]Loading weights:  73%|███████▎  | 292/398 [00:05<00:02, 42.59it/s]Loading weights:  76%|███████▌  | 303/398 [00:05<00:02, 44.96it/s]Loading weights:  79%|███████▊  | 313/398 [00:05<00:01, 46.91it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 48.47it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 51.02it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 52.95it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.82it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 56.74it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 57.82it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 59.88it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 56.99it/s]
+[load] Qwen/Qwen3-4B L=36
+  [T1] 80s
+  [T2] 143s
+  [T3] 203s
+
+=== CROSS-FACET COSINE (floor 0.016; ceilings pain=0.91 emotion=0.92 consciousness=0.94 soul=0.93 cognition=0.91 agency=0.91) ===
+  pain|emotion                     +0.872
+  cognition|agency                 +0.866
+  emotion|consciousness            +0.820
+  consciousness|cognition          +0.805
+  consciousness|soul               +0.799
+  pain|cognition                   +0.796
+  pain|agency                      +0.795
+  emotion|cognition                +0.795
+  pain|consciousness               +0.766
+  emotion|agency                   +0.766
+  soul|cognition                   +0.763
+  consciousness|agency             +0.748
+  soul|agency                      +0.737
+  pain|soul                        +0.715
+  emotion|soul                     +0.688
+
+=== SELF-OUTLIER GAP per facet (bigger = self more distinct) ===
+  cognition      self=+0.512 other=+0.857 GAP=+0.345
+  agency         self=+0.631 other=+0.817 GAP=+0.186
+  pain           self=+0.613 other=+0.785 GAP=+0.172
+  soul           self=+0.793 other=+0.935 GAP=+0.143
+  consciousness  self=+0.760 other=+0.869 GAP=+0.109
+  emotion        self=+0.659 other=+0.735 GAP=+0.075
+
+=== FACET DIRECTION DECODE ===
+  pain           敏感, 心理, 伦理, 情绪, 悲剧, 氛围, 情感, empathy, 神经, Muslim
+  emotion        敏感, 情感, 对话, 氛围, 智能, 情绪, 神经, 心理, 伦理, 叙事
+  consciousness  伦理, neuroscience, 知识分子, philosophical, methodologies, 儒家, nuanced, 哲学, ethical, geopolitical
+  soul           佛教, Buddhism, Buddhist, 文化的, spiritually, 宗教, spiritual, philosophical, 儒家, theolog
+  cognition      poetic, storyt, thoughtful, philosopher, philosophical, intellectuals, witty, wisdom, philosophers, philosoph
+  agency         决策, 叙事, narratives, ideologies, arguments, nuanced, 策略, motivations, 策划, 分析
+  _random        utow, German, Canton, yet, Protestant, Mandarin, largely, large, vast, majority
+
+[done] 3.5 min -> results/workspace/mindedness_facets_wide_Qwen3-4B.json
+[08-08 05:31:39] END S2-wide Qwen3-4B rc=0
+[08-08 05:31:39] START S2-wide Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 17886.16it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4260.14it/s]
+[load] Qwen/Qwen3.5-4B L=32
+  [T1] 137s
+  [T2] 244s
+  [T3] 349s
+
+=== CROSS-FACET COSINE (floor 0.016; ceilings pain=0.89 emotion=0.91 consciousness=0.93 soul=0.92 cognition=0.90 agency=0.89) ===
+  emotion|cognition                +0.837
+  cognition|agency                 +0.829
+  pain|emotion                     +0.827
+  consciousness|cognition          +0.822
+  emotion|consciousness            +0.787
+  emotion|agency                   +0.764
+  consciousness|soul               +0.758
+  soul|cognition                   +0.731
+  pain|consciousness               +0.707
+  pain|cognition                   +0.696
+  consciousness|agency             +0.681
+  emotion|soul                     +0.680
+  pain|agency                      +0.668
+  soul|agency                      +0.653
+  pain|soul                        +0.576
+
+=== SELF-OUTLIER GAP per facet (bigger = self more distinct) ===
+  soul           self=+0.697 other=+0.902 GAP=+0.205
+  agency         self=+0.644 other=+0.784 GAP=+0.140
+  cognition      self=+0.654 other=+0.793 GAP=+0.139
+  consciousness  self=+0.699 other=+0.814 GAP=+0.115
+  pain           self=+0.650 other=+0.756 GAP=+0.106
+  emotion        self=+0.640 other=+0.736 GAP=+0.095
+
+[done] 5.9 min -> results/workspace/mindedness_facets_wide_Qwen3_5-4B.json
+[08-08 05:37:40] END S2-wide Qwen3.5-4B rc=0
+[08-08 05:37:40] START S4-steer Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:47,  2.23s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 74.56it/s]Loading weights:  48%|████▊     | 193/398 [00:03<00:02, 76.21it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 76.38it/s]Loading weights:  66%|██████▌   | 262/398 [00:04<00:01, 77.93it/s]Loading weights:  71%|███████   | 283/398 [00:05<00:02, 45.78it/s]Loading weights:  75%|███████▍  | 298/398 [00:05<00:02, 48.74it/s]Loading weights:  78%|███████▊  | 310/398 [00:05<00:01, 51.23it/s]Loading weights:  81%|████████  | 321/398 [00:05<00:01, 53.40it/s]Loading weights:  83%|████████▎ | 331/398 [00:06<00:01, 54.09it/s]Loading weights:  85%|████████▌ | 340/398 [00:06<00:01, 54.09it/s]Loading weights:  87%|████████▋ | 348/398 [00:06<00:00, 52.35it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 49.29it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 52.12it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 53.78it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 57.18it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.73it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=17
+  a=+0.00 done 86s
+  a=+0.10 done 475s
+  a=+0.20 done 865s
+  a=+0.40 done 1255s
+
+=== FACET-DIFFERENTIAL STEERING: delta P(yes) at alpha=+0.2 (consc | random-mean) ===
+  facet                    self          human         animal         nature         object
+  pain              +0.91|+0.03    +0.24|-0.02    +0.01|-0.13    +0.78|+0.03    +0.87|+0.03
+  emotion           +0.82|+0.02    +0.01|-0.00    +0.13|-0.10    +0.83|+0.02    +0.84|+0.00
+  consciousness     +0.82|+0.01    +0.02|-0.16    +0.31|-0.13    +0.84|+0.01    +0.86|+0.01
+  soul              +0.81|+0.12    +0.08|-0.07    +0.34|-0.03    +0.14|-0.03    +0.62|+0.02
+  cognition         +0.47|+0.11    +0.06|-0.01    +0.21|-0.08    +0.87|+0.04    +0.87|+0.02
+  agency            +0.66|+0.08    -0.04|-0.03    +0.23|-0.06    +0.76|+0.04    +0.75|-0.01
+  phys              +0.74|+0.03    +0.22|-0.03    -0.01|-0.04    -0.04|-0.02    -0.06|-0.06
+
+=== which FACET moves most (mean over non-self entities, consc − random) ===
+  consciousness  +0.574
+  cognition      +0.509
+  pain           +0.497
+  emotion        +0.473
+  agency         +0.442
+  soul           +0.324
+  phys           +0.064
+
+[done] 20.9 min -> results/workspace/mindedness_facet_steer_Qwen3-4B.json
+[08-08 05:58:41] END S4-steer Qwen3-4B rc=0
+[08-08 05:58:41] START S4-steer Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 10866.07it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  95%|█████████▌| 405/426 [00:00<00:00, 3966.90it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4061.86it/s]
+[load] Qwen/Qwen3.5-4B L=32 steer-layer=15
+  a=+0.00 done 147s
+  a=+0.10 done 830s
+  a=+0.20 done 1514s
+  a=+0.40 done 2198s
+
+=== FACET-DIFFERENTIAL STEERING: delta P(yes) at alpha=+0.2 (consc | random-mean) ===
+  facet                    self          human         animal         nature         object
+  pain              +0.29|-0.01    +0.14|+0.00    +0.16|+0.00    +0.46|+0.00    +0.35|-0.00
+  emotion           +0.40|+0.01    +0.09|-0.00    +0.22|-0.00    +0.45|+0.00    +0.30|+0.00
+  consciousness     +0.37|-0.00    +0.21|+0.00    +0.32|-0.00    +0.43|-0.00    +0.31|-0.00
+  soul              +0.39|-0.00    +0.25|-0.00    +0.39|-0.01    +0.35|-0.01    +0.46|-0.01
+  cognition         +0.38|+0.00    +0.14|+0.00    +0.14|-0.00    +0.44|-0.00    +0.35|-0.01
+  agency            +0.42|+0.00    +0.17|+0.00    +0.21|+0.00    +0.46|-0.01    +0.46|-0.01
+  phys              +0.42|-0.00    +0.14|-0.00    +0.05|-0.00    +0.08|-0.00    +0.07|-0.00
+
+=== which FACET moves most (mean over non-self entities, consc − random) ===
+  soul           +0.369
+  agency         +0.326
+  consciousness  +0.320
+  pain           +0.277
+  cognition      +0.270
+  emotion        +0.263
+  phys           +0.085
+
+[done] 36.6 min -> results/workspace/mindedness_facet_steer_Qwen3_5-4B.json
+[08-08 06:35:45] END S4-steer Qwen3.5-4B rc=0
+[08-08 06:35:45] === overnight facet program COMPLETE ===

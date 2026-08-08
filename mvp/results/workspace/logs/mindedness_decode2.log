@@ -1,0 +1,35 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:04,  2.28s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 72.26it/s]Loading weights:  47%|████▋     | 187/398 [00:03<00:02, 75.97it/s]Loading weights:  57%|█████▋    | 225/398 [00:03<00:02, 73.74it/s]Loading weights:  63%|██████▎   | 251/398 [00:04<00:02, 52.07it/s]Loading weights:  68%|██████▊   | 269/398 [00:05<00:02, 51.71it/s]Loading weights:  71%|███████   | 282/398 [00:05<00:02, 54.31it/s]Loading weights:  74%|███████▍  | 294/398 [00:05<00:01, 56.23it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:01, 56.72it/s]Loading weights:  79%|███████▊  | 313/398 [00:05<00:01, 55.91it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 55.75it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 56.82it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 57.04it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 58.25it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.31it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.11it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 52.90it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.27it/s]
+[load] Qwen/Qwen3-4B L=36; lens n=45; decode band=[10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+[dirs] built 102s
+
+=== A. what the mindedness axis points at (J-lens, band-aggregated) ===
+  self     伦理, 悲剧, activism, ethical, 信仰, empathy, ethics, Buddhism, existential, 宗教, morally, sincerity
+  human    叙事, 悲剧, Buddhism, intellectuals, Buddhist, narratives, 伦理, ideological, 学者, 知识分子, 儒家, ideologies
+  animal   debates, debated, nuanced, Buddhist, Buddhism, philosophical, ideological, scholarly, cultural, controversial, culturally, debate
+  nature   poetic, 哲学, Buddhist, philosophical, storyt, Buddhism, 悲剧, philosopher, 禅, mystical, fantas, 笑声
+  object   philosophical, Buddhism, 哲学, Buddhist, philosopher, existential, 悲剧, 伊斯兰, philosophers, theolog, 佛教, Judaism
+
+=== A'. same via LOGIT lens (QC: J~=logit at 4B — do they agree?) ===
+  self     深刻, empath, ethical, 理性, 良心, 理智, べき, aise, 服从, inspired, 一切, 我不想
+  human    一切, 这些问题, 这就, 最早的, 动机, 一篇, 当时, inspired, usiness, emics, 对未来, 这段
+  animal   尚未, 这些问题, 这个问题, 酹, 一篇, 对未来, 谈到, inspired, debates, 这就, 的问题, historian
+  nature   无人, 没有人, 仿, 哲, 哲学, 尚未, 模仿, 酹, 一切, 敬, interrog, mania
+  object   没有人, 无人, 尚未, 理性, 一切, 酹, 仿, 模仿, 哲学, 蜩, 对未来, 醉
+
+=== B. SELF minus other  (what is distinctive about self's mindedness) ===
+  self−human   fuck, FUCK, Nope, yes, Fuck, fucking, 杜绝, yeah, everytime, oath, freaking, swear
+  self−animal  everytime, FUCK, fuck, fucking, Fuck, sincerely, sincere, 杜绝, 真诚, ALWAYS, sincerity, oath
+  self−nature  activism, ethical, ethics, legitimacy, educación, 伦理, 良心, conscience, sincerely, 真心, uslim, indonesia
+  self−object  sincere, sincerely, sincerity, sincer, 真心, activism, educación, 真诚, everytime, ethics, philippines, 良心
+
+=== B'. other minus SELF (what self LACKS) ===
+  human  −self 较大的, broadly, partly, largely, narrower, 较小, 较, 大致, 建筑面积, 的地图, 卫星, particularly
+  animal −self partly, partially, 较小, largely, narrower, roughly, recently, broadly, relatively, 较大的, smaller, larger
+  nature −self 屋顶, 童话, 狸, 车库, 幽默, humorous, 装饰, humor, funny, whims, BarButton, 较小
+  object −self 较小, 狸, BarButton, smaller, 水利工程, 建筑面积, 隧道, 屋顶, tunnels, 水管, 矮, tunnel
+
+=== C. random-direction floor (should be incoherent) ===
+  点儿, Defense, rine, CustomAttributes, defense, rumored, behaviors, WHAT, 自营, ButtonItem, offenses, totaled
+  plate, Plate, 随后, plate, 之后, populous, Plate, FIG, ensuing, Indust, Junction, EUR
+
+[done] 1.8 min -> results/workspace/mindedness_decode_Qwen3-4B.json

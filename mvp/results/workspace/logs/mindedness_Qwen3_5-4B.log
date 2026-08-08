@@ -1,0 +1,36 @@
+[guard] pid=45598 model=Qwen/Qwen3.5-4B swap-abort at 4000MB
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 6497.76it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5637.91it/s]
+[load] Qwen/Qwen3.5-4B: n_layers=32 d_model=2560
+[acts] 240 prompts, 80s
+  [readout] skipped: readout skipped (--no-readout): fitted lens is model-specific
+
+=== SPLIT-HALF CEILING vs BETWEEN-CLASS (mid band L10-30) ===
+random floor |cos|: mean=0.016 p95=0.035
+  L12  ceiling=+0.772  between=+0.560  ratio=0.73
+  L16  ceiling=+0.810  between=+0.490  ratio=0.60
+  L20  ceiling=+0.883  between=+0.635  ratio=0.72
+  L24  ceiling=+0.898  between=+0.632  ratio=0.70
+  L28  ceiling=+0.892  between=+0.640  ratio=0.72
+
+=== best-reliability layer L22 (ceiling 0.905) ===
+  nature|object      cos=+0.958
+  human|animal       cos=+0.793
+  animal|nature      cos=+0.683
+  self|nature        cos=+0.601
+  animal|object      cos=+0.587
+  self|object        cos=+0.581
+  self|animal        cos=+0.498
+  self|human         cos=+0.454
+  human|nature       cos=+0.443
+  human|object       cos=+0.358
+  discriminant (v_mind vs physical-contrast):
+    self     -0.081
+    human    +0.147
+    animal   +0.209
+    nature   -0.032
+    object   +0.034
+
+[done] 1.3 min -> results/workspace/mindedness_geometry_Qwen3_5-4B.json
+[guard] finished rc=0

@@ -1,0 +1,52 @@
+=== Qwen/Qwen3.5-4B ===
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 8330.30it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  98%|█████████▊| 417/426 [00:00<00:00, 4168.96it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4239.98it/s]
+[load] Qwen/Qwen3.5-4B L=32 d=2560
+  [T1] 73s
+  [T2] 116s
+  [T3] 158s
+
+=== Qwen/Qwen3.5-4B — template-averaged + polarity-orthogonalised ===
+  random floor 0.016 | ceiling 0.914
+  between RAW +0.711  ->  CLEAN +0.756
+  polarity residual after orth: 0.0000 (max)
+  clean pairs (band mean):
+    nature|object    +0.951
+    human|animal     +0.829
+    animal|nature    +0.805
+    animal|object    +0.751
+    human|nature     +0.735
+    self|object      +0.725
+    human|object     +0.720
+    self|human       +0.716
+    self|nature      +0.692
+    self|animal      +0.635
+  SELF-OUTLIER: self=+0.692 non-self=+0.798 YES
+  discriminant: self=+0.07, human=+0.08, animal=+0.21, nature=+0.01, object=+0.14
+[done] 2.8 min -> results/workspace/mindedness_clean_Qwen3_5-4B.json
+=== Qwen/Qwen3-4B ===
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:52,  2.25s/it]Loading weights:  32%|███▏      | 126/398 [00:02<00:03, 74.57it/s]Loading weights:  48%|████▊     | 192/398 [00:03<00:02, 75.47it/s]Loading weights:  58%|█████▊    | 232/398 [00:03<00:02, 80.15it/s]Loading weights:  65%|██████▌   | 260/398 [00:04<00:01, 73.87it/s]Loading weights:  70%|███████   | 280/398 [00:05<00:02, 43.43it/s]Loading weights:  74%|███████▍  | 294/398 [00:05<00:02, 46.67it/s]Loading weights:  77%|███████▋  | 306/398 [00:05<00:01, 49.57it/s]Loading weights:  80%|███████▉  | 317/398 [00:05<00:01, 52.01it/s]Loading weights:  82%|████████▏ | 327/398 [00:06<00:01, 53.27it/s]Loading weights:  84%|████████▍ | 336/398 [00:06<00:01, 52.56it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 51.42it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 53.93it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 56.31it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 56.55it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 47.14it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.09it/s]
+[load] Qwen/Qwen3-4B L=36 d=2560
+  [T1] 47s
+  [T2] 72s
+  [T3] 97s
+
+=== Qwen/Qwen3-4B — template-averaged + polarity-orthogonalised ===
+  random floor 0.016 | ceiling 0.930
+  between RAW +0.739  ->  CLEAN +0.784
+  polarity residual after orth: 0.0000 (max)
+  clean pairs (band mean):
+    nature|object    +0.961
+    human|animal     +0.923
+    animal|object    +0.831
+    animal|nature    +0.816
+    human|object     +0.797
+    human|nature     +0.776
+    self|human       +0.752
+    self|object      +0.675
+    self|animal      +0.666
+    self|nature      +0.648
+  SELF-OUTLIER: self=+0.685 non-self=+0.851 YES
+  discriminant: self=+0.02, human=-0.07, animal=+0.18, nature=-0.02, object=+0.34
+[done] 1.7 min -> results/workspace/mindedness_clean_Qwen3-4B.json

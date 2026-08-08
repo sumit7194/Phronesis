@@ -534,3 +534,42 @@ a pooled DV.
 numbers would have supported an attractive story ("the model grants souls grudgingly"); the
 headroom correction dissolves it. Qwen3.5 replication running — note its soul baseline on nature
 is 0.54, so it has more headroom and is the better test of this specific question.
+
+### F-M2. Qwen3.5-4B confirms the null — and exposes a limit of the headroom correction
+
+36.6 min. **The random control is the cleanest of the whole arc**: every random-seed delta is
+±0.01 across all 35 cells, against consciousness-vector deltas of +0.30…+0.46 on nature/object.
+No perturbation component at all on this model (consistent with F-J).
+
+Headroom-normalised, mean over non-self classes, both models:
+
+| facet | Qwen3-4B | Qwen3.5-4B |
+|---|---|---|
+| consciousness | **+1.053** (1st) | +0.654 (**last**) |
+| cognition | +0.812 | +0.678 |
+| soul | +0.807 (3rd) | **+0.783** (1st) |
+| pain | +0.783 | +0.715 |
+| agency | +0.602 | +0.735 |
+| emotion | +0.589 | +0.675 |
+| **spread across mental facets** | 0.464 | **0.129** |
+
+**H-facet-differential is dead.** The facet ordering does not agree between models — soul is 3rd on
+one and 1st on the other, consciousness 1st on one and *last* on the other — and on Qwen3.5, which
+has the cleaner control and more headroom (nature soul baseline 0.54 vs 0.74), the total spread
+across all six mental facets is 0.129. That is flat. Whatever separates these facets geometrically
+(F-L/F-L2, robust and replicated) does not make them differentially steerable by this vector.
+
+**Caveat I have to flag against my own F-M analysis:** on Qwen3.5 the *physical* control comes out
+**+0.870 — top of the normalised table** — purely because physical baselines sit at 0.89–0.95, so
+`(1 − baseline)` is ~0.05–0.1 and the divisor explodes. Raw physical deltas are +0.05…+0.08
+against +0.30…+0.46 for mental facets, i.e. specificity is intact and obvious. **The headroom
+normalisation is only trustworthy for mid-range baselines and must not be applied near 0 or 1.**
+It was the right correction for soul-on-nature at 0.74 in F-M; it is meaningless for physical at
+0.93. Both models' specificity claims should be read off the RAW deltas, and the normalised table
+used only to compare mental facets against each other.
+
+**Arc verdict.** Geometry: mindedness is ≥3 separable axes with soul distinct on four independent
+measures, replicated across two architectures (F-K…F-L2) — solid, Tier B. Causality: the
+consciousness vector raises mind-attribution to nature/objects specifically and beyond random
+(F-I/F-J) — solid on Qwen3.5, caveated on Qwen3-4B. But the causal effect is **undifferentiated
+across facets** (F-M/F-M2) — a clean null. Separable in representation, unitary under intervention.
