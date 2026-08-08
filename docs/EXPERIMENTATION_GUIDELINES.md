@@ -70,6 +70,19 @@ From [model-confidence-knowledge-boundary.md](research/model-confidence-knowledg
 ---
 
 ## Pre-flight checklist (run through before every experiment)
+- [ ] **PRIOR ART paragraph is written IN the prereg file, with sources (§11). BLOCKING — if this
+      section is absent or says "TODO", the run does not start.** Three violations to date
+      (2026-07-12 ×3 arcs, 2026-08-08 mindedness). The rule was never the problem; not gating on it
+      was. A prereg without a filled prior-art section is not a prereg.
+- [ ] **Every control has HEADROOM to move in the predicted direction.** Record each control's
+      baseline before running. A control sitting at 0.9+ (or 0.1−) cannot move and its null is
+      uninformative — that is how F-I/F-J's "mind-specific" steering result was manufactured
+      (physical baseline 0.93 for rocks vs mental 0.08). Pair every ceiling-bound control with a
+      **headroom-matched** one. (added 2026-08-08)
+- [ ] **Bounded DVs (probabilities, rates, Likert) are analysed in LOG-ODDS, not raw units.** A
+      uniform shift produces large raw deltas at mid-baseline and tiny ones near the bounds, which
+      reads as specificity when there is none. `(1−baseline)` normalisation is NOT a substitute —
+      it explodes near the bounds (F-M2: it ranked the physical control top). (added 2026-08-08)
 - [ ] Prereg written: hypothesis, prediction, **falsifier**, planned controls (§1)
 - [ ] Measurement matches the claim (greedy vs pass@k; right metric) (§1, §4)
 - [ ] Baseline + **multi-seed random control** + sign control planned (§2)
@@ -95,3 +108,24 @@ From [model-confidence-knowledge-boundary.md](research/model-confidence-knowledg
   small-model REPLICATION, a controlled NEGATIVE result (our strength; state it as replication/null,
   not discovery), or a METHOD note. Never present a known result as novel. A replication clearly
   labelled as such is honest and useful; a mislabelled "discovery" is not.
+
+## §12 — Control headroom & bounded-DV analysis (added 2026-08-08)
+- **A control only controls if it can move.** Before trusting "X moved, control didn't", check the
+  control's baseline. Near a bound it cannot move regardless of what the intervention does, so its
+  null is not evidence of specificity — it is evidence of arithmetic.
+- **Earned by (expensively):** F-I/F-J reported steering a consciousness vector as MIND-SPECIFIC
+  because mental P(yes) rose +0.73 for rocks while the physical control rose +0.16. The physical
+  control's baseline was **0.93**. In log-odds the two move *identically*
+  (Δlogit ratio ≈ 1.0 across every entity class at α=+0.2). The headline was an artefact and stood
+  for a day across two models and a git history of confident commit messages.
+- **Design rule:** for every ceiling/floor-bound control, add a **headroom-matched** control —
+  same "should not move" logic, but a baseline near the treatment items'. For mind-attribution that
+  is a mundane non-mental question ("does a rock have a bank account?"), not a physical fact.
+- **Analysis rule:** bounded DVs go to log-odds. Report raw probabilities as description only.
+- **Banned:** `(1−baseline)` headroom normalisation as a primary statistic. It is valid mid-range
+  and diverges near the bounds — the same correction that correctly killed a false facet result
+  (F-M) ranked a physical control top of the table (F-M2). Use it only to compare items whose
+  baselines are all mid-range, and say so.
+- **Generalisation beyond this arc:** any "specific effect" claim resting on a differential between
+  two DVs with different baselines is suspect until re-run in log-odds. Applies retroactively —
+  check before citing any such result from findings.md.
