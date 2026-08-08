@@ -152,3 +152,31 @@ Earned by a chain that **failed every stage and reported COMPLETE**, in one seco
   power loss cost 45 minutes because the script only wrote its output at the end; with
   checkpointing the same crash cost one template. Verify the RESUME path loads, don't just verify
   the file is written.
+
+## §14 — Hybrid architectures: the steering LAYER TYPE is part of the dose (added 2026-08-09)
+- **"The middle layer" is not a matched intervention across architectures.** Qwen3.5-4B has
+  `full_attention_interval: 4` — every 4th layer is full attention, the rest linear attention.
+  Two of our scripts computed the middle layer with different rounding (`round(0.5*(L-1))` = 16 vs
+  `(L-1)//2` = 15) and thereby landed on **different layer types**. Same model, same vector, same
+  α: steering layer 16 (linear attention) moved the DV ~+4.9 logits; layer 15 (full attention)
+  moved it **+0.79**. A ~6× difference from an off-by-one.
+- **Consequence:** a cross-model "the effect does not replicate" is worthless until effect size is
+  matched. Our first read of the Qwen3.5 v2 steering was a false negative caused entirely by this.
+- **Rules:** (1) make the steering layer an explicit CLI argument, never an implicit formula;
+  (2) print the layer AND its type at startup for hybrid models; (3) before comparing specificity
+  across models, verify the intervention produces a **comparable effect size** on the primary DV —
+  if it does not, calibrate α or the layer first; (4) sweep layers when the architecture is
+  heterogeneous. Extends §4 (calibrate parameters to the model's scale, F171) and the E16 lesson
+  (layer-sweep both methods before any comparison).
+
+## §15 — Multi-token option scoring (added 2026-08-09)
+- **Never score a forced choice on the FIRST token of each option.** Our forced-choice DV compared
+  entities via `tokenizer(" " + entity)[0]`. Nearly every entity in the bank begins with "a" or
+  "an", so **38 entities collapsed to 4 distinct first tokens**: 64% of pairs were silently skipped
+  as ties and most of the survivors compared " a" against " an" — grammar, not content. Every win
+  rate sat near 0.5 because the measure was empty.
+- **Rule:** score the full option string (sum of token log-probs, or length-normalised), and
+  **assert that the options are distinguishable** before running. A cheap guard: count distinct
+  first tokens across the option set and fail loudly if it is much smaller than the option count.
+- **Tell:** flat results near chance plus a large position-order gap means "the measure is broken",
+  not "there is no effect". Check the instrument before interpreting.

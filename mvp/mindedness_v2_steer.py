@@ -48,9 +48,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen3-4B")
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--layer", type=int, default=None,
+                    help="steer layer. NOTE hybrid models (Qwen3.5: full_attention_interval=4) "
+                         "alternate layer TYPES, and the effect size depends strongly on which "
+                         "type you inject into - picking the middle layer by index is not a "
+                         "matched dose across architectures.")
     args = ap.parse_args()
     tag = args.tag or args.model.split("/")[-1].replace(".", "_")
     OUT = f"results/workspace/mindedness_v2_steer_{tag}.json"
+    if args.layer is not None:
+        OUT = f"results/workspace/mindedness_v2_steer_{tag}_L{args.layer}.json"
     t0 = time.time()
     tok = AutoTokenizer.from_pretrained(args.model)
     try:
@@ -60,7 +67,7 @@ def main():
         hf = AutoModel.from_pretrained(args.model, dtype=torch.float16).to(DEVICE).eval()
     model = jlens.from_hf(hf, tok, force_bos=False)
     L, d = model.n_layers, model.d_model
-    SL = (L - 1) // 2
+    SL = args.layer if args.layer is not None else (L - 1) // 2
     yes_id = tok(" Yes", add_special_tokens=False)["input_ids"][0]
     no_id = tok(" No", add_special_tokens=False)["input_ids"][0]
     print(f"[load] {args.model} L={L} steer-layer={SL}", flush=True)
@@ -122,6 +129,13 @@ def main():
                 for fac, attrs in ALL_FACETS.items():
                     out[f"{cls}|{fac}"] = float(np.mean(
                         [pyes(TMPL.format(e=e, a=a)) for e in exs[:N_EX] for a in attrs]))
+                # The MPS caching allocator does not return freed blocks on its own, so over a
+                # few thousand forward passes the process creeps into swap and the guard kills it
+                # (Qwen3.5 went 4.7GB -> 11GB across ~2h on 2026-08-09). Drain per class.
+                try:
+                    torch.mps.empty_cache()
+                except Exception:
+                    pass
         return out
 
     res = {"model": args.model, "steer_layer": SL, "alphas": ALPHAS, "n_ex": N_EX,
