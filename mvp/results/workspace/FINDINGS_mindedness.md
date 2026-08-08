@@ -486,3 +486,51 @@ models. It is at least three, and the *spiritual* one behaves differently from t
 independent ways: behavioural P(yes) (rivers get souls, not awareness), cross-facet cosine
 (furthest from the affective axis), J-lens decode (uniquely religious vocabulary), and entity
 geometry (nature joins the animate cluster). Two models, two architectures.
+
+---
+
+## F-M. S4 facet-differential steering (Qwen3-4B): the apparent differential is a CEILING ARTEFACT
+
+`mindedness_facet_steer.py`, consciousness vector steered at layer 17, all six facets + physical
+as separate DVs, 5 random seeds, 21 min.
+
+**Raw ranking at α=+0.2** (Δconsc − Δrandom, mean over non-self classes) looked like a clean
+finding: consciousness +0.574 > cognition +0.509 > pain +0.497 > emotion +0.473 > agency +0.442
+> **soul +0.324** ≫ phys +0.064. Read naively: steering consciousness grants rocks *awareness*
+readily and *souls* reluctantly.
+
+**That read is wrong, and I checked before writing it up.** Soul is the one facet with almost no
+headroom on nature — its baseline is already 0.74 (F-K) where every other mental facet sits at
+0.01–0.11. A DV that starts at 0.74 cannot rise 0.85. Dividing each effect by its available
+headroom `(1 − baseline)`:
+
+| facet | self | human | animal | nature | object | mean(non-self) |
+|---|---|---|---|---|---|---|
+| consciousness | +0.93 | +1.55 | +0.95 | +0.85 | +0.86 | **+1.053** |
+| cognition | +0.66 | +0.62 | +0.90 | +0.84 | +0.89 | +0.812 |
+| **soul** | +0.78 | +0.92 | +0.85 | +0.65 | +0.81 | **+0.807** |
+| pain | +0.90 | +0.83 | +0.63 | +0.82 | +0.85 | +0.783 |
+| agency | +0.78 | −0.11 | +0.82 | +0.81 | +0.89 | +0.602 |
+| emotion | +0.89 | +0.08 | +0.62 | +0.82 | +0.84 | +0.589 |
+| _phys_ | +0.83 | +0.93 | +0.23 | **−0.19** | **−0.04** | +0.231 |
+
+Soul moves from *last* (+0.324) to *third of six* (+0.807), statistically indistinguishable from
+cognition (+0.812) and pain (+0.783). **H-facet-differential is not supported.** Once headroom is
+accounted for, the consciousness vector moves every mental facet by roughly the same proportion of
+what is available to move. The facets are *geometrically* separable (F-L) but not *causally*
+separable by this intervention.
+
+Two caveats on the table itself: human/consciousness exceeds 1.0 because the random control went
+negative there (−0.16) and the subtraction inflates the ratio — an artefact of the normalisation,
+not a super-saturating effect. And consciousness ranking first is a **positive control working as
+designed**, not a discovery: it is the steered vector's own facet.
+
+**What the run does establish cleanly is specificity.** The physical control is at −0.19 (nature)
+and −0.04 (object) while every mental facet moves +0.80…+0.89 on those same classes. That is the
+sharpest mind-specificity evidence in the whole arc, and it is now shown facet-wise rather than on
+a pooled DV.
+
+**Honest status: H-facet-differential NULL on Qwen3-4B.** Recorded as a negative result. The raw
+numbers would have supported an attractive story ("the model grants souls grudgingly"); the
+headroom correction dissolves it. Qwen3.5 replication running — note its soul baseline on nature
+is 0.54, so it has more headroom and is the better test of this specific question.
