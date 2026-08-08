@@ -130,6 +130,18 @@ def main():
     v_pol = np.mean(pol, 0)
     print(f"[polarity] built  {(time.time()-t0)/60:.1f}m", flush=True)
 
+    # The model is not needed past this point - everything below is numpy on the recorded
+    # activations. Holding ~8GB of fp16 weights through the geometry phase is what pushed this
+    # run into swap and got it killed on 2026-08-08. Free it explicitly.
+    del hf, model
+    import gc
+    gc.collect()
+    try:
+        torch.mps.empty_cache()
+    except Exception:
+        pass
+    print(f"[mem] model released before geometry phase", flush=True)
+
     # ---------------- S1 behavioural map ----------------
     res = {"model": args.model, "bank": counts(), "band": [band[0], band[-1]],
            "classes": classes, "facets": facets, "mental": MENTAL_KEYS, "control": CONTROL_KEYS}

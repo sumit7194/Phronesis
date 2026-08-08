@@ -129,3 +129,26 @@ From [model-confidence-knowledge-boundary.md](research/model-confidence-knowledg
 - **Generalisation beyond this arc:** any "specific effect" claim resting on a differential between
   two DVs with different baselines is suspect until re-run in log-odds. Applies retroactively —
   check before citing any such result from findings.md.
+
+## §13 — Driver/guard discipline for chained long runs (added 2026-08-08)
+Earned by a chain that **failed every stage and reported COMPLETE**, in one second.
+
+- **A resource guard reading SYSTEM-WIDE state cannot be sampled immediately after a kill.**
+  Swap (and RSS) stay elevated for tens of seconds after a large process dies. Our swap guard
+  killed the sweep at 7046MB, then instantly killed S3, S4, S5 and both Qwen3.5 stages — all five
+  aborted within the same second, each on the *dead process's* stale reading. **Fix: settle-wait
+  before every stage** (poll until the metric is back under a lower threshold, with a timeout).
+- **Never write a DONE marker or print COMPLETE without checking exit codes.** The old driver
+  touched `V2_ALL_DONE` and logged "program COMPLETE" after everything had failed. A success marker
+  that does not depend on success is worse than no marker — it makes a total failure look like a
+  finished run, and the monitor stays silent because nothing matched "error". **Track failures and
+  report them in the terminal line.**
+- **A stage that consumes an earlier stage's output must check the file exists and skip loudly.**
+  S3 ran against a sweep JSON that was never written.
+- **Free large models before any long post-processing phase.** The sweep held ~8GB of fp16 weights
+  through a pure-numpy geometry phase; that is what pushed it into swap. `del` + `gc.collect()` +
+  `torch.mps.empty_cache()` once the forward passes are done.
+- **Checkpoint long collection loops at a natural granularity** (per template here). The 2026-08-08
+  power loss cost 45 minutes because the script only wrote its output at the end; with
+  checkpointing the same crash cost one template. Verify the RESUME path loads, don't just verify
+  the file is written.
