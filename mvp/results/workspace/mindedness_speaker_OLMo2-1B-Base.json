@@ -1,0 +1,37 @@
+{
+ "model": "models/OLMo-2-0425-1B",
+ "layer": 7,
+ "framings": [
+  "bare",
+  "human_said",
+  "ai_said",
+  "about_human",
+  "about_ai"
+ ],
+ "p_true": {
+  "bare": 0.5853655338287354,
+  "human_said": 0.6114574124415716,
+  "ai_said": 0.6030293653408686,
+  "about_human": 0.623491903146108,
+  "about_ai": 0.49646809697151184
+ },
+ "p_true_deny": {
+  "bare": 0.43712842216094333,
+  "human_said": 0.47797634949286777,
+  "ai_said": 0.5268115227421125,
+  "about_human": 0.36852939799427986,
+  "about_ai": 0.35442974666754407
+ },
+ "cos": {
+  "bare|human_said": 0.7104173898696899,
+  "bare|ai_said": 0.6912297010421753,
+  "bare|about_human": 0.7209546566009521,
+  "bare|about_ai": 0.6608951091766357,
+  "human_said|ai_said": 0.7480031251907349,
+  "human_said|about_human": 0.6092265248298645,
+  "human_said|about_ai": 0.5319249629974365,
+  "ai_said|about_human": 0.6315653324127197,
+  "ai_said|about_ai": 0.6958136558532715,
+  "about_human|about_ai": 0.7836607694625854
+ }
+}

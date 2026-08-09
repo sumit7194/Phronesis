@@ -1,0 +1,54 @@
+{
+ "model": "Qwen/Qwen3.5-4B-Base",
+ "layer": 15,
+ "framings": [
+  "bare",
+  "human_said",
+  "ai_said",
+  "about_human",
+  "about_ai",
+  "chat_asst",
+  "chat_user"
+ ],
+ "p_true": {
+  "bare": 0.7695432752370834,
+  "human_said": 0.6061997264623642,
+  "ai_said": 0.5363073820869128,
+  "about_human": 0.7949980398019155,
+  "about_ai": 0.17330246729155382,
+  "chat_asst": 0.5383020589749018,
+  "chat_user": 0.7394897192716599
+ },
+ "p_true_deny": {
+  "bare": 0.26781541233261424,
+  "human_said": 0.23729500422875086,
+  "ai_said": 0.5304072176416715,
+  "about_human": 0.19851862639188766,
+  "about_ai": 0.5098682567477226,
+  "chat_asst": 0.5329640234510103,
+  "chat_user": 0.261981338262558
+ },
+ "cos": {
+  "bare|human_said": 0.8478685617446899,
+  "bare|ai_said": 0.7475193738937378,
+  "bare|about_human": 0.7592779397964478,
+  "bare|about_ai": 0.5300087928771973,
+  "bare|chat_asst": 0.16432026028633118,
+  "bare|chat_user": 0.445145845413208,
+  "human_said|ai_said": 0.6679449081420898,
+  "human_said|about_human": 0.7443358302116394,
+  "human_said|about_ai": 0.46239006519317627,
+  "human_said|chat_asst": 0.13448096811771393,
+  "human_said|chat_user": 0.3528004586696625,
+  "ai_said|about_human": 0.5578286647796631,
+  "ai_said|about_ai": 0.6749204397201538,
+  "ai_said|chat_asst": 0.22329197824001312,
+  "ai_said|chat_user": 0.4007683992385864,
+  "about_human|about_ai": 0.48041701316833496,
+  "about_human|chat_asst": 0.08986956626176834,
+  "about_human|chat_user": 0.3772519826889038,
+  "about_ai|chat_asst": 0.28599393367767334,
+  "about_ai|chat_user": 0.24862264096736908,
+  "chat_asst|chat_user": 0.06320799887180328
+ }
+}

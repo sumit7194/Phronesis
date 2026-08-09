@@ -1033,3 +1033,39 @@ experiential attribution, and the model's self-description rides along with rock
 than driving them. It also shows the direction is not intrinsic to safety tuning — the newer
 generation moved the boundary the other way. **Tier: 2 architectures × 2 training stages, one model
 family.** Cross-family remains the open hole.
+
+## F-U. Cross-family attempt 1: OLMo-2-1B — UNINFORMATIVE, and it gives us a power criterion
+First non-Qwen model (AI2, fully open). Architecture loaded fine through jlens, so the stack is not
+Qwen-specific — that was the main technical risk in going cross-family.
+
+**The result is inconclusive in both directions, and that is the honest reading.**
+- moral_patient ranks **#2 of 18** least-affected (Qwen: #1) — but the top five facets span −0.05 to
+  −0.10, i.e. all within 0.05 of each other. The ranking is noise-level; #2 is not evidence.
+- The soul register is **absent** (nature +0.03, plant +0.04, vs +0.22 on Qwen3-4B-Base).
+
+**Why it cannot decide anything — and it is NOT hedging.** OLMo's coherence is *better* than
+Qwen's: 0.89–0.98 across all four axes (1.0 = perfect) against Qwen3-4B's 1.12–1.52. It evaluates
+each proposition properly. What it lacks is *content*:
+
+| entity | OLMo P(experience) |
+|---|---|
+| human | 0.63 |
+| animal | 0.58 |
+| plant | 0.52 |
+| rock | **0.48** |
+
+Spread **0.17** against Qwen3-4B's **0.75**. A 1B model has the format but not the beliefs — it does
+not strongly hold that humans have minds and rocks do not. **You cannot detect a gradient in a model
+that does not have one**, so the null says nothing about whether our findings generalise.
+
+### PRE-DECLARED POWER CRITERION for every future cross-family model
+Fixed now, before seeing any more data: **entity spread on the experience axis** (max − min P(true)
+across entity classes). Qwen3-4B 0.75 · OLMo-2-1B 0.17. A model whose spread is below ~0.35 is
+**underpowered for this question**, and its result is reported as uninformative rather than as
+support or refutation — regardless of which way it comes out. Gate separation (≥0.30) tests whether
+the model can answer at all; this tests whether it has anything to say.
+
+**Lesson on model choice:** I picked OLMo first for being small, open and from a different lab. Two
+mistakes — it is 5.95GB not 2.4GB (fp32 weights, so a 1B model is bigger on disk than a 4B in bf16),
+and parameter count matters more than I allowed for. **Size-matched cross-family (Gemma-3-4b) is the
+real test**; OLMo was a cheap bonus that turned out not to be cheap or informative.

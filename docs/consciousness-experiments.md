@@ -41,6 +41,9 @@ four Qwen models is that a new model then becomes one command per row.
 | 6 speaker frame | ⬜ | ⬜ | ⬜ | ⬜ |
 | 7 subject framing | ⬜ | ⬜ | ⬜ | ⬜ |
 
+**Cross-family:** OLMo-2-1B-Base — battery complete, **uninformative** (fails the power criterion).
+OLMo-2-1B-Instruct running. Gemma-3-4b (pt+it) is the real size-matched test, pending.
+
 ---
 
 ## WHAT WE KNOW
@@ -90,6 +93,16 @@ worse than random. On Qwen3.5 those vectors barely steer, so it is **untested th
 | Chat-template presence identifies an instruct model | base models ship them too |
 
 ---
+
+## POWER CRITERION (pre-declared 2026-08-09, before further cross-family runs)
+Two gates, both fixed in advance:
+1. **Gate separation ≥ 0.30** — can the model answer yes/no at all? (`mindedness_base_gate.py`)
+2. **Entity spread ≥ ~0.35** on the experience axis (max − min P(true) across entity classes) —
+   does the model actually hold beliefs about which things have minds?
+   Reference values: Qwen3-4B **0.75** · OLMo-2-1B **0.17**.
+A model failing (2) is reported as **uninformative**, never as support or refutation. OLMo-2-1B
+passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently (coherence
+0.89–0.98, better than Qwen's) but has no mind-attribution gradient to measure.
 
 ## OPEN QUESTIONS / NEXT
 1. **Cross-family** (Gemma-3-4b, Phi-4-mini). Everything is Qwen. The one thing that could
