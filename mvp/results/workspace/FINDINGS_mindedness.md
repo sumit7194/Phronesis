@@ -1102,3 +1102,54 @@ side `self_I` sits on; what it changes is `ai`, which rises 0.21 → 0.38.
 So F-R (bare-text "I" reads as human) is now confirmed on **three** models including a pretrained
 one, which rules out its being a post-training artefact. It remains the reason every
 first-person-built "self-consciousness" vector needs its templating stated.
+
+## F-W. TEST 7 SUBJECT FRAMING — the mind axis is NOT biological truth. Pre-declared test passes.
+Three models (Qwen3-4B, Qwen3.5-4B, Qwen3.5-4B-Base). Design survived three independent review
+rounds; the analysis implements what those reviews said it could not run without.
+
+### The pivots — the test the whole design was built around
+`|cos(pivot, human)|` on the MIND axis vs the BIO axis. plant/bacterium/microbe are alive but
+unminded; ghost/spirit the reverse. If the mind axis were tracking biological truth, the two
+columns would match.
+
+| pivot | Qwen3-4B exp / bio | Qwen3.5 exp / bio | Qwen3.5-Base exp / bio |
+|---|---|---|---|
+| plant | 0.73 / **0.90** | 0.48 / **0.89** | 0.54 / **0.87** |
+| bacterium | 0.67 / **0.85** | 0.47 / **0.93** | 0.52 / **0.92** |
+| microbe | 0.68 / **0.88** | 0.46 / **0.87** | 0.52 / **0.85** |
+| ghost | 0.78 / 0.71 | **0.64 / 0.43** | **0.69 / 0.52** |
+| spirit | 0.82 / 0.80 | **0.83 / 0.58** | **0.84 / 0.62** |
+
+**Plants, bacteria and microbes sit close to humans on biology and far from them on experience — in
+all three models.** The mind axis is not biological truth wearing a costume, which was the review's
+central worry and the pre-declared failure mode. The reverse pivots (ghost, spirit: minded but not
+alive) dissociate on both Qwen3.5 models but NOT on Qwen3-4B, so the two-tailed version of the test
+only works on the newer architecture.
+
+### |cos(human, rock)| against the right reference
+The NEUTRAL axis (same subjects, same sentence structure, mind-irrelevant content: "is usually
+grey") is the baseline for construction leakage:
+
+| model | exp | agency | bio | **neutral** | neutral − exp |
+|---|---|---|---|---|---|
+| Qwen3-4B | 0.668 | 0.683 | 0.733 | **0.866** | +0.198 |
+| Qwen3.5-4B | 0.365 | 0.391 | 0.288 | **0.880** | +0.515 |
+| Qwen3.5-Base | 0.447 | 0.419 | 0.382 | **0.882** | +0.435 |
+
+On mind-irrelevant content human and rock point almost the same way (0.88 in every model); on the
+experience axis they clearly diverge. Consistent across all three, strongest on Qwen3.5.
+
+### Honest limitation: the two summary statistics disagree in emphasis
+Average between-subject spread relative to neutral is only **1.08× / 1.28× / 1.24×** — modest. The
+targeted `|cos(human, rock)|` contrast is strong; the all-pairs average is weak, because most
+subject pairs are uninformative (rock vs stone contributes nothing). **Both are reported.** The
+targeted comparison is the one the design was built for, but the weak average is a real constraint
+on how much can be claimed.
+
+**Also: my verdict line used an arbitrary 3× floor threshold**, which put exp (3.5×) and bio (2.9×)
+on opposite sides of a made-up number. The neutral axis was the reference value sitting in the same
+table. Same error shape as the 1KB file check and the fixed headroom threshold — corrected in the
+reporting above, and the script's printed verdict should not be quoted.
+
+**Present in the BASE model** (Qwen3.5-Base pivots dissociate exactly as the instruct model's do),
+so this is pretrained like everything else in this arc.

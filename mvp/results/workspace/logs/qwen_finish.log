@@ -89,3 +89,166 @@ The fast path is not available because one of the required library is not instal
   claim 6/12  0.7m
   claim 7/12  0.7m
   claim 8/12  0.8m
+  claim 9/12  0.9m
+  claim 10/12  0.9m
+  claim 11/12  1.0m
+  claim 12/12  1.0m
+
+=== (a) P(true) by SPEAKER FRAMING  [Qwen/Qwen3-4B] ===
+  bare         affirm 0.96   deny 0.45
+  human_said   affirm 0.90   deny 0.37
+  ai_said      affirm 0.56   deny 0.87
+  about_human  affirm 1.00   deny 0.05
+  about_ai     affirm 0.29   deny 0.77
+  chat_asst    affirm 0.20   deny 0.63
+  chat_user    affirm 0.99   deny 0.69
+
+=== who does each framing resemble? (cosine of the affirm−deny direction) ===
+  framing       vs about_human  vs about_ai   leans
+  bare                   0.715        0.635   HUMAN
+  human_said             0.721        0.571   HUMAN
+  ai_said                0.647        0.768   AI
+  chat_asst              0.328        0.388   AI
+  chat_user              0.556        0.482   HUMAN
+
+  anchor separation cos(about_human, about_ai) = 0.658   (if ~1.0 the anchors do not separate and the leans above are meaningless)
+
+[done] 1.0 min -> results/workspace/mindedness_speaker_Qwen3-4B.json
+[08-09 19:04:10] END speaker Qwen3-4B rc=0
+[08-09 19:04:10] START subject Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:23,  2.17s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 76.12it/s]Loading weights:  49%|████▉     | 195/398 [00:03<00:02, 78.04it/s]Loading weights:  60%|█████▉    | 237/398 [00:03<00:02, 77.07it/s]Loading weights:  67%|██████▋   | 266/398 [00:04<00:02, 53.42it/s]Loading weights:  72%|███████▏  | 286/398 [00:05<00:01, 59.33it/s]Loading weights:  76%|███████▌  | 303/398 [00:05<00:01, 54.08it/s]Loading weights:  79%|███████▉  | 316/398 [00:05<00:01, 56.64it/s]Loading weights:  82%|████████▏ | 327/398 [00:05<00:01, 57.84it/s]Loading weights:  85%|████████▍ | 337/398 [00:06<00:01, 57.59it/s]Loading weights:  87%|████████▋ | 346/398 [00:06<00:00, 56.39it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 55.31it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.49it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 57.09it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.00it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 57.80it/s]
+[load] Qwen/Qwen3-4B L=36 layer=17
+  exp      done 1.2m
+  agency   done 2.0m
+  bio      done 2.7m
+  neutral  done 3.5m
+
+=== 1. NOISE FLOOR — how far apart do two words for the SAME thing land? ===
+   (1 - |cos|; this is the distance that counts as zero)
+  exp      floor 0.058   (human/person=0.090  rock/stone=0.032  bacterium/microbe=0.052)
+  agency   floor 0.106   (human/person=0.136  rock/stone=0.114  bacterium/microbe=0.069)
+  bio      floor 0.062   (human/person=0.081  rock/stone=0.044  bacterium/microbe=0.060)
+  neutral  floor 0.078   (human/person=0.113  rock/stone=0.050  bacterium/microbe=0.070)
+
+=== 2. DO SUBJECTS DIFFER BY MORE THAN THE FLOOR? ===
+  exp      mean between-subject distance 0.204  vs floor 0.058   ratio 3.5x  REAL structure
+  agency   mean between-subject distance 0.221  vs floor 0.106   ratio 2.1x  within floor — uninterpretable
+  bio      mean between-subject distance 0.181  vs floor 0.062   ratio 2.9x  within floor — uninterpretable
+  neutral  mean between-subject distance 0.188  vs floor 0.078   ratio 2.4x  within floor — uninterpretable
+
+=== 3. TRUTH-VALUE TEST — |cos| near 1 means we are measuring plausibility ===
+  exp      |cos(human, rock)| = 0.668   oblique: not pure truth-value
+  agency   |cos(human, rock)| = 0.683   oblique: not pure truth-value
+  bio      |cos(human, rock)| = 0.733   oblique: not pure truth-value
+  neutral  |cos(human, rock)| = 0.866   oblique: not pure truth-value
+
+=== 4. PIVOTS — where mind and bio truth DISSOCIATE ===
+   if a pivot sits with human on MIND (as it does on BIO), we are tracking truth
+  plant      exp:|cos(human)|=0.73  agency:|cos(human)|=0.75  bio:|cos(human)|=0.90  neutral:|cos(human)|=0.85   (alive, not minded)
+  bacterium  exp:|cos(human)|=0.67  agency:|cos(human)|=0.68  bio:|cos(human)|=0.85  neutral:|cos(human)|=0.81   (alive, not minded)
+  microbe    exp:|cos(human)|=0.68  agency:|cos(human)|=0.70  bio:|cos(human)|=0.88  neutral:|cos(human)|=0.85   (alive, not minded)
+  ghost      exp:|cos(human)|=0.78  agency:|cos(human)|=0.67  bio:|cos(human)|=0.71  neutral:|cos(human)|=0.81   (not alive, minded)
+  spirit     exp:|cos(human)|=0.82  agency:|cos(human)|=0.77  bio:|cos(human)|=0.80  neutral:|cos(human)|=0.76   (not alive, minded)
+
+=== 5. AFTER PROJECTING OUT SUBJECT IDENTITY (the neutral axis) ===
+   separates 'genuinely different directions' from 'one direction + identity residual'
+  exp      spread 0.369  floor 0.117  ratio 3.1x   (before: 3.5x)
+  agency   spread 0.389  floor 0.177  ratio 2.2x   (before: 2.1x)
+  bio      spread 0.351  floor 0.125  ratio 2.8x   (before: 2.9x)
+
+[done] 3.5 min -> results/workspace/mindedness_v3_subject_Qwen3-4B.json
+[08-09 19:07:50] END subject Qwen3-4B rc=0
+[08-09 19:07:51] START subject Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 4809.98it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5708.40it/s]
+[load] Qwen/Qwen3.5-4B L=32 layer=15
+  exp      done 2.0m
+  agency   done 3.4m
+  bio      done 4.7m
+  neutral  done 6.1m
+
+=== 1. NOISE FLOOR — how far apart do two words for the SAME thing land? ===
+   (1 - |cos|; this is the distance that counts as zero)
+  exp      floor 0.063   (human/person=0.136  rock/stone=0.024  bacterium/microbe=0.029)
+  agency   floor 0.076   (human/person=0.169  rock/stone=0.032  bacterium/microbe=0.027)
+  bio      floor 0.098   (human/person=0.152  rock/stone=0.082  bacterium/microbe=0.058)
+  neutral  floor 0.094   (human/person=0.189  rock/stone=0.036  bacterium/microbe=0.056)
+
+=== 2. DO SUBJECTS DIFFER BY MORE THAN THE FLOOR? ===
+  exp      mean between-subject distance 0.267  vs floor 0.063   ratio 4.2x  REAL structure
+  agency   mean between-subject distance 0.281  vs floor 0.076   ratio 3.7x  REAL structure
+  bio      mean between-subject distance 0.382  vs floor 0.098   ratio 3.9x  REAL structure
+  neutral  mean between-subject distance 0.208  vs floor 0.094   ratio 2.2x  within floor — uninterpretable
+
+=== 3. TRUTH-VALUE TEST — |cos| near 1 means we are measuring plausibility ===
+  exp      |cos(human, rock)| = 0.365   oblique: not pure truth-value
+  agency   |cos(human, rock)| = 0.391   oblique: not pure truth-value
+  bio      |cos(human, rock)| = 0.288   oblique: not pure truth-value
+  neutral  |cos(human, rock)| = 0.880   oblique: not pure truth-value
+
+=== 4. PIVOTS — where mind and bio truth DISSOCIATE ===
+   if a pivot sits with human on MIND (as it does on BIO), we are tracking truth
+  plant      exp:|cos(human)|=0.48  agency:|cos(human)|=0.52  bio:|cos(human)|=0.89  neutral:|cos(human)|=0.86   (alive, not minded)
+  bacterium  exp:|cos(human)|=0.47  agency:|cos(human)|=0.45  bio:|cos(human)|=0.93  neutral:|cos(human)|=0.73   (alive, not minded)
+  microbe    exp:|cos(human)|=0.46  agency:|cos(human)|=0.42  bio:|cos(human)|=0.87  neutral:|cos(human)|=0.76   (alive, not minded)
+  ghost      exp:|cos(human)|=0.64  agency:|cos(human)|=0.61  bio:|cos(human)|=0.43  neutral:|cos(human)|=0.79   (not alive, minded)
+  spirit     exp:|cos(human)|=0.83  agency:|cos(human)|=0.72  bio:|cos(human)|=0.58  neutral:|cos(human)|=0.71   (not alive, minded)
+
+=== 5. AFTER PROJECTING OUT SUBJECT IDENTITY (the neutral axis) ===
+   separates 'genuinely different directions' from 'one direction + identity residual'
+  exp      spread 0.376  floor 0.092  ratio 4.1x   (before: 4.2x)
+  agency   spread 0.409  floor 0.109  ratio 3.8x   (before: 3.7x)
+  bio      spread 0.508  floor 0.128  ratio 4.0x   (before: 3.9x)
+
+[done] 6.1 min -> results/workspace/mindedness_v3_subject_Qwen3_5-4B.json
+[08-09 19:14:14] END subject Qwen3.5-4B rc=0
+[08-09 19:14:14] START subject Qwen3.5-Base
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 17403.75it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  81%|████████▏ | 347/426 [00:00<00:00, 3451.77it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3546.31it/s]
+[load] Qwen/Qwen3.5-4B-Base L=32 layer=15
+  exp      done 2.1m
+  agency   done 3.5m
+  bio      done 4.8m
+  neutral  done 6.3m
+
+=== 1. NOISE FLOOR — how far apart do two words for the SAME thing land? ===
+   (1 - |cos|; this is the distance that counts as zero)
+  exp      floor 0.071   (human/person=0.160  rock/stone=0.021  bacterium/microbe=0.032)
+  agency   floor 0.085   (human/person=0.197  rock/stone=0.027  bacterium/microbe=0.030)
+  bio      floor 0.096   (human/person=0.157  rock/stone=0.071  bacterium/microbe=0.059)
+  neutral  floor 0.101   (human/person=0.214  rock/stone=0.033  bacterium/microbe=0.056)
+
+=== 2. DO SUBJECTS DIFFER BY MORE THAN THE FLOOR? ===
+  exp      mean between-subject distance 0.256  vs floor 0.071   ratio 3.6x  REAL structure
+  agency   mean between-subject distance 0.287  vs floor 0.085   ratio 3.4x  REAL structure
+  bio      mean between-subject distance 0.352  vs floor 0.096   ratio 3.7x  REAL structure
+  neutral  mean between-subject distance 0.207  vs floor 0.101   ratio 2.1x  within floor — uninterpretable
+
+=== 3. TRUTH-VALUE TEST — |cos| near 1 means we are measuring plausibility ===
+  exp      |cos(human, rock)| = 0.447   oblique: not pure truth-value
+  agency   |cos(human, rock)| = 0.419   oblique: not pure truth-value
+  bio      |cos(human, rock)| = 0.382   oblique: not pure truth-value
+  neutral  |cos(human, rock)| = 0.882   oblique: not pure truth-value
+
+=== 4. PIVOTS — where mind and bio truth DISSOCIATE ===
+   if a pivot sits with human on MIND (as it does on BIO), we are tracking truth
+  plant      exp:|cos(human)|=0.54  agency:|cos(human)|=0.56  bio:|cos(human)|=0.87  neutral:|cos(human)|=0.85   (alive, not minded)
+  bacterium  exp:|cos(human)|=0.52  agency:|cos(human)|=0.45  bio:|cos(human)|=0.92  neutral:|cos(human)|=0.72   (alive, not minded)
+  microbe    exp:|cos(human)|=0.52  agency:|cos(human)|=0.45  bio:|cos(human)|=0.85  neutral:|cos(human)|=0.78   (alive, not minded)
+  ghost      exp:|cos(human)|=0.69  agency:|cos(human)|=0.67  bio:|cos(human)|=0.52  neutral:|cos(human)|=0.80   (not alive, minded)
+  spirit     exp:|cos(human)|=0.84  agency:|cos(human)|=0.76  bio:|cos(human)|=0.62  neutral:|cos(human)|=0.74   (not alive, minded)
+
+=== 5. AFTER PROJECTING OUT SUBJECT IDENTITY (the neutral axis) ===
+   separates 'genuinely different directions' from 'one direction + identity residual'
+  exp      spread 0.379  floor 0.105  ratio 3.6x   (before: 3.6x)
+  agency   spread 0.415  floor 0.113  ratio 3.7x   (before: 3.4x)
+  bio      spread 0.481  floor 0.129  ratio 3.7x   (before: 3.7x)
+
+[done] 6.3 min -> results/workspace/mindedness_v3_subject_Qwen3_5-4B-Base.json
+[08-09 19:20:39] END subject Qwen3.5-Base rc=0
+[08-09 19:20:39] START forced Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:22,  2.17s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.39it/s]Loading weights:  46%|████▋     | 185/398 [00:03<00:02, 79.19it/s]Loading weights:  56%|█████▌    | 222/398 [00:03<00:02, 81.79it/s]Loading weights:  62%|██████▏   | 248/398 [00:03<00:02, 74.64it/s]Loading weights:  67%|██████▋   | 267/398 [00:04<00:02, 46.71it/s]Loading weights:  70%|███████   | 280/398 [00:05<00:02, 48.68it/s]Loading weights:  73%|███████▎  | 291/398 [00:05<00:02, 49.83it/s]Loading weights:  76%|███████▌  | 301/398 [00:05<00:01, 50.22it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 51.10it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 53.55it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 54.26it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 56.15it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 57.15it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.13it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.50it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 52.08it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.74it/s]
+[load] Qwen/Qwen3-4B L=36
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
