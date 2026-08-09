@@ -6,9 +6,13 @@ generic affirmation push corrupts. Here the model must choose BETWEEN two entiti
 
     "Which is more likely to feel pain: a river or a calculator?\nAnswer: a"
 
-scored as P(first entity's distinguishing token) vs P(second's). There is no "yes" to inflate.
-Both orders are run and averaged, which cancels position bias; the order-gap is itself reported
-as a measurement-quality diagnostic.
+scored by the length-normalised log-probability of each FULL entity phrase as a continuation.
+There is no "yes" to inflate. Both orders are run and averaged to cancel position bias; the
+order-gap is reported as a measurement-quality diagnostic.
+
+The first version of this scored only each option's FIRST token and was invalid: 38 entities
+collapsed to 4 distinct first tokens (almost all begin with "a"), so 64% of pairs were dropped as
+ties and most survivors compared " a" against " an". Every win rate sat at 0.5. Guidelines s15.
 
 Output is a per-facet WIN-RATE ranking over entity classes -> an ordinal mind-attribution scale
 per facet, immune to the artefact that broke F-I/F-J.
@@ -68,25 +72,56 @@ def main():
             model.forward(ids)
             return model.unembed(rec.activations[L - 1][0, -1].unsqueeze(0).float()).float()[0]
 
-    def first_tok(entity):
-        """The token that distinguishes this entity as a continuation of 'Answer:'."""
-        return tok(f" {entity}", add_special_tokens=False)["input_ids"][0]
+    @torch.no_grad()
+    def seq_logprob(prompt, cont):
+        """Total log P(cont | prompt), summed over ALL of cont's tokens.
+
+        The first version of this scored only the FIRST token of each option. Nearly every entity
+        in the bank starts with "a", so 38 entities collapsed to 4 distinct first tokens: 64% of
+        pairs were skipped as ties and most survivors compared " a" against " an". Every win rate
+        sat at 0.5 because the measure was empty. Scoring the full string fixes it.
+        """
+        pi = tok(prompt, return_tensors="pt")["input_ids"].to(DEVICE)
+        ci = tok(cont, add_special_tokens=False, return_tensors="pt")["input_ids"].to(DEVICE)
+        ids = torch.cat([pi, ci], dim=1)
+        with ActivationRecorder(model.layers, at=[L - 1]) as rec:
+            model.forward(ids)
+            h = rec.activations[L - 1][0].float()
+        logits = model.unembed(h).float()
+        lp = torch.log_softmax(logits, dim=-1)
+        n_p = pi.shape[1]
+        tot = 0.0
+        for k in range(ci.shape[1]):
+            tot += float(lp[n_p - 1 + k, int(ci[0, k])])
+        return tot, ci.shape[1]
 
     def choose(attr, A, B):
-        """P(A chosen) averaged over both presentation orders."""
-        ta, tb = first_tok(A), first_tok(B)
-        if ta == tb:
-            return None                       # indistinguishable first token -> skip pair
-        lg1 = next_logits(TEMPL.format(a=attr, A=A, B=B))
-        p1 = float(torch.softmax(torch.tensor([lg1[ta], lg1[tb]]), 0)[0])
-        lg2 = next_logits(TEMPL.format(a=attr, A=B, B=A))
-        p2 = float(torch.softmax(torch.tensor([lg2[tb], lg2[ta]]), 0)[0])   # A is second here
-        return {"p_A": (p1 + p2) / 2, "order_gap": abs(p1 - p2)}
+        """P(A chosen), both presentation orders averaged. Length-normalised log-prob, because
+        entity phrases differ in token count and raw sums penalise longer options."""
+        out = []
+        for first, second in ((A, B), (B, A)):
+            prompt = TEMPL.format(a=attr, A=first, B=second)
+            la, na = seq_logprob(prompt, f" {A}")
+            lb, nb = seq_logprob(prompt, f" {B}")
+            za, zb = la / max(na, 1), lb / max(nb, 1)
+            out.append(float(np.exp(za) / (np.exp(za) + np.exp(zb))))
+        return {"p_A": (out[0] + out[1]) / 2, "order_gap": abs(out[0] - out[1])}
+
+    # Guard: the options must be distinguishable as full strings. Cheap, and it is exactly the
+    # check whose absence invalidated the first version of this stage.
+    ents = [e for c in ENTITIES for e in ENTITIES[c][:args.n_ex]]
+    toks = {e: tuple(tok(f" {e}", add_special_tokens=False)["input_ids"]) for e in ents}
+    if len(set(toks.values())) < len(ents):
+        print("ABORT: entity token sequences are not unique"); return 1
+    firsts = len({v[0] for v in toks.values()})
+    print(f"[guard] {len(ents)} entities, {len(set(toks.values()))} unique token sequences, "
+          f"{firsts} distinct FIRST tokens (first-token scoring would have been invalid)",
+          flush=True)
 
     classes = list(ENTITIES)
     pairs = list(itertools.combinations(classes, 2))
     res = {"model": args.model, "facets": list(FORCED_FACETS), "classes": classes,
-           "n_ex": args.n_ex, "pairs": {}, "skipped": 0}
+           "n_ex": args.n_ex, "pairs": {}}
     n_total = len(FORCED_FACETS) * len(pairs) * args.n_ex * args.n_ex
     n = 0
     for fac, attr in FORCED_FACETS.items():
@@ -97,9 +132,6 @@ def main():
                 for eb in ENTITIES[cb][:args.n_ex]:
                     r = choose(attr, ea, eb)
                     n += 1
-                    if r is None:
-                        res["skipped"] += 1
-                        continue
                     vals.append(r["p_A"]); gaps.append(r["order_gap"])
             if vals:
                 res["pairs"][fac][f"{ca}|{cb}"] = {"p_first": float(np.mean(vals)),
@@ -122,8 +154,7 @@ def main():
     json.dump(res, open(OUT, "w"), indent=1)
 
     print(f"\n=== FORCED-CHOICE WIN RATE (bias-free ordinal scale)  [{args.model}] ===")
-    print(f"  mean order-gap {res['order_gap_mean']:.3f} (position bias; lower is better), "
-          f"{res['skipped']} pairs skipped for token collision")
+    print(f"  mean order-gap {res['order_gap_mean']:.3f} (position bias; lower is better)")
     facs = list(FORCED_FACETS)
     print(f"  {'class':14} " + " ".join(f"{f[:9]:>9}" for f in facs))
     order = sorted(classes, key=lambda c: -np.mean([res["winrate"][f].get(c, 0.5) for f in facs]))
@@ -142,4 +173,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

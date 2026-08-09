@@ -841,3 +841,48 @@ independent better constructions agree in sign, and beat random, is the encourag
 
 **Status: v1's causal claim retracted; a weaker claim is live pending 4 more random seeds and the
 Qwen3.5 replication.** Do not quote F-P2 until those land — one random seed is not a floor.
+
+## F-Q. V2-S5 cross-model steering — Qwen3-4B observation stands; Qwen3.5 test is INCONCLUSIVE
+All 27 cells, both models, 5 random seeds each. Log-odds throughout.
+
+**Qwen3-4B (layer 17), mental − mundane_low, non-human mean, α=+0.2:**
+| vector | value | vs 5-seed random floor |
+|---|---|---|
+| v1_negation | −1.71 | z = −2.5 (within/below random) |
+| **v2_no_negation** | **+2.11** | **z = +3.9, above random** |
+| **v3_third_person** | **+1.26** | **z = +2.5, above random** |
+| random (n=5) | −0.23 ± 0.60 | — |
+
+Two independently-constructed vectors move mental attribution more than the headroom-matched
+control, beyond the random spread; the paper-style negation vector does not. **Observation stands
+on this model.**
+
+**Qwen3.5-4B (layer 16) — but the vectors that showed it barely steer there at all.**
+Raw mental movement (log-odds, non-human mean, α=+0.2 / +0.4 / +0.8):
+
+| vector | Qwen3-4B | Qwen3.5-4B |
+|---|---|---|
+| v1_negation | +2.88 / +8.56 / +8.99 | +1.85 / +3.75 / +5.20 |
+| **v2_no_negation** | +5.54 / +5.26 / +7.66 | **+0.15 / +0.43 / +0.75** |
+| **v3_third_person** | +5.76 / +3.43 / +4.24 | **+0.24 / +0.44 / +0.51** |
+| random0 | +1.47 / +6.50 / +7.77 | −0.29 / −0.40 / −0.07 |
+
+On Qwen3.5 the **negation-free and third-person vectors are effectively inert** (+0.15 logits),
+while the negation vector steers normally (+1.85). A specificity ratio computed on an inert arm is
+noise over noise, so **the Qwen3-4B observation is UNTESTED on Qwen3.5, not refuted.** To test it
+there we need α raised for those two vectors until their DV movement matches.
+
+**Incidental but notable:** Qwen3.5 has a genuinely clean random floor (random moves −0.29…−0.07),
+whereas on Qwen3-4B random directions move the mental DV by +1.47…+7.77. Random moves mental and
+mundane *equally* on Qwen3-4B, which is why the specificity z-test still works there — but it
+means Qwen3-4B is a much noisier substrate for any steering claim.
+
+### RETRACTION: the layer-type explanation was wrong
+I attributed Qwen3.5's apparent inertness to its hybrid architecture (`full_attention_interval: 4`)
+and an off-by-one putting two scripts on different layer types, and spent ~3h re-running at layer
+16. **Layers 15 and 16 give nearly identical results (+1.95 vs +1.85).** The layer type was
+irrelevant. The "6× difference" was me comparing one vector's number against a *different*
+vector's number. Guidelines §14 corrected accordingly; the surviving lesson is "check you are
+reading the same arm before theorising about architecture."
+
+**Status: observation on one model, untested on the second. Not a finding.**

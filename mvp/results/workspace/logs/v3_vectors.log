@@ -1,0 +1,17 @@
+[08-08 23:59:57] === v3 subject-framing vectors ===
+[08-08 23:59:57] settled: swap 935MB
+[08-08 23:59:57] START v3-vectors Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:29,  2.19s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.70it/s]Loading weights:  49%|████▉     | 197/398 [00:03<00:02, 79.62it/s]Loading weights:  61%|██████    | 241/398 [00:04<00:02, 56.81it/s]Loading weights:  68%|██████▊   | 269/398 [00:05<00:02, 55.25it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:01, 54.89it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:01, 57.93it/s]Loading weights:  80%|███████▉  | 317/398 [00:05<00:01, 59.58it/s]Loading weights:  82%|████████▏ | 328/398 [00:06<00:01, 56.39it/s]Loading weights:  85%|████████▍ | 337/398 [00:06<00:01, 44.95it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 34.20it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 28.85it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:01, 25.82it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 23.95it/s]Loading weights:  97%|█████████▋| 388/398 [00:09<00:00, 22.75it/s][08-09 00:00:39] ABORT v3-vectors Qwen3-4B swap 9281MB
+[08-09 00:00:39] END v3-vectors Qwen3-4B rc=137
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-7473-ts8hhao_'}
+  warnings.warn(
+[08-09 00:00:54] settled: swap 1803MB
+[08-09 00:00:54] START v3-vectors Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 19784.45it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  98%|█████████▊| 418/426 [00:00<00:00, 4177.74it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4249.59it/s]
+[load] Qwen/Qwen3.5-4B L=32 extract-layer=15
+  self_I       done  0.8m
+  self_you     done  0.9m
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-7600-0kifnje6'}
+  warnings.warn(

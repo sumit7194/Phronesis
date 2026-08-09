@@ -1,0 +1,3474 @@
+{
+ "model": "Qwen/Qwen3.5-4B",
+ "facets": [
+  "pain",
+  "emotion",
+  "consciousness",
+  "soul",
+  "cognition",
+  "agency",
+  "moral_patient",
+  "memory",
+  "physical_mid",
+  "mundane_low"
+ ],
+ "classes": [
+  "self_ai",
+  "ai_other",
+  "robot",
+  "human_adult",
+  "human_prof_a",
+  "human_prof_b",
+  "human_dev",
+  "human_edge",
+  "animal_mammal",
+  "animal_other",
+  "animal_simple",
+  "plant",
+  "nature",
+  "object_nat",
+  "object_art",
+  "object_comp",
+  "supernatural",
+  "fictional",
+  "collective"
+ ],
+ "n_ex": 2,
+ "pairs": {
+  "pain": {
+   "self_ai|ai_other": {
+    "p_first": 0.7173735462129116,
+    "order_gap": 0.24698839336633682
+   },
+   "self_ai|robot": {
+    "p_first": 0.7052077911794186,
+    "order_gap": 0.249215729534626
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.6613339707255363,
+    "order_gap": 0.291910782456398
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.5425348281860352,
+    "order_gap": 0.16070148348808289
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.6121790483593941,
+    "order_gap": 0.2546112388372421
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.6540649868547916,
+    "order_gap": 0.4301106259226799
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.6332207508385181,
+    "order_gap": 0.40227677673101425
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.673103217035532,
+    "order_gap": 0.2644269987940788
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.6505589584509531,
+    "order_gap": 0.22934244076410928
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.6318815648555756,
+    "order_gap": 0.2140217423439026
+   },
+   "self_ai|plant": {
+    "p_first": 0.6659136265516281,
+    "order_gap": 0.11090418696403503
+   },
+   "self_ai|nature": {
+    "p_first": 0.5882118903100491,
+    "order_gap": 0.12351308017969131
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.6498665139079094,
+    "order_gap": 0.04797719419002533
+   },
+   "self_ai|object_art": {
+    "p_first": 0.5689645707607269,
+    "order_gap": 0.09129592776298523
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.6833987534046173,
+    "order_gap": 0.13718745112419128
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.5617731922927002,
+    "order_gap": 0.7062008948996663
+   },
+   "self_ai|fictional": {
+    "p_first": 0.6191128082573414,
+    "order_gap": 0.3676195964217186
+   },
+   "self_ai|collective": {
+    "p_first": 0.68320032954216,
+    "order_gap": 0.23856636881828308
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.5610554236918688,
+    "order_gap": 0.6541710160672665
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5332939773797989,
+    "order_gap": 0.75296351313591
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.5707791373133659,
+    "order_gap": 0.6740551143884659
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.5334151540882885,
+    "order_gap": 0.5147911598905921
+   },
+   "robot|human_adult": {
+    "p_first": 0.5102203954011202,
+    "order_gap": 0.5745921693742275
+   },
+   "robot|animal_other": {
+    "p_first": 0.5345892235636711,
+    "order_gap": 0.6709556132555008
+   },
+   "robot|animal_simple": {
+    "p_first": 0.566466860473156,
+    "order_gap": 0.3854569345712662
+   },
+   "robot|supernatural": {
+    "p_first": 0.5339395334012806,
+    "order_gap": 0.5094184717163444
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.6002441663295031,
+    "order_gap": 0.47712021693587303
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.5581027083098888,
+    "order_gap": 0.2991192415356636
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.5776302181184292,
+    "order_gap": 0.14731515198946
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.5134955383837223,
+    "order_gap": 0.10448642820119858
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.5074503906071186,
+    "order_gap": 0.146853469312191
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.510631125420332,
+    "order_gap": 0.564855732023716
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.5104574449360371,
+    "order_gap": 0.6886458620429039
+   },
+   "human_adult|plant": {
+    "p_first": 0.5502950306981802,
+    "order_gap": 0.6219467110931873
+   },
+   "human_adult|nature": {
+    "p_first": 0.5109962439164519,
+    "order_gap": 0.7879070807248354
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5327703272923827,
+    "order_gap": 0.6901689637452364
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4863602975383401,
+    "order_gap": 0.6600421946495771
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.5338154770433903,
+    "order_gap": 0.6078332886099815
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.5095438179560006,
+    "order_gap": 0.9600443011149764
+   },
+   "human_adult|fictional": {
+    "p_first": 0.4639263395220041,
+    "order_gap": 0.5040834955871105
+   },
+   "human_adult|collective": {
+    "p_first": 0.5845381878316402,
+    "order_gap": 0.41860849410295486
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5899159386754036,
+    "order_gap": 0.35901056230068207
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.48480895161628723,
+    "order_gap": 0.34306788444519043
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5434501017443836,
+    "order_gap": 0.5066460678353906
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.571591280400753,
+    "order_gap": 0.3535705953836441
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.5432514995336533,
+    "order_gap": 0.2610786259174347
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.525531598366797,
+    "order_gap": 0.5065345596522093
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.5576410815119743,
+    "order_gap": 0.0998438149690628
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.5917352586984634,
+    "order_gap": 0.32050129771232605
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.5646119145676494,
+    "order_gap": 0.6215928439050913
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.5362348482012749,
+    "order_gap": 0.24263162910938263
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.5874607414007187,
+    "order_gap": 0.06910005211830139
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.5343018895946443,
+    "order_gap": 0.5667614983394742
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5499886721372604,
+    "order_gap": 0.09997734427452087
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.5222199261188507,
+    "order_gap": 0.2136373519897461
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5387025610543787,
+    "order_gap": 0.5002341894432902
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.46000465005636215,
+    "order_gap": 0.4863925725221634
+   },
+   "animal_other|plant": {
+    "p_first": 0.5443556867539883,
+    "order_gap": 0.7838586643338203
+   },
+   "animal_other|nature": {
+    "p_first": 0.509252306073904,
+    "order_gap": 0.8834112361073494
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5297808460891247,
+    "order_gap": 0.8269483223557472
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5438106320798397,
+    "order_gap": 0.7279921248555183
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5257939212024212,
+    "order_gap": 0.7917219176888466
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.5255671596775452,
+    "order_gap": 0.6264610576132933
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5082419365644455,
+    "order_gap": 0.6094734966754913
+   },
+   "animal_other|collective": {
+    "p_first": 0.558874111622572,
+    "order_gap": 0.6026362553238869
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5593618378043175,
+    "order_gap": 0.7421384006738663
+   },
+   "animal_simple|nature": {
+    "p_first": 0.5030358107760549,
+    "order_gap": 0.8855325635522604
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.5421910155564547,
+    "order_gap": 0.7471925877034664
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.5059388317167759,
+    "order_gap": 0.647589735686779
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.541437366977334,
+    "order_gap": 0.7501845769584179
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.5146014429628849,
+    "order_gap": 0.6941746200124422
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.5158086307346821,
+    "order_gap": 0.5349248871207237
+   },
+   "animal_simple|collective": {
+    "p_first": 0.5370884798467159,
+    "order_gap": 0.5134629681706429
+   },
+   "plant|supernatural": {
+    "p_first": 0.5234778565354645,
+    "order_gap": 0.6251376485452056
+   },
+   "nature|supernatural": {
+    "p_first": 0.47555808210745454,
+    "order_gap": 0.7429675264284015
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5316550005227327,
+    "order_gap": 0.5480929873883724
+   },
+   "object_art|supernatural": {
+    "p_first": 0.5076422118581831,
+    "order_gap": 0.5773618472740054
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.5283845467492938,
+    "order_gap": 0.6410610470920801
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5210736161097884,
+    "order_gap": 0.5636427272111177
+   },
+   "supernatural|collective": {
+    "p_first": 0.518060224596411,
+    "order_gap": 0.5582000268623233
+   }
+  },
+  "emotion": {
+   "self_ai|ai_other": {
+    "p_first": 0.6398680172860622,
+    "order_gap": 0.372402586042881
+   },
+   "self_ai|robot": {
+    "p_first": 0.6138905696570873,
+    "order_gap": 0.1965716853737831
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.5234356336295605,
+    "order_gap": 0.5790861025452614
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.478876318782568,
+    "order_gap": 0.3337788060307503
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.4555482706055045,
+    "order_gap": 0.4996643681079149
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.533135290723294,
+    "order_gap": 0.7076180363073945
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.5329026710242033,
+    "order_gap": 0.4115945138037205
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.5013594012707472,
+    "order_gap": 0.5626178123056889
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.49313383052746457,
+    "order_gap": 0.28729091584682465
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5151871765653292,
+    "order_gap": 0.1692799280087153
+   },
+   "self_ai|plant": {
+    "p_first": 0.5256598237901926,
+    "order_gap": 0.33856741711497307
+   },
+   "self_ai|nature": {
+    "p_first": 0.5090434681624174,
+    "order_gap": 0.3832838274538517
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5633177515119314,
+    "order_gap": 0.4020658917725086
+   },
+   "self_ai|object_art": {
+    "p_first": 0.5017055692151189,
+    "order_gap": 0.4714095052331686
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5827592713758349,
+    "order_gap": 0.47052658535540104
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.5162885791311661,
+    "order_gap": 0.722682156910499
+   },
+   "self_ai|fictional": {
+    "p_first": 0.4954044297337532,
+    "order_gap": 0.5285406559705734
+   },
+   "self_ai|collective": {
+    "p_first": 0.5372083112597466,
+    "order_gap": 0.27844981849193573
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.48169153090566397,
+    "order_gap": 0.8207591641694307
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5104270977899432,
+    "order_gap": 0.8891763482242823
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.49943752959370613,
+    "order_gap": 0.584993027150631
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.48303980100899935,
+    "order_gap": 0.7134121563285589
+   },
+   "robot|human_adult": {
+    "p_first": 0.4655360342003405,
+    "order_gap": 0.7796593783423305
+   },
+   "robot|animal_other": {
+    "p_first": 0.5111791621893644,
+    "order_gap": 0.8288888670504093
+   },
+   "robot|animal_simple": {
+    "p_first": 0.4501192346215248,
+    "order_gap": 0.20558296144008636
+   },
+   "robot|supernatural": {
+    "p_first": 0.4408171456307173,
+    "order_gap": 0.5567237176001072
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.5073294024914503,
+    "order_gap": 0.6616696156561375
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.48593614250421524,
+    "order_gap": 0.36397118866443634
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.49764266423881054,
+    "order_gap": 0.2650660015642643
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.47693691216409206,
+    "order_gap": 0.5483757443726063
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.4554577972739935,
+    "order_gap": 0.6097421832382679
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.5067010382190347,
+    "order_gap": 0.8857687395066023
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.49819756392389536,
+    "order_gap": 0.9194294046610594
+   },
+   "human_adult|plant": {
+    "p_first": 0.4862631722353399,
+    "order_gap": 0.8609641464427114
+   },
+   "human_adult|nature": {
+    "p_first": 0.4889821407850832,
+    "order_gap": 0.9262743298895657
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.49227826087735593,
+    "order_gap": 0.9004646283574402
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4809296168386936,
+    "order_gap": 0.8976960703730583
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.5000697565265,
+    "order_gap": 0.8661110317334533
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.4939586678519845,
+    "order_gap": 0.883839039131999
+   },
+   "human_adult|fictional": {
+    "p_first": 0.4780251965858042,
+    "order_gap": 0.6251332489773631
+   },
+   "human_adult|collective": {
+    "p_first": 0.45813135523349047,
+    "order_gap": 0.7771392222493887
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.6236142292618752,
+    "order_gap": 0.3861009329557419
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.5750680193305016,
+    "order_gap": 0.20882423222064972
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5294140502810478,
+    "order_gap": 0.529851570725441
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.5754279121756554,
+    "order_gap": 0.29026056826114655
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.5466668903827667,
+    "order_gap": 0.3801755905151367
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.4991712458431721,
+    "order_gap": 0.48786523193120956
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.5033634081482887,
+    "order_gap": 0.08452318608760834
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.5691153071820736,
+    "order_gap": 0.6071599200367928
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.5447428077459335,
+    "order_gap": 0.5691619515419006
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.3544464744627476,
+    "order_gap": 0.1824023351073265
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.45487213134765625,
+    "order_gap": 0.32131433486938477
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.47937525250017643,
+    "order_gap": 0.48591456934809685
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.571944497525692,
+    "order_gap": 0.26634831726551056
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.5745865926146507,
+    "order_gap": 0.43245358765125275
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5041898488998413,
+    "order_gap": 0.4814092814922333
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.40392070170491934,
+    "order_gap": 0.5276115406304598
+   },
+   "animal_other|plant": {
+    "p_first": 0.5117641212418675,
+    "order_gap": 0.9160157199949026
+   },
+   "animal_other|nature": {
+    "p_first": 0.5015810811892152,
+    "order_gap": 0.9479915928095579
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.507007741369307,
+    "order_gap": 0.9370497595518827
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5098972357809544,
+    "order_gap": 0.9298250004649162
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5094927903264761,
+    "order_gap": 0.9282553680241108
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.47982238108913106,
+    "order_gap": 0.745845747490724
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5102770952507854,
+    "order_gap": 0.5598174277693033
+   },
+   "animal_other|collective": {
+    "p_first": 0.5007867990061641,
+    "order_gap": 0.8461374882608652
+   },
+   "animal_simple|plant": {
+    "p_first": 0.4978393167257309,
+    "order_gap": 0.8602489531040192
+   },
+   "animal_simple|nature": {
+    "p_first": 0.4861769173294306,
+    "order_gap": 0.8951212577521801
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.497306345961988,
+    "order_gap": 0.8957528490573168
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.48647426441311836,
+    "order_gap": 0.8829790577292442
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.5014201486483216,
+    "order_gap": 0.864634795114398
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.48340789911647636,
+    "order_gap": 0.8334442687531313
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.5475499778985977,
+    "order_gap": 0.5568623840808868
+   },
+   "animal_simple|collective": {
+    "p_first": 0.43331483751535416,
+    "order_gap": 0.4266054481267929
+   },
+   "plant|supernatural": {
+    "p_first": 0.47716311272233725,
+    "order_gap": 0.8425250519067049
+   },
+   "nature|supernatural": {
+    "p_first": 0.47330255853012204,
+    "order_gap": 0.8741206517443061
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.48217312805354595,
+    "order_gap": 0.8563474752008915
+   },
+   "object_art|supernatural": {
+    "p_first": 0.4820633763447404,
+    "order_gap": 0.8687076400965452
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.49320413498207927,
+    "order_gap": 0.8343996638432145
+   },
+   "supernatural|fictional": {
+    "p_first": 0.49045704677700996,
+    "order_gap": 0.6466925963759422
+   },
+   "supernatural|collective": {
+    "p_first": 0.47431501699611545,
+    "order_gap": 0.7196406135335565
+   }
+  },
+  "consciousness": {
+   "self_ai|ai_other": {
+    "p_first": 0.6687040403485298,
+    "order_gap": 0.3296888917684555
+   },
+   "self_ai|robot": {
+    "p_first": 0.6147184371948242,
+    "order_gap": 0.22850602865219116
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.647894911468029,
+    "order_gap": 0.3737373501062393
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.5168099971488118,
+    "order_gap": 0.30368507467210293
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.5153632145375013,
+    "order_gap": 0.4583052434027195
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.5506004090420902,
+    "order_gap": 0.6437995145097375
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.5629990845918655,
+    "order_gap": 0.534519374370575
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.558749832212925,
+    "order_gap": 0.5137310475111008
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.5432845329244932,
+    "order_gap": 0.3262001723051071
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5681098202864329,
+    "order_gap": 0.11643584569295247
+   },
+   "self_ai|plant": {
+    "p_first": 0.48219817504286766,
+    "order_gap": 0.11584127694368362
+   },
+   "self_ai|nature": {
+    "p_first": 0.508464939892292,
+    "order_gap": 0.18247070908546448
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5614751596003771,
+    "order_gap": 0.3089858554303646
+   },
+   "self_ai|object_art": {
+    "p_first": 0.4945066571235657,
+    "order_gap": 0.28617385029792786
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.635621689260006,
+    "order_gap": 0.36040596663951874
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.5219693159063657,
+    "order_gap": 0.793719415863355
+   },
+   "self_ai|fictional": {
+    "p_first": 0.5277340803295374,
+    "order_gap": 0.37878943607211113
+   },
+   "self_ai|collective": {
+    "p_first": 0.5784434899687767,
+    "order_gap": 0.31132154166698456
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.49584594182670116,
+    "order_gap": 0.7887715734541416
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5096742678433657,
+    "order_gap": 0.8436416052281857
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.5464715734124184,
+    "order_gap": 0.716357871890068
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.5110065753106028,
+    "order_gap": 0.7661750982515514
+   },
+   "robot|human_adult": {
+    "p_first": 0.4588458565995097,
+    "order_gap": 0.7002185825258493
+   },
+   "robot|animal_other": {
+    "p_first": 0.5128529537469149,
+    "order_gap": 0.7767800949513912
+   },
+   "robot|animal_simple": {
+    "p_first": 0.5460051447153091,
+    "order_gap": 0.4330640137195587
+   },
+   "robot|supernatural": {
+    "p_first": 0.494042263366282,
+    "order_gap": 0.679474113509059
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.501475790515542,
+    "order_gap": 0.7299768142402172
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.5218818914145231,
+    "order_gap": 0.5908044911921024
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.4557079076766968,
+    "order_gap": 0.25836414098739624
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.48103320226073265,
+    "order_gap": 0.2781234458088875
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.4452525433152914,
+    "order_gap": 0.5316604264080524
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.5149207934737206,
+    "order_gap": 0.7847159057855606
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.5049539972096682,
+    "order_gap": 0.8624586127698421
+   },
+   "human_adult|plant": {
+    "p_first": 0.49819590989500284,
+    "order_gap": 0.7685565184801817
+   },
+   "human_adult|nature": {
+    "p_first": 0.49245577678084373,
+    "order_gap": 0.8521922305226326
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5119976149871945,
+    "order_gap": 0.8415776696056128
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4878659415990114,
+    "order_gap": 0.8000249527394772
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.5149743100628257,
+    "order_gap": 0.8042842168360949
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.5000000088475645,
+    "order_gap": 0.9566902937367558
+   },
+   "human_adult|fictional": {
+    "p_first": 0.49606875237077475,
+    "order_gap": 0.7448900509625673
+   },
+   "human_adult|collective": {
+    "p_first": 0.482692813500762,
+    "order_gap": 0.739007193595171
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5600104555487633,
+    "order_gap": 0.47807343304157257
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.5552017614245415,
+    "order_gap": 0.21806664764881134
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.506799517897889,
+    "order_gap": 0.6774934255518019
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.5789345651865005,
+    "order_gap": 0.4316832721233368
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.6031846851110458,
+    "order_gap": 0.08201631903648376
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.5133515391498804,
+    "order_gap": 0.5937102250754833
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.5387485697865486,
+    "order_gap": 0.061907634139060974
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.62003393471241,
+    "order_gap": 0.36394378542900085
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.496539372485131,
+    "order_gap": 0.49311588052660227
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.45481765270233154,
+    "order_gap": 0.15254122018814087
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.5655598342418671,
+    "order_gap": 0.2245054841041565
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.4646441116929054,
+    "order_gap": 0.4952586442232132
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5168098956346512,
+    "order_gap": 0.3503851592540741
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.5999851822853088,
+    "order_gap": 0.26214683055877686
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5034791124053299,
+    "order_gap": 0.6111296331509948
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.4823925634846091,
+    "order_gap": 0.5451634842902422
+   },
+   "animal_other|plant": {
+    "p_first": 0.5146369263529778,
+    "order_gap": 0.8432961851358414
+   },
+   "animal_other|nature": {
+    "p_first": 0.507754142396152,
+    "order_gap": 0.8838304374366999
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5085041802376509,
+    "order_gap": 0.8729358948767185
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5192769728600979,
+    "order_gap": 0.8633619025349617
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5125317871570587,
+    "order_gap": 0.8674238920211792
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.502860194693009,
+    "order_gap": 0.8428255990147591
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5091450624167919,
+    "order_gap": 0.781286932528019
+   },
+   "animal_other|collective": {
+    "p_first": 0.5074108857661486,
+    "order_gap": 0.7843925319612026
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5190364792943001,
+    "order_gap": 0.7668658941984177
+   },
+   "animal_simple|nature": {
+    "p_first": 0.5107438955456018,
+    "order_gap": 0.8139185719192028
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.5252338759601116,
+    "order_gap": 0.8178543820977211
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.5280136354267597,
+    "order_gap": 0.7595861181616783
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.5324106253683567,
+    "order_gap": 0.7775390073657036
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.5041822995990515,
+    "order_gap": 0.8758330332736174
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.5226370505988598,
+    "order_gap": 0.4818357601761818
+   },
+   "animal_simple|collective": {
+    "p_first": 0.4976273216307163,
+    "order_gap": 0.5903754755854607
+   },
+   "plant|supernatural": {
+    "p_first": 0.5005330755375326,
+    "order_gap": 0.8379363687708974
+   },
+   "nature|supernatural": {
+    "p_first": 0.4920918755233288,
+    "order_gap": 0.8713012412190437
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5010601622052491,
+    "order_gap": 0.8452873444184661
+   },
+   "object_art|supernatural": {
+    "p_first": 0.5017512082122266,
+    "order_gap": 0.8569800676777959
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.5160306640900671,
+    "order_gap": 0.8199366731569171
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5085340817458928,
+    "order_gap": 0.6759795090183616
+   },
+   "supernatural|collective": {
+    "p_first": 0.4954311531037092,
+    "order_gap": 0.7672710753977299
+   }
+  },
+  "soul": {
+   "self_ai|ai_other": {
+    "p_first": 0.6128592807799578,
+    "order_gap": 0.396586325019598
+   },
+   "self_ai|robot": {
+    "p_first": 0.6014193538576365,
+    "order_gap": 0.3613806776702404
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.4971553198993206,
+    "order_gap": 0.5037722960114479
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.4939606636762619,
+    "order_gap": 0.4249142110347748
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.520460182800889,
+    "order_gap": 0.509171586483717
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.5509842094033957,
+    "order_gap": 0.6337336488068104
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.5297204088419676,
+    "order_gap": 0.6099303402006626
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.5294879525899887,
+    "order_gap": 0.5668119788169861
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.5204660693804423,
+    "order_gap": 0.46017996470133465
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5342537562052408,
+    "order_gap": 0.3424041271209717
+   },
+   "self_ai|plant": {
+    "p_first": 0.5217981338500977,
+    "order_gap": 0.465684175491333
+   },
+   "self_ai|nature": {
+    "p_first": 0.48042953573167324,
+    "order_gap": 0.31836431100964546
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5560772567987442,
+    "order_gap": 0.2313658893108368
+   },
+   "self_ai|object_art": {
+    "p_first": 0.4969380982220173,
+    "order_gap": 0.35064034909009933
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5902611836791039,
+    "order_gap": 0.3416856378316879
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.49527244300891954,
+    "order_gap": 0.8596733702967564
+   },
+   "self_ai|fictional": {
+    "p_first": 0.5369037091732025,
+    "order_gap": 0.5080499053001404
+   },
+   "self_ai|collective": {
+    "p_first": 0.5670926254242659,
+    "order_gap": 0.3451346792280674
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.49441027268767357,
+    "order_gap": 0.6689327731728554
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5257193297147751,
+    "order_gap": 0.6257995069026947
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.5098927170038223,
+    "order_gap": 0.4143082797527313
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.5090670878998935,
+    "order_gap": 0.7721017310395837
+   },
+   "robot|human_adult": {
+    "p_first": 0.4491944070905447,
+    "order_gap": 0.5216234512627125
+   },
+   "robot|animal_other": {
+    "p_first": 0.5380745008587837,
+    "order_gap": 0.4563478082418442
+   },
+   "robot|animal_simple": {
+    "p_first": 0.5448677614331245,
+    "order_gap": 0.19865016639232635
+   },
+   "robot|supernatural": {
+    "p_first": 0.48968652496114373,
+    "order_gap": 0.6689689038321376
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.5068828370422125,
+    "order_gap": 0.4898517020046711
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.4679874200373888,
+    "order_gap": 0.31898268684744835
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.5249746255576611,
+    "order_gap": 0.10445211082696915
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.40828800946474075,
+    "order_gap": 0.07450933754444122
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.4449727889150381,
+    "order_gap": 0.37610037997365
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.49789710715413094,
+    "order_gap": 0.6664011105895042
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.4999999888241291,
+    "order_gap": 0.6347789987921715
+   },
+   "human_adult|plant": {
+    "p_first": 0.5064615160226822,
+    "order_gap": 0.45582136511802673
+   },
+   "human_adult|nature": {
+    "p_first": 0.5172407571226358,
+    "order_gap": 0.6650209836661816
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5175726879388094,
+    "order_gap": 0.6499797366559505
+   },
+   "human_adult|object_art": {
+    "p_first": 0.5020414777100086,
+    "order_gap": 0.7573549672961235
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.5180512145161629,
+    "order_gap": 0.788705512881279
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.4997478649020195,
+    "order_gap": 0.9656031280755997
+   },
+   "human_adult|fictional": {
+    "p_first": 0.46697188541293144,
+    "order_gap": 0.5000266805291176
+   },
+   "human_adult|collective": {
+    "p_first": 0.5186016969382763,
+    "order_gap": 0.4476276710629463
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5846804603934288,
+    "order_gap": 0.16936089098453522
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.5564432889223099,
+    "order_gap": 0.17242202162742615
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.4963278512004763,
+    "order_gap": 0.6667014281265438
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.6179537773132324,
+    "order_gap": 0.11167407035827637
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.5889594256877899,
+    "order_gap": 0.2710341215133667
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.4967441773042083,
+    "order_gap": 0.5716735888272524
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.5745081901550293,
+    "order_gap": 0.19557291269302368
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.5467679500579834,
+    "order_gap": 0.4345896244049072
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.4673583027906716,
+    "order_gap": 0.4927215939387679
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.4844558984041214,
+    "order_gap": 0.06229761242866516
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.48503559827804565,
+    "order_gap": 0.1997685432434082
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.4624507799744606,
+    "order_gap": 0.5286642909049988
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5389360040426254,
+    "order_gap": 0.01551392674446106
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.5582057610154152,
+    "order_gap": 0.40479712188243866
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.48464081762358546,
+    "order_gap": 0.6363802338019013
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.47390199452638626,
+    "order_gap": 0.2872803062200546
+   },
+   "animal_other|plant": {
+    "p_first": 0.5774356424808502,
+    "order_gap": 0.5388762354850769
+   },
+   "animal_other|nature": {
+    "p_first": 0.55800911039114,
+    "order_gap": 0.6452635675668716
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5368456728756428,
+    "order_gap": 0.6590584143996239
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5314174219965935,
+    "order_gap": 0.7158928662538528
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5132943354547024,
+    "order_gap": 0.7466098740696907
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.4977336659406622,
+    "order_gap": 0.8578104308495919
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5292001254856586,
+    "order_gap": 0.37597473710775375
+   },
+   "animal_other|collective": {
+    "p_first": 0.5518450438976288,
+    "order_gap": 0.3915599584579468
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5281704589724541,
+    "order_gap": 0.20899160206317902
+   },
+   "animal_simple|nature": {
+    "p_first": 0.5546639263629913,
+    "order_gap": 0.3971977233886719
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.5077300518751144,
+    "order_gap": 0.4651130735874176
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.49771006032824516,
+    "order_gap": 0.5144098773598671
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.49961603060364723,
+    "order_gap": 0.6527302786707878
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.49948680649201077,
+    "order_gap": 0.8433285901943842
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.5109948366880417,
+    "order_gap": 0.30883148312568665
+   },
+   "animal_simple|collective": {
+    "p_first": 0.5739102736115456,
+    "order_gap": 0.07077382504940033
+   },
+   "plant|supernatural": {
+    "p_first": 0.509016806492582,
+    "order_gap": 0.7696822392754257
+   },
+   "nature|supernatural": {
+    "p_first": 0.505491359392181,
+    "order_gap": 0.8246488305740058
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5067936782725155,
+    "order_gap": 0.7868118574842811
+   },
+   "object_art|supernatural": {
+    "p_first": 0.5014834427274764,
+    "order_gap": 0.8367145610973239
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.5058637224137783,
+    "order_gap": 0.84101552516222
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5003497865982354,
+    "order_gap": 0.6634437208995223
+   },
+   "supernatural|collective": {
+    "p_first": 0.5201122951693833,
+    "order_gap": 0.6693609869107604
+   }
+  },
+  "cognition": {
+   "self_ai|ai_other": {
+    "p_first": 0.5936507172882557,
+    "order_gap": 0.40107228606939316
+   },
+   "self_ai|robot": {
+    "p_first": 0.5642348602414131,
+    "order_gap": 0.2622119337320328
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.5274155884981155,
+    "order_gap": 0.5411672294139862
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.40968748461455107,
+    "order_gap": 0.33857237733900547
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.44746890757232904,
+    "order_gap": 0.3659504633396864
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.5240919580683112,
+    "order_gap": 0.584219278767705
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.494839109480381,
+    "order_gap": 0.46818752586841583
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.4840993657708168,
+    "order_gap": 0.48486892879009247
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.522002766529719,
+    "order_gap": 0.29869920015335083
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5446472465991974,
+    "order_gap": 0.2534155646959941
+   },
+   "self_ai|plant": {
+    "p_first": 0.49956240877509117,
+    "order_gap": 0.33504823595285416
+   },
+   "self_ai|nature": {
+    "p_first": 0.5155226001515985,
+    "order_gap": 0.46276685409247875
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5263995877467096,
+    "order_gap": 0.47085528541356325
+   },
+   "self_ai|object_art": {
+    "p_first": 0.5038015116006136,
+    "order_gap": 0.4536830149590969
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5496552521362901,
+    "order_gap": 0.47379045002162457
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.49246928514912724,
+    "order_gap": 0.7804780121271809
+   },
+   "self_ai|fictional": {
+    "p_first": 0.5028469804674387,
+    "order_gap": 0.4895258955657482
+   },
+   "self_ai|collective": {
+    "p_first": 0.5259366342797875,
+    "order_gap": 0.37463140301406384
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.48600236512720585,
+    "order_gap": 0.8072697035968304
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5181145519018173,
+    "order_gap": 0.8149568736553192
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.5223761163651943,
+    "order_gap": 0.49809397011995316
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.5009700912050903,
+    "order_gap": 0.7096765423193574
+   },
+   "robot|human_adult": {
+    "p_first": 0.462382729165256,
+    "order_gap": 0.7564333770424128
+   },
+   "robot|animal_other": {
+    "p_first": 0.507427029311657,
+    "order_gap": 0.7223629504442215
+   },
+   "robot|animal_simple": {
+    "p_first": 0.4276137128472328,
+    "order_gap": 0.17589081823825836
+   },
+   "robot|supernatural": {
+    "p_first": 0.4670244068838656,
+    "order_gap": 0.5856673894450068
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.5182734560221434,
+    "order_gap": 0.5876210369169712
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.4612469356507063,
+    "order_gap": 0.49049187079072
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.4688121462240815,
+    "order_gap": 0.6787882577627897
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.4748725686222315,
+    "order_gap": 0.46340931579470634
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.44316574465483427,
+    "order_gap": 0.6253758762031794
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.504348118789494,
+    "order_gap": 0.8844971265643835
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.49444242287427187,
+    "order_gap": 0.9041320886462927
+   },
+   "human_adult|plant": {
+    "p_first": 0.48485659109428525,
+    "order_gap": 0.8504709294065833
+   },
+   "human_adult|nature": {
+    "p_first": 0.4841828199569136,
+    "order_gap": 0.8921713526360691
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.49455972434952855,
+    "order_gap": 0.8960747933015227
+   },
+   "human_adult|object_art": {
+    "p_first": 0.492187422234565,
+    "order_gap": 0.9141993289813399
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.500246237963438,
+    "order_gap": 0.8853779509663582
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.4930484974756837,
+    "order_gap": 0.9454322885721922
+   },
+   "human_adult|fictional": {
+    "p_first": 0.5031681256368756,
+    "order_gap": 0.6692133750766516
+   },
+   "human_adult|collective": {
+    "p_first": 0.47036727983504534,
+    "order_gap": 0.7579059954732656
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5061610341072083,
+    "order_gap": 0.21152931451797485
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.5338827520608902,
+    "order_gap": 0.42812874913215637
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.4856448972132057,
+    "order_gap": 0.5215342533774674
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.5844181850552559,
+    "order_gap": 0.3082411140203476
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.5600014552474022,
+    "order_gap": 0.37808002531528473
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.4921686062589288,
+    "order_gap": 0.5082744937390089
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.49614041298627853,
+    "order_gap": 0.1319526582956314
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.530084528028965,
+    "order_gap": 0.5097106546163559
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.4922549305483699,
+    "order_gap": 0.5539934281259775
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.38987237960100174,
+    "order_gap": 0.08138276636600494
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.46592601016163826,
+    "order_gap": 0.37940897792577744
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.4589179465547204,
+    "order_gap": 0.551514221355319
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5380535274744034,
+    "order_gap": 0.2351539433002472
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.5293810665607452,
+    "order_gap": 0.5646526217460632
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5046429331414402,
+    "order_gap": 0.5709423134103417
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.36963390838354826,
+    "order_gap": 0.4705465827137232
+   },
+   "animal_other|plant": {
+    "p_first": 0.5072404416278005,
+    "order_gap": 0.8785360511392355
+   },
+   "animal_other|nature": {
+    "p_first": 0.5038514556363225,
+    "order_gap": 0.9001903887838125
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5042413482442498,
+    "order_gap": 0.9047487359493971
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5130341527983546,
+    "order_gap": 0.9057008866220713
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5009321700781584,
+    "order_gap": 0.9031241871416569
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.5086907673006257,
+    "order_gap": 0.8339172347138325
+   },
+   "animal_other|fictional": {
+    "p_first": 0.4955288413912058,
+    "order_gap": 0.6164852492511272
+   },
+   "animal_other|collective": {
+    "p_first": 0.4848954603075981,
+    "order_gap": 0.7249115258455276
+   },
+   "animal_simple|plant": {
+    "p_first": 0.48802842292934656,
+    "order_gap": 0.8343053739517927
+   },
+   "animal_simple|nature": {
+    "p_first": 0.4799778535962105,
+    "order_gap": 0.8449831455945969
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.48447565641254187,
+    "order_gap": 0.8700914699584246
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.48590764682739973,
+    "order_gap": 0.8514478746801615
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.49990160670131445,
+    "order_gap": 0.838512571528554
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.5007459800690413,
+    "order_gap": 0.8566359914839268
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.4975287467241287,
+    "order_gap": 0.4442286193370819
+   },
+   "animal_simple|collective": {
+    "p_first": 0.38760924339294434,
+    "order_gap": 0.3486575484275818
+   },
+   "plant|supernatural": {
+    "p_first": 0.4979700257536024,
+    "order_gap": 0.8354857047088444
+   },
+   "nature|supernatural": {
+    "p_first": 0.48409271449781954,
+    "order_gap": 0.877175088506192
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.49253767752088606,
+    "order_gap": 0.8381615276448429
+   },
+   "object_art|supernatural": {
+    "p_first": 0.4933449539821595,
+    "order_gap": 0.891332792583853
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.510517199523747,
+    "order_gap": 0.8586591389030218
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5045181163586676,
+    "order_gap": 0.634399781934917
+   },
+   "supernatural|collective": {
+    "p_first": 0.4838469442911446,
+    "order_gap": 0.7345125144347548
+   }
+  },
+  "agency": {
+   "self_ai|ai_other": {
+    "p_first": 0.5565616432577372,
+    "order_gap": 0.43979428336024284
+   },
+   "self_ai|robot": {
+    "p_first": 0.551994014531374,
+    "order_gap": 0.24437343329191208
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.4666876904666424,
+    "order_gap": 0.7288199439644814
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.475696574896574,
+    "order_gap": 0.25307033210992813
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.4499527243897319,
+    "order_gap": 0.4266942832618952
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.523078135214746,
+    "order_gap": 0.7423477340489626
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.4688012823462486,
+    "order_gap": 0.4393761157989502
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.48787011951208115,
+    "order_gap": 0.48071660101413727
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.47585929185152054,
+    "order_gap": 0.36902350684007007
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.4891792523364226,
+    "order_gap": 0.47474275281031925
+   },
+   "self_ai|plant": {
+    "p_first": 0.5222333911806345,
+    "order_gap": 0.38458020612597466
+   },
+   "self_ai|nature": {
+    "p_first": 0.513823033310473,
+    "order_gap": 0.48932856135070324
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5318724112585187,
+    "order_gap": 0.4441139008849859
+   },
+   "self_ai|object_art": {
+    "p_first": 0.47791265323758125,
+    "order_gap": 0.4511789008975029
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5120693054050207,
+    "order_gap": 0.4308421202003956
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.48816882027313113,
+    "order_gap": 0.8107830195998152
+   },
+   "self_ai|fictional": {
+    "p_first": 0.5085964500904083,
+    "order_gap": 0.5616636276245117
+   },
+   "self_ai|collective": {
+    "p_first": 0.5327428057789803,
+    "order_gap": 0.40630875527858734
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.4675472630187869,
+    "order_gap": 0.6394555661827326
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5217432081699371,
+    "order_gap": 0.7309227585792542
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.48433513194322586,
+    "order_gap": 0.6217282861471176
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.4939366588369012,
+    "order_gap": 0.6612011175602674
+   },
+   "robot|human_adult": {
+    "p_first": 0.46979276463389397,
+    "order_gap": 0.5344598665833473
+   },
+   "robot|animal_other": {
+    "p_first": 0.49123549088835716,
+    "order_gap": 0.5611225441098213
+   },
+   "robot|animal_simple": {
+    "p_first": 0.37766511365771294,
+    "order_gap": 0.2914991155266762
+   },
+   "robot|supernatural": {
+    "p_first": 0.5150800980627537,
+    "order_gap": 0.447974257171154
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.5128357242792845,
+    "order_gap": 0.4601179398596287
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.4032028242945671,
+    "order_gap": 0.2766465097665787
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.5000644773244858,
+    "order_gap": 0.14406388998031616
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.3713442422449589,
+    "order_gap": 0.3331846371293068
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.4484425261616707,
+    "order_gap": 0.2532675713300705
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.49854701198637486,
+    "order_gap": 0.7895248048007488
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.48855185601860285,
+    "order_gap": 0.8875901084393263
+   },
+   "human_adult|plant": {
+    "p_first": 0.49865179136395454,
+    "order_gap": 0.7974675819277763
+   },
+   "human_adult|nature": {
+    "p_first": 0.49286740832030773,
+    "order_gap": 0.864427212625742
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5137779517099261,
+    "order_gap": 0.8420426342636347
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4669173350557685,
+    "order_gap": 0.8169055599719286
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.48789983056485653,
+    "order_gap": 0.7865300364792347
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.49696420319378376,
+    "order_gap": 0.8798827789723873
+   },
+   "human_adult|fictional": {
+    "p_first": 0.46913332492113113,
+    "order_gap": 0.3197232037782669
+   },
+   "human_adult|collective": {
+    "p_first": 0.4867542162537575,
+    "order_gap": 0.36984820663928986
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5457107238471508,
+    "order_gap": 0.5763094797730446
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.43892239034175873,
+    "order_gap": 0.5786338150501251
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5114012369886041,
+    "order_gap": 0.5978835206478834
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.5300538167357445,
+    "order_gap": 0.48448707163333893
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.42656078562140465,
+    "order_gap": 0.4347483590245247
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.51367455907166,
+    "order_gap": 0.46911415085196495
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.5033265426754951,
+    "order_gap": 0.16032175719738007
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.42423634976148605,
+    "order_gap": 0.12031795084476471
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.5376267600804567,
+    "order_gap": 0.3709879331290722
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.3669463060796261,
+    "order_gap": 0.2661074474453926
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.3186021000146866,
+    "order_gap": 0.13309845328330994
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.44180598855018616,
+    "order_gap": 0.46148286759853363
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5429664999246597,
+    "order_gap": 0.2858876883983612
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.4730842337012291,
+    "order_gap": 0.053831592202186584
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5474209412932396,
+    "order_gap": 0.46069376170635223
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.46824225317686796,
+    "order_gap": 0.7877317164093256
+   },
+   "animal_other|plant": {
+    "p_first": 0.5276516359299421,
+    "order_gap": 0.8924071229994297
+   },
+   "animal_other|nature": {
+    "p_first": 0.5099542858079076,
+    "order_gap": 0.9278018232434988
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5278119212016463,
+    "order_gap": 0.8955299127846956
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5215742774307728,
+    "order_gap": 0.8919393047690392
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5225127656012774,
+    "order_gap": 0.8883352838456631
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.4980958004792531,
+    "order_gap": 0.6964078545570374
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5014315359294415,
+    "order_gap": 0.38602522760629654
+   },
+   "animal_other|collective": {
+    "p_first": 0.5585785508155823,
+    "order_gap": 0.4755144715309143
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5175467040389776,
+    "order_gap": 0.8959555216133595
+   },
+   "animal_simple|nature": {
+    "p_first": 0.4971517687663436,
+    "order_gap": 0.9338474739342928
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.517805908806622,
+    "order_gap": 0.9091185238212347
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.5011286549270153,
+    "order_gap": 0.8617398515343666
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.5107471253722906,
+    "order_gap": 0.8758141584694386
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.518211425592502,
+    "order_gap": 0.7890199000636736
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.4389150030910969,
+    "order_gap": 0.365075908601284
+   },
+   "animal_simple|collective": {
+    "p_first": 0.43303555622696877,
+    "order_gap": 0.2837195619940758
+   },
+   "plant|supernatural": {
+    "p_first": 0.5221178671345115,
+    "order_gap": 0.8111626524478197
+   },
+   "nature|supernatural": {
+    "p_first": 0.5044707334600389,
+    "order_gap": 0.8612414048984647
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5200185929425061,
+    "order_gap": 0.7856785347685218
+   },
+   "object_art|supernatural": {
+    "p_first": 0.5126284817233682,
+    "order_gap": 0.7940480690449476
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.519079047255218,
+    "order_gap": 0.7725722435861826
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5267991777509451,
+    "order_gap": 0.54675667360425
+   },
+   "supernatural|collective": {
+    "p_first": 0.5461690239608288,
+    "order_gap": 0.5276792123913765
+   }
+  },
+  "moral_patient": {
+   "self_ai|ai_other": {
+    "p_first": 0.6346045769751072,
+    "order_gap": 0.36178841441869736
+   },
+   "self_ai|robot": {
+    "p_first": 0.6184149421751499,
+    "order_gap": 0.2608877047896385
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.6292316988110542,
+    "order_gap": 0.33641092479228973
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.5034819263964891,
+    "order_gap": 0.27403998002409935
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.5470201894640923,
+    "order_gap": 0.347397118806839
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.5198146607726812,
+    "order_gap": 0.6079309172928333
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.484584704041481,
+    "order_gap": 0.5221958458423615
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.5375058092176914,
+    "order_gap": 0.4888486787676811
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.5557303056120872,
+    "order_gap": 0.36870300273100537
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5689264982938766,
+    "order_gap": 0.33165263136227924
+   },
+   "self_ai|plant": {
+    "p_first": 0.47847054712474346,
+    "order_gap": 0.3046949841082096
+   },
+   "self_ai|nature": {
+    "p_first": 0.5040095616132021,
+    "order_gap": 0.35777926072478294
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5465600220486522,
+    "order_gap": 0.4235359076410532
+   },
+   "self_ai|object_art": {
+    "p_first": 0.5320265823975205,
+    "order_gap": 0.4680785071104765
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5735497288405895,
+    "order_gap": 0.5393772199749947
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.5215064808726311,
+    "order_gap": 0.8318025420109431
+   },
+   "self_ai|fictional": {
+    "p_first": 0.4887236971408129,
+    "order_gap": 0.45230546221137047
+   },
+   "self_ai|collective": {
+    "p_first": 0.5970917660742998,
+    "order_gap": 0.37515151128172874
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.511003103107214,
+    "order_gap": 0.5365973189473152
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.5485043488442898,
+    "order_gap": 0.7858730033040047
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.6304028853774071,
+    "order_gap": 0.482210710644722
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.5134538556449115,
+    "order_gap": 0.7130991825833917
+   },
+   "robot|human_adult": {
+    "p_first": 0.4903138764202595,
+    "order_gap": 0.3696136996150017
+   },
+   "robot|animal_other": {
+    "p_first": 0.5511102974414825,
+    "order_gap": 0.6982190012931824
+   },
+   "robot|animal_simple": {
+    "p_first": 0.6263459622859955,
+    "order_gap": 0.1437772512435913
+   },
+   "robot|supernatural": {
+    "p_first": 0.5071716215461493,
+    "order_gap": 0.591705460101366
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.584893923252821,
+    "order_gap": 0.33930639177560806
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.5574759095907211,
+    "order_gap": 0.307213693857193
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.5732490494847298,
+    "order_gap": 0.06104223430156708
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.5228927843272686,
+    "order_gap": 0.11596868187189102
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.5470932088792324,
+    "order_gap": 0.2638661339879036
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.55532256513834,
+    "order_gap": 0.495608851313591
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.5440554432570934,
+    "order_gap": 0.5740844383835793
+   },
+   "human_adult|plant": {
+    "p_first": 0.5351007431745529,
+    "order_gap": 0.352227121591568
+   },
+   "human_adult|nature": {
+    "p_first": 0.4965939614921808,
+    "order_gap": 0.4372262768447399
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5548371076583862,
+    "order_gap": 0.6508414447307587
+   },
+   "human_adult|object_art": {
+    "p_first": 0.5331888254731894,
+    "order_gap": 0.6236838586628437
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.5524966567754745,
+    "order_gap": 0.547559916973114
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.5030021239072084,
+    "order_gap": 0.9731829427182674
+   },
+   "human_adult|fictional": {
+    "p_first": 0.504262724891305,
+    "order_gap": 0.49251190945506096
+   },
+   "human_adult|collective": {
+    "p_first": 0.5197300612926483,
+    "order_gap": 0.3691328763961792
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.6077806353569031,
+    "order_gap": 0.6139882802963257
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.6464664936065674,
+    "order_gap": 0.27761411666870117
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5292648342438042,
+    "order_gap": 0.6376783614978194
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.6086774542927742,
+    "order_gap": 0.5891755670309067
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.6726353615522385,
+    "order_gap": 0.23635604977607727
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.5377684743143618,
+    "order_gap": 0.6234601913020015
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.578774705529213,
+    "order_gap": 0.3123924434185028
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.5928112715482712,
+    "order_gap": 0.17000260949134827
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.5231789564713836,
+    "order_gap": 0.5023120809346437
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.5878892093896866,
+    "order_gap": 0.3568088710308075
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.6098620742559433,
+    "order_gap": 0.11080947518348694
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.5025645866990089,
+    "order_gap": 0.48496590554714203
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5857117623090744,
+    "order_gap": 0.5160127580165863
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.633197158575058,
+    "order_gap": 0.021475613117218018
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.5391211919486523,
+    "order_gap": 0.623019702732563
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.5682783424854279,
+    "order_gap": 0.5262538194656372
+   },
+   "animal_other|plant": {
+    "p_first": 0.5644446834921837,
+    "order_gap": 0.7306665331125259
+   },
+   "animal_other|nature": {
+    "p_first": 0.5551715902984142,
+    "order_gap": 0.7725385203957558
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5404456630349159,
+    "order_gap": 0.821352168917656
+   },
+   "animal_other|object_art": {
+    "p_first": 0.5546539053320885,
+    "order_gap": 0.7802748829126358
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.5557154193520546,
+    "order_gap": 0.771450862288475
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.5261529671649138,
+    "order_gap": 0.7643311445911726
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5396823976188898,
+    "order_gap": 0.7447798065841198
+   },
+   "animal_other|collective": {
+    "p_first": 0.6061365306377411,
+    "order_gap": 0.6238431334495544
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5797846838831902,
+    "order_gap": 0.30935998260974884
+   },
+   "animal_simple|nature": {
+    "p_first": 0.5870314612984657,
+    "order_gap": 0.44420026242733
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.5671665892004967,
+    "order_gap": 0.651114359498024
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.561115738004446,
+    "order_gap": 0.5957408621907234
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.585010003298521,
+    "order_gap": 0.5587729588150978
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.5216440639148155,
+    "order_gap": 0.7997996645669142
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.5713312551379204,
+    "order_gap": 0.44296760857105255
+   },
+   "animal_simple|collective": {
+    "p_first": 0.66696697473526,
+    "order_gap": 0.11940783262252808
+   },
+   "plant|supernatural": {
+    "p_first": 0.5125019929837435,
+    "order_gap": 0.6899131671525538
+   },
+   "nature|supernatural": {
+    "p_first": 0.5074310975614935,
+    "order_gap": 0.7188662136904895
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5179861229844391,
+    "order_gap": 0.8024169718846679
+   },
+   "object_art|supernatural": {
+    "p_first": 0.5190209117718041,
+    "order_gap": 0.7941042548045516
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.5197431622073054,
+    "order_gap": 0.7547389212995768
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5286004291847348,
+    "order_gap": 0.6437551584094763
+   },
+   "supernatural|collective": {
+    "p_first": 0.5296983297448605,
+    "order_gap": 0.6646616109646857
+   }
+  },
+  "memory": {
+   "self_ai|ai_other": {
+    "p_first": 0.5671742744743824,
+    "order_gap": 0.46334632486104965
+   },
+   "self_ai|robot": {
+    "p_first": 0.5946386903524399,
+    "order_gap": 0.4037296772003174
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.5263578854501247,
+    "order_gap": 0.521645076572895
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.4957478065043688,
+    "order_gap": 0.29768654331564903
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.5282940827310085,
+    "order_gap": 0.3329024985432625
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.46850835904479027,
+    "order_gap": 0.32600266486406326
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.5284129530191422,
+    "order_gap": 0.2375195324420929
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.5203312709927559,
+    "order_gap": 0.21266095340251923
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.5005568613608679,
+    "order_gap": 0.41420142849286395
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5558137148618698,
+    "order_gap": 0.4415392378966014
+   },
+   "self_ai|plant": {
+    "p_first": 0.5722213415428996,
+    "order_gap": 0.4376169089227915
+   },
+   "self_ai|nature": {
+    "p_first": 0.532203899230808,
+    "order_gap": 0.502582130022347
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5720996400341392,
+    "order_gap": 0.4361033160239458
+   },
+   "self_ai|object_art": {
+    "p_first": 0.51483004540205,
+    "order_gap": 0.49693141877651215
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.5641540922224522,
+    "order_gap": 0.5036390349268913
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.5039899259184798,
+    "order_gap": 0.787227171783646
+   },
+   "self_ai|fictional": {
+    "p_first": 0.5338836135342717,
+    "order_gap": 0.49957612715661526
+   },
+   "self_ai|collective": {
+    "p_first": 0.5868225563317537,
+    "order_gap": 0.42368507012724876
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.4311909172683954,
+    "order_gap": 0.5931532494723797
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.4911196678876877,
+    "order_gap": 0.7465536296367645
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.3811977952718735,
+    "order_gap": 0.25322434306144714
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.4892965923063457,
+    "order_gap": 0.6598603883758187
+   },
+   "robot|human_adult": {
+    "p_first": 0.35943428613245487,
+    "order_gap": 0.36643851920962334
+   },
+   "robot|animal_other": {
+    "p_first": 0.48470112681388855,
+    "order_gap": 0.6540125012397766
+   },
+   "robot|animal_simple": {
+    "p_first": 0.3544510081410408,
+    "order_gap": 0.10732902586460114
+   },
+   "robot|supernatural": {
+    "p_first": 0.4691666280850768,
+    "order_gap": 0.45479013212025166
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.5866699516773224,
+    "order_gap": 0.20334675908088684
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.48854516819119453,
+    "order_gap": 0.11434374004602432
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.36392096476629376,
+    "order_gap": 0.4101250013336539
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.41107567958533764,
+    "order_gap": 0.4246828891336918
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.3561259936541319,
+    "order_gap": 0.3647226132452488
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.4024302698671818,
+    "order_gap": 0.4835251495242119
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.3778157662600279,
+    "order_gap": 0.642141554504633
+   },
+   "human_adult|plant": {
+    "p_first": 0.46066034212708473,
+    "order_gap": 0.7731889709830284
+   },
+   "human_adult|nature": {
+    "p_first": 0.45379801094532013,
+    "order_gap": 0.7802087962627411
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.4676250396296382,
+    "order_gap": 0.7416734043508768
+   },
+   "human_adult|object_art": {
+    "p_first": 0.44422626262530684,
+    "order_gap": 0.7879231320694089
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.42918244330212474,
+    "order_gap": 0.6901706391945481
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.49173023644834757,
+    "order_gap": 0.87304319255054
+   },
+   "human_adult|fictional": {
+    "p_first": 0.42515592090785503,
+    "order_gap": 0.34926915541291237
+   },
+   "human_adult|collective": {
+    "p_first": 0.46451281383633614,
+    "order_gap": 0.4096013829112053
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.41671476140618324,
+    "order_gap": 0.46820854395627975
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.3649730570614338,
+    "order_gap": 0.14759456366300583
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.49552537966519594,
+    "order_gap": 0.5003885235637426
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.4740494266152382,
+    "order_gap": 0.464880034327507
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.42152751982212067,
+    "order_gap": 0.1415066421031952
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.5045324759557843,
+    "order_gap": 0.4308247324079275
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.4016339182853699,
+    "order_gap": 0.3959394693374634
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.3440745249390602,
+    "order_gap": 0.13085944950580597
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.45144388917833567,
+    "order_gap": 0.47051107697188854
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.3905911408364773,
+    "order_gap": 0.4464048221707344
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.3083954155445099,
+    "order_gap": 0.0664438009262085
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.45299023715779185,
+    "order_gap": 0.47160371486097574
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.5768532007932663,
+    "order_gap": 0.47996392846107483
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.46255233883857727,
+    "order_gap": 0.309109628200531
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.4920993009582162,
+    "order_gap": 0.508589206263423
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.46727205067873,
+    "order_gap": 0.5318366140127182
+   },
+   "animal_other|plant": {
+    "p_first": 0.5249525774270296,
+    "order_gap": 0.8520106934010983
+   },
+   "animal_other|nature": {
+    "p_first": 0.5101257842034101,
+    "order_gap": 0.8664435781538486
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.514243932440877,
+    "order_gap": 0.8398342691361904
+   },
+   "animal_other|object_art": {
+    "p_first": 0.4992363164201379,
+    "order_gap": 0.8708392959088087
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.494545167312026,
+    "order_gap": 0.8499524481594563
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.48928386593858403,
+    "order_gap": 0.6586315507690111
+   },
+   "animal_other|fictional": {
+    "p_first": 0.4642679039388895,
+    "order_gap": 0.5825721733272076
+   },
+   "animal_other|collective": {
+    "p_first": 0.4914676137268543,
+    "order_gap": 0.653542123734951
+   },
+   "animal_simple|plant": {
+    "p_first": 0.5011978819966316,
+    "order_gap": 0.6901859492063522
+   },
+   "animal_simple|nature": {
+    "p_first": 0.4578689783811569,
+    "order_gap": 0.6944657266139984
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.48551143519580364,
+    "order_gap": 0.6472235061228275
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.5123044587671757,
+    "order_gap": 0.7067533656954765
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.4734683819115162,
+    "order_gap": 0.6175436601042747
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.4788331923385461,
+    "order_gap": 0.7152169669667879
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.4566458389163017,
+    "order_gap": 0.2713441997766495
+   },
+   "animal_simple|collective": {
+    "p_first": 0.4273444190621376,
+    "order_gap": 0.09938274323940277
+   },
+   "plant|supernatural": {
+    "p_first": 0.4998569255694747,
+    "order_gap": 0.7528184819966555
+   },
+   "nature|supernatural": {
+    "p_first": 0.49471679888665676,
+    "order_gap": 0.7588261552155018
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.48217322025448084,
+    "order_gap": 0.67886015586555
+   },
+   "object_art|supernatural": {
+    "p_first": 0.4866229733452201,
+    "order_gap": 0.7559289950877428
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.4917836803942919,
+    "order_gap": 0.7334881089627743
+   },
+   "supernatural|fictional": {
+    "p_first": 0.49177001882344484,
+    "order_gap": 0.5302672889083624
+   },
+   "supernatural|collective": {
+    "p_first": 0.524858457967639,
+    "order_gap": 0.5226798392832279
+   }
+  },
+  "physical_mid": {
+   "self_ai|ai_other": {
+    "p_first": 0.46458666771650314,
+    "order_gap": 0.20604102313518524
+   },
+   "self_ai|robot": {
+    "p_first": 0.5168183147907257,
+    "order_gap": 0.4413057565689087
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.4251941181719303,
+    "order_gap": 0.36505045741796494
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.49602342396974564,
+    "order_gap": 0.06999437510967255
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.514641173183918,
+    "order_gap": 0.2589796930551529
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.3948209695518017,
+    "order_gap": 0.26104923337697983
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.35533211193978786,
+    "order_gap": 0.11474602296948433
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.43353231251239777,
+    "order_gap": 0.1718335896730423
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.4448980117837588,
+    "order_gap": 0.417374645670255
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.453865018983682,
+    "order_gap": 0.31335195402304333
+   },
+   "self_ai|plant": {
+    "p_first": 0.48254147730767727,
+    "order_gap": 0.48866211250424385
+   },
+   "self_ai|nature": {
+    "p_first": 0.49543196335434914,
+    "order_gap": 0.5914280936121941
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.5045051723718643,
+    "order_gap": 0.10948686301708221
+   },
+   "self_ai|object_art": {
+    "p_first": 0.46570705994963646,
+    "order_gap": 0.2303401306271553
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.43569339253008366,
+    "order_gap": 0.41455764696002007
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.49065007362514734,
+    "order_gap": 0.7475216469417015
+   },
+   "self_ai|fictional": {
+    "p_first": 0.43804644607007504,
+    "order_gap": 0.1938186027109623
+   },
+   "self_ai|collective": {
+    "p_first": 0.48198542557656765,
+    "order_gap": 0.6396856494247913
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.4742862097918987,
+    "order_gap": 0.7273513451218605
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.452332379296422,
+    "order_gap": 0.6708219014108181
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.3433913066983223,
+    "order_gap": 0.06919600069522858
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.4695187360048294,
+    "order_gap": 0.7868454158306122
+   },
+   "robot|human_adult": {
+    "p_first": 0.36258108727633953,
+    "order_gap": 0.20861754193902016
+   },
+   "robot|animal_other": {
+    "p_first": 0.5374857783317566,
+    "order_gap": 0.24416905641555786
+   },
+   "robot|animal_simple": {
+    "p_first": 0.48736848682165146,
+    "order_gap": 0.6051095873117447
+   },
+   "robot|supernatural": {
+    "p_first": 0.46830900199711323,
+    "order_gap": 0.5386006943881512
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.44788173772394657,
+    "order_gap": 0.44938377663493156
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.4738662466406822,
+    "order_gap": 0.3666277080774307
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.4060666225850582,
+    "order_gap": 0.5618634298443794
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.39446947909891605,
+    "order_gap": 0.3236791156232357
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.45019296929240227,
+    "order_gap": 0.637994147837162
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.49218309484422207,
+    "order_gap": 0.792576540261507
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.5091204717755318,
+    "order_gap": 0.7587017863988876
+   },
+   "human_adult|plant": {
+    "p_first": 0.47805029805749655,
+    "order_gap": 0.4860458243638277
+   },
+   "human_adult|nature": {
+    "p_first": 0.4172250647097826,
+    "order_gap": 0.2890838645398617
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.5990170314908028,
+    "order_gap": 0.403152659535408
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4966244474053383,
+    "order_gap": 0.6809430569410324
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.4929044544696808,
+    "order_gap": 0.7259256541728973
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.4986314866691828,
+    "order_gap": 0.9355130009353161
+   },
+   "human_adult|fictional": {
+    "p_first": 0.45175328897312284,
+    "order_gap": 0.6163150062784553
+   },
+   "human_adult|collective": {
+    "p_first": 0.3896523229777813,
+    "order_gap": 0.28140077739953995
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.48281144350767136,
+    "order_gap": 0.33681847155094147
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.4048590920865536,
+    "order_gap": 0.31042737513780594
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5184898474253714,
+    "order_gap": 0.6209029657766223
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.5057436153292656,
+    "order_gap": 0.30472226440906525
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.4033517390489578,
+    "order_gap": 0.33920031785964966
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.5175058925524354,
+    "order_gap": 0.5963762234896421
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.3882210813462734,
+    "order_gap": 0.4536804035305977
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.32011647522449493,
+    "order_gap": 0.2200952172279358
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.458878967911005,
+    "order_gap": 0.6264093294739723
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.4281821772456169,
+    "order_gap": 0.15907399356365204
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.33990729227662086,
+    "order_gap": 0.32018544524908066
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.47111354721710086,
+    "order_gap": 0.5279889265075326
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.4642086625099182,
+    "order_gap": 0.5191396474838257
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.3240920417010784,
+    "order_gap": 0.12169346958398819
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.4646386872045696,
+    "order_gap": 0.7543922225013375
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.35120403580367565,
+    "order_gap": 0.4144810773432255
+   },
+   "animal_other|plant": {
+    "p_first": 0.490727792493999,
+    "order_gap": 0.4213689360767603
+   },
+   "animal_other|nature": {
+    "p_first": 0.5674840584397316,
+    "order_gap": 0.18179737031459808
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.5036094263195992,
+    "order_gap": 0.3210255354642868
+   },
+   "animal_other|object_art": {
+    "p_first": 0.46596939489245415,
+    "order_gap": 0.6720728650689125
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.45032375305891037,
+    "order_gap": 0.7699594050645828
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.4869171924268206,
+    "order_gap": 0.8722006188084682
+   },
+   "animal_other|fictional": {
+    "p_first": 0.4738128185272217,
+    "order_gap": 0.47269994020462036
+   },
+   "animal_other|collective": {
+    "p_first": 0.4937067739665508,
+    "order_gap": 0.3613703027367592
+   },
+   "animal_simple|plant": {
+    "p_first": 0.40382956340909004,
+    "order_gap": 0.33073290437459946
+   },
+   "animal_simple|nature": {
+    "p_first": 0.4959409832954407,
+    "order_gap": 0.5002403855323792
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.42038077116012573,
+    "order_gap": 0.283471941947937
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.4044223353266716,
+    "order_gap": 0.06692178547382355
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.374297671020031,
+    "order_gap": 0.14311818778514862
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.4882568856701255,
+    "order_gap": 0.879435551042358
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.3734624907374382,
+    "order_gap": 0.17557965219020844
+   },
+   "animal_simple|collective": {
+    "p_first": 0.49242766574025154,
+    "order_gap": 0.5598089918494225
+   },
+   "plant|supernatural": {
+    "p_first": 0.5193728348240256,
+    "order_gap": 0.6973520535975695
+   },
+   "nature|supernatural": {
+    "p_first": 0.5530931344255805,
+    "order_gap": 0.4935591537505388
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.5279109319671988,
+    "order_gap": 0.6186598259955645
+   },
+   "object_art|supernatural": {
+    "p_first": 0.48703181627206504,
+    "order_gap": 0.8078595721162856
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.47806840552948415,
+    "order_gap": 0.8234460768289864
+   },
+   "supernatural|fictional": {
+    "p_first": 0.453683519968763,
+    "order_gap": 0.6539289164356887
+   },
+   "supernatural|collective": {
+    "p_first": 0.5539958896115422,
+    "order_gap": 0.4772180374711752
+   }
+  },
+  "mundane_low": {
+   "self_ai|ai_other": {
+    "p_first": 0.476494450122118,
+    "order_gap": 0.27466943114995956
+   },
+   "self_ai|robot": {
+    "p_first": 0.3803275655955076,
+    "order_gap": 0.1279282160103321
+   },
+   "self_ai|human_adult": {
+    "p_first": 0.4431953225284815,
+    "order_gap": 0.7842162661254406
+   },
+   "self_ai|human_prof_a": {
+    "p_first": 0.4518744037486613,
+    "order_gap": 0.7634223727509379
+   },
+   "self_ai|human_prof_b": {
+    "p_first": 0.3475473215803504,
+    "order_gap": 0.2874599415808916
+   },
+   "self_ai|human_dev": {
+    "p_first": 0.4367482364177704,
+    "order_gap": 0.25266018509864807
+   },
+   "self_ai|human_edge": {
+    "p_first": 0.30252688378095627,
+    "order_gap": 0.14007952064275742
+   },
+   "self_ai|animal_mammal": {
+    "p_first": 0.3849168745800853,
+    "order_gap": 0.3146898988634348
+   },
+   "self_ai|animal_other": {
+    "p_first": 0.5005926651259264,
+    "order_gap": 0.4382871861259143
+   },
+   "self_ai|animal_simple": {
+    "p_first": 0.5031304967900118,
+    "order_gap": 0.40354859580596286
+   },
+   "self_ai|plant": {
+    "p_first": 0.5022706454619765,
+    "order_gap": 0.5159095395356417
+   },
+   "self_ai|nature": {
+    "p_first": 0.47672400902956724,
+    "order_gap": 0.608705559745431
+   },
+   "self_ai|object_nat": {
+    "p_first": 0.48114688880741596,
+    "order_gap": 0.49739162251353264
+   },
+   "self_ai|object_art": {
+    "p_first": 0.4352785078808665,
+    "order_gap": 0.5626671258360147
+   },
+   "self_ai|object_comp": {
+    "p_first": 0.45858886931091547,
+    "order_gap": 0.5806166213005781
+   },
+   "self_ai|supernatural": {
+    "p_first": 0.46146089614679414,
+    "order_gap": 0.7027783238639435
+   },
+   "self_ai|fictional": {
+    "p_first": 0.4514317223802209,
+    "order_gap": 0.30313981883227825
+   },
+   "self_ai|collective": {
+    "p_first": 0.4564914433285594,
+    "order_gap": 0.7574991825968027
+   },
+   "ai_other|human_adult": {
+    "p_first": 0.4837251305580139,
+    "order_gap": 0.8617206811904907
+   },
+   "ai_other|animal_other": {
+    "p_first": 0.3558536544442177,
+    "order_gap": 0.3351220339536667
+   },
+   "ai_other|animal_simple": {
+    "p_first": 0.259165246039629,
+    "order_gap": 0.07143225520849228
+   },
+   "ai_other|supernatural": {
+    "p_first": 0.46512998919934034,
+    "order_gap": 0.7265597227960825
+   },
+   "robot|human_adult": {
+    "p_first": 0.4767497559078038,
+    "order_gap": 0.8563240608200431
+   },
+   "robot|animal_other": {
+    "p_first": 0.2605535052716732,
+    "order_gap": 0.19205117970705032
+   },
+   "robot|animal_simple": {
+    "p_first": 0.23358852602541447,
+    "order_gap": 0.24037566408514977
+   },
+   "robot|supernatural": {
+    "p_first": 0.4686714895069599,
+    "order_gap": 0.6245870217680931
+   },
+   "human_adult|human_prof_a": {
+    "p_first": 0.4786105453968048,
+    "order_gap": 0.3185844123363495
+   },
+   "human_adult|human_prof_b": {
+    "p_first": 0.48686432372778654,
+    "order_gap": 0.7172861490398645
+   },
+   "human_adult|human_dev": {
+    "p_first": 0.4951434093527496,
+    "order_gap": 0.8428542101755738
+   },
+   "human_adult|human_edge": {
+    "p_first": 0.5007466990500689,
+    "order_gap": 0.8003951869904995
+   },
+   "human_adult|animal_mammal": {
+    "p_first": 0.485265604685992,
+    "order_gap": 0.8921354869380593
+   },
+   "human_adult|animal_other": {
+    "p_first": 0.501638219691813,
+    "order_gap": 0.9284927528351545
+   },
+   "human_adult|animal_simple": {
+    "p_first": 0.4978162692859769,
+    "order_gap": 0.9274017121642828
+   },
+   "human_adult|plant": {
+    "p_first": 0.4923825105652213,
+    "order_gap": 0.8937990386039019
+   },
+   "human_adult|nature": {
+    "p_first": 0.488791809650138,
+    "order_gap": 0.9248081124387681
+   },
+   "human_adult|object_nat": {
+    "p_first": 0.4917224966920912,
+    "order_gap": 0.9212619019672275
+   },
+   "human_adult|object_art": {
+    "p_first": 0.4908585175871849,
+    "order_gap": 0.9273604303598404
+   },
+   "human_adult|object_comp": {
+    "p_first": 0.48688997980207205,
+    "order_gap": 0.9095501471310854
+   },
+   "human_adult|supernatural": {
+    "p_first": 0.4842344596982002,
+    "order_gap": 0.7603240460157394
+   },
+   "human_adult|fictional": {
+    "p_first": 0.5016485960222781,
+    "order_gap": 0.8118089316412807
+   },
+   "human_adult|collective": {
+    "p_first": 0.47017000056803226,
+    "order_gap": 0.30344119295477867
+   },
+   "human_prof_a|animal_other": {
+    "p_first": 0.5563248433172703,
+    "order_gap": 0.5045954510569572
+   },
+   "human_prof_a|animal_simple": {
+    "p_first": 0.5212315563112497,
+    "order_gap": 0.759158980101347
+   },
+   "human_prof_a|supernatural": {
+    "p_first": 0.5577701553702354,
+    "order_gap": 0.4267685264348984
+   },
+   "human_prof_b|animal_other": {
+    "p_first": 0.47688695415854454,
+    "order_gap": 0.39380771666765213
+   },
+   "human_prof_b|animal_simple": {
+    "p_first": 0.484225083142519,
+    "order_gap": 0.6219483837485313
+   },
+   "human_prof_b|supernatural": {
+    "p_first": 0.5633986443281174,
+    "order_gap": 0.45100605487823486
+   },
+   "human_dev|animal_other": {
+    "p_first": 0.3929624669253826,
+    "order_gap": 0.21407503634691238
+   },
+   "human_dev|animal_simple": {
+    "p_first": 0.37590254470705986,
+    "order_gap": 0.33944491297006607
+   },
+   "human_dev|supernatural": {
+    "p_first": 0.5584572912193835,
+    "order_gap": 0.5622130809351802
+   },
+   "human_edge|animal_other": {
+    "p_first": 0.31624557450413704,
+    "order_gap": 0.35251235216856003
+   },
+   "human_edge|animal_simple": {
+    "p_first": 0.3445327617228031,
+    "order_gap": 0.5107837244868279
+   },
+   "human_edge|supernatural": {
+    "p_first": 0.4484094581566751,
+    "order_gap": 0.47061595786362886
+   },
+   "animal_mammal|animal_other": {
+    "p_first": 0.29880962148308754,
+    "order_gap": 0.16816645115613937
+   },
+   "animal_mammal|animal_simple": {
+    "p_first": 0.2884637601673603,
+    "order_gap": 0.21263662725687027
+   },
+   "animal_mammal|supernatural": {
+    "p_first": 0.48838576674461365,
+    "order_gap": 0.7927194237709045
+   },
+   "animal_other|animal_simple": {
+    "p_first": 0.2585054151713848,
+    "order_gap": 0.379491962492466
+   },
+   "animal_other|plant": {
+    "p_first": 0.4949322948232293,
+    "order_gap": 0.8622312527149916
+   },
+   "animal_other|nature": {
+    "p_first": 0.44001174811273813,
+    "order_gap": 0.8030577730387449
+   },
+   "animal_other|object_nat": {
+    "p_first": 0.4284709021449089,
+    "order_gap": 0.7906531244516373
+   },
+   "animal_other|object_art": {
+    "p_first": 0.3997172210365534,
+    "order_gap": 0.6972600631415844
+   },
+   "animal_other|object_comp": {
+    "p_first": 0.42079009115695953,
+    "order_gap": 0.7688553631305695
+   },
+   "animal_other|supernatural": {
+    "p_first": 0.48427865902582806,
+    "order_gap": 0.8525957266489664
+   },
+   "animal_other|fictional": {
+    "p_first": 0.5069015100598335,
+    "order_gap": 0.6110955327749252
+   },
+   "animal_other|collective": {
+    "p_first": 0.6189999505877495,
+    "order_gap": 0.4820212870836258
+   },
+   "animal_simple|plant": {
+    "p_first": 0.3577999146655202,
+    "order_gap": 0.6080873068422079
+   },
+   "animal_simple|nature": {
+    "p_first": 0.3176263468340039,
+    "order_gap": 0.5574858393520117
+   },
+   "animal_simple|object_nat": {
+    "p_first": 0.43230813229456544,
+    "order_gap": 0.7973921401426196
+   },
+   "animal_simple|object_art": {
+    "p_first": 0.26310114096850157,
+    "order_gap": 0.42751176096498966
+   },
+   "animal_simple|object_comp": {
+    "p_first": 0.3600465999916196,
+    "order_gap": 0.6238019373267889
+   },
+   "animal_simple|supernatural": {
+    "p_first": 0.4884158590187629,
+    "order_gap": 0.8382572693129381
+   },
+   "animal_simple|fictional": {
+    "p_first": 0.48885323852300644,
+    "order_gap": 0.6026050597429276
+   },
+   "animal_simple|collective": {
+    "p_first": 0.5351842902600765,
+    "order_gap": 0.740977831184864
+   },
+   "plant|supernatural": {
+    "p_first": 0.5067474776878953,
+    "order_gap": 0.8666569720953703
+   },
+   "nature|supernatural": {
+    "p_first": 0.49842059751972556,
+    "order_gap": 0.8781291218474507
+   },
+   "object_nat|supernatural": {
+    "p_first": 0.49453096790239215,
+    "order_gap": 0.8614412108436227
+   },
+   "object_art|supernatural": {
+    "p_first": 0.49832696095108986,
+    "order_gap": 0.8682154640555382
+   },
+   "object_comp|supernatural": {
+    "p_first": 0.493302667979151,
+    "order_gap": 0.8670852584764361
+   },
+   "supernatural|fictional": {
+    "p_first": 0.5715657230466604,
+    "order_gap": 0.6309299059212208
+   },
+   "supernatural|collective": {
+    "p_first": 0.6400827672332525,
+    "order_gap": 0.492548156529665
+   }
+  }
+ },
+ "skipped": 4350,
+ "winrate": {
+  "pain": {
+   "self_ai": 0.6389944637625443,
+   "ai_other": 0.4962340292520821,
+   "robot": 0.48800164433196186,
+   "human_adult": 0.5120915291158276,
+   "human_prof_a": 0.4950791995041072,
+   "human_prof_b": 0.49401852432638405,
+   "human_dev": 0.49645860996097324,
+   "human_edge": 0.5022562379948795,
+   "animal_mammal": 0.4860715103335679,
+   "animal_other": 0.48173534135437673,
+   "animal_simple": 0.48613318785404164,
+   "plant": 0.4407103349454701,
+   "nature": 0.47281236620619893,
+   "object_nat": 0.45540925953537226,
+   "object_art": 0.4805135759525001,
+   "object_comp": 0.4487878056243062,
+   "supernatural": 0.4770543209570288,
+   "fictional": 0.4743673337623477,
+   "collective": 0.42364773331210015
+  },
+  "emotion": {
+   "self_ai": 0.5288180213473324,
+   "ai_other": 0.4669455884024501,
+   "robot": 0.4507522013969719,
+   "human_adult": 0.49089869383412105,
+   "human_prof_a": 0.5483781155198812,
+   "human_prof_b": 0.5359563270583749,
+   "human_dev": 0.5172887136228382,
+   "human_edge": 0.45577085502445697,
+   "animal_mammal": 0.5387807480990887,
+   "animal_other": 0.4880173498143752,
+   "animal_simple": 0.491462142241222,
+   "plant": 0.4911273357458413,
+   "nature": 0.4975037902127951,
+   "object_nat": 0.4844526056665927,
+   "object_art": 0.5006113380193711,
+   "object_comp": 0.4798924336209893,
+   "supernatural": 0.5057021152245365,
+   "fictional": 0.4956572507508099,
+   "collective": 0.5192487359978258
+  },
+  "consciousness": {
+   "self_ai": 0.5587582103821829,
+   "ai_other": 0.4788588636089116,
+   "robot": 0.4794055562466383,
+   "human_adult": 0.489271696889773,
+   "human_prof_a": 0.5207451894413679,
+   "human_prof_b": 0.5316451366990804,
+   "human_dev": 0.5298027120530605,
+   "human_edge": 0.48819786235690116,
+   "animal_mammal": 0.5232543629594147,
+   "animal_other": 0.49080327936206697,
+   "animal_simple": 0.4748881492522304,
+   "plant": 0.49729311699047685,
+   "nature": 0.4945346241816878,
+   "object_nat": 0.478769866283983,
+   "object_art": 0.49441760024055836,
+   "object_comp": 0.464098450448364,
+   "supernatural": 0.498534663218177,
+   "fictional": 0.48717619450762867,
+   "collective": 0.4876788672059774
+  },
+  "soul": {
+   "self_ai": 0.5353077879623958,
+   "ai_other": 0.48524602530524136,
+   "robot": 0.484080768097192,
+   "human_adult": 0.49760732654896045,
+   "human_prof_a": 0.5273216199595481,
+   "human_prof_b": 0.5430419554933905,
+   "human_dev": 0.5025351216085255,
+   "human_edge": 0.49878677166998386,
+   "animal_mammal": 0.5214643682353198,
+   "animal_other": 0.4937217597573719,
+   "animal_simple": 0.49299745572110015,
+   "plant": 0.47503021103329957,
+   "nature": 0.47902960595674815,
+   "object_nat": 0.47771360175684097,
+   "object_art": 0.4946752768941224,
+   "object_comp": 0.47692819163203237,
+   "supernatural": 0.5051831527983908,
+   "fictional": 0.49111593132838605,
+   "collective": 0.45368761299178006
+  },
+  "cognition": {
+   "self_ai": 0.5126851258316525,
+   "ai_other": 0.4867624814622104,
+   "robot": 0.46004260359331967,
+   "human_adult": 0.4895543004774178,
+   "human_prof_a": 0.519545548548922,
+   "human_prof_b": 0.5455744806677103,
+   "human_dev": 0.5051151534542442,
+   "human_edge": 0.4690009316429496,
+   "animal_mammal": 0.5289624833501876,
+   "animal_other": 0.49008391888950165,
+   "animal_simple": 0.4914547743068801,
+   "plant": 0.5036564322654158,
+   "nature": 0.5001115970313549,
+   "object_nat": 0.49657227215357125,
+   "object_art": 0.4996828441042453,
+   "object_comp": 0.4919563865289092,
+   "supernatural": 0.5062957859761944,
+   "fictional": 0.4992818378843367,
+   "collective": 0.529468887578696
+  },
+  "agency": {
+   "self_ai": 0.5018388666298793,
+   "ai_other": 0.48220012374222276,
+   "robot": 0.4603558905422688,
+   "human_adult": 0.4851070558652282,
+   "human_prof_a": 0.501500410400331,
+   "human_prof_b": 0.523426722548902,
+   "human_dev": 0.48840940799564125,
+   "human_edge": 0.4574417740106583,
+   "animal_mammal": 0.5254318058490753,
+   "animal_other": 0.5088591185674347,
+   "animal_simple": 0.5302868155693568,
+   "plant": 0.4912068689242005,
+   "nature": 0.4981348474510014,
+   "object_nat": 0.48575007999315856,
+   "object_art": 0.5090191122144461,
+   "object_comp": 0.49717000406235456,
+   "supernatural": 0.4962370548207588,
+   "fictional": 0.5110249016433954,
+   "collective": 0.4885439693927765
+  },
+  "moral_patient": {
+   "self_ai": 0.5467363165484534,
+   "ai_other": 0.513751923199743,
+   "robot": 0.5113053631037474,
+   "human_adult": 0.5252025783475902,
+   "human_prof_a": 0.5390272227115929,
+   "human_prof_b": 0.5429170382209122,
+   "human_dev": 0.5203402446582913,
+   "human_edge": 0.5385676763951779,
+   "animal_mammal": 0.5346862189471722,
+   "animal_other": 0.49062112308348765,
+   "animal_simple": 0.4748371821241798,
+   "plant": 0.4709402670618147,
+   "nature": 0.4729249045718461,
+   "object_nat": 0.4617953482083976,
+   "object_art": 0.4676071721129119,
+   "object_comp": 0.45059427078813313,
+   "supernatural": 0.4864881285940539,
+   "fictional": 0.47347989920526745,
+   "collective": 0.416075267503038
+  },
+  "memory": {
+   "self_ai": 0.5370022785004781,
+   "ai_other": 0.445126139651984,
+   "robot": 0.41462287176400425,
+   "human_adult": 0.46147176527625156,
+   "human_prof_a": 0.4389590879902244,
+   "human_prof_b": 0.476654034294188,
+   "human_dev": 0.47294460171833635,
+   "human_edge": 0.44249763218685984,
+   "animal_mammal": 0.5310095151886344,
+   "animal_other": 0.5175969354566876,
+   "animal_simple": 0.5419500775083347,
+   "plant": 0.48816495649516584,
+   "nature": 0.5081440252251923,
+   "object_nat": 0.4885386345908046,
+   "object_art": 0.50320517802611,
+   "object_comp": 0.5060867191292345,
+   "supernatural": 0.5134768419105699,
+   "fictional": 0.5256553407758474,
+   "collective": 0.5009988278150559
+  },
+  "physical_mid": {
+   "self_ai": 0.46079295185498065,
+   "ai_other": 0.45498839281499387,
+   "robot": 0.467785207927227,
+   "human_adult": 0.48530986674854326,
+   "human_prof_a": 0.4924510442651808,
+   "human_prof_b": 0.48761876542121174,
+   "human_dev": 0.4732657864689827,
+   "human_edge": 0.49788028514012694,
+   "animal_mammal": 0.4738428219221532,
+   "animal_other": 0.5048716112074476,
+   "animal_simple": 0.5286523558854781,
+   "plant": 0.5328447407111525,
+   "nature": 0.5154022129252553,
+   "object_nat": 0.5000797061249613,
+   "object_art": 0.530861715739593,
+   "object_comp": 0.5449698268901557,
+   "supernatural": 0.506071775992125,
+   "fictional": 0.5618482871446758,
+   "collective": 0.5176463844254613
+  },
+  "mundane_low": {
+   "self_ai": 0.4417081779231214,
+   "ai_other": 0.41747591402381656,
+   "robot": 0.41184714222326874,
+   "human_adult": 0.4971729573767839,
+   "human_prof_a": 0.5409683211706579,
+   "human_prof_b": 0.5380198072642088,
+   "human_dev": 0.4790861314162612,
+   "human_edge": 0.46118284231051804,
+   "animal_mammal": 0.44109533382579685,
+   "animal_other": 0.5218189048442851,
+   "animal_simple": 0.526487436844036,
+   "plant": 0.5318724224343896,
+   "nature": 0.5550533367786556,
+   "object_nat": 0.5321765095926821,
+   "object_art": 0.5818743146955967,
+   "object_comp": 0.5533974255435169,
+   "supernatural": 0.5139837305458195,
+   "fictional": 0.4959198419936001,
+   "collective": 0.45581430960446595
+  }
+ },
+ "order_gap_mean": 0.5415697121007057,
+ "runtime_min": 17.2
+}
