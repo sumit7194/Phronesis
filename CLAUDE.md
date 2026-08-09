@@ -15,6 +15,10 @@ If the user asks about publishing, engage fully. Otherwise it is noise, and it d
 choose to work on. A result that is already in the literature is still worth knowing *for
 ourselves* — replicating a known effect on our own hardware teaches us the method and the model.
 
+**Prior-art checks are PERIODIC, not one-off (user directive 2026-08-09).** Re-check whenever a
+claim changes materially — not just at prereg. Each round so far has retired one overclaim and
+protected another, for about ten minutes of searching. Log outcomes in the arc's lit-check doc.
+
 **Prior-art checks are still worth doing** — but the reason is **resource protection and
 context**, not novelty scoring. Knowing that Gray & Wegner (2007) already mapped mind perception
 makes our data *more* interpretable, not less valuable. Prior work is a collaborator, not a gate.

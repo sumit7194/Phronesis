@@ -78,3 +78,41 @@ Verified from the full text (not the abstract):
 - Kim et al., arXiv 2607.28607 — https://arxiv.org/abs/2607.28607
 - Attributing Mind to LLMs — https://link.springer.com/article/10.1007/s12369-025-01337-z
 - Perceptions of Mind and Morality Across AIs — https://arxiv.org/pdf/2502.18683
+
+---
+
+# Round 2 lit-check — 2026-08-09 (periodic, at user's standing request)
+Done after the claims changed substantially. **This is now a recurring obligation, not a one-off.**
+
+## Already published — do NOT claim as ours
+- **Base vs instruct on mind attribution.** Kim et al. 2607.28607 do this (Llama-3-8B, Gemma-2-2B/9B).
+  Our Qwen base-vs-instruct is a **cross-family replication of their design**, not a new design.
+- **Entity-class breakdown.** They report safety-ablation coefficients per class: chatbots β=2.28,
+  robots 2.13, non-animal natural 2.32, animals 1.62, **humans only 0.738 (p=.050)**.
+  → **This is our F-T4 pattern from the opposite direction.** They remove safety and everything
+  low-mind rises while humans barely move; we watched post-training add it and everything low-mind
+  fall while humans stay flat. **"Reframing the entanglement claim" was too strong and is
+  downgraded.** What survives as ours: the Qwen family, the observation that the *self* is
+  suppressed **less** than plants/rocks, and that the two Qwen generations moved the boundary in
+  **opposite directions** — the last of which does bear on their framing, since it shows the
+  direction is not intrinsic to safety tuning.
+- **New paper we had not seen:** [Theory of Mind and Self-Attributions of Mentality are Dissociable
+  in LLMs](https://arxiv.org/html/2603.28925) — reports an "AI-centric bias": models over-attribute
+  mind to technological artefacts and under-attribute to non-human animals. Adjacent to our
+  self-vs-ai_other results. Read before any writeup.
+
+## NOT covered — still ours
+- **Moral patiency.** Verified from the full text: the paper "focuses exclusively on mental state
+  attribution... does not separately examine moral patiency or moral status." Our capacity-loss
+  manipulation (`human_edge`) and the finding that moral standing survives when every capacity is
+  gone have no counterpart there. **This is the strongest surviving claim and it is uncovered.**
+- **Speaker framing.** "Does not examine chat templates, speaker framing effects, or whether
+  first-person language triggers human-like readings." F-R (bare-text "I" reads as a human) and the
+  speaker-frame test are uncovered.
+
+Both survivors came from the user's suggestions — the expanded entity bank that added `human_edge`,
+and the speaker-frame test.
+
+## Standing rule
+Re-run a check **whenever a claim changes materially**, not only at prereg. Two rounds so far have
+each retired something and protected something; the cost is ~10 minutes.
