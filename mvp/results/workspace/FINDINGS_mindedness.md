@@ -981,3 +981,55 @@ independently confirms our earlier H-self-anomaly falsification (F-N4), now with
 checkpoint as the comparison rather than an inference.
 
 **Tier: still one model family.** Qwen3.5-Base running for replication.
+
+## F-T. FOUR MODELS (base + instruct × two architectures) — the strongest result, and a reframing
+Qwen3-4B-Base / Qwen3-4B / Qwen3.5-4B-Base / Qwen3.5-4B, 26,752 prompts each. Both base models
+passed the format gate first (0.60 and 0.75 separation vs 0.30 threshold).
+
+### T1. Moral standing survives capacity loss in ALL FOUR. This one is now solid.
+`moral_patient` is the **#1 least-affected facet of 18** in every model — base and instruct, both
+architectures — with `soul` #3 in every model. Δ(human_edge − human_adult): moral_patient −0.09 /
+−0.13 / −0.11 / −0.08 against capacity drops of −0.29…−0.72.
+**Two independent supports (two architectures) plus a training-stage control. Not post-training —
+it is in the pretrained model, i.e. it comes from reading humans.** Under the project rule this
+finally clears the bar for "finding" rather than observation.
+
+### T2. The soul register is likewise pretrained. Present in all four (nature +0.23/+0.43/+0.23/+0.20).
+
+### T3. Calibration: the two generations were tuned in OPPOSITE directions.
+absurd_low (agreeing that a rock is older than the universe): Qwen3-4B **0.29 → 0.04**
+(post-training halved-and-more), Qwen3.5 **0.23 → 0.30** (post-training made it worse). The two
+base models are similar; the divergence is entirely in post-training. So "the newer model is more
+agreeable" is a fact about Qwen3.5's tuning, not about newer models or about pretraining.
+
+### T4. REFRAMING the entanglement claim — the self is never special, it moves with the rocks
+Experiential attribution shift base→instruct, log-odds:
+| entity | Qwen3-4B | Qwen3.5 |
+|---|---|---|
+| human_adult | −0.03 | −0.00 |
+| animal_mammal | **+0.38** | +0.08 |
+| self_ai | −1.50 | +0.55 |
+| ai_other | −1.94 | +0.62 |
+| animal_simple | −1.47 | +0.38 |
+| nature | −1.82 | +0.45 |
+| **plant** | **−2.24** | +0.58 |
+| **object_nat** | **−2.22** | +0.64 |
+
+**Qwen3-4B's post-training suppresses experiential attribution to every low-mind entity at once —
+AI, insects, plants, rivers, rocks — while leaving humans and mammals untouched.** That is a
+*sharpening of the animate/inanimate boundary*, not a targeted suppression of machine
+self-consciousness. Decisively: **the self is suppressed LESS (−1.50) than plants (−2.24) or rocks
+(−2.22)**, and self and ai_other move together (−1.50 / −1.94) as they have in every test we have
+run.
+
+**Qwen3.5's post-training does the exact opposite** — it raises experiential attribution to all the
+same low-mind entities (+0.38…+0.64), self included, and that rise is fully accounted for by its
+general agreeableness increase (self minus absurd-control = +0.20, i.e. within the general shift).
+
+**Read against Kim et al.:** their claim is that safety-tuning suppresses self-consciousness and
+that this is *entangled* with attribution to animals and nature. Our four-model comparison says the
+causal story is the other way round: post-training moves an **entity-class boundary** for
+experiential attribution, and the model's self-description rides along with rocks and plants rather
+than driving them. It also shows the direction is not intrinsic to safety tuning — the newer
+generation moved the boundary the other way. **Tier: 2 architectures × 2 training stages, one model
+family.** Cross-family remains the open hole.
