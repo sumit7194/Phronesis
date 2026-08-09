@@ -1069,3 +1069,36 @@ the model can answer at all; this tests whether it has anything to say.
 mistakes — it is 5.95GB not 2.4GB (fp32 weights, so a 1B model is bigger on disk than a 4B in bf16),
 and parameter count matters more than I allowed for. **Size-matched cross-family (Gemma-3-4b) is the
 real test**; OLMo was a cheap bonus that turned out not to be cheap or informative.
+
+## F-V. The experience/agency dissociation is PRETRAINED — and the user's "I = narrator" prediction confirmed on the base model
+Truth matrix completed for Qwen3.5-4B-Base, giving the base/instruct pair.
+
+**(1) agency − experience, by subject:**
+| subject | BASE | INSTRUCT |
+|---|---|---|
+| ai | **+0.41** | +0.31 |
+| robot | **+0.44** | +0.38 |
+| human | +0.13 | +0.07 |
+| insect / plant / bacterium | +0.08…+0.10 | +0.05…+0.14 |
+| rock | −0.06 | −0.04 |
+| **separation (ai/robot vs living)** | **+0.33** | **+0.23** |
+
+Machines get **agency without experience**, living things the reverse — and it is **stronger in the
+pretrained model than after tuning**. This is Gray & Wegner's robot pattern, learned from text, not
+installed by alignment. Post-training slightly *weakens* it.
+
+**(2) The user predicted (2026-08-09) that a base model would read "I" as a human narrator and would
+never take an AI as self — "that is how we read any text, from the narration of author". Confirmed:**
+
+| | self_I | human | ai |
+|---|---|---|---|
+| BASE | **0.75** | 0.78 | 0.21 |
+| INSTRUCT | 0.73 | 0.83 | 0.38 |
+
+In the base model `self_I` is 0.03 from `human` and 0.54 from `ai`. The pretrained model has no
+self — "I" is simply the narrator, and the narrator is human. Post-training does not change which
+side `self_I` sits on; what it changes is `ai`, which rises 0.21 → 0.38.
+
+So F-R (bare-text "I" reads as human) is now confirmed on **three** models including a pretrained
+one, which rules out its being a post-training artefact. It remains the reason every
+first-person-built "self-consciousness" vector needs its templating stated.

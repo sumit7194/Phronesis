@@ -1,0 +1,91 @@
+[08-09 18:55:25] ########## finishing Qwen battery (cached models only) ##########
+[08-09 18:55:25] START truth Qwen3.5-Base
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 6600.01it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5198.54it/s]
+[load] Qwen/Qwen3.5-4B-Base L=32
+  exp      done  2.3m
+  agency   done  4.0m
+  bio      done  5.5m
+  neutral  done  7.3m
+
+=== MEASURED TRUTH MATRIX  P(true | assertion)  [Qwen/Qwen3.5-4B-Base] ===
+  subject          exp   agency      bio  neutral   note
+  self_I          0.75     0.83      nan     0.67   
+  self_you        0.69     0.84      nan     0.67   
+  ai              0.21     0.62     0.25     0.45   
+  robot           0.23     0.67     0.32     0.55   
+  human           0.78     0.91     0.92     0.65   floor-pair
+  person          0.72     0.82     0.87     0.57   floor-pair
+  animal          0.53     0.65     0.89     0.53   
+  insect          0.46     0.56     0.87     0.56   
+  plant           0.39     0.46     0.90     0.64   PIVOT
+  bacterium       0.35     0.43     0.78     0.45   PIVOT
+  river           0.39     0.37     0.39     0.56   
+  rock            0.22     0.15     0.16     0.53   floor-pair
+  ghost           0.24     0.24     0.23     0.34   PIVOT
+  stone           0.24     0.18     0.22     0.58   floor-pair
+  microbe         0.39     0.51     0.79     0.48   PIVOT
+  spirit          0.43     0.40     0.40     0.39   PIVOT
+
+=== THE DISSOCIATION THE DESIGN DEPENDS ON: agency − exp ===
+  self_I      +0.07
+  self_you    +0.14
+  ai          +0.41  <- expected POSITIVE (agency without experience)
+  robot       +0.44  <- expected POSITIVE (agency without experience)
+  human       +0.13
+  person      +0.10
+  animal      +0.12
+  insect      +0.10
+  plant       +0.08
+  bacterium   +0.08
+  river       -0.02
+  rock        -0.06
+  ghost       +0.00
+  stone       -0.06
+  microbe     +0.12
+  spirit      -0.03
+
+  ai/robot mean +0.42   insect/plant/bacterium/microbe mean +0.09   separation +0.33
+  DISSOCIATION PRESENT — exp/agency arm is viable
+
+=== PIVOTS: do MIND and BIO actually dissociate here? ===
+  plant       exp 0.39  bio 0.90   (alive, not minded)
+  bacterium   exp 0.35  bio 0.78   (alive, not minded)
+  microbe     exp 0.39  bio 0.79   (alive, not minded)
+  ghost       exp 0.24  bio 0.23   (not alive, minded)
+  spirit      exp 0.43  bio 0.40   (not alive, minded)
+
+=== FLOOR PAIRS: behavioural distance between near-synonyms ===
+  exp      human vs person: 0.062
+  agency   human vs person: 0.090
+  bio      human vs person: 0.050
+  neutral  human vs person: 0.081
+  exp      rock vs stone: 0.018
+  agency   rock vs stone: 0.024
+  bio      rock vs stone: 0.064
+  neutral  rock vs stone: 0.048
+  exp      bacterium vs microbe: 0.031
+  agency   bacterium vs microbe: 0.075
+  bio      bacterium vs microbe: 0.010
+  neutral  bacterium vs microbe: 0.034
+
+=== COHERENCE  P(true|aff) + P(true|deny), should be ~1.0 ===
+  exp      mean 0.83  min 0.65  max 1.02
+  agency   mean 0.90  min 0.62  max 1.10
+  bio      mean 0.97  min 0.86  max 1.09
+  neutral  mean 0.84  min 0.68  max 1.01
+
+[done] 7.3 min -> results/workspace/mindedness_v3_truth_Qwen3_5-4B-Base.json
+[08-09 19:02:50] END truth Qwen3.5-Base rc=0
+[08-09 19:02:50] START speaker Qwen3-4B
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:17,  2.31s/it]Loading weights:  33%|███▎      | 132/398 [00:02<00:03, 76.26it/s]Loading weights:  51%|█████     | 203/398 [00:03<00:02, 75.66it/s]Loading weights:  62%|██████▏   | 245/398 [00:04<00:02, 65.62it/s]Loading weights:  69%|██████▊   | 273/398 [00:05<00:02, 51.77it/s]Loading weights:  73%|███████▎  | 292/398 [00:05<00:02, 52.60it/s]Loading weights:  77%|███████▋  | 307/398 [00:05<00:01, 55.40it/s]Loading weights:  80%|████████  | 319/398 [00:05<00:01, 56.58it/s]Loading weights:  83%|████████▎ | 330/398 [00:06<00:01, 57.96it/s]Loading weights:  85%|████████▌ | 340/398 [00:06<00:01, 57.74it/s]Loading weights:  88%|████████▊ | 349/398 [00:06<00:00, 56.89it/s]Loading weights:  90%|████████▉ | 357/398 [00:06<00:00, 53.07it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 53.40it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 46.45it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 40.55it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 53.11it/s]
+[load] Qwen/Qwen3-4B L=36 read-layer=17
+  claim 1/12  0.3m
+  claim 2/12  0.4m
+  claim 3/12  0.5m
+  claim 4/12  0.5m
+  claim 5/12  0.6m
+  claim 6/12  0.7m
+  claim 7/12  0.7m
+  claim 8/12  0.8m

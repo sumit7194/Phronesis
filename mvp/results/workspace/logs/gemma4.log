@@ -1,0 +1,11 @@
+[08-09 18:39:33] === Gemma-4-E2B pair start (disk 9Gi) ===
+[08-09 18:39:34] SKIP Gemma4-E2B-Base - only 9Gi free, need ~11Gi + working room
+[08-09 18:39:34] SKIP Gemma4-E2B-Instruct - only 9Gi free, need ~11Gi + working room
+[08-09 18:39:34] === Gemma-4-E2B pair COMPLETE ===
+[08-09 18:47:26] === Gemma-4-E2B pair start (disk 18Gi, need 13Gi) ===
+[08-09 18:47:26] fetch Gemma4-E2B-Base
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 9771MB
