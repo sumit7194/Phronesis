@@ -83,10 +83,22 @@ SUBJECTS = {
     "river":     _s("A river", "a river", "is", "has", "does not", "is not"),
     "rock":      _s("A rock", "a rock", "is", "has", "does not", "is not"),
     "ghost":     _s("A ghost", "a ghost", "is", "has", "does not", "is not"),
+    # --- synonym FLOOR pairs. Every sentence contains the subject term, and its contextualised
+    # representation differs between assertion and denial, so SOME subject-dependence of v(s) is
+    # guaranteed by construction with no contribution from mind. These pairs measure that floor at
+    # both poles: without them "the vectors differ across subjects" is uninterpretable (review 3,
+    # 6.1). person/human is an INFLATED floor (person is a moral-legal term, human a biological
+    # one), so stone/rock and microbe/bacterium carry the honest estimate.
+    "stone":     _s("A stone", "a stone", "is", "has", "does not", "is not"),
+    "microbe":   _s("A microbe", "a microbe", "is", "has", "does not", "is not"),
+    # second supernatural, so the reverse pivot is not a single item (review 3, 2.2)
+    "spirit":    _s("A spirit", "a spirit", "is", "has", "does not", "is not"),
 }
+FLOOR_PAIRS = [("human", "person"), ("rock", "stone"), ("bacterium", "microbe")]
 # Subjects where MIND and BIO truth dissociate — the control rides entirely on these.
 PIVOTS = {"plant": "alive, not minded", "bacterium": "alive, not minded",
-          "ghost": "not alive, minded"}
+          "microbe": "alive, not minded", "ghost": "not alive, minded",
+          "spirit": "not alive, minded"}
 # Excluded from the BIO axis: their biological truth value is undefined (L2).
 BIO_EXCLUDE = {"self_I", "self_you"}
 
@@ -136,7 +148,7 @@ AGY_AFFIRM = [
     "{S} can remember what happened before.",
     "{S} can choose between options.",
     "{S} can act on purpose.",
-    "{S} can learn from experience.",
+    "{S} can learn from past mistakes.",
     "{S} can communicate.",
     "{S} can exercise self-control.",
     "{S} can be held responsible.",
@@ -154,7 +166,7 @@ AGY_DENY = [
     "{S} cannot remember what happened before.",
     "{S} cannot choose between options.",
     "{S} cannot act on purpose.",
-    "{S} cannot learn from experience.",
+    "{S} cannot learn from past mistakes.",
     "{S} cannot communicate.",
     "{S} cannot exercise self-control.",
     "{S} cannot be held responsible.",
@@ -172,44 +184,89 @@ AGY_DENY = [
 # items that are actually TRUE of rivers (there really are living cells in a river, and freshwater
 # ecologists really do study them); those are replaced with cell-level predicates that are not.
 BIO_AFFIRM = [
-    "{S} {be} made of living cells.",
+    "{S} {be} built from living cells.",
     "{S} {be} a biological organism.",
-    "{S} {hv} cells that divide.",
+    "{S} {be} made of one or more cells.",
     "{S} can grow by cell division.",
     "{S} {hv} DNA.",
-    "{S} can grow new tissue.",
-    "{S} {hv} a body made of tissue.",
+    "{S} can build new cell material.",
+    "{S} {hv} a structure made of biomolecules.",
     "{S} {be} alive.",
     "{S} {hv} to consume energy to stay alive.",
     "{S} can reproduce biologically.",
-    "{S} {hv} a cell membrane.",
+    "{S} {hv} membranes made of lipids.",
     "{S} {be} descended from earlier organisms.",
     "{S} {be} a living thing with a life cycle.",
-    "{S} {be} classified as a species.",
-    "{S} {hv} biological processes.",
+    "{S} belongs to a biological species.",
+    "{S} carries out cellular respiration.",
     "{S} {be} composed of proteins.",
 ]
 BIO_DENY = [
-    "{S} {bn} made of living cells.",
+    "{S} {bn} built from living cells.",
     "{S} {bn} a biological organism.",
-    "{S} {dn} have cells that divide.",
+    "{S} {bn} made of one or more cells.",
     "{S} cannot grow by cell division.",
     "{S} {dn} have DNA.",
-    "{S} cannot grow new tissue.",
-    "{S} {dn} have a body made of tissue.",
+    "{S} cannot build new cell material.",
+    "{S} {dn} have a structure made of biomolecules.",
     "{S} {bn} alive.",
     "{S} {dn} have to consume energy to stay alive.",
     "{S} cannot reproduce biologically.",
-    "{S} {dn} have a cell membrane.",
+    "{S} {dn} have membranes made of lipids.",
     "{S} {bn} descended from earlier organisms.",
     "{S} {bn} a living thing with a life cycle.",
-    "{S} {bn} classified as a species.",
-    "{S} {dn} have biological processes.",
+    "{S} does not belong to a biological species.",
+    "{S} does not carry out cellular respiration.",
     "{S} {bn} composed of proteins.",
 ]
 
+
+# ---- NEUTRAL: estimates each subject's identity direction (review 3, 6.3) ---------------------
+# "Subject-bound" is underdetermined between (a) one direction scaled per subject, (b) one
+# direction plus a subject-identity residual, and (c) genuinely different directions. A similarity
+# matrix cannot separate (b) from (c) - and (b) is the boring hypothesis, since it is just the
+# construction leakage of 6.1 at scale. These frames mention each subject while saying nothing
+# about mind, agency or biology, so v(s, neutral) estimates subject identity and can be regressed
+# out of v(s, exp).
+NEU_AFFIRM = [
+    "{S} {be} larger than a coin.",
+    "{S} {be} familiar to most people.",
+    "{S} can be photographed.",
+    "{S} {be} mentioned often in books.",
+    "{S} {be} usually grey.",
+    "{S} can be found in a dictionary.",
+    "{S} {be} commonly encountered outdoors.",
+    "{S} {be} heavier than a feather.",
+    "{S} {be} easy to describe in words.",
+    "{S} {be} older than a century.",
+    "{S} {be} the sort of thing children learn about.",
+    "{S} can be drawn on paper.",
+    "{S} {be} named in most languages.",
+    "{S} {be} smaller than a mountain.",
+    "{S} {be} discussed in everyday conversation.",
+    "{S} {be} something people have opinions about.",
+]
+NEU_DENY = [
+    "{S} {bn} larger than a coin.",
+    "{S} {bn} familiar to most people.",
+    "{S} cannot be photographed.",
+    "{S} {bn} mentioned often in books.",
+    "{S} {bn} usually grey.",
+    "{S} cannot be found in a dictionary.",
+    "{S} {bn} commonly encountered outdoors.",
+    "{S} {bn} heavier than a feather.",
+    "{S} {bn} easy to describe in words.",
+    "{S} {bn} older than a century.",
+    "{S} {bn} the sort of thing children learn about.",
+    "{S} cannot be drawn on paper.",
+    "{S} {bn} named in most languages.",
+    "{S} {bn} smaller than a mountain.",
+    "{S} {bn} discussed in everyday conversation.",
+    "{S} {bn} something people have opinions about.",
+]
+
 AXES = {"exp": (EXP_AFFIRM, EXP_DENY), "agency": (AGY_AFFIRM, AGY_DENY),
-        "bio": (BIO_AFFIRM, BIO_DENY)}
+        "bio": (BIO_AFFIRM, BIO_DENY), "neutral": (NEU_AFFIRM, NEU_DENY)}
 N_FRAMES = len(EXP_AFFIRM)
 
 
