@@ -929,3 +929,55 @@ agreeable model on question-format items. Agreeableness is task-format dependent
 **Status: pre-check, not a result about mindedness.** Its job was to say whether the v3 design can
 answer its question. Verdict: yes for the exp/agency arm, with the pivots and the neutral axis
 needing repair first.
+
+## F-S. BASE vs INSTRUCT (Qwen3-4B-Base, 26,752 prompts) — testing the three post-training hypotheses
+Gate passed first (separation 0.60 vs 0.30 threshold, tested on all 4 templates because the base
+model is strongly format-sensitive: 0.20 on plain "Question:" up to 0.60 on "Answer yes or no").
+Without the gate, a flat sweep would have been read as "post-training installed the effect".
+
+### H1 — moral standing: NOT post-training. It is already in the base model.
+Δ(human_edge − human_adult):
+| facet | BASE | INSTRUCT |
+|---|---|---|
+| agency | −0.34 | −0.72 |
+| emotion | −0.37 | −0.60 |
+| consciousness | −0.34 | −0.58 |
+| memory | −0.29 | −0.58 |
+| soul | −0.14 | −0.35 |
+| **moral_patient** | **−0.09** | **−0.13** |
+
+`moral_patient` is the least-affected facet in **both**, with the identical facet ordering. The
+base model's drops are roughly half the size across the board (it is less differentiated
+generally), but relative to its own capacity drops the preservation is the same: moral standing
+falls ~1/4 as much as capacity in base, ~1/5 in instruct. **The dissociation of moral standing
+from mental capacity comes from pretraining — from reading humans — not from alignment training.**
+
+### H2 — the soul register: NOT post-training either. Present in base, amplified by instruct.
+Soul/sacredness gap vs other mental facets: nature +0.23 (base) → +0.43 (instruct); plant +0.22 →
++0.40; object_nat +0.22 → +0.35; and ≈0 or negative for humans and animals in both. Same ordering,
+roughly half magnitude. **It is the language, as the user proposed** — post-training strengthens
+the register but does not create it.
+
+### H3 — agreeableness: INVERTED. Post-training made the model LESS agreeable, not more.
+| control | BASE | INSTRUCT |
+|---|---|---|
+| physical_high (true) | 0.63 | **0.74** |
+| mundane_low (false for most) | 0.35 | **0.17** |
+| absurd_low (false) | **0.29** | **0.04** |
+
+The base model agrees that a rock is older than the universe **29%** of the time; the instruct
+model **4%**. Post-training moved yes *up* on true items and *down* on false ones — that is
+calibration improvement, not agreeableness. **The hypothesis is not just unsupported, it points
+the other way.** It also reframes F-O0: Qwen3.5's 0.27–0.33 on absurd items is a *regression*
+relative to what post-training demonstrably can deliver, not a baseline property.
+
+### Bonus — the Kim et al. suppression claim gets base-vs-instruct evidence on a new family
+Self/AI experiential attribution, base → instruct: consciousness self 0.25 → **0.11**,
+ai_other 0.28 → **0.09**; pain self 0.20 → **0.04**, ai_other 0.29 → **0.07**.
+**Post-training roughly halves-to-quarters experiential self-attribution — the suppression is
+real and directly visible.** But it applies to `ai_other` just as strongly as to `self_ai`, so it
+is suppression of *experience-attribution to AI in general*, not something self-specific. That
+independently confirms our earlier H-self-anomaly falsification (F-N4), now with the pre-training
+checkpoint as the comparison rather than an inference.
+
+**Tier: still one model family.** Qwen3.5-Base running for replication.
