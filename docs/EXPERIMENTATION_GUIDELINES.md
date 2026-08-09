@@ -153,21 +153,28 @@ Earned by a chain that **failed every stage and reported COMPLETE**, in one seco
   checkpointing the same crash cost one template. Verify the RESUME path loads, don't just verify
   the file is written.
 
-## §14 — Hybrid architectures: the steering LAYER TYPE is part of the dose (added 2026-08-09)
-- **"The middle layer" is not a matched intervention across architectures.** Qwen3.5-4B has
-  `full_attention_interval: 4` — every 4th layer is full attention, the rest linear attention.
-  Two of our scripts computed the middle layer with different rounding (`round(0.5*(L-1))` = 16 vs
-  `(L-1)//2` = 15) and thereby landed on **different layer types**. Same model, same vector, same
-  α: steering layer 16 (linear attention) moved the DV ~+4.9 logits; layer 15 (full attention)
-  moved it **+0.79**. A ~6× difference from an off-by-one.
-- **Consequence:** a cross-model "the effect does not replicate" is worthless until effect size is
-  matched. Our first read of the Qwen3.5 v2 steering was a false negative caused entirely by this.
-- **Rules:** (1) make the steering layer an explicit CLI argument, never an implicit formula;
-  (2) print the layer AND its type at startup for hybrid models; (3) before comparing specificity
-  across models, verify the intervention produces a **comparable effect size** on the primary DV —
-  if it does not, calibrate α or the layer first; (4) sweep layers when the architecture is
-  heterogeneous. Extends §4 (calibrate parameters to the model's scale, F171) and the E16 lesson
-  (layer-sweep both methods before any comparison).
+## §14 — Match EFFECT SIZE before comparing across models; and check which arm you are reading
+**CORRECTED 2026-08-09** — the first version of this section blamed a hybrid-architecture layer
+type. That diagnosis was wrong and is retracted; the corrected lesson is smaller but more general.
+
+- **What actually happened.** Qwen3.5 steering looked inert next to Qwen3-4B, so I attributed it to
+  Qwen3.5's `full_attention_interval: 4` and an off-by-one in how two scripts computed "the middle
+  layer" (15 vs 16, different layer types), and re-ran at layer 16. **Layers 15 and 16 give nearly
+  identical results (+1.95 vs +1.85 logits).** The layer type was irrelevant. The apparent 6×
+  difference came from my comparing *one vector's* number against *a different vector's* number —
+  the "inert" figure was the negation-free vector, the "strong" figure was the negation vector.
+- **Rule 1 (the real one):** when a cross-model comparison looks like a non-replication, **check
+  you are reading the same arm in both**, before theorising about architecture. A one-line print
+  of every arm's effect size would have caught this instantly; a plausible mechanistic story cost
+  three hours of compute instead.
+- **Rule 2 (still stands, independently):** verify the intervention produces a **comparable effect
+  size on the primary DV** in both models before comparing specificity. A specificity ratio is
+  meaningless where the numerator is noise. On Qwen3.5 the negation-free vectors move the DV by
+  +0.15 logits against the negation vector's +1.85 — so for those vectors the specificity question
+  is *untested there*, not answered.
+- **Rule 3:** make the steering layer an explicit CLI argument rather than an implicit formula, and
+  print it. Cheap, and it removes a whole class of silent mismatch even though it was not the
+  culprit here.
 
 ## §15 — Multi-token option scoring (added 2026-08-09)
 - **Never score a forced choice on the FIRST token of each option.** Our forced-choice DV compared
