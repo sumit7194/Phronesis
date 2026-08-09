@@ -84,16 +84,18 @@ def main():
         pi = tok(prompt, return_tensors="pt")["input_ids"].to(DEVICE)
         ci = tok(cont, add_special_tokens=False, return_tensors="pt")["input_ids"].to(DEVICE)
         ids = torch.cat([pi, ci], dim=1)
+        n_p, n_c = pi.shape[1], ci.shape[1]
         with ActivationRecorder(model.layers, at=[L - 1]) as rec:
             model.forward(ids)
-            h = rec.activations[L - 1][0].float()
-        logits = model.unembed(h).float()
-        lp = torch.log_softmax(logits, dim=-1)
-        n_p = pi.shape[1]
-        tot = 0.0
-        for k in range(ci.shape[1]):
-            tot += float(lp[n_p - 1 + k, int(ci[0, k])])
-        return tot, ci.shape[1]
+            # Unembed ONLY the positions that predict the continuation. Unembedding the whole
+            # sequence built a [45 x 248k] logit tensor per call (~45MB, doubled by log_softmax);
+            # across thousands of calls the MPS allocator grew until the swap guard killed the run
+            # at 100 minutes (2026-08-09). We need n_c positions, not all of them.
+            h = rec.activations[L - 1][0, n_p - 1: n_p - 1 + n_c].float()
+        lp = torch.log_softmax(model.unembed(h).float(), dim=-1)
+        tot = float(sum(lp[k, int(ci[0, k])] for k in range(n_c)))
+        del lp, h
+        return tot, n_c
 
     def choose(attr, A, B):
         """P(A chosen), both presentation orders averaged. Length-normalised log-prob, because
@@ -133,6 +135,10 @@ def main():
                     r = choose(attr, ea, eb)
                     n += 1
                     vals.append(r["p_A"]); gaps.append(r["order_gap"])
+            try:
+                torch.mps.empty_cache()
+            except Exception:
+                pass
             if vals:
                 res["pairs"][fac][f"{ca}|{cb}"] = {"p_first": float(np.mean(vals)),
                                                    "order_gap": float(np.mean(gaps))}

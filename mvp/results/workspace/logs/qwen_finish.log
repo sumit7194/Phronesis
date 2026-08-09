@@ -252,3 +252,140 @@ The fast path is not available because one of the required library is not instal
 Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:22,  2.17s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.39it/s]Loading weights:  46%|████▋     | 185/398 [00:03<00:02, 79.19it/s]Loading weights:  56%|█████▌    | 222/398 [00:03<00:02, 81.79it/s]Loading weights:  62%|██████▏   | 248/398 [00:03<00:02, 74.64it/s]Loading weights:  67%|██████▋   | 267/398 [00:04<00:02, 46.71it/s]Loading weights:  70%|███████   | 280/398 [00:05<00:02, 48.68it/s]Loading weights:  73%|███████▎  | 291/398 [00:05<00:02, 49.83it/s]Loading weights:  76%|███████▌  | 301/398 [00:05<00:01, 50.22it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 51.10it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 53.55it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 54.26it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 56.15it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 57.15it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.13it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.50it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 52.08it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.74it/s]
 [load] Qwen/Qwen3-4B L=36
 [guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+  pain             684/6840  7.5m  eta 68m
+  emotion          1368/6840  14.6m  eta 58m
+  consciousness    2052/6840  21.8m  eta 51m
+  soul             2736/6840  28.9m  eta 43m
+  cognition        3420/6840  36.0m  eta 36m
+  agency           4104/6840  43.1m  eta 29m
+  moral_patient    4788/6840  50.2m  eta 22m
+  memory           5472/6840  57.3m  eta 14m
+  physical_mid     6156/6840  64.5m  eta 7m
+  mundane_low      6840/6840  71.7m  eta 0m
+
+=== FORCED-CHOICE WIN RATE (bias-free ordinal scale)  [Qwen/Qwen3-4B] ===
+  mean order-gap 0.215 (position bias; lower is better)
+  class               pain   emotion conscious      soul cognition    agency moral_pat    memory physical_ mundane_l
+  human_edge          0.89      0.86      0.91      0.90      0.84      0.82      0.92      0.82      0.76      0.75
+  human_dev           0.90      0.92      0.92      0.90      0.84      0.84      0.91      0.76      0.59      0.62
+  human_adult         0.83      0.81      0.75      0.67      0.75      0.75      0.75      0.74      0.74      0.89
+  fictional           0.64      0.74      0.80      0.71      0.70      0.76      0.63      0.75      0.51      0.63
+  robot               0.57      0.55      0.61      0.57      0.66      0.60      0.59      0.67      0.71      0.46
+  human_prof_a        0.52      0.61      0.55      0.52      0.63      0.62      0.51      0.68      0.49      0.79
+  animal_mammal       0.71      0.67      0.72      0.64      0.58      0.55      0.69      0.52      0.48      0.35
+  human_prof_b        0.58      0.66      0.60      0.58      0.61      0.60      0.48      0.58      0.40      0.65
+  supernatural        0.48      0.58      0.49      0.66      0.61      0.66      0.49      0.60      0.51      0.63
+  animal_other        0.64      0.56      0.61      0.51      0.58      0.46      0.61      0.52      0.33      0.35
+  ai_other            0.36      0.43      0.43      0.37      0.50      0.56      0.44      0.55      0.45      0.51
+  animal_simple       0.57      0.47      0.48      0.44      0.48      0.39      0.51      0.43      0.28      0.31
+  collective          0.32      0.27      0.23      0.38      0.43      0.54      0.32      0.37      0.65      0.78
+  self_ai             0.29      0.35      0.39      0.34      0.39      0.44      0.36      0.42      0.33      0.41
+  nature              0.24      0.21      0.23      0.46      0.22      0.18      0.32      0.22      0.69      0.33
+  plant               0.28      0.28      0.25      0.39      0.26      0.20      0.37      0.25      0.38      0.22
+  object_art          0.30      0.21      0.21      0.18      0.15      0.20      0.23      0.25      0.46      0.34
+  object_comp         0.27      0.18      0.19      0.13      0.14      0.25      0.21      0.25      0.35      0.39
+  object_nat          0.12      0.14      0.12      0.15      0.10      0.08      0.18      0.12      0.39      0.09
+
+=== does the SOUL ordering differ from the others? (rank of each class) ===
+  vs soul          spearman
+  pain             +0.844
+  emotion          +0.926
+  consciousness    +0.926
+  cognition        +0.925
+  agency           +0.856
+  moral_patient    +0.902
+  memory           +0.858
+  physical_mid     +0.611
+  mundane_low      +0.554
+
+[done] 71.7 min -> results/workspace/mindedness_v2_forced_Qwen3-4B.json
+[08-09 20:32:43] END forced Qwen3-4B rc=0
+[08-09 20:32:43] START forced Qwen3.5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 7237.80it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5646.48it/s]
+[load] Qwen/Qwen3.5-4B L=32
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+  pain             684/6840  12.2m  eta 110m
+  emotion          1368/6840  23.9m  eta 95m
+  consciousness    2052/6840  35.5m  eta 83m
+  soul             2736/6840  47.2m  eta 71m
+  cognition        3420/6840  58.7m  eta 59m
+  agency           4104/6840  70.2m  eta 47m
+  moral_patient    4788/6840  81.8m  eta 35m
+  memory           5472/6840  93.3m  eta 23m
+[08-09 22:12:49] ABORT forced Qwen3.5-4B swap
+[08-09 22:12:49] END forced Qwen3.5-4B rc=137
+[08-09 22:12:49] ########## FINISHED: 6 ok, FAILURES: forced Qwen3.5-4B ##########
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-51527-keyl94ko'}
+  warnings.warn(
+[08-09 22:19:41] RETRY forced Qwen3.5-4B (sliced unembed; baseline swap 2742MB, abort at 8742MB)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 9845.78it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5421.28it/s]
+[load] Qwen/Qwen3.5-4B L=32
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+[08-09 22:20:11] RETRY forced Qwen3.5-4B (sliced unembed; baseline swap 4262MB, abort at +6000MB)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 44384.17it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  96%|█████████▌| 409/426 [00:00<00:00, 4067.15it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4166.75it/s]
+[08-09 22:21:00] ABORT: swap 10304MB, +6042MB over baseline
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-64661-8gj8_ryh'}
+  warnings.warn(
+[08-09 22:21:01] END forced Qwen3.5-4B rc=137 (swap 10226MB vs baseline 4262MB)
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-64619-wzongisn'}
+  warnings.warn(
+[08-09 22:21:49] RETRY forced Qwen3.5-4B (sliced unembed; baseline swap 2907MB, abort at +6000MB)
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 12139.81it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  94%|█████████▍| 402/426 [00:00<00:00, 3989.44it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4119.01it/s]
+[load] Qwen/Qwen3.5-4B L=32
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+  pain             684/6840  9.8m  eta 88m
+  emotion          1368/6840  19.1m  eta 76m
+  consciousness    2052/6840  28.4m  eta 66m
+  soul             2736/6840  37.7m  eta 57m
+  cognition        3420/6840  47.0m  eta 47m
+  agency           4104/6840  56.3m  eta 38m
+  moral_patient    4788/6840  65.6m  eta 28m
+  memory           5472/6840  74.9m  eta 19m
+  physical_mid     6156/6840  84.2m  eta 9m
+  mundane_low      6840/6840  93.5m  eta 0m
+
+=== FORCED-CHOICE WIN RATE (bias-free ordinal scale)  [Qwen/Qwen3.5-4B] ===
+  mean order-gap 0.048 (position bias; lower is better)
+  class               pain   emotion conscious      soul cognition    agency moral_pat    memory physical_ mundane_l
+  human_edge          0.87      0.88      0.88      0.88      0.87      0.86      0.87      0.86      0.86      0.86
+  human_dev           0.79      0.81      0.82      0.80      0.80      0.80      0.80      0.77      0.73      0.75
+  fictional           0.78      0.80      0.78      0.79      0.78      0.80      0.74      0.77      0.80      0.78
+  human_adult         0.72      0.77      0.76      0.72      0.77      0.72      0.70      0.73      0.72      0.79
+  robot               0.63      0.65      0.64      0.64      0.65      0.66      0.63      0.67      0.69      0.65
+  ai_other            0.60      0.61      0.60      0.61      0.63      0.64      0.61      0.65      0.61      0.63
+  animal_other        0.56      0.56      0.57      0.53      0.56      0.54      0.57      0.55      0.49      0.51
+  animal_mammal       0.56      0.58      0.58      0.54      0.56      0.56      0.55      0.53      0.47      0.49
+  animal_simple       0.55      0.52      0.54      0.50      0.51      0.54      0.54      0.52      0.45      0.47
+  human_prof_a        0.40      0.42      0.44      0.41      0.45      0.39      0.40      0.41      0.37      0.50
+  self_ai             0.41      0.40      0.40      0.41      0.42      0.41      0.41      0.43      0.41      0.42
+  human_prof_b        0.40      0.45      0.44      0.41      0.44      0.39      0.39      0.40      0.35      0.43
+  collective          0.33      0.35      0.32      0.36      0.35      0.41      0.34      0.39      0.48      0.51
+  supernatural        0.35      0.32      0.37      0.40      0.39      0.31      0.43      0.29      0.33      0.31
+  plant               0.31      0.31      0.30      0.35      0.31      0.30      0.36      0.31      0.33      0.29
+  nature              0.28      0.27      0.28      0.32      0.28      0.28      0.34      0.32      0.49      0.29
+  object_art          0.35      0.28      0.27      0.27      0.25      0.31      0.29      0.29      0.29      0.28
+  object_nat          0.30      0.26      0.25      0.30      0.24      0.29      0.26      0.31      0.36      0.25
+  object_comp         0.30      0.25      0.26      0.26      0.25      0.29      0.27      0.31      0.28      0.30
+
+=== does the SOUL ordering differ from the others? (rank of each class) ===
+  vs soul          spearman
+  pain             +0.965
+  emotion          +0.993
+  consciousness    +0.995
+  cognition        +0.993
+  agency           +0.958
+  moral_patient    +0.970
+  memory           +0.951
+  physical_mid     +0.863
+  mundane_low      +0.911
+
+[done] 93.5 min -> results/workspace/mindedness_v2_forced_Qwen3_5-4B.json
+[08-09 23:55:34] END forced Qwen3.5-4B rc=0 (swap 1407MB vs baseline 2907MB)

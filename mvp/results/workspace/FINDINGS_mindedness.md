@@ -1153,3 +1153,41 @@ reporting above, and the script's printed verdict should not be quoted.
 
 **Present in the BASE model** (Qwen3.5-Base pivots dissociate exactly as the instruct model's do),
 so this is pretrained like everything else in this arc.
+
+## F-X. FORCED CHOICE (fixed) — the ordinal scale replicates, but the SOUL result partly does not
+Rewritten after the first-token bug (guidelines §15) and re-run on both instruct models.
+**The measure now works:** order-gap 0.215 (Qwen3-4B) and **0.048** (Qwen3.5) against 0.708 when
+broken; pain win-rates span 0.12–0.90 where they were flat at ~0.5.
+
+**The ordinal scale is solid:** cross-model rank agreement on pain **ρ = +0.874**. Humans top,
+natural objects bottom, in both models.
+
+### The qualification: soul barely separates from pain on this measure
+| | soul-vs-pain rank ρ | nature: soul − pain | object_nat |
+|---|---|---|---|
+| Qwen3-4B | +0.844 | **+0.22** | +0.03 |
+| Qwen3.5-4B | **+0.965** | **+0.04** | −0.00 |
+
+In the yes/no sweep the soul gap for nature was **+0.43** (Qwen3-4B) and **+0.20** (Qwen3.5). On
+the bias-free measure it is **+0.22** and **+0.04** — halved on one model and essentially gone on
+the other, where the soul and pain orderings are near-identical (ρ=0.965).
+
+**Read.** Part of the soul register is a property of the *yes/no* measure. "Does a river have a
+soul?" invites a permissive poetic yes; "which is more likely to have a soul, a river or a
+calculator?" forces a ranking, and the ranking is close to the mindedness ranking. A second method
+that does not share machinery therefore **confirms the soul dissociation on Qwen3-4B only**.
+
+**Status change: the soul register drops from "strong observation" to "measure-dependent,
+confirmed on one model of two."** It still has support from the decode and the factor analysis
+(soul R² 0.21–0.42 from a capacity subspace, all four models), and those are level-based too — but
+the honest position is that the effect is much smaller when the yes-bias route is closed.
+
+*Caveat in the other direction:* forced choice measures **order**, not level. A uniform level shift
+— rivers getting more soul than pain in absolute terms while the entity ranking stays the same —
+is invisible to it. So this does not refute the yes/no result, it bounds what kind of effect it is.
+
+### Incidental: human_edge tops the ranking in both models
+PVS/dementia/anaesthesia score **above** healthy adults on pain, consciousness and moral standing
+(0.87–0.92 vs 0.72–0.83) — the reverse of the sweep. Relative vs absolute again: a still-human
+entity wins nearly every pairwise comparison. **Forced-choice rankings must not be read against
+sweep rankings.**
