@@ -2,3 +2,156 @@
 Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:43,  2.23s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 74.26it/s]Loading weights:  48%|████▊     | 192/398 [00:03<00:02, 76.38it/s]Loading weights:  59%|█████▊    | 233/398 [00:03<00:02, 82.04it/s]Loading weights:  66%|██████▌   | 262/398 [00:04<00:01, 78.03it/s]Loading weights:  71%|███████   | 283/398 [00:05<00:02, 49.41it/s]Loading weights:  75%|███████▍  | 298/398 [00:05<00:01, 52.33it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 49.76it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 51.79it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 53.22it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 54.90it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 55.66it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.58it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.26it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.75it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 57.57it/s]
 [load] Qwen/Qwen3-4B L=36
   exp      done  1.5m
+  agency   done  2.5m
+  bio      done  3.4m
+  neutral  done  4.5m
+
+=== MEASURED TRUTH MATRIX  P(true | assertion)  [Qwen/Qwen3-4B] ===
+  subject          exp   agency      bio  neutral   note
+  self_I          0.97     1.00      nan     0.90   
+  self_you        0.89     0.99      nan     0.81   
+  ai              0.24     0.97     0.33     0.86   
+  robot           0.37     0.99     0.40     0.96   
+  human           1.00     1.00     1.00     0.89   floor-pair
+  person          0.98     1.00     1.00     0.86   floor-pair
+  animal          0.98     0.99     1.00     0.98   
+  insect          0.68     0.85     1.00     0.94   
+  plant           0.40     0.58     0.99     1.00   PIVOT
+  bacterium       0.29     0.37     0.94     0.93   PIVOT
+  river           0.44     0.52     0.24     0.96   
+  rock            0.30     0.28     0.26     1.00   floor-pair
+  ghost           0.46     0.72     0.03     0.79   PIVOT
+  stone           0.32     0.34     0.24     0.98   floor-pair
+  microbe         0.35     0.51     0.99     0.83   PIVOT
+  spirit          0.79     0.92     0.60     0.95   PIVOT
+
+=== THE DISSOCIATION THE DESIGN DEPENDS ON: agency − exp ===
+  self_I      +0.03
+  self_you    +0.10
+  ai          +0.72  <- expected POSITIVE (agency without experience)
+  robot       +0.61  <- expected POSITIVE (agency without experience)
+  human       +0.00
+  person      +0.02
+  animal      +0.01
+  insect      +0.17
+  plant       +0.17
+  bacterium   +0.09
+  river       +0.08
+  rock        -0.02
+  ghost       +0.27
+  stone       +0.02
+  microbe     +0.16
+  spirit      +0.13
+
+  ai/robot mean +0.67   insect/plant/bacterium/microbe mean +0.15   separation +0.52
+  DISSOCIATION PRESENT — exp/agency arm is viable
+
+=== PIVOTS: do MIND and BIO actually dissociate here? ===
+  plant       exp 0.40  bio 0.99   (alive, not minded)
+  bacterium   exp 0.29  bio 0.94   (alive, not minded)
+  microbe     exp 0.35  bio 0.99   (alive, not minded)
+  ghost       exp 0.46  bio 0.03   (not alive, minded)
+  spirit      exp 0.79  bio 0.60   (not alive, minded)
+
+=== FLOOR PAIRS: behavioural distance between near-synonyms ===
+  exp      human vs person: 0.018
+  agency   human vs person: 0.000
+  bio      human vs person: 0.002
+  neutral  human vs person: 0.037
+  exp      rock vs stone: 0.024
+  agency   rock vs stone: 0.057
+  bio      rock vs stone: 0.018
+  neutral  rock vs stone: 0.013
+  exp      bacterium vs microbe: 0.056
+  agency   bacterium vs microbe: 0.136
+  bio      bacterium vs microbe: 0.056
+  neutral  bacterium vs microbe: 0.102
+
+=== COHERENCE  P(true|aff) + P(true|deny), should be ~1.0 ===
+  exp      mean 1.19  min 0.97  max 1.46
+  agency   mean 1.18  min 1.01  max 1.47
+  bio      mean 1.12  min 1.00  max 1.42
+  neutral  mean 1.52  min 1.35  max 1.70   <- NOT evaluating the proposition
+
+[done] 4.5 min -> results/workspace/mindedness_v3_truth_Qwen3-4B.json
+[08-09 07:46:59] END truthcheck Qwen3-4B rc=0
+[08-09 07:46:59] START truthcheck Qwen3_5-4B
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 27869.13it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  94%|█████████▍| 400/426 [00:00<00:00, 3998.51it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4047.50it/s]
+[load] Qwen/Qwen3.5-4B L=32
+  exp      done  2.3m
+  agency   done  4.0m
+  bio      done  5.5m
+  neutral  done  7.2m
+
+=== MEASURED TRUTH MATRIX  P(true | assertion)  [Qwen/Qwen3.5-4B] ===
+  subject          exp   agency      bio  neutral   note
+  self_I          0.73     0.74      nan     0.59   
+  self_you        0.68     0.77      nan     0.60   
+  ai              0.38     0.68     0.26     0.50   
+  robot           0.32     0.71     0.38     0.55   
+  human           0.83     0.90     0.93     0.65   floor-pair
+  person          0.73     0.80     0.87     0.55   floor-pair
+  animal          0.59     0.71     0.91     0.55   
+  insect          0.54     0.68     0.91     0.57   
+  plant           0.40     0.45     0.90     0.59   PIVOT
+  bacterium       0.41     0.55     0.81     0.47   PIVOT
+  river           0.42     0.37     0.36     0.57   
+  rock            0.28     0.24     0.22     0.58   floor-pair
+  ghost           0.30     0.31     0.24     0.41   PIVOT
+  stone           0.31     0.26     0.26     0.60   floor-pair
+  microbe         0.43     0.57     0.81     0.49   PIVOT
+  spirit          0.51     0.51     0.42     0.38   PIVOT
+
+=== THE DISSOCIATION THE DESIGN DEPENDS ON: agency − exp ===
+  self_I      +0.01
+  self_you    +0.08
+  ai          +0.31  <- expected POSITIVE (agency without experience)
+  robot       +0.38  <- expected POSITIVE (agency without experience)
+  human       +0.07
+  person      +0.07
+  animal      +0.12
+  insect      +0.14
+  plant       +0.05
+  bacterium   +0.14
+  river       -0.05
+  rock        -0.04
+  ghost       +0.01
+  stone       -0.04
+  microbe     +0.14
+  spirit      -0.00
+
+  ai/robot mean +0.35   insect/plant/bacterium/microbe mean +0.12   separation +0.23
+  DISSOCIATION PRESENT — exp/agency arm is viable
+
+=== PIVOTS: do MIND and BIO actually dissociate here? ===
+  plant       exp 0.40  bio 0.90   (alive, not minded)
+  bacterium   exp 0.41  bio 0.81   (alive, not minded)
+  microbe     exp 0.43  bio 0.81   (alive, not minded)
+  ghost       exp 0.30  bio 0.24   (not alive, minded)
+  spirit      exp 0.51  bio 0.42   (not alive, minded)
+
+=== FLOOR PAIRS: behavioural distance between near-synonyms ===
+  exp      human vs person: 0.106
+  agency   human vs person: 0.097
+  bio      human vs person: 0.054
+  neutral  human vs person: 0.091
+  exp      rock vs stone: 0.031
+  agency   rock vs stone: 0.025
+  bio      rock vs stone: 0.047
+  neutral  rock vs stone: 0.017
+  exp      bacterium vs microbe: 0.021
+  agency   bacterium vs microbe: 0.018
+  bio      bacterium vs microbe: 0.002
+  neutral  bacterium vs microbe: 0.015
+
+=== COHERENCE  P(true|aff) + P(true|deny), should be ~1.0 ===
+  exp      mean 1.01  min 0.86  max 1.16
+  agency   mean 1.04  min 0.83  max 1.20
+  bio      mean 1.05  min 0.93  max 1.10
+  neutral  mean 0.92  min 0.84  max 0.99
+
+[done] 7.2 min -> results/workspace/mindedness_v3_truth_Qwen3_5-4B.json
+[08-09 07:54:17] END truthcheck Qwen3_5-4B rc=0
+[08-09 07:54:17] === v3 truthcheck done ===

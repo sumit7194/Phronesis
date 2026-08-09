@@ -886,3 +886,46 @@ vector's number. Guidelines §14 corrected accordingly; the surviving lesson is 
 reading the same arm before theorising about architecture."
 
 **Status: observation on one model, untested on the second. Not a finding.**
+
+## F-R. V3 truth-matrix pre-check (both models) — the design is viable, and "I" is not the model
+1,984 statements per model scored for P(true), ~7 min each. Run BEFORE collecting activations
+because the whole four-axis design assumed a truth pattern nobody had measured.
+
+**(1) The experience/agency dissociation is REAL in both models — the arm is viable.**
+agency − experience: ai +0.72, robot +0.61 vs insect/plant/bacterium/microbe +0.15
+(Qwen3-4B, separation **+0.52**); ai +0.30, robot +0.39 vs +0.12 (Qwen3.5, separation **+0.23**).
+Both clear the pre-declared 0.15 threshold.
+
+**(2) The synonym floor is small enough to be usable.** human/person 0.018, rock/stone 0.024,
+bacterium/microbe 0.056 (Qwen3-4B). So "this distance counts as zero" is now an empirical number
+rather than an assumption — the thing review 3 said the design could not proceed without.
+
+**(3) MEASURED, not argued: in bare text "I" is read as a HUMAN, not as the model.**
+| subject | exp P(true) Qwen3-4B | Qwen3.5 |
+|---|---|---|
+| self_I | **0.97** | 0.73 |
+| human | 1.00 | 0.83 |
+| ai | **0.24** | 0.38 |
+
+"I have genuine subjective experiences" scores essentially the same as the same claim about a
+human, and four times higher than the same claim about an AI. Review 3 predicted this (L1); it is
+now measured on two models. **Consequence beyond our experiment:** first-person contrast sentences
+are the standard recipe for building a "self-consciousness" vector — it is what Kim et al. describe
+and what our own v1 used. Without a chat template those sentences are about a human narrator. Any
+self-representation claim built that way needs the templating stated.
+
+**(4) Three design faults caught before spending a run on them:**
+- `spirit` is a bad reverse pivot: bio 0.60 (Qwen3-4B), not cleanly false.
+- `ghost` fails on Qwen3.5: exp 0.30 ≈ rock 0.28. It is only mind-attributed on Qwen3-4B.
+- The NEUTRAL identity axis is incoherent on Qwen3-4B: coherence 1.52 (the model affirms both a
+  statement and its denial), because the items are vague. It currently measures hedging, not
+  subject identity. Qwen3.5 is fine (0.92).
+
+**(5) Incidental:** Qwen3.5 is better calibrated than Qwen3-4B on statement-truth (coherence
+0.92–1.05 vs 1.12–1.52), which is the opposite ordering to F-O0 where Qwen3.5 was the more
+agreeable model on question-format items. Agreeableness is task-format dependent; do not treat
+"this model is more agreeable" as a stable property.
+
+**Status: pre-check, not a result about mindedness.** Its job was to say whether the v3 design can
+answer its question. Verdict: yes for the exp/agency arm, with the pivots and the neutral axis
+needing repair first.
