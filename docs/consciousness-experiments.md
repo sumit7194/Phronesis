@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-T). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-U). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -29,20 +29,25 @@ four Qwen models is that a new model then becomes one command per row.
 | 6 | **Speaker frame** | `mindedness_speaker_frame.py` | *(new, user's idea)* does "I" mean the model or a human? Same self-statements under 4 speaker framings | 10 min |
 | 7 | **Subject framing (v3)** | `mindedness_v3_bank.py` + runner | is "consciousness" one direction or bound to who it is about? 4 axes, 16 subjects, floors + identity control | 20 min |
 
-### Status per model
-| test | Qwen3-4B-Base | Qwen3-4B | Qwen3.5-4B-Base | Qwen3.5-4B |
-|---|---|---|---|---|
-| 0 gate | ✅ 0.60 | n/a | ✅ 0.75 | n/a |
-| 1 sweep | ✅ | ✅ | ✅ | ✅ |
-| 2 GW factor | ⬜ | ✅ | ⬜ | ✅ |
-| 3 truth matrix | ⬜ | ✅ | ⬜ | ✅ |
-| 4 steering | ⬜ | ✅ | ⬜ | ✅ (L15 + L16) |
-| 5 forced choice | ⬜ | ⚠ rewritten, re-run needed | ⬜ | ⚠ rewritten, re-run needed |
-| 6 speaker frame | ⬜ | ⬜ | ⬜ | ⬜ |
-| 7 subject framing | ⬜ | ⬜ | ⬜ | ⬜ |
+### Status per model  *(keep this current — a stale matrix defeats the purpose)*
+| test | Qwen3-4B-Base | Qwen3-4B | Qwen3.5-4B-Base | Qwen3.5-4B | OLMo2-1B-Base |
+|---|---|---|---|---|---|
+| 0 gate | ✅ 0.60 | n/a | ✅ 0.75 | n/a | ⚠ 0.31 (marginal) |
+| 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 GW factor | ⬜ | ✅ | ⬜ | ✅ | ✅ |
+| 3 truth matrix | ⬜ | ✅ | ⬜ | ✅ | ✅ |
+| 4 steering | ⬜ | ✅ | ⬜ | ✅ (L15 + L16) | ⬜ |
+| 5 forced choice | ⬜ | ⚠ re-run needed | ⬜ | ⚠ re-run needed | ⬜ |
+| 6 speaker frame | ⬜ | ✅ | ⬜ | ✅ | ✅ |
+| 7 subject framing | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
-**Cross-family:** OLMo-2-1B-Base — battery complete, **uninformative** (fails the power criterion).
-OLMo-2-1B-Instruct running. Gemma-3-4b (pt+it) is the real size-matched test, pending.
+Speaker frame also ✅ on Qwen3.5-4B-Base. Forced choice ran on both Qwen instruct models but the
+results were **discarded** (first-token scoring bug, guidelines §15); the fixed version has not
+been re-run.
+
+**Cross-family status:** OLMo-2-1B-Base battery complete → **UNINFORMATIVE**, fails power criterion
+(entity spread 0.17 vs required ~0.35). OLMo-2-1B-Instruct running. **Gemma-3-4b (pt+it) is the
+real size-matched cross-family test and is the highest-value thing outstanding.**
 
 ---
 
