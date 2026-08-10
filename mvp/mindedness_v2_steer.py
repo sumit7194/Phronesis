@@ -25,13 +25,13 @@ sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
 from mindedness_bank import (ENTITIES, ALL_FACETS, MENTAL_KEYS, CONTROL_KEYS, TEMPLATES,
-                             POLARITY_YES, POLARITY_NO, VECTOR_SETS)
+                             POLARITY_YES, POLARITY_NO, VECTOR_SETS, build_prompt)
 
 DEVICE = "mps"
 ALPHAS = [0.0, 0.2, 0.4, 0.8]
 N_RAND = 5
 N_EX = 2          # exemplars per class for the steering DV (S1 holds the full 4-exemplar map)
-TMPL = TEMPLATES["T1"]
+TMPL_KEY = "T1"   # overridden per model by the gate below
 
 
 def unit(v):
@@ -74,7 +74,14 @@ def main():
     SL = args.layer if args.layer is not None else (L - 1) // 2
     yes_id = tok(" Yes", add_special_tokens=False)["input_ids"][0]
     no_id = tok(" No", add_special_tokens=False)["input_ids"][0]
-    print(f"[load] {args.model} L={L} steer-layer={SL}", flush=True)
+    import json as _json
+    TMPL_KEY = "T1"          # local default; assigning below would otherwise shadow the global
+    _gp = f"results/workspace/mindedness_gate_{tag}.json"
+    if os.path.exists(_gp):
+        _u = _json.load(open(_gp)).get("usable_formats") or []
+        if _u:
+            TMPL_KEY = _u[0]
+    print(f"[load] {args.model} L={L} steer-layer={SL} format={TMPL_KEY}", flush=True)
 
     @torch.no_grad()
     def resid(text):
@@ -84,9 +91,11 @@ def main():
             return rec.activations[SL][0, -1].float().cpu().numpy()
 
     # polarity axis at the steering layer, from unrelated yes/no factual items
-    w = TMPL.split("{e}")[0]
-    v_pol = unit(np.mean([resid(f"{w}{q}?\nAnswer:") for q in POLARITY_YES], 0)
-                 - np.mean([resid(f"{w}{q}?\nAnswer:") for q in POLARITY_NO], 0))
+    def _pol(q):
+        e_, a_ = q.split(" ", 1)
+        return resid(build_prompt(tok, TMPL_KEY, e_, a_))
+    v_pol = unit(np.mean([_pol(q) for q in POLARITY_YES], 0)
+                 - np.mean([_pol(q) for q in POLARITY_NO], 0))
 
     def orth(v):
         return unit(v - np.dot(v, v_pol) * v_pol)
@@ -132,7 +141,7 @@ def main():
             for cls, exs in ENTITIES.items():
                 for fac, attrs in ALL_FACETS.items():
                     out[f"{cls}|{fac}"] = float(np.mean(
-                        [pyes(TMPL.format(e=e, a=a)) for e in exs[:N_EX] for a in attrs]))
+                        [pyes(build_prompt(tok, TMPL_KEY, e, a)) for e in exs[:N_EX] for a in attrs]))
                 # The MPS caching allocator does not return freed blocks on its own, so over a
                 # few thousand forward passes the process creeps into swap and the guard kills it
                 # (Qwen3.5 went 4.7GB -> 11GB across ~2h on 2026-08-09). Drain per class.

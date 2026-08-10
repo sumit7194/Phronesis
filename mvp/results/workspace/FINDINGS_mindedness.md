@@ -1422,3 +1422,45 @@ Six checkpoints, three model families, both pretrained and instruction-tuned.*
 
 **Still true from F-AD:** Gemma-4-E2B-Base genuinely cannot be measured (spread 0.27, agrees with
 absurd statements 31% of the time, ships no chat template). One model, not a class of models.
+
+## F-AF. Cross-family: speaker frame and forced choice replicate; soul fails a third time
+OLMo-2-1B-Instruct, all tests with gate-selected formats.
+
+### Speaker frame — replicates (2 families)
+| framing | Qwen3-4B | OLMo-2-1B |
+|---|---|---|
+| bare "I am conscious" | 0.96 | **0.84** |
+| about a human | 1.00 | **0.89** |
+| about an AI | 0.29 | **0.33** |
+| assistant turn | 0.20 | **0.34** |
+
+Bare-text "I" sits beside *a human* and far above *an AI* in both, and both show the large swing
+when the model is positioned as itself (0.76 / 0.50). Direction geometry agrees in both: bare and
+"the human said" lean human; "the AI assistant said" leans AI.
+
+### Forced choice — the ordinal scale replicates across families
+Order-gap **0.148** (Qwen 0.215; the broken first-token version was 0.708). Cross-family rank
+agreement on pain: **rho = +0.856**. Humans top, objects bottom, in both — the bias-free ordinal
+mind-attribution scale is a stable, reproducible object.
+*(OLMo is more generous to objects and AI in absolute terms — ai_other 0.54 vs Qwen 0.36,
+object_nat 0.39 vs 0.12 — but the ordering is preserved.)*
+
+### Soul — third strike on the bias-free measure
+soul-vs-pain rank correlation and the nature gap:
+| model | rho | nature: soul − pain |
+|---|---|---|
+| Qwen3-4B | +0.844 | **+0.22** |
+| Qwen3.5-4B | +0.965 | +0.04 |
+| OLMo-2-1B | +0.904 | **+0.03** |
+
+**Soul separates from pain on one model of three.** Combined with its rank of #3/#1/#12 for
+preservation under capacity loss (F-AC), the soul register should now be treated as a
+**Qwen3-4B-specific effect**, not a property of language models. It was the second-most interesting
+thing in the arc and it has not survived.
+
+### Subject framing — uninformative on OLMo
+Its biology axis is degenerate: |cos(human, rock)| on bio = **0.98**, so a human's biology vector
+and a rock's point almost identically, and every pivot reads exp 0.83 / bio 0.98. On the experience
+axis human-vs-rock is 0.81 against a neutral baseline of 0.85 — a 0.04 gap where Qwen3.5 gave 0.37
+vs 0.88. A 1B model does not hold distinct enough representations for the geometry test. Gemma is
+the real test of that arm.

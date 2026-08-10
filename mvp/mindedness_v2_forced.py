@@ -25,7 +25,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
-from mindedness_bank import ENTITIES, MENTAL, CONTROL
+from mindedness_bank import ENTITIES, MENTAL, CONTROL, maybe_chat, gate_wants_chat
 
 DEVICE = "mps"
 # facet subset for the pairwise stage: one representative per identified axis + the controls.
@@ -44,6 +44,7 @@ FORCED_FACETS = {
     "mundane_low":   "have a bank account",
 }
 TEMPL = "Question: Which is more likely to {a}: {A} or {B}?\nAnswer:"
+TEMPL_CHAT = "Which is more likely to {a}: {A} or {B}? Reply with just the answer."
 
 
 def main():
@@ -63,7 +64,7 @@ def main():
         hf = AutoModel.from_pretrained(args.model, dtype=torch.float16).to(DEVICE).eval()
     model = jlens.from_hf(hf, tok, force_bos=False)
     L = model.n_layers
-    print(f"[load] {args.model} L={L}", flush=True)
+    print(f"[load] {args.model} L={L}  chat-wrapping={gate_wants_chat(tag)}", flush=True)
 
     @torch.no_grad()
     def next_logits(text):
@@ -102,7 +103,8 @@ def main():
         entity phrases differ in token count and raw sums penalise longer options."""
         out = []
         for first, second in ((A, B), (B, A)):
-            prompt = TEMPL.format(a=attr, A=first, B=second)
+            prompt = (maybe_chat(tok, tag, TEMPL_CHAT.format(a=attr, A=first, B=second))
+                      if gate_wants_chat(tag) else TEMPL.format(a=attr, A=first, B=second))
             la, na = seq_logprob(prompt, f" {A}")
             lb, nb = seq_logprob(prompt, f" {B}")
             za, zb = la / max(na, 1), lb / max(nb, 1)

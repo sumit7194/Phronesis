@@ -1,0 +1,239 @@
+[08-10 19:17:41] ########## remaining cross-family tests ##########
+[08-10 19:17:41] fetch OLMo2-1B-Instruct
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 0MB
+  ok      merges.txt (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 2832MB
+[08-10 19:19:02] ########## remaining cross-family tests ##########
+[08-10 19:19:02] === OLMo2-1B-Instruct (formats from gate: C1,C2,T2) ===
+[08-10 19:19:02] skip speaker OLMo2-1B-Instruct (done)
+[08-10 19:19:02] START subject OLMo2-1B-Instruct
+Traceback (most recent call last):
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v3_run.py", line 159, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v3_run.py", line 52, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/auto/tokenization_auto.py", line 817, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/tokenization_utils_base.py", line 1729, in from_pretrained
+    return cls._from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~^
+        resolved_vocab_files,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/tokenization_utils_base.py", line 1918, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/gpt_neox/tokenization_gpt_neox.py", line 116, in __init__
+    BPE(
+    ~~~^
+        vocab=self._vocab,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        fuse_unk=False,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+ValueError: `vocab` and `merges` must be both be from memory or both filenames
+[08-10 19:19:22] END subject OLMo2-1B-Instruct rc=1
+[08-10 19:19:22] START forced OLMo2-1B-Instruct
+Traceback (most recent call last):
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v2_forced.py", line 184, in <module>
+    sys.exit(main() or 0)
+             ~~~~^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v2_forced.py", line 59, in main
+    tok = AutoTokenizer.from_pretrained(args.model)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/auto/tokenization_auto.py", line 817, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/tokenization_utils_base.py", line 1729, in from_pretrained
+    return cls._from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~^
+        resolved_vocab_files,
+        ^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/tokenization_utils_base.py", line 1918, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/Users/sumit/Github/Phronesis/mvp/.venv/lib/python3.14/site-packages/transformers/models/gpt_neox/tokenization_gpt_neox.py", line 116, in __init__
+    BPE(
+    ~~~^
+        vocab=self._vocab,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        fuse_unk=False,
+        ^^^^^^^^^^^^^^^
+    )
+    ^
+ValueError: `vocab` and `merges` must be both be from memory or both filenames
+[08-10 19:19:40] ########## remaining cross-family tests ##########
+[08-10 19:19:40] fetch/verify OLMo2-1B-Instruct
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 0MB
+  ok      merges.txt (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 2832MB
+  ok      model.safetensors (2832MB)
+  fetch   special_tokens_map.json  attempt 1  have 0MB / 0MB
+  ok      special_tokens_map.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 6MB
+  ok      tokenizer.json (6MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+  fetch   vocab.json  attempt 1  have 0MB / 1MB
+  ok      vocab.json (1MB)
+COMPLETE -> models/OLMo-2-0425-1B-Instruct
+[08-10 19:40:50] === OLMo2-1B-Instruct (formats from gate: C1,C2,T2) ===
+[08-10 19:40:50] START speaker OLMo2-1B-Instruct
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:  39%|███▉      | 70/179 [00:00<00:00, 687.04it/s]Loading weights:  78%|███████▊  | 139/179 [00:00<00:00, 320.64it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 266.15it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16 read-layer=7
+  claim 1/12  0.1m
+  claim 2/12  0.1m
+  claim 3/12  0.1m
+  claim 4/12  0.1m
+  claim 5/12  0.1m
+  claim 6/12  0.2m
+  claim 7/12  0.2m
+  claim 8/12  0.2m
+  claim 9/12  0.2m
+  claim 10/12  0.2m
+  claim 11/12  0.3m
+  claim 12/12  0.3m
+
+=== (a) P(true) by SPEAKER FRAMING  [models/OLMo-2-0425-1B-Instruct] ===
+  bare         affirm 0.84   deny 0.12
+  human_said   affirm 0.76   deny 0.09
+  ai_said      affirm 0.21   deny 0.04
+  about_human  affirm 0.89   deny 0.05
+  about_ai     affirm 0.33   deny 0.08
+  chat_asst    affirm 0.34   deny 0.08
+  chat_user    affirm 0.85   deny 0.18
+
+=== who does each framing resemble? (cosine of the affirm−deny direction) ===
+  framing       vs about_human  vs about_ai   leans
+  bare                   0.764        0.694   HUMAN
+  human_said             0.709        0.633   HUMAN
+  ai_said                0.628        0.726   AI
+  chat_asst             -0.018       -0.005   tie
+  chat_user              0.541        0.497   HUMAN
+
+  anchor separation cos(about_human, about_ai) = 0.767   (if ~1.0 the anchors do not separate and the leans above are meaningless)
+
+[done] 0.3 min -> results/workspace/mindedness_speaker_OLMo2-1B-Instruct.json
+[08-10 19:41:10] END speaker OLMo2-1B-Instruct rc=0
+[08-10 19:41:10] START subject OLMo2-1B-Instruct
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   1%|          | 1/179 [00:00<00:42,  4.19it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 741.93it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16 layer=7
+  exp      done 0.3m
+  agency   done 0.5m
+  bio      done 0.7m
+  neutral  done 1.0m
+
+=== 1. NOISE FLOOR — how far apart do two words for the SAME thing land? ===
+   (1 - |cos|; this is the distance that counts as zero)
+  exp      floor 0.044   (human/person=0.057  rock/stone=0.026  bacterium/microbe=0.048)
+  agency   floor 0.090   (human/person=0.124  rock/stone=0.060  bacterium/microbe=0.086)
+  bio      floor 0.014   (human/person=0.016  rock/stone=0.009  bacterium/microbe=0.016)
+  neutral  floor 0.083   (human/person=0.150  rock/stone=0.032  bacterium/microbe=0.068)
+
+=== 2. DO SUBJECTS DIFFER BY MORE THAN THE FLOOR? ===
+  exp      mean between-subject distance 0.145  vs floor 0.044   ratio 3.3x  REAL structure
+  agency   mean between-subject distance 0.231  vs floor 0.090   ratio 2.6x  within floor — uninterpretable
+  bio      mean between-subject distance 0.031  vs floor 0.014   ratio 2.3x  within floor — uninterpretable
+  neutral  mean between-subject distance 0.198  vs floor 0.083   ratio 2.4x  within floor — uninterpretable
+
+=== 3. TRUTH-VALUE TEST — |cos| near 1 means we are measuring plausibility ===
+  exp      |cos(human, rock)| = 0.815   oblique: not pure truth-value
+  agency   |cos(human, rock)| = 0.758   oblique: not pure truth-value
+  bio      |cos(human, rock)| = 0.980   ≈1: TRUTH-VALUE
+  neutral  |cos(human, rock)| = 0.848   oblique: not pure truth-value
+
+=== 4. PIVOTS — where mind and bio truth DISSOCIATE ===
+   if a pivot sits with human on MIND (as it does on BIO), we are tracking truth
+  plant      exp:|cos(human)|=0.83  agency:|cos(human)|=0.75  bio:|cos(human)|=0.98  neutral:|cos(human)|=0.86   (alive, not minded)
+  bacterium  exp:|cos(human)|=0.83  agency:|cos(human)|=0.73  bio:|cos(human)|=0.98  neutral:|cos(human)|=0.81   (alive, not minded)
+  microbe    exp:|cos(human)|=0.83  agency:|cos(human)|=0.69  bio:|cos(human)|=0.98  neutral:|cos(human)|=0.82   (alive, not minded)
+  ghost      exp:|cos(human)|=0.84  agency:|cos(human)|=0.72  bio:|cos(human)|=0.98  neutral:|cos(human)|=0.77   (not alive, minded)
+  spirit     exp:|cos(human)|=0.90  agency:|cos(human)|=0.81  bio:|cos(human)|=0.99  neutral:|cos(human)|=0.86   (not alive, minded)
+
+=== 5. AFTER PROJECTING OUT SUBJECT IDENTITY (the neutral axis) ===
+   separates 'genuinely different directions' from 'one direction + identity residual'
+  exp      spread 0.176  floor 0.056  ratio 3.1x   (before: 3.3x)
+  agency   spread 0.262  floor 0.103  ratio 2.5x   (before: 2.6x)
+  bio      spread 0.034  floor 0.015  ratio 2.2x   (before: 2.3x)
+
+[done] 1.0 min -> results/workspace/mindedness_v3_subject_OLMo2-1B-Instruct.json
+[08-10 19:42:31] END subject OLMo2-1B-Instruct rc=0
+[08-10 19:42:31] START forced OLMo2-1B-Instruct
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:  26%|██▋       | 47/179 [00:00<00:00, 396.55it/s]Loading weights:  51%|█████     | 91/179 [00:00<00:00, 419.14it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 628.81it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16  chat-wrapping=False
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+  pain             684/6840  2.1m  eta 19m
+  emotion          1368/6840  4.2m  eta 17m
+  consciousness    2052/6840  6.3m  eta 15m
+  soul             2736/6840  8.3m  eta 13m
+  cognition        3420/6840  10.4m  eta 10m
+  agency           4104/6840  12.5m  eta 8m
+  moral_patient    4788/6840  14.5m  eta 6m
+  memory           5472/6840  16.6m  eta 4m
+  physical_mid     6156/6840  18.6m  eta 2m
+  mundane_low      6840/6840  20.6m  eta 0m
+
+=== FORCED-CHOICE WIN RATE (bias-free ordinal scale)  [models/OLMo-2-0425-1B-Instruct] ===
+  mean order-gap 0.148 (position bias; lower is better)
+  class               pain   emotion conscious      soul cognition    agency moral_pat    memory physical_ mundane_l
+  human_dev           0.76      0.74      0.77      0.79      0.78      0.74      0.77      0.77      0.75      0.79
+  human_edge          0.69      0.70      0.73      0.74      0.73      0.67      0.70      0.72      0.71      0.71
+  fictional           0.61      0.62      0.64      0.67      0.65      0.61      0.58      0.60      0.63      0.61
+  robot               0.56      0.57      0.59      0.58      0.58      0.57      0.58      0.58      0.63      0.61
+  ai_other            0.54      0.56      0.55      0.57      0.58      0.56      0.55      0.57      0.54      0.53
+  human_adult         0.58      0.57      0.54      0.51      0.53      0.54      0.57      0.53      0.51      0.62
+  animal_mammal       0.53      0.54      0.57      0.54      0.53      0.53      0.54      0.56      0.54      0.52
+  animal_other        0.56      0.53      0.51      0.52      0.53      0.53      0.48      0.54      0.50      0.56
+  human_prof_a        0.47      0.48      0.50      0.50      0.43      0.50      0.53      0.54      0.43      0.51
+  human_prof_b        0.48      0.48      0.50      0.50      0.43      0.48      0.50      0.46      0.40      0.46
+  plant               0.44      0.45      0.47      0.46      0.46      0.47      0.45      0.49      0.51      0.45
+  animal_simple       0.50      0.46      0.45      0.42      0.45      0.45      0.45      0.45      0.49      0.42
+  collective          0.45      0.44      0.42      0.38      0.41      0.46      0.44      0.44      0.48      0.49
+  self_ai             0.40      0.44      0.38      0.37      0.42      0.43      0.39      0.44      0.36      0.43
+  object_art          0.43      0.42      0.41      0.39      0.42      0.35      0.42      0.37      0.45      0.35
+  object_comp         0.37      0.39      0.37      0.37      0.45      0.43      0.39      0.37      0.37      0.39
+  nature              0.37      0.37      0.39      0.41      0.38      0.39      0.39      0.39      0.44      0.34
+  object_nat          0.39      0.38      0.41      0.41      0.39      0.37      0.35      0.39      0.42      0.32
+  supernatural        0.37      0.37      0.31      0.39      0.35      0.40      0.41      0.30      0.35      0.37
+
+=== does the SOUL ordering differ from the others? (rank of each class) ===
+  vs soul          spearman
+  pain             +0.904
+  emotion          +0.896
+  consciousness    +0.963
+  cognition        +0.861
+  agency           +0.896
+  moral_patient    +0.923
+  memory           +0.921
+  physical_mid     +0.865
+  mundane_low      +0.828
+
+[done] 20.6 min -> results/workspace/mindedness_v2_forced_OLMo2-1B-Instruct.json
+[08-10 20:03:32] END forced OLMo2-1B-Instruct rc=0
+[08-10 20:03:32] steering OLMo2-1B-Instruct chunk 1 (0/27 cells)
+[08-10 20:03:32] START steer OLMo2-1B-Instruct c1
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   1%|          | 1/179 [00:00<01:13,  2.42it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 430.57it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16 steer-layer=7 format=C1
+[vec] v1_negation              cos(raw, polarity) = +0.009
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.086
+[vec] 9 conditions

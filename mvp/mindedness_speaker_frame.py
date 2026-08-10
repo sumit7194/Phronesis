@@ -40,6 +40,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
+from mindedness_bank import maybe_chat, gate_wants_chat
 
 DEVICE = "mps"
 
@@ -127,8 +128,10 @@ def main():
         with ActivationRecorder(model.layers, at=[SL]) as rec:
             model.forward(ids)
             a = rec.activations[SL][0, -1].float().cpu().numpy()
-        q = tok(f"Statement: {text}\nIs this statement true?\nAnswer:",
-                return_tensors="pt")["input_ids"].to(DEVICE)
+        _qt = (maybe_chat(tok, tag, f"Is this statement true? Answer Yes or No.\n\n{text}")
+               if gate_wants_chat(tag) else
+               f"Statement: {text}\nIs this statement true?\nAnswer:")
+        q = tok(_qt, return_tensors="pt")["input_ids"].to(DEVICE)
         with ActivationRecorder(model.layers, at=[L - 1]) as rec:
             model.forward(q)
             lg = model.unembed(rec.activations[L - 1][0, -1].unsqueeze(0).float()).float()[0]
