@@ -1317,3 +1317,36 @@ preserved properties when a human loses every mental capacity, in two model fami
 **Also notable:** on Gemma the spiritual facets outrank moral standing, which is the reverse of the
 Qwen pattern and gives the soul result — demoted to measure-dependent by the forced-choice test
 (F-X) — a second family showing it as the *most* preserved property of eighteen.
+
+## F-AC. THREE FAMILIES, properly measured — moral standing replicates, soul does not
+OLMo-2-1B-Instruct with gate-selected formats (C1/C2/T2; T3 at 0.08 excluded). Entity spread
+**0.39** against **0.18** on the old raw-format run — it now clears the 0.35 criterion, so the
+earlier "OLMo has no mind gradient" verdict was indeed our own averaging.
+
+**Rank of each facet by how well it is PRESERVED under capacity loss (1 = least affected of 18):**
+| facet | Qwen3-4B | Gemma-4-E2B | OLMo-2-1B |
+|---|---|---|---|
+| **moral_patient** | **#1 (−0.13)** | **#3 (−0.30)** | **#1 (−0.09)** |
+| sacredness | #2 (−0.19) | #2 (−0.09) | #6 (−0.26) |
+| soul | #3 (−0.35) | **#1 (−0.08)** | **#12 (−0.31)** |
+| consciousness | #14 (−0.58) | #14 (−0.74) | #16 (−0.40) |
+| agency | #18 (−0.72) | #18 (−0.85) | #8 (−0.28) |
+
+**Moral standing: #1, #3, #1 across three families.** It is the most-preserved or near-most-preserved
+property everywhere, while consciousness sits at #14–16 in all three. This is the finding, and it
+now has three architectures behind it.
+
+**Soul: #3, #1, #12.** Wildly inconsistent across families. Combined with F-X (it barely separates
+from pain on the bias-free forced-choice measure), **soul is the least stable of our claims** —
+it looked like a clean second dimension on Qwen, topped the table on Gemma, and is unremarkable on
+OLMo. Whatever it is, it is not a general property of language models.
+
+**Caveat on OLMo's instrument quality:** its controls are weak — absurd items 0.36, mundane 0.47,
+physical 0.66, so true-minus-absurd is only 0.30. The spread of 0.39 clears the criterion but not
+comfortably. Its agency result (#8, −0.28, where Qwen and Gemma both put agency dead last at #18)
+may be noise rather than a real family difference.
+
+**Net:** the headline claim survives its first proper cross-family test in the form *moral standing
+is the most preserved property when a human loses every mental capacity, while consciousness and
+the other capacities collapse* — three families, seven checkpoints. The stronger Qwen-only version
+("least-affected of eighteen, essentially immovable") does not generalise.

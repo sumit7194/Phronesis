@@ -7,6 +7,23 @@ free_gb(){ df -g / | tail -1 | awk '{print $4}'; }
 swap_mb(){ sysctl -n vm.swapusage | sed -E 's/.*used = ([0-9.]+)M.*/\1/' | cut -d. -f1; }
 run_one(){
   local ID="$1" TAG="$2" DIR="models/$(basename "$1")"
+  # Skip only if the existing sweep was run with the GATE-SELECTED formats. Old files predate
+  # format selection and are exactly what we are here to replace; a bare file-exists check skipped
+  # all three invalid runs.
+  local DONE=$(.venv/bin/python - "$TAG" <<'PYEOF'
+import json, os, sys
+tag = sys.argv[1]
+sw = f"results/workspace/mindedness_v2_sweep_{tag}.json"
+gt = f"results/workspace/mindedness_gate_{tag}.json"
+try:
+    used = json.load(open(sw)).get("formats_used")
+    want = json.load(open(gt)).get("usable_formats")
+    print("yes" if used and want and set(used) == set(want) else "no")
+except Exception:
+    print("no")
+PYEOF
+)
+  if [ "$DONE" = "yes" ]; then note "SKIP $TAG - already run with selected formats"; return; fi
   if [ ! -d "$DIR" ]; then
     note "fetch $TAG"; ./fetch_model.sh "$ID" "$DIR" >> "$LOG" 2>&1 || { note "FETCH FAILED $TAG"; return; }
   else note "$TAG already local"; fi
@@ -30,7 +47,7 @@ run_one(){
   note "cleaned ($(free_gb)Gi free)"
 }
 note "########## cross-family v2: format-selected ##########"
-run_one google/gemma-4-E2B-it       Gemma4-E2B-Instruct
+# Gemma4-E2B-Instruct: done 2026-08-10 (spread 0.73 sweep / 0.74 truth). Skip.
 run_one allenai/OLMo-2-0425-1B-Instruct OLMo2-1B-Instruct
 run_one google/gemma-4-E2B          Gemma4-E2B-Base
 run_one allenai/OLMo-2-0425-1B      OLMo2-1B-Base
