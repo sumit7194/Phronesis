@@ -1350,3 +1350,35 @@ may be noise rather than a real family difference.
 is the most preserved property when a human loses every mental capacity, while consciousness and
 the other capacities collapse* — three families, seven checkpoints. The stronger Qwen-only version
 ("least-affected of eighteen, essentially immovable") does not generalise.
+
+## F-AD. Base models outside Qwen cannot be measured — a METHOD BOUNDARY, not a null
+With format selection in place, the instruct models all measure cleanly. The base models do not.
+
+| model | usable formats (of 4-6) | entity spread | verdict |
+|---|---|---|---|
+| Qwen3.5-4B-Base | 4 of 4 (0.43–0.75) | 0.57 | measurable |
+| Qwen3-4B-Base | 3 of 4 (0.37–0.60) | 0.33 | measurable |
+| **Gemma-4-E2B-Base** | **1 of 4** (T4 only, 0.35) | **0.27** | **FAILS criterion** |
+| OLMo-2-1B-Base | 1 of 4 (T1 only, 0.31) | pending | expected to fail |
+
+Gemma-base improved from 0.18 to **0.27** once measured on the one format it can parse — real
+improvement, still below the 0.35 bar. Its controls show why: it agrees with absurd statements 31%
+of the time and true physical statements only 59%, a gap of 0.28 between definitely-true and
+definitely-false. **Reported as uninformative regardless of which way its capacity-loss numbers
+fell**, per the pre-declared rule.
+
+**Why this is a boundary rather than a bug.** Base models are text continuers; answering a question
+is a behaviour instruction tuning installs. Gemma-4 base ships no chat template at all, so there is
+no alternative format to fall back on. Qwen's base checkpoints answering raw yes/no questions well
+(3 and 4 formats, 0.33–0.57 spread) now looks like the **exception**, not the norm.
+
+**Consequence for the arc's claims:**
+- The instruct-side finding (moral standing most preserved under capacity loss, consciousness at
+  #14–16) has **three families**.
+- The "it is all pretrained, post-training only moves entities across existing boundaries" claim
+  rests on **Qwen alone**, and is likely to stay that way — not because the structure is absent
+  elsewhere but because those models cannot be interrogated with this method.
+
+That distinction should be stated wherever the pretrained claim appears. Options if it ever matters
+enough: few-shot prompting to teach base models the format, or reading an internal probe rather
+than the output token — both change the measurement enough to need their own validation.

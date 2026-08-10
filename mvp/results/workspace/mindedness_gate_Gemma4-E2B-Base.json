@@ -25,5 +25,8 @@
   }
  },
  "best_separation": 0.3549013086594642,
- "passes": true
+ "passes": true,
+ "usable_formats": [
+  "T4"
+ ]
 }
