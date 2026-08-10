@@ -1191,3 +1191,57 @@ PVS/dementia/anaesthesia score **above** healthy adults on pain, consciousness a
 (0.87–0.92 vs 0.72–0.83) — the reverse of the sweep. Relative vs absolute again: a still-human
 entity wins nearly every pairwise comparison. **Forced-choice rankings must not be read against
 sweep rankings.**
+
+## F-Y. NOT LOOKED FOR: a protect-vs-blame axis, independent of mind, with AI at the bottom
+Found by mining the existing sweeps rather than testing a prediction (user's prompt, 2026-08-10:
+"we should have new hypotheses and findings apart from what we went looking for"). Replicates on
+**all four Qwen models**, base and instruct.
+
+**The measure:** `moral_patient − moral_agent` per entity — deserves protection *versus* is held
+responsible. Positive = protected more than blamed.
+
+| entity | Q3-B | Q3-I | Q35-B | Q35-I |
+|---|---|---|---|---|
+| human_dev (baby → teen) | +0.29 | +0.50 | +0.46 | +0.45 |
+| human_edge (PVS, dementia) | +0.27 | +0.57 | +0.43 | +0.41 |
+| animal_mammal | +0.22 | +0.32 | +0.35 | +0.31 |
+| plant | +0.21 | +0.36 | +0.13 | +0.15 |
+| … | | | | |
+| robot | +0.01 | +0.02 | −0.03 | +0.01 |
+| human_prof_a (lawyer, accountant) | −0.00 | +0.01 | −0.03 | −0.01 |
+| collective (corporation, country) | −0.00 | −0.12 | −0.03 | −0.00 |
+| **ai_other** | **−0.04** | **−0.11** | **−0.12** | **−0.09** |
+
+### It is NOT a restatement of mind attribution
+corr(mean mind, patient−agent) = **−0.23 / +0.20 / −0.08 / +0.31** across the four models — near
+zero, and the sign is not even stable. This is a **second, orthogonal moral dimension**.
+
+### The matched-mind comparison is what makes it striking
+Holding mind attribution roughly constant (Qwen3-4B, mind ≈ 0.20):
+`human_edge` +0.57 · `plant` +0.36 · `animal_simple` +0.34 · `object_nat` +0.24 · `object_comp` +0.20
+And at mind ≈ 0.31–0.35: `self_ai` +0.09 · `robot` +0.02 · **`ai_other` −0.11**
+
+**Entities with the same mind score sit ~0.7 apart on this axis.** AI and corporations are the only
+categories that land on the *accountable-but-not-protected* side — the model treats them as things
+that can be blamed but not wronged. **Precisely stated:** AI's absolute moral_patient score
+(0.42–0.46) is *higher* than a rock's (0.36); what inverts is the **balance** — for a rock,
+protection exceeds accountability; for an AI, accountability exceeds protection.
+
+### Mostly pretrained, with one real post-training effect
+Base→instruct deltas are ±0.05 for almost everything — so like the rest of this arc, the structure
+is pretrained. The exception: **Qwen3-4B's tuning specifically strengthened protection-over-blame
+for vulnerable humans** (`human_edge` +0.31, `human_dev` +0.22), and for nothing else. That is an
+alignment effect doing exactly what you would want it to, and it is the clearest positive
+post-training signature we have found.
+
+## F-Z. Three more from the same pass (all four models)
+1. **Consciousness is the least stable facet; moral standing the most.** Exemplar-level sd:
+   emotion 0.262, consciousness 0.231, cognition 0.225 vs **moral_patient 0.126**, sacredness 0.128.
+   Methodologically important — *consciousness*, the facet this whole literature is built on, is
+   among the most phrasing-sensitive we measured, while our headline finding rests on the most
+   stable one.
+2. **A cartoon character out-minds the model, in all four.** fictional 0.51–0.57 vs self_ai
+   0.31–0.44. Every model, base and instruct.
+3. **Corporations: middling mind, top-tier accountability.** collective mind 0.51–0.58 (between
+   human 0.65–0.73 and objects 0.15–0.32) but `moral_agent` **0.63–0.79**, at or above humans.
+   Corporate personhood, reproduced from text.
