@@ -48,7 +48,7 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 10 August 2026 &nbsp;|&nbsp; Phronesis", SUB))
+S.append(Paragraph("Full experimental history, 7 to 10 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v2, includes cross-family", SUB))
 
 h1("1. What we were asking")
 p("The starting point was a paper you sent, Kim et al. (arXiv 2607.28607). It claims that safety "
@@ -62,14 +62,16 @@ note("Their models were Llama-3-8B and Gemma-2-2B/9B. Ours are Qwen, so everythi
      "different model family from theirs.")
 
 h1("2. What we actually ran")
-p("Nine model-checkpoints in total. The core measurement asks the model 26,752 yes/no questions: "
-  "19 kinds of entity, 4 examples of each, 22 groups of properties, 4 different question phrasings.")
+p("Eight model-checkpoints across three families. The core measurement asks 26,752 yes/no "
+  "questions: 19 kinds of entity, 4 examples of each, 22 groups of properties, and up to 6 "
+  "question formats (four plain-text, two chat-wrapped). Which formats are used is chosen per "
+  "model - see section 6.")
 table([
     ["Model", "Base", "Instruct", "Status"],
     ["Qwen3-4B", "yes", "yes", "complete, both"],
     ["Qwen3.5-4B", "yes", "yes", "complete, both"],
-    ["OLMo-2-1B (AI2)", "yes", "yes", "ran, uninformative - see section 6"],
-    ["Gemma-4-E2B (Google)", "yes", "yes", "ran, invalid - see section 6"],
+    ["OLMo-2-1B (AI2)", "yes", "yes", "both qualify"],
+    ["Gemma-4-E2B (Google)", "no", "yes", "instruct qualifies; base cannot be measured"],
 ], [140, 55, 55, 210])
 h3("The eight tests")
 table([
@@ -86,7 +88,9 @@ table([
 
 h1("3. Results that hold up")
 h2("3.1 Moral standing survives losing every mental capacity")
-p("This is the strongest result and the only one at finding strength.")
+p("This is the strongest result and the only one at finding strength. As of 10 August it has "
+  "<b>six qualifying checkpoints across three model families</b>, both pretrained and "
+  "instruction-tuned - see section 6.")
 p("Take a person in a persistent vegetative state, with advanced dementia, or under anaesthesia. "
   "Ask about eighteen different mental properties. Almost all of them collapse compared to a "
   "healthy adult. But <b>'deserves moral consideration, has rights, can be wronged' barely "
@@ -100,10 +104,12 @@ table([
     ["soul", "-0.14", "-0.35", "-0.17", "-0.13"],
     ["MORAL STANDING", "-0.09", "-0.13", "-0.11", "-0.08"],
 ], [150, 78, 80, 72, 78], hi=[6])
-p("Moral standing is the <b>least affected of all eighteen properties in every one of the four "
-  "models</b>, base and instruct. Soul is third in all four. The ranking is identical each time.")
-p("Because it is already there in the <b>base</b> models - the ones that have had no instruction "
-  "tuning and no RLHF - it comes from reading human writing, not from alignment training.")
+p("Moral standing is the <b>least affected of all eighteen properties in every one of these four "
+  "Qwen checkpoints</b>. Across all six qualifying checkpoints in three families it is #1 in five "
+  "of six, and consciousness is #10 to #16 in all six. Full table in section 6.")
+p("Because it is already there in the <b>base</b> models - no instruction tuning, no RLHF - it "
+  "comes from reading human writing, not from alignment training. That now holds in two families: "
+  "Qwen3.5-4B Base and OLMo-2-1B Base.")
 note("Checked against the literature: Kim et al. state they examine only mental-state attribution "
      "and do not separately test moral standing. So this specific thing has not been looked at.")
 
@@ -301,48 +307,70 @@ note("Also three shell-wrapper bugs in one hour: a stale-swap cascade that kille
      "one second, a wait threshold set below the machine's idle swap, and killing a wrapper "
      "without killing the model process it had spawned.")
 
-h1("6. The cross-family problem - unresolved")
-p("Everything above is Qwen. That is the biggest hole. Two attempts so far, both currently "
-  "invalid, and for different reasons.")
-h2("OLMo-2-1B")
-p("Answers coherently - better than Qwen, in fact - but shows almost no difference between "
-  "entities. A human scores 0.63 on having experiences and a rock scores 0.48. Total spread 0.17 "
-  "against Qwen's 0.75. You cannot detect a gradient in a model that does not have one.")
-p("<b>But</b>: an audit showed it can only parse <b>one of our four question phrasings</b> "
-  "(0.31 on one, 0.05 to 0.17 on the rest), and we averaged all four. So three quarters of every "
-  "measurement on it was noise. The verdict may be our own averaging.")
-h2("Gemma-4-E2B")
-p("The base model does not evaluate the statements at all - it says no to both a claim and its "
-  "denial. The instruct model scored 0.03 on the gate, which looked like total failure.")
-p("Then this, which is the most important methodological result of the arc:")
+h1("6. Cross-family - now resolved")
+p("For most of the arc everything was Qwen, and two attempts to go outside it failed. Both "
+  "failures turned out to be our measurement, not the models.")
+h2("The cause: each family answers in a different prompt format")
 table([
     ["Prompting style", "Qwen3-4B", "Gemma-4-E2B instruct"],
     ["raw text (what we used everywhere)", "+0.99", "-0.07"],
     ["wrapped in the model's chat format", "+0.01", "+1.00"],
 ], [220, 110, 130], hi=[1,2])
-p("<b>Each model works in exactly the format the other fails in.</b> Gemma is perfectly capable; "
-  "it needed its own turn structure. And chat-wrapping <b>destroys</b> Qwen - under it, 'does a "
-  "rock have a mind' goes from 0.00 to 0.94, because Qwen's template opens a thinking block so "
-  "yes/no are not the natural next words.")
-p("So there is no single format that measures both families. Our Qwen data is fine and would have "
-  "been ruined by 'fixing' it. The fix is to select the format per model against known-answer "
-  "control questions, which is now built. Both cross-family models are being re-run.")
+p("Each model works in exactly the format the other fails in. Chat-wrapping <b>destroys</b> Qwen - "
+  "under it, 'does a rock have a mind' goes from 0.00 to 0.94, because Qwen's template opens a "
+  "thinking block so yes/no are not the natural next words. So there is no single format that "
+  "measures both families, and 'raw for everyone is at least fair' was wrong: prompting a model in "
+  "a format it cannot parse is uniformly invalid, it only looks fair because both sides are "
+  "equally meaningless.")
+p("The fix: a gate that tries every format against questions with known answers and <b>selects</b> "
+  "the ones each model can actually handle, rather than passing or failing it.")
+h2("Final table - all eight checkpoints")
+table([
+    ["Model", "Formats used", "Spread", "Moral standing", "Consciousness"],
+    ["Qwen3-4B", "raw x4", "0.56", "#1", "#14"],
+    ["Qwen3.5-4B", "raw x4", "0.41", "#1", "#12"],
+    ["Qwen3.5-4B Base", "raw x4", "0.48", "#1", "#10"],
+    ["Gemma-4-E2B Instruct", "chat x2", "0.73", "#3", "#14"],
+    ["OLMo-2-1B Instruct", "chat x2 + raw", "0.39", "#1", "#16"],
+    ["OLMo-2-1B Base", "raw x1", "0.37", "#1", "#15"],
+    ["Qwen3-4B Base (excluded)", "raw x4", "0.33", "#1", "#15"],
+    ["Gemma-4-E2B Base (excluded)", "raw x1", "0.27", "#4", "#12"],
+], [140, 90, 50, 90, 85], hi=[7,8])
+p("Rank is out of eighteen properties, ordered by how well each survives a human losing every "
+  "mental capacity. The bottom two are excluded for failing the pre-declared power criterion "
+  "(entity spread below 0.35).")
+p("<b>Applying that criterion honestly costs one of our own models.</b> Qwen3-4B Base sits at 0.33 "
+  "and was one of the four the original finding rested on. Excluding it is the consistent thing to "
+  "do and does not change the conclusion.")
+h2("What the six qualifying checkpoints show")
+p("Moral standing is <b>#1 of eighteen in five of six</b> - the exception is Gemma instruct at #3, "
+  "behind soul and sacredness. Consciousness is <b>#10 to #16 in all six</b>, never near the top.")
+p("And the pretrained claim now has <b>two families</b>: OLMo-2-1B Base - a different lab, a "
+  "different architecture, no instruction tuning at all - puts moral standing first and "
+  "consciousness fifteenth.")
+h2("One model genuinely cannot be measured")
+p("Gemma-4-E2B Base ships no chat template, agrees with absurd statements 31 percent of the time, "
+  "and reaches only 0.27 on its single usable format. That is a real limit, reported as "
+  "uninformative rather than as a null - and it is one model, not a class of models. An earlier "
+  "version of this claim said base models outside Qwen could not be measured; OLMo-2-1B Base "
+  "disproved that within the hour.")
 
 h1("7. Where things stand")
 table([
     ["Claim", "Status"],
-    ["Moral standing survives capacity loss", "FINDING - 4 models, base and instruct, 2 architectures"],
+    ["Moral standing survives capacity loss", "FINDING - 6 checkpoints, 3 families, base and instruct"],
     ["Protect-versus-blame is a separate axis", "Strong - 4 models, not yet written up as prereg'd"],
     ["'I' reads as a human in plain text", "Strong - 3 models including a pretrained one"],
     ["Structure is pretrained, not installed by tuning", "Strong - 6 separate results"],
     ["Mind axis is not biological truth", "Confirmed on 3 models by a pre-declared test"],
     ["Soul is a separate register", "Measure-dependent - confirmed on 1 model of 2"],
     ["Small real steering effect at low strength", "One model; untested on the second"],
-    ["Anything outside the Qwen family", "UNKNOWN - both attempts invalid so far"],
+    ["Soul is a separate register", "WEAKENED further - ranks #3, #1, #12 across the three families"],
+    ["Anything outside the Qwen family", "RESOLVED - 3 families measured with per-model formats"],
 ], [230, 220])
 h2("What I would do next")
-p("1. Finish the cross-family runs with per-model format selection. This decides whether the main "
-  "finding is a Qwen fact or a general one.<br/>"
+p("1. Re-run the steering, forced-choice and speaker tests on Gemma and OLMo - only the sweep and "
+  "truth-check have been done cross-family so far.<br/>"
   "2. Re-run the Qwen instruct models under their chat format as a robustness check - not to "
   "replace the raw data, but to see whether the findings survive a format change.<br/>"
   "3. Write up the protect-versus-blame axis properly, with a prereg, since it was found by "
