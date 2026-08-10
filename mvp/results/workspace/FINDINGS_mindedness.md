@@ -1495,3 +1495,38 @@ it. The failure mode is reading a raw effect before its floor exists.
 **The surviving steering effect is one model of three** — and it is the same model that produced the
 soul result. Qwen3-4B increasingly looks like the outlier of the set rather than the representative
 case. Gemma, the best-powered model in the set, is the remaining test.
+
+## F-AH. Forced choice reproduces across three families — the most robust object in the arc
+All three instruct models, gate-selected formats, bias-free pairwise measure.
+
+**Rank agreement on pain, 19 entity classes:**
+| pair | rho |
+|---|---|
+| Qwen ↔ Gemma | **+0.874** |
+| Qwen ↔ OLMo | **+0.856** |
+| Gemma ↔ OLMo | **+0.884** |
+
+Three architectures from three labs agree on the ordering at rho ≈ 0.87. Position bias falls with
+model quality: 0.215 (Qwen) → 0.148 (OLMo) → **0.114** (Gemma), against 0.708 for the broken
+first-token version. Gemma's ordering: children 0.95, incapacitated humans 0.92, adults 0.89 at the
+top; computational objects 0.10, natural objects 0.17, other AI 0.24 at the bottom.
+
+**This is arguably the most robust result we have** — not a claim that survived testing but a
+*measurement that reproduces*. The ordinal mind-attribution scale is a stable object across
+families.
+
+### Soul: closed
+nature soul−pain on the bias-free measure: Qwen3-4B **+0.22**, OLMo **+0.03**, Gemma **−0.04**
+(sign reversed). One model of three, and the capacity-loss ranks were #3/#1/#12. **Four independent
+measurements now agree the soul register does not generalise.** It is a Qwen3-4B property.
+
+### Running tally of what generalises
+| result | families | status |
+|---|---|---|
+| Moral standing preserved under capacity loss | 3 | **finding** |
+| Forced-choice ordinal scale reproduces | 3 | **finding** (measurement) |
+| Bare-text "I" reads as a human | 3 + a base model | **finding** |
+| Protect-vs-blame axis | Qwen only (4 checkpoints) | needs cross-family test |
+| Soul as a separate register | 1 of 3 | **Qwen3-4B-specific** |
+| Subject-framing geometry | 2 Qwen, fails Gemma, degenerate OLMo | **Qwen-specific** |
+| Steering beats random | 1 of 3 so far | Gemma pending |

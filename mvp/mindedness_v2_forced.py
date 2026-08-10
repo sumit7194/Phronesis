@@ -128,7 +128,22 @@ def main():
            "n_ex": args.n_ex, "pairs": {}}
     n_total = len(FORCED_FACETS) * len(pairs) * args.n_ex * args.n_ex
     n = 0
+    # resume: reuse any facets already completed in a previous run
+    if os.path.exists(OUT):
+        try:
+            old = json.load(open(OUT))
+            if old.get("n_ex") == args.n_ex:
+                res["pairs"] = {k: v for k, v in old.get("pairs", {}).items() if v}
+                if res["pairs"]:
+                    print(f"[resume] {len(res['pairs'])} facets already done: "
+                          f"{sorted(res['pairs'])}", flush=True)
+        except Exception as e:
+            print(f"[resume] ignoring unreadable {OUT}: {str(e)[:70]}", flush=True)
     for fac, attr in FORCED_FACETS.items():
+        if res["pairs"].get(fac):
+            n += len(pairs) * args.n_ex * args.n_ex
+            print(f"  {fac:16} RESUMED", flush=True)
+            continue
         res["pairs"][fac] = {}
         for ca, cb in pairs:
             vals, gaps = [], []
@@ -144,6 +159,7 @@ def main():
             if vals:
                 res["pairs"][fac][f"{ca}|{cb}"] = {"p_first": float(np.mean(vals)),
                                                    "order_gap": float(np.mean(gaps))}
+        json.dump(res, open(OUT, "w"), indent=1)      # checkpoint after every facet
         el = time.time() - t0
         print(f"  {fac:16} {n}/{n_total}  {el/60:.1f}m  eta {el/max(n,1)*(n_total-n)/60:.0f}m",
               flush=True)

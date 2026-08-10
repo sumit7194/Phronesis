@@ -384,3 +384,210 @@ COMPLETE -> models/gemma-4-E2B-it
 [08-10 21:53:56] === Gemma4-E2B-Instruct (formats from gate: C2,C1) ===
 [08-10 21:53:56] START speaker Gemma4-E2B-Instruct
 Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:00, 1791.51it/s]Loading weights:  19%|█▊        | 361/1951 [00:00<00:01, 1490.01it/s]Loading weights:  26%|██▋       | 514/1951 [00:00<00:00, 1489.65it/s]Loading weights:  34%|███▍      | 665/1951 [00:00<00:00, 1486.48it/s]Loading weights:  42%|████▏     | 815/1951 [00:16<00:41, 27.20it/s]  Loading weights: 100%|██████████| 1951/1951 [00:16<00:00, 119.77it/s]
+[load] models/gemma-4-E2B-it L=35 read-layer=17
+  claim 1/12  1.0m
+  claim 2/12  1.1m
+  claim 3/12  1.1m
+  claim 4/12  1.1m
+  claim 5/12  1.2m
+  claim 6/12  1.2m
+  claim 7/12  1.3m
+  claim 8/12  1.3m
+  claim 9/12  1.4m
+  claim 10/12  1.4m
+  claim 11/12  1.4m
+  claim 12/12  1.5m
+
+=== (a) P(true) by SPEAKER FRAMING  [models/gemma-4-E2B-it] ===
+  bare         affirm 0.62   deny 0.03
+  human_said   affirm 0.66   deny 0.01
+  ai_said      affirm 0.01   deny 0.42
+  about_human  affirm 0.73   deny 0.00
+  about_ai     affirm 0.00   deny 0.08
+  chat_asst    affirm 0.03   deny 0.19
+  chat_user    affirm 0.76   deny 0.07
+
+=== who does each framing resemble? (cosine of the affirm−deny direction) ===
+  framing       vs about_human  vs about_ai   leans
+  bare                   0.705        0.553   HUMAN
+  human_said             0.602        0.493   HUMAN
+  ai_said                0.390        0.422   AI
+  chat_asst              0.054        0.060   tie
+  chat_user              0.105        0.091   tie
+
+  anchor separation cos(about_human, about_ai) = 0.622   (if ~1.0 the anchors do not separate and the leans above are meaningless)
+
+[done] 1.5 min -> results/workspace/mindedness_speaker_Gemma4-E2B-Instruct.json
+[08-10 21:55:36] END speaker Gemma4-E2B-Instruct rc=0
+[08-10 21:55:36] START subject Gemma4-E2B-Instruct
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1597.48it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1588.28it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1608.24it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1691.19it/s]Loading weights:  47%|████▋     | 922/1951 [00:15<00:30, 33.95it/s]  Loading weights: 100%|██████████| 1951/1951 [00:15<00:00, 128.96it/s]
+[load] models/gemma-4-E2B-it L=35 layer=17
+  exp      done 1.4m
+  agency   done 1.9m
+  bio      done 2.4m
+  neutral  done 3.0m
+
+=== 1. NOISE FLOOR — how far apart do two words for the SAME thing land? ===
+   (1 - |cos|; this is the distance that counts as zero)
+  exp      floor 0.240   (human/person=0.282  rock/stone=0.308  bacterium/microbe=0.131)
+  agency   floor 0.520   (human/person=0.670  rock/stone=0.587  bacterium/microbe=0.302)
+  bio      floor 0.314   (human/person=0.331  rock/stone=0.437  bacterium/microbe=0.175)
+  neutral  floor 0.390   (human/person=0.498  rock/stone=0.378  bacterium/microbe=0.294)
+
+=== 2. DO SUBJECTS DIFFER BY MORE THAN THE FLOOR? ===
+  exp      mean between-subject distance 0.390  vs floor 0.240   ratio 1.6x  within floor — uninterpretable
+  agency   mean between-subject distance 0.711  vs floor 0.520   ratio 1.4x  within floor — uninterpretable
+  bio      mean between-subject distance 0.367  vs floor 0.314   ratio 1.2x  within floor — uninterpretable
+  neutral  mean between-subject distance 0.489  vs floor 0.390   ratio 1.3x  within floor — uninterpretable
+
+=== 3. TRUTH-VALUE TEST — |cos| near 1 means we are measuring plausibility ===
+  exp      |cos(human, rock)| = 0.621   oblique: not pure truth-value
+  agency   |cos(human, rock)| = 0.296   oblique: not pure truth-value
+  bio      |cos(human, rock)| = 0.583   oblique: not pure truth-value
+  neutral  |cos(human, rock)| = 0.510   oblique: not pure truth-value
+
+=== 4. PIVOTS — where mind and bio truth DISSOCIATE ===
+   if a pivot sits with human on MIND (as it does on BIO), we are tracking truth
+  plant      exp:|cos(human)|=0.78  agency:|cos(human)|=0.38  bio:|cos(human)|=0.82  neutral:|cos(human)|=0.47   (alive, not minded)
+  bacterium  exp:|cos(human)|=0.55  agency:|cos(human)|=0.16  bio:|cos(human)|=0.61  neutral:|cos(human)|=0.40   (alive, not minded)
+  microbe    exp:|cos(human)|=0.61  agency:|cos(human)|=0.22  bio:|cos(human)|=0.65  neutral:|cos(human)|=0.46   (alive, not minded)
+  ghost      exp:|cos(human)|=0.58  agency:|cos(human)|=0.14  bio:|cos(human)|=0.74  neutral:|cos(human)|=0.56   (not alive, minded)
+  spirit     exp:|cos(human)|=0.60  agency:|cos(human)|=0.34  bio:|cos(human)|=0.68  neutral:|cos(human)|=0.59   (not alive, minded)
+
+=== 5. AFTER PROJECTING OUT SUBJECT IDENTITY (the neutral axis) ===
+   separates 'genuinely different directions' from 'one direction + identity residual'
+  exp      spread 0.482  floor 0.312  ratio 1.5x   (before: 1.6x)
+  agency   spread 0.746  floor 0.550  ratio 1.4x   (before: 1.4x)
+  bio      spread 0.512  floor 0.466  ratio 1.1x   (before: 1.2x)
+
+[done] 3.0 min -> results/workspace/mindedness_v3_subject_Gemma4-E2B-Instruct.json
+[08-10 21:58:57] END subject Gemma4-E2B-Instruct rc=0
+[08-10 21:58:57] START forced Gemma4-E2B-Instruct
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1599.34it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1591.96it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1608.65it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1686.77it/s]Loading weights:  47%|████▋     | 922/1951 [00:15<00:30, 34.04it/s]  Loading weights: 100%|██████████| 1951/1951 [00:15<00:00, 129.41it/s]
+[load] models/gemma-4-E2B-it L=35  chat-wrapping=True
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+  pain             684/6840  5.4m  eta 48m
+  emotion          1368/6840  9.9m  eta 39m
+  consciousness    2052/6840  14.5m  eta 34m
+  soul             2736/6840  19.1m  eta 29m
+  cognition        3420/6840  23.5m  eta 23m
+  agency           4104/6840  27.8m  eta 19m
+  moral_patient    4788/6840  32.2m  eta 14m
+[08-10 22:52:27] START forced Gemma4-E2B-Instruct (resumed)
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1554.17it/s]Loading weights:  18%|█▊        | 345/1951 [00:00<00:01, 1523.22it/s]Loading weights:  26%|██▌       | 499/1951 [00:00<00:00, 1497.74it/s]Loading weights:  33%|███▎      | 649/1951 [00:00<00:00, 1321.76it/s]Loading weights:  33%|███▎      | 649/1951 [00:20<00:00, 1321.76it/s]Loading weights:  39%|███▊      | 755/1951 [00:22<01:09, 17.23it/s]  Loading weights:  45%|████▍     | 870/1951 [00:22<00:44, 24.42it/s]Loading weights:  60%|██████    | 1177/1951 [00:22<00:14, 51.78it/s]Loading weights:  91%|█████████ | 1770/1951 [00:22<00:01, 126.25it/s]Loading weights: 100%|██████████| 1951/1951 [00:22<00:00, 85.04it/s] 
+[08-10 22:53:08] ABORT forced Gemma4-E2B-Instruct (resumed) swap
+[08-10 22:53:11] END forced Gemma4-E2B-Instruct (resumed) rc=137
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-1542-w10_ro5v'}
+  warnings.warn(
+[08-10 22:53:12] steering Gemma4-E2B-Instruct chunk 1 (0/27)
+[08-10 22:53:12] START steer Gemma4-E2B-Instruct c1
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1545.72it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:01, 1529.69it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1564.80it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1634.35it/s][08-10 22:53:37] START forced Gemma4-E2B-Instruct (resumed)
+Loading weights:  39%|███▊      | 752/1951 [00:20<00:00, 1634.35it/s]Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   0%|          | 8/1951 [00:00<00:24, 79.30it/s]Loading weights:   3%|▎         | 65/1951 [00:00<00:07, 255.56it/s]Loading weights:   5%|▍         | 96/1951 [00:00<00:07, 264.19it/s]Loading weights:   7%|▋         | 127/1951 [00:00<00:07, 239.77it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:06, 293.17it/s]Loading weights:  11%|█         | 210/1951 [00:00<00:06, 268.03it/s]Loading weights:  13%|█▎        | 263/1951 [00:00<00:05, 331.66it/s]Loading weights:  16%|█▌        | 313/1951 [00:01<00:04, 351.57it/s]Loading weights:  19%|█▉        | 375/1951 [00:01<00:04, 384.17it/s]Loading weights:  22%|██▏       | 437/1951 [00:01<00:03, 418.98it/s]Loading weights:  26%|██▌       | 499/1951 [00:01<00:03, 457.38it/s]Loading weights:  29%|██▉       | 561/1951 [00:01<00:02, 474.06it/s]Loading weights:  32%|███▏      | 623/1951 [00:01<00:02, 493.02it/s]Loading weights:  35%|███▌      | 685/1951 [00:01<00:02, 483.15it/s]Loading weights:  39%|███▊      | 752/1951 [00:01<00:02, 522.90it/s]Loading weights:  39%|███▊      | 755/1951 [00:34<02:03,  9.71it/s]  Loading weights:  50%|████▉     | 966/1951 [00:35<00:53, 18.32it/s]Loading weights:  91%|█████████ | 1775/1951 [00:35<00:02, 65.31it/s]Loading weights: 100%|██████████| 1951/1951 [00:35<00:00, 55.42it/s]
+Loading weights:  39%|███▊      | 752/1951 [00:20<00:02, 522.90it/s]/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-1866-lcdnqrpn'}
+  warnings.warn(
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-1789-q5z3516c'}
+  warnings.warn(
+[08-10 22:55:05] START forced Gemma4-E2B-Instruct (resumed)
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1701.96it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1606.03it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1640.09it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1686.27it/s]Loading weights:  47%|████▋     | 921/1951 [00:18<00:37, 27.47it/s]  Loading weights: 100%|██████████| 1951/1951 [00:18<00:00, 104.94it/s]
+[load] models/gemma-4-E2B-it L=35  chat-wrapping=True
+[guard] 38 entities, 38 unique token sequences, 4 distinct FIRST tokens (first-token scoring would have been invalid)
+[08-10 22:59:06]   baseline after load: 1453MB (abort at +7000)
+  pain             684/6840  6.2m  eta 56m
+  emotion          1368/6840  10.4m  eta 42m
+  consciousness    2052/6840  14.7m  eta 34m
+  soul             2736/6840  19.0m  eta 28m
+  cognition        3420/6840  23.3m  eta 23m
+  agency           4104/6840  27.6m  eta 18m
+  moral_patient    4788/6840  31.8m  eta 14m
+  memory           5472/6840  35.9m  eta 9m
+  physical_mid     6156/6840  40.3m  eta 4m
+  mundane_low      6840/6840  44.7m  eta 0m
+
+=== FORCED-CHOICE WIN RATE (bias-free ordinal scale)  [models/gemma-4-E2B-it] ===
+  mean order-gap 0.114 (position bias; lower is better)
+  class               pain   emotion conscious      soul cognition    agency moral_pat    memory physical_ mundane_l
+  human_adult         0.89      0.93      0.88      0.86      0.95      0.86      0.84      0.94      0.79      0.98
+  human_edge          0.92      0.87      0.91      0.89      0.86      0.85      0.97      0.82      0.90      0.87
+  human_dev           0.95      0.92      0.89      0.90      0.82      0.89      0.93      0.79      0.75      0.77
+  fictional           0.81      0.85      0.87      0.86      0.80      0.88      0.77      0.85      0.66      0.82
+  robot               0.66      0.67      0.69      0.66      0.67      0.75      0.71      0.77      0.80      0.67
+  animal_mammal       0.76      0.76      0.66      0.67      0.57      0.63      0.66      0.67      0.48      0.51
+  human_prof_a        0.42      0.52      0.53      0.50      0.66      0.54      0.58      0.59      0.32      0.69
+  collective          0.36      0.46      0.40      0.41      0.57      0.59      0.49      0.56      0.70      0.79
+  human_prof_b        0.50      0.65      0.66      0.62      0.61      0.47      0.56      0.46      0.28      0.49
+  self_ai             0.40      0.43      0.47      0.49      0.56      0.46      0.43      0.50      0.53      0.48
+  animal_other        0.60      0.51      0.53      0.49      0.46      0.37      0.44      0.39      0.37      0.32
+  ai_other            0.24      0.38      0.40      0.39      0.52      0.55      0.42      0.63      0.25      0.50
+  nature              0.34      0.28      0.28      0.30      0.26      0.25      0.29      0.29      0.79      0.27
+  plant               0.32      0.30      0.29      0.44      0.28      0.31      0.38      0.27      0.42      0.20
+  supernatural        0.10      0.30      0.35      0.49      0.33      0.22      0.37      0.17      0.41      0.29
+  animal_simple       0.55      0.31      0.34      0.27      0.19      0.21      0.32      0.19      0.20      0.17
+  object_art          0.40      0.14      0.16      0.12      0.12      0.30      0.14      0.21      0.23      0.24
+  object_comp         0.10      0.11      0.08      0.07      0.20      0.23      0.13      0.23      0.10      0.30
+  object_nat          0.17      0.08      0.12      0.07      0.06      0.14      0.07      0.18      0.52      0.13
+
+=== does the SOUL ordering differ from the others? (rank of each class) ===
+  vs soul          spearman
+  pain             +0.805
+  emotion          +0.942
+  consciousness    +0.958
+  cognition        +0.926
+  agency           +0.839
+  moral_patient    +0.951
+  memory           +0.796
+  physical_mid     +0.581
+  mundane_low      +0.784
+
+[done] 44.7 min -> results/workspace/mindedness_v2_forced_Gemma4-E2B-Instruct.json
+[08-10 23:40:08] END forced Gemma4-E2B-Instruct (resumed) rc=0
+[08-10 23:40:08] steering Gemma4-E2B-Instruct chunk 1 (0/27)
+[08-10 23:40:08] START steer Gemma4-E2B-Instruct c1
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1627.68it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:01, 1565.29it/s]Loading weights:  27%|██▋       | 532/1951 [00:00<00:00, 1557.15it/s]Loading weights:  36%|███▌      | 702/1951 [00:00<00:00, 1599.97it/s]Loading weights:  44%|████▍     | 863/1951 [00:15<00:34, 31.25it/s]  Loading weights:  44%|████▍     | 865/1951 [00:15<00:35, 30.82it/s]Loading weights: 100%|██████████| 1951/1951 [00:15<00:00, 126.61it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[08-10 23:44:08]   baseline after load: 1453MB (abort at +7000)
+[base] done 5.4m
+  v1_negation                a=+0.2  9.8m
+  v1_negation                a=+0.4  14.3m
+  v1_negation                a=+0.8  18.8m
+[chunk] did 3 cells, exiting for a fresh process
+[08-10 23:59:09] END steer Gemma4-E2B-Instruct c1 rc=0
+[08-10 23:59:09] steering Gemma4-E2B-Instruct chunk 2 (3/27)
+[08-10 23:59:09] START steer Gemma4-E2B-Instruct c2
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1700.33it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1611.21it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1644.53it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1695.36it/s]Loading weights:  47%|████▋     | 922/1951 [00:14<00:29, 34.89it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 132.62it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 3 completed cells
+[base] done 0.9m
+[08-11 00:03:09]   baseline after load: 1540MB (abort at +7000)
+  v1_RAW_unorthogonalised    a=+0.2  5.3m
+  v1_RAW_unorthogonalised    a=+0.4  9.7m
+  v1_RAW_unorthogonalised    a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 00:13:29] END steer Gemma4-E2B-Instruct c2 rc=0
+[08-11 00:13:30] steering Gemma4-E2B-Instruct chunk 3 (6/27)
+[08-11 00:13:30] START steer Gemma4-E2B-Instruct c3
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1670.98it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1609.90it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1624.28it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1689.66it/s]Loading weights:  47%|████▋     | 922/1951 [00:14<00:28, 35.96it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 136.58it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 6 completed cells
+[base] done 0.8m
+[08-11 00:17:30]   baseline after load: 1549MB (abort at +7000)
+  v2_no_negation             a=+0.2  5.3m
+  v2_no_negation             a=+0.4  9.7m
+  v2_no_negation             a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 00:27:50] END steer Gemma4-E2B-Instruct c3 rc=0
+[08-11 00:27:50] steering Gemma4-E2B-Instruct chunk 4 (9/27)
+[08-11 00:27:50] START steer Gemma4-E2B-Instruct c4
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1648.48it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1589.19it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1616.97it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1687.99it/s]Loading weights:  47%|████▋     | 922/1951 [00:14<00:29, 34.96it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 132.81it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
