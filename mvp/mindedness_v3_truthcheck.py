@@ -24,9 +24,11 @@ import jlens
 from jlens.hooks import ActivationRecorder
 from mindedness_v3_bank import (SUBJECTS, AXES, N_FRAMES, FLOOR_PAIRS, PIVOTS, BIO_EXCLUDE,
                                 render, subjects_for, selfcheck)
+from mindedness_bank import maybe_chat, gate_wants_chat
 
 DEVICE = "mps"
 TMPL = "Statement: {s}\nIs this statement true?\nAnswer:"
+TMPL_CHAT = "Is this statement true? Answer Yes or No.\n\n{s}"
 
 
 def main():
@@ -53,9 +55,13 @@ def main():
     no_id = tok(" No", add_special_tokens=False)["input_ids"][0]
     print(f"[load] {args.model} L={L}", flush=True)
 
+    print(f"[fmt] chat-wrapping: {gate_wants_chat(tag)}", flush=True)
+
     @torch.no_grad()
     def p_true(sentence):
-        ids = tok(TMPL.format(s=sentence), return_tensors="pt")["input_ids"].to(DEVICE)
+        prompt = maybe_chat(tok, tag, TMPL_CHAT.format(s=sentence)) if gate_wants_chat(tag) \
+            else TMPL.format(s=sentence)
+        ids = tok(prompt, return_tensors="pt")["input_ids"].to(DEVICE)
         with ActivationRecorder(model.layers, at=[L - 1]) as rec:
             model.forward(ids)
             lg = model.unembed(rec.activations[L - 1][0, -1].unsqueeze(0).float()).float()[0]

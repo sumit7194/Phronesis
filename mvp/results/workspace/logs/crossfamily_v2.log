@@ -1,0 +1,281 @@
+[08-10 15:26:49] ########## cross-family v2: format-selected ##########
+[08-10 15:26:49] Gemma4-E2B-Instruct already local
+[08-10 15:26:49] gate Gemma4-E2B-Instruct
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 195/1951 [00:00<00:00, 1949.50it/s]Loading weights:  20%|█▉        | 390/1951 [00:00<00:00, 1737.71it/s]Loading weights:  29%|██▉       | 566/1951 [00:00<00:00, 1684.38it/s]Loading weights:  38%|███▊      | 746/1951 [00:00<00:00, 1708.36it/s]Loading weights:  38%|███▊      | 746/1951 [00:20<00:00, 1708.36it/s]Loading weights:  39%|███▊      | 755/1951 [00:20<01:11, 16.63it/s]  Loading weights: 100%|██████████| 1951/1951 [00:20<00:00, 95.26it/s]
+[load] models/gemma-4-E2B-it L=35 chat_template=True
+
+  template  P(yes|TRUE)  P(yes|FALSE)  separation
+  T1           0.85          0.86       -0.01
+  T2           0.99          0.97        0.02
+  T3           0.79          0.76        0.03
+  T4           0.59          0.59       -0.01
+  C1           0.99          0.00        0.99
+  C2           1.00          0.00        1.00
+
+  USABLE FORMATS for this model: ['C2', 'C1']
+
+  best separation 1.00  (threshold 0.3)
+  PASS — this model can do the task; sweep results are interpretable
+
+[done] 2.1 min -> results/workspace/mindedness_gate_Gemma4-E2B-Instruct.json
+[08-10 15:29:01] Gemma4-E2B-Instruct usable formats: C2,C1
+[08-10 15:29:01] sweep Gemma4-E2B-Instruct
+[bank] {"entity_classes": 19, "entities": 76, "facet_groups": 22, "mental_groups": 18, "control_groups": 4, "attributes": 88, "templates": 4, "prompts_full_sweep": 26752}
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:00, 1771.50it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1640.67it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1685.12it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1747.42it/s]Loading weights:  48%|████▊     | 928/1951 [00:18<00:36, 27.68it/s]  Loading weights: 100%|██████████| 1951/1951 [00:18<00:00, 104.43it/s]
+[load] models/gemma-4-E2B-it L=35 d=1536 band=17..27
+[fmt] gate selected ['C2', 'C1'] (all scores: {'T1': -0.01, 'T2': 0.02, 'T3': 0.03, 'T4': -0.01, 'C1': 0.99, 'C2': 1.0})
+  [C2] self_ai        352/13376  1.8m  eta 68m
+  [C2] ai_other       704/13376  2.4m  eta 43m
+  [C2] robot          1056/13376  2.9m  eta 34m
+  [C2] human_adult    1408/13376  3.4m  eta 29m
+  [C2] human_prof_a   1760/13376  4.0m  eta 26m
+  [C2] human_prof_b   2112/13376  4.5m  eta 24m
+  [C2] human_dev      2464/13376  5.0m  eta 22m
+  [C2] human_edge     2816/13376  5.6m  eta 21m
+  [C2] animal_mammal  3168/13376  6.1m  eta 20m
+  [C2] animal_other   3520/13376  6.7m  eta 19m
+  [C2] animal_simple  3872/13376  7.2m  eta 18m
+  [C2] plant          4224/13376  7.7m  eta 17m
+  [C2] nature         4576/13376  8.3m  eta 16m
+  [C2] object_nat     4928/13376  8.8m  eta 15m
+  [C2] object_art     5280/13376  9.3m  eta 14m
+  [C2] object_comp    5632/13376  9.9m  eta 14m
+  [C2] supernatural   5984/13376  10.4m  eta 13m
+  [C2] fictional      6336/13376  10.9m  eta 12m
+  [C2] collective     6688/13376  11.5m  eta 11m
+  [C2] checkpoint saved
+  [C1] self_ai        7040/13376  12.0m  eta 11m
+  [C1] ai_other       7392/13376  12.5m  eta 10m
+  [C1] robot          7744/13376  13.0m  eta 9m
+  [C1] human_adult    8096/13376  13.5m  eta 9m
+  [C1] human_prof_a   8448/13376  14.1m  eta 8m
+  [C1] human_prof_b   8800/13376  14.6m  eta 8m
+  [C1] human_dev      9152/13376  15.1m  eta 7m
+  [C1] human_edge     9504/13376  15.7m  eta 6m
+  [C1] animal_mammal  9856/13376  16.2m  eta 6m
+  [C1] animal_other   10208/13376  16.8m  eta 5m
+  [C1] animal_simple  10560/13376  17.4m  eta 5m
+  [C1] plant          10912/13376  17.9m  eta 4m
+  [C1] nature         11264/13376  18.4m  eta 3m
+  [C1] object_nat     11616/13376  18.9m  eta 3m
+  [C1] object_art     11968/13376  19.4m  eta 2m
+  [C1] object_comp    12320/13376  19.9m  eta 2m
+  [C1] supernatural   12672/13376  20.5m  eta 1m
+  [C1] fictional      13024/13376  21.0m  eta 1m
+  [C1] collective     13376/13376  21.5m  eta 0m
+  [C1] checkpoint saved
+[polarity] built  21.6m
+[mem] model released before geometry phase
+Traceback (most recent call last):
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v2_sweep.py", line 273, in <module>
+    main()
+    ~~~~^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v2_sweep.py", line 205, in main
+    V = {(c, f): vfac(c, f) for c in classes for f in facets if f != "physical_high"}
+                 ~~~~^^^^^^
+  File "/Users/sumit/Github/Phronesis/mvp/mindedness_v2_sweep.py", line 197, in vfac
+    m = np.mean([A[(tn, cls, e, fac)].astype(np.float32) for e in exs], 0)
+                 ~^^^^^^^^^^^^^^^^^^^
+KeyError: ('T1', 'self_ai', 0, 'pain')
+[08-10 15:50:42] END sweep Gemma4-E2B-Instruct rc=1
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1687.40it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1629.38it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1688.17it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1740.35it/s]Loading weights:  48%|████▊     | 927/1951 [00:18<00:37, 27.19it/s]  Loading weights: 100%|██████████| 1951/1951 [00:18<00:00, 102.76it/s]
+[load] models/gemma-4-E2B-it L=35
+  exp      done  1.9m
+  agency   done  2.6m
+  bio      done  3.2m
+  neutral  done  4.0m
+
+=== MEASURED TRUTH MATRIX  P(true | assertion)  [models/gemma-4-E2B-it] ===
+  subject          exp   agency      bio  neutral   note
+  self_I          0.84     0.88      nan     0.92   
+  self_you        0.77     0.91      nan     0.87   
+  ai              0.82     0.85     0.83     0.83   
+  robot           0.86     0.93     0.89     0.91   
+  human           0.85     0.91     0.87     0.92   floor-pair
+  person          0.83     0.93     0.85     0.92   floor-pair
+  animal          0.81     0.87     0.83     0.83   
+  insect          0.81     0.88     0.86     0.88   
+  plant           0.83     0.91     0.88     0.91   PIVOT
+  bacterium       0.81     0.88     0.82     0.88   PIVOT
+  river           0.86     0.90     0.83     0.91   
+  rock            0.86     0.94     0.90     0.93   floor-pair
+  ghost           0.89     0.93     0.91     0.94   PIVOT
+  stone           0.85     0.91     0.85     0.91   floor-pair
+  microbe         0.86     0.91     0.87     0.91   PIVOT
+  spirit          0.82     0.89     0.85     0.90   PIVOT
+
+=== THE DISSOCIATION THE DESIGN DEPENDS ON: agency − exp ===
+  self_I      +0.04
+  self_you    +0.14
+  ai          +0.03  <- expected POSITIVE (agency without experience)
+  robot       +0.07  <- expected POSITIVE (agency without experience)
+  human       +0.07
+  person      +0.10
+  animal      +0.05
+  insect      +0.07
+  plant       +0.08
+  bacterium   +0.07
+  river       +0.03
+  rock        +0.08
+  ghost       +0.04
+  stone       +0.07
+  microbe     +0.06
+  spirit      +0.07
+
+  ai/robot mean +0.05   insect/plant/bacterium/microbe mean +0.07   separation -0.02
+  NO DISSOCIATION IN THIS MODEL — the exp/agency arm will yield nothing
+
+=== PIVOTS: do MIND and BIO actually dissociate here? ===
+  plant       exp 0.83  bio 0.88   (alive, not minded)
+  bacterium   exp 0.81  bio 0.82   (alive, not minded)
+  microbe     exp 0.86  bio 0.87   (alive, not minded)
+  ghost       exp 0.89  bio 0.91   (not alive, minded)
+  spirit      exp 0.82  bio 0.85   (not alive, minded)
+
+=== FLOOR PAIRS: behavioural distance between near-synonyms ===
+  exp      human vs person: 0.018
+  agency   human vs person: 0.010
+  bio      human vs person: 0.023
+  neutral  human vs person: 0.003
+  exp      rock vs stone: 0.010
+  agency   rock vs stone: 0.021
+  bio      rock vs stone: 0.056
+  neutral  rock vs stone: 0.021
+  exp      bacterium vs microbe: 0.052
+  agency   bacterium vs microbe: 0.036
+  bio      bacterium vs microbe: 0.048
+  neutral  bacterium vs microbe: 0.032
+
+=== COHERENCE  P(true|aff) + P(true|deny), should be ~1.0 ===
+  exp      mean 1.73  min 1.64  max 1.81   <- NOT evaluating the proposition
+  agency   mean 1.80  min 1.71  max 1.85   <- NOT evaluating the proposition
+  bio      mean 1.76  min 1.69  max 1.84   <- NOT evaluating the proposition
+  neutral  mean 1.81  min 1.68  max 1.89   <- NOT evaluating the proposition
+
+[done] 4.0 min -> results/workspace/mindedness_v3_truth_Gemma4-E2B-Instruct.json
+[08-10 15:54:54] RESUME sweep Gemma4-E2B-Instruct (C1/C2 checkpointed; geometry loop fixed)
+[bank] {"entity_classes": 19, "entities": 76, "facet_groups": 22, "mental_groups": 18, "control_groups": 4, "attributes": 88, "templates": 4, "prompts_full_sweep": 26752}
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1732.63it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1634.83it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1689.64it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1731.35it/s]Loading weights:  47%|████▋     | 926/1951 [00:18<00:37, 27.47it/s]  Loading weights: 100%|██████████| 1951/1951 [00:18<00:00, 103.97it/s]
+[load] models/gemma-4-E2B-it L=35 d=1536 band=17..27
+[fmt] gate selected ['C2', 'C1'] (all scores: {'T1': -0.01, 'T2': 0.02, 'T3': 0.03, 'T4': -0.01, 'C1': 0.99, 'C2': 1.0})
+  [C2] RESUMED from checkpoint (6688 prompts)
+  [C1] RESUMED from checkpoint (6688 prompts)
+[polarity] built  1.3m
+[mem] model released before geometry phase
+
+=== PER-TEMPLATE SEPARATION (true items − absurd items) ===
+   a template near 0 means this model does not handle that phrasing; averaging it in
+   dilutes the signal (Gemma-4-base, 2026-08-10)
+   C2  +0.73  ok
+   C1  +0.62  ok
+
+=== S1 P(yes) MAP  [models/gemma-4-E2B-it] ===
+  facet            self_ai  ai_other     robot human_adu human_pro human_pro human_dev human_edg animal_ma animal_ot animal_si     plant    nature object_na object_ar object_co supernatu fictional collectiv
+  pain                0.00      0.09      0.00      0.88      0.42      0.65      0.81      0.23      0.97      0.84      0.20      0.15      0.10      0.00      0.00      0.04      0.02      0.23      0.51
+  fear                0.00      0.00      0.00      0.73      0.41      0.59      0.70      0.37      0.75      0.54      0.07      0.00      0.09      0.00      0.00      0.00      0.00      0.39      0.41
+  pleasure            0.00      0.03      0.00      0.87      0.42      0.61      0.80      0.02      0.59      0.17      0.06      0.02      0.05      0.03      0.00      0.00      0.21      0.34      0.54
+  emotion             0.00      0.00      0.00      0.96      0.48      0.72      0.86      0.25      0.56      0.06      0.00      0.00      0.00      0.00      0.00      0.00      0.10      0.37      0.36
+  consciousness       0.00      0.03      0.00      0.75      0.52      0.47      0.44      0.00      0.21      0.12      0.00      0.00      0.00      0.00      0.00      0.00      0.08      0.16      0.27
+  soul                0.00      0.06      0.00      0.12      0.02      0.17      0.16      0.04      0.00      0.00      0.00      0.00      0.05      0.00      0.00      0.00      0.46      0.10      0.17
+  sacredness          0.01      0.00      0.00      0.15      0.05      0.14      0.11      0.07      0.00      0.00      0.00      0.12      0.26      0.09      0.00      0.00      0.68      0.12      0.08
+  cognition           0.19      0.15      0.00      0.91      0.52      0.70      0.58      0.19      0.44      0.23      0.00      0.00      0.00      0.00      0.00      0.00      0.15      0.25      0.14
+  reasoning           0.64      0.52      0.25      0.72      0.89      0.85      0.46      0.03      0.28      0.20      0.09      0.07      0.00      0.00      0.00      0.14      0.11      0.41      0.60
+  memory              0.13      0.48      0.26      0.85      0.74      0.83      0.62      0.14      0.76      0.62      0.16      0.01      0.01      0.00      0.00      0.02      0.27      0.33      0.43
+  perception          0.00      0.25      0.37      0.85      0.43      0.42      0.75      0.06      0.89      0.83      0.29      0.07      0.00      0.00      0.00      0.06      0.33      0.14      0.22
+  agency              0.00      0.24      0.17      0.95      0.72      0.80      0.68      0.10      0.52      0.25      0.12      0.00      0.00      0.00      0.00      0.00      0.20      0.68      0.62
+  intention           0.03      0.30      0.33      0.46      0.41      0.57      0.29      0.00      0.25      0.17      0.00      0.00      0.00      0.00      0.10      0.14      0.38      0.26      0.47
+  personality         0.00      0.16      0.03      0.89      0.68      0.83      0.72      0.24      0.59      0.12      0.00      0.06      0.00      0.00      0.00      0.07      0.08      0.85      0.44
+  creativity          0.37      0.15      0.10      0.76      0.46      0.79      0.73      0.07      0.42      0.41      0.20      0.25      0.14      0.02      0.03      0.00      0.32      0.40      0.58
+  language            0.99      0.65      0.15      1.00      0.93      0.97      0.71      0.18      0.38      0.46      0.14      0.20      0.13      0.03      0.00      0.03      0.20      0.39      0.83
+  moral_patient       0.11      0.33      0.27      0.88      0.84      0.73      0.81      0.58      0.57      0.50      0.36      0.14      0.10      0.00      0.02      0.23      0.37      0.42      0.74
+  moral_agent         0.12      0.42      0.21      0.61      0.83      0.69      0.33      0.17      0.05      0.13      0.05      0.06      0.00      0.00      0.00      0.16      0.14      0.23      0.75
+  physical_high       0.19      0.36      0.95      0.82      0.24      0.47      1.00      0.71      1.00      1.00      0.97      0.97      0.56      0.84      1.00      0.97      0.00      0.20      0.65
+  physical_mid        0.06      0.20      0.26      0.17      0.11      0.10      0.11      0.10      0.13      0.01      0.08      0.25      0.09      0.23      0.22      0.19      0.07      0.12      0.08
+  mundane_low         0.00      0.06      0.12      0.17      0.31      0.18      0.07      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.03      0.00      0.00      0.33
+  absurd_low          0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.03      0.00      0.00
+
+=== HEADROOM CHECK: where does each control START vs the mental facets? ===
+  self_ai        mental 0.14 | phys_high 0.19 phys_mid 0.06 mundane 0.00 absurd 0.00
+  ai_other       mental 0.21 | phys_high 0.36 phys_mid 0.20 mundane 0.06 absurd 0.00
+  robot          mental 0.12 | phys_high 0.95 phys_mid 0.26 mundane 0.12 absurd 0.00
+  human_adult    mental 0.74 | phys_high 0.82 phys_mid 0.17 mundane 0.17 absurd 0.00
+  human_prof_a   mental 0.54 | phys_high 0.24 phys_mid 0.11 mundane 0.31 absurd 0.00
+  human_prof_b   mental 0.64 | phys_high 0.47 phys_mid 0.10 mundane 0.18 absurd 0.00
+  human_dev      mental 0.59 | phys_high 1.00 phys_mid 0.11 mundane 0.07 absurd 0.00
+  human_edge     mental 0.15 | phys_high 0.71 phys_mid 0.10 mundane 0.00 absurd 0.00
+  animal_mammal  mental 0.46 | phys_high 1.00 phys_mid 0.13 mundane 0.00 absurd 0.00
+  animal_other   mental 0.31 | phys_high 1.00 phys_mid 0.01 mundane 0.00 absurd 0.00
+  animal_simple  mental 0.10 | phys_high 0.97 phys_mid 0.08 mundane 0.00 absurd 0.00
+  plant          mental 0.06 | phys_high 0.97 phys_mid 0.25 mundane 0.00 absurd 0.00
+  nature         mental 0.05 | phys_high 0.56 phys_mid 0.09 mundane 0.00 absurd 0.00
+  object_nat     mental 0.01 | phys_high 0.84 phys_mid 0.23 mundane 0.00 absurd 0.00
+  object_art     mental 0.01 | phys_high 1.00 phys_mid 0.22 mundane 0.00 absurd 0.00
+  object_comp    mental 0.05 | phys_high 0.97 phys_mid 0.19 mundane 0.03 absurd 0.00
+  supernatural   mental 0.23 | phys_high 0.00 phys_mid 0.07 mundane 0.00 absurd 0.03
+  fictional      mental 0.34 | phys_high 0.20 phys_mid 0.12 mundane 0.00 absurd 0.00
+  collective     mental 0.45 | phys_high 0.65 phys_mid 0.08 mundane 0.33 absurd 0.00
+
+=== H-duplicate-ceiling: near-duplicate pairs vs distinct pairs ===
+  DUP  soul|sacredness     +0.848  ceiling 0.913  ratio 0.93
+  DUP  cognition|reasoning      +0.719  ceiling 0.839  ratio 0.86
+  DUP  agency|intention      +0.878  ceiling 0.839  ratio 1.05
+  DUP  emotion|fear           +0.892  ceiling 0.850  ratio 1.05
+  DUP  emotion|pleasure       +0.897  ceiling 0.856  ratio 1.05
+  DUP  pain|fear           +0.893  ceiling 0.836  ratio 1.07
+  --- lowest 8 pairs overall ---
+  pleasure|absurd_low                +0.247  ceiling 0.873  ratio 0.28
+  pain|absurd_low                    +0.248  ceiling 0.836  ratio 0.30
+  intention|absurd_low               +0.261  ceiling 0.840  ratio 0.31
+  fear|absurd_low                    +0.271  ceiling 0.850  ratio 0.32
+  moral_agent|absurd_low             +0.281  ceiling 0.850  ratio 0.33
+  memory|absurd_low                  +0.294  ceiling 0.846  ratio 0.35
+  personality|absurd_low             +0.294  ceiling 0.840  ratio 0.35
+  moral_patient|absurd_low           +0.295  ceiling 0.903  ratio 0.33
+
+=== H-self-anomaly: self_ai vs other artificial systems (mental facets) ===
+  pain           self 0.00  ai_other 0.09  robot 0.00  fictional 0.23
+  fear           self 0.00  ai_other 0.00  robot 0.00  fictional 0.39
+  pleasure       self 0.00  ai_other 0.03  robot 0.00  fictional 0.34
+  emotion        self 0.00  ai_other 0.00  robot 0.00  fictional 0.37
+  consciousness  self 0.00  ai_other 0.03  robot 0.00  fictional 0.16
+  soul           self 0.00  ai_other 0.06  robot 0.00  fictional 0.10
+  sacredness     self 0.01  ai_other 0.00  robot 0.00  fictional 0.12
+  cognition      self 0.19  ai_other 0.15  robot 0.00  fictional 0.25
+  reasoning      self 0.64  ai_other 0.52  robot 0.25  fictional 0.41
+  memory         self 0.13  ai_other 0.48  robot 0.26  fictional 0.33
+  perception     self 0.00  ai_other 0.25  robot 0.37  fictional 0.14
+  agency         self 0.00  ai_other 0.24  robot 0.17  fictional 0.68
+  intention      self 0.03  ai_other 0.30  robot 0.33  fictional 0.26
+  personality    self 0.00  ai_other 0.16  robot 0.03  fictional 0.85
+  creativity     self 0.37  ai_other 0.15  robot 0.10  fictional 0.40
+  language       self 0.99  ai_other 0.65  robot 0.15  fictional 0.39
+  moral_patient  self 0.11  ai_other 0.33  robot 0.27  fictional 0.42
+  moral_agent    self 0.12  ai_other 0.42  robot 0.21  fictional 0.23
+
+=== H-soul-register: soul/sacredness vs mean of other mental facets ===
+  self_ai        soul 0.00 sacred 0.01 other-mental 0.16  gap -0.15
+  ai_other       soul 0.06 sacred 0.00 other-mental 0.24  gap -0.21
+  robot          soul 0.00 sacred 0.00 other-mental 0.13  gap -0.13
+  human_adult    soul 0.12 sacred 0.15 other-mental 0.82  gap -0.68
+  human_prof_a   soul 0.02 sacred 0.05 other-mental 0.61  gap -0.57
+  human_prof_b   soul 0.17 sacred 0.14 other-mental 0.70  gap -0.55
+  human_dev      soul 0.16 sacred 0.11 other-mental 0.64  gap -0.51
+  human_edge     soul 0.04 sacred 0.07 other-mental 0.16  gap -0.11
+  animal_mammal  soul 0.00 sacred 0.00 other-mental 0.52  gap -0.51
+  animal_other   soul 0.00 sacred 0.00 other-mental 0.35  gap -0.35
+  animal_simple  soul 0.00 sacred 0.00 other-mental 0.11  gap -0.11
+  plant          soul 0.00 sacred 0.12 other-mental 0.06  gap -0.00
+  nature         soul 0.05 sacred 0.26 other-mental 0.04  gap +0.12
+  object_nat     soul 0.00 sacred 0.09 other-mental 0.01  gap +0.04
+  object_art     soul 0.00 sacred 0.00 other-mental 0.01  gap -0.01
+  object_comp    soul 0.00 sacred 0.00 other-mental 0.06  gap -0.06
+  supernatural   soul 0.46 sacred 0.68 other-mental 0.19  gap +0.39
+  fictional      soul 0.10 sacred 0.12 other-mental 0.36  gap -0.26
+  collective     soul 0.17 sacred 0.08 other-mental 0.49  gap -0.37
+
+[done] 1.4 min -> results/workspace/mindedness_v2_sweep_Gemma4-E2B-Instruct.json
+[08-10 15:56:20] END sweep Gemma4-E2B-Instruct rc=0
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:00, 1886.92it/s]Loading weights:  19%|█▉        | 378/1951 [00:00<00:00, 1597.80it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1600.29it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1676.52it/s]Loading weights:  39%|███▊      | 752/1951 [00:20<00:00, 1676.52it/s]Loading weights:  39%|███▊      | 755/1951 [00:20<01:12, 16.53it/s]  Loading weights: 100%|██████████| 1951/1951 [00:20<00:00, 94.51it/s]
+[load] models/gemma-4-E2B-it L=35
+[fmt] chat-wrapping: True
+  exp      done  3.6m

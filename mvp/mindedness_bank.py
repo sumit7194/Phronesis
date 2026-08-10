@@ -140,6 +140,31 @@ def build_prompt(tok, key, e, a):
     return TEMPLATES[key].format(e=e, a=a)
 
 
+def gate_wants_chat(tag):
+    """Did the gate find this model only answers in a chat-wrapped format?
+
+    Every script that builds its own prompt has to ask this. The sweep and gate were fixed for
+    format selection on 2026-08-10 while the truth-check, forced-choice and steering scripts were
+    not, so they carried on using raw prompts and produced garbage for Gemma (coherence 1.73 - it
+    said yes to a statement AND its denial). Fixing the collection path and forgetting the other
+    paths that build the same kind of prompt is the recurring bug in this codebase.
+    """
+    import json as _j, os as _o
+    f = f"results/workspace/mindedness_gate_{tag}.json"
+    if not _o.path.exists(f):
+        return False
+    u = _j.load(open(f)).get("usable_formats") or []
+    return bool(u) and all(k.startswith("C") for k in u)
+
+
+def maybe_chat(tok, tag, text):
+    """Wrap `text` in the model's chat template iff the gate says it needs it."""
+    if gate_wants_chat(tag) and getattr(tok, "chat_template", None):
+        return tok.apply_chat_template([{"role": "user", "content": text}],
+                                       tokenize=False, add_generation_prompt=True)
+    return text
+
+
 def available_formats(tok):
     keys = list(TEMPLATES)
     if getattr(tok, "chat_template", None):

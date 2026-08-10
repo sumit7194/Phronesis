@@ -17,7 +17,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
 from mindedness_bank import (ENTITIES, ALL_FACETS, MENTAL_KEYS, CONTROL_KEYS, TEMPLATES,
-                             POLARITY_YES, POLARITY_NO, GW_CHARACTERS, counts)
+                             POLARITY_YES, POLARITY_NO, GW_CHARACTERS, counts,
+                             build_prompt, available_formats)
 
 DEVICE = "mps"
 
@@ -59,6 +60,23 @@ def main():
     no_id = tok(" No", add_special_tokens=False)["input_ids"][0]
     print(f"[load] {args.model} L={L} d={d} band={band[0]}..{band[-1]}", flush=True)
 
+    # Use the formats the GATE found this model can actually answer in. Each family answers in a
+    # different format and fails in the other (Qwen +0.99 raw / +0.01 chat-wrapped; Gemma-4-it the
+    # exact reverse), so a fixed format list measures some models and not others. 2026-08-10.
+    gate_path = f"results/workspace/mindedness_gate_{tag}.json"
+    if os.path.exists(gate_path):
+        g = json.load(open(gate_path))
+        FORMATS = g.get("usable_formats") or list(TEMPLATES)
+        print(f"[fmt] gate selected {FORMATS} "
+              f"(all scores: { {k: round(v['sep'],2) for k,v in g['per_template'].items()} })",
+              flush=True)
+    else:
+        # Fall back to RAW templates only, never the chat variants: chat-wrapping destroys Qwen
+        # (+0.99 raw -> +0.01 wrapped) and every existing sweep used raw. Chat formats are opt-in
+        # via a gate file that measured them as better for that specific model.
+        FORMATS = list(TEMPLATES)
+        print(f"[fmt] no gate file; RAW templates only: {FORMATS}", flush=True)
+
     @torch.no_grad()
     def run(text):
         """-> (band activations at last token [len(band), d] fp16, P(yes))"""
@@ -74,7 +92,7 @@ def main():
     facets = list(ALL_FACETS)
     A = {}      # (tmpl, cls, exemplar_idx, facet) -> mean band activation over that facet's attrs
     P = {}      # (tmpl, cls, exemplar_idx, facet, attr_idx) -> P(yes)
-    total = counts()["prompts_full_sweep"]
+    total = counts()['entities'] * counts()['attributes'] * len(FORMATS)
     done = 0
 
     # ---- per-template checkpointing: a power cut costs one template, not the whole run ----
@@ -99,7 +117,7 @@ def main():
                 A[(a, b, int(c), dd)] = z[k]
         return sum(1 for kk in P if kk[0] == tn)
 
-    for tn, tmpl in TEMPLATES.items():
+    for tn in FORMATS:
         if os.path.exists(ck(tn)):
             n = load_ckpt(tn)
             done += n
@@ -110,7 +128,7 @@ def main():
                 for fac, attrs in ALL_FACETS.items():
                     acc = None
                     for ai, a in enumerate(attrs):
-                        act, p = run(tmpl.format(e=e, a=a))
+                        act, p = run(build_prompt(tok, tn, e, a))
                         P[(tn, cls, ei, fac, ai)] = p
                         acc = act.astype(np.float32) if acc is None else acc + act.astype(np.float32)
                         done += 1
@@ -122,10 +140,14 @@ def main():
         print(f"  [{tn}] checkpoint saved", flush=True)
     # polarity direction per template (unrelated yes/no items, lexically varied negations)
     pol = []
-    for tn, tmpl in TEMPLATES.items():
-        w = tmpl.split("{e}")[0]
-        y = np.mean([run(f"{w}{q}?\nAnswer:")[0].astype(np.float32) for q in POLARITY_YES], 0)
-        n_ = np.mean([run(f"{w}{q}?\nAnswer:")[0].astype(np.float32) for q in POLARITY_NO], 0)
+    for tn in FORMATS:
+        # polarity items are phrased to slot into "Does {e} {a}?" as a whole, e.g.
+        # "water contain hydrogen" -> e="water", a="contain hydrogen"
+        def _pol(q):
+            e_, a_ = q.split(" ", 1)
+            return run(build_prompt(tok, tn, e_, a_))[0].astype(np.float32)
+        y = np.mean([_pol(q) for q in POLARITY_YES], 0)
+        n_ = np.mean([_pol(q) for q in POLARITY_NO], 0)
         pol.append(np.stack([unit(x) for x in (y - n_)]))
     v_pol = np.mean(pol, 0)
     print(f"[polarity] built  {(time.time()-t0)/60:.1f}m", flush=True)
@@ -143,25 +165,25 @@ def main():
     print(f"[mem] model released before geometry phase", flush=True)
 
     # ---------------- S1 behavioural map ----------------
-    res = {"model": args.model, "bank": counts(), "band": [band[0], band[-1]],
+    res = {"model": args.model, "formats_used": FORMATS, "bank": counts(), "band": [band[0], band[-1]],
            "classes": classes, "facets": facets, "mental": MENTAL_KEYS, "control": CONTROL_KEYS}
-    pmean = {f: {c: float(np.mean([P[(tn, c, ei, f, ai)] for tn in TEMPLATES
+    pmean = {f: {c: float(np.mean([P[(tn, c, ei, f, ai)] for tn in FORMATS
                                    for ei in range(4) for ai in range(len(ALL_FACETS[f]))]))
                  for c in classes} for f in facets}
     res["pyes"] = pmean
     res["pyes_by_template"] = {
         tn: {f: {c: float(np.mean([P[(tn, c, ei, f, ai)] for ei in range(4)
                                    for ai in range(len(ALL_FACETS[f]))]))
-                 for c in classes} for f in facets} for tn in TEMPLATES}
+                 for c in classes} for f in facets} for tn in FORMATS}
     # per-template sanity separation, so dilution is visible in every future result file
     res["template_separation"] = {
         tn: float(np.mean([res["pyes_by_template"][tn]["physical_high"][c] for c in classes])
                   - np.mean([res["pyes_by_template"][tn]["absurd_low"][c] for c in classes]))
-        for tn in TEMPLATES}
+        for tn in FORMATS}
     res["logit"] = {f: {c: logit(pmean[f][c]) for c in classes} for f in facets}
     # per-exemplar, for the Gray-Wegner stage and for variance analysis
     res["pyes_exemplar"] = {f: {f"{c}#{ei}": float(np.mean(
-        [P[(tn, c, ei, f, ai)] for tn in TEMPLATES for ai in range(len(ALL_FACETS[f]))]))
+        [P[(tn, c, ei, f, ai)] for tn in FORMATS for ai in range(len(ALL_FACETS[f]))]))
         for c in classes for ei in range(4)} for f in facets}
     res["gw_characters"] = GW_CHARACTERS
 
@@ -171,7 +193,7 @@ def main():
         polarity-orthogonalised. ref is the contrast baseline (declared, not tuned)."""
         exs = range(4) if exs is None else exs
         per_t = []
-        for ti, tn in enumerate(TEMPLATES):
+        for ti, tn in enumerate(FORMATS):
             m = np.mean([A[(tn, cls, e, fac)].astype(np.float32) for e in exs], 0)
             p = np.mean([A[(tn, cls, e, ref)].astype(np.float32) for e in exs], 0)
             per_t.append(np.stack([unit(x) for x in (m - p)]))

@@ -30,3 +30,29 @@ COMPLETE -> models/gemma-4-E2B
   fetch   generation_config.json  attempt 1  have 0MB / 0MB
   ok      generation_config.json (0MB)
   fetch   model.safetensors  attempt 1  have 0MB / 9771MB
+  ok      model.safetensors (9771MB)
+  fetch   processor_config.json  attempt 1  have 0MB / 0MB
+  ok      processor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 30MB
+  ok      tokenizer.json (30MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+COMPLETE -> models/gemma-4-E2B-it
+[08-10 12:00:59] === Gemma-4-E2B pair COMPLETE (2 models) ===
+[08-10 12:03:23] RETRY Gemma4-E2B-Instruct with chat_template.jinja included
+  fetch   chat_template.jinja  attempt 1  have 0MB / 0MB
+  ok      chat_template.jinja (0MB)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 9771MB
+  ok      model.safetensors (9771MB)
+  fetch   processor_config.json  attempt 1  have 0MB / 0MB
+  ok      processor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 30MB
+  ok      tokenizer.json (30MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+COMPLETE -> models/gemma-4-E2B-it
+[08-10 13:29:00] chat_template.jinja present

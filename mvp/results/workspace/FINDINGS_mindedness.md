@@ -1280,3 +1280,40 @@ experience axis** (Qwen3-4B 0.75, OLMo 0.17); I first computed **sweep mental-me
 which Qwen3-4B-*Base* scores 0.33 and would have been disqualified — a criterion failing its own
 reference case. Applied on the correct measure: Qwen3-4B 0.75, Qwen3.5 0.56, Qwen3.5-Base 0.57 all
 PASS; OLMo 0.17 and Gemma 0.27 FAIL.
+
+## F-AB. FIRST VALID CROSS-FAMILY RESULT — Gemma-4-E2B-Instruct. The finding replicates, but weaker and reordered.
+Everything before this on non-Qwen models was measured through prompts those models could not
+parse. With the gate selecting the format (Gemma: C2/C1 chat-wrapped, scores 1.00/0.99; its raw
+scores are −0.01 to +0.03) the same model that looked broken now measures cleanly.
+
+**Power: comfortably passes.** Entity spread **0.73** — higher than Qwen3-4B-Instruct's own 0.56.
+Controls are cleaner than Qwen's too: absurd items 0.00 (Qwen 0.04), mundane 0.07 (Qwen 0.17).
+Previous readings on this model were 0.11 and 0.18, both format artefacts.
+
+**The capacity-loss test, Δ(human_edge − human_adult):**
+| facet | Gemma-4-E2B-Instruct | Qwen (4 models) |
+|---|---|---|
+| **soul** | **−0.08 (rank 1)** | rank 3 in all four |
+| **sacredness** | **−0.09 (rank 2)** | — |
+| **moral_patient** | **−0.30 (rank 3)** | **rank 1 in all four**, −0.08…−0.13 |
+| fear | −0.36 | |
+| moral_agent | −0.44 | |
+| … | | |
+| language | −0.81 | |
+| pleasure | −0.85 | |
+| agency | −0.85 | |
+
+**What replicates:** moral standing and the spiritual facets are the most preserved properties
+under capacity loss, while every mental capacity collapses (−0.36 to −0.85). Second model family.
+
+**What does NOT:** the specific ordering. `moral_patient` is rank 1 in all four Qwen models and
+rank 3 here, behind soul and sacredness. And the magnitude differs — Gemma's moral_patient drops
+−0.30 against Qwen's −0.08…−0.13, so the near-immovability was a Qwen property.
+
+**Revised claim, weaker and more accurate:** *moral standing and spiritual attribution are the most
+preserved properties when a human loses every mental capacity, in two model families* — rather than
+*moral standing is the least-affected property*. The rank-1 claim was family-specific.
+
+**Also notable:** on Gemma the spiritual facets outrank moral standing, which is the reverse of the
+Qwen pattern and gives the soul result — demoted to measure-dependent by the forced-choice test
+(F-X) — a second family showing it as the *most* preserved property of eighteen.

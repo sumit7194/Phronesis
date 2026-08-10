@@ -1,0 +1,29 @@
+[08-10 11:59:39] ########## BATTERY: Gemma4-E2B-Instruct (models/gemma-4-E2B-it) ##########
+[08-10 11:59:39] using local weights at models/gemma-4-E2B-it
+[08-10 11:59:39] START gate (disk 16Gi, swap 1149MB)
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   8%|▊         | 158/1951 [00:00<00:01, 1514.89it/s]Loading weights:  16%|█▌        | 313/1951 [00:00<00:01, 1436.65it/s]Loading weights:  24%|██▍       | 468/1951 [00:00<00:01, 1441.46it/s]Loading weights:  32%|███▏      | 623/1951 [00:00<00:00, 1424.93it/s]Loading weights:  39%|███▉      | 766/1951 [00:14<00:39, 30.23it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 138.27it/s]
+[load] models/gemma-4-E2B-it L=35 chat_template=False
+
+  template  P(yes|TRUE)  P(yes|FALSE)  separation
+  T1           0.85          0.86       -0.01
+  T2           0.99          0.97        0.02
+  T3           0.79          0.76        0.03
+  T4           0.59          0.59       -0.01
+
+  best separation 0.03  (threshold 0.3)
+  FAIL — this model cannot do the yes/no task. Any sweep result would be about format-following, not concepts. Report as UNINTERPRETABLE, not as a null.
+
+[done] 1.3 min -> results/workspace/mindedness_gate_Gemma4-E2B-Instruct.json
+[08-10 12:00:59] END gate rc=2
+[08-10 12:00:59] GATE FAILED — skipping the rest. Report as UNINTERPRETABLE, not as a null.
+[08-10 12:00:59] weights + checkpoints removed (disk 26Gi free)
+[08-10 12:00:59] ########## Gemma4-E2B-Instruct FAILURES: gate ##########
+[08-10 13:29:00] ########## BATTERY: Gemma4-E2B-Instruct (models/gemma-4-E2B-it) ##########
+[08-10 13:29:00] using local weights at models/gemma-4-E2B-it
+[08-10 13:29:00] START gate (disk 4Gi, swap 942MB)
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1661.35it/s]Loading weights:  18%|█▊        | 356/1951 [00:00<00:00, 1601.74it/s]Loading weights:  26%|██▋       | 517/1951 [00:00<00:00, 1448.03it/s]Loading weights:  34%|███▍      | 663/1951 [00:00<00:00, 1433.01it/s][08-10 13:29:20] ABORT gate: disk
+[08-10 13:29:21] END gate rc=137
+[08-10 13:29:21] GATE FAILED — skipping the rest. Report as UNINTERPRETABLE, not as a null.
+[08-10 13:29:21] ########## Gemma4-E2B-Instruct FAILURES: gate ##########
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-80005-d809ajzs'}
+  warnings.warn(
