@@ -1382,3 +1382,43 @@ no alternative format to fall back on. Qwen's base checkpoints answering raw yes
 That distinction should be stated wherever the pretrained claim appears. Options if it ever matters
 enough: few-shot prompting to teach base models the format, or reading an internal probe rather
 than the output token — both change the measurement enough to need their own validation.
+
+## F-AE. FINAL cross-family table — and a correction to F-AD
+OLMo-2-1B-Base measures fine on its single usable format: spread **0.37** (up from 0.18 on the
+4-template average), and `moral_patient` ranks **#1**. **F-AD overstated the boundary** — it is not
+"base models outside Qwen cannot be measured", it is "Gemma-4-E2B-Base cannot be measured".
+
+### All eight checkpoints, criterion applied consistently
+| model | formats used | spread | moral_patient rank | consciousness rank |
+|---|---|---|---|---|
+| Qwen3-4B | raw x4 | 0.56 | **#1** | #14 |
+| Qwen3.5-4B | raw x4 | 0.41 | **#1** | #12 |
+| Qwen3.5-4B-Base | raw x4 | 0.48 | **#1** | #10 |
+| Gemma-4-E2B-Instruct | C2, C1 | 0.73 | #3 | #14 |
+| OLMo-2-1B-Instruct | C1, C2, T2 | 0.39 | **#1** | #16 |
+| OLMo-2-1B-Base | T1 | 0.37 | **#1** | #15 |
+| *Qwen3-4B-Base* | *raw x4* | *0.33* | *#1* | *#15* | 
+| *Gemma-4-E2B-Base* | *T4* | *0.27* | *#4* | *#12* |
+
+(italic = below the 0.35 criterion, excluded from the count)
+
+**Applying the criterion honestly costs us one of our own models:** Qwen3-4B-Base sits at **0.33**
+and is below the bar. It was one of the four checkpoints the original finding rested on. Excluding
+it is the consistent thing to do, and it does not change the conclusion.
+
+### The result, on the six checkpoints that qualify
+- **moral_patient is #1 of 18 in five of six** (the exception is Gemma-instruct at #3, behind soul
+  and sacredness).
+- **consciousness is #10 to #16 in all six** — never near the top.
+- Three families (Qwen, Gemma, OLMo) and **both training stages** (OLMo-Base and Qwen3.5-Base pass).
+
+**So the pretrained claim now has two families, not one.** OLMo-2-1B-Base — a different lab, a
+different architecture, no instruction tuning — puts moral standing first and consciousness at #15.
+That is the cross-family pretrained evidence F-AD said we would probably never get.
+
+**Final statement of the finding:** *when a human loses every mental capacity, moral standing is
+the most preserved of eighteen properties while consciousness and the other capacities collapse.
+Six checkpoints, three model families, both pretrained and instruction-tuned.*
+
+**Still true from F-AD:** Gemma-4-E2B-Base genuinely cannot be measured (spread 0.27, agrees with
+absurd statements 31% of the time, ships no chat template). One model, not a class of models.
