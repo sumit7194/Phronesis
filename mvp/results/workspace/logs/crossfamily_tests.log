@@ -591,3 +591,82 @@ COMPLETE -> models/gemma-4-E2B-it
 [08-11 00:27:50] START steer Gemma4-E2B-Instruct c4
 Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1648.48it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1589.19it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1616.97it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1687.99it/s]Loading weights:  47%|████▋     | 922/1951 [00:14<00:29, 34.96it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 132.81it/s]
 [load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 9 completed cells
+[base] done 0.9m
+[08-11 00:31:51]   baseline after load: 1398MB (abort at +7000)
+  v3_third_person            a=+0.2  5.4m
+  v3_third_person            a=+0.4  9.8m
+  v3_third_person            a=+0.8  14.3m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 00:42:31] END steer Gemma4-E2B-Instruct c4 rc=0
+[08-11 00:42:31] steering Gemma4-E2B-Instruct chunk 5 (12/27)
+[08-11 00:42:31] START steer Gemma4-E2B-Instruct c5
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 184/1951 [00:00<00:00, 1826.52it/s]Loading weights:  19%|█▉        | 367/1951 [00:00<00:00, 1679.60it/s]Loading weights:  27%|██▋       | 536/1951 [00:00<00:00, 1569.28it/s]Loading weights:  36%|███▋      | 711/1951 [00:00<00:00, 1617.16it/s]Loading weights:  45%|████▍     | 874/1951 [00:14<00:32, 33.00it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 133.07it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 12 completed cells
+[base] done 0.8m
+[08-11 00:46:31]   baseline after load: 1603MB (abort at +7000)
+  random0                    a=+0.2  5.3m
+  random0                    a=+0.4  9.7m
+  random0                    a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 00:56:52] END steer Gemma4-E2B-Instruct c5 rc=0
+[08-11 00:56:52] steering Gemma4-E2B-Instruct chunk 6 (15/27)
+[08-11 00:56:52] START steer Gemma4-E2B-Instruct c6
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1589.88it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:01, 1562.42it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1613.86it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1679.17it/s]Loading weights:  47%|████▋     | 921/1951 [00:14<00:30, 34.33it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 130.73it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 15 completed cells
+[base] done 0.9m
+[08-11 01:00:52]   baseline after load: 1567MB (abort at +7000)
+  random1                    a=+0.2  5.4m
+  random1                    a=+0.4  9.8m
+  random1                    a=+0.8  14.3m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 01:11:33] END steer Gemma4-E2B-Instruct c6 rc=0
+[08-11 01:11:33] steering Gemma4-E2B-Instruct chunk 7 (18/27)
+[08-11 01:11:33] START steer Gemma4-E2B-Instruct c7
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1586.95it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1576.12it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1609.35it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1671.10it/s]Loading weights:  47%|████▋     | 920/1951 [00:14<00:29, 35.16it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 134.11it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 18 completed cells
+[base] done 0.9m
+[08-11 01:15:33]   baseline after load: 1298MB (abort at +7000)
+  random2                    a=+0.2  5.3m
+  random2                    a=+0.4  9.8m
+  random2                    a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 01:25:54] END steer Gemma4-E2B-Instruct c7 rc=0
+[08-11 01:25:54] steering Gemma4-E2B-Instruct chunk 8 (21/27)
+[08-11 01:25:54] START steer Gemma4-E2B-Instruct c8
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1609.89it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1604.35it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1618.29it/s]Loading weights:  39%|███▊      | 752/1951 [00:00<00:00, 1691.40it/s]Loading weights:  47%|████▋     | 922/1951 [00:15<00:30, 34.06it/s]  Loading weights: 100%|██████████| 1951/1951 [00:15<00:00, 129.49it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 21 completed cells
+[base] done 0.8m
+[08-11 01:29:54]   baseline after load: 1480MB (abort at +7000)
+  random3                    a=+0.2  5.3m
+  random3                    a=+0.4  9.7m
+  random3                    a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 01:40:14] END steer Gemma4-E2B-Instruct c8 rc=0
+[08-11 01:40:15] steering Gemma4-E2B-Instruct chunk 9 (24/27)
+[08-11 01:40:15] START steer Gemma4-E2B-Instruct c9
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:00, 1804.03it/s]Loading weights:  19%|█▊        | 362/1951 [00:00<00:00, 1653.15it/s]Loading weights:  27%|██▋       | 529/1951 [00:00<00:00, 1585.18it/s]Loading weights:  35%|███▌      | 689/1951 [00:00<00:00, 1563.91it/s]Loading weights:  43%|████▎     | 846/1951 [00:14<00:34, 31.80it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 133.58it/s]

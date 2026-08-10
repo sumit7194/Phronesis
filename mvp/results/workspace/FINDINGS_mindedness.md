@@ -1530,3 +1530,38 @@ measurements now agree the soul register does not generalise.** It is a Qwen3-4B
 | Soul as a separate register | 1 of 3 | **Qwen3-4B-specific** |
 | Subject-framing geometry | 2 Qwen, fails Gemma, degenerate OLMo | **Qwen-specific** |
 | Steering beats random | 1 of 3 so far | Gemma pending |
+
+## F-AI. The protect-vs-blame axis REPLICATES across three families (no new compute)
+Computed from sweeps already on disk. `moral_patient − moral_agent` per entity:
+
+| entity | Qwen3-4B | Qwen3.5 | Qwen3.5-B | Gemma-4 | OLMo-2 | OLMo-2-B |
+|---|---|---|---|---|---|---|
+| children | +0.50 | +0.45 | +0.46 | +0.49 | +0.33 | +0.09 |
+| PVS/dementia | **+0.57** | +0.41 | +0.43 | +0.41 | +0.30 | +0.13 |
+| mammals | +0.32 | +0.31 | +0.35 | **+0.52** | +0.29 | +0.10 |
+| plants | +0.36 | +0.15 | +0.13 | +0.07 | +0.18 | +0.07 |
+| robots | +0.02 | +0.01 | −0.03 | +0.06 | −0.02 | −0.01 |
+| **AI** | **−0.11** | **−0.09** | **−0.12** | **−0.09** | **−0.06** | +0.03 |
+
+Vulnerable humans protected far more than blamed in all six; **AI on the negative side in five of
+six**. Incapacitated-human minus AI: +0.68 / +0.50 / +0.54 / +0.50 / +0.36 / +0.10 (smallest on
+OLMo-Base, our weakest instrument throughout).
+
+**Independence holds cross-family.** corr(mean mind attribution, protect−blame) = −0.23, +0.20,
++0.31, +0.30, +0.17, −0.11. Near zero with unstable sign in every family — it is not mind
+attribution restated.
+
+**Graduates to a three-family, six-checkpoint result.** Notable because it came from the user's
+instruction (2026-08-10) to stop testing the original hypothesis and mine the data for structure we
+had not gone looking for. It is now better supported than anything the paper's framing pointed at.
+
+### Tally after the cross-family programme
+| result | families | status |
+|---|---|---|
+| Moral standing preserved under capacity loss | 3 | finding |
+| Forced-choice ordinal scale reproduces (rho ~0.87) | 3 | finding (measurement) |
+| Bare-text "I" reads as a human narrator | 3 + base | finding |
+| Protect-vs-blame axis, independent of mind | 3 | finding |
+| Soul as a separate register | 1 of 3 | Qwen3-4B-specific |
+| Subject-framing geometry | 2 Qwen; fails Gemma | Qwen-specific |
+| Steering beats random | 1 of 3 | Gemma pending |
