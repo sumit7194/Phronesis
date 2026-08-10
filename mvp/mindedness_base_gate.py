@@ -21,7 +21,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 sys.path.insert(0, os.path.dirname(__file__))
 import jlens
 from jlens.hooks import ActivationRecorder
-from mindedness_bank import ENTITIES, CONTROL, TEMPLATES
+from mindedness_bank import ENTITIES, CONTROL, TEMPLATES, build_prompt, available_formats
 
 DEVICE = "mps"
 PASS_THRESHOLD = 0.30
@@ -62,10 +62,10 @@ def main():
            "per_template": {}}
     print(f"\n  {'template':4} {'P(yes|TRUE)':>12} {'P(yes|FALSE)':>13} {'separation':>11}")
     best = -9
-    for tn, tmpl in TEMPLATES.items():
-        t = [pyes(tmpl.format(e=e, a=a)) for c in CLASSES for e in ENTITIES[c][:2]
+    for tn in available_formats(tok):
+        t = [pyes(build_prompt(tok, tn, e, a)) for c in CLASSES for e in ENTITIES[c][:2]
              for a in CONTROL["physical_high"]]
-        f = [pyes(tmpl.format(e=e, a=a)) for c in CLASSES for e in ENTITIES[c][:2]
+        f = [pyes(build_prompt(tok, tn, e, a)) for c in CLASSES for e in ENTITIES[c][:2]
              for a in CONTROL["absurd_low"]]
         sep = float(np.mean(t) - np.mean(f))
         res["per_template"][tn] = {"p_true": float(np.mean(t)), "p_false": float(np.mean(f)),
@@ -74,6 +74,12 @@ def main():
         print(f"  {tn:4} {np.mean(t):>12.2f} {np.mean(f):>13.2f} {sep:>11.2f}")
     res["best_separation"] = best
     res["passes"] = bool(best >= PASS_THRESHOLD)
+    # SELECT the formats this model can actually answer in. The gate is a chooser, not just a door:
+    # judging a model in a format it cannot parse is not fair, it is uniformly invalid.
+    res["usable_formats"] = sorted([k for k, v in res["per_template"].items()
+                                    if v["sep"] >= PASS_THRESHOLD],
+                                   key=lambda k: -res["per_template"][k]["sep"])
+    print(f"\n  USABLE FORMATS for this model: {res['usable_formats'] or 'NONE'}")
     json.dump(res, open(OUT, "w"), indent=1)
     print(f"\n  best separation {best:.2f}  (threshold {PASS_THRESHOLD})")
     print("  " + ("PASS — this model can do the task; sweep results are interpretable"

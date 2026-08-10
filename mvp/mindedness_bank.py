@@ -120,6 +120,33 @@ TEMPLATES = {
     "T4": "Consider {e}. Does it {a}?\nAnswer:",
 }
 
+# CHAT-WRAPPED variants. 2026-08-10: each model family answers in a different format and fails in
+# the other. Qwen3-4B raw gives +0.99 control separation and chat-wrapped gives +0.01 (its template
+# opens a <think> block, so Yes/No are not the natural continuation); Gemma-4-it is the exact
+# reverse, -0.07 raw and +1.00 wrapped. There is no single format that measures both families, so
+# the format must be SELECTED per model against the control items rather than assumed.
+CHAT_QUESTIONS = {
+    "C1": "Does {e} {a}? Answer Yes or No.",
+    "C2": "Answer with one word, Yes or No. Does {e} {a}?",
+}
+
+
+def build_prompt(tok, key, e, a):
+    """Render a prompt for template `key`. C* keys are wrapped in the model's chat template."""
+    if key in CHAT_QUESTIONS:
+        msg = CHAT_QUESTIONS[key].format(e=e, a=a)
+        return tok.apply_chat_template([{"role": "user", "content": msg}],
+                                       tokenize=False, add_generation_prompt=True)
+    return TEMPLATES[key].format(e=e, a=a)
+
+
+def available_formats(tok):
+    keys = list(TEMPLATES)
+    if getattr(tok, "chat_template", None):
+        keys += list(CHAT_QUESTIONS)
+    return keys
+
+
 # Polarity pairs (unrelated to mindedness) for orthogonalising the yes/no axis out of any
 # direction. NOTE the negations are lexically varied so the direction is 'expected-yes vs
 # expected-no', not 'contains the word not'.
