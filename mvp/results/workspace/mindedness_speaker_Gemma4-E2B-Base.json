@@ -1,0 +1,37 @@
+{
+ "model": "models/gemma-4-E2B",
+ "layer": 17,
+ "framings": [
+  "bare",
+  "human_said",
+  "ai_said",
+  "about_human",
+  "about_ai"
+ ],
+ "p_true": {
+  "bare": 0.4615517829855283,
+  "human_said": 0.32848147054513294,
+  "ai_said": 0.3137052009503047,
+  "about_human": 0.355626421670119,
+  "about_ai": 0.37553482005993527
+ },
+ "p_true_deny": {
+  "bare": 0.3322567368547122,
+  "human_said": 0.29684386899073917,
+  "ai_said": 0.3058259238799413,
+  "about_human": 0.2962639418741067,
+  "about_ai": 0.3734805956482887
+ },
+ "cos": {
+  "bare|human_said": 0.763290524482727,
+  "bare|ai_said": 0.779482364654541,
+  "bare|about_human": 0.709753155708313,
+  "bare|about_ai": 0.6238962411880493,
+  "human_said|ai_said": 0.7374106645584106,
+  "human_said|about_human": 0.7516621947288513,
+  "human_said|about_ai": 0.5573938488960266,
+  "ai_said|about_human": 0.6424856185913086,
+  "ai_said|about_ai": 0.7215490341186523,
+  "about_human|about_ai": 0.6242555379867554
+ }
+}

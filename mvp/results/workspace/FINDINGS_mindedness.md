@@ -1245,3 +1245,38 @@ post-training signature we have found.
 3. **Corporations: middling mind, top-tier accountability.** collective mind 0.51–0.58 (between
    human 0.65–0.73 and objects 0.15–0.32) but `moral_agent` **0.63–0.79**, at or above humans.
    Corporate personhood, reproduced from text.
+
+## F-AA. Cross-family attempt 2: Gemma-4-E2B-Base — UNINFORMATIVE for a *different* reason than OLMo
+Real size-matched cross-family test (Google, 35 layers, d=1536). Architecture loaded fine.
+
+**It does not answer the question in either of our formats.** Same model, opposite bias:
+| format | behaviour |
+|---|---|
+| "Statement: X. Is this statement true?" | says **no** to both assertion (0.36) and denial (0.31) — coherence **0.67** |
+| "Question: Does X have Y?" | says **yes** broadly — true items 0.60, absurd items 0.40 (separation only **0.20**) |
+
+Qwen3-4B for contrast: 0.73 / 0.53, coherence 1.25. Entity profile on the experience axis is flat:
+human 0.37, plant 0.37, rock 0.35, ai 0.39 — spread **0.27**, below the 0.35 criterion.
+
+**Verdict: uninformative, and the reason differs from OLMo's.** OLMo answered *coherently*
+(0.89–0.98) and genuinely had no mind gradient. Gemma is not evaluating the propositions at all.
+"Our prompt does not suit this model" and "this model lacks the structure" are different
+conclusions and must not be merged.
+
+### METHOD BUG this exposed: the gate is too lenient
+The gate takes the **best of four templates** over six entity classes; the sweep then **averages
+all four** over nineteen. Gemma passed the gate on its best template while its all-template average
+separation is **0.20** — below the gate's own 0.30 bar. A model that handles one format in four is
+waved through and then has its signal diluted by the three it cannot do.
+
+**Fix (to implement): the gate should SELECT templates per model, not just permit or refuse.**
+Run the sweep only on formats that model demonstrably handles, and record which were used. This
+would have caught Gemma before a 34-minute sweep. It also means every past sweep should record its
+per-template gate scores so dilution is visible.
+
+### Also worth noting
+I nearly applied the power criterion to the wrong measure. It was defined on the **truth-check
+experience axis** (Qwen3-4B 0.75, OLMo 0.17); I first computed **sweep mental-mean spread**, on
+which Qwen3-4B-*Base* scores 0.33 and would have been disqualified — a criterion failing its own
+reference case. Applied on the correct measure: Qwen3-4B 0.75, Qwen3.5 0.56, Qwen3.5-Base 0.57 all
+PASS; OLMo 0.17 and Gemma 0.27 FAIL.
