@@ -45,10 +45,19 @@ if guarded "gate" .venv/bin/python mindedness_base_gate.py --model "$ID" --tag "
     guarded "gw" .venv/bin/python mindedness_v2_gw.py --tag "$TAG"
 else
   note "GATE FAILED — skipping the rest. Report as UNINTERPRETABLE, not as a null."
+  # keep the weights: a gate failure is exactly when you need to diagnose, and deleting them
+  # forced a 40-minute re-download on 2026-08-10.
+  KEEP="--keep"
 fi
 if [ "$KEEP" != "--keep" ]; then
   case "$ID" in models/*) rm -rf "$ID" ;; *) rm -rf ~/.cache/huggingface/hub/models--$(echo "$ID" | sed 's|/|--|') ;; esac
   rm -f results/workspace/.v2ckpt_${TAG}_*.npz
   note "weights + checkpoints removed (disk $(free_gb)Gi free)"
 fi
-[ -z "$FAILED" ] && note "########## $TAG COMPLETE ##########" || note "########## $TAG FAILURES:$FAILED ##########"
+if [ -z "$FAILED" ]; then
+  note "########## $TAG COMPLETE ##########"; exit 0
+else
+  # exit non-zero so callers cannot count a gate failure as a model that ran (2026-08-10: the
+  # Gemma driver reported "COMPLETE (2 models)" when one had failed its gate and produced nothing)
+  note "########## $TAG FAILURES:$FAILED ##########"; exit 3
+fi

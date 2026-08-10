@@ -14,9 +14,14 @@ from huggingface_hub import HfApi
 i = HfApi().model_info(sys.argv[1])
 for s in i.siblings:
     n = s.rfilename
-    if n.endswith(('.safetensors', '.json', '.model')) or n in ('tokenizer.txt', 'vocab.txt'):
-        if '/' not in n:
-            print(n)
+    # Take every top-level file except docs/git metadata. An extension allow-list dropped
+    # chat_template.jinja (so an instruct model was prompted with no turn structure and said yes
+    # to everything) and merges.txt (needed by BPE tokenizers). 2026-08-10.
+    if '/' in n:
+        continue
+    if n in ('.gitattributes', 'README.md', 'LICENSE', 'USE_POLICY.md') or n.endswith('.md'):
+        continue
+    print(n)
 PY
 )
 [ -z "$FILES" ] && { echo "no files listed for $ID"; exit 1; }

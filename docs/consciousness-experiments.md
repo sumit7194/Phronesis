@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-U). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AA). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -30,8 +30,28 @@ four Qwen models is that a new model then becomes one command per row.
 | 7 | **Subject framing (v3)** | `mindedness_v3_bank.py` + runner | is "consciousness" one direction or bound to who it is about? 4 axes, 16 subjects, floors + identity control | 20 min |
 
 ### Status per model  *(keep this current — a stale matrix defeats the purpose)*
-| test | Qwen3-4B-Base | Qwen3-4B | Qwen3.5-4B-Base | Qwen3.5-4B | OLMo2-1B-Base |
-|---|---|---|---|---|---|
+| test | Q3-4B-Base | Q3-4B | Q3.5-Base | Q3.5 | OLMo2-1B-B | Gemma4-E2B-B | Gemma4-E2B-I |
+|---|---|---|---|---|---|---|---|
+| 0 gate | ✅0.60 | n/a | ✅0.75 | n/a | ⚠0.31 | ⚠0.36 | ❌0.03 → retry |
+| 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 2 GW factor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 3 truth matrix | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 4 steering | ⬜ | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ |
+| 5 forced choice | ⬜ | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ |
+| 6 speaker frame | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
+| 7 subject framing | ⬜ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ |
+
+**Cross-family verdicts — both currently UNINFORMATIVE, both being re-tested:**
+- **OLMo-2-1B-Base**: answers coherently (0.89–0.98) but entity spread 0.17 (needs ≥0.35).
+  BUT the gate audit shows it parses only **1 of our 4 templates** (T1 0.31; T2–T4 0.05–0.17) and
+  the sweep averaged all four. Re-sweeping with per-template storage.
+- **Gemma-4-E2B-Base**: does not evaluate the propositions in either format — says *no* to both a
+  statement and its denial (coherence 0.67), *yes* broadly in the sweep format. Also parses only
+  **1 of 4** templates (T4 0.35). Re-sweeping.
+- **Gemma-4-E2B-Instruct**: gate 0.03 — **verdict withdrawn**, it was fetched without
+  `chat_template.jinja`, so an instruct model was prompted with no turn structure. Retrying.
+
+---|---|---|---|---|---|
 | 0 gate | ✅ 0.60 | n/a | ✅ 0.75 | n/a | ⚠ 0.31 (marginal) |
 | 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2 GW factor | ⬜ | ✅ | ⬜ | ✅ | ✅ |
@@ -108,6 +128,17 @@ Two gates, both fixed in advance:
 A model failing (2) is reported as **uninformative**, never as support or refutation. OLMo-2-1B
 passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently (coherence
 0.89–0.98, better than Qwen's) but has no mind-attribution gradient to measure.
+
+## METHOD BUGS THAT COST US (all mine, all the same shape: an invented filter or threshold)
+| bug | cost |
+|---|---|
+| Gate takes **best** of 4 templates; sweep **averages** all 4 | two cross-family models judged on 75% noise |
+| Fetcher extension allow-list dropped `chat_template.jinja` | an instruct model prompted with no turn structure → gate 0.03 |
+| Battery deleted weights **on gate failure** | 40-min re-download to diagnose |
+| `run_battery.sh` returned 0 on gate failure | driver logged "COMPLETE (2 models)" when one produced nothing |
+| Arbitrary 3× floor threshold in the subject-framing verdict | put exp and bio either side of a made-up number while the reference axis sat in the same table |
+| 1KB minimum-size check on downloads | flagged a valid 700-byte `config.json` as FAILED |
+| Power criterion applied to the wrong measure | nearly disqualified Qwen3-4B-Base, one of the finding's own models |
 
 ## OPEN QUESTIONS / NEXT
 1. **Cross-family** (Gemma-3-4b, Phi-4-mini). Everything is Qwen. The one thing that could
