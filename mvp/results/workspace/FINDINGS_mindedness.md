@@ -1464,3 +1464,34 @@ and a rock's point almost identically, and every pivot reads exp 0.83 / bio 0.98
 axis human-vs-rock is 0.81 against a neutral baseline of 0.85 — a 0.04 gap where Qwen3.5 gave 0.37
 vs 0.88. A 1B model does not hold distinct enough representations for the geometry test. Gemma is
 the real test of that arm.
+
+## F-AG. Steering does not replicate: nothing beats random on OLMo
+OLMo-2-1B-Instruct, all 27 cells, 5 random seeds, gate-selected format (C1).
+
+| vector | mental − mundane (α=0.2) | vs random floor |
+|---|---|---|
+| v1_negation | +0.33 | **z = +1.6 — within spread** |
+| v2_no_negation | +0.00 | z = −1.1 |
+| v3_third_person | +0.02 | z = −1.0 |
+| **random (5 seeds)** | **+0.14 ± 0.12** | — |
+
+**No vector beats random.** And the specific trap: at 12/27 cells I noted v1's +0.33 as "positive
+specificity, unlike Qwen" — a possible cross-family difference. It is not. **Random directions on
+OLMo also produce positive specificity** (+0.14/+0.24/+0.62 across α). The sign was never
+informative; only the comparison to random is. The user's instruction to wait for the seeds was
+correct and I should not have read the partial cells at all.
+
+**This is the second time in this arc a "mind-specific" steering effect dissolved against a random
+control** (the first being F-I/F-J), and I walked toward it again after writing the guideline about
+it. The failure mode is reading a raw effect before its floor exists.
+
+### Steering across three families
+| model | result |
+|---|---|
+| Qwen3-4B | two better-built vectors beat the random floor (z = +3.9, +2.5) |
+| Qwen3.5-4B | those vectors are inert (+0.15 logits); untested there |
+| OLMo-2-1B | nothing beats random |
+
+**The surviving steering effect is one model of three** — and it is the same model that produced the
+soul result. Qwen3-4B increasingly looks like the outlier of the set rather than the representative
+case. Gemma, the best-powered model in the set, is the remaining test.
