@@ -1565,3 +1565,41 @@ had not gone looking for. It is now better supported than anything the paper's f
 | Soul as a separate register | 1 of 3 | Qwen3-4B-specific |
 | Subject-framing geometry | 2 Qwen; fails Gemma | Qwen-specific |
 | Steering beats random | 1 of 3 | Gemma pending |
+
+## F-AJ. STEERING: does not generalise. The effect exists only where the vector has traction.
+All three instruct models, 27 cells each, 5 random seeds, gate-selected formats.
+
+| model | v1_negation | v2_no_negation | v3_third_person | random floor | v2 raw movement |
+|---|---|---|---|---|---|
+| **Qwen3-4B** | −1.71 (z −2.5) | **+2.11 (z +3.9)** | **+1.26 (z +2.5)** | −0.23 ± 0.60 | **+5.54** |
+| OLMo-2-1B | +0.33 (z +1.6) | +0.00 (z −1.1) | +0.02 (z −1.0) | +0.14 ± 0.12 | **−0.08** |
+| Gemma-4-E2B | +0.56 (z +0.8) | +0.53 (z +0.8) | −0.46 (z −0.4) | −0.11 ± 0.82 | **+0.03** |
+
+**Nothing beats the random floor outside Qwen3-4B.** And the last column explains why: the
+negation-free vector moves the mental DV by **+5.54 logits on Qwen3-4B** and by **−0.08 and +0.03**
+on the other two. It does not steer them at all, so its specificity ratio there is noise over noise.
+
+**Read.** The one surviving piece of the causal claim is Qwen3-4B-specific. Strictly the other
+models leave it *untested* rather than refuted — you cannot measure the specificity of an
+intervention that does nothing — but with three models showing the same inertness, the parsimonious
+reading is that this vector construction has traction on Qwen3-4B and not elsewhere. The paper's
+original claim (F-I/F-J) was already dead on measurement grounds; what replaced it now has one
+family of three.
+
+### FINAL TALLY — the cross-family programme
+| result | families | verdict |
+|---|---|---|
+| Moral standing preserved under capacity loss | **3** | **finding** |
+| Forced-choice ordinal scale reproduces (rho ~0.87) | **3** | **finding** (a measurement, not a claim) |
+| Bare-text "I" reads as a human narrator | **3 + a base model** | **finding** |
+| Protect-vs-blame axis, independent of mind | **3** | **finding** |
+| Soul as a separate register | 1 of 3 | Qwen3-4B-specific |
+| Subject-framing geometry | 2 Qwen; fails Gemma | Qwen-specific |
+| Steering beats a random floor | 1 of 3 | Qwen3-4B-specific |
+
+**Four of seven generalise.** The three that do not are, in each case, the ones that looked most
+striking on the first model — soul (a river gets a soul while being denied awareness), the
+subject-binding geometry, and the causal steering effect. The four that survived are duller and
+more robust. Two of the four came from the user's suggestions rather than the paper's framing:
+the speaker-frame test, and the protect-vs-blame axis found by mining the data for structure we had
+not gone looking for.

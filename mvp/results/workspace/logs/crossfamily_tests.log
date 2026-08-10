@@ -670,3 +670,18 @@ COMPLETE -> models/gemma-4-E2B-it
 [08-11 01:40:15] steering Gemma4-E2B-Instruct chunk 9 (24/27)
 [08-11 01:40:15] START steer Gemma4-E2B-Instruct c9
 Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:00, 1804.03it/s]Loading weights:  19%|█▊        | 362/1951 [00:00<00:00, 1653.15it/s]Loading weights:  27%|██▋       | 529/1951 [00:00<00:00, 1585.18it/s]Loading weights:  35%|███▌      | 689/1951 [00:00<00:00, 1563.91it/s]Loading weights:  43%|████▎     | 846/1951 [00:14<00:34, 31.80it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 133.58it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=17 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.040
+[vec] v2_no_negation           cos(raw, polarity) = +0.020
+[vec] v3_third_person          cos(raw, polarity) = +0.001
+[vec] 9 conditions
+[resume] found 24 completed cells
+[base] done 0.9m
+[08-11 01:44:15]   baseline after load: 1465MB (abort at +7000)
+  random4                    a=+0.2  5.3m
+  random4                    a=+0.4  9.8m
+  random4                    a=+0.8  14.2m
+[chunk] did 3 cells, exiting for a fresh process
+[08-11 01:54:35] END steer Gemma4-E2B-Instruct c9 rc=0
+[08-11 01:54:35] steering Gemma4-E2B-Instruct complete (27/27)
+[08-11 01:54:36] ########## Gemma4-E2B-Instruct COMPLETE ##########
