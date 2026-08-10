@@ -149,6 +149,15 @@ def main():
                                    for ei in range(4) for ai in range(len(ALL_FACETS[f]))]))
                  for c in classes} for f in facets}
     res["pyes"] = pmean
+    res["pyes_by_template"] = {
+        tn: {f: {c: float(np.mean([P[(tn, c, ei, f, ai)] for ei in range(4)
+                                   for ai in range(len(ALL_FACETS[f]))]))
+                 for c in classes} for f in facets} for tn in TEMPLATES}
+    # per-template sanity separation, so dilution is visible in every future result file
+    res["template_separation"] = {
+        tn: float(np.mean([res["pyes_by_template"][tn]["physical_high"][c] for c in classes])
+                  - np.mean([res["pyes_by_template"][tn]["absurd_low"][c] for c in classes]))
+        for tn in TEMPLATES}
     res["logit"] = {f: {c: logit(pmean[f][c]) for c in classes} for f in facets}
     # per-exemplar, for the Gray-Wegner stage and for variance analysis
     res["pyes_exemplar"] = {f: {f"{c}#{ei}": float(np.mean(
@@ -192,6 +201,12 @@ def main():
     json.dump(res, open(OUT, "w"), indent=1)
 
     # ---------------- report ----------------
+    print("\n=== PER-TEMPLATE SEPARATION (true items − absurd items) ===")
+    print("   a template near 0 means this model does not handle that phrasing; averaging it in")
+    print("   dilutes the signal (Gemma-4-base, 2026-08-10)")
+    for tn, v in res["template_separation"].items():
+        print(f"   {tn}  {v:+.2f}  {'ok' if v >= 0.30 else 'WEAK — consider excluding at analysis time'}")
+
     print(f"\n=== S1 P(yes) MAP  [{args.model}] ===")
     hdr = [c[:9] for c in classes]
     print(f"  {'facet':14} " + " ".join(f"{h:>9}" for h in hdr))
