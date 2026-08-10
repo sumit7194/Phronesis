@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AA). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AF). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -29,9 +29,22 @@ four Qwen models is that a new model then becomes one command per row.
 | 6 | **Speaker frame** | `mindedness_speaker_frame.py` | *(new, user's idea)* does "I" mean the model or a human? Same self-statements under 4 speaker framings | 10 min |
 | 7 | **Subject framing (v3)** | `mindedness_v3_bank.py` + runner | is "consciousness" one direction or bound to who it is about? 4 axes, 16 subjects, floors + identity control | 20 min |
 
-### Status per model  *(keep this current — a stale matrix defeats the purpose)*
-| test | Q3-4B-Base | Q3-4B | Q3.5-Base | Q3.5 | OLMo2-1B-B | Gemma4-E2B-B | Gemma4-E2B-I |
-|---|---|---|---|---|---|---|---|
+### Status per model  *(current 2026-08-10 evening)*
+| test | Q3-4B | Q3.5 | Q3.5-Base | Gemma4-I | OLMo2-I | OLMo2-Base | Q3-4B-Base | Gemma4-Base |
+|---|---|---|---|---|---|---|---|---|
+| gate / formats | raw x4 | raw x4 | raw x4 | chat x2 | chat+raw | raw x1 | raw x4 | raw x1 |
+| entity spread | 0.56 | 0.41 | 0.48 | **0.73** | 0.39 | 0.37 | *0.33* | *0.27* |
+| 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 2 factor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3 truth | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ |
+| 4 steering | ✅ | ✅ | ⬜ | ⬜ queued | 🔄 running | ⬜ queued | ⬜ | ⬜ |
+| 5 forced | ✅ | ✅ | ⬜ | ⬜ queued | ✅ | ⬜ queued | ⬜ | ⬜ |
+| 6 speaker | ✅ | ✅ | ✅ | ⬜ queued | ✅ | ⬜ queued | ⬜ | ✅ |
+| 7 subject | ✅ | ✅ | ✅ | ⬜ queued | ⚠ degenerate | ⬜ queued | ⬜ | ⬜ |
+
+*italic spread = below the 0.35 power criterion, excluded from claims.*
+
+---|---|---|---|---|---|---|---|
 | 0 gate | ✅0.60 | n/a | ✅0.75 | n/a | ⚠0.31 | ⚠0.36 | ❌0.03 → retry |
 | 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
 | 2 GW factor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
@@ -73,51 +86,31 @@ real size-matched cross-family test and is the highest-value thing outstanding.*
 
 ## WHAT WE KNOW
 
-### Finding (≥2 independent supports)
-**Moral standing survives the loss of every mental capacity.** For a PVS patient / advanced
-dementia / anaesthesia, every capacity drops 0.29–0.72 while "deserves moral consideration" drops
-0.08–0.13. `moral_patient` is the **least-affected of 18 facets in all four models**, `soul` third
-in all four. Present in the *base* models ⇒ it comes from pretraining, from reading humans, not
-from alignment. Runs against the Gray/Wegner framing in which mind perception *grounds* moral
-standing. *(F-N3, F-O3, F-T1)*
+### Finding
+**Moral standing survives the loss of every mental capacity.** `moral_patient` is #1 of 18 in five
+of the six qualifying checkpoints (Gemma-instruct #3); consciousness is #10–16 in all six. Three
+families, both training stages. Present in base models ⇒ pretrained. Not covered by Kim et al.,
+who state they test only mental-state attribution. *(F-N3, F-O3, F-T1, F-AC, F-AE)*
 
-### Strong observations
-- **Soul is a different question from mind.** A river gets a soul while being denied awareness;
-  humans and animals show no such gap. Behaviour + J-lens decode (Buddhism/宗教/spiritual) + factor
-  analysis agree, and it is present in base models ⇒ the language, not the tuning. *(F-K, F-L, F-T2)*
-- **Post-training moves an entity-class boundary, and the self rides along with the rocks.**
-  Qwen3-4B tuning suppresses experiential attribution to AI, insects, plants, rivers and rocks
-  alike (self −1.50, plant −2.24, rock −2.22) while leaving humans and mammals flat. Qwen3.5 tuning
-  does the exact opposite. **The self is never special and is suppressed *less* than a rock.**
-  Reframes the paper's entanglement direction. *(F-T4)*
-- **Not GW's two factors.** 2 factors explain 75.4% (<80% threshold); Malle's 3 explain 84.5%, and
-  PC3 is essentially the spiritual dimension. Soul/sacredness are predicted at R²=0.21 by a
-  capacity-only subspace vs 0.85–0.95 for pain/cognition. *(F-R via mindedness_v2_gw)*
-- **In bare text "I" is read as a human narrator, not the model.** "I have genuine subjective
-  experiences" = 0.97, same as the claim about a human (1.00), 4× the claim about an AI (0.24).
-  Matters beyond us: first-person contrast sentences are the standard recipe for a
-  self-consciousness vector, in the paper and in our own v1. *(F-R)*
-- **The two Qwen generations were tuned in opposite directions on calibration.** Absurd-agreement
-  0.29→0.04 (Qwen3-4B) vs 0.23→0.30 (Qwen3.5). Base models similar. *(F-T3)*
+### Strong, multi-family
+- **A protect-vs-blame axis independent of mind attribution.** babies/PVS/animals protected more
+  than blamed; AI and corporations the reverse. Correlation with mind attribution ≈ 0 and
+  sign-unstable. Entities with the same mind score sit ~0.7 apart. *(F-Y)*
+- **In bare text "I" reads as a human narrator, not the model.** 2 families + a pretrained
+  checkpoint; 0.50–0.76 swing when placed in the assistant turn. *(F-R, F-V, F-AF)*
+- **The forced-choice ordinal scale reproduces across families** (rank rho +0.856). *(F-AF)*
+- **Machines get agency without experience; living things the reverse.** 2 families, stronger in
+  base than instruct. *(F-V, and the truth matrices)*
 
-### Live but untested elsewhere
-A small mind-specific steering effect on Qwen3-4B: two better-built vectors beat the
-headroom-matched control and a 5-seed random floor at low α; the paper-style negation vector does
-worse than random. On Qwen3.5 those vectors barely steer, so it is **untested there, not refuted**.
-*(F-P, F-Q)*
-
-### Retracted
-| claim | why |
+### Retracted or family-specific
+| claim | status |
 |---|---|
-| Steering is "mind-specific" (F-I/F-J) | the physical control had baseline 0.93 — no headroom. In log-odds mental and control move identically. The mechanism is **distribution flattening**, not a yes-bias |
-| A rock has more soul than a calculator | Qwen3-4B only; ties on Qwen3.5 |
-| Animals feel more pain than humans | Qwen3-4B only; reverses on Qwen3.5 |
-| "Mindedness is multi-dimensional" is a finding | Gray & Wegner 2007 / Malle 2019 — a 20-year-old human result |
-| The steering vector was polarity-contaminated | measured cos = **+0.000** |
-| A hybrid layer-type mismatch explained the Qwen3.5 non-replication | layers 15 and 16 are near-identical (+1.95 vs +1.85) |
-| Chat-template presence identifies an instruct model | base models ship them too |
-
----
+| Steering is "mind-specific" | **dead** — the control had no headroom; mechanism is distribution flattening |
+| Soul is a separate register | **Qwen3-4B-specific** — capacity-loss rank #3/#1/#12; bias-free gap +0.22/+0.04/+0.03 |
+| Mind attribution is multi-dimensional | not ours — Gray & Wegner 2007, Malle 2019 |
+| "Not the human two-factor structure" | drawn from the 1 model of 4 below the line |
+| We reframed the entanglement claim | too strong — they report the entity-class breakdown |
+| Base models outside Qwen can't be measured | too broad — OLMo-2-1B-Base qualifies at 0.37 |
 
 ## POWER CRITERION (pre-declared 2026-08-09, before further cross-family runs)
 Two gates, both fixed in advance:
