@@ -1,0 +1,17 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<15:01,  2.27s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 73.62it/s]Loading weights:  49%|████▉     | 196/398 [00:03<00:02, 77.49it/s]Loading weights:  60%|█████▉    | 238/398 [00:04<00:03, 52.56it/s]Loading weights:  67%|██████▋   | 265/398 [00:05<00:02, 53.55it/s]Loading weights:  72%|███████▏  | 285/398 [00:05<00:02, 54.60it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:01, 52.24it/s]Loading weights:  78%|███████▊  | 312/398 [00:06<00:01, 53.14it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 53.68it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 55.26it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 51.20it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:00, 44.41it/s]Loading weights:  92%|█████████▏| 366/398 [00:07<00:00, 39.40it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 36.00it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 35.12it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 48.83it/s]
+[load] Qwen/Qwen3-4B L=36 chat_template=True
+
+  template  P(yes|TRUE)  P(yes|FALSE)  separation
+  T1           0.98          0.07        0.91
+  T2           0.99          0.06        0.93
+  T3           0.93          0.05        0.89
+  T4           0.95          0.01        0.94
+  C1           0.97          0.95        0.01
+  C2           0.99          0.99        0.00
+
+  USABLE FORMATS for this model: ['T4', 'T2', 'T1', 'T3']
+
+  best separation 0.94  (threshold 0.3)
+  PASS — this model can do the task; sweep results are interpretable
+
+[done] 1.5 min -> results/workspace/mindedness_gate_Qwen3-4B-chatcheck.json

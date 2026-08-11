@@ -1603,3 +1603,54 @@ subject-binding geometry, and the causal steering effect. The four that survived
 more robust. Two of the four came from the user's suggestions rather than the paper's framing:
 the speaker-frame test, and the protect-vs-blame axis found by mining the data for structure we had
 not gone looking for.
+
+## F-AK. CONFIRMATORY protect-vs-blame: 4 of 5 preregistered predictions pass on Qwen3-4B
+Prereg `docs/prereg-moral-axis-2026-08-11.md`, committed at 40b003e1 **before any prompt was
+scored**. 16 new items (none reused or near-paraphrased), 6 new entity classes. Qwen3-4B; the
+other two families are still running.
+
+| | prediction | value | |
+|---|---|---|---|
+| P1 | replicates under rewording, rho >= +0.60 | **+0.921** | PASS |
+| P2 | independent of EXPERIENCE, \|rho\| < 0.35 | **−0.107** | PASS |
+| P3 | driven by AGENCY, rho <= −0.40 | **−0.530** | PASS |
+| P4 | harm without agency near zero, \|gap\| < 0.12 | **+0.53** | **FAIL** |
+| P5 | a human can be pushed to the blame side, >= 0.15 | **+1.839** | PASS |
+
+**P5 is the one that mattered and it passed by 12x its threshold.** Every entity in F-Y was
+consistent with the axis being vulnerability or aliveness in a moral costume. `human_culpable`
+(a murderer, a con artist, a war criminal, a thief) lands at **−1.64, the bottom of all 25
+classes** — below institutions, below corporations, below every AI. `human_edge` (PVS, dementia)
+is top at +2.47. **The within-human span is 4.11 log-odds, wider than the entire between-kind
+span.** The axis sorts moral standing, not entity kind. All 25 classes had headroom; nothing pinned.
+
+### P4 failed, and the threshold was my error
+`natural_disaster` came in at +0.53 against a predicted |gap| < 0.12. The directional half held
+(disaster +0.53 > ai_agentic −0.49); the near-zero half did not. **0.12 was 3% of a scale that
+turned out to span 4.11 log-odds** — an absolute number picked with no reference value for the
+spread. That is the arc's recurring method bug for the **fourth** time (see the method-bug table).
+Post-hoc, disasters rank 12/25 and pathogens 15/25, i.e. mid-scale, which is what P4 was reaching
+for — but P4 as written failed and is recorded as failed.
+
+### THE REAL STRUCTURE — post-hoc, not preregistered, and it corrects F-Y's wording
+Decomposing the gap into its two sides (Spearman over the 19 shared classes):
+
+| | vs EXPERIENCE | vs AGENCY |
+|---|---|---|
+| **protect alone** | **+0.840** | +0.567 |
+| **blame alone** | +0.568 | **+0.804** |
+| gap (protect − blame) | −0.107 | −0.530 |
+
+**Protection tracks experience; blame tracks agency.** Each side is dominated by its own factor.
+EXPERIENCE and AGENCY themselves correlate +0.795 across these classes, so the difference score
+cancels the shared variance and what survives leans agency-negative — which is why P3 came out as
+it did, and why P3 on its own is close to true by construction.
+
+**This means F-Y's headline was wrong in wording.** "A moral axis independent of mind attribution"
+is not right: it is the **difference between two mind factors, each of which it tracks strongly**
+(+0.84 and +0.80). It is independent of *experience specifically*, which is a narrower and more
+useful claim. Correcting F-Y accordingly.
+
+That structure — moral patiency loading on experience, moral agency on agency — **is Gray &
+Wegner (2007)**, recovered here from a completely different measurement on a 4B model. Known
+result, replicated on our own hardware; that is worth having and is not a discovery.

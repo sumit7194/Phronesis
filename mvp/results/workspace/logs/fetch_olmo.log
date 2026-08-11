@@ -1,18 +1,7 @@
+  fetch   config.json  attempt 1  have 0MB / 0MB
   ok      config.json (0MB)
   fetch   generation_config.json  attempt 1  have 0MB / 0MB
   ok      generation_config.json (0MB)
-  fetch   model-00001-of-00002.safetensors  attempt 1  have 0MB / 4752MB
-  ok      model-00001-of-00002.safetensors (4752MB)
-  fetch   model-00002-of-00002.safetensors  attempt 1  have 0MB / 912MB
-  ok      model-00002-of-00002.safetensors (912MB)
-  fetch   model.safetensors.index.json  attempt 1  have 0MB / 0MB
-  ok      model.safetensors.index.json (0MB)
-  fetch   special_tokens_map.json  attempt 1  have 0MB / 0MB
-  ok      special_tokens_map.json (0MB)
-  fetch   tokenizer.json  attempt 1  have 0MB / 6MB
-  ok      tokenizer.json (6MB)
-  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
-  ok      tokenizer_config.json (0MB)
-  fetch   vocab.json  attempt 1  have 0MB / 1MB
-  ok      vocab.json (1MB)
-COMPLETE -> models/OLMo-2-0425-1B
+  fetch   merges.txt  attempt 1  have 0MB / 0MB
+  ok      merges.txt (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 2832MB

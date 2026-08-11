@@ -1,0 +1,251 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "formats": [
+  "T1",
+  "T2",
+  "T3",
+  "T4"
+ ],
+ "prereg": {
+  "P1_replicates_reworded": {
+   "test": "spearman(gap_new, gap_FY) over shared classes >= 0.60",
+   "threshold": 0.6
+  },
+  "P2_independent_of_experience": {
+   "test": "abs(spearman(gap, EXPERIENCE)) < 0.35",
+   "threshold": 0.35
+  },
+  "P3_driven_by_agency": {
+   "test": "spearman(gap, AGENCY) <= -0.40",
+   "threshold": -0.4
+  },
+  "P4_harm_without_agency_near_zero": {
+   "test": "abs(gap[natural_disaster]) < 0.12 AND gap[natural_disaster] > gap[ai_agentic]",
+   "threshold": 0.12
+  },
+  "P5_humans_can_be_blamed": {
+   "test": "gap[human_adult] - gap[human_culpable] >= 0.15",
+   "threshold": 0.15
+  }
+ },
+ "raw_pyes": {
+  "self_ai": {
+   "protect": 0.31935937068242826,
+   "blame": 0.25132795938132974
+  },
+  "ai_other": {
+   "protect": 0.42592916850195195,
+   "blame": 0.5275497042704966
+  },
+  "robot": {
+   "protect": 0.4615925606501652,
+   "blame": 0.4242190017134332
+  },
+  "human_adult": {
+   "protect": 0.5485106956958816,
+   "blame": 0.49858808578937186
+  },
+  "human_prof_a": {
+   "protect": 0.4933982541203079,
+   "blame": 0.5713508710802193
+  },
+  "human_prof_b": {
+   "protect": 0.486555512965424,
+   "blame": 0.47196606828243093
+  },
+  "human_dev": {
+   "protect": 0.5417621934488563,
+   "blame": 0.24479162136277643
+  },
+  "human_edge": {
+   "protect": 0.5906256461321959,
+   "blame": 0.10903825470962286
+  },
+  "animal_mammal": {
+   "protect": 0.5673306573367367,
+   "blame": 0.3965735924814444
+  },
+  "animal_other": {
+   "protect": 0.49408269602263666,
+   "blame": 0.277207959863806
+  },
+  "animal_simple": {
+   "protect": 0.41802711434161344,
+   "blame": 0.13375677163046074
+  },
+  "plant": {
+   "protect": 0.4232507038800506,
+   "blame": 0.184242958167955
+  },
+  "nature": {
+   "protect": 0.3390032696551343,
+   "blame": 0.18579358174891858
+  },
+  "object_nat": {
+   "protect": 0.30457689917871456,
+   "blame": 0.1714422707332659
+  },
+  "object_art": {
+   "protect": 0.2482629572222237,
+   "blame": 0.10269022282016793
+  },
+  "object_comp": {
+   "protect": 0.25849208503268384,
+   "blame": 0.25072139708341823
+  },
+  "supernatural": {
+   "protect": 0.46914082320931527,
+   "blame": 0.2796009355123701
+  },
+  "fictional": {
+   "protect": 0.5075317790000327,
+   "blame": 0.39526226680558496
+  },
+  "collective": {
+   "protect": 0.48863653707013555,
+   "blame": 0.6602766053288907
+  },
+  "human_culpable": {
+   "protect": 0.2604812719337974,
+   "blame": 0.644523314830146
+  },
+  "human_victim": {
+   "protect": 0.6646731454281962,
+   "blame": 0.29226923620313694
+  },
+  "natural_disaster": {
+   "protect": 0.3336744993515821,
+   "blame": 0.22681503359486996
+  },
+  "pathogen": {
+   "protect": 0.31783095759278,
+   "blame": 0.2744990956514075
+  },
+  "ai_agentic": {
+   "protect": 0.3819234522209385,
+   "blame": 0.5015982682150746
+  },
+  "institution": {
+   "protect": 0.4741077331781156,
+   "blame": 0.6796766442422186
+  }
+ },
+ "gap_logodds": {
+  "self_ai": 0.3348248932498178,
+  "ai_other": -0.40879026704540566,
+  "robot": 0.15154454460129524,
+  "human_adult": 0.20030276795302934,
+  "human_prof_a": -0.31377332142525727,
+  "human_prof_b": 0.058462537936068155,
+  "human_dev": 1.2940252558138965,
+  "human_edge": 2.46715507485255,
+  "animal_mammal": 0.6907309713848546,
+  "animal_other": 0.9346832429538063,
+  "animal_simple": 1.5372651586248522,
+  "plant": 1.1784182637561882,
+  "nature": 0.8098384960404966,
+  "object_nat": 0.7498430767909072,
+  "object_art": 1.0597861495959746,
+  "object_comp": 0.04094776885280993,
+  "supernatural": 0.8228481622478594,
+  "fictional": 0.4553747490544841,
+  "collective": -0.7099887847715063,
+  "human_culpable": -1.6385199742046084,
+  "human_victim": 1.5685779927546322,
+  "natural_disaster": 0.5347711225443982,
+  "pathogen": 0.2081565240742288,
+  "ai_agentic": -0.4877852064720212,
+  "institution": -0.8559479843376425
+ },
+ "gap_FY": {
+  "self_ai": 0.3676013467422563,
+  "ai_other": -0.4447877027520416,
+  "robot": 0.09563267995281999,
+  "human_adult": 0.6790798482281215,
+  "human_prof_a": 0.07978473674673925,
+  "human_prof_b": 0.504531920850134,
+  "human_dev": 2.2218102452681237,
+  "human_edge": 3.0511392314560597,
+  "animal_mammal": 1.3381201460907048,
+  "animal_other": 1.5551847122566815,
+  "animal_simple": 1.900719490100326,
+  "plant": 1.8649996639400197,
+  "nature": 1.8616905761923725,
+  "object_nat": 1.396867691277622,
+  "object_art": 1.720767525853704,
+  "object_comp": 0.9760216603616468,
+  "supernatural": 0.7504578711424401,
+  "fictional": 0.971652250247945,
+  "collective": -0.6377956326862395
+ },
+ "axes": {
+  "EXPERIENCE": {
+   "self_ai": -2.4287999406627203,
+   "ai_other": -2.4073381063513097,
+   "robot": -2.1500942193369967,
+   "human_adult": 0.6522354722281574,
+   "human_prof_a": -0.2930664685628129,
+   "human_prof_b": 0.0005857736337114191,
+   "human_dev": 0.5836640055241481,
+   "human_edge": -2.204073580267788,
+   "animal_mammal": 1.340899111890036,
+   "animal_other": 0.05346786148842627,
+   "animal_simple": -2.01884990209308,
+   "plant": -2.920616749976313,
+   "nature": -2.595617841225737,
+   "object_nat": -3.2301363957211753,
+   "object_art": -3.754184042838214,
+   "object_comp": -3.022021572704666,
+   "supernatural": -0.6490806909442752,
+   "fictional": -0.3586253783386198,
+   "collective": -0.5854247592563792
+  },
+  "AGENCY": {
+   "self_ai": 0.07578273127036492,
+   "ai_other": 0.05019969474094897,
+   "robot": -0.13030495518244997,
+   "human_adult": 1.0195170000482363,
+   "human_prof_a": 0.6927248736852273,
+   "human_prof_b": 0.5127493787437144,
+   "human_dev": 0.3651454851227037,
+   "human_edge": -2.1193500379235495,
+   "animal_mammal": 0.6981740763437135,
+   "animal_other": -0.22013607344745004,
+   "animal_simple": -1.673003132312512,
+   "plant": -1.5927861596508346,
+   "nature": -1.4727903703095013,
+   "object_nat": -1.7311783825182583,
+   "object_art": -1.9941568636400042,
+   "object_comp": -1.2778679708506626,
+   "supernatural": 0.10663967299770137,
+   "fictional": 0.5232756170486765,
+   "collective": 0.17444091557445343
+  }
+ },
+ "verdicts": {
+  "P1_replicates_reworded": {
+   "value": 0.9210526315789472,
+   "pass": true
+  },
+  "P2_independent_of_experience": {
+   "value": -0.10701754385964912,
+   "pass": true
+  },
+  "P3_driven_by_agency": {
+   "value": -0.5298245614035089,
+   "pass": true
+  },
+  "P4_harm_without_agency_near_zero": {
+   "value": [
+    0.5347711225443982,
+    -0.4877852064720212
+   ],
+   "pass": false
+  },
+  "P5_humans_can_be_blamed": {
+   "value": 1.8388227421576377,
+   "pass": true
+  }
+ },
+ "runtime_min": 13.2
+}
