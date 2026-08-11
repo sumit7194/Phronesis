@@ -1807,3 +1807,36 @@ written down before the run and simply not connected to the verdict code.
   +0.90/+0.58). The agency half is Qwen-only.
 - **P4 fails 2 of 3, and its threshold was mis-specified** in absolute log-odds for a quantity
   whose scale is a model property — spans run 2.15 (OLMo), 4.11 (Qwen), 8.68 (Gemma).
+
+## F-AO. Chat-format robustness: the top and bottom of the ordering survive, the middle does not
+Qwen3.5-4B re-swept under **C2 chat format** (the only chat format either Qwen instruct model can
+answer in, F-AL), 26,752-prompt bank, same everything else. Capacity-loss class `human_edge`:
+
+| facet | raw x4 | rank | chat C2 | rank |
+|---|---|---|---|---|
+| **moral_patient** | +0.82 | **1** | +1.80 | **2** |
+| soul | +0.34 | 2 | +2.04 | **1** |
+| sacredness | −0.01 | 3 | +1.75 | 3 |
+| … | | | | |
+| **consciousness** | −0.54 | **15** | +1.41 | **6** |
+| intention | −0.85 | 17 | +1.33 | 10 |
+| **moral_agent** | −0.93 | **18** | +0.88 | **18** |
+
+Rank correlation raw vs chat **+0.765**.
+
+**What survives:** moral standing at the top (1st → 2nd) and moral agency at the bottom (18th →
+18th) in both formats. The load-bearing claim — *moral standing is preserved when mental capacity
+is lost, while being held responsible is not* — is **format-robust**.
+
+**What does not:** `consciousness` moves from **15th to 6th**. The finding as written said
+"consciousness is #10–16 in all six checkpoints". That specific number is a fact about the raw
+format, not about the model. Narrowing the claim accordingly.
+
+Also note every facet is positive under chat and mostly negative under raw — the chat format
+lifts the whole distribution. Ranks are the right read here, which is what the finding used, but
+it is a reminder that the absolute values were never comparable across formats.
+
+**And soul takes 1st place under chat.** The soul register, which failed to replicate across
+families three times, resurfaces at the top of the ordering as soon as the format changes on a
+model where it had been 2nd. Not a rehabilitation — one model, one format — but it is the third
+time soul has behaved unlike its neighbouring facets, and worth keeping on the list.

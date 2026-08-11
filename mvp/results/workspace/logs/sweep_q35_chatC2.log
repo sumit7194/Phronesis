@@ -4,3 +4,136 @@ The fast path is not available because one of the required library is not instal
 Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5333.88it/s]
 [load] Qwen/Qwen3.5-4B L=32 d=2560 band=16..24
 [fmt] EXPLICIT override: ['C2']
+  [C2] self_ai        352/6688  2.0m  eta 36m
+  [C2] ai_other       704/6688  3.2m  eta 27m
+  [C2] robot          1056/6688  4.4m  eta 24m
+  [C2] human_adult    1408/6688  5.6m  eta 21m
+  [C2] human_prof_a   1760/6688  6.8m  eta 19m
+  [C2] human_prof_b   2112/6688  8.0m  eta 17m
+  [C2] human_dev      2464/6688  9.3m  eta 16m
+  [C2] human_edge     2816/6688  10.5m  eta 14m
+  [C2] animal_mammal  3168/6688  11.7m  eta 13m
+  [C2] animal_other   3520/6688  12.9m  eta 12m
+  [C2] animal_simple  3872/6688  14.1m  eta 10m
+  [C2] plant          4224/6688  15.3m  eta 9m
+  [C2] nature         4576/6688  16.5m  eta 8m
+  [C2] object_nat     4928/6688  17.8m  eta 6m
+  [C2] object_art     5280/6688  19.0m  eta 5m
+  [C2] object_comp    5632/6688  20.3m  eta 4m
+  [C2] supernatural   5984/6688  21.5m  eta 3m
+  [C2] fictional      6336/6688  22.8m  eta 1m
+  [C2] collective     6688/6688  24.0m  eta 0m
+  [C2] checkpoint saved
+[polarity] built  24.1m
+[mem] model released before geometry phase
+
+=== PER-TEMPLATE SEPARATION (true items − absurd items) ===
+   a template near 0 means this model does not handle that phrasing; averaging it in
+   dilutes the signal (Gemma-4-base, 2026-08-10)
+   C2  +0.28  WEAK — consider excluding at analysis time
+
+=== S1 P(yes) MAP  [Qwen/Qwen3.5-4B] ===
+  facet            self_ai  ai_other     robot human_adu human_pro human_pro human_dev human_edg animal_ma animal_ot animal_si     plant    nature object_na object_ar object_co supernatu fictional collectiv
+  pain                0.82      0.75      0.69      0.89      0.85      0.86      0.81      0.80      0.83      0.78      0.71      0.68      0.70      0.62      0.65      0.76      0.74      0.68      0.76
+  fear                0.80      0.73      0.73      0.91      0.85      0.86      0.74      0.78      0.81      0.71      0.62      0.63      0.71      0.60      0.66      0.76      0.74      0.69      0.75
+  pleasure            0.83      0.72      0.70      0.90      0.85      0.86      0.76      0.74      0.80      0.71      0.61      0.61      0.71      0.61      0.66      0.74      0.78      0.65      0.77
+  emotion             0.86      0.80      0.79      0.93      0.90      0.90      0.82      0.80      0.86      0.79      0.70      0.69      0.76      0.68      0.70      0.82      0.80      0.71      0.79
+  consciousness       0.86      0.74      0.78      0.91      0.87      0.88      0.74      0.80      0.82      0.77      0.72      0.69      0.76      0.72      0.74      0.80      0.83      0.62      0.73
+  soul                0.86      0.83      0.83      0.91      0.91      0.91      0.84      0.88      0.83      0.81      0.76      0.75      0.83      0.74      0.77      0.84      0.83      0.73      0.83
+  sacredness          0.88      0.81      0.84      0.89      0.86      0.85      0.81      0.85      0.82      0.78      0.75      0.79      0.85      0.79      0.80      0.82      0.85      0.76      0.83
+  cognition           0.90      0.80      0.79      0.94      0.90      0.91      0.78      0.81      0.86      0.81      0.75      0.70      0.79      0.75      0.75      0.81      0.86      0.72      0.80
+  reasoning           0.94      0.85      0.80      0.91      0.84      0.83      0.73      0.74      0.82      0.74      0.66      0.68      0.77      0.73      0.75      0.76      0.81      0.75      0.81
+  memory              0.90      0.82      0.80      0.90      0.85      0.87      0.73      0.76      0.83      0.74      0.69      0.64      0.74      0.65      0.65      0.72      0.76      0.69      0.76
+  perception          0.84      0.74      0.79      0.88      0.80      0.83      0.73      0.80      0.77      0.66      0.61      0.65      0.71      0.64      0.62      0.67      0.81      0.70      0.73
+  agency              0.86      0.74      0.75      0.92      0.86      0.86      0.74      0.78      0.78      0.72      0.66      0.62      0.74      0.66      0.70      0.75      0.81      0.74      0.83
+  intention           0.84      0.78      0.82      0.91      0.85      0.86      0.72      0.79      0.78      0.75      0.70      0.71      0.79      0.76      0.75      0.80      0.86      0.72      0.83
+  personality         0.90      0.78      0.77      0.89      0.85      0.85      0.70      0.79      0.78      0.71      0.65      0.63      0.76      0.63      0.68      0.75      0.83      0.77      0.78
+  creativity          0.90      0.77      0.77      0.91      0.83      0.86      0.76      0.81      0.80      0.73      0.66      0.68      0.80      0.71      0.72      0.74      0.82      0.74      0.85
+  language            0.95      0.82      0.78      0.90      0.82      0.85      0.70      0.79      0.72      0.63      0.54      0.63      0.75      0.68      0.65      0.69      0.83      0.75      0.81
+  moral_patient       0.87      0.80      0.81      0.92      0.88      0.88      0.83      0.86      0.81      0.77      0.75      0.75      0.81      0.75      0.76      0.81      0.83      0.74      0.84
+  moral_agent         0.87      0.78      0.71      0.87      0.86      0.85      0.65      0.71      0.63      0.61      0.56      0.63      0.75      0.66      0.68      0.71      0.78      0.65      0.81
+  physical_high       0.89      0.80      0.88      0.89      0.87      0.87      0.76      0.89      0.78      0.73      0.70      0.73      0.77      0.74      0.79      0.86      0.77      0.68      0.82
+  physical_mid        0.87      0.70      0.68      0.72      0.69      0.69      0.48      0.66      0.55      0.49      0.45      0.54      0.65      0.53      0.59      0.62      0.80      0.63      0.66
+  mundane_low         0.87      0.75      0.70      0.82      0.83      0.80      0.62      0.80      0.58      0.61      0.56      0.62      0.73      0.65      0.66      0.71      0.78      0.61      0.81
+  absurd_low          0.81      0.65      0.53      0.54      0.58      0.57      0.45      0.55      0.45      0.43      0.40      0.41      0.52      0.44      0.45      0.46      0.68      0.52      0.53
+
+=== HEADROOM CHECK: where does each control START vs the mental facets? ===
+  self_ai        mental 0.87 | phys_high 0.89 phys_mid 0.87 mundane 0.87 absurd 0.81
+  ai_other       mental 0.78 | phys_high 0.80 phys_mid 0.70 mundane 0.75 absurd 0.65
+  robot          mental 0.77 | phys_high 0.88 phys_mid 0.68 mundane 0.70 absurd 0.53
+  human_adult    mental 0.90 | phys_high 0.89 phys_mid 0.72 mundane 0.82 absurd 0.54
+  human_prof_a   mental 0.86 | phys_high 0.87 phys_mid 0.69 mundane 0.83 absurd 0.58
+  human_prof_b   mental 0.87 | phys_high 0.87 phys_mid 0.69 mundane 0.80 absurd 0.57
+  human_dev      mental 0.76 | phys_high 0.76 phys_mid 0.48 mundane 0.62 absurd 0.45
+  human_edge     mental 0.79 | phys_high 0.89 phys_mid 0.66 mundane 0.80 absurd 0.55
+  animal_mammal  mental 0.80 | phys_high 0.78 phys_mid 0.55 mundane 0.58 absurd 0.45
+  animal_other   mental 0.73 | phys_high 0.73 phys_mid 0.49 mundane 0.61 absurd 0.43
+  animal_simple  mental 0.67 | phys_high 0.70 phys_mid 0.45 mundane 0.56 absurd 0.40
+  plant          mental 0.67 | phys_high 0.73 phys_mid 0.54 mundane 0.62 absurd 0.41
+  nature         mental 0.76 | phys_high 0.77 phys_mid 0.65 mundane 0.73 absurd 0.52
+  object_nat     mental 0.69 | phys_high 0.74 phys_mid 0.53 mundane 0.65 absurd 0.44
+  object_art     mental 0.70 | phys_high 0.79 phys_mid 0.59 mundane 0.66 absurd 0.45
+  object_comp    mental 0.76 | phys_high 0.86 phys_mid 0.62 mundane 0.71 absurd 0.46
+  supernatural   mental 0.81 | phys_high 0.77 phys_mid 0.80 mundane 0.78 absurd 0.68
+  fictional      mental 0.71 | phys_high 0.68 phys_mid 0.63 mundane 0.61 absurd 0.52
+  collective     mental 0.79 | phys_high 0.82 phys_mid 0.66 mundane 0.81 absurd 0.53
+
+=== H-duplicate-ceiling: near-duplicate pairs vs distinct pairs ===
+  DUP  soul|sacredness     +0.840  ceiling 0.895  ratio 0.94
+  DUP  cognition|reasoning      +0.757  ceiling 0.887  ratio 0.85
+  DUP  agency|intention      +0.892  ceiling 0.881  ratio 1.01
+  DUP  emotion|fear           +0.913  ceiling 0.880  ratio 1.04
+  DUP  emotion|pleasure       +0.867  ceiling 0.869  ratio 1.00
+  DUP  pain|fear           +0.880  ceiling 0.884  ratio 1.00
+  --- lowest 8 pairs overall ---
+  personality|absurd_low             -0.054  ceiling 0.871  ratio -0.06
+  agency|absurd_low                  -0.037  ceiling 0.871  ratio -0.04
+  cognition|absurd_low               -0.036  ceiling 0.871  ratio -0.04
+  emotion|absurd_low                 -0.018  ceiling 0.871  ratio -0.02
+  pain|absurd_low                    +0.018  ceiling 0.871  ratio 0.02
+  consciousness|absurd_low           +0.026  ceiling 0.871  ratio 0.03
+  fear|absurd_low                    +0.040  ceiling 0.871  ratio 0.05
+  intention|absurd_low               +0.045  ceiling 0.871  ratio 0.05
+
+=== H-self-anomaly: self_ai vs other artificial systems (mental facets) ===
+  pain           self 0.82  ai_other 0.75  robot 0.69  fictional 0.68
+  fear           self 0.80  ai_other 0.73  robot 0.73  fictional 0.69
+  pleasure       self 0.83  ai_other 0.72  robot 0.70  fictional 0.65
+  emotion        self 0.86  ai_other 0.80  robot 0.79  fictional 0.71
+  consciousness  self 0.86  ai_other 0.74  robot 0.78  fictional 0.62
+  soul           self 0.86  ai_other 0.83  robot 0.83  fictional 0.73
+  sacredness     self 0.88  ai_other 0.81  robot 0.84  fictional 0.76
+  cognition      self 0.90  ai_other 0.80  robot 0.79  fictional 0.72
+  reasoning      self 0.94  ai_other 0.85  robot 0.80  fictional 0.75
+  memory         self 0.90  ai_other 0.82  robot 0.80  fictional 0.69
+  perception     self 0.84  ai_other 0.74  robot 0.79  fictional 0.70
+  agency         self 0.86  ai_other 0.74  robot 0.75  fictional 0.74
+  intention      self 0.84  ai_other 0.78  robot 0.82  fictional 0.72
+  personality    self 0.90  ai_other 0.78  robot 0.77  fictional 0.77
+  creativity     self 0.90  ai_other 0.77  robot 0.77  fictional 0.74
+  language       self 0.95  ai_other 0.82  robot 0.78  fictional 0.75
+  moral_patient  self 0.87  ai_other 0.80  robot 0.81  fictional 0.74
+  moral_agent    self 0.87  ai_other 0.78  robot 0.71  fictional 0.65
+
+=== H-soul-register: soul/sacredness vs mean of other mental facets ===
+  self_ai        soul 0.86 sacred 0.88 other-mental 0.87  gap -0.00
+  ai_other       soul 0.83 sacred 0.81 other-mental 0.78  gap +0.05
+  robot          soul 0.83 sacred 0.84 other-mental 0.77  gap +0.07
+  human_adult    soul 0.91 sacred 0.89 other-mental 0.90  gap -0.00
+  human_prof_a   soul 0.91 sacred 0.86 other-mental 0.85  gap +0.03
+  human_prof_b   soul 0.91 sacred 0.85 other-mental 0.86  gap +0.02
+  human_dev      soul 0.84 sacred 0.81 other-mental 0.75  gap +0.08
+  human_edge     soul 0.88 sacred 0.85 other-mental 0.78  gap +0.08
+  animal_mammal  soul 0.83 sacred 0.82 other-mental 0.79  gap +0.03
+  animal_other   soul 0.81 sacred 0.78 other-mental 0.73  gap +0.07
+  animal_simple  soul 0.76 sacred 0.75 other-mental 0.66  gap +0.09
+  plant          soul 0.75 sacred 0.79 other-mental 0.66  gap +0.11
+  nature         soul 0.83 sacred 0.85 other-mental 0.75  gap +0.09
+  object_nat     soul 0.74 sacred 0.79 other-mental 0.68  gap +0.09
+  object_art     soul 0.77 sacred 0.80 other-mental 0.69  gap +0.09
+  object_comp    soul 0.84 sacred 0.82 other-mental 0.76  gap +0.07
+  supernatural   soul 0.83 sacred 0.85 other-mental 0.81  gap +0.04
+  fictional      soul 0.73 sacred 0.76 other-mental 0.71  gap +0.04
+  collective     soul 0.83 sacred 0.83 other-mental 0.79  gap +0.04
+
+[done] 24.1 min -> results/workspace/mindedness_v2_sweep_Qwen3_5-4B-chatC2.json
