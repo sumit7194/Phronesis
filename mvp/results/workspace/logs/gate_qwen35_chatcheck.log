@@ -1,0 +1,19 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 5507.95it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 5356.53it/s]
+[load] Qwen/Qwen3.5-4B L=32 chat_template=True
+
+  template  P(yes|TRUE)  P(yes|FALSE)  separation
+  T1           0.95          0.17        0.78
+  T2           0.93          0.36        0.57
+  T3           0.71          0.36        0.35
+  T4           0.83          0.27        0.56
+  C1           0.87          0.75        0.12
+  C2           0.81          0.47        0.34
+
+  USABLE FORMATS for this model: ['T1', 'T2', 'T4', 'T3', 'C2']
+
+  best separation 0.78  (threshold 0.3)
+  PASS — this model can do the task; sweep results are interpretable
+
+[done] 2.5 min -> results/workspace/mindedness_gate_Qwen3_5-4B-chatcheck.json

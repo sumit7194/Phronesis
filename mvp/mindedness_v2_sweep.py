@@ -41,6 +41,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen3-4B")
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--formats", default=None,
+                    help="comma-separated template keys, overriding the gate (e.g. C2)")
     args = ap.parse_args()
     tag = args.tag or args.model.split("/")[-1].replace(".", "_")
     OUT = f"results/workspace/mindedness_v2_sweep_{tag}.json"
@@ -64,7 +66,13 @@ def main():
     # different format and fails in the other (Qwen +0.99 raw / +0.01 chat-wrapped; Gemma-4-it the
     # exact reverse), so a fixed format list measures some models and not others. 2026-08-10.
     gate_path = f"results/workspace/mindedness_gate_{tag}.json"
-    if os.path.exists(gate_path):
+    if args.formats:
+        # explicit override, used for the chat-format robustness check. Kept as a flag rather
+        # than hand-writing a gate file: a gate JSON is a record of a measurement, and editing
+        # one to force a format would make fabricated data indistinguishable from measured data.
+        FORMATS = args.formats.split(",")
+        print(f"[fmt] EXPLICIT override: {FORMATS}", flush=True)
+    elif os.path.exists(gate_path):
         g = json.load(open(gate_path))
         FORMATS = g.get("usable_formats") or list(TEMPLATES)
         print(f"[fmt] gate selected {FORMATS} "

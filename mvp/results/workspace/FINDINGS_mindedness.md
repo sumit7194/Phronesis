@@ -1654,3 +1654,28 @@ useful claim. Correcting F-Y accordingly.
 That structure — moral patiency loading on experience, moral agency on agency — **is Gray &
 Wegner (2007)**, recovered here from a completely different measurement on a 4B model. Known
 result, replicated on our own hardware; that is worth having and is not a discovery.
+
+## F-AL. The Qwen instruct models were never "gated to raw" — raw is the only thing that measures one of them
+Neither Qwen instruct model had a gate file, so both fell back to raw templates. That made every
+Qwen result in the arc rest on a format that was defaulted to, not chosen. Gate run on both
+(written to a `-chatcheck` tag so it cannot silently change the format for other scripts):
+
+| | T1 | T2 | T3 | T4 | C1 (chat) | C2 (chat) | usable |
+|---|---|---|---|---|---|---|---|
+| **Qwen3-4B** | 0.911 | 0.928 | 0.886 | **0.941** | **0.012** | **0.003** | raw x4 only |
+| **Qwen3.5-4B** | **0.777** | 0.569 | 0.347 | 0.564 | 0.122 | **0.342** | raw x4 **+ C2** |
+
+**Qwen3-4B cannot be measured in chat format at all** — 0.012 and 0.003 against a 0.30 threshold,
+versus 0.89–0.94 for all four raw templates. The robustness check asked for is not possible on
+this model; raw was forced, not chosen. That is the answer, not a dodge.
+
+**And the two models differ for a structural reason.** Qwen3.5's chat template appends `<think>\n`
+after the generation prompt; Qwen3-4B's ends at `assistant\n`. So on Qwen3.5 the next-token Yes/No
+probe is being read *inside an open reasoning block* — and it still separates at 0.342 on C2,
+which is more than I would have predicted. On Qwen3-4B the probe is structurally clean and the
+model simply does not put Yes/No next in chat mode.
+
+**Consequence:** the chat robustness re-run is possible on exactly one Qwen model, Qwen3.5 under
+C2, and that is queued. Had I not checked the template tails I would have written "chat is
+unusable on Qwen" as a single fact about the family; it is two different facts with two different
+causes.
