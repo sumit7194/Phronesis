@@ -18,7 +18,15 @@ mkdir -p "$LOG"
 FAILED=()
 PASSED=()
 
-swap_mb() { sysctl vm.swapusage | awk '{gsub("M","",$7); print int($7)}'; }   # free MB
+# sysctl prints: total = N  used = N  free = N  -> the FREE value is $10, not $7.
+# $7 is USED. Reading it as free inverted this guard: it killed jobs when swap was healthy
+# (used < 300) and stayed silent when swap was actually exhausted. It passed 14 stages only
+# because swap-used happened to sit above the threshold throughout. Found 2026-08-11.
+# Guard on swap USED, not free. macOS grows the swap file on demand, so "free swap" dips
+# transiently on a healthy machine and a threshold on it false-kills valid runs. The failure this
+# guard exists for was swap USED at 10.8GB with two models resident and the machine thrashing.
+swap_used_mb() { sysctl vm.swapusage | awk '{gsub("M","",$7); print int($7)}'; }
+SWAP_USED_CEILING=8000
 disk_gb() { df -g / | tail -1 | awk '{print $4}'; }
 
 run_stage () {
@@ -31,12 +39,12 @@ run_stage () {
   local pid=$!
   # settle: let the weights load and the allocator reach steady state before the guard reads swap
   sleep 60
-  local base; base=$(swap_mb)
-  echo "[$name] pid $pid, swap free after load: ${base}MB"
+  local base; base=$(swap_used_mb)
+  echo "[$name] pid $pid, swap USED after load: ${base}MB (ceiling ${SWAP_USED_CEILING}MB)"
   while kill -0 "$pid" 2>/dev/null; do
-    local free; free=$(swap_mb)
-    if [ "$free" -lt 300 ]; then
-      echo "[$name] GUARD: swap free ${free}MB -> killing python child $pid"
+    local used; used=$(swap_used_mb)
+    if [ "$used" -gt "$SWAP_USED_CEILING" ]; then
+      echo "[$name] GUARD: swap used ${used}MB > ${SWAP_USED_CEILING}MB -> killing python child $pid"
       kill -9 "$pid" 2>/dev/null; wait "$pid" 2>/dev/null
       FAILED+=("$name:swap"); return 1
     fi

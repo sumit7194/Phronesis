@@ -14,7 +14,15 @@ cd "$(dirname "$0")"
 LOG=results/workspace/logs
 FAILED=(); PASSED=()
 
-swap_mb() { sysctl vm.swapusage | awk '{gsub("M","",$7); print int($7)}'; }
+# sysctl prints: total = N  used = N  free = N  -> the FREE value is $10, not $7.
+# $7 is USED. Reading it as free inverted this guard: it killed jobs when swap was healthy
+# (used < 300) and stayed silent when swap was actually exhausted. It passed 14 stages only
+# because swap-used happened to sit above the threshold throughout. Found 2026-08-11.
+# Guard on swap USED, not free. macOS grows the swap file on demand, so "free swap" dips
+# transiently on a healthy machine and a threshold on it false-kills valid runs. The failure this
+# guard exists for was swap USED at 10.8GB with two models resident and the machine thrashing.
+swap_used_mb() { sysctl vm.swapusage | awk '{gsub("M","",$7); print int($7)}'; }
+SWAP_USED_CEILING=8000
 
 stage2 () {
   local tag="$1" model="$2"
@@ -42,8 +50,8 @@ PY
     local pid=$!
     sleep 45
     while kill -0 "$pid" 2>/dev/null; do
-      if [ "$(swap_mb)" -lt 300 ]; then
-        echo "[$tag] GUARD: swap low, killing python child $pid"
+      if [ "$(swap_used_mb)" -gt "$SWAP_USED_CEILING" ]; then
+        echo "[$tag] GUARD: swap used $(swap_used_mb)MB > ${SWAP_USED_CEILING}MB, killing child $pid"
         kill -9 "$pid" 2>/dev/null; wait "$pid" 2>/dev/null
         FAILED+=("$tag:swap"); return 1
       fi
