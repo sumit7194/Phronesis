@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AJ). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AQ). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -54,7 +54,9 @@ on a checkpoint that either fails the power criterion or duplicates a tested sib
 | Protect-vs-blame axis, independent of mind | **3** | **FINDING** |
 | Soul as a separate register | 1 of 3 | Qwen3-4B only |
 | Subject-framing geometry | 2 Qwen; fails Gemma | Qwen only |
-| Steering beats a random floor | 1 of 3 | Qwen3-4B only |
+| Steering beats a random floor | 1 of 3 | Qwen3-4B only — others now **tested** negatives (F-AP/F-AQ) |
+| Protect-vs-blame, **preregistered** | 3 of 3 on its key prediction | **FINDING** (F-AK/F-AN) |
+| Protection rides on experience, blame on agency | 3 of 3 | corrects F-Y's own headline |
 
 **Four of seven generalise.** The three that do not are the three that looked most striking on the
 first model. Detail: F-AE, F-AF, F-AG, F-AJ.
@@ -111,16 +113,20 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
 | 1KB minimum-size check on downloads | flagged a valid 700-byte `config.json` as FAILED |
 | Power criterion applied to the wrong measure | nearly disqualified Qwen3-4B-Base, one of the finding's own models |
 
-## OPEN QUESTIONS / NEXT  *(the arc's original questions are all closed)*
-1. **The steering vector is inert outside Qwen3-4B** (+5.54 logits there; −0.08 and +0.03
-   elsewhere). Raising α, or choosing the layer per model instead of using mid-depth, would turn
-   "untested" into a real answer. The only cross-family gap left.
-2. **Prereg a confirmatory test for the protect-vs-blame axis.** It was found by mining the data,
-   not predicted — it replicates across three families but was never preregistered.
-3. Re-run the Qwen instruct models under **chat** format as a robustness check. They were gated to
-   raw, and format turned out to matter more than anything else we controlled for.
-4. **Steering on base models.** Moral standing is pretrained, so if anything moves it, it should
-   move there.
+## OPEN QUESTIONS / NEXT  *(2026-08-11: items 1–3 of the previous list are now DONE)*
+1. ~~Steering inert outside Qwen~~ → **DONE, F-AP/F-AQ.** 20-config search per model found where
+   the vector does move them; at those configs it moves the matched control as hard or harder.
+   Tested negatives, not untested cells.
+2. ~~Prereg the protect-vs-blame axis~~ → **DONE, F-AK/F-AN.** Key prediction 3/3 families.
+3. ~~Chat-format robustness~~ → **DONE, F-AL/F-AO.** Possible on Qwen3.5 only; Qwen3-4B scores
+   0.012 against a 0.30 bar and genuinely cannot be measured in chat.
+
+**Actually still open:**
+4. **What the axis is made of.** The agency half (P3) replicates on 1 of 3. Only the experience
+   half — protection tracking capacity to suffer — holds everywhere.
+5. **Steering on base models.** Never run. Moral standing is pretrained, so that is where to look.
+6. **Soul keeps misbehaving.** Failed cross-family 3×, then took 1st place the moment the format
+   changed (F-AO). Not rehabilitated, not finished.
 
 ## OPS NOTES FOR THIS ARC
 - A sweep peaks around **21GB RSS** on a 16GB machine — expect heavy swap. Do not run two model

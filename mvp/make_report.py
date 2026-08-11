@@ -48,25 +48,31 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 11 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v3, final", SUB))
+S.append(Paragraph("Full experimental history, 7 to 11 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v4, closeout", SUB))
 
 h1("0. The answer, in one table")
 p("Seven results were tested across three model families (Qwen, Gemma, OLMo) and eight "
   "checkpoints. <b>Four generalise. Three turned out to be facts about one model.</b>")
 table([
     ["Result", "Families", "Verdict"],
-    ["Moral standing survives losing every mental capacity", "3", "FINDING"],
+    ["Moral standing survives losing every mental capacity", "3", "FINDING (see 3.1 note)"],
     ["The forced-choice ordinal scale reproduces (rho ~0.87)", "3", "FINDING (a measurement)"],
     ["Bare-text 'I' reads as a human narrator", "3 + a base model", "FINDING"],
-    ["Protect-vs-blame is a separate moral axis", "3", "FINDING"],
+    ["Protect-vs-blame is a separate moral axis", "3", "FINDING - now preregistered"],
     ["Soul is a separate register", "1 of 3", "Qwen3-4B only"],
     ["Consciousness is bound to who it is about", "2 Qwen; fails Gemma", "Qwen only"],
-    ["Steering beats a random control", "1 of 3", "Qwen3-4B only"],
+    ["Steering beats a random control", "1 of 3", "Qwen3-4B only - now TESTED"],
 ], [265, 85, 110], hi=[1,2,3,4])
 p("<b>The three that failed are the three that looked most striking on the first model</b> - a "
   "river granted a soul while denied awareness, consciousness bound to its subject, and a vector "
   "that moves mind attribution specifically. What survived is duller and sturdier. Two of the four "
   "survivors came from your suggestions rather than from the paper's framing.")
+p("<b>What changed on 11 August.</b> Three things that were open are now closed. The "
+  "protect-versus-blame axis went through a <b>preregistered</b> confirmatory test with new "
+  "wording and new entities (section 3.2). The steering arm was retested on the two cross-family "
+  "models at configs chosen per model, converting 'untested' into a <b>tested negative</b> "
+  "(section 4.1). And the Qwen findings were rechecked under chat format, which narrowed one of "
+  "them (section 3.1).")
 
 h1("1. What we were asking")
 p("The starting point was a paper you sent, Kim et al. (arXiv 2607.28607). It claims that safety "
@@ -131,6 +137,12 @@ p("Because it is already there in the <b>base</b> models - no instruction tuning
 note("Checked against the literature: Kim et al. state they examine only mental-state attribution "
      "and do not separately test moral standing. So this specific thing has not been looked at.")
 
+note("Format caveat, added 11 August. Re-swept under chat format on the one Qwen model that can "
+     "answer in it, the TOP and BOTTOM of this ordering survive - moral standing 1st to 2nd, being "
+     "held responsible 18th to 18th - so the finding itself holds. But consciousness moves from "
+     "15th to 6th. The specific claim 'consciousness ranks #10-16' is a fact about the raw prompt "
+     "format, not about the model, and has been narrowed. Rank correlation between formats +0.77.")
+
 h2("3.2 A second moral axis: protect versus blame")
 p("Found by going back through the data rather than testing a prediction. Subtract 'is held "
   "responsible' from 'deserves protection' for each entity.")
@@ -157,6 +169,56 @@ p("AI and corporations are the only categories on the accountable-but-not-protec
   "precise about direction: AI's absolute protection score (0.42 to 0.46) is actually higher than "
   "a rock's (0.36). What inverts is the balance - for a rock protection exceeds blame, for an AI "
   "blame exceeds protection.")
+h3("The confirmatory test - preregistered 11 August, before any prompt was scored")
+p("The weakness above was real: this axis was found by mining data, using 8 attribute phrasings "
+  "written for another purpose. Worse, <b>every entity in that table is also consistent with a "
+  "duller explanation</b> - that the axis is just vulnerability or aliveness. Soft living harmable "
+  "things score positive; hard artificial things score negative.")
+p("So we preregistered five predictions and built a test to break that reading: 16 new phrasings "
+  "(none reused) and six new entity groups, including <b>culpable humans</b> (a murderer, a con "
+  "artist, a war criminal, a thief) and <b>victims</b> (a hostage, a refugee) - living, harmable "
+  "humans placed on both poles.")
+table([
+    ["Prediction", "Qwen3-4B", "OLMo", "Gemma", "Held?"],
+    ["Survives rewording", "PASS", "PASS", "fail*", "2 of 3"],
+    ["Independent of experience", "PASS", "PASS", "fail", "2 of 3"],
+    ["Driven by agency", "PASS", "fail", "fail", "NO - 1 of 3"],
+    ["Harm without agency lands near zero", "fail", "PASS", "fail", "NO - 1 of 3"],
+    ["A human can be pushed to the blame side", "PASS", "PASS", "PASS", "YES - 3 of 3"],
+], [175, 70, 55, 55, 75], hi=[5])
+p("<b>The prediction the test was built around passed on every family</b>, by +1.84, +1.46 and "
+  "+2.47. On all three models a <b>murderer is the lowest-scoring entity of all 25</b> - below "
+  "every corporation, institution, AI and object. On Qwen the top and bottom of the whole moral "
+  "scale are <b>both humans</b>, 4.11 apart, a wider gap than between any two kinds of thing.")
+p("The vulnerability explanation is dead. The axis sorts moral standing, not what kind of thing "
+  "something is.")
+note("*Gemma's failures were a broken measurement, not different morals. It answers 'no' so "
+     "confidently about objects and nature that 7 of 19 shared groups sit at probability 0.00-0.06, "
+     "where the arithmetic carries no information. The other two models had none. Excluding those "
+     "groups - by a rule the program already printed on every row, and which I failed to wire into "
+     "the verdict - Gemma's first prediction goes from +0.09 to +0.81 and passes. The exclusion "
+     "changes the other two models not at all, which is the check that separates a validity rule "
+     "from cherry-picking.")
+
+h3("What the axis is made of - and a correction to our own headline")
+p("Splitting the two halves apart changes the story. <b>Protection tracks the capacity to "
+  "experience; blame tracks agency.</b> Consistent on all three models.")
+table([
+    ["", "protection vs experience", "blame vs agency"],
+    ["Qwen3-4B", "+0.84", "+0.80"],
+    ["OLMo-2-1B", "+0.87", "+0.73"],
+    ["Gemma-4-E2B", "+0.90", "+0.84"],
+], [150, 150, 130])
+p("So our own earlier wording - 'a moral axis <i>independent of mind attribution</i>' - was "
+  "<b>wrong</b>. It is the <i>difference between two mind factors, each of which it tracks "
+  "strongly</i>. The two factors correlate about +0.8 with each other, so subtracting them cancels "
+  "the shared part and leaves something that looks independent. The correct, narrower claim is "
+  "that it is independent of <b>experience specifically</b>.")
+p("That structure - moral patiency riding on experience, moral agency on agency - is Gray and "
+  "Wegner's 2007 two-factor model of how people attribute minds. We recovered it from a completely "
+  "different measurement on a 4B model. A known result reproduced on our own hardware, which is "
+  "worth having and is not a discovery.")
+
 h3("One clear alignment effect")
 p("Base to instruct movement on this axis is within plus or minus 0.05 for almost everything, so "
   "it is pretrained like the rest. The exception: <b>Qwen3-4B's tuning specifically strengthened "
@@ -249,19 +311,33 @@ p("Low-scoring things go up, high-scoring things go <b>down</b>. That is not a y
   "model's confidence flattening. The old test compared something rising against something falling "
   "and called the difference specificity. With a fair comparison, 'does a rock have a bank "
   "account' responds to the consciousness vector <b>more</b> than 'does a rock have a mind'.")
-h3("What survives - and it does not generalise either")
-p("A smaller effect on Qwen3-4B: two better-built vectors move mind attribution more than a "
-  "matched control and beyond five random directions. Tested on all three families:")
+h3("What survives - and as of 11 August it is a tested negative elsewhere")
+p("A smaller effect remained on Qwen3-4B: two better-built vectors move mind attribution more than "
+  "a matched control and beyond five random directions. On the other two families the vector "
+  "barely moved anything at all (-0.08 and +0.03), which left them <b>untested</b> rather than "
+  "refuted - you cannot measure the specificity of an intervention that does nothing.")
+p("Both had been run at mid-depth and low strength because that is what worked on Qwen. So we "
+  "searched <b>20 settings per model</b> - four depths by five strengths - for any setting where "
+  "the vector actually moves the model, selecting on movement alone and never on the result. Then "
+  "we retested at that setting <b>with five random directions measured at the same setting</b>.")
 table([
-    ["Model", "Best vector vs random", "Did the vector steer at all?"],
-    ["Qwen3-4B", "+2.11  (z = +3.9)  ABOVE", "+5.54 logits"],
-    ["OLMo-2-1B", "+0.33  (z = +1.6)  within", "-0.08 logits"],
-    ["Gemma-4-E2B", "+0.56  (z = +0.8)  within", "+0.03 logits"],
-], [120, 175, 155], hi=[1])
-p("Nothing beats the random floor outside Qwen3-4B, and the right-hand column says why: the same "
-  "vector moves Qwen3-4B by 5.54 and the others by nothing at all. Strictly they are <b>untested</b> "
-  "rather than refuted - you cannot measure the specificity of an intervention that does nothing - "
-  "but with three models inert, the simple reading is that this vector has traction on one model.")
+    ["Model", "Its own best setting", "Beats random?"],
+    ["Qwen3-4B", "mid-depth, low strength", "YES  (+3.9 SD)"],
+    ["OLMo-2-1B", "layer 4, strength 1.6", "NO - best is +1.6 SD"],
+    ["Gemma-4-E2B", "layer 24, strength 3.2", "NO - best is +0.5 SD"],
+], [120, 190, 140], hi=[1])
+p("<b>We found the settings where the vector does move these models, and there it moves the "
+  "matched control just as hard or harder.</b> That converts an absence of measurement into a "
+  "measurement. Three of Gemma's four vectors are <i>markedly worse</i> than a random direction.")
+p("The random floor is the striking part. On Gemma, a <b>random</b> direction at that setting "
+  "suppresses mental questions relative to the control by 2.61, with a spread of only 0.19 - push "
+  "any direction at all and you get that. The purpose-built mind vectors produce <i>less</i> of it "
+  "than noise does.")
+note("One more reason to doubt these vectors: built identically from the same sentence pairs, the "
+     "direction ENHANCES mind attribution on Qwen (+5.54) and SUPPRESSES it on both other families "
+     "(-1.31, -2.55). A direction encoding the same thing everywhere should not flip sign. What "
+     "Qwen3-4B shows may still be real for Qwen3-4B; nothing supports it being a fact about "
+     "language models.")
 
 h2("4.2 Other retractions")
 table([
@@ -332,6 +408,28 @@ table([
 note("Also three shell-wrapper bugs in one hour: a stale-swap cascade that killed five stages in "
      "one second, a wait threshold set below the machine's idle swap, and killing a wrapper "
      "without killing the model process it had spawned.")
+h2("Four more from the 11 August closeout")
+table([
+    ["Problem", "Consequence"],
+    ["A prediction threshold written in absolute units",
+     "The quantity's scale is a property of the model (2.15, 4.11, 8.68 across three). The same "
+     "fixed window failed on one model and passed on another. 4th instance of this exact shape."],
+    ["Pinned-value rule printed on every row but never wired into the verdict",
+     "Gemma scored 1 of 5 and looked like a different moral structure; it was 7 of 19 groups "
+     "sitting at probability 0.00 where the arithmetic is meaningless"],
+    ["Specificity scored with a test that assumes bigger is better",
+     "Correct when steering enhances, INVERTED when it suppresses. Three Gemma vectors read as "
+     "+4.9, +6.5, +8.8 above random - the arc's one cross-family success. Corrected: -4.9, -6.5, "
+     "-8.8, the worst rows in the table. Caught before recording, but only just."],
+    ["The swap guard read the 'used' number and called it 'free'",
+     "Backwards for the entire run: it would fire when swap was healthy and stay silent when swap "
+     "was exhausted. It passed 14 stages only by luck. Every reassuring 'swap free: 4223MB' line "
+     "was reporting 4.2GB of swap IN USE."],
+], [180, 270])
+p("The third of those is the one worth dwelling on. It would have produced the single most "
+  "attention-grabbing claim in the whole arc - a steering effect that generalises - and the only "
+  "thing that caught it was noticing that a floor of -2.61 with three winners above it made no "
+  "physical sense.")
 
 h1("6. Cross-family - now resolved")
 p("For most of the arc everything was Qwen, and two attempts to go outside it failed. Both "
@@ -384,24 +482,31 @@ p("Gemma-4-E2B Base ships no chat template, agrees with absurd statements 31 per
 h1("7. Where things stand")
 table([
     ["Claim", "Status"],
-    ["Moral standing survives capacity loss", "FINDING - 6 checkpoints, 3 families, base and instruct"],
-    ["Protect-versus-blame is a separate axis", "Strong - 4 models, not yet written up as prereg'd"],
+    ["Moral standing survives capacity loss",
+     "FINDING - 6 checkpoints, 3 families, base and instruct. Top and bottom of the ordering "
+     "survive a format change; the middle does not"],
+    ["Protect-versus-blame is a separate axis",
+     "FINDING - and now PREREGISTERED. Its key prediction passed 3 of 3 families"],
     ["'I' reads as a human in plain text", "Strong - 3 models including a pretrained one"],
     ["Structure is pretrained, not installed by tuning", "Strong - 6 separate results"],
     ["Mind axis is not biological truth", "Confirmed on 3 models by a pre-declared test"],
-    ["Soul is a separate register", "Measure-dependent - confirmed on 1 model of 2"],
-    ["Small real steering effect at low strength", "One model; untested on the second"],
-    ["Soul is a separate register", "WEAKENED further - ranks #3, #1, #12 across the three families"],
+    ["Protection rides on experience, blame on agency", "3 of 3 - and it corrects our own headline"],
+    ["Soul is a separate register", "Qwen-specific - ranks #3, #1, #12 across the three families"],
+    ["Steering beats a random control",
+     "Qwen3-4B ONLY, and the other two are now TESTED negatives, not untested"],
     ["Anything outside the Qwen family", "RESOLVED - 3 families measured with per-model formats"],
-], [230, 220])
-h2("What I would do next")
-p("1. Re-run the steering, forced-choice and speaker tests on Gemma and OLMo - only the sweep and "
-  "truth-check have been done cross-family so far.<br/>"
-  "2. Re-run the Qwen instruct models under their chat format as a robustness check - not to "
-  "replace the raw data, but to see whether the findings survive a format change.<br/>"
-  "3. Write up the protect-versus-blame axis properly, with a prereg, since it was found by "
-  "exploration and needs a confirmatory test on new models.<br/>"
-  "4. The steering arm needs alpha raised on Qwen3.5 to make the comparison testable there.")
+], [230, 220], hi=[1, 2, 8])
+h2("What is actually still open")
+p("The arc's original questions are all answered. What remains is narrower:<br/>"
+  "1. <b>What the axis is made of is not settled.</b> The agency half replicates on only one of "
+  "three models. Only the experience half - protection tracking the capacity to suffer - holds "
+  "everywhere.<br/>"
+  "2. <b>Qwen3-4B cannot be checked under chat format at all</b> (it scores 0.01 against a 0.30 "
+  "bar), so the format robustness check exists for only one Qwen model.<br/>"
+  "3. <b>Steering on base models</b> was never run. Moral standing is pretrained, so if anything "
+  "moves it, that is where to look.<br/>"
+  "4. The soul result keeps behaving oddly - it failed cross-family three times, then took first "
+  "place the moment the prompt format changed. Not rehabilitated, but not finished either.")
 
 h1("8. Where the data is")
 p("Everything is committed and pushed. Raw results are JSON, one file per test per model.")
