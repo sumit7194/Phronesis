@@ -48,7 +48,25 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 10 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v2, includes cross-family", SUB))
+S.append(Paragraph("Full experimental history, 7 to 11 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v3, final", SUB))
+
+h1("0. The answer, in one table")
+p("Seven results were tested across three model families (Qwen, Gemma, OLMo) and eight "
+  "checkpoints. <b>Four generalise. Three turned out to be facts about one model.</b>")
+table([
+    ["Result", "Families", "Verdict"],
+    ["Moral standing survives losing every mental capacity", "3", "FINDING"],
+    ["The forced-choice ordinal scale reproduces (rho ~0.87)", "3", "FINDING (a measurement)"],
+    ["Bare-text 'I' reads as a human narrator", "3 + a base model", "FINDING"],
+    ["Protect-vs-blame is a separate moral axis", "3", "FINDING"],
+    ["Soul is a separate register", "1 of 3", "Qwen3-4B only"],
+    ["Consciousness is bound to who it is about", "2 Qwen; fails Gemma", "Qwen only"],
+    ["Steering beats a random control", "1 of 3", "Qwen3-4B only"],
+], [265, 85, 110], hi=[1,2,3,4])
+p("<b>The three that failed are the three that looked most striking on the first model</b> - a "
+  "river granted a soul while denied awareness, consciousness bound to its subject, and a vector "
+  "that moves mind attribution specifically. What survived is duller and sturdier. Two of the four "
+  "survivors came from your suggestions rather than from the paper's framing.")
 
 h1("1. What we were asking")
 p("The starting point was a paper you sent, Kim et al. (arXiv 2607.28607). It claims that safety "
@@ -231,11 +249,19 @@ p("Low-scoring things go up, high-scoring things go <b>down</b>. That is not a y
   "model's confidence flattening. The old test compared something rising against something falling "
   "and called the difference specificity. With a fair comparison, 'does a rock have a bank "
   "account' responds to the consciousness vector <b>more</b> than 'does a rock have a mind'.")
-h3("What survives")
-p("A smaller real effect on Qwen3-4B only: two better-built vectors move mind attribution more "
-  "than a matched control and beyond five random directions. The paper-style vector does worse "
-  "than random. On Qwen3.5 those vectors barely steer at all, so it is untested there, not "
-  "refuted.")
+h3("What survives - and it does not generalise either")
+p("A smaller effect on Qwen3-4B: two better-built vectors move mind attribution more than a "
+  "matched control and beyond five random directions. Tested on all three families:")
+table([
+    ["Model", "Best vector vs random", "Did the vector steer at all?"],
+    ["Qwen3-4B", "+2.11  (z = +3.9)  ABOVE", "+5.54 logits"],
+    ["OLMo-2-1B", "+0.33  (z = +1.6)  within", "-0.08 logits"],
+    ["Gemma-4-E2B", "+0.56  (z = +0.8)  within", "+0.03 logits"],
+], [120, 175, 155], hi=[1])
+p("Nothing beats the random floor outside Qwen3-4B, and the right-hand column says why: the same "
+  "vector moves Qwen3-4B by 5.54 and the others by nothing at all. Strictly they are <b>untested</b> "
+  "rather than refuted - you cannot measure the specificity of an intervention that does nothing - "
+  "but with three models inert, the simple reading is that this vector has traction on one model.")
 
 h2("4.2 Other retractions")
 table([
