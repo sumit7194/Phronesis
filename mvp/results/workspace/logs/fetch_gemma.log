@@ -1,0 +1,7 @@
+  fetch   chat_template.jinja  attempt 1  have 0MB / 0MB
+  ok      chat_template.jinja (0MB)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 9771MB

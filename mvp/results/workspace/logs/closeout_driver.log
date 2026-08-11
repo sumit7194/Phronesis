@@ -7,3 +7,21 @@
 === [wait_olmo] 15:32:23 waiting for the fetch to report COMPLETE ===
 === [steersearch_olmo_r1] 15:32:38 ===
 [steersearch_olmo_r1] pid 14776, swap free after load: 1707MB
+[steersearch_olmo_r1] ok
+=== [steersearch_olmo_r2] 15:34:38 ===
+[steersearch_olmo_r2] pid 14878, swap free after load: 1595MB
+[steersearch_olmo_r2] ok
+=== [steersearch_olmo_r3] 15:36:18 ===
+[steersearch_olmo_r3] pid 15423, swap free after load: 1507MB
+[steersearch_olmo_r3] ok
+=== [steersearch_olmo_r4] 15:37:58 ===
+[steersearch_olmo_r4] pid 15536, swap free after load: 1507MB
+[steersearch_olmo_r4] ok
+=== [steersearch_olmo_r5] 15:39:38 ===
+[steersearch_olmo_r5] pid 15606, swap free after load: 1499MB
+[steersearch_olmo_r5] ok
+[steersearch_olmo] search finished in 5 round(s)
+=== [moral_olmo] 15:40:38 ===
+[moral_olmo] pid 15623, swap free after load: 1427MB
+[moral_olmo] ok
+=== [fetch_gemma] 15:44:19 ===

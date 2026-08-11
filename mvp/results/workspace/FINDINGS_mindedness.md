@@ -1679,3 +1679,38 @@ model simply does not put Yes/No next in chat mode.
 C2, and that is queued. Had I not checked the template tails I would have written "chat is
 unusable on Qwen" as a single fact about the family; it is two different facts with two different
 causes.
+
+### F-AK update: OLMo-2-1B-Instruct, second family
+Also **4 of 5**, but a *different* prediction failed.
+
+| | Qwen3-4B | OLMo2-1B |
+|---|---|---|
+| P1 replicates under rewording | **+0.921** PASS | **+0.828** PASS |
+| P2 independent of experience | −0.107 PASS | +0.279 PASS |
+| P3 driven by agency | −0.530 PASS | **−0.160 FAIL** |
+| P4 harm without agency near zero | **+0.53 FAIL** | +0.01 PASS |
+| P5 a human can be blamed | **+1.839** PASS | **+1.460** PASS |
+
+**P1, P2 and P5 are 2 for 2.** On both models `human_culpable` is the **lowest of all 25 classes**
+— a murderer scores below every corporation, institution and AI on "deserves protection minus is
+held responsible". Two families now say the axis sorts moral standing, not entity kind.
+
+**P4 failing on Qwen and passing on OLMo is the same threshold error seen from the other side.**
+Qwen's scale spans 4.11 log-odds, OLMo's 2.15. A fixed ±0.12 window is 3% of one scale and 6% of
+the other. The prediction was not wrong in substance — it was expressed in absolute units for a
+quantity whose scale is a property of the model. Reference values, not fixed numbers, again.
+
+**Why P3 split** (post-hoc):
+
+| | protect~EXP | protect~AGY | blame~EXP | blame~AGY |
+|---|---|---|---|---|
+| Qwen3-4B | +0.840 | +0.567 | +0.568 | **+0.804** |
+| OLMo2-1B | +0.870 | +0.726 | +0.453 | **+0.726** |
+
+On Qwen, blame loads on agency *more* than protection does (+0.804 vs +0.567), so the difference
+score leans agency-negative. On OLMo the two load on agency **equally** (+0.726 each) and the
+difference cancels. So P3's mechanism is Qwen-specific so far.
+
+**What is 2-for-2 in the decomposition is the experience half:** protection tracks experience more
+than blame does, on both models (+0.87 vs +0.45; +0.84 vs +0.57). That, not the agency half, is
+the part currently surviving replication.

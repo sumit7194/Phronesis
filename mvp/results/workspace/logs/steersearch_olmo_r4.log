@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   1%|          | 1/179 [00:01<03:13,  1.09s/it]Loading weights:  45%|████▍     | 80/179 [00:01<00:01, 87.75it/s]Loading weights:  63%|██████▎   | 112/179 [00:01<00:00, 113.81it/s]Loading weights:  78%|███████▊  | 140/179 [00:01<00:00, 125.07it/s]Loading weights:  92%|█████████▏| 164/179 [00:01<00:00, 137.48it/s]Loading weights: 100%|██████████| 179/179 [00:01<00:00, 102.97it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16 format=C1 layers=[4, 6, 8, 10] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 15 cells, 1 baselines on disk
+  L10 a=0.2  mental  -0.12  absurd  -0.11  0.3m
+  L10 a=0.4  mental  -0.13  absurd  -0.11  0.6m
+  L10 a=0.8  mental  -0.41  absurd  -0.33  0.9m
+  L10 a=1.6  mental  -1.66  absurd  -1.30  1.1m
+  L10 a=3.2  mental  -2.53  absurd  -2.03  1.4m
+[chunk] 5 cells done, exiting for a fresh process

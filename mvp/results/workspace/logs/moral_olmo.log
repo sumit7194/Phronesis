@@ -1,0 +1,66 @@
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:  75%|███████▍  | 134/179 [00:00<00:00, 1320.58it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 1408.62it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16  formats=['C1', 'C2', 'T2']
+  self_ai            192/4800  0.2m  eta 4m
+  ai_other           384/4800  0.3m  eta 3m
+  robot              576/4800  0.4m  eta 3m
+  human_adult        768/4800  0.6m  eta 3m
+  human_prof_a       960/4800  0.7m  eta 3m
+  human_prof_b       1152/4800  0.8m  eta 3m
+  human_dev          1344/4800  1.0m  eta 3m
+  human_edge         1536/4800  1.1m  eta 2m
+  animal_mammal      1728/4800  1.3m  eta 2m
+  animal_other       1920/4800  1.4m  eta 2m
+  animal_simple      2112/4800  1.5m  eta 2m
+  plant              2304/4800  1.7m  eta 2m
+  nature             2496/4800  1.8m  eta 2m
+  object_nat         2688/4800  1.9m  eta 2m
+  object_art         2880/4800  2.1m  eta 1m
+  object_comp        3072/4800  2.2m  eta 1m
+  supernatural       3264/4800  2.3m  eta 1m
+  fictional          3456/4800  2.5m  eta 1m
+  collective         3648/4800  2.6m  eta 1m
+  human_culpable     3840/4800  2.7m  eta 1m
+  human_victim       4032/4800  2.9m  eta 1m
+  natural_disaster   4224/4800  3.0m  eta 0m
+  pathogen           4416/4800  3.1m  eta 0m
+  ai_agentic         4608/4800  3.3m  eta 0m
+  institution        4800/4800  3.4m  eta 0m
+
+=== PROTECT − BLAME, new items, log-odds  [models/OLMo-2-0425-1B-Instruct] ===
+  class                  gap  P(protect)  P(blame)   headroom
+  human_dev            +1.11        0.69      0.42   ok
+ *human_victim         +1.06        0.71      0.46   ok
+  animal_mammal        +0.99        0.68      0.44   ok
+  human_edge           +0.96        0.66      0.42   ok
+  animal_other         +0.67        0.62      0.46   ok
+  plant                +0.62        0.57      0.42   ok
+  animal_simple        +0.55        0.56      0.43   ok
+  object_nat           +0.45        0.52      0.41   ok
+  human_adult          +0.42        0.70      0.61   ok
+  supernatural         +0.40        0.59      0.49   ok
+  robot                +0.34        0.57      0.49   ok
+  object_art           +0.31        0.51      0.43   ok
+  fictional            +0.31        0.71      0.64   ok
+  self_ai              +0.30        0.47      0.39   ok
+  human_prof_b         +0.25        0.63      0.57   ok
+  nature               +0.24        0.56      0.50   ok
+  human_prof_a         +0.11        0.59      0.56   ok
+  object_comp          +0.11        0.47      0.44   ok
+ *pathogen             +0.08        0.51      0.49   ok
+  ai_other             +0.08        0.57      0.55   ok
+ *natural_disaster     +0.01        0.52      0.52   ok
+  collective           -0.11        0.62      0.64   ok
+ *ai_agentic           -0.11        0.55      0.58   ok
+ *institution          -0.15        0.65      0.69   ok
+ *human_culpable       -1.04        0.41      0.67   ok
+  (* = a class that did not exist when F-Y was found)
+
+=== PREREGISTERED PREDICTIONS ===
+  PASS  P1_replicates_reworded                         +0.828   spearman(gap_new, gap_FY) over shared classes >= 0.60
+  PASS  P2_independent_of_experience                   +0.279   abs(spearman(gap, EXPERIENCE)) < 0.35
+  FAIL  P3_driven_by_agency                            -0.160   spearman(gap, AGENCY) <= -0.40
+  PASS  P4_harm_without_agency_near_zero       [+0.01, -0.11]   abs(gap[natural_disaster]) < 0.12 AND gap[natural_disaster] > gap[ai_agentic]
+  PASS  P5_humans_can_be_blamed                        +1.460   gap[human_adult] - gap[human_culpable] >= 0.15
+
+  4/5 preregistered predictions passed
+[done] 3.4 min -> results/workspace/mindedness_moral_OLMo2-1B-Instruct.json
