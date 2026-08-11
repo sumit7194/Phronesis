@@ -1840,3 +1840,27 @@ it is a reminder that the absolute values were never comparable across formats.
 families three times, resurfaces at the top of the ordering as soon as the format changes on a
 model where it had been 2nd. Not a rehabilitation — one model, one format — but it is the third
 time soul has behaved unlike its neighbouring facets, and worth keeping on the list.
+
+## F-AP. STAGE 2, OLMo: tested at its own best config, and it fails. "Untested" becomes "no".
+Layer 4, α 1.6 — the config stage 1 selected on raw movement alone (F-AM). Full 22-facet DV,
+5 random seeds **at the same config**. Specificity = mental − `mundane_low`, log-odds.
+
+| condition | mental | mundane | absurd | specificity | z vs random |
+|---|---|---|---|---|---|
+| random floor (5 seeds) | +0.51 ± **3.10** | | | **−0.11 ± 0.23** | — |
+| v1_negation | −0.67 | −0.18 | +0.43 | −0.49 | −1.6 |
+| v1_RAW_unorthogonalised | −0.70 | −0.21 | +0.38 | −0.49 | −1.6 |
+| v2_no_negation | −1.57 | −1.31 | −0.62 | −0.25 | −0.6 |
+| v3_third_person | +1.79 | +1.99 | +3.18 | −0.19 | −0.4 |
+
+**Not one vector beats the random floor, and every one is on the wrong side of it.** All four
+specificity scores are *below* the random mean.
+
+The random floor is the whole story: at this config a **random direction moves the mental group by
++0.51 ± 3.10 log-odds**. The v2 vector's −1.57 looked like traction in stage 1 and is comfortably
+inside what an arbitrary direction does. Meanwhile the specificity contrast has a tight floor
+(±0.23), which is exactly why it, not raw movement, is the measure.
+
+**This closes the question F-AJ had to leave open on OLMo.** It is no longer "the vector is inert
+here so we cannot tell" — we found the config where it does move, and at that config it moves the
+matched control just as much. That is a tested negative.

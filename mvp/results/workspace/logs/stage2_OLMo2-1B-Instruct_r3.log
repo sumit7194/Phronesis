@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   1%|          | 1/179 [00:00<02:54,  1.02it/s]Loading weights:  63%|██████▎   | 113/179 [00:01<00:00, 137.64it/s]Loading weights:  91%|█████████ | 163/179 [00:01<00:00, 123.90it/s]Loading weights: 100%|██████████| 179/179 [00:01<00:00, 105.28it/s]
+[load] models/OLMo-2-0425-1B-Instruct L=16 steer-layer=4 format=C1
+[vec] v1_negation              cos(raw, polarity) = -0.018
+[vec] v2_no_negation           cos(raw, polarity) = +0.057
+[vec] v3_third_person          cos(raw, polarity) = +0.031
+[vec] 9 conditions
+[resume] found 6 completed cells
+[base] done 0.1m
+  random2                    a=+1.6  2.5m
+  random3                    a=+1.6  4.9m
+  random4                    a=+1.6  7.2m
+[chunk] did 3 cells, exiting for a fresh process
