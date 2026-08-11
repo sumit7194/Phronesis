@@ -48,6 +48,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen3-4B")
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--alphas", type=str, default=None,
+                    help="comma-separated alphas, overriding the default grid. Stage 2 of the "
+                         "traction search runs at the single alpha stage 1 selected on raw "
+                         "movement, with the random floor measured at that same alpha.")
     ap.add_argument("--layer", type=int, default=None,
                     help="steer layer. NOTE hybrid models (Qwen3.5: full_attention_interval=4) "
                          "alternate layer TYPES, and the effect size depends strongly on which "
@@ -59,9 +63,16 @@ def main():
                          "a driver loop with a fresh process per few cells is the robust fix.")
     args = ap.parse_args()
     tag = args.tag or args.model.split("/")[-1].replace(".", "_")
+    global ALPHAS
+    if args.alphas:
+        ALPHAS = [0.0] + [float(x) for x in args.alphas.split(",")]
     OUT = f"results/workspace/mindedness_v2_steer_{tag}.json"
     if args.layer is not None:
         OUT = f"results/workspace/mindedness_v2_steer_{tag}_L{args.layer}.json"
+    if args.alphas:
+        # a different alpha grid is a different experiment; never let it resume from or overwrite
+        # the default-grid file
+        OUT = OUT.replace(".json", f"_a{args.alphas.replace(',', '-')}.json")
     t0 = time.time()
     tok = AutoTokenizer.from_pretrained(args.model)
     try:
