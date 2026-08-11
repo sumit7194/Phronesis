@@ -1864,3 +1864,50 @@ inside what an arbitrary direction does. Meanwhile the specificity contrast has 
 **This closes the question F-AJ had to leave open on OLMo.** It is no longer "the vector is inert
 here so we cannot tell" — we found the config where it does move, and at that config it moves the
 matched control just as much. That is a tested negative.
+
+## F-AQ. STAGE 2, Gemma — and the steering arm closes as a negative on both cross-family models
+Layer 24, α 3.2 (stage 1's pick, the one with the *better* specificity signature). Full DV,
+5 random seeds at the same config.
+
+| condition | mental | specificity | vs random floor |
+|---|---|---|---|
+| **random floor (5 seeds)** | +1.07 ± 2.00 | **−2.61 ± 0.19** | — |
+| v1_negation | −5.39 | −1.70 | **−4.9 SD** |
+| v1_RAW_unorthogonalised | −4.57 | −1.42 | **−6.5 SD** |
+| v2_no_negation | −2.02 | −0.98 | **−8.8 SD** |
+| v3_third_person | −3.81 | −2.70 | +0.5 SD |
+
+**Nothing beats random, and three of the four are dramatically *less* mind-specific than a random
+direction.** The best of them, v3, sits exactly on the floor.
+
+The floor itself is the interesting object: a random direction at layer 24 / α 3.2 produces a
+specificity of **−2.61 with a spread of only ±0.19**. Perturbing Gemma there suppresses mental
+facets relative to the matched control by ~2.6 log-odds *whatever direction you push in*. That is
+a structural property of the model at that layer and strength. The purpose-built "mind" vectors
+produce **less** of it than noise does.
+
+### A sign error I made reading this, recorded because it nearly became a false positive
+My first pass scored these with a z-test that treats *higher* specificity as better. That is right
+when steering is enhancing (Qwen, +5.54) and **inverted when it is suppressing**, which is what
+every effect here is. Read that way, three Gemma vectors came out "ABOVE random" at z = +4.9,
++6.5, +8.8 — I would have reported the arc's one cross-family steering success. Corrected: the
+comparison must run in the direction of the vector's own effect, and those same three are
+**−4.9, −6.5, −8.8 SD**, i.e. the worst results in the table. Caught before recording, but only
+just, and only because a floor of −2.61 with three "wins" above it made no physical sense.
+
+### THE STEERING ARM, FINAL
+| model | best vector vs random | verdict |
+|---|---|---|
+| Qwen3-4B | +2.11 (z +3.9) | above random — **one family** |
+| OLMo-2-1B | +1.6 SD at best | **tested negative** |
+| Gemma-4-E2B | +0.5 SD at best | **tested negative** |
+
+F-AJ had to record OLMo and Gemma as *untested* because the vector barely moved them at the
+default config. We found the configs where it does move them, and at those configs it moves the
+headroom-matched control just as hard or harder. **The steering result is Qwen3-4B-specific, and
+that is now a measurement rather than an absence of one.**
+
+Together with F-AM's sign flip — the same construction enhancing on Qwen and suppressing on both
+others — the reasonable read is that these vectors do not encode a portable "mind attribution"
+direction. What Qwen3-4B shows may still be real for Qwen3-4B; nothing here supports it being a
+fact about language models.

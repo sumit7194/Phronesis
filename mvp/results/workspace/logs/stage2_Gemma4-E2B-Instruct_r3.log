@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 184/1951 [00:00<00:00, 1828.44it/s]Loading weights:  19%|█▉        | 367/1951 [00:00<00:00, 1698.90it/s]Loading weights:  28%|██▊       | 538/1951 [00:00<00:00, 1646.90it/s]Loading weights:  36%|███▌      | 704/1951 [00:00<00:00, 1619.59it/s]Loading weights:  44%|████▍     | 867/1951 [00:16<00:37, 28.67it/s]  Loading weights: 100%|██████████| 1951/1951 [00:16<00:00, 117.20it/s]
+[load] models/gemma-4-E2B-it L=35 steer-layer=24 format=C2
+[vec] v1_negation              cos(raw, polarity) = +0.019
+[vec] v2_no_negation           cos(raw, polarity) = -0.001
+[vec] v3_third_person          cos(raw, polarity) = +0.041
+[vec] 9 conditions
+[resume] found 6 completed cells
+[base] done 1.1m
+  random2                    a=+3.2  5.7m
+  random3                    a=+3.2  10.5m
+  random4                    a=+3.2  15.1m
+[chunk] did 3 cells, exiting for a fresh process

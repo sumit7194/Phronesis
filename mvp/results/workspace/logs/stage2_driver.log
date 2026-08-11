@@ -1,3 +1,9 @@
 === [stage2_OLMo2-1B-Instruct] layer 4 alpha 1.6  18:13:20 ===
 [OLMo2-1B-Instruct] stage 2 complete in 4 round(s)
 === [stage2_Gemma4-E2B-Instruct] layer 24 alpha 3.2  18:39:20 ===
+[Gemma4-E2B-Instruct] stage 2 complete in 4 round(s)
+
+======== STAGE 2 SUMMARY 19:31:42 ========
+passed (2): OLMo2-1B-Instruct Gemma4-E2B-Instruct
+failed (0): none
+COMPLETE
