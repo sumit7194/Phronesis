@@ -5,3 +5,11 @@
   fetch   generation_config.json  attempt 1  have 0MB / 0MB
   ok      generation_config.json (0MB)
   fetch   model.safetensors  attempt 1  have 0MB / 9771MB
+  ok      model.safetensors (9771MB)
+  fetch   processor_config.json  attempt 1  have 0MB / 0MB
+  ok      processor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 30MB
+  ok      tokenizer.json (30MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+COMPLETE -> models/gemma-4-E2B-it

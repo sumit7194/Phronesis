@@ -1714,3 +1714,45 @@ difference cancels. So P3's mechanism is Qwen-specific so far.
 **What is 2-for-2 in the decomposition is the experience half:** protection tracks experience more
 than blame does, on both models (+0.87 vs +0.45; +0.84 vs +0.57). That, not the agency half, is
 the part currently surviving replication.
+
+## F-AM. STAGE 1 traction search: both cross-family models DO have a config that moves — and the absurd control is what makes the grids readable
+F-AJ left OLMo and Gemma "untested" because the vector moved them by −0.08 and +0.03. Both had
+been run at mid-depth with α ≤ 0.8 — settings justified on Qwen and never per model. 20 configs
+each (4 layers × 5 α), selecting on **raw movement only**, with `absurd_low` as a declared
+degeneracy detector.
+
+**OLMo-2-1B — mental / absurd, log-odds**
+| layer | α0.2 | α0.4 | α0.8 | α1.6 | α3.2 |
+|---|---|---|---|---|---|
+| 4 | +0.11/+0.16 | +0.28/+0.31 | −0.19/+0.41 | **−1.31/−0.64** | −2.22/−1.53 |
+| 6 | +0.24/+0.04 | −0.38/−0.49 | +0.10/+0.49 | −1.18/−0.64 | −2.56/−1.92 |
+| 8 | +0.11/+0.10 | −0.09/+0.19 | +0.21/+0.72 | −1.06/−0.63 | −2.92/−2.25 |
+| 10 | −0.12/−0.11 | −0.13/−0.11 | −0.41/−0.33 | −1.66/−1.30 | −2.53/−2.03 |
+
+**Gemma-4-E2B — mental / absurd**
+| layer | α0.2 | α0.4 | α0.8 | α1.6 | α3.2 |
+|---|---|---|---|---|---|
+| 8 | −0.71/−0.39 | +1.25/**+2.67** | **+9.74/+13.34** | +1.61/**+8.85** | +0.99/**+7.02** |
+| 14 | +0.11/+0.36 | −0.09/+0.52 | −0.29/+0.50 | +3.37/**+4.24** | +3.26/**+8.88** |
+| 19 | −0.14/−0.44 | −0.07/−0.56 | −0.16/−0.10 | +0.46/**+2.89** | +5.56/**+10.74** |
+| 24 | −0.25/−0.54 | −0.13/−0.62 | −0.40/−0.52 | −0.78/+2.56 | **−2.55/+1.17** |
+
+Winners (raw movement, non-degenerate): **OLMo L4 α1.6** (−1.31/−0.64) and
+**Gemma L24 α3.2** (−2.55/**+1.17, opposite sign** — the better specificity signature of the two).
+
+### The thing worth keeping from this table
+**Gemma at L8 α0.8 moves the mental group by +9.74 log-odds.** Reported alone that is a
+spectacular steering result. The absurd control moved **+13.34** — the model is being driven to
+say yes to *anything*, including that a rock outweighs a car. Nine of Gemma's twenty cells have
+`absurd` moving as hard as or harder than `mental`.
+
+This is the F-I/F-J failure mode — an uncontrolled DV that looks like specific steering and is
+distribution collapse — reappearing in a different disguise. The difference is that this time it
+was caught by a control **declared before the run** rather than by re-analysis afterwards. That is
+the entire argument for headroom-matched controls in one table.
+
+### Also worth flagging: the sign flips across families
+The same vector construction moves Qwen3-4B **+5.54** and both cross-family models **negative**
+(−1.31, −2.55). A direction built the identical way should not suppress on two families and
+enhance on a third if it encodes the same thing in all of them. Stage 2's random floor is what
+decides whether any of this is signal.

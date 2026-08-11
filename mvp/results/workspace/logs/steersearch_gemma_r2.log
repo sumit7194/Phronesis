@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 184/1951 [00:00<00:00, 1828.90it/s]Loading weights:  19%|█▉        | 367/1951 [00:00<00:00, 1701.20it/s]Loading weights:  28%|██▊       | 538/1951 [00:00<00:00, 1645.93it/s]Loading weights:  36%|███▌      | 703/1951 [00:00<00:00, 1600.50it/s]Loading weights:  36%|███▌      | 703/1951 [00:20<00:00, 1600.50it/s]Loading weights:  39%|███▊      | 755/1951 [00:21<01:09, 17.21it/s]  Loading weights: 100%|██████████| 1951/1951 [00:21<00:00, 92.57it/s]
+[load] models/gemma-4-E2B-it L=35 format=C2 layers=[8, 14, 19, 24] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 5 cells, 1 baselines on disk
+  L14 a=0.2  mental  +0.11  absurd  +0.36  1.8m
+  L14 a=0.4  mental  -0.09  absurd  +0.52  2.3m
+  L14 a=0.8  mental  -0.29  absurd  +0.50  2.8m
+  L14 a=1.6  mental  +3.37  absurd  +4.24  3.3m
+  L14 a=3.2  mental  +3.26  absurd  +8.88  3.9m
+[chunk] 5 cells done, exiting for a fresh process

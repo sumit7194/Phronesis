@@ -1,0 +1,14 @@
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  10%|▉         | 189/1951 [00:00<00:01, 1578.53it/s]Loading weights:  19%|█▉        | 375/1951 [00:00<00:00, 1578.00it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:00, 1649.45it/s]Loading weights:  38%|███▊      | 746/1951 [00:00<00:00, 1719.67it/s]Loading weights:  38%|███▊      | 746/1951 [00:20<00:00, 1719.67it/s]Loading weights:  39%|███▊      | 755/1951 [00:21<01:15, 15.92it/s]  Loading weights:  75%|███████▍  | 1459/1951 [00:21<00:07, 62.74it/s]Loading weights: 100%|██████████| 1951/1951 [00:21<00:00, 90.09it/s]
+[load] models/gemma-4-E2B-it L=35  formats=['C2', 'C1']
+  self_ai            128/3200  1.5m  eta 36m
+  ai_other           256/3200  1.7m  eta 19m
+  robot              384/3200  1.9m  eta 14m
+  human_adult        512/3200  2.0m  eta 11m
+  human_prof_a       640/3200  2.2m  eta 9m
+  human_prof_b       768/3200  2.4m  eta 8m
+  human_dev          896/3200  2.6m  eta 7m
+  human_edge         1024/3200  2.7m  eta 6m
+  animal_mammal      1152/3200  2.9m  eta 5m
+  animal_other       1280/3200  3.1m  eta 5m
+  animal_simple      1408/3200  3.3m  eta 4m
+  plant              1536/3200  3.5m  eta 4m

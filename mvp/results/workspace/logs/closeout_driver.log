@@ -25,3 +25,21 @@
 [moral_olmo] pid 15623, swap free after load: 1427MB
 [moral_olmo] ok
 === [fetch_gemma] 15:44:19 ===
+=== [steersearch_gemma_r1] 16:26:10 ===
+[steersearch_gemma_r1] pid 43385, swap free after load: 4223MB
+[steersearch_gemma_r1] ok
+=== [steersearch_gemma_r2] 16:31:10 ===
+[steersearch_gemma_r2] pid 43824, swap free after load: 2909MB
+[steersearch_gemma_r2] ok
+=== [steersearch_gemma_r3] 16:35:10 ===
+[steersearch_gemma_r3] pid 44009, swap free after load: 4103MB
+[steersearch_gemma_r3] ok
+=== [steersearch_gemma_r4] 16:39:11 ===
+[steersearch_gemma_r4] pid 44343, swap free after load: 2582MB
+[steersearch_gemma_r4] ok
+=== [steersearch_gemma_r5] 16:43:11 ===
+[steersearch_gemma_r5] pid 44759, swap free after load: 3312MB
+[steersearch_gemma_r5] ok
+[steersearch_gemma] search finished in 5 round(s)
+=== [moral_gemma] 16:45:11 ===
+[moral_gemma] pid 45006, swap free after load: 3134MB
