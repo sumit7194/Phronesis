@@ -48,6 +48,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="Qwen/Qwen3-4B")
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--format", dest="fmt", default=None,
+                    help="template key, overriding the gate. Needed because several older gate "
+                         "files predate the usable_formats field, and the T1 fallback is BELOW "
+                         "threshold on some checkpoints (Qwen3-4B-Base: T1 0.20, T4 0.60). "
+                         "Measuring a pair in formats one of them cannot answer would fake a "
+                         "post-training effect.")
     ap.add_argument("--alphas", type=str, default=None,
                     help="comma-separated alphas, overriding the default grid. Stage 2 of the "
                          "traction search runs at the single alpha stage 1 selected on raw "
@@ -92,6 +98,8 @@ def main():
         _u = _json.load(open(_gp)).get("usable_formats") or []
         if _u:
             TMPL_KEY = _u[0]
+    if args.fmt:
+        TMPL_KEY = args.fmt
     print(f"[load] {args.model} L={L} steer-layer={SL} format={TMPL_KEY}", flush=True)
 
     @torch.no_grad()

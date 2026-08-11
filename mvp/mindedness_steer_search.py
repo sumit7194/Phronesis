@@ -55,6 +55,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="allenai/OLMo-2-0425-1B-Instruct")
     ap.add_argument("--tag", default=None)
+    ap.add_argument("--format", dest="fmt", default=None,
+                    help="template key, overriding the gate. Needed because several older gate "
+                         "files predate the usable_formats field, and the T1 fallback is BELOW "
+                         "threshold on some checkpoints (Qwen3-4B-Base: T1 0.20, T4 0.60). "
+                         "Measuring a pair in formats one of them cannot answer would fake a "
+                         "post-training effect.")
     ap.add_argument("--max-cells", type=int, default=0,
                     help="do at most N configs then exit; the MPS allocator grows across a long "
                          "process, so the driver restarts us")
@@ -80,6 +86,20 @@ def main():
         u = json.load(open(gp)).get("usable_formats") or []
         if u:
             TMPL_KEY = u[0]
+    if args.fmt:
+        TMPL_KEY = args.fmt
+    # Refuse to measure a checkpoint in a format it cannot answer. Qwen3-4B-Base's gate file
+    # predates usable_formats, so the T1 fallback would have been used at separation 0.20 while
+    # its instruct sibling answers T1 at 0.911 - a base-vs-instruct comparison run that way would
+    # have produced a "post-training creates the effect" result out of a format mismatch.
+    if os.path.exists(gp):
+        _sep = (json.load(open(gp)).get("per_template", {}).get(TMPL_KEY) or {}).get("sep")
+        if _sep is not None:
+            print(f"[fmt] {TMPL_KEY} gate separation {_sep:.3f}", flush=True)
+            if _sep < 0.30:
+                print(f"ABORT: {TMPL_KEY} separation {_sep:.2f} < 0.30 on {tag}. This model cannot "
+                      f"answer in that format; pass --format with a usable one.")
+                return 1
     LAYERS = sorted({max(1, min(L - 2, int(round(f * (L - 1))))) for f in LAYER_FRACS})
     print(f"[load] {args.model} L={L} format={TMPL_KEY} layers={LAYERS} alphas={ALPHAS}", flush=True)
 
