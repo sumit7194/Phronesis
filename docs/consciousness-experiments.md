@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AF). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AJ). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -29,58 +29,35 @@ four Qwen models is that a new model then becomes one command per row.
 | 6 | **Speaker frame** | `mindedness_speaker_frame.py` | *(new, user's idea)* does "I" mean the model or a human? Same self-statements under 4 speaker framings | 10 min |
 | 7 | **Subject framing (v3)** | `mindedness_v3_bank.py` + runner | is "consciousness" one direction or bound to who it is about? 4 axes, 16 subjects, floors + identity control | 20 min |
 
-### Status per model  *(current 2026-08-10 evening)*
+### Status per model  *(FINAL, 2026-08-11 — the cross-family programme is complete)*
 | test | Q3-4B | Q3.5 | Q3.5-Base | Gemma4-I | OLMo2-I | OLMo2-Base | Q3-4B-Base | Gemma4-Base |
 |---|---|---|---|---|---|---|---|---|
 | gate / formats | raw x4 | raw x4 | raw x4 | chat x2 | chat+raw | raw x1 | raw x4 | raw x1 |
 | entity spread | 0.56 | 0.41 | 0.48 | **0.73** | 0.39 | 0.37 | *0.33* | *0.27* |
 | 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2 factor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 3 truth | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | ✅ |
-| 4 steering | ✅ | ✅ | ⬜ | ⬜ queued | 🔄 running | ⬜ queued | ⬜ | ⬜ |
-| 5 forced | ✅ | ✅ | ⬜ | ⬜ queued | ✅ | ⬜ queued | ⬜ | ⬜ |
-| 6 speaker | ✅ | ✅ | ✅ | ⬜ queued | ✅ | ⬜ queued | ⬜ | ✅ |
-| 7 subject | ✅ | ✅ | ✅ | ⬜ queued | ⚠ degenerate | ⬜ queued | ⬜ | ⬜ |
+| 3 truth | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | — | ✅ |
+| 4 steering | ✅ | ✅ | — | ✅ | ✅ | — | — | — |
+| 5 forced | ✅ | ✅ | — | ✅ | ✅ | — | — | — |
+| 6 speaker | ✅ | ✅ | ✅ | ✅ | ✅ | — | — | ✅ |
+| 7 subject | ✅ | ✅ | ✅ | ✅ | ⚠ degenerate | — | — | — |
 
-*italic spread = below the 0.35 power criterion, excluded from claims.*
+*italic spread = below the 0.35 power criterion, excluded from claims. Dashes are not-run; each is
+on a checkpoint that either fails the power criterion or duplicates a tested sibling.*
 
----|---|---|---|---|---|---|---|
-| 0 gate | ✅0.60 | n/a | ✅0.75 | n/a | ⚠0.31 | ⚠0.36 | ❌0.03 → retry |
-| 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
-| 2 GW factor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
-| 3 truth matrix | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
-| 4 steering | ⬜ | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ |
-| 5 forced choice | ⬜ | ✅ | ⬜ | ✅ | ⬜ | ⬜ | ⬜ |
-| 6 speaker frame | ⬜ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ |
-| 7 subject framing | ⬜ | ✅ | ✅ | ✅ | ⬜ | ⬜ | ⬜ |
+### THE ANSWER — 7 results, 3 families, 8 checkpoints
+| result | families | verdict |
+|---|---|---|
+| Moral standing survives losing every mental capacity | **3** | **FINDING** |
+| Forced-choice ordinal scale reproduces (rho ~0.87) | **3** | **FINDING** (a measurement) |
+| Bare-text "I" reads as a human narrator | **3 + a base model** | **FINDING** |
+| Protect-vs-blame axis, independent of mind | **3** | **FINDING** |
+| Soul as a separate register | 1 of 3 | Qwen3-4B only |
+| Subject-framing geometry | 2 Qwen; fails Gemma | Qwen only |
+| Steering beats a random floor | 1 of 3 | Qwen3-4B only |
 
-**Cross-family verdicts — both currently UNINFORMATIVE, both being re-tested:**
-- **OLMo-2-1B-Base**: answers coherently (0.89–0.98) but entity spread 0.17 (needs ≥0.35).
-  BUT the gate audit shows it parses only **1 of our 4 templates** (T1 0.31; T2–T4 0.05–0.17) and
-  the sweep averaged all four. Re-sweeping with per-template storage.
-- **Gemma-4-E2B-Base**: does not evaluate the propositions in either format — says *no* to both a
-  statement and its denial (coherence 0.67), *yes* broadly in the sweep format. Also parses only
-  **1 of 4** templates (T4 0.35). Re-sweeping.
-- **Gemma-4-E2B-Instruct**: gate 0.03 — **verdict withdrawn**, it was fetched without
-  `chat_template.jinja`, so an instruct model was prompted with no turn structure. Retrying.
-
----|---|---|---|---|---|
-| 0 gate | ✅ 0.60 | n/a | ✅ 0.75 | n/a | ⚠ 0.31 (marginal) |
-| 1 sweep | ✅ | ✅ | ✅ | ✅ | ✅ |
-| 2 GW factor | ⬜ | ✅ | ⬜ | ✅ | ✅ |
-| 3 truth matrix | ⬜ | ✅ | ⬜ | ✅ | ✅ |
-| 4 steering | ⬜ | ✅ | ⬜ | ✅ (L15 + L16) | ⬜ |
-| 5 forced choice | ⬜ | ⚠ re-run needed | ⬜ | ⚠ re-run needed | ⬜ |
-| 6 speaker frame | ⬜ | ✅ | ⬜ | ✅ | ✅ |
-| 7 subject framing | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-
-Speaker frame also ✅ on Qwen3.5-4B-Base. Forced choice ran on both Qwen instruct models but the
-results were **discarded** (first-token scoring bug, guidelines §15); the fixed version has not
-been re-run.
-
-**Cross-family status:** OLMo-2-1B-Base battery complete → **UNINFORMATIVE**, fails power criterion
-(entity spread 0.17 vs required ~0.35). OLMo-2-1B-Instruct running. **Gemma-3-4b (pt+it) is the
-real size-matched cross-family test and is the highest-value thing outstanding.**
+**Four of seven generalise.** The three that do not are the three that looked most striking on the
+first model. Detail: F-AE, F-AF, F-AG, F-AJ.
 
 ---
 
@@ -106,6 +83,7 @@ who state they test only mental-state attribution. *(F-N3, F-O3, F-T1, F-AC, F-A
 | claim | status |
 |---|---|
 | Steering is "mind-specific" | **dead** — the control had no headroom; mechanism is distribution flattening |
+| What replaced it (v2/v3 vectors beat random) | **Qwen3-4B-specific** — the vector is inert elsewhere (F-AJ) |
 | Soul is a separate register | **Qwen3-4B-specific** — capacity-loss rank #3/#1/#12; bias-free gap +0.22/+0.04/+0.03 |
 | Mind attribution is multi-dimensional | not ours — Gray & Wegner 2007, Malle 2019 |
 | "Not the human two-factor structure" | drawn from the 1 model of 4 below the line |
@@ -133,14 +111,16 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
 | 1KB minimum-size check on downloads | flagged a valid 700-byte `config.json` as FAILED |
 | Power criterion applied to the wrong measure | nearly disqualified Qwen3-4B-Base, one of the finding's own models |
 
-## OPEN QUESTIONS / NEXT
-1. **Cross-family** (Gemma-3-4b, Phi-4-mini). Everything is Qwen. The one thing that could
-   overturn the moral-standing finding. ~8GB each — **download, run, delete**; every test saves its
-   own JSON.
-2. **Speaker frame** (test 6) — the user's proposal, below.
-3. **Subject framing** (test 7) — three review rounds done, blocking fixes applied, not yet run.
-4. **Raise α on Qwen3.5** so the steering comparison becomes testable there.
-5. Re-run forced choice on all four (the tokenizer bug is fixed but it has never been re-run).
+## OPEN QUESTIONS / NEXT  *(the arc's original questions are all closed)*
+1. **The steering vector is inert outside Qwen3-4B** (+5.54 logits there; −0.08 and +0.03
+   elsewhere). Raising α, or choosing the layer per model instead of using mid-depth, would turn
+   "untested" into a real answer. The only cross-family gap left.
+2. **Prereg a confirmatory test for the protect-vs-blame axis.** It was found by mining the data,
+   not predicted — it replicates across three families but was never preregistered.
+3. Re-run the Qwen instruct models under **chat** format as a robustness check. They were gated to
+   raw, and format turned out to matter more than anything else we controlled for.
+4. **Steering on base models.** Moral standing is pretrained, so if anything moves it, it should
+   move there.
 
 ## OPS NOTES FOR THIS ARC
 - A sweep peaks around **21GB RSS** on a 16GB machine — expect heavy swap. Do not run two model
