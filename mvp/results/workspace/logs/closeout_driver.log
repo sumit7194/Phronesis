@@ -43,3 +43,9 @@
 [steersearch_gemma] search finished in 5 round(s)
 === [moral_gemma] 16:45:11 ===
 [moral_gemma] pid 45006, swap free after load: 3134MB
+[moral_gemma] ok
+
+================ CLOSEOUT SUMMARY 16:51:12 ================
+passed (14): gate_qwen3_chatcheck gate_qwen35_chatcheck steersearch_olmo_r1 steersearch_olmo_r2 steersearch_olmo_r3 steersearch_olmo_r4 steersearch_olmo_r5 moral_olmo steersearch_gemma_r1 steersearch_gemma_r2 steersearch_gemma_r3 steersearch_gemma_r4 steersearch_gemma_r5 moral_gemma
+failed (0): none
+COMPLETE — all 14 stages succeeded

@@ -1756,3 +1756,54 @@ The same vector construction moves Qwen3-4B **+5.54** and both cross-family mode
 (−1.31, −2.55). A direction built the identical way should not suppress on two families and
 enhance on a third if it encodes the same thing in all of them. Stage 2's random floor is what
 decides whether any of this is signal.
+
+## F-AN. Third family, and the verdict on the preregistered moral test
+Gemma-4-E2B-Instruct scored **1 of 5** as preregistered. Applying the prereg's own family-level
+rule across all three:
+
+| | Qwen3-4B | OLMo2-1B | Gemma4-E2B | verdict |
+|---|---|---|---|---|
+| P1 replicates under rewording | +0.921 ✅ | +0.828 ✅ | **+0.088 ❌** | HOLDS 2/3 |
+| P2 independent of experience | −0.107 ✅ | +0.279 ✅ | **+0.640 ❌** | HOLDS 2/3 |
+| P3 driven by agency | −0.530 ✅ | −0.160 ❌ | **+0.432 ❌** | **FAILS 1/3** |
+| P4 harm without agency near zero | +0.53 ❌ | +0.01 ✅ | +0.48 ❌ | **FAILS 1/3** |
+| **P5 a human can be pushed to blame** | **+1.839 ✅** | **+1.460 ✅** | **+2.468 ✅** | **HOLDS 3/3** |
+
+**P5 — the prediction the whole test was built around — is 3 for 3**, and it is the one that kills
+the "vulnerability or aliveness in a moral costume" reading. On every family a culpable human sits
+far below an ordinary one, by +1.84, +1.46 and +2.47 log-odds.
+
+### Gemma's failures are a broken measurement, and the fix was already in the file
+Gemma **pins 7 of 19 shared classes** — `object_art` P(protect)=0.00, `object_nat` 0.00/0.00,
+`nature` 0.00/0.06, plus plant, animal_other, animal_simple, object_comp. Those gaps are
+differences between clamped values and carry no information. Qwen and OLMo pin **zero**.
+
+The runner *detected and printed* this on every row. **I never wired the pinning rule into the
+verdict.** That omission is mine, and guidelines §12 already required it. Re-analysing on the
+unpinned classes only:
+
+| | as preregistered | unpinned only | threshold |
+|---|---|---|---|
+| Gemma P1 | +0.088 FAIL | **+0.811 PASS** | ≥ +0.60 |
+| Gemma P2 | 0.640 FAIL | 0.399 **still FAIL** | < 0.35 |
+| Qwen / OLMo P1, P2 | — | **unchanged** | (0 pinned) |
+
+**The exclusion moves only the model whose measurement was broken and leaves the other two
+untouched**, which is the check that separates a validity rule from cherry-picking. P2 still fails
+on Gemma even after it.
+
+**Reported both ways on purpose.** As preregistered, P1 holds 2/3. With the pre-existing pinning
+rule applied, P1 holds 3/3. The preregistered number is the one that counts against the prereg;
+the corrected one is what I actually believe, and the reason to believe it is that the rule was
+written down before the run and simply not connected to the verdict code.
+
+### WHERE THIS LEAVES THE AXIS
+- **It exists and it is not vulnerability or aliveness** — P5, 3/3, no caveats.
+- **`human_culpable` is the lowest unpinned class on all three families.** A murderer scores below
+  every corporation, institution, AI and object on "deserves protection minus is held responsible".
+- **It survives rewording** — 3/3 once pinned classes are excluded, 2/3 without.
+- **The mechanism is not settled.** P3 fails 2 of 3. What replicates is only the experience half:
+  protection tracks experience more than blame does on all three (+0.84/+0.57, +0.87/+0.45,
+  +0.90/+0.58). The agency half is Qwen-only.
+- **P4 fails 2 of 3, and its threshold was mis-specified** in absolute log-odds for a quantity
+  whose scale is a model property — spans run 2.15 (OLMo), 4.11 (Qwen), 8.68 (Gemma).
