@@ -7,7 +7,18 @@ set -u
 ID="$1"; DEST="$2"
 mkdir -p "$DEST"
 TOKEN=$(.venv/bin/python -c "from huggingface_hub import get_token; print(get_token() or '')")
-AUTH=(); [ -n "$TOKEN" ] && AUTH=(-H "Authorization: Bearer $TOKEN")
+# The token goes in a 0600 curl config file, NOT on the command line. Passing it as -H put it in
+# argv, where `ps` shows it to every process on the machine. 2026-08-11.
+CURLRC=""
+AUTH=()
+if [ -n "$TOKEN" ]; then
+  CURLRC=$(mktemp "${TMPDIR:-/tmp}/.hfcurl.XXXXXX")
+  chmod 600 "$CURLRC"
+  printf 'header = "Authorization: Bearer %s"\n' "$TOKEN" > "$CURLRC"
+  AUTH=(-K "$CURLRC")
+  trap 'rm -f "$CURLRC"' EXIT INT TERM
+fi
+unset TOKEN
 FILES=$(.venv/bin/python - "$ID" << 'PY'
 import sys
 from huggingface_hub import HfApi
