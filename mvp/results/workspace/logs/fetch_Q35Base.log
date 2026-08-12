@@ -1,0 +1,21 @@
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 3MB
+  ok      merges.txt (3MB)
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 1  have 0MB / 5082MB
+  ok      model.safetensors-00001-of-00002.safetensors (5082MB)
+  fetch   model.safetensors-00002-of-00002.safetensors  attempt 1  have 0MB / 3805MB
+  ok      model.safetensors-00002-of-00002.safetensors (3805MB)
+  fetch   model.safetensors.index.json  attempt 1  have 0MB / 0MB
+  ok      model.safetensors.index.json (0MB)
+  fetch   preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      preprocessor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 12MB
+  ok      tokenizer.json (12MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+  fetch   video_preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      video_preprocessor_config.json (0MB)
+  fetch   vocab.json  attempt 1  have 0MB / 6MB
+  ok      vocab.json (6MB)
+COMPLETE -> models/Qwen3.5-4B-Base

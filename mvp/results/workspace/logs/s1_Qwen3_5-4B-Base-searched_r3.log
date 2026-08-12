@@ -1,0 +1,10 @@
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4485.42it/s]
+[load] models/Qwen3.5-4B-Base L=32 format=T1 layers=[8, 12, 17, 22] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 10 cells, 1 baselines on disk
+  L17 a=0.2  mental  +0.11  absurd  +0.11  1.8m
+  L17 a=0.4  mental  +0.31  absurd  +0.41  3.0m
+  L17 a=0.8  mental  +0.55  absurd  +0.75  4.2m
+  L17 a=1.6  mental  -0.88  absurd  -0.42  5.5m
+  L17 a=3.2  mental  -2.72  absurd  -2.20  6.7m
+[chunk] 5 cells done, exiting for a fresh process

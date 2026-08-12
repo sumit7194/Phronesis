@@ -1,0 +1,23 @@
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4325.49it/s]
+[load] models/Qwen3.5-4B-Base L=32 format=T1 layers=[8, 12, 17, 22] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 20 cells, 1 baselines on disk
+
+=== STAGE 1 TRACTION GRID  [models/Qwen3.5-4B-Base] — vector v2_no_negation ===
+  mental-group movement in log-odds; |move| < 0.3 = no traction
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2
+       8     +0.09     +0.38     +1.40     +2.14     -1.25
+      12     +0.14     +0.47     +1.17     +1.10     +0.17
+      17     +0.11     +0.31     +0.55     -0.88     -2.72
+      22     -0.06     -0.08     -0.06     -0.48     -0.87
+
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2   <- absurd_low
+       8     -0.18     +0.00     +0.66     +2.62     -0.35
+      12     -0.18     -0.06     +0.94     +1.58     +0.92
+      17     +0.11     +0.41     +0.75     -0.42     -2.20
+      22     +0.03     +0.06     +0.09     -0.55     -0.65
+
+  TRACTION FOUND: layer 8, alpha 0.8 — mental +1.40, absurd +0.66
+  -> stage 2: mindedness_v2_steer.py --layer 8 --alphas 0.8
+
+[done] 0.4 min -> results/workspace/mindedness_steer_search_Qwen3_5-4B-Base-searched.json

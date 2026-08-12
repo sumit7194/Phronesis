@@ -1,0 +1,13 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 18157.16it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  97%|█████████▋| 415/426 [00:00<00:00, 4101.31it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4197.70it/s]
+[load] Qwen/Qwen3.5-4B L=32 steer-layer=8 format=T1
+[vec] v1_negation              cos(raw, polarity) = +0.030
+[vec] v2_no_negation           cos(raw, polarity) = +0.026
+[vec] v3_third_person          cos(raw, polarity) = -0.027
+[vec] 9 conditions
+[base] done 11.4m
+  v1_negation                a=+3.2  21.9m
+  v1_RAW_unorthogonalised    a=+3.2  32.5m
+  v2_no_negation             a=+3.2  43.1m
+[chunk] did 3 cells, exiting for a fresh process

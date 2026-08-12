@@ -1995,3 +1995,66 @@ Qwen (it predates tuning) and not on OLMo (tuning does not install it).
 **What remains true and small:** one family of three, pretrained, amplified ~2x by post-training,
 and only via the negation-free vector construction. The paper's own recipe (`v1_negation`) fails on
 every checkpoint tested — five of five.
+
+## F-AT. Qwen3.5 shows nothing — so F-AS's "the split is by family" is RETRACTED. It is one checkpoint.
+Both Qwen3.5-4B checkpoints run under the full two-stage protocol, T1 on both (gate 0.688 base /
+0.777 instruct). Neither had ever been searched — the earlier "inert" reading came from the default
+config only, which F-AJ established means untested.
+
+**Qwen3.5-4B-Instruct (L8 α3.2): 0 of 4 vectors beat the floor.** Clean negative.
+
+**Qwen3.5-4B-Base (L8 α0.8): 4 of 4 "beat" — and that is the artefact, not a result.**
+| vector | spec | z |
+|---|---|---|
+| v1_negation | +0.23 | +4.1 |
+| v1_RAW | +0.22 | +4.1 |
+| v2_no_negation | **+0.03** | +2.3 |
+| v3_third_person | +0.31 | **+4.9** |
+
+random floor spec −0.23 ± **0.11**
+
+### The methodological correction: z alone is not enough, and I had been reporting only z
+| checkpoint | best vector | **\|spec\| (effect)** | floor SD | z | n beat |
+|---|---|---|---|---|---|
+| Qwen3-4B-Base (own) | v2 | **1.53** | 0.42 | +3.7 | 2/4 |
+| Qwen3-4B-Base (matched) | v2 | 0.34 | 0.18 | +3.0 | 2/4 |
+| Qwen3-4B-Instruct | v2 | **2.25** | 0.91 | +2.8 | 1/4 |
+| Qwen3.5-4B-Base | v3 | **0.31** | **0.11** | **+4.9** | **4/4** |
+| Qwen3.5-4B-Instruct | v3 | 1.59 | 0.29 | +1.4 | 0/4 |
+| OLMo-2-1B-Base | v2 | 0.49 | 0.13 | +1.9 | 0/4 |
+| Gemma-4-E2B-Instruct | v3 | **2.70** | 0.19 | +0.5 | 0/4 |
+
+**Qwen3.5-Base earns the highest z in the whole arc (+4.9) on an effect of 0.31 log-odds** — 7x
+smaller than Qwen3-4B-Instruct's 2.25, which scored a *lower* z. Its floor SD is 0.11, the
+tightest anywhere. Gemma is the mirror image: effect 2.70, z +0.5.
+
+**The `n beat` column is the real tell.** A mind-specific direction should discriminate between
+constructions — v2 should beat v1, because v1 is contaminated by negation. Qwen3.5-Base passes all
+four *including v1*, which means it is detecting that every vector sits slightly above a floor
+parked at −0.23, not anything about minds.
+
+**This also weakens a number I led with.** I reported Qwen3-4B-Base's matched-config result as
+"+3.0 SD"; its effect there is **0.34**, the same magnitude as the Qwen3.5 result I am now
+discarding. What separates them is the discrimination pattern (2/4 with v1 failing vs 4/4), not
+the z. F-AR's conclusion stands on the own-config effect (1.53) and the vector pattern — **not on
+the matched-config z as strongly as I presented it.**
+
+### RETRACTION of F-AS's framing
+F-AS said *"the split is by family, not by training stage."* The first half is wrong.
+
+| model | base | instruct |
+|---|---|---|
+| **Qwen3-4B** | **YES** | **YES** |
+| Qwen3.5-4B | no (artefact) | no |
+| OLMo-2-1B | no | no |
+| Gemma-4-E2B | n/a (power) | no |
+
+**One checkpoint of four shows it, at both of its training stages.** Its own family sibling shows
+it at neither. What survives from F-AS is only the *training-stage* half: where the effect exists
+it predates post-training. "By family" is retracted — Qwen3.5-4B is the same family and is
+negative. (It is also a different architecture — hybrid MoE with `full_attention_interval: 4` —
+so "family" was doing less work than the name suggests.)
+
+**Where this leaves the steering arm: a single-checkpoint result.** Real on Qwen3-4B, pretrained
+there, absent on four other checkpoints across three families. Nothing here supports it being a
+fact about language models.

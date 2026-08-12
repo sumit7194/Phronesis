@@ -1,0 +1,24 @@
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 17403.75it/s]
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:  87%|████████▋ | 372/426 [00:00<00:00, 3716.40it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 3827.42it/s]
+[load] Qwen/Qwen3.5-4B L=32 format=T1 layers=[8, 12, 17, 22] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 20 cells, 1 baselines on disk
+
+=== STAGE 1 TRACTION GRID  [Qwen/Qwen3.5-4B] — vector v2_no_negation ===
+  mental-group movement in log-odds; |move| < 0.3 = no traction
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2
+       8     +0.20     +0.71     +1.99     +2.18     -2.14
+      12     +0.24     +0.75     +1.50     +0.91     -0.77
+      17     +0.28     +0.71     +1.24     -1.69     -4.31
+      22     -0.09     -0.16     -0.29     -1.59     -0.02
+
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2   <- absurd_low
+       8     -0.18     +0.33     +1.67     +3.38     -0.72
+      12     -0.20     +0.06     +1.31     +2.16     +0.60
+      17     +0.36     +0.82     +1.41     -0.88     -3.10
+      22     +0.15     +0.23     +0.10     -1.56     +0.89
+
+  TRACTION FOUND: layer 8, alpha 3.2 — mental -2.14, absurd -0.72
+  -> stage 2: mindedness_v2_steer.py --layer 8 --alphas 3.2
+
+[done] 0.4 min -> results/workspace/mindedness_steer_search_Qwen3_5-4B-searched.json

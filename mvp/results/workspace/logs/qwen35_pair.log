@@ -1,0 +1,16 @@
+=== fetching Qwen/Qwen3.5-4B-Base ===
+
+################ Qwen3_5-4B-Base-searched (12:47:26) ################
+[s1_Qwen3_5-4B-Base-searched] done in 5 round(s)
+=== [Qwen3_5-4B-Base-searched] stage 2 at layer 8 alpha 0.8 ===
+[s2_Qwen3_5-4B-Base-searched] done in 4 round(s)
+
+################ Qwen3_5-4B-searched (15:10:32) ################
+[s1_Qwen3_5-4B-searched] done in 5 round(s)
+=== [Qwen3_5-4B-searched] stage 2 at layer 8 alpha 3.2 ===
+[s2_Qwen3_5-4B-searched] done in 4 round(s)
+
+======== QWEN3.5 PAIR SUMMARY 17:30:39 ========
+passed (4): s1_Qwen3_5-4B-Base-searched s2_Qwen3_5-4B-Base-searched s1_Qwen3_5-4B-searched s2_Qwen3_5-4B-searched
+failed (0): none
+COMPLETE
