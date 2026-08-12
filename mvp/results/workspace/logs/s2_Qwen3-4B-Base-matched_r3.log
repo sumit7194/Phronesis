@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<13:23,  2.02s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 80.49it/s]Loading weights:  46%|████▋     | 185/398 [00:02<00:02, 85.71it/s]Loading weights:  56%|█████▌    | 223/398 [00:04<00:03, 55.41it/s]Loading weights:  62%|██████▏   | 247/398 [00:04<00:02, 56.72it/s]Loading weights:  67%|██████▋   | 265/398 [00:04<00:02, 62.23it/s]Loading weights:  71%|███████   | 281/398 [00:05<00:01, 58.87it/s]Loading weights:  74%|███████▎  | 293/398 [00:05<00:01, 60.28it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:01, 61.04it/s]Loading weights:  79%|███████▉  | 314/398 [00:05<00:01, 59.92it/s]Loading weights:  81%|████████  | 323/398 [00:05<00:01, 57.81it/s]Loading weights:  84%|████████▎ | 333/398 [00:05<00:01, 53.17it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 44.86it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:01, 38.59it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 37.67it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 35.05it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 33.29it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 51.30it/s]
+[load] models/Qwen3-4B-Base L=36 steer-layer=19 format=T4
+[vec] v1_negation              cos(raw, polarity) = +0.121
+[vec] v2_no_negation           cos(raw, polarity) = +0.079
+[vec] v3_third_person          cos(raw, polarity) = -0.033
+[vec] 9 conditions
+[resume] found 6 completed cells
+[base] done 0.5m
+  random2                    a=+0.2  6.8m
+  random3                    a=+0.2  13.1m
+  random4                    a=+0.2  19.4m
+[chunk] did 3 cells, exiting for a fresh process

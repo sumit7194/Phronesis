@@ -1,0 +1,10 @@
+
+################ Qwen3-4B-Base  (22:28:14) ################
+=== fetching Qwen/Qwen3-4B-Base ===
+[s1_Qwen3-4B-Base] done in 5 round(s)
+=== [Qwen3-4B-Base] stage 2 at layer 14 alpha 1.6 ===
+[s2_Qwen3-4B-Base] done in 4 round(s)
+
+################ Qwen3-4B-searched  (00:26:58) ################
+[s1_Qwen3-4B-searched] done in 5 round(s)
+=== [Qwen3-4B-searched] stage 2 at layer 19 alpha 0.2 ===

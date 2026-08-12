@@ -1,0 +1,12 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<19:31,  2.95s/it]Loading weights:  34%|███▍      | 135/398 [00:03<00:04, 58.53it/s]Loading weights:  42%|████▏     | 169/398 [00:03<00:03, 58.76it/s]Loading weights:  48%|████▊     | 190/398 [00:04<00:03, 57.75it/s]Loading weights:  52%|█████▏    | 205/398 [00:04<00:03, 60.09it/s]Loading weights:  55%|█████▍    | 218/398 [00:04<00:02, 61.10it/s]Loading weights:  58%|█████▊    | 229/398 [00:04<00:02, 59.60it/s]Loading weights:  60%|█████▉    | 238/398 [00:04<00:02, 56.43it/s]Loading weights:  62%|██████▏   | 246/398 [00:05<00:02, 50.76it/s]Loading weights:  64%|██████▍   | 256/398 [00:05<00:02, 48.38it/s]Loading weights:  67%|██████▋   | 267/398 [00:05<00:02, 49.10it/s]Loading weights:  70%|██████▉   | 278/398 [00:05<00:02, 53.42it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 53.84it/s]Loading weights:  75%|███████▌  | 300/398 [00:06<00:01, 55.49it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 55.99it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 54.54it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 46.79it/s]Loading weights:  85%|████████▍ | 338/398 [00:07<00:01, 30.91it/s]Loading weights:  89%|████████▉ | 355/398 [00:07<00:01, 38.43it/s]Loading weights:  92%|█████████▏| 366/398 [00:08<00:00, 35.47it/s]Loading weights:  95%|█████████▍| 377/398 [00:08<00:00, 33.45it/s]Loading weights:  97%|█████████▋| 388/398 [00:08<00:00, 32.04it/s]Loading weights: 100%|██████████| 398/398 [00:08<00:00, 45.21it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=19 format=T4
+[vec] v1_negation              cos(raw, polarity) = +0.087
+[vec] v2_no_negation           cos(raw, polarity) = +0.047
+[vec] v3_third_person          cos(raw, polarity) = +0.008
+[vec] 9 conditions
+[resume] found 2 completed cells
+[base] done 0.7m
+  v2_no_negation             a=+0.2  7.0m
+  v3_third_person            a=+0.2  13.4m
+  random0                    a=+0.2  19.6m
+[chunk] did 3 cells, exiting for a fresh process

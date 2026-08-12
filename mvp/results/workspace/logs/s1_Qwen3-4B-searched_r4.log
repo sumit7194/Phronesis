@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:21,  2.17s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 75.21it/s]Loading weights:  46%|████▌     | 182/398 [00:03<00:02, 77.78it/s]Loading weights:  55%|█████▍    | 217/398 [00:03<00:02, 78.82it/s]Loading weights:  61%|██████    | 242/398 [00:03<00:02, 76.26it/s]Loading weights:  66%|██████▌   | 261/398 [00:04<00:02, 51.34it/s]Loading weights:  69%|██████▉   | 275/398 [00:04<00:02, 56.73it/s]Loading weights:  72%|███████▏  | 288/398 [00:04<00:01, 62.26it/s]Loading weights:  76%|███████▌  | 301/398 [00:05<00:01, 54.21it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 54.48it/s]Loading weights:  81%|████████  | 322/398 [00:05<00:01, 55.24it/s]Loading weights:  84%|████████▎ | 333/398 [00:05<00:01, 56.72it/s]Loading weights:  86%|████████▋ | 344/398 [00:05<00:00, 59.87it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 60.04it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 59.77it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 59.18it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 61.79it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 59.22it/s]
+[load] Qwen/Qwen3-4B L=36 format=T4 layers=[9, 14, 19, 24] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 15 cells, 1 baselines on disk
+  L24 a=0.2  mental  -0.82  absurd  -3.38  1.6m
+  L24 a=0.4  mental  +0.07  absurd  -1.80  2.3m
+  L24 a=0.8  mental  +2.03  absurd  +3.34  3.0m
+  L24 a=1.6  mental  +0.02  absurd  +2.55  3.7m
+  L24 a=3.2  mental  +0.53  absurd  +3.28  4.4m
+[chunk] 5 cells done, exiting for a fresh process

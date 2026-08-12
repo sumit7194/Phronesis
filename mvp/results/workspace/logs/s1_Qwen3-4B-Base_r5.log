@@ -1,0 +1,23 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<13:34,  2.05s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 80.79it/s]Loading weights:  48%|████▊     | 193/398 [00:02<00:02, 84.54it/s]Loading weights:  59%|█████▉    | 234/398 [00:03<00:02, 79.74it/s]Loading weights:  66%|██████▌   | 262/398 [00:04<00:02, 52.44it/s]Loading weights:  71%|███████   | 281/398 [00:05<00:02, 53.36it/s]Loading weights:  74%|███████▍  | 296/398 [00:05<00:01, 56.25it/s]Loading weights:  78%|███████▊  | 309/398 [00:05<00:01, 56.32it/s]Loading weights:  80%|████████  | 320/398 [00:05<00:01, 56.97it/s]Loading weights:  83%|████████▎ | 329/398 [00:05<00:01, 56.34it/s]Loading weights:  85%|████████▍ | 337/398 [00:05<00:01, 54.58it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:01, 51.24it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.03it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 58.56it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 57.75it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.68it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 58.08it/s]
+[fmt] T4 gate separation 0.604
+[load] models/Qwen3-4B-Base L=36 format=T4 layers=[9, 14, 19, 24] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 20 cells, 1 baselines on disk
+
+=== STAGE 1 TRACTION GRID  [models/Qwen3-4B-Base] — vector v2_no_negation ===
+  mental-group movement in log-odds; |move| < 0.3 = no traction
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2
+       9     +0.26     +0.27     +3.11     +0.22     -2.43
+      14     +0.36     +1.08     +2.60     -1.58     -3.13
+      19     +0.99     +2.02     +1.80     -0.71     -1.81
+      24     +0.05     +0.39     +1.03     +0.36     -0.15
+
+   layer     a=0.2     a=0.4     a=0.8     a=1.6     a=3.2   <- absurd_low
+       9     +0.47     +1.02     +3.06     +1.21     -1.80
+      14     +0.40     +0.95     +2.70     -0.84     -2.46
+      19     +0.40     +1.33     +2.02     -0.37     -1.34
+      24     -0.12     -0.08     +1.05     +0.79     +0.50
+
+  TRACTION FOUND: layer 14, alpha 1.6 — mental -1.58, absurd -0.84
+  -> stage 2: mindedness_v2_steer.py --layer 14 --alphas 1.6
+
+[done] 0.2 min -> results/workspace/mindedness_steer_search_Qwen3-4B-Base.json

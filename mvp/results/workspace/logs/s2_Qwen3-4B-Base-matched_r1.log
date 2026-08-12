@@ -1,0 +1,11 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<13:37,  2.06s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 80.22it/s]Loading weights:  49%|████▉     | 196/398 [00:02<00:02, 85.23it/s]Loading weights:  60%|██████    | 240/398 [00:03<00:02, 78.48it/s]Loading weights:  68%|██████▊   | 269/398 [00:04<00:02, 50.39it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 51.01it/s]Loading weights:  76%|███████▋  | 304/398 [00:05<00:01, 54.19it/s]Loading weights:  80%|███████▉  | 317/398 [00:05<00:01, 56.36it/s]Loading weights:  82%|████████▏ | 328/398 [00:05<00:01, 56.97it/s]Loading weights:  85%|████████▍ | 338/398 [00:06<00:01, 57.45it/s]Loading weights:  87%|████████▋ | 347/398 [00:06<00:00, 55.44it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 54.07it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 53.58it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 49.78it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 43.47it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 55.02it/s]
+[load] models/Qwen3-4B-Base L=36 steer-layer=19 format=T4
+[vec] v1_negation              cos(raw, polarity) = +0.121
+[vec] v2_no_negation           cos(raw, polarity) = +0.079
+[vec] v3_third_person          cos(raw, polarity) = -0.033
+[vec] 9 conditions
+[base] done 6.8m
+  v1_negation                a=+0.2  13.1m
+  v1_RAW_unorthogonalised    a=+0.2  19.5m
+  v2_no_negation             a=+0.2  25.7m
+[chunk] did 3 cells, exiting for a fresh process

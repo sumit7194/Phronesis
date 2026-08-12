@@ -1,0 +1,119 @@
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<13:31,  2.04s/it]Loading weights:  31%|███▏      | 125/398 [00:02<00:03, 80.89it/s]Loading weights:  48%|████▊     | 191/398 [00:02<00:02, 83.32it/s]Loading weights:  58%|█████▊    | 231/398 [00:03<00:01, 84.32it/s]Loading weights:  65%|██████▌   | 259/398 [00:04<00:02, 52.63it/s]Loading weights:  70%|██████▉   | 278/398 [00:04<00:02, 56.58it/s]Loading weights:  74%|███████▍  | 294/398 [00:05<00:01, 59.21it/s]Loading weights:  77%|███████▋  | 307/398 [00:05<00:01, 61.07it/s]Loading weights:  80%|███████▉  | 318/398 [00:05<00:01, 61.08it/s]Loading weights:  82%|████████▏ | 328/398 [00:05<00:01, 59.33it/s]Loading weights:  85%|████████▍ | 337/398 [00:05<00:01, 57.74it/s]Loading weights:  87%|████████▋ | 345/398 [00:05<00:00, 54.79it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 55.30it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 59.55it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 58.57it/s]Loading weights:  97%|█████████▋| 388/398 [00:06<00:00, 60.28it/s]Loading weights: 100%|██████████| 398/398 [00:06<00:00, 59.74it/s]
+[load] models/Qwen3-4B-Base L=36 steer-layer=14 format=T4
+[vec] v1_negation              cos(raw, polarity) = -0.013
+[vec] v2_no_negation           cos(raw, polarity) = +0.063
+[vec] v3_third_person          cos(raw, polarity) = -0.005
+[vec] 9 conditions
+[resume] found 9 completed cells
+[base] done 0.5m
+
+=== H-bias: does the MENTAL group move more than the HEADROOM-MATCHED controls? ===
+    (all in log-odds; mundane_low is the matched control, absurd_low the bias detector)
+
+  --- v1_negation ---
+  alpha class            mental  mundane   absurd  phys_mid phys_high   mental−mundane
+   +1.6 self_ai            1.57     0.68     3.02      2.19      1.61      +0.89
+   +1.6 ai_other           2.12     2.44     3.72      2.22      2.11      -0.32
+   +1.6 robot              1.62     1.58     2.92      2.04     -0.44      +0.03
+   +1.6 human_adult       -0.53    -0.19     1.58      0.24     -1.75      -0.33
+   +1.6 human_prof_a       0.45     0.12     2.60      1.54      0.76      +0.33
+   +1.6 human_prof_b       0.60     1.29     2.31      1.85      0.83      -0.69
+   +1.6 human_dev          0.62     1.82     1.59      1.36     -0.59      -1.20
+   +1.6 human_edge         0.77     0.96     1.69      0.91      0.28      -0.19
+   +1.6 animal_mammal     -0.36     2.15     2.27      1.74     -2.24      -2.51
+   +1.6 animal_other      -0.04     1.33     1.39      1.45     -1.61      -1.37
+   +1.6 animal_simple      1.49     2.08     1.86      2.02     -0.06      -0.59
+   +1.6 plant              1.86     2.38     2.21      1.93      0.35      -0.51
+   +1.6 nature             1.85     2.17     2.35      1.97      0.23      -0.32
+   +1.6 object_nat         2.80     2.63     2.38      2.28      0.46      +0.17
+   +1.6 object_art         2.36     3.07     2.36      1.99     -0.63      -0.71
+   +1.6 object_comp        2.14     2.34     1.99      1.59      0.19      -0.19
+   +1.6 supernatural       1.13     0.95     1.71      1.63      2.23      +0.18
+   +1.6 fictional          0.48     1.60     2.38      1.35     -0.31      -1.12
+   +1.6 collective         0.72     0.16     2.60      1.87      0.79      +0.56
+
+
+  --- v2_no_negation ---
+  alpha class            mental  mundane   absurd  phys_mid phys_high   mental−mundane
+   +1.6 self_ai            0.30    -0.30     1.08      0.42      0.09      +0.60
+   +1.6 ai_other           0.66     1.43     1.78      0.95      0.62      -0.77
+   +1.6 robot             -1.27    -0.37    -0.52     -0.63     -3.45      -0.89
+   +1.6 human_adult       -3.82    -1.77    -1.89     -1.83     -4.41      -2.05
+   +1.6 human_prof_a      -2.57    -1.16    -0.95     -0.72     -2.25      -1.41
+   +1.6 human_prof_b      -2.36    -0.16    -0.99     -0.45     -2.47      -2.20
+   +1.6 human_dev         -3.27    -1.93    -3.30     -2.47     -4.99      -1.34
+   +1.6 human_edge        -3.81    -1.91    -2.65     -2.70     -4.24      -1.90
+   +1.6 animal_mammal     -2.81     0.88    -1.17     -0.27     -4.53      -3.69
+   +1.6 animal_other      -0.85     1.49    -0.47      0.86     -2.33      -2.33
+   +1.6 animal_simple     -2.91    -0.87    -3.05     -2.12     -4.83      -2.04
+   +1.6 plant             -0.99     1.03    -0.79     -0.23     -2.97      -2.02
+   +1.6 nature            -1.97     0.11    -1.24     -0.97     -4.18      -2.08
+   +1.6 object_nat        -1.60    -0.51    -1.63     -1.81     -4.30      -1.09
+   +1.6 object_art        -1.02     0.89    -1.74     -1.44     -4.56      -1.91
+   +1.6 object_comp       -1.87    -0.77    -2.20     -2.04     -4.49      -1.10
+   +1.6 supernatural      -0.67    -1.21    -1.26     -1.99      0.09      +0.54
+   +1.6 fictional         -1.37     1.27     0.05      0.23     -2.02      -2.64
+   +1.6 collective        -2.62    -1.80    -0.91     -0.74     -2.70      -0.82
+
+
+  --- v3_third_person ---
+  alpha class            mental  mundane   absurd  phys_mid phys_high   mental−mundane
+   +1.6 self_ai            1.40     0.89     2.63      1.65      1.58      +0.52
+   +1.6 ai_other          -0.02     1.40     2.75      0.88      0.58      -1.42
+   +1.6 robot             -0.50     0.78     2.10      0.57     -1.90      -1.28
+   +1.6 human_adult       -1.15    -0.79     1.84      0.15     -1.98      -0.36
+   +1.6 human_prof_a      -1.09    -0.40     1.44      0.00     -0.26      -0.69
+   +1.6 human_prof_b      -0.90     0.57     1.33      0.68     -0.68      -1.47
+   +1.6 human_dev         -0.91     0.00     0.73      0.27     -1.73      -0.91
+   +1.6 human_edge        -2.64    -1.11    -0.32     -1.38     -2.54      -1.53
+   +1.6 animal_mammal     -1.36     1.72     1.65      0.69     -3.00      -3.08
+   +1.6 animal_other      -0.18     1.68     1.63      1.48     -1.64      -1.86
+   +1.6 animal_simple      0.02     0.93     0.96      0.89     -1.28      -0.91
+   +1.6 plant              0.55     1.62     1.35      0.63     -1.12      -1.07
+   +1.6 nature             0.24     1.74     1.43      0.78     -1.32      -1.50
+   +1.6 object_nat         0.68     1.10     0.75      0.43     -1.43      -0.42
+   +1.6 object_art         0.99     2.13     1.39      0.51     -2.01      -1.13
+   +1.6 object_comp        0.42     1.27     1.18      0.51     -0.92      -0.84
+   +1.6 supernatural       0.35     0.46     0.91      0.42      1.20      -0.11
+   +1.6 fictional         -0.84     1.44     1.78      0.79     -0.99      -2.28
+   +1.6 collective        -1.37    -1.29     1.09      0.34     -0.69      -0.08
+
+
+  --- v1_RAW_unorthogonalised ---
+  alpha class            mental  mundane   absurd  phys_mid phys_high   mental−mundane
+   +1.6 self_ai            1.57     0.68     3.01      2.18      1.62      +0.90
+   +1.6 ai_other           2.12     2.43     3.72      2.20      2.11      -0.32
+   +1.6 robot              1.61     1.58     2.92      2.02     -0.43      +0.03
+   +1.6 human_adult       -0.53    -0.19     1.58      0.20     -1.76      -0.34
+   +1.6 human_prof_a       0.44     0.11     2.62      1.52      0.75      +0.32
+   +1.6 human_prof_b       0.61     1.32     2.33      1.83      0.84      -0.71
+   +1.6 human_dev          0.64     1.84     1.61      1.35     -0.57      -1.21
+   +1.6 human_edge         0.76     0.96     1.69      0.88      0.27      -0.20
+   +1.6 animal_mammal     -0.34     2.17     2.28      1.74     -2.23      -2.51
+   +1.6 animal_other      -0.03     1.35     1.40      1.44     -1.60      -1.39
+   +1.6 animal_simple      1.51     2.11     1.87      2.02     -0.05      -0.59
+   +1.6 plant              1.86     2.38     2.21      1.91      0.35      -0.53
+   +1.6 nature             1.85     2.17     2.36      1.95      0.22      -0.33
+   +1.6 object_nat         2.80     2.64     2.39      2.27      0.46      +0.16
+   +1.6 object_art         2.37     3.09     2.38      1.99     -0.62      -0.73
+   +1.6 object_comp        2.14     2.35     2.00      1.58      0.19      -0.21
+   +1.6 supernatural       1.14     0.96     1.73      1.63      2.24      +0.18
+   +1.6 fictional          0.50     1.61     2.38      1.33     -0.29      -1.11
+   +1.6 collective         0.72     0.16     2.59      1.84      0.79      +0.56
+
+
+=== RANDOM FLOOR (mean over 5 seeds), mental group, log-odds ===
+  alpha=+1.6  self_ai=+0.76  ai_other=+1.65  robot=+0.77  human_adu=-0.15  human_pro=+0.01  human_pro=+0.82  human_dev=+1.10  human_edg=+1.18
+
+=== VERDICT TABLE: mental−mundane (log-odds), averaged over non-human classes ===
+  v1_negation                a+1.6=-0.42
+  v1_RAW_unorthogonalised    a+1.6=-0.42
+  v2_no_negation             a+1.6=-1.45
+  v3_third_person            a+1.6=-1.10
+  random0                    a+1.6=-0.39
+  random1                    a+1.6=-0.12
+  random2                    a+1.6=-0.21
+  random3                    a+1.6=+0.75
+  random4                    a+1.6=-0.21
+
+[done] 0.5 min -> results/workspace/mindedness_v2_steer_Qwen3-4B-Base_L14_a1.6.json

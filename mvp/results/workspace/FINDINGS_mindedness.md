@@ -1911,3 +1911,51 @@ Together with F-AM's sign flip — the same construction enhancing on Qwen and s
 others — the reasonable read is that these vectors do not encode a portable "mind attribution"
 direction. What Qwen3-4B shows may still be real for Qwen3-4B; nothing here supports it being a
 fact about language models.
+
+## F-AR. The steerable mind-direction is PRETRAINED. Post-training amplifies it, ~2x, and does not create it.
+Prereg `docs/prereg-steering-base-2026-08-11.md`, committed at 4aea8da3 before any base run.
+Qwen3-4B-Base vs Qwen3-4B-Instruct, identical two-stage protocol, identical format (T4: gate
+separation 0.60 base / 0.941 instruct).
+
+### Preregistered verdicts
+| | prediction | result |
+|---|---|---|
+| P1 | base shows traction | **PASS** — many configs move it; the biggest (+3.11 at L9/α0.8) is disqualified by absurd at +3.06 |
+| P2 | **base beats its random floor** | **PASS** — v2 at **+3.7 SD** at its own winner, **+3.0 SD** at the matched config |
+| P3 | sign matches instruct | **PASS at matched config** (both +), fails at own-winners — see below |
+| P4 | **instruct still beats random under a searched config** | **PASS** — v2 at **+2.8 SD**, so the original result was not an artefact of the default config |
+
+### The matched-config comparison (post-hoc addition, and it is the real result)
+The prereg said "identical protocol", which was not enough: the search picked **L14 for base and
+L19 for instruct**, so the two sides were compared at different configs and the confound the
+prereg existed to remove crept back in. Both were re-run at **L19 α0.2**:
+
+| vector | BASE mental | INST mental | BASE z | INST z |
+|---|---|---|---|---|
+| v1_negation | +2.63 | +5.18 | +0.5 | −0.6 |
+| v1_RAW_unorthogonalised | +3.11 | +6.00 | +0.6 | −0.9 |
+| **v2_no_negation** | **+0.97** | **+2.18** | **+3.0** | **+2.8** |
+| v3_third_person | +1.75 | +3.06 | +2.3 | +0.3 |
+
+**Both beat their floors, with the same vector, in the same direction.** The apparent sign flip
+between the own-winner runs (base −1.83, instruct +2.18) was the max-magnitude **selection rule**
+picking different layers, not a property of the models — flagged as a possibility before these
+numbers existed, and confirmed.
+
+### What this says
+1. **Pretrained.** A 4B checkpoint that never saw post-training already has a direction that moves
+   mind attribution more than a matched control and beyond a random floor. Consistent with every
+   other structural result in this arc.
+2. **Post-training amplifies about 2x** (+0.97 → +2.18 at the same config) and does not create.
+3. **The vector construction matters more than the checkpoint.** `v2_no_negation` is the only one
+   that beats random on either model; `v1_negation` — the paper-style contrast with negation baked
+   in — fails on **both**, and fails *below* random on instruct. The original recipe was measuring
+   its own negation component.
+4. **Still one family.** OLMo and Gemma instruct remain tested negatives (F-AP, F-AQ). This
+   sharpens *what* the Qwen3-4B effect is, not how far it reaches.
+
+### The control earning its place again
+Instruct's `v1_RAW` moves the mental group **+6.00**, the largest movement in the entire run, with
+the absurd control at **+5.88**. Reported alone that is the arc's most impressive steering number
+and it is a yes-push. The vector that actually wins moves mental **+2.18** and absurd **−0.27**.
+Smaller and real beats larger and fake — third time this pattern has appeared (F-I/F-J, F-AM, here).
