@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AS). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AT). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -54,10 +54,10 @@ on a checkpoint that either fails the power criterion or duplicates a tested sib
 | Protect-vs-blame axis, independent of mind | **3** | **FINDING** |
 | Soul as a separate register | 1 of 3 | Qwen3-4B only |
 | Subject-framing geometry | 2 Qwen; fails Gemma | Qwen only |
-| Steering beats a random floor | 1 of 3 | Qwen3-4B only — others now **tested** negatives (F-AP/F-AQ) |
+| Steering beats a random floor | **1 of 5 checkpoints** | Qwen3-4B only, at both its stages; Qwen3.5 negative at both (F-AT) |
 | Protect-vs-blame, **preregistered** | 3 of 3 on its key prediction | **FINDING** (F-AK/F-AN) |
 | Protection rides on experience, blame on agency | 3 of 3 | corrects F-Y's own headline |
-| **The steerable direction is pretrained** | Qwen3-4B base **and** instruct | **preregistered**, 4/4 resolved (F-AR) |
+| **The steerable direction is pretrained** | Qwen3-4B base **and** instruct | **preregistered**, 4/4 resolved (F-AR); replicates arXiv 2605.13329 |
 
 **Four of seven generalise.** The three that do not are the three that looked most striking on the
 first model. Detail: F-AE, F-AF, F-AG, F-AJ.
@@ -128,9 +128,11 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
 5. ~~Steering on base models~~ → **DONE, F-AR/F-AS.** Preregistered (4aea8da3), all four
    predictions resolved. Qwen3-4B-Base beats its random floor; at a matched config base +3.0 SD
    and instruct +2.8 SD with the same vector. Post-training amplifies ~2x, does not create.
-   OLMo is negative at BOTH stages, so **the split is by family, not training stage**.
-   Still open there: *why* Qwen and not the others — architecture or pretraining data — and
-   Qwen3.5-4B-Base, dropped to keep the primary pair clean.
+   OLMo is negative at BOTH stages. **F-AT then retracted the "by family" half**: Qwen3.5-4B is
+   negative at both stages too, so it is **one checkpoint of five**, not a family property.
+   Only the training-stage half survives — where the effect exists it predates post-training.
+   F-AT also records a scoring flaw: z was reported without effect size, and the two dissociate
+   (highest z in the arc, +4.9, came off the second-smallest effect and a floor SD of 0.11).
 6. **Soul keeps misbehaving.** Failed cross-family 3×, then took 1st place the moment the format
    changed (F-AO). Not rehabilitated, not finished.
 

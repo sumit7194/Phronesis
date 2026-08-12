@@ -48,7 +48,7 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 12 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v5, base models", SUB))
+S.append(Paragraph("Full experimental history, 7 to 12 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v6", SUB))
 
 h1("0. The answer, in one table")
 p("Seven results were tested across three model families (Qwen, Gemma, OLMo) and eight "
@@ -61,7 +61,7 @@ table([
     ["Protect-vs-blame is a separate moral axis", "3", "FINDING - now preregistered"],
     ["Soul is a separate register", "1 of 3", "Qwen3-4B only"],
     ["Consciousness is bound to who it is about", "2 Qwen; fails Gemma", "Qwen only"],
-    ["Steering beats a random control", "1 of 3", "Qwen3-4B only - now TESTED"],
+    ["Steering beats a random control", "1 of 5", "ONE checkpoint - see 4.2"],
 ], [265, 85, 110], hi=[1,2,3,4])
 p("<b>The three that failed are the three that looked most striking on the first model</b> - a "
   "river granted a soul while denied awareness, consciousness bound to its subject, and a vector "
@@ -73,10 +73,11 @@ p("<b>What changed on 11 August.</b> Three things that were open are now closed.
   "models at configs chosen per model, converting 'untested' into a <b>tested negative</b> "
   "(section 4.1). And the Qwen findings were rechecked under chat format, which narrowed one of "
   "them (section 3.1).")
-p("<b>What changed on 12 August.</b> The last open item - steering on models that never had "
-  "post-training - is done, and it answers a question the arc had been circling. The steerable "
-  "direction is <b>already there before any tuning</b>, and tuning roughly doubles it rather than "
-  "creating it. Section 4.2.")
+p("<b>What changed on 12 August.</b> Steering on models that never had post-training is done. "
+  "The steerable direction is <b>already there before any tuning</b> on the one model that has it. "
+  "But testing a second model from the same family then <b>forced a retraction of my own "
+  "conclusion from earlier the same day</b>, and exposed a flaw in how I had been scoring every "
+  "steering result. Section 4.2, and it is the most instructive part of this report.")
 
 h1("1. What we were asking")
 p("The starting point was a paper you sent, Kim et al. (arXiv 2607.28607). It claims that safety "
@@ -375,23 +376,57 @@ p("The instruct model's <b>v1 un-orthogonalised moves the mental questions +6.00
   "actually wins moves the mental questions +2.18 and the absurd control <b>-0.27</b>, in the "
   "opposite direction. Smaller and real beats larger and fake - the third time this exact pattern "
   "has appeared.")
-h3("Where the split actually falls")
+h3("Then I tested a second model from the same family, and had to retract")
+p("The conclusion I reached first was <i>the split is by family</i> - Qwen has the handle, OLMo "
+  "does not. Qwen3.5-4B had never been run under this protocol, so I ran both its checkpoints. "
+  "<b>Neither shows the effect.</b> Qwen3.5-Instruct: none of the four vectors beat its floor. "
+  "Qwen3.5-Base appeared to pass on <i>all four</i> - and that turned out to be a measurement "
+  "artefact that also revealed a flaw in how I had scored everything.")
+h3("The flaw: I was reporting statistical significance without effect size")
 table([
-    ["Checkpoint", "Beats a random direction?"],
-    ["Qwen3-4B-Base (no post-training)", "YES  +3.0 SD"],
-    ["Qwen3-4B-Instruct", "YES  +2.8 SD"],
-    ["OLMo-2-1B-Base", "no  (+1.9 SD, marginal)"],
-    ["OLMo-2-1B-Instruct", "no  (+1.6 SD)"],
-    ["Gemma-4-E2B-Instruct", "no  (+0.5 SD)"],
-    ["Gemma-4-E2B-Base", "excluded - fails the power criterion"],
-], [250, 200], hi=[1,2])
-p("<b>The split is by family, not by training stage.</b> Qwen3-4B has the handle before tuning and "
-  "keeps it after. OLMo lacks it before and after. So 'alignment tuning installs the handle' is "
-  "dead from both ends: it predates tuning where it exists, and tuning fails to install it where "
-  "it does not. Whatever separates these models is architecture or pretraining data.")
-p("One more thing this settles: <b>the paper's own vector construction fails on five of five "
-  "checkpoints</b>, and on two of them it does worse than a random direction. Building the "
-  "contrast out of a sentence and its negation means largely measuring the negation.")
+    ["Checkpoint", "EFFECT size", "floor spread", "significance", "how many of 4 pass"],
+    ["Qwen3-4B-Base", "1.53", "0.42", "+3.7 SD", "2 of 4"],
+    ["Qwen3-4B-Instruct", "2.25", "0.91", "+2.8 SD", "1 of 4"],
+    ["Qwen3.5-4B-Base", "0.31", "0.11", "+4.9 SD", "4 of 4"],
+    ["Qwen3.5-4B-Instruct", "1.59", "0.29", "+1.4 SD", "0 of 4"],
+    ["OLMo-2-1B-Base", "0.49", "0.13", "+1.9 SD", "0 of 4"],
+    ["Gemma-4-E2B-Instruct", "2.70", "0.19", "+0.5 SD", "0 of 4"],
+], [125, 75, 80, 90, 90], hi=[3])
+p("<b>Qwen3.5-Base earns the highest significance in the whole arc (+4.9) on the second-smallest "
+  "effect (0.31).</b> Its floor is simply very tight, so anything slightly off it scores high. "
+  "Gemma is the mirror image: a large effect (2.70) that random directions match exactly. "
+  "Significance and effect size point in opposite directions, and I had been quoting only the "
+  "first.")
+p("<b>The last column is the honest test.</b> A direction that really tracks minds should tell "
+  "vector constructions apart - the negation-free one should win, and the negation-based one "
+  "should lose. Qwen3.5-Base passes all four <i>including the discredited one</i>, which means it "
+  "is detecting that everything sits slightly above a floor, not anything about minds.")
+note("This also weakens a number of my own. I reported Qwen3-4B-Base's matched-setting result as "
+     "'+3.0 SD'; its effect there is 0.34 - the same size as the Qwen3.5 result I am discarding. "
+     "What separates them is that Qwen3-4B discriminates between vectors and Qwen3.5 does not. The "
+     "base-model conclusion rests on the 1.53 effect at its own setting and on that pattern, not "
+     "on the matched-setting significance as strongly as I first presented it.")
+h3("Where it actually lands")
+table([
+    ["Model", "Base checkpoint", "Instruct checkpoint"],
+    ["Qwen3-4B", "YES", "YES"],
+    ["Qwen3.5-4B", "no (artefact)", "no"],
+    ["OLMo-2-1B", "no", "no"],
+    ["Gemma-4-E2B", "excluded - power criterion", "no"],
+], [130, 160, 160], hi=[1])
+p("<b>One checkpoint out of five shows this, at both of its training stages.</b> Its own family "
+  "sibling shows it at neither - and that sibling is a different architecture anyway (a hybrid "
+  "mixture-of-experts), so 'family' was doing less work than the name suggests. What survives is "
+  "only the training-stage half: <b>where the effect exists, it predates post-training.</b> "
+  "'It is a Qwen thing' is retracted.")
+p("One more thing this settles: <b>the paper's own vector construction fails on every checkpoint "
+  "tested</b>, and on several does worse than a random direction. Building the contrast out of a "
+  "sentence and its negation means largely measuring the negation.")
+note("Prior art, checked 12 August: arXiv 2605.13329 (Tracing Persona Vectors Through LLM "
+     "Pretraining) reports the same pattern for personality traits - directions form during "
+     "pretraining and post-training 'only tunes its volume'. Our result is an independent "
+     "replication of a known effect in a different domain, not a discovery. Two setups agreeing "
+     "raises confidence in it.")
 
 h2("4.3 Other retractions")
 table([
@@ -462,9 +497,13 @@ table([
 note("Also three shell-wrapper bugs in one hour: a stale-swap cascade that killed five stages in "
      "one second, a wait threshold set below the machine's idle swap, and killing a wrapper "
      "without killing the model process it had spawned.")
-h2("Three from 12 August, two of them expensive")
+h2("Four from 12 August")
 table([
     ["Problem", "Consequence"],
+    ["Scoring every steering result by significance alone, with no effect-size floor",
+     "The highest significance in the arc (+4.9 SD) came from the second-smallest effect, off an "
+     "unusually tight control spread. Would have been recorded as the strongest steering result "
+     "anywhere. Caught because all four vectors passed, including one already known to be broken."],
     ["A prereg that said 'identical protocol' but not 'identical setting'",
      "The search chose different layers for the two halves of a matched pair, reintroducing the "
      "exact confound the prereg existed to remove. Caught mid-run; fixed with a third run."],
@@ -572,13 +611,14 @@ p("Every question the arc set out with is answered, and so is the base-model one
   "1. <b>What the protect-blame axis is made of is not settled.</b> The agency half replicates on "
   "only one of three models. Only the experience half - protection tracking the capacity to suffer "
   "- holds everywhere.<br/>"
-  "2. <b>Why Qwen3-4B and not the others?</b> The split is by family and predates tuning, so the "
-  "answer is in architecture or pretraining data. Testing that needs more checkpoints per family "
-  "than a 16GB machine comfortably holds.<br/>"
+  "2. <b>Why this one checkpoint and not the other four?</b> It is not the family - the other Qwen "
+  "is negative. Answering this needs many more checkpoints than a 16GB machine holds, and may need "
+  "pretraining-data access nobody outside the labs has.<br/>"
   "3. <b>Qwen3-4B cannot be checked under chat format at all</b> (0.01 against a 0.30 bar), so the "
   "format robustness check exists for only one Qwen model.<br/>"
-  "4. <b>Qwen3.5-4B-Base</b> was dropped from the base run to keep the primary pair clean - a "
-  "second Qwen base model would test whether this is Qwen3-4B or Qwen-the-family.<br/>"
+  "4. <b>An effect-size floor should be declared</b> for the steering comparison, in units of the "
+  "measured spread rather than an absolute number - the same mistake as the harm-without-agency "
+  "threshold, in a different place.<br/>"
   "5. The soul result keeps behaving oddly - it failed cross-family three times, then took first "
   "place the moment the prompt format changed. Not rehabilitated, not finished.")
 
