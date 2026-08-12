@@ -116,3 +116,49 @@ and the speaker-frame test.
 ## Standing rule
 Re-run a check **whenever a claim changes materially**, not only at prereg. Two rounds so far have
 each retired something and protected something; the cost is ~10 minutes.
+
+---
+
+## Round 3 — 2026-08-12, triggered by two materially changed claims
+CLAUDE.md requires a re-check whenever a claim changes materially. Two did today.
+
+### Claim 1: "the steerable mind-direction is pretrained; post-training amplifies ~2x" (F-AR)
+**Direct prior art, and it is close.** *Tracing Persona Vectors Through LLM Pretraining*,
+arXiv **2605.13329**. Their finding: persona directions form during pretraining — "within 0.22% of
+OLMo-3 pretraining" — and remain effective for steering the fully post-trained instruct models.
+Their phrasing for what post-training does is **"post-training only tunes its volume"**, which is
+the same claim as our "amplification, not creation", arrived at independently and stated better.
+
+They also test two families (OLMo-3-7B, Apertus-8B) and report **family differences** — early
+vectors go "nearly ineffective" for one trait on Apertus. That parallels our family split.
+They use random and shuffled controls.
+
+**Consequence for us:** F-AR is a **replication of a known pattern in a different domain** —
+mind attribution and moral standing rather than persona traits, on Qwen3-4B and OLMo-2-1B rather
+than OLMo-3 and Apertus. F-AR never claimed novelty, so nothing is retracted. But the honest
+framing is now explicit: we independently reproduced a published result on our own hardware, which
+is worth having and is not a discovery. It also *raises* our confidence in the finding, since two
+independent setups in different domains agree.
+
+### Claim 2: "protection tracks experience, blame tracks agency" (F-AK/F-AN)
+**Long-established, as already recorded.** Gray, Gray & Wegner (2007) is the two-factor source, and
+the mapping we "found" is textbook: *experience qualifies entities as moral patients, agency
+qualifies them as moral agents*. Our F-AK already labelled this as recovering Gray & Wegner rather
+than discovering anything, which was the right call.
+
+Adjacent work worth knowing: *Robots, Chatbots, Self-Driving Cars: Perceptions of Mind and Morality
+Across Artificial Intelligences* (arXiv 2502.18683) covers the entity classes we use.
+*The Moral Mind(s) of Large Language Models* (arXiv 2412.04476). *Tracing Moral Foundations in LLMs*
+(arXiv 2601.05437).
+
+### What is NOT covered by anything found
+- **`human_culpable` at the bottom of the scale.** No hit describes testing whether a *culpable
+  human* falls below corporations and AI on a protect-minus-blame measure. Our P5 test appears not
+  to be a re-run of anything, though the framework it sits in is fully established.
+- **The format-gate result** (a family answers in one prompt format and fails in another, and the
+  gate must therefore be a chooser). No hit; likely folklore rather than a publication.
+
+### Score for this round
+One claim substantially anticipated (and confirmed by it), one already correctly attributed, one
+sub-result apparently untouched. Ten minutes. Same value as the previous two rounds: it did not
+kill anything, it correctly located what we did relative to what exists.
