@@ -1,0 +1,10 @@
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:   1%|          | 2/179 [00:02<02:58,  1.01s/it]Loading weights:  57%|█████▋    | 102/179 [00:02<00:01, 57.53it/s]Loading weights:  66%|██████▋   | 119/179 [00:02<00:01, 57.36it/s]Loading weights:  73%|███████▎  | 131/179 [00:02<00:00, 54.88it/s]Loading weights:  78%|███████▊  | 140/179 [00:03<00:00, 50.65it/s]Loading weights:  82%|████████▏ | 147/179 [00:03<00:00, 48.65it/s]Loading weights:  88%|████████▊ | 157/179 [00:03<00:00, 51.65it/s]Loading weights: 100%|██████████| 179/179 [00:03<00:00, 50.67it/s]
+[fmt] T1 gate separation 0.306
+[load] models/OLMo-2-0425-1B-Base L=16 format=T1 layers=[4, 6, 8, 10] alphas=[0.2, 0.4, 0.8, 1.6, 3.2]
+[resume] 5 cells, 1 baselines on disk
+  L 6 a=0.2  mental  +0.26  absurd  +0.34  0.3m
+  L 6 a=0.4  mental  +0.86  absurd  +1.25  0.6m
+  L 6 a=0.8  mental  +1.47  absurd  +1.96  0.8m
+  L 6 a=1.6  mental  +0.36  absurd  +0.89  1.1m
+  L 6 a=3.2  mental  -0.85  absurd  -0.26  1.3m
+[chunk] 5 cells done, exiting for a fresh process

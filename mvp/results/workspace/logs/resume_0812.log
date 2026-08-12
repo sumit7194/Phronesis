@@ -3,3 +3,10 @@
 ################ matched-config: BASE at instruct's config (L19 a0.2) ################
 [s2_Qwen3-4B-Base-matched] done in 4 round(s)
 ################ OLMo-2-1B-Base ################
+[s1_OLMo2-1B-Base] done in 5 round(s)
+[s2_OLMo2-1B-Base] done in 4 round(s)
+
+======== RESUME SUMMARY 10:34:50 ========
+passed (4): s2_Qwen3-4B-searched s2_Qwen3-4B-Base-matched s1_OLMo2-1B-Base s2_OLMo2-1B-Base
+failed (0): none
+COMPLETE

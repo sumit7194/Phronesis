@@ -1959,3 +1959,39 @@ Instruct's `v1_RAW` moves the mental group **+6.00**, the largest movement in th
 the absurd control at **+5.88**. Reported alone that is the arc's most impressive steering number
 and it is a yes-push. The vector that actually wins moves mental **+2.18** and absurd **−0.27**.
 Smaller and real beats larger and fake — third time this pattern has appeared (F-I/F-J, F-AM, here).
+
+## F-AS. OLMo base is negative too — the family split is not about post-training
+OLMo-2-1B-Base, layer 6 α3.2 (its only non-degenerate config of 20), full DV, 5 random seeds.
+
+| condition | mental | absurd | specificity | vs random |
+|---|---|---|---|---|
+| random floor | −1.39 ± 1.54 | | −0.24 ± 0.13 | — |
+| v1_negation | +3.99 | **+4.62** | −0.12 | +0.9 SD |
+| v1_RAW | +3.97 | **+4.62** | −0.13 | +0.9 SD |
+| v2_no_negation | −1.02 | −0.13 | −0.49 | **+1.9 SD** |
+| v3_third_person | +2.42 | **+3.00** | −0.52 | −2.1 SD |
+
+**Nothing clears the bar.** v2 at +1.9 SD is just under +2 — a marginal null, not a decisive one,
+and worth stating that way. Two caveats on this checkpoint: it clears the format gate at **0.306**
+against a 0.30 threshold, and 19 of its 20 configs were disqualified because the absurd control
+moved as hard as the mental group.
+
+### THE BASE-MODEL ARM, COMPLETE
+| checkpoint | beats random? |
+|---|---|
+| Qwen3-4B-Base | **YES** (+3.7 SD own config, +3.0 SD matched) |
+| Qwen3-4B-Instruct | **YES** (+2.8 SD) |
+| OLMo-2-1B-Base | no (+1.9 SD, marginal) |
+| OLMo-2-1B-Instruct | no (+1.6 SD) |
+| Gemma-4-E2B-Instruct | no (+0.5 SD) |
+| Gemma-4-E2B-Base | excluded — entity spread 0.34 < 0.35 |
+
+**The split is by family, not by training stage.** Qwen3-4B has the steerable direction before
+post-training and keeps it after. OLMo lacks it before and after. Post-training is not what
+separates the models that have this from the models that do not — architecture or pretraining data
+is. That closes the "maybe alignment tuning installs the handle" hypothesis from both ends: not on
+Qwen (it predates tuning) and not on OLMo (tuning does not install it).
+
+**What remains true and small:** one family of three, pretrained, amplified ~2x by post-training,
+and only via the negation-free vector construction. The paper's own recipe (`v1_negation`) fails on
+every checkpoint tested — five of five.
