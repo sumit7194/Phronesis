@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AQ). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-AS). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -57,6 +57,7 @@ on a checkpoint that either fails the power criterion or duplicates a tested sib
 | Steering beats a random floor | 1 of 3 | Qwen3-4B only — others now **tested** negatives (F-AP/F-AQ) |
 | Protect-vs-blame, **preregistered** | 3 of 3 on its key prediction | **FINDING** (F-AK/F-AN) |
 | Protection rides on experience, blame on agency | 3 of 3 | corrects F-Y's own headline |
+| **The steerable direction is pretrained** | Qwen3-4B base **and** instruct | **preregistered**, 4/4 resolved (F-AR) |
 
 **Four of seven generalise.** The three that do not are the three that looked most striking on the
 first model. Detail: F-AE, F-AF, F-AG, F-AJ.
@@ -124,7 +125,12 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
 **Actually still open:**
 4. **What the axis is made of.** The agency half (P3) replicates on 1 of 3. Only the experience
    half — protection tracking capacity to suffer — holds everywhere.
-5. **Steering on base models.** Never run. Moral standing is pretrained, so that is where to look.
+5. ~~Steering on base models~~ → **DONE, F-AR/F-AS.** Preregistered (4aea8da3), all four
+   predictions resolved. Qwen3-4B-Base beats its random floor; at a matched config base +3.0 SD
+   and instruct +2.8 SD with the same vector. Post-training amplifies ~2x, does not create.
+   OLMo is negative at BOTH stages, so **the split is by family, not training stage**.
+   Still open there: *why* Qwen and not the others — architecture or pretraining data — and
+   Qwen3.5-4B-Base, dropped to keep the primary pair clean.
 6. **Soul keeps misbehaving.** Failed cross-family 3×, then took 1st place the moment the format
    changed (F-AO). Not rehabilitated, not finished.
 

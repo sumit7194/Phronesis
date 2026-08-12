@@ -48,7 +48,7 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 11 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v4, closeout", SUB))
+S.append(Paragraph("Full experimental history, 7 to 12 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v5, base models", SUB))
 
 h1("0. The answer, in one table")
 p("Seven results were tested across three model families (Qwen, Gemma, OLMo) and eight "
@@ -73,6 +73,10 @@ p("<b>What changed on 11 August.</b> Three things that were open are now closed.
   "models at configs chosen per model, converting 'untested' into a <b>tested negative</b> "
   "(section 4.1). And the Qwen findings were rechecked under chat format, which narrowed one of "
   "them (section 3.1).")
+p("<b>What changed on 12 August.</b> The last open item - steering on models that never had "
+  "post-training - is done, and it answers a question the arc had been circling. The steerable "
+  "direction is <b>already there before any tuning</b>, and tuning roughly doubles it rather than "
+  "creating it. Section 4.2.")
 
 h1("1. What we were asking")
 p("The starting point was a paper you sent, Kim et al. (arXiv 2607.28607). It claims that safety "
@@ -339,7 +343,57 @@ note("One more reason to doubt these vectors: built identically from the same se
      "Qwen3-4B shows may still be real for Qwen3-4B; nothing supports it being a fact about "
      "language models.")
 
-h2("4.2 Other retractions")
+h2("4.2 Base models: the steerable direction is pretrained")
+p("Everything the arc found about what a model <i>represents</i> turned out to be pretrained. The "
+  "open question was whether the one thing we could <i>push on</i> was different - whether "
+  "alignment tuning installs the causal handle even though it does not install the representation. "
+  "That would be a real asymmetry. Preregistered 11 August, before any base model was run.")
+h3("The design problem, and the mistake in my own prereg")
+p("The published instruct result used a default setting; a base model would get a searched one. "
+  "Comparing those directly confounds post-training with procedure, so both sides were re-run "
+  "under the same two-stage search. But 'same procedure' is <b>not</b> 'same setting' - the search "
+  "picked layer 14 for the base model and layer 19 for the instruct model, and the confound crept "
+  "straight back in. I noticed mid-run and added a third run: both checkpoints at the same "
+  "setting. That comparison was not in the prereg and is the one that answers the question.")
+table([
+    ["Vector", "BASE moves", "INSTRUCT moves", "BASE vs random", "INSTRUCT vs random"],
+    ["v1_negation (the paper's)", "+2.63", "+5.18", "+0.5 SD", "-0.6 SD"],
+    ["v1 un-orthogonalised", "+3.11", "+6.00", "+0.6 SD", "-0.9 SD"],
+    ["v2 no-negation", "+0.97", "+2.18", "+3.0 SD  BEATS", "+2.8 SD  BEATS"],
+    ["v3 third-person", "+1.75", "+3.06", "+2.3 SD  BEATS", "+0.3 SD"],
+], [140, 75, 90, 95, 100], hi=[3])
+p("<b>Both sides beat their random floor, with the same vector, in the same direction.</b> The "
+  "pretrained model already has it. Post-training takes the same setting from +0.97 to +2.18 - "
+  "roughly a doubling. <b>Amplification, not creation.</b>")
+note("An apparent sign disagreement between the two searched settings (base -1.83, instruct +2.18) "
+     "was the selection rule picking different layers, not a difference between the models. I "
+     "flagged that as the likely explanation before running the matched comparison, and it was.")
+h3("And the same table shows why controls are not optional")
+p("The instruct model's <b>v1 un-orthogonalised moves the mental questions +6.00</b> - the largest "
+  "steering number anywhere in this arc. The absurd control moved <b>+5.88</b>. It is the model "
+  "being pushed to say yes to anything, including that a rock outweighs a car. The vector that "
+  "actually wins moves the mental questions +2.18 and the absurd control <b>-0.27</b>, in the "
+  "opposite direction. Smaller and real beats larger and fake - the third time this exact pattern "
+  "has appeared.")
+h3("Where the split actually falls")
+table([
+    ["Checkpoint", "Beats a random direction?"],
+    ["Qwen3-4B-Base (no post-training)", "YES  +3.0 SD"],
+    ["Qwen3-4B-Instruct", "YES  +2.8 SD"],
+    ["OLMo-2-1B-Base", "no  (+1.9 SD, marginal)"],
+    ["OLMo-2-1B-Instruct", "no  (+1.6 SD)"],
+    ["Gemma-4-E2B-Instruct", "no  (+0.5 SD)"],
+    ["Gemma-4-E2B-Base", "excluded - fails the power criterion"],
+], [250, 200], hi=[1,2])
+p("<b>The split is by family, not by training stage.</b> Qwen3-4B has the handle before tuning and "
+  "keeps it after. OLMo lacks it before and after. So 'alignment tuning installs the handle' is "
+  "dead from both ends: it predates tuning where it exists, and tuning fails to install it where "
+  "it does not. Whatever separates these models is architecture or pretraining data.")
+p("One more thing this settles: <b>the paper's own vector construction fails on five of five "
+  "checkpoints</b>, and on two of them it does worse than a random direction. Building the "
+  "contrast out of a sentence and its negation means largely measuring the negation.")
+
+h2("4.3 Other retractions")
 table([
     ["Claim", "Why it died"],
     ["A rock has more soul than a calculator", "Qwen3-4B only; ties on Qwen3.5"],
@@ -352,7 +406,7 @@ table([
      "They already report the entity-class breakdown; too strong"],
 ], [200, 250])
 
-h2("4.3 The soul result was demoted last night")
+h2("4.4 The soul result was demoted last night")
 p("Soul looked like a clean separate thing: a river gets a soul while being denied awareness. But "
   "the forced-choice measure, which a yes-bias cannot inflate, shows soul barely separating from "
   "pain.")
@@ -367,7 +421,7 @@ p("So part of the soul effect is a property of the yes/no format. Asking 'does a
 note("Caveat in the other direction: forced choice measures ORDER, not LEVEL. A uniform level "
      "shift is invisible to it. So this bounds what kind of effect soul is rather than refuting it.")
 
-h2("4.4 My own explanations that were wrong")
+h2("4.5 My own explanations that were wrong")
 table([
     ["My explanation", "What was actually true"],
     ["The steering vector was contaminated by negation words",
@@ -408,6 +462,20 @@ table([
 note("Also three shell-wrapper bugs in one hour: a stale-swap cascade that killed five stages in "
      "one second, a wait threshold set below the machine's idle swap, and killing a wrapper "
      "without killing the model process it had spawned.")
+h2("Three from 12 August, two of them expensive")
+table([
+    ["Problem", "Consequence"],
+    ["A prereg that said 'identical protocol' but not 'identical setting'",
+     "The search chose different layers for the two halves of a matched pair, reintroducing the "
+     "exact confound the prereg existed to remove. Caught mid-run; fixed with a third run."],
+    ["Cleanup ran on the failure path",
+     "A guard kill was immediately followed by deleting 7.5GB of model weights, which then had to "
+     "be downloaded again. A failure path must never destroy expensive state."],
+    ["A swap ceiling never calibrated against real usage",
+     "Set at 8GB when a 7.5GB model on this machine normally sits near 10GB. Killed four "
+     "legitimate runs in a row - the hour after I had fixed the same guard for reading the wrong "
+     "number entirely."],
+], [180, 270])
 h2("Four more from the 11 August closeout")
 table([
     ["Problem", "Consequence"],
@@ -493,20 +561,26 @@ table([
     ["Protection rides on experience, blame on agency", "3 of 3 - and it corrects our own headline"],
     ["Soul is a separate register", "Qwen-specific - ranks #3, #1, #12 across the three families"],
     ["Steering beats a random control",
-     "Qwen3-4B ONLY, and the other two are now TESTED negatives, not untested"],
+     "Qwen3-4B ONLY - but at BOTH training stages. Others are tested negatives"],
+    ["The steerable direction is pretrained",
+     "PREREGISTERED, all 4 predictions resolved. Tuning amplifies ~2x, does not create"],
     ["Anything outside the Qwen family", "RESOLVED - 3 families measured with per-model formats"],
 ], [230, 220], hi=[1, 2, 8])
 h2("What is actually still open")
-p("The arc's original questions are all answered. What remains is narrower:<br/>"
-  "1. <b>What the axis is made of is not settled.</b> The agency half replicates on only one of "
-  "three models. Only the experience half - protection tracking the capacity to suffer - holds "
-  "everywhere.<br/>"
-  "2. <b>Qwen3-4B cannot be checked under chat format at all</b> (it scores 0.01 against a 0.30 "
-  "bar), so the format robustness check exists for only one Qwen model.<br/>"
-  "3. <b>Steering on base models</b> was never run. Moral standing is pretrained, so if anything "
-  "moves it, that is where to look.<br/>"
-  "4. The soul result keeps behaving oddly - it failed cross-family three times, then took first "
-  "place the moment the prompt format changed. Not rehabilitated, but not finished either.")
+p("Every question the arc set out with is answered, and so is the base-model one added on 11 "
+  "August. What remains is narrower:<br/>"
+  "1. <b>What the protect-blame axis is made of is not settled.</b> The agency half replicates on "
+  "only one of three models. Only the experience half - protection tracking the capacity to suffer "
+  "- holds everywhere.<br/>"
+  "2. <b>Why Qwen3-4B and not the others?</b> The split is by family and predates tuning, so the "
+  "answer is in architecture or pretraining data. Testing that needs more checkpoints per family "
+  "than a 16GB machine comfortably holds.<br/>"
+  "3. <b>Qwen3-4B cannot be checked under chat format at all</b> (0.01 against a 0.30 bar), so the "
+  "format robustness check exists for only one Qwen model.<br/>"
+  "4. <b>Qwen3.5-4B-Base</b> was dropped from the base run to keep the primary pair clean - a "
+  "second Qwen base model would test whether this is Qwen3-4B or Qwen-the-family.<br/>"
+  "5. The soul result keeps behaving oddly - it failed cross-family three times, then took first "
+  "place the moment the prompt format changed. Not rehabilitated, not finished.")
 
 h1("8. Where the data is")
 p("Everything is committed and pushed. Raw results are JSON, one file per test per model.")
