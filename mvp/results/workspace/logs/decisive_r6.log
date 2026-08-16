@@ -1,0 +1,8 @@
+[held-out] 13 classes x 12 mental facets, disjoint from the 6x6 selection set
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:34,  2.20s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 74.08it/s]Loading weights:  45%|████▌     | 181/398 [00:03<00:02, 76.01it/s]Loading weights:  54%|█████▍    | 216/398 [00:03<00:02, 77.55it/s]Loading weights:  60%|██████    | 240/398 [00:03<00:02, 78.02it/s]Loading weights:  65%|██████▌   | 259/398 [00:04<00:02, 46.38it/s]Loading weights:  68%|██████▊   | 272/398 [00:05<00:02, 48.05it/s]Loading weights:  71%|███████   | 283/398 [00:05<00:02, 48.95it/s]Loading weights:  73%|███████▎  | 292/398 [00:05<00:02, 48.92it/s]Loading weights:  75%|███████▌  | 300/398 [00:05<00:02, 43.61it/s]Loading weights:  78%|███████▊  | 311/398 [00:06<00:01, 44.97it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 47.95it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 51.69it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 54.22it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 56.25it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 57.94it/s]Loading weights:  95%|█████████▍| 377/398 [00:07<00:00, 59.98it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 61.99it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.90it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=19 fmt=T4 alphas=[0.05, 0.1, 0.2, 0.3, 0.4] seeds=20
+[vec] 3 constructions + 20 random
+[resume] 84 cells on disk
+[pin] keeping 8/13 classes; dropped ['human_dev', 'animal_other', 'animal_simple', 'object_nat', 'object_comp']
+  ...10 new cells, 27.3m
+[chunk] 12 cells, exiting for a fresh process

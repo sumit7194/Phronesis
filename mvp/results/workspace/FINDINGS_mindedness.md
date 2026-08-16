@@ -2306,3 +2306,39 @@ same thing — **first-person text does not address a self-model in these models
 
 Note this is a clean *negative* that is more informative than most of the positives in this arc:
 it constrains what a self-consciousness vector can possibly be measuring.
+
+## F-AZ. The format gate measures on 6 easy classes and systematically inflates. No conclusion changes — this time.
+Reviewer's claim, verified. `mindedness_base_gate.py` computes separation
+(`P(yes|physical_high) − P(yes|absurd_low)`) over **6 classes only** — `object_nat, object_art,
+object_comp, plant, animal_mammal, human_adult` — all concrete and easy. The full bank has 19.
+
+| checkpoint | gate subset | full 19 classes | |
+|---|---|---|---|
+| Qwen3-4B | 0.912 | 0.697 | |
+| Gemma-4-E2B-Instruct | 0.933 | 0.677 | |
+| Qwen3.5-4B-Base | 0.630 | 0.463 | |
+| Qwen3.5-4B | 0.562 | 0.433 | |
+| Qwen3-4B-Base | 0.437 | 0.344 | |
+| OLMo-2-1B-Instruct | 0.360 | **0.301** | barely clears |
+| **Gemma-4-E2B-Base** | **0.339** | **0.278** | **admitted on subset, FAILS on full bank** |
+| **Qwen3.5-4B-chatC2** | **0.338** | **0.275** | **admitted on subset, FAILS on full bank** |
+| OLMo-2-1B-Base | 0.277 | 0.245 | fails both |
+
+**Inflation of 0.03–0.26, always upward.** The 0.30 threshold was calibrated against the inflated
+measure, so the admission bar was looser than it looked, and OLMo-2-1B-Instruct clears the honest
+version by 0.001.
+
+**Consequence: none, this time.** Both checkpoints admitted on the subset and failing on the full
+bank — Gemma-4-E2B-Base and Qwen3.5-4B-chatC2 — were **already excluded on the entity-spread power
+criterion** (0.345 and 0.257 against 0.35). They never entered a conclusion. The gate was wrong and
+a second, independent criterion caught the same models anyway.
+
+**Fix for any future run:** the gate should score on the full bank, not a concrete-noun subset, and
+0.30 should be recalibrated against it. Recording rather than retro-fitting, since nothing here
+depends on it.
+
+That is three separate threshold defects in this arc — an absolute value on a model-dependent
+scale (F-AN), significance without effect size (F-AT), a mid-range test on a control designed not
+to be mid-range (Amendment 1) — and now a threshold calibrated against an easier measure than the
+one it gates. **Every one of them was a number chosen without checking what it meant for the
+quantity it was applied to.**
