@@ -2187,3 +2187,48 @@ speaker-frame items I get Qwen3.5-Instruct **1.23**, OLMo-Base **1.02**, Qwen3.5
 Different item subsets. The shared conclusion — **most checkpoints answer incoherently on this
 yes/no probe** (Gemma-Instruct 0.52: it says "No" to a claim *and* its denial) — holds either way,
 and it is worse than anything we had recorded.
+
+## F-AW. Resolving the F-AU discrepancy: F-AE applied the wrong power measure, and it cost us a checkpoint
+F-AU flagged that our records and a recomputation disagreed. Resolved.
+
+**Cause.** F-AE computed entity spread over **all 18 mental facets**; the power criterion as
+preregistered (2026-08-09) specifies the **6-facet experience axis**. Reproduced exactly:
+Qwen3-4B-Base all-mental **0.333** (recorded 0.33), Gemma-Base all-mental **0.266** (recorded 0.27).
+The criterion's own stated reference value settles which is intended — it lists Qwen3-4B at
+**0.75**, and the experience axis gives **0.740** where all-mental gives 0.559.
+
+**Consequence — exactly one verdict flips:**
+
+| checkpoint | experience axis (preregistered) | all-mental (used in F-AE) |
+|---|---|---|
+| **Qwen3-4B-Base** | **0.466 PASS** | **0.333 fail** |
+| Gemma-4-E2B-Base | 0.345 fail | 0.266 fail |
+| Qwen3.5-4B-chatC2 | 0.257 fail | 0.232 fail |
+| the other six | PASS | PASS |
+
+F-AE wrote *"applying the criterion honestly costs us one of our own models: Qwen3-4B-Base sits at
+0.33 and is below the bar."* **It sits at 0.466 on the preregistered measure and qualifies.** It
+was excluded by a measure the prereg does not specify.
+
+**Second discrepancy: the Gemma rank does not reproduce.** F-AE records Gemma-instruct at
+`moral_patient` **#3, "behind soul and sacredness"**. Current data gives **#1 of 18**, and Gemma's
+top-4 is `moral_patient, fear, emotion, personality` — no soul, no sacredness. The description
+"behind soul and sacredness" matches **Qwen3-4B's** ordering (`moral_patient, soul, sacredness,
+perception`), which suggests a transcription slip between rows, or a table written before Gemma was
+re-swept after the `chat_template.jinja` fix. I cannot determine which. **The current data is
+unambiguous: #1.**
+
+### Corrected statement of the moral-standing finding
+`moral_patient` is **#1 of 18 on all seven qualifying checkpoints** (the eighth and ninth fail the
+power criterion; the only non-#1 anywhere is Qwen3.5-chatC2 at #2, which fails it). Previously
+recorded as "5 of 6".
+
+**This correction makes the finding stronger, which is the direction that deserves the most
+suspicion.** Stating plainly why I am accepting it: the experience-axis definition is the one
+written down in the prereg *before* any of this, and it is corroborated by the criterion's own
+reference value. I am applying the preregistered rule, not selecting the flattering one — and the
+same rule leaves Gemma-Base and Qwen3.5-chatC2 excluded, which is not flattering.
+
+**Net effect:** the pretrained side of the finding gains a checkpoint (Qwen3-4B-Base is a base
+model), so moral standing under capacity loss now holds on **three base checkpoints** rather than
+two.
