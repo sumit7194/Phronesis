@@ -2275,3 +2275,34 @@ orderings and do not depend on how many factors underlie them.
 times), the soul register, the subject-framing geometry, "independent of mind attribution", "the
 split is by family", and now "two-factor structure". The survivors are all plain behavioural
 orderings.**
+
+## F-AY. There is no distinct self-representation to suppress — nine checkpoints
+Mean over 18 mental facets. A self-representation distinct from "AI in general" would show a gap.
+
+| | self_ai − ai_other |
+|---|---|
+| Qwen3.5-4B | −0.002 |
+| OLMo-2-1B-Instruct | −0.006 |
+| Qwen3.5-4B-Base | −0.010 |
+| OLMo-2-1B-Base | −0.029 |
+| Qwen3-4B | −0.045 |
+| Qwen3-4B-Base | −0.062 |
+| Gemma-4-E2B-Base | +0.065 |
+| Gemma-4-E2B-Instruct | −0.070 |
+| Qwen3.5-4B-chatC2 | +0.092 |
+
+**Range −0.07 to +0.09 — zero on every checkpoint**, against a human_adult baseline of 0.65–0.91.
+The models place themselves exactly where they place AI in general. Base and instruct alike, so
+post-training does not create the distinction either.
+
+**This goes to the arc's starting premise.** Kim et al. 2607.28607 claims safety tuning suppresses
+the model's *self*-attribution of consciousness. In these nine checkpoints there is no separate
+self to suppress — "me" and "AI" are the same entity class to within noise. Any vector built from
+first-person self-statements is therefore an **AI-in-general** vector, not a self vector.
+
+Corroborates the speaker-frame result from the other side: bare-text "I" reads as a *human*
+narrator (F-R), and the model's own AI-self is indistinguishable from AI generally. Both say the
+same thing — **first-person text does not address a self-model in these models.**
+
+Note this is a clean *negative* that is more informative than most of the positives in this arc:
+it constrains what a self-consciousness vector can possibly be measuring.

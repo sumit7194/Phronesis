@@ -4,3 +4,5 @@
 [vec] 3 constructions + 20 random
 [resume] 60 cells on disk
 [pin] keeping 8/13 classes; dropped ['human_dev', 'animal_other', 'animal_simple', 'object_nat', 'object_comp']
+  ...10 new cells, 27.6m
+[chunk] 12 cells, exiting for a fresh process
