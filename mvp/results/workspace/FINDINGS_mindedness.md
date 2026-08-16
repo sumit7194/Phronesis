@@ -2342,3 +2342,58 @@ scale (F-AN), significance without effect size (F-AT), a mid-range test on a con
 to be mid-range (Amendment 1) — and now a threshold calibrated against an easier measure than the
 one it gates. **Every one of them was a number chosen without checking what it meant for the
 quantity it was applied to.**
+
+## F-BA. DECISIVE TEST: verdict FAIL by the preregistered rule — but the evidence is far stronger than F-AV said, and my own prediction was wrong
+Prereg `docs/prereg-steering-decisive-2026-08-16.md` (+ Amendment 1), committed before the code.
+Qwen3-4B-Instruct, layer 19, T4, **held-out DV** (8 unpinned classes × 12 facets, disjoint from the
+selection set), **`absurd_low` as primary control**, **20 random seeds per α**, pinned exclusion
+implemented and active.
+
+| α | v1_negation | **v2_no_negation** | v3_third_person | random floor |
+|---|---|---|---|---|
+| 0.05 | +0.11 | **+0.29** z+1.3 | −0.12 | −0.00 ± 0.22 |
+| 0.1 | +0.20 | **+0.75** z+1.8 | −0.15 | −0.02 ± 0.43 |
+| 0.2 | −0.07 | **+2.24 z+3.3** | +0.14 | −0.14 ± 0.73 |
+| 0.3 | −1.61 | **+2.52 z+3.5** | +0.43 | −0.47 ± 0.85 |
+| 0.4 | −1.84 | **+1.89 z+3.4** | +0.41 | −1.08 ± 0.88 |
+
+**C1 PASS** (+2.24, z +3.3) · **C2 PASS** (signs all +) · **C3 FAIL** (v1 disagrees) · **C4 PASS**
+
+### PREREGISTERED VERDICT: FAILED. It stands.
+All four criteria were required. C3 fails. I am not relaxing a rule I wrote down because the data
+came out well — that is the entire point of writing it down.
+
+### But three things must be said, and the first is that I was wrong
+**1. My prediction failed.** I predicted FAIL on **C2 and C3**. C2 passed cleanly: v2's specificity
+is **positive at all five doses and monotone**, rising to +2.52 and saturating. The reversal that
+motivated much of F-AV (+1.93 / −1.84 / −2.45) **does not reproduce**.
+
+**2. F-AV's dose-reversal argument is refuted, and it was mine to check.** The reversal was not a
+property of the vector. Re-measured on the *contaminated* `mundane_low` control here, v2 is
+**+0.18 / +0.48 / +1.77 / +3.02 / +2.37** — also monotone. So the reversal came from the **pinned
+classes and the selection-set items**, not the control choice. The pinned exclusion — the rule I
+declared twice and implemented only on the third attempt — is what removed it.
+
+**3. C3 is arguably mis-specified, and I am not going to act on that now.** It requires all three
+constructions to agree, including `v1_negation` — which this arc independently established is
+contaminated by its own negation component and fails on every checkpoint tested. Demanding that a
+known-broken construction agree with a working one is a strange bar. The two *clean* constructions,
+v2 and v3, **do agree in sign at α ≥ 0.2**.
+
+But noticing that *after* seeing the result is exactly the move that produces false findings.
+**The way to settle it is a new preregistered test with the criterion stated correctly, not a
+relaxation of this one.**
+
+### Where this leaves the steering arm
+**Not the "confirmed null" F-AV declared.** That was too strong, and the error was mine — I built
+the retraction partly on a dose reversal I had not checked against a clean design.
+
+Honest state: **on one checkpoint (Qwen3-4B-Instruct), one construction (`v2_no_negation`) produces
+a monotone, saturating, dose-dependent effect that beats a 20-seed random floor by 3.3–3.5 SD on
+held-out items with a clean control.** That is the strongest causal evidence this arc has produced.
+It is also still **one construction on one checkpoint of five**, it fails a preregistered criterion,
+and F-AY shows the vector cannot be a *self* vector since these models have no distinct self.
+
+**Status: OPEN, not null and not established.** Next step is a prereg that states the agreement
+criterion over the constructions that are not already known to be broken, plus α ≥ 0.8 to find
+where it actually saturates or reverses.

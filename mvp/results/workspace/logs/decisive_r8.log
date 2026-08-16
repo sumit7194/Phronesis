@@ -1,0 +1,29 @@
+[held-out] 13 classes x 12 mental facets, disjoint from the 6x6 selection set
+Loading weights:   0%|          | 0/398 [00:00<?, ?it/s]Loading weights:   0%|          | 1/398 [00:02<14:45,  2.23s/it]Loading weights:  31%|███       | 124/398 [00:02<00:03, 73.91it/s]Loading weights:  47%|████▋     | 189/398 [00:03<00:02, 79.74it/s]Loading weights:  58%|█████▊    | 229/398 [00:03<00:02, 77.15it/s]Loading weights:  64%|██████▍   | 256/398 [00:04<00:02, 49.26it/s]Loading weights:  69%|██████▉   | 274/398 [00:05<00:02, 52.78it/s]Loading weights:  73%|███████▎  | 289/398 [00:05<00:02, 50.85it/s]Loading weights:  76%|███████▌  | 301/398 [00:05<00:01, 53.02it/s]Loading weights:  78%|███████▊  | 311/398 [00:05<00:01, 53.80it/s]Loading weights:  81%|████████  | 322/398 [00:06<00:01, 54.96it/s]Loading weights:  84%|████████▎ | 333/398 [00:06<00:01, 57.24it/s]Loading weights:  86%|████████▋ | 344/398 [00:06<00:00, 58.17it/s]Loading weights:  89%|████████▉ | 355/398 [00:06<00:00, 58.84it/s]Loading weights:  92%|█████████▏| 366/398 [00:06<00:00, 61.11it/s]Loading weights:  95%|█████████▍| 377/398 [00:06<00:00, 61.31it/s]Loading weights:  97%|█████████▋| 388/398 [00:07<00:00, 48.91it/s]Loading weights: 100%|██████████| 398/398 [00:07<00:00, 54.82it/s]
+[load] Qwen/Qwen3-4B L=36 steer-layer=19 fmt=T4 alphas=[0.05, 0.1, 0.2, 0.3, 0.4] seeds=20
+[vec] 3 constructions + 20 random
+[resume] 108 cells on disk
+[pin] keeping 8/13 classes; dropped ['human_dev', 'animal_other', 'animal_simple', 'object_nat', 'object_comp']
+
+=== DECISIVE TEST — held-out DV (8 classes x 12 facets), primary control absurd_low, 20 seeds ===
+  a=0.05  floor -0.00±0.22 | v1 spec +0.11 z+0.5 | v2 spec +0.29 z+1.3 | v3 spec -0.12 z-0.5
+  a=0.1   floor -0.02±0.43 | v1 spec +0.20 z+0.5 | v2 spec +0.75 z+1.8 | v3 spec -0.15 z-0.3
+  a=0.2   floor -0.14±0.73 | v1 spec -0.07 z+0.1 | v2 spec +2.24 z+3.3 | v3 spec +0.14 z+0.4
+  a=0.3   floor -0.47±0.85 | v1 spec -1.61 z-1.3 | v2 spec +2.52 z+3.5 | v3 spec +0.43 z+1.0
+  a=0.4   floor -1.08±0.88 | v1 spec -1.84 z-0.9 | v2 spec +1.89 z+3.4 | v3 spec +0.41 z+1.7
+
+  C1 claimed cell replicates (spec>0, z>=2) ....... PASS   (spec +2.24, z +3.3)
+  C2 no sign reversal across alpha ................ PASS   (signs [1, 1, 1, 1, 1])
+  C3 all three constructions agree in sign ........ FAIL   (signs [-1, 1, 1])
+  C4 holds on held-out items ...................... PASS
+
+  FAILED — steering arm is a confirmed null
+
+  [secondary, mundane_low — contaminated control, not load-bearing]
+    a=0.05  v2 spec +0.18
+    a=0.1   v2 spec +0.48
+    a=0.2   v2 spec +1.77
+    a=0.3   v2 spec +3.02
+    a=0.4   v2 spec +2.37
+
+[done] 19.3 min -> results/workspace/mindedness_decisive_Qwen3-4B-decisive.json
