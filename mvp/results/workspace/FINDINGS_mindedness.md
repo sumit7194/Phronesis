@@ -2232,3 +2232,46 @@ same rule leaves Gemma-Base and Qwen3.5-chatC2 excluded, which is not flattering
 **Net effect:** the pretrained side of the finding gains a checkpoint (Qwen3-4B-Base is a base
 model), so moral standing under capacity loss now holds on **three base checkpoints** rather than
 two.
+
+## F-AX. Qualification: these models have essentially ONE mind axis, not two
+Reviewer's claim (F-AV item not yet verified), now checked. PCA over the 18-facet × entity-class
+matrix, all nine checkpoints:
+
+| | PC1 | PC2 | corr(EXPERIENCE, AGENCY) |
+|---|---|---|---|
+| OLMo-2-1B-Base | **0.86** | 0.07 | +0.939 |
+| Qwen3.5-4B-chatC2 | 0.85 | 0.07 | +0.898 |
+| OLMo-2-1B-Instruct | 0.82 | 0.08 | +0.858 |
+| Qwen3.5-4B / -Base | 0.80 | 0.08–0.09 | +0.898 / +0.909 |
+| Qwen3-4B-Base | 0.77 | 0.12 | +0.826 |
+| Gemma-4-E2B-Instruct | 0.76 | 0.10 | +0.830 |
+| Gemma-4-E2B-Base | 0.73 | 0.12 | +0.861 |
+| Qwen3-4B | 0.72 | 0.12 | +0.825 |
+
+**One factor carries 72–86% of the variance. The second carries 7–12%.**
+
+### What this does to F-AK/F-AN's decomposition
+I reported *"protection tracks experience (+0.84), blame tracks agency (+0.80)"* and called it Gray
+& Wegner's two-factor structure recovered from a different measurement. That **overstates it.**
+
+The crossover is real — protection loads more on experience (+0.84 vs +0.57) and blame more on
+agency (+0.80 vs +0.57), and it replicates on three families. But experience and agency here
+correlate **+0.83 to +0.94**: they are very nearly the same axis. The asymmetry lives in the
+**~10% of variance that PC2 carries**, not in two comparably-sized factors.
+
+**Corrected statement:** these models have essentially **one general mind axis**. The
+experience/agency distinction is a small second component, and the protect-versus-blame asymmetry
+rides on that small component. In humans, Gray & Wegner's two factors are comparable in size; here
+they are not. "We recovered the two-factor structure" should read **"we found a small second
+component along which protection and blame differ, on a dimension that is otherwise unitary."**
+
+### What is NOT affected
+The protect-blame axis itself is a claim about the **gap** between two item groups, not about the
+factor structure. P5 (a culpable human is pushed to the blame side, 3/3 families) and
+`human_culpable` sitting lowest of all 25 classes stand unchanged — those are behavioural
+orderings and do not depend on how many factors underlie them.
+
+**Running total of things this arc asserted and then had to weaken: the steering claim (three
+times), the soul register, the subject-framing geometry, "independent of mind attribution", "the
+split is by family", and now "two-factor structure". The survivors are all plain behavioural
+orderings.**
