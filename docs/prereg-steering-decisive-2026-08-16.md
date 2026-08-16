@@ -60,3 +60,34 @@ forced-choice scale, the speaker-frame effect, and the preregistered protect-vs-
 Log-odds throughout. Specificity scored **in the direction of the vector's own effect** on the
 mental group (the sign error recorded in F-AQ). Effect size reported **alongside** every z, never
 alone (the flaw recorded in F-AT).
+
+---
+
+## AMENDMENT 1 — 2026-08-16, after an abort at the baseline, before any steered data
+The run **aborted at its own safety check** before producing a single steered measurement (no
+output file was written). The exclusion rule as written above was **mis-specified by me**, and this
+records the fix and the reasoning before re-running.
+
+**What went wrong.** I required both the mental group *and* the control to sit inside [0.05, 0.95].
+Applied to `absurd_low` that is self-defeating: `absurd_low` is the yes-bias detector and a **low
+baseline is its intended property**, not a defect. Measured range across the 13 held-out classes:
+**0.007 to 0.168**. The rule dropped 12 of 13 classes, and **every drop was triggered by
+`absurd_low`, none by the mental group** (mental means 0.179–0.582, all healthy).
+
+**The fix, and why it targets the real failure.** The failure mode the rule exists for is
+*clamp domination*: when a probability sits at or beyond the ε=1e-4 floor, its log-odds is
+fiction and any difference of two such values is meaningless (this is what corrupted Gemma in
+F-AN). A baseline of 0.007 is nowhere near that — logit −4.98 against a clamp at −9.21. So:
+
+- **Pinning test applies to the MENTAL group only:** 0.05 < mean-mental < 0.95.
+- **Clamp guard applies to every value used, controls included:** 0.001 < p < 0.999, i.e. an
+  order of magnitude clear of ε.
+- **Both are evaluated on BASELINE values only**, never on steered ones, so the exclusion cannot
+  depend on the outcome.
+- Steered values that hit the clamp are **counted and reported as a diagnostic**, not filtered —
+  filtering on the outcome is exactly the error this whole design exists to avoid.
+
+Under the corrected rule all 13 held-out classes are retained.
+
+**Nothing else changes.** The four pass criteria, the α grid, the 20 seeds, the held-out split, the
+primary control and my recorded prediction (FAIL on C2 and C3) all stand unamended.

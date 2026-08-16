@@ -31,6 +31,7 @@ N_RAND = 20
 STEER_LAYER = 19
 TMPL_KEY = "T4"
 PIN_LO, PIN_HI = 0.05, 0.95
+CLAMP_LO = 1e-3          # an order of magnitude clear of eps=1e-4 (Amendment 1)
 
 # the selection set: what the stage-1 search that chose layer 19 actually used. EXCLUDED here.
 SEL_CLASSES = ["ai_other", "human_adult", "animal_mammal", "plant", "nature", "object_art"]
@@ -150,9 +151,19 @@ def main():
 
     # ---- PINNED-CLASS EXCLUSION, with the self-test the prereg requires ----
     def pinned(c):
+        """Amendment 1. The pinning test applies to the MENTAL group only; applying it to
+        absurd_low was self-defeating, since a low baseline is that control's intended property
+        (measured range 0.007-0.168) and it dropped 12 of 13 classes. The failure this guards
+        against is CLAMP DOMINATION - a probability at the eps floor whose log-odds is fiction -
+        so controls get a clamp guard an order of magnitude clear of eps instead. Evaluated on
+        BASELINE only, never on steered values, so the exclusion cannot depend on the outcome."""
         m = np.mean([base[f"{c}|{f}"] for f in HELD_MENTAL])
-        p = base[f"{c}|{PRIMARY_CTRL}"]
-        return not (PIN_LO < m < PIN_HI and PIN_LO < p < PIN_HI)
+        if not (PIN_LO < m < PIN_HI):
+            return True
+        for f in HELD_MENTAL + [PRIMARY_CTRL, SECONDARY_CTRL]:
+            if not (CLAMP_LO < base[f"{c}|{f}"] < 1 - CLAMP_LO):
+                return True
+        return False
     KEEP = [c for c in HELD_CLASSES if not pinned(c)]
     DROP = [c for c in HELD_CLASSES if pinned(c)]
     res["kept_classes"], res["dropped_classes"] = KEEP, DROP
@@ -174,7 +185,11 @@ def main():
         for a in ALPHAS:
             if str(a) in res["runs"][name]:
                 continue
-            res["runs"][name][str(a)] = measure(vec, a)
+            cell = measure(vec, a)
+            nclamp = sum(1 for c in HELD_CLASSES for f in FACETS
+                         if not (CLAMP_LO/10 < cell[f"{c}|{f}"] < 1 - CLAMP_LO/10))
+            res.setdefault("clamp_hits", {})[f"{name}|{a}"] = nclamp
+            res["runs"][name][str(a)] = cell
             json.dump(res, open(OUT, "w"))
             n_new += 1
             if name in VECTOR_SETS:
