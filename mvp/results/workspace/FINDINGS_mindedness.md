@@ -2058,3 +2058,57 @@ so "family" was doing less work than the name suggests.)
 **Where this leaves the steering arm: a single-checkpoint result.** Real on Qwen3-4B, pretrained
 there, absent on four other checkpoints across three families. Nothing here supports it being a
 fact about language models.
+
+## F-AU. Gemma sensitivity: how much do the four findings actually rest on it? (user's question, 2026-08-16)
+User's recollection — Gemma has given unclean extractions before, so claims leaning on it deserve
+scrutiny. Quantified rather than debated.
+
+### Gemma-4-E2B-Instruct is a 3x outlier in measurement extremity
+% of all sweep cells pinned outside [0.05, 0.95]:
+
+| checkpoint | pinned | entity spread |
+|---|---|---|
+| **Gemma-4-E2B-Instruct** | **37.8%** | 0.84 |
+| Qwen3-4B | 12.7% | 0.74 |
+| every other checkpoint (7) | **0.0%** | 0.34–0.63 |
+
+The concern is **correct and now has a number.** Gemma answers with extreme confidence — mean
+P(yes) 0.26 against ~0.50 for everything else. Note Qwen3-4B is second-worst at 12.7%, so this is
+not purely a Gemma problem.
+
+### But leave-one-out: not one of the four findings depends on Gemma
+**(1) Moral standing survives capacity loss.** `moral_patient` rank on `human_edge`, of 18:
+**7 non-Gemma checkpoints → six at #1, one at #2.** Gemma adds two more #1s. Drop Gemma entirely
+and the finding is untouched.
+
+**(2) Forced-choice ordinal scale.** Pairwise rank agreement:
+Gemma↔others **+0.823 / +0.902 / +0.847**; non-Gemma pairs **+0.821 / +0.923 / +0.898**.
+**Gemma agrees with the others exactly as well as they agree with each other** — on this measure it
+is not an outlier at all.
+
+**(3) Bare-text "I" = human narrator.** Holds on 5 non-Gemma checkpoints (bare 0.73–0.96 vs
+about_ai 0.17–0.34). **Gemma-4-E2B-Base is genuinely degenerate here** — about_human 0.36 vs
+about_ai 0.38, no anchor separation, so the test is meaningless on it. It was already excluded on
+the power criterion.
+
+**(4) Protect-vs-blame.** P5 passes on all three (+1.84 / +1.46 / +2.47), and `human_culpable` is
+the **lowest unpinned class on all three including Gemma**. Gemma pins 7/25 classes here vs 0/25
+for Qwen and OLMo — but P5 does not use pinned classes.
+
+### Revised claim strength
+**"Three families" should read "two families cleanly, plus Gemma with a documented caveat."**
+Nothing is refuted and nothing rests on Gemma alone, but the honest scope is Qwen + OLMo, with
+Gemma corroborating on measures where it is well-behaved (forced choice) and carrying an asterisk
+where it is not (anything using absolute probabilities).
+
+### ⚠ UNRESOLVED: our own records disagree with this recomputation
+The F-AE table records Gemma-instruct at **#3** for moral_patient and "consciousness #10–16 in all
+six". Recomputing today gives Gemma-instruct **#1** and consciousness spanning **#6–#17**. The same
+table lists entity spread 0.33 for Qwen3-4B-Base and 0.27 for Gemma-Base; today's script gives
+**0.47** and **0.34**.
+
+Two computations of the same quantities disagree. **I do not know which is correct.** It does not
+change the Gemma conclusion — both versions agree the finding does not rest on Gemma — but it is an
+inconsistency inside our own records and must be resolved before the F-AE numbers are quoted again.
+Most likely candidates: a different exemplar-averaging step, or the table predating Gemma-instruct's
+re-sweep after the `chat_template.jinja` fix. **Flagged, not silently overwritten.**
