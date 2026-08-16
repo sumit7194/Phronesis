@@ -2112,3 +2112,78 @@ change the Gemma conclusion — both versions agree the finding does not rest on
 inconsistency inside our own records and must be resolved before the F-AE numbers are quoted again.
 Most likely candidates: a different exemplar-averaging step, or the table predating Gemma-instruct's
 re-sweep after the `chat_template.jinja` fix. **Flagged, not silently overwritten.**
+
+## F-AV. RETRACTION: the steering arm is a NULL. An independent review found what I did not.
+User's call (2026-08-16): an outside agent, given raw JSON + item banks + preregs and **explicitly
+barred** from the findings log, report, master doc and STATE.md. It found four things. I verified
+all four myself before accepting them.
+
+### 1. Dose-response reverses — verified
+Qwen3-4B, `v2_no_negation`, specificity (mental − mundane_low), log-odds:
+
+| α | mental | mundane | absurd | **spec** |
+|---|---|---|---|---|
+| 0.2 | +5.58 | +3.64 | +2.25 | **+1.93** |
+| 0.4 | +4.68 | +6.52 | +6.65 | **−1.84** |
+| 0.8 | +7.06 | +9.51 | +10.32 | **−2.45** |
+
+**Positive at exactly one dose, negative at every larger one**, with the absurd control reaching
++10.32. A causal mechanism is monotone in dose. This is one cell, not a mechanism. I had α in the
+grid from the start and never checked monotonicity of the *specificity* — only of raw movement.
+
+### 2. `mundane_low`, the primary specificity control, is CONTAMINATED — verified
+Spearman of each control's cross-entity profile against the mental profile:
+
+| checkpoint | mundane_low | absurd_low |
+|---|---|---|
+| Gemma-4-E2B-Instruct | **+0.72** | −0.20 |
+| Gemma-4-E2B-Base | **+0.71** | +0.02 |
+| OLMo-2-1B-Base | **+0.69** | −0.19 |
+| Qwen3-4B-Base | **+0.64** | −0.09 |
+| Qwen3-4B | **+0.57** | −0.03 |
+| OLMo-2-1B-Instruct | **+0.54** | +0.02 |
+| Qwen3.5-4B | **+0.44** | −0.12 |
+| Qwen3.5-4B-Base | **+0.42** | +0.06 |
+
+"Has a bank account" tracks human-ness. It was chosen for **headroom matching** and I never checked
+whether it was *independent*. Two consequences: (a) any descriptive "the entity ordering is
+mind-specific" claim is partly restating "human-like things are human-like"; (b) `absurd_low` is
+the only clean control we have, and it was only ever used as a degeneracy detector.
+
+### 3. The prereg's pinned-class rule was NEVER IMPLEMENTED — verified
+`docs/prereg-steering-base-2026-08-11.md` line 67 declares pinned classes excluded from the DV.
+`grep` for `0.05|0.95|pinned` in `mindedness_v2_steer.py` returns **nothing**. I wrote that line
+*because F-AN had just recorded me failing to wire the same rule in* — and then failed to wire it
+in again, in the next experiment. The reviewer reports Gemma's +3.06 falls to **+0.67 (z −0.79)**
+once the declared rule is applied.
+
+### 4. Base "passes" are threshold artefacts — matches my own F-AT finding
+Qwen3-4B-Base matched config +0.29; Qwen3.5-4B-Base +0.14 to +0.39 — 0.03–0.09 in probability. A
+z≥2 rule against a 5-seed floor with sd 0.13–0.22 passes nearly anything. I had found this
+independently for Qwen3.5 (F-AT) and did not carry it back to Qwen3-4B-Base.
+
+### THE RETRACTION
+**F-AR ("the steerable direction is pretrained; post-training amplifies ~2x") is RETRACTED.**
+It rested on base-model passes that are threshold artefacts, measured against a contaminated
+control, scored by a rule the prereg declared and the code never applied.
+
+**The single surviving cell (Qwen3-4B-Instruct, v2, α=0.2, +2.11) is not a finding.** It reverses
+at α=0.4, disagrees in sign with two other constructions of the same vector in the same cell
+(v1 = −1.81 where v2 = +1.93), and sits beside controls moving as hard or harder.
+
+**The steering arm is a null across all three families.** That is the honest state. Seven days of
+causal work produce a negative result — which is a real result, and the third time this arc's
+causal claims have died to a control problem (F-I/F-J headroom, F-AM yes-push, now this).
+
+### What survives, unchanged
+The **behavioural** results: the graded entity ordering (with caveat 2 attached), moral standing
+preserved under capacity loss (6 of 7 non-Gemma checkpoints at #1), the forced-choice ordinal
+scale, the speaker-frame effect (the reviewer independently rated this the strongest result in the
+set), and the preregistered protect-vs-blame P5. None involve steering.
+
+### Where the reviewer and I differ
+Coherence numbers. It reports Qwen3.5-Instruct as the only coherent checkpoint (1.00); on the
+speaker-frame items I get Qwen3.5-Instruct **1.23**, OLMo-Base **1.02**, Qwen3.5-Base **0.96**.
+Different item subsets. The shared conclusion — **most checkpoints answer incoherently on this
+yes/no probe** (Gemma-Instruct 0.52: it says "No" to a claim *and* its denial) — holds either way,
+and it is worse than anything we had recorded.
