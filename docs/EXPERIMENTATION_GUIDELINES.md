@@ -187,3 +187,45 @@ type. That diagnosis was wrong and is retracted; the corrected lesson is smaller
   first tokens across the option set and fail loudly if it is much smaller than the option count.
 - **Tell:** flat results near chance plus a large position-order gap means "the measure is broken",
   not "there is no effect". Check the instrument before interpreting.
+
+## §16 — Thresholds must be stated in units of the thing they gate (added 2026-08-17)
+The mindedness arc produced **four separate threshold defects, all the same shape**: a number chosen
+without checking what it meant for the quantity it was applied to.
+
+| defect | what happened |
+|---|---|
+| Absolute threshold on a model-dependent scale | Predicted `\|gap\| < 0.12` for a quantity whose spread is a property of the model — it ran 2.15 / 4.11 / 8.68 across three checkpoints. The prediction failed on one and passed on another for that reason alone (F-AN). |
+| Significance without effect size | The highest z in the arc (+4.9) came off the **second-smallest effect** (0.31) because that checkpoint's random floor happened to be tight (sd 0.11). Another checkpoint showed effect **2.70** at z **+0.5** (F-AT). |
+| Mid-range test on a control designed not to be mid-range | Required `absurd_low` to sit inside [0.05, 0.95]. It is the yes-bias detector; a **low baseline is its purpose**. Dropped 12 of 13 classes and aborted the run (Amendment 1, prereg-steering-decisive). |
+| Threshold calibrated against an easier measure than the one it gates | The format gate scored 6 concrete classes; the bank has 19. Inflation up to 0.26, always upward, so the 0.30 bar was looser than it looked (F-AZ). |
+
+**Rules.**
+1. **Express thresholds in units of the measured spread**, not absolutes — "within 5% of the
+   observed range", not "< 0.12" — unless you have a reference value for that specific quantity on
+   that specific model.
+2. **Never report a z, SD-above-floor or p without the effect size beside it.** They dissociate.
+   When they disagree, the effect size is the one that means something.
+3. **Before applying a threshold to a control, ask what that control is *for*.** A control designed
+   to sit near zero will fail any "must be mid-range" test by construction.
+4. **A gate must score on the same items it gates.** If it screens a subset, its threshold is
+   calibrated on a different distribution from the one it admits people to.
+5. Pre-declaring a threshold does not make it correct. It makes it honest. **Check the units too.**
+
+## §17 — Record the DENOMINATOR of any renormalised probe (added 2026-08-17)
+A DV of the form `softmax over [" Yes", " No"]` is a **two-way renormalisation**. It is perfectly
+well-defined even when those tokens carry almost no probability — it just stops meaning anything.
+
+The mindedness arc ran for seven days, produced ~30 findings and three preregistrations, and
+**never once stored the denominator**. When it was finally measured, the answer was survivable
+(mean mass 0.683 on the good format, 88% top-1) — but it could equally have invalidated everything,
+and **no saved result could have told us either way** (F-BB).
+
+**Rules.**
+1. **Always save the raw mass** of the tokens you renormalise over, alongside the renormalised DV.
+   It costs one float per prompt.
+2. **Check whether the mass covaries with your independent variable.** Uniformly low mass is a
+   power problem; mass that tracks your IV is a confound — the ordering would be partly an artefact
+   of which prompts the probe can read.
+3. **Record what the model actually wanted to say** (top-k) on a sample. On one format here the
+   model's first choice was `" The"` 23% of the time, which is the signature of a probe the prompt
+   format is fighting.
