@@ -2397,3 +2397,48 @@ and F-AY shows the vector cannot be a *self* vector since these models have no d
 **Status: OPEN, not null and not established.** Next step is a prereg that states the agreement
 criterion over the constructions that are not already known to be broken, plus α ≥ 0.8 to find
 where it actually saturates or reverses.
+
+## F-BB. Probe validity: the DV is real, T4 is much cleaner than T1, and the entity ordering is NOT a mass artefact
+The reviewer's sharpest unanswered question (F-AV): every DV in this arc is a two-way renormalised
+softmax over `" Yes"`/`" No"`, and **nothing ever recorded the denominator**. If those tokens carry
+no mass, every number in seven days of work is a ratio of noise. No saved result could answer it.
+Re-probed directly.
+
+| | **T4** (used in the decisive test) | T1 |
+|---|---|---|
+| mean raw P(" Yes")+P(" No") | **0.683** | 0.531 |
+| median | 0.728 | 0.561 |
+| 10th percentile | 0.337 | **0.079** |
+| prompts with mass < 0.10 | **1%** | 13% |
+| prompts with mass < 0.01 | **0%** | 2% |
+| top-1 token is Yes or No | **88%** | 61% |
+
+**The probe is not measuring noise.** On T4 the two tokens carry two-thirds of the distribution and
+are the model's actual first choice 88% of the time. **T4 is substantially cleaner than T1** — which
+independently vindicates the format gate's preference for T4 and the decisive test's use of it.
+
+### The caveat, and the check that defuses it
+Mass **does** vary by entity class (spread 0.325 on T4, 0.548 on T1). The fatal version of that
+would be mass tracking mind attribution — the ordering would then be partly an artefact of which
+prompts the probe can read at all. It does not:
+
+**rho(mass, mind) = +0.095 on T4** (+0.333 on T1). They dissociate plainly:
+
+| class | mass (T4) | mind |
+|---|---|---|
+| self_ai | **0.80** | 0.31 |
+| object_art | **0.75** | 0.15 |
+| animal_mammal | **0.51** | **0.67** |
+
+`animal_mammal` has among the lowest mass and the second-highest mind score; `self_ai` and
+`object_art` have high mass and low mind. **The entity ordering is not a mass artefact.**
+
+### Honest limitation
+13% of **T1** prompts sit below 0.10 mass, and most of this arc's earlier sweeps averaged T1–T4.
+Those results are therefore built partly on prompts where the probe was weakly defined. The
+decisive test and everything scored on T4 are clean; the older averaged-format sweeps carry this
+caveat. Not fatal — the ordering replicates on T4 alone — but it should be stated wherever the
+old sweeps are quoted.
+
+**Verdict: the measurement is sound enough to carry the behavioural findings.** This was the one
+outstanding question that could have invalidated the whole arc, and it does not.

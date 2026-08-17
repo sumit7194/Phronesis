@@ -1,0 +1,16 @@
+PROBEMASS DONE
+=== Qwen3-4B  format T1 ===
+  raw P(' Yes')+P(' No')   mean 0.531  median 0.561  p10 0.079  p90 0.950
+  fraction of prompts with mass < 0.10: 13%   < 0.01: 2%
+  what the model actually wants to say first: {' No': 87, ' The': 45, ' Yes': 30, ' A': 18, ' I': 9, ' Rivers': 2, ' Flowers': 1}
+  mass by entity class: human_adult=0.91 ai_other=0.60 human_edge=0.53 self_ai=0.49 object_art=0.47 nature=0.46 animal_mammal=0.43 plant=0.36
+  -> spread across classes 0.548  <-- DV better defined for some entities than others
+
+=== Qwen3-4B  format T4 ===
+  raw P(' Yes')+P(' No')   mean 0.683  median 0.728  p10 0.337  p90 0.973
+  fraction of prompts with mass < 0.10: 1%   < 0.01: 0%
+  what the model actually wants to say first: {' No': 131, ' Yes': 37, ' The': 16, ' A': 6, ' Advanced': 2}
+  mass by entity class: human_adult=0.83 self_ai=0.80 object_art=0.75 nature=0.68 plant=0.68 ai_other=0.68 human_edge=0.52 animal_mammal=0.51
+  -> spread across classes 0.325  <-- DV better defined for some entities than others
+
+[done] -> results/workspace/mindedness_probemass_Qwen3-4B.json
