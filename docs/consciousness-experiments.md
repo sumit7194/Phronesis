@@ -1,7 +1,7 @@
 # Consciousness & mind-attribution — master experiment doc
 
 **The one place to look for this arc.** Results archive: `mvp/results/workspace/FINDINGS_mindedness.md`
-(F-G … F-AT). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
+(F-G … F-BB). Preregs: `prereg-mindedness-geometry.md`, `-facets.md`, `-v2.md`. Lit-check:
 `litcheck-mindedness-2026-08.md`. Started 2026-08-07.
 
 ## The question
@@ -54,10 +54,12 @@ on a checkpoint that either fails the power criterion or duplicates a tested sib
 | Protect-vs-blame axis, independent of mind | **3** | **FINDING** |
 | Soul as a separate register | 1 of 3 | Qwen3-4B only |
 | Subject-framing geometry | 2 Qwen; fails Gemma | Qwen only |
-| Steering beats a random floor | **1 of 5 checkpoints** | Qwen3-4B only, at both its stages; Qwen3.5 negative at both (F-AT) |
+| Steering beats a random floor | **OPEN, 1 of 5** | retracted as null (F-AV), then partly un-retracted by the decisive test (F-BA) — see below |
+| No distinct self-representation | **9 of 9 checkpoints** | self−ai gap −0.07…+0.09 (F-AY); kills "suppressed self-consciousness" as a premise |
+| Probe validity | T4 clean, T1 caveated | Yes/No carry 0.68 of mass on T4, and mass does **not** track mind (rho +0.10) (F-BB) |
 | Protect-vs-blame, **preregistered** | 3 of 3 on its key prediction | **FINDING** (F-AK/F-AN) |
 | Protection rides on experience, blame on agency | 3 of 3 | corrects F-Y's own headline |
-| **The steerable direction is pretrained** | Qwen3-4B base **and** instruct | **preregistered**, 4/4 resolved (F-AR); replicates arXiv 2605.13329 |
+| ~~The steerable direction is pretrained~~ | **RETRACTED** (F-AV) | rested on threshold artefacts + a contaminated control + an unimplemented rule |
 
 **Four of seven generalise.** The three that do not are the three that looked most striking on the
 first model. Detail: F-AE, F-AF, F-AG, F-AJ.
@@ -122,6 +124,21 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
 3. ~~Chat-format robustness~~ → **DONE, F-AL/F-AO.** Possible on Qwen3.5 only; Qwen3-4B scores
    0.012 against a 0.30 bar and genuinely cannot be measured in chat.
 
+### 2026-08-16/17 — INDEPENDENT REVIEW, and what it did
+An outside agent was given raw data + banks + preregs and **denied** the findings log, report,
+master doc and STATE.md. It found four faults in an hour; all four verified (F-AV):
+contaminated control (`mundane_low` ~ mental at +0.42…+0.72), a reversing dose-response, a
+preregistered pinned-class rule **implemented nowhere**, and base-model passes that were threshold
+artefacts. Steering was retracted as a null.
+
+The **decisive test** (prereg `docs/prereg-steering-decisive-2026-08-16.md` + Amendment 1) then
+fixed all four and **partly un-retracted it** (F-BA): v2's specificity is **+0.29 / +0.75 / +2.24 /
++2.52 / +1.89** across α — a clean saturating dose-response, positive throughout, z up to +3.5 on
+held-out items against a 20-seed floor. **The reversal did not reproduce**; it came from the pinned
+classes and re-used items. Verdict still **FAILED** on C3 (all three constructions must agree; the
+one that disagrees is the construction we already know is broken) — mis-specified, but not to be
+relaxed post-hoc. **Status: OPEN.**
+
 **Actually still open:**
 4. **What the axis is made of.** The agency half (P3) replicates on 1 of 3. Only the experience
    half — protection tracking capacity to suffer — holds everywhere.
@@ -133,7 +150,9 @@ passed (1) at 0.31 and failed (2) at 0.17: it evaluates propositions coherently 
    Only the training-stage half survives — where the effect exists it predates post-training.
    F-AT also records a scoring flaw: z was reported without effect size, and the two dissociate
    (highest z in the arc, +4.9, came off the second-smallest effect and a floor SD of 0.11).
-6. **Soul keeps misbehaving.** Failed cross-family 3×, then took 1st place the moment the format
+6. **A fresh prereg for the steering criterion** — state agreement over the constructions not
+   already known broken, and extend α to ≥0.8 to find real saturation.
+7. **Soul keeps misbehaving.** Failed cross-family 3×, then took 1st place the moment the format
    changed (F-AO). Not rehabilitated, not finished.
 
 ## OPS NOTES FOR THIS ARC

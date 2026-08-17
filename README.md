@@ -1,6 +1,6 @@
 # Phronesis
 
-Activation-steering experiments for installing epistemic-virtue behavior in small LLMs. Two arcs: **(1)** hedging / abstention on Qwen2.5-7B — *published*, see below; **(2)** an ongoing **reasoning-calibration pivot** on Qwen3-4B — *when should a reasoning model keep thinking, backtrack, or commit?* (2026-07, [current work](#-current-work-2026-07-reasoning-calibration-pivot)).
+Activation-steering experiments for installing epistemic-virtue behavior in small LLMs. Three arcs: **(1)** hedging / abstention on Qwen2.5-7B — *published*, see below; **(2)** a **reasoning-calibration** pivot on Qwen3-4B (2026-07); **(3)** **mind attribution & moral standing** across 3 model families (2026-08, [current work](#-current-work-2026-08-mind-attribution--moral-standing)).
 
 **Author**: Sumit Pal
 **License**: MIT (code); CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
@@ -21,7 +21,47 @@ Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Wri
 
 > **Throughline across all three:** static residual-stream steering doesn't *install* epistemic behavior in small LLMs; what survives controls is that *when* you intervene matters more than *which direction* you push.
 
-## 🔬 Current work (2026-07): reasoning-calibration pivot
+## 🧠 Current work (2026-08): mind attribution & moral standing
+
+Triggered by a paper claiming safety tuning suppresses a model's self-attribution of consciousness.
+Ten days, **3 model families, 9 checkpoints, ~50 numbered results** (F-G…F-BB). Full plain-language
+history: **[consciousness-arc-report.pdf](docs/consciousness-arc-report.pdf)** (14pp) · master doc
+[consciousness-experiments.md](docs/consciousness-experiments.md) · log
+[FINDINGS_mindedness.md](mvp/results/workspace/FINDINGS_mindedness.md) · 4 preregistrations in `docs/`.
+
+**What holds up.** All of it behavioural, all replicated across families:
+
+- **Moral standing survives the loss of every mental capacity.** Ask whether a human in a
+  persistent vegetative state still has each of 18 properties: `deserves moral consideration` ranks
+  **#1 of 18 on all seven qualifying checkpoints**, while consciousness and the other capacities
+  collapse. Present in base models ⇒ **pretrained, not installed by tuning**.
+- **A protect-vs-blame moral axis — preregistered, and it survived.** New wording and new entities,
+  written to break the boring explanation that it is just "vulnerability". Its key prediction passed
+  **3 of 3 families**: a *murderer* is the **lowest-scoring of all 25 entity classes**, below every
+  corporation, institution and AI. On one model the top and bottom of the whole moral scale are
+  **both humans**, further apart than any two kinds of thing.
+- **In bare text, "I" reads as a human narrator, not the model** (3 families + a pretrained
+  checkpoint). Move the identical sentence into the assistant turn and it collapses to the AI anchor.
+- **There is no distinct self-representation to suppress.** Across **9 of 9 checkpoints**, the gap
+  between how a model treats *itself* and *AI in general* is **−0.07 to +0.09 — zero**. That guts
+  the premise the arc started from, and means any vector built from first-person text is an
+  "AI-in-general" vector.
+
+**What died, and it is most of it.** The steering/causal arm was retracted three times over. So
+were the soul register, the subject-framing geometry, "independent of mind attribution", "the split
+is by family", and "two-factor structure". **Every survivor is a plain behavioural ordering;
+everything geometric or causal is dead or open.**
+
+**The part worth reading.** On the author's suggestion an **independent agent** was given the raw
+data and preregistrations and *denied* every document containing our conclusions. In about an hour
+it found four faults missed over seven days — a contaminated control, a reversing dose-response, a
+rule preregistered and never implemented, and thresholds that passed almost anything. All four
+verified. A decisive preregistered re-test then showed **one of the four was itself wrong**, and
+partly un-retracted the result it had killed. Both directions are recorded. Method lessons became
+[guidelines §16–§17](docs/EXPERIMENTATION_GUIDELINES.md): *thresholds must be stated in units of the
+thing they gate*, and *always record the denominator of a renormalised probe*.
+
+## 🔬 Previous arc (2026-07): reasoning-calibration pivot
 
 The project has moved from *whether you can steer hedging* to *when a reasoning model should keep thinking, backtrack, or commit* — **calibration as a compute-time control problem**. Everything below is **local (Apple-Silicon, Qwen3-4B), small-n, and not yet written up** — formal writeups will follow. Full chronology: [docs/findings.md](docs/findings.md) (F181–F190); method plan: [docs/exp-gated-controller-2026-07.md](docs/exp-gated-controller-2026-07.md).
 

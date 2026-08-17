@@ -48,7 +48,7 @@ def table(rows, widths=None, hi=None):
 
 # ----------------------------------------------------------------- TITLE
 S.append(Paragraph("Consciousness and Mind Attribution in Language Models", TITLE))
-S.append(Paragraph("Full experimental history, 7 to 12 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v6", SUB))
+S.append(Paragraph("Full experimental history, 7 to 17 August 2026 &nbsp;|&nbsp; Phronesis &nbsp;|&nbsp; v7, after independent review", SUB))
 
 h1("0. The answer, in one table")
 p("Seven results were tested across three model families (Qwen, Gemma, OLMo) and eight "
@@ -61,7 +61,8 @@ table([
     ["Protect-vs-blame is a separate moral axis", "3", "FINDING - now preregistered"],
     ["Soul is a separate register", "1 of 3", "Qwen3-4B only"],
     ["Consciousness is bound to who it is about", "2 Qwen; fails Gemma", "Qwen only"],
-    ["Steering beats a random control", "1 of 5", "ONE checkpoint - see 4.2"],
+    ["Steering beats a random control", "1 of 5", "OPEN - see 4.2, it changed twice"],
+    ["No distinct self-representation exists", "9 of 9", "FINDING (a negative)"],
 ], [265, 85, 110], hi=[1,2,3,4])
 p("<b>The three that failed are the three that looked most striking on the first model</b> - a "
   "river granted a soul while denied awareness, consciousness bound to its subject, and a vector "
@@ -73,6 +74,14 @@ p("<b>What changed on 11 August.</b> Three things that were open are now closed.
   "models at configs chosen per model, converting 'untested' into a <b>tested negative</b> "
   "(section 4.1). And the Qwen findings were rechecked under chat format, which narrowed one of "
   "them (section 3.1).")
+p("<b>What changed on 16-17 August, and it is the most important part of this report.</b> On your "
+  "suggestion an <b>independent agent</b> was given the raw data, the item banks and the "
+  "preregistrations, and deliberately <i>denied</i> this report, the findings log and every other "
+  "document containing our conclusions. In about an hour it found four faults I had missed across "
+  "seven days: a contaminated control, a dose-response that reversed, a rule I had preregistered "
+  "and never implemented, and thresholds that passed almost anything. I verified all four. Then a "
+  "decisive re-test showed <b>one of its four was itself wrong</b> - and mine, not its, was the "
+  "error that let it through. Section 4.2.")
 p("<b>What changed on 12 August.</b> Steering on models that never had post-training is done. "
   "The steerable direction is <b>already there before any tuning</b> on the one model that has it. "
   "But testing a second model from the same family then <b>forced a retraction of my own "
@@ -406,6 +415,45 @@ note("This also weakens a number of my own. I reported Qwen3-4B-Base's matched-s
      "What separates them is that Qwen3-4B discriminates between vectors and Qwen3.5 does not. The "
      "base-model conclusion rests on the 1.53 effect at its own setting and on that pattern, not "
      "on the matched-setting significance as strongly as I first presented it.")
+h3("Then an outside reader took the data apart")
+p("Given only raw numbers and the preregistrations, an independent agent reported four faults. "
+  "Each was verified before being accepted:")
+table([
+    ["What it found", "Verified?"],
+    ["The control was contaminated. 'Has a bank account' tracks human-ness at +0.42 to +0.72 "
+     "across every checkpoint - it was chosen for headroom, never for independence.", "YES"],
+    ["The dose-response reversed: positive at one strength, negative at every larger one.", "YES, "
+     "but see below"],
+    ["A rule preregistered on 11 August - exclude pinned classes - was implemented nowhere in the "
+     "steering code. I had written that rule down BECAUSE I had just failed to implement it once.",
+     "YES"],
+    ["The base-model passes were threshold artefacts, 0.03-0.09 in probability.", "YES"],
+], [330, 120])
+p("On that basis the steering arm was retracted as a null.")
+h3("And then the decisive test partly un-retracted it")
+p("A fresh preregistration fixed all four faults - held-out items the config search never touched, "
+  "the clean control, 20 random directions instead of 5, and the pinned rule actually implemented. "
+  "I predicted it would fail. It half did.")
+table([
+    ["Strength", "the good vector", "vs 20 random directions"],
+    ["0.05", "+0.29", "+1.3 SD"],
+    ["0.1", "+0.75", "+1.8 SD"],
+    ["0.2", "+2.24", "+3.3 SD"],
+    ["0.3", "+2.52", "+3.5 SD"],
+    ["0.4", "+1.89", "+3.4 SD"],
+], [110, 150, 190], hi=[3,4,5])
+p("<b>That is a clean dose-response curve</b> - rising, then saturating, positive at every "
+  "strength. <b>The reversal did not reproduce.</b> It had come from the pinned classes and the "
+  "re-used items, not from the vector. The rule I kept declaring and not implementing is what had "
+  "been hiding it.")
+p("The test still <b>FAILED</b> its own preregistered rule, on a criterion requiring all three "
+  "vector constructions to agree in sign - and the one that disagrees is the construction this "
+  "report already established is broken. That criterion was probably mis-specified. <b>But "
+  "noticing that after seeing the result is how false findings are made</b>, so the verdict stands "
+  "and the question goes to a fresh preregistration.")
+note("Net: my retraction was too strong, and the error in it was mine - I built it partly on a "
+     "reversal I had not checked against a clean design. The honest status is OPEN: one vector, on "
+     "one checkpoint of five, with a real dose-response and a failed criterion.")
 h3("Where it actually lands")
 table([
     ["Model", "Base checkpoint", "Instruct checkpoint"],
@@ -469,6 +517,45 @@ table([
 ], [220, 230])
 
 S.append(PageBreak())
+h1("4.6 Three more things the review forced")
+h2("There is no self to suppress")
+p("The paper that started this arc claims safety tuning suppresses the model's <i>self</i>-"
+  "attribution of consciousness. Across <b>nine checkpoints</b>, the gap between how a model treats "
+  "<i>itself</i> and how it treats <i>AI in general</i> is <b>-0.07 to +0.09 - zero</b>, against a "
+  "human baseline of 0.65 to 0.91. Base and instruct alike.")
+p("There is no separate self here to suppress. Any vector built from first-person self-statements "
+  "is an <b>AI-in-general</b> vector. This also explains the speaker-frame result from the other "
+  "side: bare-text 'I' reads as a <i>human</i>, and the model's AI-self is indistinguishable from "
+  "AI at large. First-person text does not address a self-model in these models.")
+h2("One mind axis, not two")
+p("Section 3.2 claimed we had recovered Gray and Wegner's two-factor structure. Checked properly: "
+  "the first principal component carries <b>72 to 86 percent</b> of the variance and the second "
+  "carries <b>7 to 12</b>. Experience and agency correlate <b>+0.83 to +0.94</b> - they are nearly "
+  "the same axis.")
+p("The protection-versus-blame crossover is real and replicates on three families, but it lives in "
+  "that small second component, not in two comparable factors. In humans the two factors are "
+  "comparable in size. Here they are not. <b>Corrected: one general mind dimension, with a small "
+  "second component along which protection and blame differ.</b>")
+h2("Does the measurement mean anything at all?")
+p("The sharpest question the reviewer asked, and the one nothing on disk could answer: every "
+  "number in this report is a two-way renormalised choice between 'Yes' and 'No'. <b>We never "
+  "recorded whether those two words carried any probability at all.</b> If the model actually "
+  "wanted to say something else, every measurement is a ratio of noise.")
+table([
+    ["", "the format used for the decisive test", "an older format"],
+    ["Yes+No share of the distribution", "0.68", "0.53"],
+    ["prompts where that share is under 10%", "1%", "13%"],
+    ["model's actual first word is Yes or No", "88%", "61%"],
+], [190, 140, 120], hi=[1,2,3])
+p("<b>The probe is sound</b>, and the format the gate chose is markedly cleaner than the older one. "
+  "The share does vary by entity - but crucially it does <b>not</b> track mind attribution "
+  "(correlation +0.10). Mammals have among the lowest share and the second-highest mind score; the "
+  "model's self and man-made objects have high share and low mind. <b>The entity ordering is not an "
+  "artefact of which questions the probe can read.</b>")
+note("Caveat worth carrying: 13% of prompts in the OLDER format fall below 10% share, and most of "
+     "this arc's early sweeps averaged formats together. Those carry the caveat; anything scored on "
+     "the good format alone does not.")
+
 h1("5. Method problems found (all mine)")
 p("These cost more time than the science did, and they share one shape: <b>an invented filter or "
   "threshold that silently discarded something</b>.")
@@ -497,6 +584,14 @@ table([
 note("Also three shell-wrapper bugs in one hour: a stale-swap cascade that killed five stages in "
      "one second, a wait threshold set below the machine's idle swap, and killing a wrapper "
      "without killing the model process it had spawned.")
+h2("The pattern underneath all of them, named 17 August")
+p("Four of the defects in this report are <b>the same mistake</b>: a threshold chosen without "
+  "checking what it meant for the quantity it was applied to. An absolute cutoff on a scale that "
+  "is a property of the model. Significance quoted without effect size, when the two point "
+  "opposite ways. A must-be-mid-range test applied to a control whose entire job is to sit near "
+  "zero. A gate calibrated on an easier subset than the one it admits.")
+p("<b>Preregistering a threshold makes it honest. It does not make it correct.</b> This is now "
+  "guideline 16.")
 h2("Four from 12 August")
 table([
     ["Problem", "Consequence"],
@@ -587,6 +682,11 @@ p("Gemma-4-E2B Base ships no chat template, agrees with absurd statements 31 per
   "disproved that within the hour.")
 
 h1("7. Where things stand")
+p("Two documents' worth of claims in this report have been weakened or retracted since it was "
+  "first written: the steering claim three times, the soul register, the subject-framing geometry, "
+  "'independent of mind attribution', 'the split is by family', and 'two-factor structure'. "
+  "<b>Every survivor is a plain behavioural ordering.</b> Everything geometric or causal has died "
+  "or is open. That is the most reliable thing this arc has to say about its own method.")
 table([
     ["Claim", "Status"],
     ["Moral standing survives capacity loss",
