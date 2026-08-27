@@ -123,9 +123,9 @@ def main():
     ap.add_argument("--bins", type=int, default=10)
     a = ap.parse_args()
     W = "results/workspace/calib"
-    benches = sorted({os.path.basename(f).split("_")[3] if False else
-                      os.path.basename(f)[len("run_%s_base_" % a.tag):-len("_%s.json" % a.arm)]
-                      for f in glob.glob("%s/run_%s_base_*_%s.json" % (W, a.tag, a.arm))})
+    pre, suf = "run_%s_base_" % a.tag, "_%s.json" % a.arm
+    benches = sorted({os.path.basename(f)[len(pre):-len(suf)]
+                      for f in glob.glob("%s/%s*%s" % (W, pre, suf))})
     if not benches:
         print("no completed cells found"); return 1
 

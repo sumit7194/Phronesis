@@ -101,3 +101,30 @@ the DV would be a ratio of noise.
 One model family, one pair, two benchmarks = **an observation, not a finding.** Promotion to a
 finding requires a second family (Gemma-4 or Olmo-3) or a second method. Per the project rule
 earned by six same-day retractions on 2026-08-08.
+
+---
+
+## ADDENDUM 1 — 2026-08-28 02:2x, after validating the scorer on synthetic data, before any real result
+`calib_analyze.py` had never been executed when this prereg was written. It has now been checked
+against cases with known answers (**synthetic data only** — deliberately not the pilot records, so
+that no outcome measure touches real data before the full run). All checks pass: AUROC returns
+exactly 1.0 / 0.0 / 0.5 on separated, inverted and fully-tied inputs, handles partial ties
+correctly, averages to 0.502 on random labels, and the Murphy identity
+`Brier = reliability - resolution + uncertainty` closes on six independent draws.
+
+**One property of the chosen method needs stating, because it was not obvious to me when I wrote
+the design.** Under a pure monotone rescale of confidence (sqrt, square, a sharpening
+`x^3/(x^3+(1-x)^3)`), the synthetic check gives:
+
+| | before | after |
+|---|---|---|
+| AUROC | 0.765971 | **0.765971** (identical to 6 dp) |
+| resolution | 0.0528 | **0.0528** (identical) |
+| reliability | 0.0005 | 0.0270 - 0.0488 |
+
+Because the bins are **equal-count**, bin membership is determined by ranks, so *resolution is also
+rescale-invariant*. That is the behaviour I want — reliability absorbs all of the rescaling and
+AUROC/resolution absorb all of the rank information, which is exactly the separation P2 turns on —
+but it means **resolution is not independent evidence from AUROC**. They are two views of the same
+rank quality. P3 should therefore be read as a consistency check on the decomposition, **not** as a
+second, corroborating test of P2. Nothing in the design changes; the predictions stand as written.
