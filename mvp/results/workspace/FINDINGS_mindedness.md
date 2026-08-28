@@ -2447,7 +2447,10 @@ outstanding question that could have invalidated the whole arc, and it does not.
 
 # CALIBRATION ARC (opened 2026-08-27, from a user question about a DeepMind podcast)
 
-## F-BC. Post-training made Qwen3.5-4B QUIETER and better calibrated, not louder. My own prediction failed, in the opposite direction.
+## F-BC. Post-training moved Qwen3.5-4B's confidence TOWARD calibration, in whichever direction it was wrong. It added no discrimination. My own prediction failed.
+*(Title amended 2026-08-29 after MMLU-Pro. The original read "made it QUIETER" — true of
+MMLU-CF, and wrong as a general claim: on MMLU-Pro post-training made it slightly LOUDER.
+See the replication section below.)*
 Prereg `docs/prereg-calibration-2026-08-28.md` + Addendum 1, committed **c5adc406 / 72632477 before
 any outcome measure had been computed on any data**. Primary benchmark **MMLU-CF**, n=1500 items,
 `Qwen3.5-4B-Base` vs `Qwen3.5-4B`, format matched by construction (byte-identical raw 5-shot
@@ -2525,3 +2528,76 @@ renormalisation: median mass 0.937–0.998 across all four pilot cells, **0%** o
 mass, and the model's actual top-1 token was an option letter **100%** of the time. The
 mindedness T1 readout was 0.531 median with 13% of prompts under 0.10. If that arc is ever
 revisited, this is the format to use.
+
+### REPLICATION on MMLU-Pro (added 2026-08-29, run complete 00:33). Same prereg, no changes.
+10-way, k=10 items only, n=1500, same format-matched protocol. All four cells integrity-checked.
+
+| | **MMLU-CF** (4-way, ~63%) | | **MMLU-Pro** (10-way, ~48%) | |
+|---|---|---|---|---|
+| | base → instruct | Δ [95% CI] | base → instruct | Δ [95% CI] |
+| accuracy | 0.6340 → 0.6300 | −0.0040 [−.017, +.009] | 0.4813 → 0.4787 | −0.0027 [−.022, +.015] |
+| **mean confidence** | 0.6890 → 0.6544 | **−0.0345 [−.038, −.031]** | 0.4428 → 0.4484 | **+0.0056 [+.000, +.011]** |
+| **AUROC** | 0.7534 → 0.7701 | +0.0166 [−.003, +.036] | 0.7736 → 0.7850 | +0.0114 [−.011, +.034] |
+| resolution | 0.0423 → 0.0481 | +0.0058 [−.002, +.014] | 0.0624 → 0.0636 | +0.0012 [−.007, +.010] |
+| reliability | 0.0044 → 0.0015 | −0.0029 [−.006, +.000] | 0.0022 → 0.0016 | −0.0005 [−.004, +.002] |
+| ECE | 0.0620 → 0.0345 | −0.0275 [−.042, −.001] | 0.0385 → 0.0326 | −0.0060 [−.026, +.014] |
+| letter mass (median) | 0.9975 → 0.9920 | — | 0.9956 → 0.9362 | — |
+
+#### The confidence delta FLIPS SIGN between benchmarks — and that is the result, not a failure
+Both CIs exclude zero, in opposite directions. It looks like a failed replication until you look at
+which side of calibration the base model started on:
+
+| | base gap (conf − acc) | instruct gap | \|gap\| |
+|---|---|---|---|
+| MMLU-CF | **+0.0550 OVERconfident** | +0.0244 | 0.0550 → **0.0244** |
+| MMLU-Pro | **−0.0385 UNDERconfident** | −0.0303 | 0.0385 → **0.0303** |
+
+**The base model is overconfident on the easier benchmark and underconfident on the harder one.
+Post-training moved it toward calibration in both cases** — down where it was too high, up where it
+was too low. The *mechanism* replicates exactly; only the *direction of travel* is task-dependent.
+
+#### What this forces me to correct
+1. **F-BC's original title ("made it QUIETER") is wrong as a general claim** and has been amended
+   above. It described MMLU-CF only. The right statement is *toward the correct level, whichever
+   side it started on*.
+2. **A non-preregistered hunch of mine, stated to the user on 08-28, was wrong:** I said if the
+   confidence drop were the model learning to hedge, it should appear *more* on the harder
+   benchmark. It did not appear more — it **reversed**.
+
+#### What replicates on BOTH benchmarks
+- **accuracy unchanged** (−0.004, −0.003; both CIs span zero) — post-training added no task ability
+- **AUROC unchanged** (+0.017, +0.011; **both CIs span zero**), resolution likewise
+- confidence moves toward calibration; \|gap\| shrinks both times
+
+**Core conclusion holds and is stronger for the replication: BETTER-SCALED, NOT BETTER-INFORMED.**
+Post-training recalibrated this model without measurably improving its ability to tell which
+questions it can answer. Since AUROC is invariant to any monotone rescaling of confidence
+(verified on synthetic data, Addendum 1), a **flat AUROC alongside a real confidence shift is the
+signature of pure rescaling** — and we now have it twice, in opposite directions.
+
+#### Final preregistered scorecard
+| | prediction | MMLU-CF | MMLU-Pro |
+|---|---|---|---|
+| P1 | confidence rises > +0.05 | **FAIL** (fell 0.0345) | **FAIL** (rose 0.0056) |
+| P2 | ΔAUROC < +0.03 and CI includes 0 | holds | holds |
+| P3 | \|Δresolution\| < \|Δreliability\| | **FAIL** (0.0058 vs 0.0029) | **FAIL** (0.0012 vs 0.0005) |
+| P4 | Δaccuracy < +0.05 | PASS | — |
+| P5 | letter mass ≥ 0.50 | PASS | PASS |
+
+**P2 is still not scored as vindication.** It predicted flat AUROC *because the model had merely got
+louder*. On MMLU-CF the model got **quieter**. The number was right for a reason I did not have,
+and a passed threshold is not a passed hypothesis.
+
+**The 2026-08-27 claim to the user — that post-training is what makes models overconfident —
+remains RETRACTED.** It reduced miscalibration in both directions on this pair.
+
+#### Status: OBSERVATION, not a finding
+Two benchmarks, but **one family and one checkpoint pair**. A second family is what promotion needs;
+Qwen3.5-2B (same recipe, different size) and Gemma-4-E2B are both eligible and cheap. Note the
+mindedness arc's F-AU flagged Gemma-4-E2B as a 3x outlier in measurement extremity, so Qwen3.5-2B
+is the safer first move and Gemma the harder test.
+
+#### Side observation, not load-bearing
+Both checkpoints discriminate **better** on the harder benchmark (AUROC 0.774/0.785 on MMLU-Pro vs
+0.753/0.770 on MMLU-CF; resolution 0.062 vs 0.042). Consistent with MMLU-Pro having a wider spread
+of item difficulty, which is what populates a calibration curve. Untested.

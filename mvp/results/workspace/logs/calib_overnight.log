@@ -1,0 +1,7 @@
+=== overnight start 2026-08-28_01:39:24 ===
+[ok] pilot finished 02:07:25
+[resume-test] killed with 50 records, complete=False
+[resume-test] after resume: 100 records, complete=True, items 0..99 contiguous=True
+[resume-test] PASS
+[done] mmlu_cf/base  (attempt 1)  03:17:05
+[done] mmlu_cf/instruct  (attempt 1)  04:23:50

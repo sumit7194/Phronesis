@@ -1,0 +1,67 @@
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf: 200 items, k=4, 5-shot ===
+  [BASE] models/Qwen3.5-4B-Base
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 7470.69it/s]
+    [Qwen3.5-4B-BASE/mmlu_cf] 25/200  acc=0.660  1.49s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 50/200  acc=0.670  1.40s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 75/200  acc=0.647  1.37s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 100/200  acc=0.665  1.37s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 125/200  acc=0.672  1.37s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 150/200  acc=0.697  1.36s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 175/200  acc=0.703  1.36s/pass
+    [Qwen3.5-4B-BASE/mmlu_cf] 200/200  acc=0.698  1.35s/pass
+  [INSTRUCT] models/Qwen3.5-4B
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 6111.74it/s]
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 25/200  acc=0.740  1.50s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 50/200  acc=0.710  1.39s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 75/200  acc=0.713  1.37s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 100/200  acc=0.705  1.37s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 125/200  acc=0.708  1.37s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 150/200  acc=0.723  1.37s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 175/200  acc=0.717  1.36s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_cf] 200/200  acc=0.720  1.36s/pass
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+
+=== mmlu_pro: 200 items, k=10, 5-shot ===
+  [BASE] models/Qwen3.5-4B-Base
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4283.73it/s]
+    [Qwen3.5-4B-BASE/mmlu_pro] 25/200  acc=0.420  4.07s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 50/200  acc=0.500  4.61s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 75/200  acc=0.500  4.63s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 100/200  acc=0.460  5.05s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 125/200  acc=0.456  5.49s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 150/200  acc=0.473  5.36s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 175/200  acc=0.494  5.20s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 200/200  acc=0.480  5.17s/pass
+  [INSTRUCT] models/Qwen3.5-4B
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 29758.73it/s]
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 25/200  acc=0.420  4.13s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 50/200  acc=0.460  4.70s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 75/200  acc=0.473  4.61s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 100/200  acc=0.425  4.74s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 125/200  acc=0.444  5.07s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 150/200  acc=0.453  5.02s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 175/200  acc=0.477  4.91s/pass
+    [Qwen3.5-4B-INSTRUCT/mmlu_pro] 200/200  acc=0.485  4.90s/pass
+
+================================================================================================
+bench      role         acc  chance  massMed  mass<.1  top1=L   bias  s/pass
+------------------------------------------------------------------------------------------------
+mmlu_cf    BASE       0.698   0.250    0.998    0.000   1.000  0.050    1.35
+mmlu_cf    INSTRUCT   0.720   0.250    0.992    0.000   1.000  0.005    1.36
+mmlu_pro   BASE       0.480   0.100    0.996    0.000   1.000  0.038    5.17
+mmlu_pro   INSTRUCT   0.485   0.100    0.937    0.000   1.000  0.060    4.91
+
+SELECTION (criteria fixed before the run; none of them is the outcome):
+  mmlu_cf    band[0.35,0.80] PASS (BASE=0.698, INSTRUCT=0.720)   probe-validity PASS
+  mmlu_pro   band[0.35,0.80] PASS (BASE=0.480, INSTRUCT=0.485)   probe-validity PASS
+
+  QUALIFYING: ['mmlu_cf', 'mmlu_pro']

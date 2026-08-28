@@ -1,0 +1,79 @@
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+
+=== mmlu_pro | raw arm | 1500 items | k=10 ===
+  [BASE] models/Qwen3.5-4B-Base -> results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4426.76it/s]
+    [Qwen3.5-4B-BASE/mmlu_pro] 50/1500 acc=0.400 4.27s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 100/1500 acc=0.415 4.22s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 150/1500 acc=0.420 4.43s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 200/1500 acc=0.440 4.52s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 250/1500 acc=0.436 4.66s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 300/1500 acc=0.435 4.74s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 350/1500 acc=0.449 5.43s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 400/1500 acc=0.446 5.92s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 450/1500 acc=0.463 6.17s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 500/1500 acc=0.464 7.03s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 550/1500 acc=0.459 7.77s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 600/1500 acc=0.459 8.63s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 650/1500 acc=0.461 9.13s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 700/1500 acc=0.468 9.59s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 750/1500 acc=0.471 10.40s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 800/1500 acc=0.469 11.05s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 850/1500 acc=0.471 11.68s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 900/1500 acc=0.469 12.15s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 950/1500 acc=0.465 12.39s/pass
+/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-13268-6z5gzsyc'}
+  warnings.warn(
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+
+=== mmlu_pro | raw arm | 1500 items | k=10 ===
+  [BASE] models/Qwen3.5-4B-Base -> results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json
+  [resume] results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json: 1900 records on disk
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4405.55it/s]
+    [Qwen3.5-4B-BASE/mmlu_pro] 1000/1500 acc=0.463 5.33s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1050/1500 acc=0.465 5.19s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1100/1500 acc=0.462 5.25s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1150/1500 acc=0.463 5.02s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1200/1500 acc=0.466 4.91s/pass
+    [chunk] Qwen3.5-4B-BASE/mmlu_pro stopped at item 1200/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+
+=== mmlu_pro | raw arm | 1500 items | k=10 ===
+  [BASE] models/Qwen3.5-4B-Base -> results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json
+  [resume] results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json: 2400 records on disk
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4479.60it/s]
+    [Qwen3.5-4B-BASE/mmlu_pro] 1250/1500 acc=0.465 4.13s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1300/1500 acc=0.462 4.67s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1350/1500 acc=0.463 4.82s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1400/1500 acc=0.465 6.23s/pass
+    [Qwen3.5-4B-BASE/mmlu_pro] 1450/1500 acc=0.467 8.23s/pass
+    [chunk] Qwen3.5-4B-BASE/mmlu_pro stopped at item 1450/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+Using the latest cached version of the dataset since TIGER-Lab/MMLU-Pro couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/TIGER-Lab___mmlu-pro/default/0.0.0/b189ec765aa7ed75c8acfea42df31fdae71f97be (last modified on Thu Aug 27 22:44:32 2026).
+
+=== mmlu_pro | raw arm | 1500 items | k=10 ===
+  [BASE] models/Qwen3.5-4B-Base -> results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json
+  [resume] results/workspace/calib/run_Qwen3.5-4B_base_mmlu_pro_raw.json: 2900 records on disk
+The fast path is not available because one of the required library is not installed. Falling back to torch implementation. To install follow https://github.com/fla-org/flash-linear-attention#installation and https://github.com/Dao-AILab/causal-conv1d
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 4481.98it/s]
+    [Qwen3.5-4B-BASE/mmlu_pro] 1500/1500 acc=0.467 6.13s/pass
+
+[ALL CELLS COMPLETE]

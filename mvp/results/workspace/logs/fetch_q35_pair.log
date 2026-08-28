@@ -1,0 +1,93 @@
+[fetch] Qwen/Qwen3.5-4B-Base -> models/Qwen3.5-4B-Base  (47929MB free)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 3MB
+  ok      merges.txt (3MB)
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 1  have 0MB / 5082MB
+  ok      model.safetensors-00001-of-00002.safetensors (5082MB)
+  fetch   model.safetensors-00002-of-00002.safetensors  attempt 1  have 0MB / 3805MB
+  ok      model.safetensors-00002-of-00002.safetensors (3805MB)
+  fetch   model.safetensors.index.json  attempt 1  have 0MB / 0MB
+  ok      model.safetensors.index.json (0MB)
+  fetch   preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      preprocessor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 12MB
+  ok      tokenizer.json (12MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+  fetch   video_preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      video_preprocessor_config.json (0MB)
+  fetch   vocab.json  attempt 1  have 0MB / 6MB
+  ok      vocab.json (6MB)
+COMPLETE -> models/Qwen3.5-4B-Base
+[fetch] Qwen/Qwen3.5-4B -> models/Qwen3.5-4B  (38390MB free)
+  fetch   chat_template.jinja  attempt 1  have 0MB / 0MB
+  ok      chat_template.jinja (0MB)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 3MB
+  ok      merges.txt (3MB)
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 1  have 0MB / 5082MB
+--- fetch run 2026-08-28_00:15:08 ---
+[fetch] Qwen/Qwen3.5-4B-Base -> models/Qwen3.5-4B-Base  (35165MB free)
+  ok      config.json (0MB)
+  ok      merges.txt (3MB)
+  ok      model.safetensors-00001-of-00002.safetensors (5082MB)
+  ok      model.safetensors-00002-of-00002.safetensors (3805MB)
+  ok      model.safetensors.index.json (0MB)
+  ok      preprocessor_config.json (0MB)
+  ok      tokenizer.json (12MB)
+  ok      tokenizer_config.json (0MB)
+  ok      video_preprocessor_config.json (0MB)
+  ok      vocab.json (6MB)
+COMPLETE -> models/Qwen3.5-4B-Base
+[fetch] Qwen/Qwen3.5-4B -> models/Qwen3.5-4B  (35102MB free)
+  ok      chat_template.jinja (0MB)
+  ok      config.json (0MB)
+  ok      merges.txt (3MB)
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 1  have 2430MB / 5082MB
+  ok      model.safetensors-00001-of-00002.safetensors (5082MB)
+  fetch   model.safetensors-00002-of-00002.safetensors  attempt 1  have 0MB / 3805MB
+  ok      model.safetensors-00002-of-00002.safetensors (3805MB)
+  fetch   model.safetensors.index.json  attempt 1  have 0MB / 0MB
+  ok      model.safetensors.index.json (0MB)
+  fetch   preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      preprocessor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 12MB
+  ok      tokenizer.json (12MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+  fetch   video_preprocessor_config.json  attempt 1  have 0MB / 0MB
+  ok      video_preprocessor_config.json (0MB)
+  fetch   vocab.json  attempt 1  have 0MB / 6MB
+  ok      vocab.json (6MB)
+COMPLETE -> models/Qwen3.5-4B
+[done] pair ready  (28517MB free)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   merges.txt  attempt 1  have 0MB / 3MB
+  ok      merges.txt (3MB)
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 1  have 0MB / 5082MB
+Terminated: 15
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 2  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 3  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 4  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 5  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 6  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 7  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors-00001-of-00002.safetensors  attempt 8  have 61MB / 5082MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  FAILED  model.safetensors-00001-of-00002.safetensors (have 64434176 of 5329398712)

@@ -1,6 +1,6 @@
 # Phronesis
 
-Activation-steering experiments for installing epistemic-virtue behavior in small LLMs. Three arcs: **(1)** hedging / abstention on Qwen2.5-7B — *published*, see below; **(2)** a **reasoning-calibration** pivot on Qwen3-4B (2026-07); **(3)** **mind attribution & moral standing** across 3 model families (2026-08, [current work](#-current-work-2026-08-mind-attribution--moral-standing)).
+Activation-steering experiments for installing epistemic-virtue behavior in small LLMs. Three arcs: **(1)** hedging / abstention on Qwen2.5-7B — *published*, see below; **(2)** a **reasoning-calibration** pivot on Qwen3-4B (2026-07); **(3)** **mind attribution & moral standing** across 3 model families (2026-08); **(4)** **does post-training make models overconfident?** — a preregistered test that retracted my own claim (2026-08, [current work](#-current-work-2026-08-does-post-training-make-models-overconfident)).
 
 **Author**: Sumit Pal
 **License**: MIT (code); CC-BY-4.0 (data + docs) — see [LICENSE](LICENSE)
@@ -21,7 +21,49 @@ Three findings + a labeled dataset, published with citable DOIs (CC-BY-4.0). Wri
 
 > **Throughline across all three:** static residual-stream steering doesn't *install* epistemic behavior in small LLMs; what survives controls is that *when* you intervene matters more than *which direction* you push.
 
-## 🧠 Current work (2026-08): mind attribution & moral standing
+## 📏 Current work (2026-08): does post-training make models overconfident?
+
+Started from a listener question about a DeepMind podcast on machine uncertainty. I claimed
+post-training, not architecture, is what breaks calibration in LLMs. Then tested it.
+
+**Design.** `Qwen3.5-4B-Base` vs `Qwen3.5-4B` — same pretraining, differing only by post-training.
+Byte-identical raw 5-shot prompts for both (format matched by construction), n=1500 items each on
+**MMLU-CF** and **MMLU-Pro**, two option orders per item, gold answer swept uniformly across all
+display slots. Prereg with five falsifiable predictions committed **before any outcome measure had
+been computed on any data**: [prereg-calibration-2026-08-28.md](docs/prereg-calibration-2026-08-28.md).
+
+**The instrument.** ECE cannot separate *"the model got louder"* from *"the model got better
+informed"*. Murphy's decomposition can — `Brier = reliability − resolution + uncertainty` — and
+**AUROC is the sharp end**: it is rank-based, so *any* monotone rescaling of confidence leaves it
+unmoved. Verified on synthetic data before use (squaring or square-rooting confidence left AUROC
+identical to 6 dp while reliability moved 100x).
+
+**Result — my claim was wrong, and I retracted it.**
+
+| | MMLU-CF (4-way, ~63%) | MMLU-Pro (10-way, ~48%) |
+|---|---|---|
+| accuracy | −0.004 [−.017, +.009] | −0.003 [−.022, +.015] |
+| **AUROC** | **+0.017 [−.003, +.036]** | **+0.011 [−.011, +.034]** |
+| mean confidence | −0.035 [−.038, −.031] | +0.006 [+.000, +.011] |
+| base gap (conf − acc) | **+0.055 OVERconfident** | **−0.039 UNDERconfident** |
+
+Post-training added **no accuracy** and **no discrimination** — AUROC's interval spans zero on both
+benchmarks. What it did was move confidence **toward the correct level in whichever direction the
+base model was wrong**: down where it was overconfident, up where it was underconfident. The
+confidence delta flips sign between benchmarks while |gap| shrinks both times.
+
+**Reading: better-scaled, not better-informed.** A flat AUROC beside a real confidence shift is the
+signature of pure rescaling — observed twice, in opposite directions.
+
+**Scorecard: P1 and P3 failed; P2 held but is not scored as vindication** — it predicted flat AUROC
+*because the model had got louder*, and on MMLU-CF it got quieter. A passed threshold is not a
+passed hypothesis. The finding's original title ("made it quieter") was also amended after the
+second benchmark contradicted it.
+
+**Status: observation, not a finding** — one family, one checkpoint pair. Log:
+[FINDINGS_mindedness.md](mvp/results/workspace/FINDINGS_mindedness.md) (F-BC).
+
+## 🧠 Previous arc (2026-08): mind attribution & moral standing
 
 Triggered by a paper claiming safety tuning suppresses a model's self-attribution of consciousness.
 Ten days, **3 model families, 9 checkpoints, ~50 numbered results** (F-G…F-BB). Full plain-language
@@ -87,7 +129,7 @@ The project has moved from *whether you can steer hedging* to *when a reasoning 
 
 ## What this is
 
-*(This section describes the published arc 1 — the Qwen2.5-7B hedging/abstention work. For the ongoing Qwen3-4B reasoning-calibration work, see [Current work](#-current-work-2026-07-reasoning-calibration-pivot) above.)*
+*(This section describes the published arc 1 — the Qwen2.5-7B hedging/abstention work. For the ongoing Qwen3-4B reasoning-calibration work, see [Previous arc (2026-07)](#-previous-arc-2026-07-reasoning-calibration-pivot) above.)*
 
 A 6-week solo project that attempted to install epistemic-virtue hedging (calibrated uncertainty on contested-evidence prompts) via DPO-trained steering vectors at the residual stream of Qwen2.5-7B-Instruct. After six sequential walkbacks of broader claims under standard steering-vector controls (matched-norm random direction, cross-layer, dose-response, cross-prompt replication, n=50 seed replication, strict-rubric verification), the surviving empirical finding is:
 
