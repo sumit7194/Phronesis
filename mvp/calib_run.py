@@ -20,7 +20,7 @@ CKPT_EVERY = 50
 
 
 @torch.no_grad()
-def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False):
+def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False, chunk=0):
     done = []
     if os.path.exists(out):
         prev = json.load(open(out))
@@ -48,7 +48,8 @@ def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False):
                   open(out + ".tmp", "w"))
         os.replace(out + ".tmp", out)   # atomic: a cut mid-write must not truncate the checkpoint
 
-    for i in range(start_item, len(items)):
+    stop_at = len(items) if not chunk else min(len(items), start_item + chunk)
+    for i in range(start_item, stop_at):
         it = items[i]
         for pi in range(n_perm):
             order = make_order(it, k, i, pi, n_perm)
@@ -75,9 +76,14 @@ def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False):
             acc = np.mean([r["pred"] == r["gold"] for r in recs])
             print("    [%s/%s] %d/%d acc=%.3f %.2fs/pass"
                   % (tag, bench, i + 1, len(items), acc, (time.time() - t0) / n), flush=True)
-    save(True)
+    finished = stop_at >= len(items)
+    save(finished)
     del hf
     torch.mps.empty_cache()
+    if not finished:
+        # exit signal for the driver: this process did its share, relaunch for the rest.
+        print("    [chunk] %s/%s stopped at item %d/%d - relaunch to continue"
+              % (tag, bench, stop_at, len(items)), flush=True)
     return json.load(open(out))
 
 
@@ -91,6 +97,11 @@ def main():
     ap.add_argument("--seed", type=int, default=20260828)
     ap.add_argument("--tag", default="Qwen3.5-4B")
     ap.add_argument("--chat", action="store_true")
+    ap.add_argument("--chunk", type=int, default=0,
+                    help="process at most N new items per process, then exit so the driver can "
+                         "relaunch. Bounds MPS allocator growth: on mmlu_pro (10 options, ~4x "
+                         "longer prompts) one 1500-item process degraded 4.3s -> 12.4s/pass and "
+                         "was still climbing. 2026-08-28.")
     ap.add_argument("--only", default=None, help="base|instruct, to run one checkpoint per process")
     a = ap.parse_args()
 
@@ -106,7 +117,7 @@ def main():
             out = "results/workspace/calib/run_%s_%s_%s_%s.json" % (a.tag, role, bench, arm)
             print("  [%s] %s -> %s" % (role.upper(), path, out), flush=True)
             run_cell(path, "%s-%s" % (a.tag, role.upper()), bench, items, shots, k,
-                     a.n_perm, out, chat=a.chat)
+                     a.n_perm, out, chat=a.chat, chunk=a.chunk)
     print("\n[ALL CELLS COMPLETE]", flush=True)
 
 

@@ -2442,3 +2442,86 @@ old sweeps are quoted.
 
 **Verdict: the measurement is sound enough to carry the behavioural findings.** This was the one
 outstanding question that could have invalidated the whole arc, and it does not.
+
+---
+
+# CALIBRATION ARC (opened 2026-08-27, from a user question about a DeepMind podcast)
+
+## F-BC. Post-training made Qwen3.5-4B QUIETER and better calibrated, not louder. My own prediction failed, in the opposite direction.
+Prereg `docs/prereg-calibration-2026-08-28.md` + Addendum 1, committed **c5adc406 / 72632477 before
+any outcome measure had been computed on any data**. Primary benchmark **MMLU-CF**, n=1500 items,
+`Qwen3.5-4B-Base` vs `Qwen3.5-4B`, format matched by construction (byte-identical raw 5-shot
+prompts, no chat template), 2 option orders per item, item-level scoring.
+
+### Where this came from
+On 2026-08-27 I told the user that post-training, not architecture, is what breaks LLM
+overconfidence. Re-reading the mindedness results format-matched supported the *polarization* half
+(post-training tripled the fraction of probability-collapsed cells: Qwen3-4B 16.7% -> 60.4%,
+Qwen3.5-4B 8.3% -> 27.1%) but could not separate **"got louder"** from **"got better informed"**,
+because discrimination rose in lockstep and the only ground-truth proxy available was 38 items of
+rocks-do-not-feel-pain. This run was built to force them apart.
+
+### Result
+
+| | BASE | INSTRUCT | delta [95% CI, paired bootstrap] |
+|---|---|---|---|
+| accuracy | 0.6340 | 0.6300 | −0.0040 [−0.0173, +0.0093] |
+| **mean confidence** | 0.6890 | 0.6544 | **−0.0345 [−0.0384, −0.0306]** |
+| overconfidence (conf − acc) | +0.0550 | +0.0244 | −0.0305 |
+| **ECE** | 0.0620 | 0.0345 | **−0.0275 [−0.0419, −0.0005]** |
+| reliability | 0.0044 | 0.0015 | −0.0029 [−0.0060, +0.0003] |
+| **AUROC** | 0.7534 | 0.7701 | +0.0166 [−0.0032, +0.0364] |
+| resolution | 0.0423 | 0.0481 | +0.0058 [−0.0023, +0.0141] |
+| option-letter mass (median) | 0.9975 | 0.9919 | — |
+
+### Preregistered verdicts
+| | prediction | result |
+|---|---|---|
+| P1 | mean confidence rises > +0.05 | **FAIL — and in the opposite direction.** It *fell* 0.0345, CI nowhere near zero |
+| P2 | ΔAUROC < +0.03 and CI includes zero | **passes its numbers, FAILS its mechanism** — see below |
+| P3 | \|Δresolution\| < \|Δreliability\| | **FAIL** — 0.0058 vs 0.0029, resolution moved twice as much |
+| P4 | Δaccuracy < +0.05 | PASS (−0.0040) |
+| P5 | letter mass ≥ 0.50 both checkpoints | PASS, emphatically (0.99+) |
+
+**P2 must not be scored as a win.** It predicted flat AUROC *because the model had merely got
+louder*. The model did not get louder. The number survived; the reasoning behind it is refuted.
+Claiming P2 as support would be reading a passed threshold as a passed hypothesis.
+
+### RETRACTION
+**My 2026-08-27 claim — that post-training is what makes models overconfident — is wrong on this
+pair, and backwards.** The **base** model is the overconfident one here (+5.5 pts). Post-training
+halved that (+2.4 pts) and roughly halved calibration error, while changing accuracy by nothing
+(−0.004, CI spans zero). Whether it also improved *ranking* is **not established**: AUROC +0.0166
+with a CI that crosses zero.
+
+So the honest reading is **better-scaled, not better-informed** — reached by getting quieter.
+
+### Robustness (all four agree)
+1. per-pass scoring (no permutation averaging) gives the same drop: conf 0.7015 -> 0.6641
+2. each option order separately: Δconf −0.0366 (perm 0), −0.0383 (perm 1)
+3. the instruct model is **less polarised**, not more: frac(conf>0.9) 0.254 -> 0.181,
+   frac(conf>0.99) 0.0020 -> 0.0000, frac(conf<0.4) 0.121 -> 0.171
+4. both checkpoints have a working confidence gradient (accuracy by confidence decile
+   0.37->0.91 base, 0.29->0.91 instruct), so neither readout is degenerate
+
+### This CONTRADICTS the same-family mindedness observation, and that matters
+The 2026-08-27 re-analysis found Qwen3.5-4B post-training **increasing** polarization on the
+steer-search baseline (0.255 -> 0.298, extreme cells 8.3% -> 27.1%). Here the same checkpoint pair
+shows post-training **decreasing** it. Two candidate reasons, untested:
+- **task regime**: unanswerable Yes/No philosophical probes vs 5-shot MCQ with a real answer
+- **readout**: a 2-token renormalisation with median mass 0.53 vs a k-way letter readout with
+  median mass 0.997
+
+Note it was already flagged on 08-27 that the mindedness sweep files and steer-search files
+**disagreed on the sign** for this very checkpoint. That disagreement now looks less like noise.
+
+### Status: OBSERVATION, not a finding
+One family, one pair, one benchmark. MMLU-Pro (10-way) is the preregistered replication and is
+running. Promotion needs a second family (Gemma-4-E2B or Olmo-3) or the second benchmark agreeing.
+
+### Method note worth keeping
+The MCQ letter readout is a **far cleaner instrument** than the mindedness arc's Yes/No
+renormalisation: median mass 0.937–0.998 across all four pilot cells, **0%** of passes below 0.10
+mass, and the model's actual top-1 token was an option letter **100%** of the time. The
+mindedness T1 readout was 0.531 median with 13% of prompts under 0.10. If that arc is ever
+revisited, this is the format to use.
