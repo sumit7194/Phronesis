@@ -128,3 +128,44 @@ AUROC/resolution absorb all of the rank information, which is exactly the separa
 but it means **resolution is not independent evidence from AUROC**. They are two views of the same
 rank quality. P3 should therefore be read as a consistency check on the decomposition, **not** as a
 second, corroborating test of P2. Nothing in the design changes; the predictions stand as written.
+
+---
+
+## ADDENDUM 2 — 2026-08-29, ONE bounded attempt to make the Gemma chat readout valid
+Written **before running it**, and before computing any outcome on it.
+
+**Situation.** Gemma-4-E2B on MMLU-CF, raw format, shows post-training collapsing every measure
+(accuracy −0.101, AUROC 0.724 → 0.583, ECE 0.038 → 0.297, all CIs excluding zero). That is exactly
+the claim I retracted on 08-28, which is precisely why it needs a hostile check. The obvious
+alternative reading is that `gemma-4-E2B-it` is **out of distribution** on raw few-shot text: its
+letter bias is 0.183 (Qwen's was 0.013) and 23.6% of its items sit above 0.99 confidence.
+
+The chat-template arm was meant to settle it and **failed P5**: median option-letter mass 0.4998
+(floor 0.50) and 11.3% of passes under 0.10 mass (limit 10%). The reason is visible in the top-1
+tokens — about a third of the time the model wants to begin prose or markdown (`'The'` 0.173,
+`'**'` 0.167, `'Here'` 0.034), because that is what chat tuning trained it to do.
+
+**The single attempt.** Append an assistant **prefill** — `The answer is` — after the chat
+template's generation prompt, so the next token position is one where a bare letter is the only
+sensible continuation. This changes the *instrument*, not the hypothesis.
+
+**Rules binding this attempt, fixed now:**
+1. **One attempt only.** If it fails, the Gemma chat arm is abandoned and the raw-arm result is
+   reported as **inconclusive with respect to out-of-distribution effects**. No third variant.
+2. **Success is defined by P5 alone** — median letter mass ≥ 0.50 and ≤10% of passes below 0.10.
+   The accuracy, AUROC, ECE and confidence numbers play **no part** in deciding whether the
+   readout is acceptable, and are not to be looked at until P5 has been scored.
+3. The `" A"` vs `"A"` token prefix continues to be chosen by measured mass, never by outcome.
+4. If P5 passes, the chat arm is reported **as a secondary condition**, and the raw arm remains
+   the preregistered primary. A disagreement between them is reported as a disagreement, not
+   resolved in favour of whichever is more convenient.
+
+**Why this is a fix and not p-hacking, stated so it can be judged:** the criterion is declared
+before the run, is about probe validity rather than the result, and the number of attempts is
+capped at one in advance. If I were to try a third readout after seeing an unfavourable second,
+that would be a garden of forking paths and the whole Gemma leg should then be discarded.
+
+**Prediction, on record:** I expect the prefill to **pass P5** (mass should go near 1.0, as it does
+in the raw arm), and I expect Gemma's instruct model to **still look worse than its base** but by a
+**smaller margin** than the raw arm's −0.101 accuracy and −0.141 AUROC. That is, I expect part but
+not all of the raw-arm collapse to be an out-of-distribution artefact.
