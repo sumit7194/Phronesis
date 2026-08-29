@@ -2601,3 +2601,100 @@ is the safer first move and Gemma the harder test.
 Both checkpoints discriminate **better** on the harder benchmark (AUROC 0.774/0.785 on MMLU-Pro vs
 0.753/0.770 on MMLU-CF; resolution 0.062 vs 0.042). Consistent with MMLU-Pro having a wider spread
 of item difficulty, which is what populates a calibration curve. Untested.
+
+---
+
+## F-BD. Second family: Gemma-4-E2B goes the OPPOSITE way to Qwen3.5. The effect is a property of the post-training recipe, not of post-training.
+Prereg `docs/prereg-calibration-2026-08-28.md` + Addenda 1–2 (all committed before the data they
+govern). Gemma-4-E2B base vs instruct, MMLU-CF, n=1500, same protocol as F-BC.
+
+### mmlu_pro was EXCLUDED before any Gemma outcome was computed
+Pre-set band gate [0.35, 0.80] on **both** checkpoints. Gemma-4-E2B-Base scored **0.242** against a
+0.10 chance floor on the completed 200-item pilot cell — below the band. The instruct cell was
+stopped at 50 items (0.200) because it could not change a verdict already fixed by completed base
+data. This is the floor risk flagged at planning time: a 2.3B-effective model on a 10-way benchmark
+sits too near chance for a calibration curve to exist. See `GEMMA_PILOT_VERDICT.md`.
+
+### Result
+
+| cell | acc | conf | gap | AUROC | ECE | resolution | letter bias |
+|---|---|---|---|---|---|---|---|
+| base (raw) | 0.4967 | 0.5148 | **+0.018** | **0.7237** | **0.0375** | 0.0397 | 0.050 |
+| instruct (raw) | 0.3953 | 0.6924 | +0.297 | 0.5832 | 0.2970 | 0.0076 | 0.183 |
+| instruct (chat, valid) | **0.4807** | **0.7754** | **+0.295** | **0.6472** | **0.2947** | 0.0198 | 0.089 |
+
+**instruct(chat) − base(raw)**, paired bootstrap 95% CI:
+
+| | Δ | CI |
+|---|---|---|
+| accuracy | −0.0160 | [−0.042, +0.009] — **spans zero, MATCHED** |
+| mean confidence | **+0.2606** | [+0.249, +0.272] |
+| **AUROC** | **−0.0765** | [−0.109, −0.046] |
+| resolution | −0.0199 | [−0.029, −0.011] |
+| ECE | +0.2572 | [+0.216, +0.277] |
+
+With accuracy matched — so the difficulty confound is gone — **post-training on Gemma made the
+model much more confident, ~8x worse calibrated, and measurably WORSE at knowing what it knows.**
+
+### The two families disagree, and that is the finding
+| | Qwen3.5-4B (F-BC) | Gemma-4-E2B (F-BD) |
+|---|---|---|
+| accuracy | matched | matched |
+| mean confidence | **−0.035** | **+0.261** |
+| ECE | 0.062 → **0.035** (better) | 0.038 → **0.295** (8x worse) |
+| AUROC | +0.017, CI spans zero | **−0.077, CI excludes zero** |
+
+Same protocol, same benchmark, same measures, opposite outcomes.
+
+**Status of my 2026-08-27 claim.** It said post-training is what makes models overconfident. It
+**stays RETRACTED as a general claim** — Qwen3.5 flatly contradicts it. It is **true of Gemma**, and
+strongly so. What replaces both framings: **this is a property of the post-training recipe, not of
+post-training as such.** Neither "it just gets louder" nor "it gets better informed" generalises.
+
+### The out-of-distribution check, and what it cost to get right
+The raw-format instruct arm looked like a total collapse (accuracy −0.101, AUROC 0.724 → 0.583).
+Because that is *exactly* the claim I had retracted, it got a hostile check rather than a victory
+lap. Two instrument failures had to be fixed first, **both caught by the F-BB mass gate, neither by
+the numbers looking wrong**:
+
+1. **The first chat arm was fiction.** It ran to completion and produced entirely plausible figures
+   (acc 0.428, AUROC 0.641, tidy CIs) on a DV whose **median letter mass was 0.000000, max 3e-6**.
+   Raw prompts end `Answer:` so the next token is `" A"`; Gemma's chat template ends
+   `<|turn>model\n`, so the answer is at line start and the token is `"A"` with no space. The
+   readout now probes both prefixes and picks by mass.
+2. **`gemma-4-E2B-it` will not emit a bare answer letter.** Given the prefill `The answer is` it
+   puts **98%** on `' **'`. Post-training installed a rigid markdown format — it intends to write
+   `**A**`. Only a `**` prefill restores mass (0.9535).
+
+Addendum 2 capped this at one attempt with success defined by **P5 alone**; six prefills were tried
+and selected **on probe mass, with no outcome computed for any of them beforehand**. Final chat
+readout: median mass **0.9900**, 0.8% of passes below 0.10 — PASS.
+
+**My preregistered prediction for this attempt was right and is on record**: P5 would pass, and
+instruct would still look worse than base but by *less* than the raw arm showed. Accuracy recovered
++0.085 and AUROC +0.064 under the chat template (both CIs excluding zero), so part of the raw
+collapse WAS an artefact — and part was not.
+
+### A methodological tension NOT to paper over
+The headline comparison is **base-on-raw vs instruct-on-chat** — each model in its native format.
+Defensible, but **not format-matched**, and format mismatch is exactly what made half the mindedness
+base-vs-instruct comparisons unreadable. So:
+
+- **format-matched** (both raw): instruct is out of distribution, accuracy differs by 10 points
+- **format-appropriate** (native each): accuracy matched, but the formats differ
+
+Neither is clean; they are confounded in **different directions**; and **both show confidence up and
+AUROC down**. That convergence is the strongest available claim and it is weaker than either
+comparison alone would look.
+
+### Carry forward
+Any cross-family single-token logit probe is partly measuring **probe compliance**, not knowledge.
+Qwen3.5 answers with a bare letter; Gemma refuses to without a markdown prefill. Model families
+differ in how willing they are to put a bare token where the probe is watching, and that difference
+is not a difference in what they know.
+
+### Status: OBSERVATION, not a finding
+Two families now disagree, which is itself informative, but it is 2 families x 1 benchmark and the
+Gemma leg needed instrument repair. **Gemma-4-E2B is also a smaller model than Qwen3.5-4B** (E4B's
+16GB of weights will not run on a 16GB machine), so family and scale are confounded in the
+comparison. A third family, or Qwen3.5-2B to separate scale from family, is what promotion needs.

@@ -1,0 +1,28 @@
+=== gemma chat-arm start 2026-08-29_10:45:04 ===
+[chunk] pass 1 swap 1156MB disk 14GB 10:53:05
+[chunk] pass 2 swap 850MB disk 15GB 10:59:50
+[chunk] pass 3 swap 643MB disk 15GB 11:06:21
+[chunk] pass 4 swap 856MB disk 15GB 11:12:51
+[chunk] pass 5 swap 815MB disk 15GB 11:19:07
+[chunk] pass 6 swap 796MB disk 15GB 11:25:22
+[done] chat arm 11:25:23
+=== chat arm ended 11:25:23 ===
+=== gemma chat-arm start 2026-08-29_11:58:56 ===
+[chunk] pass 1 swap 944MB disk 15GB 12:08:12
+[chunk] pass 2 swap 722MB disk 15GB 12:14:57
+[chunk] pass 3 swap 1148MB disk 15GB 12:22:13
+[chunk] pass 4 swap 888MB disk 15GB 12:28:59
+[chunk] pass 5 swap 874MB disk 15GB 12:35:30
+[chunk] pass 6 swap 733MB disk 14GB 12:42:00
+[done] chat arm 12:42:00
+=== chat arm ended 12:42:00 ===
+=== gemma chat-arm start 2026-08-29_12:53:17 ===
+=== gemma chat-arm start 2026-08-29_12:56:37 ===
+[chunk] pass 1 swap 1061MB disk 14GB 13:05:38
+[chunk] pass 2 swap 492MB disk 14GB 13:12:38
+[chunk] pass 3 swap 896MB disk 14GB 13:19:39
+[chunk] pass 4 swap 775MB disk 14GB 13:26:25
+[chunk] pass 5 swap 822MB disk 14GB 13:33:10
+[chunk] pass 6 swap 993MB disk 14GB 13:39:56
+[done] chat arm 13:39:56
+=== chat arm ended 13:39:56 ===

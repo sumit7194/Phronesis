@@ -1,0 +1,66 @@
+--- fetch run 2026-08-29_00:48:50 ---
+[fetch] google/gemma-4-E2B -> models/gemma-4-E2B (36606MB free)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 9771MB
+Terminated: 15
+  fetch   model.safetensors  attempt 2  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 3  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 4  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 5  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 6  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 7  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  fetch   model.safetensors  attempt 8  have 763MB / 9771MB
+curl: option -K: error encountered when reading a file
+curl: try 'curl --help' or 'curl --manual' for more information
+  FAILED  model.safetensors (have 800616448 of 10246621918)
+--- fetch run 2026-08-29_00:52:37 ---
+[fetch] google/gemma-4-E2B -> models/gemma-4-E2B (35805MB free)
+  ok      config.json (0MB)
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 763MB / 9771MB
+  fetch   model.safetensors  attempt 2  have 5091MB / 9771MB
+  ok      model.safetensors (9771MB)
+  fetch   processor_config.json  attempt 1  have 0MB / 0MB
+  ok      processor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 30MB
+  ok      tokenizer.json (30MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+COMPLETE -> models/gemma-4-E2B
+[fetch] google/gemma-4-E2B-it -> models/gemma-4-E2B-it (26751MB free)
+  fetch   chat_template.jinja  attempt 1  have 0MB / 0MB
+  ok      chat_template.jinja (0MB)
+  fetch   config.json  attempt 1  have 0MB / 0MB
+  ok      config.json (0MB)
+  fetch   generation_config.json  attempt 1  have 0MB / 0MB
+  ok      generation_config.json (0MB)
+  fetch   model.safetensors  attempt 1  have 0MB / 9771MB
+  fetch   model.safetensors  attempt 2  have 2049MB / 9771MB
+  fetch   model.safetensors  attempt 3  have 7040MB / 9771MB
+  fetch   model.safetensors  attempt 4  have 7040MB / 9771MB
+  fetch   model.safetensors  attempt 5  have 7040MB / 9771MB
+  fetch   model.safetensors  attempt 6  have 7040MB / 9771MB
+  ok      model.safetensors (9771MB)
+  fetch   processor_config.json  attempt 1  have 0MB / 0MB
+  ok      processor_config.json (0MB)
+  fetch   tokenizer.json  attempt 1  have 0MB / 30MB
+  ok      tokenizer.json (30MB)
+  fetch   tokenizer_config.json  attempt 1  have 0MB / 0MB
+  ok      tokenizer_config.json (0MB)
+COMPLETE -> models/gemma-4-E2B-it
+[done] gemma pair ready (16686MB free)

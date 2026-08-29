@@ -1,0 +1,27 @@
+
+==============================================================================
+mmlu_cf   arm=raw   n=1500 items
+------------------------------------------------------------------------------
+                     BASE   INSTRUCT      delta
+acc                0.4967     0.3953    -0.1013
+conf               0.5148     0.6924    +0.1776
+gap                0.0181     0.2970    +0.2789
+auroc              0.7237     0.5832    -0.1405
+brier              0.2114     0.3496    +0.1382
+reliability        0.0020     0.1180    +0.1161
+resolution         0.0397     0.0076    -0.0321
+uncertainty        0.2500     0.2390    -0.0109
+ece                0.0375     0.2970    +0.2595
+mass_median        0.9975     1.0000    +0.0024
+mass_lt_010        0.0000     0.0000    +0.0000
+
+bootstrap 95%% CI on INSTRUCT - BASE (paired items, 2000 draws):
+  AUROC         -0.1405  [-0.1772, -0.1073]  *
+  resolution    -0.0321  [-0.0409, -0.0232]  *
+  reliability   +0.1161  [+0.0991, +0.1346]  *
+  ECE           +0.2595  [+0.2186, +0.2799]  *
+  accuracy      -0.1013  [-0.1320, -0.0707]  *
+  mean conf     +0.1776  [+0.1646, +0.1904]  *
+
+* = 95%% CI excludes zero. Effect sizes are reported alongside every interval,
+  never an interval or a z alone (the F-AT lesson).

@@ -1,0 +1,109 @@
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   8%|▊         | 158/1951 [00:00<00:01, 1546.72it/s]Loading weights:  17%|█▋        | 325/1951 [00:00<00:01, 1611.56it/s]Loading weights:  26%|██▋       | 516/1951 [00:00<00:00, 1740.48it/s]Loading weights:  36%|███▌      | 702/1951 [00:00<00:00, 1768.04it/s]Loading weights:  45%|████▌     | 879/1951 [00:17<00:38, 27.93it/s]  Loading weights: 100%|██████████| 1951/1951 [00:18<00:00, 108.34it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 50/1500 acc=0.510 0.68s/pass
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 100 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   8%|▊         | 158/1951 [00:00<00:01, 1540.85it/s]Loading weights:  16%|█▌        | 313/1951 [00:00<00:01, 1144.45it/s]Loading weights:  22%|██▏       | 434/1951 [00:00<00:01, 1064.58it/s]Loading weights:  29%|██▉       | 561/1951 [00:00<00:01, 1086.05it/s]Loading weights:  35%|███▌      | 685/1951 [00:00<00:01, 1109.93it/s]Loading weights:  41%|████      | 798/1951 [00:17<00:55, 20.89it/s]  Loading weights: 100%|██████████| 1951/1951 [00:17<00:00, 108.53it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 100/1500 acc=0.485 0.74s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 150/1500 acc=0.507 0.71s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 200/1500 acc=0.510 0.70s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 250/1500 acc=0.506 0.72s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 300/1500 acc=0.492 0.72s/pass
+    [chunk] gemma-4-E2B-BASE/mmlu_cf stopped at item 300/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 600 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:00, 1783.69it/s]Loading weights:  18%|█▊        | 360/1951 [00:00<00:00, 1730.58it/s]Loading weights:  27%|██▋       | 534/1951 [00:00<00:00, 1719.01it/s]Loading weights:  37%|███▋      | 716/1951 [00:00<00:00, 1752.16it/s]Loading weights:  46%|████▌     | 892/1951 [00:14<00:31, 34.07it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 132.47it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 350/1500 acc=0.509 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 400/1500 acc=0.487 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 450/1500 acc=0.484 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 500/1500 acc=0.486 0.70s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 550/1500 acc=0.491 0.70s/pass
+    [chunk] gemma-4-E2B-BASE/mmlu_cf stopped at item 550/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 1100 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:01, 1764.77it/s]Loading weights:  18%|█▊        | 358/1951 [00:00<00:00, 1721.95it/s]Loading weights:  28%|██▊       | 556/1951 [00:00<00:00, 1835.66it/s]Loading weights:  38%|███▊      | 740/1951 [00:00<00:00, 1825.83it/s]Loading weights:  47%|████▋     | 923/1951 [00:14<00:27, 36.91it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 138.00it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 600/1500 acc=0.487 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 650/1500 acc=0.481 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 700/1500 acc=0.478 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 750/1500 acc=0.477 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 800/1500 acc=0.482 0.66s/pass
+    [chunk] gemma-4-E2B-BASE/mmlu_cf stopped at item 800/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 1600 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   9%|▉         | 181/1951 [00:00<00:00, 1772.79it/s]Loading weights:  18%|█▊        | 359/1951 [00:00<00:00, 1743.00it/s]Loading weights:  28%|██▊       | 553/1951 [00:00<00:00, 1826.91it/s]Loading weights:  38%|███▊      | 739/1951 [00:00<00:00, 1818.98it/s]Loading weights:  47%|████▋     | 921/1951 [00:14<00:29, 35.30it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 132.39it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 850/1500 acc=0.486 0.69s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 900/1500 acc=0.486 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 950/1500 acc=0.489 0.68s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1000/1500 acc=0.486 0.68s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1050/1500 acc=0.486 0.71s/pass
+    [chunk] gemma-4-E2B-BASE/mmlu_cf stopped at item 1050/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 2100 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   8%|▊         | 158/1951 [00:00<00:01, 1569.00it/s]Loading weights:  17%|█▋        | 339/1951 [00:00<00:00, 1683.95it/s]Loading weights:  27%|██▋       | 530/1951 [00:00<00:00, 1765.15it/s]Loading weights:  37%|███▋      | 716/1951 [00:00<00:00, 1782.87it/s]Loading weights:  46%|████▌     | 895/1951 [00:14<00:29, 35.38it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 135.00it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 1100/1500 acc=0.484 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1150/1500 acc=0.484 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1200/1500 acc=0.485 0.65s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1250/1500 acc=0.483 0.67s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1300/1500 acc=0.483 0.67s/pass
+    [chunk] gemma-4-E2B-BASE/mmlu_cf stopped at item 1300/1500 - relaunch to continue
+
+[ALL CELLS COMPLETE]
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+Using the latest cached version of the dataset since microsoft/MMLU-CF couldn't be found on the Hugging Face Hub (offline mode is enabled).
+Found the latest cached dataset configuration 'default' at /Users/sumit/.cache/huggingface/datasets/microsoft___mmlu-cf/default/0.0.0/c25b89a968a2062e422dd96ddf0fe3387507f0dd (last modified on Thu Aug 27 22:44:04 2026).
+
+=== mmlu_cf | raw arm | 1500 items | k=4 ===
+  [BASE] models/gemma-4-E2B -> results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json
+  [resume] results/workspace/calib/run_gemma-4-E2B_base_mmlu_cf_raw.json: 2600 records on disk
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:   8%|▊         | 158/1951 [00:00<00:01, 1568.46it/s]Loading weights:  16%|█▌        | 315/1951 [00:00<00:01, 1566.62it/s]Loading weights:  26%|██▌       | 511/1951 [00:00<00:00, 1733.68it/s]Loading weights:  36%|███▌      | 697/1951 [00:00<00:00, 1770.34it/s]Loading weights:  45%|████▍     | 874/1951 [00:14<00:30, 35.65it/s]  Loading weights: 100%|██████████| 1951/1951 [00:14<00:00, 138.15it/s]
+    [gemma-4-E2B-BASE/mmlu_cf] 1350/1500 acc=0.484 0.66s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1400/1500 acc=0.486 0.65s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1450/1500 acc=0.488 0.64s/pass
+    [gemma-4-E2B-BASE/mmlu_cf] 1500/1500 acc=0.488 0.65s/pass
+
+[ALL CELLS COMPLETE]

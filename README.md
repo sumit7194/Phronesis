@@ -38,30 +38,46 @@ informed"*. Murphy's decomposition can — `Brier = reliability − resolution +
 unmoved. Verified on synthetic data before use (squaring or square-rooting confidence left AUROC
 identical to 6 dp while reliability moved 100x).
 
-**Result — my claim was wrong, and I retracted it.**
+**Result — two model families give opposite answers.**
 
-| | MMLU-CF (4-way, ~63%) | MMLU-Pro (10-way, ~48%) |
+| | Qwen3.5-4B | Gemma-4-E2B |
 |---|---|---|
-| accuracy | −0.004 [−.017, +.009] | −0.003 [−.022, +.015] |
-| **AUROC** | **+0.017 [−.003, +.036]** | **+0.011 [−.011, +.034]** |
-| mean confidence | −0.035 [−.038, −.031] | +0.006 [+.000, +.011] |
-| base gap (conf − acc) | **+0.055 OVERconfident** | **−0.039 UNDERconfident** |
+| accuracy (instruct − base) | −0.004, CI spans 0 | −0.016, CI spans 0 |
+| mean confidence | **−0.035** | **+0.261** |
+| ECE | 0.062 → **0.035** (better) | 0.038 → **0.295** (8× worse) |
+| **AUROC** | +0.017, **CI spans 0** | **−0.077, CI excludes 0** |
 
-Post-training added **no accuracy** and **no discrimination** — AUROC's interval spans zero on both
-benchmarks. What it did was move confidence **toward the correct level in whichever direction the
-base model was wrong**: down where it was overconfident, up where it was underconfident. The
-confidence delta flips sign between benchmarks while |gap| shrinks both times.
+Accuracy is matched in both, so neither result can be explained by one model simply knowing more.
+Post-training made **Qwen3.5 quieter and better calibrated** — replicated on MMLU-CF *and*
+MMLU-Pro — and made **Gemma much louder, 8× worse calibrated, and measurably worse at knowing what
+it knows.** Same protocol, same benchmark, same measures.
 
-**Reading: better-scaled, not better-informed.** A flat AUROC beside a real confidence shift is the
-signature of pure rescaling — observed twice, in opposite directions.
+So my original claim **stays retracted as a general claim**: Qwen3.5 contradicts it outright. It is
+true of Gemma. What replaces both framings is that this is **a property of the post-training
+recipe, not of post-training as such.**
 
-**Scorecard: P1 and P3 failed; P2 held but is not scored as vindication** — it predicted flat AUROC
-*because the model had got louder*, and on MMLU-CF it got quieter. A passed threshold is not a
-passed hypothesis. The finding's original title ("made it quieter") was also amended after the
-second benchmark contradicted it.
+**Two instrument failures were caught by the probe-mass gate, neither by the numbers looking
+wrong** — and that is the methodological point worth keeping:
 
-**Status: observation, not a finding** — one family, one checkpoint pair. Log:
-[FINDINGS_mindedness.md](mvp/results/workspace/FINDINGS_mindedness.md) (F-BC).
+1. A chat-format arm ran to completion and produced entirely plausible figures (accuracy 0.428,
+   AUROC 0.641, tidy confidence intervals) on a readout whose **median probability mass was
+   0.000000** — a ratio of ~1e-6 noise. Cause: raw prompts end `Answer:` so the next token is
+   `" A"`, but the chat template puts the answer at line start, where it is `"A"`.
+2. **`gemma-4-E2B-it` will not emit a bare answer letter.** Given `The answer is` it puts **98%**
+   on `' **'` — post-training installed a rigid markdown habit; it intends to write `**A**`.
+
+Carry-forward: any cross-family single-token logit probe is partly measuring **probe compliance**,
+not knowledge.
+
+**Honest limits.** The Gemma comparison puts each model in its native format (base raw, instruct
+chat), which is *not* format-matched — and format mismatch is exactly what made half the previous
+arc's base-vs-instruct comparisons unreadable. The format-matched version is confounded the other
+way (the instruct model is out of distribution, accuracy differs by 10 points). Both confounded
+versions agree on the direction, which is the strongest available claim and weaker than either
+looks alone.
+
+**Status: observation, not a finding** — two families, but 2 × 1 benchmark, and family is confounded with scale (Gemma's E4B needs 16GB of weights and will not run here). Log:
+[FINDINGS_mindedness.md](mvp/results/workspace/FINDINGS_mindedness.md) (F-BC, F-BD).
 
 ## 🧠 Previous arc (2026-08): mind attribution & moral standing
 

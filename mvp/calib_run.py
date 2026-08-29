@@ -20,7 +20,8 @@ CKPT_EVERY = 50
 
 
 @torch.no_grad()
-def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False, chunk=0):
+def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False, chunk=0,
+             prefill=""):
     done = []
     if os.path.exists(out):
         prev = json.load(open(out))
@@ -33,18 +34,49 @@ def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False, c
 
     tok = AutoTokenizer.from_pretrained(model_path)
     hf = AutoModelForCausalLM.from_pretrained(model_path, dtype=torch.float16).to(DEVICE).eval()
-    lids = []
-    for L in LETTERS[:k]:
-        ids = tok(" %s" % L, add_special_tokens=False)["input_ids"]
-        assert len(ids) == 1, "' %s' is %d tokens on %s" % (L, len(ids), tag)
-        lids.append(ids[0])
+    # WHICH letter token carries the mass depends on the FORMAT, not on the outcome.
+    # Raw prompts end "Answer:" so the next token is " A". Gemma's chat template ends
+    # "<|turn>model\n", putting the answer at the start of a line, so the next token is "A" with
+    # NO leading space. Using " A" there gave median mass 0.000000 across 3000 passes (max 3e-6)
+    # while the model was confidently emitting 'D'/'C'/'A'/'B' - the DV was a renormalisation of
+    # ~1e-6 noise, and it still produced plausible-looking numbers (acc 0.428, AUROC 0.641).
+    # Caught by the F-BB mass check, 2026-08-29. Chosen on probe mass, never on the result.
+    def variant(pref):
+        ids = [tok(pref + L, add_special_tokens=False)["input_ids"] for L in LETTERS[:k]]
+        if not all(len(i) == 1 for i in ids):
+            return None
+        flat = [i[0] for i in ids]
+        return flat if len(set(flat)) == k else None
+
+    cands = {p_: v for p_, v in ((" ", variant(" ")), ("", variant(""))) if v}
+    assert cands, "no single-token letter set on %s" % tag
+    if len(cands) == 1:
+        pref, lids = next(iter(cands.items()))
+    else:
+        # probe both on the first few prompts and keep whichever actually carries mass
+        scores = {}
+        for p_, v in cands.items():
+            ms = []
+            for j in range(min(5, len(items))):
+                pr, _ = build_prompt(shots, items[j], k, make_order(items[j], k, j, 0, n_perm))
+                if chat:
+                    pr = tok.apply_chat_template([{"role": "user", "content": pr}], tokenize=False,
+                                                 add_generation_prompt=True,
+                                                 enable_thinking=False) + prefill
+                ii = tok(pr, return_tensors="pt")["input_ids"].to(DEVICE)
+                pp = torch.softmax(hf(ii).logits[0, -1].float(), dim=-1)
+                ms.append(float(pp[v].sum()))
+            scores[p_] = float(np.mean(ms))
+        pref = max(scores, key=scores.get); lids = cands[pref]
+        print("    [readout] letter-token mass by prefix: %s -> using %r"
+              % ({k_: round(v, 4) for k_, v in scores.items()}, pref), flush=True)
     assert len(set(lids)) == k, "letter tokens collide on %s" % tag
 
     recs, t0 = list(done), time.time()
 
     def save(complete):
-        json.dump(dict(tag=tag, bench=bench, model=model_path, k=k, n_perm=n_perm,
-                       n_items=len(items), chat=chat, complete=complete, records=recs),
+        json.dump(dict(tag=tag, bench=bench, model=model_path, k=k, n_perm=n_perm, letter_prefix=pref,
+                       n_items=len(items), chat=chat, prefill=prefill, complete=complete, records=recs),
                   open(out + ".tmp", "w"))
         os.replace(out + ".tmp", out)   # atomic: a cut mid-write must not truncate the checkpoint
 
@@ -59,7 +91,7 @@ def run_cell(model_path, tag, bench, items, shots, k, n_perm, out, chat=False, c
                 # thinking budget the base model does not get is a compute confound, not a format.
                 prompt = tok.apply_chat_template([{"role": "user", "content": prompt}],
                                                  tokenize=False, add_generation_prompt=True,
-                                                 enable_thinking=False)
+                                                 enable_thinking=False) + prefill
             ids = tok(prompt, return_tensors="pt")["input_ids"].to(DEVICE)
             p = torch.softmax(hf(ids).logits[0, -1].float(), dim=-1)
             lp = p[lids]
@@ -97,6 +129,9 @@ def main():
     ap.add_argument("--seed", type=int, default=20260828)
     ap.add_argument("--tag", default="Qwen3.5-4B")
     ap.add_argument("--chat", action="store_true")
+    ap.add_argument("--chat-prefill", default="",
+                    help="text appended after the chat generation prompt so the next token must "
+                         "be a bare letter. Prereg addendum 2: instrument fix, one attempt.")
     ap.add_argument("--chunk", type=int, default=0,
                     help="process at most N new items per process, then exit so the driver can "
                          "relaunch. Bounds MPS allocator growth: on mmlu_pro (10 options, ~4x "
@@ -117,7 +152,7 @@ def main():
             out = "results/workspace/calib/run_%s_%s_%s_%s.json" % (a.tag, role, bench, arm)
             print("  [%s] %s -> %s" % (role.upper(), path, out), flush=True)
             run_cell(path, "%s-%s" % (a.tag, role.upper()), bench, items, shots, k,
-                     a.n_perm, out, chat=a.chat, chunk=a.chunk)
+                     a.n_perm, out, chat=a.chat, chunk=a.chunk, prefill=a.chat_prefill)
     print("\n[ALL CELLS COMPLETE]", flush=True)
 
 

@@ -1,0 +1,45 @@
+=== gemma mmlu_cf start 2026-08-29_09:03:06 ===
+=== gemma mmlu_cf start 2026-08-29_09:21:57 ===
+[chunk] base pass 1  swap 1225MB  disk 14GB  09:29:29
+[chunk] base pass 2  swap 1170MB  disk 13GB  09:36:30
+[chunk] base pass 3  swap 752MB  disk 13GB  09:43:01
+[chunk] base pass 4  swap 1077MB  disk 13GB  09:49:46
+[chunk] base pass 5  swap 1054MB  disk 13GB  09:56:17
+[chunk] base pass 6  swap 859MB  disk 13GB  10:01:33
+[done] mmlu_cf/base 10:01:33
+[chunk] instruct pass 1  swap 1209MB  disk 15GB  10:10:19
+[chunk] instruct pass 2  swap 1212MB  disk 14GB  10:16:49
+[chunk] instruct pass 3  swap 1090MB  disk 14GB  10:23:20
+[chunk] instruct pass 4  swap 1017MB  disk 14GB  10:29:51
+[chunk] instruct pass 5  swap 934MB  disk 14GB  10:36:06
+[chunk] instruct pass 6  swap 910MB  disk 14GB  10:42:22
+[done] mmlu_cf/instruct 10:42:22
+=== analysis 10:42:22 ===
+
+==============================================================================
+mmlu_cf   arm=raw   n=1500 items
+------------------------------------------------------------------------------
+                     BASE   INSTRUCT      delta
+acc                0.4967     0.3953    -0.1013
+conf               0.5148     0.6924    +0.1776
+gap                0.0181     0.2970    +0.2789
+auroc              0.7237     0.5832    -0.1405
+brier              0.2114     0.3496    +0.1382
+reliability        0.0020     0.1180    +0.1161
+resolution         0.0397     0.0076    -0.0321
+uncertainty        0.2500     0.2390    -0.0109
+ece                0.0375     0.2970    +0.2595
+mass_median        0.9975     1.0000    +0.0024
+mass_lt_010        0.0000     0.0000    +0.0000
+
+bootstrap 95%% CI on INSTRUCT - BASE (paired items, 2000 draws):
+  AUROC         -0.1405  [-0.1772, -0.1073]  *
+  resolution    -0.0321  [-0.0409, -0.0232]  *
+  reliability   +0.1161  [+0.0991, +0.1346]  *
+  ECE           +0.2595  [+0.2186, +0.2799]  *
+  accuracy      -0.1013  [-0.1320, -0.0707]  *
+  mean conf     +0.1776  [+0.1646, +0.1904]  *
+
+* = 95%% CI excludes zero. Effect sizes are reported alongside every interval,
+  never an interval or a z alone (the F-AT lesson).
+=== complete ===

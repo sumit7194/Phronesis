@@ -1,0 +1,5 @@
+=== gemma arc start 2026-08-29_00:52:37 ===
+[fetch] google/gemma-4-E2B -> models/gemma-4-E2B (35805MB free)
+[fetch] google/gemma-4-E2B-it -> models/gemma-4-E2B-it (26751MB free)
+[done] gemma pair ready (16686MB free)
+=== pilot 03:13:27 ===
