@@ -169,3 +169,27 @@ that would be a garden of forking paths and the whole Gemma leg should then be d
 in the raw arm), and I expect Gemma's instruct model to **still look worse than its base** but by a
 **smaller margin** than the raw arm's −0.101 accuracy and −0.141 AUROC. That is, I expect part but
 not all of the raw-arm collapse to be an out-of-distribution artefact.
+
+### Addendum 2, note added during execution (before any outcome was computed)
+The declared prefill `The answer is` **reads zero mass** — not a failed hypothesis, a dead
+instrument. Diagnosing it produced a fact about the model worth recording on its own:
+**`gemma-4-E2B-it` will not emit a bare answer letter.** Measured at the answer position:
+
+| prefill | mass on `" X"` | mass on `"X"` | top token |
+|---|---|---|---|
+| *(none)* | 0.0000 | 0.4038 | `'**'` 0.39 |
+| `The answer is` | 0.0000 | **0.0000** | `' **'` **0.98** |
+| `**` | 0.0000 | **0.9535** | `'A'` 0.91 |
+
+Post-training installed a **rigid markdown output format**: after "The answer is" the model wants
+`' **'` with 98% probability. It intends to write `**A**`, not `A`.
+
+**Six prefill strings were tried; `**` was selected.** The selection was made on **probe mass
+alone**, which rule 3 of this addendum explicitly provides for, and **no outcome quantity —
+accuracy, AUROC, ECE, confidence — was computed for any of them before choosing.** What was being
+repaired is the instrument, not the hypothesis. Recording it here rather than silently, because it
+is close enough to the forking-paths line that a reader should be able to judge it independently.
+
+**The one-attempt cap still binds and is now spent.** If the `**` readout fails P5, the Gemma chat
+arm is abandoned and the raw arm is reported as inconclusive with respect to out-of-distribution
+effects. No further variants.
